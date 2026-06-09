@@ -1,11 +1,11 @@
 id: CNVD-2022-86535
 
 info:
-  name: ThinkPHP Multi Languag - File Inc & Remote Code Execution (RCE)
+  name: ThinkPHP 多语言功能文件包含及远程代码执行漏洞（CNVD-2022-86535）
   author: arliya,ritikchaddha
   severity: high
   description: |
-    ThinkPHP has a command execution vulnerability because the multi-language function is enabled and the parameter passing of parameter lang is not strictly filtered. Attackers can use this vulnerability to execute commands.
+    ThinkPHP 在开启多语言功能且 `lang` 参数过滤不严时，可能被利用加载 `pearcmd` 并进一步触发命令执行。模板结合 `think_lang` 回显与 `config-create` 成功信息，识别文件包含到远程代码执行链路是否可用。
   reference:
     - https://cn-sec.com/archives/1465289.html
     - https://blog.csdn.net/qq_60614981/article/details/128724640

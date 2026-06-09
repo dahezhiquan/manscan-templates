@@ -1,10 +1,10 @@
 id: CNVD-2021-15824
 
 info:
-  name: EmpireCMS 7.5 - Cross-Site Scripting
+  name: EmpireCMS 7.5 DOM 型 XSS 漏洞（CNVD-2021-15824）
   author: daffainfo,pikpikcu
   severity: high
-  description: EmpireCMS is vulnerable to a DOM based cross-site scripting attack.
+  description: EmpireCMS 7.5 的 `ViewImg` 页面存在 DOM 型跨站脚本风险，前端脚本会直接使用用户提供的 `url` 参数拼接链接。模板通过检测页面中的相关脚本逻辑，识别可被利用的 DOM XSS 条件。
   reference:
     - https://sourceforge.net/projects/empirecms/
     - https://www.bilibili.com/read/cv10441910

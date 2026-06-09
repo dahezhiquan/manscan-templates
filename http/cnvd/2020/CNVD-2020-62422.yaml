@@ -1,10 +1,10 @@
 id: CNVD-2020-62422
 
 info:
-  name: Seeyon - Local File Inclusion
+  name: 致远 OA 任意文件读取漏洞（CNVD-2020-62422）
   author: pikpikcu
   severity: medium
-  description: Seeyon is vulnerable to local file inclusion.
+  description: 致远 OA 的 `webmail.do` 下载接口存在目录穿越导致的任意文件读取风险，攻击者可读取 `datasourceCtp.properties` 等配置文件。模板以响应头下载特征和 `ctpDataSource.password` 字段验证漏洞。
   reference:
     - https://blog.csdn.net/m0_46257936/article/details/113150699
   metadata:

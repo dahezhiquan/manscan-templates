@@ -1,11 +1,11 @@
 id: CNVD-2021-43984
 
 info:
-  name: MPSec ISG1000 Security Gateway - Arbitrary File Download
+  name: MPSec ISG1000 安全网关任意文件下载漏洞（CNVD-2021-43984）
   author: DhiyaneshDk
   severity: high
   description: |
-    The MPSec ISG1000 safety gateway at MP Communications Technology Co., Ltd. has any file download loophole, and attackers can use the loophole to obtain sensitive information.
+    MPSec ISG1000 安全网关存在任意文件下载风险，攻击者可通过路径穿越读取服务器上的敏感文件。模板请求 `../etc/passwd` 并以明文内容和响应头特征作为命中依据。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-43984
     - https://github.com/chaitin/xray/blob/master/pocs/mpsec-isg1000-file-read.yml

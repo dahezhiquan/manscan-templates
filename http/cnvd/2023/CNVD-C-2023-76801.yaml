@@ -1,11 +1,11 @@
 id: CNVD-C-2023-76801
 
 info:
-  name: UFIDA NC uapjs - Remote Code Execution
+  name: 用友 NC/NCC uapjs 远程代码执行漏洞（CNVD-C-2023-76801）
   author: SleepingBag945,s4e-io
   severity: critical
   description: |
-    There is an arbitrary method calling vulnerability in UFIDA NC and NCC systems. By exploiting the vulnerability through uapjs (jsinvoke), dangerous methods can be called to cause attacks.
+    用友 NC/NCC 的 `uapjs`/`jsinvoke` 调用链存在危险方法调用风险，攻击者可借此触发远程代码执行。模板向目标发送调用负载，并以接口返回 200 且响应体为空作为命中特征。
   reference:
     - https://mp.weixin.qq.com/s/8ZRrmUCD2bfznd1MyDDU8A
   metadata:

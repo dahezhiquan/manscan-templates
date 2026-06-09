@@ -1,11 +1,11 @@
 id: CNVD-2023-96945
 
 info:
-  name: McVie Safety Digital Management Platform - Arbitrary File Upload
+  name: 迈威安全生产数字化管理平台任意文件上传漏洞（CNVD-2023-96945）
   author: DhiyaneshDk
   severity: high
   description: |
-    Jiangsu Maiwei Intelligent Technology Co., Ltd. is a software technology service provider focusing on customized development of software products. There is a file upload vulnerability in Jiangsu Maiwei Intelligent Technology Co., Ltd.'s safe production digital management platform. An attacker can use this vulnerability to gain server permissions.
+    迈威安全生产数字化管理平台存在任意文件上传风险。该模板依据公开资料中的上传组件位置，检测 `FileChoose.html` 上传页面是否可被直接访问，用于识别疑似受影响资产。
   reference:
     - https://blog.csdn.net/weixin_42628854/article/details/136036109
   metadata:

@@ -1,10 +1,10 @@
 id: CNVD-2021-28277
 
 info:
-  name: Landray-OA - Local File Inclusion
+  name: 蓝凌 OA 任意文件读取漏洞（CNVD-2021-28277）
   author: pikpikcu,daffainfo
   severity: high
-  description: Landray-OA is susceptible to local file inclusion.
+  description: 蓝凌 OA 存在本地文件包含/任意文件读取风险，攻击者可读取服务器上的敏感文件内容。模板通过读取 Linux 或 Windows 系统典型文件，并依据回显特征验证漏洞。
   reference:
     - https://www.aisoutu.com/a/1432457
     - https://mp.weixin.qq.com/s/TkUZXKgfEOVqoHKBr3kNdw

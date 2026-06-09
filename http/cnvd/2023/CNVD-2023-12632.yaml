@@ -1,11 +1,11 @@
 id: CNVD-2023-12632
 
 info:
-  name: E-Cology V9 - SQL Injection
+  name: 泛微 E-Cology V9 SQL 注入漏洞（CNVD-2023-12632）
   author: daffainfo
   severity: high
   description: |
-    Ecology9 is a new and efficient collaborative office system created by Panmicro for medium and large organizations. There is a SQL injection vulnerability in Panmicro ecology9, which can be exploited by attackers to obtain sensitive database information.
+    泛微 E-Cology V9 存在 SQL 注入风险。模板利用接口回显型注入特征，在响应中匹配注入生成的 MD5 值以及 `autoCount`、`autoGet` 字段，以确认数据库查询可被操控。
   reference:
     - https://www.zhihu.com/tardis/zm/art/625931869?source_id=1003
     - https://blog.csdn.net/qq_50854662/article/details/129992329

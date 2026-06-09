@@ -1,10 +1,10 @@
 id: CNVD-2020-56167
 
 info:
-  name: Ruijie Smartweb - Default Password
+  name: 锐捷 Smartweb 默认口令漏洞（CNVD-2020-56167）
   author: pikpikcu
   severity: low
-  description: Ruijie Smartweb contains a vulnerability via the default password. An attacker can successfully bypass entering required credentials, thus possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+  description: 锐捷 Smartweb 存在默认口令风险，攻击者可使用已知凭据直接进入高权限管理目录。模板通过提交默认认证信息并验证是否进入 `/WEB_VMS/LEVEL15/` 页面来确认漏洞。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2020-56167
     - https://securityforeveryone.com/tools/ruijie-smartweb-default-password-scanner

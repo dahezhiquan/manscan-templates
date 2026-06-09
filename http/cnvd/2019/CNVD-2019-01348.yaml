@@ -1,11 +1,11 @@
 id: CNVD-2019-01348
 
 info:
-  name: Xiuno BBS CNVD-2019-01348
+  name: Xiuno BBS 系统重装漏洞（CNVD-2019-01348）
   author: princechaddha
   severity: high
-  description: The Xiuno BBS system has a system reinstallation vulnerability. The vulnerability stems from the failure to protect or filter the installation directory after the system is installed. Attackers can directly reinstall the system through the installation page.
-  remediation: Upgrade to the latest version of Xiuno BBS or switch to a supported product.
+  description: Xiuno BBS 安装完成后若 `install` 目录未被妥善处理，攻击者仍可直接访问安装向导并发起系统重装。模板通过检测 `/install/` 页面中的安装资源与语言选择内容来识别该风险。
+  remediation: 升级到已修复版本，并在部署后及时删除、限制或关闭安装目录及其访问入口。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2019-01348
   classification:

@@ -1,10 +1,10 @@
 id: CNVD-2019-32204
 
 info:
-  name: Fanwei e-cology <=9.0 - Remote Code Execution
+  name: 泛微 e-cology <= 9.0 远程代码执行漏洞（CNVD-2019-32204）
   author: daffainfo
   severity: critical
-  description: Fanwei e-cology <=9.0 is susceptible to remote code execution vulnerabilities. Remote attackers can directly execute arbitrary commands on the target server by invoking the unauthorized access problem interface in the BeanShell component. Currently, the security patch for this vulnerability has been released. Please take protective measures as soon as possible for users who use the Fanwei e-cology OA system.
+  description: 泛微 e-cology 9.0 及以下版本存在远程代码执行风险，攻击者可借助未授权的 BeanShell 组件接口直接在服务器上执行命令。模板通过触发命令执行并匹配系统文件内容来确认漏洞。
   reference:
     - https://blog.actorsfit.com/a?ID=01500-11a2f7e6-54b0-4a40-9a79-5c56dc6ebd51
   classification:

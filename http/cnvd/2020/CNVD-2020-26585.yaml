@@ -1,11 +1,11 @@
 id: CNVD-2020-26585
 
 info:
-  name: Showdoc <2.8.6 - File Uploads
+  name: ShowDoc < 2.8.6 任意文件上传漏洞（CNVD-2020-26585）
   author: pikpikcu,Co5mos
   severity: critical
   description: |
-    ShowDoc is an online API and technical documentation tool that is very suitable for IT teams. Showdoc has a file upload vulnerability, which attackers can exploit to gain server permissions.
+    ShowDoc 2.8.6 之前版本存在任意文件上传风险，攻击者可上传受控文件并在 Web 目录中访问。模板先上传随机内容文件，再次访问返回路径并校验内容一致，以确认漏洞。
   reference:
     - https://vul.wangan.com/a/CNVD-2020-26585
     - https://blog.csdn.net/qq_48985780/article/details/122211136

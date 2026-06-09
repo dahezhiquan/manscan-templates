@@ -1,10 +1,10 @@
 id: CNVD-2018-13393
 
 info:
-  name: Metinfo - Local File Inclusion
+  name: MetInfo 本地文件包含漏洞（CNVD-2018-13393）
   author: ritikchaddha
   severity: high
-  description: Metinfo is susceptible to local file inclusion.
+  description: MetInfo 的 `thumb.php` 存在本地文件包含风险，攻击者可通过特殊路径参数读取后台登录脚本等敏感文件。模板通过构造跨目录参数并匹配返回的 PHP 源码特征确认漏洞。
   reference:
     - https://paper.seebug.org/676/
   classification:

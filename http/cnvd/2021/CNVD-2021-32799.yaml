@@ -1,11 +1,11 @@
 id: CNVD-2021-32799
 
 info:
-  name: 360 Xintianqing - SQL Injection
+  name: 360 天擎终端安全管理系统 SQL 注入漏洞（CNVD-2021-32799）
   author: SleepingBag945
   severity: high
   description: |
-    The Tianqing Terminal Security Management System, designed for government and enterprise use, faces a SQL injection vulnerability. This flaw could enable attackers to access sensitive database information.
+    公开资料将 360 天擎终端安全管理系统的 `rptsvcsyncpoint` 接口归类为 SQL 注入风险点。当前模板通过访问 `/api/dp/rptsvcsyncpoint?ccid=1` 并匹配特定 JSON 字段识别疑似受影响接口，适合用于资产侧快速发现。
   reference:
     - https://blog.51cto.com/u_9691128/4295047
     - https://www.cnvd.org.cn/patchInfo/show/270651

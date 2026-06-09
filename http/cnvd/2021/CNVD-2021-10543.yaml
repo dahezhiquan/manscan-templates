@@ -1,10 +1,10 @@
 id: CNVD-2021-10543
 
 info:
-  name: EEA - Information Disclosure
+  name: EEA 信息泄露漏洞（CNVD-2021-10543）
   author: pikpikcu
   severity: high
-  description: EEA is susceptible to information disclosure including the username and password.
+  description: EEA 的 `authenticationserverservlet` 接口存在敏感信息泄露风险，未经授权即可返回认证账号和口令。模板通过匹配响应中的 `<username>` 与 `<password>` 标签验证漏洞。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-10543
   classification:

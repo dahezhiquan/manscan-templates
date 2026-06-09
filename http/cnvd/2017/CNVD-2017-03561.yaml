@@ -5,7 +5,7 @@ info:
   author: ritikchaddha
   severity: high
   description: |
-    泛微 eMobile 存在 OGNL 表达式注入漏洞。攻击者可在 `/login.do` 或 `/login/login.do` 的 `message` 参数中构造恶意表达式，并在服务端被解析执行。该模板通过注入算术表达式并校验响应中是否返回计算结果来证明漏洞存在。成功利用后，攻击者可在目标系统上下文中执行未授权操作，进一步导致敏感信息泄露、业务数据被篡改或系统权限被滥用。
+    泛微 eMobile 的 `login.do` 与 `login/login.do` 接口存在 OGNL 表达式注入风险。攻击者可在 `message` 参数中构造恶意表达式并由服务端解析执行；模板通过注入算术表达式并校验响应中是否返回计算结果来确认漏洞。
   reference:
     - https://gitee.com/cute-guy/Penetration_Testing_POC/blob/master/%E6%B3%9B%E5%BE%AEe-mobile%20ognl%E6%B3%A8%E5%85%A5.md
     - https://reconshell.com/vulnerability-research-list/

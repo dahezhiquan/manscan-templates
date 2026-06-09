@@ -1,11 +1,11 @@
 id: CNVD-2023-72138
 
 info:
-  name: LiveGBS user/save - Logical Flaw
+  name: LiveGBS user/save 逻辑缺陷漏洞（CNVD-2023-72138）
   author: pussycat0x
   severity: high
   description: |
-    There is a logic defect vulnerability in LiveGBS user/save. Unauthenticated attackers can exploit this vulnerability to arbitrarily add users, resulting in the takeover of background services and causing adverse effects such as information leakage.
+    LiveGBS 的 `api/v1/user/save` 接口存在未鉴权逻辑缺陷，攻击者可直接新增高权限用户。模板通过提交管理员角色参数，并校验响应中返回默认密码和用户 ID 来验证风险。
   reference:
     - https://github.com/wy876/POC/blob/main/LiveGBS%E5%AD%98%E5%9C%A8%E9%80%BB%E8%BE%91%E7%BC%BA%E9%99%B7%E6%BC%8F%E6%B4%9E(CNVD-2023-72138).md
   metadata:

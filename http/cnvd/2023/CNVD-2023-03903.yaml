@@ -1,11 +1,11 @@
 id: CNVD-2023-03903
 
 info:
-  name: EduSoho < v22.4.7 - Local File Inclusion
+  name: EduSoho 本地文件包含漏洞（CNVD-2023-03903）
   author: s4e-io
   severity: high
   description: |
-    The edusoho education and training system <v22.4.7 has unauthorized file reading vulnerability. Through this vulnerability, an attacker can read the contents of the config/parameters.yml file and obtain sensitive information such as the secret value saved in the file and database account password. After the secret value is obtained, an attacker can implement RCE with symfony _fragment routing.
+    EduSoho 22.4.7 之前版本存在未授权文件读取风险，攻击者可读取 `config/parameters.yml` 等敏感文件并为后续利用创造条件。模板通过构造下载请求并匹配返回内容中的系统文件特征来验证漏洞。
   reference:
     - https://blog.csdn.net/qq_41904294/article/details/135007351
     - https://github.com/gobysec/GobyVuls/blob/master/CNVD-2023-03903.md

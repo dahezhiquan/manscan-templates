@@ -1,11 +1,11 @@
 id: CNVD-2020-63964
 
 info:
-  name: jshERP - Information Disclosure
+  name: jshERP 信息泄露漏洞（CNVD-2020-63964）
   author: brucelsone
   severity: high
   description: |
-    jshERP that can reveal sensitive information including system credentials without credentials.
+    jshERP 前台接口存在未授权信息泄露风险，可直接返回用户账号、登录名及口令字段。模板访问 `user/getAllList;.ico` 并匹配 JSON 中的 `username`、`loginName` 和 `password` 字段判断漏洞。
   reference:
     - https://cn-sec.com/archives/1798444.html
   classification:

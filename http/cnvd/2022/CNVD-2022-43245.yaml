@@ -1,11 +1,11 @@
 id: CNVD-2022-43245
 
 info:
-  name: Weaver OA XmlRpcServlet - Arbitary File Read
+  name: 泛微 e-office XmlRpcServlet 任意文件读取漏洞（CNVD-2022-43245）
   author: SleepingBag945
   severity: high
   description: |
-    e-office is a standard collaborative mobile office platform. Ltd. e-office has an arbitrary file reading vulnerability, which can be exploited by attackers to obtain sensitive information.
+    泛微 e-office 的 `org.apache.xmlrpc.webserver.XmlRpcServlet` 接口存在任意文件读取风险。模板调用 `WorkflowService.getAttachment` 读取 `/etc/passwd`，并通过 XML-RPC 响应中的 Base64 内容判断漏洞是否存在。
   classification:
     cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
   metadata:

@@ -1,11 +1,11 @@
 id: CNVD-2022-36985
 
 info:
-  name: Wuzhicms 4.1.0 - SQL Injection
+  name: Wuzhicms 4.1.0 SQL 注入漏洞（CNVD-2022-36985）
   author: princechaddha
   severity: critical
   description: |
-    Wuzhicms 4.1.0 contains a SQL injection vulnerability via the grouppid parameter of /coreframe/app/member/admin/group.php. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+    Wuzhicms 4.1.0 的 `api/sms_check.php` 接口存在 SQL 注入风险。参考资料显示问题源于 `param` 参数可控并直接进入数据库查询；该模板通过构造 `updatexml` 报错并校验返回的 MD5 值来确认漏洞。
   reference:
     - https://github.com/wuzhicms/wuzhicms/issues/184
     - https://vulners.com/cnvd/CNVD-2022-36985

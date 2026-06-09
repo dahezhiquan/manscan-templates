@@ -1,10 +1,10 @@
 id: CNVD-2020-67113
 
 info:
-  name: H5S CONSOLE - Unauthorized Access
+  name: H5S CONSOLE 未授权访问漏洞（CNVD-2020-67113）
   author: ritikchaddha
   severity: medium
-  description: H5S CONSOLE is susceptible to an unauthorized access vulnerability.
+  description: H5S CONSOLE 存在未授权访问风险，攻击者可直接获取视频源或设备配置中的账号口令信息。模板通过访问 `GetSrc` 和 `GetDevice` 接口，并匹配 `strUser`、`strPasswd` 等字段验证漏洞。
   reference:
     - https://vul.wangan.com/a/CNVD-2020-67113
   classification:

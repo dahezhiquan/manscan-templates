@@ -1,10 +1,10 @@
 id: CNVD-2020-23735
 
 info:
-  name: Xxunchi CMS - Local File Inclusion
+  name: Xxunchi CMS 本地文件包含漏洞（CNVD-2020-23735）
   author: princechaddha
   severity: high
-  description: Xunyou CMS is vulnerable to local file inclusion. Attackers can use vulnerabilities to obtain sensitive information.
+  description: Xxunchi CMS 的 `backup/auto.php` 参数处理存在本地文件包含风险。模板通过回读脚本自身内容，并匹配默认口令常量与 `display_errors` 文本来验证漏洞。
   reference:
     - https://www.cnvd.org.cn/flaw/show/2025171
   classification:

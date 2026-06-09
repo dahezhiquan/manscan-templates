@@ -1,10 +1,10 @@
 id: CNVD-2021-30167
 
 info:
-  name: UFIDA NC BeanShell Remote Command Execution
+  name: 用友 NC BeanShell 远程命令执行漏洞（CNVD-2021-30167）
   author: pikpikcu
   severity: critical
-  description: UFIDA NC BeanShell contains a remote command execution vulnerability in the bsh.servlet.BshServlet program.
+  description: 用友 NC 的 `bsh.servlet.BshServlet` 暴露后可被直接利用执行系统命令。模板在确认 `BeanShell Test Servlet` 存在的同时，匹配命令执行后的 `uid=` 或 `Windows IP` 等回显内容来验证漏洞。
   reference:
     - https://mp.weixin.qq.com/s/FvqC1I_G14AEQNztU0zn8A
     - https://www.cnvd.org.cn/webinfo/show/6491

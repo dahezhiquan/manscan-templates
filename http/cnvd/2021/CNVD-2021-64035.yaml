@@ -1,11 +1,11 @@
 id: CNVD-2021-64035
 
 info:
-  name: Leadsec VPN - Arbitrary File Read
+  name: 网御星云 Leadsec SSL VPN 任意文件读取漏洞（CNVD-2021-64035）
   author: xiaoWangSec
   severity: high
   description: |
-    There is an information leakage vulnerability in the SSL VPN of Beijing Wangyuxingyun Information Technology Co., Ltd., and attackers can use the vulnerability to obtain sensitive information.
+    网御星云 Leadsec SSL VPN 存在任意文件读取风险，攻击者可未授权读取服务器本地敏感文件。模板通过发起读取请求并匹配 `/etc/passwd` 内容及特定响应头确认漏洞。
   reference:
     - https://avd.aliyun.com/detail?id=AVD-2021-888761
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-64035

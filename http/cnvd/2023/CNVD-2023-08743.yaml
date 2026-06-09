@@ -1,10 +1,10 @@
 id: CNVD-2023-08743
 
 info:
-  name: Hongjing Human Resource Management System - SQL Injection
+  name: 宏景人力资源管理系统 SQL 注入漏洞（CNVD-2023-08743）
   author: SleepingBag945
   severity: critical
-  description: There is a SQL injection vulnerability in the categories of Hongjing Human Resource Management System, from which attackers can obtain sensitive database information.
+  description: 宏景人力资源管理系统相关查询接口存在 SQL 注入风险。模板通过发送构造后的 XML 请求，并以响应中出现 `SQL Server` 报错及业务节点信息作为命中依据。
   reference:
     - https://www.henry4e36.top/index.php/archives/162.html
     - https://blog.csdn.net/qq_41904294/article/details/130944159

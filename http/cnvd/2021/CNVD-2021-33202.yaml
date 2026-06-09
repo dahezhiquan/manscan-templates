@@ -1,11 +1,11 @@
 id: CNVD-2021-33202
 
 info:
-  name: OA E-Cology LoginSSO.jsp - SQL Injection
+  name: 泛微 OA E-Cology LoginSSO.jsp SQL 注入漏洞（CNVD-2021-33202）
   author: SleepingBag945
   severity: high
   description: |
-    e-cology is an OA office system specially produced for large and medium-sized enterprises. It supports simultaneous office work on PC, mobile and WeChat terminals. There is a SQL injection vulnerability in Panwei e-cology. An attacker could exploit this vulnerability to obtain sensitive information.
+    泛微 E-Cology 的 `LoginSSO.jsp` 接口存在 SQL 注入风险。模板通过构造注入请求并在响应中匹配回显的 MD5 标记，确认数据库查询可被恶意控制。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Cology%20LoginSSO.jsp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%20CNVD-2021-33202.md
     - https://www.cnblogs.com/0day-li/p/14637680.html

@@ -1,11 +1,11 @@
 id: CNVD-2021-49104
 
 info:
-  name: Pan Micro E-office File Uploads
+  name: 泛微 E-office 任意文件上传漏洞（CNVD-2021-49104）
   author: pikpikcu
   severity: critical
-  description: The Pan Wei Micro E-office version running allows arbitrary file uploads from a remote attacker.
-  remediation: Pan Wei has released an update to resolve this vulnerability.
+  description: 泛微 E-office 上传接口对文件类型校验不严，远程攻击者可上传可执行脚本并进一步控制服务器。模板通过上传 PHP 文件并访问固定落地路径，校验返回的 MD5 值来确认漏洞。
+  remediation: 升级到官方修复版本，并限制上传接口的匿名访问、严格校验文件类型与落地目录的执行权限。
   reference:
     - https://chowdera.com/2021/12/202112200602130067.html
     - http://v10.e-office.cn

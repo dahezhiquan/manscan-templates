@@ -1,10 +1,10 @@
 id: CNVD-2021-17369
 
 info:
-  name: Ruijie Smartweb Management System Password Information Disclosure
+  name: 锐捷 Smartweb 管理系统密码信息泄露漏洞（CNVD-2021-17369）
   author: pikpikcu
   severity: high
-  description: The wireless smartweb management system of Ruijie Networks Co., Ltd. has a logic flaw. An attacker can obtain the administrator account and password from a low-privileged user, thereby escalating the low-level privilege to the administrator's privilege.
+  description: 锐捷 Smartweb 管理系统存在敏感凭据泄露风险，低权限或未授权访问可能获取管理员口令信息。模板通过读取 `web/xml/webuser-auth.xml` 并匹配 `password` 标签判断漏洞是否存在。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-17369
   classification:

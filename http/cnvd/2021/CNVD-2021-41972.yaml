@@ -1,11 +1,11 @@
 id: CNVD-2021-41972
 
 info:
-  name: AceNet AceReporter Report - Arbitrary File Download
+  name: AceNet AceReporter Report 任意文件下载漏洞（CNVD-2021-41972）
   author: DhiyaneshDk
   severity: high
   description: |
-    All firewall devices that use the AceNet AceReporter report component can download arbitrary files
+    AceNet AceReporter 报表组件存在目录穿越导致的任意文件下载风险。模板通过 `download_file.php` 下载 `/etc/passwd`，并结合响应头中的附件下载标记与文件内容验证漏洞。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-41972
     - https://github.com/hktalent/scan4all/blob/main/lib/goby/goby_pocs/AceNet_AceReporter_Report_component_Arbitrary_file_download.txt

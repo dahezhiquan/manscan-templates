@@ -1,10 +1,10 @@
 id: CNVD-2021-26422
 
 info:
-  name: eYouMail - Remote Code Execution
+  name: 亿邮邮件系统远程代码执行漏洞（CNVD-2021-26422）
   author: daffainfo
   severity: critical
-  description: eYouMail is susceptible to a remote code execution vulnerability.
+  description: 亿邮邮件系统存在远程代码执行风险，攻击者可在服务器上执行任意命令。模板通过触发利用并以返回结果中的系统账户信息作为命中依据。
   reference:
     - https://github.com/ltfafei/my_POC/blob/master/CNVD-2021-26422_eYouMail/CNVD-2021-26422_eYouMail_RCE_POC.py
     - https://github.com/EdgeSecurityTeam/Vulnerability/blob/main/%E4%BA%BF%E9%82%AE%E9%82%AE%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%20(CNVD-2021-26422).md

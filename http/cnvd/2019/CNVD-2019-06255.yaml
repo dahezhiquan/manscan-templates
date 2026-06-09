@@ -1,12 +1,12 @@
 id: CNVD-2019-06255
 
 info:
-  name: CatfishCMS - Remote Command Execution
+  name: CatfishCMS 远程命令执行漏洞（CNVD-2019-06255）
   author: Lark-Lab
   severity: critical
   description: |
-    CatfishCMS 4.8.54 contains a remote command execution vulnerability in the "method" parameter.
-  remediation: Upgrade to CatfishCMS version 4.8.54 or later.
+    CatfishCMS 4.8.54 的请求方法处理链存在远程命令执行风险，攻击者可借助 `_method=__construct` 等参数调用系统命令。模板先识别站点为 Catfish CMS，再通过返回的环境变量信息验证命令执行。
+  remediation: 升级至官方已修复版本，并限制危险请求参数的解析行为，避免外部请求触发系统命令。
   reference:
     - https://its401.com/article/yun2diao/91344725
     - https://github.com/xwlrbh/Catfish/issues/4

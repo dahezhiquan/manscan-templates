@@ -1,10 +1,10 @@
 id: CNVD-2020-46552
 
 info:
-  name: Sangfor EDR - Remote Code Execution
+  name: 深信服 EDR 远程代码执行漏洞（CNVD-2020-46552）
   author: ritikchaddha
   severity: critical
-  description: Sangfor Endpoint Monitoring and Response Platform (EDR) contains a remote code execution vulnerability. An attacker could exploit this vulnerability by constructing an HTTP request which could execute arbitrary commands on the target host.
+  description: 公开资料显示深信服 EDR 的日志组件可被进一步利用实现远程代码执行。当前模板通过访问 `tool/log/c.php` 并匹配源码关键片段，识别疑似暴露的危险组件。
   reference:
     - https://www.modb.pro/db/144475
     - https://blog.csdn.net/bigblue00/article/details/108434009

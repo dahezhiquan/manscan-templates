@@ -1,10 +1,10 @@
 id: CNVD-2019-19299
 
 info:
-  name: Zhiyuan A8 - Remote Code Execution
+  name: 致远 A8 远程代码执行漏洞（CNVD-2019-19299）
   author: daffainfo
   severity: critical
-  description: Zhiyuan A8 is susceptible to remote code execution because of an arbitrary file write issue.
+  description: 致远 A8 因任意文件写入问题可被进一步利用实现远程代码执行。模板先访问相关组件确认目标特征，再读取已写入脚本的执行结果，以返回的 `Windows IP` 信息作为命中依据。
   reference:
     - https://www.cxyzjd.com/article/guangying177/110177339
     - https://github.com/sectestt/CNVD-2019-19299

@@ -1,7 +1,7 @@
 id: CNVD-2017-06001
 
 info:
-  name: Dahua DSS - SQL Injection
+  name: 大华 DSS SQL 注入漏洞（CNVD-2017-06001）
   author: napgh0st,ritikchaddha
   severity: high
   reference:

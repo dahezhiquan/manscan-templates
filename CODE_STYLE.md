@@ -744,7 +744,7 @@ matchers:
   - type: word
     part: body
     words:
-      - "nuclei-test-success"
+      - "manscan-test-success"
 ```
 
 ### 9.7 🧰 常见 matcher 类型

@@ -1,31 +1,43 @@
 # ManScan Templates
 
-`manscan-templates` 是一个以 `YAML` 为核心的安全检测模板仓库，用于维护漏洞检测、错误配置检查、暴露面发现和扫描工作流规则。仓库目录结构、模板语法和校验方式整体沿用 `nuclei` 模板生态，同时适配团队内部的 `ManScan` 使用场景。
-如果你需要新增模板、修正匹配逻辑，或按场景组织批量扫描，这个仓库就是日常维护入口。
+`manscan-templates` 是一个以 `YAML` 模板为核心的安全检测规则仓库，用于维护漏洞检测、配置错误检查、暴露面发现、情报收集与扫描工作流。仓库整体沿用 `nuclei` 模板生态的目录组织和语法约定，同时适配当前团队使用的 `ManScan` 执行方式。
 
-## 📌 你可以从这里开始
+如果你要做这些事情，这个仓库就是日常入口：
 
-- 想快速跑一个模板：直接看下方 `🚀 快速开始`
-- 想知道模板放哪里：看 `🧱 目录结构`
-- 想提交或修改模板：看 `🛠️ 开发规范`
-- 想排查常见报错：看 `❓ 常见问题`
+- 新增或修复漏洞模板
+- 调整匹配逻辑，降低误报
+- 按产品、协议或场景组织批量扫描
+- 维护推荐扫描配置、工作流和辅助 payload
+
+## 📌 阅读导航
+
+- 想尽快跑起来：看 [🚀 快速开始](#-快速开始)
+- 想了解仓库里都放了什么：看 [🧱 目录结构](#-目录结构)
+- 想知道模板怎么提交更稳：看 [🛠️ 开发规范](#-开发规范)
+- 想排查常见问题：看 [❓ 常见问题](#-常见问题)
 
 ## 📦 项目简介
 
-仓库按协议、场景和能力维度拆分模板，覆盖 `http`、`dns`、`ssl`、`network`、`javascript`、`dast`、`cloud` 等多个方向。除了单条检测模板外，还维护了 `workflows/` 下的组合扫描工作流，以及 `profiles/` 下的场景化扫描配置。
-它更像“规则库”而不是应用服务：核心工作是补充覆盖、减少误报、统一模板质量，并确保新增内容能通过自动化校验。
+这个仓库不是传统意义上的应用服务，而是一套可长期维护的扫描规则库。当前快照下，仓库中包含约 `13,000+` 个 `YAML` 配置文件，其中包括 `206` 个工作流和 `20` 个扫描配置文件，覆盖 `http`、`network`、`dns`、`ssl`、`javascript`、`dast`、`cloud`、`code`、`file` 等多个方向。
+
+仓库的核心目标不是“尽量多扫”，而是围绕以下几个方向持续演进：
+
+- 让模板具备稳定、可复核的检测证据
+- 让目录结构、字段风格和命名保持一致
+- 让工作流和配置文件能复用已有模板，而不是重复造轮子
+- 让新增内容在批量扫描场景下更可控，减少弱匹配和噪声结果
 
 ## 🚀 快速开始
 
 ### 前置条件
 
-- 已安装 `nuclei`
-- 本地具备 `python3`、`git`
+推荐准备以下环境：
 
-> 说明：仓库现有 CI、配置注释和模板文档均以 `nuclei` 为基线。
-> 如果你的环境通过 `ManScan` 封装执行这些模板，可将下方命令中的 `nuclei` 按需替换为 `manscan`。
+- `git`
+- `manscan` 可执行文件
+- 可选：如果你就在当前仓库环境中操作，也可以直接使用根目录里的 `./manscan`
 
-### 获取仓库
+### 克隆仓库
 
 ```bash
 git clone <your-repo-url>
@@ -35,160 +47,218 @@ cd manscan-templates
 ### 运行单个模板
 
 ```bash
-nuclei -t http/cves/2020/CVE-2020-36884.yaml -u https://example.com
+manscan -t http/cves/2020/CVE-2020-36884.yaml -u https://example.com
 ```
 
-适合快速验证某条模板是否生效，或在修改后做定向回归。
+适合用来做定向验证、模板调试或修改后的最小回归。
 
 ### 运行工作流
 
 ```bash
-nuclei -w workflows/wordpress-workflow.yaml -u https://example.com
+manscan -w workflows/wordpress-workflow.yaml -u https://example.com
 ```
 
-`workflows/` 中的模板会先识别目标技术，再串联执行对应子模板，适合按产品或场景批量扫描。
+工作流会先识别目标特征，再串联执行相关子模板，适合按产品或场景做批量扫描。
 
-### 使用推荐扫描配置
+### 使用扫描配置
+
+推荐从 `profiles/recommended.yml` 开始：
 
 ```bash
-nuclei -profile recommended -u https://example.com
+manscan -config profiles/recommended.yml -u https://example.com
 ```
 
-仓库中的 `profiles/recommended.yml` 提供了一个更聚焦的扫描范围，适合作为常规入口。
-如果你的 `nuclei` 版本或使用方式要求显式指定文件路径，也可以使用：
+这个配置默认包含：
+
+- `critical` 到 `low` 级别的常见模板
+- `dns`、`ssl`、`tcp`、`http`、`javascript` 等主要协议类型
+- 一批默认排除的高噪声模板和弱匹配模板
+
+如果要做专题扫描，也可以直接切换到其他配置，例如：
 
 ```bash
-nuclei -config profiles/recommended.yml -u https://example.com
+manscan -config profiles/osint.yml -u https://example.com
+manscan -config profiles/wordpress.yml -u https://example.com
 ```
 
-### 校验模板是否合法
+### 校验模板语法
+
+修改模板后，至少建议做一次本地校验：
 
 ```bash
-nuclei -duc -validate -lfa -ud "$(pwd)" -w workflows/ -et .github/ -ept code -et helpers/payloads/
+manscan -validate -t http/cves/2020/CVE-2020-36884.yaml
 ```
 
-这是仓库 CI 正在使用的核心校验命令。新增或修改模板后，建议至少执行一次，确认语法、引用路径和工作流结构都没有问题。
+如果你需要按整个仓库做更完整的验证，可以使用当前 README 原先沿用的仓库级校验命令：
 
-## 🧰 技术栈
+```bash
+manscan -duc -validate -lfa -ud "$(pwd)" -w workflows/ -ept code -et helpers/payloads/
+```
 
-- `Nuclei Template YAML`：仓库的核心资产，用于定义检测逻辑、风险特征、工作流和场景配置。
-- `Nuclei`：模板解释与执行引擎，也是仓库 CI 和辅助文档的事实标准。
-- `ManScan`：团队内部使用语境中的扫描入口，可在兼容场景下复用本仓库模板。
-- `GitHub Actions`：负责执行 `yamllint`、模板合法性校验、弱匹配器检查，以及部分衍生文件生成。
-- `Python / Go` 脚本：用于 README、统计文件和 `cves.json` 等衍生内容的生成与更新。
+这条命令适合在大批量修改后做整体自检，用来提前发现模板语法、工作流引用或本地 payload 路径问题。
 
 ## 🧱 目录结构
 
+下面是最值得先理解的目录：
+
 ```text
 .
-|-- http/          # HTTP 相关模板，含 CVE、默认口令、指纹、暴露面等
-|-- network/       # TCP 等网络协议模板
-|-- dns/           # DNS 枚举、接管检测、解析配置检查
-|-- ssl/           # TLS 与证书相关检查
-|-- javascript/    # JavaScript 模板与部分客户端逻辑检测
-|-- dast/          # 动态应用安全测试模板
-|-- cloud/         # 云配置与 Kubernetes 相关规则
-|-- code/          # 本地代码或系统侧检测规则
-|-- workflows/     # 按产品或场景组合多个模板的工作流
-|-- profiles/      # 推荐扫描配置和专题扫描配置
-|-- helpers/       # 辅助 payload、swagger 文件等资源
-|-- .github/       # CI、自动化脚本、Issue 模板
-|-- .yamllint
-|-- .nuclei-ignore # ManScan 默认忽略列表
+|-- http/         # HTTP 类模板，包含 CVE、暴露面、默认口令、配置错误等
+|-- network/      # TCP 与其他网络协议类模板
+|-- dns/          # DNS 枚举、解析检查、接管类模板
+|-- ssl/          # TLS、证书与加密配置相关模板
+|-- javascript/   # JavaScript 运行时、客户端能力与枚举模板
+|-- dast/         # 动态应用安全测试模板
+|-- cloud/        # 云平台、Kubernetes 与云配置类模板
+|-- code/         # 本地代码、系统或离线检测类模板
+|-- file/         # 文件内容、源码痕迹、敏感信息类模板
+|-- workflows/    # 多模板组合扫描工作流
+|-- profiles/     # 扫描配置文件
+|-- helpers/      # payload、swagger 文件和其他辅助资源
+|-- CODE_STYLE.md
+|-- SYNTAX-REFERENCE.md
+|-- AGENTS.md
+|-- .nuclei-ignore
 ```
 
-重点目录说明：
+目录使用建议：
 
-- `http/`、`network/`、`dns/`、`ssl/` 是最常见的模板落点，新增模板时优先按协议或检测方式归类。
-- `workflows/` 适合把多个模板串成一条扫描链，避免把重复逻辑复制到单个模板里。
-- `profiles/` 用于定义“推荐扫描”“云配置”“OSINT”等批量执行范围。
-- `.nuclei-ignore` 已明确标注为自动维护文件，更适合视为默认排除策略，而不是人工长期编辑入口。
+- 新增单条 Web 检测模板时，优先放到 `http/` 下对应子目录。
+- 需要按产品串联多个模板时，优先放到 `workflows/`，不要把流程逻辑硬塞进单个模板。
+- 需要定义一组推荐扫描范围时，放到 `profiles/`。
+- 依赖本地辅助文件的模板，优先复用 `helpers/payloads/` 中已有资源。
 
 ## 🛠️ 开发规范
 
-### 模板编写
+### 模板编写入口
 
-- 新模板提交前，先检查仓库中是否已有同类规则，避免重复建设。
-- `id` 应简短且可读，通常使用产品名、漏洞类型或 `CVE` 编号。
-- `info` 中至少补全 `name`、`author`、`severity`、`description`、`reference`、`tags`。
-- 尽量使用多个强匹配条件组合，不要只依赖过短关键词或通用报错文本。
-- 工作流模板放在 `workflows/`，单条检测模板放在对应协议目录，不要混放。
+本仓库已经明确提供了三份重要文档，建议按下面顺序阅读：
 
-### 本地检查
+1. [AGENTS.md](AGENTS.md)
+2. [CODE_STYLE.md](CODE_STYLE.md)
+3. [SYNTAX-REFERENCE.md](SYNTAX-REFERENCE.md)
 
-- 修改模板后建议执行仓库 CI 同款校验命令
+其中：
+
+- `AGENTS.md` 定义了当前仓库中处理模板时的强制规则
+- `CODE_STYLE.md` 更聚焦模板结构、命名、字段顺序、误报控制与自检要求
+- `SYNTAX-REFERENCE.md` 适合在协议块、匹配器、语法细节上快速查阅
+
+### 日常修改建议
+
+- 先确认仓库里是否已有同类模板，避免重复建设。
+- 修改前先理解目标模板的用途、验证方式和影响范围，不要机械改写。
+- 新建模板时，优先证明漏洞，再设计匹配器。
+- 优先使用更强的多条件组合匹配，避免只依赖短关键词、单一状态码或泛化报错。
+- 保持原有结构、缩进、字段顺序和语义风格稳定，尤其是在修补已有模板时。
+
+### 本地自检建议
+
+推荐至少做这三类检查：
+
+1. 单模板语法校验
 
 ```bash
-nuclei -duc -validate -lfa -ud "$(pwd)" -w workflows/ -et .github/ -ept code -et helpers/payloads/
+manscan -validate -t path/to/template.yaml
 ```
 
-### CI 规则
+2. 工作流或目录级回归
 
-- `.github/workflows/tests.yml` 会在 PR 中执行 `yamllint`
-- 同一工作流还会使用 `nuclei` 做模板合法性校验
-- 新增或修改的模板还会经过弱匹配器检查；如果在蜜罐目标上命中，PR 会被标记为潜在误报
+```bash
+manscan -w workflows/wordpress-workflow.yaml -u https://example.com
+```
 
-### 协作建议
+3. 全仓库结构性校验
 
-- 当前仓库未发现独立的 commit message 规范工具，可优先采用清晰的英文动作描述，例如 `add`、`fix`、`update`
-- 如需了解完整贡献和模板审查标准，可进一步阅读：
-  - [CONTRIBUTING.md](CONTRIBUTING.md)
-  - [TEMPLATE-CREATION-GUIDE.md](TEMPLATE-CREATION-GUIDE.md)
-  - [TEMPLATE-REVIEW-GUIDE.md](TEMPLATE-REVIEW-GUIDE.md)
+```bash
+manscan -duc -validate -lfa -ud "$(pwd)" -w workflows/ -ept code -et helpers/payloads/
+```
+
+### 关于忽略列表
+
+根目录的 [`.nuclei-ignore`](.nuclei-ignore) 已明确标注为自动维护文件。当前内容主要用于：
+
+- 默认忽略 `dos`、`local`、`fuzz`、`bruteforce` 等高风险或高噪声标签
+- 排除一批弱匹配或已知容易误报的模板文件
+
+如果只是你的本地扫描需要额外排除内容，更建议把规则写到自己的配置文件，而不是直接改仓库默认忽略列表。
+
+### 当前仓库可确认的协作现状
+
+- 已有明确的模板编写与仓库协作规范文档
+- 当前仓库快照下未发现 `.github/` 目录或可直接引用的 CI 工作流文件
+- 当前也未发现独立的 `CONTRIBUTING.md`、`TEMPLATE-CREATION-GUIDE.md`、`TEMPLATE-REVIEW-GUIDE.md`
+
+因此，提交前更应依赖本地校验和现有规范文档，而不是假设仓库会自动帮你兜底。
+
+## 🧭 常用工作流与配置
+
+如果你是第一次接触这个仓库，下面几类文件最值得先看：
+
+- `profiles/recommended.yml`
+  适合做常规入口扫描，覆盖面和噪声控制相对平衡。
+- `profiles/osint.yml`
+  适合情报收集、钓鱼、暴露面与相关枚举场景。
+- `profiles/wordpress.yml`
+  适合 WordPress 相关目标的聚焦扫描。
+- `workflows/wordpress-workflow.yaml`
+  适合理解“先识别目标，再串联漏洞模板”的组织方式。
+
+补充阅读：
+
+- [profiles/README.md](profiles/README.md)
 
 ## ❓ 常见问题
 
-### 1. `nuclei -validate` 失败
+### `manscan -validate` 失败怎么办
+
+常见现象：
+
+- 报 YAML 语法错误
+- 报字段不合法
+- 报模板路径或工作流引用不存在
+
+排查建议：
+
+- 先对单个模板执行 `-validate`
+- 再检查缩进、字段拼写、协议块层级是否符合当前语法
+- 如果模板依赖本地文件，确认引用路径是否真实存在
+
+### 模板能运行，但结果明显误报
 
 常见原因：
 
-- YAML 缩进错误
-- `workflow` 或模板路径写错
-- 模板字段不符合当前 `nuclei` 语法要求
-
-解决方式：
-
-- 先执行仓库标准校验命令定位报错文件
-- 参考同目录下已通过校验的模板修正字段格式
-
-### 2. 模板能跑，但 PR 被提示 weak matcher
-
-常见原因：
-
+- 只依赖状态码
 - 匹配词过短、过泛
-- 只校验状态码或单个通用报错字符串
-- 缺少漏洞特征、版本特征或交互式证明
+- 没有把产品指纹和漏洞证据区分开
 
-解决方式：
+解决思路：
 
-- 增加多个匹配条件，并配合 `matchers-condition` 使用
-- 优先加入版本信息、产品标识、漏洞特征字符串
-- 对高风险模板尽量补充可验证但低副作用的 POC 逻辑
+- 增加多个独立特征，并配合 `matchers-condition`
+- 优先加入版本、组件名称、特定报错、响应结构等更强证据
+- 对高风险漏洞尽量补充更可复核的验证逻辑
 
-### 3. 不确定模板该放在哪个目录
+### 不确定模板该放到哪个目录
 
-建议优先按“协议或执行方式”归类：
+可按下面思路快速判断：
 
-- Web 请求类优先放 `http/`
-- DNS 查询类放 `dns/`
-- 证书与 TLS 检查放 `ssl/`
-- 需要串联多个模板时放 `workflows/`
+- Web 请求类：`http/`
+- DNS 查询类：`dns/`
+- TLS / 证书类：`ssl/`
+- 本地文件或源码类：`file/` 或 `code/`
+- 需要组合多个模板的流程类：`workflows/`
 
-如果同一技术已经存在专属目录，尽量沿用现有结构，减少后续整理成本。
+如果已有同产品或同技术专属目录，优先沿用现有结构。
 
-### 4. `.nuclei-ignore` 里的内容想改怎么办
+### 想直接修改 `.nuclei-ignore`
 
-这个文件头部已说明会被自动更新，不适合作为人工长期维护入口。
-如果只是本地扫描想额外排除某些标签或模板，建议把规则写到自己的扫描配置中，而不是直接修改仓库默认忽略列表。
+不推荐把它当成常规编辑入口。这个文件当前就是默认排除策略的载体，而且文件头已经声明会被自动更新。更稳妥的做法是把你的本地差异化排除逻辑放进自定义 profile 或扫描命令参数中。
+
 
 ## 📚 相关文档
 
-- [CONTRIBUTING.md](CONTRIBUTING.md)
-- [TEMPLATE-CREATION-GUIDE.md](TEMPLATE-CREATION-GUIDE.md)
-- [TEMPLATE-REVIEW-GUIDE.md](TEMPLATE-REVIEW-GUIDE.md)
+- [AGENTS.md](AGENTS.md)
+- [CODE_STYLE.md](CODE_STYLE.md)
+- [SYNTAX-REFERENCE.md](SYNTAX-REFERENCE.md)
 - [profiles/README.md](profiles/README.md)
-
-## 📝 待补充
-
-当前仓库能够确认模板维护、校验和贡献流程，但根目录下没有看到统一的发布策略、本地开发脚本约定或团队内同步方式说明。
-如果后续需要继续完善 README，建议补一节“ManScan 如何消费本仓库模板”，专门说明私有配置、同步流程和版本管理约定。
+- [LICENSE.md](LICENSE.md)

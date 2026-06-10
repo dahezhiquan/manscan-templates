@@ -1,7 +1,7 @@
 id: sauce-token
 
 info:
-  name: Sauce Token
+  name: Sauce 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

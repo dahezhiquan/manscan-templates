@@ -1,7 +1,7 @@
 id: lua-runtime-error
 
 info:
-  name: LUA Runtime Error - Page
+  name: LUA Runtime Error 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

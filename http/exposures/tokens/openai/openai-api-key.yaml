@@ -1,7 +1,7 @@
 id: openai-api-key
 
 info:
-  name: OpenAI API Key
+  name: OpenAI API 密钥泄露（暴露面识别）
   author: DhiyaneshDK,Chemo850
   severity: info
   reference:

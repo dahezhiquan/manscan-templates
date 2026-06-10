@@ -1,11 +1,11 @@
 id: node-repl-history-disclosure
 
 info:
-  name: Node.js REPL History Disclosure
+  name: Node.js REPL History 泄露（暴露面识别）
   author: pussycat0x
   severity: low
   description: |
-    The Node.js REPL history file (.node_repl_history) was exposed, which had contained a log of commands entered into the Node.js interactive shell.
+    检测到对外可访问的 Node.js REPL History。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://nodejs.org/api/repl.html#persistent-history
     - https://joshtronic.com/2022/12/18/nodejs-repl-history/

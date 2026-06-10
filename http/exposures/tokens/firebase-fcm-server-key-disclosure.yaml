@@ -1,11 +1,11 @@
 id: firebase-fcm-server-key-disclosure
 
 info:
-  name: Firebase Cloud Messaging - Server Key Disclosure
+  name: Firebase Cloud Messaging Server 密钥泄露（暴露面识别）
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Firebase Cloud Messaging (FCM) legacy server keys were identified in client-side files. These keys can be used to send push notifications to any device.
+    检测到页面中疑似暴露了 Firebase Cloud Messaging Server 密钥。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://firebase.google.com/docs/cloud-messaging
   classification:

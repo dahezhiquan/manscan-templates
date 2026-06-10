@@ -1,7 +1,7 @@
 id: build-properties
 
 info:
-  name: Build Properties File Exposure
+  name: Build Properties 文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

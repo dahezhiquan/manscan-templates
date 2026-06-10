@@ -1,7 +1,7 @@
 id: segment-public-token
 
 info:
-  name: Segment Public API Token
+  name: Segment Public API 令牌暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

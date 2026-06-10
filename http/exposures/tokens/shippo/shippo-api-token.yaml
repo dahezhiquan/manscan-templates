@@ -1,7 +1,7 @@
 id: shippo-api-token
 
 info:
-  name: Shippo API Token
+  name: Shippo API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

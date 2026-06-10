@@ -1,11 +1,11 @@
 id: ovhcloud-backup-config
 
 info:
-  name: OVHcloud Backup Configuration - Exposure
+  name: OVHcloud Backup 配置暴露（暴露面识别）
   author: pussycat0x
   severity: high
   description: |
-    Detected exposed OVHcloud backup configuration files (ovh-backups.json) containing sensitive credentials such as OpenStack/Swift authentication details, API keys, and storage configuration.
+    检测到对外可访问的 OV。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.ovh.com/gb/en/storage/
     - https://docs.ovh.com/gb/en/public-cloud/access_and_security_in_horizon/

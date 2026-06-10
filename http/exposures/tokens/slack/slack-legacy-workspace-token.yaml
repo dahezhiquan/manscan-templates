@@ -1,7 +1,7 @@
 id: slack-legacy-workspace-token
 
 info:
-  name: Slack Legacy Workspace Token
+  name: Slack Legacy Workspace 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

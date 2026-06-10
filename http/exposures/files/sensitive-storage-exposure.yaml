@@ -1,10 +1,10 @@
 id: sensitive-storage-data-expose
 
 info:
-  name: Sensitive Storage Data - Detect
+  name: 敏感存储数据暴露（暴露面识别）
   author: pussycat0x
   severity: medium
-  description: A generic search for 'storage' in sensitive key files, file names, logs, etc., returned a match.
+  description: 检测到对外可访问的 敏感存储数据。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.exploit-db.com/ghdb/6304
   classification:

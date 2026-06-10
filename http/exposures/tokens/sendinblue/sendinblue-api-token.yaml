@@ -1,7 +1,7 @@
 id: sendinblue-api-token
 
 info:
-  name: Sendinblue API Token
+  name: Sendinblue API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

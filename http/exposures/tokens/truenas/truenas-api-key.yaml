@@ -1,7 +1,7 @@
 id: truenas-api-key
 
 info:
-  name: TrueNAS API Key (WebSocket)
+  name: TrueNAS API 密钥 (WebSocket) 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

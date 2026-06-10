@@ -1,11 +1,11 @@
 id: oracle-ebs-sqllog-exposure
 
 info:
-  name: Oracle EBS SQL Log - Exposure
+  name: Oracle EBS SQL Log 暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detected exposure of the sqlnet.log file in Oracle E-Business Suite (EBS), which often contained sensitive information such as database connection details, TNS entries, usernames, and error logs.
+    检测到可直接访问的 Oracle EBS SQL Log。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://the-infosec.com/2017/03/29/do-you-know-what-your-erp-is-telling-us/
   metadata:

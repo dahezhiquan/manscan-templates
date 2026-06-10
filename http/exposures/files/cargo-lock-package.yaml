@@ -1,7 +1,7 @@
 id: cargo-lock-package
 
 info:
-  name: Cargo Lock Packages Disclosure
+  name: Cargo Lock Packages 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

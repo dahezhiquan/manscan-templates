@@ -1,7 +1,7 @@
 id: heroku-oauth2-token
 
 info:
-  name: Heroku OAuth2 Token
+  name: Heroku OAuth2 令牌泄露（暴露面识别）
   author: Chemo850
   severity: info
   reference:

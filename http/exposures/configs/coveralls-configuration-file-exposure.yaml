@@ -1,11 +1,11 @@
 id: coveralls-configuration-file-exposure
 
 info:
-  name: Coveralls Configuration File Exposure
+  name: Coveralls 配置文件暴露（暴露面识别）
   author: 0x_Akoko
   severity: medium
   description: |
-   Detected a Coveralls configuration file (.coveralls.yml) on the target. This file could have exposed a sensitive repo_token, allowing an attacker to submit fake data, view private coverage details, or impersonate the project.
+    检测到对外可访问的 Coveralls 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.coveralls.io/ci-services
     - https://coveralls-python.readthedocs.io/en/latest/usage/configuration.html

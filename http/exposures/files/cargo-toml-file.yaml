@@ -1,7 +1,7 @@
 id: cargo-toml-file
 
 info:
-  name: Cargo TOML File Disclosure
+  name: Cargo TOML 文件泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: newrelic-api-service-key
 
 info:
-  name: New Relic API Service Key
+  name: New Relic API Service 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

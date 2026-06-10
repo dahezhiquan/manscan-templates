@@ -1,7 +1,7 @@
 id: flickr-accesstoken
 
 info:
-  name: Flickr Access Token
+  name: Flickr 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

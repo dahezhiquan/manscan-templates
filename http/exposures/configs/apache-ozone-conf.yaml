@@ -1,11 +1,11 @@
 id: apache-ozone-conf
 
 info:
-  name: Apache Ozone - Exposure
+  name: Apache Ozone 暴露（暴露面识别）
   author: icarot
   severity: info
   description: |
-    Detects if path /conf of Apache Ozone web application is exposed.
+    检测到对外可访问的 Apache Ozone。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cpe: cpe:2.3:a:apache:ozone:-:*:*:*:*:*:*:*
   metadata:

@@ -1,10 +1,10 @@
 id: bitbucket-oauth-exposure
 
 info:
-  name: Bitbucket OAuth Credentials Exposure
+  name: Bitbucket OAuth 凭据 暴露（暴露面识别）
   author: TheZakMan
   severity: high
-  description: Detects exposed auth.json files containing Bitbucket OAuth credentials
+  description: 检测到对外可访问的 Bitbucket OAuth 凭据。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

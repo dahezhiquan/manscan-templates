@@ -1,10 +1,10 @@
 id: amazon-docker-config
 
 info:
-  name: Dockerrun AWS Configuration Page - Detect
+  name: Dockerrun AWS 配置 页面 检测（暴露面识别）
   author: pdteam
   severity: medium
-  description: Dockerrun AWS configuration page was detected.
+  description: 检测到对外可访问的 Dockerrun AWS 配置 页面。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

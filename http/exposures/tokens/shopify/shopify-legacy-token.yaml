@@ -1,7 +1,7 @@
 id: shopify-legacy-token
 
 info:
-  name: Shopify Access Token (Legacy Private App)
+  name: Shopify 访问令牌 (Legacy Private App) 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

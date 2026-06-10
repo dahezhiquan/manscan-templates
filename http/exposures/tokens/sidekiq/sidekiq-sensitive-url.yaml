@@ -1,7 +1,7 @@
 id: sidekiq-sensitive-url
 
 info:
-  name: Sidekiq Sensitive URL
+  name: Sidekiq Sensitive URL 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: postgres-history-exposure
 
 info:
-  name: PostgreSQL History - Exposure
+  name: PostgreSQL History 暴露（暴露面识别）
   author: theamanrawat,0x_Akoko
   severity: low
   description: |
-    Exposed PostgreSQL history files (.psql_history) were detected. These files contain a record of executed SQL commands and may disclose sensitive information like passwords, database schemas, and query logic.
+    检测到对外可访问的 PostgreSQL History。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-FILES
   metadata:

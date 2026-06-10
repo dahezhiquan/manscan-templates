@@ -1,10 +1,10 @@
 id: darkstat-detect
 
 info:
-  name: Detect Darkstat Reports
+  name: 检测 Darkstat Reports 泄露（暴露面识别）
   author: geeknik
   severity: high
-  description: Darkstat captures network traffic, calculates statistics about usage, and serves reports over HTTP
+  description: 检测到可直接访问的 检测 Darkstat Reports。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://unix4lyfe.org/darkstat/
   metadata:

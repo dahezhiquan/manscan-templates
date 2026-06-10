@@ -1,7 +1,7 @@
 id: newrelic-pixie-deploy-key
 
 info:
-  name: New Relic Pixie Deploy Key
+  name: New Relic Pixie Deploy 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

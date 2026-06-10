@@ -1,11 +1,11 @@
 id: vugex-source-detect
 
 info:
-  name: Vugex Framework Source Code - Detect
+  name: Vugex Framework 源码 检测（暴露面识别）
   author: ProjectDiscoveryAI,pdteam
   severity: medium
   description: |
-    Detects the presence of exposed Vugex Framework source code by identifying common files and directories associated with the framework.
+    检测到可直接访问的 Vugex Framework 源码。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   metadata:
     verified: true
     max-request: 1

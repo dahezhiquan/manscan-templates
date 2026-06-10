@@ -1,10 +1,10 @@
 id: ws-ftp-log
 
 info:
-  name: WS FTP File Disclosure
+  name: WS FTP 文件泄露（暴露面识别）
   author: Hardik-Solanki
   severity: low
-  description: WS_FTP software, which is a popular FTP (File Transfer Protocol) client used for transferring files between a local computer and a remote server has its log file exposed.
+  description: 检测到可直接访问的 WS FTP 文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   classification:
     cpe: cpe:2.3:a:ipswitch:ws_ftp:*:*:*:*:*:*:*:*
   metadata:

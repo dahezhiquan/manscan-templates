@@ -1,7 +1,7 @@
 id: jenkins-crumb-token
 
 info:
-  name: Jenkins Token or Crumb
+  name: Jenkins 令牌 or Crumb 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

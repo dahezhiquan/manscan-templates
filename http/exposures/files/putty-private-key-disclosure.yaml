@@ -1,10 +1,10 @@
 id: putty-private-key-disclosure
 
 info:
-  name: Putty Private Key Disclosure
+  name: Putty 私钥 泄露（暴露面识别）
   author: DhiyaneshDk,geeknik
   severity: medium
-  description: Putty internal user key file is exposed.
+  description: 检测到对外可访问的 Putty 私钥。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/putty-private-key-disclosure.json
   classification:

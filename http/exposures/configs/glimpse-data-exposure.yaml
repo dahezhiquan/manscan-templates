@@ -1,11 +1,11 @@
 id: glimpse-data-exposure
 
 info:
-  name: Glimpse Diagnostics - Sensitive Data Exposure
+  name: Glimpse Diagnostics 敏感数据暴露（暴露面识别）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Glimpse diagnostics endpoint. Glimpse is a .NET diagnostics tool that reveals detailed request information, server configuration, SQL queries, connection strings, and session data.
+    检测到对外可访问的 Gl。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://getglimpse.com/
     - https://github.com/Glimpse/Glimpse

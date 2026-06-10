@@ -1,11 +1,11 @@
 id: prettier-ignore-disclosure
 
 info:
-  name: Prettier - Ignore File Disclosure
+  name: Prettier Ignore 文件泄露（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    The .prettierignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
+    检测到对外可访问的 Prettier Ignore 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://prettier.io/docs/en/ignore.html
   metadata:

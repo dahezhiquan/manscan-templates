@@ -1,11 +1,11 @@
 id: gcloudignore-file-exposure
 
 info:
-  name: Google Cloud Ignore File Exposure
+  name: Google Cloud Ignore 文件暴露（暴露面识别）
   author: DhiyaneshDK
   severity: low
   description: |
-    Detected exposed .gcloudignore files which may reveal directory structure,deployment configurations, and sensitive project information used by Google Cloud SDK (gcloud) during deployments.
+    检测到对外可访问的 Google Cloud Ignore 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://cloud.google.com/sdk/gcloud/reference/topic/gcloudignore
   metadata:

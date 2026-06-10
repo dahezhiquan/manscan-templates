@@ -1,11 +1,11 @@
 id: sql-server-dump
 
 info:
-  name: SQL Server - Dump Files
+  name: SQL Server 转储文件泄露（暴露面识别）
   author: userdehghani
   severity: medium
   description: |
-    A SQL Server dump file was found
+    检测到可下载的 SQL Server 转储文件。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

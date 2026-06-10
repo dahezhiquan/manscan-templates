@@ -1,11 +1,11 @@
 id: n8n-config
 
 info:
-  name: N8n - Config
+  name: N8n 配置 泄露（暴露面识别）
   author: icarot
   severity: medium
   description: |
-    The `/rest/settings` endpoint in N8n was publicly exposed, which could have disclosed internal configuration details and sensitive application information.
+    检测到对外可访问的 N8n 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/n8n-io/n8n
   classification:

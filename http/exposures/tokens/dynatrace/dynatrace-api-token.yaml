@@ -1,7 +1,7 @@
 id: dynatrace-api-token
 
 info:
-  name: Dynatrace API Token
+  name: Dynatrace API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

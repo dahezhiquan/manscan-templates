@@ -1,10 +1,10 @@
 id: remote-spark-gateway-config
 
 info:
-  name: Remote Spark Gateway Configuration/Credentials - Exposure
+  name: Remote Spark Gateway 配置/凭据 暴露（暴露面识别）
   author: domwhewell-sage
   severity: medium
-  description: Remote Spark Gateway config found via /gateway.conf.
+  description: 检测到对外可访问的 Remote Spark Gateway 配置/凭据。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.sparkview.info/books/sparkview-admin-manual/page/31-gateway
   classification:

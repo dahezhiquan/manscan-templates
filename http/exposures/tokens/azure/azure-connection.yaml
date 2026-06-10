@@ -1,7 +1,7 @@
 id: azure-connection
 
 info:
-  name: Azure Connection String
+  name: Azure 连接字符串 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

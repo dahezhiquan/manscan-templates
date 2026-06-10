@@ -1,11 +1,11 @@
 id: flow-config-exposure
 
 info:
-  name: Flow Configuration - Exposure
+  name: Flow 配置暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detects an exposed Flow configuration file. These files may contain sensitive information such as credentials, internal endpoints, or environment settings.
+    检测到对外可访问的 Fl。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://flow.org/en/docs/config/
   metadata:

@@ -1,7 +1,7 @@
 id: npm-anonymous-cli
 
 info:
-  name: NPM Anonymous CLI Metrics Exposure
+  name: NPM 匿名 CLI 指标暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: batflat-sqlite-exposure
 
 info:
-  name: Batflat SQLite Database - Exposure
+  name: Batflat SQLite 数据库 暴露（暴露面识别）
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected exposed Batflat CMS SQLite database files that may contain sensitive information including admin credentials, user data, site configuration, and content. Batflat stores its database in the /inc/data/ directory by default.
+    检测到可下载的 Batflat SQLite 数据库。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   reference:
     - https://batflat.org/
     - https://github.com/sruupl/batflat

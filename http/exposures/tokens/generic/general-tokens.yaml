@@ -1,7 +1,7 @@
 id: generic-tokens
 
 info:
-  name: Generic Tokens
+  name: Generic Tokens 泄露（暴露面识别）
   author: nadino,geeknik
   severity: unknown
   metadata:

@@ -1,7 +1,7 @@
 id: nuget-package-config
 
 info:
-  name: NuGet Package.config File Disclosure
+  name: NuGet Package.配置 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

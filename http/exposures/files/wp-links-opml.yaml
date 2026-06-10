@@ -1,11 +1,11 @@
 id: wp-links-opml
 
 info:
-  name: WordPress wp-links-opml.php - Version Disclosure
+  name: WordPress wp-links-opml.php Version 泄露（暴露面识别）
   author: princechaddha
   severity: info
   description: |
-    WordPress wp-links-opml.php file was publicly accessible and expossed the WordPress version in the generator tag.
+    检测到对外可访问的 WordPress wp-links-opml.php Version。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-version-disclosed/
     - https://wordpress.org/

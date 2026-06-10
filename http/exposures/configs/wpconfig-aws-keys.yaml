@@ -1,10 +1,10 @@
 id: wpconfig-aws-keys
 
 info:
-  name: AWS S3 keys Leak
+  name: AWS S3 密钥泄露（暴露面识别）
   author: r12w4n
   severity: high
-  description: AWS S3 keys are exposed.
+  description: 检测到对外可访问的 AWS S3 密钥。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   metadata:
     max-request: 2
   tags: aws,s3,wordpress,disclosure,exposure,vuln

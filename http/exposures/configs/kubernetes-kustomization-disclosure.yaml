@@ -1,10 +1,10 @@
 id: kubernetes-kustomization-disclosure
 
 info:
-  name: Kubernetes Kustomize Configuration - Detect
+  name: Kubernetes Kustomize 配置检测（暴露面识别）
   author: dhiyaneshDk
   severity: medium
-  description: Kubernetes Kustomize configuration was detected.
+  description: 检测到对外可访问的 Kubernetes Kustomize 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/kubernetes-kustomization-disclosure.json
   classification:

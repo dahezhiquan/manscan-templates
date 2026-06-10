@@ -1,11 +1,11 @@
 id: selenium-grid-exposure
 
 info:
-  name: Selenium Grid Exposure
+  name: Selenium Grid 暴露（暴露面识别）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Selenium Grid console without authentication, exposing internal network IPs, container names, OS details, software versions, and browser node configurations. Attackers could abuse this for SSRF, internal reconnaissance, or resource hijacking.
+    检测到对外可访问的 Selenium Grid。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.selenium.dev/documentation/grid/
     - https://github.com/SeleniumHQ/selenium

@@ -1,7 +1,7 @@
 id: pyproject-disclosure
 
 info:
-  name: Pyproject Disclosure
+  name: Pyproject 泄露（暴露面识别）
   author: dhiyaneshDk
   severity: info
   reference:

@@ -1,15 +1,18 @@
 id: symfony-lock-exposure
 
 info:
-  name: Symfony Lock File - Exposure
+  name: Symfony Lock 文件暴露（暴露面识别）
   author: ritikchaddha
   severity: low
   description: |
-    symfony.lock was found accessible, exposing a full list of installed Composer packages, library versions, and metadata for a Symfony-based PHP application. Disclosure of this file can provide insight into the application's attack surface, potentially revealing vulnerable or outdated dependencies and aiding an attacker in choosing their exploit strategy.
+    检测到对外可访问的 Symfony Lock 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   impact: |
-    Attackers can enumerate all installed Composer packages and versions, increasing the risk of targeted attacks (e.g., against known CVEs in dependencies) or application fingerprinting.
+    - 暴露的资源可能泄露敏感配置、内部实现细节或历史数据。
+    - 攻击者可结合这些信息开展进一步侦察、未授权访问或定向利用。
   remediation: |
-    Restrict direct access to internal and sensitive files such as symfony.lock via proper web server configuration (e.g., .htaccess, nginx directives) and consider excluding such files from the web root in deployment.
+    - 将相关文件或接口移出 Web 根目录，或通过鉴权与访问控制限制访问。
+    - 清理已暴露内容中的敏感信息，并评估是否需要轮换关联凭据。
+    - 检查部署、备份与静态资源发布流程，防止同类资源再次被公开访问。
   reference:
     - https://cheatsheetseries.owasp.org/cheatsheets/Information_Leakage.html
     - https://symfony.com/doc/current/deployment.html

@@ -1,7 +1,7 @@
 id: webpack-mix-js
 
 info:
-  name: Webpack Mix File Disclosure
+  name: Webpack Mix 文件泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

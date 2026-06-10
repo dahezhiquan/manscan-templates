@@ -1,11 +1,11 @@
 id: kcfinder-exposure
 
 info:
-  name: KCFinder - Exposure
+  name: KCFinder 暴露（暴露面识别）
   author: theamanrawat
   severity: high
   description: |
-    Detected publicly accessible KCFinder instances that may have allowed arbitrary file uploads and remote code execution (RCE).Exposure of KCFinder could have allowed an attacker to gain unauthorized access to the file manager and upload malicious files.
+    检测到对外可访问的 KCFinder。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://github.com/sunhater/kcfinder
   metadata:

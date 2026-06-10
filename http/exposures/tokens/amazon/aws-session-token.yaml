@@ -1,7 +1,7 @@
 id: aws-session-token
 
 info:
-  name: AWS Session Token
+  name: AWS Session 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: zapier-webhook-token
 
 info:
-  name: Zapier Webhook Disclosure
+  name: Zapier Webhook 泄露（暴露面识别）
   author: Ice3man
   severity: info
   metadata:

@@ -1,10 +1,10 @@
 id: exposed-alps-spring
 
 info:
-  name: Exposed Spring Data REST Application-Level Profile Semantics (ALPS)
+  name: 暴露 Spring Data REST Application-Level Profile Semantics (ALPS) 泄露（暴露面识别）
   author: dwisiswant0
   severity: medium
-  description: Exposed Spring Data profile semantics is exposed.
+  description: 检测到对外可访问的 暴露 Spring Data REST Application-Level Profile Semantics (ALPS)。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://niemand.com.ar/2021/01/08/exploiting-application-level-profile-semantics-apls-from-spring-data-rest/
   metadata:

@@ -1,11 +1,11 @@
 id: netlify-headers-config-exposure
 
 info:
-  name: Netlify Headers Configuration - Exporsure
+  name: Netlify Headers 配置 Exporsure 泄露（暴露面识别）
   author: theamanrawat
   severity: low
   description: |
-    Detected publicly accessible Netlify configuration files such as _headers, headers, or netlify.toml. Exposure of these files may disclose security header settings, routing rules, authentication mechanisms, or other sensitive deployment information.
+    检测到对外可访问的 Netlify Headers 配置 Exporsure。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.netlify.com/routing/headers/
     - https://docs.netlify.com/configure-builds/file-based-configuration/

@@ -1,7 +1,7 @@
 id: algolia-api-key
 
 info:
-  name: Algolia API Key
+  name: Algolia API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

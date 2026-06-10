@@ -1,7 +1,7 @@
 id: mako-runtime-error
 
 info:
-  name: Mako Runtime Error - Page
+  name: Mako Runtime Error 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

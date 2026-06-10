@@ -1,10 +1,10 @@
 id: dockercfg-config
 
 info:
-  name: Detect .dockercfg
+  name: 检测 .dockercfg 泄露（暴露面识别）
   author: geeknik
   severity: high
-  description: Docker registry authentication data
+  description: 检测到对外可访问的 检测 .dockercfg。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   metadata:
     max-request: 2
   tags: docker,exposure,config,vuln

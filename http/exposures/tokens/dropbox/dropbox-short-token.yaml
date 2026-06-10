@@ -1,7 +1,7 @@
 id: dropbox-short-token
 
 info:
-  name: Dropbox Short Lived API Token
+  name: Dropbox Short Lived API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

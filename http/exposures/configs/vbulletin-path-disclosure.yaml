@@ -1,7 +1,7 @@
 id: vbulletin-path-disclosure
 
 info:
-  name: vBulletin - Full Path Disclosure
+  name: vBulletin Full Path 泄露（暴露面识别）
   author: MaStErChO
   severity: info
   reference:

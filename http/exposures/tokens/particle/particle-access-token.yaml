@@ -1,7 +1,7 @@
 id: particle-access-token
 
 info:
-  name: particle.io Access Token
+  name: particle.io 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

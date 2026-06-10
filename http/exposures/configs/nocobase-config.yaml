@@ -1,11 +1,11 @@
 id: nocobase-config
 
 info:
-  name: Nocobase - Config
+  name: Nocobase 配置 泄露（暴露面识别）
   author: icarot
   severity: medium
   description: |
-    The path /api/v1/db/meta/nocodb/info of the NocoBase web application was exposed, revealing internal information. NocoBase was an extensibility-first, open-source no-code/low-code platform for building business applications and enterprise solutions.
+    检测到对外可访问的 Nocobase 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/nocobase/nocobase/
     - https://www.nocobase.com/

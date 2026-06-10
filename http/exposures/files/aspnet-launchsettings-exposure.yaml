@@ -1,11 +1,11 @@
 id: aspnet-launchsettings-exposure
 
 info:
-  name: ASP.NET Launch Settings - Exposure
+  name: ASP.NET Launch Settings 暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detected exposed launchSettings.json files in ASP.NET Core applications. This file contains environment variables and launch configurations that may leak sensitive information.
+    检测到对外可访问的 ASP.NET Launch Settings。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments
   tags: aspnet,config,exposure,json,dotnet

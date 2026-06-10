@@ -1,10 +1,10 @@
 id: jsapi-ticket-json
 
 info:
-  name: JsAPI Ticket Json
+  name: JsAPI Ticket JSON 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: low
-  description: JsAPI Ticket internal file is exposed.
+  description: 检测到对外可访问的 JsAPI Ticket JSON。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.exploit-db.com/ghdb/6070
   metadata:

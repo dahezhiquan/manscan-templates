@@ -1,10 +1,10 @@
 id: wadl-api
 
 info:
-  name: WADL API - Detect
+  name: WADL API 检测（暴露面识别）
   author: 0xrudra,manuelbua
   severity: info
-  description: WADL API was detected.
+  description: 检测到对外可访问的 WADL API。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
     - https://github.com/dwisiswant0/wadl-dumper
     - https://www.nopsec.com/leveraging-exposed-wadl-xml-in-burp-suite/

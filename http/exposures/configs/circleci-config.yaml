@@ -1,10 +1,10 @@
 id: circleci-config
 
 info:
-  name: CircleCI Configuration File - Detect
+  name: CircleCI 配置文件检测（暴露面识别）
   author: geeknik
   severity: medium
-  description: CircleCI config.yml file was detected.
+  description: 检测到对外可访问的 CircleCI 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://circleci.com/docs/2.0/sample-config/
   classification:

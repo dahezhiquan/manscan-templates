@@ -1,7 +1,7 @@
 id: airtable-api-key
 
 info:
-  name: Airtable API Key
+  name: Airtable API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

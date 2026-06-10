@@ -1,7 +1,7 @@
 id: routes-ini
 
 info:
-  name: routes.ini File Exposure
+  name: routes.INI 文件暴露（暴露面识别）
   author: geeknik
   severity: info
   metadata:

@@ -1,11 +1,11 @@
 id: pear-registry-exposed
 
 info:
-  name: PEAR Registry Files Exposed
+  name: PEAR Registry 文件暴露（暴露面识别）
   author: pussycat0x
   severity: low
   description: |
-    Detected exposed PEAR registry files (.reg) containing serialized PHP metadata, including package versions and local paths. This exposure facilitated supply-chain reconnaissance by revealing installed dependencies and system mappings.
+    检测到对外可访问的 PEAR Registry 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://pear.php.net/manual/en/core.pear.pear-registry.php
     - https://github.com/pear/pear-core/blob/master/PEAR/Registry.php

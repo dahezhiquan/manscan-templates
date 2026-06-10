@@ -1,7 +1,7 @@
 id: vault-batch-token
 
 info:
-  name: Vault Batch Token
+  name: Vault Batch 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: freshbooks-accesstoken
 
 info:
-  name: Freshbooks Access Token
+  name: Freshbooks 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

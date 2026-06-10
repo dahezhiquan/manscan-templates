@@ -1,7 +1,7 @@
 id: symfony-properties-ini
 
 info:
-  name: Symfony properties.ini File Disclosure
+  name: Symfony properties.INI 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

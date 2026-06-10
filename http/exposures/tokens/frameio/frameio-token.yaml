@@ -1,7 +1,7 @@
 id: frameio-token
 
 info:
-  name: Frameio API Token
+  name: Frameio API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: token-info-json
 
 info:
-  name: Token Info Json File
+  name: 令牌 Info JSON 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

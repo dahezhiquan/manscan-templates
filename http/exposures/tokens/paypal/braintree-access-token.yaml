@@ -1,7 +1,7 @@
 id: braintree-access-token
 
 info:
-  name: PayPal Braintree Access Token Disclosure
+  name: PayPal Braintree 访问令牌泄露（暴露面识别）
   author: Ice3man
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: pinata-api-key
 
 info:
-  name: Pinata API Key - Expose
+  name: Pinata API 密钥 Expose 泄露（暴露面识别）
   author: 0xpugal
   severity: info
   classification:

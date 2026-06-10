@@ -1,10 +1,10 @@
 id: vtigercrm-exposed-directory
 info:
-  name: Vtiger CRM - Exposed Directory
+  name: Vtiger CRM 暴露 Directory 泄露（暴露面识别）
   author: icarot
   severity: low
   description: |
-    Detected a Vtiger CRM directory listing exposure that could have revealed sensitive files and internal application structure.
+    检测到对外可访问的 Vtiger CRM 暴露 Directory。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://github.com/vtiger-crm/vtigercrm
     - https://code.vtiger.com/vtiger/vtigercrm

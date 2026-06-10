@@ -1,11 +1,11 @@
 id: apache-kyuubi-config
 
 info:
-  name: Apache Kyuubi - Configuration Exposure
+  name: Apache Kyuubi 配置暴露（暴露面识别）
   author: icarot
   severity: medium
   description: |
-    Detects if path Appconfigs of Apache Kyuubi web application is exposed, getting internal information about the configuration made.
+    检测到对外可访问的 Ap。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cpe: cpe:2.3:a:apache:kyuubi:*:*:*:*:*:*:*:*
   metadata:

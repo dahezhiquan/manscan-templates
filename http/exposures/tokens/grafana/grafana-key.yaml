@@ -1,7 +1,7 @@
 id: grafana-key
 
 info:
-  name: Grafana API Key
+  name: Grafana API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: sumologic-access-id
 
 info:
-  name: Sumologic Access ID
+  name: Sumo Logic Access ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: phoenix-contact-charx-api
 
 info:
-  name: Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API - Detect
+  name: Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API 检测（暴露面识别）
   author: inokii
   severity: info
   description: |
-    Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API was detected.
+    检测到对外可访问的 Phoenix Contact CHARX SEC-3XXX AC Charging Controller REST API。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
     - https://www.phoenixcontact.com/en-us/products/ac-charging-controllers
   metadata:

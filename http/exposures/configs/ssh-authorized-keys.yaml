@@ -1,11 +1,11 @@
 id: ssh-authorized-keys
 
 info:
-  name: SSH Authorized Keys File - Detect
+  name: SSH Authorized 密钥 文件 检测（暴露面识别）
   author: geeknik,0x_Akoko
   severity: medium
   description: |
-    SSH authorized keys file was detected.
+    检测到对外可访问的 SSH Authorized 密钥 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.ssh.com/academy/ssh/authorized-key
   classification:

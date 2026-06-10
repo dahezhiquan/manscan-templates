@@ -1,11 +1,14 @@
 id: axiom-digitalocean-key-exposure
 
 info:
-  name: DigitalOcean Key Exposure via Axiom
+  name: Axiom DigitalOcean 密钥泄露（暴露面识别）
   author: geeknik
   severity: critical
-  description: Axiom is a dynamic infrastructure framework to efficiently work with multi-cloud environments.
-  remediation: Restrict access to the do.json file or upgrade to a newer version of Axiom
+  description: 检测到页面中疑似暴露了 Axiom DigitalOcean 密钥。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
+  remediation: |
+    - 立即移除对外暴露的敏感文件或响应内容，并限制未授权访问。
+    - 轮换已泄露的密钥、令牌或凭据，审计其历史使用记录。
+    - 检查构建、备份和发布流程，避免再次将敏感信息暴露到公网。
   reference:
     - https://github.com/pry0cc/axiom
   classification:

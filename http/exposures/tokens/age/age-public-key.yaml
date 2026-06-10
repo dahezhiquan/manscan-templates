@@ -1,7 +1,7 @@
 id: age-public-key
 
 info:
-  name: Age Recipient (X25519 public key)
+  name: Age Recipient (X25519 公钥) 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

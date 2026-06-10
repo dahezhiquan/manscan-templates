@@ -1,11 +1,11 @@
 id: phpsys-info
 
 info:
-  name: phpSysInfo Exposure
+  name: phpSysInfo 暴露（暴露面识别）
   author: fpatrik
   severity: low
   description: |
-    phpSysInfo: a customizable PHP script that displays information about your system nicely
+    检测到对外可访问的 phpSysInfo。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://phpsysinfo.github.io/phpsysinfo/
   classification:

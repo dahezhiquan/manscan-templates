@@ -1,7 +1,7 @@
 id: dropbox-token
 
 info:
-  name: Dropbox API Token
+  name: Dropbox API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

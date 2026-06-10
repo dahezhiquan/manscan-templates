@@ -1,10 +1,10 @@
 id: go-mod-disclosure
 
 info:
-  name: Go.mod Disclosure
+  name: Go.mod 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: low
-  description: go.mod internal file is exposed.
+  description: 检测到对外可访问的 Go.mod。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   classification:
     cpe: cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*
   metadata:

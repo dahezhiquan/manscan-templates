@@ -1,7 +1,7 @@
 id: grafana-cloud-token
 
 info:
-  name: Grafana Cloud API Key
+  name: Grafana Cloud API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

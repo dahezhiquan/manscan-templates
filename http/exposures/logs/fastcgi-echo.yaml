@@ -1,12 +1,15 @@
 id: fastcgi-echo
 
 info:
-  name: FastCGI Echo Endpoint Script - Detect
+  name: FastCGI Echo 端点脚本检测（暴露面识别）
   author: powerexploit
   severity: info
   description: |
-    FastCGI echo endpoint script was detected, which lists several kinds of sensitive information such as port numbers, server software versions, port numbers, and IP addresses.
-  remediation: Remove or disable FastCGI module delivered with the Apache httpd server which is incorporated into the Oracle Application Server.FastCGI echo programs (echo and echo2).
+    检测到可直接访问的 FastCGI Echo 端点脚本。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
+  remediation: |
+    - 关闭公开日志、调试或异常查看入口，仅对受信任管理员开放。
+    - 从日志中移除敏感字段，并避免在生产环境输出调试信息。
+    - 轮换日志中可能已泄露的令牌、会话、密码或其他敏感凭据。
   reference:
     - https://www.exploit-db.com/ghdb/183
     - https://www.integrigy.com/oracle-application-server-fastcgi-echo-vulnerability-reports

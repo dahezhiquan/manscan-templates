@@ -1,11 +1,11 @@
 id: wordpress-db-exposure
 
 info:
-  name: WordPress Database Backup File - Exposure
+  name: WordPress 数据库 备份文件暴露（暴露面识别）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected WordPress database backup files that were publicly accessible, exposing sensitive data including user credentials, email addresses, and site content.
+    检测到可下载的 WordPress 数据库 备份文件。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   reference:
     - https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
     - https://wordpress.org/support/article/backing-up-your-database/

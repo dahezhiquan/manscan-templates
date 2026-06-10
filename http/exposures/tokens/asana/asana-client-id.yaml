@@ -1,7 +1,7 @@
 id: asana-client-id
 
 info:
-  name: Asana Client ID
+  name: Asana 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

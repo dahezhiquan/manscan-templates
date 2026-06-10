@@ -1,10 +1,10 @@
 id: ftpconfig
 
 info:
-  name: Atom remote-ssh ftpconfig Exposure
+  name: Atom remote-ssh ftpconfig 暴露（暴露面识别）
   author: geeknik,DhiyaneshDK
   severity: high
-  description: Created by remote-ssh for Atom, contains SFTP/SSH server details and credentials
+  description: 检测到对外可访问的 Atom remote-ssh ftpconfig。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     verified: true
     max-request: 1

@@ -1,7 +1,7 @@
 id: zenserp-api-key
 
 info:
-  name: Zenserp Api Key
+  name: Zenserp API 密钥泄露（暴露面识别）
   author: ritikchaddha
   severity: high
   reference:

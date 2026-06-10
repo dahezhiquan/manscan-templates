@@ -1,7 +1,7 @@
 id: gitlab-pipeline-token
 
 info:
-  name: GitLab Pipeline Trigger Token
+  name: GitLab Pipeline Trigger 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

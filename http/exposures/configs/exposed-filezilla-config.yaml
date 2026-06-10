@@ -1,11 +1,11 @@
 id: exposed-filezilla-config
 
 info:
-  name: Exposed FileZilla Configuration File - Exposure
+  name: 暴露 FileZilla 配置文件暴露（暴露面识别）
   author: pussycat0x
   severity: medium
   description: |
-    Detected publicly accessible FileZilla client configuration files (sitemanager.xml, recentservers.xml, filezilla.xml).
+    检测到对外可访问的 暴露 FileZilla 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://wiki.filezilla-project.org/Xml_files
   metadata:

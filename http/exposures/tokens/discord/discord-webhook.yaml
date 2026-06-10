@@ -1,7 +1,7 @@
 id: discord-webhook
 
 info:
-  name: Discord Webhook Disclosure
+  name: Discord Webhook 泄露（暴露面识别）
   author: Ice3man, apapedulimu
   severity: info
   metadata:

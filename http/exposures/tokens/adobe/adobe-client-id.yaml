@@ -1,7 +1,7 @@
 id: adobe-client-id
 
 info:
-  name: Adobe Client ID
+  name: Adobe 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

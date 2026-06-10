@@ -1,7 +1,7 @@
 id: rubygems-api-key
 
 info:
-  name: RubyGems API Key
+  name: RubyGems API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: high
   reference:

@@ -1,11 +1,11 @@
 id: postman-collection-exposure
 
 info:
-  name: Postman Collection Exposure
+  name: Postman Collection 暴露（暴露面识别）
   author: Hamza Sahin
   severity: low
   description: |
-    Detected exposed Postman collection JSON files that contained API endpoints and environment details. These files were publicly accessible and disclosed authentication headers and other sensitive information.
+    检测到对外可访问的 Postman Collection。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
     - https://medium.com/@utkarshporwal24/exposed-postman-collections-ed6086b96ba5
   classification:

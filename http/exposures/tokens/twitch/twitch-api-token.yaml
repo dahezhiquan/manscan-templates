@@ -1,7 +1,7 @@
 id: twitch-api-token
 
 info:
-  name: Twitch API Secret Token
+  name: Twitch API 密钥 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

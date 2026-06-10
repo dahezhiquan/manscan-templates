@@ -1,7 +1,7 @@
 id: slack-webhook-url
 
 info:
-  name: Slack Webhook URL
+  name: Slack Webhook URL 泄露（暴露面识别）
   author: Ice3man,DhiyaneshDK
   severity: info
   reference:

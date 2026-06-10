@@ -1,10 +1,10 @@
 id: mapbox-token-disclosure
 
 info:
-  name: Mapbox Token Disclosure
+  name: Mapbox 令牌泄露（暴露面识别）
   author: Devang-Solanki
   severity: medium
-  description: Mapbox secret token is exposed to external users.
+  description: 检测到页面中疑似暴露了 Mapbox 令牌。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://docs.gitguardian.com/secrets-detection/detectors/specifics/mapbox_token
     - https://github.com/zricethezav/gitleaks/blob/master/cmd/generate/config/rules/mapbox.go

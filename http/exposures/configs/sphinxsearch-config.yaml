@@ -1,12 +1,13 @@
 id: sphinxsearch-config
 
 info:
-  name: Sphinx Search Config - Exposure
+  name: Sphinx Search 配置暴露（暴露面识别）
   author: gtrrnr
   severity: high
-  description: sphinx.conf file contains SQL credentials and is publicly accessible.
+  description: 检测到对外可访问的 Sp。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   impact: |
-    An attacker can use leaked credentials to gain access to database.
+    - 暴露的资源可能泄露敏感配置、内部实现细节或历史数据。
+    - 攻击者可结合这些信息开展进一步侦察、未授权访问或定向利用。
   reference:
     - https://github.com/manticorp/SphinxSearch/blob/master/sphinx.conf.example
   metadata:

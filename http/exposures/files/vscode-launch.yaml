@@ -1,11 +1,11 @@
 id: vscode-launch
 
 info:
-  name: Visual Studio Code launch.json Exposure
+  name: Visual Studio Code launch.JSON 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: low
   description: |
-    The .vscode/launch.json file, used by Visual Studio Code for debugging configurations, is publicly accessible. This file often contains sensitive information such as local file paths, runtime arguments, environment variables, and sometimes hardcoded credentials or access tokens.
+    检测到对外可访问的 Visual Studio Code launch.JSON。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://code.visualstudio.com/docs/editor/debugging
   metadata:

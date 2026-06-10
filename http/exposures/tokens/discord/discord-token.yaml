@@ -1,7 +1,7 @@
 id: discord-token
 
 info:
-  name: Discord API Token
+  name: Discord API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

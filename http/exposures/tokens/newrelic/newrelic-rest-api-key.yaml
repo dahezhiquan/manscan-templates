@@ -1,7 +1,7 @@
 id: newrelic-rest-api-key
 
 info:
-  name: REST API Key Disclosure
+  name: REST API 密钥泄露（暴露面识别）
   author: Ice3man
   severity: info
   reference:

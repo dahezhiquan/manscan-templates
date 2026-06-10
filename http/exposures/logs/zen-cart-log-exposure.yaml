@@ -1,11 +1,11 @@
 id: zen-cart-log-exposure
 
 info:
-  name: Zen Cart Log File Exposure
+  name: Zen Cart 日志文件暴露（暴露面识别）
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected exposed Zen Cart log files that may contain sensitive information including error messages, file paths, database queries, and customer data.
+    检测到可直接访问的 Zen Cart 日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://www.zen-cart.com/
     - https://docs.zen-cart.com/user/troubleshooting/debug_logs/

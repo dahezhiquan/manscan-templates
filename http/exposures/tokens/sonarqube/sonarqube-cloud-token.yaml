@@ -1,7 +1,7 @@
 id: sonarqube-cloud-token
 
 info:
-  name: SonarQube Cloud Token Disclosure
+  name: SonarQube Cloud 令牌泄露（暴露面识别）
   author: DhiyaneshDk
   severity: high
   reference:

@@ -1,7 +1,7 @@
 id: contentful-token
 
 info:
-  name: Contentful Delivery API Token
+  name: Contentful Delivery API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

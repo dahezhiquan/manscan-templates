@@ -1,10 +1,10 @@
 id: tugboat-config-exposure
 
 info:
-  name: Tugboat Configuration File Exposure
+  name: Tugboat 配置文件暴露（暴露面识别）
   author: geeknik
   severity: critical
-  description: A Tugboat configuration file was discovered. Tugboat is a command line tool for interacting with DigitalOcean droplets.
+  description: 检测到页面中疑似暴露了 Tugboat 配置文件。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://github.com/petems/tugboat
     - https://www.digitalocean.com/community/tools/tugboat

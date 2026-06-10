@@ -1,11 +1,11 @@
 id: magento-config-disclosure
 
 info:
-  name: Magento Configuration Panel - Detect
+  name: Magento 配置 Panel 检测（暴露面识别）
   author: ptonewreckin,danigoland,geeknik
   severity: high
   description: |
-    Magento configuration panel was detected. Misconfigured instances of Magento may disclose usernames, passwords, and database configurations via /app/etc/local.xml.
+    检测到对外可访问的 Magento 配置 Panel。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/ptonewreckin/cmsDetector/blob/master/signatures/magento.py
   classification:

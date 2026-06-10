@@ -1,7 +1,7 @@
 id: confluent-accesstoken
 
 info:
-  name: Confluent Access Token
+  name: Confluent 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

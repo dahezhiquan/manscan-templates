@@ -1,10 +1,10 @@
 id: php-backup-files
 
 info:
-  name: PHP Source - Backup File Information Disclosure
+  name: PHP Source 备份文件 信息泄露（暴露面识别）
   author: StreetOfHackerR007,pwnhxl,mastercho,0xpugal
   severity: medium
-  description: PHP Source File is disclosed to external users.
+  description: 检测到可下载的 PHP Source 备份文件 相关信息资源。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   metadata:
     max-request: 1512
   tags: exposure,backup,php,disclosure,fuzz,vuln

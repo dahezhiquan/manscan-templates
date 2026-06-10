@@ -1,11 +1,11 @@
 id: chroma-api-exposure
 
 info:
-  name: ChromaDB - Unauthenticated API Exposure
+  name: ChromaDB 未授权 API 暴露（暴露面识别）
   author: pussycat0x,DevamShah
   severity: medium
   description: |
-    ChromaDB runs without authentication by default, exposing the API edpoint to anyone and allowing unauthorized access to read.
+    检测到对外可访问的 ChromaDB 未授权 API。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
     - https://github.com/chroma-core/chroma
     - https://docs.trychroma.com/docs/run-chroma/chroma-server/security

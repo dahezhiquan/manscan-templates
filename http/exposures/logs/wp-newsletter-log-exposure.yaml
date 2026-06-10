@@ -1,11 +1,11 @@
 id: wp-newsletter-log-exposure
 
 info:
-  name: WordPress Newsletter - Log File Exposure
+  name: WordPress Newsletter 日志文件暴露（暴露面识别）
   author: pussycat0x
   severity: medium
   description: |
-    The Newsletters plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 4.9.5. This makes it possible for unauthenticated attackers to extract potentially sensitive information from log files.
+    检测到可直接访问的 WordPress Newsletter 日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://wpscan.com/vulnerability/334e02e9-fcbd-47fe-b7ab-079dd525b396/
   metadata:

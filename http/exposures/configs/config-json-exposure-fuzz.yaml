@@ -1,11 +1,11 @@
 id: config-json-exposure-fuzz
 
 info:
-  name: Exposed JSON Configuration Files
+  name: 暴露 JSON 配置 文件泄露（暴露面识别）
   author: geeknik
   severity: critical
   description: |
-    Detects exposed JSON configuration files containing sensitive information including API keys, access tokens, AWS credentials, database configurations, base URLs, file paths, and application settings. These files often contain production configurations and credentials that should not be publicly accessible.
+    检测到对外可访问的 暴露 JSON 配置 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10.0

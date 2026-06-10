@@ -1,7 +1,7 @@
 id: digital-ocean-personal-token
 
 info:
-  name: DigitalOcean Personal Access Token
+  name: DigitalOcean 个人访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

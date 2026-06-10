@@ -1,7 +1,7 @@
 id: squarespace-access-token
 
 info:
-  name: Squarespace Access Token
+  name: Squarespace 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

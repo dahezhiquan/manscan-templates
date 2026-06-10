@@ -1,10 +1,10 @@
 id: fcm-server-key
 
 info:
-  name: FCM Server Key
+  name: FCM Server 密钥泄露（暴露面识别）
   author: absshax
   severity: high
-  description: FCM Server Key is leaked.
+  description: 检测到页面中疑似暴露了 FCM Server 密钥。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://abss.me/posts/fcm-takeover
   classification:

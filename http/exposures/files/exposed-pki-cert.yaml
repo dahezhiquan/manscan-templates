@@ -1,11 +1,11 @@
 id: exposed-pki-cert
 
 info:
-  name: Exposed Internal PKI Infrastructure - Detect
+  name: 暴露 Internal PKI Infrastructure 检测（暴露面识别）
   author: nullenc0de
   severity: high
   description: |
-    Detects exposed internal PKI infrastructure including CRL distribution points and OCSP responders
+    检测到对外可访问的 暴露 Internal PKI Infrastructure。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     verified: true
     max-request: 10

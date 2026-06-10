@@ -1,11 +1,11 @@
 id: eclipse-project-exposure
 
 info:
-  name: Eclipse .project Configuration - Exposure
+  name: Eclipse .project 配置暴露（暴露面识别）
   author: 0x_Akoko
   severity: info
   description: |
-    Detected Eclipse .project configuration file, which may reveal project structure and paths.
+    检测到对外可访问的 Ec。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://help.eclipse.org/latest/index.jsp
   metadata:

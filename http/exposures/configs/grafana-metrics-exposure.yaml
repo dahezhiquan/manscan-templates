@@ -1,11 +1,11 @@
 id: grafana-metrics-exposure
 
 info:
-  name: Grafana Metrics Endpoint - Information Disclosure
+  name: Grafana Metrics 端点信息泄露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detected Grafana metrics endpoint exposed without authentication revealed sensitive infrastructure information, including version, edition, user counts, dashboard statistics, datasources, and database connection details.
+    检测到对外可访问的 Grafana Metrics 端点相关信息资源。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://grafana.com/docs/grafana/latest/setup-grafana/set-up-grafana-monitoring/
     - https://hackerone.com/reports/1448218

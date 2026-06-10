@@ -1,7 +1,7 @@
 id: symfony-security
 
 info:
-  name: Symfony security.yml File Disclosure
+  name: Symfony security.YML 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

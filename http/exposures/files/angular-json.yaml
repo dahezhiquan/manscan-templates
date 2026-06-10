@@ -1,7 +1,7 @@
 id: angular-json
 
 info:
-  name: Angular JSON File Exposure
+  name: Angular JSON 文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

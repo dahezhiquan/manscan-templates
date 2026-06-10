@@ -1,7 +1,7 @@
 id: newrelic-pixie-api-key
 
 info:
-  name: New Relic Pixie API Key
+  name: New Relic Pixie API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

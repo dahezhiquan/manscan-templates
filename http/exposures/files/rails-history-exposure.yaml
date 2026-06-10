@@ -1,11 +1,11 @@
 id: rails-history-exposure
 
 info:
-  name: Rails/Ruby Console History - Exposure
+  name: Rails/Ruby Console History 暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detects exposure of Ruby/Rails console history files (.irb_history and .pry_history) via HTTP. Leakage of these files may disclose sensitive code, credentials, or insight into application logic, increasing the risk of unauthorized access or exploitation.
+    检测到对外可访问的 Rails/Ruby Console History。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://pry.github.io
     - https://docs.ruby-lang.org/en/2.6.0/IRB.html

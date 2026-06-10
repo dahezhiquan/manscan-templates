@@ -1,7 +1,7 @@
 id: react-app-username
 
 info:
-  name: React App Username
+  name: React App Username 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

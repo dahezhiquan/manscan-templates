@@ -1,7 +1,7 @@
 id: redmine-settings
 
 info:
-  name: Redmine settings.yml File Disclosure
+  name: Redmine settings.YML 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

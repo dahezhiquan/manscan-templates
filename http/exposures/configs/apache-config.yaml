@@ -1,11 +1,14 @@
 id: apache-config
 
 info:
-  name: Apache Configuration File - Detect
+  name: Apache 配置文件检测（暴露面识别）
   author: sheikhrishad
   severity: medium
-  description: Apache configuration file was detected.
-  remediation: Remove the configuration file from the web root.
+  description: 检测到对外可访问的 Apache 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+  remediation: |
+    - 将相关文件或接口移出 Web 根目录，或通过鉴权与访问控制限制访问。
+    - 清理已暴露内容中的敏感信息，并评估是否需要轮换关联凭据。
+    - 检查部署、备份与静态资源发布流程，防止同类资源再次被公开访问。
   reference:
     - https://httpd.apache.org/docs/2.4/configuring.html
   classification:

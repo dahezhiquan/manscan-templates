@@ -1,10 +1,10 @@
 id: jeecg-boot-swagger
 
 info:
-  name: Jeecg Boot Swagger Bootstrap UI - Detect
+  name: Jeecg Boot Swagger Bootstrap UI 检测（暴露面识别）
   author: ritikchaddha
   severity: info
-  description: Jeecg Swagger Bootstrap UI exposed.
+  description: 检测到对外可访问的 Jeecg Boot Swagger Bootstrap UI。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   classification:
     cpe: cpe:2.3:a:jeecg:jeecg-boot:*:*:*:*:*:*:*:*
   metadata:

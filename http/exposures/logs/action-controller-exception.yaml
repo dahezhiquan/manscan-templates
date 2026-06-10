@@ -1,7 +1,7 @@
 id: action-controller-exception
 
 info:
-  name: Action Controller Exception - Page
+  name: Action Controller 异常 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

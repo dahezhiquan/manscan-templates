@@ -1,10 +1,10 @@
 id: httpd-config
 
 info:
-  name: Apache httpd Config File - Detect
+  name: Apache httpd 配置 文件 检测（暴露面识别）
   author: sheikhrishad
   severity: info
-  description: Apache httpd configuration information was detected.
+  description: 检测到对外可访问的 Apache httpd 配置 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://httpd.apache.org/docs/current/configuring.html
   classification:

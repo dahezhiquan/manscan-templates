@@ -1,11 +1,11 @@
 id: backup-directory-listing
 
 info:
-  name: Backup Directory Listing - Detect
+  name: Backup 目录列表 检测（暴露面识别）
   author: DhiyaneshDK
   severity: low
   description: |
-    Backup Directory Listing folder was detected.
+    检测到可下载的 Backup 目录列表。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   reference:
     - https://www.invicti.com/learn/directory-listing/
     - https://hackerone.com/reports/684838

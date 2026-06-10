@@ -1,10 +1,10 @@
 id: perl-status
 
 info:
-  name: Apache Mod_perl Status Page - Detect
+  name: Apache Mod_perl 状态页 检测（暴露面识别）
   author: pdteam
   severity: medium
-  description: Apache mod_perl status page was detected.
+  description: 检测到对外可访问的 Apache Mod_perl 状态页。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://perl.apache.org/
   classification:

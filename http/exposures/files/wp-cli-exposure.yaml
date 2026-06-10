@@ -1,7 +1,7 @@
 id: wp-cli-exposure
 
 info:
-  name: WP-CLI Yaml File Exposure
+  name: WP-CLI YAML 文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

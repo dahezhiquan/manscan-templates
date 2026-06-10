@@ -1,7 +1,7 @@
 id: wget-hsts-list-exposure
 
 info:
-  name: WGET HSTS List Exposure
+  name: WGET HSTS 列表 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   metadata:

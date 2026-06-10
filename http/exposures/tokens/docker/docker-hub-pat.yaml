@@ -1,7 +1,7 @@
 id: docker-hub-pat
 
 info:
-  name: Docker Hub Personal Access Token
+  name: Docker Hub 个人访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: wgetrc-config
 
 info:
-  name: Wgetrc Configuration File - Detect
+  name: Wgetrc 配置文件检测（暴露面识别）
   author: DhiyaneshDK
   severity: info
-  description: Wgetrc configuration file was detected.
+  description: 检测到对外可访问的 Wgetrc 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.gnu.org/software/wget/manual/html_node/Wgetrc-Commands.html
   classification:

@@ -1,11 +1,11 @@
 id: jolokia-config-exposure
 
 info:
-  name: Jolokia Configuration - Exposure
+  name: Jolokia 配置暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detected exposed Jolokia configuration files (jolokia-agent.properties and jolokia-access.xml). Exposure of these files could have revealed sensitive agent configuration, authentication credentials, or access control policies (CORS, allowed MBeans).
+    检测到对外可访问的 Jo。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://jolokia.org/reference/html/agents.html
     - https://docs.microfocus.com/doc/388/24.3/confjolokia

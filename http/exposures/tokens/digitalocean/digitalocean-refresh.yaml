@@ -1,7 +1,7 @@
 id: digitalocean-refresh
 
 info:
-  name: DigitalOcean Refresh Token
+  name: DigitalOcean 刷新令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

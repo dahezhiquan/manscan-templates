@@ -1,7 +1,7 @@
 id: shopify-public-token
 
 info:
-  name: Shopify Access Token (Public App)
+  name: Shopify Public App 访问令牌暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

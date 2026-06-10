@@ -1,10 +1,10 @@
 id: pubspec-config
 
 info:
-  name: Pubspec YAML Configuration File - Detect
+  name: Pubspec YAML 配置文件检测（暴露面识别）
   author: DhiyaneshDk
   severity: info
-  description: Pubspec YAML configuration file was detected.
+  description: 检测到对外可访问的 Pubspec YAML 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.flutter.dev/development/tools/pubspec
     - https://xeladu.medium.com/the-flutter-pubspec-yaml-in-detail-eee5729d9df7

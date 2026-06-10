@@ -1,7 +1,7 @@
 id: databricks-token
 
 info:
-  name: Databricks API Token
+  name: Databricks API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: roundcube-log-disclosure
 
 info:
-  name: Roundcube Log Disclosure
+  name: Roundcube Log 泄露（暴露面识别）
   author: dhiyaneshDk,kazet
   severity: medium
-  description: Roundcube Log file was disclosed.
+  description: 检测到可直接访问的 Roundcube Log。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/roundcube-log-disclosure.json
   metadata:

@@ -1,10 +1,10 @@
 id: exposed-mysql-initial
 
 info:
-  name: mysql.initial Config - Detect
+  name: mysql.initial 配置检测（暴露面识别）
   author: ELSFA7110
   severity: info
-  description: mysql.initial configuration file was detected.
+  description: 检测到可下载的 mysql.initial 配置。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   reference:
     - https://hackerone.com/reports/1081817
   classification:

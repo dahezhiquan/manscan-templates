@@ -1,11 +1,11 @@
 id: interswitch-webpay
 
 info:
-  name: Interswitch Webpay - Credentials Exposure
+  name: Interswitch Webpay 凭据 暴露（暴露面识别）
   author: Lloydcoder
   severity: info
   description: |
-    Exposure of Interswitch Webpay product IDs, MAC keys and access tokens.
+    检测到页面中疑似暴露了 Interswitch Webpay 凭据。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://docs.interswitchgroup.com/reference/how-to-use-the-reference
   tags: exposure,interswitch,webpay,token

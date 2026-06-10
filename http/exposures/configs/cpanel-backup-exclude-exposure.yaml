@@ -1,11 +1,11 @@
 id: cpanel-backup-exclude-exposure
 
 info:
-  name: cPanel Backup Exclusion Configuration - Exposure
+  name: cPanel Backup Exclusion 配置暴露（暴露面识别）
   author: 0x_Akoko
   severity: info
   description: |
-    cPanel backup exclusion configuration file (cpbackup-exclude.conf) was publicly accessible, potentially exposing directory structure and system paths.
+    检测到对外可访问的 cP。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://docs.cpanel.net/knowledge-base/backup/how-to-exclude-files-from-backups/
   classification:

@@ -1,7 +1,7 @@
 id: newrelic-license-key-non
 
 info:
-  name: New Relic License Key (non-suffixed)
+  name: New Relic License 密钥 (non-suffixed) 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

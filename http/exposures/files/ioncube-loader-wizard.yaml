@@ -1,10 +1,10 @@
 id: ioncube-loader-wizard
 
 info:
-  name: ioncube Loader Wizard Disclosure
+  name: ioncube Loader Wizard 泄露（暴露面识别）
   author: Mubassirpatel
   severity: medium
-  description: An ioncube Loader Wizard was discovered.
+  description: 检测到对外可访问的 ioncube Loader Wizard。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://firefart.at/post/multiple-vulnerabilities-in-ioncube-loader-wizard/
   classification:

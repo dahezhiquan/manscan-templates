@@ -1,7 +1,7 @@
 id: postman-key
 
 info:
-  name: Postman API Key
+  name: Postman API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

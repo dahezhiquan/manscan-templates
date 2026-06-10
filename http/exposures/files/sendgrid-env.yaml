@@ -1,10 +1,10 @@
 id: sendgrid-env
 
 info:
-  name: SendGrid Env File Exposure
+  name: SendGrid Env 文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: medium
-  description: SendGrid file is exposed containing environment variables.
+  description: 检测到对外可访问的 SendGrid Env 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   classification:
     cpe: cpe:2.3:a:sendgrid:sendgrid:*:*:*:*:wordpress:*:*:*
   metadata:

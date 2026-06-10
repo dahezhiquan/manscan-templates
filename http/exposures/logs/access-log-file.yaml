@@ -1,10 +1,10 @@
 id: access-log-file
 
 info:
-  name: Publicly accessible access-log file
+  name: 访问日志文件泄露（暴露面识别）
   author: sheikhrishad
   severity: low
-  description: Log file was exposed.
+  description: 检测到可直接访问的 访问日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   classification:
     cwe-id: CWE-219,CWE-552
   metadata:

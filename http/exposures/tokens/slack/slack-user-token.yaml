@@ -1,7 +1,7 @@
 id: slack-user-token
 
 info:
-  name: Slack User token disclosure
+  name: Slack User 令牌泄露（暴露面识别）
   author: Ice3man,DhiyaneshDK
   severity: high
   reference:

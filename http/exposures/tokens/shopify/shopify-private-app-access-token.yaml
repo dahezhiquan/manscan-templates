@@ -1,7 +1,7 @@
 id: shopify-private-app-access-token
 
 info:
-  name: Shopify Private App Access Token
+  name: Shopify Private App 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

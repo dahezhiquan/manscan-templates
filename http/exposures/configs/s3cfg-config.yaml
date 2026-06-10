@@ -1,10 +1,10 @@
 id: s3cfg-config
 
 info:
-  name: S3CFG Configuration - Detect
+  name: S3CFG 配置检测（暴露面识别）
   author: geeknik,DhiyaneshDK
   severity: high
-  description: S3CFG configuration file was detected.
+  description: 检测到对外可访问的 S3CFG 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://s3tools.org/kb/item14.htm
   classification:

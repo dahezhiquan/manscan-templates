@@ -1,7 +1,7 @@
 id: twilio-api-key
 
 info:
-  name: Twilio API Key
+  name: Twilio API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

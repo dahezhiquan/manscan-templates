@@ -1,7 +1,7 @@
 id: expression-engine-exception
 
 info:
-  name: ExpressionEngine Exception - Page
+  name: ExpressionEngine 异常 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

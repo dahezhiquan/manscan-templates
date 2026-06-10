@@ -1,11 +1,11 @@
 id: openvpn-as-config-exposure
 
 info:
-  name: OpenVPN Access Server - Configuration Exposure
+  name: OpenVPN Access Server 配置暴露（暴露面识别）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected OpenVPN Access Server with sensitive configuration data exposed, including VPN client profiles, certificates, private keys, and session tokens, without authentication.
+    检测到对外可访问的 Op。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://openvpn.net/vpn-server-resources/access-server-rest-api/
   metadata:

@@ -1,11 +1,11 @@
 id: opentsdb-status
 
 info:
-  name: OpenTSDB - Detect
+  name: OpenTSDB 检测（暴露面识别）
   author: pussycat0x
   severity: low
   description: |
-    OpenTSDB stats exposed which is commonly used in monitoring and observability scenarios where tracking and analyzing the performance of systems, applications, and infrastructure over time is essential.
+    检测到可直接访问的 OpenTSDB。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - http://opentsdb.net/
   classification:

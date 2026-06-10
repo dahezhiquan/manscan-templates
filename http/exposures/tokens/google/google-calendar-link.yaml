@@ -1,7 +1,7 @@
 id: google-calendar-link
 
 info:
-  name: Google Calendar URI Disclosure
+  name: Google Calendar URI 泄露（暴露面识别）
   author: Ice3man
   severity: info
   metadata:

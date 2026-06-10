@@ -1,11 +1,11 @@
 id: azure-functions-hostjson-exposure
 
 info:
-  name: Azure Functions host.json Configuration Exposure
+  name: Azure Functions host.JSON 配置暴露（暴露面识别）
   author: pussycat0x
   severity: medium
   description: |
-    Detected exposed Azure Functions host.json configuration files. The exposed metadata revealed sensitive runtime, logging, extension, and infrastructure settings that could aid attackers in understanding the application architecture.
+    检测到对外可访问的 Az。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   metadata:
     max-request: 1
     verified: false

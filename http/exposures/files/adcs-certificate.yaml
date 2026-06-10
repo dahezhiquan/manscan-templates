@@ -1,11 +1,11 @@
 id: adcs-certificate
 
 info:
-  name: Microsoft AD CS Web Enrollment - Detect
+  name: Microsoft AD CS Web Enrollment 检测（暴露面识别）
   author: pastaga,defte,atomiczsec
   severity: info
   description: |
-    Detects Microsoft Active Directory Certificate Services (AD CS) Web Enrollment and certificate download pages.
+    检测到对外可访问的 Microsoft AD CS Web Enrollment。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     verified: true
     max-request: 3

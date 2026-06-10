@@ -1,11 +1,11 @@
 id: jwk-json-leak
 
 info:
-  name: JSON Web Key File - Exposure
+  name: JSON Web 密钥 文件暴露（暴露面识别）
   author: Mohsen Yaghoubi
   severity: info
   description: |
-    Searches for JSON Web Key (JWK) file.
+    检测到页面中疑似暴露了 JSON Web 密钥 文件。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://portswigger.net/web-security/jwt/algorithm-confusion
   classification:

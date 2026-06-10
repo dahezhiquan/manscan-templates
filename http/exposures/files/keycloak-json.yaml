@@ -1,7 +1,7 @@
 id: keycloak-json
 
 info:
-  name: Keycloak JSON File
+  name: Keycloak JSON 文件泄露（暴露面识别）
   author: oppsec
   severity: info
   metadata:

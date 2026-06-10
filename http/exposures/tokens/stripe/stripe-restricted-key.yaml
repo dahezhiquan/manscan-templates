@@ -1,7 +1,7 @@
 id: stripe-restricted-key
 
 info:
-  name: Stripe Restricted Key Disclosure
+  name: Stripe Restricted 密钥泄露（暴露面识别）
   author: Ice3man
   severity: info
   reference:

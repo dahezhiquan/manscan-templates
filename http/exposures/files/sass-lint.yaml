@@ -1,7 +1,7 @@
 id: sass-lint
 
 info:
-  name: Sass Lint File Exposure
+  name: Sass Lint 文件暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

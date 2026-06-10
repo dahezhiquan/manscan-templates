@@ -1,10 +1,10 @@
 id: nginx-shards
 
 info:
-  name: NGINX Shards Disclosure
+  name: NGINX Shards 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: medium
-  description: NGINX internal information, shards page exposed.
+  description: 检测到可直接访问的 NGINX Shards。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://infosecwriteups.com/how-i-got-rce-in-the-world-largest-russian-company-8e6e8288bc4e
   metadata:

@@ -1,7 +1,7 @@
 id: vault-service-token
 
 info:
-  name: Vault Service Token
+  name: Vault Service 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: wp-enable-media-replace-log
 
 info:
-  name: WordPress Plugin Enable Media Replace - Log File Exposure
+  name: WordPress Plugin Enable Media Replace 日志文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: medium
   description: |
-    The WordPress plugin "Enable Media Replace" (enable-media-replace) bundles a ShortPixel-based logger that writes a plugin-specific log file into the WordPress uploads directory, typically as `wp-content/uploads/EnableMediaReplace.log`.
+    检测到可直接访问的 WordPress Plugin Enable Media Replace 日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://wordpress.org/plugins/enable-media-replace/
   metadata:

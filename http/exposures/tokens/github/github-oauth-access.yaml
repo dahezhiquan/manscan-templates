@@ -1,7 +1,7 @@
 id: github-oauth-access
 
 info:
-  name: GitHub OAuth Access Token
+  name: GitHub OAuth 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

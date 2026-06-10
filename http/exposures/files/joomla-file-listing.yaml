@@ -1,11 +1,14 @@
 id: joomla-file-listing
 
 info:
-  name: Joomla! Database File List
+  name: Joomla! 数据库 文件 列表 泄露（暴露面识别）
   author: iampritam
   severity: medium
-  description: A Joomla! database directory /libraries/joomla/database/ was found exposed and has directory indexing enabled.
-  remediation: Disable directory indexing on the /libraries/joomla/database/ directory or remove the content from the web root. If the databases can be download, rotate any credentials contained in the databases.
+  description: 检测到对外可访问的 Joomla! 数据库 文件 列表。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+  remediation: |
+    - 将相关文件或接口移出 Web 根目录，或通过鉴权与访问控制限制访问。
+    - 清理已暴露内容中的敏感信息，并评估是否需要轮换关联凭据。
+    - 检查部署、备份与静态资源发布流程，防止同类资源再次被公开访问。
   reference:
     - https://www.exploit-db.com/ghdb/6377
   classification:

@@ -1,7 +1,7 @@
 id: digitalocean-app-token
 
 info:
-  name: DigitalOcean Application Access Token
+  name: DigitalOcean Application 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

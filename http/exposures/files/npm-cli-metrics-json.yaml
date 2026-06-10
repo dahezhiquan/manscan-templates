@@ -1,10 +1,10 @@
 id: npm-cli-metrics-json
 
 info:
-  name: NPM Anonymous CLI Metrics Json
+  name: NPM 匿名 CLI 指标 JSON 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: low
-  description: anonymous-cli-metrics.json internal file in NPM is exposed.
+  description: 检测到对外可访问的 NPM 匿名 CLI 指标 JSON。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   classification:
     cpe: cpe:2.3:a:npmjs:npm:*:*:*:*:*:*:*:*
   metadata:

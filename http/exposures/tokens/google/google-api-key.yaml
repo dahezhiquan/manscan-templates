@@ -1,7 +1,7 @@
 id: google-api-key
 
 info:
-  name: Google API Key
+  name: Google API 密钥泄露（暴露面识别）
   author: Swissky
   severity: info
   reference:

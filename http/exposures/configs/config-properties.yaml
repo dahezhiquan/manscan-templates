@@ -1,10 +1,10 @@
 id: config-properties
 
 info:
-  name: Config Properties Exposure
+  name: 配置 Properties 暴露（暴露面识别）
   author: j4vaovo,DhiyaneshDK
   severity: high
-  description: Config Properties were exposed.
+  description: 检测到对外可访问的 配置 Properties。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://twitter.com/win3zz/status/1657624974851702784/photo/1
   metadata:

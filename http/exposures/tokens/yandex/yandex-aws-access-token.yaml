@@ -1,7 +1,7 @@
 id: yandex-aws-access-token
 
 info:
-  name: Yandex AWS Access Token
+  name: Yandex AWS 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

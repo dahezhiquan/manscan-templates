@@ -1,11 +1,11 @@
 id: bitrix-log-file-disclosure
 
 info:
-  name: Bitrix Site Manager - Log File Disclosure
+  name: Bitrix Site Manager 日志文件泄露（暴露面识别）
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Bitrix Site Manager log files, potentially exposing sensitive information including database credentials, file paths, SQL queries, and user session data.
+    检测到可直接访问的 Bitrix Site Manager 日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2795
     - https://dev.1c-bitrix.ru/api_help/main/general/error.php

@@ -1,7 +1,7 @@
 id: gitlab-personal-token
 
 info:
-  name: GitLab Personal Access Token
+  name: GitLab 个人访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: high
   reference:

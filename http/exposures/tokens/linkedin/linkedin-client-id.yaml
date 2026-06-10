@@ -1,7 +1,7 @@
 id: linkedin-client-id
 
 info:
-  name: LinkedIn Client ID
+  name: LinkedIn 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

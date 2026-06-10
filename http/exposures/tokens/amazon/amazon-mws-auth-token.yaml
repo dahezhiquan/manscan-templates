@@ -1,7 +1,7 @@
 id: amazon-mws-auth-token
 
 info:
-  name: Amazon MWS Auth Token
+  name: Amazon MWS Auth 令牌泄露（暴露面识别）
   author: puzzlepeaches
   severity: info
   classification:

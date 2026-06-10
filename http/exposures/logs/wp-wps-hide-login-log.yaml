@@ -1,11 +1,11 @@
 id: wp-wps-hide-login-log
 
 info:
-  name: WordPress WPS Hide Login - Error Log Disclosure
+  name: WordPress WPS Hide Login Error Log 泄露（暴露面识别）
   author: pussycat0x
   severity: low
   description: |
-    Detected whether the WPS Hide Login plugin’s /classes/ directory was exposed with directory listing enabled due to server misconfiguration, potentially disclosing PHP error logs or source code.
+    检测到可直接访问的 WordPress WPS Hide Login Error Log。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://wordpress.org/plugins/wps-hide-login/
   metadata:

@@ -1,10 +1,10 @@
 id: gcloud-access-token
 
 info:
-  name: Google Cloud Access Token
+  name: Google Cloud 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: medium
-  description: Internal Google Cloud access tokens are exposed.
+  description: 检测到对外可访问的 Google Cloud 访问令牌。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     verified: true
     max-request: 2

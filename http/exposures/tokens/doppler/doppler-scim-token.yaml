@@ -1,7 +1,7 @@
 id: doppler-scim-token
 
 info:
-  name: Doppler SCIM Token
+  name: Doppler SCIM 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

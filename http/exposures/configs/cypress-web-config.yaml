@@ -1,10 +1,10 @@
 id: cypress-web-config
 
 info:
-  name: Cypress Oxygen Configuration Page - Detect
+  name: Cypress Oxygen 配置 页面 检测（暴露面识别）
   author: tess
   severity: info
-  description: Cypress Oxygen configuration page was detected.
+  description: 检测到对外可访问的 Cypress Oxygen 配置 页面。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

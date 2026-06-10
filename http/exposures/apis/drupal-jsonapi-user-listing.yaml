@@ -1,10 +1,10 @@
 id: drupal-jsonapi-user-listing
 
 info:
-  name: Drupal JSON:API Username Listing - Detect
+  name: Drupal JSON:API Username Listing 检测（暴露面识别）
   author: lixts
   severity: medium
-  description: Drupal JSON:API username listing was detected via the /user/user endpoint.
+  description: 检测到对外可访问的 Drupal JSON:API Username Listing。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
     - https://www.drupal.org/project/drupal/issues/3240913
   classification:

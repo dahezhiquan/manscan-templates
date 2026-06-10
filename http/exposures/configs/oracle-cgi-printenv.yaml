@@ -1,10 +1,10 @@
 id: oracle-cgi-printenv
 
 info:
-  name: Oracle CGI printenv - Information Disclosure
+  name: Oracle CGI printenv 信息泄露（暴露面识别）
   author: DhiyaneshDk
   severity: medium
-  description: Oracle CGI printenv component is susceptible to an information disclosure vulnerability.
+  description: 检测到对外可访问的 Oracle CGI printenv 相关信息资源。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/OracleCGIPrintEnv.java
   classification:

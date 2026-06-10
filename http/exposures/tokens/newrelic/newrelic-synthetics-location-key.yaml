@@ -1,7 +1,7 @@
 id: newrelic-synthetics-location-key
 
 info:
-  name: Synthetics Location Key Disclosure
+  name: Synthetics Location 密钥泄露（暴露面识别）
   author: Ice3man
   severity: info
   metadata:

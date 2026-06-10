@@ -1,7 +1,7 @@
 id: slack-bot-token
 
 info:
-  name: Slack Bot token
+  name: Slack Bot 令牌泄露（暴露面识别）
   author: nadino
   severity: high
   reference:

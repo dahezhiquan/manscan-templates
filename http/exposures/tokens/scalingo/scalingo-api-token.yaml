@@ -1,7 +1,7 @@
 id: scalingo-api-token
 
 info:
-  name: Scalingo API Token
+  name: Scalingo API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

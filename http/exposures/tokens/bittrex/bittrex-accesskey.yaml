@@ -1,7 +1,7 @@
 id: bittrex-accesskey
 
 info:
-  name: Bittrex Access Key
+  name: Bittrex 访问密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

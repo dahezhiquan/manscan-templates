@@ -1,7 +1,7 @@
 id: zenscrape-api-key
 
 info:
-  name: Zenscrape API Key
+  name: Zenscrape API 密钥泄露（暴露面识别）
   author: ritikchaddha
   severity: high
   reference:

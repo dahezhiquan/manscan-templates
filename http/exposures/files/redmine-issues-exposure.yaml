@@ -1,11 +1,11 @@
 id: redmine-issues-exposure
 
 info:
-  name: Redmine Issues - Exposure
+  name: Redmine Issues 暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Redmine instance exposed issues via the REST API without authentication. This could have leaked sensitive project information, issue details, and user data.
+    检测到对外可访问的 Redmine Issues。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.redmine.org/projects/redmine/wiki/rest_api
   classification:

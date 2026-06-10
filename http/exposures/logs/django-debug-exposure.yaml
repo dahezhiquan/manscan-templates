@@ -1,10 +1,10 @@
 id: django-debug-exposure
 
 info:
-  name: Django Debug Exposure
+  name: Django Debug 暴露（暴露面识别）
   author: geeknik
   severity: high
-  description: Django debug mode enabled exposes internal information.
+  description: 检测到可直接访问的 Django Debug。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://twitter.com/Alra3ees/status/1397660633928286208
   metadata:

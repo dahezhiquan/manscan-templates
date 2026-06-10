@@ -1,10 +1,10 @@
 id: iceflow-vpn-disclosure
 
 info:
-  name: ICEFlow VPN Disclosure
+  name: ICEFlow VPN 泄露（暴露面识别）
   author: pikpikcu
   severity: low
-  description: ICEFlow VPN internal log file is exposed.
+  description: 检测到对外可访问的 ICEFlow VPN。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 8
   tags: exposure,files,iceflow,logs,vuln

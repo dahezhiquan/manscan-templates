@@ -1,11 +1,11 @@
 id: prisma-schema-exposure
 
 info:
-  name: Exposed Prisma Database Schema - Exposure
+  name: 暴露 Prisma 数据库 Schema 暴露（暴露面识别）
   author: Umut ÖZEN
   severity: medium
   description: |
-    Prisma is a modern ORM extremely popular in the Node.js and TypeScript (Next.js/Express) ecosystems. Developers often accidentally expose the `prisma/` folder in web directories during deployments or Docker builds. This template checks for the exposure of the `schema.prisma` file, which typically contains the complete internal database table definitions, architectures, and the database connection strings (URLs) pointing to AWS RDS, PostgreSQL, or SQLite databases.
+    检测到对外可访问的 暴露 Prisma 数据库 Schema。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   metadata:
     max-requests: 5
     verified: true

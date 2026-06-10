@@ -1,10 +1,10 @@
 id: token-json
 
 info:
-  name: Token Json File Disclosure
+  name: 令牌 JSON 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: low
-  description: Internal token.json file is exposed.
+  description: 检测到对外可访问的 令牌 JSON 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     verified: true
     max-request: 2

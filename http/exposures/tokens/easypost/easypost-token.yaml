@@ -1,7 +1,7 @@
 id: easypost-token
 
 info:
-  name: Easypost API Token
+  name: Easypost API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: crates-api-key
 
 info:
-  name: Crates.io API Key
+  name: Crates.io API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

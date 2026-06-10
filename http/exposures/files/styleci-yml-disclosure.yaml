@@ -1,7 +1,7 @@
 id: styleci-yml-disclosure
 
 info:
-  name: StyleCi Yaml File Disclosure
+  name: StyleCi YAML 文件泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

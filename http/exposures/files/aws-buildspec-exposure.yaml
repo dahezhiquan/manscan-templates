@@ -1,11 +1,11 @@
 id: aws-buildspec-exposure
 
 info:
-  name: AWS CodeBuild Build Spec - Exposure
+  name: AWS CodeBuild Build Spec 暴露（暴露面识别）
   author: theamanrawat
   severity: low
   description: |
-    Detected the presence of the AWS CodeBuild buildspec.yml file. This file contains build commands and settings that may disclose sensitive information about the application's build process and infrastructure.
+    检测到对外可访问的 AWS CodeBuild Build Spec。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
   metadata:

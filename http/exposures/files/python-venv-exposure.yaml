@@ -1,11 +1,11 @@
 id: python-venv-exposure
 
 info:
-  name: Python Virtual Environment  Directory Exposure
+  name: Python Virtual Environment Directory 暴露（暴露面识别）
   author: a1baradi
   severity: info
   description: |
-    An exposed Python virtual environment directory allows public access to internal files like pyvenv.cfg, installed packages, and configurations. This can leak sensitive information and aid attackers in identifying or exploiting vulnerabilities.
+    检测到对外可访问的 Python Virtual Environment Directory。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://docs.python.org/3/library/venv.html
   metadata:

@@ -1,7 +1,7 @@
 id: sonarqube-token
 
 info:
-  name: SonarQube Token Disclosure
+  name: SonarQube 令牌泄露（暴露面识别）
   author: Ice3man
   severity: info
   reference:

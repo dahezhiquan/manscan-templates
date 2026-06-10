@@ -1,11 +1,11 @@
 id: azure-instrumentation-key-exposure
 
 info:
-  name: Azure Instrumentation Key - Exposure
+  name: Azure Instrumentation 密钥 暴露（暴露面识别）
   author: pussycat0x
   severity: medium
   description: |
-    Detected exposed Azure Application Insights Instrumentation Keys (classic ikey format) in HTTP responses, which allowed anyone to send telemetry data and, in some older configurations, could enable read access via undocumented or legacy APIs.
+    检测到页面中疑似暴露了 Azure Instrumentation 密钥。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   reference:
     - https://learn.microsoft.com/en-us/azure/azure-monitor/app/connection-strings
     - http://www.medic-consulting.com/2016/07/10/Share-Asp-Net-Core-appsettings-json-with-Service-Fabric-Microservices/

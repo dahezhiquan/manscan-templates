@@ -1,11 +1,11 @@
 id: vscode-settings
 
 info:
-  name: Visual Studio Code Settings - Credential Exposure
+  name: Visual Studio Code Settings 凭据 暴露（暴露面识别）
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected exposed Visual Studio Code configuration files that were accessible over HTTP, which could have led to credential leakage or sensitive workspace disclosure.
+    检测到对外可访问的 Visual Studio Code Settings 凭据。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 3
     verified: true

@@ -1,11 +1,11 @@
 id: magento-debug-log-exposure
 
 info:
-  name: Magento Debug Log - Exposure
+  name: Magento Debug Log 暴露（暴露面识别）
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Magento debug.log file was publicly accessible. This file contained sensitive debugging information including full server paths, stack traces, customer activity, internal code paths, cache data, and cron job details.
+    检测到可直接访问的 Magento Debug Log。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://devdocs.magento.com/guides/v2.4/config-guide/log/log-intro.html
   classification:

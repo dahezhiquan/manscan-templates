@@ -1,7 +1,7 @@
 id: google-oauth-prefixed
 
 info:
-  name: Google OAuth Client Secret (prefixed)
+  name: Google OAuth 客户端密钥 (prefixed) 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

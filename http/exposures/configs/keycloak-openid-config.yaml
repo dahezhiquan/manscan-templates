@@ -1,10 +1,10 @@
 id: keycloak-openid-config
 
 info:
-  name: Keycloak OpenID Configuration - Detect
+  name: Keycloak OpenID 配置检测（暴露面识别）
   author: rodnt
   severity: info
-  description: Keycloak Openid configuration information was detected.
+  description: 检测到对外可访问的 Keycloak OpenID 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://issues.jboss.org/browse/KEYCLOAK-571
   classification:

@@ -1,7 +1,7 @@
 id: bitbucket-clientid
 
 info:
-  name: BitBucket Client ID
+  name: BitBucket 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: doppler-cli-token
 
 info:
-  name: Doppler CLI Token
+  name: Doppler CLI 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

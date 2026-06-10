@@ -1,7 +1,7 @@
 id: npm-access-token
 
 info:
-  name: NPM Access Token (fine-grained)
+  name: NPM 访问令牌 (fine-grained) 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: high
   reference:

@@ -1,11 +1,14 @@
 id: accueil-wampserver
 
 info:
-  name: Accueil WAMPSERVER Configuration Page - Detect
+  name: Accueil WAMPSERVER 配置 页面 检测（暴露面识别）
   author: tess
   severity: medium
-  description: Accueil WAMPSERVER configuration page was detected.
-  remediation: Restrict access to the WAMP server configuration page and sub-tools.
+  description: 检测到对外可访问的 Accueil WAMPSERVER 配置 页面。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+  remediation: |
+    - 禁止在公网暴露诊断页面、环境信息页或默认调试入口。
+    - 通过 Web 服务器访问控制限制相关页面，仅对受信任管理员开放。
+    - 清理页面中泄露的路径、扩展、环境变量与凭据，并评估后续风险。
   reference:
     - https://www.wampserver.com/
   classification:

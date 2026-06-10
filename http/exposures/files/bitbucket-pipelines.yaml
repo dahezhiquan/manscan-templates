@@ -1,7 +1,7 @@
 id: bitbucket-pipelines
 
 info:
-  name: BitBucket Pipelines Configuration Exposure
+  name: BitBucket Pipelines 配置暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

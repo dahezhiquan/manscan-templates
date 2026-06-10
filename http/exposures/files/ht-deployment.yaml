@@ -1,12 +1,15 @@
 id: ht-deployment
 
 info:
-  name: .htdeployment - Files Tree Cache File
+  name: .htdeployment 文件 Tree Cache 文件泄露（暴露面识别）
   author: Michal-Mikolas
   severity: medium
   description: |
-    FTP Deployment cache file that contains whole files structure with paths to potentially sensitive files.
-  remediation: Block access to the file using `.htaccess` on the server. The best-practise is to block all the folders/files beginning with `.` except `.well-known` folder.
+    检测到对外可访问的 .htdeployment 文件 Tree Cache 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+  remediation: |
+    - 将相关文件或接口移出 Web 根目录，或通过鉴权与访问控制限制访问。
+    - 清理已暴露内容中的敏感信息，并评估是否需要轮换关联凭据。
+    - 检查部署、备份与静态资源发布流程，防止同类资源再次被公开访问。
   reference:
     - https://github.com/dg/ftp-deployment/tree/master
     - https://github.com/dg/ftp-deployment/blob/master/src/Deployment/Deployer.php#L206

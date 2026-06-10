@@ -1,11 +1,11 @@
 id: sportybet-api
 
 info:
-  name: SportyBet / BetKing Admin or API Token - Exposure
+  name: SportyBet / BetKing Admin or API 令牌 暴露（暴露面识别）
   author: Lloydcoder
   severity: info
   description: |
-    Detected exposed internal tokens and administrative endpoints belonging to online betting platforms.
+    检测到页面中疑似暴露了 SportyBet / BetKing Admin or API 令牌。如果相关密钥、令牌或凭据仍然有效，攻击者可能借此访问关联服务、调用接口、读取数据，或进一步对目标环境发起横向利用。
   tags: exposure,betting,sportybet,betking,token
 
 http:

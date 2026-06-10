@@ -1,10 +1,10 @@
 id: trace-axd-expose
 
 info:
-  name: ASP.NET Trace.AXD - Exposure
+  name: ASP.NET Trace.AXD 暴露（暴露面识别）
   author: dhiyaneshDK
   severity: low
-  description: ASP.NET Trace.AXD information was exposed.
+  description: 检测到可直接访问的 ASP.NET Trace.AXD。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://www.rapid7.com/db/vulnerabilities/spider-asp-dot-net-trace-axd/
   metadata:

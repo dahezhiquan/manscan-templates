@@ -1,11 +1,11 @@
 id: servicestack-requestlogs
 
 info:
-  name: ServiceStack Request Logs - Unauthenticated Access
+  name: ServiceStack 请求日志 未授权访问 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected ServiceStack Request Logs endpoint was accessible without authentication.
+    检测到可直接访问的 ServiceStack 请求日志 未授权访问。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://docs.servicestack.net/request-logger
     - https://docs.servicestack.net/admin-ui-profiling

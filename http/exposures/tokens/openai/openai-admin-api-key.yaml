@@ -1,7 +1,7 @@
 id: openai-admin-api-key
 
 info:
-  name: OpenAI Admin API Key Detection
+  name: OpenAI Admin API 密钥 检测（暴露面识别）
   author: Chemo850
   severity: info
   reference:

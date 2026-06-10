@@ -1,10 +1,10 @@
 id: exposed-sharepoint-list
 
 info:
-  name: Sharepoint List - Detect
+  name: Sharepoint 列表 检测（暴露面识别）
   author: ELSFA7110
   severity: medium
-  description: Sharepoint list was detected because of improper configuration. An anonymous user can access SharePoint Web Services.
+  description: 检测到对外可访问的 Sharepoint 列表。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://hackerone.com/reports/761158
     - https://hackerone.com/reports/300539

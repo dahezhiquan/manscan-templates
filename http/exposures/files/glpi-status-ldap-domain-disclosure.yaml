@@ -1,7 +1,7 @@
 id: glpi-status-domain-disclosure
 
 info:
-  name: GLPI Status Domain Disclosure
+  name: GLPI 状态 Domain 泄露（暴露面识别）
   author: dogasantos
   severity: info
   metadata:

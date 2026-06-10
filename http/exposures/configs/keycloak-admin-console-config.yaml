@@ -1,11 +1,11 @@
 id: keycloak-admin-console-config
 
 info:
-  name: Keycloak Admin Console Configuration Disclosure
+  name: Keycloak Admin Console 配置 泄露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detected Keycloak admin console configuration was exposing realm name, client ID, SSL requirements, and authentication server URL enabling reconnaissance and targeted authentication attacks.
+    检测到对外可访问的 Keycloak Admin Console 配置。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.keycloak.org/docs/latest/server_admin/index.html
     - https://www.keycloak.org/docs/latest/securing_apps/index.html

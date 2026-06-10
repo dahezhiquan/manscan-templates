@@ -1,7 +1,7 @@
 id: sumologic-access-token
 
 info:
-  name: Sumologic Access Token
+  name: Sumologic 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

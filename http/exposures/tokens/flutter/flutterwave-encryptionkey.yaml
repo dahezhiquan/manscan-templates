@@ -1,7 +1,7 @@
 id: flutterwave-encryptionkey
 
 info:
-  name: Flutterwave Encryption Key
+  name: Flutterwave Encryption 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

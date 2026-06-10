@@ -1,11 +1,11 @@
 id: bun-lock
 
 info:
-  name: Bun Lock File Disclosure
+  name: Bun Lock 文件泄露（暴露面识别）
   author: noraj
   severity: info
   description: |
-    The bun.lockb file is similar to the package-lock.json file used by npm or the yarn.lock file used by Yarn. It serves as a lock file that ensures consistent and reproducible installations of dependencies across different environments.
+    检测到对外可访问的 Bun Lock 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://bun.sh/docs/install/lockfile
   metadata:

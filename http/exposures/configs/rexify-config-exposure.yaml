@@ -1,11 +1,11 @@
 id: rexify-config-exposure
 
 info:
-  name: Rexify Configuration - Exposure
+  name: Rexify 配置暴露（暴露面识别）
   author: theamanrawat
   severity: high
   description: |
-    Rexfile configuration from the Rex/Rexify automation framework was exposed. These files may contain SSH credentials, server hostnames, private key paths, and other sensitive data.
+    检测到对外可访问的 Re。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.rexify.org/
   metadata:

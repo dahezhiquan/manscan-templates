@@ -1,7 +1,7 @@
 id: dropbox-long-token
 
 info:
-  name: Dropbox Long Lived API Token
+  name: Dropbox Long Lived API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

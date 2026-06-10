@@ -1,11 +1,11 @@
 id: appsettings-file-disclosure
 
 info:
-  name: Application Setting file disclosure
+  name: Application Setting 文件泄露（暴露面识别）
   author: DhiyaneshDK,tess
   severity: high
   description: |
-    appsetting.json file discloses the DB connection strings containing sensitive information.
+    检测到对外可访问的 Application Setting 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://twitter.com/hacker_/status/1518003548855930882?s=20&t=BVauK0yUjVl5yL7rwy0Eag
   metadata:

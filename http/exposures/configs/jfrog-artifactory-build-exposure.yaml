@@ -1,11 +1,11 @@
 id: jfrog-artifactory-build-exposure
 
 info:
-  name: JFrog Artifactory Build - Exposure
+  name: JFrog Artifactory Build 暴露（暴露面识别）
   author: theamanrawat
   severity: medium
   description: |
-    Detected exposure of build information in JFrog Artifactory via unauthenticated API endpoints. Access to these endpoints may disclose sensitive data such as build names, numbers, CI/CD pipeline details, artifact paths, and internal infrastructure information.
+    检测到对外可访问的 JFrog Artifactory Build。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://jfrog.com/help/r/jfrog-rest-apis/builds
     - https://jfrog.com/artifactory/

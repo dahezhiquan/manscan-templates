@@ -1,7 +1,7 @@
 id: gitter-token
 
 info:
-  name: Gitter Access Token
+  name: Gitter 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

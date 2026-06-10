@@ -1,11 +1,11 @@
 id: exposed-gitmodules
 
 info:
-  name: .gitmodules File Exposed
+  name: .gitmodules 文件暴露（暴露面识别）
   author: pussycat0x
   severity: high
   description: |
-    The .gitmodules file was exposed on the web server as part of an accessible .git directory.This exposure indicated a misconfiguration that could have allowed attackers to explore the .git directory further and potentially reconstruct or download the full source code repository.
+    检测到对外可访问的 .gitmodules 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/git-repository-found/
     - https://pentester.land/tutorials/2018/10/25/source-code-disclosure-via-exposed-git-folder.html

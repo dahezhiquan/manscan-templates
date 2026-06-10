@@ -1,15 +1,18 @@
 id: laravel-ignition-log-viewer
 
 info:
-  name: Laravel Ignition - Log Viewer Information Disclosure
+  name: Laravel Ignition 日志查看器信息泄露（暴露面识别）
   author: moamenbasel
   severity: medium
   description: |
-    Laravel Ignition's log viewer endpoint is publicly accessible and exposes application logs. These logs may contain stack traces, SQL queries, environment variables, API keys, user data, and other sensitive information.
+    检测到可直接访问的 Laravel Ignition 日志查看器信息泄露。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   impact: |
-    An attacker can access application logs without authentication, potentially exposing stack traces, database queries, environment variables, API keys, session tokens, user credentials, and internal application paths. This information can be leveraged for further attacks such as credential theft, privilege escalation, or direct system compromise.
+    - 日志或调试输出可能泄露内部路径、堆栈、令牌、会话信息和业务数据。
+    - 这些信息可被用于构造针对性攻击、凭据窃取或进一步提权。
   remediation: |
-    Disable Ignition in production by setting APP_DEBUG=false. If Ignition must remain enabled, configure it to disable the log viewer endpoint via the ignition config file.
+    - 在生产环境关闭调试能力，并确认 `APP_DEBUG=false`。
+    - 禁用或限制 Ignition 日志查看接口，仅允许受信任管理员访问。
+    - 清理日志中的敏感信息，并轮换可能已经暴露的密钥、令牌和凭据。
   reference:
     - https://github.com/spatie/laravel-ignition
     - https://laravel.com/docs/10.x/errors#configuration

@@ -1,7 +1,7 @@
 id: jwt-token
 
 info:
-  name: JWT Token Disclosure
+  name: JWT 令牌泄露（暴露面识别）
   author: Ice3man
   severity: unknown
   metadata:

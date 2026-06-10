@@ -1,10 +1,10 @@
 id: blazor-boot
 
 info:
-  name: Blazor Boot File Disclosure
+  name: Blazor Boot 文件泄露（暴露面识别）
   author: freakyclown
   severity: info
-  description: Exposed Blazor Boot (a web framework developed by Microsoft) config file.
+  description: 检测到对外可访问的 Blazor Boot 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/freakyclown/Nuclei_templates/blob/main/blazor_server.yaml
   metadata:

@@ -1,11 +1,11 @@
 id: librechat-config-exposure
 
 info:
-  name: librechat - Config Exposure
+  name: librechat 配置暴露（暴露面识别）
   author: icarot
   severity: low
   description: |
-    Detected the `/api/config` endpoint of the LibreChat web application was publicly accessible, potentially exposing internal configuration details.
+    检测到对外可访问的 li。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   classification:
     cpe: cpe:2.3:a:librechat:librechat:-:*:*:*:*:*:*:*
   metadata:

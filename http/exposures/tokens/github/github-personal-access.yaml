@@ -1,7 +1,7 @@
 id: github-personal-access
 
 info:
-  name: GitHub Personal Access Token
+  name: GitHub 个人访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: high
   reference:

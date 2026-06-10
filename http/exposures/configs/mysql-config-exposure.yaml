@@ -1,11 +1,11 @@
 id: mysql-config-exposure
 
 info:
-  name: MySQL Conifg - Exposure
+  name: MySQL Conifg 暴露（暴露面识别）
   author: theamanrawat
   severity: high
   description: |
-    Detects exposure of MySQL credentials, configuration, and command history via HTTP. Exposure of files such as .my.cnf and .mysql_history may lead to leakage of database passwords or SQL history, enabling attackers to compromise databases.
+    检测到对外可访问的 MySQL Conifg。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://dev.mysql.com/doc/refman/8.0/en/option-files.html
   metadata:

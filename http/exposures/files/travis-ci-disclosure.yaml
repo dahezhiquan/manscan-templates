@@ -1,13 +1,15 @@
 id: travis-ci-disclosure
 
 info:
-  name: Travis CI Disclosure
+  name: Travis CI 泄露（暴露面识别）
   author: DhiyaneshDK,AmirHossein Raeisi
   severity: high
   description: |
-    Travis CI is a Software as a Service (SaaS) based continuous integration service used to build and test software projects. By defining a configuration file named `.travis.yml` in their source code repositories, developers can customize their applications build workflows.
+    检测到对外可访问的 Travis CI。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   remediation: |
-    Ensure that the `.travis.yml` file is not deployed with the application or, at least, is not exposed in a web server directory by setting proper permissions on it. If sensitive information like credentials are leaked in the exposed file, they should be revoked and reset on the affected assets.
+    - 将相关文件或接口移出 Web 根目录，或通过鉴权与访问控制限制访问。
+    - 清理已暴露内容中的敏感信息，并评估是否需要轮换关联凭据。
+    - 检查部署、备份与静态资源发布流程，防止同类资源再次被公开访问。
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
     - https://arstechnica.com/information-technology/2021/09/travis-ci-flaw-exposed-secrets-for-thousands-of-open-source-projects/

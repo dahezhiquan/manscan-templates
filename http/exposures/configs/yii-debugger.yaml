@@ -1,10 +1,10 @@
 id: yii-debugger
 
 info:
-  name: View Yii Debugger Information
+  name: View Yii Debugger Information 泄露（暴露面识别）
   author: geeknik,rumble773
   severity: low
-  description: Detects potential exposure to Yii Debugger information.
+  description: 检测到对外可访问的 View Yii Debugger Information。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://yii2-framework.readthedocs.io/en/stable/guide/tool-debugger/
   classification:

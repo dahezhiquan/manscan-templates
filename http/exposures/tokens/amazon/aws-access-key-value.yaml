@@ -1,7 +1,7 @@
 id: aws-access-key-value
 
 info:
-  name: AWS Access Key ID Value
+  name: AWS Access Key ID 暴露（暴露面识别）
   author: Swissky
   severity: info
   metadata:

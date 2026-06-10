@@ -1,7 +1,7 @@
 id: twig-runtime-error
 
 info:
-  name: Twig Runtime Error - Page
+  name: Twig Runtime Error 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   metadata:

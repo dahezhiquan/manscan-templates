@@ -1,10 +1,10 @@
 id: generic-php-files
 
 info:
-  name: Generic PHP Backup Information Disclosure
+  name: Generic PHP Backup 信息泄露（暴露面识别）
   author: sheikhrishad,matejsmycka
   severity: medium
-  description: Generic php file source code was detected via backup files.
+  description: 检测到可下载的 Generic PHP Backup 相关信息资源。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

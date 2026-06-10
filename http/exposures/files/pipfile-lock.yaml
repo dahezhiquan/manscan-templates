@@ -1,7 +1,7 @@
 id: pipfile-lock
 
 info:
-  name: Pipfile.lock Disclosure
+  name: Pipfile.lock 泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   metadata:

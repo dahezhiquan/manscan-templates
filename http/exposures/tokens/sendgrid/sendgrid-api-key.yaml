@@ -1,7 +1,7 @@
 id: sendgrid-api-key
 
 info:
-  name: Sendgrid API Key Disclosure
+  name: Sendgrid API 密钥泄露（暴露面识别）
   author: Ice3man,DhiyaneshDK
   severity: info
   reference:

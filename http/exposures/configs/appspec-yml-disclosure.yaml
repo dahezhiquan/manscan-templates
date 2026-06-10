@@ -1,10 +1,10 @@
 id: appspec-yml-disclosure
 
 info:
-  name: Appspec YML/YAML - Detect
+  name: Appspec YML/YAML 检测（暴露面识别）
   author: dhiyaneshDk
   severity: medium
-  description: Appspec YML and YAML files are susceptible to information disclosure.
+  description: 检测到对外可访问的 Appspec YML/YAML。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/appsec-yml-disclosure.json
   classification:

@@ -1,10 +1,10 @@
 id: redis-exception-error
 
 info:
-  name: Redis Exception Connection Error Page
+  name: Redis 异常 Connection Error 页面 泄露（暴露面识别）
   author: DhiyaneshDk
   severity: low
-  description: Redis exception connection error page detected.
+  description: 检测到可直接访问的 Redis 异常 Connection Error 页面。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://www.facebook.com/ExWareLabs/photos/pcb.5563308760399619/5563307330399762/
   classification:

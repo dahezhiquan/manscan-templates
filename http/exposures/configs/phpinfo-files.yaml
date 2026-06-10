@@ -1,12 +1,15 @@
 id: phpinfo-files
 
 info:
-  name: PHPinfo Page - Detect
+  name: PHPinfo 页面 检测（暴露面识别）
   author: pdteam,daffainfo,meme-lord,dhiyaneshDK,wabafet,mastercho
   severity: low
   description: |
-    PHPinfo page was detected. The output of the phpinfo() command can reveal sensitive and detailed PHP environment information.
-  remediation: Remove PHP Info pages from publicly accessible sites, or restrict access to authorized users only.
+    检测到对外可访问的 PHPinfo 页面。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+  remediation: |
+    - 禁止在公网暴露诊断页面、环境信息页或默认调试入口。
+    - 通过 Web 服务器访问控制限制相关页面，仅对受信任管理员开放。
+    - 清理页面中泄露的路径、扩展、环境变量与凭据，并评估后续风险。
   classification:
     cwe-id: CWE-200
   metadata:

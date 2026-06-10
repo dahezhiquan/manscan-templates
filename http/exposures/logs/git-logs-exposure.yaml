@@ -1,10 +1,10 @@
 id: git-logs-exposure
 
 info:
-  name: Git Logs Disclosure
+  name: Git 日志泄露（暴露面识别）
   author: NullFuzz
   severity: info
-  description: Searches Git Logs files and passed URLs.
+  description: 检测到可直接访问的 Git 日志。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   metadata:
     max-request: 1
   tags: logs,git,exposure,vuln

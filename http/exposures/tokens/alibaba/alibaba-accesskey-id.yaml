@@ -1,7 +1,7 @@
 id: alibaba-accesskey-id
 
 info:
-  name: Alibaba Access Key ID
+  name: Alibaba AccessKey ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

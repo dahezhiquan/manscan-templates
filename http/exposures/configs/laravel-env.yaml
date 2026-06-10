@@ -1,11 +1,11 @@
 id: laravel-env
 
 info:
-  name: Laravel - Sensitive Information Disclosure
+  name: Laravel 敏感信息泄露（暴露面识别）
   author: pxmme1337,dwisiswant0,geeknik,emenalf,adrianmf
   severity: high
   description: |
-    A Laravel .env file was discovered, which stores sensitive information like database credentials and tokens. It should not be publicly accessible.
+    检测到对外可访问的 Laravel 敏感信息泄露。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://laravel.com/docs/master/configuration#environment-configuration
     - https://stackoverflow.com/questions/38331397/how-to-protect-env-file-in-laravel

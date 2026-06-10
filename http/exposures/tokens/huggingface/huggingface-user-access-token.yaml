@@ -1,7 +1,7 @@
 id: huggingface-user-access-token
 
 info:
-  name: HuggingFace User Access Token
+  name: HuggingFace User 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

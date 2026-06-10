@@ -1,10 +1,10 @@
 id: composer-auth-json
 
 info:
-  name: Composer-auth Json File Disclosure
+  name: Composer-auth JSON 文件泄露（暴露面识别）
   author: DhiyaneshDK
   severity: low
-  description: Composer Auth Josn file is disclosed.
+  description: 检测到对外可访问的 Composer-auth JSON 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://www.exploit-db.com/ghdb/5768
   classification:

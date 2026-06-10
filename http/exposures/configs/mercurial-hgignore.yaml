@@ -1,10 +1,10 @@
 id: mercurial-hgignore
 
 info:
-  name: Mercurial Ignore - File Disclosure
+  name: Mercurial Ignore 文件泄露（暴露面识别）
   author: DhiyaneshDK,s4e-io
   severity: info
-  description: Mercurial Ignore file disclosure was detected.
+  description: 检测到对外可访问的 Mercurial Ignore 文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://swcarpentry.github.io/hg-novice/08-ignore/
   classification:

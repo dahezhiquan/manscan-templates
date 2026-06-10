@@ -1,7 +1,7 @@
 id: twitter-client-id
 
 info:
-  name: Twitter Client ID
+  name: Twitter 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: slack-legacy-bot-token
 
 info:
-  name: Slack Legacy Bot Token
+  name: Slack Legacy Bot 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

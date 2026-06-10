@@ -1,10 +1,10 @@
 id: qdpm-info-leak
 
 info:
-  name: qdPM 9.2 - DB Credentials Exposure
+  name: qdPM 9.2 DB 凭据 暴露（暴露面识别）
   author: gy741
   severity: high
-  description: qdPM 9.2 database credentials were discovered.
+  description: 检测到对外可访问的 qdPM 9.2 DB 凭据。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.exploit-db.com/exploits/50176
   metadata:

@@ -1,10 +1,10 @@
 id: ds-store-file
 
 info:
-  name: DS_Store File - Exposed
+  name: DS_Store 文件暴露（暴露面识别）
   author: 0w4ys,pwnhxl
   severity: info
-  description: A .DS_Store file was found. This file may contain names of files that exist on the server, including backups or other files that aren't meant to be publicly available.
+  description: 检测到对外可访问的 DS_Store 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://github.com/lijiejie/ds_store_exp
   metadata:

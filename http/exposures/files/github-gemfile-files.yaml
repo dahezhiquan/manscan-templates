@@ -1,10 +1,10 @@
 id: github-gemfile-files
 
 info:
-  name: Github Gemfiles
+  name: Github Gemfiles 泄露（暴露面识别）
   author: hahwul
   severity: info
-  description: Find github page files(Gemfile / Gemfile.lock)
+  description: 检测到对外可访问的 Github Gemfiles。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 2
   tags: github,exposure,files,vuln

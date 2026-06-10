@@ -1,10 +1,10 @@
 id: readme-md
 
 info:
-  name: README.md file disclosure
+  name: README.md 文件泄露（暴露面识别）
   author: ambassify
   severity: info
-  description: Internal documentation file often used in projects which can contain sensitive information.
+  description: 检测到对外可访问的 README.md 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 1
     shodan-query: html:"README.MD"

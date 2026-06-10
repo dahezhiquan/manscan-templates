@@ -1,11 +1,11 @@
 id: phpcs-config
 
 info:
-  name: PHP_CodeSniffer Configuration Exposure - Detect
+  name: PHP_CodeSniffer 配置暴露 检测（暴露面识别）
   author: DhiyaneshDK
   severity: info
   description: |
-    PHP_CodeSniffer configuration file was detected.
+    检测到对外可访问的 PHP_CodeSniffer 配置暴露。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://github.com/squizlabs/PHP_CodeSniffer
   classification:

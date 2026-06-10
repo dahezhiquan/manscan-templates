@@ -1,10 +1,10 @@
 id: xampp-environment-variables
 
 info:
-  name: XAMPP Environment Variables Exposure
+  name: XAMPP Environment Variables 暴露（暴露面识别）
   author: melbadry9,DhiyaneshDK
   severity: low
-  description: printenv.pl file is exposed in XAMPP leaking environment variables.
+  description: 检测到对外可访问的 XAMPP Environment Variables。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 1
   tags: exposure,xampp,files,vuln

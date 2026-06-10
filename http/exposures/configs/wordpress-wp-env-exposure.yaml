@@ -1,11 +1,11 @@
 id: wordpress-wp-env-exposure
 
 info:
-  name: WordPress Configuration wp-env - Exposure
+  name: WordPress 配置 wp-env 暴露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detected the WordPress wp-env.json configuration file publicly accessible, potentially revealing the PHP version, installed plugins, themes, and development environment details.
+    检测到对外可访问的 WordPress 配置 wp-env。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://developer.wordpress.org/block-editor/reference-guides/packages/packages-env/
   metadata:

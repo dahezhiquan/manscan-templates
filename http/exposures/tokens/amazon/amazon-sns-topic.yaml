@@ -1,7 +1,7 @@
 id: amazon-sns-topic
 
 info:
-  name: Amazon SNS Topic Disclosure
+  name: Amazon SNS Topic 泄露（暴露面识别）
   author: Ice3man
   severity: info
   metadata:

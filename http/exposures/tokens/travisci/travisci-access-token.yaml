@@ -1,7 +1,7 @@
 id: travisci-access-token
 
 info:
-  name: TravisCI Access Token
+  name: TravisCI 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

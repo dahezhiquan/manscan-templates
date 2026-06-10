@@ -1,11 +1,11 @@
 id: yarn-lock
 
 info:
-  name: Yarn Lock File Disclosure
+  name: Yarn Lock 文件泄露（暴露面识别）
   author: oppsec,noraj
   severity: info
   description: |
-    The yarn.lock file stores the versions of each Yarn dependency installed. It's a lock file for package.json.
+    检测到对外可访问的 Yarn Lock 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
   metadata:

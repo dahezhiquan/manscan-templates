@@ -1,7 +1,7 @@
 id: figma-personal-token
 
 info:
-  name: Figma Personal Access Token
+  name: Figma 个人访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

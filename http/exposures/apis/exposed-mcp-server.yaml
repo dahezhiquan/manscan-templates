@@ -1,14 +1,11 @@
 id: exposed-mcp-server
 
 info:
-  name: Exposed MCP JSON-RPC 2.0 API Detection
+  name: 暴露 MCP JSON-RPC 2.0 API 检测（暴露面识别）
   author: ivan_wallarm
   severity: unknown
   description: |
-    Detects exposed Machine Control Protocol (MCP) servers through JSON-RPC 2.0 API endpoints.
-    MCP servers often provide administrative access to AI tools, LLM systems, or other automation infrastructure.
-    Exposed MCP interfaces can lead to unauthorized access, information disclosure, and potential system compromise.
-    This template tests multiple detection methods including tools/list, rpc.discover, resources/list, and prompts/list.
+    检测到对外可访问的 暴露 MCP JSON-RPC 2.0 API。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   metadata:
     verified: true
     max-request: 10

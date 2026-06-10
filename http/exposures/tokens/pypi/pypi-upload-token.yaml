@@ -1,7 +1,7 @@
 id: pypi-upload-token
 
 info:
-  name: PyPI Upload Token
+  name: PyPI Upload 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

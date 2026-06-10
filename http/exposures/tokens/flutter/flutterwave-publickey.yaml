@@ -1,7 +1,7 @@
 id: flutterwave-publickey
 
 info:
-  name: Flutterwave Public Key
+  name: Flutterwave 公钥暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: snyk-ignore-file-disclosure
 
 info:
-  name: Snyk Ignore File Disclosure
+  name: Snyk Ignore 文件泄露（暴露面识别）
   author: dhiyaneshDk
   severity: info
   reference:

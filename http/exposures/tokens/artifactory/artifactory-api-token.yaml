@@ -1,7 +1,7 @@
 id: artifactory-api-token
 
 info:
-  name: Artifactory API Token Disclosure
+  name: Artifactory API 令牌泄露（暴露面识别）
   author: Ice3man
   severity: info
   reference:

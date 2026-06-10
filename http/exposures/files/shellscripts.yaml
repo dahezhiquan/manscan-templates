@@ -1,10 +1,10 @@
 id: shellscripts
 
 info:
-  name: Public shellscripts
+  name: 公开 Shell 脚本泄露（暴露面识别）
   author: panch0r3d
   severity: low
-  description: This template checks exposure of bash scripts.
+  description: 检测到对外可访问的 Shell 脚本。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   metadata:
     max-request: 27
   tags: bash,exposure,files,vuln

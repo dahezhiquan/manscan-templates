@@ -1,11 +1,11 @@
 id: redv-super-logs
 
 info:
-  name: RED-V Super Digital Signage System RXV-A740R - Log Information Disclosure
+  name: RED-V Super Digital Signage System RXV-A740R Log 信息泄露（暴露面识别）
   author: r3Y3r53
   severity: medium
   description: |
-    The application is vulnerable to sensitive information disclosure vulnerability. An unauthenticated attacker can visit several endpoints and disclose the webserver's log file list containing sensitive system resources and debug log information running on the device.
+    检测到可直接访问的 RED-V Super Digital Signage System RXV-A740R Log 相关信息资源。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5609.php
   metadata:

@@ -1,7 +1,7 @@
 id: wireguard-preshared-key
 
 info:
-  name: WireGuard Preshared Key
+  name: WireGuard Preshared 密钥泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

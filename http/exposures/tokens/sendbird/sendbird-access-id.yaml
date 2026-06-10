@@ -1,7 +1,7 @@
 id: sendbird-access-id
 
 info:
-  name: SendBird Access ID
+  name: SendBird Access ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: npmrc-authtoken
 
 info:
-  name: Hardcoded .npmrc AuthToken
+  name: Hardcoded .npmrc AuthToken 泄露（暴露面识别）
   author: geeknik
   severity: info
   reference:

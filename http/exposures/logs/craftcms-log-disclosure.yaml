@@ -1,11 +1,11 @@
 id: craftcms-log-disclosure
 
 info:
-  name: Craft CMS - Log File Disclosure
+  name: Craft CMS 日志文件泄露（暴露面识别）
   author: pussycat0x
   severity: medium
   description: |
-    Detected exposed Craft CMS log files due to misconfiguration, allowing unauthenticated access to sensitive information including error messages, stack traces, database queries, and potentially credentials or session data.
+    检测到可直接访问的 Craft CMS 日志文件。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://craftcms.com/docs/5.x/system/logging.html
     - https://craftcms.com/knowledge-base/locating-error-logs-and-database-backups

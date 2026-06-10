@@ -1,10 +1,10 @@
 id: mysql-dump
 
 info:
-  name: MySQL - Dump Files
+  name: MySQL 转储文件泄露（暴露面识别）
   author: geeknik,dwisiswant0,ELSFA7110,mastercho
   severity: medium
-  description: A MySQL dump file was found
+  description: 检测到可下载的 MySQL 转储文件泄露。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

@@ -1,7 +1,7 @@
 id: datadog-accesstoken
 
 info:
-  name: Datadog Access Token
+  name: Datadog 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

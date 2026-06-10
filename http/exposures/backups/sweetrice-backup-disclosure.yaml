@@ -1,11 +1,11 @@
 id: sweetrice-backup-disclosure
 
 info:
-  name: SweetRice CMS 1.5.1 - Backup Disclosure
+  name: SweetRice CMS 1.5.1 备份泄露（暴露面识别）
   author: mananispiwpiw
   severity: medium
   description: |
-    Detected SweetRice-specific backups and generic .sql files exposed via directory listing in the SweetRice mysql_backup directory.
+    检测到可下载的 SweetRice CMS 1.5.1 备份。备份文件或数据库转储往往包含源码、配置、用户数据、历史记录或认证信息，一旦暴露可能直接导致敏感数据外泄。
   reference:
     - https://www.exploit-db.com/exploits/40718
   tags: sweetrice,cms,exposure,backup,misconfig

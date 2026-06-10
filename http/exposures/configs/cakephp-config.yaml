@@ -1,10 +1,10 @@
 id: cakephp-config
 
 info:
-  name: CakePHP Configuration File - Detect
+  name: CakePHP 配置文件检测（暴露面识别）
   author: DhiyaneshDk
   severity: medium
-  description: CakePHP configuration file was detected.
+  description: 检测到对外可访问的 CakePHP 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://book.cakephp.org/phinx/0/en/configuration.html
   classification:

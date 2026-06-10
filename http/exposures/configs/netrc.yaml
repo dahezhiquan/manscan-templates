@@ -1,10 +1,10 @@
 id: netrc
 
 info:
-  name: Netrc - Config File Discovery
+  name: Netrc 配置 文件 Discovery 泄露（暴露面识别）
   author: geeknik
   severity: high
-  description: Netrc configuration file was discovered.
+  description: 检测到对外可访问的 Netrc 配置 文件 Discovery。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.gnu.org/software/inetutils/manual/html_node/The-_002enetrc-file.html
   metadata:

@@ -1,7 +1,7 @@
 id: zoho-webhook-token
 
 info:
-  name: Zoho Webhook Disclosure
+  name: Zoho Webhook 泄露（暴露面识别）
   author: Ice3man
   severity: info
   metadata:

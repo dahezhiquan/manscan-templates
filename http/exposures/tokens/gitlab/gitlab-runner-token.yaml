@@ -1,7 +1,7 @@
 id: gitlab-runner-token
 
 info:
-  name: GitLab Runner Registration Token
+  name: GitLab Runner Registration 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

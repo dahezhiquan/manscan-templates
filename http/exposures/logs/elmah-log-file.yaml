@@ -1,11 +1,11 @@
 id: elmah-log-file
 
 info:
-  name: ELMAH Exposure
+  name: ELMAH 暴露（暴露面识别）
   author: shine,idealphase
   severity: high
   description: |
-    ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment. In some cases, the logs expose ASPXAUTH cookies allowing to hijack a logged in administrator session.
+    检测到可直接访问的 ELMAH。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   reference:
     - https://code.google.com/archive/p/elmah/
     - https://www.troyhunt.com/aspnet-session-hijacking-with-google/

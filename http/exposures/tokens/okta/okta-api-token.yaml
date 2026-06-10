@@ -1,7 +1,7 @@
 id: okta-api-token
 
 info:
-  name: Okta API Token
+  name: Okta API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

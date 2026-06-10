@@ -1,7 +1,7 @@
 id: reactapp-env-js
 
 info:
-  name: React App Environment Js
+  name: React App Environment Js 泄露（暴露面识别）
   author: random-robbie,rinolock
   severity: unknown
   metadata:

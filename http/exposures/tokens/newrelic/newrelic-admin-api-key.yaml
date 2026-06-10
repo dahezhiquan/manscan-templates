@@ -1,7 +1,7 @@
 id: newrelic-admin-api-key
 
 info:
-  name: Admin API Key Disclosure
+  name: Admin API 密钥泄露（暴露面识别）
   author: Ice3man
   severity: info
   reference:

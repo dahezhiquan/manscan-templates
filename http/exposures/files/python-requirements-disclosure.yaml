@@ -1,11 +1,11 @@
 id: python-requirements-disclosure
 
 info:
-  name: Python Requirements File Disclosure
+  name: Python Requirements 文件泄露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detected Python requirements.txt file. This file contains Python package dependencies and versions that could reveal technology stack, vulnerable package versions, and internal dependencies.
+    检测到对外可访问的 Python Requirements 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://pip.pypa.io/en/stable/reference/requirements-file-format/
   classification:

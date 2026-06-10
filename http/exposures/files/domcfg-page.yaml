@@ -1,10 +1,10 @@
 id: domcfg-page
 
 info:
-  name: Lotus Domino Configuration Page
+  name: Lotus Domino 配置 页面 泄露（暴露面识别）
   author: gevakun
   severity: low
-  description: Lotus Domino configuration file is exposed.
+  description: 检测到对外可访问的 Lotus Domino 配置 页面。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
   reference:
     - https://twitter.com/Wh11teW0lf/status/1295594085445709824
   metadata:

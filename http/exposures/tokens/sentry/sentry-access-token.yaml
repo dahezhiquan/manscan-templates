@@ -1,7 +1,7 @@
 id: sentry-access-token
 
 info:
-  name: Sentry Access Token
+  name: Sentry 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

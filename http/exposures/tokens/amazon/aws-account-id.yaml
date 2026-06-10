@@ -1,7 +1,7 @@
 id: aws-account-id
 
 info:
-  name: AWS Account ID
+  name: AWS 账号 ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: info
   reference:

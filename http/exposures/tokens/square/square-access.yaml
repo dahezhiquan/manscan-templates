@@ -1,7 +1,7 @@
 id: square-access
 
 info:
-  name: Square Access Token
+  name: Square 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
   severity: high
   reference:

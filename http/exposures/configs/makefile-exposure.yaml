@@ -1,11 +1,11 @@
 id: makefile-exposure
 
 info:
-  name: Makefile - Exposure
+  name: Makefile 暴露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detected Makefile configuration file was identified, which potentially exposed build process details, author information, and directory structure
+    检测到对外可访问的 Makefile。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   reference:
     - https://www.gnu.org/software/make/manual/make.html
   metadata:

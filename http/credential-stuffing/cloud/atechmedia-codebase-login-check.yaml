@@ -1,10 +1,10 @@
 id: atechmedia-codebase-login-check
 
 info:
-  name: Atechmedia/Codebase Login Check
+  name: Atechmedia/Codebase 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid Atechmedia/Codebase account.
+  description: 通过抓取登录页令牌并提交用户名和密码，依据返回的 user_session Cookie 与 302 跳转判断给定凭证是否可成功登录 Atechmedia/Codebase，适用于撞库场景下的账号有效性验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

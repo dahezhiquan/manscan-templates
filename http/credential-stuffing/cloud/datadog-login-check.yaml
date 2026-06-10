@@ -1,10 +1,10 @@
 id: datadog-login-check
 
 info:
-  name: Datadog Login Check
+  name: Datadog 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid datadog account.
+  description: 通过先提取 Datadog 登录页中的认证令牌，再提交用户名和密码，并依据返回的 dogweb 会话 Cookie 与 302 跳转判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性核验。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

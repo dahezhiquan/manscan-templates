@@ -1,10 +1,10 @@
 id: github-login-check
 
 info:
-  name: Github Login Check
+  name: GitHub 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid github account.
+  description: 该模板会先提取 GitHub 登录页中的防伪参数，再提交用户名和密码，并依据登录成功后的会话 Cookie，或跳转至双因素认证页面的行为，判断给定凭证是否有效，适用于撞库场景下的账号可登录性核验。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

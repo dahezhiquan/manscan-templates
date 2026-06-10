@@ -1,10 +1,10 @@
 id: gitea-login-check
 
 info:
-  name: gitea.com Login Check
+  name: Gitea.com 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid gitea account.
+  description: 通过向 Gitea.com 登录接口提交用户名和密码，并依据返回的 Location: / 跳转与 303 状态码判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

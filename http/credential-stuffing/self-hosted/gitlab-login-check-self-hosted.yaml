@@ -1,10 +1,10 @@
 id: gitlab-login-check-self-hosted
 
 info:
-  name: Gitlab Login Check Self Hosted
+  name: GitLab 自托管实例登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid login on self hosted GitLab instance.
+  description: 该模板会先获取 GitLab 自托管实例登录页中的 authenticity_token，再提交用户名和密码，并依据 302 跳转且响应中未出现 invalid login 提示来判断给定凭证是否有效，适用于撞库场景下的自托管 GitLab 账号验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

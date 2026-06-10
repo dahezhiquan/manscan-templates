@@ -1,10 +1,10 @@
 id: pulmi-login-check
 
 info:
-  name: pulmi.com Login Check
+  name: Pulumi 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid github account.
+  description: 通过向 Pulumi 控制台登录接口提交用户名和密码，依据响应中的 pulumiAccessToken 与 userInfo 字段判断给定凭证是否可成功登录，适用于撞库场景下的 Pulumi 账号有效性核验。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

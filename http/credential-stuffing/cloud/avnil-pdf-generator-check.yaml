@@ -1,10 +1,10 @@
 id: avnil-pdf-generator-check
 
 info:
-  name: useanvil.com Login Check
+  name: Anvil PDF Generator 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid avnil pdf generator account.
+  description: 通过向 Anvil 的 GraphQL 登录接口提交邮箱和密码，依据响应中的 email、eid 等账户字段判断给定凭证是否可成功登录 Anvil PDF Generator 服务，适用于撞库场景下的凭证有效性核验。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

@@ -1,10 +1,10 @@
 id: atlassian-login-check
 
 info:
-  name: Atlassian Login Check
+  name: Atlassian 登录反馈检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid atlassian account.
+  description: 通过向 Atlassian 认证接口提交用户名和密码，并识别 403 状态与固定的 Wrong email or password. 错误提示，判断该登录流程是否会对撞库尝试返回可区分的凭证反馈，便于进一步开展账号口令验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

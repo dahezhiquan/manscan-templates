@@ -1,10 +1,10 @@
 id: codepen-login-check
 
 info:
-  name: codepen.io Login Check
+  name: CodePen 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid codepen account.
+  description: 该模板会先获取 CodePen 登录页中的 CSRF 令牌，再提交邮箱和密码，并结合 302 跳转及未出现用户名或密码错误提示来判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

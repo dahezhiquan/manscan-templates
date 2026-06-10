@@ -1,10 +1,10 @@
 id: chefio-login-check
 
 info:
-  name: Chef.io Login Check
+  name: Chef.io 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid chef.io account.
+  description: 通过向 Chef.io 登录接口提交用户名和密码，依据响应头中的登录成功跳转地址与 302 状态码判断给定凭证是否有效，可用于撞库场景下验证 Chef.io 账号是否可被成功接管。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

@@ -1,10 +1,10 @@
 id: docker-hub-login-check
 
 info:
-  name: Docker Hub Login Check
+  name: Docker Hub 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid Docker Hub account.
+  description: 通过向 Docker Hub 登录接口提交用户名和密码，结合响应体中的 token 字段、响应头中的 token Cookie 以及 200 状态码判断给定凭证是否有效，可用于撞库场景下验证 Docker Hub 账户可登录性。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

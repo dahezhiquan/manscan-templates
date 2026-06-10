@@ -1,10 +1,10 @@
 id: postman-login-check
 
 info:
-  name: Postman Login Check
+  name: Postman 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: Checks for a valid postman account.
+  description: 通过获取 Postman 登录流程中的 CSRF 令牌后提交用户名和密码，并结合 getpostmanlogin 会话 Cookie、继续跳转标识及响应状态，判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性验证。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

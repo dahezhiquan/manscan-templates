@@ -1,72 +1,50 @@
-## Credential Stuffing Templates
-
-![credential-stuffing](https://github.com/projectdiscovery/nuclei-templates/assets/28601533/50ed7f7e-7da7-4708-8747-39b207eb8b52)
+## 撞库 Templates
 
 
-This directory contains a collection of credential stuffing templates for both cloud and self-hosted services. These templates help automate the detection and prevention of credential stuffing attempts on your organization's websites and applications using the Nuclei vulnerability scanner.
+用于检测 某个账号 + 密码，能不能成功登录某个服务
 
-### Types of Templates
 
-- **Cloud Services**: Templates for credential stuffing testing on cloud service providers.
-- **Self-Hosted Services**: Templates for credential stuffing testing on self-hosted software instances that often have custom hosting environments.
+### 模板类型
+
+- **cloud**: 用于对云服务提供商进行撞库测试的模板，比如 Datadog、GitHub、AWS 相关服务
+- **Self-Hosted**: 自托管服务模板，比如公司自己搭的 Jira、GitLab、Confluence、Jenkins 等
 
 ### Usage
 
-#### Cloud Services Template
+#### 云服务模板用法
 
-An example of using a cloud service credential stuffing template can be seen with the Datadog Login Check template:
+以检测 Datadog 登录为例：
 
-```bash
-nuclei -var username=testing@projectdiscovery.io -var password=test123 -id datadog-login-check
-```
-
-Here, the `-var` option supplies the necessary inputs (username/email and password) to the template.
-
-#### Self-Hosted Services Template
-
-An example of using a self-hosted service credential stuffing template can be seen with the Jira Login Check template:
+- 直接运行，用 -var 传入用户名和密码变量，用 -id 指定模板名称
+- 关键点：不需要提供 -u（目标网址），因为目标就是 Datadog 的官方网站，已经写在模板里了
 
 ```bash
-nuclei -u https://jira.projectdiscovery.io/ -id jira-login-check -var username=testing@projectdiscovery.io -var password=test123 
+manscan -var username=testingxxx.io -var password=test123 -id datadog-login-check
 ```
 
-In this case, you also need to provide the hostname/IP of the deployed instance using the `-u` or `--url` option along with the necessary credentials using the `-var` option.
 
-### Attack Types
+#### 自托管服务模板用法
 
-By default, Nuclei uses Pitchfork mode in which it takes the first line from `email.txt` as the username input and the first line from `pass.txt` as the password parameter input. Ensure that both `email.txt` and `pass.txt` have an equal number of entries, with email/password combinations aligned on the same line in both files.
+以检测 Jira 登录为例：
 
-Starting with Nuclei 2.8, you can override the default behavior using the `-at` or `-attack-type` CLI option. Specifying the attack-type option as `clusterbomb` enables convenient verification of weak credentials for a list of given email addresses across various services.
-
-For example, assuming `email.txt` contains:
-
-```
-email1@example.com
-email2@example.com
-email3@example.com
-```
-
-And `pass.txt` contains:
-
-```
-password1
-password2
-password3
-```
-
-The command below will check credential validity by sequentially testing each email from `email.txt` with all entries in `pass.txt` across different hosts stored in `jira.txt`:
+- 需要通过 -u 选项手动指定你公司 Jira 实例的网址
+- 必须提供 -u，因为模板不知道你私有服务器的地址
 
 ```bash
-cat jira.txt | nuclei -var username=email.txt -var password=pass.txt -id jira-login-check -attack-type clusterbomb
+manscan -u https://jira.xxx.io/ -id jira-login-check -var username=testing@xxx.io -var password=test123 
 ```
 
-Developing custom target-specific templates for internal/custom portals can yield even more comprehensive results.
 
-### Contributing and Updating Templates
+### 攻击类型（Attack Types）
 
-Help us improve the credential stuffing templates by contributing new templates, reporting bugs, or requesting new features. Contributions are most welcome!
+#### Pitchfork（默认模式）
 
+例如，将 email.txt（账号文件）和 pass.txt（密码文件）按行一对一对应测试
 
-Fix issues, add new templates, and update existing ones by submitting a pull request. Always adhere to the best practices for YAML syntax and ensure that your template is tested before submitting.
+适用场景：当你已知明确的“某邮箱对应某密码”组合，想验证它们是否在其他服务上有效时
 
-Please refer to the template documentation to learn more about writing and submitting new templates to this repository: https://docs.projectdiscovery.io/templates/introduction
+#### Cluster Bomb（集束炸弹）
+
+进行笛卡尔积测试。遍历 email.txt 中的每一个账号，分别与 pass.txt 中的每一个密码组合进行测试
+
+适用场景：知道一堆账号和一堆弱密码，想大面积撒网，测试哪些账号使用了这些常见弱密码

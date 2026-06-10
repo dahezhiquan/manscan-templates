@@ -1,10 +1,10 @@
 id: locklizard-webviewer-panel
 
 info:
-  name: Locklizard Web Viewer Login Panel - Detect
+  name: Locklizard Web Viewer 登录面板识别（暴露面识别）
   author: righettod
   severity: info
-  description: Locklizard Web Viewer login panel was detected.
+  description: 该模板通过识别 Locklizard Web Viewer 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.locklizard.com/pdf_security_webviewer/
   classification:

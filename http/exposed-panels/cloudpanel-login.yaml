@@ -1,7 +1,7 @@
 id: cloudpanel-login
 
 info:
-  name: CloudPanel Login - Detect
+  name: CloudPanel 登录识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

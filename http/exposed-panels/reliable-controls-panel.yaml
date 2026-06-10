@@ -1,14 +1,11 @@
 id: reliable-controls-panel
 
 info:
-  name: Reliable Controls MACH-Pro - Login Panel
+  name: Reliable Controls MACH-Pro - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Reliable Controls MACH-ProWebSys is a web-based building controller for
-    HVAC, lighting, and energy management using BACnet/IP. These controllers
-    are widely deployed in commercial buildings across North America and are
-    often directly internet-facing with no VPN protection.
+    该模板通过识别 Reliable Controls MACH-Pro 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://reliablecontrols.com/products/mach-prowebsys/
   metadata:

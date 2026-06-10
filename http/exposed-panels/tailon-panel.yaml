@@ -1,7 +1,7 @@
 id: tailon-panel
 
 info:
-  name: Tailon Panel - Detect
+  name: Tailon 面板识别（暴露面识别）
   author: ritikchaddha
   severity: unknown
   reference:

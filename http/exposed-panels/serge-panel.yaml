@@ -1,11 +1,11 @@
 id: serge-panel
 
 info:
-  name: Serge Panel - Detect
+  name: Serge 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Serge is a web interface for chatting with Alpaca through llama.cpp. This template detects the presence of a Serge chat interface.
+    该模板通过识别 Serge 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/serge-chat/serge
     - https://serge.chat

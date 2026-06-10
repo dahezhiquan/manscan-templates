@@ -1,11 +1,11 @@
 id: google-adk-api-exposed
 
 info:
-  name: Google ADK API Exposure
+  name: Google ADK API 暴露（暴露面识别）
   author: princechaddha
   severity: unknown
   description: |
-    Detects the exposure of the Google Agent Development Kit (ADK) API, which may lead to sensitive information disclosure or unauthorized access.
+    该模板用于识别 Google ADK API 相关暴露入口或页面特征。若命中，说明目标可能对外公开了可访问的管理或信息接口，存在进一步泄露系统信息、配置数据或服务细节的风险。
   reference:
     - https://google.github.io/adk-docs/
     - https://github.com/google/adk-samples

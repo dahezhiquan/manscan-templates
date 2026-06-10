@@ -1,13 +1,13 @@
 id: cisco-prime-license-manager-panel
 
 info:
-  name: Cisco Prime License Manager - Detect
+  name: Cisco Prime License Manager 识别（暴露面识别）
   author: rxerium
   severity: info
   reference:
     - https://www.cisco.com/c/en/us/support/cloud-systems-management/prime-license-manager/series.html
   description: |
-    Detected exposed Cisco Prime License Manager portals
+    该模板用于识别 Cisco Prime License Manager 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   metadata:
     max-request: 1
     shodan-query: http.title:"Cisco Prime License Manager"

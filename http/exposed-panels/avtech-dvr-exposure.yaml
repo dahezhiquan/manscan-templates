@@ -1,10 +1,10 @@
 id: avtech-dvr-exposure
 
 info:
-  name: AVTECH AVC798HA DVR - Information Exposure
+  name: AVTECH AVC798HA DVR - Information 暴露（暴露面识别）
   author: geeknik
   severity: low
-  description: AVTECH AVC798HA DVR is susceptible to information exposure. CGI scripts in the /cgi-bin/nobody directory can be accessed without authentication. An attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板用于识别 AVTECH AVC798HA DVR - Information 相关暴露入口或页面特征。若命中，说明目标可能对外公开了可访问的管理或信息接口，存在进一步泄露系统信息、配置数据或服务细节的风险。
   reference:
     - http://www.avtech.com.tw/
   metadata:

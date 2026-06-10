@@ -1,7 +1,7 @@
 id: zenml-dashboard-panel
 
 info:
-  name: ZenML Dashboard Panel - Detect
+  name: ZenML Dashboard 面板识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

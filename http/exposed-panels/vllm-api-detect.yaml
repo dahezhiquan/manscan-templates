@@ -1,11 +1,11 @@
 id: vllm-api-detect
 
 info:
-  name: vLLM OpenAI-Compatible Server - Detect
+  name: vLLM OpenAI-Compatible Server 识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-   Detected vLLM was a high-throughput LLM serving engine that exposed an OpenAI-compatible HTTP API on TCP 8000 with no authentication by default.
+    该模板用于识别 vLLM OpenAI-Compatible Server 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://github.com/vllm-project/vllm
     - https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html

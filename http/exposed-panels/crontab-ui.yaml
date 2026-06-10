@@ -1,7 +1,7 @@
 id: crontab-ui
 
 info:
-  name: Crontab UI - Dashboard Exposure
+  name: Crontab UI - Dashboard 暴露（暴露面识别）
   author: DhiyaneshDk
   severity: high
   reference:

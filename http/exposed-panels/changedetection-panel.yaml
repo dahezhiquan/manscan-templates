@@ -1,11 +1,11 @@
 id: changedetection-panel
 
 info:
-  name: Changedetection.io Panel - Detect
+  name: Changedetection.io 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Change Detection is an open-source service which allows you to detect changes on websites
+    该模板通过识别 Changedetection.io 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/dgtlmoon/changedetection.io
     - https://changedetection.io/

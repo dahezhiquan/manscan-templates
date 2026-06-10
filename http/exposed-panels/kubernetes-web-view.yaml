@@ -1,10 +1,10 @@
 id: kubernetes-web-view
 
 info:
-  name: Kubernetes Local Cluster Web View Panel- Detect
+  name: Kubernetes Local Cluster Web View Panel 识别（暴露面识别）
   author: tess
   severity: medium
-  description: Kubernetes local cluster web view panel discovered.
+  description: 该模板通过识别 Kubernetes Local Cluster Web View 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5

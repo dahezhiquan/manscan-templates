@@ -1,11 +1,11 @@
 id: xymon-exposure
 
 info:
-  name: Xymon - Exposure
+  name: Xymon 暴露（暴露面识别）
   author: theamanrawat
   severity: low
   description: |
-    Detected the exposure of the Xymon monitoring system interface.
+    该模板用于识别 Xymon 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://xymon.com/
   metadata:

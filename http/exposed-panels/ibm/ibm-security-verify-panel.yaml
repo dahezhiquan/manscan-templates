@@ -1,11 +1,11 @@
 id: ibm-security-verify-panel
 
 info:
-  name: IBM Security Verify Access Login - Panel
+  name: IBM Security Verify Access Login 面板（暴露面识别）
   author: johnk3r
   severity: info
   description: |
-    IBM Security Verify Access login panel was detected.
+    该模板通过识别 IBM Security Verify Access Login 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.ibm.com/docs/en/sva/10.0.8?topic=overview-introduction-security-verify-access
   metadata:

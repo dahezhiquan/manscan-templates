@@ -1,11 +1,11 @@
 id: windmill-panel
 
 info:
-  name: Windmill Panel - Detect
+  name: Windmill 面板识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-    Windmill panel was detected. Windmill (windmill.dev) is an open-source developer platform for workflows, scripts and internal apps, often self-hosted as a Postgres-backed UI. Exposed instances may reveal scripts, secrets and connected resources, and provide an authenticated path to script execution.
+    该模板用于识别 Windmill 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/windmill-labs/windmill
     - https://windmill.dev/

@@ -1,10 +1,10 @@
 id: mikrotik-routeros
 
 info:
-  name: MikroTik Router OS Login Panel - Detect
+  name: MikroTik Router OS 登录面板识别（暴露面识别）
   author: gy741
   severity: info
-  description: MikroTik Router OS login panel was detected.
+  description: 该模板通过识别 MikroTik Router OS 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://systemweakness.com/routeros-user-with-just-ftp-policy-can-write-to-filesystem-cve-2021-27221-e3e45d780dfe
   classification:

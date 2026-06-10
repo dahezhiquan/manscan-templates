@@ -1,11 +1,11 @@
 id: molgenis-panel
 
 info:
-  name: Molgenis Panel - Exposure
+  name: Molgenis Panel 暴露（暴露面识别）
   author: matejsmycka
   severity: info
   description: |
-    Molgenis emx2 data platform is a software that provides a web-based interface for managing and analyzing data. It might contain sensitive information without authentication.
+    该模板用于识别 Molgenis 相关暴露入口或页面特征。若命中，说明目标可能对外公开了可访问的管理或信息接口，存在进一步泄露系统信息、配置数据或服务细节的风险。
   reference:
     - https://molgenis.org/
     - https://github.com/molgenis/molgenis-emx2

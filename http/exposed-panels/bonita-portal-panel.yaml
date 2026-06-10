@@ -1,11 +1,11 @@
 id: bonita-portal-panel
 
 info:
-  name: Bonita Portal Login - Detect
+  name: Bonita Portal 登录识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   description: |
-    Detects the presence of Bonita Portal login page.
+    该模板通过识别 Bonita Portal 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   metadata:
     verified: true
     max-request: 1

@@ -1,7 +1,7 @@
 id: canon-ir-adv
 
 info:
-  name: Canon iR-ADV Panel - Detect
+  name: Canon iR-ADV 面板识别（暴露面识别）
   author: ritikchaddha,matejsmycka
   severity: info
   metadata:

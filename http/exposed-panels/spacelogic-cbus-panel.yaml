@@ -1,7 +1,7 @@
 id: spacelogic-cbus-panel
 
 info:
-  name: SpaceLogic C-Bus Home Panel - Detect
+  name: SpaceLogic C-Bus Home 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   metadata:

@@ -1,10 +1,10 @@
 id: activemq-panel
 
 info:
-  name: Apache ActiveMQ Exposure
+  name: Apache ActiveMQ 暴露（暴露面识别）
   author: pdteam,righettod
   severity: info
-  description: An Apache ActiveMQ implementation was discovered.
+  description: 该模板用于识别 Apache ActiveMQ 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://activemq.apache.org/
     - https://activemq.apache.org/components/classic/documentation/rest

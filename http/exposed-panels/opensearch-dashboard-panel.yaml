@@ -1,11 +1,11 @@
 id: opensearch-dashboard-panel
 
 info:
-  name: OpenSearch Dashboard Panel - Detect
+  name: OpenSearch Dashboard 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    OpenSearch Dashboard is a visualization and management tool for OpenSearch. This template detects the presence of the OpenSearch Dashboard login panel, which is the default authentication interface for accessing the dashboard.
+    该模板通过识别 OpenSearch Dashboard 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
   reference:
     - https://opensearch.org/docs/latest/dashboards/index/
   metadata:

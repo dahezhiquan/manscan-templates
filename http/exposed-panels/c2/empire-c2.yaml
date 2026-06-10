@@ -1,11 +1,11 @@
 id: empire-c2
 
 info:
-  name: Empire C2 - Detect
+  name: Empire C2 识别（暴露面识别）
   author: pussycat0x
   severity: info
   description: |
-    Empire is a post-exploitation and adversary emulation framework that is used to aid Red Teams and Penetration Testers. The Empire server is written in Python 3 and is modular to allow operator flexibility. Empire comes built-in with a client that can be used remotely to access the server. There is also a GUI available for remotely accessing the Empire server.
+    该模板通过识别 Empire C2 相关页面或响应特征，判断目标是否暴露了疑似 C2、窃密或钓鱼基础设施面板。若命中，可作为外部暴露面排查、威胁狩猎与恶意基础设施识别的线索。
   reference:
     - https://github.com/thehappydinoa/awesome-censys-queries#security-applications
     - https://bc-security.gitbook.io/empire-wiki/

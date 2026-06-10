@@ -1,11 +1,11 @@
 id: jedox-web-panel
 
 info:
-  name: Jedox Web Login Panel - Detect
+  name: Jedox Web 登录面板识别（暴露面识别）
   author: Team Syslifters / Christoph MAHRL,Aron MOLNAR,Patrick PIRKER,Michael WEDL
   severity: info
   description: |
-    Jedox is an Enterprise Performance Management software which is used for planning, analytics and reporting  in finance and other areas such as sales, human resources and procurement.
+    该模板通过识别 Jedox Web 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.jedox.com
   classification:

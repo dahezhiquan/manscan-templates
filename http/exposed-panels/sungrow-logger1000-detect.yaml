@@ -1,10 +1,10 @@
 id: sungrow-logger1000-detect
 
 info:
-  name: SUNGROW Logger1000 Panel - Detect
+  name: SUNGROW Logger1000 面板识别（暴露面识别）
   author: gy741
   severity: info
-  description: SUNGROW (Solar Energy Inverter Monitoring Devices) Logger1000 panel was detected.
+  description: 该模板通过识别 SUNGROW Logger1000 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.europe-solarstore.com/download/Sungrow/Sungrow-data-logger-1000_1000B-usert-manual.pdf
   classification:

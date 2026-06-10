@@ -1,10 +1,10 @@
 id: open-stack-dashboard-login
 
 info:
-  name: OpenStack Dashboard Login Panel - Detect
+  name: OpenStack Dashboard 登录面板识别（暴露面识别）
   author: dhiyaneshDK,hackergautam
   severity: info
-  description: OpenStack Dashboard login panel was detected.
+  description: 该模板通过识别 OpenStack 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
   reference:
     - https://www.exploit-db.com/ghdb/6464
   classification:

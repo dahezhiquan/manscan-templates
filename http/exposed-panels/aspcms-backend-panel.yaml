@@ -1,11 +1,11 @@
 id: aspcms-backend-panel
 
 info:
-  name: Aspcms Backend Panel - Detect
+  name: Aspcms Backend 面板识别（暴露面识别）
   author: SleepingBag945
   severity: info
   description: |
-    ASPcms /plug/oem/AspCms_OEMFun.asp leak backend url.
+    该模板通过识别 Aspcms Backend 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/GREENHAT7/pxplan/blob/main/goby_pocs/Aspcms_Backend_Leak.json
   classification:

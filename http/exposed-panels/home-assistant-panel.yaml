@@ -1,7 +1,7 @@
 id: home-assistant-panel
 
 info:
-  name: Home Assistant Panel
+  name: Home Assistant 面板（暴露面识别）
   author: fabaff,daffainfo,lum8rjack
   severity: info
   reference:

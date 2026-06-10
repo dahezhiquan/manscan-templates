@@ -1,11 +1,11 @@
 id: ms-exchange-web-service
 
 info:
-  name: Microsoft Exchange Web Service - Detect
+  name: Microsoft Exchange Web Service 识别（暴露面识别）
   author: bhutch,userdehghani
   severity: info
   description: |
-    Microsoft Exchange Web Services was detected.
+    该模板用于识别 Microsoft Exchange Web Service 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/start-using-web-services-in-exchange
     - https://pentestlab.blog/tag/ews/

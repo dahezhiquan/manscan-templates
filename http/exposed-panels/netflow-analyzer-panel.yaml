@@ -1,7 +1,7 @@
 id: netflow-analyzer-panel
 
 info:
-  name: Netflow Analyzer Login - Panel
+  name: Netflow Analyzer Login 面板（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

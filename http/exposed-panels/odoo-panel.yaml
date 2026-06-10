@@ -1,7 +1,7 @@
 id: odoo-panel
 
 info:
-  name: Odoo - Panel Detect
+  name: Odoo 面板识别（暴露面识别）
   author: DhiyaneshDK,righettod
   severity: info
   classification:

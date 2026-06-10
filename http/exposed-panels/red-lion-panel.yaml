@@ -1,7 +1,7 @@
 id: red-lion-panel
 
 info:
-  name: Red Lion Control Panel - Detect
+  name: Red Lion Control 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   metadata:

@@ -1,11 +1,11 @@
 id: openshift-oauth-proxy-panel
 
 info:
-  name: OpenShift OAuth Proxy - Panel Detect
+  name: OpenShift OAuth Proxy 面板识别（暴露面识别）
   author: r3dg33k
   severity: info
   description: |
-    Detects OpenShift OAuth Proxy login endpoints via `_oauth_proxy_csrf` or `_oauth_proxy` cookie and login page content. Checks both the default port and port 9001.
+    该模板通过识别 OpenShift OAuth Proxy 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   metadata:
     verified: true
     max-request: 2

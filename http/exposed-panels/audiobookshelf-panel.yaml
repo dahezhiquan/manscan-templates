@@ -1,7 +1,7 @@
 id: audiobookshelf-panel
 
 info:
-  name: Audiobookshelf Login Panel - Detect
+  name: Audiobookshelf 登录面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   reference:

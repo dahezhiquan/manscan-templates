@@ -1,11 +1,11 @@
 id: headlamp-panel
 
 info:
-  name: Headlamp Kubernetes UI Panel - Detect
+  name: Headlamp Kubernetes UI 面板识别（暴露面识别）
   author: shamo0
   severity: medium
   description: |
-    Detected Headlamp Kubernetes Web UI panel exposed, which could lead to unauthorized access to Kubernetes cluster management if not properly secured.
+    该模板用于识别 Headlamp Kubernetes UI 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://headlamp.dev/
     - https://github.com/kubernetes-sigs/headlamp

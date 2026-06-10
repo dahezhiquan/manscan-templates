@@ -1,13 +1,11 @@
 id: deep-sea-electronics-dse855-detect
 
 info:
-  name: Deep Sea Electronics DSE 855 Generator Controller - Detect
+  name: Deep Sea Electronics DSE 855 Generator Controller 识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Deep Sea Electronics DSE 855 is a generator/mains automatic transfer switch (ATS) controller
-    with a built-in HTTP web server for remote monitoring and configuration of generator control systems.
-    The interface is commonly exposed on port 8090 and requires no authentication by default.
+    该模板用于识别 Deep Sea Electronics DSE 855 Generator Controller 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.deepseaelectronics.com/products/auto-mains-failure-modules/855.html
   metadata:

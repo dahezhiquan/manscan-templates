@@ -1,7 +1,7 @@
 id: sevone-nms-network-manager
 
 info:
-  name: SevOne NMS Network Manager
+  name: SevOne NMS Network Manager 面板识别（暴露面识别）
   author: pussycat0x
   severity: info
   metadata:

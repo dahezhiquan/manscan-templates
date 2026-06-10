@@ -1,7 +1,7 @@
 id: yellowfin-panel
 
 info:
-  name: Yellowfin Information Collaboration - Detect
+  name: Yellowfin Information Collaboration 识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

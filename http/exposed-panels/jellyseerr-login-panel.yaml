@@ -1,7 +1,7 @@
 id: jellyseerr-login-panel
 
 info:
-  name: Jellyseerr Login Panel - Detect
+  name: Jellyseerr 登录面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   reference:

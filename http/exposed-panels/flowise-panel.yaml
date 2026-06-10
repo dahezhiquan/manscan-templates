@@ -1,11 +1,11 @@
 id: flowise-panel
 
 info:
-  name: Flowise Panel - Detect
+  name: Flowise 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Flowise panel was detected. Flowise is an open-source drag-and-drop LLM flow builderand AI agent platform. Exposed instances may reveal AI workflow configurations, API keys, and connected data sources.
+    该模板用于识别 Flowise 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/FlowiseAI/Flowise
     - https://flowiseai.com/

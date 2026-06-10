@@ -1,10 +1,10 @@
 id: cgit-panel
 
 info:
-  name: CGIT - Detect
+  name: CGIT 识别（暴露面识别）
   author: tess,righettod
   severity: info
-  description: CGIT panel was detected.
+  description: 该模板通过识别 CGIT 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://git.zx2c4.com/cgit/about/
   classification:

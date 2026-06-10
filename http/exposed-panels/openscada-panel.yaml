@@ -1,13 +1,11 @@
 id: openscada-panel
 
 info:
-  name: OpenSCADA - Panel
+  name: OpenSCADA 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    OpenSCADA is an open-source SCADA (Supervisory Control and Data Acquisition)
-    system. Exposed instances may provide access to industrial control interfaces
-    and operational technology (OT) data without authentication.
+    该模板用于识别 OpenSCADA 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://oscada.org
     - https://sourceforge.net/projects/oscada/

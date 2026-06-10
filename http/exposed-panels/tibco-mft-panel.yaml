@@ -1,11 +1,11 @@
 id: tibco-mft-panel
 
 info:
-  name: TIBCO Managed File Transfer - Panel
+  name: TIBCO Managed File Transfer 面板（暴露面识别）
   author: Th3l0newolf
   severity: info
   description: |
-    TIBCO Managed File Transfer Login Panel was discovered.
+    该模板通过识别 TIBCO Managed File Transfer 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.tibco.com/products/managed-file-transfer
   metadata:

@@ -1,7 +1,7 @@
 id: sophos-web-appliance
 
 info:
-  name: Sophos Web Appliance
+  name: Sophos Web Appliance 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

@@ -1,13 +1,11 @@
 id: outback-power-detect
 
 info:
-  name: OutBack Power Mate3s Gateway - Detect
+  name: OutBack Power Mate3s Gateway 识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    OutBack Power Mate3s is a system hub and gateway for OutBack FX-series inverter-chargers
-    used in off-grid, grid-hybrid, and battery backup solar power systems.
-    The built-in web interface exposes system status, battery metrics, and inverter data.
+    该模板通过识别 OutBack Power Mate3s Gateway 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.outbackpower.com/outback-products/communications/detail/mate3s
   metadata:

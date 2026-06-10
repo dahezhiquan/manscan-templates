@@ -1,11 +1,11 @@
 id: sillytavern-panel
 
 info:
-  name: SillyTavern Panel - Detect
+  name: SillyTavern 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    SillyTavern was detected. SillyTavern is a character-based AI roleplay and chat frontend that connects to local or remote LLM backends. Exposed instances may allow unauthenticated access to AI models and conversation history.
+    该模板用于识别 SillyTavern 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/SillyTavern/SillyTavern
     - https://docs.sillytavern.app/

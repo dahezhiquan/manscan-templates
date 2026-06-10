@@ -1,12 +1,11 @@
 id: metaflow-ui-panel
 
 info:
-  name: Metaflow UI Panel - Detect
+  name: Metaflow UI 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Metaflow is an open-source ML platform created by Netflix for building and managing real-life data science projects.
-    The Metaflow UI provides a web interface for monitoring and managing Metaflow runs and flows.
+    该模板通过识别 Metaflow UI 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/Netflix/metaflow-ui
     - https://metaflow.org

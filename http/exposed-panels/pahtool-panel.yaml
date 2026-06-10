@@ -1,11 +1,11 @@
 id: pahtool-panel
 
 info:
-  name: PAHTool Login Panel - Detect
+  name: PAHTool 登录面板识别（暴露面识别）
   author: righettod
   severity: info
   description: |
-    PAHTool login panel was detected.
+    该模板通过识别 PAHTool 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - http://www.inovultus.com/index.html
   metadata:

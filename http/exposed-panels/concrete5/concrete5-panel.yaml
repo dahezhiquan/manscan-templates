@@ -1,10 +1,10 @@
 id: concrete5-panel
 
 info:
-  name: Concrete5 Login Panel - Detect
+  name: Concrete5 登录面板识别（暴露面识别）
   author: dhiyaneshDk
   severity: info
-  description: Concrete5 login panel was detected.
+  description: 该模板通过识别 Concrete5 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

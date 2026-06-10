@@ -1,11 +1,11 @@
 id: security-onion-panel
 
 info:
-  name: Security Onion Panel - Detect
+  name: Security Onion 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Security Onion is a free and open source Linux distribution for intrusion detection, security monitoring, and log management. It includes CyberChef, NetworkMiner, and many other security tools.
+    该模板通过识别 Security Onion 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://securityonionsolutions.com/
     - https://github.com/Security-Onion-Solutions/securityonion

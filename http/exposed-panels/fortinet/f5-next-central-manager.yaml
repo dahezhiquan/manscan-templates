@@ -1,11 +1,11 @@
 id: f5-next-central-manager
 
 info:
-  name: F5 Next Central Manager Panel - Detect
+  name: F5 Next Central Manager 面板识别（暴露面识别）
   author: EgemenKochisarli
   severity: info
   description: |
-    F5 Next Central Manager login panel was detected.
+    该模板通过识别 F5 Next Central Manager 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://clouddocs.f5.com/bigip-next/latest/use_cm/
   classification:

@@ -1,11 +1,11 @@
 id: gitlab-saml
 
 info:
-  name: Gitlab SAML - Detection
+  name: Gitlab SAML - 识别（暴露面识别）
   author: rootxharsh,iamnoooob,pdresearch
   severity: info
   description: |
-    The presence of SAML-based authentication on GitLab instances. SAML is commonly used for Single Sign-On (SSO) integrations, which allows users to authenticate with GitLab using an external Identity Provider (IdP).
+    该模板用于识别 Gitlab SAML 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   metadata:
     verified: true
     max-request: 1

@@ -1,10 +1,10 @@
 id: adhoc-transfer-panel
 
 info:
-  name: WS-FTP Ad Hoc Transfer Panel - Detect
+  name: WS-FTP Ad Hoc Transfer 面板识别（暴露面识别）
   author: johnk3r
   severity: info
-  description: WS_FTP Ad Hoc panel was detected.
+  description: 该模板通过识别 WS-FTP Ad Hoc Transfer 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   metadata:
     verified: true
     max-request: 1

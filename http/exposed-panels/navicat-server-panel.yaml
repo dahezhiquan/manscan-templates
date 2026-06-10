@@ -1,11 +1,11 @@
 id: navicat-server-panel
 
 info:
-  name: Navicat On-Prem Server Panel - Detect
+  name: Navicat On-Prem Server 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    Navicat On-Prem Server is an on-premise solution that provides you with the option to host a cloud environment for storing Navicat objects internally at your location. In our On-Prem environment, you can enjoy complete control over your system and maintain 100% privacy. It is secure and reliable that allow you to maintain a level of control that the cloud often cannot.
+    该模板通过识别 Navicat On-Prem Server 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   metadata:
     verified: true
     max-request: 2

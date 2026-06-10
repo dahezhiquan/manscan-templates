@@ -1,14 +1,11 @@
 id: osisoft-pi-vision-panel
 
 info:
-  name: OSIsoft PI Vision - Login Panel
+  name: OSIsoft PI Vision - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    OSIsoft PI Vision (now AVEVA PI Vision) is a web-based data visualisation
-    platform for the PI System, widely used in energy, utilities, oil and gas,
-    and manufacturing for real-time operational data monitoring. Exposed instances
-    may provide access to sensitive operational technology data.
+    该模板通过识别 OSIsoft PI Vision 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.aveva.com/en/products/pi-vision/
     - https://docs.aveva.com/bundle/pi-vision/

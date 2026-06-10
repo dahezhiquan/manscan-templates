@@ -1,13 +1,11 @@
 id: clearscada-panel
 
 info:
-  name: Schneider Electric ClearSCADA - Panel
+  name: Schneider Electric ClearSCADA 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    ClearSCADA (now branded as EcoStruxure Geo SCADA Expert) is a Schneider Electric
-    SCADA platform used in water, oil and gas, and utilities sectors. Exposed instances
-    may provide unauthenticated access to industrial process data and control interfaces.
+    该模板用于识别 Schneider Electric ClearSCADA 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.se.com/ww/en/work/products/product-launch/scada/
     - https://www.se.com/us/en/faqs/FA298792/

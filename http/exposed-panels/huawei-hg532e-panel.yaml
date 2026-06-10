@@ -1,10 +1,10 @@
 id: huawei-hg532e-panel
 
 info:
-  name: Huawei HG532e Router Panel - Detect
+  name: Huawei HG532e Router 面板识别（暴露面识别）
   author: idealphase
   severity: info
-  description: Huawei HG532e router login panel was detected. After installation, both the default username and default password are user.
+  description: 该模板通过识别 Huawei HG532e Router 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://setuprouter.com/router/huawei/hg532e/1194.pdf
     - https://www.192-168-1-1-ip.co/router/huawei/hg532e/2186/

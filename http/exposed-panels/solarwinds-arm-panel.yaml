@@ -1,11 +1,11 @@
 id: solarwinds-arm-panel
 
 info:
-  name: SolarWinds ARM (Access Rights Manager) - Detect
+  name: SolarWinds ARM (Access Rights Manager) 识别（暴露面识别）
   author: bhutch
   severity: info
   description: |
-    SolarWinds ARM login panel was detected.
+    该模板通过识别 SolarWinds ARM (Access Rights Manager) 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.solarwinds.com/access-rights-manager
   classification:

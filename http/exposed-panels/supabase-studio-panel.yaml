@@ -1,11 +1,11 @@
 id: supabase-studio-panel
 
 info:
-  name: Supabase Studio Panel - Detect
+  name: Supabase Studio 面板识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-    Supabase Studio login panel was detected. The admin dashboard shipped with Supabase, the popular open-source Firebase alternative (Postgres + auth + realtime + storage + edge functions).
+    该模板通过识别 Supabase Studio 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
   reference:
     - https://github.com/supabase/supabase
     - https://supabase.com/docs/guides/self-hosting

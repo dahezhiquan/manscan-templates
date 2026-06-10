@@ -1,7 +1,7 @@
 id: aws-ec2-autoscale
 
 info:
-  name: AWS EC2 Auto Scaling Lab
+  name: AWS EC2 Auto Scaling Lab 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

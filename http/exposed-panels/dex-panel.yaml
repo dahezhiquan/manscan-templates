@@ -1,7 +1,7 @@
 id: dex-panel
 
 info:
-  name: Dex Authentication - Panel
+  name: Dex Authentication 面板（暴露面识别）
   author: rxerium
   severity: info
   reference:

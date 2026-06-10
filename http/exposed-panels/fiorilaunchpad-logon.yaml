@@ -1,10 +1,10 @@
 id: fiorilaunchpad-logon
 
 info:
-  name: Fiori Launchpad Login Panel - Detect
+  name: Fiori Launchpad 登录面板识别（暴露面识别）
   author: dhiyaneshDK
   severity: info
-  description: Fiori Launchpad login panel was detected.
+  description: 该模板通过识别 Fiori Launchpad 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.exploit-db.com/ghdb/6793
   classification:

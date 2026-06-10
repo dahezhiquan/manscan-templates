@@ -1,11 +1,11 @@
 id: supershell-c2
 
 info:
-  name: Supershell C2 - Detect
+  name: Supershell C2 识别（暴露面识别）
   author: pussycat0x
   severity: info
   description: |
-    Supershell is a C2 remote control platform accessed through WEB services. By establishing a reverse SSH tunnel, a fully interactive shell can be obtained, and it supports multi-platform architecture Payload.
+    该模板通过识别 Supershell C2 相关页面或响应特征，判断目标是否暴露了疑似 C2、窃密或钓鱼基础设施面板。若命中，可作为外部暴露面排查、威胁狩猎与恶意基础设施识别的线索。
   reference:
     - https://twitter.com/S4nsLimit3/status/1693619836339859497
     - https://github.com/tdragon6/Supershell/blob/main/README_EN.md

@@ -1,10 +1,10 @@
 id: odoo-database-manager
 
 info:
-  name: Odoo - Database Manager Discovery
+  name: Odoo - Database Manager Discovery 面板识别（暴露面识别）
   author: __Fazal,R3dg33k
   severity: low
-  description: Odoo database manager was discovered.
+  description: 该模板用于识别 Odoo - Database Manager Discovery 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   classification:
     cpe: cpe:2.3:a:odoo:odoo:*:*:*:*:*:*:*:*
   metadata:

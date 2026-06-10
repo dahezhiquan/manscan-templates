@@ -1,11 +1,11 @@
 id: couchbase-server-console
 
 info:
-  name: Couchbase Server Console - Detect
+  name: Couchbase Server Console 识别（暴露面识别）
   author: Th3l0newolf
   severity: info
   description: |
-    Couchbase Server administrative console was discovered.
+    该模板通过识别 Couchbase Server Console 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

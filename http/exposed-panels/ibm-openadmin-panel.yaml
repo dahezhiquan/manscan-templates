@@ -1,7 +1,7 @@
 id: ibm-openadmin-panel
 
 info:
-  name: IBM OpenAdmin Tool - Panel
+  name: IBM OpenAdmin Tool 面板（暴露面识别）
   author: DhiyaneshDK
   severity: info
   metadata:

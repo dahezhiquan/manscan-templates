@@ -1,7 +1,7 @@
 id: compalex-panel-detect
 
 info:
-  name: Compalex Panel - Detect
+  name: Compalex 面板识别（暴露面识别）
   author: MaStErCho
   severity: medium
   reference:

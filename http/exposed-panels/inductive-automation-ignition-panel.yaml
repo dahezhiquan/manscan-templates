@@ -1,15 +1,11 @@
 id: inductive-automation-ignition-panel
 
 info:
-  name: Inductive Automation Ignition - Gateway Panel
+  name: Inductive Automation Ignition - Gateway 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Inductive Automation Ignition is a widely-deployed industrial SCADA/HMI
-    platform used in manufacturing, utilities, and process industries. The
-    Ignition Gateway web interface provides access to project management,
-    OPC-UA tag browsing, and system configuration. Exposed gateways may
-    allow unauthenticated access to project lists and system information.
+    该模板用于识别 Inductive Automation Ignition - Gateway 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://inductiveautomation.com/ignition/
     - https://docs.inductiveautomation.com/docs/8.1/ignition-gateway-interface

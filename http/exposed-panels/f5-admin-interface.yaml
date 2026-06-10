@@ -1,11 +1,11 @@
 id: f5-admin-interface
 
 info:
-  name: F5 Admin Interface - Detect
+  name: F5 Admin Interface 识别（暴露面识别）
   author: drewvravick,righettod
   severity: info
   description: |
-    Detects F5 Admin Interfaces.
+    该模板用于识别 F5 Admin Interface 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   metadata:
     verified: true
     max-request: 1

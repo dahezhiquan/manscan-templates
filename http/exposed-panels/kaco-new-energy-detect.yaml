@@ -1,13 +1,11 @@
 id: kaco-new-energy-detect
 
 info:
-  name: KACO New Energy Solar Inverter - Detect
+  name: KACO New Energy Solar Inverter 识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    KACO new energy is a solar inverter manufacturer. Their inverters include a built-in web server
-    that serves compressed HTML over HTTP for monitoring inverter status and energy production data.
-    Devices are commonly deployed on residential and commercial solar installations.
+    该模板用于识别 KACO New Energy Solar Inverter 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://kaco-newenergy.com/
   metadata:

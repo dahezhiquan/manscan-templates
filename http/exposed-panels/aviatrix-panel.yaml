@@ -1,10 +1,10 @@
 id: aviatrix-panel
 
 info:
-  name: Aviatrix Cloud Controller Panel
+  name: Aviatrix Cloud Controller 面板（暴露面识别）
   author: pikpikcu,philippedelteil,daffainfo
   severity: info
-  description: An Aviatrix Cloud Controller login panel was detected.
+  description: 该模板通过识别 Aviatrix Cloud Controller 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://docs.aviatrix.com/HowTos/controller_config.html
   classification:

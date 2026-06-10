@@ -1,11 +1,11 @@
 id: kubeview-dashboard
 
 info:
-  name: KubeView Dashboard - Detect
+  name: KubeView Dashboard 识别（暴露面识别）
   author: ja1sh
   severity: info
   description: |
-    KubeView dashboard was detected.
+    该模板通过识别 KubeView Dashboard 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

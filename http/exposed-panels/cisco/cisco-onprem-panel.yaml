@@ -1,11 +1,11 @@
 id: cisco-onprem-panel
 
 info:
-  name: Cisco Smart Software Manager On-Prem Panel - Detect
+  name: Cisco Smart Software Manager On-Prem 面板识别（暴露面识别）
   author: irshad ahamed
   severity: info
   description: |
-    Cisco Smart Software Manager On-Prem is an on-premises software license management solution offered by Cisco. It enables organizations to manage and optimize their Cisco software licenses, entitlements, and usage in their local data centers, providing greater control and visibility over software assets.
+    该模板通过识别 Cisco Smart Software Manager On-Prem 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.cisco.com/c/en/us/products/collateral/cloud-systems-management/smart-software-manager-satellite/datasheet-c78-734539.html
     - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-ssm-sql-X9MmjSYh

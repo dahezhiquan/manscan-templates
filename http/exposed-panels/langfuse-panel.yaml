@@ -1,11 +1,11 @@
 id: langfuse-panel
 
 info:
-  name: Langfuse Panel - Detect
+  name: Langfuse 面板识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-    Langfuse panel was detected. Langfuse is an open-source LLM engineering platform for observability, evaluations, prompt management and analytics. Exposed instances may reveal LLM prompts, traces, evaluations, and connected API keys.
+    该模板用于识别 Langfuse 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/langfuse/langfuse
     - https://langfuse.com/

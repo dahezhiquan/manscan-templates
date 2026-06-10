@@ -1,11 +1,11 @@
 id: rallly-login-panel
 
 info:
-  name: Rallly Login - Panel Detect
+  name: Rallly Login 面板识别（暴露面识别）
   author: Th3l0newolf
   severity: info
   description: |
-    Rallly login interface was discovered.
+    该模板通过识别 Rallly Login 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

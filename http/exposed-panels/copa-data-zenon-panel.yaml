@@ -1,13 +1,11 @@
 id: copa-data-zenon-panel
 
 info:
-  name: Copa-Data zenon - Login Panel
+  name: Copa-Data zenon - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Copa-Data zenon is an industrial automation platform used in manufacturing,
-    energy, and infrastructure. The zenon Web Server and Smart Server expose a
-    browser-based HMI interface for remote monitoring and control of SCADA processes.
+    该模板通过识别 Copa-Data zenon 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.copadata.com/en/products/zenon-software-platform/zenon-supervisor/
     - https://www.copadata.com/en/support-services/knowledge-base-documents/zenon-web-server/

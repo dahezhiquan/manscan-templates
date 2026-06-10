@@ -1,7 +1,7 @@
 id: connectwise-panel
 
 info:
-  name: ConnectWise Control Remote Support Software Panel - Detect
+  name: ConnectWise Control Remote Support Software 面板识别（暴露面识别）
   author: johnk3r
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: urbackup-panel
 
 info:
-  name: UrBackup Panel - Detect
+  name: UrBackup 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

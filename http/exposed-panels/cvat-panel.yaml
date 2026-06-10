@@ -1,11 +1,11 @@
 id: cvat-panel
 
 info:
-  name: CVAT Computer Vision Annotation Tool - Detect
+  name: CVAT Computer Vision Annotation Tool 识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    CVAT (Computer Vision Annotation Tool) was detected. CVAT is a widely used open-source annotation platform for labelling images, video, and 3D point clouds used to train AI/ML computer vision models.
+    该模板通过识别 CVAT Computer Vision Annotation Tool 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/cvat-ai/cvat
     - https://cvat.ai/

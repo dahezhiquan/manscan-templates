@@ -1,7 +1,7 @@
 id: watcher-panel
 
 info:
-  name: Watcher Panel - Detect
+  name: Watcher 面板识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   metadata:

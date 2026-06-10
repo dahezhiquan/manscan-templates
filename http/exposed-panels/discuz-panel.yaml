@@ -1,7 +1,7 @@
 id: discuz-panel
 
 info:
-  name: Discuz Panel - Detection
+  name: Discuz Panel - 识别（暴露面识别）
   author: ritikchaddha
   severity: info
   classification:

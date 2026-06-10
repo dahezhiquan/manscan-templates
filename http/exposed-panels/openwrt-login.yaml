@@ -1,7 +1,7 @@
 id: openwrt-login
 
 info:
-  name: Opentwrt Login / Configuration Interface
+  name: Opentwrt Login / Configuration Interface 面板识别（暴露面识别）
   author: For3stCo1d,TechbrunchFR
   severity: info
   reference:

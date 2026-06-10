@@ -1,7 +1,7 @@
 id: librephotos-panel
 
 info:
-  name: LibrePhotos Panel - Detect
+  name: LibrePhotos 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   reference:

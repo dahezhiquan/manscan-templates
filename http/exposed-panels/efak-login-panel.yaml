@@ -1,11 +1,11 @@
 id: efak-login-panel
 
 info:
-  name: Eagle For Apache Kakfa Login - Detect
+  name: Eagle For Apache Kakfa 登录识别（暴露面识别）
   author: irshad ahamed
   severity: info
   description: |
-    EFAK is a visualization and management software that allows one to query, visualize, alert on, and explore their metrics wherever they were stored.
+    该模板通过识别 Eagle For Apache Kakfa 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://github.com/smartloli/efak
     - https://www.kafka-eagle.org/

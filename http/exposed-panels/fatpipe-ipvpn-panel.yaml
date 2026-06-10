@@ -1,7 +1,7 @@
 id: fatpipe-ipvpn-panel
 
 info:
-  name: FatPipe IPVPN® Panel - Detect
+  name: FatPipe IPVPN® 面板识别（暴露面识别）
   author: dwisiswant0
   severity: info
   reference:

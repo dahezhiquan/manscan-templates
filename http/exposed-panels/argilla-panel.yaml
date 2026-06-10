@@ -1,12 +1,11 @@
 id: argilla-panel
 
 info:
-  name: Argilla Panel - Detect
+  name: Argilla 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Argilla is an open-source data labelling platform for AI and LLM fine-tuning workflows.
-    It provides a web interface for annotating datasets used in machine learning model training.
+    该模板通过识别 Argilla 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/argilla-io/argilla
     - https://argilla.io

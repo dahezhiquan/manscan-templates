@@ -1,13 +1,11 @@
 id: mlflow-panel
 
 info:
-  name: MLflow Panel - Detect
+  name: MLflow 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    MLflow is an open-source platform for managing the end-to-end machine learning
-    lifecycle including experimentation, reproducibility, and deployment. This template
-    detects exposed MLflow tracking server UI instances.
+    该模板用于识别 MLflow 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/mlflow/mlflow
     - https://mlflow.org

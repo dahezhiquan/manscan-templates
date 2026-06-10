@@ -1,11 +1,11 @@
 id: mageai-panel
 
 info:
-  name: Mage AI Panel - Detect
+  name: Mage AI 面板识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-    Mage AI (mage.ai / github.com/mage-ai/mage-ai) is an open-source data pipeline + orchestration platform with a notebook-style UI. Self-hosted instances default to TCP 6789 and historically have shipped without authentication. Exposed instances may reveal pipeline source, secrets, and provide an authenticated path to arbitrary code execution via custom blocks.
+    该模板用于识别 Mage AI 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/mage-ai/mage-ai
     - https://docs.mage.ai/

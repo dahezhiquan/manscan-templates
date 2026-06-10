@@ -1,11 +1,11 @@
 id: sanity-studio-panel
 
 info:
-  name: Sanity Studio Panel - Detect
+  name: Sanity Studio 面板识别（暴露面识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Sanity Studio panel was detected. Sanity is a headless CMS platform.
+    该模板通过识别 Sanity Studio 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.sanity.io/
   metadata:

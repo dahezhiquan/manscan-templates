@@ -1,10 +1,10 @@
 id: rocketmq-console-exposure
 
 info:
-  name: Apache RocketMQ Console Panel - Detect
+  name: Apache RocketMQ Console 面板识别（暴露面识别）
   author: pdteam
   severity: info
-  description: Apache RocketMQ Console panel was detected.
+  description: 该模板用于识别 Apache RocketMQ Console 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

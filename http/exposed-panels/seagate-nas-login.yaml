@@ -1,11 +1,11 @@
 id: seagate-nas-login
 
 info:
-  name: Seagate NAS Login - Detect
+  name: Seagate NAS 登录识别（暴露面识别）
   author: JustaAcat
   severity: info
   description: |
-    Seagate NAS - SEAGATE Login was detected.
+    该模板通过识别 Seagate NAS 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   classification:
     cpe: cpe:2.3:o:seagate:nas_os:*:*:*:*:*:*:*:*
   metadata:

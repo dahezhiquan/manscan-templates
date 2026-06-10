@@ -1,11 +1,11 @@
 id: jenkins-login
 
 info:
-  name: Jenkins Login Detected
+  name: Jenkins 登录页识别（暴露面识别）
   author: pdteam
   severity: info
-  description: Jenkins is an open source automation server.
-  remediation: Ensure proper access.
+  description: 该模板通过识别 Jenkins 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  remediation: 确保仅授权用户可访问 Jenkins 登录入口，并结合访问控制、反向代理或网络边界策略限制暴露范围。
   reference:
     - https://www.jenkins.io/doc/book/security/
   classification:

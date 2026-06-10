@@ -1,11 +1,11 @@
 id: untangle-admin-login
 
 info:
-  name: Untangle Administrator Login Panel - Detect
+  name: Untangle Administrator 登录面板识别（暴露面识别）
   author: irshad ahamed
   severity: info
   description: |
-    Untangle Administrator is a centralized web-based management console that allows administrators to efficiently configure, monitor, and control various network security and filtering features provided by the Untangle NG Firewall, ensuring robust network protection and policy enforcement.
+    该模板通过识别 Untangle Administrator 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://edge.arista.com/ng-firewall/
   classification:

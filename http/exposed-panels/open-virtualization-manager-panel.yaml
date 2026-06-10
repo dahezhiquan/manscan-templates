@@ -1,10 +1,10 @@
 id: open-virtualization-manager-panel
 
 info:
-  name: Open Virtualization Userportal & Webadmin Panel Detection
+  name: Open Virtualization Userportal & Webadmin 面板识别（暴露面识别）
   author: idealphase
   severity: info
-  description: Open Virtualization Userportal & Webadmin panels were detected. Open Virtualization Manager is an open-source distributed virtualization solution designed to manage enterprise infrastructure. oVirt uses the trusted KVM hypervisor and is built upon several other community projects, including libvirt, Gluster, PatternFly, and Ansible.
+  description: 该模板通过识别 Open Virtualization Userportal & Webadmin 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.ovirt.org/
     - https://www.ovirt.org/dropped/admin-guide/virt/console-client-resources.html

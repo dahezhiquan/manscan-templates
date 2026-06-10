@@ -1,7 +1,7 @@
 id: qBittorrent-panel
 
 info:
-  name: qBittorrent Web UI Panel - Detect
+  name: qBittorrent Web UI 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: zammad-helpdesk-panel
 
 info:
-  name: Zammad Helpdesk Panel - Detect
+  name: Zammad Helpdesk 面板识别（暴露面识别）
   author: righettod
   severity: info
   description: |
-    Zammad is an open source helpdesk and customer support system that provides ticket management, live chat, and knowledge base functionality. This template detects exposed Zammad installations.
+    该模板用于识别 Zammad Helpdesk 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/zammad/zammad
     - https://zammad.org/

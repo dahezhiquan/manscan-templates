@@ -1,11 +1,11 @@
 id: riello-netman204-panel
 
 info:
-  name: Riello UPS NetMan 204 Panel - Detect
+  name: Riello UPS NetMan 204 面板识别（暴露面识别）
   author: s4e-io
   severity: info
   description: |
-    Riello UPS NetMan 204 login panel was detected.
+    该模板通过识别 Riello UPS NetMan 204 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.riello-ups.com
   metadata:

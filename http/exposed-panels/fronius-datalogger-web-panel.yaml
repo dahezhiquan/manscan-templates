@@ -1,11 +1,11 @@
 id: fronius-datalogger-web-panel
 
 info:
-  name: Fronius Datalogger Web - Login Panel
+  name: Fronius Datalogger Web - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Fronius Datalogger Web is a web interface for Fronius solar inverter data loggers, providing real-time monitoring and configuration of photovoltaic systems.
+    该模板通过识别 Fronius Datalogger Web 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.fronius.com/en/solar-energy/installers-partners/technical-data/all-products/system-monitoring/hardware/fronius-datamanager-2-0
   metadata:

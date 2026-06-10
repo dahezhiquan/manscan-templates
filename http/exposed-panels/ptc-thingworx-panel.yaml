@@ -1,14 +1,11 @@
 id: ptc-thingworx-panel
 
 info:
-  name: PTC ThingWorx - Panel
+  name: PTC ThingWorx 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    PTC ThingWorx is an Industrial IoT (IIoT) platform for building and deploying
-    connected industrial applications, machine monitoring, and remote service solutions.
-    Exposed instances may provide unauthenticated access to IIoT dashboards and
-    connected device management interfaces.
+    该模板通过识别 PTC ThingWorx 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
   reference:
     - https://www.ptc.com/en/products/thingworx
   metadata:

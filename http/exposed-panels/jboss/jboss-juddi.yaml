@@ -1,12 +1,12 @@
 id: jboss-juddi-panel
 
 info:
-  name: JBoss WS JUDDI Console Panel - Detect
+  name: JBoss WS JUDDI Console 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   description: |
-    The jUDDI (Java Universal Description, Discovery and Integration) Registry is a core component of the JBoss Enterprise SOA Platform. It is the product's default service registry and comes included as part of the product. In it are stored the addresses (end-point references) of all the services connected to the Enterprise Service Bus. It was implemented in JAXR and conforms to the UDDI specifications.
-  remediation: Restrict access to the service if not needed.
+    该模板通过识别 JBoss WS JUDDI Console 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  remediation: 如无业务需要，应限制该服务的访问范围，避免服务注册表控制台直接暴露在外网。
   reference:
     - https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossJuddi.java
   classification:

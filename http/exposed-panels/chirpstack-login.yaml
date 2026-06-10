@@ -1,11 +1,11 @@
 id: chirpstack-login
 
 info:
-  name: ChirpStack LoRaWAN Detection
+  name: ChirpStack LoRaWAN 识别（暴露面识别）
   author: ProjectDiscoveryAI
   severity: info
   description: |
-    Detects the presence of ChirpStack LoRaWAN Network-Server by identifying unique page characteristics in the HTML response.
+    该模板通过识别 ChirpStack LoRaWAN 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.chirpstack.io/docs/chirpstack/use/login.html
   metadata:

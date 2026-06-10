@@ -1,11 +1,11 @@
 id: librespeed-panel
 
 info:
-  name: LibreSpeed Panel - Detect
+  name: LibreSpeed 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    LibreSpeed is a very lightweight speed test implemented in Javascript, using XMLHttpRequest and Web Workers.
+    该模板通过识别 LibreSpeed 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/librespeed/speedtest
   metadata:

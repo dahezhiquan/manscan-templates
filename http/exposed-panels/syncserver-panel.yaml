@@ -1,7 +1,7 @@
 id: syncserver-panel
 
 info:
-  name: Symmetricom SyncServer Panel - Detect
+  name: Symmetricom SyncServer 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   classification:

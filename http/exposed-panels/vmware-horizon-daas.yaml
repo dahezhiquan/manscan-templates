@@ -1,7 +1,7 @@
 id: vmware-horizon-daas
 
 info:
-  name: Desktop Portal VMware Horizon DaaS Trade Platform
+  name: Desktop Portal VMware Horizon DaaS Trade Platform 面板识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   classification:

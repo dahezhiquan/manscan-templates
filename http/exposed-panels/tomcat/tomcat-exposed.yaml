@@ -1,10 +1,10 @@
 id: tomcat-exposed
 
 info:
-  name: Tomcat Exposed - Detect
+  name: Tomcat Exposed 识别（暴露面识别）
   author: Podalirius,righettod
   severity: info
-  description: An Apache Tomcat instance was detected.
+  description: 该模板用于识别 Tomcat Exposed 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   classification:
     cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
   metadata:

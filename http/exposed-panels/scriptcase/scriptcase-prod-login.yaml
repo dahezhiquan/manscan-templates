@@ -1,7 +1,7 @@
 id: scriptcase-prod-login
 
 info:
-  name: ScriptCase Production Environment Login
+  name: ScriptCase Production Environment Login 面板识别（暴露面识别）
   author: Ricardo Maia (Brainfork)
   severity: info
   reference:

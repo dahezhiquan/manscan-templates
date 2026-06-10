@@ -1,7 +1,7 @@
 id: misp-panel
 
 info:
-  name: MISP Threat Intelligence Sharing Platform Panel - Detect
+  name: MISP Threat Intelligence Sharing Platform 面板识别（暴露面识别）
   author: johnk3r,darses
   severity: info
   classification:

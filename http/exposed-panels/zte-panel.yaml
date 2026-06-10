@@ -1,11 +1,11 @@
 id: zte-panel
 
 info:
-  name: ZTE Panel - Detect
+  name: ZTE 面板识别（暴露面识别）
   author: its0x08,idealphase
   severity: info
   description: |
-    ZTE panel was detected. ZTE Corporation is a global leader in telecommunications and information technology. Founded in 1985 and listed on both the Hong Kong and Shenzhen Stock Exchanges, the company has been committed to providing innovative technologies and integrated solutions for global operators, government and enterprise, and consumers from over 160 countries across the globe. ZTE Corporation is a global leader in telecommunications and information technology. Founded in 1985 and listed on both the Hong Kong and Shenzhen Stock Exchanges, the company has been committed to providing innovative technologies and integrated solutions for global operators, government and enterprise, and consumers from over 160 countries across the globe.
+    该模板通过识别 ZTE 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.zte.com.cn/global/
   classification:

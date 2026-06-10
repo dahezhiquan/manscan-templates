@@ -1,10 +1,10 @@
 id: airflow-admin-login-panel
 
 info:
-  name: Apache Airflow Admin Login Panel
+  name: Apache Airflow 管理登录面板（暴露面识别）
   author: pdteam
   severity: info
-  description: An Apache Airflow admin login panel was discovered.
+  description: 该模板通过识别 Apache Airflow 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://airflow.apache.org/docs/apache-airflow/stable/security/webserver.html
   classification:

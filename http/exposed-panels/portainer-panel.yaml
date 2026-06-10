@@ -1,7 +1,7 @@
 id: portainer-panel
 
 info:
-  name: Portainer Login Panel - Detect
+  name: Portainer 登录面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   reference:

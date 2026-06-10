@@ -1,14 +1,11 @@
 id: moxa-mxview-panel
 
 info:
-  name: Moxa MXview One - Network Management Panel
+  name: Moxa MXview One - Network Management 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Moxa MXview One is a network management platform for industrial Ethernet
-    infrastructure, OT network monitoring, and topology visualisation. It is
-    widely used in manufacturing, energy, and transportation to manage industrial
-    switches and routers.
+    该模板通过识别 Moxa MXview One - Network Management 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.moxa.com/en/products/industrial-network-infrastructure/network-management-software/mxview-series/
   metadata:

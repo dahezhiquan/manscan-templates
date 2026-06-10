@@ -1,11 +1,11 @@
 id: overseerr-panel
 
 info:
-  name: Overseerr Panel - Detect
+  name: Overseerr 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.
+    该模板通过识别 Overseerr 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://overseerr.dev/
     - https://github.com/sct/overseerr

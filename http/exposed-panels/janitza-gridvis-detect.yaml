@@ -1,12 +1,11 @@
 id: janitza-gridvis-detect
 
 info:
-  name: Janitza GridVis Energy Management - Detect
+  name: Janitza GridVis Energy Management 识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Janitza GridVis is an energy monitoring and management software platform by Janitza Electronics GmbH.
-    It provides real-time power quality analysis, energy data logging, and grid visualisation for industrial facilities.
+    该模板用于识别 Janitza GridVis Energy Management 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://www.janitza.com/gridvis.html
   metadata:

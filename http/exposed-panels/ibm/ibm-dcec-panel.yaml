@@ -1,11 +1,11 @@
 id: ibm-dcec-panel
 
 info:
-  name: IBM Decision Center Enterprise Console - Panel Detection
+  name: IBM Decision Center Enterprise Console 面板识别（暴露面识别）
   author: DhiyaneshDK
   severity: info
   description: |
-    IBM Decision Center Enterprise Console panel was detected.
+    该模板通过识别 IBM Decision Center Enterprise Console 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.ibm.com/docs/en/odm/8.5.1?topic=console-tutorial-getting-started-decision-center-enterprise
   metadata:

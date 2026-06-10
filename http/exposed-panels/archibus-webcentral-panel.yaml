@@ -1,10 +1,10 @@
 id: archibus-webcentral-panel
 
 info:
-  name: Archibus Web Central Login - Panel Detect
+  name: Archibus Web Central Login 面板识别（暴露面识别）
   author: righettod,PJBorah,Hardik-Rathod
   severity: info
-  description: Archibus Web Central login panel was detected.
+  description: 该模板通过识别 Archibus Web Central Login 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://archibus.com/products/
   classification:

@@ -1,14 +1,11 @@
 id: fuxa-scada-panel
 
 info:
-  name: FUXA - SCADA/HMI Panel
+  name: FUXA - SCADA/HMI 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    FUXA is an open-source web-based SCADA/HMI platform built on Node.js.
-    It supports Modbus, OPC-UA, BACnet, MQTT, and Siemens S7 protocols and
-    is widely self-hosted for small industrial deployments. Instances are
-    frequently exposed to the internet without authentication.
+    该模板用于识别 FUXA - SCADA/HMI 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/frangoteam/FUXA
   metadata:

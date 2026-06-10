@@ -1,10 +1,10 @@
 id: ampps-panel
 
 info:
-  name: AMPPS Login Panel
+  name: AMPPS 登录面板（暴露面识别）
   author: deFr0ggy
   severity: info
-  description: An AMPPS login panel was detected.
+  description: 该模板通过识别 AMPPS 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   classification:
     cwe-id: CWE-200
   metadata:

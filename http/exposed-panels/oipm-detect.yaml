@@ -1,11 +1,11 @@
 id: oipm-detect
 
 info:
-  name: One Identity Password Manager Detection
+  name: One Identity Password Manager 识别（暴露面识别）
   author: nodauf
   severity: info
-  description: One Identity Password Manager is a secure password manager that gives enterprises control over password management, policies, and automated reset functions.
-  remediation: Ensure proper access.
+  description: 该模板用于识别 One Identity Password Manager 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  remediation: 确保仅授权用户可访问 One Identity Password Manager 界面，并通过访问控制与网络策略收敛暴露范围。
   reference:
     - https://www.oneidentity.com/techbrief/security-guide-for-password-manager821177/
   classification:

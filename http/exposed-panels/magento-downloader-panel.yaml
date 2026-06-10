@@ -1,11 +1,11 @@
 id: magento-downloader-panel
 
 info:
-  name: Magento Connect Manager Installer - Detect
+  name: Magento Connect Manager Installer 识别（暴露面识别）
   author: 5up3r541y4n
   severity: info
   description: |
-    Magento Connect Manager installer was detected. The software, available via /downloader/ location, requires Magento admin rights and uses the same authorization methods as for backend. If an attacker locates a matching pair of login/password, the installation will be compromised. An attacker can then discover backend URL for login (even if it is customized as described in Securing Magento /admin/) and install a Filesystem extension to obtain full access to all files and finally the database.
+    该模板通过识别 Magento Connect Manager Installer 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://magentary.com/kb/restrict-access-to-magento-downloader/
     - https://www.mageplaza.com/kb/how-to-stop-brute-force-attacks-magento.html#solution-3

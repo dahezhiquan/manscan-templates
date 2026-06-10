@@ -1,14 +1,11 @@
 id: scadabr-panel
 
 info:
-  name: ScadaBR - Login Panel
+  name: ScadaBR - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    ScadaBR is an open-source SCADA system based on Mango Automation, widely
-    used in Brazil and Latin America for industrial monitoring. The "powered by
-    Mango" tagline in the title is a unique identifier. Instances are often
-    internet-facing without authentication controls.
+    该模板通过识别 ScadaBR 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.scadabr.com.br/
     - https://github.com/ScadaBR/ScadaBR

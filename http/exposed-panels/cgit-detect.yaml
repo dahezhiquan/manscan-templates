@@ -1,11 +1,11 @@
 id: cgit-detect
 
 info:
-  name: cgit Web Interface - Detection
+  name: cgit Web Interface - 识别（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    Detects cgit web interface for Git repositories. cgit is a hyperfast web frontend for Git repositories written in C. It provides a web-based interface to browse Git repositories, view commits, diffs, and files. cgit is designed to be publicly accessible for open source projects. However, detecting cgit instances
+    该模板用于识别 cgit Web Interface 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://git.zx2c4.com/cgit/about/
     - https://wiki.archlinux.org/title/Cgit

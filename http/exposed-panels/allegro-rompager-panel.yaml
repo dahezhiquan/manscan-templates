@@ -1,11 +1,11 @@
 id: allegro-rompager-panel
 
 info:
-  name: Allegro RomPager - Panel
+  name: Allegro RomPager 面板（暴露面识别）
   author: matejsmycka
   severity: info
   description: |
-    Allegro RomPager was detected.This toolkit was commonly used in embedded devices such as routers, cameras, and IoT devices, often on historical hardware with possible default credentials.
+    该模板通过识别 Allegro RomPager 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - http://rompager.com
   metadata:

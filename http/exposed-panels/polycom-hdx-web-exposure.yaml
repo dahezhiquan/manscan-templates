@@ -1,11 +1,11 @@
 id: polycom-hdx-web-exposure
 
 info:
-  name: Polycom HDX - Web Interface Exposure
+  name: Polycom HDX - Web Interface 暴露（暴露面识别）
   author: 0x_Akoko
   severity: low
   description: |
-    Detecetd Polycom HDX video conferencing system web interface, potentially allowing unauthorized access to device configuration and video calls.
+    该模板用于识别 Polycom HDX - Web Interface 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.polycom.com/products-services/hd-telepresence-video-conferencing.html
     - https://support.polycom.com/content/support/north-america/usa/en/support/video.html

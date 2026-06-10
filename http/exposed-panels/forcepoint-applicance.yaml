@@ -1,7 +1,7 @@
 id: forcepoint-applicance
 
 info:
-  name: Forcepoint Appliance
+  name: Forcepoint Appliance 面板识别（暴露面识别）
   author: dhiyaneshDK
   severity: info
   classification:

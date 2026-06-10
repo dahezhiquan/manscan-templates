@@ -1,7 +1,7 @@
 id: woodwing-panel
 
 info:
-  name: Woodwing Studio Server Panel - Detect
+  name: Woodwing Studio Server 面板识别（暴露面识别）
   author: pdteam,righettod
   severity: info
   reference:

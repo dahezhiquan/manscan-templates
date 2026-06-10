@@ -1,11 +1,11 @@
 id: ibm-odm-panel
 
 info:
-  name: IBM Operational Decision Manager Panel - Detect
+  name: IBM Operational Decision Manager 面板识别（暴露面识别）
   author: DhiyaneshDK,righettod
   severity: info
   description: |
-    IBM Operational Decision Manager panel was detected.
+    该模板通过识别 IBM Operational Decision Manager 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.ibm.com/docs/en/odm/8.12.0
     - https://www.ibm.com/products/operational-decision-manager

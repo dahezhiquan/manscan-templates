@@ -1,7 +1,7 @@
 id: arcserve-panel
 
 info:
-  name: ArcServe Panel - Detect
+  name: ArcServe 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: manageengine-adaudit
 
 info:
-  name: ZOHO ManageEngine ADAudit/ADManager Panel - Detect
+  name: ZOHO ManageEngine ADAudit/ADManager 面板识别（暴露面识别）
   author: dhiyaneshDK,PR3R00T,idealphase
   severity: info
   description: |
-    ZOHO ManageEngine ADAudit/ADManager panel was detected.
+    该模板通过识别 ZOHO ManageEngine ADAudit/ADManager 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.manageengine.com/products/active-directory-audit/
     - https://www.manageengine.com/products/ad-manager/

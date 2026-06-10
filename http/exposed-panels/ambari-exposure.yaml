@@ -1,10 +1,10 @@
 id: ambari-exposure
 
 info:
-  name: Apache Ambari Exposure Admin Login Panel
+  name: Apache Ambari Exposure 管理登录面板（暴露面识别）
   author: pdteam
   severity: info
-  description: An Apache Ambari panel was discovered.
+  description: 该模板通过识别 Apache Ambari 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-668

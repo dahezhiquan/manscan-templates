@@ -1,10 +1,10 @@
 id: adiscon-loganalyzer
 
 info:
-  name: Adiscon LogAnalyzer - Information Disclosure
+  name: Adiscon LogAnalyzer - 信息泄露（暴露面识别）
   author: geeknik
   severity: high
-  description: Adiscon LogAnalyzer was discovered. Adiscon LogAnalyzer is a web interface to syslog and other network event data. It provides easy browsing and analysis of real-time network events and reporting services.
+  description: 该模板用于识别 Adiscon LogAnalyzer 相关暴露入口或页面特征。若命中，说明目标可能对外公开了可访问的管理或信息接口，存在进一步泄露系统信息、配置数据或服务细节的风险。
   reference:
     - https://loganalyzer.adiscon.com/
   classification:

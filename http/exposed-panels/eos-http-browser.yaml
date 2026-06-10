@@ -1,7 +1,7 @@
 id: eos-http-browser
 
 info:
-  name: EOS HTTP Browser
+  name: EOS HTTP Browser 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: medium
   reference:

@@ -1,11 +1,11 @@
 id: solaredge-monitoring-panel
 
 info:
-  name: SolarEdge Monitoring - Login Panel
+  name: SolarEdge Monitoring - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    SolarEdge Telematics monitoring panel has been detected.
+    该模板通过识别 SolarEdge Monitoring 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.solaredge.com/
   metadata:

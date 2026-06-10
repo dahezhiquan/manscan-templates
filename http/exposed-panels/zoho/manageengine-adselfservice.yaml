@@ -1,10 +1,10 @@
 id: manageengine-adselfservice
 
 info:
-  name: ZOHO ManageEngine ADSelfService Plus - Detect
+  name: ZOHO ManageEngine ADSelfService Plus 识别（暴露面识别）
   author: dhiyaneshDK,SaK1
   severity: info
-  description: ZOHO ManageEngine ADSelfService panel was detected.
+  description: 该模板通过识别 ZOHO ManageEngine ADSelfService Plus 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

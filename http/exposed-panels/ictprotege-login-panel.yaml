@@ -1,7 +1,7 @@
 id: ictprotege-login-panel
 
 info:
-  name: ICT Protege WX Login Panel - Detect
+  name: ICT Protege WX 登录面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   classification:

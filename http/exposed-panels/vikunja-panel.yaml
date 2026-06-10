@@ -1,11 +1,11 @@
 id: vikunja-panel
 
 info:
-  name: Vikunja Login Panel - Detect
+  name: Vikunja 登录面板识别（暴露面识别）
   author: matheusalbarello
   severity: info
   description: |
-    Vikunja login panel was detected. Vikunja is a self-hosted to-do and project management application.
+    该模板通过识别 Vikunja 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://vikunja.io
     - https://github.com/go-vikunja/vikunja

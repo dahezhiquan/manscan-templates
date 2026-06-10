@@ -1,12 +1,11 @@
 id: big-agi-panel
 
 info:
-  name: big-AGI Panel - Detect
+  name: big-AGI 面板识别（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    big-AGI is a generative AI suite for power users, teams, and developers. It provides
-    an AI chat interface with support for multiple LLM providers
+    该模板通过识别 big-AGI 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://github.com/enricoros/big-AGI
     - https://big-agi.com

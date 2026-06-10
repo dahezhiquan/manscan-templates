@@ -1,14 +1,11 @@
 id: opto22-groov-panel
 
 info:
-  name: Opto 22 groov - Panel
+  name: Opto 22 groov 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Opto 22 groov is an IIoT and industrial automation platform providing browser-based
-    HMI and edge computing capabilities. The groov View and groov Admin interfaces allow
-    control of industrial devices and data acquisition systems. Exposed instances may
-    provide unauthenticated access to industrial control panels.
+    该模板用于识别 Opto 22 groov 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.opto22.com/products/product-container/groov-epic
     - https://www.opto22.com/products/product-container/groov-rio

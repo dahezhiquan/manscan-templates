@@ -1,11 +1,11 @@
 id: kong-manager-exposure
 
 info:
-  name: Kong Manager OSS/Admin - Exposure
+  name: Kong Manager OSS/Admin 暴露（暴露面识别）
   author: Krishna Jaishwal
   severity: medium
   description: |
-    Exposed Kong Manager (OSS/Admin) interface accessible without authentication.
+    该模板用于识别 Kong Manager OSS/Admin 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - http://github.com/Kong/kong-manager
   metadata:

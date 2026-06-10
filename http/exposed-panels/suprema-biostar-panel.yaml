@@ -1,7 +1,7 @@
 id: suprema-biostar-panel
 
 info:
-  name: Suprema BioStar 2 Panel - Detect
+  name: Suprema BioStar 2 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   classification:

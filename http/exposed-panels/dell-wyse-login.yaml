@@ -1,10 +1,10 @@
 id: dell-wyse-login
 
 info:
-  name: Dell Wyse Management Suite Login Panel - Detect
+  name: Dell Wyse Management Suite 登录面板识别（暴露面识别）
   author: gy741
   severity: info
-  description: Dell Wyse Management Suite login panel was detected.
+  description: 该模板通过识别 Dell Wyse Management Suite 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://research.nccgroup.com/2021/07/06/technical-advisory-arbitrary-file-read-in-dell-wyse-management-suite-cve-2021-21586-cve-2021-21587/
   classification:

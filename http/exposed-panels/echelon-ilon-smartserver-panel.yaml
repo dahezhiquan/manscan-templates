@@ -1,13 +1,11 @@
 id: echelon-ilon-smartserver-panel
 
 info:
-  name: Echelon i.LON SmartServer - Login Panel
+  name: Echelon i.LON SmartServer - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Echelon (now Adesto/Dialog Semiconductor) i.LON SmartServer is a LonWorks/IP-852
-    building automation controller used in HVAC, lighting, and energy management systems.
-    The embedded web interface is frequently exposed on standard and non-standard ports.
+    该模板通过识别 Echelon i.LON SmartServer 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.echelon.com/products/ilon-smartserver/
   metadata:

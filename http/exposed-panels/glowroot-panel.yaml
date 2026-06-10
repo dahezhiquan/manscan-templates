@@ -1,7 +1,7 @@
 id: glowroot-panel
 
 info:
-  name: Glowroot - Panel
+  name: Glowroot 面板（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

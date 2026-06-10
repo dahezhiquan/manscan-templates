@@ -1,10 +1,10 @@
 id: sap-netweaver-portal
 
 info:
-  name: SAP NetWeaver Portal - Detect
+  name: SAP NetWeaver Portal 识别（暴露面识别）
   author: organiccrap
   severity: info
-  description: SAP NetWeaver Portal login has been detected. Note that NetWeaver has multiple default passwords as listed in the references.
+  description: 该模板通过识别 SAP NetWeaver Portal 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.sap.com/products/technology-platform/netweaver.html
     - https://www.cisoplatform.com/profiles/blogs/sap-netweaver-abap-security-configuration-part-2-default

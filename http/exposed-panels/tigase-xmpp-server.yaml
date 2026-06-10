@@ -1,7 +1,7 @@
 id: tigase-xmpp-server
 
 info:
-  name: Tigase XMPP Server - Exposure
+  name: Tigase XMPP Server 暴露（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

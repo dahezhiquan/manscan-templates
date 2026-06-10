@@ -1,14 +1,11 @@
 id: ge-proficy-webspace-panel
 
 info:
-  name: GE Proficy WebSpace - Login Panel
+  name: GE Proficy WebSpace - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    GE Proficy WebSpace is a thin-client delivery platform for GE Proficy
-    HMI/SCADA (iFIX, CIMPLICITY) applications over the web. It exposes
-    industrial HMI screens via browser on TCP/491 by default. The Server
-    header "WebSocket++/0.7.0" is a unique indicator.
+    该模板通过识别 GE Proficy WebSpace 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://www.ge.com/digital/applications/hmi-scada/proficy-webspace
   metadata:

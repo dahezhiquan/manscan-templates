@@ -1,14 +1,11 @@
 id: rockwell-factorytalk-viewpoint-panel
 
 info:
-  name: Rockwell Automation FactoryTalk ViewPoint - Panel
+  name: Rockwell Automation FactoryTalk ViewPoint 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Rockwell Automation FactoryTalk ViewPoint is a web-based HMI that allows remote
-    monitoring and control of industrial automation systems from a browser. It provides
-    access to FactoryTalk View Machine Edition and Site Edition displays. Exposed
-    instances may allow unauthorised access to industrial control system visualisations.
+    该模板用于识别 Rockwell Automation FactoryTalk ViewPoint 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.rockwellautomation.com/en-us/products/software/factorytalk/operationsuite/view/factorytalk-viewpoint.html
   metadata:

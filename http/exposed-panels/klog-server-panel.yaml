@@ -1,11 +1,11 @@
 id: klog-server-panel
 
 info:
-  name: Klog Server Panel - Detect
+  name: Klog Server 面板识别（暴露面识别）
   author: s4e-io
   severity: info
   description: |
-    Klog Server panel was discovered.
+    该模板通过识别 Klog Server 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.klogserver.com/
   metadata:

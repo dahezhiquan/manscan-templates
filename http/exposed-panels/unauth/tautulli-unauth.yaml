@@ -1,7 +1,7 @@
 id: tautulli-unauth
 
 info:
-  name: Tautulli Panel - Unauthenticated Access
+  name: Tautulli Panel - Unauthenticated Access 面板识别（暴露面识别）
   author: ritikchaddha
   severity: medium
   classification:

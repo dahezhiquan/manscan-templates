@@ -1,11 +1,11 @@
 id: trellix-panel
 
 info:
-  name: Trellix Login Panel
+  name: Trellix 登录面板（暴露面识别）
   author: johnk3r
   severity: info
   description: |
-    Trellix login panel was detected.
+    该模板通过识别 Trellix 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   metadata:
     max-request: 1
     shodan-query: "Server: Trellix"

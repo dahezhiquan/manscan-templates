@@ -1,10 +1,10 @@
 id: openvpn-monitor
 
 info:
-  name: OpenVPN Monitor - Detect
+  name: OpenVPN Monitor 识别（暴露面识别）
   author: geeknik
   severity: info
-  description: openvpn-monitor was discovered. OpenVPN Monitor is a simple python program to generate html that displays the status of an OpenVPN server, including all its current connections.
+  description: 该模板用于识别 OpenVPN Monitor 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
   reference:
     - https://openvpn-monitor.openbytes.ie/
   classification:

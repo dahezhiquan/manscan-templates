@@ -1,7 +1,7 @@
 id: pdi-device-page
 
 info:
-  name: PDI Intellifuel - Device Page
+  name: PDI Intellifuel - Device Page 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: low
   reference:

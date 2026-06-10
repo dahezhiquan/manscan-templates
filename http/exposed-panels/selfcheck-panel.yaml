@@ -1,7 +1,7 @@
 id: selfcheck-panel
 
 info:
-  name: SelfCheck System Manager - Panel
+  name: SelfCheck System Manager 面板（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

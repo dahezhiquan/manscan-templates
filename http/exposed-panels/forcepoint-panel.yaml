@@ -1,7 +1,7 @@
 id: forcepoint-login-panel
 
 info:
-  name: Forcepoint Login Panel - Detect
+  name: Forcepoint 登录面板识别（暴露面识别）
   author: husain
   severity: info
   reference:

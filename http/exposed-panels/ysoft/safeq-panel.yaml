@@ -1,11 +1,11 @@
 id: safeq-panel
 
 info:
-  name: YSoft SafeQ Panel - Detect
+  name: YSoft SafeQ 面板识别（暴露面识别）
   author: matejsmycka
   severity: info
   description: |
-    The YSoft SafeQ panel is umbrella printer management software used by many printer vendors. This should not be exposed to the public internet.
+    该模板用于识别 YSoft SafeQ 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.ysoft.com/safeq
     - https://1617882505.rsc.cdn77.org/YSoft_SAFEQ_Cloud_documentation.pdf

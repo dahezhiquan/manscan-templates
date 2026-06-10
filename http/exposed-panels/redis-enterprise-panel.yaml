@@ -1,7 +1,7 @@
 id: redis-enterprise-panel
 
 info:
-  name: Redis Enterprise - Detect
+  name: Redis Enterprise 识别（暴露面识别）
   author: tess
   severity: info
   classification:

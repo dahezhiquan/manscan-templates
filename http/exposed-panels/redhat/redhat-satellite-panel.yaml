@@ -1,7 +1,7 @@
 id: redhat-satellite-panel
 
 info:
-  name: Red Hat Satellite Panel - Detect
+  name: Red Hat Satellite 面板识别（暴露面识别）
   author: princechaddha
   severity: info
   classification:

@@ -1,11 +1,11 @@
 id: aveva-intouch-access-anywhere-panel
 
 info:
-  name: AVEVA InTouch Access Anywhere - Panel
+  name: AVEVA InTouch Access Anywhere 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    Detected AVEVA InTouch Access Anywhere was a secure gateway that provided browser-based remote access to InTouch HMI applications over the internet. It was widely used in industrial process control, utilities, and manufacturing environments. Exposed instances may have provided access to industrial HMI displays and SCADA interfaces.
+    该模板用于识别 AVEVA InTouch Access Anywhere 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.aveva.com/en/products/intouch-hmi/
     - https://www.aveva.com/en/products/intouch-access-anywhere/

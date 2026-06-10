@@ -1,7 +1,7 @@
 id: pulse-secure-version
 
 info:
-  name: Pulse Secure Version
+  name: Pulse Secure Version 面板识别（暴露面识别）
   author: dadevel
   severity: info
   classification:

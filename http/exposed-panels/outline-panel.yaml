@@ -1,11 +1,11 @@
 id: outline-panel
 
 info:
-  name: Outline Panel - Detect
+  name: Outline 面板识别（暴露面识别）
   author: ChrisJr404
   severity: info
   description: |
-    Outline (getoutline.com / github.com/outline/outline) is a popular open-source team knowledge base / wiki, often self-hosted as a Notion alternative. Exposed self-hosted instances may reveal team documents and provide a path to login enumeration if SSO is misconfigured.
+    该模板通过识别 Outline 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://github.com/outline/outline
     - https://www.getoutline.com/

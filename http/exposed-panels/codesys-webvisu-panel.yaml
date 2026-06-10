@@ -1,14 +1,11 @@
 id: codesys-webvisu-panel
 
 info:
-  name: CODESYS WebVisu - Panel
+  name: CODESYS WebVisu 面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    CODESYS WebVisu is the web-based HMI (Human-Machine Interface) component of the
-    CODESYS industrial automation runtime. It provides browser-based access to PLC
-    visualizations and industrial control interfaces. Exposed instances may reveal
-    real-time process data and control functions without authentication.
+    该模板用于识别 CODESYS WebVisu 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://www.codesys.com/products/codesys-runtime/web-visualization.html
   metadata:

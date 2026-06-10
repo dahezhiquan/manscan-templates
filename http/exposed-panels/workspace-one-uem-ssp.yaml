@@ -1,11 +1,11 @@
 id: workspace-one-uem-ssp
 
 info:
-  name: VMware Workspace ONE UEM Airwatch Self-Service Portal - Detect
+  name: VMware Workspace ONE UEM Airwatch Self-Service Portal 识别（暴露面识别）
   author: KoratSec
   severity: info
   description: |
-    VMware Workspace ONE UEM Airwatch Self-Service Portal (SSP) login panel was detected.
+    该模板通过识别 VMware Workspace ONE UEM Airwatch Self-Service Portal 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://docs.vmware.com/en/VMware-Workspace-ONE-UEM/2209/UEM_ConsoleBasics/GUID-AWT-SELFSERVICEPORTALOVERVIEW.html
   classification:

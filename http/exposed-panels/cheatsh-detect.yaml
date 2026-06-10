@@ -1,11 +1,11 @@
 id: cheatsh-detect
 
 info:
-  name: cheat.sh Instance - Detection
+  name: cheat.sh Instance - 识别（暴露面识别）
   author: ritikchaddha
   severity: info
   description: |
-    Detects exposed cheat.sh instances. cheat.sh is a community-driven cheat sheet service that provides quick command-line reference for programming languages and Unix commands. While designed to be public, self-hosted instances may expose internal documentation.
+    该模板用于识别 cheat.sh Instance 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/chubin/cheat.sh
     - https://cheat.sh/

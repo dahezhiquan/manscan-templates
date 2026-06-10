@@ -1,7 +1,7 @@
 id: monitorr-panel
 
 info:
-  name: Monitorr Panel - Detect
+  name: Monitorr 面板识别（暴露面识别）
   author: ritikchaddha
   severity: info
   classification:

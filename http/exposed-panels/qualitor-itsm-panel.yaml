@@ -1,10 +1,10 @@
 id: qualitor-itsm-panel
 
 info:
-  name: Qualitor ITSM - Detect
+  name: Qualitor ITSM 识别（暴露面识别）
   author: johnk3r
   severity: info
-  description: Qualitor ITSM login panel was detected.
+  description: 该模板通过识别 Qualitor ITSM 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://github.com/projectdiscovery/nuclei-templates/blob/7ade904e3e23bde3e1f5bf721c3a0f4e3f128ae4/http/cves/2024/CVE-2024-44849.yaml
   classification:

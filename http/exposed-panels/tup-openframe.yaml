@@ -1,7 +1,7 @@
 id: tup-openframe
 
 info:
-  name: T-Up OpenFrame
+  name: T-Up OpenFrame 面板识别（暴露面识别）
   author: DhiyaneshDk
   severity: info
   reference:

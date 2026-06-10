@@ -1,7 +1,7 @@
 id: remedy-axis-login
 
 info:
-  name: Remedy Axis Login Panel - Detect
+  name: Remedy Axis 登录面板识别（暴露面识别）
   author: tess
   severity: info
   classification:

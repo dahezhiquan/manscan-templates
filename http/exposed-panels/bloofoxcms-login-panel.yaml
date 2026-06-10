@@ -1,7 +1,7 @@
 id: bloofoxcms-login-panel
 
 info:
-  name: bloofoxCMS Login Panel - Detect
+  name: bloofoxCMS 登录面板识别（暴露面识别）
   author: theamanrawat
   severity: info
   classification:

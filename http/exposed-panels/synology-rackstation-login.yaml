@@ -1,7 +1,7 @@
 id: synology-rackstation-login
 
 info:
-  name: Synology RackStation Login Detect
+  name: Synology RackStation Login Detect 面板识别（暴露面识别）
   author: princechaddha
   severity: info
   metadata:

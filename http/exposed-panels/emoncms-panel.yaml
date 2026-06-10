@@ -1,13 +1,11 @@
 id: emoncms-panel
 
 info:
-  name: OpenEnergyMonitor emonCMS - Login Panel
+  name: OpenEnergyMonitor emonCMS - 登录面板（暴露面识别）
   author: rxerium
   severity: info
   description: |
-    emonCMS is an open-source energy monitoring web application by OpenEnergyMonitor,
-    used in homes and small businesses to track electricity, gas, and temperature.
-    The login page is commonly exposed on port 80, 443, or 8010.
+    该模板通过识别 OpenEnergyMonitor emonCMS 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
   reference:
     - https://emoncms.org/
     - https://github.com/emoncms/emoncms

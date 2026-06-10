@@ -1,11 +1,11 @@
 id: advantech-webaccess-panel
 
 info:
-  name: Advantech WebAccess/SCADA - Panel
+  name: Advantech WebAccess/SCADA 面板（暴露面识别）
   author: 0x_Akoko
   severity: info
   description: |
-   Detected Advantech WebAccess/SCADA login panel, a web-browser-based HMI/SCADA software used in critical manufacturing, energy, and water systems.
+    该模板通过识别 Advantech WebAccess/SCADA 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
   reference:
     - https://www.advantech.com/en-us/products/webaccess-scada/sub_a7b4308c-a3d0-446c-8f03-0d098d4b2c31
     - https://www.cisa.gov/news-events/ics-advisories/icsa-23-150-01

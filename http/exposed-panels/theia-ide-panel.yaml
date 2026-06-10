@@ -1,11 +1,11 @@
 id: theia-ide-panel
 
 info:
-  name: Eclipse Theia IDE Panel - Detect
+  name: Eclipse Theia IDE 面板识别（暴露面识别）
   author: 0x_Akoko
   severity: info
   description: |
-    Detected Eclipse Theia IDE panel was exposed. Theia is an extensible platform for multi-language Cloud and Desktop IDEs. Exposed panels may have allowed unauthenticated access to development environments and terminal.
+    该模板用于识别 Eclipse Theia IDE 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:
     - https://github.com/eclipse-theia/theia
     - https://theia-ide.org/

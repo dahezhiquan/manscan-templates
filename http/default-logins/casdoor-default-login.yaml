@@ -1,11 +1,11 @@
 id: casdoor-default-login
 
 info:
-  name: Casdoor - Default Admin Credentials
+  name: Casdoor 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Casdoor platform was found to have been using the default administrator credentials (admin:123). An attacker could have gained full administrative access to manage organizations, users, applications, and OAuth providers.
+    该模板用于检测 Casdoor 是否仍在使用默认管理员凭据。若命中，攻击者可直接管理组织、用户、应用与 OAuth 提供方配置。
   reference:
     - https://casdoor.org/docs/basic/core-concepts/
     - https://github.com/casdoor/casdoor

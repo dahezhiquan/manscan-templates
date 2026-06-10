@@ -1,11 +1,11 @@
 id: caimore-default-login
 
 info:
-  name: CAIMORE Gateway  Default Login - Detect
+  name: CAIMORE Gateway 默认口令登录检测（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    The gateway of Xiamen Caimao Communication Technology Co., Ltd. is designed with open software architecture. It is a metal shell design, with two Ethernet RJ45 interfaces, and an industrial design wireless gateway using 3G/4G/5G wide area network for Internet communication. There is a command execution vulnerability in the formping file of the gateway of Xiamen Caimao Communication Technology Co., Ltd. An attacker can use this vulnerability to arbitrarily execute code on the server side, write to the back door, obtain server permissions, and then control the entire web server.
+    该模板通过尝试 CAIMORE Gateway Default Login 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: cloudstack-default-login
 
 info:
-  name: Apache CloudStack - Default Login
+  name: Apache CloudStack 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   description: |
-    CloudStack instance discovered using weak default credentials, allows the attacker to gain admin privilege.
+    该模板通过尝试 Apache CloudStack 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   classification:
     cpe: cpe:2.3:a:apache:cloudstack:*:*:*:*:*:*:*:*
   metadata:

@@ -1,11 +1,11 @@
 id: ruijie-nbr-default-login
 
 info:
-  name: Ruijie NBR Series Routers - Default Login
+  name: Ruijie NBR Series Routers 默认口令登录（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    Ruijie NBR Series Routers Default Login username and password was discovered.
+    该模板通过尝试 Ruijie NBR Series Routers 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   metadata:
     max-request: 1
     verified: true

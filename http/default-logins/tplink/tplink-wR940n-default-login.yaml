@@ -1,7 +1,7 @@
 id: tplink-wR940n-default-login
 
 info:
-  name: TP-Link Wireless N Router WR940N - Default-Login
+  name: TP-Link Wireless N Router WR940N 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   metadata:

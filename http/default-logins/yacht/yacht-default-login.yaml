@@ -1,11 +1,11 @@
 id: yacht-default-login
 
 info:
-  name: Yacht - Default Login
+  name: Yacht 默认口令登录（弱口令）
   author: Fur1na
   severity: high
   description: |
-    Yacht is a web interface for managing Docker containers. This template detects instances with default admin credentials (admin@yacht.local:pass), which could allow unauthorized access to the Docker environment, potentially leading to container manipulation, data exposure, or even host system compromise.
+    该模板通过尝试 Yacht 的默认管理员账号口令（如 admin@yacht.local:pass），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://github.com/SelfhostedPro/Yacht
     - https://dev.yacht.sh/docs/Installation/Getting_Started

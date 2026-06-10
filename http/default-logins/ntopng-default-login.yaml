@@ -1,11 +1,11 @@
 id: ntopng-default-login
 
 info:
-  name: ntopng - Default Login
+  name: ntopng 默认口令登录（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected the ntopng network traffic monitoring tool was found to be using default credentials (admin:admin). An attacker could have gained full administrative access to network traffic data, flow analysis, and system configuration.
+    该模板用于检测 ntopng 是否仍在使用默认管理员凭据。若命中，攻击者可直接查看网络流量分析数据、系统配置与监控视图。
   reference:
     - https://www.ntop.org/guides/ntopng/faq.html
     - https://www.ntop.org/guides/ntopng/api/rest/api_v2.html

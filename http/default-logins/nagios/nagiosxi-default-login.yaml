@@ -1,10 +1,10 @@
 id: nagiosxi-default-login
 
 info:
-  name: Nagios XI Default Admin Login - Detect
+  name: Nagios XI 默认管理员登录检测（弱口令）
   author: ritikchaddha
   severity: critical
-  description: Nagios XI default admin login credentials were detected.
+  description: 该模板通过尝试 Nagios XI 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://nagiosxi.demos.nagios.com/nagiosxi/login.php?redirect=/nagiosxi/index.php%3f&noauth=1
   classification:

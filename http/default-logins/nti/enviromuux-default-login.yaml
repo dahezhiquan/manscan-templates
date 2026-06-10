@@ -1,11 +1,11 @@
 id: enviromuux-default-login
 
 info:
-  name: Network Technologies Inc ENVIROMUX - Default Login
+  name: Network Technologies Inc ENVIROMUX 默认口令登录（弱口令）
   author: M.Sarmad Shafiq
   severity: high
   description: |
-    The ENVIROMUX environment monitoring system from Network Technologies Inc was found to be using its default login credentials. This default configuration could have allowed unauthorized users to gain access to the web management interface without authentication, potentially leading to information disclosure or unauthorized control over environmental monitoring systems.
+    该模板通过尝试 Network Technologies Inc ENVIROMUX 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - http://www.networktechinc.com/download/d-environment-monitor-16.html
     - http://www.networktechinc.com/pdf/man154.pdf

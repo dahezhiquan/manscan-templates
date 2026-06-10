@@ -1,11 +1,11 @@
 id: wildfly-default-login
 
 info:
-  name: Wildfly - Default Admin Login
+  name: Wildfly 默认管理员登录（弱口令）
   author: s0obi
   severity: high
   description: |
-    Wildfly default admin login credentials were successful.
+    该模板通过尝试 Wildfly 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://docs.wildfly.org/26.1/#administrator-guides
   metadata:

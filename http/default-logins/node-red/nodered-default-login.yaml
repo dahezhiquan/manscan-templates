@@ -1,11 +1,11 @@
 id: nodered-default-login
 
 info:
-  name: Node-Red - Default Login
+  name: Node-Red 默认口令登录（弱口令）
   author: savik
   severity: critical
   description: |
-    Allows attacker to log in and execute RCE on the Node-Red panel using the default credentials.
+    该模板用于检测 Node-RED 面板是否仍启用默认账号口令。若命中，攻击者不仅可以接管流程编排界面，还可能在具备相关功能或插件的场景下进一步执行远程代码。
   reference:
     - https://quentinkaiser.be/pentesting/2018/09/07/node-red-rce/
   classification:

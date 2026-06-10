@@ -1,11 +1,11 @@
 id: netbox-default-login
 
 info:
-  name: NetBox - Default Admin Credentials
+  name: NetBox 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected that NetBox was using the default credentials admin:admin. The official netbox-docker deployment set SUPERUSER_NAME=admin and SUPERUSER_PASSWORD=admin by default.
+    该模板用于检测 NetBox 是否仍在使用默认管理员账号口令。若命中，攻击者可直接进入资产与网络资源管理后台，查看设备、机柜、IP 地址和系统配置等敏感信息。
   reference:
     - https://github.com/netbox-community/netbox-docker
     - https://docs.netbox.dev/en/stable/integrations/rest-api/#authenticating-to-the-api

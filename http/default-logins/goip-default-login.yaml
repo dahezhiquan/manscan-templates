@@ -1,11 +1,11 @@
 id: goip-default-login
 
 info:
-  name: GoIP GSM VoIP Gateway - Default Password
+  name: GoIP GSM VoIP Gateway 默认口令（弱口令）
   author: drfabiocastro
   severity: high
   description: |
-    GoIP GSM VoIP Gateway Default Password, Allows attackers to send, receive sms and calls.
+    该模板通过尝试 GoIP GSM VoIP Gateway 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - http://en.dbltek.com/
     - https://medium.com/@hackatnow/how-to-create-a-python-script-to-find-goip-gsm-gateway-on-shodan-and-send-sms-ussd-via-goip-e2e203f5d339

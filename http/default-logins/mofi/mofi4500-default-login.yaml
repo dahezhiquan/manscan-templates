@@ -1,10 +1,10 @@
 id: mofi4500-default-login
 
 info:
-  name: MOFI4500-4GXeLTE-V2 Default Login
+  name: MOFI4500-4GXeLTE-V2 默认口令登录（弱口令）
   author: pikpikcu
   severity: high
-  description: Mofi Network MOFI4500-4GXELTE wireless router default admin credentials were discovered.
+  description: 该模板通过尝试 MOFI4500-4GXeLTE-V2 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.cleancss.com/router-default/Mofi_Network/MOFI4500-4GXELTE
   classification:

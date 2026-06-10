@@ -1,10 +1,10 @@
 id: dvwa-default-login
 
 info:
-  name: DVWA Default Login
+  name: DVWA 默认口令登录（弱口令）
   author: pdteam
   severity: critical
-  description: Damn Vulnerable Web App (DVWA) is a test application for security professionals. The hard coded credentials are part of a security testing scenario.
+  description: 该模板通过尝试 DVWA 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://opensourcelibs.com/lib/dvwa
   classification:

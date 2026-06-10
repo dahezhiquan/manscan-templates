@@ -1,11 +1,11 @@
 id: crushftp-anonymous-login
 
 info:
-  name: CrushFTP - Anonymous Login
+  name: CrushFTP 匿名登录（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    CrushFTP Anonymous login credentials were discovered.
+    该模板用于检测 CrushFTP 是否允许使用匿名账户直接登录。若命中，未授权用户无需口令即可访问系统功能或管理资源。
   classification:
     cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
   metadata:

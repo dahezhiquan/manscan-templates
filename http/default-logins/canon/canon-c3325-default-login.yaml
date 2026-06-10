@@ -1,7 +1,7 @@
 id: canon-c3325-default-login
 
 info:
-  name: Canon R-ADV C3325 - Default-Login
+  name: Canon R-ADV C3325 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   reference:

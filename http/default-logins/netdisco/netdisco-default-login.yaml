@@ -1,15 +1,15 @@
 id: netdisco-default-login
 
 info:
-  name: Netdisco Admin - Default Login
+  name: Netdisco Admin 默认口令登录（弱口令）
   author: ritikchaddha
   severity: critical
   description: |
-    Detects use of hard-coded credentials in Netdisco.
+    该模板用于检测 Netdisco 是否仍可通过内置的硬编码凭据登录管理后台。若命中，攻击者可直接访问网络资产管理界面，查看设备信息并执行未授权的管理操作。
   impact: |
-    Attackers can potentially exploit this vulnerability to gain unauthorized access to sensitive information.
+    - 攻击者可借助硬编码凭据未授权访问网络资产管理信息，进而查看敏感设备数据或执行管理操作。
   remediation: |
-    Update the application to remove hard-coded credentials and implement secure credential management practices.
+    - 更新应用版本，移除硬编码凭据并改用安全的凭据管理机制。
   metadata:
     verified: true
     max-request: 1

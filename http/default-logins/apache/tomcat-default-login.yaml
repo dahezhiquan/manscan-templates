@@ -1,10 +1,10 @@
 id: tomcat-default-login
 
 info:
-  name: Apache Tomcat Manager Default Login
+  name: Apache Tomcat Manager 默认口令登录（弱口令）
   author: pdteam,sinKettu,nybble04
   severity: high
-  description: Apache Tomcat Manager default login credentials were discovered.
+  description: 该模板通过尝试 Apache Tomcat Manager 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.rapid7.com/db/vulnerabilities/apache-tomcat-default-ovwebusr-password/
     - https://github.com/danielmiessler/SecLists/blob/master/Passwords/Default-Credentials/tomcat-betterdefaultpasslist.txt

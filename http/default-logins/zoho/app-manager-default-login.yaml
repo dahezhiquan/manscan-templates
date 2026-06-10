@@ -1,11 +1,11 @@
 id: app-manager-default-login
 
 info:
-  name: ManageEngine Applications Manager - Default Credentials
+  name: ManageEngine Applications Manager 默认凭据（弱口令）
   author: 0midC13
   severity: high
   description: |
-    Default credentials grants administrative access to ManageEngine Applications Manager, which can be later escalated into a RCE via DB queries.
+    该模板用于检测 ManageEngine Applications Manager 是否仍在使用默认管理凭据。若命中，攻击者可直接获得监控平台后台权限，并可能借助后续数据库查询等功能进一步扩大影响。
   reference:
     - https://www.manageengine.com/products/applications_manager/
   metadata:

@@ -1,11 +1,11 @@
 id: jhipster-default-login
 
 info:
-  name: JHipster Platform - Default Login
+  name: JHipster Platform 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    Detects the presence of JHipster application dashboard or API endpoints that allow authentication using default credentials. JHipster applications by default are often configured with the username "admin" and password "admin", potentially exposing application management interfaces or sensitive APIs if not changed after deployment.
+    该模板用于检测 JHipster 应用是否仍在使用默认管理账号口令。若命中，攻击者可直接访问应用管理面板或受保护接口，进一步查看敏感信息并修改配置。
   reference:
     - https://www.jhipster.tech/security/
   metadata:

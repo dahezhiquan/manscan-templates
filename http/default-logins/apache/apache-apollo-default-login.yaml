@@ -1,7 +1,7 @@
 id: apache-apollo-default-login
 
 info:
-  name: Apache Apollo - Default Login
+  name: Apache Apollo 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   classification:

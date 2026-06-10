@@ -1,10 +1,10 @@
 id: chinaunicom-default-login
 
 info:
-  name: China Unicom Modem Default Login
+  name: China Unicom Modem 默认口令登录（弱口令）
   author: princechaddha
   severity: high
-  description: Default login credentials were discovered for a China Unicom modem.
+  description: 该模板通过尝试 China Unicom Modem 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   classification:
     cwe-id: CWE-798
   metadata:

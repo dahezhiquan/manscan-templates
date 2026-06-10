@@ -1,10 +1,10 @@
 id: guacamole-default-login
 
 info:
-  name: Guacamole Default Login
+  name: Guacamole 默认口令登录（弱口令）
   author: r3dg33k
   severity: high
-  description: Guacamole default admin login credentials were detected.
+  description: 该模板通过尝试 Guacamole 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://wiki.debian.org/Guacamole#:~:text=You%20can%20now%20access%20the,password%20are%20both%20%22guacadmin%22
   classification:

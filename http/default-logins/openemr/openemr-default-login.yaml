@@ -1,10 +1,10 @@
 id: openemr-default-login
 
 info:
-  name: OpenEMR - Default Admin Discovery
+  name: OpenEMR 默认管理员账户发现（弱口令）
   author: Geekby
   severity: high
-  description: OpenEMR default admin credentials were discovered.
+  description: 该模板通过尝试 OpenEMR 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://github.com/openemr/openemr-devops/tree/master/docker/openemr/6.1.0/#openemr-official-docker-image
   classification:

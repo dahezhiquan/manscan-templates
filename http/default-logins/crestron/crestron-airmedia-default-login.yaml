@@ -1,11 +1,11 @@
 id: crestron-airmedia-default-login
 
 info:
-  name: Crestron Airmedia 2.0 - Default Login
+  name: Crestron Airmedia 2.0 默认口令登录（弱口令）
   author: Andrew Lentz
   severity: high
   description: |
-    Crestron AirMedia 2.0 devices contain default credentials (admin:admin) that allow unauthorized administrative access to device configuration and control.
+    该模板通过尝试 Crestron Airmedia 2.0 的默认凭据（如 admin:admin），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   metadata:
     verified: true
     max-request: 3

@@ -1,11 +1,11 @@
 id: redmine-default-login
 
 info:
-  name: Redmine - Default Admin Credentials
+  name: Redmine 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Redmine project management application was found to have been using the default administrator credentials (admin:admin). An attacker could have gained full administrative access to manage projects, users, and system settings.
+    该模板用于检测 Redmine 是否仍在使用默认管理员凭据。若命中，攻击者可直接访问项目管理后台，查看或修改项目、用户与系统设置。
   reference:
     - https://www.redmine.org/projects/redmine/wiki/RedmineInstall
     - https://www.simplified.guide/redmine/default-password

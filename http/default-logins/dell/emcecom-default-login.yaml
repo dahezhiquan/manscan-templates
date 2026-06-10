@@ -1,11 +1,11 @@
 id: emcecom-default-login
 
 info:
-  name: Dell EMC ECOM - Default Login
+  name: Dell EMC ECOM 默认口令登录（弱口令）
   author: Techryptic (@Tech)
   severity: high
-  description: Dell EMC ECOM default login information "(admin:#1Password)" was discovered.
-  remediation: To resolve this issue, perform a "remsys" and "addsys" with no other operations occurring (reference the appropriate SMI-S provider documentation) and specify the new password when re-adding the array. If there are issues performing the "addsys" operation, it is recommended to restart the management server on each SP.
+  description: 该模板通过尝试 Dell EMC ECOM 的默认账号口令（如 admin:#1Password），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
+  remediation: 可通过执行 `remsys` 与 `addsys` 重新添加阵列并在重新接入时指定新密码来修复该问题。执行期间不应同时进行其他操作；若 `addsys` 过程异常，建议按对应 SMI-S Provider 文档重启各 SP 上的管理服务器。
   reference:
     - https://www.dell.com/support/kbdoc/en-za/000171270/vipr-controller-operation-denied-by-clariion-array-you-are-not-privileged-to-perform-the-requested-operation
   classification:

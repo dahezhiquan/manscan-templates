@@ -1,11 +1,11 @@
 id: circutor-default-login
 
 info:
-  name: Circutor Line-TCPRS1 - Default Login
+  name: Circutor Line-TCPRS1 默认口令登录（弱口令）
   author: s4e-io
   severity: high
   description: |
-    A default login was discovered on a Circutor Line-TCPRS1 device. An attacker can obtain access to user accounts, access sensitive information, modify data, and execute unauthorized operations.
+    该模板通过尝试 Circutor Line-TCPRS1 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://circutor.com/en/products/line-tcprs1/
   metadata:

@@ -1,10 +1,10 @@
 id: cs141-default-login
 
 info:
-  name: UPS Adapter CS141 SNMP Module Default Login
+  name: UPS Adapter CS141 SNMP Module 默认口令登录（弱口令）
   author: socketz
   severity: medium
-  description: UPS Adapter CS141 SNMP Module default login credentials were discovered.
+  description: 该模板通过尝试 UPS Adapter CS141 SNMP Module 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.generex.de/media/pages/packages/documents/manuals/f65348d5b6-1628841637/manual_CS141_en.pdf
   classification:

@@ -1,11 +1,11 @@
 id: molgenis-default-login
 
 info:
-  name: Molgenis - Default Login
+  name: Molgenis 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    Attempts to login to Molgenis using the default credentials (admin/admin). Successful login may indicate a security risk due to unchanged default credentials.
+    该模板通过尝试 Molgenis 的默认凭据（如 admin/admin），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://molgenis.org/
     - https://github.com/molgenis/molgenis-emx2

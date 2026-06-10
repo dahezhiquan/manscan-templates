@@ -1,11 +1,11 @@
 id: sonarqube-default-login
 
 info:
-  name: SonarQube Default Login - Detect
+  name: SonarQube 默认口令登录检测（弱口令）
   author: Ep1cSage
   severity: high
   description: |
-    SonarQube contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    该模板通过尝试 SonarQube Default Login 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://docs.sonarsource.com/sonarqube/9.6/instance-administration/security/#:~:text=When%20installing%20SonarQube%2C%20a%20default,Password%3A%20admin
   classification:

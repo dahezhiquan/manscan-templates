@@ -1,11 +1,11 @@
 id: samsung-printer-default-login
 
 info:
-  name: Samsung Printer - Default Login
+  name: Samsung Printer 默认口令登录（弱口令）
   author: gy741
   severity: high
   description: |
-    Samsung printers contain a default admin login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    该模板通过尝试 Samsung Printer 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://support.hp.com/gb-en/document/c05591673
   classification:

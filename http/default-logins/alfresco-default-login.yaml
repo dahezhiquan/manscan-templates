@@ -1,11 +1,11 @@
 id: alfresco-default-login
 
 info:
-  name: Alfresco - Default Admin Credentials
+  name: Alfresco 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Alfresco Content Services was found to have been using the default administrator credentials (admin:admin). An attacker could have gained full administrative access to manage content, users, and repository configuration.
+    该模板用于检测 Alfresco Content Services 是否仍在使用默认管理员凭据。若命中，攻击者可直接管理内容仓库、用户权限与系统配置。
   reference:
     - https://docs.alfresco.com/content-services/community/admin/admin-console/
     - https://docs.alfresco.com/community5.0/references/RESTful-RepositoryLoginPost.html

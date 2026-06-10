@@ -1,10 +1,10 @@
 id: cobbler-default-login
 
 info:
-  name: Cobbler Default Login
+  name: Cobbler 默认口令登录（弱口令）
   author: c-sh0
   severity: high
-  description: Cobbler default login credentials for the testing module (testing/testing) were discovered.
+  description: 该模板通过尝试 Cobbler 的默认账号口令（如 testing/testing），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://seclists.org/oss-sec/2022/q1/146
     - https://github.com/cobbler/cobbler/issues/2307

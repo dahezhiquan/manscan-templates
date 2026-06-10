@@ -1,11 +1,11 @@
 id: openplc-default-login
 
 info:
-  name: OpenPLC Webserver v3 - Default Login
+  name: OpenPLC Webserver v3 默认口令登录（弱口令）
   author: machevalia,shriyanss
   severity: high
   description: |
-    Identifies default credentials (openplc:openplc) on OpenPLC Webserver v3, allowing unauthorized access to the web interface.
+    该模板通过尝试 OpenPLC Webserver v3 的默认凭据（如 openplc:openplc），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   metadata:
     verified: true
     max-request: 2

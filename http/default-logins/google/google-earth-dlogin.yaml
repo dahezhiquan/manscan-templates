@@ -1,16 +1,15 @@
 id: google-earth-dlogin
 
 info:
-  name: Google Earth Enterprise Default Login
+  name: Google Earth Enterprise 默认口令登录（弱口令）
   author: orpheus,johnjhacking
   severity: high
   description: |
-    Google Earth Enterprise default login credentials were discovered.
+    该模板通过尝试 Google Earth Enterprise 的默认账号口令，并依据成功登录后的管理界面响应判断目标是否仍在使用出厂凭据。若命中，攻击者可直接访问 Earth Enterprise 管理后台并修改服务配置。
   remediation: |
-    To reset the username and password:
-
-    sudo /opt/google/gehttpd/bin/htpasswd -c
-    /opt/google/gehttpd/conf.d/.htpasswd geapacheuse"
+    可使用以下命令重新设置 Google Earth Enterprise 的用户名和密码：
+    
+    `sudo /opt/google/gehttpd/bin/htpasswd -c /opt/google/gehttpd/conf.d/.htpasswd geapacheuser`
   reference:
     - https://johnjhacking.com/blog/gee-exploitation/
     - https://www.opengee.org/geedocs/5.2.2/answer/3470759.html

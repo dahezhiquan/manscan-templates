@@ -1,13 +1,14 @@
 id: grandstream-grp-default-login
 
 info:
-  name: Grandstream GRP - Default Login
+  name: Grandstream GRP 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   description: |
-    Grandstream GRP series devices use default credentials (admin/admin). The web UI login sends a SHA-256 hash of the password to /cgi-bin/access. Successful authentication returns a JSON response with a session token, indicating full admin access to the device management interface.
+    该模板通过向 Grandstream GRP 设备的 Web 管理接口提交默认口令对应的 SHA-256 值，并依据返回的成功 JSON 与会话信息判断目标是否仍在使用弱口令。若命中，攻击者可直接接管设备管理界面。
   remediation: |
-    Change the default administrator password immediately. Update firmware to the latest version which generates random passwords on factory reset.
+    - 立即修改默认管理员密码。
+    - 升级到最新固件版本，以便在恢复出厂设置后自动生成随机密码。
   metadata:
     verified: true
     max-request: 1

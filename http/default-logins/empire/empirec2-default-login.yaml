@@ -1,11 +1,11 @@
 id: empirec2-default-login
 
 info:
-  name: Empire C2 / Starkiller Interface - Default Login
+  name: Empire C2 / Starkiller Interface 默认口令登录（弱口令）
   author: clem9669,parzival
   severity: high
   description: |
-    Empire C2 / Starkiller Default Administrator Credentials Discovered.
+    该模板通过尝试 Empire C2 / Starkiller Interface 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://github.com/BC-SECURITY/Empire
     - https://github.com/BC-SECURITY/empire-docs/blob/main/restful-api/README.md

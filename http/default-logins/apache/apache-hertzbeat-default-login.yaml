@@ -1,11 +1,11 @@
 id: apache-hertzbeat-default-login
 
 info:
-  name: Apache HertzBeat - Default Credentials
+  name: Apache HertzBeat 默认凭据（弱口令）
   author: securitytaters,icarot
   severity: high
   description: |
-    Apache HertzBeat enables default admin (and others) credentials. An attacker can execute unauthorized operations.
+    该模板通过尝试 Apache HertzBeat 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://github.com/apache/hertzbeat
   metadata:

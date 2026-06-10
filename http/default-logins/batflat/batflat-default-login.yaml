@@ -1,11 +1,11 @@
 id: batflat-default-login
 
 info:
-  name: Batflat CMS - Default Login
+  name: Batflat CMS 默认口令登录（弱口令）
   author: r3Y3r53
   severity: high
   description: |
-    Batflat CMS is vulnerable to default login vulnerability that most commonly affects devices having some pre-set (default) administrative credentials to access all configuration settings.
+    该模板通过尝试 Batflat CMS 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.exploitalert.com/view-details.html?id=34749
     - https://cxsecurity.com/issue/WLB-2020010100

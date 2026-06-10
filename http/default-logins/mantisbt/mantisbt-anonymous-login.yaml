@@ -1,11 +1,11 @@
 id: mantisbt-anonymous-login
 
 info:
-  name: mantisbt - Anonymous Login
+  name: mantisbt 匿名登录（弱口令）
   author: pussycat0x
   severity: medium
   description: |
-    mantisbt Anonymous login were discovered.
+    该模板用于检测 mantisbt 是否允许使用匿名账户直接登录。若命中，未授权用户无需口令即可访问系统功能或管理资源。
   classification:
     cpe: cpe:2.3:a:mantisbt:mantisbt:*:*:*:*:*:*:*:*
   metadata:

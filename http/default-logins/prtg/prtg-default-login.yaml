@@ -1,10 +1,10 @@
 id: prtg-default-login
 
 info:
-  name: PRTG Network Monitor - Hardcoded Credentials
+  name: PRTG Network Monitor 硬编码凭据（弱口令）
   author: johnk3r
   severity: high
-  description: PRTG Network Monitor contains a hardcoded credential vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板用于检测 PRTG Network Monitor 是否仍启用内置的硬编码凭据。若命中，攻击者可直接利用程序固化的账号口令访问后台或敏感功能。
   reference:
     - https://www.paessler.com/manuals/prtg/login
   classification:

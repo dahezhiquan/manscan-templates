@@ -1,10 +1,10 @@
 id: gophish-default-login
 
 info:
-  name: Gophish < v0.10.1 Default Credentials
+  name: Gophish < v0.10.1 默认凭据（弱口令）
   author: arcc,dhiyaneshDK
   severity: high
-  description: For versions of Gophish > 0.10.1, the temporary administrator credentials are printed in the logs when you first execute the Gophish binary.
+  description: Gophish 在首次启动时会将临时管理员凭据输出到日志中。该模板用于验证这些默认或临时口令是否仍可用；一旦命中，攻击者可直接接管钓鱼活动管理后台。
   reference:
     - https://docs.getgophish.com/user-guide/getting-started
   classification:

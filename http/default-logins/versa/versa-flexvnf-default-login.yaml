@@ -1,10 +1,10 @@
 id: versa-flexvnf-default-login
 
 info:
-  name: Versa FlexVNF - Default Login
+  name: Versa FlexVNF 默认口令登录（弱口令）
   author: c-sh0
   severity: high
-  description: Versa FlexVNF contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板通过尝试 Versa FlexVNF 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://versa-networks.com/products/
   classification:

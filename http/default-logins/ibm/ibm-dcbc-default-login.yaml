@@ -1,7 +1,7 @@
 id: ibm-dcbc-default-login
 
 info:
-  name: IBM Decision Center Business Console - Default Login
+  name: IBM Decision Center Business Console 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   reference:

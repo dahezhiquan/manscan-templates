@@ -1,12 +1,11 @@
 id: dataease-default-login
 
 info:
-  name: Dataease - Default Login
+  name: Dataease 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   description: |
-    Dataease has a built-in account demo/dataease, and many developers forget to delete or change the account password.
-    As a result, many Dataease can log in with this built-in account.
+    该模板用于检测 Dataease 是否仍启用内置演示账户或未修改的默认口令。若命中，攻击者可借助弱口令直接登录可视化分析平台，查看数据源、报表和系统配置。
   reference:
     - https://github.com/dataease/dataease/issues/5995
   classification:

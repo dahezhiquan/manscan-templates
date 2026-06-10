@@ -1,11 +1,11 @@
 id: joplin-default-login
 
 info:
-  name: Joplin - Default Login
+  name: Joplin 默认口令登录（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    Joplin Server installations are vulnerable to default administrative credentials. The system ships with a default admin account using the credentials admin@localhost:admin. Attackers can leverage these default credentials to gain administrative access to the Joplin Server instance, potentially compromising sensitive user data and system functionality.
+    该模板通过尝试 Joplin 的默认凭据（如 admin@localhost:admin.），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   metadata:
     verified: true
     shodan-query: 'title:"Joplin Server"'

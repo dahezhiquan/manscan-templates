@@ -1,11 +1,11 @@
 id: wazuh-default-login
 
 info:
-  name: Wazuh - Default Login
+  name: Wazuh 默认口令登录（弱口令）
   author: theamanrawat,denandz,PulseSecurity.co.nz
   severity: high
   description: |
-    Wazuh contains default credentials. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+    该模板通过尝试 Wazuh 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://documentation.wazuh.com/current/user-manual/user-administration/password-management.html
     - https://wazuh.com

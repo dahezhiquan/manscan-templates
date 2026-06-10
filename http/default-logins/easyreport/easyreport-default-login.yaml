@@ -1,7 +1,7 @@
 id: easyreport-default-login
 
 info:
-  name: EasyReport - Default Login
+  name: EasyReport 默认口令登录（弱口令）
   author: SleepingBag945
   severity: high
   classification:

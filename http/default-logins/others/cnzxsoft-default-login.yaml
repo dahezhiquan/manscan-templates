@@ -1,11 +1,11 @@
 id: cnzxsoft-default-login
 
 info:
-  name: Cnzxsoft System - Default Login
+  name: Cnzxsoft System 默认口令登录（弱口令）
   author: SleepingBag945
   severity: high
   description: |
-    Cnzxsoft Golden Shield Information Security Management System has a default weak password.
+    该模板通过尝试 Cnzxsoft System 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   metadata:
     verified: true
     max-request: 1

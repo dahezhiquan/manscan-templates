@@ -1,11 +1,11 @@
 id: splunk-default-login
 
 info:
-  name: Splunk - Default Password
+  name: Splunk 默认口令（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    Splunk Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
+    该模板通过尝试 Splunk 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   classification:
     cpe: cpe:2.3:a:splunk:splunk:*:*:*:*:*:*:*:*
   metadata:

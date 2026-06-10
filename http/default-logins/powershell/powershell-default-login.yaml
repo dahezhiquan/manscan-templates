@@ -1,11 +1,11 @@
 id: powershell-default-login
 
 info:
-  name: PowerShell Universal - Default Login
+  name: PowerShell Universal 默认口令登录（弱口令）
   author: ap3r
   severity: high
   description: |
-    PowerShell Universal default admin credentials were discovered.
+    该模板通过尝试 PowerShell Universal 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://ironmansoftware.com/powershell-universal
   metadata:

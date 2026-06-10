@@ -1,11 +1,11 @@
 id: seeyon-a8-default-login
 
 info:
-  name: Seeyon OA A8 - Default Login
+  name: Seeyon OA A8 默认口令登录（弱口令）
   author: SleepingBag945
   severity: high
   description: |
-    Seeyon (seeyon) OA A8+ Enterprise Edition has a weak password vulnerability, which can be used to log in to the background
+    该模板通过尝试 Seeyon OA A8 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   metadata:
     verified: true
     max-request: 1

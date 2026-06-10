@@ -1,7 +1,7 @@
 id: openmediavault-default-login
 
 info:
-  name: OpenMediaVault - Default Login
+  name: OpenMediaVault 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   reference:

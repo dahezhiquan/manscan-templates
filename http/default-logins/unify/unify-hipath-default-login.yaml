@@ -1,15 +1,15 @@
 id: unify-hipath-default-login
 
 info:
-  name: Unify HiPath Cordless IP - Default Login
+  name: Unify HiPath Cordless IP 默认口令登录（弱口令）
   author: FLX
   severity: high
   description: |
-    Default login credentials on the Unify HiPath Cordless IP admin center were discovered.
+    该模板通过尝试 Unify HiPath Cordless IP 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   impact: |
-    An attacker could gain unauthorized access to the admin center and potentially change the configuration of the devices configured on the service.
+    - 攻击者可未授权进入 Unify HiPath Cordless IP 管理中心，并修改该服务下挂设备的关键配置。
   remediation: |
-    Change the default password to a strong password.
+    - 立即将默认密码修改为高强度且唯一的管理员口令。
   reference:
     - https://wiki.unify.com/images/d/dd/HiPath_Cordless_IP_V1,_Administrator_Documentation.pdf
   classification:

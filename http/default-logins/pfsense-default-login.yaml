@@ -1,11 +1,11 @@
 id: pfsense-default-login
 
 info:
-  name: pfSense - Default Admin Credentials
+  name: pfSense 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected pfSense firewall was found using default administrator credentials (admin:pfsense). An attacker could have gained full administrative access to manage firewall rules, routing, and network configuration.
+    该模板用于检测 pfSense 防火墙是否仍在使用默认管理员凭据。若命中，攻击者可直接获得网络边界设备的完整控制权限，修改防火墙策略、路由与系统配置。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/
   metadata:

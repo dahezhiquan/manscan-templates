@@ -1,11 +1,11 @@
 id: harbor-default-login
 
 info:
-  name: Harbor Registry - Default Admin Credentials
+  name: Harbor Registry 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected: The Harbor container registry was found to be using default administrator credentials (admin:Harbor12345). An attacker could have gained full administrative access to manage registries, projects, users, and stored container images.
+    该模板用于检测 Harbor Registry 是否仍在使用默认管理员凭据。若命中，攻击者可直接管理镜像仓库、项目、用户和制品访问策略。
   reference:
     - https://goharbor.io/docs/1.10/install-config/run-installer-script/
     - https://goharbor.io/docs/latest/administration/managing-users/

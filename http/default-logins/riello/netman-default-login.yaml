@@ -1,11 +1,11 @@
 id: netman-default-login
 
 info:
-  name: Riello UPS NetMan 204 Network Card - Default Login
+  name: Riello UPS NetMan 204 Network Card 默认口令登录（弱口令）
   author: mabdullah22
   severity: high
   description: |
-    Default logins on Riello UPS NetMan 204 is used. Attacker can access to UPS and attacker can manipulate the UPS settings to disrupt the onsite systems.
+    该模板通过尝试 Riello UPS NetMan 204 Network Card 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.riello-ups.com/
   classification:

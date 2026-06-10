@@ -1,11 +1,11 @@
 id: wago-webbased-default-login
 
 info:
-  name: WAGO Web based Management - Default Login
+  name: WAGO Web based Management 默认口令登录（弱口令）
   author: biero-el-corridor
   severity: high
   description: |
-      Identified WAGO Web-Based Management interfaces that were accessible using default credentials (admin:wago).These interfaces are used to configure and monitor WAGO programmable logic controllers (PLCs) and automation systems. Use of factory-default credentials exposed critical OT infrastructure to unauthorized access.
+    该模板通过尝试 WAGO Web based Management 的默认凭据（如 admin:wago），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   metadata:
     shodan-query: html:"WAGO Ethernet Web-based Management"
     verified: true

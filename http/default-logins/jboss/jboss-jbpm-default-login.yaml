@@ -1,10 +1,10 @@
 id: jboss-jbpm-default-login
 
 info:
-  name: JBoss jBPM Administration Console Default Login - Detect
+  name: JBoss jBPM Administration Console 默认口令登录检测（弱口令）
   author: DhiyaneshDk
   severity: high
-  description: JBoss jBPM Administration Console default login information was detected.
+  description: 该模板用于检测 JBoss jBPM Administration Console 是否仍在使用默认管理员凭据。若命中，攻击者可直接进入流程管理后台并执行未授权操作。
   reference:
     - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossjBPMAdminConsole.java
   classification:

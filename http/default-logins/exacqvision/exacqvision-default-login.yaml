@@ -1,10 +1,10 @@
 id: exacqvision-default-login
 
 info:
-  name: ExacqVision Default Login
+  name: ExacqVision 默认口令登录（弱口令）
   author: ELSFA7110
   severity: high
-  description: ExacqVision Web Service default login credentials (admin/admin256) were discovered.
+  description: 该模板通过尝试 ExacqVision 的默认账号口令（如 admin/admin256），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://cdn.exacq.com/auto/manspec/files_2/exacqvision_user_manuals/web_service/exacqVision_Web_Service_Configuration_User_Manual_(version%208.8).pdf
   classification:

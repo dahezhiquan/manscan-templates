@@ -1,10 +1,10 @@
 id: rseenet-default-login
 
 info:
-  name: Advantech R-SeeNet Default Login
+  name: Advantech R-SeeNet 默认口令登录（弱口令）
   author: princechaddha
   severity: high
-  description: Advantech R-SeeNet default admin credentials were discovered. R-SeeNet is a software system used for monitoring of status and functions of Advantech routers.
+  description: 该模板通过尝试 Advantech R-SeeNet 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://icr.advantech.cz/products/software/r-seenet
   classification:

@@ -1,10 +1,10 @@
 id: trilithic-viewpoint-default
 
 info:
-  name: Trilithic Viewpoint Default Login
+  name: Trilithic Viewpoint 默认口令登录（弱口令）
   author: davidmckennirey
   severity: high
-  description: Trilithic Viewpoint application default admin credentials were discovered. Note this product has been discontinued.
+  description: 该模板通过尝试 Trilithic Viewpoint 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L
     cvss-score: 8.3

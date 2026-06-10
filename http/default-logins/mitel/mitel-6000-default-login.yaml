@@ -1,11 +1,11 @@
 id: mitel-6000-default-login
 
 info:
-  name: Mitel 6000 - Default Login
+  name: Mitel 6000 默认口令登录（弱口令）
   author: matejsmycka
   severity: high
   description: |
-   This template detects the use of default credentials (admin:22222) on Mitel 6000 devices, which may allow unauthorized access to system information.
+    该模板通过尝试 Mitel 6000 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://wiki.bicomsystems.com/UADs/Mitel_6930
   metadata:

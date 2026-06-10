@@ -1,11 +1,11 @@
 id: owncast-default-login
 
 info:
-  name: Owncast - Default Credentials
+  name: Owncast 默认凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Owncast using default admin credentials admin:abc123. The admin API was accessible via HTTP Basic authentication, allowing full server configuration access.
+    该模板用于检测 Owncast 是否仍在使用默认管理员凭据。若命中，攻击者可通过管理 API 或后台界面修改直播服务配置、访问密钥及相关系统设置。
   reference:
     - https://owncast.online/docs/configuration/
     - https://owncast.online/quickstart/configure/

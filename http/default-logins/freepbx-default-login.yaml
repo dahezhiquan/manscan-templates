@@ -1,11 +1,11 @@
 id: freepbx-default-login
 
 info:
-  name: FreePBX - Default Admin Credentials
+  name: FreePBX 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected FreePBX administration panel was using default admin credentials (admin:admin). An attacker could gain full administrative access to the PBX system, manage extensions, trunks, and call routing.
+    该模板用于检测 FreePBX 管理后台是否仍启用默认管理员凭据。若命中，攻击者可直接管理分机、外线与呼叫路由，进而影响语音系统的核心配置。
   reference:
     - https://www.freepbx.org/
     - https://community.freepbx.org/t/freepbx-default-admin-passwords/9221

@@ -1,10 +1,10 @@
 id: rancher-default-login
 
 info:
-  name: Rancher Default Login
+  name: Rancher 默认口令登录（弱口令）
   author: princechaddha
   severity: high
-  description: Rancher default admin credentials were discovered. Rancher is an open-source multi-cluster orchestration platform that lets operations teams deploy, manage and secure enterprise Kubernetes.
+  description: 该模板通过尝试 Rancher 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。 在部分部署场景下，还可能进一步造成远程代码执行。
   reference:
     - https://github.com/rancher/rancher
     - https://rancher.com/docs/rancher/v2.5/en/admin-settings/authentication/local/

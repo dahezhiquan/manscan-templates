@@ -1,11 +1,11 @@
 id: opensearch-dashboard-default-login
 
 info:
-  name: OpenSearch Dashboard - Default Login
+  name: OpenSearch Dashboard 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    OpenSearch Dashboard is a community-driven, open source search and analytics suite. This template detects instances using default credentials (admin:admin).
+    该模板通过尝试 OpenSearch Dashboard 的默认凭据（如 admin:admin），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。 在部分部署场景下，还可能进一步造成远程代码执行。
   reference:
     - https://opensearch.org/docs/latest/security/access-control/users-roles/
     - https://github.com/opensearch-project/OpenSearch-Dashboards

@@ -1,11 +1,11 @@
 id: openwebui-default-login
 
 info:
-  name: Open WebUI - Default Login
+  name: Open WebUI 默认口令登录（弱口令）
   author: matejsmycka
   severity: critical
   description: |
-    Detected the presence of an OpenWebUI panel with default credentials (admin@localhost/admin). Successful authentication using these default credentials allows attackers to access the admin interface and potentially perform remote code execution by defining a custom "tool".
+    该模板用于检测 Open WebUI 是否仍在使用默认管理员凭据。若命中，攻击者可直接进入管理界面；在允许自定义工具或脚本的部署场景下，还可能进一步造成远程代码执行。
   reference:
     - https://openwebui.com/
   metadata:

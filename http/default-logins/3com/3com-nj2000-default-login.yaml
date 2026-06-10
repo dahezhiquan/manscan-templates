@@ -1,10 +1,10 @@
 id: 3com-nj2000-default-login
 
 info:
-  name: 3COM NJ2000 - Default Login
+  name: 3COM NJ2000 默认口令登录（弱口令）
   author: daffainfo
   severity: high
-  description: 3COM NJ2000 contains a default login vulnerability. Default admin login password of 'password' was found. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板通过尝试 3COM NJ2000 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.manualslib.com/manual/204158/3com-Intellijack-Nj2000.html?page=12
   classification:

@@ -1,7 +1,7 @@
 id: topaccess-default-login
 
 info:
-  name: Toshiba TopAccess - Default-Login
+  name: Toshiba TopAccess 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   reference:

@@ -1,15 +1,17 @@
 id: graylog-default-login
 
 info:
-  name: Graylog - Default Login
+  name: Graylog 默认口令登录（弱口令）
   author: 0x_Akoko,0xBassia
   severity: high
   description: |
-    Graylog instance is accessible with default admin credentials (admin/admin). This provides full administrative access to the log management platform, including the ability to read all ingested logs, create inputs, configure pipelines, and manage users.
+    该模板通过向 Graylog 会话接口尝试默认管理员账号口令，并依据返回的有效会话信息判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接获得日志平台的完整后台访问权限。
   impact: |
-    An attacker with admin access to Graylog can read all collected log data which may contain credentials, API keys, internal IPs, and sensitive business information. They can also create new inputs to intercept future log data or modify pipelines to redirect/suppress logs.
+    - 攻击者可读取 Graylog 中已采集的全部日志，其中可能包含账号口令、API Key、内部 IP 及业务敏感信息。
+    - 攻击者可新建输入源以截获后续日志流量，或修改流水线规则以重定向、篡改或压制日志。
   remediation: |
-    Change the default root_password_sha2 in the Graylog server.conf configuration file. Use a strong, unique password for the admin account.
+    - 修改 Graylog `server.conf` 配置文件中的 `root_password_sha2`。
+    - 为管理员账户设置强且唯一的密码，并避免复用其他系统口令。
   reference:
     - https://go2docs.graylog.org/current/setting_up_graylog/rest_api.html
     - https://docs.graylog.org/docs/server-conf

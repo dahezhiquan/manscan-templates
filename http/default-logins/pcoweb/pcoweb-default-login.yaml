@@ -1,7 +1,7 @@
 id: pcoweb-default-login
 
 info:
-  name: pCOWeb - Default-Login
+  name: pCOWeb 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   reference:

@@ -1,10 +1,10 @@
 id: tomcat-examples-login
 
 info:
-  name: Apache Tomcat - Default Login Discovery
+  name: Apache Tomcat 默认口令登录发现（弱口令）
   author: 0xelkomy & C0NQR0R
   severity: info
-  description: Apache Tomcat 10.1.0-M1 to 10.1.0-M16, 10.0.0-M1 to 10.0.22, 9.0.30 to 9.0.64 and 8.5.50 to 8.5.81  default login credentials were successful.
+  description: 该模板通过尝试 Apache Tomcat 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://c0nqr0r.github.io/CVE-2022-34305/
   classification:

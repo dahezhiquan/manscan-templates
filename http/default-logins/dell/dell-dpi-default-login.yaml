@@ -1,11 +1,11 @@
 id: dell-dpi-default-login
 
 info:
-  name: Dell DPI Remote Power Management - Default Login
+  name: Dell DPI Remote Power Management 默认口令登录（弱口令）
   author: megamansec
   severity: medium
   description: |
-    The Dell Metered Rack Power Distribution Unit uses a default username and password which is widely known, and any user could change the default password with access.
+    该模板通过尝试 Dell DPI Remote Power Management 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://dl.dell.com/manuals/all-products/esuprt_ser_stor_net/esuprt_rack_infrastructure/dell-metered-pdu_user%27s%20guide3_en-us.pdf
   classification:

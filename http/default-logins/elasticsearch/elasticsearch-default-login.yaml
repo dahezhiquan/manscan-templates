@@ -1,11 +1,11 @@
 id: elasticsearch-default-login
 
 info:
-  name: ElasticSearch - Default Login
+  name: ElasticSearch 默认口令登录（弱口令）
   author: Mohammad Reza Omrani | @omranisecurity
   severity: high
   description: |
-    Elasticsearch default credentials were discovered.
+    该模板通过尝试 ElasticSearch 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://www.alibabacloud.com/blog/what-is-the-default-username-and-password-for-elasticsearch_599610
     - https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-users.html

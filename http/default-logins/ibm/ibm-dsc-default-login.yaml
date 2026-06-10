@@ -1,7 +1,7 @@
 id: ibm-dsc-default-login
 
 info:
-  name: IBM Decision Server Console - Default Login
+  name: IBM Decision Server Console 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
   reference:

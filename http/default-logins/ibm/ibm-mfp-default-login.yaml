@@ -1,11 +1,11 @@
 id: ibm-mfp-default-login
 
 info:
-  name: IBM MobileFirst Foundation - Default Credentials
+  name: IBM MobileFirst Foundation 默认凭据（弱口令）
   author: Vishal Vishwakarma
   severity: critical
   description: |
-    Detected IBM MobileFirst Foundation Operations Console was found using default credentials. The administration REST API exposes full control over mobile application backends including adapter management, push notification infrastructure, OAuth security configuration, and application authenticity enforcement.
+    该模板通过尝试 IBM MobileFirst Foundation 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://www.ibm.com/docs/en/mfp/8.0?topic=console-mobilefirst-operations
     - https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/installation-configuration/production/server-configuration/

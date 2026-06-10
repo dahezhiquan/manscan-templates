@@ -1,11 +1,11 @@
 id: ciphertrust-default-login
 
 info:
-  name: Ciphertrust - Default Login
+  name: Ciphertrust 默认口令登录（弱口令）
   author: SleepingBag945
   severity: high
   description: |
-    Attackers can control the entire platform through the default password （initpass） vulnerability, and use administrator privileges to operate core functions.
+    该模板通过尝试 Ciphertrust 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://www.thalesdocs.com/ctp/cm/2.6/get_started/deployment/initial-password/index.html#:~:text=The%20username%20of%20the%20initial,to%20%22admin%22%20in%20lowercase.
   metadata:

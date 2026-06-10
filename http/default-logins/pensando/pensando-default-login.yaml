@@ -1,11 +1,11 @@
 id: pensando-default-login
 
 info:
-  name: AMD Pensando PSM - Default Login
+  name: AMD Pensando PSM 默认口令登录（弱口令）
   author: tpierru
   severity: high
   description: |
-    The AMD Pensando Policy and Services Manager used a default password for the admin account.This allowed instances to be accessed using the default credentials.
+    该模板通过尝试 AMD Pensando PSM 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://www.amd.com/en/solutions/data-center/networking.html
     - https://arubanetworking.hpe.com/techdocs/Pensando/AMD_Pensando_PSM_for_DSS_Guide-1.72.1-T.pdf

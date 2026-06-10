@@ -1,10 +1,10 @@
 id: panos-default-login
 
 info:
-  name: Palo Alto Networks PAN-OS Default Login
+  name: Palo Alto Networks PAN-OS 默认口令登录（弱口令）
   author: Techryptic (@Tech)
   severity: high
-  description: Palo Alto Networks PAN-OS application default admin credentials were discovered.
+  description: 该模板通过尝试 Palo Alto Networks PAN-OS 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/getting-started/integrate-the-firewall-into-your-management-network/perform-initial-configuration.html#:~:text=By%20default%2C%20the%20firewall%20has,with%20other%20firewall%20configuration%20tasks.
   classification:

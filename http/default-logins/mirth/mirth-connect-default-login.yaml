@@ -1,11 +1,11 @@
 id: mirth-connect-default-login
 
 info:
-  name: Mirth Connect - Default Admin Credentials
+  name: Mirth Connect 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Mirth Connect was using default credentials admin:admin. Mirth Connect is a widely used healthcare integration engine for HL7, FHIR, and other medical data standards.
+    该模板用于检测 Mirth Connect 是否仍在使用默认管理员凭据。若命中，攻击者可直接接管医疗集成平台后台，查看或修改 HL7、FHIR 等接口配置与数据流转规则。
   reference:
     - https://www.nextgen.com/products-and-services/integration-engine
     - https://docs.nextgen.com/bundle/Mirth_Connect_v4.4.1/page/connect/connect/topics/c_Getting_Started_mirth_connect_ug.html

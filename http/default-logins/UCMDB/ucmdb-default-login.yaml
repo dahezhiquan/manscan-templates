@@ -1,10 +1,10 @@
 id: ucmdb-default-login
 
 info:
-  name: Micro Focus Universal CMDB Default Login
+  name: Micro Focus Universal CMDB 默认口令登录（弱口令）
   author: dwisiswant0
   severity: high
-  description: Micro Focus Universal CMDB default login credentials were discovered for diagnostics/admin. Note there is potential for this to be chained together with other vulnerabilities as with CVE-2020-11853 and CVE-2020-11854.
+  description: 该模板通过尝试 Micro Focus Universal CMDB 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://packetstormsecurity.com/files/161182/Micro-Focus-UCMDB-Remote-Code-Execution.htm
   classification:

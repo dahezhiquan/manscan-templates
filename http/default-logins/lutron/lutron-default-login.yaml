@@ -1,10 +1,10 @@
 id: lutron-default-login
 
 info:
-  name: Lutron - Default Account
+  name: Lutron 默认账户（弱口令）
   author: geeknik
   severity: critical
-  description: Multiple Lutron devices contain a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板用于检测 Lutron 是否仍启用默认账户。若命中，攻击者可直接利用预置账号进入系统并执行未授权操作。
   reference:
     - https://www.lutron.com
     - https://vulners.com/openvas/OPENVAS:1361412562310113206

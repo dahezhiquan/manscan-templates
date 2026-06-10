@@ -1,13 +1,15 @@
 id: magnusbilling-default-login
 
 info:
-  name: MagnusBilling - Default Login
+  name: MagnusBilling 默认口令登录（弱口令）
   author: DhiyaneshDk
   severity: high
   description: |
-    MagnusBilling installs with a default administrative account using the credentials root / magnus. If unchanged, these credentials grant full access to the system, allowing attackers to manage billing data, modify configurations, and potentially execute arbitrary code or commands via exposed interfaces.
+    该模板用于检测 MagnusBilling 是否仍启用默认管理账户。若命中，攻击者可借助弱口令直接控制计费平台，进一步查看账务数据、修改配置，甚至在暴露接口较多的场景下执行额外命令。
   impact: |
-    An unauthenticated attacker can gain full administrative control over the MagnusBilling platform, leading to compromise of billing systems, data leakage, and potential pivoting into internal infrastructure.
+    - 攻击者可直接获取 MagnusBilling 平台的完整管理权限。
+    - 计费数据、客户信息与系统配置可能因此泄露或被恶意篡改。
+    - 在与内部系统联动较多的部署场景下，攻击者还可能进一步横向移动到内网基础设施。
   metadata:
     verified: true
     max-request: 1

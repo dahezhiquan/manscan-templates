@@ -1,10 +1,10 @@
 id: dell-idrac-default-login
 
 info:
-  name: Dell iDRAC6/7/8 Default Login
+  name: Dell iDRAC6/7/8 默认口令登录（弱口令）
   author: kophjager007,megamansec
   severity: high
-  description: Dell iDRAC6/7/8 default login information was discovered. The default iDRAC username and password are widely known, and any user with access to the server could change the default password.
+  description: 该模板通过尝试 Dell iDRAC6/7/8 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://securityforeveryone.com/tools/dell-idrac6-7-8-default-login-scanner
   classification:

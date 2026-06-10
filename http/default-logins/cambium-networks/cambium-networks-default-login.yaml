@@ -1,11 +1,11 @@
 id: cambium-networks-default-login
 
 info:
-  name: Canopy 5.7GHz Access Point - Default Login
+  name: Canopy 5.7GHz Access Point 默认口令登录（弱口令）
   author: defektive
   severity: high
   description: |
-    Cambium Networks / Motorola Canopy 5750AP ADVANTAGE Access Point 5.7GHz login credentials were discovered.
+    该模板通过尝试 Canopy 5.7GHz Access Point 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   metadata:
     verified: true
     max-request: 2

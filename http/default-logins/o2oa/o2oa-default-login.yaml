@@ -1,11 +1,11 @@
 id: o2oa-default-login
 
 info:
-  name: O2OA - Default Login
+  name: O2OA 默认口令登录（弱口令）
   author: SleepingBag945
   severity: high
   description: |
-    O2OA is an open source and free enterprise and team office platform. It provides four major platforms portal management, process management, information management, and data management. It integrates many functions such as work reporting, project collaboration, mobile OA, document sharing, process approval, and data collaboration. Meet various management and collaboration needs of enterprises.
+    该模板通过尝试 O2OA 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。 在部分部署场景下，还可能进一步造成远程代码执行。
   classification:
     cpe: cpe:2.3:a:zoneland:o2oa:*:*:*:*:*:*:*:*
   metadata:

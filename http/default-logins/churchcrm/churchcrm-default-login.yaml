@@ -1,11 +1,11 @@
 id: churchcrm-default-login
 
 info:
-  name: ChurchCRM - Default Login
+  name: ChurchCRM 默认口令登录（弱口令）
   author: Kazgangap
   severity: high
   description: |
-    ChurchCRM contains a default login vulnerability.
+    该模板通过尝试 ChurchCRM 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://github.com/ChurchCRM/CRM
   metadata:

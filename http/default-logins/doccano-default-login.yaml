@@ -1,11 +1,11 @@
 id: doccano-default-login
 
 info:
-  name: Doccano - Default Login
+  name: Doccano 默认口令登录（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected the Doccano data labeling platform was using default administrator credentials (admin:password). An attacker could have gained full administrative access.
+    该模板用于检测 Doccano 是否仍在使用默认管理员凭据。若命中，攻击者可直接访问数据标注平台后台并管理项目、数据集与用户。
   reference:
     - https://github.com/doccano/doccano
     - https://doccano.github.io/doccano/

@@ -1,11 +1,11 @@
 id: bigant-default-login
 
 info:
-  name: BigAnt - Default Password
+  name: BigAnt 默认口令（弱口令）
   author: ritikchaddha
   severity: critical
   description: |
-    Misconfiguratoin leads to Default Login into BigAnt Super Admin Account.
+    该模板通过尝试 BigAnt 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://www.bigantsoft.com/support/faq/2-4_How_to_switch_login_accounts_System_admin_Security_admin_Audit_admin_super_admin.html#:~:text=How%2Dto-,How%20to%20switch%20login%20accounts%3A%20System%20admin%2FSecurity%20admin%2F,password%20is%20123456%20by%20default.
   classification:

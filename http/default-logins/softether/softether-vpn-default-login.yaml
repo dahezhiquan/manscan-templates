@@ -1,11 +1,11 @@
 id: softether-vpn-default-login
 
 info:
-  name: SoftEther VPN Admin Console - Default Login
+  name: SoftEther VPN Admin Console 默认口令登录（弱口令）
   author: bhutch
   severity: high
   description: |
-    The administrative password for the SoftEther VPN Server is blank.
+    该模板通过尝试 SoftEther VPN Admin Console 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.softether.org/4-docs/1-manual/3._SoftEther_VPN_Server_Manual/3.3_VPN_Server_Administration#Administration_Authority_for_the_Entire_SoftEther_VPN_Server
   classification:

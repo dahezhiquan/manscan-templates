@@ -1,11 +1,11 @@
 id: avaya-phone-default-login
 
 info:
-  name: Avaya Phone Web Interface - Default Login
+  name: Avaya Phone Web Interface 默认口令登录（弱口令）
   author: tpierru
   severity: high
   description: |
-    Avaya phone web interface contains a default login vulnerability. An attacker can obtain access to sensitive information, modify data, and/or execute unauthorized operations.
+    该模板通过尝试 Avaya Phone Web Interface 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://documentation.avaya.com/bundle/InstallandadminJ100seriesIPPhone_r4.1.x/page/Logging_into_web_UI.html
   classification:

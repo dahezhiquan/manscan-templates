@@ -1,10 +1,10 @@
 id: samsung-wlan-default-login
 
 info:
-  name: Samsung Wlan AP (WEA453e) Default Login
+  name: Samsung Wlan AP (WEA453e) 默认口令登录（弱口令）
   author: pikpikcu
   severity: high
-  description: Samsung Wlan AP (WEA453e) default root credentials were discovered.
+  description: 该模板通过尝试 Samsung Wlan AP (WEA453e) 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://securityforeveryone.com/tools/samsung-wlan-ap-wea453e-default-credentials-scanner
   classification:

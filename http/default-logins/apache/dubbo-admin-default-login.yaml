@@ -1,10 +1,10 @@
 id: dubbo-admin-default-login
 
 info:
-  name: Apache Dubbo - Default Admin Discovery
+  name: Apache Dubbo 默认管理员账户发现（弱口令）
   author: ritikchaddha
   severity: high
-  description: Apache Dubbo default admin credentials were discovered.
+  description: 该模板通过尝试 Apache Dubbo 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://www.cnblogs.com/wishwzp/p/9438658.html
   classification:

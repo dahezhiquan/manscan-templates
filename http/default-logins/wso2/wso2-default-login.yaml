@@ -1,10 +1,10 @@
 id: wso2-default-login
 
 info:
-  name: WSO2 Management Console Default Login
+  name: WSO2 Management Console 默认口令登录（弱口令）
   author: cocxanh
   severity: high
-  description: WSO2 Management Console default admin credentials were discovered.
+  description: 该模板通过尝试 WSO2 Management Console 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://docs.wso2.com/display/UES100/Accessing+the+Management+Console
     - https://is.docs.wso2.com/en/5.12.0/learn/multi-attribute-login/

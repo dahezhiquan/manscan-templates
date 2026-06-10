@@ -1,11 +1,11 @@
 id: doris-default-login
 
 info:
-  name: Apache Doris - Default Login
+  name: Apache Doris 默认口令登录（弱口令）
   author: icarot
   severity: high
   description: |
-    Tests if Apache Doris Panel, it is an easy-to-use, high performance and unified analytics database, is using the default password on root/admin user accounts.
+    该模板通过尝试 Apache Doris 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   metadata:
     verified: true
     max-request: 2

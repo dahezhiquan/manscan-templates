@@ -1,10 +1,10 @@
 id: ibm-mqseries-default-login
 
 info:
-  name: IBM MQSeries Web Console Default Login
+  name: IBM MQSeries Web Console 默认口令登录（弱口令）
   author: righettod
   severity: high
-  description: IBM MQ and REST API default admin credentials were discovered. An unauthenticated, remote attacker can exploit this gain privileged or administrator access to the system.
+  description: 该模板通过尝试 IBM MQSeries Web Console 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://github.com/ibm-messaging/mq-container/blob/master/etc/mqm/mq.htpasswd
     - https://vulners.com/nessus/IBM_MQ_DEFAULT_CREDENTIALS.NASL

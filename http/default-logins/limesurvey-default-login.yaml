@@ -1,11 +1,11 @@
 id: limesurvey-default-login
 
 info:
-  name: LimeSurvey - Default Admin Credentials
+  name: LimeSurvey 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected the LimeSurvey survey management platform was found to be using default administrator credentials (admin:password). An attacker was able to gain full administrative access to manage surveys, responses, and user accounts.
+    该模板用于检测 LimeSurvey 是否仍在使用默认管理员凭据。若命中，攻击者可直接管理问卷、答卷数据与后台账户。
   reference:
     - https://github.com/LimeSurvey/LimeSurvey/blob/master/application/config/config-defaults.php
     - https://www.limesurvey.org/manual/Optional_settings

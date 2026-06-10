@@ -1,11 +1,11 @@
 id: brickcom-camera-default-login
 
 info:
-  name: Brickcom Camera - Default Login
+  name: Brickcom Camera 默认口令登录（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Brickcom IP cameras accessible using default credentials (admin/admin). Successful authentication exposed full camera configuration, live video streams, LED control, and network settings to remote attackers.
+    该模板用于检测 Brickcom IP Camera 是否仍启用默认管理员凭据。若命中，攻击者可直接访问摄像头配置、实时视频与网络设置等敏感功能。
   reference:
     - https://www.brickcom.com/support/faq_contents.php?id=48
     - https://cxsecurity.com/issue/WLB-2026020031

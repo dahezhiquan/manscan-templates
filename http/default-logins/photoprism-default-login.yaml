@@ -1,11 +1,11 @@
 id: photoprism-default-login
 
 info:
-  name: PhotoPrism - Default Login
+  name: PhotoPrism 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    PhotoPrism is an AI-powered photos app for the decentralized web. This template detects instances using default credentials (admin:admin321).
+    该模板通过尝试 PhotoPrism 的默认凭据（如 admin:admin321），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://docs.photoprism.app/getting-started/
   metadata:

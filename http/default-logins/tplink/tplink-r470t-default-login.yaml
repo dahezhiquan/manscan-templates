@@ -1,7 +1,7 @@
 id: tplink-r470t-default-login
 
 info:
-  name: TP-LINK Router R470T - Default-Login
+  name: TP-LINK Router R470T 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   reference:

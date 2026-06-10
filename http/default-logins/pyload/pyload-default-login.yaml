@@ -1,11 +1,11 @@
 id: pyload-default-login
 
 info:
-  name: PyLoad Default Login
+  name: PyLoad 默认口令登录（弱口令）
   author: DhiyaneshDk
   severity: high
   description: |
-    PyLoad Default Credentials were discovered.
+    该模板通过尝试 PyLoad 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   reference:
     - https://pypi.org/project/pyload-ng/#:~:text=Default%20username%3A%20pyload%20.,Default%20password%3A%20pyload%20.
   classification:

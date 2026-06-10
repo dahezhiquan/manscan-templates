@@ -1,11 +1,11 @@
 id: infinispan-default-login
 
 info:
-  name: Infinispan - Default Admin Login
+  name: Infinispan 默认管理员登录（弱口令）
   author: DhiyanesDk
   severity: high
   description: |
-    The Infinispan REST API was found exposed with the default administrator credentials `admin:password`. An unauthenticated network attacker can authenticate via HTTP Digest and gain full read/write access to all cache managers, caches, and server administration endpoints.
+    该模板通过尝试 Infinispan 的默认管理员账号口令（如 admin:password），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
   reference:
     - https://infinispan.org/docs/stable/titles/security/security.html
     - https://infinispan.org/

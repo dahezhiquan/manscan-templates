@@ -1,7 +1,7 @@
 id: webmethod-integration-default-login
 
 info:
-  name: WebMethod Integration Server Default Login
+  name: WebMethod Integration Server 默认口令登录（弱口令）
   author: ChristianPoeschl,OleWagner,usdAG
   severity: high
   reference:

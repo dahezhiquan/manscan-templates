@@ -1,10 +1,10 @@
 id: azkaban-default-login
 
 info:
-  name: Azkaban Web Client Default Credential
+  name: Azkaban Web Client 默认凭据（弱口令）
   author: pussycat0x
   severity: high
-  description: Azkaban is a batch workflow job scheduler created at LinkedIn to run Hadoop jobs.  Default web client credentials were discovered.
+  description: 该模板通过尝试 Azkaban Web Client 的默认凭据，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统并访问相应管理功能或业务数据。
   classification:
     cwe-id: CWE-798
     cpe: cpe:2.3:a:azkaban_project:azkaban:*:*:*:*:*:*:*:*

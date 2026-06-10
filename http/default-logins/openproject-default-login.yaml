@@ -1,11 +1,11 @@
 id: openproject-default-login
 
 info:
-  name: OpenProject - Default Admin Credentials
+  name: OpenProject 默认管理员凭据（弱口令）
   author: 0x_Akoko
   severity: high
   description: |
-    Detected OpenProject was found using the default administrator credentials admin:admin. An attacker could gain full administrative control, including user management, project data, and system configuration.
+    该模板用于检测 OpenProject 是否仍在使用默认管理员凭据。若命中，攻击者可直接控制项目、用户、工作项与系统配置。
   reference:
     - https://www.openproject.org/docs/installation-and-operations/installation/manual/
     - https://www.openproject.org/docs/api/introduction/

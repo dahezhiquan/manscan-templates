@@ -1,11 +1,11 @@
 id: ispconfig-hcp-default-login
 
 info:
-  name: ISPConfig Hosting Control Panel - Default Login
+  name: ISPConfig Hosting Control Panel 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    ISPConfig Hosting Control Panel Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
+    该模板通过尝试 ISPConfig Hosting Control Panel 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   classification:
     cpe: cpe:2.3:a:ispconfig:ispconfig:*:*:*:*:*:*:*:*
   metadata:

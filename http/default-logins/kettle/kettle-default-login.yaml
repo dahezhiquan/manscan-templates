@@ -1,10 +1,10 @@
 id: kettle-default-login
 
 info:
-  name: Kettle - Default Login
+  name: Kettle 默认口令登录（弱口令）
   author: For3stCo1d
   severity: medium
-  description: Kettle contains a default login vulnerability. An attacker can obtain access to user accounts and access sensitive information, modify data, and/or execute unauthorized operations.
+  description: 该模板通过尝试 Kettle 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
     cvss-score: 5.8

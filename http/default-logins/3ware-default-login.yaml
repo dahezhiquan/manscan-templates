@@ -1,11 +1,11 @@
 id: 3ware-default-login
 
 info:
-  name: 3ware Controller 3DM2 - Default Login
+  name: 3ware Controller 3DM2 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   description: |
-    The default password for logging in to the 3DM2 web interface of a 3ware controller is "3ware" for both the Administrator and User accounts.
+    该模板通过尝试 3ware Controller 3DM2 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://www.thomas-krenn.com/en/wiki/3ware_Controller_3DM2_Password
   metadata:

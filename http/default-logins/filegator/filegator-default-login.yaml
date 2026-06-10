@@ -1,7 +1,7 @@
 id: filegator-default-login
 
 info:
-  name: Filegator - Default-Login
+  name: Filegator 默认口令登录（弱口令）
   author: ritikchaddha
   severity: high
   reference:

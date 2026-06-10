@@ -1,15 +1,18 @@
 id: checkmk-default-login
 
 info:
-  name: Checkmk - Default Login
+  name: Checkmk 默认口令登录（弱口令）
   author: 0xBassia
   severity: high
   description: |
-    Checkmk monitoring instance is accessible with default credentials (cmkadmin/cmkadmin). This provides full administrative access to the monitoring platform, including the ability to view all monitored hosts, execute commands on agents, and access stored credentials.
+    该模板通过尝试 Checkmk 的默认管理员账号口令，并依据登录成功后的跳转结果判断目标是否仍在使用弱口令。若命中，攻击者可直接进入监控平台后台，查看主机信息、凭据与自动化任务。
   impact: |
-    An attacker with admin access to Checkmk can view the entire monitored infrastructure, access stored SNMP community strings and SSH credentials, execute commands on monitored hosts via the agent, and gain visibility into the organization's network topology.
+    - 攻击者可查看整个被监控基础设施及主机清单。
+    - 攻击者可访问已保存的 SNMP community、SSH 凭据等敏感认证信息。
+    - 攻击者还可通过代理执行命令，并借此掌握组织网络拓扑与运维资产分布。
   remediation: |
-    Change the default cmkadmin password immediately after installation using 'cmk-passwd cmkadmin' or through the web interface.
+    - 安装完成后立即修改 `cmkadmin` 的默认密码。
+    - 可通过 `cmk-passwd cmkadmin` 命令或 Web 管理界面完成密码重置。
   reference:
     - https://docs.checkmk.com/latest/en/intro_setup.html
     - https://docs.checkmk.com/latest/en/wato_user.html

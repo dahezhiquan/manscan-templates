@@ -1,11 +1,11 @@
 id: franklin-fueling-default-login
 
 info:
-  name: Franklin Fueling System - Default Login
+  name: Franklin Fueling System 默认口令登录（弱口令）
   author: r3Y3r53
   severity: high
   description: |
-    A default password vulnerability refers to a security flaw that arises when a system or device is shipped or set up with a pre-configured, default password that is commonly known or easily guessable.
+    该模板通过尝试 Franklin Fueling System 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   reference:
     - https://www.exploitalert.com/view-details.html?id=39466
   classification:

@@ -1,11 +1,11 @@
 id: ispconfig-admin-default-login
 
 info:
-  name: ISPConfig Admin - Default Password
+  name: ISPConfig Admin 默认口令（弱口令）
   author: pussycat0x
   severity: high
   description: |
-    ISPConfig Admin Default Password Vulnerability exposes systems to unauthorized access, compromising data integrity and security.
+    该模板通过尝试 ISPConfig Admin 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
   metadata:
     verified: true
     max-request: 9

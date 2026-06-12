@@ -1,10 +1,10 @@
 id: global-waf-detect
 
 info:
-  name: Global WAF Detect Matchers
+  name: 全局 WAF 检测匹配器（全局模版）
   author: pdteam
   severity: info
-  description: This global matcher detects WAFs
+  description: 该全局匹配器用于检测网站是否受到 Web 应用防火墙 (WAF) 的保护。
   metadata:
     max-request: 0
   tags: waf-detect,discovery

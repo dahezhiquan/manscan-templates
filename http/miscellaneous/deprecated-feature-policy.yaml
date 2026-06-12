@@ -1,11 +1,11 @@
 id: deprecated-feature-policy
 
 info:
-  name: Deprecated Feature-Policy Header - Detection
+  name: 已废弃 Feature-Policy 响应头检测
   author: ritikchaddha
   severity: info
   description: |
-    Detected the presence of the deprecated Feature-Policy HTTP response header. The Feature-Policy header has been deprecated and replaced by the Permissions-Policy header. While Feature-Policy is still supported in some browsers for backward compatibility, it is recommended to migrate to Permissions-Policy for future-proofing web applications.
+    检测 HTTP 响应中是否仍使用已废弃的 Feature-Policy 头。该响应头已被 Permissions-Policy 替代，虽然部分浏览器仍为兼容性保留支持，但建议迁移到 Permissions-Policy 以避免策略失效或维护风险。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy

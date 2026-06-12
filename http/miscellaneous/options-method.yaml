@@ -1,7 +1,7 @@
 id: options-method
 
 info:
-  name: Allowed Options Method
+  name: OPTIONS 方法允许检测
   author: pdteam
   severity: info
   metadata:

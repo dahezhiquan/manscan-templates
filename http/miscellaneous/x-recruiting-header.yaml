@@ -1,10 +1,11 @@
 id: x-recruiting-header
 
 info:
-  name: X-Recruiting Header
+  name: X-Recruiting 响应头检测
   author: geeknik
   severity: info
-  description: Websites that advertise jobs via HTTP headers
+  description: |
+    检测网站是否通过 HTTP 响应头发布招聘信息。该类头通常用于面向安全研究员或开发者展示招聘线索。
   reference:
     - https://webtechsurvey.com/response-header/x-recruiting
   metadata:

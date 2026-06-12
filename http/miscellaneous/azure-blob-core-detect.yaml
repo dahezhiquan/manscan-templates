@@ -1,11 +1,11 @@
 id: azure-blob-core-detect
 
 info:
-  name: Azure Blob Core Service - Detect
+  name: Azure Blob Core 服务引用检测
   author: ProjectDiscoveryAI
   severity: info
   description: |
-    This template detects the presence of 'blob.core.windows.net' in the response body, indicating potential references to Azure Blob Storage.
+    检测响应正文中是否出现 blob.core.windows.net 特征，用于识别页面或接口中潜在的 Azure Blob Storage 资源引用。
   metadata:
     max-request: 1
     verified: true

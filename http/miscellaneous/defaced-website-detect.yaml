@@ -1,10 +1,11 @@
 id: defaced-website-detect
 
 info:
-  name: Defaced Website - Detection
+  name: 网站被篡改检测
   author: ggranjus
   severity: info
-  description: The detected website is defaced.
+  description: |
+    检测目标网站是否出现被篡改后的页面特征。命中通常表示页面标题或内容包含黑客署名、篡改标识或异常展示内容。
   metadata:
     verified: 'true'
     max-request: 1

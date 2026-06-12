@@ -1,11 +1,11 @@
 id: moodle-changelog
 
 info:
-  name: Moodle Changelog File Detect
+  name: Moodle Changelog 文件检测
   author: oppsec,lap1nou
   severity: info
   description: |
-    Moodle has a file which describes API changes in core libraries and APIs, and can be used to discover Moodle version.
+    检测 Moodle changelog 文件是否可访问。该文件记录核心库和 API 变更，可被用于推断 Moodle 版本及潜在受影响范围。
   reference:
     - https://moodledev.io/general/development/upgradenotes
     - https://moodle.atlassian.net/browse/MDL-81125

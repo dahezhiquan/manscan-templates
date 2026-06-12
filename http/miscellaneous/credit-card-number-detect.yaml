@@ -1,11 +1,11 @@
 id: credit-card-number-detect
 
 info:
-  name: Credit and Debit Card Number - Detection
+  name: 信用卡与借记卡号码泄露检测
   author: spiderSilk,morsy,geeknik
   severity: medium
   description: |
-    This template is designed to identify the presence of credit or debit card numbers exposed within web pages, APIs, or other application responses. It searches for patterns matching card numbers using regular expressions aligned with common card formats, including Visa, MasterCard, American Express, and Discover cards. Detecting exposed card information can help identify potential compliance issues with standards like PCI DSS and mitigate risks of data leaks.
+    该模板用于识别网页、API 或其他应用响应中暴露的信用卡或借记卡号码。检测逻辑基于常见卡组织格式的正则特征，包括 Visa、MasterCard、American Express 和 Discover 等，可辅助发现潜在的数据泄露和 PCI DSS 合规风险。
   reference:
     - https://www.tenable.com/plugins/was/98129
     - https://en.wikipedia.org/wiki/Payment_card_number

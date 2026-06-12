@@ -1,10 +1,11 @@
 id: maxforwards-headers-detect
 
 info:
-  name: Max-Forwards Header - Detect
+  name: Max-Forwards 响应头检测
   author: righettod
   severity: info
-  description: Max-Forwards response header is specified.
+  description: |
+    检测响应中是否存在 Max-Forwards 头。该头通常用于限制 TRACE 或 OPTIONS 请求在代理链中的转发次数，出现时可反映中间代理或服务端调试行为。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Max-Forwards
     - https://http.dev/max-forwards

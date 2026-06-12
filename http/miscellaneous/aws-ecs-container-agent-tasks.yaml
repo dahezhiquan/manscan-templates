@@ -1,10 +1,11 @@
 id: aws-ecs-container-agent-tasks
 
 info:
-  name: aws-ecs-container-agent-tasks
+  name: AWS ECS 容器代理任务元数据暴露
   author: dogasantos
   severity: info
-  description: Aws container metadata content
+  description: |
+    检测 AWS ECS 容器代理任务元数据内容。若该接口被错误暴露，可能泄露容器任务、镜像、环境和运行时相关信息。
   reference:
     - https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
   metadata:

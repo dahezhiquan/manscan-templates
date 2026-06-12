@@ -1,10 +1,11 @@
 id: external-service-interaction
 
 info:
-  name: External Service Interaction
+  name: 外部服务交互检测
   author: andreluna
   severity: info
-  description: External Service interaction via Host Header Injection.
+  description: |
+    检测通过 Host 头注入触发的外部服务交互。若应用将 Host 头拼接到链接、回调或服务端请求中，攻击者可能诱导目标访问外部地址并验证注入点。
   reference:
     - https://portswigger.net/kb/issues/00300210_external-service-interaction-http
     - https://success.qualys.com/support/s/article/000006843

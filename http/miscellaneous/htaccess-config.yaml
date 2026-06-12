@@ -1,7 +1,7 @@
 id: htaccess-config
 
 info:
-  name: HTaccess config file
+  name: HTaccess 配置文件暴露检测
   author: Yash Anand @yashanand155
   severity: info
   metadata:

@@ -1,11 +1,11 @@
 id: crypto-address-detect
 
 info:
-  name: Exposed Cryptocurrency Wallet Address
+  name: 加密货币钱包地址暴露检测
   author: rxerium
   severity: info
   description: |
-    Detected Bitcoin, Monero, Ethereum, or XRP wallet addresses were identified in webpage content.
+    检测网页内容中是否暴露 Bitcoin、Monero、Ethereum 或 XRP 等加密货币钱包地址。该信息可用于 OSINT 关联分析，也可能暴露业务收款地址或链上资产线索。
   reference:
     - https://bitcoin.org/
     - https://xrpl.org/

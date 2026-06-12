@@ -1,7 +1,7 @@
 id: exposed-file-upload-form
 
 info:
-  name: Exposed File Upload Form
+  name: 文件上传表单暴露检测
   author: geeknik
   severity: info
   classification:

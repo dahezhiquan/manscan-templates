@@ -1,7 +1,7 @@
 id: xml-schema-detect
 
 info:
-  name: XML Schema Detection
+  name: XML Schema 检测
   author: alph4byt3
   severity: info
   metadata:

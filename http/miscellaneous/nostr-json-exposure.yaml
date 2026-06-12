@@ -1,13 +1,13 @@
 id: nostr-json-exposure
 
 info:
-  name: Well-Known Nostr JSON
+  name: Well-Known Nostr JSON 暴露
   author: rxerium
   severity: info
   description: |
-    Detects Nostr public key discovery JSON.
+    检测 Nostr 公钥发现 JSON 文件。该资源用于将域名或用户标识与 Nostr 公钥关联。
   impact: |
-    Presence of this well-known resource can expose implementation details or policies.
+    该 well-known 资源的存在可能暴露 Nostr 身份、公钥映射和相关实现策略。
   reference:
     - https://github.com/nostr-protocol/nips/blob/master/05.md
   metadata:

@@ -1,7 +1,7 @@
 id: robots-txt
 
 info:
-  name: robots.txt file
+  name: robots.txt 文件检测
   author: CasperGN,TheZakMan
   severity: info
   metadata:

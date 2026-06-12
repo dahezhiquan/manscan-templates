@@ -1,11 +1,11 @@
 id: torrent-magnet-detect
 
 info:
-  name: Torrent Magnet - Detect
+  name: Torrent Magnet 链接检测
   author: rxerium
   severity: info
   description: |
-    Detects magnet links present on a website, which are commonly used for torrenting.
+    检测网站中是否存在 magnet 链接。此类链接常用于 BitTorrent 资源分发，命中可用于识别种子资源站点或页面中的 BT 下载入口。
   reference:
     - https://www.zdnet.com/article/what-is-torrenting-and-how-does-it-work/
   metadata:

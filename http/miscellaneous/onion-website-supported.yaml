@@ -1,11 +1,11 @@
 id: onion-website-supported
 
 info:
-  name: Onion Website Supported via Onion-Location Header
+  name: Onion-Location 头支持检测
   author: rxerium
   severity: info
   description: |
-    Identified websites that supported Tor network access through the Onion-Location HTTP response header, which pointed to a corresponding .onion service for enhanced privacy and anonymity.
+    检测网站是否通过 Onion-Location HTTP 响应头声明支持 Tor 网络访问。该响应头会指向对应的 .onion 服务，以提供更强的隐私和匿名访问能力。
   metadata:
     verified: true
     max-request: 1

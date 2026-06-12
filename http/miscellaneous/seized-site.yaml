@@ -1,11 +1,11 @@
 id: seized-site
 
 info:
-  name: Seized Site
+  name: 执法接管网站检测
   author: rxerium
   severity: info
   description: |
-    This website has been seized by law enforcement
+    检测网站是否显示已被执法机构接管的页面。命中通常表示域名或站点已被司法、执法或监管机构查封。
   metadata:
     max-request: 1
     verified: true

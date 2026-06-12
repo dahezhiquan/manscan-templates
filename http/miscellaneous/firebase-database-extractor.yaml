@@ -1,10 +1,11 @@
 id: firebase-database-extractor
 
 info:
-  name: Firebase Database Extract Check
+  name: Firebase 数据库提取检测
   author: rafaelwdornelas
   severity: info
-  description: Extract Firebase Database
+  description: |
+    检测并提取 Firebase Database 相关信息。命中可能表示应用响应中暴露了 Firebase 数据库端点或可进一步验证的配置。
   metadata:
     max-request: 1
   tags: miscellaneous,firebase,misc,vuln

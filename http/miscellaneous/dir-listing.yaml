@@ -1,7 +1,7 @@
 id: dir-listing
 
 info:
-  name: Directory listing enabled
+  name: 目录列出启用检测
   author: _harleo,pentest_swissky,hczdmr
   severity: info
   reference:

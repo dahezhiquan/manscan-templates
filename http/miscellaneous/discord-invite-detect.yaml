@@ -1,11 +1,11 @@
 id: discord-invite-detect
 
 info:
-  name: Discord Invites for Users, Bots & Servers - Detect
+  name: Discord 邀请链接检测
   author: rxerium
   severity: info
   description: |
-    Detect Discord Invites for users, bots and servers
+    检测页面中是否存在面向用户、机器人或服务器的 Discord 邀请链接。该信息可用于发现公开社群入口或关联资产。
   reference:
     - https://discord.com
   tags: discord,info,osint,misc,vuln

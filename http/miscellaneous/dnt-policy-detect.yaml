@@ -1,11 +1,11 @@
 id: dnt-policy-detect
 
 info:
-  name: DNT Policy Declaration
+  name: Do Not Track 策略声明检测
   author: rxerium
   severity: info
   description: |
-    Detects a Do not Track policy.
+    检测站点是否声明 Do Not Track (DNT) 隐私策略。该策略用于说明网站如何响应用户浏览器发送的“不跟踪”偏好。
   reference:
     - https://www.freeprivacypolicy.com/blog/privacy-policy-do-not-track-dnt/
   tags: privacy,dnt,detect,compliance,policy,vuln

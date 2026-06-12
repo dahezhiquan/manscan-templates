@@ -1,7 +1,7 @@
 id: http-trace
 
 info:
-  name: HTTP TRACE method enabled
+  name: HTTP TRACE 方法启用检测
   author: nodauf
   severity: info
   reference:

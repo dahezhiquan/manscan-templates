@@ -1,7 +1,7 @@
 id: microsoft-azure-error
 
 info:
-  name: Microsoft Azure Web App - Error 404
+  name: Microsoft Azure Web App 404 错误页检测
   author: dhiyaneshDK
   severity: info
   classification:

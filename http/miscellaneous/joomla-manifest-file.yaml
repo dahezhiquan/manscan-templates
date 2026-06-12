@@ -1,10 +1,11 @@
 id: joomla-manifest-file
 
 info:
-  name: Joomla! Manifest File - Disclosure
+  name: Joomla! Manifest 文件泄露
   author: oppsec
   severity: medium
-  description: A Joomla! Manifest file was discovered. joomla.xml is a file which stores information about installed Joomla!, such as version, files, and paths.
+  description: |
+    检测 Joomla! Manifest 文件是否可访问。joomla.xml 会记录已安装 Joomla! 的版本、文件和路径等信息，泄露后可能帮助攻击者定位组件和版本风险。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

@@ -1,10 +1,11 @@
 id: google-floc-disabled
 
 info:
-  name: Google FLoC Disabled
+  name: Google FLoC 禁用检测
   author: geeknik
   severity: info
-  description: The detected website has decided to explicitly exclude itself from Google FLoC tracking.
+  description: |
+    检测网站是否明确选择退出 Google FLoC 跟踪。命中表示站点通过响应头或策略声明禁止参与 FLoC 行为分析。
   reference:
     - https://www.bleepingcomputer.com/news/security/github-disables-google-floc-user-tracking-on-its-website/
   metadata:

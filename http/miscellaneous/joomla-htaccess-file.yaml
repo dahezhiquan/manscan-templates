@@ -1,10 +1,11 @@
 id: joomla-htaccess-file
 
 info:
-  name: Joomla! htaccess file disclosure
+  name: Joomla! htaccess 文件泄露
   author: oppsec
   severity: info
-  description: Joomla!  has an htaccess file to store configurations about HTTP config, directory listing, etc.
+  description: |
+    检测 Joomla! 站点是否暴露 htaccess 文件。该文件通常包含 HTTP 配置、目录列出控制和重写规则等信息，泄露后可能帮助攻击者理解站点配置。
   metadata:
     max-request: 1
   tags: miscellaneous,misc,joomla,vuln

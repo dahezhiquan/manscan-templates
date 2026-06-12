@@ -1,11 +1,11 @@
 id: defacement-detect
 
 info:
-  name: Defacement Content - Detection
+  name: 网页篡改内容检测
   author: ricardomaia
   severity: info
   description: |
-    This template detects defacement content in the response body, using a list of commom paths as payload.It also detects spamdexing and hacktivism signatures and extracts a text snippet with the match.The URL paths and regex rules were based on research from several sources.Other rules are based in the author's experience and are not exhaustive.
+    该模板通过常见路径和响应正文规则检测网页篡改内容，同时识别 spamdexing、黑客行动主义签名和篡改文本片段。路径与正则规则来源于公开研究和经验规则，适合用于发现已被入侵或被恶意替换内容的页面。
   reference:
     - https://www.zone-h.org
     - https://zone-xsec.com

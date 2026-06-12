@@ -1,7 +1,7 @@
 id: old-copyright
 
 info:
-  name: Find Pages with Old Copyright Dates
+  name: 旧版权年份页面检测
   author: geeknik
   severity: info
   metadata:

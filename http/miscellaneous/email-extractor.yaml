@@ -1,7 +1,7 @@
 id: email-extractor
 
 info:
-  name: Email Extractor
+  name: 电子邮件地址提取
   author: panch0r3d
   severity: info
   metadata:

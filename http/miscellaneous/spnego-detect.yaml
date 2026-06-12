@@ -1,11 +1,11 @@
 id: spnego-detect
 
 info:
-  name: SPNEGO - Detect
+  name: SPNEGO 认证检测
   author: lady_bug,ruppde
   severity: info
   description: |
-    SPNEGO stands for Simple and Protected GSSAPI Negotiation Mechanism. It is a protocol used for secure authentication and negotiation between client and server applications in a network environment. SPNEGO is based on the Generic Security Services Application Programming Interface (GSSAPI) framework.
+    检测目标是否启用 SPNEGO (Simple and Protected GSSAPI Negotiation Mechanism)。该机制基于 GSSAPI，常用于 Windows/Kerberos 环境中的 HTTP 单点登录协商认证。
   reference:
     - https://www.ibm.com/docs/en/was-liberty/core?topic=authentication-single-sign-http-requests-using-spnego-web
     - https://arstechnica.com/information-technology/2022/12/critical-windows-code-execution-vulnerability-went-undetected-until-now/

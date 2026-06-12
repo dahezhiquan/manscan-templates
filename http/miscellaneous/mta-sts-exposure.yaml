@@ -1,13 +1,13 @@
 id: mta-sts-exposure
 
 info:
-  name: Well-Known MTA-STS Policy
+  name: Well-Known MTA-STS 策略暴露
   author: rxerium
   severity: info
   description: |
-    Detects SMTP MTA-STS policy file (RFC 8461).
+    检测 SMTP MTA-STS 策略文件 (RFC 8461)。该文件用于声明邮件服务器的 TLS 传输安全策略。
   impact: |
-    Presence of this well-known resource can expose implementation details or policies.
+    该 well-known 资源可能暴露邮件安全策略、MX 主机信息和策略有效期等实现细节。
   reference:
     - https://www.rfc-editor.org/rfc/rfc8461
   metadata:

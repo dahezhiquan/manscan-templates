@@ -1,12 +1,13 @@
 id: cloudflare-transform-via-url-injection
 
 info:
-  name: Cloudflare Transform via URL - Image Injection
+  name: Cloudflare Transform via URL 图片注入
   author: j3ssie
   severity: unknown
   description: |
-    Transform via URL feature in Cloudflare allow attackers to show arbitrary images to the visitor of a crafted URL on the website. This can be used to perform various attacks such as phishing, defacement, etc.
-  remediation: Disable Images → Transformations → “Resize from any origin” setting in Cloudflare console.
+    Cloudflare 的 Transform via URL 功能在配置不当时可能允许攻击者通过构造 URL 向访问者展示任意图片内容。该行为可被用于钓鱼、页面篡改或品牌冒充等攻击场景。
+  remediation: |
+    在 Cloudflare 控制台中禁用 Images > Transformations > Resize from any origin 设置，并限制允许转换图片的可信来源。
   reference:
     - https://developers.cloudflare.com/images/transform-images/transform-via-url/
   metadata:

@@ -1,10 +1,11 @@
 id: netflix-conductor-version
 
 info:
-  name: Netflix Conductor Version Detection
+  name: Netflix Conductor 版本信息检测
   author: c-sh0
   severity: info
-  description: Obtain netflix conductor version information
+  description: |
+    检测 Netflix Conductor 版本信息。命中后可获取 Conductor UI 或管理接口暴露的版本线索，用于资产识别和后续风险评估。
   reference:
     - https://github.com/Netflix/conductor/blob/v1.6.0-rc1/ui/src/server.js#L17
     - https://github.com/Netflix/conductor/blob/v3.1.0/rest/src/main/java/com/netflix/conductor/rest/controllers/AdminResource.java#L42

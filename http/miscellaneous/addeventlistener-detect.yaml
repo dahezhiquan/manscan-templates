@@ -1,11 +1,11 @@
 id: addeventlistener-detect
 
 info:
-  name: Add DOM EventListener - Detection
+  name: DOM addEventListener 调用检测
   author: yavolo,dwisiswant0
   severity: info
   description: |
-    Identifies the use of JavaScript addEventListener calls in the DOM.
+    检测页面响应中是否存在 JavaScript DOM addEventListener 调用。此类调用本身并不一定构成漏洞，但如果用于处理 postMessage 等跨窗口消息且缺少来源校验，可能成为 DOM 型 XSS 或消息注入风险的线索。
   reference:
     - https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
   metadata:

@@ -1,7 +1,7 @@
 id: robots-txt-endpoint
 
 info:
-  name: robots.txt endpoint prober
+  name: robots.txt 端点探测
   author: CasperGN,pdteam,TheZakMan
   severity: info
   metadata:

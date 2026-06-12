@@ -1,11 +1,11 @@
 id: trust-center-detect
 
 info:
-  name: Trust Center Page - Detect
+  name: 信任中心页面检测
   author: ajdumanhug
   severity: info
   description: |
-    Detected the presence of Trust Center pages or subdomains provided by Safebase, Vanta, or TrustCloud.
+    检测由 Safebase、Vanta 或 TrustCloud 等平台提供的 Trust Center 页面或子域名。该页面通常用于展示安全、合规和隐私资料。
   metadata:
     verified: true
     max-request: 6

@@ -1,11 +1,11 @@
 id: form-detection
 
 info:
-  name: Form Detection
+  name: HTML 表单检测
   author: pdteam
   severity: info
   description: |
-    A template to detect HTML Forms in page response.
+    检测页面响应中是否存在 HTML 表单。该信息可用于识别登录、搜索、上传或其他交互入口。
   reference:
     - https://github.com/dirtycoder0124/formcrawler
   metadata:

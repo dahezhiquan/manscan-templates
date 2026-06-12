@@ -1,12 +1,11 @@
 id: rdap-whois
 
 info:
-  name: RDAP WHOIS
+  name: RDAP WHOIS 信息查询
   author: ricardomaia,sttlr
   severity: info
   description: |
-    RDAP (Registration Data Access Protocol) is a standard defined by the IETF to replace the whois protocol
-    in queries for information about Internet resource records such as domain names, IP addresses, and ASNs.
+    RDAP (Registration Data Access Protocol) 是 IETF 定义的标准协议，用于替代 WHOIS 查询域名、IP 地址和自治系统号等互联网资源注册信息。
   reference:
     - https://about.rdap.org/
   classification:

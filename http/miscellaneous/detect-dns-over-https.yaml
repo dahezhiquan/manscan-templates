@@ -1,11 +1,11 @@
 id: detect-dns-over-https
 
 info:
-  name: Detect DNS over HTTPS
+  name: DNS over HTTPS 服务检测
   author: geeknik
   severity: info
   description: |
-    With DNS over HTTPS (DoH), DNS queries and responses are encrypted and sent via the HTTP or HTTP/2 protocols. DoH ensures that attackers cannot forge or alter DNS traffic. DoH uses port 443, which is the standard HTTPS traffic port, to wrap the DNS query in an HTTPS request. DNS queries and responses are camouflaged within other HTTPS traffic, since it all comes and goes from the same port.
+    检测目标是否支持 DNS over HTTPS (DoH)。DoH 会通过 HTTP 或 HTTP/2 加密传输 DNS 查询与响应，通常使用 HTTPS 443 端口，从而将 DNS 流量隐藏在普通 HTTPS 流量中。
   reference:
     - https://developers.google.com/speed/public-dns/docs/doh/
     - https://developers.cloudflare.com/1.1.1.1/dns-over-https/wireformat

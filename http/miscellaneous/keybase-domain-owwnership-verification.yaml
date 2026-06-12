@@ -1,11 +1,11 @@
 id: keybase-domain-owwnership-verification
 
 info:
-  name: Keybase Domain Ownership Verification
+  name: Keybase 域名所有权验证检测
   author: rxerium
   severity: info
   description: |
-    Detects presence of keybase.txt used to prove domain ownership via Keybase identity.
+    检测 keybase.txt 是否存在，该文件用于通过 Keybase 身份证明域名所有权。暴露该文件可帮助关联域名与 Keybase 身份信息。
   reference:
     - https://book.keybase.io/account#proofs
   metadata:

@@ -1,11 +1,11 @@
 id: siemens-logo8-panel
 
 info:
-  name: Siemens Logo! 8 Web - Panel
+  name: Siemens LOGO! 8 Web 登录面板（IOT）
   author: biero-el-corridor
   severity: info
-  description:
-    Siemens Logo! 8 Web Login Panel was discovered.
+  description: |
+    检测到 Siemens LOGO! 8 Web 登录面板。该入口与小型 PLC/自动化控制设备相关，公网暴露会增加工业控制设备被探测和攻击的风险。
   metadata:
     max-request: 1
     verified: true

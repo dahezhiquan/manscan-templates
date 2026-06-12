@@ -1,10 +1,11 @@
 id: brother-unauthorized-access
 
 info:
-  name: Brother Printer
+  name: Brother 打印机未授权访问（IOT）
   author: pussycat0x
   severity: medium
-  description: Brother Printer unauthorized access was detected.
+  description: |
+    检测到 Brother 打印机存在未授权访问迹象。攻击者无需登录即可访问设备页面，可能查看打印机状态、配置或进一步尝试修改管理参数。
   reference:
     - https://www.exploit-db.com/ghdb/6889
   metadata:

@@ -1,10 +1,11 @@
 id: heatmiser-wifi-thermostat
 
 info:
-  name: Heatmiser Wifi Thermostat Panel - Detect
+  name: Heatmiser WiFi 温控器面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Heatmiser Wifi Thermostat panel was detected.
+  description: |
+    检测到 Heatmiser WiFi 温控器面板。该入口用于远程管理温控设备，暴露后可能泄露楼宇或家庭环境控制设备的访问入口。
   reference:
     - https://www.exploit-db.com/ghdb/7445
   classification:

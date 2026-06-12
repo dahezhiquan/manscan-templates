@@ -1,10 +1,11 @@
 id: mobotix-guest-camera
 
 info:
-  name: MOBOTIX Guest Camera Live View - Detect
+  name: MOBOTIX 访客摄像机实时画面（IOT）
   author: dhiyaneshDK
   severity: info
-  description: MOBOTIX Guest Camera live view was detected.
+  description: |
+    检测到 MOBOTIX Guest Camera 实时画面。该页面公开时可能导致摄像头视频或静态画面被未授权查看。
   reference:
     - https://www.exploit-db.com/ghdb/6848
   classification:

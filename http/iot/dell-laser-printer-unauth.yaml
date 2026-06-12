@@ -1,11 +1,11 @@
 id: dell-laser-printer-unauth
 
 info:
-  name: Dell Laser Printer - Unauthenticated Detect
+  name: Dell 激光打印机未授权访问（IOT）
   author: pussycat0x
   severity: high
   description: |
-    The Dell Laser Printer web interface was accessible without authentication.
+    检测到 Dell 激光打印机 Web 接口可在未认证状态下访问。攻击者可能读取设备状态、打印配置或尝试进一步操作打印服务。
   metadata:
     max-request: 1
     shodan-query: title="Laser Printer"

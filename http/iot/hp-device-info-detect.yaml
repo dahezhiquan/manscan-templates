@@ -1,10 +1,11 @@
 id: hp-device-info-detect
 
 info:
-  name: HP Device Info Detection
+  name: HP 设备信息泄露（IOT）
   author: pussycat0x
   severity: low
-  description: Internal info is disclosed to external users in HP Device.
+  description: |
+    检测到 HP 设备内部信息对外暴露。未授权访问者可能读取设备型号、状态或配置相关信息，为后续攻击或资产测绘提供线索。
   reference:
     - https://www.exploit-db.com/ghdb/6905
   metadata:

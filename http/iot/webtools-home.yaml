@@ -1,10 +1,11 @@
 id: webtools-home
 
 info:
-  name: Webtools Home
+  name: Webtools 面板识别（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Webtools panel was detected.
+  description: |
+    检测到 Webtools 面板。该模板用于识别暴露的 Webtools 管理或服务页面，可能泄露相关设备或应用入口。
   metadata:
     max-request: 1
     shodan-query: http.title:"Webtools"

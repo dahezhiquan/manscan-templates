@@ -1,10 +1,11 @@
 id: brother-printer-detect
 
 info:
-  name: Brother Printer
+  name: Brother 打印机面板（IOT）
   author: pussycat0x
   severity: low
-  description: Brother Printer panel was detected.
+  description: |
+    检测到 Brother 打印机 Web 管理面板。该页面暴露可用于确认打印设备资产，并可能进一步暴露打印配置、状态信息或管理入口。
   reference:
     - https://www.exploit-db.com/ghdb/6889
   metadata:

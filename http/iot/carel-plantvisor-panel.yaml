@@ -1,10 +1,11 @@
 id: carel-plantvisor-panel
 
 info:
-  name: CAREL Pl@ntVisor Panel
+  name: CAREL Pl@ntVisor 面板（IOT）
   author: Hardik-Solanki
   severity: info
-  description: Carel plantvisor panel was detected.
+  description: |
+    检测到 CAREL Pl@ntVisor 面板。该系统常用于暖通、制冷或楼宇设施监控，公网暴露可能泄露工业控制系统的管理入口。
   metadata:
     max-request: 1
     shodan-query: title:"CAREL Pl@ntVisor"

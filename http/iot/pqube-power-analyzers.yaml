@@ -1,10 +1,11 @@
 id: pqube-power-analyzers
 
 info:
-  name: PQube 3 Power Analyzers
+  name: PQube 3 电能质量分析仪面板（IOT）
   author: pussycat0x
   severity: low
-  description: PQube 3 Power Analyzer panel was detected.
+  description: |
+    检测到 PQube 3 Power Analyzer 面板。该设备用于电能质量监测，暴露后可能泄露电力监测设备的状态信息和访问入口。
   metadata:
     verified: true
     max-request: 1

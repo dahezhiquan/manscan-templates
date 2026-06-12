@@ -1,10 +1,11 @@
 id: homeworks-illumination
 
 info:
-  name: HomeWorks Illumination Web Keypad
+  name: HomeWorks Illumination Web 键盘面板（IOT）
   author: geeknik
   severity: low
-  description: HomeWorks Illumination Web Keypad panel was detected.
+  description: |
+    检测到 HomeWorks Illumination Web Keypad 面板。该面板用于照明控制系统，公网暴露可能泄露智能照明或楼宇控制入口。
   reference:
     - https://www.lutron.com
   metadata:

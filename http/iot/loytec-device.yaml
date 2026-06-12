@@ -1,10 +1,11 @@
 id: loytec-device
 
 info:
-  name: Loytec Device Info Detection
+  name: Loytec 设备信息面板（IOT）
   author: pussycat0x
   severity: info
-  description: Loytec Device info panel was detected.
+  description: |
+    检测到 Loytec 设备信息面板。该页面可用于识别楼宇自动化或控制设备，并可能暴露设备型号和管理入口。
   classification:
     cpe: cpe:2.3:h:loytec:lvis-3me:*:*:*:*:*:*:*:*
   metadata:

@@ -1,10 +1,11 @@
 id: ulanzi-clock
 
 info:
-  name: Ulanzi Clock Detect
+  name: Ulanzi 时钟面板识别（IOT）
   author: fabaff
   severity: info
-  description: Ulanzi Clock panel was detected.
+  description: |
+    检测到 Ulanzi Clock 面板。该页面用于识别智能时钟设备的 Web 入口，暴露后可能泄露设备状态或配置入口。
   metadata:
     max-request: 1
   tags: panel,ulanzi,iot,discovery

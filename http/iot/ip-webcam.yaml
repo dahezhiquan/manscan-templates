@@ -1,11 +1,11 @@
 id: ip-webcam
 
 info:
-  name: IP Webcam Viewer Page - Detect
+  name: IP Webcam 查看页面暴露（IOT）
   author: gy741
   severity: low
   description: |
-    Searches for exposed webcams by querying the  endpoint and the existence of IP Webcam in the body.
+    检测到暴露的 IP Webcam 查看页面。该模板通过页面内容特征识别可访问的摄像头界面，可能导致实时画面或设备信息被未授权查看。
   metadata:
     verified: true
     max-request: 1

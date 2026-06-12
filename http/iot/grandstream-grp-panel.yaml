@@ -1,11 +1,11 @@
 id: grandstream-grp-panel
 
 info:
-  name: Grandstream GRP Panel - Detect
+  name: Grandstream GRP Web 管理面板（IOT）
   author: DhiyaneshDk
   severity: info
   description: |
-    Detected the presence of a Grandstream GRP web management login panel. The React-based SPA loads characteristic JavaScript modules including tl.account.ucm.js and webpack chunks for UCM modules.
+    检测到 Grandstream GRP Web 管理登录面板。目标页面加载了 tl.account.ucm.js 及 UCM 模块相关 webpack 资源，符合 Grandstream 管理界面的前端特征。
   classification:
     cpe: cpe:2.3:o:grandstream:ucm6200_firmware:*:*:*:*:*:*:*:*
   metadata:

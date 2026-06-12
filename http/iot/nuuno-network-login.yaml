@@ -1,10 +1,11 @@
 id: nuuno-network-login
 
 info:
-  name: NUUO Network Video Recorder Login Panel - Detect
+  name: NUUO 网络录像机登录面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: NUUO Network Video Recorder login panel was detected.
+  description: |
+    检测到 NUUO 网络视频录像机登录面板。该页面暴露可能泄露视频监控基础设施入口，并增加口令攻击风险。
   reference:
     - https://www.exploit-db.com/ghdb/6840
   classification:

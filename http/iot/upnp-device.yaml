@@ -1,10 +1,11 @@
 id: upnp-device-detect
 
 info:
-  name: Detect Basic uPNP Device
+  name: 基础 UPnP 设备识别（IOT）
   author: geeknik
   severity: info
-  description: uPNP Device was detected.
+  description: |
+    检测到基础 UPnP 设备。该模板根据 UPnP 设备描述信息识别可发现的物联网或网络设备，暴露后可能泄露设备能力、服务和网络信息。
   reference:
     - https://www.upnp.org/specs/basic/UPnP-basic-Basic-v1-Device.pdf
   metadata:

@@ -1,10 +1,11 @@
 id: octoprint-3dprinter
 
 info:
-  name: Octoprint 3D Printer Panel - Detect
+  name: OctoPrint 3D 打印机面板（IOT）
   author: Matthew Nickerson (b0than) @ Layer 8 Security
   severity: info
-  description: Octoprint 3D Printer panel was detected.
+  description: |
+    检测到 OctoPrint 3D 打印机管理面板。该入口用于控制和监控 3D 打印作业，暴露后可能泄露打印任务或设备控制入口。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

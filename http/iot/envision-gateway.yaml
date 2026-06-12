@@ -1,10 +1,11 @@
 id: envision-gateway
 
 info:
-  name: EnvisionGateway Scheduler Panel - Detect
+  name: EnvisionGateway 调度面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: EnvisionGateway scheduler panel was detected.
+  description: |
+    检测到 EnvisionGateway Scheduler 面板。该面板暴露可用于确认调度系统或网关资产，并可能泄露内部业务调度服务的访问入口。
   reference:
     - https://www.exploit-db.com/ghdb/7315
   classification:

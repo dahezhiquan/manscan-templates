@@ -1,11 +1,11 @@
 id: hikvision-cam-info-exposure
 
 info:
-  name: Hikvision IP Camera - Info Exposure
+  name: Hikvision IP 摄像机信息泄露（IOT）
   author: AbdulrahmanTamim
   severity: high
   description: |
-    Unauthenticated exposure of sensitive endpoints was detected on vulnerable Hikvision IP cameras. This included live snapshot feeds, encrypted configuration files, and full user credential XML through CVE-2021-36260 exploit chaining and bypass logic.
+    检测到 Hikvision IP 摄像机敏感端点未授权暴露。模板会验证快照、加密配置文件及用户凭据 XML 等接口特征，可与 CVE-2021-36260 相关利用链或绕过逻辑结合导致敏感信息泄露。
   reference:
     - https://www.exploit-db.com/exploits/45231
     - https://www.cve.org/CVERecord?id=CVE-2021-36260

@@ -1,11 +1,11 @@
 id: flock-safety-camera-panel
 
 info:
-  name: Flock Safety Camera Admin Panel - Detect
+  name: Flock Safety 摄像头管理面板（IOT）
   author: inokii
   severity: info
   description: |
-    Detected the Flock Safety camera admin panel.
+    检测到 Flock Safety 摄像头管理面板。该面板与视频监控和安防摄像设备相关，暴露后可能泄露监控系统管理入口或设备部署信息。
   reference:
     - https://www.flocksafety.com/products/video-cameras
   metadata:

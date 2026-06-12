@@ -1,10 +1,11 @@
 id: iotawatt-app-exposure
 
 info:
-  name: IoTaWatt Configuration App Exposure
+  name: IoTaWatt 配置应用暴露（IOT）
   author: pussycat0x
   severity: high
-  description: An IoTaWatt configuration app was discovered. Unauthenticated access to an IoTaWatt energy monitor could give a malicious attacker the means to upload to any of several third-party energy websites/database.
+  description: |
+    检测到 IoTaWatt 能源监测器配置应用暴露。未授权访问该配置界面可能允许攻击者修改上传目标或连接第三方能源网站、数据库的参数。
   reference:
     - https://docs.iotawatt.com/en/master/passConfig.html
   classification:

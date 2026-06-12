@@ -1,10 +1,11 @@
 id: zebra-printer-detect
 
 info:
-  name: Zebra Printer Detect
+  name: Zebra 打印机面板识别（IOT）
   author: gy741
   severity: info
-  description: Zebra Printer panel was detected.
+  description: |
+    检测到 Zebra 打印机面板。该模板通过 Zebra Technologies 页面特征识别条码、标签或工业打印设备的 Web 管理入口。
   reference:
     - https://www.zebra.com/kr/ko/products/printers.html
   classification:

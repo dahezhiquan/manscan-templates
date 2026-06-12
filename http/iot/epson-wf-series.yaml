@@ -1,10 +1,11 @@
 id: epson-wf-series
 
 info:
-  name: Epson WF Series Detection
+  name: Epson WF 系列打印机识别（IOT）
   author: aashiq
   severity: info
-  description: Searches for Epson WF series printers on the domain
+  description: |
+    检测到 Epson WF 系列打印机。该模板通过页面特征识别域内或目标环境中的 Epson 多功能打印设备。
   metadata:
     max-request: 1
   tags: iot,printer,discovery

@@ -1,11 +1,11 @@
 id: cae-monitor-panel
 
 info:
-  name: CAE Monitoring - Login Panel
+  name: CAE Monitoring 登录面板（IOT）
   author: biero-el-corridor
   severity: info
   description: |
-    Identified an exposed CAE Monitoring login panel.
+    检测到对外暴露的 CAE Monitoring 登录面板。该入口通常用于设备或环境监控，暴露后会增加被撞库、弱口令探测和资产定位的风险。
   metadata:
     shodan-query: http.favicon.hash:-268676052
     verified: true

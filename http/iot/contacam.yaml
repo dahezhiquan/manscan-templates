@@ -1,10 +1,11 @@
 id: contacam
 
 info:
-  name: ContaCam Snapshot Images - Detect
+  name: ContaCam 快照图像暴露（IOT）
   author: dhiyaneshDk
   severity: medium
-  description: ContaCam snapshot images were detected.
+  description: |
+    检测到 ContaCam 快照图像页面。该模板识别公开可访问的摄像头截图资源，可能导致现场画面或监控区域信息被未授权查看。
   reference:
     - https://www.exploit-db.com/ghdb/6831
   classification:

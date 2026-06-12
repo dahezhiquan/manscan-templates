@@ -1,10 +1,11 @@
 id: kevinlab-device-detect
 
 info:
-  name: KevinLAB Devices Detection
+  name: KevinLAB 能源管理设备识别（IOT）
   author: gy741
   severity: info
-  description: KevinLab is a venture company specialized in IoT, Big Data, A.I based energy management platform. KevinLAB's BEMS (Building Energy Management System) enables efficient energy management in buildings by collecting and analyzing various information of energy usage and facilities as well as efficiency and indoor environment control.
+  description: |
+    检测到 KevinLAB 相关设备或平台页面。KevinLAB 提供基于 IoT、大数据和 AI 的建筑能源管理系统，该页面暴露可用于识别能源管理资产。
   metadata:
     max-request: 2
   tags: iot,kevinlab,discovery

@@ -1,10 +1,11 @@
 id: internet-service
 
 info:
-  name: Fuji Xerox Internet Services Panel - Detect
+  name: Fuji Xerox Internet Services 面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Fuji Xerox Internet Services panel was detected.
+  description: |
+    检测到 Fuji Xerox Internet Services 面板。该 Web 管理界面用于打印机或复合机管理，公网暴露可能泄露设备状态、作业信息或管理入口。
   reference:
     - https://www.exploit-db.com/ghdb/5948
     - https://www.support.xerox.com/en-us/article/en/1852141

@@ -1,10 +1,11 @@
 id: panasonic-network-management
 
 info:
-  name: Panasonic Network Camera Management System - Detect
+  name: Panasonic 网络摄像机管理系统暴露（IOT）
   author: dhiyaneshDk
   severity: medium
-  description: Panasonic Network Camera Management System page with live views was detected.
+  description: |
+    检测到 Panasonic Network Camera Management System 页面及实时画面入口。该页面暴露可能导致摄像头管理界面或视频视图被未授权访问。
   reference:
     - https://www.exploit-db.com/ghdb/6487
   classification:

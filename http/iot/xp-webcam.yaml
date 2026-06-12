@@ -1,10 +1,11 @@
 id: xp-webcam
 
 info:
-  name: XP Webcam Viewer Page
+  name: XP Webcam 查看页面暴露（IOT）
   author: aashiq
   severity: medium
-  description: Searches for exposed webcams by querying the /mobile.html endpoint and the existence of webcamXP in the body.
+  description: |
+    检测到暴露的 webcamXP 查看页面。模板通过 /mobile.html 端点和页面中的 webcamXP 特征识别可公开访问的摄像头页面。
   metadata:
     max-request: 1
   tags: webcam,iot,discovery

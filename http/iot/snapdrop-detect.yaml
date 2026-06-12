@@ -1,10 +1,11 @@
 id: snapdrop-detect
 
 info:
-  name: Snapdrop Detect
+  name: Snapdrop 面板识别（IOT）
   author: tess
   severity: info
-  description: Snapdrop panel was detected.
+  description: |
+    检测到 Snapdrop 面板。该服务用于局域网文件传输或共享，公开暴露可能暴露文件交换入口和相关服务信息。
   metadata:
     verified: true
     max-request: 1

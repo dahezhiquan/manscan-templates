@@ -1,10 +1,11 @@
 id: network-camera-detect
 
 info:
-  name: Various Online Devices Detection (Network Camera)
+  name: 网络摄像机面板识别（IOT）
   author: iamthefrogy
   severity: info
-  description: Network camera panel was detected.
+  description: |
+    检测到网络摄像机管理或查看面板。该模板用于识别在线摄像设备，公开访问可能暴露设备入口和监控资产信息。
   metadata:
     max-request: 1
   tags: iot,discovery

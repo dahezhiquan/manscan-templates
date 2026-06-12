@@ -1,11 +1,11 @@
 id: etic-telecom-panel
 
 info:
-  name: ETIC Telecom Device Login - Panel
+  name: ETIC Telecom 设备登录面板（IOT）
   author: biero-el-corridor
   severity: info
   description: |
-    ETIC Telecom device login panel was discovered
+    检测到 ETIC Telecom 设备登录面板。该入口常用于工业通信或远程接入设备管理，公网暴露可能泄露网络边界设备入口。
   metadata:
     verified: true
     max-request: 1

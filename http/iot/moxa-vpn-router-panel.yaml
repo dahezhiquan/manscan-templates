@@ -1,11 +1,11 @@
 id: moxa-vpn-router-panel
 
 info:
-  name: Moxa OnCell VPN - Login Panel
+  name: Moxa OnCell VPN 登录面板（IOT）
   author: biero-el-corridor
   severity: info
   description: |
-    Moxa OnCell VPN panel was discovered.
+    检测到 Moxa OnCell VPN 登录面板。该入口用于工业蜂窝 VPN/路由设备管理，暴露后会增加边界网络设备被口令探测的风险。
   metadata:
     shodan-query: http.favicon.hash:-234487373
     verified: true

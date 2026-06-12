@@ -1,10 +1,11 @@
 id: novus-ip-camera
 
 info:
-  name: NoVus IP Login Panel - Detect
+  name: NoVus IP 摄像机登录面板（IOT）
   author: DhiyaneshDk
   severity: info
-  description: NoVus IP login panel was detected.
+  description: |
+    检测到 NoVus IP 摄像机登录面板。该入口暴露可用于定位摄像头设备，并可能成为后续弱口令或未授权访问测试目标。
   reference:
     - https://www.exploit-db.com/ghdb/8002
   classification:

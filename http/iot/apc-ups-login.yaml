@@ -1,10 +1,11 @@
 id: apc-ups-login
 
 info:
-  name: APC UPS Login - Detect
+  name: APC UPS 登录面板（IOT）
   author: droberson
   severity: info
-  description: APC UPS panel was detected.
+  description: |
+    检测到 APC UPS 登录面板。该界面用于管理不间断电源设备，暴露后可帮助攻击者识别供电基础设施的型号与远程管理入口。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

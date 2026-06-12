@@ -1,10 +1,11 @@
 id: hp-laserjet-detect
 
 info:
-  name: HP LaserJet Professional Panel - Detect
+  name: HP LaserJet Professional 面板（IOT）
   author: dhiyaneshDk
   severity: info
-  description: HP LaserJet Professional panel was detected.
+  description: |
+    检测到 HP LaserJet Professional 面板。该面板暴露可用于确认打印设备型号和管理入口，可能进一步暴露设备状态或配置页面。
   reference:
     - https://www.exploit-db.com/ghdb/6459
   classification:

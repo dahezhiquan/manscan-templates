@@ -1,11 +1,11 @@
 id: raspberry-shake-config
 
 info:
-  name: Raspberry Shake Config Detection
+  name: Raspberry Shake 配置页面暴露（IOT）
   author: pussycat0x
   severity: medium
   description: |
-    The Shake Board digitizer receives, processes, and interprets the sensor data in real-time, allowing for the Raspberry Pi computer to export the data for easy access. The data output can be displayed and analyzed using our own comprehensive set of web tools or any standard seismological software.
+    检测到 Raspberry Shake 配置页面。该设备用于实时接收、处理和导出震动/地震传感数据，配置页面暴露可能泄露传感器部署与数据输出参数。
   metadata:
     verified: true
     max-request: 1

@@ -1,10 +1,11 @@
 id: grandstream-device-configuration
 
 info:
-  name: Grandstream Device Configuration
+  name: Grandstream 设备配置页面（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Exposed Grandstream device configuration page detected.
+  description: |
+    检测到 Grandstream 设备配置页面。该页面暴露可能泄露语音网关或通信终端的配置入口及设备固件信息。
   classification:
     cpe: cpe:2.3:o:grandstream:ht801_firmware:*:*:*:*:*:*:*:*
   metadata:

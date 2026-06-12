@@ -1,10 +1,11 @@
 id: open-mjpg-streamer
 
 info:
-  name: open-mjpg-streamer
+  name: open-mjpg-streamer 摄像头视频流暴露（IOT）
   author: gboddin
   severity: medium
-  description: Open mjpg-streamer service sharing webcam/camera feed
+  description: |
+    检测到 open-mjpg-streamer 服务正在共享摄像头或 webcam 视频流。若无访问控制，外部用户可能直接查看实时画面。
   reference:
     - https://github.com/jacksonliam/mjpg-streamer
   metadata:

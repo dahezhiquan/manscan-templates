@@ -1,11 +1,11 @@
 id: emerson-intellislot-webcard
 
 info:
-  name: Emerson Network Power IntelliSlot Web Card - Exposure
+  name: Emerson IntelliSlot Web Card 暴露（IOT）
   author: Th3l0newolf
   severity: medium
   description: |
-    Emerson IntelliSlot Web Card interface panel was discovered. This web interface provides remote monitoring and management capabilities for Emerson Network Power devices. Unauthorized access to this interface could potentially allow attackers to view sensitive information or control critical infrastructure equipment. Proper authentication and access controls should be implemented to secure this interface.
+    检测到 Emerson Network Power IntelliSlot Web Card 管理界面。该接口用于远程监控和管理 Emerson 电力设备，若缺少严格访问控制，可能暴露关键供电设备的状态信息或控制入口。
   reference:
     - https://www.vertiv.com
   metadata:

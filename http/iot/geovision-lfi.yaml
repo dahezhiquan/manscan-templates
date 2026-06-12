@@ -1,12 +1,12 @@
 id: geovision-lfi
 
 info:
-  name: GeoVision GV-SNVR0811 - Directory Traversal
+  name: GeoVision GV-SNVR0811 目录遍历漏洞（IOT）
   author: DhiyaneshDK
   severity: high
   description: |
-    The GeoVision GV-SNVR0811 network video recorder is vulnerable to a Directory Traversal vulnerability, which allows unauthenticated remote attackers to access arbitrary files on the device by manipulating the file path in HTTP requests (e.g., using ../ sequences).
-  impact: This could lead to unauthorized access to sensitive files, including system configurations, credentials, or other critical information.
+    GeoVision GV-SNVR0811 网络视频录像机存在目录遍历漏洞。未认证远程攻击者可通过在 HTTP 请求路径中构造 ../ 等目录跳转序列读取设备上的任意文件。
+  impact: 攻击者可能未授权读取系统配置、凭据或其他敏感文件，进而扩大对录像设备及关联网络的控制风险。
   reference:
     - https://www.exploit-db.com/exploits/45065
   metadata:

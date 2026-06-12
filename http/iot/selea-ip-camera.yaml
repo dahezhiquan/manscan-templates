@@ -1,10 +1,11 @@
 id: selea-ip-camera
 
 info:
-  name: Detect Selea Targa IP OCR-ANPR Camera
+  name: Selea Targa IP OCR-ANPR 摄像机流泄露（IOT）
   author: geeknik
   severity: info
-  description: Various version of the Selea Targa IP OCR-ANPR Camera are vulnerable to an Unauthenticated RTP/RTSP/M-JPEG Stream Disclosure flaw
+  description: |
+    检测到 Selea Targa IP OCR-ANPR 摄像机相关页面。多个版本存在未授权 RTP、RTSP 或 M-JPEG 视频流泄露风险，可能导致车牌识别摄像画面被外部访问。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5619.php
   metadata:

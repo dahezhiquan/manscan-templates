@@ -1,11 +1,11 @@
 id: kyocera-printer-panel
 
 info:
-  name: Kyocera Printer Panel - Detect
+  name: Kyocera 打印机面板（IOT）
   author: gy741
   severity: info
   description: |
-    Kyocera printer panel was detected.
+    检测到 Kyocera 打印机 Web 面板。该入口暴露可能泄露打印设备型号、状态信息或远程管理界面。
   metadata:
     verified: true
     max-request: 1

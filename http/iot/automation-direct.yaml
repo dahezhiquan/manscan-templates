@@ -1,10 +1,11 @@
 id: automation-direct
 
 info:
-  name: AutomationDirect Panel - Detect
+  name: AutomationDirect C-more HMI 面板（IOT）
   author: DhiyaneshDK
   severity: info
-  description: AutomationDirect panel was detected.
+  description: |
+    检测到 AutomationDirect C-more HMI 面板。该模板通过页面标题识别工业人机界面，公网暴露可能泄露自动化控制系统的远程访问入口。
   reference:
     - https://www.exploit-db.com/ghdb/7295
   classification:

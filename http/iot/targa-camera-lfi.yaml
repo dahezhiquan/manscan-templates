@@ -1,10 +1,11 @@
 id: targa-camera-lfi
 
 info:
-  name: Selea Targa IP OCR-ANPR Camera - Local File Inclusion
+  name: Selea Targa IP OCR-ANPR 摄像机本地文件包含（IOT）
   author: gy741
   severity: high
-  description: Selea Targa IP OCR-ANPR camera suffers from an unauthenticated local file inclusion vulnerability because input passed through the Download Archive in Storage page using get_file.php script is not properly verified before being used to download files. This can be exploited to disclose the contents of arbitrary and sensitive files via directory traversal attacks and aid the attacker in disclosing clear-text credentials.
+  description: |
+    Selea Targa IP OCR-ANPR 摄像机存在未授权本地文件包含漏洞。Storage 页面中的 Download Archive 功能通过 get_file.php 下载文件时未正确校验输入，攻击者可利用目录遍历读取任意敏感文件并获取明文凭据。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5616.php
   classification:

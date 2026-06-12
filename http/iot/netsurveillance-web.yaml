@@ -1,10 +1,11 @@
 id: netsurveillance-web
 
 info:
-  name: NETSurveillance Web Panel - Detect
+  name: NETSurveillance Web 面板（IOT）
   author: DhiyaneshDK
   severity: info
-  description: NETSurveillance Web panel was detected.
+  description: |
+    检测到 NETSurveillance Web 面板。该页面通常与网络摄像机或录像设备相关，暴露后可能泄露视频监控系统入口。
   reference:
     - https://www.exploit-db.com/ghdb/7288
   classification:

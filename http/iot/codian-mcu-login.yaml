@@ -1,10 +1,11 @@
 id: codian-mcu-login
 
 info:
-  name: Codian MCU Login Panel - Detect
+  name: Codian MCU 登录面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Codian MCU login panel was detected.
+  description: |
+    检测到 Codian MCU 登录面板。该面板用于视频会议多点控制单元管理，暴露后可能泄露会议基础设施入口并引发未授权访问尝试。
   reference:
     - https://www.exploit-db.com/ghdb/7404
   classification:

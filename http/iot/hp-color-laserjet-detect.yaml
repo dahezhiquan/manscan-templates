@@ -1,10 +1,11 @@
 id: hp-color-laserjet-detect
 
 info:
-  name: HP Color LaserJet Detection
+  name: HP Color LaserJet 打印机识别（IOT）
   author: idealphase,gy741
   severity: info
-  description: HP color laserJet panel was detected.
+  description: |
+    检测到 HP Color LaserJet 打印机面板。该模板通过标题和页面特征识别 HP 彩色激光打印设备的 Web 管理入口。
   reference:
     - http://www.hp.com/
     - https://www.hp.com/us-en/shop/cv/printers

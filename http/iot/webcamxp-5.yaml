@@ -1,10 +1,11 @@
 id: webcamxp-5
 
 info:
-  name: WebcamXP 5 Login Panel - Detect
+  name: WebcamXP 5 登录面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: WebcamXP 5 login panel was detected.
+  description: |
+    检测到 WebcamXP 5 登录面板。该页面与摄像头视频管理服务相关，暴露后可能成为摄像头访问或配置探测入口。
   reference:
     - https://www.exploit-db.com/ghdb/7448
   classification:

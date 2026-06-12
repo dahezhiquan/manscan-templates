@@ -1,11 +1,11 @@
 id: panabit-ixcache-rce
 
 info:
-  name: Panabit iXCache date_config - Remote Code Execution
+  name: Panabit iXCache date_config 远程命令执行（IOT）
   author: momika233
   severity: critical
   description: |
-    Panabit iXCache date_config module has command splicing, resulting in the execution of arbitrary commands.
+    Panabit iXCache 的 date_config 模块存在命令拼接问题。攻击者可通过构造相关参数触发任意命令执行，进而控制受影响设备或获取系统权限。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E/Panabit%20iXCache%20date_config%20%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/Panabit/Panabit%20iXCache%20date_config%20%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md

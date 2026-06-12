@@ -1,10 +1,11 @@
 id: honeywell-building-control
 
 info:
-  name: Honeywell Building Control
+  name: Honeywell 楼宇控制面板（IOT）
   author: dhiyaneshDK
   severity: info
-  description: Honeywell Building control panel was detected.
+  description: |
+    检测到 Honeywell Building Control 面板。该页面与 Honeywell/Alerton 楼宇控制模块相关，暴露后可能帮助攻击者定位楼宇自动化资产。
   classification:
     cpe: cpe:2.3:h:honeywell:alerton_ascent_control_module:*:*:*:*:*:*:*:*
   metadata:

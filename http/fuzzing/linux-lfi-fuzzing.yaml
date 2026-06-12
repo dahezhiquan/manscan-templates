@@ -1,10 +1,10 @@
 id: linux-lfi-fuzzing
 
 info:
-  name: Linux - Local File Inclusion Fuzzing
+  name: Linux 本地文件包含模糊测试
   author: geeknik,unstabl3,pentest_swissky,sushantkamble,0xSmiley
   severity: high
-  description: Multiple fuzzes for /etc/passwd on passed URLs were conducted, leading to multiple instances of local file inclusion vulnerability.
+  description: 该模板针对常见参数批量注入多种目录穿越与编码变体，尝试读取 `/etc/passwd`，用于检测 Linux 环境下的本地文件包含漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

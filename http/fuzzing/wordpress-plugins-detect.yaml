@@ -1,7 +1,7 @@
 id: wordpress-plugins-detect
 
 info:
-  name: WordPress Plugins Detection
+  name: WordPress 插件探测
   author: 0xcrypto
   severity: info
   metadata:

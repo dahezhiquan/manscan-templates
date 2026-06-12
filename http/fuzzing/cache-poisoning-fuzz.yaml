@@ -1,7 +1,7 @@
 id: cache-poisoning-fuzz
 
 info:
-  name: Cache Poison Fuzzing
+  name: 缓存投毒模糊测试
   author: dwisiswant0,ColbyJack1134
   severity: info
   reference:

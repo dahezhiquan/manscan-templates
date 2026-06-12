@@ -1,7 +1,7 @@
 id: prestashop-module-fuzz
 
 info:
-  name: Prestashop Modules Enumeration
+  name: Prestashop 模块枚举
   author: meme-lord
   severity: info
   metadata:

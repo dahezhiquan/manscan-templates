@@ -1,10 +1,10 @@
 id: mdb-database-file
 
 info:
-  name: Microsoft Access Database File - Detect
+  name: Microsoft Access 数据库文件检测
   author: pdteam
   severity: medium
-  description: Microsoft Access database file was detected.
+  description: 该模板枚举常见的 MDB 数据库路径，并通过文件头与响应类型识别对外暴露的 Microsoft Access 数据库文件。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.5-Testing_for_MS_Access.html
   classification:

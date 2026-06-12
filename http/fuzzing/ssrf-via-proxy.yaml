@@ -1,7 +1,7 @@
 id: ssrf-via-proxy
 
 info:
-  name: SSRF via Proxy Unsafe
+  name: 通过代理触发的 SSRF 检测
   author: geeknik,petergrifin
   severity: unknown
   reference:

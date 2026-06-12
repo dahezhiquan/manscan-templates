@@ -1,7 +1,7 @@
 id: wordpress-themes-detect
 
 info:
-  name: WordPress Theme Detection
+  name: WordPress 主题探测
   author: 0xcrypto
   severity: info
   metadata:

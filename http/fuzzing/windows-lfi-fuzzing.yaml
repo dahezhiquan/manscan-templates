@@ -1,11 +1,11 @@
 id: windows-lfi-fuzzing
 
 info:
-  name: Windows - Local File Inclusion Fuzzing
+  name: Windows 本地文件包含模糊测试
   author: matejsmycka
   severity: high
   description: |
-    Fuzzing for /windows/win.ini.
+    该模板针对常见目录穿越路径尝试读取 `windows/win.ini`，用于检测 Windows 环境下的本地文件包含漏洞。
   tags: fuzz,windows,lfi,fuzzing,vuln
 
 http:

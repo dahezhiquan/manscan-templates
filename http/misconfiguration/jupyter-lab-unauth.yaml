@@ -1,11 +1,11 @@
 id: unauth-jupyter-lab
 
 info:
-  name: Jupyter Lab - Unauthenticated Access
+  name: Jupyter Lab 未授权 访问
   author: j4vaovo
   severity: critical
   description: |
-    JupyterLab was able to be accessed without authentication.
+    检测到 Jupyter Lab 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://paper.seebug.org/2058/
   classification:

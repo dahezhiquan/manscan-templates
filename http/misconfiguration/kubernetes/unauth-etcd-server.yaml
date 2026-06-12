@@ -1,12 +1,14 @@
 id: unauth-etcd-server
 
 info:
-  name: Etcd Server - Unauthenticated Access
+  name: Etcd 服务器 未授权 访问
   author: sharath,pussycat0x
   severity: high
   description: |
-    A Kubernetes etcd server stores the cluster secrets and configurations files. Anonymous access on etcd allows unauthenticated access the data without providing any authentication credentials.
-  remediation: https://etcd.io/docs/v2.3/authentication
+    检测到 Etcd 服务器 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  remediation: |
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://www.optiv.com/insights/source-zero/blog/kubernetes-attack-surface
   metadata:

@@ -1,10 +1,11 @@
 id: ec2-instance-information
 
 info:
-  name: EC2 Instance Information
+  name: EC2 Instance Information 检测
   author: DhiyaneshDk
   severity: low
-  description: EC2 Instance information is exposed.
+  description: |
+    检测到 EC2 Instance Information 检测。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5567070616690100/
   metadata:

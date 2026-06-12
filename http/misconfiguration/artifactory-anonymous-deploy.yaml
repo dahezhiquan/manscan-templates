@@ -1,10 +1,11 @@
 id: artifactory-anonymous-deploy
 
 info:
-  name: Artifactory anonymous deploy
+  name: Artifactory 匿名 deploy
   author: panch0r3d
   severity: high
-  description: Artifactory anonymous repo is exposed.
+  description: |
+    检测到 Artifactory 匿名 deploy。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.errno.fr/artifactory/Attacking_Artifactory.html
   metadata:

@@ -1,10 +1,11 @@
 id: tomcat-cookie-exposed
 
 info:
-  name: Tomcat Cookie Exposed
+  name: Tomcat Cookie 暴露
   author: tess,dk999
   severity: low
-  description: Tomcat Cookie is exposed.
+  description: |
+    检测到 Tomcat Cookie 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://medium.com/bugbountywriteup/apache-example-servlet-leads-to-61a2720cac20
   metadata:

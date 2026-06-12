@@ -1,11 +1,11 @@
 id: amr-printer-management-unauth
 
 info:
-  name: AMR Printer Management Dashboard - Exposure
+  name: AMR Printer 管理 仪表盘 暴露
   author: ritikchaddha
   severity: medium
   description: |
-    Unauthorized access to the AMR Printer Management dashboard was possible, potentially exposing sensitive printer configuration and management interfaces without proper authentication.
+    检测到 AMR Printer 管理 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     max-request: 1
     verified: true

@@ -1,10 +1,11 @@
 id: unauthenticated-popup-upload
 
 info:
-  name: Unauthenticated Popup File Upload - Detect
+  name: 未授权 Popup 文件上传 检测
   author: DhiyaneshDk
   severity: info
-  description: Endpoints where files can be uploaded without authentication were detected.
+  description: |
+    检测到 未授权 Popup 文件上传 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.exploit-db.com/ghdb/6671
   classification:

@@ -1,15 +1,17 @@
 id: litellm-unauth-model-exposure
 
 info:
-  name: LiteLLM Proxy - Model Exposure
+  name: LiteLLM Proxy Model 暴露
   author: DevamShah
   severity: medium
   description: |
-    LiteLLM proxy was detected with anonymous access to the model listing API. LiteLLM proxies that ship without `general_settings.master_key` (or with the key disabled) expose the configured upstream model catalog via /v1/models and /model/info — revealing which OpenAI / Anthropic / Azure / Bedrock / local-LLM endpoints are wired in, often along with their litellm_params routing config, and frequently leaving /chat/completions and /embeddings reachable without any bearer token.
+    检测到 LiteLLM Proxy Model 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Attackers can enumerate the proxy's full model catalog and abuse the upstream accounts for free inference (cost amplification), exfiltrate any prompt logs cached locally, or pivot to internal-only model endpoints exposed via the proxy's routing config.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Set `general_settings.master_key: sk-...` in the LiteLLM config, or pass `--api_key` on startup. Enforce per-user virtual keys via the LiteLLM admin API and place the proxy behind authenticated reverse proxy or service mesh.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://docs.litellm.ai/docs/proxy/virtual_keys
     - https://docs.litellm.ai/docs/proxy/configs

@@ -1,11 +1,11 @@
 id: symfony-fragment
 
 info:
-  name: Symfony _fragment - Detect
+  name: Symfony fragment 检测
   author: Palanichamy_perumal,TechbrunchFR
   severity: unknown
   description: |
-    Symfony servers support a "/_fragment" command that allows clients to provide custom PHP commands and return the HTML output.
+    检测到 Symfony fragment 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://portswigger.net/daily-swig/symfony-based-websites-open-to-rce-attack-research-finds
     - https://medium.com/@m4cddr/how-i-got-rce-in-10-websites-26dd87441f22

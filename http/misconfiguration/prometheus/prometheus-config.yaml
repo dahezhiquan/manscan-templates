@@ -1,10 +1,11 @@
 id: prometheus-config
 
 info:
-  name: Prometheus Config API Endpoint Discovery
+  name: Prometheus 配置 API Endpoint Discovery
   author: geeknik
   severity: info
-  description: A Prometheus config API endpoint was discovered. The config endpoint returns the loaded Prometheus configuration file along with the addresses of targets and alerting/discovery services alongside the credentials required to access them. Usually, Prometheus replaces the passwords in the credentials config configuration field with the placeholder <secret> (although this still leaks the username).
+  description: |
+    检测到 Prometheus 配置 API Endpoint Discovery。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/
   metadata:

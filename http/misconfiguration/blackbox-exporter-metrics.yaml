@@ -1,7 +1,7 @@
 id: blackbox-exporter-metrics
 
 info:
-  name: Blackbox Exporter Metrics Exposed
+  name: Blackbox 导出器 指标 暴露
   author: DhiyaneshDk
   severity: info
   metadata:

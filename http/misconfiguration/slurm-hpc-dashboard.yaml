@@ -1,11 +1,11 @@
 id: slurm-hpc-dashboard
 
 info:
-  name: Slurm HPC Dashboard - Detect
+  name: Slurm HPC 仪表盘 检测
   author: ritikchaddha
   severity: medium
   description: |
-    Slurm HPC Dashboard was detected.
+    检测到 Slurm HPC 仪表盘 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://grafana.com/grafana/dashboards/4323-slurm-dashboard/
   classification:

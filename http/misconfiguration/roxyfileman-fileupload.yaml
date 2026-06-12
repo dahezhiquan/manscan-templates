@@ -1,11 +1,11 @@
 id: roxyfileman-fileupload
 
 info:
-  name: Roxy Fileman 1.4.4 - Arbitrary File Upload
+  name: Roxy 文件man 1.4.4 Arbitrary 文件上传
   author: DhiyaneshDK
   severity: high
   description: |
-    Roxy Fileman 1.4.4 is susceptible to remote code execution via the FORBIDDEN_UPLOADS setting, which is checked when renaming an existing file to a new file extension. An attacker can bypass this check and rename already uploaded files to any extension using the move function, which does not perform any checks.
+    检测到 Roxy 文件man 1.4.4 Arbitrary 文件上传。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.exploit-db.com/exploits/39963
   classification:

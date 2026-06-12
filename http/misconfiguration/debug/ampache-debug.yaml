@@ -1,7 +1,7 @@
 id: ampache-debug
 
 info:
-  name: Ampache Debug Page
+  name: Ampache 调试 Page
   author: ritikchaddha
   severity: info
   classification:

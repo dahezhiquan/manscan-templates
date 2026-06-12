@@ -1,15 +1,17 @@
 id: 3cx-installer
 
 info:
-  name: 3CX Phone System - Installer Page Exposure
+  name: 3CX Phone System 安装向导 Page 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    A 3CX Phone System installer or setup wizard page is publicly accessible. This web-based configuration tool is used for initial PBX setup including admin credential creation, SIP trunk configuration, license activation, and network settings. Exposure of this page allows unauthenticated attackers to reconfigure or take over the phone system.
+    检测到 3CX Phone System 安装向导 Page 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   impact: |
-    An attacker can access the setup wizard to create admin credentials, modify SIP trunk settings, or take complete control of the PBX without authentication.
+    - 攻击者可能接管初始化流程、创建管理员账户或覆盖现有配置。
+    - 暴露的安装页面可能导致系统被重新部署或植入恶意配置。
   remediation: |
-    Restrict access to the 3CX installer and configuration pages to trusted internal networks only. Ensure the setup wizard port (5015) and management console are not exposed to the internet.
+    - 删除或限制安装向导、初始化页面和示例配置入口。
+    - 完成部署后强制关闭安装流程，并为后台入口启用认证和访问控制。
   reference:
     - https://www.3cx.com/docs/manual/install/
     - https://www.3cx.com/

@@ -1,11 +1,11 @@
 id: cakephp-debugkit-exposure
 
 info:
-  name: CakePHP - Debug Kit Toolbar Exposure
+  name: CakePHP 调试 Kit Toolbar 暴露
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected CakePHP Debug Kit toolbar, potentially leaking sensitive application information, database queries, and configuration.
+    检测到 CakePHP 调试 Kit Toolbar 暴露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://github.com/cakephp/debug_kit
     - https://book.cakephp.org/debugkit/

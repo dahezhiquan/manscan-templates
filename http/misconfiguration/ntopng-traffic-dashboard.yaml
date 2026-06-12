@@ -1,10 +1,11 @@
 id: ntopng-traffic-dashboard
 
 info:
-  name: Ntopng Traffic Dashboard - Detect
+  name: Ntopng Traffic 仪表盘 检测
   author: theamanrawat
   severity: medium
-  description: Ntopng traffic dashboard was detected.
+  description: |
+    检测到 Ntopng Traffic 仪表盘 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

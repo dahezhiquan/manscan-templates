@@ -1,11 +1,11 @@
 id: nacos-create-user
 
 info:
-  name: Alibaba Nacos - Unauthorized Account Creation
+  name: Alibaba Nacos 未授权 Account Creation
   author: SleepingBag945
   severity: high
   description: |
-    Nacos uses a fixed JWT token key to authenticate users in the default configuration. Since Nacos is an open source project, the key is publicly known, so unauthorized attackers can use this fixed key to forge any user identity Log in to Nacos to manage and operate background interface functions.
+    检测到 Alibaba Nacos 未授权 Account Creation。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/nacos-token-create-user.yaml
   classification:

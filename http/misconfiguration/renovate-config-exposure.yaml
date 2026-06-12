@@ -1,11 +1,11 @@
 id: renovate-config-exposure
 
 info:
-  name: Renovate Configuration Exposure
+  name: Renovate 配置 暴露
   author: ritikchaddha
   severity: info
   description: |
-    Detects exposed Renovate configuration files that may contain sensitive tokens or credentials.
+    检测到 Renovate 配置 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/renovatebot/renovate
     - https://docs.renovatebot.com/configuration-options/

@@ -1,7 +1,7 @@
 id: php-errors
 
 info:
-  name: PHP errors
+  name: PHP 错误信息
   author: w4cky_,geeknik,dhiyaneshDK
   severity: info
   classification:

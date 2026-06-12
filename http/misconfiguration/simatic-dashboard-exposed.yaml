@@ -1,11 +1,11 @@
 id: simatic-dashboard-exposed
 
 info:
-  name: Siemens SIMATIC 300 Dashboard - Exposed
+  name: Siemens SIMATIC 300 仪表盘 暴露
   author: Th3l0newolf
   severity: high
   description: |
-    An unauthenticated exposed web interface for Siemens SIMATIC S7-300 was discovered, potentially allowing access without any login credentials.
+    检测到 Siemens SIMATIC 300 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://new.siemens.com
   metadata:

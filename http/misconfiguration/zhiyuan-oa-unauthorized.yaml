@@ -1,10 +1,11 @@
 id: zhiyuan-oa-unauthorized
 
 info:
-  name: Zhiyuan Oa Unauthorized
+  name: Zhiyuan Oa 未授权
   author: pikpikcu
   severity: low
-  description: Zhiyuan Oa is exposed.
+  description: |
+    检测到 Zhiyuan Oa 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://buaq.net/go-53721.html
   metadata:

@@ -1,10 +1,11 @@
 id: vernemq-status-page
 
 info:
-  name: VerneMQ Status Page
+  name: VerneMQ 状态页
   author: geeknik
   severity: low
-  description: VerneMQ Status Page is exposed.
+  description: |
+    检测到 VerneMQ 状态页。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/vernemq/vernemq
   metadata:

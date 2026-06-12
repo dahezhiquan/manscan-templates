@@ -1,10 +1,11 @@
 id: sonarqube-public-projects
 
 info:
-  name: Sonarqube with public projects
+  name: Sonarqube public projects 检测
   author: sickwell
   severity: low
-  description: Sonarqube public projects detected.
+  description: |
+    检测到 Sonarqube public projects 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://next.sonarqube.com/sonarqube/web_api/api/components/suggestions?internal=true
   metadata:

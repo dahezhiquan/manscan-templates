@@ -1,11 +1,11 @@
 id: teslamate-unauth-access
 
 info:
-  name: TeslaMate - Unauthenticated Access
+  name: TeslaMate 未授权 访问
   author: For3stCo1d
   severity: medium
   description: |
-    A misconfig in Teslamate allows unauthorized access to /settings endpoint.
+    检测到 TeslaMate 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:teslamate_project:teslamate:*:*:*:*:*:*:*:*
   metadata:

@@ -1,11 +1,11 @@
 id: nagios-logserver-installer
 
 info:
-  name: Nagios Log Server - Install
+  name: Nagios 日志 服务器 Install
   author: ritikchaddha
   severity: high
   description: |
-    Detects the presence of a Nagios Log Server installation page, which can expose configuration setup information or initialization steps.
+    检测到 Nagios 日志 服务器 Install。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     verified: true
     max-request: 1

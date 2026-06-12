@@ -1,11 +1,11 @@
 id: onlyoffice-installer
 
 info:
-  name: OnlyOffice Wizard Page - Exposure
+  name: OnlyOffice Wizard Page 暴露
   author: DhiyaneshDK
   severity: high
   description: |
-    Detects exposed OnlyOffice Setup page.
+    检测到 OnlyOffice Wizard Page 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.onlyoffice.com/
   classification:

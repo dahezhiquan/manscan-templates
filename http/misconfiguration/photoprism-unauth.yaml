@@ -1,11 +1,11 @@
 id: photoprism-unauth
 
 info:
-  name: PhotoPrism - Unauth Access
+  name: PhotoPrism 未授权 访问
   author: ritikchaddha
   severity: high
   description: |
-    PhotoPrism is an AI-powered photos app for the decentralized web. This template detects instances that are accessible without authentication, potentially exposing sensitive user data and photos.
+    检测到 PhotoPrism 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.photoprism.app/getting-started/
   metadata:

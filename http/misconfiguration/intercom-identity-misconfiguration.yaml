@@ -1,11 +1,11 @@
 id: intercom-identity-misconfiguration
 
 info:
-  name: Intercom Identity Verification Misconfiguration
+  name: Intercom Identity Verification 配置不当
   author: domwhewell-sage
   severity: medium
   description: |
-    Identity Verification is not setup on the Intercom widget, allowing an attacker to impersonate a user and access their chat history.
+    检测到 Intercom Identity Verification 配置不当。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://medium.com/@hellother18/uncovering-a-vulnerability-in-intercom-widget-chat-configuration-e5633d06df60
     - https://www.intercom.com/help/en/articles/183-set-up-identity-verification-for-web-and-mobile

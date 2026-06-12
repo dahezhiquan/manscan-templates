@@ -1,7 +1,7 @@
 id: mongod-exposure
 
 info:
-  name: MongoD Server - Exposure
+  name: MongoD 服务器 暴露
   author: DhiyaneshDk
   severity: low
   classification:

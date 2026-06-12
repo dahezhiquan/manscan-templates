@@ -1,11 +1,11 @@
 id: heimdall-dashboard-exposure
 
 info:
-  name: Heimdall Application Dashboard - Unauthenticated Access
+  name: Heimdall Application 仪表盘 未授权 访问
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected The Heimdall Application Dashboard was accessible without authentication.When it was deployed without the protection, the full dashboard-including all linked internal services and API credentials-was accessible to unauthenticated users.
+    检测到 Heimdall Application 仪表盘 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/linuxserver/Heimdall
   metadata:

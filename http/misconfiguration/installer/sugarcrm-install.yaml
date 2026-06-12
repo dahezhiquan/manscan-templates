@@ -1,10 +1,11 @@
 id: sugarcrm-install
 
 info:
-  name: SugarCRM Exposed Installation
+  name: SugarCRM 暴露 安装
   author: ritikchaddha
   severity: high
-  description: SugarCRM is susceptible to the Installation page exposure due to misconfiguration.
+  description: |
+    检测到 SugarCRM 暴露 安装。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   classification:
     cpe: cpe:2.3:a:sugarcrm:sugarcrm:*:*:*:*:*:*:*:*
   metadata:

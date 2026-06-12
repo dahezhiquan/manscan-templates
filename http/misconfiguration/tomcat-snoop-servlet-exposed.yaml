@@ -1,11 +1,11 @@
 id: tomcat-snoop-servlet-exposed
 
 info:
-  name: Apache Tomcat - Snoop Servlet Information Disclosure
+  name: Apache Tomcat Snoop Servlet 信息泄露
   author: Thabisocn
   severity: info
   description: |
-    The Snoop servlet is exposed in the Apache Tomcat examples directory.
+    检测到 Apache Tomcat Snoop Servlet 信息泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://vulners.com/nessus/TOMCAT_SNOOP.NASL
     - https://nvd.nist.gov/vuln/detail/CVE-2000-0760

@@ -1,11 +1,11 @@
 id: craftcms-install-exposure
 
 info:
-  name: Craft CMS Installation Wizard Exposure
+  name: Craft CMS 安装 Wizard 暴露
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Craft CMS installation wizard was exposed, allowing attackers to complete the installation process and gain administrative access to the CMS.
+    检测到 Craft CMS 安装 Wizard 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://craftcms.com/docs/4.x/installation.html
     - https://craftcms.com/knowledge-base/securing-craft

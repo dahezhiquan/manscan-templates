@@ -1,11 +1,11 @@
 id: laragon-phpinfo
 
 info:
-  name: Laragon - phpinfo Disclosure
+  name: Laragon php信息泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    Laragon phpinfo file was exposed.
+    检测到 Laragon php信息泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: wp-advanced-iframe-fpd
 
 info:
-  name: WordPress Advanced iFrame - Full Path Disclosure
+  name: WordPress Advanced iFrame 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    WordPress Advanced iFrame plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    检测到 WordPress Advanced iFrame 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/advanced-iframe/
   metadata:

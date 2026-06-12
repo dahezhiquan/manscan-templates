@@ -1,11 +1,11 @@
 id: graphiql-exposure
 
 info:
-  name: GraphiQL - Exposure
+  name: GraphiQL 暴露
   author: Vincent Olagbemide
   severity: low
   description: |
-    Detected publicly exposed GraphiQL consoles.
+    检测到 GraphiQL 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/graphql/graphiql
   metadata:

@@ -1,11 +1,11 @@
 id: sendmail-forward-exposure
 
 info:
-  name: Sendmail .forward File - Exposure
+  name: Sendmail .forward 文件 暴露
   author: ritikchaddha
   severity: low
   description: |
-    Sendmail .forward file is publicly accessible. This file is used to configure email forwarding and can expose sensitive information including email addresses, forwarding rules, and potentially executable commands (pipe to programs).
+    检测到 Sendmail .forward 文件 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.sendmail.org/~ca/email/doc8.12/op-sh-4.html
     - https://linux.die.net/man/5/forward

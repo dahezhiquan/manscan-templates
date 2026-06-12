@@ -1,10 +1,11 @@
 id: kubernetes-resource-report
 
 info:
-  name: Detect Overview Kubernetes Resource Report
+  name: 检测 Overview Kubernetes Resource 仓库rt
   author: pussycat0x
   severity: medium
-  description: Information Disclosure of Kubernetes Resource Report
+  description: |
+    检测到 检测 Overview Kubernetes Resource 仓库rt。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     max-request: 1
   tags: kubernetes,exposure,misconfig,vuln

@@ -1,10 +1,11 @@
 id: apache-impala
 
 info:
-  name: Apache Impala - Exposure
+  name: Apache Impala 暴露
   author: DhiyaneshDk
   severity: medium
-  description: Apache Impala is exposed.
+  description: |
+    检测到 Apache Impala 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.facebook.com/photo/?fbid=627585602745296&set=pcb.627585619411961
   classification:

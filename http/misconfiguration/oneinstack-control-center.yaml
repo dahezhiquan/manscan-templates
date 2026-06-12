@@ -1,11 +1,11 @@
 id: oneinstack-control-center
 
 info:
-  name: OneinStack Control Center Dashboard - Detect
+  name: OneinStack Control Center 仪表盘 检测
   author: theabhinavgaur
   severity: medium
   description: |
-    OneinStack Control Center dashboard was detected.
+    检测到 OneinStack Control Center 仪表盘 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/oneinstack/oneinstack
     - https://oneinstack.com/

@@ -1,10 +1,11 @@
 id: cloud-metadata
 
 info:
-  name: GCP/AWS Metadata Disclosure
+  name: GCP AWS 元数据 泄露
   author: DhiyaneshDk
   severity: low
-  description: GCP/AWS Metadata is exposed.
+  description: |
+    检测到 GCP AWS 元数据 泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://www.facebook.com/ExWareLabs/photos/pcb.5605494709514357/5605493856181109/
   metadata:

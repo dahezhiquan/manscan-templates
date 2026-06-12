@@ -1,11 +1,11 @@
 id: fastly-debug-headers
 
 info:
-  name: Fastly CDN Debug Headers Exposure
+  name: Fastly CDN 调试 Headers 暴露
   author: pussycat0x
   severity: info
   description: |
-    Detected Fastly CDN debug headers being exposed when the Fastly-Debug header was sent in a request.This exposure disclosed sensitive debugging information such as cache paths, TTL values, content digests, surrogate keys, and cache server identities, which could help attackers understand CDN configuration and cache behavior.
+    检测到 Fastly CDN 调试 Headers 暴露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://www.fastly.com/documentation/reference/http/http-headers/Fastly-Debug/
   metadata:

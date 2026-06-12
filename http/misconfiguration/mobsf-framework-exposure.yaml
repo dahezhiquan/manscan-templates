@@ -1,10 +1,11 @@
 id: mobsf-framework-exposure
 
 info:
-  name: MobSF Framework - Exposure
+  name: MobSF Framework 暴露
   author: Shine
   severity: high
-  description: MobSF Framework is exposed.
+  description: |
+    检测到 MobSF Framework 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

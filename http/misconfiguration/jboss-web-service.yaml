@@ -1,12 +1,14 @@
 id: jboss-web-service
 
 info:
-  name: JBoss Web Service Console - Detect
+  name: JBoss Web 服务 控制台 检测
   author: DhiyaneshDK
   severity: low
   description: |
-    The JBoss Web Service console discloses the details of the remote system, The console displays all the web services and exposed by the system leading to a potential information disclosure.
-  remediation: Restrict access to the ws service
+    检测到 JBoss Web 服务 控制台 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  remediation: |
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/JBossWS.java
   metadata:

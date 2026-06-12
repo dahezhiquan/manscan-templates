@@ -1,10 +1,11 @@
 id: liferay-jsonws
 
 info:
-  name: Liferay /api/jsonws - API Exposed
+  name: Liferay API jsonws API 暴露
   author: DhiyaneshDk
   severity: low
-  description: Liferay /api/jsonws - API is Exposed.
+  description: |
+    检测到 Liferay API jsonws API 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LiferayAPI.java
     - https://liferay.dev/blogs/-/blogs/securing-the-api-jsonws-ui?_com_liferay_blogs_web_portlet_BlogsPortlet_showFlags=true&scroll=_com_liferay_blogs_web_portlet_BlogsPortlet_discussionContainer

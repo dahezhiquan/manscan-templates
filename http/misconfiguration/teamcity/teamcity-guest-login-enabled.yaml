@@ -1,11 +1,11 @@
 id: teamcity-guest-login-enabled
 
 info:
-  name: JetBrains TeamCity - Guest User Access Enabled
+  name: JetBrains TeamCity Guest 用户 访问 启用
   author: Ph33r
   severity: high
   description: |
-    TeamCity provides the ability to turn on the guest login allowing anonymous access to the TeamCity UI.
+    检测到 JetBrains TeamCity Guest 用户 访问 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://ph33r.medium.com/misconfig-in-teamcity-panel-lead-to-auth-bypass-in-apache-org-exploit-146f6a1a4e2b
     - https://www.jetbrains.com/help/teamcity/guest-user.html

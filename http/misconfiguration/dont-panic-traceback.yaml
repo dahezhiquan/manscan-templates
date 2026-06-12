@@ -1,11 +1,11 @@
 id: dont-panic-traceback
 
 info:
-  name: DON'T PANIC Traceback
+  name: DON'T PANIC 回溯信息
   author: ritikchaddha
   severity: low
   description: |
-    DON'T PANIC Traceback was detected.
+    检测到 DON'T PANIC 回溯信息。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     verified: true
     max-request: 1

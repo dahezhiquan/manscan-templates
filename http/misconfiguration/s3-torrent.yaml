@@ -1,10 +1,11 @@
 id: s3-torrent
 
 info:
-  name: Amazon S3 Torrent Download - Detect
+  name: Amazon S3 Torrent Download 检测
   author: ambassify
   severity: info
-  description: Amazon S3 Torrent download was detected, which can allow a malicious user to download files.
+  description: |
+    检测到 Amazon S3 Torrent Download 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

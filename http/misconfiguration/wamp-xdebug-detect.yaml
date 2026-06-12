@@ -1,10 +1,11 @@
 id: wamp-xdebug-detect
 
 info:
-  name: WAMP Xdebug - Detect
+  name: WAMP X调试 检测
   author: e_schultze_
   severity: info
-  description: WAMP Xdebug was detected.
+  description: |
+    检测到 WAMP X调试 检测。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://github.com/random-robbie/My-Shodan-Scripts/blob/1b01bceecc9be0b74b202f445874920eee48bba5/wamp-xdebug/wamp-xdebug.py
   classification:

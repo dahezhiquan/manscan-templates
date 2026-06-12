@@ -1,11 +1,11 @@
 id: trilium-notes-installer
 
 info:
-  name: Trilium Notes Installer - Exposure
+  name: Trilium Notes 安装向导 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    Detects if the Trilium Notes setup page is accessible.
+    检测到 Trilium Notes 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     max-request: 1
     shodan-query: "html:\"Trilium Notes\""

@@ -1,11 +1,11 @@
 id: corebos-htaccess
 
 info:
-  name: CoreBos - .htaccess File Exposure
+  name: CoreBos .ht访问 文件 暴露
   author: arafatansari
   severity: info
   description: |
-    CoreBos was discovered to have .htaccess file exposed to public which includes sensitive information.
+    检测到 CoreBos .ht访问 文件 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://huntr.dev/bounties/5b0fe6e3-4ca1-44ae-8875-d7e6c065432e/
   metadata:

@@ -1,11 +1,11 @@
 id: google-calendar-exposure
 
 info:
-  name: Google Calendar - Exposure
+  name: Google Calendar 暴露
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected publicly accessible Google Calendar embedded on the target that may expose sensitive information including meeting details, attendee names, event schedules, and internal organizational data.
+    检测到 Google Calendar 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://support.google.com/calendar/answer/37083
   metadata:

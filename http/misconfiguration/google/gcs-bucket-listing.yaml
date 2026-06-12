@@ -1,11 +1,11 @@
 id: gcs-bucket-listing
 
 info:
-  name: Google Cloud Storage - Public Bucket Listing
+  name: Google Cloud Storage Public 存储桶列出
   author: 0x_Akoko
   severity: unknown
   description: |
-    Detected Google Cloud Storage bucket was publicly accessible and allows listing of objects, potentially exposing sensitive files.
+    检测到 Google Cloud Storage Public 存储桶列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://cloud.google.com/storage/docs/public-access-prevention
   metadata:

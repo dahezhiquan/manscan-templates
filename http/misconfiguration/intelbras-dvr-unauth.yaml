@@ -1,11 +1,11 @@
 id: intelbras-dvr-unauth
 
 info:
-  name: Intelbras DVR - Unrestricted Access
+  name: Intelbras DVR Unrestricted 访问
   author: pussycat0x
   severity: low
   description: |
-    The HTTP GET request to /cap.js on the server Intelbras DVR reveals several potentially sensitive pieces of information that are not properly protected or encrypted.
+    检测到 Intelbras DVR Unrestricted 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/netsecfish/intelbras_cap_js
   metadata:

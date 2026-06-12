@@ -1,11 +1,11 @@
 id: laravel-terminal-exposure
 
 info:
-  name: Laravel Terminal - Exposed
+  name: Laravel Terminal 暴露
   author: pussycat0x
   severity: high
   description: |
-    The web application was built on the Laravel framework, with Laravel Terminal enabled and publicly accessible; this was detected in the production environment and led to disclosure of sensitive application information.
+    检测到 Laravel Terminal 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/recca0120/laravel-terminal
     - https://www.acunetix.com/vulnerabilities/web/laravel-terminal-open/

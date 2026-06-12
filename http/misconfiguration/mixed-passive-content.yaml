@@ -1,11 +1,11 @@
 id: mixed-passive-content
 
 info:
-  name: Mixed Passive Content
+  name: Mixed Passive Content 检测
   author: Liwermor
   severity: info
   description: |
-    This check detects if there are any passive content being loaded over HTTP instead of HTTPS.
+    检测到 Mixed Passive Content 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content
     - https://portswigger.net/kb/issues/01000400_mixed-content

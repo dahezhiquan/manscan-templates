@@ -1,10 +1,11 @@
 id: zenphoto-setup
 
 info:
-  name: Zenphoto <1.5 Installer - Detect
+  name: Zenphoto <1.5 安装向导 检测
   author: pdteam
   severity: critical
-  description: Zenphoto setup page before version 1.5 is susceptible to sensitive information disclosure due to misconfiguration.
+  description: |
+    检测到 Zenphoto <1.5 安装向导 检测。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:H/A:H
     cvss-score: 9.4

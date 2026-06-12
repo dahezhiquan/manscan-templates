@@ -1,10 +1,11 @@
 id: unauthenticated-mongo-express
 
 info:
-  name: Mongo Express - Unauthenticated Access
+  name: Mongo Express 未授权 访问
   author: dhiyaneshDK,b0rn2r00t
   severity: high
-  description: Mongo Express was able to be access with no authentication requirements in place.
+  description: |
+    检测到 Mongo Express 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.exploit-db.com/ghdb/5684
   classification:

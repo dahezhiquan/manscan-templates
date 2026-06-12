@@ -1,11 +1,11 @@
 id: nocodb-public-registration-enabled
 
 info:
-  name: NocoDB Public Registration Enabled
+  name: Noco数据库 Public 注册已启用
   author: pussycat0x
   severity: medium
   description: |
-    Detected NocoDB instances that allow public user registration without requiring an invitation. This misconfiguration allows anyone to create an account on the NocoDB instance, potentially leading to unauthorized access to databases and sensitive information.
+    检测到 Noco数据库 Public 注册已启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.nocodb.com/getting-started/self-hosted/environment-variables/
     - https://nocodb.com/docs/product-docs/account-settings/oss-specific-details

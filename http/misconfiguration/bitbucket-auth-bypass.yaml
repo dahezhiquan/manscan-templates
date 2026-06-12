@@ -1,11 +1,11 @@
 id: bitbucket-auth-bypass
 
 info:
-  name: Bitbucket Server > 4.8 - Authentication Bypass
+  name: Bitbucket 服务器 > 4.8 Authentication Bypass
   author: DhiyaneshDk
   severity: critical
   description: |
-    There is a permission bypass vulnerability through %20, which allows arbitrary users to obtain sensitive data
+    检测到 Bitbucket 服务器 > 4.8 Authentication Bypass。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Atlassian%20Bitbucket%20%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E.md
   classification:

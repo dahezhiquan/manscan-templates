@@ -1,15 +1,17 @@
 id: cookies-without-httponly
 
 info:
-  name: Cookies without HttpOnly attribute - Detect
+  name: Cookies without HttpOnly attribute 检测
   author: RJ Coleman,Mr.Bobo HP
   severity: info
   description: |
-    Checks whether cookies in the HTTP response contain the HttpOnly attribute. If the HttpOnly flag is set, it means that the cookie is HTTP-only
+    检测到 Cookies without HttpOnly attribute 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   impact: |
-    Lack of HttpOnly flag on cookies increases the risk of client-side attacks, compromising user session security and data privacy.
+    - 凭据、密钥、配置或环境变量泄露后，攻击者可能访问内部系统或第三方服务。
+    - 泄露信息可被用于横向移动、权限提升或供应链攻击。
   remediation: |
-    Ensure that all cookies are set with the HttpOnly attribute to prevent client-side access.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://owasp.org/www-community/HttpOnly
   classification:

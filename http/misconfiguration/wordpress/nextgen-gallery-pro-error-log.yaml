@@ -1,11 +1,11 @@
 id: nextgen-gallery-pro-error-log
 
 info:
-  name: WordPress NextGEN Gallery Pro - Error Log Disclosure
+  name: WordPress NextGEN Gallery Pro 错误 日志 泄露
   author: ritikchaddha
   severity: medium
   description: |
-    The NextGEN Gallery Pro plugin for WordPress may expose debug/error log files that contain sensitive information including file paths, database queries, and potentially credentials. These log files are accessible without authentication.
+    检测到 WordPress NextGEN Gallery Pro 错误 日志 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wpscan.com/plugin/nextgen-gallery/
     - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-nextgen-gallery-wordpress-gallery-information-disclosure-1-9-11/

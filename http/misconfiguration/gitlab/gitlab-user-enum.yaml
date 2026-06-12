@@ -1,7 +1,7 @@
 id: gitlab-user-enum
 
 info:
-  name: GitLab - User Enumeration
+  name: GitLab 用户枚举
   author: Suman_Kar
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: springboot-integrationgraph
 
 info:
-  name: Springboot Actuator integrationgraph
+  name: Springboot Actuator integrationgraph 检测
   author: ELSFA7110
   severity: low
   description: |
-    The integrationgraph endpoint exposes a graph containing all Spring Integration components.
+    检测到 Springboot Actuator integrationgraph 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
   metadata:

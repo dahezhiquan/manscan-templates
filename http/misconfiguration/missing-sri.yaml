@@ -1,11 +1,11 @@
 id: missing-sri
 
 info:
-  name: Missing Subresource Integrity
+  name: 缺失 Subresource Integrity
   author: lucky0x0d,PulseSecurity.co.nz,sullo amarsct
   severity: info
   description: |
-    Checks if external script and stylesheet tags in the HTML response are missing the Subresource Integrity (SRI) attribute.
+    检测到 缺失 Subresource Integrity。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#subresource-integrity
     - https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity

@@ -1,11 +1,11 @@
 id: homebridge-unfinished-install
 
 info:
-  name: Homebridge - Unfinished Installation
+  name: Homebridge 未完成安装ation
   author: theamanrawat
   severity: high
   description: |
-    Homebridge instance with incomplete installation detected. The setup wizard is exposed, allowing anyone to create the first admin account and gain full control over the Homebridge instance. This can lead to unauthorized access to smart home devices and potential network compromise.
+    检测到 Homebridge 未完成安装ation。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://homebridge.io/
     - https://github.com/homebridge/homebridge-config-ui-x

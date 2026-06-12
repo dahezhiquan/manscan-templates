@@ -1,7 +1,7 @@
 id: navidrome-admin-install
 
 info:
-  name: Navidrome Admin User Creation
+  name: Navidrome Admin 用户 Creation
   author: DhiyaneshDK
   severity: critical
   metadata:

@@ -1,10 +1,11 @@
 id: mongodb-exporter-metrics
 
 info:
-  name: MongoDB Exporter - Detect
+  name: Mongo数据库 导出器 检测
   author: pussycat0x
   severity: medium
-  description: MongoDB exporter was detected.
+  description: |
+    检测到 Mongo数据库 导出器 检测。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://github.com/percona/mongodb_exporter
   classification:

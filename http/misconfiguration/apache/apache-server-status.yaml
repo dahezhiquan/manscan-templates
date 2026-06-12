@@ -1,11 +1,11 @@
 id: apache-server-status
 
 info:
-  name: Apache Server Status Disclosure
+  name: Apache 服务器 状态 泄露
   author: thabisocn
   severity: low
   description: |
-    Apache /server-status displays information about your Apache status. If you are not using this feature, disable it.
+    检测到 Apache 服务器 状态 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://www.exploit-db.com/ghdb/5548
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/apache-server-status-detected/

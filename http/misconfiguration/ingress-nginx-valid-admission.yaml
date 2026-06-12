@@ -1,11 +1,11 @@
 id: ingress-nginx-valid-admission
 
 info:
-  name: Kubernetes Ingress-Nginx Valid AdmissionReview - Detection
+  name: Kubernetes Ingress Nginx Valid AdmissionReview 检测
   author: burso
   severity: unknown
   description: |
-    Sends a valid minimal AdmissionReview JSON to reliably detect Kubernetes Ingress-Nginx Admission webhook endpoints.
+    检测到 Kubernetes Ingress Nginx Valid AdmissionReview 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

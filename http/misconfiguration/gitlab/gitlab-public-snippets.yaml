@@ -1,7 +1,7 @@
 id: gitlab-public-snippets
 
 info:
-  name: GitLab public snippets
+  name: GitLab public snippets 检测
   author: pdteam
   severity: info
   reference:

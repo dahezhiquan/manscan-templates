@@ -1,11 +1,11 @@
 id: blackbox-exporter-exposure
 
 info:
-  name: Blackbox Exporter - Exposure
+  name: Blackbox 导出器 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    Blackbox Exporter was detected and appeared to be accessible without authentication.
+    检测到 Blackbox 导出器 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cwe-id: CWE-200
   metadata:

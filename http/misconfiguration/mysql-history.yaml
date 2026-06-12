@@ -1,11 +1,11 @@
 id: mysql-history
 
 info:
-  name: Mysql History - File Disclosure
+  name: Mysql 历史记录 文件 泄露
   author: kazet
   severity: low
   description: |
-    The mysql_history file is a history file used by the MySQL command-line client (mysql) to store a record of the SQL commands and statements entered by a user during their interactive MySQL sessions. It serves as a command history for the MySQL client, allowing users to recall and reuse previously executed SQL commands.
+    检测到 Mysql 历史记录 文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - http://doc.docs.sk/mysql-refman-5.5/mysql-history-file.html
   classification:

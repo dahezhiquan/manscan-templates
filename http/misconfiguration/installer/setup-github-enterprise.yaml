@@ -1,7 +1,7 @@
 id: setup-github-enterprise
 
 info:
-  name: Setup GitHub Enterprise - Detect
+  name: 安装配置 GitHub Enterprise 检测
   author: tess
   severity: unknown
   classification:

@@ -1,15 +1,17 @@
 id: graphql-directive-overloading
 
 info:
-  name: GraphQL Directive Overloading
+  name: GraphQL Directive Overloading 检测
   author: shamo0
   severity: info
   description: |
-    GraphQL directive overloading occurs when multiple duplicated directives are allowed in a single query, potentially leading to denial of service attacks or resource exhaustion.
+    检测到 GraphQL Directive Overloading 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   impact: |
-    An attacker could exploit directive overloading to consume excessive server resources, potentially leading to denial of service conditions.
+    - 凭据、密钥、配置或环境变量泄露后，攻击者可能访问内部系统或第三方服务。
+    - 泄露信息可被用于横向移动、权限提升或供应链攻击。
   remediation: |
-    Configure GraphQL server to limit or prevent directive overloading by implementing proper validation and rate limiting.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL
     - https://github.com/dolevf/graphql-cop/blob/main/lib/tests/dos_directive_overloading.py

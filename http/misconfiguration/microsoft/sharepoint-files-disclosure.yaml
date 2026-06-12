@@ -1,11 +1,11 @@
 id: sharepoint-files-disclosure
 
 info:
-  name: Microsoft SharePoint Files Disclosure
+  name: Microsoft Sha仓库int 文件 泄露
   author: pussycat0x
   severity: info
   description: |
-    Deteted information revealed that Microsoft SharePoint files had been inadvertently disclosed.
+    检测到 Microsoft Sha仓库int 文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
     - https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest

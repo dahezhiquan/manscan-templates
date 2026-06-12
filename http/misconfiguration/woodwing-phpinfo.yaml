@@ -1,10 +1,11 @@
 id: woodwing-phpinfo
 
 info:
-  name: Woodwing Studio Server - Phpinfo Config
+  name: Woodwing Studio 服务器 phpinfo 配置
   author: pdteam
   severity: medium
-  description: Phpinfo Config file exposed in Woodwing Studio Server.
+  description: |
+    检测到 Woodwing Studio 服务器 phpinfo 配置。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://twitter.com/ynsmroztas/status/1680961398011047936
   metadata:

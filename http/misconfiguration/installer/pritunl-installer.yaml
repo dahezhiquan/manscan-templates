@@ -1,11 +1,11 @@
 id: pritunl-installer
 
 info:
-  name: Pritunl - Installation
+  name: Pritunl 安装
   author: DhiyaneshDk
   severity: high
   description: |
-    Pritunl is susceptible to the Installation page exposure due to misconfiguration.
+    检测到 Pritunl 安装。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://pritunl.com/
     - https://docs.pritunl.com/docs/installation

@@ -1,7 +1,7 @@
 id: helm-dashboard-exposure
 
 info:
-  name: Helm Dashboard - Exposure
+  name: Helm 仪表盘 暴露
   author: DhiyaneshDk
   severity: medium
   classification:

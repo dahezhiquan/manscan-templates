@@ -1,10 +1,11 @@
 id: unauth-wavink-panel
 
 info:
-  name: Wavlink Panel - Unauthenticated Access
+  name: Wavlink 面板 未授权 访问
   author: princechaddha
   severity: high
-  description: Wavlink Panel was able to be accessed with no authentication requirements in place.
+  description: |
+    检测到 Wavlink 面板 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 1

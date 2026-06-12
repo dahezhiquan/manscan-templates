@@ -1,7 +1,7 @@
 id: phpcli-stack-trace
 
 info:
-  name: PHP CLI Server Stack Trace
+  name: PHP CLI 服务器 堆栈跟踪
   author: DhiyaneshDk
   severity: info
   classification:

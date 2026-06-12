@@ -1,11 +1,11 @@
 id: wp-nextgen-gallery-log
 
 info:
-  name: WordPress Gallery Plugin / NextGEN Gallery (nextgen-gallery) Error Log Disclosure
+  name: WordPress Gallery Plugin NextGEN Gallery (nextgen gallery) 错误 日志 泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    The WordPress NextGEN Gallery plugin exposes a PHP error log file (php_errors.log) within its admin directory that is directly accessible without authentication.
+    检测到 WordPress Gallery Plugin NextGEN Gallery (nextgen gallery) 错误 日志 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/nextgen-gallery/
   metadata:

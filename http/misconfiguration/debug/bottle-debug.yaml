@@ -1,7 +1,7 @@
 id: bottle-debug
 
 info:
-  name: Bottle debug mode enabled
+  name: Bottle 调试模式 启用
   author: viondexd
   severity: info
   reference:

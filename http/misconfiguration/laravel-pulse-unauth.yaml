@@ -1,13 +1,14 @@
 id: laravel-pulse-unauth
 
 info:
-  name: Laravel Pulse - Unauthenticated Dashboard Access
+  name: Laravel Pulse 未授权 仪表盘 访问
   author: moamenbasel
   severity: medium
   description: |
-    Laravel Pulse monitoring dashboard is accessible without authentication. Pulse displays server performance metrics, slow queries, user activity, cache hit rates, and exception logs that could aid attackers in reconnaissance.
+    检测到 Laravel Pulse 未授权 仪表盘 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   remediation: |
-    Configure Pulse's gate method in the PulseServiceProvider to restrict access. Add proper authorization checks using Gate::define in app/Providers/PulseServiceProvider.php.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://laravel.com/docs/11.x/pulse#dashboard-authorization
     - https://owasp.org/Top10/A01_2021-Broken_Access_Control/

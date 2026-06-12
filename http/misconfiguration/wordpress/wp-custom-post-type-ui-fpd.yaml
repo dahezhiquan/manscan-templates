@@ -1,11 +1,11 @@
 id: wp-custom-post-type-ui-fpd
 
 info:
-  name: WordPress Custom Post Type UI - Full Path Disclosure
+  name: WordPress Custom Post Type UI 完整路径泄露
   author: 0x_Akoko
   severity: low
   description: |
-    Detected WordPress Custom Post Type UI exposes internal file system path through direct file access.
+    检测到 WordPress Custom Post Type UI 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/custom-post-type-ui/
     - https://github.com/WebDevStudios/custom-post-type-ui

@@ -1,11 +1,11 @@
 id: craftcms-debug-exposure
 
 info:
-  name: CraftCMS Debug Methods Exposed
+  name: CraftCMS 调试 Methods 暴露
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected CraftCMS with devMode enabled, which exposed the Yii2 debug toolbar and sensitive information. This misconfiguration could have leaked database queries, session data, cookies, stack traces, CSRF tokens, and internal application details to unauthenticated users.
+    检测到 CraftCMS 调试 Methods 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://craftcms.com/docs/5.x/system/config.html#devmode
     - https://www.acunetix.com/vulnerabilities/web/craft-cms-development-mode-enabled/

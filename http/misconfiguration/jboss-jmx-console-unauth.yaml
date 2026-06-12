@@ -1,11 +1,11 @@
 id: jboss-jmx-console-unauth
 
 info:
-  name: JBoss JMX Console - Unauthenticated Access
+  name: JBoss JMX 控制台 未授权 访问
   author: 0x_Akoko
   severity: high
   description: |
-    Detected JBoss JMX Console was accessible without authentication. The exposed console provided complete access to all MBeans, including MainDeployer, which enabled arbitrary WAR file deployment, leading to remote code execution. Attackers could view the entire MBean tree, deploy malicious applications, and invoke administrative operations without valid credentials.
+    检测到 JBoss JMX 控制台 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://developer.jboss.org/wiki/SecureTheJmxConsole
     - https://www.invicti.com/web-application-vulnerabilities/jboss-jmx-console-unrestricted-access

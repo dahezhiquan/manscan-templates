@@ -1,10 +1,11 @@
 id: filebrowser-unauth
 
 info:
-  name: File Browser Dashboard - Unauthenticated Access
+  name: 文件 Browser 仪表盘 未授权 访问
   author: ritikchaddha
   severity: medium
-  description: File Browser dashboard is exposed.
+  description: |
+    检测到 文件 Browser 仪表盘 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://filebrowser.org/
   metadata:

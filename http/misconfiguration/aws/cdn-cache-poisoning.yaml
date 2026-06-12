@@ -1,11 +1,11 @@
 id: cdn-cache-poisoning
 
 info:
-  name: Misconfigured CDN Cache Poisoning via X-Amz-Server-Side-Encryption Header
+  name: 配置不当 CDN 缓存投毒 X Amz 服务器 Side Encryption Header
   author: 0xcharan
   severity: unknown
   description: |
-    When the X-Amz-Server-Side-Encryption header is sent with user controlled value, it can lead to a misconfigured CDN cache response with a 400 status code, making the page inaccessible.
+    检测到 配置不当 CDN 缓存投毒 X Amz 服务器 Side Encryption Header。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://portswigger.net/web-security/web-cache-poisoning
   metadata:

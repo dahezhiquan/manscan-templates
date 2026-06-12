@@ -1,10 +1,11 @@
 id: clockwork-dashboard-exposure
 
 info:
-  name: Clockwork Dashboard Exposure
+  name: Clockwork 仪表盘 暴露
   author: dhiyaneshDk
   severity: high
-  description: Clockwork Dashboard is exposed.
+  description: |
+    检测到 Clockwork 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/clockwork-dashboard-exposure.json
   metadata:

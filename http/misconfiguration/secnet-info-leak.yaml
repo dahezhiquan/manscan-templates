@@ -1,10 +1,11 @@
 id: secnet-info-leak
 
 info:
-  name: Secnet Intelligent Routing System actpt_5g.data - Information Leak
+  name: Secnet Intelligent Routing System actpt 5g.data Information Leak 检测
   author: DhiyaneshDk
   severity: high
-  description: Secnet Intelligent Routing System is exposed.
+  description: |
+    检测到 Secnet Intelligent Routing System actpt 5g.data Information Leak 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://mp.weixin.qq.com/s/lNlI5ZtUJG50ipS0WfytUw
     - https://github.com/gobysec/GobyVuls/blob/master/secnet_Intelligent_Router_actpt_5g.data_Infoleakage.md

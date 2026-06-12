@@ -1,11 +1,11 @@
 id: ejbca-enterprise-installer
 
 info:
-  name: EJBCA Enterprise Cloud Configuration Wizard - Exposure
+  name: EJBCA Enterprise Cloud 配置 Wizard 暴露
   author: DhiyaneshDK
   severity: high
   description: |
-    Detects exposed EJBCA Enterprise Cloud Installation page.
+    检测到 EJBCA Enterprise Cloud 配置 Wizard 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://aws.amazon.com/marketplace/pp/prodview-u2xdo5mkuilke
   classification:

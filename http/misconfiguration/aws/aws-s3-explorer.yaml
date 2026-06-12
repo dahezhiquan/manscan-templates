@@ -1,10 +1,11 @@
 id: aws-s3-explorer
 
 info:
-  name: Amazon Web Services S3 Explorer - Detect
+  name: Amazon Web 服务s S3 Explorer 检测
   author: DhiyaneshDk
   severity: medium
-  description: Amazon Web Services S3 Explorer page was detected. Page contains links to sensitive information.
+  description: |
+    检测到 Amazon Web 服务s S3 Explorer 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.exploit-db.com/ghdb/7967
   classification:

@@ -1,11 +1,11 @@
 id: aem-jcr-exposure
 
 info:
-  name: Adobe AEM JCR Compare Exposure
+  name: Adobe AEM JCR Compare 暴露
   author: pussycat0x
   severity: medium
   description: |
-    Detected an exposed Adobe AEM JCR compare functionality that was accessible without proper authorization. This exposure may have allowed attackers to infer repository structure or sensitive content through comparison operations.
+    检测到 Adobe AEM JCR Compare 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://experienceleague.adobe.com/docs/experience-manager-65/administering/security/security-checklist.html
     - https://medium.com/@vsr061/adobe-experience-manager-security-issues-9b5bd24e0eb0

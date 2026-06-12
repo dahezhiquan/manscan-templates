@@ -1,11 +1,14 @@
 id: jenkins-openuser-register
 
 info:
-  name: Jenkins Open User registration
+  name: Jenkins Open 用户 registration
   author: DhiyaneshDk
   severity: medium
-  description: The Jenkins allows registering a new user and accessing the dashboard.
-  remediation: Its recommended to turn off user registration.
+  description: |
+    检测到 Jenkins Open 用户 registration。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  remediation: |
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/jenkins-open-user-registration/
   classification:

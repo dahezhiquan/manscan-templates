@@ -1,10 +1,11 @@
 id: pcdn-cache-node
 
 info:
-  name: PCDN Cache Node Dataset
+  name: PCDN Cache Node Dataset 检测
   author: DhiyaneshDk
   severity: low
-  description: PCDN Cache Node dataset is exposed.
+  description: |
+    检测到 PCDN Cache Node Dataset 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cpe: cpe:2.3:a:cache-base_project:cache-base:*:*:*:*:node.js:*:*:*
   metadata:

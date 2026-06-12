@@ -1,11 +1,11 @@
 id: wp-members-error-log-disclosure
 
 info:
-  name: WordPress Members / Membership & User Role Editor Plugin - Error Log Disclosure
+  name: WordPress Members Membership & 用户 Role Editor Plugin 错误 日志 泄露
   author: ritikchaddha
   severity: low
   description: |
-    WordPress Members plugin is vulnerable to error log disclosure via direct access to plugin files.
+    检测到 WordPress Members Membership & 用户 Role Editor Plugin 错误 日志 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/members/
   metadata:

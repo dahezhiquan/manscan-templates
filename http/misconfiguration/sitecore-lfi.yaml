@@ -1,10 +1,11 @@
 id: sitecore-lfi
 
 info:
-  name: Sitecore 9.3 - Webroot File Read
+  name: Sitecore 9.3 Webroot 文件 读取
   author: DhiyaneshDK
   severity: high
-  description: SiteCore 9.3 is vulnerable to LFI.
+  description: |
+    检测到 Sitecore 9.3 Webroot 文件 读取。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://blog.assetnote.io/2023/05/10/sitecore-round-two/
   classification:

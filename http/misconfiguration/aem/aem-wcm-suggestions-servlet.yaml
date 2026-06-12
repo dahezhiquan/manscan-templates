@@ -1,10 +1,11 @@
 id: aem-wcm-suggestions-servlet
 
 info:
-  name: AEM WCM Suggestions Servlet
+  name: AEM WCM Suggestions Servlet 检测
   author: DhiyaneshDk
   severity: low
-  description: AEM WCM Suggestions Servlet is exposed.
+  description: |
+    检测到 AEM WCM Suggestions Servlet 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://speakerdeck.com/0ang3el/hunting-for-security-bugs-in-aem-webapps?slide=96
   metadata:

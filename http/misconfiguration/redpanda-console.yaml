@@ -1,13 +1,14 @@
 id: redpanda-console
 
 info:
-  name: Redpanda Console - Exposure
+  name: Redpanda 控制台 暴露
   author: kh4sh3i
   severity: medium
   description: |
-    Unauthorized access to the Redpanda Console could allow attackers to view or manipulate streaming data, monitor clusters, or access configuration information, leading to potential data leaks or service disruption.
+    检测到 Redpanda 控制台 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Exposing the Redpanda Console to the public can result in unauthorized access, leading to data leaks, misconfigurations, or even denial of service attacks on the streaming infrastructure.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   reference:
     - https://github.com/redpanda-data/console
   metadata:

@@ -1,10 +1,11 @@
 id: drupal-install
 
 info:
-  name: Drupal Install
+  name: Drupal Install 检测
   author: NkxxkN
   severity: high
-  description: Drupal Install panel exposed.
+  description: |
+    检测到 Drupal Install 检测。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     max-request: 2
     shodan-query:

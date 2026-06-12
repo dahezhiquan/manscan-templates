@@ -1,13 +1,14 @@
 id: laravel-debug-enabled
 
 info:
-  name: Laravel Debug Enabled
+  name: Laravel 调试 启用
   author: notsoevilweasel
   severity: medium
   description: |
-    Laravel with APP_DEBUG set to true is prone to show verbose errors.
+    检测到 Laravel 调试 启用。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   remediation: |
-    Disable Laravel's debug mode by setting APP_DEBUG to false.
+    - 限制该端点的公网访问，仅允许可信来源访问。
+    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
   metadata:
     max-request: 1
   tags: debug,laravel,misconfig,vuln

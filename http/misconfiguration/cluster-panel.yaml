@@ -1,10 +1,11 @@
 id: unauth-cluster-trino
 
 info:
-  name: Cluster Overview - Unauthenticated Dashboard Exposure
+  name: 集群 Overview 未授权 仪表盘 暴露
   author: tess
   severity: medium
-  description: Cluster Overview dashboard is exposed.
+  description: |
+    检测到 集群 Overview 未授权 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 1

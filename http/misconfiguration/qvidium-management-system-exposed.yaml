@@ -1,10 +1,11 @@
 id: qvidium-management-system-exposed
 
 info:
-  name: QVidium Management System Exposed
+  name: QVidium 管理 System 暴露
   author: tess
   severity: medium
-  description: QVidium Management System is Exposed.
+  description: |
+    检测到 QVidium 管理 System 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

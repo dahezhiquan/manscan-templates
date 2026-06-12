@@ -1,16 +1,17 @@
 id: opentext-filr-guest-access
 
 info:
-  name: OpenText Filr - Guest Access Enabled
+  name: OpenText Filr Guest 访问 启用
   author: pussycat0x
   severity: medium
   description: |
-    OpenText Filr (formerly Micro Focus/Novell Filr) had guest access enabled, allowing unauthenticated users to access the system as a Guest, exposing GuestUser: 'true' and an "Enter as Guest" option on the SSF login page.
+    检测到 OpenText Filr Guest 访问 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Anonymous users can access publicly shared files and folders without authentication, potentially exposing sensitive internal documents.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Disable guest access via Admin Console (Port 8443) > System > Web Application > uncheck "Allow Guest access".
-    Ensure Filr instances exposed to the internet do not have guest access enabled.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://www.microfocus.com/documentation/filr/filr-23.2/filr-admin/access.html
     - https://www.microfocus.com/documentation/filr/filr-23.2/filr-inst/bjm9tb7.html

@@ -1,11 +1,11 @@
 id: wordpress-elementor-fpd
 
 info:
-  name: WordPress Elementor Page Builder - Full Path Disclosure
+  name: WordPress Elementor Page Builder 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    WordPress Plugin Elementor Page Builder plugin files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    检测到 WordPress Elementor Page Builder 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/elementor/
   metadata:

@@ -1,11 +1,11 @@
 id: missing-cookie-samesite-strict
 
 info:
-  name: Missing Cookie SameSite Strict
+  name: 缺失 Cookie SameSite Strict
   author: lucky0x0d,PulseSecurity.co.nz
   severity: info
   description: |
-    Identified cookies that lacked the samesite=strict attribute, which prevented enforcement of restrictions on cross-domain cookie transmission.
+    检测到 缺失 Cookie SameSite Strict。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://pulsesecurity.co.nz/articles/samesite-lax-csrf
   classification:

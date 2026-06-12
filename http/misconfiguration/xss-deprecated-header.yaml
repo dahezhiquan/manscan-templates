@@ -1,10 +1,11 @@
 id: xss-deprecated-header
 
 info:
-  name: XSS-Protection Header - Cross-Site Scripting
+  name: XSS Protection Header Cross Site Scripting 检测
   author: joshlarsen
   severity: info
-  description: Setting the XSS-Protection header is deprecated. Setting the header to anything other than `0` can actually introduce an XSS vulnerability.
+  description: |
+    检测到 XSS Protection Header Cross Site Scripting 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
     - https://owasp.org/www-project-secure-headers/#x-xss-protection

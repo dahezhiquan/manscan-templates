@@ -1,11 +1,11 @@
 id: chroma-db-unauth
 
 info:
-  name: Chroma DB - Information Disclosure
+  name: Chroma 数据库 信息泄露
   author: Shay Ben Tikva
   severity: high
   description: |
-    Chroma DB API endpoints were accessible and exposed collection metadata, enabling enumeration of collections under the default tenant and database, potentially leading to sensitive vector data disclosure.
+    检测到 Chroma 数据库 信息泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.trychroma.com/security
     - https://github.com/shaybentk/chroma-db-unauthorized-info-disclosure

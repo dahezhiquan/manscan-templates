@@ -1,11 +1,11 @@
 id: wp-members-log-disclosure
 
 info:
-  name: WordPress Members Plugin - Debug/Error Log Disclosure
+  name: WordPress Members Plugin 调试 错误 日志 泄露
   author: ritikchaddha
   severity: low
   description: |
-    The WordPress Members plugin exposes error/debug log files that may contain sensitive information.
+    检测到 WordPress Members Plugin 调试 错误 日志 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/members/
     - https://pentest-tools.com/vulnerabilities-exploits/wordpress-members-membership-and-user-role-editor-plugin-error-log-disclosure_28354

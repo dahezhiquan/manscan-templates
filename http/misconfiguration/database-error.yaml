@@ -1,7 +1,7 @@
 id: database-error
 
 info:
-  name: Database Error
+  name: 数据库 错误
   author: dhiyaneshDK
   severity: info
   metadata:

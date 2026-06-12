@@ -1,10 +1,11 @@
 id: jetty-showcontexts-enable
 
 info:
-  name: Jetty showContexts Enable in DefaultHandler
+  name: Jetty showContexts Enable 默认Handler
   author: dhiyaneshDK
   severity: low
-  description: Jetty showContexts is Enabled in DefaultHandler
+  description: |
+    检测到 Jetty showContexts Enable 默认Handler。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jetty-showcontexts-enable.yaml
     - https://swarm.ptsecurity.com/jetty-features-for-hacking-web-apps/

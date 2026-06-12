@@ -1,10 +1,11 @@
 id: openshift-installer-panel
 
 info:
-  name: OpenShift Assisted Installer Panel - Detect
+  name: OpenShift Assisted 安装向导 面板 检测
   author: DhiyaneshDk
   severity: medium
-  description: OpenShift Assisted Installer panel was detected.
+  description: |
+    检测到 OpenShift Assisted 安装向导 面板 检测。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:U/C:L/I:L/A:L
     cvss-score: 4.6

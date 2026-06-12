@@ -1,11 +1,11 @@
 id: cacti-fpd
 
 info:
-  name: Cacti - Full Path Disclosure
+  name: Cacti 完整路径泄露
   author: theamanrawat
   severity: low
   description: |
-    Detected a Full Path Disclosure (FPD) in Cacti when the log file is not writable. The error message reveals the absolute path of the log file on the server.
+    检测到 Cacti 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   tags: cacti,fpd,exposure,path,misconfig
 
 http:

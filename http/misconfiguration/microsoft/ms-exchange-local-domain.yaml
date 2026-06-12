@@ -1,15 +1,17 @@
 id: ms-exchange-local-domain
 
 info:
-  name: Microsoft Exchange Autodiscover - Local Domain Exposure
+  name: Microsoft Exchange Autodiscover Local Domain 暴露
   author: userdehghani
   severity: info
   description: |
-    Microsoft Exchange is prone to a local domain exposure using the Autodiscover v2 endpoint.
+    检测到 Microsoft Exchange Autodiscover Local Domain 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   impact: |
-    An attacker can leverage this information for reconnaissance and targeted attacks.
+    - 凭据、密钥、配置或环境变量泄露后，攻击者可能访问内部系统或第三方服务。
+    - 泄露信息可被用于横向移动、权限提升或供应链攻击。
   remediation: |
-    Restrict access to the Autodiscover service or configure it to not expose local domain information.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://support.microsoft.com/en-gb/topic/autodiscover-v2-returns-internalurl-not-externalurls-in-other-site-774301e2-2d1e-d5e0-aa41-a49f6e9b06f4
   classification:

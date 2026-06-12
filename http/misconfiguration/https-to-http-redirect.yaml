@@ -1,11 +1,11 @@
 id: https-to-http-redirect
 
 info:
-  name: HTTPS to HTTP redirect Misconfiguration
+  name: HTTPS HTTP redirect 配置不当
   author: kazet,idealphase
   severity: info
   description: |
-    Detects whether there is a redirect from https:// to http://
+    检测到 HTTPS HTTP redirect 配置不当。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

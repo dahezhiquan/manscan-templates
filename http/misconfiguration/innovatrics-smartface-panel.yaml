@@ -1,11 +1,11 @@
 id: unauth-innovatrics-smartface-panel
 
 info:
-  name: Unauthenticated SmartFace Panel - Detect
+  name: 未授权 SmartFace 面板 检测
   author: matejsmycka
   severity: medium
   description: |
-    An unauthenticated SmartFace login was detected. The panel, used for facial recognition from video streams, allowed attackers to extract camera connection strings and other sensitive information
+    检测到 未授权 SmartFace 面板 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.innovatrics.com/face-recognition-solutions/
   metadata:

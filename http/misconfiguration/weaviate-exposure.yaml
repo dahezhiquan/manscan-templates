@@ -1,11 +1,11 @@
 id: weaviate-exposure
 
 info:
-  name: Weaviate - Exposure
+  name: Weaviate 暴露
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected an exposed Weaviate instance by accessing its API endpoints. Verified exposure by identifying meta information, schema details, and specific endpoint references in the response, confirming that the instance was publicly accessible.
+    检测到 Weaviate 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: wp-safe-svg-fpd
 
 info:
-  name: WordPress Plugin Safe SVG - Full Path Disclosure
+  name: WordPress Plugin Safe SVG 完整路径泄露
   author: ritikchaddha
   severity: low
   description: |
-    WordPress Safe SVG plugin is vulnerable to full path disclosure via direct access to plugin files.
+    检测到 WordPress Plugin Safe SVG 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/safe-svg/
   metadata:

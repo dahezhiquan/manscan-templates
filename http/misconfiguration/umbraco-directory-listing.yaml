@@ -1,11 +1,11 @@
 id: umbraco-directory-listing
 
 info:
-  name: Umbraco CMS - Directory Listing Exposure
+  name: Umbraco CMS 目录列出 暴露
   author: DhiyaneshDk
   severity: medium
   description: |
-    Detected directory listing enabled on sensitive Umbraco CMS directories, potentially exposing configuration files, logs, backups, and other sensitive data.
+    检测到 Umbraco CMS 目录列出 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://docs.umbraco.com/umbraco-cms/reference/security/security-hardening
   classification:

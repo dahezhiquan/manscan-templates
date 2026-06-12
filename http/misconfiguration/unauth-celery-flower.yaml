@@ -1,11 +1,11 @@
 id: unauth-celery-flower
 
 info:
-  name: Celery Flower - Unauthenticated Access
+  name: Celery Flower 未授权 访问
   author: DhiyaneshDK
   severity: high
   description: |
-    Celery Flower was able to be accessed with no authentication requirements in place.
+    检测到 Celery Flower 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:flower_project:flower:*:*:*:*:*:*:*:*
   metadata:

@@ -1,10 +1,11 @@
 id: unauth-mautic-upgrade
 
 info:
-  name: Unauthenticated Mautic Upgrade.php Exposure
+  name: 未授权 Mautic Upgrade.php 暴露
   author: huowuzhao
   severity: high
-  description: Upgrade.php page in Mautic is exposed.
+  description: |
+    检测到 未授权 Mautic Upgrade.php 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: browserconfig-xml
 
 info:
-  name: Browser Configuration "browserconfig.xml" Exposure
+  name: Browser 配置 "browser配置.xml" 暴露
   author: DhiyaneshDk
   severity: info
   description: |
-    Browser Configuration "browserconfig.xml" File was exposed.
+    检测到 Browser 配置 "browser配置.xml" 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.sygnal.com/lessons/browserconfig-xml
   metadata:

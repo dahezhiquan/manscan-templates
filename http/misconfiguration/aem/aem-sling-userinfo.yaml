@@ -1,7 +1,7 @@
 id: aem-sling-userinfo
 
 info:
-  name: Adobe AEM Sling User Info Servlet Exposure
+  name: Adobe AEM Sling 用户 Info Servlet 暴露
   author: DhiyaneshDk
   severity: info
   reference:

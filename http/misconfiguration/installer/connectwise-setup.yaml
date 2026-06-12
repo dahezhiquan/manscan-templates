@@ -1,7 +1,7 @@
 id: connectwise-setup
 
 info:
-  name: ConnectWise Setup Wizard - Exposure
+  name: ConnectWise 安装向导 暴露
   author: DhiyaneshDk
   severity: high
   classification:

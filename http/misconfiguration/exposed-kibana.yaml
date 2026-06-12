@@ -1,10 +1,11 @@
 id: exposed-kibana
 
 info:
-  name: Exposed Kibana
+  name: 暴露 Kibana
   author: Shine
   severity: medium
-  description: Kibana is exposed.
+  description: |
+    检测到 暴露 Kibana。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     max-request: 3
   tags: kibana,unauth,misconfig,vuln

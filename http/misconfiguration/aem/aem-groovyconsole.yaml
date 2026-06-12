@@ -1,10 +1,11 @@
 id: aem-groovyconsole
 
 info:
-  name: AEM Groovy Console Discovery
+  name: AEM Groovy 控制台 Discovery
   author: Dheerajmadhukar
   severity: critical
-  description: An Adobe Experience Manager Groovy console was discovered. This can possibly lead to remote code execution.
+  description: |
+    检测到 AEM Groovy 控制台 Discovery。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://hackerone.com/reports/672243
     - https://twitter.com/XHackerx007/status/1435139576314671105

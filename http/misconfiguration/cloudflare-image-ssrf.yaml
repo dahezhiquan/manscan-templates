@@ -1,10 +1,11 @@
 id: cloudflare-external-image-resize
 
 info:
-  name: Cloudflare External Image Resizing Misconfiguration
+  name: Cloudflare External Image Resizing 配置不当
   author: vavkamil
   severity: info
-  description: Cloudflare Image Resizing defaults to restricting resizing to the same domain. This prevents third parties from resizing any image at any origin. However, you can enable this option if you check Resize images from any origin.
+  description: |
+    检测到 Cloudflare External Image Resizing 配置不当。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://support.cloudflare.com/hc/en-us/articles/360028146432-Understanding-Cloudflare-Image-Resizing#12345684
   metadata:

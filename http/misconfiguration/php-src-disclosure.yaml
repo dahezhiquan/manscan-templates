@@ -1,11 +1,11 @@
 id: php-src-diclosure
 
 info:
-  name: PHP Development Server <= 7.4.21 - Remote Source Disclosure
+  name: PHP Development 服务器 <= 7.4.21 Remote Source 泄露
   author: pdteam
   severity: high
   description: |
-    A source code disclosure vulnerability in a web server caused by improper handling of multiple requests in quick succession, leading to the server treating requested files as static files instead of executing scripts.
+    检测到 PHP Development 服务器 <= 7.4.21 Remote Source 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://blog.projectdiscovery.io/php-http-server-source-disclosure/
   classification:

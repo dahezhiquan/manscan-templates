@@ -1,11 +1,11 @@
 id: traccar-settings-disclosure
 
 info:
-  name: Traccar Server Settings - Disclosure
+  name: Traccar 服务器 Settings 泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    Traccar exposes server settings at the /api/server endpoint without authentication.
+    检测到 Traccar 服务器 Settings 泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.traccar.org/api-reference/
   metadata:

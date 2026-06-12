@@ -1,10 +1,10 @@
 id: hashicorp-consul-unauth
 info:
-  name: Hashicorp Consul API Unauthenticated
+  name: Hashicorp Consul API 未授权
   author: pussycat0x
   severity: medium
   description: |
-    In HashiCorp Consul's API without authentication arises when Consul is improperly secured, exposing its endpoints to unauthorized access.
+    检测到 Hashicorp Consul API 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/hashicorp-consul-api-is-accessible-without-authentication/
   metadata:

@@ -1,11 +1,11 @@
 id: phpmyadmin-fpd
 
 info:
-  name: phpMyAdmin - Full Path Disclosure
+  name: phpMyAdmin 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected potential Full Path Disclosure (FPD) via directly accessible phpMyAdmin files that may throw PHP errors revealing filesystem paths when error display is enabled.
+    检测到 phpMyAdmin 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     verified: true
     max-request: 1

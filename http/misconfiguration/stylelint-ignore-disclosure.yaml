@@ -1,11 +1,11 @@
 id: stylelint-ignore-disclosure
 
 info:
-  name: Stylelint - Ignore File Disclosure
+  name: Stylelint Ignore 文件 泄露
   author: ritikchaddha
   severity: info
   description: |
-    The .stylelintignore file is publicly accessible, potentially revealing project structure, sensitive file paths, and internal directory organization.
+    检测到 Stylelint Ignore 文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://stylelint.io/user-guide/ignore-code
   metadata:

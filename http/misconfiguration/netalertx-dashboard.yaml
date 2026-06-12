@@ -1,11 +1,11 @@
 id: netalertx-dashboard
 
 info:
-  name: NetAlert X Admin Dashboard - Exposed
+  name: NetAlert X Admin 仪表盘 暴露
   author: s4e-io
   severity: medium
   description: |
-    Unauthorized access to the NetAlert X Admin Dashboard.
+    检测到 NetAlert X Admin 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/jokob-sk/NetAlertX
   metadata:

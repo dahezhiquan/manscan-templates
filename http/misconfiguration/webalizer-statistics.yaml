@@ -1,12 +1,14 @@
 id: webalizer-statistics
 
 info:
-  name: Webalizer Statistics Information Disclosure
+  name: Webalizer Statistics 信息泄露
   author: 0x_Akoko
   severity: low
   description: |
-    The remote host is running the Webalizer Report generator. Webalizer parses web logs and gives a potential attacker information regarding hosts that have accessed the server, resources accessed, total statistics for the Web server, version of Web server, and more.
-  remediation: Use ACLs to protect the Webalizer report.
+    检测到 Webalizer Statistics 信息泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  remediation: |
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://www.rapid7.com/db/vulnerabilities/spider-webalizer-stats-disclosure
     - https://www.tenable.com/plugins/nnm/2506

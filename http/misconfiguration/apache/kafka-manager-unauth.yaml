@@ -1,10 +1,11 @@
 id: kafka-manager-unauth
 
 info:
-  name: Kafka Manager Panel - Unauthorized Access
+  name: Kafka Manager 面板 未授权 访问
   author: Paper-Pen
   severity: low
-  description: A kafka manager unauthorized access was discovered.
+  description: |
+    检测到 Kafka Manager 面板 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/yahoo/CMAK
   metadata:

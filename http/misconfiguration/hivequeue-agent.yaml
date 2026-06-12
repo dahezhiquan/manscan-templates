@@ -1,10 +1,11 @@
 id: hivequeue-agent
 
 info:
-  name: HiveQueue Agent
+  name: HiveQueue Agent 检测
   author: DhiyaneshDk
   severity: low
-  description: HiveQueue Agent is exposed.
+  description: |
+    检测到 HiveQueue Agent 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5555061814557647/
   metadata:

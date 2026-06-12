@@ -1,10 +1,11 @@
 id: python-metrics
 
 info:
-  name: Detect Python Exposed Metrics
+  name: 检测 Python 暴露 指标
   author: dhiyaneshDK
   severity: low
-  description: Information Disclosure of Garbage Collection
+  description: |
+    检测到 检测 Python 暴露 指标。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://gist.github.com/ruanbekker/e5b1e7895f62b020ff29b5f40767190c
   classification:

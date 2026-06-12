@@ -1,7 +1,7 @@
 id: php-fpm-status
 
 info:
-  name: PHP-FPM Status
+  name: PHP FPM 状态
   author: geeknik
   severity: unknown
   metadata:

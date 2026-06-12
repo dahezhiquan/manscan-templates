@@ -1,10 +1,11 @@
 id: exposed-service-now
 
 info:
-  name: ITMS-Misconfigured
+  name: ITMS 配置不当
   author: dhiyaneshDK
   severity: info
-  description: Detection of misconfigured ServiceNow ITSM instances.
+  description: |
+    检测到 ITMS 配置不当。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://medium.com/@th3g3nt3l/multiple-information-exposed-due-to-misconfigured-service-now-itsm-instances-de7a303ebd56
     - https://github.com/leo-hildegarde/SnowDownKB/

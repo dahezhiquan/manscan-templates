@@ -1,10 +1,11 @@
 id: gopher-server
 
 info:
-  name: Gopher Server - Exposure
+  name: Gopher 服务器 暴露
   author: DhiyaneshDk
   severity: medium
-  description: Gopher Server is exposed.
+  description: |
+    检测到 Gopher 服务器 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.facebook.com/photo/?fbid=627579942745862&set=a.467014098802448
   metadata:

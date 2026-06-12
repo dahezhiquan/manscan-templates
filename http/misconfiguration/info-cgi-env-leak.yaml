@@ -1,11 +1,11 @@
 id: info-cgi-env-leak
 
 info:
-  name: info.cgi  Environment Variable - Disclosure
+  name: info.cgi 环境 Variable 泄露
   author: pussycat0x
   severity: medium
   description: |
-    Detected exposure of server environment variables through the info.cgi script. This can leak sensitive paths, internal IPs, software versions, credentials in env, etc.
+    检测到 info.cgi 环境 Variable 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/test-cgi-script-leaking-environment-variables/
     - https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/cgi

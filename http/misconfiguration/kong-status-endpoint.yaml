@@ -1,11 +1,11 @@
 id: kong-status-endpoint
 
 info:
-  name: Kong API Gateway - Internal Status Endpoint
+  name: Kong API Gateway Internal 状态 Endpoint
   author: Amjad Ali
   severity: info
   description: |
-    Kong API Gateway's internal /status endpoint is publicly accessible either directly or via IP restriction bypass using spoofed headers. The endpoint exposes server metrics including active connections, request counts, database reachability, worker Lua VM memory usage, and shared dictionary allocation details.
+    检测到 Kong API Gateway Internal 状态 Endpoint。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://docs.konghq.com/gateway/latest/production/monitoring/status-api/
   metadata:

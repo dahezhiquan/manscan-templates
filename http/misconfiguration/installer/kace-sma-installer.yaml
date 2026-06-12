@@ -1,11 +1,11 @@
 id: kace-sma-installer
 
 info:
-  name: KACE Systems Management Appliance - Installer
+  name: KACE Systems 管理 Appliance 安装向导
   author: ritikchaddha
   severity: high
   description: |
-    The exposure of the KACE Systems Management Appliance’s installer interface through the /common/setup.php endpoint allowed unauthorized access to the system setup wizard. This interface was publicly accessible when it should have been restricted, potentially granting attackers the ability to initiate or manipulate the setup process, leading to system compromise or unauthorized configuration changes.
+    检测到 KACE Systems 管理 Appliance 安装向导。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     verified: true
     max-request: 1

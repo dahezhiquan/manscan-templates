@@ -1,11 +1,11 @@
 id: sap-listconfigfiles-disclosure
 
 info:
-  name: SAPControl ListConfigFiles - Disclosure
+  name: SAPControl List配置文件 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the ListConfigFiles web method without authentication.
+    检测到 SAPControl List配置文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://itsiti.com/csmon/
     - https://cloud.ibm.com/docs/sap?topic=sap-monitoring-prereqs

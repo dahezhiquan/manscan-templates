@@ -1,11 +1,11 @@
 id: thanos-prometheus-exposure
 
 info:
-  name: Thanos Prometheus Setup - Exposure
+  name: Thanos Prometheus 安装配置 暴露
   author: DhiyaneshDk,righettod
   severity: high
   description: |
-    Thanos graph endpoint was detected.
+    检测到 Thanos Prometheus 安装配置 暴露。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://thanos.io/
     - https://github.com/thanos-io/thanos

@@ -1,7 +1,7 @@
 id: aws-ec2-status
 
 info:
-  name: Amazon EC2 Status
+  name: Amazon EC2 状态
   author: DhiyaneshDk
   severity: info
   reference:

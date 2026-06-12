@@ -1,7 +1,7 @@
 id: github-debug
 
 info:
-  name: GitHub Debug Page
+  name: GitHub 调试 Page
   author: ritikchaddha
   severity: info
   classification:

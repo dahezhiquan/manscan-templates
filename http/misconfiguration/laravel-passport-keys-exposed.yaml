@@ -1,13 +1,14 @@
 id: laravel-passport-keys-exposed
 
 info:
-  name: Laravel Passport - OAuth2 Keys Exposed
+  name: Laravel Passport OAuth2 密钥s 暴露
   author: moamenbasel
   severity: high
   description: |
-    Laravel Passport OAuth2 RSA private or public keys are publicly accessible at default storage paths. Exposed private keys allow attackers to forge OAuth2 access tokens and impersonate any user.
+    检测到 Laravel Passport OAuth2 密钥s 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   remediation: |
-    Ensure the storage directory is not publicly accessible. Move Passport keys outside the web root or configure the web server to deny access to the storage directory.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://laravel.com/docs/10.x/passport#installation
   metadata:

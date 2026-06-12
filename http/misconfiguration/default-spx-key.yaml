@@ -1,13 +1,14 @@
 id: default-spx-key
 
 info:
-  name: SPX PHP Profiler - Default Key
+  name: SPX PHP Pro文件r 默认 密钥
   author: vagnerd
   severity: high
   description: |
-    SPX PHP profiler default spx key were discovered.
+    检测到 SPX PHP Pro文件r 默认 密钥。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   remediation: |
-    - https://github.com/NoiseByNorthwest/php-spx#security-concern
+    - 限制该端点的公网访问，仅允许可信来源访问。
+    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
   reference:
     - https://github.com/NoiseByNorthwest/php-spx
   classification:

@@ -1,11 +1,11 @@
 id: manage-cabinet-register
 
 info:
-  name: Manage Cabinet Register - Exposed
+  name: Manage Cabinet 注册 暴露
   author: noel
   severity: low
   description: |
-   The path to the Cabinet Storage is omniapp/pages/cabinet/managecabinet.jsf?Action=1. If exposed, it gives an attacker insight into information such as Storage Volume Name, Cabinet Name, it's alias, Deployed AppServer IP Address and Port
+    检测到 Manage Cabinet 注册 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.edms-consultants.com/newgen-rlos/
   metadata:

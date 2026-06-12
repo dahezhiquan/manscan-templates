@@ -1,11 +1,11 @@
 id: mongodb-exposure
 
 info:
-  name: MongoDB Exposure
+  name: Mongo数据库 暴露
   author: DhiyaneshDk
   severity: info
   description: |
-    Detected MongoDB instances exposed over HTTP using the native driver port.
+    检测到 Mongo数据库 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

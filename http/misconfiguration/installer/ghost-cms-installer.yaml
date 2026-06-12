@@ -1,12 +1,11 @@
 id: ghost-cms-installer
 
 info:
-  name: Ghost CMS Installation Setup - Exposure
+  name: Ghost CMS 安装 安装配置 暴露
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Ghost CMS installation setup wizard accessible without authentication. An unauthenticated remote attacker can navigate to
-    /ghost/#/setup and complete the installation to gain full owner-level administrative control of the site.
+    检测到 Ghost CMS 安装 安装配置 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://ghost.org/docs/install/
     - https://ghost.org/docs/config/

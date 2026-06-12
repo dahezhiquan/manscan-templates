@@ -1,10 +1,11 @@
 id: exposed-kafdrop
 
 info:
-  name: Publicly exposed Kafdrop Interface
+  name: Publicly 暴露 Kafdrop Interface
   author: dhiyaneshDk
   severity: low
-  description: Publicly Kafdrop Interface is exposed.
+  description: |
+    检测到 Publicly 暴露 Kafdrop Interface。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     max-request: 1
   tags: exposure,misconfig,kafdrop,vuln

@@ -1,11 +1,11 @@
 id: whisparr-dashboard-unauth
 
 info:
-  name: Whisparr Dashboard - Unauthenticated
+  name: Whisparr 仪表盘 未授权
   author: ProjectDiscoveryAI
   severity: medium
   description: |
-    Exposure of Whisparr dashboard which can lead to sensitive information disclosure.
+    检测到 Whisparr 仪表盘 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 1

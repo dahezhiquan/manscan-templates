@@ -1,11 +1,11 @@
 id: unauth-munin
 
 info:
-  name: Munin Monitoring Dashboard - Exposure
+  name: Munin Monitoring 仪表盘 暴露
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Munin monitoring dashboard, exposing system metrics and server statistics.
+    检测到 Munin Monitoring 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://munin-monitoring.org/
   metadata:

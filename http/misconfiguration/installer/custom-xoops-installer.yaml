@@ -1,11 +1,11 @@
 id: custom-xoops-installer
 
 info:
-  name: XOOPS Custom - Installation
+  name: XOOPS Custom 安装
   author: DhiyaneshDK
   severity: high
   description: |
-    Detects the presence of XOOPS Custom installation page.
+    检测到 XOOPS Custom 安装。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.exploit-db.com/ghdb/1115
   classification:

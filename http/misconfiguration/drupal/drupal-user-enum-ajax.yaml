@@ -1,7 +1,7 @@
 id: drupal-user-enum-ajax
 
 info:
-  name: Drupal User Enumration [Ajax]
+  name: Drupal 用户枚举ration [Ajax]
   author: 0w4ys
   severity: info
   metadata:

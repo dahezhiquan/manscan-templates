@@ -1,7 +1,7 @@
 id: confluence-oauth-admin
 
 info:
-  name: Confluence OAuth Administration Endpoint
+  name: Confluence OAuth Administration Endpoint 检测
   author: DhiyaneshDK
   severity: info
   classification:

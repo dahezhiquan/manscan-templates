@@ -1,11 +1,11 @@
 id: gitea-public-repo-exposure
 
 info:
-  name: Gitea Public Repository - Exposure
+  name: Gitea Public 仓库 暴露
   author: theamanrawat
   severity: low
   description: |
-    Detected publicly accessible Gitea instances exposing repository listings and user information without authentication.
+    检测到 Gitea Public 仓库 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://gitea.io/
     - https://docs.gitea.io/en-us/

@@ -1,13 +1,14 @@
 id: laravel-clockwork-exposure
 
 info:
-  name: Laravel Clockwork - Sensitive Information Exposure
+  name: Laravel Clockwork 敏感信息 暴露
   author: moamenbasel
   severity: medium
   description: |
-    Laravel Clockwork (itsgoingd/clockwork) was detected as enabled and publicly accessible. When left active in production, it exposes SQL queries, request data, session variables, mail logs, and application internals to any visitor.
+    检测到 Laravel Clockwork 敏感信息 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   remediation: |
-    Disable Clockwork in production by setting CLOCKWORK_ENABLE=false in the .env file or removing the package from production dependencies.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://github.com/itsgoingd/clockwork
     - https://underground.works/clockwork/

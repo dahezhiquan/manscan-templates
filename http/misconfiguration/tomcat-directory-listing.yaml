@@ -1,13 +1,14 @@
 id: tomcat-directory-listing
 
 info:
-  name: Apache Tomcat - Directory Listing Enabled
+  name: Apache Tomcat 目录列出 启用
   author: oleveloper
   severity: medium
   description: |
-    Directory listing is enabled on the Apache Tomcat server, allowing users to view the contents of web directories.This could lead to unauthorized access to sensitive files and potential information disclosure.
+    检测到 Apache Tomcat 目录列出 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   remediation: |
-    Disable directory listings by setting the listings parameter to false in the web.xml under the DefaultServlet. This helps prevent unauthorized directory browsing and protects sensitive files.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://isms.kisa.or.kr
   metadata:

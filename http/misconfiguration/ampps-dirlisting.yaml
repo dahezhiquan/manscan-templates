@@ -1,10 +1,11 @@
 id: ampps-dirlisting
 
 info:
-  name: AMPPS by Softaculous Panel - Directory Listing - Detect
+  name: AMPPS Softaculous 面板 目录列出 检测
   author: deFr0ggy
   severity: info
-  description: AMPPS by Softaculous panel directory listing was detected.
+  description: |
+    检测到 AMPPS Softaculous 面板 目录列出 检测。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

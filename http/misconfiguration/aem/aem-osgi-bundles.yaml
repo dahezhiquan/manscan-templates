@@ -1,10 +1,11 @@
 id: aem-osgi-bundles
 
 info:
-  name: Adobe AEM Installed OSGI Bundles
+  name: Adobe AEM Installed OSGI Bundles 检测
   author: dhiyaneshDk
   severity: low
-  description: Adobe AEM Installed OSGI Bundles leaked.
+  description: |
+    检测到 Adobe AEM Installed OSGI Bundles 检测。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.slideshare.net/0ang3el/hacking-aem-sites
   classification:

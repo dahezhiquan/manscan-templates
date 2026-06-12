@@ -1,10 +1,11 @@
 id: transmission-dashboard
 
 info:
-  name: Transmission Dashboard - Detect
+  name: Transmission 仪表盘 检测
   author: fabaff
   severity: medium
-  description: Transmission dashboard was detected.
+  description: |
+    检测到 Transmission 仪表盘 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://transmissionbt.com/
   classification:

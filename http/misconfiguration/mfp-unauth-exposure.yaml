@@ -1,11 +1,11 @@
 id: mfp-unauth-exposure
 
 info:
-  name: Multi-function Printer - Unauthorized Access
+  name: Multi function Printer 未授权 访问
   author: matejsmycka
   severity: medium
   description: |
-    Unauthorized access to MFP (Multi-function printer) using eSCL protocol allows attackers to scan documents left physically in the printer and send them to an arbitrary location. Furthermore, exposure of this endpoint allows attackers to gather information about the printer, serial number, model, and possibly pull documents scanned by legitimate users.
+    检测到 Multi function Printer 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://wiki.debian.org/eSCL
     - https://support.princh.com/en/the-onboarding-process-1

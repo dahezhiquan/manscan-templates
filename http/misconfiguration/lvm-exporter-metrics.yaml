@@ -1,10 +1,11 @@
 id: lvm-exporter-metrics
 
 info:
-  name: LVM Exporter Metrics
+  name: LVM 导出器 指标
   author: DhiyaneshDk
   severity: low
-  description: LVM Exporter Metrics is exposed.
+  description: |
+    检测到 LVM 导出器 指标。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     verified: true
     max-request: 1

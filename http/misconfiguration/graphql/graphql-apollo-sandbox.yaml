@@ -1,11 +1,11 @@
 id: apollo-sandbox-ui-exposed
 
 info:
-  name: Apollo Sandbox UI - Exposed
+  name: Apollo San数据库ox UI 暴露
   author: Hamza Sahin
   severity: low
   description: |
-    Detects the Apollo Sandbox developer interface exposed in production environments, which could facilitate schema discovery or testing by unauthorized users.
+    检测到 Apollo San数据库ox UI 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.apollographql.com/docs/studio/sandbox/
   metadata:

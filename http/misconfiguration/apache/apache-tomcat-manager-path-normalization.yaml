@@ -1,10 +1,11 @@
 id: apache-tomcat-manager-path-normalization
 
 info:
-  name: Apache Tomcat Manager Path Normalization Panel - Detect
+  name: Apache Tomcat Manager Path Normalization 面板 检测
   author: brenocss,organiccrap
   severity: info
-  description: Apache Tomcat Manager Path Normalization login panel was discovered via path normalization. Normalizing a path involves modifying the string that identifies a path or file so that it conforms to a valid path on the target operating system.
+  description: |
+    检测到 Apache Tomcat Manager Path Normalization 面板 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://i.blackhat.com/us-18/Wed-August-8/us-18-Orange-Tsai-Breaking-Parser-Logic-Take-Your-Path-Normalization-Off-And-Pop-0days-Out-2.pdf
   classification:

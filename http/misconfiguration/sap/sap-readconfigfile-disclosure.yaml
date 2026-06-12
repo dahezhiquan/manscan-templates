@@ -1,11 +1,11 @@
 id: sap-readconfig-disclosure
 
 info:
-  name: SAPControl Read DEFAULT.PFL - Disclosure
+  name: SAPControl 读取 默认.PFL 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the ReadConfigFile web method in combination with an unprotected ListConfigFiles call, allowing unauthenticated reading of the global DEFAULT.PFL profile.
+    检测到 SAPControl 读取 默认.PFL 泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://help.sap.com/docs/SAP_NETWEAVER_700/1098b2396c531014be229f0b7ff0e0c6/95840a509ece466ce10000000a423f68.html
     - https://learning.sap.com/courses/technical-implementation-and-operation-i-of-sap-s-4hana-and-sap-business-suite/configuring-sap-systems-via-profile-parameters

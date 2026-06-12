@@ -1,10 +1,11 @@
 id: aem-querybuilder-internal-path-read
 
 info:
-  name: AEM QueryBuilder Internal Path Read
+  name: AEM QueryBuilder Internal Path 读取
   author: DhiyaneshDk
   severity: medium
-  description: AEM QueryBuilder is vulnerable to LFI.
+  description: |
+    检测到 AEM QueryBuilder Internal Path 读取。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://speakerdeck.com/0ang3el/aem-hacker-approaching-adobe-experience-manager-webapps-in-bug-bounty-programs?slide=91
   classification:

@@ -1,7 +1,7 @@
 id: gitlab-public-repos
 
 info:
-  name: GitLab public repositories
+  name: GitLab public 仓库itories
   author: ldionmarcil
   severity: info
   reference:

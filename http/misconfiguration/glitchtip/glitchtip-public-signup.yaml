@@ -1,11 +1,11 @@
 id: glitchtip-public-signup
 
 info:
-  name: Gitea Public Registration Enabled
+  name: Gitea Public 注册已启用
   author: DhiyaneshDk
   severity: medium
   description: |
-    A misconfiguration in GlitchTip allows arbitrary users to sign up.
+    检测到 Gitea Public 注册已启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://glitchtip.com/documentation/install
   metadata:

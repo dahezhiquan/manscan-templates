@@ -1,11 +1,11 @@
 id: ecology-info-leak
 
 info:
-  name: Ecology - Information Exposure
+  name: Eco日志y Information 暴露
   author: qianbenhyu
   severity: high
   description: |
-    The "ecology" component exposes a file that contains sensitive database credentials (dbuser/dbpass).
+    检测到 Eco日志y Information 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/xinyisleep/pocscan/blob/main/%E6%B3%9B%E5%BE%AE/oa%E6%B3%9B%E5%BE%AE0day%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96.py
   metadata:

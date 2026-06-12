@@ -1,10 +1,11 @@
 id: unauthenticated-alert-manager
 
 info:
-  name: Alert Manager - Unauthenticated Access
+  name: Alert Manager 未授权 访问
   author: dhiyaneshDK
   severity: high
-  description: Alert Manager was able to be accessed with no authentication requirements in place.
+  description: |
+    检测到 Alert Manager 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:prometheus:alertmanager:*:*:*:*:*:*:*:*
   metadata:

@@ -1,10 +1,11 @@
 id: kubernetes-metrics
 
 info:
-  name: Detect Kubernetes Exposed Metrics
+  name: 检测 Kubernetes 暴露 指标
   author: pussycat0x
   severity: low
-  description: Information Disclosure of Garbage Collection
+  description: |
+    检测到 检测 Kubernetes 暴露 指标。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/#metrics-in-kubernetes
   metadata:

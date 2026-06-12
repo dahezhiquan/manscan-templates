@@ -1,10 +1,11 @@
 id: android-debug-database-exposed
 
 info:
-  name: Android Debug Manager
+  name: Android 调试 Manager
   author: dhiyaneshDK
   severity: low
-  description: Android Debug Manger is exposed.
+  description: |
+    检测到 Android 调试 Manager。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     max-request: 1
     shodan-query: http.title:"Android Debug Database"

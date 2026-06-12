@@ -1,10 +1,11 @@
 id: unauthenticated-varnish-cache-purge
 
 info:
-  name: Varnish Unauthenticated Cache Purge
+  name: Varnish 未授权 Cache Purge
   author: 0xelkomy
   severity: low
-  description: As per guideline one should protect purges with ACLs from unauthorized hosts.
+  description: |
+    检测到 Varnish 未授权 Cache Purge。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
     - https://hackerone.com/reports/154278

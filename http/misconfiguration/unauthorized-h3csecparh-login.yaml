@@ -1,10 +1,11 @@
 id: unauthorized-h3csecparh-login
 
 info:
-  name: H3C Server - Unauthenticated Access
+  name: H3C 服务器 未授权 访问
   author: ritikchaddha
   severity: high
-  description: H3C server was able to be accessed with no authentication requirements in place.
+  description: |
+    检测到 H3C 服务器 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:h:h3c:secpath_f5060:*:*:*:*:*:*:*:*
   metadata:

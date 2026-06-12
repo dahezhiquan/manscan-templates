@@ -1,11 +1,11 @@
 id: selenium-exposure
 
 info:
-  name: Selenium - Node Exposure
+  name: Selenium Node 暴露
   author: w0Tx
   severity: high
   description: |
-    Selenium was shown to have an exposed node. If a Selenium node is exposed without any form of authentication, remote command execution could be possible if chromium is configured. By default the port is 4444, still, most of the internet facing are done through reverse proxies.
+    检测到 Selenium Node 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://nutcrackerssecurity.github.io/selenium.html
     - https://labs.detectify.com/2017/10/06/guest-blog-dont-leave-your-grid-wide-open/

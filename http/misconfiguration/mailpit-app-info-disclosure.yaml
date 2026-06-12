@@ -1,11 +1,11 @@
 id: mailpit-app-info-disclosure
 
 info:
-  name: Mailpit App - Information Disclosure
+  name: Mailpit App 信息泄露
   author: DhiyaneshDK
   severity: medium
   description: |
-    Mailpit exposes the /api/v1/messages endpoint which can leak email metadata or full email content without authentication, leading to information disclosure.
+    检测到 Mailpit App 信息泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://github.com/axllent/mailpit
     - https://mailpit.axllent.org/docs/api/

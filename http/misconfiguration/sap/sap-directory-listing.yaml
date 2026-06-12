@@ -1,10 +1,11 @@
 id: sap-directory-listing
 
 info:
-  name: SAP Directory Listing
+  name: SAP 目录列出
   author: dhiyaneshDK
   severity: medium
-  description: SAP Directory Listing is enabled.
+  description: |
+    检测到 SAP 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   metadata:
     max-request: 1
   tags: sap,listing,misconfig,vuln

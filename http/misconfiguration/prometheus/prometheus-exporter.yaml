@@ -1,10 +1,11 @@
 id: prometheus-exporter
 
 info:
-  name: Prometheus exporter detect
+  name: Prometheus 导出器 检测
   author: jarijaas
   severity: info
-  description: Prometheus exporter detector
+  description: |
+    检测到 Prometheus 导出器 检测。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://github.com/prometheus/prometheus/wiki/Default-port-allocations
   metadata:

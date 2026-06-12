@@ -1,11 +1,11 @@
 id: wordfence-waf-logs-disclosure
 
 info:
-  name: WordPress Wordfence - WAF Logs and Data Disclosure
+  name: WordPress Wordfence WAF 日志s Data 泄露
   author: ritikchaddha
   severity: low
   description: |
-    The Wordfence Security plugin creates various log and data files in the wflogs directory. If directory listing is enabled or files are directly accessible, sensitive information about blocked attacks, IP addresses, and firewall configuration may be exposed.
+    检测到 WordPress Wordfence WAF 日志s Data 泄露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://wordpress.org/support/topic/detect-suspicious-content-in-word-fence-wflogs-in-my-site/
     - https://wordpress.org/support/topic/syn_sent-in-wflogs-filename-php/

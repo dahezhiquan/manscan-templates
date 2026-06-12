@@ -1,7 +1,7 @@
 id: liferay-axis
 
 info:
-  name: Liferay /api/axis - API Exposed
+  name: Liferay API axis API 暴露
   author: DhiyaneshDk
   severity: info
   reference:

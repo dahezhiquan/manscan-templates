@@ -1,11 +1,11 @@
 id: wordpress-twentynineteen-fpd
 
 info:
-  name: WordPress Twenty Nineteen - Full Path Disclosure
+  name: WordPress Twenty Nineteen 完整路径泄露
   author: pussycat0x
   severity: low
   description: |
-    The WordPress Twentytwenty themes was detected to be vulnerable to Full Path Disclosure, allowing unauthenticated access to the full application path.
+    检测到 WordPress Twenty Nineteen 完整路径泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://wordpress.org/themes/twentynineteen/
   metadata:

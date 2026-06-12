@@ -1,11 +1,11 @@
 id: vscode-slnx-sqlite-disclosure
 
 info:
-  name: Visual Studio Code - Slnx.SQLite File Disclosure
+  name: Visual Studio Code Slnx.SQLite 文件 泄露
   author: ritikchaddha
   severity: high
   description: |
-    Visual Studio Code and Visual Studio may create slnx.sqlite database files that contain solution metadata, project information, and potentially sensitive configuration data. If these files are accessible on a web server, they can expose internal project structure and development environment details.
+    检测到 Visual Studio Code Slnx.SQLite 文件 泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   metadata:
     max-request: 2
     verified: true

@@ -1,11 +1,11 @@
 id: opennms-dashboard-exposure
 
 info:
-  name: OpenNMS Dashboard - Exposure Detection
+  name: OpenNMS 仪表盘 暴露 检测
   author: ritikchaddha
   severity: medium
   description: |
-    OpenNMS Dashboard exposure was detected. OpenNMS is an enterprise-grade network monitoring platform. Exposed dashboards may reveal sensitive network infrastructure information, monitoring data, alarms, and potentially allow unauthorized access.
+    检测到 OpenNMS 仪表盘 暴露 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.opennms.com/horizon/35/operation/deep-dive/visualizations/dashboard.html
     - https://docs.opennms.com/horizon/30/operation/user-management/introduction.html

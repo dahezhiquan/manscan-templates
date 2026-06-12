@@ -1,10 +1,11 @@
 id: unauth-fastvue-dashboard
 
 info:
-  name: Fastvue Dashboard Panel - Unauthenticated Detect
+  name: Fastvue 仪表盘 面板 未授权 检测
   author: DhiyaneshDK
   severity: medium
-  description: Fastvue Dashboard panel was detected without authentication.
+  description: |
+    检测到 Fastvue 仪表盘 面板 未授权 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

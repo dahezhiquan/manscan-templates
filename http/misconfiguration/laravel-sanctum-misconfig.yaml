@@ -1,15 +1,17 @@
 id: laravel-sanctum-misconfig
 
 info:
-  name: Laravel Sanctum - Stateful Domain CSRF Misconfiguration
+  name: Laravel Sanctum Stateful Domain CSRF 配置不当
   author: moamenbasel
   severity: medium
   description: |
-    Laravel Sanctum's SPA authentication uses cookie-based session authentication for first-party single-page applications. The /sanctum/csrf-cookie endpoint issues XSRF-TOKEN cookies to requesting origins. When SANCTUM_STATEFUL_DOMAINS is misconfigured with wildcard or overly permissive values, the application responds with CORS headers that permit arbitrary external origins to make credentialed cross-origin requests.
+    检测到 Laravel Sanctum Stateful Domain CSRF 配置不当。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   impact: |
-    An attacker can host a malicious page that performs authenticated actions on behalf of any logged-in user who visits it. Exploitable actions include reading sensitive user data, modifying account settings, changing email or password, initiating transactions, or any other operation exposed by Sanctum-protected API endpoints. The attack requires no prior authentication and only needs the victim to visit an attacker-controlled URL while logged in.
+    - 凭据、密钥、配置或环境变量泄露后，攻击者可能访问内部系统或第三方服务。
+    - 泄露信息可被用于横向移动、权限提升或供应链攻击。
   remediation: |
-    Restrict SANCTUM_STATEFUL_DOMAINS and SESSION_DOMAIN to only trusted application domains, and configure session cookies with SameSite=Lax or SameSite=Strict to reduce unauthorized cross-site requests. Additionally, ensure config/cors.php does not use wildcard (*) origins when supports_credentials is enabled, allowing only trusted origins for credentialed requests.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://laravel.com/docs/11.x/sanctum#spa-authentication
     - https://laravel.com/docs/11.x/sanctum#cors-and-cookies

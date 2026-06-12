@@ -1,10 +1,11 @@
 id: tiny-file-manager-unauth
 
 info:
-  name: Tiny File Manager - Unauthorized Access
+  name: Tiny 文件 Manager 未授权 访问
   author: ritikchaddha,HuTa0
   severity: medium
-  description: Unauthenticated Tiny File Manager panel was detected.
+  description: |
+    检测到 Tiny 文件 Manager 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 1

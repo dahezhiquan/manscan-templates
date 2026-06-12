@@ -1,13 +1,14 @@
 id: anteon-dashboard-unauth
 
 info:
-  name: Anteon Dashboard - Unauthenticated
+  name: Anteon 仪表盘 未授权
   author: DhiyaneshDk
   severity: medium
   description: |
-    The Anteon Dashboard was found to be accessible via the /dashboard endpoint without authentication.This exposure may allow unauthorized users to gain insights into internal services, configurations, or sensitive operational data depending on the permissions and features enabled on the dashboard.
+    检测到 Anteon 仪表盘 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Unauthorized access to the dashboard can lead to information disclosure, configuration leaks, or even administrative control depending on the level of access the endpoint provides.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   metadata:
     verified: true
     max-request: 1

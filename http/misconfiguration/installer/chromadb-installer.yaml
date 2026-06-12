@@ -1,11 +1,11 @@
 id: chromadb-installer
 
 info:
-  name: ChromaDB Installer - Detected
+  name: Chroma数据库 安装向导 检测ed
   author: pussycat0x
   severity: info
   description: |
-    Detects the presence of the ChromaDB admin interface.The endpoint reveals connection details and authentication type.
+    检测到 Chroma数据库 安装向导 检测ed。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     verified: true
     shodan-query: "ChromaDB"

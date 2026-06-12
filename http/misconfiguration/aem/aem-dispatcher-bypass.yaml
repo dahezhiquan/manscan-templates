@@ -1,11 +1,11 @@
 id: aem-dispatcher-bypass
 
 info:
-  name: Adobe Experience Manager - Dispatcher Bypass
+  name: Adobe Experience Manager Dispatcher Bypass 检测
   author: DhiyaneshDK,assetnote
   severity: medium
   description: |
-    Detected potential Adobe Experience Manager (AEM) Dispatcher misconfigurations that could have allowed bypassing request filtering, exposing internal endpoints, or permitting unauthorised access to restricted resources.
+    检测到 Adobe Experience Manager Dispatcher Bypass 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.google.com/presentation/d/1PypHgd0r3ZVII7e5fLX5JjZIJQfAsMEydLnug0yFb9k/edit?usp=sharing (Slide 18,22,24)
   metadata:

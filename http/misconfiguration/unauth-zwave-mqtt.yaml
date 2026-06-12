@@ -1,10 +1,11 @@
 id: unauth-zwave-mqtt
 
 info:
-  name: Unauthenticated ZWave To MQTT Console
+  name: 未授权 ZWave MQTT 控制台
   author: geeknik
   severity: low
-  description: ZWave To MQTT Console is exposed.
+  description: |
+    检测到 未授权 ZWave MQTT 控制台。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/OpenZWave/Zwave2Mqtt
   metadata:

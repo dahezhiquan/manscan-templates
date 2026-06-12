@@ -1,12 +1,11 @@
 id: azuracast-installer
 
 info:
-  name: AzuraCast - Unfinished Installation
+  name: AzuraCast 未完成安装ation
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected exposed AzuraCast setup wizard that allows unauthorized superuser account creation.An unfinished AzuraCast installation exposes setup endpoints that enable attackers to create
-    administrator accounts and gain full control of the application.
+    检测到 AzuraCast 未完成安装ation。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://github.com/AzuraCast/AzuraCast
     - https://docs.azuracast.com/en/getting-started/installation

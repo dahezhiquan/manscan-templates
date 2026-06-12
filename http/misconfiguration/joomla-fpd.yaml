@@ -1,11 +1,11 @@
 id: joomla-fpd
 
 info:
-  name: Joomla! - Full Path Disclosure
+  name: Joomla! 完整路径泄露
   author: pussycat0x
   severity: low
   description: |
-    Detects full path disclosure in Joomla! sending requests to specific paths and identifying fatal error stack traces that leaked absolute filesystem paths.
+    检测到 Joomla! 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://developer.joomla.org/security-centre/884-20220801-core-multiple-full-path-disclosures-because-of-missing-jexec-or-die-check.html
   metadata:

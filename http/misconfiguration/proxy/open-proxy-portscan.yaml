@@ -1,11 +1,14 @@
 id: open-proxy-portscan
 
 info:
-  name: Open Proxy to Ports on the Proxy's localhost Interface
+  name: 开放代理 Ports Proxy's localhost Interface
   author: sullo
   severity: high
-  description: The host is configured as a proxy which allows access to its internal interface
-  remediation: Disable the proxy or restrict configuration to only allow access to approved hosts/ports.
+  description: |
+    检测到 开放代理 Ports Proxy's localhost Interface。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  remediation: |
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://blog.projectdiscovery.io/abusing-reverse-proxies-internal-access/
     - https://en.wikipedia.org/wiki/Open_proxy

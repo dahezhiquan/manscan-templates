@@ -1,10 +1,11 @@
 id: ibm-friendly-path-exposure
 
 info:
-  name: IBM Websphere Friendly Path Exposure
+  name: IBM Websphere Friendly Path 暴露
   author: clarkvoss
   severity: medium
-  description: Finds friendly path exposed that can be used to access signup page and create new user accounts.
+  description: |
+    检测到 IBM Websphere Friendly Path 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://clarkvoss.medium.com/how-to-harpon-big-blue-c163722638d8
   classification:

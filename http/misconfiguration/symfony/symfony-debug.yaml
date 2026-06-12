@@ -1,10 +1,11 @@
 id: symfony-debug
 
 info:
-  name: Symfony Debug Mode
+  name: Symfony 调试模式
   author: organiccrap,pdteam
   severity: high
-  description: A Symfony installations 'debug' interface is enabled, allowing the disclosure and possible execution of arbitrary code.
+  description: |
+    检测到 Symfony 调试模式。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://github.com/synacktiv/eos
   classification:

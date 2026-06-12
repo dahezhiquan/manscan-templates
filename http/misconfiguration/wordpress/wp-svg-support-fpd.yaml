@@ -1,11 +1,11 @@
 id: wp-svg-support-fpd
 
 info:
-  name: WordPress SVG Support - Full Path Disclosure
+  name: WordPress SVG Support 完整路径泄露
   author: pussycat0x
   severity: low
   description: |
-    The WordPress SVG Support plugin was detected to have publicly accessible PHP files without ABSPATH protection, which exposed sensitive server path information. Direct access to vendor/composer files triggered PHP fatal errors that revealed the full WordPress filesystem path.
+    检测到 WordPress SVG Support 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/svg-support/
   metadata:

@@ -1,11 +1,11 @@
 id: kube-state-metrics
 
 info:
-  name: Kube State Metrics Exposure
+  name: Kube State 指标 暴露
   author: ja1sh
   severity: low
   description: |
-    An attacker can detect the public instance of a Kube-State-Metrics metrics. The Kubernetes API server exposes data about the count, health, and availability of pods, nodes, and other Kubernetes objects.
+    检测到 Kube State 指标 暴露。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   classification:
     cpe: cpe:2.3:a:kubernetes:kube-state-metrics:*:*:*:*:*:*:*:*
   metadata:

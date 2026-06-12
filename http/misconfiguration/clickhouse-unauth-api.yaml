@@ -1,10 +1,11 @@
 id: clickhouse-unauth-api
 
 info:
-  name: ClickHouse API Database Interface - Improper Authorization
+  name: ClickHouse API 数据库 Interface Improper Authorization
   author: DhiyaneshDk
   severity: high
-  description: Clickhouse API Database is exposed.
+  description: |
+    检测到 ClickHouse API 数据库 Interface Improper Authorization。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/luck-ying/Library-POC/blob/master/ClickHouse%E6%95%B0%E6%8D%AE%E5%BA%93/ClickHouse%E6%95%B0%E6%8D%AE%E5%BA%93%208123%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE.py
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/redteam/vulnerability/unauthorized/ClickHouse%208123%E7%AB%AF%E5%8F%A3.md?plain=1

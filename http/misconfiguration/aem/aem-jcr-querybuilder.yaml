@@ -1,7 +1,7 @@
 id: aem-jcr-querybuilder
 
 info:
-  name: Query JCR role via QueryBuilder Servlet
+  name: Query JCR role QueryBuilder Servlet 检测
   author: DhiyaneshDk
   severity: info
   metadata:

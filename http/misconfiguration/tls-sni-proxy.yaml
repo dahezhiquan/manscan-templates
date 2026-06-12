@@ -1,7 +1,7 @@
 id: tls-sni-proxy
 
 info:
-  name: TLS SNI Proxy Detection
+  name: TLS SNI Proxy 检测
   author: pdteam
   severity: info
   reference:

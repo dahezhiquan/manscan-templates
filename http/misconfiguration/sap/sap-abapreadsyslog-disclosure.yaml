@@ -1,11 +1,11 @@
 id: sap-abapreadsyslog-disclosure
 
 info:
-  name: SAPControl ABAPReadSyslog - Disclosure
+  name: SAPControl ABAP读取Sys日志 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    Detected SAP systems where the SAPControl SOAP web service exposes the ABAPReadSyslog operation without authentication. ABAPReadSyslog returns the ABAP system log (equivalent to transaction SM21) via SAPControl sapstartsrv and includes fields such as client, username, transaction code, message number, free-text message and severity.
+    检测到 SAPControl ABAP读取Sys日志 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://my-handshake.blogspot.com/2011/03/sapcontrol-webmethods-list.html
     - https://gist.github.com/c6da760f57e062397e52400936ca5797

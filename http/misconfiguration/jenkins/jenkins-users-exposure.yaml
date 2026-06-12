@@ -1,11 +1,11 @@
 id: jenkins-users-exposure
 
 info:
-  name: Jenkins Users - Exposure
+  name: Jenkins 用户暴露
   author: theamanrawat
   severity: info
   description: |
-    Detected an exposed Jenkins asynchPeople endpoint that discloses user information (e.g., users, full names, and profile URLs) allowing user enumeration.
+    检测到 Jenkins 用户暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
   reference:

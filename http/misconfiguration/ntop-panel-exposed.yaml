@@ -1,7 +1,7 @@
 id: ntop-panel-exposed
 
 info:
-  name: ntop Network Traffix Exposed
+  name: ntop Network Traffix 暴露
   author: tess
   severity: unknown
   classification:

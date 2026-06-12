@@ -1,11 +1,11 @@
 id: sony-bravia-disclosure
 
 info:
-  name: Sony BRAVIA Digital Signage 1.7.8 System API Information Disclosure
+  name: Sony BRAVIA Digital Signage 1.7.8 System API 信息泄露
   author: geeknik
   severity: low
   description: |
-    The application is vulnerable to sensitive information disclosure vulnerability. An unauthenticated attacker can visit several API endpoints and disclose information running on the device.
+    检测到 Sony BRAVIA Digital Signage 1.7.8 System API 信息泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5610.php
     - https://www.zeroscience.mk/codes/sonybravia_sysinfo.txt

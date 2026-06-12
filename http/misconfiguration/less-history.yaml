@@ -1,11 +1,11 @@
 id: lesshst-history
 
 info:
-  name: Less History - File Disclosure
+  name: Less 历史记录 文件 泄露
   author: kazet
   severity: low
   description: |
-    LESSHST file is a Less History File. LESSHST file is a Less History File. Less is a terminal pager program on Unix, Windows, and Unix-like systems used to view (but not change) the contents of a text file one screen at a time.
+    检测到 Less 历史记录 文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

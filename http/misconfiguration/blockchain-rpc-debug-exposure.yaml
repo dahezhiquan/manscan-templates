@@ -1,15 +1,17 @@
 id: blockchain-rpc-debug-exposure
 
 info:
-  name: Blockchain RPC Debug Trace Methods - Exposure
+  name: Blockchain RPC 调试 Trace Methods 暴露
   author: 0xBassia
   severity: medium
   description: |
-    The blockchain RPC endpoint has debug-level tracing methods enabled (debug_traceTransaction, debug_traceBlockByNumber, trace_block, trace_filter). These methods return complete EVM execution traces including opcodes, stack values, and memory contents, enabling smart contract reverse engineering and targeted attacks.
+    检测到 Blockchain RPC 调试 Trace Methods 暴露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   impact: |
-    An attacker can reconstruct the logic of unverified smart contracts, analyze internal call flows, and simulate transactions. Combined with txpool access, this enables sophisticated MEV strategies. Heavy trace calls can also cause resource exhaustion on the RPC node.
+    - 攻击者可能利用暴露信息进行资产测绘、权限探测或后续攻击。
+    - 若目标接口缺少访问控制，可能进一步造成敏感数据泄露或系统被滥用。
   remediation: |
-    Disable all debug_* and trace_* namespace methods on public RPC endpoints. If needed for developer tooling, expose them on a separate rate-limited endpoint requiring API key authentication.
+    - 限制该端点的公网访问，仅允许可信来源访问。
+    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
   reference:
     - https://geth.ethereum.org/docs/developers/dapp-developer/native
     - https://github.com/ledgerwatch/erigon

@@ -1,11 +1,11 @@
 id: virtual-smartzone-installer
 
 info:
-  name: Virtual SmartZone Setup Wizard - Exposure
+  name: Virtual SmartZone 安装向导 暴露
   author: DhiyaneshDK
   severity: high
   description: |
-    Detects exposed Virtual SmartZone Installation page.
+    检测到 Virtual SmartZone 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://support.ruckuswireless.com/products/83-virtual-smartzone-vsz
   metadata:

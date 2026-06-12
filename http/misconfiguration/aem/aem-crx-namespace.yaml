@@ -1,10 +1,11 @@
 id: aem-crx-namespace
 
 info:
-  name: Adobe AEM CRX Namespace Editor Exposure
+  name: Adobe AEM CRX Namespace Editor 暴露
   author: dhiyaneshDk
   severity: low
-  description: Adobe AEM CRX Namespace Editor is exposed.
+  description: |
+    检测到 Adobe AEM CRX Namespace Editor 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   classification:

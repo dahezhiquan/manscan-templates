@@ -1,11 +1,11 @@
 id: flowise-installer
 
 info:
-  name: Flowise Installation Wizard - Exposure
+  name: Flowise 安装 Wizard 暴露
   author: pussycat0x
   severity: high
   description: |
-    Flowise Installation Wizard is susceptible to the Installation page exposure due to misconfiguration
+    检测到 Flowise 安装 Wizard 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     verified: true
     shodan-query: http.title:"Flowise - Build AI Agents, Visually"

@@ -1,11 +1,11 @@
 id: envoy-metadata-disclosure
 
 info:
-  name: Envoy Proxy - Metadata Disclosure
+  name: 环境变量oy Proxy 元数据 泄露
   author: theamanrawat
   severity: info
   description: |
-    Detected misconfigured Envoy proxy instances that disclose sensitive information about the target infrastructure via the "x-envoy-peer-metadata" response header.
+    检测到 环境变量oy Proxy 元数据 泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/envoy-metadata-disclosure/
     - https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration

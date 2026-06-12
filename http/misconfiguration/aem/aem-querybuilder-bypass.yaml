@@ -1,11 +1,11 @@
 id: aem-querybuilder-bypass
 
 info:
-  name: AEM QueryBuilder JSON Exposure - Bypass
+  name: AEM QueryBuilder JSON 暴露 Bypass
   author: tess,assetnote
   severity: critical
   description: |
-    Adobe Experience Manager QueryBuilder endpoint allows unauthenticated attackers to extract sensitive user repository data, including password hashes from the rep:password field in /home/users. This vulnerability bypasses access controls and exposes bcrypt/SHA-256 password hashes through the querybuilder.json API, enabling potential credential compromise and account takeover attacks.
+    检测到 AEM QueryBuilder JSON 暴露 Bypass。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://experienceleague.adobe.com/docs/experience-manager-65/developing/platform/query-builder/querybuilder-api.html
     - https://slcyber.io/assetnote-security-research-center/finding-critical-bugs-in-adobe-experience-manager/

@@ -1,10 +1,11 @@
 id: springboot-threaddump
 
 info:
-  name: Detect Springboot Thread Dump page
+  name: 检测 Springboot Th读取 Dump page
   author: philippedelteil
   severity: low
-  description: The threaddump endpoint provides a thread dump from the application's JVM.
+  description: |
+    检测到 检测 Springboot Th读取 Dump page。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://docs.spring.io/spring-boot/docs/2.4.11-SNAPSHOT/actuator-api/htmlsingle/#threaddump
   metadata:

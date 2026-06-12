@@ -1,11 +1,11 @@
 id: root-path-disclosure
 
 info:
-  name: ROOT - Path Disclosure
+  name: ROOT Path 泄露
   author: soltanali0,ArganexEmad
   severity: high
   description: |
-    Detects potential exposure of sensitive file paths like /000~ROOT~000/.
+    检测到 ROOT Path 泄露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   metadata:
     verified: true
     max-request: 4

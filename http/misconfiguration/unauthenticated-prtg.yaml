@@ -1,10 +1,11 @@
 id: unauthenticated-prtg
 
 info:
-  name: PRTG Traffic Grapher - Unauthenticated Access
+  name: PRTG Traffic Grapher 未授权 访问
   author: dhiyaneshDK
   severity: high
-  description: PRTG Traffic Grapher was able to be accessed with no authentication requirements in place.
+  description: |
+    检测到 PRTG Traffic Grapher 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.exploit-db.com/ghdb/5808
   metadata:

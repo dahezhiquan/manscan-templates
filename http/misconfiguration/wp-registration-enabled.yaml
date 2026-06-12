@@ -1,13 +1,14 @@
 id: wp-registration-enabled
 
 info:
-  name: WordPress User Registration Panel - Detect
+  name: WordPress 用户 Registration 面板 检测
   author: tess,DhiyaneshDK
   severity: info
   description: |
-    WordPress user registration is currently configured so that anyone can register as a user, thereby enabling an attacker to possibly access sensitive data and execute unathorized operations.
+    检测到 WordPress 用户 Registration 面板 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   remediation: |
-    Disable user registration if not needed. To do so, log in as an administrator and go to Settings -> General and uncheck "Anyone can register."
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-user-registration-enabled/
   classification:

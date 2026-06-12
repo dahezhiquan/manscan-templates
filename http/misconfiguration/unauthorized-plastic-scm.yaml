@@ -1,10 +1,11 @@
 id: unauthorized-plastic-scm
 
 info:
-  name: Plastic Admin Console - Authentication Bypass
+  name: Plastic Admin 控制台 Authentication Bypass
   author: DEENA
   severity: critical
-  description: A Plastic Admin console was discovered.
+  description: |
+    检测到 Plastic Admin 控制台 Authentication Bypass。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://infosecwriteups.com/story-of-google-hall-of-fame-and-private-program-bounty-worth-53559a95c468
   classification:

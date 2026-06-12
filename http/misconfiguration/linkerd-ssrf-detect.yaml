@@ -1,10 +1,11 @@
 id: linkerd-ssrf-detection
 
 info:
-  name: Linkerd SSRF detection
+  name: Linkerd SSRF 检测
   author: dudez
   severity: high
-  description: Linkerd is vulnerable to SSRF.
+  description: |
+    检测到 Linkerd SSRF 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://twitter.com/nirvana_msu/status/1084144955034165248
   metadata:

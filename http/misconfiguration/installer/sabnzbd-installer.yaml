@@ -1,11 +1,11 @@
 id: sabnzbd-installer
 
 info:
-  name: SABnzbd Quick-Start Wizard - Exposure
+  name: SABnzbd Quick Start Wizard 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    Default installation wizard page of SABnzbd was discovered.
+    检测到 SABnzbd Quick Start Wizard 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.sabnzbd.org/
   classification:

@@ -1,10 +1,11 @@
 id: aem-offloading-browser
 
 info:
-  name: Adobe AEM Offloading Browser
+  name: Adobe AEM Offloading Browser 检测
   author: dhiyaneshDk
   severity: medium
-  description: Adobe AEM Offloading Browser is exposed.
+  description: |
+    检测到 Adobe AEM Offloading Browser 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   classification:

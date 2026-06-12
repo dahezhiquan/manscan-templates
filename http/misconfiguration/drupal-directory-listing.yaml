@@ -1,10 +1,11 @@
 id: drupal-directory-listing
 
 info:
-  name: Drupal Directory Listing
+  name: Drupal 目录列出
   author: ritikchaddha
   severity: low
-  description: Detects enabled directory listing on Drupal installations that may expose sensitive files and directory structures.
+  description: |
+    检测到 Drupal 目录列出。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.drupal.org/
     - https://www.drupal.org/docs/security-in-drupal

@@ -1,10 +1,11 @@
 id: apache-couchdb-unauth
 
 info:
-  name: Apache CouchDB - Unauthenticated Access
+  name: Apache Couch数据库 未授权 访问
   author: SleepingBag945
   severity: high
-  description: Apache CouchDB is exposed to external users.
+  description: |
+    检测到 Apache Couch数据库 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/ax1sX/SecurityList/blob/main/Database/CouchDB.md
     - https://github.com/taomujian/linbing/blob/master/python/app/plugins/http/CouchDB/Couchdb_Unauthorized.py

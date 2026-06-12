@@ -1,11 +1,11 @@
 id: modx-installer
 
 info:
-  name: ModX CMS - Unfinished Installation
+  name: ModX CMS 未完成安装ation
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected accessible ModX CMS installation or setup pages that indicated an incomplete installation.An exposed installation interface allowed attackers to complete the setup process and gain administrative access.
+    检测到 ModX CMS 未完成安装ation。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://modx.com/
     - https://docs.modx.com/3.x/en/getting-started/installation

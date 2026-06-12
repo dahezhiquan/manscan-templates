@@ -1,10 +1,11 @@
 id: aws-object-listing
 
 info:
-  name: AWS bucket with Object listing
+  name: AWS bucket 对象列出
   author: pdteam
   severity: low
-  description: Object listing is enabled in AWS bucket.
+  description: |
+    检测到 AWS bucket 对象列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
   metadata:

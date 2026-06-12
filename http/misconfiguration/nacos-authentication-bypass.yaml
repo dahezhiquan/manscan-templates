@@ -1,12 +1,14 @@
 id: nacos-authentication-bypass
 
 info:
-  name: Nacos < 2.2.0 - Authentication Bypass
+  name: Nacos < 2.2.0 Authentication Bypass 检测
   author: Esonhugh
   severity: critical
   description: |
-    The authentication function of Nacos is can be bypass through default JWT secret.
-  remediation: Change value of jwt secret in the configurations
+    检测到 Nacos < 2.2.0 Authentication Bypass 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  remediation: |
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://github.com/alibaba/nacos/issues/10060
     - https://avd.aliyun.com/detail?id=AVD-2023-1655789

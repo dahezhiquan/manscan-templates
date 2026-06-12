@@ -1,11 +1,11 @@
 id: sap-readlogfile-disclosure
 
 info:
-  name: SAPControl ReadDeveloperTrace Log - Disclosure
+  name: SAPControl 读取DeveloperTrace 日志 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP interface exposes the ReadDeveloperTrace web method without authentication.
+    检测到 SAPControl 读取DeveloperTrace 日志 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/scanner/sap/sap_mgmt_con_getlogfiles.rb
     - https://itsiti.com/csmon/

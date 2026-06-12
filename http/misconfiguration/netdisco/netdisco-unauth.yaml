@@ -1,13 +1,14 @@
 id: netdisco-unauth
 
 info:
-  name: Netdisco - Unauth Access
+  name: Netdisco 未授权 访问
   author: ritikchaddha
   severity: critical
   description: |
-    Detects an unauth dashboard access of Netdisco.
+    检测到 Netdisco 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Attackers can potentially exploit this vulnerability to gain unauthorized access to sensitive information.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: adminbro-dashboard-exposure
 
 info:
-  name: AdminBro Dashboard - Unauthenticated Access
+  name: AdminBro 仪表盘 未授权 访问
   author: 0x_Akoko
   severity: high
   description: |
-    Detected AdminBro/AdminJS admin panel was exposed without authentication, allowing unauthenticated users to access the admin dashboard and potentially view, modify, or delete sensitive data. This misconfiguration occurred when developers used buildRouter() instead of buildAuthenticatedRouter().
+    检测到 AdminBro 仪表盘 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.adminjs.co/basics/authentication
     - https://github.com/SoftwareBrothers/adminjs

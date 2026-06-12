@@ -1,11 +1,11 @@
 id: apache-skywalking-dashboard
 
 info:
-  name: Apache SkyWalking - Dashboard
+  name: Apache SkyWalking 仪表盘
   author: icarot
   severity: high
   description: |
-    Apache SkyWalking server, an APM, Application Performance Monitoring System, exposed the backend monitoring dashboard. An attacker can execute unauthorized operations.
+    检测到 Apache SkyWalking 仪表盘。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/apache/skywalking
     - https://github.com/apache/skywalking-ui

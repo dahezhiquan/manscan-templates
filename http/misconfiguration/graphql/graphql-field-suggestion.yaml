@@ -1,13 +1,11 @@
 id: graphql-field-suggestion
 
 info:
-  name: GraphQL Field Suggestion Information Disclosure
+  name: GraphQL Field Suggestion 信息泄露
   author: Dolev Farhi
   severity: info
   description: |
-    If introspection is disabled on your target, Field Suggestion can allow users to still earn information on the GraphQL schema.
-    By default, GraphQL backends have a feature for fields and operations suggestions.
-    If you try to query a field but you have made a typo, GraphQL will attempt to suggest fields that are similar to the initial attempt.
+    检测到 GraphQL Field Suggestion 信息泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/webonyx/graphql-php/issues/454
     - https://github.com/dolevf/Damn-Vulnerable-GraphQL-Application

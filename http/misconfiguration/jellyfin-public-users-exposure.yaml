@@ -1,11 +1,11 @@
 id: jellyfin-public-users-exposure
 
 info:
-  name: Jellyfin Public Users - Exposure
+  name: Jellyfin Public 用户暴露
   author: theamanrawat
   severity: medium
   description: |
-    The Jellyfin media server exposed user information via the public users API endpoint. This endpoint could have leaked sensitive data including usernames, user IDs, server IDs, administrator status, password configuration, login activity, and user policies without authentication.
+    检测到 Jellyfin Public 用户暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/jellyfin/jellyfin/issues/880
     - https://jellyfin.org/docs/

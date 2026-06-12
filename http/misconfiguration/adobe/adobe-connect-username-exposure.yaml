@@ -1,10 +1,11 @@
 id: adobe-connect-username-exposure
 
 info:
-  name: Adobe Connect Username Exposure
+  name: Adobe Connect 用户name 暴露
   author: dhiyaneshDk
   severity: low
-  description: Adobe Connect Username is exposed.
+  description: |
+    检测到 Adobe Connect 用户name 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://packetstormsecurity.com/files/161345/Adobe-Connect-10-Username-Disclosure.html
   metadata:

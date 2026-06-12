@@ -1,13 +1,14 @@
 id: hazelcast-management-exposure
 
 info:
-  name: Hazelcast Management Center - Configuration Exposure
+  name: Hazelcast 管理 Center 配置 暴露
   author: S3R4PH
   severity: medium
   description: |
-    Detected poor architectural configurations or unsecured REST API endpoints in Hazelcast by checking the cluster endpoint, which exposes internal member IPs, UUIDs, and version information.
+    检测到 Hazelcast 管理 Center 配置 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   remediation: |
-    Disable the Hazelcast REST API if not required. If its use is necessary, restrict network exposure, enable authentication mechanisms, limit access through firewall rules, and allow only trusted hosts to access the service.
+    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
+    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
   reference:
     - https://docs.hazelcast.com/imdg/latest/management-center/rest-api
   classification:

@@ -1,11 +1,11 @@
 id: hadoop-unauth-rce
 
 info:
-  name: Apache Hadoop YARN ResourceManager - Remote Code Execution
+  name: Apache Hadoop YARN ResourceManager 远程代码执行
   author: pdteam,Couskito
   severity: critical
   description: |
-    Apache Hadoop YARN ResourceManager is susceptible to remote code execution. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+    检测到 Apache Hadoop YARN ResourceManager 远程代码执行。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - http://archive.hack.lu/2016/Wavestone%20-%20Hack.lu%202016%20-%20Hadoop%20safari%20-%20Hunting%20for%20vulnerabilities%20-%20v1.0.pdf
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/linux/http/hadoop_unauth_exec.rb

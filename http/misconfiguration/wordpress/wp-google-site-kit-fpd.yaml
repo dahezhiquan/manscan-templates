@@ -1,11 +1,11 @@
 id: wp-google-site-kit-fpd
 
 info:
-  name: WordPress Plugin Site Kit by Google - Full Path Disclosure
+  name: WordPress Plugin Site Kit Google 完整路径泄露
   author: 0x_Akoko,DhiyaneshDK
   severity: info
   description: |
-    WordPress plugin Site Kit by Google internal file system path is exposed.
+    检测到 WordPress Plugin Site Kit Google 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/google-site-kit/
   metadata:

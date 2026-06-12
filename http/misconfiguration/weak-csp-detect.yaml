@@ -1,11 +1,11 @@
 id: weak-csp-detect
 
 info:
-  name: Weak Content Security Policy - Detect
+  name: Weak Content Security Policy 检测
   author: pussycat0x,celbahraoui
   severity: info
   description: |
-    Detected misconfigured CSP directives containing unsafe and overly permissive keywords that weakened resource loading restrictions. This configuration allowed high-risk script behaviors, resulting in reduced protection against XSS attacks.
+    检测到 Weak Content Security Policy 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src

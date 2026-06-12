@@ -1,11 +1,11 @@
 id: salesforce-community-misconfig
 
 info:
-  name: Salesforce Community Misconfiguration
+  name: Salesforce Community 配置不当
   author: domwhewell-sage
   severity: medium
   description: |
-    A misconfigured Salesforce Community may lead to sensitive Salesforce data being exposed to anyone on the internet. Anonymous users can query objects that contain sensitive information such as customer lists, support cases, and employee email addresses.
+    检测到 Salesforce Community 配置不当。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.varonis.com/blog/abusing-salesforce-communities
     - https://www.enumerated.ie/index/salesforce

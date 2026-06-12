@@ -1,10 +1,11 @@
 id: server-status
 
 info:
-  name: Server Status Panel - Detect
+  name: 服务器 状态 面板 检测
   author: DhiyaneshDK
   severity: info
-  description: Server Status panel was detected.
+  description: |
+    检测到 服务器 状态 面板 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.facebook.com/ExWareLabs/photos/a.361854183878462/5527767173953778/
   classification:

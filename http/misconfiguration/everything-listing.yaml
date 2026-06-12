@@ -1,11 +1,11 @@
 id: everything-listing
 
 info:
-  name: Everything Server Exposure
+  name: Everything 服务器 暴露
   author: pussycat0x
   severity: high
   description: |
-    Everything is a freeware desktop search utility for Windows that can rapidly find files and folders by name.
+    检测到 Everything 服务器 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://www.voidtools.com/
   classification:

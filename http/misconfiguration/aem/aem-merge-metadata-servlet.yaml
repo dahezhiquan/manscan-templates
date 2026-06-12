@@ -1,7 +1,7 @@
 id: aem-merge-metadata-servlet
 
 info:
-  name: AEM MergeMetadataServlet
+  name: AEM Merge元数据Servlet
   author: DhiyaneshDk
   severity: info
   reference:

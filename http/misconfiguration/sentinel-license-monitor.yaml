@@ -1,7 +1,7 @@
 id: sentinel-license-monitor
 
 info:
-  name: Sentinel License Monitor - Detect
+  name: Sentinel License Monitor 检测
   author: DhiyaneshDk
   severity: unknown
   classification:

@@ -1,10 +1,11 @@
 id: cx-cloud-upload-detect
 
 info:
-  name: CX Cloud Unauthenticated Upload - Detect
+  name: CX Cloud 未授权 上传 检测
   author: dhiyaneshDk
   severity: info
-  description: CX Cloud unauthenticated upload was detected.
+  description: |
+    检测到 CX Cloud 未授权 上传 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

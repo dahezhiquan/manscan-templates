@@ -1,11 +1,11 @@
 id: dd-wrt-controlpanel-exposure
 
 info:
-  name: DD-WRT Control Panel - Exposure
+  name: DD WRT 控制面板 暴露
   author: DhiyaneshDk
   severity: low
   description: |
-    The DD-WRT web interface was found exposed without proper access controls, potentially allowing unauthorized users to view.
+    检测到 DD WRT 控制面板 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://wiki.dd-wrt.com/wiki/index.php/Web_interface
     - https://dd-wrt.com/

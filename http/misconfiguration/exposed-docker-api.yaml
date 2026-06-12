@@ -1,7 +1,7 @@
 id: exposed-docker-api
 
 info:
-  name: Exposed Docker API
+  name: 暴露 Docker API
   author: furkansenan,dwisiswant0
   severity: info
   metadata:

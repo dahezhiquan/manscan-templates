@@ -1,15 +1,17 @@
 id: aem-anonymous-write
 
 info:
-  name: Adobe Experience Manager (AEM) - Anonymous JCR Node Creation
+  name: Adobe Experience Manager (AEM) 匿名 JCR Node Creation
   author: DhiyaneshDk,0ang3el
   severity: high
   description: |
-    Anonymous users can create new JCR nodes via the AEM POST Servlet, which may allow attackers to inject malicious content, achieve persistent XSS, or abuse servlets registered by resource types for further attacks.
+    检测到 Adobe Experience Manager (AEM) 匿名 JCR Node Creation。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Successful exploitation allows unauthenticated attackers to create arbitrary JCR nodes, potentially leading to persistent cross-site scripting (XSS), content injection, or exploitation of servlets registered to handle specific resource types.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Configure proper access control lists (ACLs) on AEM paths to prevent anonymous users from creating JCR nodes. Review and restrict permissions on the POST servlet to authenticated users only.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://clarkvoss.medium.com/the-cve-that-will-never-die-86149b450840
     - https://github.com/0ang3el/aem-hacker/blob/master/aem_hacker.py

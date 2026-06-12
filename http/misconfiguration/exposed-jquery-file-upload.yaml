@@ -1,10 +1,11 @@
 id: exposed-jquery-file-upload
 
 info:
-  name: BlueImp jQuery-File-Upload - Arbitrary File Upload
+  name: BlueImp jQuery 文件上传 Arbitrary 文件上传
   author: dhiyaneshDk
   severity: critical
-  description: BlueImp jQuery-File-Upload does not require validation to upload files to the server and  does not exclude file types, which can lead to a remote code execution vulnerability.
+  description: |
+    检测到 BlueImp jQuery 文件上传 Arbitrary 文件上传。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.exploit-db.com/exploits/45584
     - https://github.com/blueimp/jQuery-File-Upload/blob/master/server/php/UploadHandler.php

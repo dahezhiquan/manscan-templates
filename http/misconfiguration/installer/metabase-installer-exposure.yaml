@@ -1,11 +1,11 @@
 id: metabase-installer-exposure
 
 info:
-  name: Metabase Installer - Exposure
+  name: Metabase 安装向导 暴露
   author: 0x_Akoko
   severity: high
   description: |
-    Detected Metabase installer page, allowing unauthorized database setup and configuration.
+    检测到 Metabase 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://www.metabase.com/docs/latest/installation-and-operation/installing-metabase
   metadata:

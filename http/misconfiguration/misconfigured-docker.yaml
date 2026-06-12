@@ -1,10 +1,11 @@
 id: misconfigured-docker
 
 info:
-  name: Docker Container - Misconfiguration Exposure
+  name: Docker 容器 配置不当 暴露
   author: dhiyaneshDK
   severity: critical
-  description: A Docker container misconfiguration was discovered. The Docker daemon can listen for Docker Engine API requests via three different types of Socket - unix, tcp, and fd. With tcp enabled, the default setup provides un-encrypted and un-authenticated direct access to the Docker daemon. It is conventional to use port 2375 for un-encrypted, and port 2376 for encrypted communication with the daemon.
+  description: |
+    检测到 Docker 容器 配置不当 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://madhuakula.com/content/attacking-and-auditing-docker-containers-using-opensource/attacking-docker-containers/misconfiguration.html
   metadata:

@@ -1,11 +1,11 @@
 id: bitrix-fpd
 
 info:
-  name: Bitrix Path Disclosure
+  name: Bitrix Path 泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected Full Path Disclosure (FPD) in Bitrix by sending requests request to specific paths and identifying fatal error stack traces that leaked absolute filesystem paths.
+    检测到 Bitrix Path 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://www.bitrix24.in/tools/crm/
   metadata:

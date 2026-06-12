@@ -1,11 +1,11 @@
 id: label-studio-signup
 
 info:
-  name: Label Studio - Sign-up Detect
+  name: Label Studio Sign up 检测
   author: DhiyaneshDK
   severity: unknown
   description: |
-    Detects the presence of the Label Studio sign-up.
+    检测到 Label Studio Sign up 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cpe: cpe:2.3:a:heartex:label_studio:*:*:*:*:*:*:*:*
   metadata:

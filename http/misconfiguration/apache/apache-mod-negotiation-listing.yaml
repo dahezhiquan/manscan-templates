@@ -1,11 +1,11 @@
 id: apache-mod-negotiation-listing
 
 info:
-  name: Apache mod_negotiation - Pseudo Directory Listing
+  name: Apache mod negotiation Pseudo 目录列出
   author: 0x_Akoko
   severity: low
   description: |
-    Detected Apache server with mod_negotiation and MultiViews enabled, exposing a pseudo directory listing when invalid Accept headers are sent to extensionless filenames.
+    检测到 Apache mod negotiation Pseudo 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/apache-mod_negotiation-filename-bruteforcing/
     - https://cwe.mitre.org/data/definitions/538.html

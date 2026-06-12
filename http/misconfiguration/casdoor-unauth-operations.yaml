@@ -1,11 +1,11 @@
 id: casdoor-unauth-operations
 
 info:
-  name: Casdoor <=v1.811.0 - Unauthenticated SCIM Operations
+  name: Casdoor <=v1.811.0 未授权 SCIM Operations
   author: iamnoooob,rootxharsh,pdresearch
   severity: critical
   description: |
-    Detects unauthorized SCIM (System for Cross-domain Identity Management) operations in Casdoor versions ≤1.811.0, allowing unauthenticated access to user management functionalities.
+    检测到 Casdoor <=v1.811.0 未授权 SCIM Operations。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 3

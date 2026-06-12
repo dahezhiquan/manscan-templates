@@ -1,11 +1,11 @@
 id: wp-cf7-data-source-fpd
 
 info:
-  name: WordPress Data Source for Contact Form 7 - Full Path Disclosure
+  name: WordPress Data Source Contact Form 7 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    WordPress Plugin CData Source for Contact Form 7 files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    检测到 WordPress Data Source Contact Form 7 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/cf7-data-source/
   metadata:

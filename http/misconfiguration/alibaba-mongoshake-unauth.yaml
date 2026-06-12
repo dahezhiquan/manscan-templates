@@ -1,7 +1,7 @@
 id: alibaba-mongoshake-unauth
 
 info:
-  name: Alibaba Mongoshake Unauth
+  name: Alibaba Mongoshake 未授权
   author: pikpikcu
   severity: info
   metadata:

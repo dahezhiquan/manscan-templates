@@ -1,10 +1,11 @@
 id: unauthenticated-glowroot
 
 info:
-  name: Glowroot Anonymous User
+  name: Glowroot 匿名 用户
   author: pussycat0x
   severity: high
-  description: Anonymous user access allows to understand the host internals
+  description: |
+    检测到 Glowroot 匿名 用户。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     max-request: 1
     shodan-query: http.title:"Glowroot"

@@ -1,10 +1,11 @@
 id: uvdesk-install
 
 info:
-  name: UVDesk Installation Wizard
+  name: UVDesk 安装 Wizard
   author: DhiyaneshDk
   severity: high
-  description: UVDesk is susceptible to the Installation page exposure due to misconfiguration.
+  description: |
+    检测到 UVDesk 安装 Wizard。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   classification:
     cpe: cpe:2.3:a:webkul:uvdesk:*:*:*:*:*:*:*:*
   metadata:

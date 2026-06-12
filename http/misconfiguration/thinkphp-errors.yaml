@@ -1,10 +1,11 @@
 id: thinkphp-errors
 
 info:
-  name: ThinkPHP Errors - Sensitive Information Exposure
+  name: ThinkPHP 错误信息 敏感信息 暴露
   author: j4vaovo
   severity: medium
-  description: ThinkPHP error is leaking sensitive info.
+  description: |
+    检测到 ThinkPHP 错误信息 敏感信息 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
   metadata:

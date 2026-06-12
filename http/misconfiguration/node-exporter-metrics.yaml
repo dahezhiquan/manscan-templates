@@ -1,10 +1,11 @@
 id: node-exporter-metrics
 
 info:
-  name: Detect Node Exporter Metrics
+  name: 检测 Node 导出器 指标
   author: pussycat0x,matejsmycka
   severity: low
-  description: Information Disclosure of Garbage Collection
+  description: |
+    检测到 检测 Node 导出器 指标。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     max-request: 1
   tags: node,exposure,debug,misconfig,vuln

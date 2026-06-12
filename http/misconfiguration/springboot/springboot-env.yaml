@@ -1,10 +1,11 @@
 id: springboot-env
 
 info:
-  name: Springboot Env Actuator - Detect
+  name: Springboot 环境变量 Actuator 检测
   author: that_juan_,dwisiswant0,wdahlenb,philippedelteil,stupidfish
   severity: low
-  description: Sensitive environment variables may not be masked
+  description: |
+    检测到 Springboot 环境变量 Actuator 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     max-request: 4
   tags: misconfig,springboot,env,exposure,vuln

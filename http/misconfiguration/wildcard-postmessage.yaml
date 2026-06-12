@@ -1,10 +1,11 @@
 id: wildcard-postmessage
 
 info:
-  name: postMessage - Cross-Site Scripting
+  name: postMessage Cross Site Scripting 检测
   author: pdteam
   severity: unknown
-  description: postMessage contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and therefore steal cookie-based authentication credentials and launch other attacks.
+  description: |
+    检测到 postMessage Cross Site Scripting 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://jlajara.gitlab.io/web/2020/06/12/Dom_XSS_PostMessage.html
     - https://payatu.com/blog/anubhav.singh/postmessage-vulnerabilities

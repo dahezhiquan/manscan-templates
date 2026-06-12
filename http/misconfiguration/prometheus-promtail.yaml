@@ -1,11 +1,11 @@
 id: prometheus-promtail
 
 info:
-  name: Prometheus Promtail - Exposure
+  name: Prometheus Promtail 暴露
   author: irshad ahamed
   severity: medium
   description: |
-    Prometheus Promtail is an agent that gathers log data from various sources, such as files or systemd journal.
+    检测到 Prometheus Promtail 暴露。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:
     - https://grafana.com/docs/loki/latest/clients/promtail/
     - https://github.com/grafana/loki/issues/8680

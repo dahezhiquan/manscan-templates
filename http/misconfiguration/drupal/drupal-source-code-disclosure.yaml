@@ -1,11 +1,11 @@
 id: drupal-source-code-disclosure
 
 info:
-  name: Drupal - Source Code Disclosure
+  name: Drupal 源码泄露
   author: pussycat0x
   severity: medium
   description: |
-    Detected exposed Drupal source code, backup files, and sensitive configurations, potentially disclosing database credentials and API keys. This exposure revealed internal system paths and critical site metadata, increasing the risk of full system compromise.
+    检测到 Drupal 源码泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://www.drupal.org/docs/security-in-drupal
     - https://www.drupal.org/project/drupal/issues/3457781

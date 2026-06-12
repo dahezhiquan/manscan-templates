@@ -1,10 +1,11 @@
 id: airflow-debug
 
 info:
-  name: Airflow Debug Trace
+  name: Airflow 调试 Trace
   author: pdteam
   severity: low
-  description: Airflow Debug Trace enabled.
+  description: |
+    检测到 Airflow 调试 Trace。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   classification:
     cpe: cpe:2.3:a:apache:airflow:*:*:*:*:*:*:*:*
   metadata:

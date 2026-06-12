@@ -1,15 +1,17 @@
 id: puppetdb-dashboard-unauth
 
 info:
-  name: PuppetDB Dashboard - Unauthenticated Access
+  name: Puppet数据库 仪表盘 未授权 访问
   author: DhiyaneshDk,pussycat0x
   severity: high
   description: |
-    PuppetDB dashboard and API endpoints were found accessible without authentication. PuppetDB stores infrastructure configuration data including node facts, catalogs, and reports. Unauthenticated access exposes sensitive infrastructure details such as hostnames, IP addresses, OS versions, installed packages, Puppet classes, and configuration parameters across the entire managed environment.
+    检测到 Puppet数据库 仪表盘 未授权 访问。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   impact: |
-    An attacker can enumerate the entire Puppet-managed infrastructure, extract node facts (hostnames, IPs, OS details, hardware specs), read catalogs containing configuration secrets, and gather intelligence for lateral movement or targeted attacks.
+    - 攻击者可能接管初始化流程、创建管理员账户或覆盖现有配置。
+    - 暴露的安装页面可能导致系统被重新部署或植入恶意配置。
   remediation: |
-    Restrict access to PuppetDB by configuring certificate-based authentication (mutual TLS) in the jetty.ini or webserver.conf. Use firewall rules to limit access to trusted Puppet infrastructure hosts only. Disable the dashboard in production or place it behind an authenticated reverse proxy.
+    - 删除或限制安装向导、初始化页面和示例配置入口。
+    - 完成部署后强制关闭安装流程，并为后台入口启用认证和访问控制。
   reference:
     - https://puppet.com/docs/puppetdb/latest/configure.html
     - https://puppet.com/docs/puppetdb/latest/api/index.html

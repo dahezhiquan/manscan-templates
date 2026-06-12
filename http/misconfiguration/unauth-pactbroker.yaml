@@ -1,11 +1,11 @@
 id: unauth-pact-broker
 
 info:
-  name: Unauth Pact Broker - Detect
+  name: 未授权 Pact Broker 检测
   author: pdteam
   severity: medium
   description: |
-    Unauthenticated access to Pact Broker, a repository for consumer-driven contracts and verification results.
+    检测到 未授权 Pact Broker 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.pact.io/pact_broker
     - https://github.com/pact-foundation/pact_broker

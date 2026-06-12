@@ -1,11 +1,11 @@
 id: cockroachdb-information-disclosure
 
 info:
-  name: CockroachDB Information Disclosure
+  name: Cockroach数据库 信息泄露
   author: pussycat0x
   severity: medium
   description: |
-    CockroachDB exposed the Statements Admin UI page and the HTTP endpoint /_status/statements in ways that let non-admin users (and in some builds, unauthenticated callers) see SQL text executed across the cluster.
+    检测到 Cockroach数据库 信息泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/cockroachdb/cockroach/issues/44348
   metadata:

@@ -1,11 +1,11 @@
 id: wordfence-config-disclosure
 
 info:
-  name: WordPress Wordfence - Configuration File Disclosure
+  name: WordPress Wordfence 配置文件 泄露
   author: ritikchaddha
   severity: medium
   description: |
-    The Wordfence Security plugin for WordPress stores configuration files in the /wp-content/wflogs/ directory. These files may be accessible without authentication and can expose sensitive configuration data, firewall rules, attack logs, and internal paths.
+    检测到 WordPress Wordfence 配置文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://wordpress.org/support/topic/files-created-in-wflogs-before-plugin-activated/
     - https://forum.ait-pro.com/forums/topic/wordfence-firewall-wp-contentwflogsconfig-php-file-quarantined/

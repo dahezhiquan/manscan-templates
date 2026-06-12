@@ -1,10 +1,11 @@
 id: kubernetes-pods-api
 
 info:
-  name: Kubernetes Pods - API Discovery & Remote Code Execution
+  name: Kubernetes Pods API Discovery & 远程代码执行
   author: ilovebinbash,geeknik,0xtavian
   severity: critical
-  description: A Kubernetes Pods API was discovered. When the service port is available, unauthenticated users can execute commands inside the container.
+  description: |
+    检测到 Kubernetes Pods API Discovery & 远程代码执行。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/officialhocc/Kubernetes-Kubelet-RCE
     - https://blog.binaryedge.io/2018/12/06/kubernetes-being-hijacked-worldwide/

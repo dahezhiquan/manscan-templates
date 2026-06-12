@@ -1,11 +1,11 @@
 id: icinga-installer
 
 info:
-  name: Icinga Web 2 Installer Exposure
+  name: Icinga Web 2 安装向导 暴露
   author: pussycat0x
   severity: high
   description: |
-    Icinga Web 2 installer/setup wizard is publicly accessible. The setup page at /icingaweb2/setup exposes the configuration wizard which guides through full application configuration including database credentials, authentication backends, and admin account creation. While a setup token is required to proceed, the exposure of the installer itself is a serious misconfiguration that signals an incomplete or improperly secured installation.
+    检测到 Icinga Web 2 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://icinga.com/docs/icinga-web/latest/doc/02-Installation/
   classification:

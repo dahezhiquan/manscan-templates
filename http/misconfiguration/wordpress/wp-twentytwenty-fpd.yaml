@@ -1,11 +1,11 @@
 id: wp-twentytwenty-fpd
 
 info:
-  name: WordPress Twenty Twenty Theme - Full Path Disclosure
+  name: WordPress Twenty Twenty Theme 完整路径泄露
   author: 0x_Akoko
   severity: info
   description: |
-    WordPress theme twentytwenty internal file system path of a WordPress installation is exposed or disclosed to unauthorized users.
+    检测到 WordPress Twenty Twenty Theme 完整路径泄露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://wordpress.stackexchange.com/questions/62999/worthwhile-to-restrict-direct-access-of-theme-files
     - https://core.trac.wordpress.org/ticket/38317

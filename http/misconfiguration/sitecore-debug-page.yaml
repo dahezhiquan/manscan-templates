@@ -1,10 +1,11 @@
 id: sitecore-debug-page
 
 info:
-  name: SiteCore Debug Page
+  name: SiteCore 调试 Page
   author: dhiyaneshDK
   severity: low
-  description: SiteCore debug page is exposed.
+  description: |
+    检测到 SiteCore 调试 Page。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     max-request: 1
     shodan-query: http.title:"Welcome to Sitecore"

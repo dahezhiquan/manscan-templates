@@ -1,11 +1,11 @@
 id: jfrog-artifactory-exposure
 
 info:
-  name: JFrog Artifactory Artifacts Exposure
+  name: JFrog Artifactory Artifacts 暴露
   author: DhiyaneshDk
   severity: low
   description: |
-    JFrog Artifactory Artifact repository was exposed.
+    检测到 JFrog Artifactory Artifacts 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://jfrog.com/help/r/jfrog-rest-apis/artifactory-rest-apis
   metadata:

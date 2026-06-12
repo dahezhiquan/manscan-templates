@@ -1,11 +1,11 @@
 id: ms-exchange-user-enum
 
 info:
-  name: Microsoft Exchange Autodiscover - User Enumeration
+  name: Microsoft Exchange Autodiscover 用户枚举
   author: righettod
   severity: info
   description: |
-    Microsoft Exchange (on premise) is prone to a user enumeration via the ActiveSync protocol using the AutodiscoverV2 endpoint.
+    检测到 Microsoft Exchange Autodiscover 用户枚举。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.msxfaq.de/exchange/autodiscover/autodiscover_v2.htm
     - https://github.com/righettod/toolbox-pentest-web/blob/master/docs/4-HINTS_ARCHIVED.md#user-enumeration-techniques-for-microsoft-exchange

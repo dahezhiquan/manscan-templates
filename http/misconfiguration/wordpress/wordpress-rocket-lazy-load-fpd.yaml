@@ -1,11 +1,11 @@
 id: wordpress-rocket-lazy-load-fpd
 
 info:
-  name: WordPress LazyLoad Plugin - Full Path Disclosure
+  name: WordPress LazyLoad Plugin 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    WordPress Plugin LazyLoad files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    检测到 WordPress LazyLoad Plugin 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/rocket-lazy-load/
   metadata:

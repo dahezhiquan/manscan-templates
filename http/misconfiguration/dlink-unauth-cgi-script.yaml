@@ -1,11 +1,11 @@
 id: dlink-unauth-cgi-script
 
 info:
-  name: D-Link DNS Series  CGI Script - Unauthenticated
+  name: D Link DNS Series CGI Script 未授权
   author: pussycat0x
   severity: low
   description: |
-    A vulnerability has been identified in the D-Link DNS series network storage devices, allowing for the exposure of sensitive device information to unauthorized actors. This vulnerability is due to an unauthenticated access flaw in the info.cgi script, which can be exploited via a simple HTTP GET request, affecting over 920,000 devices on the Internet.
+    检测到 D Link DNS Series CGI Script 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://github.com/netsecfish/info_cgi
   classification:

@@ -1,11 +1,11 @@
 id: iot-vdme-simulator
 
 info:
-  name: IoT vDME Simulator Panel - Detect
+  name: IoT vDME Simulator 面板 检测
   author: tess
   severity: medium
   description: |
-    loT vDME Simulator panel was detected. Exposure IoT vDME Simulator panel allows anonymous access to create new Items.
+    检测到 IoT vDME Simulator 面板 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

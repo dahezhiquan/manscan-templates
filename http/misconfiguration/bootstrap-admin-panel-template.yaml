@@ -1,10 +1,11 @@
 id: bootstrap-admin-panel-template
 
 info:
-  name: Bootstrap Admin Panel Template Panel - Detect
+  name: Bootstrap 管理面板 Template 面板 检测
   author: tess
   severity: info
-  description: Bootstrap Admin Panel Template panel was detected.
+  description: |
+    检测到 Bootstrap 管理面板 Template 面板 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

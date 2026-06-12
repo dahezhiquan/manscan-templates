@@ -1,11 +1,11 @@
 id: subrion-installer
 
 info:
-  name: Subrion CMS Web Installer - Exposure
+  name: Subrion CMS Web 安装向导 暴露
   author: ritikchaddha
   severity: high
   description: |
-    Subrion CMS Web Installer has been exposed.
+    检测到 Subrion CMS Web 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://github.com/intelliants/subrion
   classification:

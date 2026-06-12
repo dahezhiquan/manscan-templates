@@ -1,10 +1,11 @@
 id: apache-storm-unauth
 
 info:
-  name: Apache Storm Unauth
+  name: Apache Storm 未授权
   author: pikpikcu
   severity: medium
-  description: Apache Storm instance is exposed.
+  description: |
+    检测到 Apache Storm 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://storm.apache.org/releases/current/STORM-UI-REST-API.html
   metadata:

@@ -1,10 +1,11 @@
 id: wp-install
 
 info:
-  name: WordPress Exposed Installation
+  name: WordPress 暴露 安装
   author: princechaddha,0xpugal
   severity: critical
-  description: Wordpress installation files have been detected
+  description: |
+    检测到 WordPress 暴露 安装。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://smaranchand.com.np/2020/04/misconfigured-wordpress-takeover-to-remote-code-execution/
     - https://x.com/0xPugal/status/1610315762392268802

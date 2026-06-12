@@ -1,11 +1,11 @@
 id: unauthenticated-opencode-web
 
 info:
-  name: OpenCode Web - Unauthenticated Access
+  name: OpenCode Web 未授权 访问
   author: Kazgangap
   severity: medium
   description: |
-    Unauthenticated network access to the OpenCode web interface was detected. When the OpenCode web server is started without setting the OPENCODE_SERVER_PASSWORD environment variable, the server is completely unsecured.
+    检测到 OpenCode Web 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://opencode.ai/docs/tr/web/
   metadata:

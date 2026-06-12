@@ -1,11 +1,11 @@
 id: zipline-installer
 
 info:
-  name: Zipline - Installer
+  name: Zipline 安装向导
   author: pussycat0x
   severity: critical
   description: |
-    Zipline installer setup was detected.
+    检测到 Zipline 安装向导。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://zipline.diced.sh/docs/get-started/docker
   metadata:

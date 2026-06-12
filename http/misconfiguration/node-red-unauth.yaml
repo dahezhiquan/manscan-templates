@@ -1,15 +1,17 @@
 id: node-red-unauth
 
 info:
-  name: Node-RED - Unauthenticated Access
+  name: Node RED 未授权 访问
   author: 0xBassia
   severity: high
   description: |
-    Node-RED flow editor is accessible without authentication. Node-RED is a flow-based programming tool that can execute arbitrary system commands, read/write files, and make network requests. Unauthenticated access leads to remote code execution.
+    检测到 Node RED 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    An attacker can create flows that execute system commands on the server, read sensitive files, establish reverse shells, or pivot to internal networks. Node-RED's exec node provides direct OS command execution.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Enable authentication in Node-RED settings.js by configuring adminAuth with username and bcrypt-hashed password. Restrict network access to trusted IPs only.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://nodered.org/docs/user-guide/runtime/securing-node-red
     - https://nodered.org/docs/user-guide/runtime/configuration

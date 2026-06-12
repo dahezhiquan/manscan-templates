@@ -1,10 +1,11 @@
 id: openbmcs-ssrf
 
 info:
-  name: OpenBMCS 2.4 - Server-Side Request Forgery /  Remote File Inclusion
+  name: OpenBMCS 2.4 服务器 Side Request Forgery Remote 文件 Inclusion
   author: dhiyaneshDK
   severity: medium
-  description: OpenBMCS 2.4 is susceptible to unauthenticated server-side request forgery and remote file inclusion vulnerabilities within its functionalities. The application parses user supplied data in the POST parameter 'ip' to query a server IP on port 81 by default. Since no validation is carried out on the parameter, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary destination host.
+  description: |
+    检测到 OpenBMCS 2.4 服务器 Side Request Forgery Remote 文件 Inclusion。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.exploit-db.com/exploits/50670
     - https://securityforeveryone.com/tools/openbmcs-unauth-ssrf-rfi-vulnerability-scanner

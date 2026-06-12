@@ -1,11 +1,11 @@
 id: call-com-installer
 
 info:
-  name: Call.com Setup Page - Exposure
+  name: Call.com 安装配置 Page 暴露
   author: DhiyaneshDK
   severity: high
   description: |
-    Detects exposed Call.com  Setup page.
+    检测到 Call.com 安装配置 Page 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://cal.com/
   classification:

@@ -1,10 +1,11 @@
 id: unauthorized-printer-hp
 
 info:
-  name: Unauthorized HP office pro printer
+  name: 未授权 HP office pro printer
   author: pussycat0x,r3naissance
   severity: high
-  description: HP office pro printer web access is exposed.
+  description: |
+    检测到 未授权 HP office pro printer。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:h:hp:officejet_pro_8730_m9l80a:*:*:*:*:*:*:*:*
   metadata:

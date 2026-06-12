@@ -1,10 +1,11 @@
 id: concrete-installer
 
 info:
-  name: Concrete Installer
+  name: Concrete 安装向导
   author: pussycat0x
   severity: high
-  description: Concrete is susceptible to the Installation page exposure due to misconfiguration.
+  description: |
+    检测到 Concrete 安装向导。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   classification:
     cpe: cpe:2.3:a:concretecms:concrete_cms:*:*:*:*:*:*:*:*
   metadata:

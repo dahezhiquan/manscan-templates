@@ -1,10 +1,11 @@
 id: rabbitmq-exporter-metrics
 
 info:
-  name: RabbitMQ Exporter
+  name: RabbitMQ 导出器
   author: DhiyaneshDk
   severity: low
-  description: RabbitMQ Exporter is exposed.
+  description: |
+    检测到 RabbitMQ 导出器。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   classification:
     cpe: cpe:2.3:a:vmware:rabbitmq:*:*:*:*:*:*:*:*
   metadata:

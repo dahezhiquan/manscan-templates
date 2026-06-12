@@ -1,11 +1,11 @@
 id: unauth-etherpad
 
 info:
-  name: Unauthenticated Etherpad
+  name: 未授权 Etherpad
   author: philippedelteil
   severity: low
   description: |
-    Finds Etherpad instances that allow adding new notes without authentication.
+    检测到 未授权 Etherpad。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:etherpad:etherpad:*:*:*:*:*:*:*:*
   metadata:

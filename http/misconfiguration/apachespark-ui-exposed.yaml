@@ -1,11 +1,11 @@
 id: apachespark-ui-exposed
 
 info:
-  name: Apache Spark Application UI - Exposed
+  name: Apache Spark Application UI 暴露
   author: ritikchaddha
   severity: medium
   description: |
-    Detects exposed PySparkShell Application UI by Apache Spark on port 4040. The UI should not be exposed to the internet as it may leak sensitive job and cluster information.
+    检测到 Apache Spark Application UI 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://spark.apache.org/docs/latest/web-ui.html
   metadata:

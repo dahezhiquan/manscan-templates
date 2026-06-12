@@ -1,10 +1,11 @@
 id: wamp-server-configuration
 
 info:
-  name: default-wamp-server-page
+  name: wamp 服务器 配置
   author: pussycat0x
   severity: medium
-  description: Wamp default page will expose sensitive configuration and vhosts.
+  description: |
+    检测到 wamp 服务器 配置。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://www.exploit-db.com/ghdb/6891.
   metadata:

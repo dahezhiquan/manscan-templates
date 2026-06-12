@@ -1,11 +1,11 @@
 id: moleculer-microservices
 
 info:
-  name: Moleculer Microservices Project
+  name: Moleculer Micro服务s Project
   author: pussycat0x
   severity: low
   description: |
-    Moleculer microservice was able to be accessed with no required authentication in place.
+    检测到 Moleculer Micro服务s Project。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

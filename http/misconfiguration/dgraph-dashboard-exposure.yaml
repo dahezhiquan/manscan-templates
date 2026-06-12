@@ -1,10 +1,11 @@
 id: dgraph-dashboard-exposure
 
 info:
-  name: Dgraph Ratel Dashboard Exposure Panel - Detect
+  name: Dgraph Ratel 仪表盘 暴露 面板 检测
   author: dhiyaneshDk
   severity: info
-  description: Dgraph Ratel Dashboard Exposure panel was detected.
+  description: |
+    检测到 Dgraph Ratel 仪表盘 暴露 面板 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,11 +1,11 @@
 id: wp-astra-fpd
 
 info:
-  name: WordPress Astra - Full Path Disclosure
+  name: WordPress Astra 完整路径泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    WordPress Astra Theme files are publicly accessible without ABSPATH protection, exposing sensitive server path information through PHP error messages when accessed directly.
+    检测到 WordPress Astra 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/themes/astra/
   metadata:

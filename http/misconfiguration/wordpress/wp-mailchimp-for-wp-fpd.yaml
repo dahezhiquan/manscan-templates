@@ -1,11 +1,11 @@
 id: wp-mailchimp-for-wp-fpd
 
 info:
-  name: WordPress Mailchimp for WordPress Plugin - Full Path Disclosure
+  name: WordPress Mailchimp WordPress Plugin 完整路径泄露
   author: 0x_Akoko
   severity: info
   description: |
-    WordPress plugin MC4WP: Mailchimp for WordPress internal file system path is exposed.
+    检测到 WordPress Mailchimp WordPress Plugin 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/mailchimp-for-wp/
   metadata:

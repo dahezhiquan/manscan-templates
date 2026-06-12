@@ -1,11 +1,11 @@
 id: symfony-conflicting-misconfig
 
 info:
-  name: Symfony Conflicting Headers - Information Disclosure
+  name: Symfony Conflicting Headers 信息泄露
   author: wakedxy
   severity: medium
   description: |
-    A misconfiguration in Symfony’s trusted proxy and header settings could trigger a ConflictingHeadersException when both Forwarded and X-Forwarded-* headers were present. When debug mode was enabled in production, this issue could have exposed sensitive environment details such as SMTP credentials, application paths, or system configuration.
+    检测到 Symfony Conflicting Headers 信息泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://symfony.com/doc/current/deployment/proxies.html
     - https://owasp.org/Top10/A05_2021-Security_Misconfiguration/

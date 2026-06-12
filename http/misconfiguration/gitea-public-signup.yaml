@@ -1,11 +1,11 @@
 id: gitea-public-signup
 
 info:
-  name: Gitea Public Registration Enabled
+  name: Gitea Public 注册已启用
   author: edoardottt
   severity: high
   description: |
-    A misconfiguration in Gitea allows arbitrary users to sign up and read code hosted on the service.
+    检测到 Gitea Public 注册已启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.youtube.com/watch?v=oHhofSj9lEM&t=157s
     - https://gitea.io/en-us/

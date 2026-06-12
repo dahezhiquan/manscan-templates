@@ -1,7 +1,7 @@
 id: internal-ip-disclosure
 
 info:
-  name: Internal IP Disclosure
+  name: Internal IP 泄露
   author: WillD96
   severity: info
   reference:

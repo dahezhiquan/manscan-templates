@@ -1,11 +1,11 @@
 id: revive-adserver-installer
 
 info:
-  name: Revive Adserver - Exposed Installer
+  name: Revive Ad服务器 暴露 安装向导
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected exposed Revive Adserver installation wizard that allows unauthorized installation and configuration.
+    检测到 Revive Ad服务器 暴露 安装向导。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://github.com/revive-adserver/revive-adserver
     - https://www.revive-adserver.com/support/installation/

@@ -1,11 +1,11 @@
 id: weblate-public-project-exposure
 
 info:
-  name: Weblate Public Project - Exposure
+  name: Weblate Public Project 暴露
   author: ritikchaddha
   severity: info
   description: |
-    Weblate instance is publicly accessible. Public exposure of Weblate may lead to unauthorized access to translation projects, potential data leaks, credential exposure, or manipulation of open source localization data. Attackers can view available projects and access sensitive information if proper access controls are not implemented.
+    检测到 Weblate Public Project 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.weblate.org/en/latest/admin/security.html
     - https://github.com/WeblateOrg/weblate

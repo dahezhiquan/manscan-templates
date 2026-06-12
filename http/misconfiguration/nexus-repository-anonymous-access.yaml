@@ -1,11 +1,11 @@
 id: nexus-repository-anonymous-access
 
 info:
-  name: Nexus Repository Manager - Anonymous Access Enabled
+  name: Nexus 仓库 Manager 匿名 访问 启用
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Nexus Repository Manager instance with anonymous access enabled, allowing unauthenticated users to list and browse repositories containing private artifacts including source code, packages, and Docker images.
+    检测到 Nexus 仓库 Manager 匿名 访问 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://help.sonatype.com/en/anonymous-access.html
     - https://help.sonatype.com/en/access-control.html

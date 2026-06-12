@@ -1,11 +1,11 @@
 id: sap-getenvironment-disclosure
 
 info:
-  name: SAPControl GetEnvironment - Disclosure
+  name: SAPControl Get环境 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    Detected SAP systems where the SAP Start Service (sapstartsrv) SAPControl SOAP web service exposes the GetEnvironment web method without authentication.
+    检测到 SAPControl Get环境 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://help.sap.com/docs/SUPPORT_CONTENT/si/3362959700.html
     - https://itsiti.com/csmon/

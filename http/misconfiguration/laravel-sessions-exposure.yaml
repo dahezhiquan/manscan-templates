@@ -1,11 +1,11 @@
 id: laravel-sessions-exposure
 
 info:
-  name: Laravel Sessions Folder Exposure
+  name: Laravel Sessions Folder 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    Detected unauthenticated access to the Laravel session storage directory, allowing attackers to browse and download session files that may contain active authentication tokens, CSRF tokens, and serialized user data.
+    检测到 Laravel Sessions Folder 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     max-request: 2
     verified: true

@@ -1,11 +1,11 @@
 id: ariang-debug-console
 
 info:
-  name: AriaNg Debug Console - Exposure
+  name: AriaNg 调试 控制台 暴露
   author: DhiyaneshDk
   severity: medium
   description: |
-    Detects the presence of AriaNg Debug Console exposure
+    检测到 AriaNg 调试 控制台 暴露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     verified: true
     max-request: 1

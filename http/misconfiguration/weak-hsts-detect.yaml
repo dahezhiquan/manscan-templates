@@ -1,11 +1,11 @@
 id: weak-hsts-detect
 
 info:
-  name: Weak HTTP Strict-Transport-Security - Detect
+  name: Weak HTTP Strict Transport Security 检测
   author: saint_orion
   severity: info
   description: |
-    Detected HTTP Strict-Transport-Security header with a weak max-age value (less than one year). A low max-age reduces the effectiveness of HSTS, leaving users vulnerable to protocol downgrade attacks and cookie hijacking during the gap period.
+    检测到 Weak HTTP Strict Transport Security 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://owasp.org/www-project-secure-headers/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security

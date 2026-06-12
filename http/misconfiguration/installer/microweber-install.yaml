@@ -1,11 +1,11 @@
 id: microweber-install
 
 info:
-  name: Microweber Exposed Installation - Detected
+  name: Microweber 暴露 安装 检测ed
   author: pussycat0x
   severity: high
   description: |
-    Microweber Installation page was exposed.
+    检测到 Microweber 暴露 安装 检测ed。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   metadata:
     verified: true
     max-request: 1

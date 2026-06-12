@@ -1,10 +1,11 @@
 id: unauth-kubecost
 
 info:
-  name: KubeCost - Unauthenticated Dashboard Exposure
+  name: KubeCost 未授权 仪表盘 暴露
   author: pussycat0x
   severity: medium
-  description: KubeCost Dashboard is exposed to external users.
+  description: |
+    检测到 KubeCost 未授权 仪表盘 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.facebook.com/photo?fbid=470414125129112&set=pcb.470413798462478
   metadata:

@@ -1,11 +1,11 @@
 id: perforce-repository
 
 info:
-  name: Perforce Repository Disclosure
+  name: Perforce 仓库 泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    Detected an exposed .p4ignore file, which could have revealed ignored files, sensitive paths, or developer-specific information useful for further enumeration.
+    检测到 Perforce 仓库 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://help.perforce.com/helix-core/server-apps/cmdref/current/Content/CmdRef/P4IGNORE.html
   metadata:

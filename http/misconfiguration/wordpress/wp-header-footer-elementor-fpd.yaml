@@ -1,11 +1,11 @@
 id: wp-header-footer-elementor-fpd
 
 info:
-  name: WordPress Header Footer Elementor - Full Path Disclosure
+  name: WordPress Header Footer Elementor 完整路径泄露
   author: ritikchaddha
   severity: low
   description: |
-    WordPress Header Footer Elementor plugin (also known as Ultimate Addons for Elementor - Lite) contains PHP files that lack proper ABSPATH protection, allowing direct access that reveals sensitive server path information via PHP error messages.
+    检测到 WordPress Header Footer Elementor 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:
     - https://wordpress.org/plugins/header-footer-elementor/
   metadata:

@@ -1,11 +1,11 @@
 id: coldfusion-cfide-dir-listing
 
 info:
-  name: Adobe ColdFusion CFIDE - Directory Listing
+  name: Adobe ColdFusion CFIDE 目录列出
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected Adobe ColdFusion CFIDE directory listing was exposed. This can reveal sensitive files and subdirectories including administrator interfaces, scripts, and application components.
+    检测到 Adobe ColdFusion CFIDE 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   reference:
     - https://helpx.adobe.com/coldfusion/kb/securing-coldfusion.html
     - https://www.carnal0wnage.com/papers/LARES-ColdFusion.pdf

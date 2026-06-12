@@ -1,11 +1,11 @@
 id: cockroachdb-unauth-exposure
 
 info:
-  name: CockroachDB Unauthenticated Console Exposure
+  name: Cockroach数据库 未授权 控制台 暴露
   author: pussycat0x
   severity: high
   description: |
-    Unauthenticated access to the CockroachDB console allows viewing the cluster nodes and server version.
+    检测到 Cockroach数据库 未授权 控制台 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     shodan-query: product:cockroachdb

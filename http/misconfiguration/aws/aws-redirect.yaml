@@ -1,7 +1,7 @@
 id: aws-redirect
 
 info:
-  name: Subdomain takeover AWS S3
+  name: Subdomain 接管 AWS S3
   author: manikanta a.k.a @secureitmania
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: unauth-supervisor-dashboard
 
 info:
-  name: Unauth Supervisor Dashboard - Detect
+  name: 未授权 Supervisor 仪表盘 检测
   author: DhiyaneshDk
   severity: high
   description: |
-    Supervisor Dashboard was detected and appeared to be accessible without authentication.
+    检测到 未授权 Supervisor 仪表盘 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cwe-id: CWE-200
   metadata:

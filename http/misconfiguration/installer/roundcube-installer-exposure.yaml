@@ -1,11 +1,11 @@
 id: roundcube-installer-exposure
 
 info:
-  name: Roundcube Webmail Installer - Exposure
+  name: Roundcube Webmail 安装向导 暴露
   author: theamanrawat
   severity: high
   description: |
-    Detects exposure of the Roundcube Webmail installer interface. Public access to this installer may allow attackers to reconfigure the webmail application, potentially leading to email account compromise or the disclosure of sensitive configuration details.
+    检测到 Roundcube Webmail 安装向导 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://roundcube.net/
     - https://github.com/roundcube/roundcubemail/wiki/Installation

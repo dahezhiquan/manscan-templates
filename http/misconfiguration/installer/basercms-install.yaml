@@ -1,13 +1,14 @@
 id: basercms-install
 
 info:
-  name: baserCMS Installation - Exposure
+  name: baserCMS 安装 暴露
   author: ritikchaddha
   severity: critical
   description: |
-    baserCMS installation panel was detected. This indicates an incomplete installation that could be exploited by unauthorized users to set up the CMS with attacker-controlled parameters.
+    检测到 baserCMS 安装 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   remediation: |
-    Complete the installation process immediately or restrict access to the installation page.
+    - 删除或限制安装向导、初始化页面和示例配置入口。
+    - 完成部署后强制关闭安装流程，并为后台入口启用认证和访问控制。
   reference:
     - https://basercms.net/
   classification:

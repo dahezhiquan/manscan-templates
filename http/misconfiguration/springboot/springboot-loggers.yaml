@@ -1,10 +1,11 @@
 id: springboot-loggers
 
 info:
-  name: Springboot Loggers - Exposure
+  name: Springboot 日志gers 暴露
   author: that_juan_,dwisiswant0,wdahlenb,TheZakMan
   severity: low
-  description: Springboot Loggers is exposed.
+  description: |
+    检测到 Springboot 日志gers 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     max-request: 2
     verified: true

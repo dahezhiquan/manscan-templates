@@ -1,11 +1,11 @@
 id: prometheus-unauth
 
 info:
-  name: Prometheus Monitoring System - Unauthenticated
+  name: Prometheus Monitoring System 未授权
   author: pussycat0x
   severity: high
   description: |
-    Detects unauthenticated access to Prometheus Time Series Collection and Processing Server by checking for specific elements in the response from the `/graph` endpoint.
+    检测到 Prometheus Monitoring System 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   metadata:
     verified: true
     max-request: 2

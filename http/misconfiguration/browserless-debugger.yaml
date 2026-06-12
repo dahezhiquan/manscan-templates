@@ -1,10 +1,11 @@
 id: browserless-debugger
 
 info:
-  name: Exposed Browserless debugger
+  name: 暴露 Browserless 调试ger
   author: ggranjus
   severity: medium
-  description: Browserless instance can be used to make web requests. May worth checking /workspace for juicy files.
+  description: |
+    检测到 暴露 Browserless 调试ger。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.browserless.io/docs/docker.html#securing-your-instance
   classification:

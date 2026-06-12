@@ -1,10 +1,11 @@
 id: laravel-debug-error
 
 info:
-  name: Larvel Debug Method Enabled
+  name: Larvel 调试 Method 启用
   author: dhiyaneshDK
   severity: medium
-  description: Larvel Debug method is enabled.
+  description: |
+    检测到 Larvel 调试 Method 启用。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     max-request: 1
   tags: debug,laravel,misconfig,vuln

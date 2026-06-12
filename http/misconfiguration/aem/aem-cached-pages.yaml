@@ -1,10 +1,11 @@
 id: aem-cached-pages
 
 info:
-  name: Invalidate / Flush Cached Pages on AEM
+  name: Invalidate Flush Cached Pages AEM 检测
   author: hetroublemakr
   severity: low
-  description: Cached Pages on AEM can be Flushed.
+  description: |
+    检测到 Invalidate Flush Cached Pages AEM 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://twitter.com/AEMSecurity/status/1244965623689609217
   classification:

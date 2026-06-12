@@ -1,11 +1,11 @@
 id: apache-server-status-localhost
 
 info:
-  name: Server Status Disclosure
+  name: 服务器 状态 泄露
   author: pdteam,geeknik,NaN-kl
   severity: low
   description: |
-    Apache Server Status page is exposed, which may contain information about pages visited by the users, their IPs or sensitive information such as session tokens.
+    检测到 服务器 状态 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   metadata:
     max-request: 2
   tags: apache,debug,misconfig,vuln

@@ -1,10 +1,11 @@
 id: private-key-exposure
 
 info:
-  name: Private key exposure via helper detector
+  name: 私钥暴露 helper 检测or
   author: aashiq
   severity: high
-  description: Searches for private key exposure by attempting to query the helper endpoint on node_modules
+  description: |
+    检测到 私钥暴露 helper 检测or。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     max-request: 1
   tags: exposure,node,misconfig,vuln

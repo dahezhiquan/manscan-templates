@@ -1,15 +1,17 @@
 id: argo-workflows-unauth
 
 info:
-  name: Argo Workflows - Unauthenticated Dashboard
+  name: Argo Workflows 未授权 仪表盘
   author: 0xBassia
   severity: high
   description: |
-    Argo Workflows dashboard is accessible without authentication. Argo Workflows is a Kubernetes-native workflow engine that can execute arbitrary containers and commands. Unauthenticated access allows viewing, creating, and modifying workflows.
+    检测到 Argo Workflows 未授权 仪表盘。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    An attacker can view all workflow executions and their logs (potentially containing secrets), submit new workflows that execute arbitrary containers in the Kubernetes cluster, and access service account tokens for further cluster exploitation.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Configure Argo Workflows SSO authentication or set --auth-mode=server in the argo-server deployment. Apply Kubernetes RBAC policies to restrict workflow creation.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-auth-mode/
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-sso/

@@ -1,11 +1,11 @@
 id: itflow-unfinished-installation
 
 info:
-  name: ITFlow Unfinished Installation
+  name: ITFlow 未完成安装ation
   author: 0x_Akoko
   severity: high
   description: |
-    Detected ITFlow setup wizard was exposed with an unfinished installation, allowing attackers to configure the database and create an admin account.
+    检测到 ITFlow 未完成安装ation。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://github.com/itflow-org/itflow
     - https://docs.itflow.org/installation

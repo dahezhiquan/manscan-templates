@@ -1,11 +1,11 @@
 id: openstack-config
 
 info:
-  name: Openstack - Infomation Disclosure
+  name: Openstack Infomation 泄露
   author: MayankPandey01
   severity: low
   description: |
-    Openstack exposing Configuration or settings related to the Swift object storage system.
+    检测到 Openstack Infomation 泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://docs.openstack.org/python-cloudkittyclient/stein/api_reference/info.html
   classification:

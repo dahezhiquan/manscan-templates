@@ -1,11 +1,11 @@
 id: anonymous-distribution-point-sccm
 
 info:
-  name: Microsoft SCCM - Anonymous Distribution Point Access
+  name: Microsoft SCCM 匿名 Distribution Point 访问
   author: matejsmycka
   severity: medium
   description: |
-    Microsoft System Center Configuration Manager (SCCM) can be configured to allow anonymous access to its distribution points.This can lead to sensitive data exposure and information gathering by unauthorized users.This misconfiguration is exploitable only via HTTP.
+    检测到 Microsoft SCCM 匿名 Distribution Point 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.synacktiv.com/en/publications/sccmsecretspy-exploiting-sccm-policies-distribution-for-credentials-harvesting-initial
     - https://github.com/badsectorlabs/sccm-http-looter

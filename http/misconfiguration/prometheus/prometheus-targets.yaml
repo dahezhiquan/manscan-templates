@@ -1,10 +1,11 @@
 id: prometheus-targets
 
 info:
-  name: Prometheus targets API endpoint
+  name: Prometheus targets API endpoint 检测
   author: geeknik
   severity: info
-  description: The targets endpoint exposes services belonging to the infrastructure, including their roles and labels. In addition to showing the target machine addresses, the endpoint also exposes metadata labels that are added by the target provider. These labels are intended to contain non-sensitive values, like the name of the server or its description, but various cloud platforms may automatically expose sensitive data in these labels, oftentimes without the developer's knowledge.
+  description: |
+    检测到 Prometheus targets API endpoint 检测。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:
     - https://jfrog.com/blog/dont-let-prometheus-steal-your-fire/
   metadata:

@@ -1,11 +1,11 @@
 id: tolgee-api-anonymous
 
 info:
-  name: Tolgee API - Misconfiguration Anonymous Access
+  name: Tolgee API 配置不当 匿名 访问
   author: matejsmycka
   severity: medium
   description: |
-    The Tolgee API exposes the `/v2/pats` endpoint without requiring authentication, allowing attackers to create Personal Access Tokens (PATs). These tokens can then be leveraged to interact with the API and gain elevated privileges.
+    检测到 Tolgee API 配置不当 匿名 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.tolgee.io/api
   metadata:

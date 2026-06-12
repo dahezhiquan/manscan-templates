@@ -1,17 +1,17 @@
 id: mistserver-installer
 
 info:
-  name: MistServer Installation Wizard - Exposure
+  name: Mist服务器 安装 Wizard 暴露
   author: DhiyaneshDk
   severity: high
   description: |
-    MistServer installation/setup wizard is publicly accessible, allowing unauthorized users to create admin accounts and take full control of the streaming server. This is a first-user-wins vulnerability.
+    检测到 Mist服务器 安装 Wizard 暴露。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
   reference:
     - https://docs.mistserver.org/mistserver/configuration
     - https://mistserver.org/
   impact: |
-    An attacker can create an admin account on unconfigured MistServer instances,
-    gaining full control over the streaming server configuration and content.
+    - 攻击者可能接管初始化流程、创建管理员账户或覆盖现有配置。
+    - 暴露的安装页面可能导致系统被重新部署或植入恶意配置。
   metadata:
     verified: true
     max-request: 1

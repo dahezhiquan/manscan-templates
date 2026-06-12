@@ -1,11 +1,11 @@
 id: http-missing-security-headers
 
 info:
-  name: HTTP Missing Security Headers
+  name: HTTP 安全响应头缺失
   author: socketz,geeknik,G4L1T0,convisoappsec,kurohost,dawid-czarnecki,forgedhallpass,jub0bs,userdehghani,celbahraoui,safejulian
   severity: info
   description: |
-    This template searches for missing HTTP security headers. The impact of these missing headers can vary.
+    检测到 HTTP 安全响应头缺失。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   classification:
     cwe-id: CWE-693
   metadata:

@@ -1,15 +1,17 @@
 id: jetty-directory-listing
 
 info:
-  name: Eclipse Jetty - Directory Listing Enabled
+  name: Eclipse Jetty 目录列出 启用
   author: ritikchaddha
   severity: low
   description: |
-    Eclipse Jetty server has directory listing enabled, which exposes the directory structure and file names to unauthenticated users. This can reveal sensitive files, backup files, configuration files, and aid attackers in reconnaissance.
+    检测到 Eclipse Jetty 目录列出 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   impact: |
-    Attackers can enumerate files and directories, discover hidden resources, backup files, configuration files, and potentially sensitive data that should not be publicly accessible.
+    - 未授权用户可能访问管理功能、业务数据或系统状态。
+    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
   remediation: |
-    Disable directory listing by setting dirAllowed to false in the DefaultServlet configuration or by setting allowDirectoryListing to false in WebAppContext. Add index files (index.html) to directories that should not list contents.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://www.eclipse.org/jetty/documentation/jetty-11/operations-guide/index.html
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/04-Review_Old_Backup_and_Unreferenced_Files_for_Sensitive_Information

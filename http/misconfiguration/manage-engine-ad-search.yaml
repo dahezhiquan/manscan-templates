@@ -1,10 +1,11 @@
 id: manage-engine-ad-search
 
 info:
-  name: Manage Engine AD Search
+  name: Manage Engine AD Search 检测
   author: PR3R00T
   severity: high
-  description: Manage Engine AD Manager service can be configured to allow anonymous users to browse the AD list remotely.
+  description: |
+    检测到 Manage Engine AD Search 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:zohocorp:manageengine_admanager_plus:*:*:*:*:*:*:*:*
   metadata:

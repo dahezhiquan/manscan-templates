@@ -1,7 +1,7 @@
 id: nginx-status
 
 info:
-  name: Nginx Status Page
+  name: Nginx 状态页
   author: dhiyaneshDK
   severity: info
   metadata:

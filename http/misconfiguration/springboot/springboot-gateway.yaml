@@ -1,10 +1,11 @@
 id: springboot-gateway
 
 info:
-  name: Detect Spring Gateway Actuator
+  name: 检测 Spring Gateway Actuator
   author: wdahlenb
   severity: medium
-  description: Sensitive environment variables may not be masked
+  description: |
+    检测到 检测 Spring Gateway Actuator。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://wya.pl/2021/12/20/bring-your-own-ssrf-the-gateway-actuator/
   metadata:

@@ -1,11 +1,11 @@
 id: unauth-temporal-web-ui
 
 info:
-  name: Temporal Web UI - Unauthenticated Access
+  name: Temporal Web UI 未授权 访问
   author: ggranjus
   severity: high
   description: |
-    Temporal Web UI was able to be accessed because no authentication was required
+    检测到 Temporal Web UI 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://docs.temporal.io/web-ui
   classification:

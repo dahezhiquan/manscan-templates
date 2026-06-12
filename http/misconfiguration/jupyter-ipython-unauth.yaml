@@ -1,10 +1,11 @@
 id: jupyter-ipython-unauth
 
 info:
-  name: Jupyter ipython - Authorization Bypass
+  name: Jupyter ipython Authorization Bypass 检测
   author: pentest_swissky
   severity: critical
-  description: Jupyter was able to be accessed without authentication.
+  description: |
+    检测到 Jupyter ipython Authorization Bypass 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10

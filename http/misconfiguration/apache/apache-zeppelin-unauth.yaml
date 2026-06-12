@@ -1,11 +1,11 @@
 id: apache-zeppelin-unauth
 
 info:
-  name: Apache Zeppelin - Unauthenticated Access
+  name: Apache Zeppelin 未授权 访问
   author: j4vaovo
   severity: high
   description: |
-    Apache Zeppelin server was able to be accessed because no authentication was required.
+    检测到 Apache Zeppelin 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://www.adminxe.com/2172.html
   classification:

@@ -1,10 +1,11 @@
 id: gocd-cruise-configuration
 
 info:
-  name: GoCd Cruise Configuration disclosure
+  name: GoCd Cruise 配置 泄露
   author: dhiyaneshDk
   severity: high
-  description: GoCd Cruise Configuration is exposed.
+  description: |
+    检测到 GoCd Cruise 配置 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://attackerkb.com/assessments/9101a539-4c6e-4638-a2ec-12080b7e3b50
     - https://blog.sonarsource.com/gocd-pre-auth-pipeline-takeover

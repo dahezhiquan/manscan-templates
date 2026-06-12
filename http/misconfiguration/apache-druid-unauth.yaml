@@ -1,10 +1,11 @@
 id: apache-druid-unauth
 
 info:
-  name: Apache Druid Unauth
+  name: Apache Druid 未授权
   author: DhiyaneshDk
   severity: low
-  description: Apache Druid is exposed to external users.
+  description: |
+    检测到 Apache Druid 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cpe: cpe:2.3:a:apache:druid:*:*:*:*:*:*:*:*
   metadata:

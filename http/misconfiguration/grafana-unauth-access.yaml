@@ -1,11 +1,11 @@
 id: grafana-unauth-access
 
 info:
-  name: Grafana Unauthenticated Access
+  name: Grafana 未授权 访问
   author: ritikchaddha
   severity: high
   description: |
-    Detects Grafana instances configured with anonymous access enabled, allowing unauthenticated users to access dashboards, data sources, organization info, and potentially sensitive monitoring data without any credentials.
+    检测到 Grafana 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

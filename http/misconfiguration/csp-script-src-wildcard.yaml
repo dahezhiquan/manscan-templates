@@ -1,11 +1,11 @@
 id: csp-script-src-wildcard
 
 info:
-  name: Content-Security-Policy "script-src" Wildcard Detected
+  name: Content Security Policy "script src" Wildcard 检测ed
   author: pussycat0x
   severity: info
   description: |
-    Detected a wildcard (*) within the script-src directive of the Content-Security-Policy. This allowed scripts to load from any origin, weakening the CSP and increasing XSS risk.
+    检测到 Content Security Policy "script src" Wildcard 检测ed。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/script-src
   metadata:

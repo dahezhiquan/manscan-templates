@@ -1,11 +1,11 @@
 id: directory-listing-no-host-header
 
 info:
-  name: Directory Listing - No Host header
+  name: 目录列出 No Host 头
   author: kazet
   severity: unknown
   description: |
-    The HTTP server is configured to list files in the root directory when no Host header is provided.
+    检测到 目录列出 No Host 头。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   metadata:
     verified: true
     max-request: 1

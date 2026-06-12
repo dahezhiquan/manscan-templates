@@ -1,10 +1,11 @@
 id: iis-shortname-detect
 
 info:
-  name: IIS - Short Name Detect
+  name: IIS Short Name 检测
   author: nodauf,liquidsec
   severity: info
-  description: A website running via IIS on an old .net framework contains a get request vulnerability. Using the the tilde character "~" in the request, an attacker can locate short names of files and folders not normally visible.
+  description: |
+    检测到 IIS Short Name 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://github.com/irsdl/IIS-ShortName-Scanner
     - https://github.com/lijiejie/IIS_shortname_Scanner

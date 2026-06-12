@@ -1,11 +1,11 @@
 id: h2o-arbitary-file-read
 
 info:
-  name: H2O - Arbitrary Path Lookup
+  name: H2O Arbitrary Path Lookup 检测
   author: danmcinerney,byt3bl33d3r
   severity: medium
   description: |
-    H2O allows for arbitrary path lookup via it's Typehead API endpoint
+    检测到 H2O Arbitrary Path Lookup 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://huntr.com/bounties/e76372c2-39be-4984-a7c8-7048a75a25dc/
   classification:

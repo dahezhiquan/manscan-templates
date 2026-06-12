@@ -1,10 +1,11 @@
 id: prometheus-log
 
 info:
-  name: Exposed Prometheus
+  name: 暴露 Prometheus
   author: dhiyaneshDK,thevillagehacker
   severity: low
-  description: Prometheus instance is exposed.
+  description: |
+    检测到 暴露 Prometheus。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   metadata:
     max-request: 3
   tags: prometheus,misconfig,vuln

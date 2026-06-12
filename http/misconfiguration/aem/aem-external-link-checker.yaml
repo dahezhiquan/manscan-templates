@@ -1,7 +1,7 @@
 id: aem-external-link-checker
 
 info:
-  name: Adobe AEM External Link Checker Exposure
+  name: Adobe AEM External Link Checker 暴露
   author: dhiyaneshDk
   severity: unknown
   reference:

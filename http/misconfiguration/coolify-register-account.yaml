@@ -1,11 +1,11 @@
 id: coolify-register-account
 
 info:
-  name: Coolify Register User Account - Enabled
+  name: Coolify 注册 用户 Account 启用
   author: DhiyaneshDk
   severity: medium
   description: |
-    Exposed Coolify user register page.
+    检测到 Coolify 注册 用户 Account 启用。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   metadata:
     verified: true
     max-request: 1

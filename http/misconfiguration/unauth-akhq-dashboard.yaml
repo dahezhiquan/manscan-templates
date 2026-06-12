@@ -1,11 +1,11 @@
 id: unauth-akhq-dashboard
 
 info:
-  name: AKHQ Dashboard - Unauthenticated Access
+  name: AKHQ 仪表盘 未授权 访问
   author: DhiyaneshDk
   severity: high
   description: |
-    AKHQ Dashboard was detected and appeared to be accessible without authentication.
+    检测到 AKHQ 仪表盘 未授权 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   classification:
     cwe-id: CWE-200
   metadata:

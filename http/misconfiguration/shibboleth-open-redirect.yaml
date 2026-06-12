@@ -1,13 +1,14 @@
 id: shibboleth-open-redirect
 
 info:
-  name: Shibboleth SSO - Open Redirect
+  name: Shibboleth SSO 开放重定向
   author: aushack
   severity: medium
   description: |
-    Shibboleth SSO contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    检测到 Shibboleth SSO 开放重定向。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   remediation: |
-    Set the redirectLimit option documented in the references.
+    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
+    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
   reference:
     - https://shibboleth.atlassian.net/wiki/spaces/SP3/pages/2065334342/Sessions
   classification:

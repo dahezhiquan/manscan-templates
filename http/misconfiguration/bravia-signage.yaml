@@ -1,10 +1,11 @@
 id: bravia-signage
 
 info:
-  name: BRAVIA Signage - Exposure
+  name: BRAVIA Signage 暴露
   author: DhiyaneshDK
   severity: medium
-  description: Bravia Signage is exposed.
+  description: |
+    检测到 BRAVIA Signage 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
     - https://twitter.com/WhiteOakSec/status/1667197552461004800
     - https://www.whiteoaksecurity.com/blog/sony-bravia-remote-code-execution-disclosure/

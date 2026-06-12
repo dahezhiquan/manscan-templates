@@ -1,10 +1,11 @@
 id: http-etcd-unauthenticated-api-data-leak
 
 info:
-  name: etcd Unauthenticated HTTP API Leak
+  name: etcd 未授权 HTTP API Leak
   author: dhiyaneshDk
   severity: high
-  description: etcd HTTP API is exposed.
+  description: |
+    检测到 etcd 未授权 HTTP API Leak。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:
     - https://hackerone.com/reports/1088429
   metadata:

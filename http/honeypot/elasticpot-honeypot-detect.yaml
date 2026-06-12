@@ -1,12 +1,12 @@
 id: elasticpot-honeypot-detect
 
 info:
-  name: ElasticPot Honeypot - Detect
+  name: ElasticPot蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    A ElasticPot (ElasticSearch) honeypot has been identified.
-    The response to a '_cluster/settings' request differs from real installations, signaling a possible deceptive setup.
+    系统检测到 ElasticPot (Elasticsearch 模拟) 蜜罐。
+    该蜜罐在响应对 "_cluster/settings" 的请求时其返回特征与真实的 Elasticsearch 安装有明显差异，以此表明该服务可能是一个极具欺骗性的陷阱/蜜罐设置。
   metadata:
     max-request: 1
     vendor: elasticpot

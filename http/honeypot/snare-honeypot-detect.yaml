@@ -1,12 +1,12 @@
 id: snare-honeypot-detect
 
 info:
-  name: Snare Honeypot - Detect
+  name: Snare蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    Snare honeypot has been identified.
-    The response to an incorrect HTTP version reveals a possible setup of the Snare web application honeypot.
+    系统检测到 Snare 蜜罐。
+    目标在接收到不正确的 HTTP 版本请求时返回了特定信息，暴露出该网络服务可能由 Snare Web 应用蜜罐伪装而成。
   metadata:
     verified: true
     max-request: 1

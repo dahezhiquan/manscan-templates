@@ -1,11 +1,12 @@
 id: tpot-honeypot-detect
 
 info:
-  name: T-Pot Honeypot - Detect
+  name: T-Pot蜜罐识别（蜜罐识别）
   author: rxerium
   severity: info
   description: |
-    A tpot dashboard has been detected
+    系统检测到 T-Pot 多合一蜜罐平台的控制面板。
+    T-Pot 整合了多种不同类型的安全蜜罐，泄露此后台可能意味着该环境已被部署为蜜罐诱捕节点，或者正在向外展示蜜罐的管理平台。
   reference:
     - https://github.com/telekom-security/tpotce
   metadata:

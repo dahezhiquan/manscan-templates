@@ -1,12 +1,12 @@
 id: dionaea-http-honeypot-detect
 
 info:
-  name: Dionaea HTTP Honeypot - Detect
+  name: Dionaea HTTP蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    Dionaea HTTP honeypot has been identified.
-    The response to an incorrect HTTP method reveals a possible setup of the Dioanea web application honeypot.
+    系统检测到 Dionaea HTTP 蜜罐。
+    对不正确的 HTTP 请求方法，目标返回了 Dionaea 独有的协议特征响应，揭示出目标极有可能是用于捕获攻击流量的 Dionaea 蜜罐环境。
   metadata:
     max-request: 1
     vendor: dionaea

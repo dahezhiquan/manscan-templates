@@ -1,12 +1,12 @@
 id: citrix-honeypot-detect
 
 info:
-  name: Citrix Honeypot - Detect
+  name: Citrix蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Citrix honeypot has been identified.
-    The HTTP response reveals a possible setup of the Citrix web application honeypot.
+    系统检测到 Citrix 模拟蜜罐。
+    目标返回的 HTTP 响应报文和 HTML 源码特征，高度契合 Citrix Web 应用模拟蜜罐的搭建模式，可能属于虚假的目标诱捕环境。
   metadata:
     verified: true
     max-request: 1

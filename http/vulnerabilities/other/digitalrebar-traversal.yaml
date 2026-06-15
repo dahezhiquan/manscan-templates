@@ -1,10 +1,10 @@
 id: digitalrebar-traversal
 
 info:
-  name: Digital Rebar - Local File Inclusion
+  name: Digital Rebar - 本地文件包含漏洞
   author: c-sh0
   severity: high
-  description: Digital Rebar versions 4.3.0, 4.3.2, 4.3.3, 4.4.0, and maybe others are vulnerable to local file inclusion because web requests can navigate outside of DRP controlled areas.
+  description: Digital Rebar - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://docs.rackn.io/en/latest/doc/security/cve_20200924A.html
     - https://docs.rackn.io/en/latest/doc/release.html

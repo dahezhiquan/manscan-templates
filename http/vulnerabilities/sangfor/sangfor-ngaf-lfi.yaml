@@ -1,11 +1,10 @@
 id: sangfor-nextgen-lfi
 
 info:
-  name: Sangfor Next Gen Application Firewall - Arbitary File Read
+  name: Sangfor Next Gen Application Firewall - Arbitary - 任意文件读取漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    Sangfor Next Gen Application Firewall is susceptible to Local File Inclusion as it does not validate the file parameter.
+  description: Sangfor Next Gen Application Firewall - Arbitary File Read 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://labs.watchtowr.com/yet-more-unauth-remote-command-execution-vulns-in-firewalls-sangfor-edition/
   classification:

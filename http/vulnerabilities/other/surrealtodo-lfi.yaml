@@ -1,11 +1,10 @@
 id: surrealtodo-lfi
 
 info:
-  name: Surreal ToDo 0.6.1.2 - Local File Inclusion
+  name: Surreal ToDo 0.6.1.2 - 本地文件包含漏洞
   author: arafatansari
   severity: high
-  description: |
-    Surreal ToDo 0.6.1.2 is vulnerable to local file inclusion via index.php and the content parameter.
+  description: Surreal ToDo 0.6.1.2 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/45826
   classification:

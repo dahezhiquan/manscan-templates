@@ -1,13 +1,13 @@
 id: raisecom-rce
 
 info:
-  name: Raisecom Gateway vpn_template_style.php - Remote Command Execution
+  name: Raisecom Gateway vpn_template_style.php - 远程命令执行漏洞
   author: 3th1c_yuk1
   severity: critical
-  description: |
-    The /vpn/vpn_template_style.php endpoint in Raisecom Multi-Service Intelligent Gateway is vulnerable to unauthenticated remote command execution. The stylenum parameter fails to properly sanitize user input, allowing attackers to inject system commands using backticks (`\) or pipe (|`) characters.
+  description: Raisecom Gateway vpn_template_style.php - 远程命令执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   impact: |
-    Successful exploitation allows arbitrary command execution on the target device, enabling actions such as file manipulation or system control. This vulnerability affects multiple instances and does not require authentication.
+    - 攻击者可能在目标主机上执行任意命令并取得系统控制权。
+    - 进一步风险包括植入后门、横向移动、窃取数据或破坏业务连续性。
   reference:
     - https://github.com/koishi0x01/CVE/blob/main/CVE_1.md
   metadata:

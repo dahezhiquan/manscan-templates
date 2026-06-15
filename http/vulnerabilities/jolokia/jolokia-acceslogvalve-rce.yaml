@@ -1,10 +1,10 @@
 id: jolokia-acceslogvalve-rce
 
 info:
-  name: Jolokia write to RCE valve
+  name: Jolokia write to 远程代码执行 valve
   author: pathtaga
   severity: critical
-  description: RCE in Jolokia < 1.7.1 using AccesLogValve
+  description: Jolokia write to 远程代码执行 valve 存在安全漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   tags: jolokia,rce,vuln
   reference:
     - https://github.com/laluka/jolokia-exploitation-toolkit

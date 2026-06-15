@@ -1,10 +1,10 @@
 id: wp-phpfreechat-xss
 
 info:
-  name: WordPress PHPFreeChat 0.2.8 - Cross-Site Scripting
+  name: WordPress PHPFreeChat 0.2.8 - 跨站脚本漏洞
   author: daffainfo
   severity: high
-  description: WordPress PHPFreeChat 0.2.8 plugin contains a cross-site scripting vulnerability via the url parameter. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+  description: WordPress PHPFreeChat 0.2.8 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploit-db.com/exploits/37485
     - http://web.archive.org/web/20210120061848/https://www.securityfocus.com/bid/54332/info

@@ -1,11 +1,10 @@
 id: drupal-avatar-xss
 
 info:
-  name: Drupal Avatar Uploader - Cross-Site Scripting
+  name: Drupal Avatar Uploader - 跨站脚本漏洞
   author: bywalks
   severity: high
-  description: |
-    Drupal Avatar Uploader v7.x-1.0-beta8 plugin contains a cross-site scripting vulnerability in the slider import search feature and tab parameter via plugin settings.
+  description: Drupal Avatar Uploader - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploit-db.com/exploits/50841
     - https://packetstormsecurity.com/files/166409/Drupal-Avatar-Upload-7.x-1.0-beta8-Cross-Site-Scripting.html

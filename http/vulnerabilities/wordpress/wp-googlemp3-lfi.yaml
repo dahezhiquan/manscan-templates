@@ -4,8 +4,7 @@ info:
   name: WordPress Plugin CodeArt Google MP3 Player - File Disclosure Download
   author: theamanrawat
   severity: critical
-  description: |
-    WordPress Plugin CodeArt Google MP3 Player allows an unauthenticated attacker to download file from server.
+  description: WordPress Plugin CodeArt Google MP3 Player - File Disclosure Download 存在未授权访问漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/35460
     - https://wordpress.org/plugins/google-mp3-audio-player/

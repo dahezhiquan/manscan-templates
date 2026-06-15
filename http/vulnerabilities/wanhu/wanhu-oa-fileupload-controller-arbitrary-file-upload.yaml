@@ -1,11 +1,10 @@
 id: wanhu-oa-fileupload-controller
 
 info:
-  name: Wanhu OA Fileupload Controller - Arbitrary File Upload
+  name: Wanhu OA Fileupload Controller - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    There is an arbitrary file upload vulnerability in Wanhu OA fileUpload.controller. An attacker can upload any file through the vulnerability.
+  description: Wanhu OA Fileupload Controller - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/90103c248a2c52bb0a060d0ee95d5a67e4579c3d/docs/wiki/oa/%E4%B8%87%E6%88%B7OA/%E4%B8%87%E6%88%B7OA%20fileUpload.controller%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md?plain=1#L24
     - https://github.com/tr0uble-mAker/POC-bomber/blob/d2433ac41eaa58eb4fb0876ec05e3b645e10ecd7/pocs/redteam/wanhu_oa_fileupload-controller_fileupload_2022.py#L20

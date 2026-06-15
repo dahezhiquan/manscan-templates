@@ -1,10 +1,10 @@
 id: crlf-injection-generic
 
 info:
-  name: CRLF - Injection Detection
+  name: CRLF - Injection 检测
   author: melbadry9,nadino,xElkomy
   severity: low
-  description: CRLF sequences were not properly sanitized.
+  description: CRLF - Injection Detection 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://hackerone.com/reports/858650
   metadata:

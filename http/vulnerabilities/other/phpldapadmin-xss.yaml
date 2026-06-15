@@ -1,10 +1,10 @@
 id: phpldapadmin-xss
 
 info:
-  name: PHP LDAP Admin < 1.2.5 - Cross-Site Scripting
+  name: PHP LDAP Admin < 1.2.5 - 跨站脚本漏洞
   author: GodfatherOrwa,herry
   severity: medium
-  description: PHP LDAP Admin is vulnerable to XSS.
+  description: PHP LDAP Admin < 1.2.5 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://twitter.com/GodfatherOrwa/status/1701392754251563477
   classification:

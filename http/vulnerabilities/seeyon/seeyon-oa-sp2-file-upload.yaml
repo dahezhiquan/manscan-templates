@@ -1,11 +1,10 @@
 id: seeyon-oa-sp2-file-upload
 
 info:
-  name: Seeyon OA wpsAssistServlet - Arbitrary File Upload
+  name: Seeyon OA wpsAssistServlet - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    There is an arbitrary file upload vulnerability in the Seeyon OA wpsAssistServlet interface. Through the vulnerability, an attacker can send a specific request packet to upload malicious files and obtain server permissions.
+  description: Seeyon OA wpsAssistServlet - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/SeeyonController.java
     - http://wiki.peiqi.tech/wiki/oa/致远OA/致远OA%20wpsAssistServlet%20任意文件上传漏洞.html

@@ -1,10 +1,10 @@
 id: goanywhere-mft-log4j-rce
 
 info:
-  name: GoAnywhere Managed File Transfer - Remote Code Execution (Apache Log4j)
+  name: GoAnywhere Managed File Transfer - 远程代码执行漏洞
   author: pussycat0x
   severity: critical
-  description: GoAnywhere Managed File Transfer is vulnerable to a remote command execution (RCE) issue via the included Apache Log4j.
+  description: GoAnywhere Managed File Transfer - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://www.goanywhere.com/cve-2021-44228-and-cve-2021-45046-goanywhere-mitigation-steps
     - https://logging.apache.org/log4j/2.x/security.html

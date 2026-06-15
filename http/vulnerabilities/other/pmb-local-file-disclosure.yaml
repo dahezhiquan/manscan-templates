@@ -1,10 +1,10 @@
 id: pmb-local-file-disclosure
 
 info:
-  name: PMB 5.6 - Local File Inclusion
+  name: PMB 5.6 - 本地文件包含漏洞
   author: dhiyaneshDk
   severity: high
-  description: PMB 5.6 is vulnerable to local file inclusion.
+  description: PMB 5.6 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/49054
   classification:

@@ -1,10 +1,10 @@
 id: wordpress-ssrf-oembed
 
 info:
-  name: Wordpress Oembed Proxy - Server-side request forgery
+  name: Wordpress Oembed Proxy - 服务端请求伪造漏洞
   author: dhiyaneshDk
   severity: medium
-  description: The oEmbed feature in WordPress allows embedding content from external sources, and if it's not properly secured, it could be exploited for SSRF.
+  description: Wordpress Oembed Proxy - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/wordpress.html
     - https://github.com/incogbyte/quickpress/blob/master/core/req.go

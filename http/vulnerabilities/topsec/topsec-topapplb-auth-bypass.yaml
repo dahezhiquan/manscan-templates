@@ -1,11 +1,10 @@
 id: topsec-topapplb-auth-bypass
 
 info:
-  name: Topsec TopAppLB - Authentication Bypass
+  name: Topsec TopAppLB - 认证绕过漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    Topsec TopAppLB is vulnerable to authetication bypass .Enter any account on the login page, the password is `;id`.
+  description: Topsec TopAppLB - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/cqr-cryeye-forks/goby-pocs/blob/main/Topsec-TopAppLB-Any-account-Login.json
   metadata:

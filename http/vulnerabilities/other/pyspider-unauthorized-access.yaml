@@ -1,10 +1,10 @@
 id: pyspider-unauthorized-access
 
 info:
-  name: Pyspider Unauthorized Access
+  name: Pyspider - 未授权访问漏洞
   author: ritikchaddha
   severity: high
-  description: Unauthorized Access exists in PySpider which is an open-source web crawling and web scraping framework written in Python.
+  description: Pyspider 未授权 Access 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/ianxtianxt/Pyspider-webui-poc
   metadata:

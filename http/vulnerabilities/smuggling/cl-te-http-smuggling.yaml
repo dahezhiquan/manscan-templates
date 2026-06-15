@@ -4,8 +4,7 @@ info:
   name: Basic CL.TE - HTTP request smuggling
   author: pdteam,akincibor
   severity: low
-  description: |
-    Detected a potential CL.TE request smuggling condition where conflicting Content-Length and Transfer-Encoding headers caused the gateway and backend to parse requests differently.
+  description: Basic CL.TE - HTTP request smuggling 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://portswigger.net/web-security/request-smuggling/lab-basic-cl-te
   metadata:

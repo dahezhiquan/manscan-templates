@@ -1,11 +1,10 @@
 id: generic-windows-lfi
 
 info:
-  name: Windows - Local File Inclusion
+  name: Windows - 本地文件包含漏洞
   author: mesaglio,sushantkamble,ritikchaddha
   severity: high
-  description: |
-    Windows is vulnerable to local file inclusion because of searches for /windows/win.ini on passed URLs.
+  description: Windows - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

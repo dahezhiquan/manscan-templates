@@ -1,10 +1,10 @@
 id: wp-spot-premium-lfi
 
 info:
-  name: WordPress Javo Spot Premium Theme - Unauthenticated Directory Traversal
+  name: WordPress Javo Spot Premium Theme - 未授权访问漏洞
   author: dhiyaneshDk
   severity: high
-  description: WordPress Javo Spot Premium Theme `wp-config` was discovered via local file inclusion. This file is remotely accessible and its content available for reading.
+  description: WordPress Javo Spot Premium Theme - 未授权 Directory Traversal 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://wpscan.com/vulnerability/2d465fc4-d4fa-43bb-9c0d-71dcc3ee4eab
     - https://codeseekah.com/2017/02/09/javo-themes-spot-lfi-vulnerability/

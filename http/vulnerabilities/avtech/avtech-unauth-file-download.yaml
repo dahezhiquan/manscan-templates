@@ -1,11 +1,10 @@
 id: avtech-unauth-file-download
 
 info:
-  name: AVTECH Video Surveillance Product - Unauthenticated File Download
+  name: AVTECH Video Surveillance Product - 未授权访问漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    AVTECH video surveillance products unauthenticated file download from web root through /cgi-bin/cgibox, Since the .cab string is verified by the strstr method, the file download can be realized by adding ?.cab at the end of the file name.
+  description: AVTECH Video Surveillance Product - 未授权 File Download 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   metadata:
     verified: true
     max-request: 2

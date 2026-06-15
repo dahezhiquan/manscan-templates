@@ -1,10 +1,10 @@
 id: rundeck-log4j-rce
 
 info:
-  name: Rundeck - Remote Code Execution (Apache Log4j)
+  name: Rundeck - 远程代码执行漏洞
   author: DhiyaneshDK
   severity: critical
-  description: Rundeck is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: Rundeck - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://docs.rundeck.com/docs/history/CVEs/log4j.html
     - https://logging.apache.org/log4j/2.x/security.html

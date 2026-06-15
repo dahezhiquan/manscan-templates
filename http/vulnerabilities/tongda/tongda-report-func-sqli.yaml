@@ -1,11 +1,10 @@
 id: tongda-report-func-sqli
 
 info:
-  name: Tongda OA v11.6 report_bi.func.php - SQL injection
+  name: Tongda OA v11.6 report_bi.func.php - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    Tongda OA v11.6 report_bi.func.php has a SQL injection vulnerability, and attackers can obtain database information through the vulnerability.
+  description: Tongda OA v11.6 report_bi.func.php - SQL injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v11.6%20report_bi.func.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:

@@ -1,11 +1,10 @@
 id: vrealize-operations-log4j-rce
 
 info:
-  name: VMware vRealize Operations Tenant - JNDI Remote Code Execution (Apache Log4j)
+  name: VMware vRealize Operations Tenant - JNDI - 远程代码执行漏洞
   author: bughuntersurya
   severity: critical
-  description: |
-    VMware vRealize Operations is susceptible to a critical vulnerability in Apache Log4j which may allow remote code execution in an impacted vRealize Operations Tenant application.
+  description: VMware vRealize Operations Tenant - JNDI 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://www.vmware.com/security/advisories/VMSA-2021-0028.html
     - https://core.vmware.com/vmsa-2021-0028-questions-answers-faq

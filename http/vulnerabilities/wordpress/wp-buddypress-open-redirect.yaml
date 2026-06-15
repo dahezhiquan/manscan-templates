@@ -1,11 +1,10 @@
 id: wp-buddypress-open-redirect
 
 info:
-  name: WordPress BuddyPress < 2.9.2 - Authenticated Open Redirect
+  name: WordPress BuddyPress < 2.9.2 - Authenticated - 开放重定向漏洞
   author: 0x_Akoko
   severity: low
-  description: |
-    WordPress BuddyPress plugin before 2.9.2 contains an authenticated open redirect vulnerability via the wp_http_referer parameter on the bp-profile-edit admin page. After updating profile, the Back to Users link redirects to the attacker-specified URL.
+  description: WordPress BuddyPress < 2.9.2 - Authenticated 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://hackerone.com/reports/277502
     - https://buddypress.org/2017/11/buddypress-2-9-2-security-and-maintenance-release/

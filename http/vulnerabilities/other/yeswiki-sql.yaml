@@ -1,11 +1,10 @@
 id: yeswiki-sql
 
 info:
-  name: YesWiki <2022-07-07 - SQL Injection
+  name: YesWiki <2022-07-07 - SQL 注入漏洞
   author: arafatansari
   severity: critical
-  description: |
-    YesWiki before 2022-07-07 contains a SQL injection vulnerability via the id parameter in the AccueiL URL. An attacker can possibly obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+  description: YesWiki <2022-07-07 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://huntr.dev/bounties/32e27955-376a-48fe-9984-87dd77e24985
   classification:

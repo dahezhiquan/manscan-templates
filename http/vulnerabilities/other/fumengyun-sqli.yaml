@@ -1,15 +1,16 @@
 id: fumengyun-sqli
 
 info:
-  name: Fumeng - SQL Injection
+  name: Fumeng - SQL 注入漏洞
   author: ritikchaddha
   severity: critical
-  description: |
-    The Fumeng AjaxMethod.ashx file has an SQL injection vulnerability. Attackers can use this vulnerability to obtain server data.
+  description: Fumeng - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   impact: |
-    Successful exploitation could lead to unauthorized access to sensitive data.
+    - 攻击者可读取、篡改甚至删除数据库中的敏感数据。
+    - 在部分场景下还可能绕过身份验证或进一步扩展为代码执行。
   remediation: |
-    Implement input validation and use parameterized queries to prevent SQL Injection attacks.
+    - 使用参数化查询或预编译语句，避免将用户输入直接拼接到 SQL 语句中。
+    - 对相关接口增加权限校验、输入校验与异常审计，防止敏感查询被滥用。
   reference:
     - https://github.com/emadshanab/goby-poc/blob/main/fumengyun%20%20AjaxMethod.ashx%20SQL%20injection.json
   classification:

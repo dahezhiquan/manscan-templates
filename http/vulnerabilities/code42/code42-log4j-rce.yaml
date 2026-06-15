@@ -1,16 +1,10 @@
 id: code42-log4j-rce
 
 info:
-  name: Apache Code42 - Remote Code Execution (Apache Log4j)
+  name: Apache Code42 - 远程代码执行漏洞
   author: Adam Crosser
   severity: critical
-  description: |
-    Multiple Code42 components are impacted by the logj4 vulnerability. Affected Code42 components include:
-    - Code42 cloud: Updated Log4j from 2.15.0 to 2.17.1 on January 26, 2022
-    - Code42 app for Incydr Basic and Advanced and CrashPlan Cloud product plans: Updated Log4j from 2.16.0 to 2.17.1 on January 18, 2022
-    - Code42 User Directory Sync (UDS): Updated Log4j from 2.15.0 to 2.17.1 on February 2, 2022
-    - On-premises Code42 server: Mitigated from Log4j vulnerabilities by following these steps
-    - On-premises Code42 app: Updated to Log4j 2.16 on December 17, 2021
+  description: Apache Code42 - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://support.code42.com/Terms_and_conditions/Code42_customer_support_resources/Code42_response_to_industry_security_incidents
     - https://logging.apache.org/log4j/2.x/security.html

@@ -1,10 +1,10 @@
 id: checkout-fields-manager-xss
 
 info:
-  name: WordPress Checkout Fields Manager for WooCommerce <5.5.7 - Cross-Site Scripting
+  name: WordPress Checkout Fields Manager for WooCommerce <5.5.7 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: WordPress Checkout Fields Manager for WooCommerce 5.5.7 does not escape some URLs before outputting them back in attributes, leading to reflected cross-site scripting.
+  description: WordPress Checkout Fields Manager for WooCommerce <5.5.7 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/ea617acd-348a-4060-a8bf-08ab3b569577
     - https://wordpress.org/plugins/woocommerce-checkout-manager

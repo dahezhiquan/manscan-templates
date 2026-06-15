@@ -1,11 +1,10 @@
 id: vbulletin-ajaxreg-sqli
 
 info:
-  name: vBulletin 3.x / 4.x AjaxReg - SQL Injection
+  name: vBulletin 3.x / 4.x AjaxReg - SQL 注入漏洞
   author: mastercho
   severity: critical
-  description: |
-    vBulletin versions 3.x and 4.x suffer from an AjaxReg remote blind SQL injection vulnerability.
+  description: vBulletin 3.x / 4.x AjaxReg - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://packetstormsecurity.com/files/118703/vBulletin-3.x-4.x-AjaxReg-SQL-Injection.html
   classification:

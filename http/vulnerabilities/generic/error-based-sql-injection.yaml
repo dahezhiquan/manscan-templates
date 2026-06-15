@@ -1,10 +1,10 @@
 id: error-based-sql-injection
 
 info:
-  name: Error based SQL injection
+  name: Error based - SQL 注入漏洞
   author: geeknik
   severity: critical
-  description: A SQL injection vulnerability was identified based on an error message returned by the server.
+  description: Error based SQL injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8

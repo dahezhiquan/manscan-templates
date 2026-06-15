@@ -1,11 +1,10 @@
 id: pmb-sqli
 
 info:
-  name: PMB <= 7.4.6 - SQL Injection
+  name: PMB <= 7.4.6 - SQL 注入漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    PMB is a completely free ILS (Integrated Library management System). The domain of software for libraries is almost exclusively occupied by proprietary products. We are some librarians, users and developers deploring this state of affairs.
+  description: PMB <= 7.4.6 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploit-db.com/exploits/51197
     - https://vulners.com/exploitdb/EDB-ID:51197

@@ -1,11 +1,10 @@
 id: seeyon-config-exposure
 
 info:
-  name: Seeyon OA A6 config.jsp - Information Disclosure
+  name: Seeyon OA A6 config.jsp - 信息泄露漏洞
   author: SleepingBag945
   severity: medium
-  description: |
-    The Seeyon OA A6 config.jsp page can be accessed without authorization, resulting in sensitive information leakage vulnerabilities, through which attackers can obtain sensitive information in the server
+  description: Seeyon OA A6 config.jsp - 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E8%87%B4%E8%BF%9COA/%E8%87%B4%E8%BF%9COA%20A6%20config.jsp%20%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E6%BC%8F%E6%B4%9E.md
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/SeeyonController.java

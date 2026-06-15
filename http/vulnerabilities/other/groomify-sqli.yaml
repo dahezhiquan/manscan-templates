@@ -1,11 +1,10 @@
 id: groomify-sqli
 
 info:
-  name: Groomify v1.0 - SQL Injection Vulnerability
+  name: Groomify v1.0 - SQL 注入漏洞
   author: theamanrawat
   severity: high
-  description: |
-    An unauthenticated Time-Based SQL injection found in Webkul QloApps 1.6.0 via GET parameter date_from, date_to, and id_product allows a remote attacker to bypass a web application's authentication and authorization mechanisms and retrieve the contents of an entire database.
+  description: Groomify v1.0 - SQL 注入 Vulnerability 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://codecanyon.net/item/groomify-barbershop-salon-spa-booking-and-ecommerce-platform/45808114#
     - https://vulners.com/zdt/1337DAY-ID-38799

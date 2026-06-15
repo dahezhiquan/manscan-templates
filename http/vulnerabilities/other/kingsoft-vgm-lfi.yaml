@@ -1,11 +1,10 @@
 id: kingsoft-vgm-lfi
 
 info:
-  name: Kingsoft VGM Antivirus - Arbitrary File Read
+  name: Kingsoft VGM Antivirus - 任意文件读取漏洞
   author: abbas.heybati
   severity: high
-  description: |
-    There is an arbitrary file reading vulnerability in Kingsoft Antivirus. An attacker can obtain any file on the server through the vulnerability.
+  description: Kingsoft VGM Antivirus - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://mp.weixin.qq.com/s?__biz=MzkyMjE3MjEyNQ==&mid=2247486073&idx=1&sn=8e61e162262585bb8ce973b61df989b4&chksm=c1f925cbf68eacddfe441b8f1861e88068039712e467fb9bbe91eae31d439286c7147d197b07
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/kongsoft-vgm-antivirus-wall-rce.yaml

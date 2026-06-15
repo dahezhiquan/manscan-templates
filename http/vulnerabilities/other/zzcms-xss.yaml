@@ -1,10 +1,10 @@
 id: zzcms-xss
 
 info:
-  name: ZZCMS - Cross-Site Scripting
+  name: ZZCMS - 跨站脚本漏洞
   author: ritikchaddha
   severity: high
-  description: ZZCMS contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+  description: ZZCMS - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/JcQSteven/blog/issues/20
   classification:

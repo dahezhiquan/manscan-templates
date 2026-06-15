@@ -1,15 +1,17 @@
 id: wp-instagram-feed-xss
 
 info:
-  name: Instagram Feed < 1.6 - Cross-Site Scripting
+  name: Instagram Feed < 1.6 - 跨站脚本漏洞
   author: theamanrawat
   severity: medium
-  description: |
-    The Instagram Feed WordPress plugin before 1.6 contains a reflected cross-site scripting (XSS) vulnerability due to improper sanitization of user-supplied input, allowing attackers to inject malicious scripts via crafted requests.
+  description: Instagram Feed < 1.6 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   impact: |
-    Attackers with administrator privileges can execute malicious Javascript in the context of the site, potentially stealing cookies or hijacking user sessions.
+    - 攻击者可在受害者浏览器上下文中执行恶意脚本。
+    - 可能导致 Cookie 窃取、会话劫持、页面篡改或钓鱼攻击。
   remediation: |
-    Update to version 1.6 or later.
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：version 1.6 or later.。
+    - 对所有可控输入实施严格校验，并在输出到 HTML、JavaScript 或 URL 上下文前完成正确编码。
+    - 如为后台或插件组件问题，建议同步更新到厂商已修复版本并审计相关功能入口。
   reference:
     - https://dumpco.re/blog/xss-instagram-feed
     - https://wordpress.org/plugins/instagram-feed

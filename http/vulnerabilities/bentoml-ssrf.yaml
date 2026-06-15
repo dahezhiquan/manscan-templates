@@ -1,11 +1,10 @@
 id: bentoml-ssrf
 
 info:
-  name: Bentoml - Server Side Request Forgery
+  name: Bentoml - 服务端请求伪造
   author: ritikchaddha
   severity: critical
-  description: |
-    BentoML's upload file request is vulnerable to SSRF that allowing attacker to access internal service (local network).
+  description: Bentoml - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://huntr.com/bounties/901ae5bd-5e24-4f1f-be9f-aa03fa6e1316
   classification:

@@ -1,10 +1,10 @@
 id: wp-xmlrpc-pingback-detection
 
 info:
-  name: Wordpress XMLRPC - Pingback Detection
+  name: Wordpress XMLRPC - Pingback 检测
   author: pdteam
   severity: info
-  description: WordPress XML-RPC Pingback Detection refers to the identification and monitoring of XML-RPC Pingback functionality in a WordPress website. This is vulnerable to pingback detection and bruteforce attacks.
+  description: Wordpress XMLRPC - Pingback Detection 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/dorkerdevil/rpckiller
     - https://the-bilal-rizwan.medium.com/wordpress-xmlrpc-php-common-vulnerabilites-how-to-exploit-them-d8d3c8600b32

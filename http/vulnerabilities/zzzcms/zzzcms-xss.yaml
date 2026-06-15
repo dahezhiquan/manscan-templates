@@ -1,10 +1,10 @@
 id: zzzcms-xss
 
 info:
-  name: Zzzcms 1.75 - Cross-Site Scripting
+  name: Zzzcms 1.75 - 跨站脚本漏洞
   author: ritikchaddha
   severity: medium
-  description: ZzzCMS ( A Lightweight ASP.NET content management system ) is vulnerable to XSS( Cross-Site Scripting ).
+  description: Zzzcms 1.75 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/Ares-X/VulWiki/blob/master/Web%E5%AE%89%E5%85%A8/Zzzcms/Zzzcms%201.75%20xss%E6%BC%8F%E6%B4%9E.md
   classification:

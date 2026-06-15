@@ -1,11 +1,10 @@
 id: yeswiki-stored-xss
 
 info:
-  name: YesWiki - Stored Cross-Site Scripting
+  name: YesWiki - Stored - 跨站脚本漏洞
   author: arafatansari
   severity: high
-  description: |
-    YesWiki contains a stored contains a cross-site scripting vulnerability via the bf_text field when adding a new entry for Forum.
+  description: YesWiki - 存储型跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://huntr.dev/bounties/5f27a9b1-c092-47e2-8092-a81298a4b932/
   classification:

@@ -1,11 +1,10 @@
 id: arcade-php-sqli
 
 info:
-  name: Arcade.php - SQL Injection
+  name: Arcade.php - SQL 注入漏洞
   author: MaStErChO
   severity: high
-  description: |
-    The arcade.php script is vulnerable to SQL injection. By exploiting this vulnerability, an attacker can manipulate the SQL queries executed by the script, potentially gaining unauthorized access to the database.
+  description: Arcade.php - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploit-db.com/exploits/29604
     - https://github.com/OWASP/vbscan/

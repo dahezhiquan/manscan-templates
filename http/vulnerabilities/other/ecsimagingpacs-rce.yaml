@@ -1,10 +1,10 @@
 id: ecsimagingpacs-rce
 
 info:
-  name: ECSIMAGING PACS <= 6.21.5 - Command Execution and Local File Inclusion
+  name: ECSIMAGING PACS <= 6.21.5 - Command Execution and - 本地文件包含漏洞
   author: ritikchaddha
   severity: critical
-  description: ECSIMAGING PACS Application 6.21.5 and below suffer from a command injection vulnerability and a local file include vulnerability. The 'file' parameter on the page /showfile.php can be exploited to perform command execution or local file inclusion. Often on ECSIMAGING PACS, the www-data user has sudo NOPASSWD access.
+  description: ECSIMAGING PACS <= 6.21.5 - Command Execution and 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/49388
   classification:

@@ -1,10 +1,10 @@
 id: crawlab-lfi
 
 info:
-  name: Crawlab - Arbitrary File Read
+  name: Crawlab - 任意文件读取漏洞
   author: pussycat0x
   severity: high
-  description: Crawlab is vulnerable to arbitrary file read.
+  description: Crawlab - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Crawlab%20file%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   classification:

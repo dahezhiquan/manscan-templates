@@ -1,11 +1,10 @@
 id: tongda-contact-list-exposure
 
 info:
-  name: Tongda OA v2014 Get Contactlistt - Sensitive Information Disclosure
+  name: Tongda OA v2014 Get Contactlistt - Sensitive - 信息泄露漏洞
   author: SleepingBag945
   severity: medium
-  description: |
-    There is an information leakage vulnerability in the get_contactlist.php file of Tongda OA v2014. Attackers can obtain sensitive information through the vulnerability and conduct further attacks.
+  description: Tongda OA v2014 Get Contactlistt - Sensitive 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/tongda-contact-list-disclosure.yaml
   metadata:

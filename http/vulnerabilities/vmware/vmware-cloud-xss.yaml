@@ -1,10 +1,10 @@
 id: vmware-cloud-xss
 
 info:
-  name: VMWare Cloud - Cross Site Scripting
+  name: VMWare Cloud - 跨站脚本漏洞
   author: tess
   severity: medium
-  description: VMWare Cloud is vulnerable to Reflected Cross Site Scripting vulnerability.
+  description: VMWare Cloud - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   classification:
     cpe: cpe:2.3:a:vmware:cloud_foundation:*:*:*:*:*:*:*:*
     cwe-id: CWE-80

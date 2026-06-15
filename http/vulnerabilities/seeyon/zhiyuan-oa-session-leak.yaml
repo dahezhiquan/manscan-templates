@@ -4,7 +4,7 @@ info:
   name: Zhiyuan OA Session Leak
   author: pikpikcu
   severity: medium
-  description: A vulnerability in Zhiyuan OA allows remote unauthenticated users access to sensitive session information via the 'getSessionList.jsp' endpoint.
+  description: Zhiyuan OA Session Leak 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.zhihuifly.com/t/topic/3345
   metadata:

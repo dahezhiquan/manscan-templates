@@ -1,10 +1,10 @@
 id: bullwark-momentum-lfi
 
 info:
-  name: Bullwark Momentum Series JAWS 1.0 - Local File Inclusion
+  name: Bullwark Momentum Series JAWS 1.0 - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: Bullwark Momentum Series JAWS 1.0 is vulnerable to local file inclusion.
+  description: Bullwark Momentum Series JAWS 1.0 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/47773
     - http://www.bullwark.net/Kategoriler.aspx?KategoriID=24 # software link

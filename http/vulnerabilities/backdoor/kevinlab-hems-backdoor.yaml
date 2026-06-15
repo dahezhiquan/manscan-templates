@@ -1,11 +1,10 @@
 id: kevinlab-hems-backdoor
 
 info:
-  name: KevinLAB HEMS - Backdoor Detection
+  name: KevinLAB HEMS - 后门检测
   author: gy741
   severity: critical
-  description: |
-    KevinLAB HEMS has an undocumented backdoor account and these sets of credentials are never exposed to the end-user and cannot be changed through any normal operation of the solution through the RMI. An attacker could exploit this vulnerability by logging in using the backdoor account with highest privileges for administration and gain full system control. The backdoor user cannot be seen in the users settings in the admin panel and it also uses an undocumented privilege level (admin_pk=1) which allows full availability of the features that the HEMS is offering remotely.
+  description: 该模板用于检测目标是否存在与 KevinLAB HEMS - Backdoor Detection 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5654.php
   metadata:

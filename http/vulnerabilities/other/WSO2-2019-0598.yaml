@@ -1,13 +1,13 @@
 id: WSO2-2019-0598
 
 info:
-  name: WSO2 <5.8.0 - Server Side Request Forgery
+  name: WSO2 <5.8.0 - 服务端请求伪造
   author: Amnotacat
   severity: medium
-  description: |
-    WSO2 prior to version 5.8.0 is susceptible to a server-side request forgery vulnerability. This vulnerability can be exploited by misusing the UI gadgets loading capability of the shindig web application. An attacker can alter a specific URL in the request causing the server to initiate a GET request to the altered URL.
+  description: WSO2 <5.8.0 - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   remediation: |
-    Upgrade the product version to 5.8.0 or higher.
+    - 限制服务器对外和对内的可访问地址范围，禁止访问云元数据地址与敏感内网段。
+    - 对 URL、协议、端口和重定向目标进行严格校验，并启用出站访问控制。
   reference:
     - https://docs.wso2.com/display/Security/Security+Advisory+WSO2-2019-0598
   classification:

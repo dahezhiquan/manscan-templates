@@ -1,10 +1,10 @@
 id: huawei-hg659-lfi
 
 info:
-  name: HUAWEI HG659 - Local File Inclusion
+  name: HUAWEI HG659 - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: HUAWEI HG659 is vulnerable to local file inclusion.
+  description: HUAWEI HG659 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://twitter.com/sec715/status/1406782172443287559
   classification:

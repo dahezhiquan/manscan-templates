@@ -1,12 +1,14 @@
 id: wp-smart-manager-sqli
 
 info:
-  name: Smart Manager for WooCommerce & WPeC <= 3.9.6 - SQL Injection
+  name: Smart Manager for WooCommerce & WPeC <= 3.9.6 - SQL 注入漏洞
   author: r3Y3r53
   severity: critical
-  description: |
-    The Smart Manager For WooCommerce – Stock Management, Bulk Edit & more… WordPress plugin was affected by an Unauthenticated SQL Injection security vulnerability.
-  remediation: Fixed in version 3.9.7
+  description: Smart Manager for WooCommerce & WPeC <= 3.9.6 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in version 3。
+    - 使用参数化查询或预编译语句，避免将用户输入直接拼接到 SQL 语句中。
+    - 对相关接口增加权限校验、输入校验与异常审计，防止敏感查询被滥用。
   reference:
     - https://wpscan.com/vulnerability/e060fbff-792f-4fb5-baa5-82d80240ec99
     - http://cinu.pl/research/wp-plugins/mail_0666ceeca20683907bf82514e8f93e0f.html

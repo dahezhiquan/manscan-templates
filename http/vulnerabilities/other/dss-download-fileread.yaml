@@ -1,10 +1,10 @@
 id: dss-download-fileread
 
 info:
-  name: DSS Download - Local File Inclusion
+  name: DSS Download - 本地文件包含漏洞
   author: ritikchaddha
   severity: high
-  description: DSS Download is vulnerable to local file inclusion.
+  description: DSS Download - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

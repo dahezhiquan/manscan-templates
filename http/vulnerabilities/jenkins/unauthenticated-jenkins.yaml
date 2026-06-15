@@ -1,10 +1,10 @@
 id: unauthenticated-jenkins
 
 info:
-  name: Jenkins Dashboard - Unauthenticated Access
+  name: Jenkins Dashboard - 未授权访问漏洞
   author: dhiyaneshDK
   severity: high
-  description: Jenkins Dashboard is exposed to external users.
+  description: Jenkins Dashboard - 未授权 Access 存在未授权访问漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 2
   tags: jenkins,vuln

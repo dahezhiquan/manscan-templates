@@ -1,11 +1,10 @@
 id: slims-9-xss-index
 
 info:
-  name: Senayan Library Management System v9.5.2 (Bulian) - Cross-Site Scripting
+  name: Senayan Library Management System v9.5.2 (Bulian) - 跨站脚本漏洞
   author: nblirwn
   severity: medium
-  description: |
-    SLiMS 9.5.2 (Bulian) vulnerable to Cross-Site Scripting in index.php. When injected, website will execute the payload repeatedly
+  description: Senayan Library Management System v9.5.2 (Bulian) - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/slims/slims9_bulian/issues/185
   metadata:

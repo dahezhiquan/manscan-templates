@@ -1,7 +1,7 @@
 id: linkerd-service-detect
 
 info:
-  name: Linkerd Service detection
+  name: Linkerd Service 检测ion
   author: dudez
   severity: info
   reference:

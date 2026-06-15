@@ -1,10 +1,10 @@
 id: bsphp-info
 
 info:
-  name: BSPHP - Information Disclosure
+  name: BSPHP - 信息泄露漏洞
   author: ritikchaddha
   severity: low
-  description: Information disclosure in BSPHP Pro causing user and unauth IP disclosure.
+  description: BSPHP - 信息泄露 存在信息泄露漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/CMS%E6%BC%8F%E6%B4%9E/BSPHP%20index.php%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%20%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E.md
     - https://github.com/bigblackhat/oFx/blob/main/poc/BSPHP/Info_Disclosure/poc.py

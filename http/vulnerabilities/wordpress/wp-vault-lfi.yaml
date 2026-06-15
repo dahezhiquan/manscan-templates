@@ -1,10 +1,10 @@
 id: wp-vault-local-file-inclusion
 
 info:
-  name: WordPress Vault 0.8.6.6 - Local File Inclusion
+  name: WordPress Vault 0.8.6.6 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Vault 0.8.6.6 is vulnerable to local file inclusion.
+  description: WordPress Vault 0.8.6.6 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/40850
   classification:

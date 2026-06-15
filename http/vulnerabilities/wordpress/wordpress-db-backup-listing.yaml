@@ -4,7 +4,7 @@ info:
   name: WordPress DB Backup
   author: Suman_Kar
   severity: medium
-  description: WordPress DB Backup plugin exposes db file along with directory listing.
+  description: WordPress DB Backup 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 1
   tags: wordpress,backup,vuln

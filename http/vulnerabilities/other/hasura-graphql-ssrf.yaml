@@ -1,10 +1,10 @@
 id: hasura-graphql-ssrf
 
 info:
-  name: Hasura GraphQL Engine - Server Side Request Forgery
+  name: Hasura GraphQL Engine - 服务端请求伪造
   author: princechaddha
   severity: high
-  description: Hasura GraphQL Engine is vulnerable to SSRF( Server Side Request Forgery )
+  description: Hasura GraphQL Engine - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://cxsecurity.com/issue/WLB-2021040115
   classification:

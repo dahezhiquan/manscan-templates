@@ -1,11 +1,10 @@
 id: dlink-netgear-xss
 
 info:
-  name: Dlink DSR-250 and Netgear Prosafe - Cross-Site Scripting
+  name: Dlink DSR-250 and Netgear Prosafe - 跨站脚本漏洞
   author: gtrrnr,vulnspace
   severity: medium
-  description: |
-    Dlink DSR-250 and Netgear Prosafe are vulnerable to reflected cross site scripting endpoint scgi-bin/platform.cgi in parameter SSLVPN.
+  description: Dlink DSR-250 and Netgear Prosafe - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.encripto.no/forskning/whitepapers/Netgear_prosafe_advisory_june_2015.pdf
   classification:

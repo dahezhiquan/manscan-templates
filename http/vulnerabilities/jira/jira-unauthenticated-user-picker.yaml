@@ -1,7 +1,7 @@
 id: jira-unauthenticated-user-picker
 
 info:
-  name: Jira Unauthenticated User Picker
+  name: Jira - 未授权访问漏洞
   author: TechbrunchFR
   severity: info
   classification:

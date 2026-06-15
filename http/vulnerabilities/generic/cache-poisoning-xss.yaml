@@ -1,10 +1,10 @@
 id: cache-poisoning-xss
 
 info:
-  name: Cache Poisoning - Stored XSS
+  name: Cache Poisoning - 存储型跨站脚本
   author: melbadry9,xelkomy,akincibor
   severity: high
-  description: Cache Poisoning leads to Stored XSS.
+  description: Cache Poisoning - 存储型跨站脚本 存在安全漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://blog.melbadry9.xyz/fuzzing/nuclei-cache-poisoning
     - https://portswigger.net/research/practical-web-cache-poisoning

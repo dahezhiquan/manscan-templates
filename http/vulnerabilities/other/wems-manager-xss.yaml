@@ -1,10 +1,10 @@
 id: wems-manager-xss
 
 info:
-  name: WEMS Enterprise Manager - Cross-Site Scripting
+  name: WEMS Enterprise Manager - 跨站脚本漏洞
   author: pikpikcu
   severity: high
-  description: WEMS Enterprise Manager contains a cross-site scripting vulnerability via the /guest/users/forgotten endpoint and the email parameter, which allows a remote attacker to inject arbitrary JavaScript into the response return by the server.
+  description: WEMS Enterprise Manager - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/155777/WEMS-Enterprise-Manager-2.58-Cross-Site-Scripting.html
   classification:

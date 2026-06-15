@@ -1,11 +1,10 @@
 id: wyse-devicegroup-register
 
 info:
-  name: Dell Wyse Management Suite - Unauthenticated Device Registration
+  name: Dell Wyse Management Suite - 未授权访问漏洞
   author: DhiyaneshDK
   severity: high
-  description: |
-    Dell Wyse Management Suite allows unauthenticated device registration by chaining deviceGroupLogin2 and deviceRegister endpoints, leaking wyseIdentifier and authenticationCode.
+  description: Dell Wyse Management Suite - 未授权 Device Registration 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://swarm.ptsecurity.com/business-logic-and-chains-unauthenticated-rce-in-dell-wyse-management-suite/
   metadata:

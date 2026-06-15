@@ -1,10 +1,10 @@
 id: wp-memphis-documents-library-lfi
 
 info:
-  name: WordPress Memphis Document Library 3.1.5 - Local File Inclusion
+  name: WordPress Memphis Document Library 3.1.5 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Memphis Document Library 3.1.5 is vulnerable to local file inclusion.
+  description: WordPress Memphis Document Library 3.1.5 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/39593
     - https://wpscan.com/vulnerability/53999c06-05ca-44f1-b713-1e4d6b4a3f9f

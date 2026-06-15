@@ -1,15 +1,16 @@
 id: yeswiki-reflected-xss
 
 info:
-  name: YesWiki - Cross-Site Scripting
+  name: YesWiki - 跨站脚本漏洞
   author: MuhammadWaseem
   severity: high
-  description: |
-    YesWiki versions < 4.5.3 are vulnerable to multiple reflected cross-site scripting (XSS) vulnerabilities, allowing arbitrary JavaScript execution.
-  impact:
-    Attackers can steal cookies, hijack user sessions, deface websites, or embed malicious content.
+  description: YesWiki < 4.5.3 存在多个反射型跨站脚本漏洞。该模板通过构造恶意输入并检查回显特征，验证目标是否会在浏览器上下文中执行任意 JavaScript。
+  impact: |
+    - 攻击者可在受害者浏览器上下文中执行恶意脚本。
+    - 可能导致 Cookie 窃取、会话劫持、页面篡改或钓鱼攻击。
   remediation: |
-    Upgrade to YesWiki version 4.6.0 or later.
+    - 升级到 YesWiki 4.6.0 或更高版本。
+    - 对所有可控输入实施严格校验，并在输出到 HTML、JavaScript 或 URL 上下文前完成正确编码。
   reference:
     - https://github.com/YesWiki/yeswiki/security/advisories/GHSA-5724-x3rh-5qqq
   metadata:

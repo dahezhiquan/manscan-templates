@@ -1,10 +1,10 @@
 id: brandfolder-lfi
 
 info:
-  name: Wordpress Brandfolder - Remote/Local File Inclusion
+  name: Wordpress Brandfolder - Remote/ - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Brandfolder allows remote attackers to access arbitrary files that reside on the local and remote server and disclose their content.
+  description: Wordpress Brandfolder - Remote/本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/39591
     - https://cxsecurity.com/issue/WLB-2016030120

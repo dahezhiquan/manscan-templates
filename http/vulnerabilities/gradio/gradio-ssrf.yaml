@@ -1,11 +1,10 @@
 id: gradio-ssrf
 
 info:
-  name: Gradio 3.47 - 3.50.2 - Server-Side Request Forgery
+  name: Gradio 3.47 - 3.50.2 - 服务端请求伪造漏洞
   author: nvn1729
   severity: high
-  description: |
-    Gradio Full Read SSRF when auth is not enabled, this version should work for versions 3.47 - 3.50.2.
+  description: Gradio 3.47 - 3.50.2 - Server-Side Request Forgery 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://github.com/gradio-app/gradio/commit/24a583688046867ca8b8b02959c441818bdb34a2
     - https://www.horizon3.ai/attack-research/disclosures/exploiting-file-read-vulnerabilities-in-gradio-to-steal-secrets-from-hugging-face-spaces/

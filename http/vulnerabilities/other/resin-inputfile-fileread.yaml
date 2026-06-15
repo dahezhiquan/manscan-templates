@@ -4,7 +4,7 @@ info:
   name: Caucho Resin LFR
   author: princechaddha
   severity: high
-  description: A vulnerability in Caucho Resin allows remote unauthenticated users to utilize the 'inputFile' variable to include the content of locally stored files and disclose their content.
+  description: Caucho Resin LFR 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://blkstone.github.io/2017/10/30/resin-attack-vectors/
   metadata:

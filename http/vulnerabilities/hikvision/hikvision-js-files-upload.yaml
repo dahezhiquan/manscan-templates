@@ -1,11 +1,10 @@
 id: hikvision-js-files-upload
 
 info:
-  name: Hikvision iSecure Center - File Upload
+  name: Hikvision iSecure Center - 任意文件上传漏洞
   author: Xc1Ym
   severity: critical
-  description: |
-    THikvision iSecure Center /center/api/files;.js has an arbitrary file upload vulnerability
+  description: Hikvision iSecure Center - File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://zhuanlan.zhihu.com/p/639514473
     - https://mp.weixin.qq.com/s/DR9xbwnrpg6YYSTw5pIAhw

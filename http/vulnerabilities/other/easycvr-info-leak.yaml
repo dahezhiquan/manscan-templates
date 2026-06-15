@@ -1,11 +1,10 @@
 id: easycvr-info-leak
 
 info:
-  name: EasyCVR video management - Users Information Exposure
+  name: EasyCVR video management - Users - 信息泄露漏洞
   author: pussycat0x
   severity: high
-  description: |
-    EasyCVR video management platform has leaked user information
+  description: EasyCVR video management - Users 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/wy876/POC/blob/main/EasyCVR%20%E8%A7%86%E9%A2%91%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%E5%AD%98%E5%9C%A8%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2.md
   metadata:

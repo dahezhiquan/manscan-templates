@@ -1,11 +1,10 @@
 id: h3c-cnsss-arbitrary-file-upload
 
 info:
-  name: H3C CNSSS - Arbitrary File Upload
+  name: H3C CNSSS - Arbitrary - 任意文件上传漏洞
   author: s4e-io
   severity: critical
-  description: |
-    H3C-Campus Network Self-Service System vulnerability allows for arbitrary file uploads. This enables attackers to upload any files they choose, acquire webshells, manipulate server permissions, and access sensitive information.
+  description: 该模板用于检测目标是否存在与 H3C CNSSS - 任意文件上传 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://github.com/wy876/POC/blob/main/H3C-%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%87%AA%E5%8A%A9%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9Fflexfileupload%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   metadata:

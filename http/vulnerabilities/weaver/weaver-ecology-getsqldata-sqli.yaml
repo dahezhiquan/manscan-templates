@@ -1,11 +1,10 @@
 id: weaver-ecology-getsqldata-sqli
 
 info:
-  name: Weaver E-Cology `getsqldata` - SQL Injection
+  name: Weaver E-Cology `getsqldata` - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    When the getSqlData interface of the Panwei e-cology OA system uses the mssql database, the built-in SQL statements are not spliced strictly, resulting in a SQL injection vulnerability.
+  description: Weaver E-Cology `getsqldata` - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/Wrin9/weaverOA_sql_RCE/blob/14cca7a6da7a4a81e7c7a7016cb0da75b8b290bc/weaverOA_sql_injection_POC_EXP.py#L46
   classification:

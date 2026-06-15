@@ -1,15 +1,17 @@
 id: marimo-proxy-abuse
 
 info:
-  name: Marimo > 0.9.20 - Proxy Abuse
+  name: Marimo > 0.9.20 - 代理滥用漏洞
   author: ritikchaddha
   severity: medium
-  description: |
-    The /mpl/<port>/<route> endpoint, which is accessible without authentication on default Marimo installations allows for external attackers to reach internal services and arbitrary ports.
+  description: Marimo > 0.9.20 - Proxy Abuse 存在代理滥用漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   impact: |
-    This vulnerability, as it can be used to bypass firewalls and access internal services that are intended to be local-only. The level of impact depends entirely on what services are running and accessible on the local machine.
+    - 攻击者可利用该漏洞获取未授权能力或访问敏感资源。
+    - 具体影响取决于受影响组件权限、部署方式以及周边安全控制。
   remediation: |
-    Upgrade to Marimo version 0.16.4 or later which adds authentication validation to the
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Upgrade to Marimo version 0。
+    - 根据厂商安全公告或补丁说明升级到最新安全版本。
+    - 结合访问控制、日志审计和暴露面收敛，降低相同问题再次被利用的风险。
   reference:
     - https://github.com/marimo-team/marimo/security/advisories/GHSA-xjv7-6w92-42r7
     - https://github.com/marimo-team/marimo

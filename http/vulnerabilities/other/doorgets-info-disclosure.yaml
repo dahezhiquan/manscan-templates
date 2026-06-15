@@ -1,11 +1,10 @@
 id: doorgets-info-disclosure
 
 info:
-  name: DoorGets CMS v7.0 - Information Disclosure
+  name: DoorGets CMS v7.0 - 信息泄露漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    doorGets 7.0 has a sensitive information disclosure vulnerability in /setup/temp/admin.php. A remote unauthenticated attacker could exploit this vulnerability to obtain administrator's password.
+  description: DoorGets CMS v7.0 - 信息泄露 存在未授权访问漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   reference:
     - https://packetstormsecurity.com/files/174236/DoorGets-CMS-7.0-Information-Disclosure.html
     - https://sourceforge.net/projects/doorgets-cms/files/latest/download?source=directory

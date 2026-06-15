@@ -1,11 +1,10 @@
 id: wp-adivaha-sqli
 
 info:
-  name: WordPress adivaha Travel Plugin 2.3 - SQL Injection
+  name: WordPress adivaha Travel Plugin 2.3 - SQL 注入漏洞
   author: theamanrawat
   severity: high
-  description: |
-    An unauthenticated Time-Based SQL injection found in adivaha Travel Plugin 2.3 allows a remote attacker to retrieve the contents of an entire database.
+  description: WordPress adivaha Travel Plugin 2.3 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://wordpress.org/plugins/adiaha-hotel/
   classification:

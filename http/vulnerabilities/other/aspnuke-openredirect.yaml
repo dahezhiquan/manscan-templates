@@ -1,10 +1,10 @@
 id: aspnuke-openredirect
 
 info:
-  name: ASP-Nuke - Open Redirect
+  name: ASP-Nuke - 开放重定向漏洞
   author: pdteam
   severity: medium
-  description: ASP-Nuke contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: ASP-Nuke - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://packetstormsecurity.com/files/125931/ASP-Nuke-2.0.7-Open-Redirect.html
   classification:

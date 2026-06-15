@@ -1,11 +1,10 @@
 id: wp-touch-redirect
 
 info:
-  name: WordPress WPtouch 3.7.5 - Open Redirect
+  name: WordPress WPtouch 3.7.5 - 开放重定向漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    WordPress WPtouch 3.7.5 is affected by an Open Redirect issue.
+  description: WordPress WPtouch 3.7.5 - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://packetstormsecurity.com/files/170568/WordPress-WPtouch-3.7.5-Open-Redirection.html
   classification:

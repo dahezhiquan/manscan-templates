@@ -1,11 +1,10 @@
 id: seatreg-redirect
 
 info:
-  name: WordPress Plugin ‘SeatReg’ - Open Redirect
+  name: WordPress Plugin ‘SeatReg’ - 开放重定向漏洞
   author: Mariam Tariq
   severity: medium
-  description: |
-    WordPress SeatReg plugin version 1.23.0 suffers from an open redirection vulnerability.
+  description: WordPress Plugin ‘SeatReg’ - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://packetstormsecurity.com/files/167888/WordPress-SeatReg-1.23.0-Open-Redirect.html
   metadata:

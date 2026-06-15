@@ -1,13 +1,13 @@
 id: laravel-ignition-xss
 
 info:
-  name: Laravel Ignition - Cross-Site Scripting
+  name: Laravel Ignition - 跨站脚本漏洞
   author: 0x_Akoko
   severity: high
-  description: |
-    Laravel Ignition contains a cross-site scripting vulnerability when debug mode is enabled.
+  description: Laravel Ignition - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   remediation: |
-    Disable debug mode by setting APP_DEBUG to false.
+    - 对所有可控输入实施严格校验，并在输出到 HTML、JavaScript 或 URL 上下文前完成正确编码。
+    - 如为后台或插件组件问题，建议同步更新到厂商已修复版本并审计相关功能入口。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/laravel-ignition-reflected-cross-site-scripting/
     - https://github.com/facade/ignition/issues/273

@@ -1,11 +1,10 @@
 id: aspcms-commentlist-sqli
 
 info:
-  name: AspCMS commentList.asp - SQL Injection
+  name: AspCMS commentList.asp - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    An SQL injection vulnerability has been identified in the commentList.asp file of AspCMS. Exploiting this vulnerability, an attacker can illicitly acquire the administrator's MD5 password.
+  description: AspCMS commentList.asp - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/cms/AspCMS/AspCMS%20commentList.asp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:

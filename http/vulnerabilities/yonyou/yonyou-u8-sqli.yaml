@@ -1,11 +1,10 @@
 id: yonyou-u8-sqli
 
 info:
-  name: Yonyou U8 bx_historyDataCheck - SQL Injection
+  name: Yonyou U8 bx_historyDataCheck - SQL 注入漏洞
   author: xianke
   severity: high
-  description: |
-    Yonyou U8 Grp contains a SQL injection vulnerability.
+  description: Yonyou U8 bx_historyDataCheck - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-grp-u8-bx_historyDataChecks-sqli.yaml
     - https://github.com/MD-SEC/MDPOCS/blob/main/Yongyou_Grp_U8_bx_historyDataCheck_Sql_Poc.py

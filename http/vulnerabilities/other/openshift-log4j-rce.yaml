@@ -1,11 +1,10 @@
 id: openshift-log4j-rce
 
 info:
-  name: OpenShift - Remote Code Execution (Apache Log4j)
+  name: OpenShift - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    OpenShift is susceptible to Log4j JNDI remote code execution. OpenShift is a unified platform to build, modernize, and deploy applications at scale.
+  description: OpenShift - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://access.redhat.com/security/cve/cve-2021-44228
   classification:

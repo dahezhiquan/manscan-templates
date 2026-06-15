@@ -1,11 +1,13 @@
 id: cucm-username-enumeration
 
 info:
-  name: Cisco Unified Communications Manager - User Enumeration
+  name: Cisco Unified Communications Manager - 用户名枚举漏洞
   author: manasmbellani,Morgan Robertson
   severity: medium
-  description: Cisco Unified Call Manager is vulnerable to username enumeration. This template enumerates valid usernames and emails from the Cisco UCM UDS API.
-  remediation: To mitigate this, enable Contact Search Authentication.
+  description: Cisco Unified Communications Manager - User Enumeration 存在用户名枚举漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  remediation: |
+    - 为敏感接口补充鉴权与最小化返回策略，避免未授权用户获取配置、账户或节点信息。
+    - 审核日志、错误页和调试接口的输出内容，关闭不必要的调试或管理入口。
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#users
     - https://www.n00py.io/2022/01/unauthenticated-dumping-of-usernames-via-cisco-unified-call-manager-cucm/

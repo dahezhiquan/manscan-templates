@@ -1,11 +1,10 @@
 id: theia-lfi-to-rce
 
 info:
-  name: Eclipse Theia IDE - LFI to RCE
+  name: Eclipse Theia IDE - 本地文件包含 to 远程代码执行
   author: 0x_Akoko
   severity: critical
-  description: |
-    Detected Eclipse Theia IDE was exposed without authentication, allowing unauthenticated attackers to access the web-based IDE with terminal capabilities, file system access, and arbitrary command execution.
+  description: Eclipse Theia IDE - 本地文件包含 to 远程代码执行 存在未授权访问漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://theia-ide.org/
   metadata:

@@ -1,7 +1,7 @@
 id: idocview-2word-fileupload
 
 info:
-  name: IDoc View /html/2word - Arbitrary File Upload
+  name: IDoc View /html/2word - Arbitrary - 任意文件上传漏洞
   author: DhiyaneshDK
   severity: high
   metadata:

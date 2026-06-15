@@ -1,11 +1,10 @@
 id: yonyou-nc-grouptemplet-fileupload
 
 info:
-  name: UFIDA NC Grouptemplet Interface - Unauthenticated File Upload
+  name: UFIDA NC Grouptemplet Interface - 未授权 - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    The UFIDA NC Grouptemplet Interface permits unauthenticated users to upload potentially malicious files.
+  description: UFIDA NC Grouptemplet Interface - 未授权 File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.seebug.org/vuldb/ssvid-99547
     - https://github.com/Augensternyu/POC-bomber/blob/main/pocs/redteam/yongyou_nc_fileupload_2022.py

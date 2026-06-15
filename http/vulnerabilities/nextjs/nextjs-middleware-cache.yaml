@@ -4,8 +4,7 @@ info:
   name: Next.js - Cache Poisoning
   author: DhiyaneshDk
   severity: high
-  description: |
-     Next.js is vulnerable to Cache Poisoning using X-Middleware-Prefetch.
+  description: Next.js - Cache Poisoning 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://zhero-web-sec.github.io/research-and-things/nextjs-and-cache-poisoning-a-quest-for-the-black-hole
   metadata:

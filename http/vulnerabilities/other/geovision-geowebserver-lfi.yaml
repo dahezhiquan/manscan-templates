@@ -1,10 +1,10 @@
 id: geowebserver-lfi
 
 info:
-  name: GeoVision Geowebserver 5.3.3 - Local File Inclusion
+  name: GeoVision Geowebserver 5.3.3 - 本地文件包含漏洞
   author: madrobot
   severity: high
-  description: GeoVision Geowebserver 5.3.3 allows remote unauthenticated attackers to disclose the content of locally stored files via local file inclusion.
+  description: GeoVision Geowebserver 5.3.3 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://packetstormsecurity.com/files/163860/geovisiongws533-lfixssxsrfexec.txt
   classification:

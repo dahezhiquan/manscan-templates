@@ -1,10 +1,10 @@
 id: goip-1-lfi
 
 info:
-  name: GoIP-1 GSM - Local File Inclusion
+  name: GoIP-1 GSM - 本地文件包含漏洞
   author: gy741
   severity: high
-  description: GoIP-1 GSM is vulnerable to local file inclusion because input passed thru the 'content' or 'sidebar' GET parameter in 'frame.html' or 'frame.A100.html' is not properly sanitized before being used to read files. This can be exploited by an unauthenticated attacker to read arbitrary files on the affected system.
+  description: GoIP-1 GSM - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://shufflingbytes.com/posts/hacking-goip-gsm-gateway/
     - http://www.hybertone.com/uploadfile/download/20140304125509964.pdf

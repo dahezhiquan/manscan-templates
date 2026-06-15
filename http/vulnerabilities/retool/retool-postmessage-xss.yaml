@@ -1,11 +1,10 @@
 id: retool-postmessage-xss
 
 info:
-  name: Retool Self-Hosted - postMessage XSS via Custom Component Collections
+  name: Retool Self-Hosted - postMessage 跨站脚本 via Custom Component Collections
   author: DhiyaneshDk
   severity: high
-  description: |
-    Retool Self-Hosted versions 3.284.0 through 3.284.11 contain a cross-site scripting (XSS) vulnerability in the custom component collections iframe handler. The postMessage event listener in custom-component-collections.html accepts messages from any origin without validation and dynamically imports the received code via data:text/javascript URLs, allowing arbitrary JavaScript execution in the Retool instance origin context.
+  description: Retool Self-Hosted - postMessage 跨站脚本 via Custom Component Collections 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://docs.retool.com/releases
     - https://docs.retool.com/changelog/disclosures/custom-component-xss

@@ -1,11 +1,10 @@
 id: wp-portrait-archiv-xss
 
 info:
-  name: WordPress Portrait-Archiv.com Photostore 5.0.4 - Reflected Cross Site Scripting
+  name: WordPress Portrait-Archiv.com Photostore 5.0.4 - Reflected - 跨站脚本漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    The 'pDetails' GET parameter from the js/imageDetails.php was vulnerable to an unauthenticated reflected XSS attack.
+  description: WordPress Portrait-Archiv.com Photostore 5.0.4 - 反射型跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/c6a8757e-41ef-4c20-8c7d-97b57d56fe0e
     - https://wordpress.org/plugins/portrait-archiv-shop/

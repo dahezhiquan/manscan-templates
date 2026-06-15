@@ -1,11 +1,10 @@
 id: wp-related-post-xss
 
 info:
-  name: WordPress Related Posts <= 2.1.1 - Cross Site Scripting
+  name: WordPress Related Posts <= 2.1.1 - 跨站脚本漏洞
   author: arafatansari
   severity: medium
-  description: |
-    WordPress Related Posts plugin before 2.1.1 contains an Reflected XSS via rp4wp_parent
+  description: WordPress Related Posts <= 2.1.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://huntr.dev/bounties/7c9bd2d2-2a6f-420c-a45e-716600cf810e/
     - https://wordpress.org/plugins/wordpress-23-related-posts-plugin/advanced/

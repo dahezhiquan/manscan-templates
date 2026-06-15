@@ -1,11 +1,10 @@
 id: tongda-action-uploadfile
 
 info:
-  name: Tongda OA v2017 action_upload - Arbitrary File Upload
+  name: Tongda OA v2017 action_upload - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Tongda OA v2017 action_upload.php file filtering is insufficient and does not require background permissions, resulting in arbitrary file upload vulnerabilities
+  description: Tongda OA v2017 action_upload - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E9%80%9A%E8%BE%BEOA/%E9%80%9A%E8%BE%BEOA%20v2017%20action_upload.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
     - https://github.com/shadow1ng/fscan/blob/main/WebScan/pocs/tongda-v2017-uploadfile.yml

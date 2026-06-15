@@ -1,10 +1,10 @@
 id: wordpress-wordfence-waf-bypass-xss
 
 info:
-  name: Wordpress Wordfence - Cross-Site Scripting
+  name: Wordpress Wordfence - 跨站脚本漏洞
   author: hackergautam
   severity: medium
-  description: Wordpress Wordfence is vulnerable to cross-site scripting.
+  description: Wordpress Wordfence - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://twitter.com/naglinagli/status/1382082473744564226
   classification:

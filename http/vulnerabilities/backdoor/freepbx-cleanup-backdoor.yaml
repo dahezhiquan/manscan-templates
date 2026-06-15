@@ -1,11 +1,10 @@
 id: freepbx-cleanup-backdoor
 
 info:
-  name: FreePBX - CVE-2025-57819 Backdoor
+  name: FreePBX 清理脚本后门检测
   severity: high
   author: darses
-  description: |
-    FreePBX backdoor cleanup script used in 0-day exploitation of CVE-2025-57819 was detected.
+  description: 检测 FreePBX 在针对 CVE-2025-57819 的 0day 利用过程中出现的清理脚本后门。命中通常意味着系统已经遭受入侵或仍残留恶意文件。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,10 @@
 id: yonyou-nc-info-leak
 
 info:
-  name: Yonyou UFIDA NC - Information Exposure
+  name: Yonyou UFIDA NC - 信息泄露漏洞
   author: SleepingBag945
   severity: medium
-  description: |
-    After logging in and visiting the address where the information was leaked, you will have permission to upload files. Then just go back to the homepage and view the published content directly.
+  description: Yonyou UFIDA NC - 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://mp.weixin.qq.com/s/Lu6Zd9LP3PQsb8uzTIcANQ
     - https://github.com/zhangzhenfeng/AnyScan/blob/master/AnyScanUI/AnyPoc/data/poc/bugscan/exp%EF%BC%8D2311.py

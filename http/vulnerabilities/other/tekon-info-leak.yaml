@@ -1,10 +1,10 @@
 id: tekon-info-leak
 
 info:
-  name: Tekon - Unauthenticated Log Leak
+  name: Tekon - 未授权访问漏洞
   author: gy741
   severity: low
-  description: A vulnerability in Tekon allows remote unauthenticated users to disclose the Log of the remote device
+  description: Tekon - 未授权 Log Leak 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://medium.com/@bertinjoseb/post-auth-rce-based-in-malicious-lua-plugin-script-upload-scada-controllers-located-in-russia-57044425ac38
   classification:

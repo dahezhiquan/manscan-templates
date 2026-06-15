@@ -1,10 +1,10 @@
 id: gsoap-lfi
 
 info:
-  name: gSOAP 2.8 - Local File Inclusion
+  name: gSOAP 2.8 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: gSOAP 2.8 is vulnerable to local file inclusion.
+  description: gSOAP 2.8 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/47653
   classification:

@@ -4,8 +4,7 @@ info:
   name: JustBoil.me Images Plugin - Exposed Image Upload
   author: 0xr2r
   severity: medium
-  description: |
-    JustBoil.me Images Plugin for TinyMCE contains an exposed dialog interface that could lead to potential security vulnerabilities. The plugin's dialog-v4.htm file is accessible without proper access controls, which may allow unauthorized access to image upload functionality.
+  description: JustBoil.me Images Plugin - Exposed Image Upload 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://cxsecurity.com/issue/WLB-2019050108
   metadata:

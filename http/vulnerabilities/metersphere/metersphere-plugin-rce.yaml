@@ -1,11 +1,10 @@
 id: metersphere-plugin-rce
 
 info:
-  name: MeterSphere - Remote Code Execution
+  name: MeterSphere - 远程代码执行漏洞
   author: pdteam,y4er,pdresearch,rootxharsh,iamnoooob
   severity: critical
-  description: |
-    MeterSphere is susceptible to remote code execution.
+  description: MeterSphere - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://y4er.com/post/metersphere-plugincontroller-pre-auth-rce/
     - https://github.com/metersphere/metersphere

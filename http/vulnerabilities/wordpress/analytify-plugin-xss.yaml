@@ -1,11 +1,10 @@
 id: analytify-plugin-xss
 
 info:
-  name: Analytify <4.2.1 - Cross-Site Scripting
+  name: Analytify <4.2.1 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: |
-    WordPress Analytify 4.2.1 does not escape the current URL before outputting it back in a 404 page when the 404 tracking feature is enabled, leading to reflected cross-site scripting.
+  description: Analytify <4.2.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/b8415ed5-6fd0-42fe-9201-73686c1871c5
   classification:

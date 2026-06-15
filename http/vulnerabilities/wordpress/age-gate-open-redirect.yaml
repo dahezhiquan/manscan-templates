@@ -1,10 +1,10 @@
 id: age-gate-open-redirect
 
 info:
-  name: WordPress Age Gate <2.13.5 - Open Redirect
+  name: WordPress Age Gate <2.13.5 - 开放重定向漏洞
   author: akincibor
   severity: medium
-  description: WordPress Age Gate plugin before 2.13.5 contains an open redirect vulnerability via the  _wp_http_referer parameter after certain actions and after invalid or missing nonces. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: WordPress Age Gate <2.13.5 - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://wpscan.com/vulnerability/10489
     - https://packetstormsecurity.com/files/160236/

@@ -1,10 +1,10 @@
 id: rockmongo-xss
 
 info:
-  name: RockMongo 1.1.8 - Cross-Site Scripting
+  name: RockMongo 1.1.8 - 跨站脚本漏洞
   author: pikpikcu
   severity: high
-  description: RockMongo 1.1.8 contains a cross-site scripting vulnerability which allows attackers to inject arbitrary JavaScript into the response returned by the application.
+  description: RockMongo 1.1.8 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/136658/RockMongo-1.1.8-Cross-Site-Request-Forgery-Cross-Site-Scripting.html
   classification:

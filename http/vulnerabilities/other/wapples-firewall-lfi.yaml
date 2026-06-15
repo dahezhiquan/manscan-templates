@@ -1,10 +1,10 @@
 id: wapples-firewall-lfi
 
 info:
-  name: Wapples Web Application Firewall - Local File Inclusion
+  name: Wapples Web Application Firewall - 本地文件包含漏洞
   author: For3stCo1d
   severity: high
-  description: Wapples Web Application Firewall is vulnerable to local file inclusion.
+  description: Wapples Web Application Firewall - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://medium.com/@_sadshade/wapples-web-application-firewall-multiple-vulnerabilities-35bdee52c8fb
   classification:

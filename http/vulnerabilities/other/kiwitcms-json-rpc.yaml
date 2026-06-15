@@ -1,10 +1,10 @@
 id: kiwitcms-json-rpc
 
 info:
-  name: Kiwi TCMS Information Disclosure
+  name: Kiwi TCMS - 信息泄露漏洞
   author: act1on3
   severity: high
-  description: Internal info exposed in Kiwi TCMS.
+  description: Kiwi TCMS 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://hackerone.com/reports/968402
     - https://kiwitcms.org/blog/kiwi-tcms-team/2020/08/23/kiwi-tcms-86/

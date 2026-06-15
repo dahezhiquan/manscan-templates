@@ -1,7 +1,7 @@
 id: prestashop-cartabandonmentpro-file-upload
 
 info:
-  name: Prestashop Cart Abandonment Pro File Upload
+  name: Prestashop Cart Abandonment Pro - 任意文件上传漏洞
   author: MaStErChO
   severity: critical
   reference:

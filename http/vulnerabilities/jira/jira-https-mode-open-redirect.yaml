@@ -1,11 +1,10 @@
 id: jira-https-mode-open-redirect
 
 info:
-  name: JIRA in HTTPS mode - Open Redirect
+  name: JIRA in HTTPS mode - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: |
-    Detected Open redirect vulnerability in Jira via os_destination parameter versions 5.2.11, 6.2, and 6.2.2.
+  description: JIRA in HTTPS mode - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://jira.atlassian.com/browse/JRASERVER-38075
   classification:

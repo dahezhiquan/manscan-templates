@@ -1,11 +1,10 @@
 id: leaguemanager-sql-injection
 
 info:
-  name: LeagueManager <= 3.9.11 - SQL Injection
+  name: LeagueManager <= 3.9.11 - SQL 注入漏洞
   author: theamanrawat
   severity: critical
-  description: |
-    The plugin does not sanitise and escape a parameter before using it in a SQL statement via an AJAX action (available to unauthenticated users), leading to an SQL injection.
+  description: LeagueManager <= 3.9.11 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://wpscan.com/vulnerability/f3be48f5-ae2c-4e27-80ca-664829b8fba3
     - https://wordpress.org/plugins/leaguemanager/

@@ -1,11 +1,10 @@
 id: prestashop-apmarketplace-sqli
 
 info:
-  name: PrestaShop Ap Marketplace - SQL Injection
+  name: PrestaShop Ap Marketplace - SQL 注入漏洞
   author: mastercho
   severity: high
-  description: |
-    The AP Marketplace Prestashop module is vulnerable to Blind/Time SQL Injection. An attacker can exploit this vulnerability to execute arbitrary SQL queries on the underlying database.
+  description: PrestaShop Ap Marketplace - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.openservis.cz/prestashop-blog/nejcastejsi-utoky-v-roce-2023-seznam-deravych-modulu-nemate-nejaky-z-nich-na-e-shopu-i-vy/#pll_switcher
   classification:

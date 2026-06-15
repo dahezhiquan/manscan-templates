@@ -1,10 +1,10 @@
 id: newsletter-open-redirect
 
 info:
-  name: WordPress Newsletter Manager < 1.5 - Unauthenticated Open Redirect
+  name: WordPress Newsletter Manager < 1.5 - 未授权 - 开放重定向漏洞
   author: dhiyaneshDk
   severity: medium
-  description: WordPress Newsletter Manager < 1.5 is susceptible to an open redirect vulnerability. The plugin used base64 encoded user input in the appurl parameter without validation to redirect users using the header() PHP function, leading to an open redirect issue.
+  description: WordPress Newsletter Manager < 1.5 - 未授权 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://wpscan.com/vulnerability/847b3878-da9e-47d6-bc65-3cfd2b3dc1c1
   classification:

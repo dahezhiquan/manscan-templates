@@ -1,11 +1,10 @@
 id: yonyou-nc-ncmessageservlet-rce
 
 info:
-  name: UFIDA NC NCMessageServlet - Deserialization RCE Detection
+  name: UFIDA NC NCMessageServlet - 反序列化漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    UFIDA NC is in the process of processing client request data. Insufficient checking and filtering when deserializing user-supplied data can lead to malicious deserialization operations and execution of commands on the operating system. After analysis, security researchers found that the system has many exploit points for deserialization. Currently, the official vulnerability fix plan is to perform deserialization whitelist control on known exploit points and repair some exploit chain dependencies. The possibility of similar problems occurring in the system in the future is still high.
+  description: UFIDA NC NCMessageServlet - Deserialization 远程代码执行 Detection 存在反序列化漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-nc-ncmessageservlet-rce.yaml
   classification:

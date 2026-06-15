@@ -1,12 +1,14 @@
 id: 3dprint-arbitrary-file-upload
 
 info:
-  name: WordPress 3DPrint Lite <1.9.1.5 - Arbitrary File Upload
+  name: WordPress 3DPrint Lite <1.9.1.5 - Arbitrary - 任意文件上传漏洞
   author: SecTheBit
   severity: high
-  description: |
-    WordPress 3DPrint Lite plugin before 1.9.1.5 contains an arbitrary file upload vulnerability. The p3dlite_handle_upload AJAX action of the plugin does not have any authorization and does not check the uploaded file. An attacker can upload arbitrary files to the server, which in turn can be used to make the application execute file content as code, As a result, an attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
-  remediation: Upgrade to 1.9.1.5 or later.
+  description: WordPress 3DPrint Lite <1.9.1.5 - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Upgrade to 1。
+    - 对上传文件的类型、扩展名、内容特征和落地路径进行严格限制，避免脚本文件可执行。
+    - 将上传目录与 Web 可执行目录隔离，并增加病毒查杀、访问控制与审计监测。
   reference:
     - https://wpscan.com/vulnerability/c46ecd0d-a132-4ad6-b936-8acde3a09282
     - https://www.exploit-db.com/exploits/50321

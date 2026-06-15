@@ -1,11 +1,10 @@
 id: wp-under-construction-ssrf
 
 info:
-  name: Under Construction, Coming Soon & Maintenance Mode < 1.1.2 - Server Side Request Forgery (SSRF)
+  name: Under Construction, Coming Soon & Maintenance Mode < 1.1.2 - 服务端请求伪造 ( - 服务端请求伪造漏洞
   author: Akincibor
   severity: high
-  description: |
-    The includes/mc-get_lists.php file used the 'apiKey' POST parameter to create an https URL from it without sanitisation and called it with cURL, leading to a SSRF issue. The issue is exploitable via direct access to the affected file, and ucmm_mc_api AJAX call (available to both authenticated and unauthenticated users).
+  description: Under Construction, Coming Soon & Maintenance Mode < 1.1.2 - 服务端请求伪造 (服务端请求伪造) 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://wpscan.com/vulnerability/24784c84-3efd-4166-81c1-e5a266562cfc
     - https://packetstormsecurity.com/files/161576/

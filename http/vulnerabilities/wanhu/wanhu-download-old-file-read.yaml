@@ -1,11 +1,10 @@
 id: wanhu-download-old-file-read
 
 info:
-  name: Wanhu OA download_old.jsp - Arbitrary File Read
+  name: Wanhu OA download_old.jsp - 任意文件读取漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    There is an arbitrary file download vulnerability in the Wanhu OA download_old.jsp file. An attacker can download any file on the server through the vulnerability.
+  description: Wanhu OA download_old.jsp - 任意文件读取 存在任意文件读取漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20download_old.jsp%20任意文件下载漏洞.html
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/wanhu-oa-download-old-file-read.yaml

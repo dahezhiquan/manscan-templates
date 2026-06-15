@@ -1,15 +1,16 @@
 id: feiyuxing-ent-router-infoleak
 
 info:
-  name: FeiYuXing Enterprise Router - Information Leakage
+  name: FeiYuXing Enterprise Router - 信息泄露漏洞
   author: adeljck
   severity: high
-  description: |
-    The FeiYuXing Enterprise Router Information Leakage Vulnerability is a critical flaw that allows unauthorized attackers to retrieve sensitive configuration details from the router.
+  description: FeiYuXing Enterprise Router - 信息泄露 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   impact: |
-    Exploiting this vulnerability enables an attacker to gain access to stored credentials, including administrative usernames and passwords, which can lead to a complete compromise of the device.
+    - 攻击者可获取系统配置、用户信息、节点信息或其他敏感元数据。
+    - 这些信息可显著降低后续定向攻击、撞库或暴力破解的门槛。
   remediation: |
-    Update the frimware to the latest version. If your device is out of service.add path /js/../.htpasswd to your WAF.
+    - 根据厂商安全公告或补丁说明升级到最新安全版本。
+    - 结合访问控制、日志审计和暴露面收敛，降低相同问题再次被利用的风险。
   metadata:
     verified: true
     max-request: 1

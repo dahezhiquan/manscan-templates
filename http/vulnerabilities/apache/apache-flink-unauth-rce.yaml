@@ -1,10 +1,10 @@
 id: apache-flink-unauth-rce
 
 info:
-  name: Apache Flink - Remote Code Execution
+  name: Apache Flink - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: Apache Flink contains an unauthenticated remote code execution vulnerability.
+  description: Apache Flink - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.exploit-db.com/exploits/48978
     - https://adamc95.medium.com/apache-flink-1-9-x-part-1-set-up-5d85fd2770f3

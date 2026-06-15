@@ -1,16 +1,10 @@
 id: vmware-nsx-stream-rce
 
 info:
-  name: VMware NSX Manager XStream Pre-authenticated Remote Code Execution
+  name: VMware NSX Manager XStream Pre-authenticated - 远程代码执行漏洞
   author: _0xf4n9x_
   severity: high
-  description: |
-    VMware Cloud Foundation (NSX-V) contains a remote code execution vulnerability via XStream open source library.
-    VMware has evaluated the severity of this issue to be in the Critical severity range with a maximum CVSSv3 base score of 9.8.
-    Due to an unauthenticated endpoint that leverages XStream for input serialization in VMware Cloud Foundation (NSX-V),
-    a malicious actor can get remote code execution in the context of 'root' on the appliance.
-    VMware Cloud Foundation 3.x and more specific NSX Manager Data Center for vSphere up to and including version 6.4.13
-    are vulnerable to Remote Command Injection.
+  description: VMware NSX Manager XStream Pre-authenticated 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.vmware.com/security/advisories/VMSA-2022-0027.html
     - https://kb.vmware.com/s/article/89809

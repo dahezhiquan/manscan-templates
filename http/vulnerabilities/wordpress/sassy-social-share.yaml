@@ -1,11 +1,10 @@
 id: sassy-social-share-xss
 
 info:
-  name: Sassy Social Share <=3.3.3 - Cross-Site Scripting
+  name: Sassy Social Share <=3.3.3 - 跨站脚本漏洞
   author: Random_Robbie
   severity: medium
-  description: |
-    WordPress Sassy Social Share 3.3.3 and prior is vulnerable to cross-site scripting because certain AJAX endpoints return JSON data with no Content-Type header set and then use the default text/html. In other words, any JSON that has HTML will be rendered as such.
+  description: Sassy Social Share <=3.3.3 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/4631519b-2060-43a0-b69b-b3d7ed94c705
   classification:

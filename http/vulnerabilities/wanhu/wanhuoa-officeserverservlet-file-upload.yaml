@@ -1,10 +1,10 @@
 id: wanhuoa-officeserverservlet-file-upload
 
 info:
-  name: Wanhu OA OfficeServerServlet - Arbitrary File Upload
+  name: Wanhu OA OfficeServerServlet - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: Wanhu OA officeserverservlet file upload vulnerability
+  description: Wanhu OA OfficeServerServlet - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/onMey/WH/blob/main/poc.py
     - http://wiki.peiqi.tech/wiki/oa/万户OA/万户OA%20OfficeServer.jsp%20任意文件上传漏洞.html

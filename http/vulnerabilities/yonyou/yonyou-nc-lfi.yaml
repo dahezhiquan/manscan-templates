@@ -1,13 +1,13 @@
 id: yonyou-nc-lfi
 
 info:
-  name: UFIDA NC - Arbitrary File Read
+  name: UFIDA NC - 任意文件读取漏洞
   author: vva
   severity: high
-  description: |
-    UFIDA NC is vulnerable to an arbitrary file read vulnerability in the nc.uap.lfw.file.action.DocServlet component. An unauthenticated remote attacker can exploit this flaw to read sensitive files on the server by sending crafted requests.
+  description: UFIDA NC - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   impact: |
-    Successful exploitation allows attackers to access sensitive files and information stored on the server.
+    - 攻击者可读取配置文件、凭证文件或应用源码等敏感内容。
+    - 泄露的信息可被用于后续提权、横向移动或持久化控制。
   reference:
     - https://github.com/szjr123/Target-practice/blob/05ed667090d8040a09235826f7698ff5347a93cf/%E7%94%A8%E5%8F%8BOA/NC%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96_DocServlet/yongyou_read.py
   classification:

@@ -1,10 +1,10 @@
 id: aspose-ie-file-download
 
 info:
-  name: WordPress Aspose Importer & Exporter 1.0 - Local File Inclusion
+  name: WordPress Aspose Importer & Exporter 1.0 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Aspose Importer & Exporter version 1.0 is vulnerable to local file inclusion.
+  description: WordPress Aspose Importer & Exporter 1.0 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://packetstormsecurity.com/files/131162/
     - https://wordpress.org/plugins/aspose-importer-exporter

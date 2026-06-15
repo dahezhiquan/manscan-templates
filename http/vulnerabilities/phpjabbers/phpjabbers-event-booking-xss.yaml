@@ -1,11 +1,10 @@
 id: phpjabbers-event-booking-xss
 
 info:
-  name: PHPJabbers Event Booking Calendar - Reflected XSS
+  name: PHPJabbers Event Booking Calendar - 反射型跨站脚本
   author: 0x_Akoko
   severity: medium
-  description: |
-    Detected that PHPJabbers Event Booking Calendar contained a reflected cross-site scripting vulnerability in the preview.php endpoint
+  description: PHPJabbers Event Booking Calendar - 反射型跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://cxsecurity.com/issue/WLB-2026050008
     - https://www.phpjabbers.com/event-booking-calendar/

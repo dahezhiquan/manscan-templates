@@ -1,11 +1,10 @@
 id: phuket-cms-sqli
 
 info:
-  name: Phuket Solution CMS - SQL Injection
+  name: Phuket Solution CMS - SQL 注入漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    Phuket Solutions CMS is vulnerable to sql injection in which an attacker is able to manipulate an SQL query through user input, causing the application to execute unintended SQL code.
+  description: Phuket Solution CMS - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploitalert.com/view-details.html?id=36234
   classification:

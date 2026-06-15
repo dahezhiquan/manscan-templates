@@ -1,13 +1,13 @@
 id: infinitt-pacs-file-upload
 
 info:
-  name: Infinitt PACS System - Arbitary File Upload
+  name: Infinitt PACS System - Arbitary - 任意文件上传漏洞
   author: adeljck
   severity: critical
-  description: |
-    Infinitt PACS System is vulnerable to file upload vulnerability which allows an attacker to upload a webshell and gain unauthorized access to the server.
+  description: 该模板用于检测目标是否存在与 Infinitt PACS System - Arbitary File Upload 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   remediation: |
-    Ensure that file uploads are properly validated and sanitized. Implement strict access controls and monitoring to detect and prevent unauthorized file uploads.
+    - 对上传文件的类型、扩展名、内容特征和落地路径进行严格限制，避免脚本文件可执行。
+    - 将上传目录与 Web 可执行目录隔离，并增加病毒查杀、访问控制与审计监测。
   reference:
     - https://github.com/wy876/POC/blob/a9e4000fc76d0157b53ade916323b7b8256b17c3/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9FWebJobUpload%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   metadata:

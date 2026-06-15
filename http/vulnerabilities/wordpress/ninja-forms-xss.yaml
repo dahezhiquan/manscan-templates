@@ -1,15 +1,17 @@
 id: ninja-forms-xss
 
 info:
-  name: Ninja Forms < 3.5.5 - Cross-Site Scripting
+  name: Ninja Forms < 3.5.5 - 跨站脚本漏洞
   author: ritikchaddha
   severity: medium
-  description: |
-    The Ninja Forms WordPress plugin before 3.5.5 does not escape an URL before outputting it back in an attribute, leading to a Reflected Cross-Site Scripting which could be used against high privilege users such as admin
+  description: Ninja Forms < 3.5.5 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   impact: |
-    Attackers can potentially exploit this XSS vulnerability to gain unauthorized access to sensitive information.
+    - 攻击者可在受害者浏览器上下文中执行恶意脚本。
+    - 可能导致 Cookie 窃取、会话劫持、页面篡改或钓鱼攻击。
   remediation: |
-    Update the plugin to Latest version. Fixed in 3.5.5.
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in 3。
+    - 对所有可控输入实施严格校验，并在输出到 HTML、JavaScript 或 URL 上下文前完成正确编码。
+    - 如为后台或插件组件问题，建议同步更新到厂商已修复版本并审计相关功能入口。
   reference:
     - https://wpscan.com/vulnerability/ba6fa3d6-e3f7-449a-bd78-d57c26a67aa6/
   classification:

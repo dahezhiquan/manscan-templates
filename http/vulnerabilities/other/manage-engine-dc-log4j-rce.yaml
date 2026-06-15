@@ -1,11 +1,10 @@
 id: manage-engine-dc-log4j-rce
 
 info:
-  name: Manage Engine Desktop Central - Remote Code Execution (Apache Log4j)
+  name: Manage Engine Desktop Central - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    Manage Engine Endpoint Central (formerly Desktop Central) is susceptible to Log4j JNDI remote code execution. Endpoint Central is a Unified Endpoint Management (UEM) & Endpoint protection suite that helps manage and secure various network devices
+  description: Manage Engine Desktop Central - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://pitstop.manageengine.com/portal/en/community/topic/log4j-security-issue
   classification:

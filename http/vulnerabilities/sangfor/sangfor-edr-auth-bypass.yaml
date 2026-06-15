@@ -1,11 +1,10 @@
 id: sangfor-edr-auth-bypass
 
 info:
-  name: Sangfor EDR - Authentication Bypass
+  name: Sangfor EDR - 认证绕过漏洞
   author: princechaddha
   severity: high
-  description: |
-    Sangfor EDR contains an authentication bypass vulnerability. An attacker can access the system with admin privileges by accessing the login page directly using a provided username rather than going through the login screen without providing a username. This makes it possible to obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: Sangfor EDR - 认证绕过 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 8.1

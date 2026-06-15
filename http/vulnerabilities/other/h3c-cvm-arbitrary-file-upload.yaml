@@ -1,11 +1,10 @@
 id: h3c-cvm-arbitrary-file-upload
 
 info:
-  name: H3C CVM - Arbitrary File Upload
+  name: H3C CVM - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    An H3C CVM vulnerability allows for arbitrary file uploads. This enables attackers to upload any files they choose, acquire webshells, manipulate server permissions, and access sensitive information.
+  description: 该模板用于检测目标是否存在与 H3C CVM - 任意文件上传 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/h3c-cvm-fileupload.yaml
     - https://github.com/tr0uble-mAker/POC-bomber/blob/main/pocs/redteam/h3c_cvm_fileupload_2022.py

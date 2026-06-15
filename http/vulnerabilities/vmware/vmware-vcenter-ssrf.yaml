@@ -1,10 +1,10 @@
 id: vmware-vcenter-ssrf
 
 info:
-  name: VMware vCenter - Server-Side Request Forgery/Local File Inclusion/Cross-Site Scripting
+  name: VMware vCenter - 服务端请求伪造漏洞
   author: pdteam
   severity: critical
-  description: VMware vCenter 7.0.2.00100 is susceptible to multiple vulnerabilities including server-side request forgery, local file inclusion, and cross-site scripting.
+  description: VMware vCenter - Server-Side Request Forgery/本地文件包含/跨站脚本 存在服务端请求伪造漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/l0ggg/VMware_vCenter
   classification:

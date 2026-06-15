@@ -4,8 +4,7 @@ info:
   name: QiHang Media Web Digital Signage 3.0.9 - Cleartext Credentials Disclosure
   author: gy741
   severity: high
-  description: |
-    QiHang Media Web Digital Signage 3.0.9 suffers from a clear-text credentials disclosure vulnerability that allows an unauthenticated attacker to issue a request to an unprotected directory that hosts an XML file /xml/User/User.xml and obtain administrative login information that allows for a successful authentication bypass attack.
+  description: QiHang Media Web Digital Signage 3.0.9 - Cleartext Credentials Disclosure 存在认证绕过漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5579.php
   classification:

@@ -1,10 +1,10 @@
 id: acme-xss
 
 info:
-  name: Let's Encrypt - Cross-Site Scripting
+  name: Let's Encrypt - 跨站脚本漏洞
   author: pdteam
   severity: high
-  description: Let's Encrypt contains a cross-site scripting vulnerability when using the the ACME protocol to issue SSL certificates.
+  description: Let's Encrypt - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.mike-gualtieri.com/posts/chaining-remote-web-vulnerabilities-to-abuse-lets-encrypt
     - https://community.letsencrypt.org/t/xss-via-acme-implementations/72295

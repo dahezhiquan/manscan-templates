@@ -1,11 +1,10 @@
 id: powercreator-cms-rce
 
 info:
-  name: PowerCreator CMS - Remote Code Execution
+  name: PowerCreator CMS - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: |
-    PowerCreator CMS is susceptible to a remote code execution vulnerability.
+  description: PowerCreator CMS - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://wiki.96.mk/Web%E5%AE%89%E5%85%A8/PowerCreatorCms/PowerCreatorCms%E4%BB%BB%E6%84%8F%E4%B8%8A%E4%BC%A0/
   classification:

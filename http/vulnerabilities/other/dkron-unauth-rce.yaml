@@ -1,11 +1,10 @@
 id: dkron-unauth-rce
 
 info:
-  name: Dkron - Unauthenticated Remote Command Execution
+  name: Dkron - 未授权 - 远程命令执行漏洞
   author: icarot
   severity: high
-  description: |
-    An exposed Dkron server, a distributed and fault-tolerant job scheduling system for cloud-native environments, was found vulnerable to unauthenticated remote command execution (RCE).This flaw allowed attackers to execute arbitrary commands on the host without authentication.
+  description: Dkron - 未授权 远程命令执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/distribworks/dkron/
   metadata:

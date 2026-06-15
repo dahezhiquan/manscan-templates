@@ -1,10 +1,10 @@
 id: 404-to-301-xss
 
 info:
-  name: WordPress 404 to 301 Log Manager <3.1.2 - Cross-Site Scripting
+  name: WordPress 404 to 301 Log Manager <3.1.2 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: WordPress 404 to 301 Log Manager 3.1.2 does not escape some URLs before outputting them back in attributes, leading to reflected cross-site scripting.
+  description: WordPress 404 to 301 Log Manager <3.1.2 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/4a310b4f-79fa-4b74-93f8-e4522921abe1
     - https://wordpress.org/plugins/404-to-301

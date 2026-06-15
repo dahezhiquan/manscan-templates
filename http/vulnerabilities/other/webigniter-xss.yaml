@@ -1,11 +1,10 @@
 id: webigniter-xss
 
 info:
-  name: Webigniter 28.7.23 - Cross-Site Scripting
+  name: Webigniter 28.7.23 - 跨站脚本漏洞
   author: theamanrawat
   severity: medium
-  description: |
-    The value of the redirect request parameter is copied into the value of an HTML tag attribute which is encapsulated in double quotation marks. The payload ycsz3"><script>alert(1)</script>bn76w was submitted in the redirect parameter. This input was echoed unmodified in the application's response. By using this Java Script injection, the attacker can trick a lot of users into visiting his dangerous URL which is reflected on the login form, before they log in, warning them that there is a problem with the login
+  description: Webigniter 28.7.23 - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/nu11secur1ty/CVE-nu11secur1ty/tree/main/vendors/WEBIGniter/2023/WEBIGniter-28.7.23-XSS-Reflected
     - https://webigniter.net

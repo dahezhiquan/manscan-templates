@@ -4,7 +4,7 @@ info:
   name: WordPress license file disclosure
   author: yashgoti
   severity: info
-  description: Leaked WordPress license file.
+  description: WordPress license file disclosure 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 1
   tags: wordpress,vuln

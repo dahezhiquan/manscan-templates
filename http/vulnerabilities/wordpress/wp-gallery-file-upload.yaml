@@ -1,12 +1,14 @@
 id: wp-gallery-file-upload
 
 info:
-  name: WordPress Plugin Gallery 3.06 - Arbitrary File Upload
+  name: WordPress Plugin Gallery 3.06 - Arbitrary - 任意文件上传漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    The Gallery by BestWebSoft WordPress plugin was affected by an Unauthenticated File Upload PHP Code Execution security vulnerability.
-  remediation: Fixed in version 3.1.1
+  description: WordPress Plugin Gallery 3.06 - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in version 3。
+    - 对上传文件的类型、扩展名、内容特征和落地路径进行严格限制，避免脚本文件可执行。
+    - 将上传目录与 Web 可执行目录隔离，并增加病毒查杀、访问控制与审计监测。
   reference:
     - https://www.exploit-db.com/exploits/18998
     - http://wordpress.org/extend/plugins/gallery-plugin/

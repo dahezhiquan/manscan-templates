@@ -1,10 +1,10 @@
 id: natshell-path-traversal
 
 info:
-  name: NatShell - Local File Inclusion
+  name: NatShell - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: NatShell is vulnerable to local file inclusion.
+  description: NatShell - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://mp.weixin.qq.com/s/g4YNI6UBqIQcKL0TRkKWlw
   classification:

@@ -1,11 +1,14 @@
 id: mobileiron-log4j-rce
 
 info:
-  name: Ivanti MobileIron (Log4j) - Remote Code Execution
+  name: Ivanti MobileIron (Log4j) - 远程代码执行漏洞
   author: meme-lord
   severity: critical
-  description: Ivanti MobileIron is susceptible to remote code execution via the Apache Log4j2 library.  Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker-controlled LDAP and other JNDI-related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled.
-  remediation: From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.
+  description: Ivanti MobileIron (Log4j) - 远程代码执行 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：version 2.16.0。
+    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
+    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   reference:
     - https://github.com/advisories/GHSA-jfh8-c2jp-5v3q
     - https://www.lunasec.io/docs/blog/log4j-zero-day/

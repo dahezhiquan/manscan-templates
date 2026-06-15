@@ -4,8 +4,7 @@ info:
   name: ThinkPHP 6.0.0~6.0.1 - Arbitrary File Write
   author: arliya
   severity: critical
-  description: |
-    ThinkPHP 6.0.0~6.0.1 is susceptible to remote code execution. An attacker can upload any script file through this vulnerability to realize remote code execution takeover.We inject payload into PHPSESSID. In the buggy version, the payload is url encoded and returned as it is. In the fixed version, the payload is returned as a 32-bit hexadecimal string
+  description: ThinkPHP 6.0.0~6.0.1 - Arbitrary File Write 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://community.f5.com/t5/technical-articles/thinkphp-6-0-0-6-0-1-arbitrary-file-write-vulnerability/ta-p/281591
     - https://github.com/Loneyers/ThinkPHP6_Anyfile_operation_write

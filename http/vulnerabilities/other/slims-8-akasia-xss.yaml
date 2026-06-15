@@ -1,11 +1,10 @@
 id: slims-8-akasia-xss
 
 info:
-  name: Senayan Library Management System v8.3.1 (Akasia) - Cross-Site Scripting
+  name: Senayan Library Management System v8.3.1 (Akasia) - 跨站脚本漏洞
   author: nblirwn
   severity: medium
-  description: |
-    SLiMS 8.3.1 (Akasia) has a `destination` parameter that is vulnerable to reflected XSS. However, ensure that the `p` parameter points to the 'member'. Additional google dork 'intext:"SLiMS 8.3.1 (Akasia)"'.
+  description: Senayan Library Management System v8.3.1 (Akasia) - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/slims/slims8_akasia/issues/184
   metadata:

@@ -1,10 +1,10 @@
 id: pollbot-redirect
 
 info:
-  name: Mozilla Pollbot - Open Redirect
+  name: Mozilla Pollbot - 开放重定向漏洞
   author: Evan Rubinstien
   severity: medium
-  description: Mozilla Pollbot contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: Mozilla Pollbot - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://bugzilla.mozilla.org/show_bug.cgi?id=1753838
     - https://github.com/mozilla/PollBot

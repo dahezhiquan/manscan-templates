@@ -1,11 +1,10 @@
 id: castel-digital-sqli
 
 info:
-  name: Castel Digital - Authentication Bypass
+  name: Castel Digital - 认证绕过漏洞
   author: s4e-io
   severity: high
-  description: |
-    SQL Injection vulnerability in Castel Digital login forms.
+  description: Castel Digital - 认证绕过 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.casteldigital.com.br/
     - https://cxsecurity.com/issue/WLB-2024050032

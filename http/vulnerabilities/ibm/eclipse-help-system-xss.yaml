@@ -1,10 +1,10 @@
 id: eclipse-help-system-xss
 
 info:
-  name: IBM Eclipse Help System - Cross-Site Scripting
+  name: IBM Eclipse Help System - 跨站脚本漏洞
   author: pikpikcu
   severity: high
-  description: IBM Eclipse Help System 6.1.0 through 6.1.0.6, 6.1.5 through 6.1.5.3, 7.0 through 7.0.0.2, and 8.0 prior to 8.0.0.1 contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site.
+  description: IBM Eclipse Help System - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/131924/IBM-Eclipse-Help-System-IEHS-Cross-Site-Scripting.html
   classification:

@@ -1,11 +1,10 @@
 id: oracle-fatwire-lfi
 
 info:
-  name: Oracle Fatwire 6.3 - Path Traversal
+  name: Oracle Fatwire 6.3 - 路径遍历漏洞
   author: Bernardo Rodrigues @bernardofsr
   severity: high
-  description: |
-    Oracle Fatwire 6.3 suffers from a path traversal vulnerability in the getSurvey.jsp endpoint.
+  description: Oracle Fatwire 6.3 - Path Traversal 存在路径遍历漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/50167
   classification:

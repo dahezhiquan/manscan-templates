@@ -1,11 +1,10 @@
 id: tongdaoa-auth-bypass
 
 info:
-  name: Tongda OA - Authentication Bypass
+  name: Tongda OA - 认证绕过漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    Tongda OA is an OA system. The old version of header.inc.php has an authentication bypass vulnerability. An attacker can construct a malicious request to access header.inc.php, obtain the cookie, pass identity authentication, log in to the backend, perform related sensitive operations, and cause sensitive information leakage, etc.
+  description: Tongda OA - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/Phuong39/2022-HW-POC/blob/main/%E9%80%9A%E8%BE%BEOA%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E7%BB%95%E8%BF%87.md
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/tongda-oa-2017-auth-bypass.yaml

@@ -1,11 +1,10 @@
 id: yonyou-nc-dispatcher-fileupload
 
 info:
-  name: Yonyou NC ServiceDispatcher Servlet - Arbitrary File Upload
+  name: Yonyou NC ServiceDispatcher Servlet - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Yonyou NC ServiceDispatcherServlet deserialization file upload vulnerability.
+  description: Yonyou NC ServiceDispatcher Servlet - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/lal0ne/vulnerability/blob/c0985107adfd91d85fbd76d9a8acf8fbfa98ed41/YonyouNC/ncDecode/README.md
   classification:

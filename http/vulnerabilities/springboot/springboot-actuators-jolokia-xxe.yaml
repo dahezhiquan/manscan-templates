@@ -1,10 +1,10 @@
 id: springboot-actuators-jolokia-xxe
 
 info:
-  name: Spring Boot Actuators (Jolokia) XXE
+  name: Spring Boot Actuators (Jolokia) - XXE 漏洞
   author: dwisiswant0,ipanda
   severity: high
-  description: A vulnerability in Spring Boot Actuators's 'jolokia' endpoint allows remote attackers to perform an XML External Entities (XXE) attack and include content stored on a remote server as if it was its own. This has the potential to allow the execution of arbitrary code and/or disclosure of sensitive information from the target machine.
+  description: Spring Boot Actuators (Jolokia) XXE 存在XXE 漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.veracode.com/blog/research/exploiting-spring-boot-actuators
     - https://github.com/mpgn/Spring-Boot-Actuator-Exploit

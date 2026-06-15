@@ -1,10 +1,10 @@
 id: webpagetest-ssrf
 
 info:
-  name: Web Page Test - Server Side Request Forgery (SSRF)
+  name: Web Page Test - 服务端请求伪造 ( - 服务端请求伪造漏洞
   author: pdteam
   severity: high
-  description: Web Page Test is vulnerable to SSRF.
+  description: Web Page Test - 服务端请求伪造 (服务端请求伪造) 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://thinkloveshare.com/hacking/preauth_remote_code_execution_web_page_test/
     - https://github.com/WPO-Foundation/webpagetest

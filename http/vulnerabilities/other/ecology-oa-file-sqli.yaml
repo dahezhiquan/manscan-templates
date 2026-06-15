@@ -1,11 +1,10 @@
 id: ecology-oa-file-sqli
 
 info:
-  name: E-cology FileDownloadForOutDocSQL - SQL Injection
+  name: E-cology FileDownloadForOutDocSQL - SQL 注入漏洞
   author: momika233
   severity: high
-  description: |
-    e-cology did not effectively filter the user input, but directly spliced it into the SQL query statement, resulting in SQL injection vulnerabilities in the system
+  description: E-cology FileDownloadForOutDocSQL - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/TgHook/Vulnerability-Wiki/blob/master/docs-base/docs/oa/%E6%B3%9B%E5%BE%AEOA%20e-cology%20FileDownloadForOutDoc%E5%89%8D%E5%8F%B0SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   classification:

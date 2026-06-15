@@ -1,10 +1,10 @@
 id: umbraco-base-ssrf
 
 info:
-  name: Umbraco 8.14.1 - baseUrl Server-Side Request Forgery (SSRF)
+  name: Umbraco 8.14.1 - baseUrl - 服务端请求伪造漏洞
   author: dhiyaneshDk
   severity: medium
-  description: Umbraco 8.1.4.1 allows attackers to use the baseUrl parameter to several programs to perform a server-side request forgery (SSRF) attack.
+  description: Umbraco 8.14.1 - baseUrl Server-Side Request Forgery (服务端请求伪造) 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://www.exploit-db.com/exploits/50462
   classification:

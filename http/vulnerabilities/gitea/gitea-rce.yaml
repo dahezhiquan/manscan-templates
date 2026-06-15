@@ -1,11 +1,10 @@
 id: gitea-rce
 
 info:
-  name: Gitea 1.4.0 - Remote Code Execution
+  name: Gitea 1.4.0 - 远程代码执行漏洞
   author: theamanrawat
   severity: critical
-  description: |
-    Gitea 1.4.0 is vulnerable to remote code execution.
+  description: Gitea 1.4.0 - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://www.exploit-db.com/exploits/44996
     - https://github.com/kacperszurek/exploits/blob/master/Gitea/gitea_lfs_rce.py

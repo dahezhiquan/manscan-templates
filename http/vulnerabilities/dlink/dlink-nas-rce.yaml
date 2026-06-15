@@ -1,13 +1,13 @@
 id: dlink-nas-rce
 
 info:
-  name: D-Link NAS `sc_mgr.cgi` - Remote Code Execution
+  name: D-Link NAS `sc_mgr.cgi` - 远程代码执行漏洞
   author: adeljck
   severity: critical
-  description: |
-    The D-Link NAS interface sc_mgr.cgi contains a command execution vulnerability that allows attackers to execute arbitrary commands on the device, potentially leading to unauthorized access or control over the system.
+  description: D-Link NAS `sc_mgr.cgi` - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   remediation: |
-    To remediate this vulnerability, ensure that the device firmware is updated to the latest version provided by the manufacturer. Additionally, consider implementing network segmentation and firewall rules to restrict unauthorized access to the device.
+    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
+    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   classification:
     cwe-id: CWE-78
   metadata:

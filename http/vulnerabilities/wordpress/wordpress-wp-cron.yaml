@@ -4,7 +4,7 @@ info:
   name: Wordpress wp-cron.php DOS
   author: pathtaga
   severity: info
-  description: When this file is accessed a heavy MySQL query is performed, so it could be used by attackers to cause a DoS.
+  description: Wordpress wp-cron.php DOS 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/wordpress.html
     - https://medium.com/@thecpanelguy/the-nightmare-that-is-wpcron-php-ae31c1d3ae30

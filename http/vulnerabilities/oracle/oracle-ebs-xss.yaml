@@ -1,10 +1,10 @@
 id: oracle-ebs-xss
 
 info:
-  name: Oracle E-Business Suite - Cross-Site Scripting
+  name: Oracle E-Business Suite - 跨站脚本漏洞
   author: dhiyaneshDk
   severity: medium
-  description: Oracle E-Business Suite is vulnerable to Cross Site Scripting.
+  description: Oracle E-Business Suite - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.blackhat.com/docs/us-16/materials/us-16-Litchfield-Hackproofing-Oracle-eBusiness-Suite.pdf
     - http://www.davidlitchfield.com/AssessingOraclee-BusinessSuite11i.pdf

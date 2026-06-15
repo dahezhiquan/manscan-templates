@@ -4,7 +4,7 @@ info:
   name: Woocommerce - PDF Invoice Exposure
   author: mohammedsaneem,sec_hawk
   severity: medium
-  description: A vulnerability in Woocommerce allows remote unauthenticated attackers to access company invoices and other sensitive information.
+  description: Woocommerce - PDF Invoice Exposure 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://twitter.com/sec_hawk/status/1426984595094913025?s=21
     - https://github.com/Mohammedsaneem/wordpress-upload-information-disclosure/blob/main/worpress-upload.yaml

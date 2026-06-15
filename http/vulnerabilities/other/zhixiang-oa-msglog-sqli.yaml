@@ -1,10 +1,10 @@
 id: zhixiang-oa-msglog-sqli
 
 info:
-  name: Zhixiang OA msglog.aspx - SQL injection
+  name: Zhixiang OA msglog.aspx - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: There is a SQL injection vulnerability in the msglog.aspx file of Zhixiang OA. Attackers can obtain sensitive information through the vulnerability.
+  description: Zhixiang OA msglog.aspx - SQL injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - http://wiki.peiqi.tech/wiki/oa/%E8%87%B4%E7%BF%94OA/%E8%87%B4%E7%BF%94OA%20msglog.aspx%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.html
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E8%87%B4%E7%BF%94OA/%E8%87%B4%E7%BF%94OA%20msglog.aspx%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md

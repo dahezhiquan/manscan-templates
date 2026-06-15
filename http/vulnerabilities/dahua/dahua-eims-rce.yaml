@@ -1,11 +1,10 @@
 id: dahua-eims-rce
 
 info:
-  name: Dahua EIMS - Remote Command Execution
+  name: Dahua EIMS - 远程命令执行漏洞
   author: DhiyaneshDk
   severity: critical
-  description: |
-    Dahua EIMS capture_handle interface allows remote command execution.
+  description: Dahua EIMS - 远程命令执行 存在远程命令执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/wy876/POC/blob/main/%E5%A4%A7%E5%8D%8EEIMS-capture_handle%E6%8E%A5%E5%8F%A3%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
     - https://cn-sec.com/archives/2554372.html

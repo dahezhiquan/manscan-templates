@@ -1,10 +1,10 @@
 id: dahua-wpms-lfi
 
 info:
-  name: Dahua Smart Park Management Platform - Arbitary File Read
+  name: Dahua Smart Park Management Platform - Arbitary - 任意文件读取漏洞
   author: DhiyaneshDk
   severity: high
-  description: Dahua Smart Park Management Platform is vulnerable to Local File Inclusion.
+  description: Dahua Smart Park Management Platform - Arbitary File Read 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://mp.weixin.qq.com/s/uRhVl2XC5fTNKO8eDFFebA
     - https://github.com/Vme18000yuan/FreePOC/blob/master/poc/pocsuite/dahua_zhyq_attachment_fileread.py

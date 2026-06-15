@@ -1,7 +1,7 @@
 id: jira-unauthenticated-screens
 
 info:
-  name: Jira Unauthenticated Access to screens
+  name: Jira - 未授权访问漏洞
   author: TESS
   severity: info
   reference:

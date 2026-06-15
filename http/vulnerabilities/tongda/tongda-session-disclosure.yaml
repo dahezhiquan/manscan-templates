@@ -4,7 +4,7 @@ info:
   name: Tongda User Session Disclosure
   author: ritikchaddha
   severity: medium
-  description: Tongda User session exposed.
+  description: Tongda User Session Disclosure 存在安全漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   reference:
     - https://mp.weixin.qq.com/s/llyGEBRo0t-C7xOLMDYfFQ
   metadata:

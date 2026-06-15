@@ -1,11 +1,10 @@
 id: fronsetiav-xss
 
 info:
-  name: Fronsetiav1.1 - Cross-Site Scripting
+  name: Fronsetiav1.1 - 跨站脚本漏洞
   author: s4e-io
   severity: high
-  description: |
-    The fronsetiav1.1 application is vulnerable to a Reflected XSS attack through the show_operations.jsp endpoint. An attacker can inject malicious scripts via the WSDL Location input, which is executed in the victim's browser due to improper input sanitization. This allows attackers to execute arbitrary JavaScript, potentially stealing sensitive data or performing phishing attacks..
+  description: Fronsetiav1.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://seclists.org/fulldisclosure/2024/Nov/10
     - https://packetstormsecurity.com/files/182764/fronsetia-1.1-Cross-Site-Scripting.html

@@ -1,11 +1,10 @@
 id: shoowbiz-xss
 
 info:
-  name: SHOOWBIZ - Cross Site Scripting
+  name: SHOOWBIZ - 跨站脚本漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    Cross-Site Scripting, is a type of security vulnerability commonly found in web applications. It occurs when an attacker injects malicious scripts (typically written in JavaScript) into web pages viewed by other users.
+  description: SHOOWBIZ - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploitalert.com/view-details.html?id=36000
   metadata:

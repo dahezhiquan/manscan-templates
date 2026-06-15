@@ -1,11 +1,10 @@
 id: weaver-uploadoperation-file-upload
 
 info:
-  name: Weaver OA Workrelate - Arbitary File Upload
+  name: Weaver OA Workrelate - Arbitary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Ecology contains an arbitrary file upload vulnerability. An attacker can upload arbitrary files to the server, which in turn can be used to make the application execute file content as code, As a result, an attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: Weaver OA Workrelate - Arbitary File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/weaver-oa-workrelate-file-upload.yaml

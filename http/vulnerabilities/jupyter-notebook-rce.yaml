@@ -1,11 +1,10 @@
 id: jupyter-notebook-rce
 
 info:
-  name: Jupyter Notebook - Remote Command Execution
+  name: Jupyter Notebook - 远程命令执行漏洞
   author: HuTa0
   severity: high
-  description: |
-    Jupyter Notebook is an interactive Notebook, computer application is a web based visualization, Jupyter Notebook API/terminals path there are loopholes in the remote command execution.
+  description: Jupyter Notebook - 远程命令执行 存在远程命令执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/SCAMagic/SCAMagicScan/blob/de8130a2280ee08d719ac6612e590b8e2678fb97/pocs/poc-yaml-jupyter-notebook-rce.py
   classification:

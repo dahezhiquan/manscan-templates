@@ -1,11 +1,13 @@
 id: zhiyuan-file-upload
 
 info:
-  name: Zhiyuan OA Arbitrary File Upload Vulnerability
+  name: Zhiyuan OA Arbitrary - 任意文件上传漏洞
   author: gy741
   severity: critical
-  description: A vulnerability in Zhiyuan OA allows remote unauthenticated attackers to upload arbitrary files to the remote server and cause execute arbitrary code to be executed.
-  remediation: Apply the appropriate patch.
+  description: Zhiyuan OA 任意文件上传 Vulnerability 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  remediation: |
+    - 对上传文件的类型、扩展名、内容特征和落地路径进行严格限制，避免脚本文件可执行。
+    - 将上传目录与 Web 可执行目录隔离，并增加病毒查杀、访问控制与审计监测。
   reference:
     - https://www.programmersought.com/article/92658169875/
   metadata:

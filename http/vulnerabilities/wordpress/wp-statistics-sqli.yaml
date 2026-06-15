@@ -1,11 +1,10 @@
 id: wp-statistics-sqli
 
 info:
-  name: WordPress WP Statistics Plugin 13.0.7 - SQL Injection
+  name: WordPress WP Statistics Plugin 13.0.7 - SQL 注入漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    WordPress Plugin WP Statistics 13.0.7  contains an unauthenticated Time based SQL injection vulnerability. The plugin does not sanitize and escape the id parameter before using it in a SQL statement, leading to an unauthenticated blind SQL injection. An attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized administrative operations in the context of the affected site.
+  description: WordPress WP Statistics Plugin 13.0.7 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploit-db.com/exploits/49894
     - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wp-statistics-sql-injection-13-0-7/

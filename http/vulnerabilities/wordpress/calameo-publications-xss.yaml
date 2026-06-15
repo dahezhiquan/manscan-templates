@@ -1,11 +1,10 @@
 id: calameo-publications-xss
 
 info:
-  name: WordPress Manage Calameo Publications 1.1.0 - Cross-Site Scripting
+  name: WordPress Manage Calameo Publications 1.1.0 - 跨站脚本漏洞
   author: DhiyaneshDK
   severity: medium
-  description: |
-    WordPress Manage Calameo Publications 1.1.0 is vulnerable to reflected cross-site scripting via  thickbox_content.php and the attachment_id parameter.
+  description: WordPress Manage Calameo Publications 1.1.0 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://codevigilant.com/disclosure/wp-plugin-athlon-manage-calameo-publications-a3-cross-site-scripting-xss/
     - https://wpscan.com/vulnerability/83343eb3-bb4c-4b82-adf6-745882f872cc

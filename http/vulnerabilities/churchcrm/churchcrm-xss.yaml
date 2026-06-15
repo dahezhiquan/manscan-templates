@@ -1,11 +1,10 @@
 id: churchcrm-xss
 
 info:
-  name: ChurchCRM - Cross-Site Scripting
+  name: ChurchCRM - 跨站脚本漏洞
   author: pikpikcu
   severity: medium
-  description: |
-    A reflected cross-site scripting (XSS) vulnerability was discovered in ChurchCRM via the 'username' parameter in /session/begin.
+  description: ChurchCRM - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/ChurchCRM/CRM/blob/91cfa8eb00aef724705f5e038c236c146c6cf3a6/src/session/templates/begin-session.php#L39
   classification:

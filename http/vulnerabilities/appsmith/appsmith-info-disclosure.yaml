@@ -1,15 +1,16 @@
 id: appsmith-info-disclosure
 
 info:
-  name: Appsmith <= v1.97 - Information Disclosure
+  name: Appsmith <= v1.97 - 信息泄露漏洞
   author: ritikchaddha
   severity: medium
-  description: |
-    Appsmith <= v1.97 instance management API endpoints are accessible without authentication, allowing an attacker to obtain sensitive information such as license plan, instance ID, authentication providers, feature flags, and configuration metadata via unauthenticated requests to specific API endpoints.
+  description: Appsmith <= v1.97 的实例管理 API 端点可在未认证情况下访问，攻击者可借此获取许可证计划、实例 ID、认证提供方、功能开关及配置元数据等敏感信息。
   impact: |
-    Attackers can extract detailed information about Appsmith enterprise features, authentication methods, and configuration, enabling more focused and effective attacks against the instance and its users.
+    - 攻击者可获取系统配置、用户信息、节点信息或其他敏感元数据。
+    - 这些信息可显著降低后续定向攻击、撞库或暴力破解的门槛。
   remediation: |
-    Restrict unauthenticated access to the management API endpoints and ensure that only authorized users can retrieve sensitive configuration information.
+    - 为敏感接口补充鉴权与最小化返回策略，避免未授权用户获取配置、账户或节点信息。
+    - 审核日志、错误页和调试接口的输出内容，关闭不必要的调试或管理入口。
   reference:
     - https://github.com/appsmithorg/appsmith/security/advisories/GHSA-qvvc-prjx-f85j
   classification:

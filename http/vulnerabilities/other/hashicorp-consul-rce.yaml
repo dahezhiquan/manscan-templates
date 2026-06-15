@@ -1,10 +1,10 @@
 id: hashicorp-consul-rce
 
 info:
-  name: Hashicorp Consul Services API - Remote Code Execution
+  name: Hashicorp Consul Services API - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: Hashicorp Consul Services API is vulnerable to an attack that can be leveraged to perform remote command execution on Consul nodes.
+  description: Hashicorp Consul Services API - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://www.exploit-db.com/exploits/46074
   classification:

@@ -4,8 +4,7 @@ info:
   name: Social Metrics Tracker <= 1.6.8 - Unauthorised Data Export
   author: randomrobbie
   severity: medium
-  description: |
-    The lack of proper authorisation when exporting data from the plugin could allow unauthenticated users to get information about the posts and page of the blog, including their author's username and email.
+  description: Social Metrics Tracker <= 1.6.8 - Unauthorised Data Export 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://wpscan.com/vulnerability/f4eed3ba-2746-426f-b030-a8c432defeb2
   metadata:

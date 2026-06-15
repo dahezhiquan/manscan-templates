@@ -1,11 +1,10 @@
 id: acti-video-lfi
 
 info:
-  name: ACTi-Video Monitoring - Local File Inclusion
+  name: ACTi-Video Monitoring - 本地文件包含漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    ACTI video surveillance has loopholes in reading any files
+  description: ACTi-Video Monitoring - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.cnblogs.com/hmesed/p/16292252.html
   classification:

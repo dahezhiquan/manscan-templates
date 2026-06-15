@@ -1,10 +1,10 @@
 id: crystal-live-server-lfi
 
 info:
-  name: Crystal Live HTTP Server 6.01 - Local File Inclusion
+  name: Crystal Live HTTP Server 6.01 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: Crystal Live HTTP Server 6.01 is vulnerable to local file inclusion.
+  description: Crystal Live HTTP Server 6.01 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://cxsecurity.com/issue/WLB-2019110127
   classification:

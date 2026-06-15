@@ -1,11 +1,10 @@
 id: leantime-stored-xss
 
 info:
-  name: Leantime < 3.3 = Cross-Site Scripting
+  name: Leantime < 3.3 = - 跨站脚本漏洞
   author: iamnoooob,rootxharsh,pdresearch
   severity: high
-  description: |
-    Any low privileged user like manager, or editor, can create an API key with XSS payload. When admin will visit the Company page, the XSS will automatically get triggerred leading to the unauthorized action performed from the ADMIN account. Like, removing any user, or adding someone else as high privilege, and many more.
+  description: Leantime < 3.3 = 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/advisories/GHSA-c39w-3pjx-qc7m
   classification:

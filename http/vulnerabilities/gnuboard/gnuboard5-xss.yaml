@@ -1,11 +1,10 @@
 id: gnuboard5-xss
 
 info:
-  name: Gnuboard 5 - Cross-Site Scripting
+  name: Gnuboard 5 - 跨站脚本漏洞
   author: arafatansari
   severity: medium
-  description: |
-    Gnuboard 5 contains a cross-site scripting vulnerability via the clean_xss_tags() function called in new.php.
+  description: Gnuboard 5 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://huntr.dev/bounties/ad2a9b32-fe6c-43e9-9b05-2c77c58dde6a/
   classification:

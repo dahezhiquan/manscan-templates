@@ -1,10 +1,10 @@
 id: geowebserver-xss
 
 info:
-  name: GeoVision Geowebserver 5.3.3 - Cross-Site Scripting
+  name: GeoVision Geowebserver 5.3.3 - 跨站脚本漏洞
   author: madrobot
   severity: high
-  description: GeoVision Geowebserver 5.3.3 and prior versions are vulnerable to several cross-site scripting / HTML injection / local file inclusion / XML injection / code execution vectors because the application fails to properly sanitize user requests.
+  description: GeoVision Geowebserver 5.3.3 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/163860/geovisiongws533-lfixssxsrfexec.txt
   classification:

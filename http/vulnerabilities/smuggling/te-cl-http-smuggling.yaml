@@ -4,8 +4,7 @@ info:
   name: Basic TE.CL - HTTP Request Smuggling
   author: pdteam,akincibor
   severity: low
-  description: |
-    Detected a potential TE.CL request smuggling condition where an injected Transfer-Encoding header conflicted with an existing Content-Length header, causing differing parsing behavior between proxy and backend.
+  description: Basic TE.CL - HTTP Request Smuggling 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl
   metadata:

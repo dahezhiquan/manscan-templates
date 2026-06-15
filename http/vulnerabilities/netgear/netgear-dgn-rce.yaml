@@ -4,8 +4,7 @@ info:
   name: Netgear DGN Devices - Command Execution
   author: 3th1c_yuk1
   severity: critical
-  description: |
-    This template checks for unauthenticated command execution vulnerability in Netgear DGN devices. Attackers can bypass authentication mechanisms and execute arbitrary commands with root privileges.
+  description: Netgear DGN Devices - Command Execution 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.crowdsec.net/blog/netgear-rce-and-how-vulnerabilities-persist-in-the-wild
     - https://github.com/rapid7/metasploit-framework/blob/master/documentation/modules/exploit/linux/http/netgear_dgn1000_setup_unauth_exec.md

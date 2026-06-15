@@ -1,14 +1,10 @@
 id: sharepoint-toolshell-backdoor
 
 info:
-  name: SharePoint Webshell - ToolShell
+  name: SharePoint - WebShell 检测
   author: johnk3r
   severity: critical
-  description: |
-    Detects a persistent webshell named 'spinstall0.aspx' deployed on Microsoft SharePoint servers.
-    This file exposes sensitive cryptographic machineKey values from the SharePoint configuration,
-    indicating the presence of a ToolShell backdoor implant. This implant is linked to targeted
-    post-auth RCE campaigns exploiting CVE-2025-53770.
+  description: 该模板用于检测目标是否存在与 SharePoint Webshell - ToolShell 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://research.eye.security/sharepoint-under-siege/
   metadata:

@@ -1,11 +1,10 @@
 id: nsfocus-lfi
 
 info:
-  name: Nsfocus - Arbitrary File Read
+  name: Nsfocus - 任意文件读取漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    Nsfocus bastion has an Arbitrary File Read Vulnerability through '/webconf/GetFile/'.
+  description: Nsfocus - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://forum.butian.net/article/250
   metadata:

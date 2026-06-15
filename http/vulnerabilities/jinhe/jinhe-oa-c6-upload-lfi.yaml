@@ -1,11 +1,10 @@
 id: jinhe-oa-c6-upload-lfi
 
 info:
-  name: Jinhe OA_C6_UploadFileDownLoadnew - Arbitrary File Read
+  name: Jinhe OA_C6_UploadFileDownLoadnew - 任意文件读取漏洞
   author: pussycat0x
   severity: high
-  description: |
-    There is an arbitrary file reading vulnerability in the UploadFileDownLoadnew.aspx interface of Jinhe OA C6. An unauthenticated attacker can use this vulnerability to read important system files (such as database configuration files, system configuration files), database configuration files, etc., causing the website to be in Extremely unsafe state.
+  description: Jinhe OA_C6_UploadFileDownLoadnew - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://github.com/wy876/POC/blob/main/%E9%87%91%E5%92%8COA_C6_UploadFileDownLoadnew%E5%AD%98%E5%9C%A8%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   classification:

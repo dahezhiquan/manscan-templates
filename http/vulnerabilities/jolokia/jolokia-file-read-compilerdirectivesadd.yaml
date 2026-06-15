@@ -1,10 +1,10 @@
 id: jolokia-file-read-compilerdirectivesadd
 
 info:
-  name: Jolokia - CompilerDirectivesAdd File Read
+  name: Jolokia - CompilerDirectivesAdd - 任意文件读取漏洞
   author: dhiyaneshDk
   severity: high
-  description: Jolokia is vulnerable to local file inclusion via compilerDirectivesAdd.
+  description: Jolokia - CompilerDirectivesAdd File Read 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit

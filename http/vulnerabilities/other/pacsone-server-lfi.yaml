@@ -1,10 +1,10 @@
 id: pacsone-server-lfi
 
 info:
-  name: PACSOne Server 6.6.2 - Local File Inclusion
+  name: PACSOne Server 6.6.2 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: PACSOne Server 6.6.2 is vulnerable to local file inclusion via its integrated DICOM Web Viewer.
+  description: PACSOne Server 6.6.2 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://cxsecurity.com/issue/WLB-2018010303
   classification:

@@ -1,11 +1,10 @@
 id: epp-server-lfi
 
 info:
-  name: EPP Server - Local File Inclusion
+  name: EPP Server - 本地文件包含漏洞
   author: DhiyaneshDK
   severity: high
-  description: |
-    servlet called "CitiesServlet" that handles HTTP GET requests, so the user-provided input, obtained from the country parameter, is directly concatenated with the "/cities/cities_" string to form the fileName, This means an attacker can manipulate the country parameter and potentially access arbitrary files on the server's file system
+  description: EPP Server - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://hackcompute.com/hacking-epp-servers/
   metadata:

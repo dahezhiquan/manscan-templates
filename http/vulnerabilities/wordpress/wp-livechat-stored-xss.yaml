@@ -1,11 +1,10 @@
 id: wp-livechat-stored-xss
 
 info:
-  name: WordPress LiveChat < 3.7.6 - Unauthenticated Stored XSS
+  name: WordPress LiveChat < 3.7.6 - 未授权访问漏洞
   author: 0x_Akoko
   severity: high
-  description: |
-    WordPress LiveChat plugin before < 3.7.6 lacked CSRF and authorization checks on the option update handler in the LiveChatAdmin constructor. The code ran on any POST to a wp-admin URL without Referer validation, nonce check, or capability verification. This allowed unauthenticated attackers to update plugin settings.
+  description: WordPress LiveChat < 3.7.6 - 未授权 存储型跨站脚本 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://wpscan.com/plugin/wp-live-chat-software-for-wordpress/
     - https://wordpress.org/plugins/wp-live-chat-software-for-wordpress

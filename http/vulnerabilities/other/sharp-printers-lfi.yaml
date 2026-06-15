@@ -1,13 +1,13 @@
 id: sharp-printers-lfi
 
 info:
-  name: Sharp Multifunction Printers - Local File Inclusion
+  name: Sharp Multifunction Printers - 本地文件包含漏洞
   author: gy741
   severity: high
-  description: |
-    It was observed that Sharp printers are vulnerable to a local file inclusion without authentication. Any attacker can read any file located in the printer.
+  description: Sharp Multifunction Printers - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   remediation: |
-    Apply all relevant security patches and product upgrades.
+    - 修复路径拼接与文件访问控制逻辑，禁止用户输入直接决定本地文件路径。
+    - 收敛 Web 进程对敏感目录的读取权限，并对关键配置文件实施访问隔离。
   reference:
     - https://pierrekim.github.io/blog/2024-06-27-sharp-mfp-17-vulnerabilities.html#pre-auth-lfi
     - https://jvn.jp/en/vu/JVNVU93051062/index.html

@@ -1,11 +1,10 @@
 id: webp-server-lfi
 
 info:
-  name: Webp Server Go - Path Traversal
+  name: Webp Server Go - 路径遍历漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    Webp Server Go has an Path Traversal vulnerability. Attackers can use the vulnerability to access arbitraty file.
+  description: Webp Server Go - Path Traversal 存在路径遍历漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://github.com/webp-sh/webp_server_go/issues/92
   metadata:

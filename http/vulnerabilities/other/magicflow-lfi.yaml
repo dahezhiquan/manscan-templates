@@ -1,11 +1,10 @@
 id: magicflow-lfi
 
 info:
-  name: MagicFlow - Local File Inclusion
+  name: MagicFlow - 本地文件包含漏洞
   author: gy741
   severity: high
-  description: |
-    MagicFlow is susceptible to local file inclusion vulnerabilities because it allows remote unauthenticated users to access locally stored files on the server and return their content via the '/msa/main.xp' endpoint and the 'Fun' parameter.
+  description: MagicFlow - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.seebug.org/vuldb/ssvid-89258
   classification:

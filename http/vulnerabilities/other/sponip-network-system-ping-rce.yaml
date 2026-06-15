@@ -1,11 +1,10 @@
 id: sponip-network-system-ping-rce
 
 info:
-  name: Sponip Network System Ping - Remote Code Execution
+  name: Sponip Network System Ping - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: |
-    Sponip Network System Ping is susceptible to remote code execution.
+  description: Sponip Network System Ping - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://mp.weixin.qq.com/s?__biz=Mzg3NDU2MTg0Ng==&mid=2247486018&idx=1&sn=d744907475a4ea9ebeb26338c735e3e9
   classification:

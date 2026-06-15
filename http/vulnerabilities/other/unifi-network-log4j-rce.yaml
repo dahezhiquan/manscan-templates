@@ -1,11 +1,10 @@
 id: unifi-network-log4j-rce
 
 info:
-  name: UniFi Network Application - Remote Code Execution (Apache Log4j)
+  name: UniFi Network Application - 远程代码执行漏洞
   author: KrE80r
   severity: critical
-  description: |
-    UniFi Network Application is susceptible to a critical vulnerability in Apache Log4j (CVE-2021-44228) that may allow for remote code execution in an impacted implementation.
+  description: UniFi Network Application - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://community.ui.com/releases/UniFi-Network-Application-6-5-55/48c64137-4a4a-41f7-b7e4-3bee505ae16e
     - https://twitter.com/sprocket_ed/status/1473301038832701441

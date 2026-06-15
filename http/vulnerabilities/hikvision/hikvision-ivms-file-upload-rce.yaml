@@ -1,11 +1,10 @@
 id: hikvision-ivms-file-upload-rce
 
 info:
-  name: Hikvision iVMS-8700 - File Upload Remote Code Execution
+  name: Hikvision iVMS-8700 - File Upload - 远程代码执行漏洞
   author: brucelsone
   severity: critical
-  description: |
-    Arbitrary file upload vulnerability in HIKVISION iVMS-8700 Integrated Security Management Platform Software allows attackers to upload and execute malicious files, leading to potential unauthorized server control.
+  description: Hikvision iVMS-8700 - File Upload 远程代码执行 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.wangan.com/p/11v754aceadb994f
     - https://cn-sec.com/archives/1828326.html

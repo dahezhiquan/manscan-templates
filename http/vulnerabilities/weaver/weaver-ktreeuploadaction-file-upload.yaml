@@ -1,11 +1,10 @@
 id: weaver-ktreeuploadaction-file-upload
 
 info:
-  name: Weaver E-Cology KtreeUploadAction - Arbitrary File Upload
+  name: Weaver E-Cology KtreeUploadAction - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    There is a file upload vulnerability in Weaver E-Cology. An attacker can upload any file through KtreeUploadAction.jsp and further exploit it.
+  description: Weaver E-Cology KtreeUploadAction - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://buaq.net/go-117479.html
   classification:

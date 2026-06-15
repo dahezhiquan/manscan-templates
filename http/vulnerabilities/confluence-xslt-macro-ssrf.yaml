@@ -1,11 +1,10 @@
 id: confluence-xslt-macro-ssrf
 
 info:
-  name: Atlassian Confluence XSLT Macro - Server-Side Request Forgery
+  name: Atlassian Confluence XSLT Macro - 服务端请求伪造漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    Atlassian Confluence Data Center and Server include an XSLT macro feature that may be vulnerable to Server-Side Request Forgery (SSRF). By leveraging the ability of the XSLT macro to access external resources, attackers can potentially cause the server to make HTTP requests to arbitrary URLs. This can allow internal network scanning, access to sensitive systems, or exposure of internal information.
+  description: Atlassian Confluence XSLT Macro - Server-Side Request Forgery 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://jira.atlassian.com/browse/CONFSERVER-101489
   classification:

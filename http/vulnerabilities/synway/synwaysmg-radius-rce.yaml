@@ -1,11 +1,10 @@
 id: sanhuismg-radius-rce
 
 info:
-  name: Synway SMG Gateway 9-2radius.php - Remote Command Execution
+  name: Synway SMG Gateway 9-2radius.php - 远程命令执行漏洞
   author: Chenkh
   severity: critical
-  description: |
-    Synway SMG Gateway Management Software contains a remote command execution vulnerability in 9-2radius.php, where the radius_address parameter is passed to a system() call without sanitization. This allows unauthenticated attackers to execute arbitrary commands on the server.
+  description: Synway SMG Gateway 9-2radius.php - 远程命令执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://mp.weixin.qq.com/s/PyepoFSuQ63E3RnpQa9nsA
   metadata:

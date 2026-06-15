@@ -1,11 +1,10 @@
 id: ups-network-lfi
 
 info:
-  name: UPS Network Management Card 4 Path Traversal
+  name: UPS Network Management Card 4 - 路径遍历漏洞
   author: s4e-io
   severity: high
-  description: |
-    UPS Network Management Card version 4 suffers from a path traversal vulnerability.
+  description: UPS Network Management Card 4 Path Traversal 存在路径遍历漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://packetstormsecurity.com/files/177626/upsnmc4-traversal.txt
     - https://www.exploit-db.com/exploits/51897

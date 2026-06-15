@@ -1,11 +1,10 @@
 id: weaver-eoffice-file-upload
 
 info:
-  name: Weaver E-Office v9.5 - Arbitrary File Upload
+  name: Weaver E-Office v9.5 - Arbitrary - 任意文件上传漏洞
   author: princechaddha
   severity: high
-  description: |
-    Weaver E-Office version 9.5 is susceptible to an arbitrary file upload vulnerability. This flaw allows malicious actors to upload and execute arbitrary code or files without proper validation or authorization.
+  description: Weaver E-Office v9.5 - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/RCEraser/cve/blob/main/Weaver.md
   classification:

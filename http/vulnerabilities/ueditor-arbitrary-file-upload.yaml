@@ -1,11 +1,10 @@
 id: ueditor-arbitrary-file-upload
 
 info:
-  name: UEditor - PHP Arbitrary File Upload
+  name: UEditor - PHP Arbitrary - 任意文件上传漏洞
   author: ChiragArtani
   severity: medium
-  description: |
-    Detects arbitrary file upload vulnerability in UEditor PHP  by attempting to upload and execute a PHP file. This vulnerability allows remote attackers to upload arbitrary files including PHP files, potentially leading to remote code execution.
+  description: UEditor - PHP 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.rescuetime.com/focus/url/https%3A%2F%2Fwww.cnblogs.com%2Fzhibing%2Fp%2F16893839.html%23_4
   classification:

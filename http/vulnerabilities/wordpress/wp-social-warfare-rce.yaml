@@ -1,12 +1,14 @@
 id: wp-social-warfare-rce
 
 info:
-  name: Social Warfare <= 3.5.2 - Remote Code Execution
+  name: Social Warfare <= 3.5.2 - 远程代码执行漏洞
   author: theamanrawat
   severity: critical
-  description: |
-    Unauthenticated remote code execution has been discovered in functionality that handles settings import.
-  remediation: Fixed in version 3.5.3
+  description: Social Warfare <= 3.5.2 - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in version 3。
+    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
+    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   reference:
     - https://wpscan.com/vulnerability/9259
     - https://wordpress.org/plugins/social-warfare/

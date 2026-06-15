@@ -1,10 +1,10 @@
 id: modula-image-gallery-xss
 
 info:
-  name: WordPress Modula Image Gallery <2.6.7 - Cross-Site Scripting
+  name: WordPress Modula Image Gallery <2.6.7 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: WordPress Modula Image Gallery 2.6.7 does not escape some URLs before outputting them back in attributes, leading to reflected cross-site scripting.
+  description: WordPress Modula Image Gallery <2.6.7 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/ee248078-89ee-4cc0-b0fe-e932cd00db3e
     - https://wordpress.org/plugins/modula-best-grid-gallery

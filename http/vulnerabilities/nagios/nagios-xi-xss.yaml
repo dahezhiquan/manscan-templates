@@ -1,11 +1,10 @@
 id: nagios-xi-xss
 
 info:
-  name: Nagios XI 5.7.1 - Cross-Site Scripting
+  name: Nagios XI 5.7.1 - 跨站脚本漏洞
   author: ritikchaddha
   severity: medium
-  description: |
-    A reflected cross-site scripting (XSS) in Nagios XI 5.7.1 can result in an attacker performing malicious actions to users who open a maliciously crafted link or third-party web page.
+  description: Nagios XI 5.7.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://github.com/EmreOvunc/Nagios-XI-Reflected-XSS?tab=readme-ov-file
   classification:

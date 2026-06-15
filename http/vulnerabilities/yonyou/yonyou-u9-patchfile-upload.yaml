@@ -1,11 +1,10 @@
 id: yonyou-u9-patchfile-upload
 
 info:
-  name: Yonyou U9 PatchFile.asmx - Unauthenticated Arbitrary File Upload
+  name: Yonyou U9 PatchFile.asmx - 未授权 Arbitrary - 任意文件上传漏洞
   author: Co5mos,ProjectDiscoveryAI
   severity: critical
-  description: |
-    An arbitrary file upload vulnerability in U9 PatchFile.asmx allows attackers to upload files to the server.This can lead to various security issues including remote code execution.
+  description: Yonyou U9 PatchFile.asmx - 未授权 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   metadata:
     verified: true
     fofa-query: title="U9-登录"

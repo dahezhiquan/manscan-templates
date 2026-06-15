@@ -4,7 +4,7 @@ info:
   name: WordPress gtranslate Plugin Directory Listing
   author: dhiyaneshDK
   severity: info
-  description: Searches for sensitive directories present in the gtranslate wordpress plugin.
+  description: WordPress gtranslate Plugin Directory Listing 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.exploit-db.com/ghdb/6160
   metadata:

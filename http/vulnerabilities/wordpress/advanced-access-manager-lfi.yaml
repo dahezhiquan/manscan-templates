@@ -1,11 +1,10 @@
 id: advanced-access-manager-lfi
 
 info:
-  name: WordPress Advanced Access Manager < 5.9.9 - Local File Inclusion
+  name: WordPress Advanced Access Manager < 5.9.9 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: |
-    WordPress Advanced Access Manager versions before 5.9.9 are vulnerable to local file inclusion and allows attackers to download the wp-config.php file and get access to the database, which is publicly reachable on many servers.
+  description: WordPress Advanced Access Manager < 5.9.9 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://wpscan.com/vulnerability/9873
     - https://id.wordpress.org/plugins/advanced-access-manager/

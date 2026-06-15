@@ -1,10 +1,10 @@
 id: wp-javospot-lfi
 
 info:
-  name: WordPress Javo Spot Premium Theme - Local File Inclusion
+  name: WordPress Javo Spot Premium Theme - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Javo Spot Premium Theme is vulnerable to local file inclusion that allows remote unauthenticated attackers access to locally stored file and return their content.
+  description: WordPress Javo Spot Premium Theme - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://codeseekah.com/2017/02/09/javo-themes-spot-lfi-vulnerability/
     - https://wpscan.com/vulnerability/2d465fc4-d4fa-43bb-9c0d-71dcc3ee4eab

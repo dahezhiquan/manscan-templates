@@ -1,11 +1,10 @@
 id: jamf-pro-log4j-rce
 
 info:
-  name: JamF Pro - Remote Code Execution (Apache Log4j)
+  name: JamF Pro - 远程代码执行漏洞
   author: DhiyaneshDK,pdteam
   severity: critical
-  description: |
-    JamF is susceptible to Lof4j JNDI remote code execution. JamF is the industry standard when it comes to the management of iOS devices (iPhones and iPads), macOS computers (MacBooks, iMacs, etc.), and tvOS devices (Apple TV).
+  description: JamF Pro - 远程代码执行 (Apache Log4j) 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/random-robbie/jamf-log4j
     - https://docs.jamf.com/technical-articles/Mitigating_the_Apache_Log4j_2_Vulnerability.html

@@ -1,11 +1,10 @@
 id: ait-csv-import-export-rce
 
 info:
-  name: WordPress AIT CSV Import Export - Unauthenticated Remote Code Execution
+  name: WordPress AIT CSV Import Export - 未授权 - 远程代码执行漏洞
   author: gy741
   severity: critical
-  description: |
-    The AIT CSV Import/Export plugin <= 3.0.3 allows unauthenticated remote attackers to upload and execute arbitrary PHP code. The upload-handler does not require authentication, nor validates the uploaded content.
+  description: WordPress AIT CSV Import Export - 未授权 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://wpscan.com/vulnerability/10471
     - https://github.com/rapid7/metasploit-framework/blob/master//modules/exploits/multi/http/wp_ait_csv_rce.rb

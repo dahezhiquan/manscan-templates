@@ -1,11 +1,10 @@
 id: caimore-gateway-rce
 
 info:
-  name: CAIMORE Gateway - Remote Code Execution
+  name: CAIMORE Gateway - 远程代码执行漏洞
   author: momika233
   severity: high
-  description: |
-    The gateway of Xiamen Caimao Communication Technology Co., Ltd. is designed with open software architecture. It is a metal shell design, with two Ethernet RJ45 interfaces, and an industrial design wireless gateway using 3G/4G/5G wide area network for Internet communication. There is a command execution vulnerability in the formping file of the gateway of Xiamen Caimao Communication Technology Co., Ltd. An attacker can use this vulnerability to arbitrarily execute code on the server side, write to the back door, obtain server permissions, and then control the entire web server.
+  description: CAIMORE Gateway - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://www.ctfiot.com/126482.html
   classification:

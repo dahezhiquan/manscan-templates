@@ -1,10 +1,10 @@
 id: cherry-file-download
 
 info:
-  name: Cherry Plugin < 1.2.7 - Arbitrary File Retrieval and File Upload
+  name: Cherry Plugin < 1.2.7 - Arbitrary File Retrieval and - 任意文件上传漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress plugin Cherry < 1.2.7 contains an unauthenticated file upload and download vulnerability, allowing attackers to upload and download arbitrary files. This could result in attacker uploading backdoor shell scripts or downloading the wp-config.php file.
+  description: Cherry Plugin < 1.2.7 - Arbitrary File Retrieval and File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://wpscan.com/vulnerability/90034817-dee7-40c9-80a2-1f1cd1d033ee
     - https://github.com/CherryFramework/cherry-plugin

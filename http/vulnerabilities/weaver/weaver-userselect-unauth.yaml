@@ -1,11 +1,10 @@
 id: weaver-userselect-unauth
 
 info:
-  name: OA E-Office UserSelect Unauthorized Access
+  name: OA E-Office UserSelect - 未授权访问漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    OA E-Office UserSelect interface has an unauthorized access vulnerability, through which attackers can obtain sensitive information
+  description: OA E-Office UserSelect 未授权 Access 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/WeaverEOfficeController.java
     - http://wiki.peiqi.tech/wiki/oa/泛微OA/泛微OA%20E-Office%20UserSelect%20未授权访问漏洞.html

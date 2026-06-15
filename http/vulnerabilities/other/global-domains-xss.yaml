@@ -1,11 +1,10 @@
 id: global-domains-xss
 
 info:
-  name: Global Domains International - Cross-Site Scripting
+  name: Global Domains International - 跨站脚本漏洞
   author: princechaddha
   severity: high
-  description: |
-    Sites hosted by Global Domains International, Inc. have cross-site scripting and directory traversal vulnerabilities.
+  description: Global Domains International - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://cxsecurity.com/issue/WLB-2018020247
     - https://packetstormsecurity.com/files/126545/Global-Domains-International-Cross-Site-Scripting-Traversal.html

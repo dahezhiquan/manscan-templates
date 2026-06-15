@@ -1,10 +1,10 @@
 id: top-xss-params
 
 info:
-  name: Top 38 Parameters - Cross-Site Scripting
+  name: Top 38 Parameters - 跨站脚本漏洞
   author: foulenzer,geeknik
   severity: high
-  description: Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+  description: Top 38 Parameters - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2

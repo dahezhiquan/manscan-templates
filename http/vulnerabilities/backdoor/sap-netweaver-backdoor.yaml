@@ -1,11 +1,10 @@
 id: sap-netweaver-backdoor
 
 info:
-  name: SAP NetWeaver - Backdoor Detection
+  name: SAP NetWeaver - 后门检测
   author: DhiyaneshDk
   severity: critical
-  description: |
-    Detected a potential backdoor in SAP NetWeaver allowing unauthorized command execution.
+  description: 该模板用于检测目标是否存在与 SAP NetWeaver - Backdoor Detection 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://www.bleepingcomputer.com/news/security/sap-fixes-suspected-netweaver-zero-day-exploited-in-attacks/
   metadata:

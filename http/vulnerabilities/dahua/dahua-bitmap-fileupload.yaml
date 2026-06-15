@@ -1,7 +1,7 @@
 id: dahua-bitmap-fileupload
 
 info:
-  name: Dahua Bitmap - File Upload Remote Code Execution
+  name: Dahua Bitmap - 任意文件上传漏洞
   author: DhiyaneshDK
   severity: critical
   reference:

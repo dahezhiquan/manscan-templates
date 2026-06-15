@@ -1,11 +1,10 @@
 id: rconfig-file-upload
 
 info:
-  name: rConfig 3.9.5 - Arbitrary File Upload
+  name: rConfig 3.9.5 - Arbitrary - 任意文件上传漏洞
   author: dwisiswant0
   severity: high
-  description: |
-    rConfig 3.9.5 is susceptible to an arbitrary file upload via the userprocess.php endpoint. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: rConfig 3.9.5 - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.rconfig.com/downloads/rconfig-3.9.5.zip
     - https://www.exploit-db.com/exploits/48878

@@ -1,10 +1,10 @@
 id: jira-unauthenticated-installed-gadgets
 
 info:
-  name: Jira Unauthenticated Installed gadgets
+  name: Jira - 未授权访问漏洞
   author: philippedelteil
   severity: info
-  description: Some Jira instances allow to read the installed gadgets (sometimes it's also possible to read config xml file for some gadgets)
+  description: Jira 未授权 Installed gadgets 存在未授权访问漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 1
     shodan-query: http.component:"Atlassian Jira"

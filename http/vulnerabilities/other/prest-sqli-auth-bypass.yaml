@@ -1,11 +1,10 @@
 id: prest-sqli-auth-bypass
 
 info:
-  name: pREST < 1.5.4 - SQL Injection Via Authentication Bypass
+  name: pREST < 1.5.4 - SQL 注入漏洞
   author: mihail8531,iamnoooob,rootxharsh,pdresearch
   severity: critical
-  description: |
-    An authentication bypass vulnerability was introduced by changing the JWT whitelist configuration to use a regex pattern, allowing unauthorized access to any path containing /auth and leading to SQL Injection.
+  description: pREST < 1.5.4 - SQL 注入 Via 认证绕过 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/advisories/GHSA-wm25-j4gw-6vr3
   metadata:

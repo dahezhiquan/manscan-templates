@@ -1,11 +1,10 @@
 id: age-gate-xss
 
 info:
-  name: WordPress Age Gate <2.20.4 - Cross-Site Scripting
+  name: WordPress Age Gate <2.20.4 - 跨站脚本漏洞
   author: akincibor,daffainfo
   severity: high
-  description: |
-    WordPress Age Gate plugin before 2.20.4 contains a cross-site scripting vulnerability. The plugin does not escape some URLs before outputting them back in attributes.
+  description: WordPress Age Gate <2.20.4 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/a13148fe-ffc9-4003-a44d-652624ba5535
     - https://wordpress.org/plugins/age-gate/

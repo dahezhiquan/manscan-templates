@@ -1,11 +1,10 @@
 id: pega-log4j-rce
 
 info:
-  name: Pega - Remote Code Execution (Apache Log4j)
+  name: Pega - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    Pega is susceptible to Log4j JNDI remote code execution. Pega provides a powerful low-code platform that empowers the world's leading enterprises to Build for Change.
+  description: Pega - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://docs.pega.com/security-advisory/security-advisory-apache-log4j-zero-day-vulnerability
   classification:

@@ -1,11 +1,10 @@
 id: qi-anxin-netkang-next-generation-firewall-rce
 
 info:
-  name: Qi'anxin Netkang Next Generation Firewall - Remote Code Execution
+  name: Qi'anxin Netkang Next Generation Firewall - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: |
-    Qi'anxin Netkang Next Generation Firewall is susceptible to remote code execution.
+  description: Qi'anxin Netkang Next Generation Firewall - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
   classification:

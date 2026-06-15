@@ -1,11 +1,10 @@
 id: sonicwall-sslvpn-shellshock
 
 info:
-  name: Sonicwall SSLVPN - Remote Code Execution (ShellShock)
+  name: Sonicwall SSLVPN - 远程代码执行漏洞
   author: PR3R00T
   severity: critical
-  description: |
-    Sonicwall SSLVPN contains a 'ShellShock' vulnerability which allows remote unauthenticated attackers to execute arbitrary commands.
+  description: Sonicwall SSLVPN - 远程代码执行 (ShellShock) 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://twitter.com/chybeta/status/1353974652540882944
     - https://darrenmartyn.ie/2021/01/24/visualdoor-sonicwall-ssl-vpn-exploit/

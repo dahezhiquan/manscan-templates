@@ -1,11 +1,10 @@
 id: realor-gwt-system-sqli
 
 info:
-  name: Realor GWT System SQL injection
+  name: Realor GWT System - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    Realor GWT System system improperly handles the security of data passed by users, resulting in a SQL injection vulnerability. Remote and unauthorized attackers can use this vulnerability to obtain sensitive information in the database, and can further write webshell backdoors. Access, the attacker can execute arbitrary malicious code on the target server and gain system privileges.
+  description: 该模板用于检测目标是否存在与 Realor GWT System SQL injection 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/realor-gwt-system-sql-injection.yaml
   classification:

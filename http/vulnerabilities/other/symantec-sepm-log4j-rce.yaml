@@ -1,11 +1,10 @@
 id: symantec-sepm-log4j-rce
 
 info:
-  name: Symantec SEPM - Remote Code Execution (Apache Log4j)
+  name: Symantec SEPM - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    Symantec SPEM is susceptible to Log4j JNDI remote code execution.
+  description: Symantec SEPM - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://support.broadcom.com/security-advisory/content/security-advisories/Symantec-Security-Advisory-for-Log4j-2-CVE-2021-44228-Vulnerability/SYMSA19793
   classification:

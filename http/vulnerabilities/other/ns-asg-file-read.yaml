@@ -1,10 +1,10 @@
 id: nsasg-arbitrary-file-read
 
 info:
-  name: NS ASG - Local File Inclusion
+  name: NS ASG - 本地文件包含漏洞
   author: pikpikcu,ritikchaddha
   severity: high
-  description: NS ASG is vulnerable to local file inclusion.
+  description: NS ASG - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://zhuanlan.zhihu.com/p/368054963
     - http://wiki.xypbk.com/Web安全/网康%20NS-ASG安全网关/网康%20NS-ASG安全网关%20任意文件读取漏洞.md

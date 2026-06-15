@@ -1,11 +1,10 @@
 id: weaver-group-xml-sqli
 
 info:
-  name: OA E-Office group_xml.php - SQL Injection
+  name: OA E-Office group_xml.php - SQL 注入漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    There is a SQL injection vulnerability in the Panwei OA E-Office group_xml.php file. Through the vulnerability, an attacker can write to the Webshell file to obtain server permissions.
+  description: 该模板用于检测目标是否存在与 OA E-Office group_xml.php - SQL 注入 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - http://wiki.peiqi.tech/wiki/oa/泛微OA/泛微OA%20E-Office%20group_xml.php%20SQL注入漏洞.html
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Office%20group_xml.php%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md

@@ -1,10 +1,10 @@
 id: turbocrm-xss
 
 info:
-  name: TurboCRM - Cross-Site Scripting
+  name: TurboCRM - 跨站脚本漏洞
   author: pikpikcu
   severity: high
-  description: TurboCRM contains a cross-site scripting vulnerability which allows a remote attacker to inject arbitrary JavaScript into the response returned by the application.
+  description: TurboCRM - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://gist.github.com/pikpikcu/9689c5220abbe04d4927ffa660241b4a
   classification:

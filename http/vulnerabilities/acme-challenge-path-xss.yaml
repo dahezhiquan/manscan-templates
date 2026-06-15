@@ -1,11 +1,10 @@
 id: acme-challenge-path-xss
 
 info:
-  name: ACME Challenge Path - Reflected Cross-Site Scripting
+  name: ACME Challenge Path - 反射型跨站脚本漏洞
   author: pussycat0x
   severity: low
-  description: |
-    Detects XSS vulnerabilities in ACME http-01 challenge implementations where hosting providers reflect the challenge key from the URL without proper sanitization
+  description: ACME Challenge Path - 反射型跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://labs.detectify.com/security-guidance/xss-using-quirky-implementations-of-acme-http-01/
     - https://www.acunetix.com/vulnerabilities/web/cross-site-scripting-in-http-01-acme-challenge-implementation/

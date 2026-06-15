@@ -1,11 +1,10 @@
 id: w3c-total-cache-ssrf
 
 info:
-  name: Wordpress W3C Total Cache <= 0.9.4 - Server Side Request Forgery (SSRF)
+  name: Wordpress W3C Total Cache <= 0.9.4 - 服务端请求伪造 ( - 服务端请求伪造漏洞
   author: random_robbie
   severity: medium
-  description: |
-    The W3 Total Cache WordPress plugin was affected by an Unauthenticated Server Side Request Forgery (SSRF) security vulnerability.
+  description: Wordpress W3C Total Cache <= 0.9.4 - 服务端请求伪造 (服务端请求伪造) 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://wpvulndb.com/vulnerabilities/8644
     - https://klikki.fi/adv/w3_total_cache.html

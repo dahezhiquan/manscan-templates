@@ -1,11 +1,10 @@
 id: wanhuoa-smartupload-file-upload
 
 info:
-  name: Wanhu OA smartUpload.jsp - Arbitrary File Upload
+  name: Wanhu OA smartUpload.jsp - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Wanhu OA smartUpload.jsp file has a file upload interface and does not filter file types, resulting in arbitrary file upload vulnerabilities. Malicious JSP files can be uploaded directly.
+  description: Wanhu OA smartUpload.jsp - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/90103c248a2c52bb0a060d0ee95d5a67e4579c3d/docs/wiki/oa/%E4%B8%87%E6%88%B7OA/%E4%B8%87%E6%88%B7OA%20smartUpload.jsp%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md?plain=1#L24
   metadata:

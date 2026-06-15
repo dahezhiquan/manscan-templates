@@ -1,11 +1,10 @@
 id: jitsi-meet-log4j-rce
 
 info:
-  name: Jitsi Meet - Remote Code Execution (Apache Log4j)
+  name: Jitsi Meet - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    Jitsi Meet is susceptible to Log4j JNDI remote code execution. Jitsi is a collection of free and open-source multiplatform voice, video conferencing and instant messaging applications for the Web platforms.
+  description: Jitsi Meet - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://github.com/jitsi/security-advisories/blob/4e1ab58585a8a0593efccce77d5d0e22c5338605/advisories/JSA-2021-0004.md
   classification:

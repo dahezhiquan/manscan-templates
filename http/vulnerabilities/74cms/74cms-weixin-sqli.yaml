@@ -1,11 +1,10 @@
 id: 74cms-weixin-sqli
 
 info:
-  name: 74CMS weixin.php - SQL Injection
+  name: 74CMS weixin.php - SQL 注入漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    There is a libxml_disable_entity_loader function to prevent XML eXternal Entity Injection, but this function needs to be customized by the user. If the user does not customize it, there will be no filtering, which leads to SQL injection vulnerabilities.
+  description: 74CMS weixin.php - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://cn-sec.com/archives/25900.html
   classification:

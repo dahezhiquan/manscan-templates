@@ -1,11 +1,10 @@
 id: dahua-icc-backdoor-user
 
 info:
-  name: Dahua Intelligent IoT - Information Disclosure
+  name: Dahua Intelligent IoT - 信息泄露漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    There is a vulnerability in the user login interface /evo-apigw/evo-oauth/oauth/token of Zhejiang Dahua Technology Co., Ltd. Intelligent IoT Integrated Management Platform. Users can successfully log in to the platform using justForTest/any password, causing information leakage.
+  description: 该模板用于检测目标是否存在与 Dahua Intelligent IoT - 信息泄露 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   metadata:
     verified: true
     max-request: 1

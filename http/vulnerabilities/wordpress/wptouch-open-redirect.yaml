@@ -1,11 +1,10 @@
 id: wptouch-open-redirect
 
 info:
-  name: WordPress WPtouch 3.x - Open Redirect
+  name: WordPress WPtouch 3.x - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: |
-    WordPress WPtouch plugin 3.x contains an open redirect vulnerability. The plugin fails to properly sanitize user-supplied input. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: WordPress WPtouch 3.x - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://cxsecurity.com/issue/WLB-2020030114
   classification:

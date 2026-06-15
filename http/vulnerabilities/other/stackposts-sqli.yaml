@@ -1,11 +1,10 @@
 id: stackposts-sqli
 
 info:
-  name: Stackposts Social Marketing Tool v1.0 - SQL Injection
+  name: Stackposts Social Marketing Tool v1.0 - SQL 注入漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    SQL Injection is a type of SQL injection attack in which an attacker can exploit a vulnerability in a web application's input fields to manipulate the application's SQL queries.
+  description: Stackposts Social Marketing Tool v1.0 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploit-db.com/exploits/51473
     - https://vulners.com/zdt/1337DAY-ID-38725

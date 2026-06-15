@@ -1,11 +1,10 @@
 id: avchat-video-chat-xss
 
 info:
-  name: WordPress AVChat Video Chat 1.4.1 - Cross-Site Scripting
+  name: WordPress AVChat Video Chat 1.4.1 - 跨站脚本漏洞
   author: DhiyaneshDK
   severity: medium
-  description: |
-    WordPress AVChat Video Chat 1.4.1 is vulnerable to reflected cross-site scripting via index_popup.php and multiple parameters.
+  description: WordPress AVChat Video Chat 1.4.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://codevigilant.com/disclosure/wp-plugin-avchat-3-a3-cross-site-scripting-xss/
     - https://wpscan.com/vulnerability/fce99c82-3958-4c17-88d3-6e8fa1a11e59

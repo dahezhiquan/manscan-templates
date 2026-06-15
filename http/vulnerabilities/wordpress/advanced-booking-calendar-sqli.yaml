@@ -1,12 +1,14 @@
 id: advanced-booking-calendar-sqli
 
 info:
-  name: Advanced Booking Calendar < 1.6.2 - SQL Injection
+  name: Advanced Booking Calendar < 1.6.2 - SQL 注入漏洞
   author: theamanrawat
   severity: critical
-  description: |
-    The AJAX action abc_booking_getBookingResult, available to both authenticated and Unauthenticated users did not sanitise the calendarId parameter which was then concatenated to a SQL statement, leading an unauthenticated SQL injection issue. This could be used to retrieve information from the database, such as users' hashed password, username and email address.
-  remediation: Fixed in version 1.6.2
+  description: Advanced Booking Calendar < 1.6.2 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in version 1。
+    - 使用参数化查询或预编译语句，避免将用户输入直接拼接到 SQL 语句中。
+    - 对相关接口增加权限校验、输入校验与异常审计，防止敏感查询被滥用。
   reference:
     - https://wpscan.com/vulnerability/bac7b590-70de-45b3-bdc2-19f90524ca39
     - https://wordpress.org/plugins/advanced-booking-calendar/

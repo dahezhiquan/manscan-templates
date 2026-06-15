@@ -1,11 +1,10 @@
 id: nacos-info-leak
 
 info:
-  name: Nacos - Information Disclosure
+  name: Nacos - 信息泄露漏洞
   author: s4e-io
   severity: high
-  description: |
-    Nacos unauthorized download of configuration information.
+  description: Nacos - 信息泄露 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/wy876/POC/blob/main/Nacos/Nacos%E6%9C%AA%E6%8E%88%E6%9D%83%E4%B8%8B%E8%BD%BD%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF.md
   metadata:

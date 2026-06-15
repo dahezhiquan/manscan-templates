@@ -1,10 +1,10 @@
 id: sangfor-edr-rce
 
 info:
-  name: Sangfor EDR 3.2.17R1/3.2.21 - Remote Code Execution
+  name: Sangfor EDR 3.2.17R1/3.2.21 - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: Sangfor EDR 3.2.17R1/3.2.21 allows remote unauthenticated users to to execute arbitrary commands.
+  description: Sangfor EDR 3.2.17R1/3.2.21 - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.cnblogs.com/0day-li/p/13650452.html
   classification:

@@ -1,12 +1,14 @@
 id: vbulletin-search-sqli
 
 info:
-  name: vBulletin `Search.php` - SQL Injection
+  name: vBulletin `Search.php` - SQL 注入漏洞
   author: MaStErChO
   severity: high
-  description: |
-    vBulletin 4 is vulnerable to an SQL injection vulnerability, which may allow an attacker can execute malicious SQL statements that control a web application's database server.
-  remediation: Upgrade to the latest version of vBulletin.
+  description: vBulletin `Search.php` - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Upgrade to the latest version of vBulletin。
+    - 使用参数化查询或预编译语句，避免将用户输入直接拼接到 SQL 语句中。
+    - 对相关接口增加权限校验、输入校验与异常审计，防止敏感查询被滥用。
   reference:
     - https://www.exploit-db.com/exploits/17314
     - https://web.archive.org/web/20181129123620/https://j0hnx3r.org/vbulletin-4-x-sql-injection-vulnerability/

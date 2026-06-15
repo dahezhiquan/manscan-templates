@@ -6,10 +6,10 @@ id: rails6-xss
 #  Working poc by @Mad-robot
 # /rails/actions?error=ActiveRecord::PendingMigrationError&action=Run%20pending%20migrations&location=%0Djavascript%3Aalert%28document.domain%29
 info:
-  name: Ruby on Rails - CRLF Injection and Cross-Site Scripting
+  name: Ruby on Rails - CRLF Injection and - 跨站脚本漏洞
   author: ooooooo_q,rootxharsh,iamnoooob
   severity: medium
-  description: Ruby on Rails 6.0.0-6.0.3.1 contains a CRLF issue which allows JavaScript to be injected into the response, resulting in cross-site scripting.
+  description: Ruby on Rails - CRLF Injection and 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://hackerone.com/reports/904059
   classification:

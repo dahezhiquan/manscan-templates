@@ -1,11 +1,10 @@
 id: chanjet-tplus-file-read
 
 info:
-  name: Chanjet TPlus DownloadProxy.aspx - Arbitrary File Read
+  name: Chanjet TPlus DownloadProxy.aspx - 任意文件读取漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    Chanjet TPlus DownloadProxy.aspx file has an arbitrary file reading vulnerability. An attacker can obtain sensitive files on the server through the vulnerability.
+  description: Chanjet TPlus DownloadProxy.aspx - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9AT%2B%20DownloadProxy.aspx%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   classification:

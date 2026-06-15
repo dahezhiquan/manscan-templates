@@ -1,10 +1,10 @@
 id: maccmsv10-backdoor
 
 info:
-  name: Maccmsv10 - Backdoor Remote Code Execution
+  name: Maccmsv10 - Backdoor - 远程代码执行漏洞
   author: princechaddha
   severity: critical
-  description: Maccmsv10 contains a backdoor which can be exploited by remote attackers. The backdoor is accessible via the '/index.php/bbs/index/download' endpoint and the special 'getpwd' parameter value of 'WorldFilledWithLove'. Exploitation of this vulnerability will allow remote attackers to execute code.
+  description: 该模板用于检测目标是否存在与 Maccmsv10 - Backdoor 远程代码执行 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://github.com/chaitin/xray/blob/master/pocs/maccmsv10-backdoor.yml
   classification:

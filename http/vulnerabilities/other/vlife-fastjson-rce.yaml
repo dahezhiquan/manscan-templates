@@ -1,11 +1,10 @@
 id: vlife-fastjson-rce
 
 info:
-  name: Vlife FastJSON - Remote Code Execution
+  name: Vlife FastJSON - 远程代码执行漏洞
   author: omarkurt
   severity: critical
-  description: |
-    alibaba/fastjson v1.2.67 within the MyUsernamePasswordAuthenticationFilter for processing authentication requests. The /vlife/login endpoint directly deserializes the raw HTTP request body using JSON.parseObject() without enforcing type restrictions or enabling safe mode, allowing unauthenticated attackers to exploit known fastjson gadget chains for Remote Code Execution.
+  description: Vlife FastJSON - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://securitylab.github.com/advisories/GHSL-2024-300_wwwlike_vlife/
   classification:

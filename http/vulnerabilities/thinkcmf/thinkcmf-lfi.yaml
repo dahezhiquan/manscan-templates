@@ -1,10 +1,10 @@
 id: thinkcmf-lfi
 
 info:
-  name: ThinkCMF - Local File Inclusion
+  name: ThinkCMF - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: ThinkCMF is vulnerable to local file inclusion.
+  description: ThinkCMF - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.freebuf.com/vuls/217586.html
   classification:

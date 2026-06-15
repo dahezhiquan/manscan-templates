@@ -1,10 +1,10 @@
 id: luftguitar-arbitrary-file-upload
 
 info:
-  name: Luftguitar CMS Arbitrary File Upload
+  name: Luftguitar CMS Arbitrary - 任意文件上传漏洞
   author: pikpikcu
   severity: high
-  description: A vulnerability in Luftguitar CMS allows remote unauthenticated users to upload files to the remote service via the 'ftb.imagegallery.aspx' endpoint.
+  description: Luftguitar CMS 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.exploit-db.com/exploits/14991
   metadata:

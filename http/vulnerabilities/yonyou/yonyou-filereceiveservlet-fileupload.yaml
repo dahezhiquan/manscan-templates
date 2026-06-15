@@ -1,11 +1,10 @@
 id: yonyou-filereceiveservlet-fileupload
 
 info:
-  name: Yonyou NC FileReceiveServlet - Aribitrary File Upload
+  name: Yonyou NC FileReceiveServlet - Aribitrary - 任意文件上传漏洞
   author: bjxsec
   severity: critical
-  description: |
-    An unauthorized attacker can upload a file via the FileReceiveServlet endpoint.
+  description: Yonyou NC FileReceiveServlet - Aribitrary File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/yonyou-nc-arbitrary-file-upload.yaml
   metadata:

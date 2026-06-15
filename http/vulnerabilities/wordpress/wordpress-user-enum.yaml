@@ -1,10 +1,10 @@
 id: wordpress-user-enum
 
 info:
-  name: Wordpress User Enumeration
+  name: Wordpress - 用户名枚举漏洞
   author: r3dg33k
   severity: info
-  description: This template detects user enumeration in wordpress.
+  description: Wordpress User Enumeration 存在用户名枚举漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 1
   tags: wordpress,vuln

@@ -1,11 +1,10 @@
 id: retool-svg-xss
 
 info:
-  name: Retool < 3.88 - SVG Cross-Site Scripting
+  name: Retool < 3.88 - SVG - 跨站脚本漏洞
   author: iamnoooob,iamnoooob,pdresearch
   severity: high
-  description: |
-    This template checks for SVG Cross-Site Scripting(XSS) vulnerability via the Image Proxy URL parameter in Retool.
+  description: Retool < 3.88 - SVG 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://docs.retool.com/releases/edge/3.88#:~:text=Fixed%20an%20SVG%20XSS%20vulnerability%20by%20adding%20a%20CSP.%20(%2349381)
   classification:

@@ -1,10 +1,10 @@
 id: ewebs-arbitrary-file-reading
 
 info:
-  name: EWEBS - Local File Inclusion
+  name: EWEBS - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: EWEBS is vulnerable to local file inclusion and allows remote attackers to disclose the content of locally stored files via the 'Language_S' parameter supplied to the 'casmain.xgi' endpoint.
+  description: EWEBS - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - http://wiki.peiqi.tech/PeiQi_Wiki/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/%E6%9E%81%E9%80%9AEWEBS/%E6%9E%81%E9%80%9AEWEBS%20casmain.xgi%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.html
   classification:

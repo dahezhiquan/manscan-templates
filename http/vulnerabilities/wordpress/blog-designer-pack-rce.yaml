@@ -1,11 +1,10 @@
 id: blog-designer-pack-rce
 
 info:
-  name: News & Blog Designer Pack < 3.4.2 - Remote Code Execution
+  name: News & Blog Designer Pack < 3.4.2 - 远程代码执行漏洞
   author: iamnoooob,rootxharsh,pdresearch
   severity: critical
-  description: |
-    News & Blog Designer Pack contains a local file inclusion vulnerability via user controlled $design variable extracted by POST parameter 'shrt_param' leading to Remote Code Execution via pearcmd.php. The vulnerability occurs within bdp_get_more_post function inside file bdp-ajax-functions.php.
+  description: News & Blog Designer Pack < 3.4.2 - 远程代码执行 存在远程代码执行漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://twitter.com/frycos/status/1717571552470819285
     - https://wordpress.org/plugins/blog-designer-pack/

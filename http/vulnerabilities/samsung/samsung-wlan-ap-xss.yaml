@@ -1,10 +1,10 @@
 id: samsung-wlan-ap-xss
 
 info:
-  name: Samsung WLAN AP WEA453e - Cross-Site Scripting
+  name: Samsung WLAN AP WEA453e - 跨站脚本漏洞
   author: pikpikcu
   severity: high
-  description: Samsung WLAN AP WEA453e router contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+  description: Samsung WLAN AP WEA453e - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://iryl.info/2020/11/27/exploiting-samsung-router-wlan-ap-wea453e/
   classification:

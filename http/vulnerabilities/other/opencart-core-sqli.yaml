@@ -1,11 +1,10 @@
 id: opencart-core-sqli
 
 info:
-  name: OpenCart Core 4.0.2.3 'search' - SQL Injection
+  name: OpenCart Core 4.0.2.3 'search' - SQL 注入漏洞
   author: s4e-io
   severity: high
-  description: |
-    Opencart allows SQL Injection via parameter 'search' in /index.php?route=product/search&search=. Exploiting this issue could allow an attacker to compromise the application, access or modify data, or exploit latent vulnerabilities in the underlying database.
+  description: OpenCart Core 4.0.2.3 'search' - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://www.exploit-db.com/exploits/51940
     - https://cxsecurity.com/issue/WLB-2024040004

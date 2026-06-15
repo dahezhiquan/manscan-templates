@@ -1,11 +1,10 @@
 id: wp-jetpack-ssrf
 
 info:
-  name: Wordpress Jetpack plugin - Server Side Request Forgery
+  name: Wordpress Jetpack plugin - 服务端请求伪造
   author: pussycat0x
   severity: medium
-  description: |
-    The Jetpack WordPress plugin exposes an endpoint that fetches external URLs provided via the 'urls' parameter to retrieve Twitter (X) card descriptions/metadata. This allows unauthenticated SSRF, enabling attackers to force the server to request attacker-controlled URLs
+  description: Wordpress Jetpack plugin - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   classification:
     cwe-id: CWE-99,CWE-918
   metadata:

@@ -1,11 +1,10 @@
 id: esafenet-noticeajax-sqli
 
 info:
-  name: Esafenet CDG NoticeAjax - Sql Injection
+  name: Esafenet CDG NoticeAjax - SQL 注入漏洞
   author: adeljck
   severity: high
-  description: |
-    CDGServer3 NoticeAjax Interface Sql Injection.
+  description: Esafenet CDG NoticeAjax - Sql Injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   classification:
     cwe-id: CWE-89
   metadata:

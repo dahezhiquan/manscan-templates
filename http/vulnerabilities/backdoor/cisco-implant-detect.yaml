@@ -1,13 +1,13 @@
 id: cisco-implant-detect
 
 info:
-  name: Cisco IOS XE - Impant Detection
+  name: Cisco IOS XE 植入后门检测
   author: DhiyaneshDK,rxerium
   severity: critical
-  description: |
-    Cisco is aware of active exploitation of a previously unknown vulnerability in the web UI feature of Cisco IOS XE Software when exposed to the internet or to untrusted networks. This vulnerability allows a remote, unauthenticated attacker to create an account on an affected system with privilege level 15 access. The attacker can then use that account to gain control of the affected system.
+  description: 检测 Cisco IOS XE Web UI 在被公开利用后遗留的恶意植入特征。命中通常意味着攻击者已在设备上创建后门账户或注入持久化组件。
   remediation: |
-    Disable the HTTP server feature on internet-facing systems by running one of the following commands in global configuration mode: 'no ip http server' or 'no ip http secure-server'.
+    - 根据厂商安全公告或补丁说明升级到最新安全版本。
+    - 结合访问控制、日志审计和暴露面收敛，降低相同问题再次被利用的风险。
   reference:
     - https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-iosxe-webui-privesc-j22SaA4z
     - https://www.bleepingcomputer.com/news/security/cisco-warns-of-new-ios-xe-zero-day-actively-exploited-in-attacks/

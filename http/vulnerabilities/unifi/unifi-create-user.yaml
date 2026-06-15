@@ -1,11 +1,10 @@
 id: unifi-create-user
 
 info:
-  name: UniFi - Unauthenticated Creation Access For Users
+  name: UniFi - 未授权访问漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    The /api/v1/user_assets/nfc endpoint accepts unauthenticated POST requests with NFC provisioning data (e.g., alias, asset_id, nfc_id, tokens) and returns {"code":"CODE_SUCCESS"} over HTTP, confirming backend processing without any authentication or session validation.
+  description: UniFi - 未授权 Creation Access For Users 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.catchify.sa/post/cve-2025-52665-rce-in-unifi-os-25-000
   metadata:

@@ -1,10 +1,10 @@
 id: qizhi-fortressaircraft-unauth
 
 info:
-  name: Qizhi Fortressaircraft Unauthorized Access
+  name: Qizhi Fortressaircraft - 未授权访问漏洞
   author: ritikchaddha
   severity: high
-  description: Qizhi Fortressaircraft is vulnerable to Unauthorized Access.
+  description: Qizhi Fortressaircraft 未授权 Access 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://mp.weixin.qq.com/s/FjMRJfCqmXfwPzGYq5Vhkw
   metadata:

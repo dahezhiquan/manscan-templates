@@ -1,10 +1,10 @@
 id: hanta-rce
 
 info:
-  name: Hanta Internet Behavior Management System - Remote Code Execution
+  name: Hanta Internet Behavior Management System - 远程代码执行漏洞
   author: momika233
   severity: high
-  description: Hanta Internet Behavior Management System is vulnerable to RCE.
+  description: Hanta Internet Behavior Management System - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   classification:
     cwe-id: CWE-78
   metadata:

@@ -1,11 +1,10 @@
 id: grp-u8-uploadfiledata
 
 info:
-  name: UFIDA GRP-U8 UploadFileData - Arbitrary File Upload
+  name: UFIDA GRP-U8 UploadFileData - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    File upload vulnerability in UFIDA U8+ERP customer relationship management software. An attacker can use this vulnerability to gain control of the server.
+  description: UFIDA GRP-U8 UploadFileData - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://mp.weixin.qq.com/s/DZXFxLC7fFKbPUWrdyITag
   metadata:

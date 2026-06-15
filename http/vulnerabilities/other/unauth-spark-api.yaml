@@ -1,11 +1,13 @@
 id: unauth-spark-api
 
 info:
-  name: Unauthenticated Spark REST API
+  name: 未授权访问漏洞
   author: princechaddha
   severity: critical
-  description: The Spark product's REST API interface allows access to unauthenticated users.
-  remediation: Restrict access the exposed API ports.
+  description: 未授权 Spark REST API 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  remediation: |
+    - 根据厂商安全公告或补丁说明升级到最新安全版本。
+    - 结合访问控制、日志审计和暴露面收敛，降低相同问题再次被利用的风险。
   reference:
     - https://xz.aliyun.com/t/2490
   classification:

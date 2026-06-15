@@ -1,10 +1,10 @@
 id: yarn-resourcemanager-rce
 
 info:
-  name: Apache Hadoop YARN ResourceManager - Remote Code Execution
+  name: Apache Hadoop YARN ResourceManager - 远程代码执行漏洞
   author: pdteam
   severity: low
-  description: Apache Hadoop YARN ResourceManager is susceptible to remote code execution. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: Apache Hadoop YARN ResourceManager - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://neerajsabharwal.medium.com/hadoop-yarn-hack-9a72cc1328b6
     - https://www.infosecmatter.com/nessus-plugin-library/?id=117615

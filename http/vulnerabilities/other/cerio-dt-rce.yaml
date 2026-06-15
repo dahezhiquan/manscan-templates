@@ -4,8 +4,7 @@ info:
   name: CERIO-DT Interface - Command Execution
   author: pussycat0x
   severity: critical
-  description: |
-    CERIO DT series routers have an operation command injection vulnerability in specific versions. An attacker could exploit this vulnerability to execute commands.
+  description: CERIO-DT Interface - Command Execution 存在命令注入漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/20142995/sectool
     - https://github.com/tanjiti/sec_profile

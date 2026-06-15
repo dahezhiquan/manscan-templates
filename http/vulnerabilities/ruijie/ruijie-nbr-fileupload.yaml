@@ -1,11 +1,10 @@
 id: ruijie-nbr-fileupload
 
 info:
-  name: Ruijie NBR fileupload.php - Arbitrary File Upload
+  name: Ruijie NBR fileupload.php - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Ruijie NBR router fileupload.php file has an arbitrary file upload vulnerability. An attacker can upload any file to the server through the vulnerability to obtain server permissions.
+  description: Ruijie NBR fileupload.php - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/ruijie-nbr-fileupload.yaml
   classification:

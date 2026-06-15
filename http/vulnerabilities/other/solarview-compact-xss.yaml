@@ -1,11 +1,10 @@
 id: solarview-compact-xss
 
 info:
-  name: SolarView Compact 6.00 - Cross-Site Scripting
+  name: SolarView Compact 6.00 - 跨站脚本漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    SolarView Compact 6.00 contains a cross-site scripting vulnerability via fname at /Solar_Image.php.
+  description: SolarView Compact 6.00 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploit-db.com/exploits/50968
   classification:

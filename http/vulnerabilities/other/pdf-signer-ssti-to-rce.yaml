@@ -4,7 +4,7 @@ info:
   name: PDF Signer 3.0 - Template Injection
   author: madrobot
   severity: critical
-  description: PDF Signer 3.0 is susceptible to a template injection which allows code execution, due to improper cookie handling and an improper CSRF implementation. An attacker can execute code on the server in the context of the web server.
+  description: PDF Signer 3.0 - Template Injection 存在安全漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8

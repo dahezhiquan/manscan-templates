@@ -1,10 +1,10 @@
 id: opensis-lfi
 
 info:
-  name: openSIS 5.1 - Local File Inclusion
+  name: openSIS 5.1 - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: openSIS 5.1 is vulnerable to local file inclusion and allows attackers to obtain potentially sensitive information by executing arbitrary local scripts in the context of the web server process. This may allow the attacker to compromise the application and computer; other attacks are also possible.
+  description: openSIS 5.1 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/38039
   classification:

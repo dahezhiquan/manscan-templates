@@ -4,7 +4,7 @@ info:
   name: Exposed Magento 2 API
   author: TechbrunchFR
   severity: info
-  description: The API in Magento 2 can be accessed by the world without providing credentials. Through the API information like storefront, (hidden) products including prices are exposed.
+  description: Exposed Magento 2 API 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://support.hypernode.com/en/ecommerce/magento-2/how-to-protect-the-magento-2-api
   classification:

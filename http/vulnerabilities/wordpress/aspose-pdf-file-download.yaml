@@ -1,10 +1,10 @@
 id: aspose-pdf-file-download
 
 info:
-  name: WordPress Aspose PDF Exporter - Local File Inclusion
+  name: WordPress Aspose PDF Exporter - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: WordPress Aspose PDF Exporter is vulnerable to local file inclusion.
+  description: WordPress Aspose PDF Exporter - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://packetstormsecurity.com/files/131161
     - https://wordpress.org/plugins/aspose-pdf-exporter

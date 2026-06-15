@@ -1,10 +1,10 @@
 id: h3c-imc-rce
 
 info:
-  name: H3c IMC - Remote Code Execution
+  name: H3c IMC - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: H3c IMC allows remote unauthenticated attackers to cause the remote web application to execute arbitrary commands via the 'dynamiccontent.properties.xhtml' endpoint.
+  description: H3c IMC - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://mp.weixin.qq.com/s/BP9_H3lpluqIwL5OMIJlIw
   classification:

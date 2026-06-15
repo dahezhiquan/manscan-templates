@@ -1,11 +1,10 @@
 id: joomla-jlex-xss
 
 info:
-  name: Joomla JLex Review 6.0.1 - Cross-Site Scripting
+  name: Joomla JLex Review 6.0.1 - 跨站脚本漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    The attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credentials.
+  description: Joomla JLex Review 6.0.1 - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.exploitalert.com/view-details.html?id=39732
     - https://www.exploit-db.com/exploits/51645

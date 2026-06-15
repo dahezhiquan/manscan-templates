@@ -4,8 +4,7 @@ info:
   name: functions.php Full Path Disclosure
   author: pussycat0x
   severity: low
-  description: |
-    Detected a full server file path disclosure in the WordPress functions.php file. This exposure revealed sensitive directory information that could have aided attackers in further exploitation.
+  description: functions.php Full Path Disclosure 存在安全漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   metadata:
     verified: true
     fofa-query: 'body="/wp-includes/functions.php"'

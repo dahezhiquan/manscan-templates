@@ -1,10 +1,10 @@
 id: vmware-operation-manager-log4j-rce
 
 info:
-  name: VMware Operations Manager - Remote Code Execution (Apache Log4j)
+  name: VMware Operations Manager - 远程代码执行漏洞
   author: DhiyaneshDK
   severity: critical
-  description: VMware Operations Manager is susceptible to remote code execution via the Apache Log4j framework. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: VMware Operations Manager - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://www.vmware.com/security/advisories/VMSA-2021-0028.html
     - https://logging.apache.org/log4j/2.x/security.html

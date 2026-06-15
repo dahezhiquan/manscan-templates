@@ -1,11 +1,10 @@
 id: tongda-auth-bypass
 
 info:
-  name: Tongda OA 11.7 - Authentication Bypass
+  name: Tongda OA 11.7 - 认证绕过漏洞
   author: HuTa0
   severity: high
-  description: |
-    Tongda OA is a collaborative office automation software independently developed by Beijing Tongda Xinke Technology Co., LTD v11.7 has the interface query online user function, when the user is online, it will return PHPSESSION so that it can log in to the background system.
+  description: Tongda OA 11.7 - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://s1xhcl.github.io/2021/03/13/%E9%80%9A%E8%BE%BEOA-v11-7-%E5%9C%A8%E7%BA%BF%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E6%BC%8F%E6%B4%9E/
   classification:

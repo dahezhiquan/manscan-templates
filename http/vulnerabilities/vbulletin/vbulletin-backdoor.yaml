@@ -1,7 +1,7 @@
 id: vbulletin-backdoor
 
 info:
-  name: vBulletin Backdoor - Detect
+  name: vBulletin - 后门检测
   author: MaStErCho
   severity: high
   reference:

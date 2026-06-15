@@ -4,8 +4,7 @@ info:
   name: NETGEAR Routers - Serial Number Disclosure
   author: geeknik
   severity: medium
-  description: |
-    Multiple NETGEAR router models disclose their serial number which can be used to obtain the admin password if password recovery is enabled.
+  description: NETGEAR Routers - Serial Number Disclosure 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.exploit-db.com/exploits/47117
   classification:

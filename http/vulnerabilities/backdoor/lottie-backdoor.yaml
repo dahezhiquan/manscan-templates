@@ -1,11 +1,10 @@
 id: lottie-backdoor
 
 info:
-  name: Lottie Player - Backdoor
+  name: Lottie Player - 后门检测
   author: nagli-wiz
   severity: critical
-  description: |
-    Detectes vulnerable compormised version of lottie-player JS Library that were compormised with a Web3 wallet pop-up backdoor.
+  description: 该模板用于检测目标是否存在与 Lottie Player - Backdoor 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://github.com/LottieFiles/lottie-player/issues/254
     - https://x.com/galnagli/status/1851779972639363076

@@ -1,11 +1,10 @@
 id: joomla-marvikshop-xss
 
 info:
-  name: Joomla MarvikShop ShoppingCart 3.4 - Cross-Site Scripting
+  name: Joomla MarvikShop ShoppingCart 3.4 - 跨站脚本漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    Joomla MarvikShop ShoppingCart 3.4 is vulnerable to reflected xss where attacker can send to victim a link containing a malicious URL in an email or instant message can perform a wide variety of actions, such as stealing the victim's session token or login credentials.
+  description: Joomla MarvikShop ShoppingCart 3.4 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/168598/Joomla-MarvikShop-ShoppingCart-3.4-Cross-Site-Scripting.html
     - https://cxsecurity.com/issue/WLB-2022100015

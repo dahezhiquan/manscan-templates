@@ -1,10 +1,10 @@
 id: weaver-uploadify-file-upload
 
 info:
-  name: OA E-Office Uploadify - Arbitrary File Upload
+  name: OA E-Office Uploadify - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: OA E-Office Uploadify is vulnerable to arbitrary file upload.
+  description: OA E-Office Uploadify - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/w-digital-scanner/w9scan/blob/master/plugins/weaver_oa/2158.py
   classification:

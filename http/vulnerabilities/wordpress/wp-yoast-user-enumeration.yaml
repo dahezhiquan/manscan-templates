@@ -1,7 +1,7 @@
 id: wp-yoast-user-enumeration
 
 info:
-  name: WordPress Yoast SEO Plugin - User Enumeration
+  name: WordPress Yoast SEO Plugin - 用户名枚举漏洞
   author: FLX
   severity: info
   reference:

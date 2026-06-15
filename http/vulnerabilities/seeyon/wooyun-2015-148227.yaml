@@ -1,10 +1,10 @@
 id: wooyun-2015-148227
 
 info:
-  name: Seeyon WooYun - Local File Inclusion
+  name: Seeyon WooYun - 本地文件包含漏洞
   author: princechaddha
   severity: high
-  description: Seeyon WooYun allows remote attackers to include the content of locally stored content and disclose it back to the attacker via local file inclusion.
+  description: Seeyon WooYun - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://wooyun.x10sec.org/static/bugs/wooyun-2015-0148227.html
   classification:

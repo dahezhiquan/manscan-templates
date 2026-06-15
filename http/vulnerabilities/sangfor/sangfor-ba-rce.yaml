@@ -1,11 +1,10 @@
 id: sangfor-ba-rce
 
 info:
-  name: Sangfor BA - Remote Code Execution
+  name: Sangfor BA - 远程代码执行漏洞
   author: ritikchaddha
   severity: critical
-  description: |
-    Sangfor products allow remote unauthenticated users to cause the product to execute arbitrary commands.
+  description: Sangfor BA - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://mobile.twitter.com/sec715/status/1406886851072253953
   classification:

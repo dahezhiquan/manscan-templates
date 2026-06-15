@@ -1,10 +1,10 @@
 id: netsweeper-rxss
 
 info:
-  name: Netsweeper 4.0.9 - Cross-Site Scripting
+  name: Netsweeper 4.0.9 - 跨站脚本漏洞
   author: daffainfo
   severity: high
-  description: Netsweeper 4.0.9 contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+  description: Netsweeper 4.0.9 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://packetstormsecurity.com/files/download/133034/netsweeper-issues.tgz
     - https://www.exploit-db.com/exploits/37930

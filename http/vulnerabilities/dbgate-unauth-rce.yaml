@@ -1,11 +1,10 @@
 id: dbgate-unauth-rce
 
 info:
-  name: DbGate Web Client - Unauthenticated Remote Command Execution
+  name: DbGate Web Client - 未授权 - 远程命令执行漏洞
   author: h0j3n
   severity: critical
-  description: |
-    DbGate Web Client Management is suspectible to an unauthenticated remote code execution vulnerability.
+  description: DbGate Web Client - 未授权 远程命令执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/dbgate/dbgate
     - https://dbgate.org/docs/env-variables.html

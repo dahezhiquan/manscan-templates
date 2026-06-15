@@ -1,11 +1,10 @@
 id: unauthenticated-duplicator-disclosure
 
 info:
-  name: WordPress Duplicator Plugin - Information disclosure
+  name: WordPress Duplicator Plugin - 信息泄露漏洞
   author: tess
   severity: medium
-  description: |
-    Unauthenticated Information disclosure of Duplicator WordPress plugin sensitive files.
+  description: WordPress Duplicator Plugin - Information disclosure 存在未授权访问漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   metadata:
     verified: true
     max-request: 2

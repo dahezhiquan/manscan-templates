@@ -1,11 +1,10 @@
 id: gradio-file-redirect
 
 info:
-  name: Gradio - Open Redirect
+  name: Gradio - 开放重定向漏洞
   author: neo-ai-engineer,DhiyaneshDk
   severity: low
-  description: |
-    An open redirect vulnerability in Gradio allows attackers to craft malicious URLs that redirect users to external, potentially harmful sites without proper validation.
+  description: Gradio - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   metadata:
     verified: true
     max-request: 2

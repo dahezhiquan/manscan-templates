@@ -1,10 +1,10 @@
 id: open-redirect-generic
 
 info:
-  name: Open Redirect - Detection
+  name: 开放重定向漏洞
   author: afaq,melbadry9,Elmahdi,pxmme1337,Regala_,andirrahmani1,geeknik
   severity: medium
-  description: An open redirect vulnerability was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: 开放重定向 - Detection 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1

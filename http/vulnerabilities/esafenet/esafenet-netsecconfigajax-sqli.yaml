@@ -1,11 +1,10 @@
 id: esafenet-netsecconfigajax-sqli
 
 info:
-  name: Esafenet CDG NetSecConfigAjax - Sql Injection
+  name: Esafenet CDG NetSecConfigAjax - SQL 注入漏洞
   author: adeljck
   severity: high
-  description: |
-    The `state` parameter of the `NetSecConfigAjax` interface of the Yisaitong electronic document security management system does not pre-compile and adequately verify the incoming data, resulting in a SQL injection vulnerability in the interface. Malicious attackers may obtain the server through this vulnerability information or directly obtain server permissions.
+  description: Esafenet CDG NetSecConfigAjax - Sql Injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   classification:
     cpe: cpe:2.3:a:esafenet:cdg:*:*:*:*:*:*:*:*
     cwe-id: CWE-89

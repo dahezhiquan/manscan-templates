@@ -1,11 +1,10 @@
 id: weaver-office-server-file-upload
 
 info:
-  name: OA E-Office OfficeServer.php Arbitrary File Upload
+  name: OA E-Office OfficeServer.php Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    OA E-Office OfficeServer.php has an arbitrary file upload vulnerability. Attackers can obtain sensitive information on the server through the vulnerability.
+  description: OA E-Office OfficeServer.php 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Office%20OfficeServer.php%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   classification:

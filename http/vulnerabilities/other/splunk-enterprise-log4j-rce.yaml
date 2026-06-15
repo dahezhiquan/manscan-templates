@@ -1,11 +1,10 @@
 id: splunk-enterprise-log4j-rce
 
 info:
-  name: Splunk Enterprise - Remote Code Execution (Apache Log4j)
+  name: Splunk Enterprise - 远程代码执行漏洞
   author: shaikhyaser
   severity: critical
-  description: |
-    Splunk Enterprise is susceptible to Log4j JNDI remote code execution. Splunk Enterprise enables you to search, analyze and visualize your data to quickly act on insights from across your technology landscape.
+  description: Splunk Enterprise - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://www.splunk.com/en_us/blog/bulletins/splunk-security-advisory-for-apache-log4j-cve-2021-44228.html
   classification:

@@ -1,10 +1,10 @@
 id: flir-path-traversal
 
 info:
-  name: Flir - Local File Inclusion
+  name: Flir - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: Flir is vulnerable to local file inclusion.
+  description: Flir - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://juejin.cn/post/6961370156484263972
   classification:

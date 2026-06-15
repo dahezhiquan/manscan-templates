@@ -1,10 +1,10 @@
 id: seacms-rce
 
 info:
-  name: SeaCMS V6.4.5 RCE
+  name: SeaCMS V6.4.5 远程代码执行
   author: pikpikcu
   severity: high
-  description: A vulnerability in SeaCMS allows remote unauthenticated attackers to execute arbitrary PHP code.
+  description: SeaCMS V6.4.5 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://mengsec.com/2018/08/06/SeaCMS-v6-45前台代码执行漏洞分析/
   metadata:

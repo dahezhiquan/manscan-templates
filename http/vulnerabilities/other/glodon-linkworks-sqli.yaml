@@ -1,11 +1,10 @@
 id: glodon-linkworks-sqli
 
 info:
-  name: Glodon Linkworks GWGdWebService - SQL injection
+  name: Glodon Linkworks GWGdWebService - SQL 注入漏洞
   author: DhiyaneshDK
   severity: high
-  description: |
-    There is a SQL injection vulnerability in the GWGdWebService interface of Glodon Linkworks office OA. Sensitive information in the database can be obtained after sending a request package.
+  description: Glodon Linkworks GWGdWebService - SQL injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/zan8in/pocwiki/blob/main/%E5%B9%BF%E8%81%94%E8%BE%BE-linkworks-gwgdwebservice%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
   metadata:

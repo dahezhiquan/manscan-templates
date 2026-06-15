@@ -1,11 +1,10 @@
 id: tongda-meeting-unauth
 
 info:
-  name: Tongda OA Meeting - Unauthorized Access
+  name: Tongda OA Meeting - 未授权访问漏洞
   author: SleepingBag945
   severity: medium
-  description: |
-    Tongda Meeting Unauthorized Access were Detected.
+  description: Tongda OA Meeting - 未授权 Access 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://github.com/hktalent/scan4all/blob/2a7faf7862265eab33699034fd193bcf11b44e0f/config/poc/%E9%80%9A%E8%BE%BEoa/%E9%80%9A%E8%BE%BEoa-meeting-unauthorized-access.json#L10
   classification:

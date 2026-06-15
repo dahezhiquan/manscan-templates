@@ -1,10 +1,10 @@
 id: pieregister-open-redirect
 
 info:
-  name: WordPress Pie Register < 3.7.2.4 - Open Redirect
+  name: WordPress Pie Register < 3.7.2.4 - 开放重定向漏洞
   author: 0x_Akoko
   severity: low
-  description: WordPress Pie Register < 3.7.2.4 is susceptible to an open redirect vulnerability because the plugin passes unvalidated user input to the wp_redirect() function.
+  description: WordPress Pie Register < 3.7.2.4 - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://wpscan.com/vulnerability/f6efa32f-51df-44b4-bbba-e67ed5785dd4
     - https://wordpress.org/plugins/pie-register/

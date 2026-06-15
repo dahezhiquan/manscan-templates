@@ -4,7 +4,7 @@ info:
   name: QiHang Media Web (QH.aspx) Digital Signage 3.0.9 - Arbitrary File Disclosure
   author: gy741
   severity: high
-  description: The QiHang Media Web application suffers from an unauthenticated file disclosure vulnerability when input passed thru the filename parameter when using the download action or thru path parameter when using the getAll action is not properly verified before being used. This can be exploited to disclose contents of files and directories from local resources.
+  description: QiHang Media Web (QH.aspx) Digital Signage 3.0.9 - Arbitrary File Disclosure 存在未授权访问漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2020-5581.php
   classification:

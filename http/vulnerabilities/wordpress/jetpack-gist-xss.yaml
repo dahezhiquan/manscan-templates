@@ -1,11 +1,10 @@
 id: jetpack-stored-xss
 
 info:
-  name: Jetpack < 6.5 - Stored Cross-Site Scripting
+  name: Jetpack < 6.5 - Stored - 跨站脚本漏洞
   author: 0x_Akoko
   severity: medium
-  description: |
-    Detected authenticated stored XSS in Jetpack < 6.5 via crafted Gist shortcode.
+  description: Jetpack < 6.5 - 存储型跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/5e63453f-4d95-4bc3-9338-2d77f95f9ee7/
     - https://wordpress.org/plugins/jetpack/

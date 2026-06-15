@@ -1,11 +1,10 @@
 id: yonyou-u8-crm-fileupload
 
 info:
-  name: UFIDA U8-CRM getemaildata - Arbitary File Upload
+  name: UFIDA U8-CRM getemaildata - Arbitary - 任意文件上传漏洞
   author: SleepingBag945,pussycat0x
   severity: critical
-  description: |
-    There is an arbitrary file upload vulnerability in the getemaildata.php file of UFIDA U8 CRM customer relationship management system. An attacker can obtain server permissions through the vulnerability and attack the server.
+  description: UFIDA U8-CRM getemaildata - Arbitary File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   classification:
     cwe-id: CWE-434
   metadata:

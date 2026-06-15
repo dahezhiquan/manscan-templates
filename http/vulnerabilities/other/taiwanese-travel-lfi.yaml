@@ -1,11 +1,10 @@
 id: taiwanese-travel-lfi
 
 info:
-  name: Taiwanese Travel - Local File Inclusion
+  name: Taiwanese Travel - 本地文件包含漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    The vulnerability in '/index.php?page=' allows for Local File Inclusion (LFI), granting attackers the ability to include and potentially execute files on the server, compromising the application's security
+  description: Taiwanese Travel - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploitalert.com/view-details.html?id=35607
   metadata:

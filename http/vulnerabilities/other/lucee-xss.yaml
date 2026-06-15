@@ -1,10 +1,10 @@
 id: lucee-xss
 
 info:
-  name: Lucee - Cross-Site Scripting
+  name: Lucee - 跨站脚本漏洞
   author: incogbyte
   severity: high
-  description: Lucee contains a cross-site scripting vulnerability. It allows remote attackers to inject arbitrary JavaScript into the responses returned by the server.
+  description: Lucee - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/lucee-server-arbitrary-file-creation/
   classification:

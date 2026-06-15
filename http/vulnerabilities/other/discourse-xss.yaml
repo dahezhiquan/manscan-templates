@@ -1,10 +1,10 @@
 id: discourse-xss
 
 info:
-  name: Discourse - Cross-Site Scripting
+  name: Discourse - 跨站脚本漏洞
   author: madrobot
   severity: high
-  description: Discourse contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+  description: Discourse - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.cvedetails.com/vulnerability-list/vendor_id-20185/product_id-57316/opxss-1/Discourse-Discourse.html
     - https://github.com/discourse/discourse/security/advisories/GHSA-xhmc-9jwm-wqph

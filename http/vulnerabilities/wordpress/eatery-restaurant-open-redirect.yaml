@@ -1,11 +1,10 @@
 id: eatery-restaurant-open-redirect
 
 info:
-  name: WordPress Eatery 2.2 - Open Redirect
+  name: WordPress Eatery 2.2 - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: |
-    WordPress Eatery theme 2.2 contains an open redirect vulnerability. The theme accepts a user-controlled input that specifies a link to an external site. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: WordPress Eatery 2.2 - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://cxsecurity.com/issue/WLB-2020030183
   classification:

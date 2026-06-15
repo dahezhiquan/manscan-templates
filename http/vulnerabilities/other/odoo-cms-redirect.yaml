@@ -1,10 +1,10 @@
 id: odoo-cms-redirect
 
 info:
-  name: Odoo CMS - Open Redirect
+  name: Odoo CMS - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: Odoo CMS contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: Odoo CMS - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://cxsecurity.com/issue/WLB-2021020143
     - https://www.odoo.com/page/security-nonvuln-redirectors

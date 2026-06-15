@@ -1,10 +1,10 @@
 id: issuu-panel-lfi
 
 info:
-  name: Wordpress Plugin Issuu Panel Remote/Local File Inclusion
+  name: Wordpress Plugin Issuu Panel Remote/ - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: The WordPress Issuu Plugin includes an arbitrary file disclosure vulnerability that allows unauthenticated attackers to disclose the content of local and remote files.
+  description: Wordpress Plugin Issuu Panel Remote/本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://cxsecurity.com/issue/WLB-2016030131
     - https://wordpress.org/plugins/issuu-panel/

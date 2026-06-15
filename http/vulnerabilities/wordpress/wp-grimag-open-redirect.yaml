@@ -1,11 +1,14 @@
 id: wp-grimag-open-redirect
 
 info:
-  name: WordPress Grimag <1.1.1 - Open Redirection
+  name: WordPress Grimag <1.1.1 - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: WordPress Grimag theme before 1.1.1 contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
-  remediation: Fixed in 1.1.1.
+  description: WordPress Grimag <1.1.1 - 开放重定向ion 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in 1。
+    - 对跳转目标实施白名单校验，避免直接信任用户可控的 URL 参数。
+    - 对登录、回调和重定向相关流程增加来源校验与业务约束。
   reference:
     - https://wpscan.com/vulnerability/db319d4c-7de6-4d36-90e9-86de82e9c03a
   classification:

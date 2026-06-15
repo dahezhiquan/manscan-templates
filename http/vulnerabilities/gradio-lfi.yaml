@@ -1,11 +1,10 @@
 id: gradio-lfi
 
 info:
-  name: Gradio - Local File Inclusion
+  name: Gradio - 本地文件包含漏洞
   author: ritikchaddha
   severity: critical
-  description: |
-    Gradio's Dropdown component is vulnerable to Local File Inclusion (LFI) when the value is a dictionary controlled by an attacker. In the postprocess of components, if the value type is a dict, it flows to the async_move_files_to_cache function. When the dictionary is crafted with a "path" key, it causes local file inclusion allowing attackers to read arbitrary files.
+  description: Gradio - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://huntr.com/bounties/936ef084-45e1-4dc5-a419-bca071189565
   classification:

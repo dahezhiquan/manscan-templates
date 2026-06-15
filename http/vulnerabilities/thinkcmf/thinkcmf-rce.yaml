@@ -1,10 +1,10 @@
 id: thinkcmf-rce
 
 info:
-  name: ThinkCMF - Remote Code Execution
+  name: ThinkCMF - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: ThinkCMF  is susceptible to a remote code execution vulnerability.
+  description: ThinkCMF - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://www.freebuf.com/vuls/217586.html
   classification:

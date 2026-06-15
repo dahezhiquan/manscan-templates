@@ -1,11 +1,10 @@
 id: jinhe-jc6-sqli
 
 info:
-  name: Jinhe OA - SQL Injection
+  name: Jinhe OA - SQL 注入漏洞
   author: Ky9oss
   severity: high
-  description: |
-    SQL injection vulnerability in the ljc6/servlet/clobfield interface of Jinhe OA jc6. An attacker can obtain sensitive information.
+  description: Jinhe OA - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/wy876/POC/blob/main/%E9%87%91%E5%92%8COA%20jc6%20clobfield%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
     - https://blog.csdn.net/qq_41904294/article/details/135074649

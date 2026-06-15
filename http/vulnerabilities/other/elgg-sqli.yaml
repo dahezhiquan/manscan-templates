@@ -1,11 +1,10 @@
 id: elgg-sqli
 
 info:
-  name: Elgg 5.1.4 - SQL Injection
+  name: Elgg 5.1.4 - SQL 注入漏洞
   author: s4e-io
   severity: high
-  description: |
-    Elgg 5.1.4 version has a SQL Injection vulnerability in the sort_by[direction] parameter. This vulnerability allows an unauthenticated attacker to manipulate SQL queries by injecting malicious SQL code, potentially leading to unauthorized data access or database compromise. No user authentication is required to exploit this vulnerability.
+  description: Elgg 5.1.4 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/4rdr/proofs/blob/main/info/Elgg_unauth_SQLi_5.1.4.md
     - https://github.com/Elgg/Elgg

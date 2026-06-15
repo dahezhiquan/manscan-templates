@@ -1,11 +1,10 @@
 id: slims-xss
 
 info:
-  name: Senayan Library Management System v9.4.0(SLIMS 9) - Cross Site Scripting
+  name: Senayan Library Management System v9.4.0(SLIMS 9) - 跨站脚本漏洞
   author: arafatansari
   severity: medium
-  description: |
-    SLIMS 9 was discovered to contain `destination` request parameter that copies the value of an HTML tag attribute which is encapsulated in double quotation marks.
+  description: Senayan Library Management System v9.4.0(SLIMS 9) - 跨站脚本 存在跨站脚本漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://packetstormsecurity.com/files/170182/Senayan-Library-Management-System-9.4.0-Cross-Site-Scripting.html
   classification:

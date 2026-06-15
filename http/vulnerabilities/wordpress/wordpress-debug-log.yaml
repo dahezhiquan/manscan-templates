@@ -4,7 +4,7 @@ info:
   name: WordPress Debug Log - Exposure
   author: geraldino2,dwisiswant0,philippedelteil,FLX
   severity: low
-  description: Exposed Wordpress debug log.
+  description: WordPress Debug Log - Exposure 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 4
   tags: wp,wordpress,log,exposure,vuln

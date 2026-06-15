@@ -1,7 +1,7 @@
 id: junos-xss
 
 info:
-  name: JunOS - Cross-Site Scripting
+  name: JunOS - 跨站脚本漏洞
   author: DhiyaneshDK
   severity: medium
   reference:

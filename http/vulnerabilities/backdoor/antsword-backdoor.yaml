@@ -1,11 +1,13 @@
 id: antsword-backdoor
 
 info:
-  name: AntSword Backdoor Detection
+  name: AntSword 后门检测
   author: ffffffff0x
   severity: critical
-  description: An AntSword application backdoor shell was discovered.
-  remediation: Reinstall AnstSword on a new system due to the target system's compromise. Follow best practices for securing PHP servers/applications via the php.ini and other mechanisms.
+  description: 检测目标系统中是否存在 AntSword 相关后门特征。命中通常表明主机已被植入 WebShell 或被攻击者持久化控制，需要按失陷主机处置。
+  remediation: |
+    - 将目标系统按已失陷主机处理，隔离主机并全面排查恶意文件、账户、计划任务和持久化项。
+    - 在清理完成后重置凭证、更新系统与组件，并根据攻击面修复对应初始入侵入口。
   reference:
     - https://github.com/AntSwordProject/AntSword-Labs/tree/master/bypass_disable_functions/9
   classification:

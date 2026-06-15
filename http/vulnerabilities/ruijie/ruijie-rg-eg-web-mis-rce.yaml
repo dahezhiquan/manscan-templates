@@ -1,11 +1,10 @@
 id: ruijie-rg-eg-web-mis-rce
 
 info:
-  name: Ruijie RG-EG - Remote Code Execution
+  name: Ruijie RG-EG - 远程代码执行漏洞
   author: DhiyaneshDk
   severity: critical
-  description: |
-    Ruijie RG-EG easy gateway WEB management system front-end RCE has a command execution vulnerability. An attacker without identity authentication can execute arbitrary commands to control server permissions.
+  description: Ruijie RG-EG - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/xinyisleep/pocscan/blob/main/%E9%94%90%E6%8D%B7/%E9%94%90%E6%8D%B7_EG%E6%98%93%E7%BD%91%E5%85%B3_WEB%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F_%E5%89%8D%E5%8F%B0RCE.py
   classification:

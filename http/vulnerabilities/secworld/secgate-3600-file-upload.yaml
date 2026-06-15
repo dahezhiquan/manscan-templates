@@ -1,11 +1,10 @@
 id: secgate-3600-file-upload
 
 info:
-  name: SecGate 3600 Firewall obj_app_upfile - Arbitrary File Upload
+  name: SecGate 3600 Firewall obj_app_upfile - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    There is an arbitrary file upload vulnerability in the obj_app_upfile interface of Internet SecGate 3600 firewall. An attacker can obtain server permissions by constructing a special request package.
+  description: SecGate 3600 Firewall obj_app_upfile - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://peiqi.wgpsec.org/wiki/iot/%E5%A5%87%E5%AE%89%E4%BF%A1/%E7%BD%91%E7%A5%9E%20SecGate%203600%20%E9%98%B2%E7%81%AB%E5%A2%99%20obj_app_upfile%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.html
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/%E5%A5%87%E5%AE%89%E4%BF%A1/%E7%BD%91%E7%A5%9E%20SecGate%203600%20%E9%98%B2%E7%81%AB%E5%A2%99%20obj_app_upfile%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md

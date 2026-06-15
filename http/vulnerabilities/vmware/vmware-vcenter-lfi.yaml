@@ -1,10 +1,10 @@
 id: vmware-vcenter-lfi
 
 info:
-  name: VMware vCenter - Local File Inclusion
+  name: VMware vCenter - 本地文件包含漏洞
   author: dwisiswant0
   severity: high
-  description: VMware vCenter is vulnerable to local file inclusion.
+  description: VMware vCenter - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://kb.vmware.com/s/article/7960893
     - https://twitter.com/ptswarm/status/1316016337550938122

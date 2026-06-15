@@ -1,10 +1,10 @@
 id: cherry-lfi
 
 info:
-  name: WordPress Cherry < 1.2.7 - Unauthenticated Arbitrary File Upload and Download
+  name: WordPress Cherry < 1.2.7 - 未授权 Arbitrary - 任意文件上传漏洞
   author: dhiyaneshDK
   severity: high
-  description: WordPress plugin Cherry < 1.2.7 has a vulnerability which enables an attacker to upload files directly to the server. This could result in attacker uploading backdoor shell scripts or downloading the wp-config.php file.
+  description: WordPress Cherry < 1.2.7 - 未授权 任意文件上传 and Download 存在任意文件上传漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://wpscan.com/vulnerability/90034817-dee7-40c9-80a2-1f1cd1d033ee
     - https://support.alertlogic.com/hc/en-us/articles/115003048083-06-19-17-WordPress-CMS-Cherry-Plugin-Arbitrary-File-Upload-RCE

@@ -1,11 +1,10 @@
 id: opensns-rce
 
 info:
-  name: OpenSNS - Remote Code Execution
+  name: OpenSNS - 远程代码执行漏洞
   author: gy741
   severity: critical
-  description: |
-    OpenSNS allows remote unauthenticated attackers to execute arbitrary code via the 'shareBox' endpoint.
+  description: OpenSNS - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10

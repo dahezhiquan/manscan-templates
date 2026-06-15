@@ -1,11 +1,10 @@
 id: nacos-auth-bypass
 
 info:
-  name: Nacos 1.x - Authentication Bypass
+  name: Nacos 1.x - 认证绕过漏洞
   author: taielab,pikpikcu,SleepingBag945
   severity: critical
-  description: |
-    Nacos 1.x was discovered. A default Nacos instance needs to modify the application.properties configuration file or add the JVM startup variable Dnacos.core.auth.enabled=true to enable the authentication function (reference: https://nacos.io/en-us/docs/auth.html). But authentication can still be bypassed under certain circumstances and any interface can be called as in the following example that can add a new user (POST https://127.0.0.1:8848/nacos/v1/auth/users?username=test&password=test). That user can then log in to the console to access, modify, and add data.
+  description: Nacos 1.x - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/alibaba/nacos/issues/4593
     - https://nacos.io/en-us/docs/auth.html

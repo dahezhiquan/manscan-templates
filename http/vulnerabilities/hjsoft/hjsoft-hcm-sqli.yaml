@@ -1,11 +1,10 @@
 id: hjsoft-hcm-sqli
 
 info:
-  name: Hongjing HCM - Sql Injection
+  name: Hongjing HCM - SQL 注入漏洞
   author: s4e-io
   severity: high
-  description: |
-    There is a SQL injection vulnerability in the /servlet/sduty/getSdutyTree interface of Hongjing HCM. Unauthenticated remote attackers can execute arbitrary commands by exploiting the SQL injection vulnerability with the database xp_cmdshell, thereby controlling the server.
+  description: Hongjing HCM - Sql Injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/wy876/POC/blob/main/%E5%AE%8F%E6%99%AFeHR%E4%BA%BA%E5%8A%9B%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3getSdutyTree%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md
     - https://blog.csdn.net/qq_41904294/article/details/140172351

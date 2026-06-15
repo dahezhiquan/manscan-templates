@@ -1,10 +1,10 @@
 id: thinkphp-5023-rce
 
 info:
-  name: ThinkPHP 5.0.23 - Remote Code Execution
+  name: ThinkPHP 5.0.23 - 远程代码执行漏洞
   author: dr_set
   severity: critical
-  description: ThinkPHP 5.0.23 is susceptible to remote code execution. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: ThinkPHP 5.0.23 - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/vulhub/vulhub/tree/0a0bc719f9a9ad5b27854e92bc4dfa17deea25b4/thinkphp/5.0.23-rce
   classification:

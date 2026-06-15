@@ -1,11 +1,10 @@
 id: tongda-api-file-upload
 
 info:
-  name: Tongda OA v11.8 api.ali.php - Arbitrary File Upload
+  name: Tongda OA v11.8 api.ali.php - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Tongda OA v11.8 api.ali.php has an arbitrary file upload vulnerability. An attacker can upload malicious files to control the server through the vulnerability.
+  description: Tongda OA v11.8 api.ali.php - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/tongda-oa-api-ali-upload.yaml
   metadata:

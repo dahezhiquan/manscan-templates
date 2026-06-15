@@ -1,12 +1,13 @@
 id: liferay-resource-leak
 
 info:
-  name: Liferay - Local File Inclusion
+  name: Liferay - 本地文件包含漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    Liferay is vulnerable to local file inclusion in the I18n Servlet because it leaks information via sending an HTTP request to /[language]/[resource];.js (also .jsp works).
-  remediation: Update Liferay to the latest version
+  description: Liferay - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  remediation: |
+    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
+    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   reference:
     - https://github.com/ilmila/J2EEScan/blob/master/src/main/java/burp/j2ee/issues/impl/LiferayI18nServletResourceLeaks.java
   classification:

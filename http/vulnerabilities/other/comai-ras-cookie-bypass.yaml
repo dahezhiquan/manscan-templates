@@ -4,8 +4,7 @@ info:
   name: Comai RAS System Cookie - Authentication Override
   author: SleepingBag945
   severity: high
-  description: |
-    Comai RAS system has cookie authentication overreach, when RAS_Admin_UserInfo_UserName is set to admin, the background can be accessed
+  description: Comai RAS System Cookie - Authentication Override 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/webapp/%E7%A7%91%E8%BF%88/%E7%A7%91%E8%BF%88%20RAS%E7%B3%BB%E7%BB%9F%20Cookie%E9%AA%8C%E8%AF%81%E8%B6%8A%E6%9D%83%E6%BC%8F%E6%B4%9E.md
     - https://github.com/zan8in/afrog/blob/main/v2/pocs/afrog-pocs/vulnerability/maike-ras-cookie-bypass.yaml

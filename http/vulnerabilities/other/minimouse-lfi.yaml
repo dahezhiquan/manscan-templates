@@ -1,10 +1,10 @@
 id: minimouse-lfi
 
 info:
-  name: Mini Mouse 9.2.0 - Local File Inclusion
+  name: Mini Mouse 9.2.0 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: Mini Mouse 9.2.0 is vulnerable to local file inclusion because it allows remote unauthenticated attackers to include and disclose the content of locally stored files via the 'file' parameter.
+  description: Mini Mouse 9.2.0 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://www.exploit-db.com/exploits/49744
   classification:

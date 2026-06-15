@@ -1,7 +1,7 @@
 id: deadbolt-ransomware
 
 info:
-  name: Deadbolt Ransomware Detection
+  name: Deadbolt Ransomware 检测
   author: pdteam
   severity: info
   metadata:

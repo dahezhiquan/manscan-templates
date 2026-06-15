@@ -4,7 +4,7 @@ info:
   name: UpdraftPlus Plugin Pem Key
   author: dhiyaneshDk
   severity: info
-  description: UpdraftPlus wordpress plugin private key leaked with directory listing.
+  description: UpdraftPlus Plugin Pem Key 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://www.exploit-db.com/ghdb/6437
   metadata:

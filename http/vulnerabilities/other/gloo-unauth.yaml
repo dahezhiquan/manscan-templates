@@ -1,10 +1,10 @@
 id: gloo-unauth
 
 info:
-  name: Unauthenticated Gloo UI
+  name: 未授权访问漏洞
   author: dhiyaneshDk
   severity: high
-  description: Gloo UI is exposed to external users.
+  description: 未授权 Gloo UI 存在未授权访问漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     max-request: 1
   tags: unauth,gloo,vuln

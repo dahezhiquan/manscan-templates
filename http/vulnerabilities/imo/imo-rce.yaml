@@ -1,11 +1,10 @@
 id: imo-rce
 
 info:
-  name: IMO - Remote Code Execution
+  name: IMO - 远程代码执行漏洞
   author: ritikchaddha
   severity: critical
-  description: |
-    The lax filtering of imo cloud office/file/NDisk/get_file.php allows unlimited file uploads. Attackers can directly obtain website permissions through this vulnerability.
+  description: IMO - 远程代码执行 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://www.henry4e36.top/index.php/archives/130.html#cl-1
     - https://forum.butian.net/article/213

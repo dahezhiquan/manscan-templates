@@ -1,10 +1,10 @@
 id: elex-woocommerce-xss
 
 info:
-  name: WordPress WooCommerce Google Shopping < 1.2.4 - Cross-Site Scripting
+  name: WordPress WooCommerce Google Shopping < 1.2.4 - 跨站脚本漏洞
   author: dhiyaneshDk
   severity: high
-  description: WordPress WooCommerce Google Shopping < 1.2.4 is susceptible to cross-site scripting because the plugin does not sanitize or escape the search GET parameter before outputting it back in the page and executing it in a logged in admin context.
+  description: WordPress WooCommerce Google Shopping < 1.2.4 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/647448d6-32c0-4b38-a40a-3b54c55f4e2e
   classification:

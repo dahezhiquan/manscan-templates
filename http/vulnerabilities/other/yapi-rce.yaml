@@ -1,10 +1,10 @@
 id: yapi-rce
 
 info:
-  name: Yapi - Remote Code Execution
+  name: Yapi - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: Yapi allows remote unauthenticated attackers to cause the product to execute arbitrary code.
+  description: Yapi - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.secpulse.com/archives/162502.html
     - https://gist.github.com/pikpikcu/0145fb71203c8a3ad5c67b8aab47165b

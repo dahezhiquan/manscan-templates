@@ -1,11 +1,10 @@
 id: wp-real-estate-xss
 
 info:
-  name: WordPress Real Estate 7 Theme <= 3.3.4 - Cross-Site Scripting
+  name: WordPress Real Estate 7 Theme <= 3.3.4 - 跨站脚本漏洞
   author: Harsh
   severity: medium
-  description: |
-    The Real Estate 7 premium theme for WordPress is vulnerable to Reflected Cross-Site Scripting (XSS) attack vector in versions up to, and including, v3.3.4 via the 'ct_additional_features' option due to insufficient input sanitization and output escaping. This vulnerability allows unauthenticated attackers to inject malicious JavaScript payload in the search page that execute if they can trick a user into performing an action such as clicking on a link.
+  description: WordPress Real Estate 7 Theme <= 3.3.4 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploitalert.com/view-details.html?id=39344
     - https://packetstormsecurity.com/files/171186/WordPress-Real-Estate-7-Theme-3.3.4-Cross-Site-Scripting.html

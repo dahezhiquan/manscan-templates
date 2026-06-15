@@ -1,10 +1,10 @@
 id: core-chuangtian-cloud-rce
 
 info:
-  name: Core Chuangtian Cloud Desktop System - Remote Code Execution
+  name: Core Chuangtian Cloud Desktop System - 远程代码执行漏洞
   author: pikpikcu
   severity: critical
-  description: Core Chuangtian Cloud Desktop System is susceptible to remote code execution vulnerabilities.
+  description: Core Chuangtian Cloud Desktop System - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://mp.weixin.qq.com/s/wH5luLISE_G381W2ssv93g
   classification:

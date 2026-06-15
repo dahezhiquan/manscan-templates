@@ -1,11 +1,10 @@
 id: chanjet-tplus-fileupload
 
 info:
-  name: UFIDA Chanjet TPluse Upload.aspx - Arbitrary File Upload
+  name: UFIDA Chanjet TPluse Upload.aspx - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: high
-  description: |
-    There is an arbitrary file upload vulnerability in the Upload.aspx interface of UFIDA Chanjet TPlus. An attacker can use the preload parameter to bypass authentication to upload files and control the server.
+  description: UFIDA Chanjet TPluse Upload.aspx - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/webapp/%E7%94%A8%E5%8F%8B/%E7%94%A8%E5%8F%8B%20%E7%95%85%E6%8D%B7%E9%80%9AT%2B%20Upload.aspx%20%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   metadata:

@@ -4,7 +4,7 @@ info:
   name: Wordpress - Path Disclosure
   author: arcc
   severity: info
-  description: Wordpress internal file system path of a WordPress installation is exposed or disclosed to unauthorized users.
+  description: Wordpress - Path Disclosure 存在未授权访问漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   reference:
     - https://make.wordpress.org/core/handbook/testing/reporting-security-vulnerabilities/#why-are-there-path-disclosures-when-directly-loading-certain-files
     - https://core.trac.wordpress.org/ticket/38317

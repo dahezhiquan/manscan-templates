@@ -1,10 +1,10 @@
 id: hasura-graphql-psql-exec
 
 info:
-  name: Hasura GraphQL Engine - Remote Code Execution
+  name: Hasura GraphQL Engine - 远程代码执行漏洞
   author: Udyz
   severity: critical
-  description: Hasura GraphQL Engine allows remote unauthenticated users to execute arbitrary SQL statements via the '/v2/query' endpoint (aka remote code execution).
+  description: Hasura GraphQL Engine - 远程代码执行 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.exploit-db.com/exploits/49802
   classification:

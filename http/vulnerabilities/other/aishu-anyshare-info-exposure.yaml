@@ -1,13 +1,13 @@
 id: aishu-anyshare-info-exposure
 
 info:
-  name: Aishu AnyShare - Information Disclosure
+  name: Aishu AnyShare - 信息泄露漏洞
   author: s4e-io
   severity: high
-  description: |
-    Aishu AnyShare intelligent content management platform Usrm_GetAllUsers interface has an information disclosure vulnerability, and unauthenticated attackers can obtain sensitive information such as usernames and passwords. You can log in to the background and put the system in a highly insecure state.
+  description: Aishu AnyShare - 信息泄露 存在未授权访问漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
   remediation: |
-    Ensure that the endpoint is protected and only accessible by authenticated and authorized users. Implement proper access controls and validate user permissions.
+    - 为敏感接口补充鉴权与最小化返回策略，避免未授权用户获取配置、账户或节点信息。
+    - 审核日志、错误页和调试接口的输出内容，关闭不必要的调试或管理入口。
   reference:
     - https://cn-sec.com/archives/3431184.html
   metadata:

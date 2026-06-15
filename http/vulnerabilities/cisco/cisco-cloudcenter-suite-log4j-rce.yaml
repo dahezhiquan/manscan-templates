@@ -1,12 +1,13 @@
 id: cisco-cloudcenter-suite-log4j-rce
 
 info:
-  name: Cisco CloudCenter Suite (Log4j) - Remote Code Execution
+  name: Cisco CloudCenter Suite (Log4j) - 远程代码执行漏洞
   author: pwnhxl
   severity: critical
-  description: |
-    Cisco CloudCenter Suite is susceptible to remote code execution via the Apache Log4j library. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials. Apache Log4j2 2.0-beta9 through 2.15.0 (excluding security releases 2.12.2, 2.12.3, and 2.3.1) JNDI features used in configuration, log messages, and parameters do not protect against attacker-controlled LDAP and other JNDI-related endpoints. An attacker who can control log messages or log message parameters can execute arbitrary code loaded from LDAP servers when message lookup substitution is enabled.
-  remediation: From log4j 2.15.0, this behavior has been disabled by default. From version 2.16.0 (along with 2.12.2, 2.12.3, and 2.3.1), this functionality has been completely removed. Note that this vulnerability is specific to log4j-core and does not affect log4net, log4cxx, or other Apache Logging Services projects.
+  description: Cisco CloudCenter Suite 受 Apache Log4j 相关缺陷影响，攻击者可借助可控日志消息或参数触发 JNDI 解析，从而在目标环境中执行任意代码。该模板通过实际请求与响应特征验证目标是否仍暴露该漏洞面。
+  remediation: |
+    - 按厂商公告升级相关组件，并确保 Log4j 升级到已修复版本。
+    - 同时排查历史日志与主机侧痕迹，确认是否已被利用植入恶意代码或后门。
   reference:
     - https://logging.apache.org/log4j/2.x/security.html
     - http://www.openwall.com/lists/oss-security/2021/12/10/1

@@ -1,10 +1,10 @@
 id: samsung-wlan-ap-lfi
 
 info:
-  name: Samsung WLAN AP WEA453e - Local File Inclusion
+  name: Samsung WLAN AP WEA453e - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: Samsung WLAN AP WEA453e is susceptible to local file inclusion vulnerabilities.
+  description: Samsung WLAN AP WEA453e - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://omriinbar.medium.com/samsung-wlan-ap-wea453e-vulnerabilities-7aa4a57d4dba
   classification:

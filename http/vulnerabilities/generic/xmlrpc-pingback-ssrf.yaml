@@ -1,10 +1,10 @@
 id: xmlrpc-pingback-ssrf
 
 info:
-  name: XMLRPC Pingback SSRF
+  name: XMLRPC Pingback - 服务端请求伪造漏洞
   author: geeknik
   severity: high
-  description: XMLRPC Pingback leads to SSRF.
+  description: XMLRPC Pingback 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://hackerone.com/reports/406387
   classification:

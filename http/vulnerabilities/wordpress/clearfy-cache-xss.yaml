@@ -1,10 +1,10 @@
 id: clearfy-cache-xss
 
 info:
-  name: WordPress Clearfy Cache <2.0.5 - Cross-Site Scripting
+  name: WordPress Clearfy Cache <2.0.5 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: WordPress Clearfy Cache 2.0.5 does not escape some URLs before outputting them back in attributes, leading to reflected cross-site scripting.
+  description: WordPress Clearfy Cache <2.0.5 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/a59e7102-13d6-4f1e-b7b1-75eae307e516
     - https://wordpress.org/plugins/clearfy

@@ -1,10 +1,10 @@
 id: jexboss-backdoor
 
 info:
-  name: JexBoss - Remote Code Execution
+  name: JexBoss - 远程代码执行漏洞
   author: UnkL4b
   severity: critical
-  description: JexBoss is susceptible to remote code execution via the webshell. An attacker can execute malware, obtain sensitive information, modify data, and/or gain full control over a compromised system without entering necessary credentials.
+  description: 该模板用于检测目标是否存在与 JexBoss - 远程代码执行 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://us-cert.cisa.gov/ncas/analysis-reports/AR18-312A
     - https://github.com/joaomatosf/jexboss

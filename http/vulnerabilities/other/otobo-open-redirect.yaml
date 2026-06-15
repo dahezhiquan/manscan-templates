@@ -1,10 +1,10 @@
 id: otobo-open-redirect
 
 info:
-  name: Otobo - Open Redirect
+  name: Otobo - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: Otobo contains an open redirect vulnerability. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: Otobo - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
   reference:
     - https://huntr.dev/bounties/de64ac71-9d06-47cb-b643-891db02f2a1f/
     - https://github.com/rotheross/otobo

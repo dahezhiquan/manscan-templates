@@ -4,7 +4,7 @@ info:
   name: Magento Unprotected development files
   author: TechbrunchFR
   severity: high
-  description: Magento version 1.9.2.x includes /dev directories or files that might reveal your passwords and other sensitive information. The /dev directories and files are not protected by default. According to Magento, "these tests are not supposed to end up on production servers".
+  description: Magento Unprotected development files 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://support.hypernode.com/en/support/solutions/articles/48001153348-how-to-secure-your-data-using-encryption-and-hashing
   classification:

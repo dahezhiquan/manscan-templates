@@ -1,10 +1,10 @@
 id: jolokia-logback-jndi-rce
 
 info:
-  name: Jolokia Logback JNDI - Remote Code Execution
+  name: Jolokia Logback JNDI - 远程代码执行漏洞
   author: SleepingBag945
   severity: high
-  description: Jolokia Logback is vulnerable to RCE.
+  description: Jolokia Logback JNDI - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://thinkloveshare.com/hacking/ssrf_to_rce_with_jolokia_and_mbeans/
     - https://github.com/laluka/jolokia-exploitation-toolkit

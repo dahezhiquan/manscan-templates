@@ -1,10 +1,10 @@
 id: microstrategy-ssrf
 
 info:
-  name: MicroStrategy tinyurl - Server-Side Request Forgery (Blind)
+  name: MicroStrategy tinyurl - 服务端请求伪造漏洞
   author: organiccrap
   severity: high
-  description: Blind server-side (SSRF) request forgery vulnerability on MicroStrategy URL shortener.
+  description: MicroStrategy tinyurl - Server-Side Request Forgery (Blind) 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
   reference:
     - https://medium.com/@win3zz/how-i-made-31500-by-submitting-a-bug-to-facebook-d31bb046e204
   classification:

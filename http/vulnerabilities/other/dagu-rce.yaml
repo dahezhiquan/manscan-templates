@@ -1,12 +1,14 @@
 id: dagu-rce
 
 info:
-  name: Dagu Workflow Engine - Remote Code Execution
+  name: Dagu Workflow Engine - 远程代码执行漏洞
   author: omarkurt
   severity: critical
-  description: |
-    Dagu (<= 1.30.3) ships with authentication disabled by default. The POST /api/v2/dag-runs endpoint accepts inline YAML DAG specifications and immediately executes shell commands without credentials.
-  remediation: Upgrade to a patched version.
+  description: Dagu Workflow Engine - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Upgrade to a patched version。
+    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
+    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   reference:
     - https://github.com/dagu-org/dagu
     - https://vulnerabletarget.com/vt-dagu

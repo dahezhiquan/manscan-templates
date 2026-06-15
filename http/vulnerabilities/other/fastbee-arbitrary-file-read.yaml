@@ -1,11 +1,10 @@
 id: fastbee-arbitrary-file-read
 
 info:
-  name: FastBee - Local File Inclusion
+  name: FastBee - 本地文件包含漏洞
   author: s4e-io
   severity: high
-  description: |
-    Arbitrary file read vulnerability exists in FastBee IoT platform download, which may lead to sensitive information leakage, data theft and other security risks, thus causing serious harm to the system and users.
+  description: FastBee - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://blog.csdn.net/weixin_43167326/article/details/141806542
   metadata:

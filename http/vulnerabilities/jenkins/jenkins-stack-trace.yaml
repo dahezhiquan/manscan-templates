@@ -1,10 +1,10 @@
 id: jenkins-stack-trace
 
 info:
-  name: Detect Jenkins in Debug Mode with Stack Traces Enabled
+  name: 检测 Jenkins in Debug Mode with Stack Traces Enabled
   author: Dheerajmadhukar
   severity: low
-  description: Module identified that the affected host is running an instance of Jenkins in debug mode, as a result stack traces are enabled.
+  description: Detect Jenkins in Debug Mode with Stack Traces Enabled 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://hackerone.com/reports/221833
   metadata:

@@ -1,7 +1,7 @@
 id: jira-unauthenticated-projects
 
 info:
-  name: Jira Unauthenticated Projects
+  name: Jira - 未授权访问漏洞
   author: TechbrunchFR
   severity: info
   metadata:

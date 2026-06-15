@@ -1,11 +1,10 @@
 id: indonasia-toko-cms-sql
 
 info:
-  name: Indonasia Toko CMS - SQL Injection
+  name: Indonasia Toko CMS - SQL 注入漏洞
   author: r3Y3r53
   severity: high
-  description: |
-    Indonesia Toko CMS is susceptible to SQL Injection in its login system, enabling attackers to exploit vulnerabilities and bypass authentication by injecting malicious SQL code.
+  description: Indonasia Toko CMS - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://cxsecurity.com/issue/WLB-2019030008
   classification:

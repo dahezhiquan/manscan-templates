@@ -1,11 +1,10 @@
 id: joomla-iproperty-xss
 
 info:
-  name: Joomla iProperty Real Estate 4.1.1 - Cross-Site Scripting
+  name: Joomla iProperty Real Estate 4.1.1 - 跨站脚本漏洞
   author: r3Y3r53
   severity: medium
-  description: |
-    Joomla extension iproperty is vulnerable to XSS in GET parameter 'filter_keyword'.
+  description: Joomla iProperty Real Estate 4.1.1 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploit-db.com/exploits/51640
     - https://cxsecurity.com/issue/WLB-2023070076

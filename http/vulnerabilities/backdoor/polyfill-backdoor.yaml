@@ -1,11 +1,10 @@
 id: polyfill-backdoor
 
 info:
-  name: Polyfill.io - Backdoor
+  name: Polyfill.io - 后门检测
   author: kazet
   severity: info
-  description: |
-    The polyfill.io CDN was suspected to serve malware. Note: it's not exploitable anymore
+  description: 该模板用于检测目标是否存在与 Polyfill.io - Backdoor 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://sansec.io/research/polyfill-supply-chain-attack
     - https://web.archive.org/web/20240229113710/https://github.com/polyfillpolyfill/polyfill-service/issues/2834

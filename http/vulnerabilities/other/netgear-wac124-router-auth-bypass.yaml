@@ -1,11 +1,10 @@
 id: netgear-wac124-router-auth-bypass
 
 info:
-  name: NETGEAR WAC124 - Authentication Bypass
+  name: NETGEAR WAC124 - 认证绕过漏洞
   author: gy741
   severity: high
-  description: |
-    NETGEAR WAC124 AC2000 routers contain an authentication bypass vulnerability. An attacker can gain access by bypassing proper authentication, thereby making it possible to obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: NETGEAR WAC124 - 认证绕过 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://flattsecurity.medium.com/finding-bugs-to-trigger-unauthenticated-command-injection-in-a-netgear-router-psv-2022-0044-2b394fb9edc
     - https://kb.netgear.com/000064730/Security-Advisory-for-Multiple-Vulnerabilities-on-the-WAC124-PSV-2022-0044

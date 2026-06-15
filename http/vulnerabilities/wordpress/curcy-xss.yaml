@@ -1,10 +1,10 @@
 id: curcy-xss
 
 info:
-  name: WordPress CURCY - Multi Currency for WooCommerce <2.1.18 - Cross-Site Scripting
+  name: WordPress CURCY - Multi Currency for WooCommerce <2.1.18 - 跨站脚本漏洞
   author: Akincibor
   severity: medium
-  description: WordPress CURCY - Multi Currency for WooCommerce 2.1.18 does not escape some generated URLs before outputting them back in attributes, leading to reflected cross-site scripting.
+  description: WordPress CURCY - Multi Currency for WooCommerce <2.1.18 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://wpscan.com/vulnerability/6ebafb52-e167-40bc-a86c-b9840b2b9b37
     - https://wordpress.org/plugins/woo-multi-currency

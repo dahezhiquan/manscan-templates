@@ -1,10 +1,10 @@
 id: metabase-log4j-rce
 
 info:
-  name: Metabase - Remote Code Execution (Apache Log4j)
+  name: Metabase - 远程代码执行漏洞
   author: DhiyaneshDK
   severity: critical
-  description: Metabase is susceptible to remote code execution due to an incomplete patch in Apache Log4j 2.15.0 in certain non-default configurations. A remote attacker can pass malicious data and perform a denial of service attack, exfiltrate data, or execute arbitrary code.
+  description: Metabase - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
   reference:
     - https://www.cybersecurity-help.cz/vdb/SB2021121706
     - https://logging.apache.org/log4j/2.x/security.html

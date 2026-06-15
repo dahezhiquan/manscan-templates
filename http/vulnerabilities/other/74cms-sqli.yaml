@@ -1,10 +1,10 @@
 id: 74cms-sqli
 
 info:
-  name: 74cms Sql Injection
+  name: 74cms - SQL 注入漏洞
   author: princechaddha
   severity: critical
-  description: A SQL injection vulnerability exists in 74cms 5.0.1 AjaxPersonalController.class.php.
+  description: 74cms Sql Injection 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://github.com/possib1e/vuln/issues/3
   classification:

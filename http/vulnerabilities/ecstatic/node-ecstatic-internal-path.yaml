@@ -4,7 +4,7 @@ info:
   name: Node ecstatic Internal Path - Exposure
   author: DhiyaneshDK
   severity: low
-  description: Internal path exposure in Node ecstatic.
+  description: Node ecstatic Internal Path - Exposure 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   reference:
     - https://tripla.dk/2020/03/26/multiple-vulnerabilities-in-nodejs-ecstatic-http-server-http-party/
   metadata:

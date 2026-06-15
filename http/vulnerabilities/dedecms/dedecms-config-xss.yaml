@@ -1,11 +1,10 @@
 id: dedecms-config-xss
 
 info:
-  name: DedeCMS 5.7 - Cross-Site Scripting
+  name: DedeCMS 5.7 - 跨站脚本漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    DeDeCMS 5.7 contains a cross-site scripting vulnerability in the '/include/dialog/config.php' file. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site.
+  description: DedeCMS 5.7 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.zilyun.com/8665.html
     - https://www.60ru.com/161.html

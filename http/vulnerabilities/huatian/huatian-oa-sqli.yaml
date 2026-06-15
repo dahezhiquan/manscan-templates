@@ -1,11 +1,10 @@
 id: huatian-oa-sqli
 
 info:
-  name: Huatian Power OA 8000 - SQL Injection
+  name: Huatian Power OA 8000 - SQL 注入漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    There is a SQL injection vulnerability in the workFlowService interface of Huatian Power OA 8000. An attacker can exploit this vulnerability to obtain sensitive database information.
+  description: Huatian Power OA 8000 - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://blog.csdn.net/qq_41617034/article/details/124305120
   classification:

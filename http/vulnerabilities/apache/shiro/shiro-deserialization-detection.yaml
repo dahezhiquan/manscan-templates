@@ -1,11 +1,10 @@
 id: shiro-deserialization-detection
 
 info:
-  name: Shiro <= 1.2.4 Deserialization Detection
+  name: Shiro 默认密钥反序列化检测
   author: hotpot,j4vaovo
   severity: unknown
-  description: |
-    This template is designed to detect the Shiro framework's default key vulnerabilities. It leverages 51 built-in Shiro keys to probe for potential vulnerabilities.
+  description: 该模板通过使用多组内置默认密钥探测 Apache Shiro 框架的默认密钥反序列化问题，可用于识别潜在的未修复 Shiro RememberMe 漏洞面。
   reference:
     - https://github.com/sv3nbeast/ShiroScan
   metadata:

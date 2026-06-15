@@ -1,10 +1,10 @@
 id: jinfornet-jreport-lfi
 
 info:
-  name: Jinfornet Jreport 15.6 - Local File Inclusion
+  name: Jinfornet Jreport 15.6 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: Jinfornet Jreport 15.6 is vulnerable to local file incluion via the Jreport Help function in the SendFileServlet. Exploitaiton allows remote unauthenticated users to view any files on the Operating System with Application services user permission. This vulnerability affects Windows and Unix operating systems.
+  description: Jinfornet Jreport 15.6 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://cxsecurity.com/issue/WLB-2020030151
     - https://www.jinfonet.com/product/download-jreport/

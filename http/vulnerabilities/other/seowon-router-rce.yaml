@@ -1,11 +1,10 @@
 id: seowon-router-rce
 
 info:
-  name: Seowon 130-SLC router - Remote Code Execution
+  name: Seowon 130-SLC router - 远程代码执行漏洞
   author: gy741
   severity: critical
-  description: |
-    Seowon 130-SLC router lets remote attackers execute commands without authentication as admin users via the router ip & Port(if available) in the request.
+  description: Seowon 130-SLC router - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://www.exploit-db.com/exploits/50295
   classification:

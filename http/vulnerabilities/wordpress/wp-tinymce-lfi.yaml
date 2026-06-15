@@ -1,10 +1,10 @@
 id: wp-tinymce-lfi
 
 info:
-  name: Tinymce Thumbnail Gallery <=1.0.7 - Local File Inclusion
+  name: Tinymce Thumbnail Gallery <=1.0.7 - 本地文件包含漏洞
   author: 0x_Akoko
   severity: high
-  description: Tinymce Thumbnail Gallery 1.0.7 and before are vulnerable to local file inclusion via download-image.php.
+  description: Tinymce Thumbnail Gallery <=1.0.7 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://wpscan.com/vulnerability/4a49b023-c1c9-4cc4-a2fd-af5f911bb400
     - http://wordpress.org/extend/plugins/tinymce-thumbnail-gallery/

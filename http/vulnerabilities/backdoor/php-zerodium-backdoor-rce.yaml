@@ -1,11 +1,10 @@
 id: php-zerodium-backdoor-rce
 
 info:
-  name: PHP 8.1.0-dev - Backdoor Remote Code Execution
+  name: PHP 8.1.0-dev - Backdoor - 远程代码执行漏洞
   author: dhiyaneshDk
   severity: critical
-  description: |
-    PHP 8.1.0-dev contains a backdoor dubbed 'zerodiumvar_dump' which can allow the execution of arbitrary PHP code.
+  description: 该模板用于检测目标是否存在与 PHP 8.1.0-dev - Backdoor 远程代码执行 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
   reference:
     - https://news-web.php.net/php.internals/113838
     - https://flast101.github.io/php-8.1.0-dev-backdoor-rce/

@@ -1,11 +1,10 @@
 id: wp-woocommerce-email-verification
 
 info:
-  name: Email Verification for WooCommerce < 1.8.2 - Loose Comparison to Authentication Bypass
+  name: Email Verification for WooCommerce < 1.8.2 - Loose Comparison to - 认证绕过漏洞
   author: random_robbie,daffianfo
   severity: critical
-  description: |
-    Email Verification for WooCommerce Wordpress plugin prior to version 1.8.2  contains a loose comparison issue which could allow any user to log in as administrator.
+  description: Email Verification for WooCommerce < 1.8.2 - Loose Comparison to 认证绕过 存在认证绕过漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://wpvulndb.com/vulnerabilities/10318
     - https://wpscan.com/vulnerability/0c93832c-83db-4053-8a11-70de966bb3a8

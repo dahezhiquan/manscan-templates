@@ -1,11 +1,10 @@
 id: ecology-mysql-config
 
 info:
-  name: Fanwei OA E-Office - Information Disclosure
+  name: Fanwei OA E-Office - 信息泄露漏洞
   author: ritikchaddha
   severity: medium
-  description: |
-    Fanwei E-Office mysql_config.ini file can be directly accessed, leaking database account password and other information.
+  description: Fanwei OA E-Office - 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     verified: true
     max-request: 1

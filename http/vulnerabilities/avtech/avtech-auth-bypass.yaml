@@ -1,11 +1,10 @@
 id: avtech-auth-bypass
 
 info:
-  name: AVTECH Video Surveillance Product - Authentication Bypass
+  name: AVTECH Video Surveillance Product - 认证绕过漏洞
   author: ritikchaddha
   severity: high
-  description: |
-    AVTECH Video Surveillance Products password disclosure through /cgi-bin/user/Config.cgi.
+  description: AVTECH Video Surveillance Product - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
   metadata:
     verified: true
     max-request: 2

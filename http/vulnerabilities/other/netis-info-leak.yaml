@@ -4,7 +4,7 @@ info:
   name: Netis E1+ V1.2.32533 - WiFi Password Disclosure
   author: gy741
   severity: high
-  description: A vulnerability in Netis allows remote unauthenticated users to disclose the WiFi password of the remote device.
+  description: Netis E1+ V1.2.32533 - WiFi Password Disclosure 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://www.exploit-db.com/exploits/48384
     - https://www.netis-systems.com/

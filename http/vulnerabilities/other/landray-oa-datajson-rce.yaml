@@ -1,11 +1,10 @@
 id: landray-oa-datajson-rce
 
 info:
-  name: Landray OA Datajson S Bean - Remote Code Execution
+  name: Landray OA Datajson S Bean - 远程代码执行漏洞
   author: SleepingBag945
   severity: critical
-  description: |
-    Landray Office Automation (OA) software, specifically in the "s_bean" component's "sysFormulaSimulateByJS" functionality. This vulnerability allows remote code execution (RCE), enabling attackers to execute arbitrary code on a target system.
+  description: Landray OA Datajson S Bean - 远程代码执行 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   reference:
     - https://github.com/k3sc/Landray-oa-rce-1/blob/main/poc.py
     - https://github.com/hktalent/scan4all/blob/main/pocs_go/landray/Landray_RCE.go

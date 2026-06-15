@@ -1,12 +1,14 @@
 id: zero-spam-sql-injection
 
 info:
-  name: WordPress Zero Spam <= 2.1.1 - Blind SQL Injection
+  name: WordPress Zero Spam <= 2.1.1 - Blind - SQL 注入漏洞
   author: theamanrawat
   severity: critical
-  description: |
-    The WordPress Zero Spam WordPress plugin was affected by an Unauthenticated Blind SQL Injection security vulnerability.
-  remediation: Fixed in version 2.2.0
+  description: WordPress Zero Spam <= 2.1.1 - Blind SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Fixed in version 2。
+    - 使用参数化查询或预编译语句，避免将用户输入直接拼接到 SQL 语句中。
+    - 对相关接口增加权限校验、输入校验与异常审计，防止敏感查询被滥用。
   reference:
     - https://wpscan.com/vulnerability/44cc8d59-9b45-46b7-afaf-894e4ba62dd5
     - https://wordpress.org/plugins/zero-spam/

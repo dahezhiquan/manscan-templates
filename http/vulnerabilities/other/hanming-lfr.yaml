@@ -1,10 +1,10 @@
 id: hanming-lfr
 
 info:
-  name: Hanming Video Conferencing - Local File Inclusion
+  name: Hanming Video Conferencing - 本地文件包含漏洞
   author: ritikchaddha
   severity: high
-  description: Hanming Video Conferencing is vulnerable to local file inclusion.
+  description: Hanming Video Conferencing - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://mp.weixin.qq.com/s/F-M21PT0xn9QOuwoC8llKA
   classification:

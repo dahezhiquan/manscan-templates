@@ -1,11 +1,10 @@
 id: cross-site-tracing-xss
 
 info:
-  name: Cross Site Tracing - Cross-Site Scripting
+  name: 跨站追踪引发的跨站脚本漏洞
   author: ritikchaddha
   severity: low
-  description: |
-    Cross-site scripting vulnerability was discovered via HTTP TRACE method reflection. The TRACE method reflects the request body back in the response, which can beexploited for XSS attacks when user input is reflected without proper sanitization.
+  description: Cross Site Tracing - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://medium.com/@tushar_rs_/cross-site-tracing-attack-xst-5aa519658b7a
     - https://www.owasp.org/index.php/Cross_Site_Tracing

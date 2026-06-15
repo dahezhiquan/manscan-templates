@@ -1,11 +1,10 @@
 id: ecshop-sqli
 
 info:
-  name: ECShop 2.x/3.x - SQL Injection
+  name: ECShop 2.x/3.x - SQL 注入漏洞
   author: Lark-lab,ImNightmaree,ritikchaddha
   severity: critical
-  description: |
-    ECShop 2.x and 3.x contains a SQL injection vulnerability which can allow an attacker to inject arbitrary SQL statements via the referer header field and the dangerous eval function, thus possibly allowing an attacker to obtain sensitive information from a database, modify data, and execute unauthorized administrative operations in the context of the affected site.
+  description: ECShop 2.x/3.x - SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
   reference:
     - https://titanwolf.org/Network/Articles/Article?AID=af15bee8-7afc-4bb2-9761-a7d61210b01a
     - https://phishingkittracker.blogspot.com/2019/08/userphp-ecshop-sql-injection-2017.html

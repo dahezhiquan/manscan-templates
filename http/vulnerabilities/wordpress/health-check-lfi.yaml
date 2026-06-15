@@ -1,11 +1,14 @@
 id: health-check-lfi
 
 info:
-  name: WordPress Health Check & Troubleshooting <1.24 - Local File Inclusion
+  name: WordPress Health Check & Troubleshooting <1.24 - 本地文件包含漏洞
   author: DhiyaneshDK
   severity: high
-  description: WordPress Health Check & Troubleshooting prior to 1.2.4 is vulnerable to local file inclusion. Exploitation does require authentication.
-  remediation: Upgrade to version 1.2.4 or later.
+  description: WordPress Health Check & Troubleshooting <1.24 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  remediation: |
+    - 按厂商公告升级到已修复版本；原始说明中提到的版本信息为：Upgrade to version 1。
+    - 修复路径拼接与文件访问控制逻辑，禁止用户输入直接决定本地文件路径。
+    - 收敛 Web 进程对敏感目录的读取权限，并对关键配置文件实施访问隔离。
   reference:
     - https://wpscan.com/vulnerability/5eecc4a7-0b44-495d-9352-78dccebfc72a
     - https://www.synacktiv.com/ressources/advisories/WordPress_Health_Check_1.2.3_Vulnerabilities.pdf

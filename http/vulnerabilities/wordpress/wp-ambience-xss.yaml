@@ -1,11 +1,10 @@
 id: wp-ambience-xss
 
 info:
-  name: WordPress Ambience Theme <=1.0 - Cross-Site Scripting
+  name: WordPress Ambience Theme <=1.0 - 跨站脚本漏洞
   author: daffainfo
   severity: medium
-  description: |
-    WordPress Ambience Theme 1.0 and earlier was affected by a cross-site scripting vulnerability.
+  description: WordPress Ambience Theme <=1.0 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
   reference:
     - https://www.exploit-db.com/expl oits/38568
     - https://wpscan.com/vulnerability/c465e5c1-fe43-40e9-894a-97b8ac462381

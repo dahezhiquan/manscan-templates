@@ -1,7 +1,7 @@
 id: idocview-lfi
 
 info:
-  name: IDoc View - Arbitrary File Read
+  name: IDoc View - 任意文件读取漏洞
   author: DhiyaneshDK
   severity: high
   classification:

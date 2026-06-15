@@ -1,11 +1,10 @@
 id: unauth-lfd-zhttpd
 
 info:
-  name: zhttpd - Local File Inclusion
+  name: zhttpd - 本地文件包含漏洞
   author: EvergreenCartoons
   severity: high
-  description: |
-    zhttpd is vulnerable to unauthenticated local inclusion including privileged files such as /etc/shadow. An attacker can read all files on the system by using this endpoint.
+  description: zhttpd - 本地文件包含 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
   reference:
     - https://sec-consult.com/blog/detail/enemy-within-unauthenticated-buffer-overflows-zyxel-routers/
     - https://sec-consult.com/vulnerability-lab/advisory/multiple-critical-vulnerabilities-in-multiple-zyxel-devices/

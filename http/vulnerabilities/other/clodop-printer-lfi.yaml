@@ -1,11 +1,10 @@
 id: clodop-printer-lfi
 
 info:
-  name: C-Lodop Printer - Arbitrary File Read
+  name: C-Lodop Printer - 任意文件读取漏洞
   author: DhiyaneshDk
   severity: high
-  description: |
-    The C-Lodop printer has an arbitrary file reading vulnerability. By constructing a special URL, it can read any file in the system.
+  description: C-Lodop Printer - 任意文件读取 存在任意文件读取漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/8e4f0be1f75a71cffe4b2c2c558ad1cd4d03d9a7/%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E6%BC%8F%E6%B4%9E/C-Lodop%E6%89%93%E5%8D%B0%E6%9C%BA%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E6%BC%8F%E6%B4%9E.md
   classification:

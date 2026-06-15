@@ -1,10 +1,10 @@
 id: jolokia-tomcat-creds-leak
 
 info:
-  name: Jolokia <= 1.7.1 Information Leakage
+  name: Jolokia <= 1.7.1 - 信息泄露漏洞
   author: pathtaga
   severity: critical
-  description: Tomcat's credential disclosure leading to Remote Code Execution via WAR upload.
+  description: Jolokia <= 1.7.1 信息泄露 存在远程代码执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
   tags: jolokia,tomcat,exposure,vuln
   reference:
     - https://github.com/laluka/jolokia-exploitation-toolkit/blob/main/exploits/info-leak-tomcat-creds.py

@@ -1,15 +1,16 @@
 id: wp-user-enum
 
 info:
-  name: WordPress REST API User Enumeration
+  name: WordPress REST API - 用户名枚举漏洞
   author: Manas_Harsh,daffainfo,geeknik,dr0pd34d
   severity: low
-  description: |
-    The REST API exposed user data for all users who had authored a post of a public post type. WordPress 4.7.1 limits this to only post types which have specified that they should be shown within the REST API.
+  description: WordPress REST API 曾向未授权访问者暴露公开文章作者的用户信息。该模板通过访问相关接口验证目标是否存在用户名枚举问题，从而识别可被用于后续爆破或社工的账户情报泄露面。
   impact: |
-    An attacker can easily determine valid usernames, which can lead to targeted attacks such as brute force attacks or social engineering.
+    - 攻击者可轻易枚举出有效用户名，显著降低口令爆破与撞库攻击门槛。
+    - 结合收集到的账户信息，还可能进一步发起社工、钓鱼或定向攻击。
   remediation: |
-    Install a WordPress plugin such as Stop User Enumeration. Stop User Enumeration is a security plugin designed to detect and prevent hackers scanning your site for user names.
+    - 关闭或限制未授权用户枚举接口访问。
+    - 可部署 Stop User Enumeration 等安全插件，阻止通过 REST API 枚举用户名。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-rest-api-user-enumeration/
     - https://wordpress.org/plugins/stop-user-enumeration/

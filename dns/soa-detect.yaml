@@ -1,11 +1,11 @@
 id: soa-detect
 
 info:
-  name: SOA Record Service - Detection
+  name: SOA 记录服务识别（dns）
   author: rxerium
   severity: info
   description: |
-    Detects which domain provider a domain is using, detected through SOA records
+    该模板通过 SOA 记录识别域名使用的 DNS 提供商或权威区域信息。SOA 记录包含区域主服务器、管理员邮箱和序列号等元数据。
   reference:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-soa-record/
   metadata:

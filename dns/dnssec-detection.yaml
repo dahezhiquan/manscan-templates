@@ -1,10 +1,11 @@
 id: dnssec-detection
 
 info:
-  name: DNSSEC Detection
+  name: DNSSEC 配置识别（dns）
   author: pdteam
   severity: info
-  description: Domain Name System Security Extensions (DNSSEC) are enabled. The Delegation of Signing (DS) record provides information about a signed zone file when DNSSEC enabled.
+  description: |
+    该模板检测 DNSSEC 相关配置是否启用，重点关注 DS 等记录。DNSSEC 用于为 DNS 数据提供来源认证和完整性校验。
   reference:
     - https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
     - https://www.cyberciti.biz/faq/unix-linux-test-and-validate-dnssec-using-dig-command-line/

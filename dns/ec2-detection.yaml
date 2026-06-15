@@ -1,10 +1,11 @@
 id: ec2-detection
 
 info:
-  name: AWS EC2 Detection
+  name: AWS EC2 资产识别（dns）
   author: melbadry9
   severity: info
-  description: Amazon Elastic Compute Cloud (EC2) detected.
+  description: |
+    该模板检测 DNS 记录是否指向 Amazon EC2 相关资源，用于识别目标暴露在 AWS EC2 上的主机或服务。
   reference:
     - https://aws.amazon.com/ec2/
     - https://infosecwriteups.com/dangling-dns-aws-ec2-e2d801701e8

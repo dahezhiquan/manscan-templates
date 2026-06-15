@@ -1,10 +1,11 @@
 id: mx-service-detector
 
 info:
-  name: Email Service Detector
+  name: 邮件服务提供商识别（dns）
   author: binaryfigments,rxerium
   severity: info
-  description: An email service was detected. Check the email service or spam filter that is used for a domain.
+  description: |
+    该模板根据 MX 记录识别域名使用的邮件服务或垃圾邮件过滤服务，帮助判断目标邮件托管与安全网关。
   classification:
     cwe-id: CWE-200
   metadata:

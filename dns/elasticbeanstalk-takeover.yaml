@@ -1,10 +1,11 @@
 id: elasticbeanstalk-takeover
 
 info:
-  name: ElasticBeanstalk Subdomain Takeover Detection
+  name: Elastic Beanstalk 子域名接管检测（dns）
   author: philippedelteil,rotemreiss,zy9ard3,joaonevess
   severity: high
-  description: ElasticBeanstalk subdomain takeover detected. A subdomain takeover occurs when an attacker gains control over a subdomain of a target domain. Typically, this happens when the subdomain has a canonical name (CNAME) in the Domain Name System (DNS), but no host is providing content for it.
+  description: |
+    该模板检测指向 AWS Elastic Beanstalk 的悬空子域名。若 CNAME 指向的 Beanstalk 环境已删除或未被占用，攻击者可能创建同名资源接管该子域名。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/147
     - https://twitter.com/payloadartist/status/1362035009863880711

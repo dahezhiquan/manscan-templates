@@ -1,11 +1,11 @@
 id: dkim-record-detect
 
 info:
-  name: DKIM Record - Detection
+  name: DKIM 记录识别（dns）
   author: princechaddha
   severity: info
   description: |
-    A DKIM (DomainKeys Identified Mail) TXT record was detected. DKIM is an email authentication method that allows the receiver to check that an email claimed to have come from a specific domain was indeed authorized by the owner of that domain.
+    该模板检测 DKIM TXT 记录。DKIM 允许收件方验证邮件是否由域名所有者授权发送，并确认邮件内容在传输过程中未被篡改。
   reference:
     - https://www.rfc-editor.org/rfc/rfc6376
     - https://dkim.org/

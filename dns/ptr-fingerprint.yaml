@@ -1,10 +1,11 @@
 id: ptr-fingerprint
 
 info:
-  name: PTR Detected
+  name: PTR 记录识别（dns）
   author: pdteam
   severity: info
-  description: A PTR record was detected. A PTR record refers to the domain name.
+  description: |
+    该模板检测 PTR 反向解析记录。PTR 记录用于将 IP 地址映射回域名，常用于邮件服务、资产归属和网络指纹识别。
   classification:
     cwe-id: CWE-200
   metadata:

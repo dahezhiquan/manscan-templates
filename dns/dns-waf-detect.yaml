@@ -1,10 +1,11 @@
 id: dns-waf-detect
 
 info:
-  name: DNS WAF Detection
+  name: DNS WAF 识别（dns）
   author: lu4nx
   severity: info
-  description: A DNS WAF was detected.
+  description: |
+    该模板通过 DNS 记录特征识别目标是否接入 Web 应用防火墙或安全代理服务。
   classification:
     cwe-id: CWE-200
   metadata:

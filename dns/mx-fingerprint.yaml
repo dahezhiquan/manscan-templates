@@ -1,10 +1,11 @@
 id: mx-fingerprint
 
 info:
-  name: MX Record Detection
+  name: MX 记录识别（dns）
   author: pdteam
   severity: info
-  description: An MX record was detected. MX records direct emails to a mail exchange server.
+  description: |
+    该模板检测域名是否存在 MX 记录。MX 记录用于指定接收该域名邮件的邮件交换服务器，可辅助识别邮件基础设施。
   reference:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-mx-record/
     - https://mxtoolbox.com/

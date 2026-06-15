@@ -1,11 +1,11 @@
 id: srv-service-detect
 
 info:
-  name: SRV Record Service - Detect
+  name: SRV 服务记录识别（dns）
   author: rxerium
   severity: info
   description: |
-    Detected services via SRV (Service) DNS records. SRV records defined the location of servers for specified services.
+    该模板检测 SRV 记录暴露的服务信息。SRV 记录用于声明特定服务的主机名、端口、优先级和权重。
   reference:
     - https://www.rfc-editor.org/rfc/rfc2srv
     - https://en.wikipedia.org/wiki/SRV_record

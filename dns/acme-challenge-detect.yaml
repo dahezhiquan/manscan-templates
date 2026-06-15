@@ -1,11 +1,11 @@
 id: acme-challenge-detect
 
 info:
-  name: ACME DNS Challenge - Detect
+  name: ACME DNS-01 验证记录识别（dns）
   author: rxerium
   severity: info
   description: |
-    Detects ACME (Automated Certificate Management Environment) DNS-01 challenge records used by Let's Encrypt and other certificate authorities.
+    该模板检测 _acme-challenge 等 ACME DNS-01 验证记录，这类记录通常由 Let's Encrypt 或其他证书颁发机构用于验证域名控制权。
   reference:
     - https://www.rfc-editor.org/rfc/rfc8555
     - https://letsencrypt.org/docs/challenge-types/

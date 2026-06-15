@@ -1,11 +1,11 @@
 id: bimi-record-detect
 
 info:
-  name: BIMI Record - Detection
+  name: BIMI 记录识别（dns）
   author: rxerium
   severity: info
   description: |
-    A BIMI record was detected
+    该模板检测域名是否配置 BIMI 记录。BIMI 用于在邮件客户端中展示经过验证的品牌标识，通常依赖 DMARC 等邮件认证配置。
   reference:
     - https://postmarkapp.com/blog/what-the-heck-is-bimi
   metadata:

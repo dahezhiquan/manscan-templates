@@ -1,11 +1,11 @@
 id: spf-record-detect
 
 info:
-  name: SPF Record - Detection
+  name: SPF 记录识别（dns）
   author: rxerium
   severity: info
   description: |
-    An SPF TXT record was detected
+    该模板检测域名是否存在 SPF TXT 记录。SPF 用于声明哪些服务器被授权代表该域名发送邮件。
   reference:
     - https://www.mimecast.com/content/how-to-create-an-spf-txt-record
   metadata:

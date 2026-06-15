@@ -1,10 +1,11 @@
 id: nameserver-fingerprint
 
 info:
-  name: NS Record Detection
+  name: NS 记录识别（dns）
   author: pdteam
   severity: info
-  description: An NS record was detected. An NS record delegates a subdomain to a set of name servers.
+  description: |
+    该模板检测域名的 NS 记录。NS 记录用于指定负责该域名或子域名解析的权威名称服务器。
   classification:
     cwe-id: CWE-200
   metadata:

@@ -1,10 +1,10 @@
 id: dns-rebinding
 info:
-  name: DNS Rebinding Attack
+  name: DNS Rebinding 攻击检测（dns）
   author: ricardomaia
   severity: unknown
   description: |
-    Detects DNS Rebinding attacks by checking if the DNS response contains a private IPv4 or IPv6 address.
+    该模板通过检查 DNS 响应是否解析到私有 IPv4 或 IPv6 地址来识别 DNS Rebinding 风险。攻击者可借此让浏览器访问内网地址或本地服务。
   reference:
     - https://capec.mitre.org/data/definitions/275.html
     - https://payatu.com/blog/dns-rebinding/

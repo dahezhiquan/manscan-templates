@@ -1,10 +1,11 @@
 id: detect-dangling-cname
 
 info:
-  name: CNAME Detect Dangling
+  name: 悬空 CNAME 记录检测（dns）
   author: pdteam,nytr0gen
   severity: info
-  description: A CNAME detect dangling condition was discovered. Most commonly this relates to failing to remove records from the zone once they are no longer needed.
+  description: |
+    该模板检测可能悬空的 CNAME 记录。常见原因是 DNS 记录仍指向已删除、不再使用或未完成绑定的外部服务，可能导致子域名接管风险。
   reference:
     - https://securitytrails.com/blog/subdomain-takeover-tips
     - https://nominetcyber.com/dangling-dns-is-no-laughing-matter/

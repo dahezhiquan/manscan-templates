@@ -1,10 +1,11 @@
 id: spoofable-spf-records-ptr
 
 info:
-  name: Spoofable SPF Records with PTR Mechanism
+  name: 含 PTR 机制的可伪造 SPF 记录检测（dns）
   author: binaryfigments
   severity: info
-  description: SPF records in DNS containing a PTR mechanism are spoofable.
+  description: |
+    该模板检测 SPF 记录中是否使用 PTR 机制。PTR 机制已不推荐使用，解析结果容易被滥用或伪造，可能削弱 SPF 防伪效果。
   reference:
     - https://www.digitalocean.com/community/tutorials/how-to-use-an-spf-record-to-prevent-spoofing-improve-e-mail-reliability
   classification:

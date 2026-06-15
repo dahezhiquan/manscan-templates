@@ -1,11 +1,11 @@
 id: txt-service-detect
 
 info:
-  name: DNS TXT Service - Detect
+  name: DNS TXT 服务识别（dns）
   author: rxerium
   severity: info
   description: |
-    Finding the services companies use via their TXT records.
+    该模板通过 TXT 记录识别公司或域名正在使用的第三方服务。许多 SaaS 平台会要求添加 TXT 记录进行域名验证或功能启用。
   reference:
     - https://www.abenezer.ca/blog/services-companies-use-txt-records
   metadata:

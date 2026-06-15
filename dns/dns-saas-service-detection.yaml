@@ -1,10 +1,11 @@
 id: dns-saas-service-detection
 
 info:
-  name: DNS SaaS Service Detection
+  name: DNS SaaS 服务识别（dns）
   author: noah @thesubtlety,pdteam
   severity: info
-  description: A CNAME DNS record was discovered
+  description: |
+    该模板检测 CNAME 记录中暴露的 SaaS 或第三方服务信息。CNAME 可显示域名依赖的外部平台，也可能暴露资产归属和潜在悬空记录。
   reference:
     - https://ns1.com/resources/cname
     - https://www.theregister.com/2021/02/24/dns_cname_tracking/

@@ -1,11 +1,11 @@
 id: tlsa-record-detect
 
 info:
-  name: TLSA Record - DANE Detection
+  name: TLSA/DANE 记录识别（dns）
   author: rxerium
   severity: info
   description: |
-    A TLSA record was detected. TLSA records are used for DANE (DNS-based Authentication of Named Entities) to bind TLS certificates to domain names.
+    该模板检测 TLSA 记录。TLSA 记录用于 DANE，将 TLS 证书或公钥信息与 DNSSEC 保护的域名绑定。
   reference:
     - https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities
     - https://www.internetsociety.org/resources/deploy360/dane/

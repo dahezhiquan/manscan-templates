@@ -1,11 +1,11 @@
 id: spf-limit-lookup
 
 info:
-  name: SPF record DNS lookup limit
+  name: SPF DNS 查询次数超限检测（dns）
   author: theamanrawat
   severity: info
   description: |
-    SPF (Sender Policy Framework) records that exceed the 10 DNS lookup limit was detected. SPF records with more than 10 DNS-based mechanisms may cause SPF authentication failures, leading to potential email delivery issues and spoofing risks.
+    该模板检测 SPF 记录是否超过 10 次 DNS 查询限制。超限会触发 SPF permerror，可能导致邮件认证失败、投递异常或被冒用风险上升。
   reference:
     - https://dmarcly.com/blog/spf-permerror-too-many-dns-lookups-when-spf-record-exceeds-10-dns-lookup-limit
   tags: dns,spf,discovery

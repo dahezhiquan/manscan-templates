@@ -1,11 +1,11 @@
 id: aaaa-fingerprint
 
 info:
-  name: AAAA Record - IPv6 Detection
+  name: AAAA 记录 IPv6 识别（dns）
   author: rxerium
   severity: info
   description: |
-    An AAAA record was detected. AAAA records are used to map domain names to IPv6 addresses.
+    该模板检测域名是否存在 AAAA 记录。AAAA 记录用于将域名解析到 IPv6 地址，可帮助识别目标是否启用了 IPv6 访问面。
   reference:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/
     - https://en.wikipedia.org/wiki/IPv6_address

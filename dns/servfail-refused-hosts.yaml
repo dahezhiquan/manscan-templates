@@ -1,10 +1,11 @@
 id: servfail-refused-hosts
 
 info:
-  name: DNS Servfail Host Finder
+  name: DNS SERVFAIL/REFUSED 主机发现（dns）
   author: pdteam
   severity: info
-  description: A DNS ServFail error occurred. ServFail errors occur when there is an error communicating with a DNS server. This could have a number of causes, including an error on the DNS server itself, or a temporary networking issue.
+  description: |
+    该模板检测 DNS 查询返回 SERVFAIL 或 REFUSED 的主机。此类响应可能表示权威服务器配置异常、解析链故障、访问受限或临时网络问题。
   classification:
     cwe-id: CWE-200
   metadata:

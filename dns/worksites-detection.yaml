@@ -1,10 +1,11 @@
 id: detect-worksites
 
 info:
-  name: Worksites.net Service Detection
+  name: Worksites.net 服务识别（dns）
   author: melbadry9
   severity: info
-  description: A worksites.net service was detected.
+  description: |
+    该模板检测 DNS 记录是否指向 worksites.net 服务，用于识别相关第三方托管或潜在悬空 DNS 场景。
   reference:
     - https://blog.melbadry9.xyz/dangling-dns/xyz-services/ddns-worksites
   classification:

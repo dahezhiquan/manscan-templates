@@ -1,10 +1,11 @@
 id: caa-fingerprint
 
 info:
-  name: CAA Record
+  name: CAA 记录识别（dns）
   author: pdteam
   severity: info
-  description: A CAA record was discovered. A CAA record is used to specify which certificate authorities (CAs) are allowed to issue certificates for a domain.
+  description: |
+    该模板检测域名是否存在 CAA 记录。CAA 记录用于声明哪些证书颁发机构可以为该域名签发证书，有助于降低误签发风险。
   reference:
     - https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record
   classification:

@@ -1,11 +1,11 @@
 id: fbi-seized-nameserver
 
 info:
-  name: FBI Seized Nameserver - Detect
+  name: FBI 扣押域名服务器识别（dns）
   author: rxerium
   severity: info
   description: |
-    Detected domains whose nameservers have been seized by law enforcement (e.g., FBI), often indicating involvement in malicious or criminal activity.
+    该模板检测域名是否使用执法机构扣押相关的 nameserver。命中通常表示域名可能因恶意活动、犯罪调查或封禁处置被接管。
   classification:
     cwe-id: CWE-200
   metadata:

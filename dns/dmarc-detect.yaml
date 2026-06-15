@@ -1,11 +1,11 @@
 id: dmarc-detect
 
 info:
-  name: DNS DMARC - Detect
+  name: DMARC 记录识别（dns）
   author: juliosmelo
   severity: info
   description: |
-    DNS DMARC information was detected.
+    该模板检测 DNS 中的 DMARC 配置。DMARC 基于 SPF 和 DKIM 结果定义邮件认证失败时的处理策略，可帮助降低域名被冒用发送邮件的风险。
   reference:
     - https://dmarc.org/
     - https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F

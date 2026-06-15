@@ -1,11 +1,11 @@
 id: wildcard-dns-detect
 
 info:
-  name: Wildcard DNS Configuration - Detection
+  name: 通配符 DNS 配置检测（dns）
   author: rxerium
   severity: info
   description: |
-    A wildcard DNS configuration was detected. Wildcard DNS records can resolve all subdomains to the same IP address, which may indicate a catch-all configuration.
+    该模板检测通配符 DNS 配置。通配符记录会让大量未显式配置的子域名解析到同一目标，可能影响资产枚举和误报判断。
   reference:
     - https://en.wikipedia.org/wiki/Wildcard_DNS_record
     - https://developers.cloudflare.com/dns/manage-dns-records/reference/wildcard-dns-records/

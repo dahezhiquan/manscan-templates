@@ -1,11 +1,10 @@
 id: aws-s3-bucket-enum
 
 info:
-  name: AWS S3 Buckets - Cloud Enumeration
+  name: AWS S3 Buckets - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: |
-    Searches for open and protected buckets in AWS S3
+  description: 该规则用于检查 enum aws-s3-bucket-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   metadata:
     verified: true
     max-request: 1

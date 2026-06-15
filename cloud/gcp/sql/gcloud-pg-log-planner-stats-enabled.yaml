@@ -1,15 +1,16 @@
 id: gcloud-pg-log-planner-stats-enabled
 
 info:
-  name: Log Planner Stats Enabled in PostgreSQL Database Instances
+  name: PostgreSQL 数据库实例启用了 log_planner_stats（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the log_planner_stats database flag is disabled for your Google Cloud PostgreSQL database instances in order to avoid performance issues caused by excessive logging. The log_planner_stats flag controls the inclusion of PostgreSQL planner performance statistics in the PostgreSQL logs for each query.
+  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Enabling the log_planner_stats flag may lead to significant performance degradation due to excessive logging, impacting the database's overall efficiency.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Disable the log_planner_stats flag in your PostgreSQL database instance configuration to prevent performance issues caused by excessive logging.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config

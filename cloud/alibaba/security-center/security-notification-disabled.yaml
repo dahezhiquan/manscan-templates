@@ -1,11 +1,10 @@
 id: security-notification-disabled
 
 info:
-  name: Security Center Notifications - Disabled
+  name: Security Center 通知s -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Notifications for Alibaba Security Center are disabled, which may result in missed alerts for critical security events.
+  description: 该规则用于检查 阿里云 安全中心 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.alibabacloud.com/help/en/security-center/user-guide/use-the-notification-feature
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-SecurityCenter/enable-high-risk-item-notifications.html

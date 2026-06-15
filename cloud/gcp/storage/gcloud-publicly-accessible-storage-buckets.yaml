@@ -1,15 +1,16 @@
 id: gcloud-publicly-accessible-storage-buckets
 
 info:
-  name: Check for Publicly Accessible Cloud Storage Buckets
+  name: 检查 的公开可访问 Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that the IAM policy associated with your Google Cloud Storage buckets is restricting anonymous and/or public access. The IAM policy should not include bindings for "allUsers" or "allAuthenticatedUsers" to prevent unauthorized access to sensitive data.
+  description: 该规则用于检查 GCP 存储账户 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Publicly accessible Cloud Storage buckets can lead to unauthorized access and potential data breaches, exposing sensitive information to the Internet.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Update the IAM policy of your Google Cloud Storage buckets to remove bindings for "allUsers" and "allAuthenticatedUsers" members, restricting access to authorized users only.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://cloud.google.com/storage/docs/access-control/iam
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,iam,security,public-access,gcp-cloud-config

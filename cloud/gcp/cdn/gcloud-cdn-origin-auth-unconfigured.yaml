@@ -1,15 +1,16 @@
 id: gcloud-cdn-origin-auth-unconfigured
 
 info:
-  name: Unconfigured Cloud CDN Origin Authentication
+  name: Unconfigured Cloud CDN Origin Authentication（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Cloud CDN origins are configured to authenticate access to the content available at backend (backend buckets or backend services) using signed cookies and signed URLs. Signed cookies and URLs are designed to prevent unauthorized users from bypassing the authentication process and accessing sensitive information.
+  description: 该规则用于检查 GCP cdn 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    If Cloud CDN origins are not properly configured with signed cookies and signed URLs, it could lead to unauthorized access and potential exposure of sensitive information. This configuration is essential for maintaining the security and integrity of content delivery.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure your Cloud CDN origins to use signed cookies and URLs by adding signed request keys to your backend services. This will enforce authentication on CDN-cached content, preventing unauthorized access.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/cdn/docs/using-signed-urls
   tags: cloud,devops,gcp,gcloud,cloud-cdn,gcp-cloud-config

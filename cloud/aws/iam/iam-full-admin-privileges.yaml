@@ -1,10 +1,9 @@
 id: iam-full-admin-privileges
 info:
-  name: Overly Permissive IAM Policies
+  name: Overly Permissive IAM 策略（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Verifies that no Amazon IAM policies grant full administrative privileges, ensuring adherence to the Principle of Least Privilege
+  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html
   metadata:

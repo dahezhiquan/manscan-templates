@@ -1,14 +1,15 @@
 id: cloudtrail-mgmt-events
 info:
-  name: CloudTrail Management Events Logging Not Enabled
+  name: CloudTrail Management Events 日志记录未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensures Amazon CloudTrail trails are configured to log management events, capturing crucial API calls and console actions for security and audit purposes.
+  description: 该规则用于检查 AWS CloudTrail 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failure to log management events can lead to insufficient audit trails, hindering the ability to investigate and respond to suspicious activities.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable management event logging in CloudTrail by creating a new trail or updating existing trails to include management events.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html
   metadata:

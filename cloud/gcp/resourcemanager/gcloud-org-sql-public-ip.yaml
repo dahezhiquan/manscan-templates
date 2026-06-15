@@ -1,15 +1,16 @@
 id: gcloud-org-sql-public-ip
 
 info:
-  name: Public IP Access for Cloud SQL Instances Not Restricted
+  name: Public IP 访问 的Cloud SQL Instances 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Restrict Public IP access on Cloud SQL instances" policy is enforced for your Google Cloud organizations. Due to strict security and compliance regulations, you can't allow GCP members to configure security-critical database instances with public IPs. For highly sensitive workloads, the access to the SQL database instances can be made only through private IP addresses or Google Cloud SQL Proxy.
+  description: 该规则用于检查 GCP resourcemanager 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Without restricting public IP access, Cloud SQL instances can be configured with public IP addresses, potentially exposing sensitive databases to unauthorized access from the internet.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Enable the "Restrict Public IP access on Cloud SQL instances" policy at the organization level using the 'gcloud alpha resource-manager org-policies enable-enforce' command with the sql.restrictPublicIp constraint.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-public-ip-access-at-organization-level.html
     - https://cloud.google.com/sql/docs/mysql/configure-ip

@@ -1,14 +1,15 @@
 id: azure-aks-entra-id-unintegrated
 info:
-  name: Azure AKS Microsoft Entra ID Integration Not Configured
+  name: Azure AKS Microsoft Entra ID Integration 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Azure Kubernetes Service (AKS) clusters are integrated with Microsoft Entra ID to provide granular access to AKS resources.
+  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without Microsoft Entra ID integration, AKS clusters might lack granular access control, increasing the risk of unauthorized access and potential security breaches.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure that each Azure Kubernetes Service (AKS) cluster is configured with Microsoft Entra ID by enabling the integration in the AKS cluster settings.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/managed-aad
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config

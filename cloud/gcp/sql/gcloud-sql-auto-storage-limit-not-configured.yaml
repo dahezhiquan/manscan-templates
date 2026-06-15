@@ -1,15 +1,16 @@
 id: gcloud-sql-auto-storage-limit-not-configured
 
 info:
-  name: Automatic Storage Increase Limit Not Configured for Cloud SQL
+  name: Automatic Storage Increase Limit 未Configured 的Cloud SQL（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that an optimal limit is configured for the Automatic Storage Increase feature within your Cloud SQL database instance settings to avoid unexpected charges on your Google Cloud bill. Having no limit or an excessively high limit for this feature can lead to unplanned costs.
+  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without an appropriate storage increase limit, unexpected charges may occur due to unlimited or excessive storage usage.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure an appropriate limit for the Automatic Storage Increase feature in your Cloud SQL database instance settings to control costs and maintain predictability.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/sql/docs/configure-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,storage,gcp-cloud-config

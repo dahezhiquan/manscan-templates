@@ -1,15 +1,16 @@
 id: gcloud-backend-bucket-missing-storage
 
 info:
-  name: Backend Buckets Referencing Missing Storage Buckets
+  name: Backend Buckets Referencing 缺失 Storage Buckets（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Cloud CDN backend buckets are referencing existing storage buckets in order to be able to deliver static content efficiently from the nearest edge location to users, reducing latency and improving performance.
+  description: 该规则用于检查 GCP cdn 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Referencing missing storage buckets can lead to a failure in content delivery, increased latency, and a poor user experience.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Verify that each backend bucket is referencing an existing storage bucket. Update the Cloud CDN backend bucket configuration to point to valid and existing storage buckets.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/cdn/docs/backends
   tags: cloud,devops,gcp,gcloud,cdn,cloud-cdn,gcp-cloud-config

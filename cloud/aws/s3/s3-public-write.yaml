@@ -1,10 +1,9 @@
 id: s3-public-write
 info:
-  name: S3 Bucket with Public WRITE Access
+  name: S3 Bucket 使用Public WRITE 访问（云安全）
   author: princechaddha
   severity: critical
-  description: |
-    Checks if Amazon S3 buckets are secured against public WRITE access, preventing unauthorized modifications to access control permissions.
+  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-acl.html
   metadata:

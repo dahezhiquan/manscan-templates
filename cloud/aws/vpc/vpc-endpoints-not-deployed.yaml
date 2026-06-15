@@ -1,14 +1,15 @@
 id: vpc-endpoints-not-deployed
 info:
-  name: VPC Endpoints Not Deployed
+  name: VPC Endpoints 未Deployed（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensures VPC endpoints are utilized for secure AWS service connectivity without needing an Internet Gateway, enhancing network security and efficiency.
+  description: 该规则用于检查 AWS VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Avoids data exposure and reduces bandwidth use by ensuring AWS traffic remains within the AWS network, without public IP requirements for EC2 instances.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Implement VPC endpoints for supported AWS services to secure and optimize connectivity within your VPC, minimizing external access risks.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
   metadata:

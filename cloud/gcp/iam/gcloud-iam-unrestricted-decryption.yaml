@@ -1,15 +1,16 @@
 id: gcloud-iam-unrestricted-decryption
 
 info:
-  name: IAM Users with Unrestricted Data Decryption Permissions
+  name: IAM Users 使用Unrestricted Data Decryption Permissions（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that IAM users with data decryption permissions should use conditions to enforce strict controls, enhancing data protection and reducing risks of unauthorized decryption. For compliance, the Cloud KMS CryptoKey Decrypter (roles/cloudkms.cryptoKeyDecrypter), Cloud KMS Crypto Operator (roles/cloudkms.cryptoOperator), and Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter) roles must have a condition preventing data decryption with any KMS key.
+  description: 该规则用于检查 GCP IAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Without conditions on decryption permissions, IAM users can decrypt data using any KMS key in the project, potentially leading to unauthorized access to sensitive data.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Add IAM conditions to roles that allow decryption operations, restricting access to specific KMS keys. This can be done using resource.type and resource.name conditions in the IAM policy.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/IAM/decryption-with-all-keys-not-allowed.html
     - https://cloud.google.com/kms/docs/reference/permissions-and-roles

@@ -1,15 +1,16 @@
 id: gcloud-org-vpn-peer-ips
 
 info:
-  name: VPN Peer IP Addresses Not Restricted
+  name: VPN Peer IP Addresses 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that only trusted IPv4 addresses can be configured as VPN peer IPs within your Google Cloud organization. By enforcing the "Restrict VPN Peer IPs" constraint policy, you can control the IP addresses that can be configured as VPN peer IPs within your Google Cloud organization in order to meet security and compliance requirements.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    By default, any IP address can be a VPN peer IP for a Virtual Private Cloud (VPC) network. Without restrictions, this could allow unauthorized or malicious networks to establish VPN connections with your VPC.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Restrict VPN Peer IPs" policy at the organization level to explicitly specify which IPv4 addresses can be configured as VPN peer IPs. Use space-separated IP addresses in the policy configuration.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-vpn-peer-ips.html
     - https://cloud.google.com/vpc/docs/using-vpn

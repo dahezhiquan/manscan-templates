@@ -1,15 +1,16 @@
 id: gcloud-iam-service-roles-project-level
 
 info:
-  name: Service Account Roles at Project Level
+  name: Service Account Roles at Project Level（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the Service Account User and Service Account Token Creator roles are assigned to a user for a specific GCP service account rather than to a user at the GCP project level, in order to implement the principle of least privilege (POLP). The principle of least privilege (also known as the principle of minimal privilege) is the practice of providing every user the minimal amount of access required to perform its tasks. The Service Account User (iam.serviceAccountUser) role allows an IAM user to attach a service account to a long-running job service such as an App Engine App or Dataflow Job, whereas the Service Account Token Creator (iam.serviceAccountTokenCreator) role allows a user to directly impersonate the identity of a service account.
+  description: 该规则用于检查 GCP IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Assigning critical roles such as Service Account User and Token Creator at the project level can lead to excessive permissions that can be exploited.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Ensure these roles are assigned directly to service accounts and not at the project level to enforce the principle of least privilege.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://cloud.google.com/iam/docs/understanding-roles
   tags: cloud,devops,gcp,gcloud,google-cloud-iam,gcp-cloud-config

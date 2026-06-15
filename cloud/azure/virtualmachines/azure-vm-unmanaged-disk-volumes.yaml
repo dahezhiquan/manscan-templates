@@ -1,14 +1,15 @@
 id: azure-vm-unmanaged-disk-volumes
 info:
-  name: Azure VM Unmanaged Disk Volumes Detected
+  name: Azure VM Unmanaged Disk Volumes Detected（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Microsoft Azure virtual machines (VMs) are configured to use managed disk volumes for reliable, efficient, and simplified disk management. A managed disk is an abstraction of current Standard/Premium storage disk in Azure Storage. Managed disks provide granular access control with RBAC and better reliability for the virtual machines deployed within an Azure Availability Set.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using unmanaged disk volumes can lead to less efficient management and potential reliability issues in disk access within Azure VMs.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure your Azure VMs to use managed disks for better reliability and simplified management of disk resources.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config

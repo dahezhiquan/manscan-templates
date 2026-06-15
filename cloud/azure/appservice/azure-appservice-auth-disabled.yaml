@@ -1,14 +1,15 @@
 id: azure-appservice-auth-disabled
 info:
-  name: Azure App Service Authentication Not Enabled
+  name: Azure App Service Authentication未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that App Service Authentication feature is enabled for Microsoft Azure App Service to add an extra layer of security to the authentication process implemented by your web applications.
+  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling App Service Authentication can expose the application to unauthorized access and potential security vulnerabilities.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the App Service Authentication feature for Azure App Services to ensure an additional layer of security for your web applications.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config

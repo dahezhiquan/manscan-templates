@@ -1,14 +1,15 @@
 id: azure-diagnostic-categories-misconfigured
 info:
-  name: Diagnostic Settings Categories on Azure Resources not configured
+  name: Diagnostic Settings Categories on Azure Resources not configured（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that diagnostic settings are configured to log the appropriate activities from the Azure Monitor control/management plane. Proper configuration of diagnostic settings is crucial for effective monitoring and capturing essential management activities performed by resources on the Azure platform.
+  description: 该规则用于检查 Azure monitor 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Misconfigured diagnostic settings can lead to inadequate logging of control and management activities, increasing the risk of unnoticed malicious activities or misconfigurations.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure diagnostic settings for each Azure resource to log necessary activities from the control/management plane, ensuring that all important events are captured and reviewed regularly for anomalies.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings
   tags: cloud,devops,azure,microsoft,diagnostic,azure-cloud-config

@@ -1,14 +1,15 @@
 id: azure-policy-assignment-create-alert-missing
 info:
-  name: Azure Policy Assignment Create Alert Not Configured
+  name: Azure 策略 Assignment Create Alert 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that an Azure activity log alert is used to detect "Create Policy Assignment" events within your Microsoft Azure cloud account. Activity log alerts get activated when a new activity log event that matches the condition specified in the alert occurs. In this case, the condition used is 'Whenever the Policy Activity Log "Create policy assignment (policyAssignments)" has "any" level, with "any" status and event is initiated by "any"'.
+  description: 该规则用于检查 Azure 活动日志 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not having a specific alert for policy assignment creation events can lead to missing critical activities that could affect the security and compliance of your Azure environment.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure an Azure activity log alert for "Create Policy Assignment" events to ensure compliance and enhance security monitoring.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
   tags: cloud,devops,azure,microsoft,azure-monitor,azure-cloud-config

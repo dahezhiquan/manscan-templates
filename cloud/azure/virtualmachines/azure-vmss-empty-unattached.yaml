@@ -1,14 +1,15 @@
 id: azure-vmss-empty-unattached
 info:
-  name: Azure Virtual Machine Scale Sets Empty and Unattached
+  name: Azure Virtual Machine Scale Sets Empty and Unattached（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Identify any empty virtual machine scale sets available within your Microsoft Azure cloud account and delete them in order to eliminate unnecessary costs and meet compliance requirements when it comes to unused resources. A Microsoft Azure virtual machine scale set is considered empty when it doesn't have any VM instances attached anymore and is no longer associated with a load balancer.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Maintaining empty VM scale sets can incur unnecessary costs and occupy valuable resources that could be utilized elsewhere.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Regularly check and remove any VM scale sets that do not contain any VM instances and are not associated with any load balancers.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config

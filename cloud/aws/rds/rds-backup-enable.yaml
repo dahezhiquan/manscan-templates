@@ -1,14 +1,15 @@
 id: rds-backup-enable
 info:
-  name: RDS Automated Backup Check
+  name: RDS Automated Backup 检查（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Amazon RDS database instances have automated backups enabled for point-in-time recovery.
+  description: 该规则用于检查 AWS RDS 是否正确配置备份、快照、证书续期、密钥轮换或其他韧性保护措施，以降低中断、失效或数据恢复失败的风险。
   impact: |
-    Lack of automated backups can lead to data loss in case of accidental deletion or database corruption.
+    - 缺少备份、续期、轮换或删除保护会增加服务中断、数据丢失或恢复失败的风险。
+    - 当故障、误操作或攻击发生时，业务可用性和恢复能力都会受到明显影响。
   remediation: |
-    Enable automated backups for RDS instances by setting the backup retention period to a value other than 0.
+    - 启用备份、快照、版本控制、证书续期、密钥轮换或删除保护等韧性配置。
+    - 定期验证恢复流程和到期提醒机制，确保在故障或攻击发生时能够快速恢复。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
   metadata:

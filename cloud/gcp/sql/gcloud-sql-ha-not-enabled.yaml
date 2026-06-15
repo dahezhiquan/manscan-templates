@@ -1,15 +1,16 @@
 id: gcloud-sql-ha-not-enabled
 
 info:
-  name: High Availability Not Enabled for Cloud SQL Database Instances
+  name: High Availability 未Enabled 的Cloud SQL Database Instances（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that all your production and mission-critical Google Cloud SQL database instances are configured for High Availability (HA) and automatic failover support. Configuring HA ensures database reliability and minimizes downtime in the event of an outage.
+  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Cloud SQL database instances not configured with High Availability (HA) lack automatic failover support, which can lead to extended downtime and potential data accessibility issues during outages.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Update the configuration of your Google Cloud SQL database instances to use High Availability (REGIONAL) instead of the default ZONAL configuration to enable automatic failover and ensure minimal downtime.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/sql/docs/mysql/high-availability
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,gcp-cloud-config

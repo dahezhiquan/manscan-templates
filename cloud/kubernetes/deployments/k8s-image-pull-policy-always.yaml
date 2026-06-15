@@ -1,13 +1,16 @@
 id: k8s-image-pull-policy-always
 
 info:
-  name: Image Pull Policy set to Always
+  name: Image Pull 策略 set to Always（云安全）
   author: princechaddha
   severity: low
-  description: Ensures that Kubernetes deployments have the image pull policy set to 'Always', which guarantees the most up-to-date version of the image is used.
+  description: 该规则用于检查 Kubernetes deployments 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Not setting the image pull policy to 'Always' may cause pods to use outdated versions of images, which can lead to security vulnerabilities if the images contain fixes or updates.
-  remediation: Update the image pull policy in Kubernetes Deployments to 'Always' to ensure that the latest container images are always used.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+  remediation: |
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://kubernetes.io/docs/concepts/containers/images/#updating-images
   tags: cloud,devops,kubernetes,k8s,devsecops,deployments,images,docker,k8s-cluster-security

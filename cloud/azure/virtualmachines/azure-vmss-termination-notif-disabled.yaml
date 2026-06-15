@@ -1,14 +1,15 @@
 id: azure-vmss-termination-notif-disabled
 info:
-  name: Azure VMSS Instance Termination Notifications Disabled
+  name: Azure VMSS Instance Termination 通知s未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Microsoft Azure virtual machine scale sets are configured to receive instance termination notifications through the Azure Metadata service and have a predefined delay timeout configured for the "Terminate" operation (event). The termination notifications are delivered through Scheduled Events, an Azure Metadata feature which sends termination notifications, and can also be used to delay impactful operations such as reboots and redeployments. The delay associated with the "Terminate" event will depend on the delay limit specified in the VM scale set model configuration.
+  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failing to enable instance termination notifications can lead to insufficient preparation time for termination events, potentially disrupting operations and leading to data loss.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure the termination notification feature for all your Azure VM scale sets to receive proper alerts and set a reasonable delay for the termination events.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-terminate-notification
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config

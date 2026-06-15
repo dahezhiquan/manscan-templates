@@ -1,15 +1,16 @@
 id: gcloud-org-allowed-external-ips
 
 info:
-  name: Organization Policy for Allowed External IPs Not Configured
+  name: Organization 策略 的Allowed External IPs 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Define Allowed External IPs for VM Instances" constraint policy is enforced at the GCP organization level in order to enable you to define the set of virtual machine (VM) instances that are allowed to use external IP addresses. This constraint helps you to minimize your instance's exposure to the Internet.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    By default, all Google Cloud virtual machine instances are allowed to use external IP addresses. Without proper constraints, this increases the attack surface as instances may be unnecessarily exposed to the internet.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Define Allowed External IPs for VM Instances" policy at the organization level to explicitly specify which VM instances are allowed to have external IP addresses. Use the format: projects/<project-id>/zones/<instance-zone>/instances/<instance-name>.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/allowed-external-ips.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints

@@ -1,14 +1,15 @@
 id: cw-alarms-actions
 info:
-  name: CloudWatch Alarms Actions Enabled
+  name: CloudWatch Alarms Actions已启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that all Amazon CloudWatch alarms have actions enabled (ActionEnabled: true) to respond to state changes.
+  description: 该规则用于检查 AWS CloudWatch 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without actions enabled, CloudWatch alarms cannot perform automated actions in response to state changes, potentially missing critical alerts.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Enable actions for each CloudWatch alarm by setting the ActionEnabled parameter to true, allowing for automated responses to alarms.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
   metadata:

@@ -1,10 +1,9 @@
 id: iam-unapproved-policy
 info:
-  name: Unapproved IAM Policy Attachments
+  name: Unapproved IAM 策略 Attachments（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Checks for the attachment of unapproved Amazon IAM managed policies to IAM roles, users, or groups, ensuring compliance with organizational access policies
+  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html
   tags: cloud,devops,aws,amazon,iam,ssl,tls,aws-cloud-config

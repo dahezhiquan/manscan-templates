@@ -1,15 +1,16 @@
 id: s3-protection-disabled
 
 info:
-  name: GuardDuty S3 Protection - Disabled
+  name: GuardDuty S3 保护 -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Ensure that the S3 Protection feature is enabled for your Amazon GuardDuty detectors.
+  description: 该规则用于检查 AWS GuardDuty 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    GuardDuty S3 Protection disabled increases the risk of undetected malicious activities, such as unauthorized access or data exfiltration, within S3 buckets.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable GuardDuty S3 Protection by configuring it in the GuardDuty console or via AWS CLI to monitor S3 buckets for unauthorized access and malicious activities.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/GuardDuty/enable-s3-protection.html
     - https://docs.aws.amazon.com/guardduty/latest/ug/s3-protection.html

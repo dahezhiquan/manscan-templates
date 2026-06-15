@@ -1,14 +1,15 @@
 id: azure-aks-api-version-not-latest
 info:
-  name: Azure AKS Kubernetes API Version Not Latest
+  name: Azure AKS Kubernetes API Version 未Latest（云安全）
   author: princechaddha
   severity: high
-  description: |
-    To maximize the benefits of your Azure Kubernetes Service (AKS) clusters, it is important to ensure they are running on the latest Kubernetes version. By doing so, you gain access to new and improved features, as well as the latest security patches. The Kubernetes API upgrade becomes fully available only after it is approved by Microsoft Azure.
+  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Running an older version of Kubernetes can expose the cluster to vulnerabilities and limit access to improved functionality, potentially compromising the security and efficiency of the infrastructure.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Upgrade the Kubernetes API version of your AKS clusters by following the Azure documentation to apply the latest approved updates and ensure all clusters are consistently using the most recent version available.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster
   tags: cloud,devops,azure,microsoft,kubernetes,azure-cloud-config

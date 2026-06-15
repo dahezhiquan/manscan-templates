@@ -1,15 +1,16 @@
 id: gcloud-default-vpc-in-use
 
 info:
-  name: Default VPC Network In Use
+  name: Default VPC Network已使用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Google Cloud Platform (GCP) projects are not using the default Virtual Private Cloud (VPC) network. Using the default VPC network does not adhere to security best practices and may not meet specific networking requirements.
+  description: 该规则用于检查 GCP VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using the default VPC network can expose your infrastructure to security risks due to overly permissive rules and configurations.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Delete the default VPC network and create custom VPC networks with tailored configurations to meet your organization's security and networking requirements.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/vpc/docs/vpc
   tags: cloud,devops,gcp,gcloud,google-cloud-vpc,networking,security,gcp-cloud-config

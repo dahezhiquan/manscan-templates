@@ -1,11 +1,10 @@
 id: alibaba-cloud-code-env
 
 info:
-  name: Alibaba Cloud Environment Validation
+  name: 阿里云环境校验（云安全）
   author: DhiyaneshDK
   severity: info
-  description: |
-    Checks if Aliyun CLI is set up and all necessary tools are installed on the environment.
+  description: 检查当前环境是否已正确配置阿里云 CLI 以及执行云安全基线检测所需的相关工具。
   reference:
     - https://github.com/aliyun/aliyun-cli
   metadata:

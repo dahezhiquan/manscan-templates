@@ -1,15 +1,16 @@
 id: k8s-missing-network-policies
 
 info:
-  name: Check for Missing Network Policies in Kubernetes
+  name: 检查 的缺失 Network 策略 中的Kubernetes（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Checks if any network policies are defined across all namespaces in the Kubernetes cluster.
+  description: 该规则用于检查 Kubernetes network-policies 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not having network policies in place can expose namespaces to potential security risks by allowing unrestricted network traffic.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Define and apply network policies to manage ingress and egress traffic within namespaces effectively. Use `kubectl apply -f <network-policy-file.yaml>` to enforce network boundaries.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://kubernetes.io/docs/concepts/services-networking/network-policies/
   tags: cloud,devops,kubernetes,devsecops,k8s,k8s-cluster-security

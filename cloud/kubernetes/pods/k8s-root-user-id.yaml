@@ -1,13 +1,16 @@
 id: k8s-root-user-id
 
 info:
-  name: Pods run with root user ID
+  name: Pods run 使用root user ID（云安全）
   author: princechaddha
   severity: low
-  description: Checks for pods running with the user ID of the root user, increasing security risks.
+  description: 该规则用于检查 Kubernetes pods 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Running pods with the root user ID can allow malicious entities to gain unnecessary privileges, leading to potential compromises in the Kubernetes environment.
-  remediation: Configure pods to run with a non-root user ID by setting the 'securityContext' for each container and the pod itself.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+  remediation: |
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   tags: cloud,devops,kubernetes,devsecops,pods,k8s,k8s-cluster-security

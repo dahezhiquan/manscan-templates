@@ -1,18 +1,16 @@
 id: gcloud-vm-shielded-disabled
 
 info:
-  name: Shielded VM Security Features Not Enabled
+  name: Shielded VM Security Features未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Google Compute Engine instances are configured to use Shielded VM security feature for protection against rootkits and bootkits. Google Compute Engine service can enable 3 advanced security components for Shielded VM instances:
-    - Virtual Trusted Platform Module (vTPM) - validates the guest virtual machine pre-boot and boot integrity, and provides key generation and protection
-    - Integrity Monitoring - lets you monitor and verify the runtime boot integrity using Google Cloud Operations reports
-    - Secure boot - protects your VM instances against boot-level and kernel-level malware and rootkits
+  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without Shielded VM features enabled, your VM instances are more vulnerable to rootkits, bootkits, and other advanced threats that can compromise the boot integrity and security of your instances.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable Shielded VM security features (vTPM and Integrity Monitoring) for your VM instances. Note that enabling Secure Boot is optional and should only be done if you don't use custom or unsigned drivers, as it may prevent the VM from booting.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/enable-shielded-vm.html
     - https://cloud.google.com/compute/docs/instances/modifying-shielded-vm

@@ -1,14 +1,15 @@
 id: azure-vm-web-tier-disk-unencrypted
 info:
-  name: Azure VM Web-Tier Disk Volumes Not Encrypted
+  name: Azure VM Web-Tier Disk Volumes 未Encrypted（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that all the disk volumes attached to the Microsoft Azure virtual machines (VMs) launched within the web tier are encrypted to meet security and compliance requirements. This rule assumes all Azure cloud resources in the web tier are tagged with <web_tier_tag>:<web_tier_tag_value>. Tags must be configured on the Cloud Conformity dashboard prior to running this check.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Unencrypted disk volumes can lead to data breaches and non-compliance with security standards, exposing sensitive information.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Enable encryption for all disk volumes attached to VMs within the Azure web tier to enhance data security and comply with regulatory requirements.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/encrypt-disks
   tags: cloud,devops,azure,microsoft,azure-vm,azure-cloud-config

@@ -1,15 +1,16 @@
 id: gcloud-sql-log-lock-waits-disabled
 
 info:
-  name: Log Lock Waits Flag Disabled for PostgreSQL Database Instances
+  name: PostgreSQL 数据库实例未启用 log_lock_waits 标志（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the "log_lock_waits" database flag is enabled for all your Google Cloud PostgreSQL database instances to improve database performance monitoring and troubleshooting.
+  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling the "log_lock_waits" flag can lead to reduced visibility into database lock wait events, which may result in difficulty identifying and resolving performance bottlenecks.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "log_lock_waits" database flag for all PostgreSQL database instances in your Google Cloud environment. This ensures better monitoring and identification of lock wait issues.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgreSQL,gcp-cloud-config

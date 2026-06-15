@@ -1,15 +1,16 @@
 id: gcloud-org-sql-default-encryption
 
 info:
-  name: Default Google-Managed Encryption for Cloud SQL Not Restricted
+  name: Default Google-Managed 加密 的Cloud SQL 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the use of Google-managed encryption keys for Cloud SQL database instances is disabled at the GCP organization level in order to enforce the use of Customer-Managed Keys (CMKs) and have full control over SQL database encryption/decryption process. Note: This organization policy is not retroactive, therefore any existing database instances using Google-managed encryption are not impacted unless they are updated or refreshed.
+  description: 该规则用于检查 GCP resourcemanager 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    By default, Google-managed encryption is allowed for all Cloud SQL instances. Without enforcing CMK usage, you have less control over the encryption keys that protect your SQL databases.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "Restrict Default Google-Managed Encryption for Cloud SQL Instances" policy at the organization level using the 'gcloud alpha resource-manager org-policies enable-enforce' command with the sql.disableDefaultEncryptionCreation constraint.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-default-encryption-for-sql-instances.html
     - https://cloud.google.com/sql/docs/mysql/customer-managed-encryption-keys

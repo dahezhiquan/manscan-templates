@@ -1,15 +1,16 @@
 id: gcloud-dataproc-no-cmk
 
 info:
-  name: Dataproc Cluster Not Using Customer-Managed Keys
+  name: Dataproc Cluster 未Using Customer-Managed Keys（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Google Cloud Dataproc clusters on Compute Engine are encrypted with Customer-Managed Keys (CMKs) in order to control the cluster data encryption/decryption process. You can create and manage your own Customer-Managed Keys (CMKs) with Cloud Key Management Service (Cloud KMS). Cloud KMS provides secure and efficient encryption key management, controlled key rotation, and revocation mechanisms.
+  description: 该规则用于检查 GCP dataproc 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   impact: |
-    Without Customer-Managed Keys, you have less control over data encryption and key management, potentially impacting compliance requirements and security controls.
+    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
+    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
   remediation: |
-    Re-create your Dataproc clusters with Customer-Managed Keys using Cloud KMS. Configure a key ring and CMK in Cloud KMS, then specify the key when creating the cluster using the '--gce-pd-kms-key' flag or through the console.
+    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
+    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Dataproc/enable-encryption-with-cmks-for-dataproc-clusters.html
     - https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/customer-managed-encryption

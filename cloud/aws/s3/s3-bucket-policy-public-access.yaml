@@ -1,10 +1,9 @@
 id: s3-bucket-policy-public-access
 info:
-  name: Public Access of S3 Buckets via Policy
+  name: Public 访问 of S3 Buckets via 策略（云安全）
   author: princechaddha
   severity: critical
-  description: |
-    This template checks if Amazon S3 buckets are configured to prevent public access via bucket policies
+  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-policy.html
   metadata:

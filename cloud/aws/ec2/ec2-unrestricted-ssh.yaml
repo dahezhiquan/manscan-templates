@@ -1,14 +1,15 @@
 id: ec2-unrestricted-ssh
 info:
-  name: Unrestricted SSH Access in EC2
+  name: Unrestricted SSH 访问 中的EC2（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Checks for inbound rules in Amazon EC2 security groups that allow unrestricted SSH access (0.0.0.0/0 or ::/0) on TCP port 22, indicating a security risk by exposing the SSH server to the internet.
+  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Unrestricted SSH access increases the risk of unauthorized access and potential brute force attacks against the SSH server, compromising the security of the EC2 instances.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Restrict SSH access in EC2 security groups to trusted IP addresses or ranges, adhering to the Principle of Least Privilege (POLP) and mitigating the risk of unauthorized access.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config

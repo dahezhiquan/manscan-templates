@@ -1,15 +1,16 @@
 id: gcloud-vm-preemptible-enabled
 
 info:
-  name: VM Instance Preemptibility Not Disabled
+  name: VM Instance Preemptibility Not未启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Google Cloud Platform (GCP) projects are not using preemptible virtual machine instances for production and business-critical applications. A preemptible virtual machine (VM) is an instance that you can create and run at a much lower price than normal instances but it can be terminated sooner due to system demands.
+  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Preemptible VM instances can be terminated at any time to free up resources for standard VM instances, making them unsuitable for production workloads and potentially causing service disruptions.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Re-create your VM instances with preemptibility disabled. Note that you cannot disable preemptibility on an existing instance - you must create a new instance without the preemptible option.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/disable-preemptibility.html
     - https://cloud.google.com/compute/docs/instances/preemptible

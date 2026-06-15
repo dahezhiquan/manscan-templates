@@ -1,22 +1,16 @@
 id: k8s-clusterrole-nodes-proxy-rce
 
 info:
-  name: ClusterRoles with Risky nodes/proxy GET Permission
+  name: ClusterRoles 使用高风险 nodes/proxy GET 权限（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Detects Kubernetes ClusterRoles that grant GET permission on nodes/proxy resource.
-    Due to an authorization inconsistency in Kubelet, the nodes/proxy GET permission allows
-    execution of commands in any container via WebSocket connections to the Kubelet API.
-    The Kubelet authorizes based on the initial HTTP GET method of WebSocket handshake
-    rather than the actual operation (exec/run/attach) which should require CREATE permission.
+  description: 该规则用于检测 Kubernetes ClusterRole 是否授予 `nodes/proxy` 资源的 `GET` 权限。由于 Kubelet 在 WebSocket 握手阶段仅校验初始 GET 请求，这类权限可能被滥用以对容器执行命令，形成高危利用路径。
   impact: |
-    Service accounts with nodes/proxy GET permission can potentially execute commands in any
-    container if they have network access to the Kubelet API (port 10250). This bypasses
-    expected RBAC controls and audit logging.
+    - 拥有该权限且可访问 Kubelet 10250 端口的主体，可能在任意容器中执行命令。
+    - 这会绕过预期的 RBAC 控制边界，并削弱对相关高危操作的审计能力。
   remediation: |
-    Remove nodes/proxy GET permissions from ClusterRoles unless absolutely necessary.
-    Restrict network access to Kubelet port 10250 and implement network policies.
+    - 除非确有必要，否则应从 ClusterRole 中移除 `nodes/proxy` 资源的 `GET` 权限。
+    - 限制对 Kubelet 10250 端口的网络访问，并结合 NetworkPolicy 等机制收敛访问路径。
   reference:
     - https://grahamhelton.com/blog/nodes-proxy-rce
   tags: cloud,devops,kubernetes,devsecops,rbac,k8s,k8s-cluster-security

@@ -1,14 +1,15 @@
 id: azure-vmss-auto-os-upgrade-missing
 info:
-  name: Azure VMSS Automatic OS Upgrade Not Enabled
+  name: Azure VMSS Automatic OS Upgrade未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that operating system (OS) upgrades are automatically applied to your Microsoft Azure virtual machine scale sets when a newer version of the OS image is released by the image publishers. Automatic OS Upgrades feature supports both Windows and Linux images, and can be enabled for all virtual machine sizes. An automatic OS upgrade works by replacing the boot (OS) disk of a virtual machine instance running within a scale set with a new disk created using the latest image version available. Any configured extensions and custom data scripts are run on the OS disk, while persisted data disks are retained. To minimize the application downtime, the upgrades take place in multiple batches, with a maximum of 20% of the scale set upgrading at any time.
+  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failure to enable automatic OS upgrades can lead to outdated OS versions in use, which may lack critical security updates and features, increasing the risk of security vulnerabilities and operational inefficiencies.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable automatic OS upgrades in Azure VMSS settings to ensure all instances are updated automatically with the latest OS image version, thereby improving security and reducing manual maintenance overhead.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config

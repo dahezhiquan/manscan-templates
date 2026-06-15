@@ -1,15 +1,16 @@
 id: gcloud-bucket-website-config-not-defined
 
 info:
-  name: Define Index Page Suffix and Error Page for Bucket Website Configuration
+  name: Define Index Page Suffix and Error Page 的Bucket Website Configuration（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that website index (main) page suffix and error (404 not found) page are defined for your Google Cloud Storage buckets with static website configuration. Specifying these configurations ensures proper functionality and user experience for websites hosted on Cloud Storage buckets.
+  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without a defined index page suffix and error page, users may encounter broken functionality or unexpected behavior when accessing the hosted website.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Define an index page suffix (e.g., index.html) and an error page (e.g., 404.html) in the static website configuration for your Cloud Storage buckets.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/storage/docs/hosting-static-website
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,website-config,static-website,gcp-cloud-config

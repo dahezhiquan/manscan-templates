@@ -1,14 +1,15 @@
 id: azure-keyvault-network-unrestricted
 info:
-  name: Unrestricted Network Access to Azure Key Vaults
+  name: Unrestricted Network 访问 to Azure Key Vaults（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Microsoft Azure Key Vaults are configured to deny access to traffic from all networks (including the public Internet). By restricting the public access to your Azure Key Vaults, you add an important layer of security, since the default action is to accept connections from clients on any network. To limit access to trusted networks and/or IP addresses, you must change the Key Vault firewall default action from "Allow" to "Deny" and configure the appropriate access.
+  description: 该规则用于检查 Azure Key Vault 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Allowing unrestricted access from all networks to Azure Key Vaults can expose sensitive data and increase the risk of unauthorized access.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Modify Key Vault network settings to deny access from all networks by default. Configure network rules to allow access only from specific trusted IPs or networks.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/general/network-security
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config

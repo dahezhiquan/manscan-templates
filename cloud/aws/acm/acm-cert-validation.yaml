@@ -1,14 +1,15 @@
 id: acm-cert-validation
 info:
-  name: ACM Certificate Validation Check
+  name: ACM 证书 校验检查（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure ACM SSL/TLS certificates are properly validated during issue or renewal, indicating secure communication channels.
+  description: 该规则用于检查 AWS ACM 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   impact: |
-    Lack of validation may allow unauthorized certificates, leading to potential man-in-the-middle attacks or data breaches.
+    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
+    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
   remediation: |
-    Use AWS ACM for certificate provisioning and ensure domain validation steps are correctly followed for each certificate issued or renewed.
+    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
+    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html
   metadata:

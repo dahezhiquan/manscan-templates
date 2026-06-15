@@ -1,15 +1,16 @@
 id: gcloud-oslogin-disabled
 
 info:
-  name: OS Login Not Enabled for GCP Projects
+  name: OS Login 未Enabled 的GCP Projects（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that the OS Login feature is enabled at the Google Cloud Platform (GCP) project level in order to provide you with centralized and automated SSH key pair management. OS Login ensures that SSH keys are mapped with Google Cloud IAM users, facilitating centralized management of SSH access.
+  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without OS Login enabled, managing SSH access becomes decentralized and complex, making it difficult to handle compromised SSH keys or revoke access for specific users across multiple instances.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable OS Login at the project level by setting the "enable-oslogin" metadata key to "TRUE". Note that enabling OS Login disables metadata-based SSH key configurations on all instances within the project.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/enable-os-login.html
     - https://cloud.google.com/compute/docs/oslogin

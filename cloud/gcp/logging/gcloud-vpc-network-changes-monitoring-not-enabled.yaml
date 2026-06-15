@@ -1,15 +1,16 @@
 id: gcloud-vpc-network-changes-monitoring-not-enabled
 
 info:
-  name: Enable VPC Network Changes Monitoring
+  name: Enable VPC Network Changes 监控（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that each Google Cloud Platform (GCP) project has configured an alerting policy that is triggered each time a Virtual Private Cloud (VPC) network change is made. The log filter pattern used to recognize VPC network changes is "resource.type=gce_network AND protoPayload.methodName=beta.compute.networks.insert OR protoPayload.methodName=beta.compute.networks.patch OR protoPayload.methodName=v1.compute.networks.delete OR protoPayload.methodName=v1.compute.networks.removePeering OR protoPayload.methodName=v1.compute.networks.addPeering".
+  description: 该规则用于检查 GCP logging 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    If VPC network changes monitoring is not enabled, critical network modifications may go undetected, leading to potential security risks and compliance violations.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure a logs-based metric with the specified filter pattern and create an alerting policy to monitor Virtual Private Cloud (VPC) network changes for all GCP projects.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://cloud.google.com/monitoring/alerts
     - https://cloud.google.com/logging/docs/audit

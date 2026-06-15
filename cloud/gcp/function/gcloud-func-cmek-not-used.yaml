@@ -1,15 +1,16 @@
 id: gcloud-func-cmek-not-used
 
 info:
-  name: No Customer-Managed Encryption Keys in Google Cloud Functions
+  name: No Customer-Managed 加密 Keys 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Google Cloud functions use Customer-Managed Encryption Keys (CMEK) instead of Google-managed encryption keys to encrypt data at rest. CMEKs provide greater control over the encryption and decryption process, enabling you to meet stringent compliance requirements.
+  description: 该规则用于检查 GCP function 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   impact: |
-    Using Google-managed encryption keys instead of CMEKs reduces your ability to control the encryption process and comply with certain regulatory standards.
+    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
+    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
   remediation: |
-    Configure your Google Cloud functions to use Customer-Managed Encryption Keys (CMEK) to ensure data encryption at rest is managed according to your compliance and security requirements.
+    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
+    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-encryption-keys
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config

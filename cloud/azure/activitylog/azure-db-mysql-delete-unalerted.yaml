@@ -1,14 +1,15 @@
 id: azure-db-mysql-delete-unalerted
 info:
-  name: Azure MySQL Database Delete Alert Not Configured
+  name: Azure MySQL Database Delete Alert 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that a Microsoft Azure activity log alert is fired whenever a "Delete MySQL Database" event is triggered within your cloud account. An Azure activity log alert fires each time the action event that matches the condition specified in the alert configuration is triggered. The alert condition that this conformity rule checks for is "Whenever the Activity Log has an event with Category='Administrative', Signal name='Delete MySQL Database (servers/databases)'"
+  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Failing to configure alerts for "Delete MySQL Database" events can allow unauthorized or accidental deletions to go unnoticed, potentially leading to significant data loss and compliance issues.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure an activity log alert to fire on "Delete MySQL Database" events with the condition set to "Microsoft.DBforMySQL/servers/databases/delete" and ensure that an action group is attached to manage notifications.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
   tags: cloud,devops,azure,microsoft,mysql,azure-cloud-config

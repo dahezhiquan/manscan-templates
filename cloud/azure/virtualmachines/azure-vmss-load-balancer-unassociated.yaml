@@ -1,14 +1,15 @@
 id: azure-vmss-load-balancer-unassociated
 info:
-  name: Azure VMSS Load Balancer Unassociated
+  name: Azure VMSS Load Balancer Unassociated（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that each Microsoft Azure virtual machine scale set is integrated with a load balancer in order to distribute incoming traffic among healthy virtual machine instances running within the scale set. Azure load balancer is a layer 4 load balancer that provides low latency, high throughput, and scales up to millions of flows for all TCP and UDP web applications.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Virtual machine scale sets without associated load balancers may experience uneven traffic distribution and potential bottlenecks, affecting performance and reliability.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure each Azure virtual machine scale set is integrated with a load balancer to distribute incoming traffic effectively among instances.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-load-balancer
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config

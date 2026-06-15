@@ -1,15 +1,16 @@
 id: gcloud-persistent-disks-suspended-vms
 
 info:
-  name: Persistent Disks Attached to Suspended Virtual Machines
+  name: Persistent Disks Attached to Suspended Virtual Machines（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that persistent disks are not attached to suspended virtual machine (VM) instances in your Google Cloud environment. Persistent disks attached to suspended VMs continue to incur charges even when the VM is not running, leading to unnecessary costs.
+  description: 该规则用于检查 GCP compute 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Keeping persistent disks attached to suspended VMs results in ongoing storage charges without active utilization, increasing cloud infrastructure costs unnecessarily.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Identify and detach persistent disks from suspended VMs, or delete the disks if they are no longer needed to optimize cloud resource costs.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/compute/docs/disks
   tags: cloud,devops,gcp,gcloud,compute,storage,cost-optimization,gcp-cloud-config

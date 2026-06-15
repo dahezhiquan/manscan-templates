@@ -1,14 +1,15 @@
 id: azure-diag-logs-not-enabled
 info:
-  name: Diagnostic Logs Not Enabled for Azure Resources
+  name: Diagnostic Logs 未Enabled 的Azure Resources（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Diagnostic Logs are enabled for all the supported Azure resources to log interactions within your cloud resources. Logging every access request and operation to your cloud resources is a security best practice.
+  description: 该规则用于检查 Azure monitor 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failure to enable Diagnostic Logs can lead to a lack of insight into operations performed within resources, such as Azure Key Vault, which could potentially hinder the ability to perform security and compliance auditing.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable Diagnostic Logs for all Azure resources and ensure logs are sent to a storage account and Log Analytics Workspace or an equivalent system. Logs should be kept in accessible storage for at least one year, then moved to cold storage.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/logs/diagnostic-logs-overview
   tags: cloud,devops,azure,microsoft,diagnostic-logs,azure-cloud-config

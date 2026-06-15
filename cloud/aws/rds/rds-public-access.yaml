@@ -1,15 +1,16 @@
 id: rds-public-access
 
 info:
-  name: RDS Publicly Accessible - Enabled
+  name: RDS 公开可访问 -已启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: |
-    Check for any public-facing Amazon RDS database instances provisioned within your AWS cloud account and restrict unauthorized access in order to minimize security risks.
+  description: 该规则用于检查 AWS RDS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    The RDS instance is exposed to the internet, increasing the risk of unauthorized access, attacks, and data breaches.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    To restrict access to a publicly accessible database instance, you must disable the PubliclyAccessible configuration flag, and update the security group associated with the database instance.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/RDS/rds-publicly-accessible.html
     - http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.html

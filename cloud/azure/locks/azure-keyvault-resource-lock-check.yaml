@@ -1,14 +1,15 @@
 id: azure-keyvault-resource-lock-check
 info:
-  name: Azure KeyVault Resource Lock Not Enabled
+  name: Azure Key Vault 资源锁未启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that all your mission critical Azure cloud resources have resource locks enabled so that certain users are not able to delete or modify these resources in order to help prevent accidental and malicious changes or deletion.
+  description: 该规则用于检查 Azure 资源锁 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not having resource locks on mission-critical resources can lead to accidental or malicious modifications and deletions, potentially compromising the security and stability of the application.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Apply resource locks to all critical Azure resources, particularly Key Vaults. Use either the "ReadOnly" or "CanNotDelete" lock levels to prevent unwanted changes or deletions.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config

@@ -1,11 +1,10 @@
 id: vpc-flow-disabled
 
 info:
-  name: VPC Flow Log - Disabled
+  name: VPC Flow Log -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    The VPC Flow Log is disabled, meaning network traffic data is not being captured or monitored. This lack of logging reduces visibility into network activities, making it difficult to detect and investigate potential security incidents or performance issues.
+  description: 该规则用于检查 阿里云 VPC 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.alibabacloud.com/help/en/vpc/user-guide/create-and-manage-flow-log
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-VPC/enable-flow-logs.html

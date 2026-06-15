@@ -1,11 +1,10 @@
 id: security-plan-disabled
 
 info:
-  name: Security Center Plan - Disabled
+  name: Security Center Plan -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Ensure your Alibaba Cloud Security Center is on the Advanced or Enterprise Edition for enhanced security features like malware detection, webshell identification, and anomaly recognition. Upgrading provides critical protection against undetected threats.
+  description: 该规则用于检查 阿里云 安全中心 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.alibabacloud.com/help/en/security-center/product-overview/upgrade-and-downgrade-security-center
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-SecurityCenter/security-center-plan.html

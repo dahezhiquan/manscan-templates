@@ -1,14 +1,15 @@
 id: cloudtrail-logs-not-encrypted
 info:
-  name: CloudTrail Logs Not Encrypted
+  name: CloudTrail Logs 未Encrypted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure Amazon CloudTrail logs are encrypted at rest using AWS Key Management Service (KMS) to secure log data.
+  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Non-encrypted CloudTrail logs pose a risk of unauthorized access, compromising the integrity and confidentiality of log data.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Enable Server-Side Encryption (SSE) for CloudTrail logs using an AWS KMS key through the CloudTrail console or AWS CLI.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html
   metadata:

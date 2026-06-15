@@ -1,11 +1,10 @@
 id: sns-topic-public-accessible
 
 info:
-  name: Public Access of SNS Topics via Policy
+  name: Public 访问 of SNS Topics via 策略（云安全）
   author: Ritesh_Gohil(#L4stPL4Y3R)
   severity: high
-  description: |
-    This template checks if Amazon SNS topics are configured to prevent public access via topic policies.
+  description: 该规则用于检查 AWS SNS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://docs.aws.amazon.com/sns/latest/api/API_GetTopicAttributes.html
   metadata:

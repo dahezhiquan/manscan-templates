@@ -1,15 +1,16 @@
 id: gcloud-vertexai-root-access
 
 info:
-  name: Root Access Not Disabled for Vertex AI Notebooks
+  name: Root 访问 未Disabled 的Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that root access to your Google Cloud Vertex AI notebook instances is disabled in order to reduce the risk of accidental or malicious system damage by limiting administrative privileges within the instances. Disabling root access minimizes the risk of unauthorized modifications and helps maintain a more controlled and secure AI environment.
+  description: 该规则用于检查 GCP vertexai 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Allowing root access to Vertex AI notebook instances increases the risk of unauthorized modifications and potential misuse of superuser privileges. This could lead to system damage, data breaches, or compromise of the AI environment.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Disable root access for Vertex AI notebook instances using the 'gcloud workbench instances update' command with metadata parameter 'notebook-disable-root=true'. Note that instances must be stopped before updating this configuration.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/disable-root-access.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/manage-instance

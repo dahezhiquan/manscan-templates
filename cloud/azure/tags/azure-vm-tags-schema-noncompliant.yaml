@@ -1,14 +1,15 @@
 id: azure-vm-tags-schema-noncompliant
 info:
-  name: Azure VM Tags Schema Non-compliant
+  name: Azure VM Tags Schema Non-compliant（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that user-defined tags are being used for labeling, collecting, and organizing cloud resources within your Microsoft Azure account. User-defined tags are name/value pairs that enable you to categorize resources and view consolidated billing by applying the same tag to multiple cloud resources. Trend Micro Cloud One™ – Conformity recommends the following tagging schema to help you identify and manage your Azure resources: Name, Role, Environment, and Owner.
+  description: 该规则用于检查 Azure tags 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Not using the recommended tagging schema can lead to difficulties in managing and organizing cloud resources effectively, potentially leading to operational inefficiencies and increased costs.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Update the tagging schema of your Azure virtual machines to include the recommended tags: Name, Role, Environment, and Owner to ensure effective resource management and billing.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/tagging
   tags: cloud,devops,azure,microsoft,azure-vm,azure-cloud-config

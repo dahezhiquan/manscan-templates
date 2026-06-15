@@ -1,15 +1,16 @@
 id: gcloud-pg-log-error-verbosity-flag-not-configured
 
 info:
-  name: Log Error Verbosity Flag Not Configured Properly for PostgreSQL Instances
+  name: Log Error Verbosity Flag 未Configured Properly 的PostgreSQL Instances（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the "log_error_verbosity" database flag configured for your Google Cloud PostgreSQL database instances is set to DEFAULT or to a stricter value. The "log_error_verbosity" flag determines the level of detail recorded in the server log for logged messages. Valid values are TERSE, DEFAULT, and VERBOSE, with TERSE being the most restrictive and VERBOSE providing the most detail.
+  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    An improperly configured "log_error_verbosity" flag can result in either insufficient logging, which hinders troubleshooting and auditing, or excessive logging, which can impact performance and increase storage costs.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Set the "log_error_verbosity" flag to DEFAULT or a stricter value (e.g., TERSE) to balance logging detail and performance, as per your organization's logging policy.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,logging,gcp-cloud-config

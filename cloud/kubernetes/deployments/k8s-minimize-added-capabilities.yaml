@@ -1,14 +1,16 @@
 id: minimize-added-capabilities
 
 info:
-  name: Minimize container added capabilities
+  name: Minimize container added capabilities（云安全）
   author: princechaddha
   severity: high
-  description: Checks for containers in Kubernetes Deployments with added capabilities beyond the default set, increasing security risks.
+  description: 该规则用于检查 Kubernetes deployments 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Containers with additional capabilities are granted more privileges than necessary, potentially allowing them to bypass intended security restrictions. This increases the risk of exploitation and unauthorized access.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure that no unnecessary capabilities are added to containers within Kubernetes Deployments. Use security contexts to define the minimum necessary privileges.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   tags: cloud,devops,kubernetes,k8s,devsecops,deployments,k8s-cluster-security

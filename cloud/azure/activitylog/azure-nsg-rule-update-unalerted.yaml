@@ -1,14 +1,15 @@
 id: azure-nsg-rule-update-unalerted
 info:
-  name: Azure Network Security Group Rule Create/Update Alert Not Configured
+  name: Azure Network Security Group Rule Create/Update Alert 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that an Azure activity log alert is fired whenever "Create" or "Update Network Security Group Rule" events are triggered within your Microsoft Azure cloud account. Activity log alerts get activated when a new activity log event that matches the condition specified in the alert occurs. In this case, the alert condition required is 'Whenever the Administrative Activity Log "Create or Update Security Rule (networkSecurityGroups/securityRules)" has "any" level, with "any" status and event is initiated by "any"'.
+  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Without proper alert rules configured for monitoring "Create or Update Network Security Group Rule" events, unauthorized or unwanted changes might go unnoticed, leading to potential security risks.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Ensure alert rules are properly configured to monitor and notify on "Create or Update Network Security Group Rule" events by setting the alert condition to "Microsoft.Network/networkSecurityGroups/securityRules/write" and ensuring that an action group is attached to manage notifications.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
   tags: cloud,devops,azure,microsoft,network-security-group,azure-cloud-config

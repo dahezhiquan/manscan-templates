@@ -1,10 +1,9 @@
 id: iam-access-analyzer
 info:
-  name: IAM Access Analyzer is not Used
+  name: IAM 访问 Analyzer is not Used（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Checks if Amazon IAM Access Analyzer is active for identifying unsolicited access risks in AWS resources
+  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/list-analyzers.html
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config

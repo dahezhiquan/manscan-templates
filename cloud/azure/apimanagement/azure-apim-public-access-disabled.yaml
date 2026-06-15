@@ -1,14 +1,15 @@
 id: azure-apim-public-access-disabled
 info:
-  name: Azure API Management Public Network Access Disabled with Private Endpoint
+  name: Azure API Management 使用 Private Endpoint 时公有网络访问未禁用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Azure API Management services configured with a private endpoint should not be publicly accessible to enhance security by ensuring that the API service instance is only accessible from within your private network, over Azure Private Link, limiting exposure to potential external threats and unauthorized access.
+  description: 该规则用于检查 Azure apimanagement 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    If public network access is enabled for Azure API Management services with a private endpoint, it may expose sensitive APIs to external threats and unauthorized access, potentially leading to data breaches and other security vulnerabilities.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Disable public network access for Azure API Management services that are configured with a private endpoint to ensure they are only accessible via Azure Private Link within the private network.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-private-link
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config

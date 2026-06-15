@@ -1,15 +1,16 @@
 id: gcloud-sql-remote-access-enabled
 
 info:
-  name: Remote Access Enabled for SQL Server Database Instances
+  name: SQL Server 数据库实例启用了远程访问（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that the "remote access" database flag is turned off for your Google Cloud SQL Server database instances. This prevents the execution of stored procedures from local or remote servers on which your SQL Server instances are running, improving security and compliance.
+  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Enabling the "remote access" flag for SQL Server database instances can lead to security vulnerabilities, as it allows execution of stored procedures from remote servers. This increases the attack surface of the database.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Disable the "remote access" database flag for all SQL Server database instances in Google Cloud Platform. Update the database configuration settings to ensure the flag is turned off.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/configure-instance-settings
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,sqlserver,gcp-cloud-config

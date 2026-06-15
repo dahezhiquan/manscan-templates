@@ -1,15 +1,16 @@
 id: gcloud-org-ip-forwarding
 
 info:
-  name: VM IP Forwarding Not Restricted
+  name: VM IP Forwarding 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the virtual machine (VM) instances allowed to use IP forwarding, that belong to your project, folder, or organization, are defined using the "Restrict VM IP Forwarding" policy. This constraint policy helps you improve security and achieve regulatory compliance by explicitly defining the resource name of the VM instances allowed to use IP forwarding.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    By default, any virtual machine instance can enable IP forwarding in any VPC network. When IP forwarding is enabled on a VM's network interface, it allows the VM to act as a router and receive traffic addressed to other destinations, which could be exploited for malicious purposes.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Restrict VM IP Forwarding" policy at the organization level to explicitly specify which VM instances can use IP forwarding. Use the format projects/<project-id>/zones/<instance-zone>/instances/<instance-name> or under: prefix for broader scopes.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enable-ip-forwarding-restriction-policy.html
     - https://cloud.google.com/vpc/docs/using-instance-ip-forwarding

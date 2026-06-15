@@ -1,11 +1,10 @@
 id: s3-public-read
 
 info:
-  name: S3 Bucket with Public READ Access
+  name: S3 Bucket 使用Public READ 访问（云安全）
   author: princechaddha
   severity: critical
-  description: |
-    Verifies that Amazon S3 buckets do not permit public 'READ' (LIST) access to anonymous users, protecting against unauthorized data exposure
+  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-acl.html
   metadata:

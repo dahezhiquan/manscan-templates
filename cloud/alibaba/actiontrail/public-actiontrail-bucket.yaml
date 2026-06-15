@@ -1,11 +1,10 @@
 id: public-actiontrail-bucket
 
 info:
-  name: ActionTrail Log Buckets - Publicly Exposed
+  name: ActionTrail Log Buckets - 公开暴露（云安全）
   author: ritikchaddha
   severity: high
-  description: |
-    Identify any publicly accessible ActionTrail trail log buckets in order to determine if your Alibaba Cloud account could be at risk. A publicly accessible trail bucket is a bucket were all users, including anonymous users, can perform read and write operations on the objects within the bucket.
+  description: 该规则用于检查 阿里云 ActionTrail 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ActionTrail/trail-bucket-publicly-accessible.html
   metadata:

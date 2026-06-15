@@ -1,14 +1,15 @@
 id: azure-postgres-log-checkpoints-disabled
 info:
-  name: Azure PostgreSQL Flexible Server log_checkpoints Disabled
+  name: Azure PostgreSQL Flexible Server log_checkpoints未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "log_checkpoints" server parameter is enabled for all PostgreSQL flexible database servers available within your Microsoft Azure cloud account. The "log_checkpoints" parameter allows checkpoints and restart points to be logged in the Azure PostgreSQL server log.
+  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling "log_checkpoints" can prevent logging of critical events such as checkpoints and restarts, which are important for troubleshooting and ensuring the reliability of the database service.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "log_checkpoints" parameter for your Azure PostgreSQL flexible servers to ensure critical operational events are logged.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters
   tags: cloud,devops,azure,microsoft,postgres,azure-cloud-config

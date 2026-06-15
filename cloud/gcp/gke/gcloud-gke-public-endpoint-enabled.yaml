@@ -1,13 +1,13 @@
 id: gcloud-gke-public-endpoint-enabled
 
 info:
-  name: GKE Clusters with Public Control Plane Endpoints
+  name: GKE Clusters 使用Public Control Plane Endpoints（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Google Kubernetes Engine (GKE) clusters are configured to use private endpoints only for control plane access, effectively disabling external access to the Kubernetes API. This requires configuring the GKE cluster with private nodes, a private master IP range, and IP aliasing.
+  description: 该规则用于检查 GCP gke 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    While Kubernetes API requires authentication tokens for sensitive actions, a vulnerability could expose it with unrestricted access. Moreover, attackers could potentially identify the cluster and Kubernetes API version to check for known vulnerabilities.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/clusters-with-private-endpoints.html

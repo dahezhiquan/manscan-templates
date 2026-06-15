@@ -1,15 +1,16 @@
 id: gcloud-bucket-lock-not-configured
 
 info:
-  name: Configure Retention Policies with Bucket Lock for Log Buckets
+  name: Configure Retention 策略 使用Bucket Lock 的Log Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that all retention policies attached to your Google Cloud log sink buckets are configured with the Bucket Lock feature. This prevents logging data from being overwritten or deleted and ensures compliance with data retention policies by locking the retention configuration.
+  description: 该规则用于检查 GCP 存储账户 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Without the Bucket Lock feature, retention policies can be modified or removed, potentially leading to accidental or unauthorized deletion of critical logging data.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Enable Bucket Lock on your Google Cloud log sink buckets to enforce retention policies and prevent changes to the data retention duration.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://cloud.google.com/storage/docs/bucket-lock
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,retention,bucket-lock,security,gcp-cloud-config

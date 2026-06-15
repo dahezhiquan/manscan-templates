@@ -1,14 +1,15 @@
 id: azure-appservice-https-only-not-enforced
 info:
-  name: Azure App Service HTTPS-Only Not Enforced
+  name: Azure App Service HTTPS-Only 未Enforced（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Azure App Service web applications redirect all non-secure HTTP traffic to HTTPS in order to encrypt the communication between applications and web clients. HTTPS uses the Secure Sockets Layer (SSL)/Transport Layer Security (TLS) protocol to provide a secure connection, which is both encrypted and authenticated. This adds an extra layer of security to the HTTP requests made to the web application.
+  description: 该规则用于检查 Azure appservice 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   impact: |
-    Not enforcing HTTPS only for web applications can lead to unencrypted and unauthenticated traffic, which can be intercepted by attackers.
+    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
+    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
   remediation: |
-    Enable the HTTPS-only feature on all Azure App Services to enforce all traffic to be encrypted and secure.
+    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
+    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings#enforce-https
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config

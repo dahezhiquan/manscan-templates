@@ -1,15 +1,16 @@
 id: gcloud-dnssec-keysigning-rsasha1
 
 info:
-  name: DNSSEC RSASHA1 Algorithm Deprecated Usage
+  name: DNSSEC RSASHA1 Algorithm Deprecated Usage（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Domain Name System Security Extensions (DNSSEC) feature is not using the deprecated RSASHA1 algorithm for the Key-Signing Key (KSK) associated with your DNS managed zone file.
+  description: 该规则用于检查 GCP dns 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using the deprecated RSASHA1 algorithm in DNSSEC configurations can expose DNS infrastructure to vulnerabilities and compromise the integrity and security of DNS data.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Update the DNSSEC configuration for each DNS managed zone to use more secure algorithms like RSASHA256 or ECDSAP256SHA256 for the Key-Signing Key (KSK).
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/dns/docs/dnssec-config
   tags: cloud,devops,gcp,gcloud,dns,dnssec,gcp-cloud-config,discovery

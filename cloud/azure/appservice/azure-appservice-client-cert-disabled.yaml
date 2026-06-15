@@ -1,14 +1,15 @@
 id: azure-appservice-client-cert-disabled
 info:
-  name: Azure App Service Client Certificate Not Required
+  name: Azure App Service Client 证书 未Required（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Microsoft Azure App Service web applications are configured to require an SSL certificate from all incoming requests, for security and compliance purposes. Once the certificate is implemented, only web clients that have this valid SSL certificate will be able to reach your web application. By default, incoming client certificates are disabled for Azure App Service web applications.
+  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    If incoming client certificates are not required, unauthorized clients might be able to access the web application, which can lead to security breaches.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure Azure App Services to require SSL certificates for incoming requests to enhance security and compliance with regulations.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#require-incoming-certificate
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config

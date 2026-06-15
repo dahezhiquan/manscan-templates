@@ -1,15 +1,16 @@
 id: gcloud-api-keys-present
 
 info:
-  name: Delete Google Cloud API Keys
+  name: Delete Google Cloud API Keys（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that all your Google Cloud projects are using standard authentication flow instead of API keys for authentication. Google Cloud Platform (GCP) API keys are simple encrypted strings that can be used when calling certain APIs which don't need to access private user data. GCP API keys are usually accessible to clients, as they can be publicly viewed from within a browser, making it easy to discover and steal an API key.
+  description: 该规则用于检查 GCP IAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Using API keys that are publicly accessible can lead to unauthorized access and potential security breaches.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Remove all API keys and replace them with standard authentication methods to secure your applications.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://cloud.google.com/docs/authentication/api-keys
   tags: cloud,devops,gcp,gcloud,google-cloud-api,gcp-cloud-config

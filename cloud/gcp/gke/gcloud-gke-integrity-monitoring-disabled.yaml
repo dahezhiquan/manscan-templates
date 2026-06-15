@@ -1,16 +1,16 @@
 id: gcloud-gke-integrity-monitoring-disabled
 
 info:
-  name: GKE Node Pools Without Integrity Monitoring
+  name: GKE Node Pools 未启用完整性 监控（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Integrity Monitoring is enabled for your Google Kubernetes Engine (GKE) cluster nodes to monitor and automatically check the runtime boot integrity using Google Cloud Monitoring service. This feature helps verify that the boot loader and other measured components remain untampered.
+  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without Integrity Monitoring enabled, there is no automated verification of boot integrity for cluster nodes, making it harder to detect potential tampering or compromises of the boot components.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Re-create your node pools with Integrity Monitoring enabled using:
-    gcloud container node-pools create POOL_NAME --cluster=CLUSTER_NAME --shielded-integrity-monitoring
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/shielded-gke-nodes
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-integrity-monitoring.html

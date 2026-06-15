@@ -1,15 +1,16 @@
 id: gcloud-func-no-vpc-access
 
 info:
-  name: No Serverless VPC Access in Google Cloud Functions
+  name: No Serverless VPC 访问 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Google Cloud functions are configured to use Serverless VPC Access in order to connect functions directly to your VPC network, allowing access to other VPC resources such as VM instances, MemoryStore instances, or any other cloud resources with an internal IP address. Without Serverless VPC Access, these functions may not be able to communicate efficiently with other resources in the same VPC.
+  description: 该规则用于检查 GCP function 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Lack of Serverless VPC Access in Google Cloud functions can lead to inefficient or failed communications between your serverless functions and other resources within the same VPC, impacting application performance and increasing latency.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure Serverless VPC Access for your Google Cloud functions by setting the vpcConnector parameter to the name of an already configured VPC connector in your project settings.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/functions/docs/connecting-vpc
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config

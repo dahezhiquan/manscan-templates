@@ -1,11 +1,10 @@
 id: gcp-env
 
 info:
-  name: GCP Environment Validation
+  name: GCP Environment 校验（云安全）
   author: princechaddha
   severity: info
-  description: |
-    Checks if Google Cloud CLI (gcloud) is set up and all necessary tools are installed on the environment.
+  description: 该规则用于检查 GCP gcp-env.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   reference:
     - https://console.cloud.google.com/
   tags: cloud,devops,google,gcp,gcp-cloud-config

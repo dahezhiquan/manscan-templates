@@ -1,10 +1,9 @@
 id: s3-auth-fullcontrol
 info:
-  name: Restrict S3 Buckets FULL_CONTROL Access for Authenticated Users
+  name: Restrict S3 Buckets FULL_CONTROL 访问 的Authenticated Users（云安全）
   author: princechaddha
   severity: critical
-  description: |
-    Checks if Amazon S3 buckets grant FULL_CONTROL access to authenticated users, preventing unauthorized operations
+  description: 该规则用于检查 AWS S3 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
   metadata:

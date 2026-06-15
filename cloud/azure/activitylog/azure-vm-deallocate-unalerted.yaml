@@ -1,14 +1,15 @@
 id: azure-vm-deallocate-unalerted
 info:
-  name: Azure Virtual Machine Deallocate Alert Not Configured
+  name: Azure Virtual Machine Deallocate Alert 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that an Azure activity log alert is fired whenever "Deallocate Virtual Machine" events are triggered within your Microsoft Azure cloud account. An Azure activity log alert is triggered when a new activity log event that matches the condition specified in the alert configuration occurs. For this conformity rule, the matched condition is `Whenever the Administrative Activity Log "Deallocate Virtual Machine (Microsoft.Compute/virtualMachines)" has "any" Event level, with "any" Status and Event initiated by "any"`.
+  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Without an alert for "Deallocate Virtual Machine" events, unauthorized or unintended shutdowns of VMs may occur without detection, leading to potential disruptions and security risks.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure Azure activity log alerts to detect "Deallocate Virtual Machine" events by setting the alert condition to "Microsoft.Compute/virtualMachines/deallocate/action" and ensuring that alerts trigger notifications appropriately.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
   tags: cloud,devops,azure,microsoft,virtual-machines,azure-cloud-config

@@ -1,15 +1,16 @@
 id: rds-copy-snap
 
 info:
-  name: RDS Copy Tags to Snapshots - Disabled
+  name: RDS Copy Tags to Snapshots -未启用（云安全）
   author: DhiyaneshDK
   severity: low
-  description: |
-    Ensure that your Amazon RDS database instances make use of the Copy Tags to Snapshots feature in order to allow tags set on your database instances to be automatically copied to any automated or manual database snapshots that are created from these RDS instances.
+  description: 该规则用于检查 AWS RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Tags are not copied to snapshots, making it harder to track, manage, and identify snapshots for cost allocation, compliance, or organization.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "Copy Tags to Snapshots" option for the RDS instance in the AWS Management Console, CLI, or API to ensure that tags are automatically applied to any created snapshots.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/RDS/copy-tags-to-snapshot.html
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html

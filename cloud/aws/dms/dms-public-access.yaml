@@ -1,15 +1,16 @@
 id: dms-public-access
 
 info:
-  name: Publicly Accessible DMS Replication Instances
+  name: 公开可访问 DMS Replication Instances（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Ensure that your Amazon Database Migration Service (DMS) are not publicly accessible from the Internet in order to avoid exposing private data and minimize security risks.
+  description: 该规则用于检查 AWS DMS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Publicly accessible DMS replication instances expose your database to unauthorized access and potential attacks, increasing the risk of data breaches and compromising the security of sensitive information.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Restrict access to your DMS replication instances by configuring security groups and network access controls to allow connections only from trusted IP addresses and private subnets, ensuring that they are not publicly accessible.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/DMS/publicly-accessible.html
     - https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html

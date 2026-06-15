@@ -1,15 +1,16 @@
 id: gcloud-logs-router-cmek-not-enabled
 
 info:
-  name: Logs Router Encryption with Customer-Managed Keys Not Enabled
+  name: Logs Router 加密 使用Customer-Managed Keys未启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that Google Cloud Logs Router data is encrypted with Customer-Managed Keys (CMKs) to provide full control over your data encryption and decryption process and to help meet compliance requirements. Using Cloud Key Management Service (Cloud KMS), you can create and manage your CMKs, ensuring secure and efficient encryption key management, controlled key rotation, and revocation mechanisms.
+  description: 该规则用于检查 GCP logging 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without Customer-Managed Keys (CMKs) encryption, your Logs Router data may not meet organizational compliance requirements and is not protected by keys you control, potentially exposing sensitive information to unauthorized access.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable Customer-Managed Keys (CMKs) for Logs Router encryption within your GCP organization by configuring Cloud KMS keys and associating them with the Logs Router service. Ensure the CMKs are properly managed and rotated per compliance requirements.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/logging/docs/routing/managed-encryption
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,gcp-cloud-config

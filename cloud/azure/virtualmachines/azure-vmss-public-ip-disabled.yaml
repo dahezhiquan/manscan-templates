@@ -1,14 +1,15 @@
 id: azure-vmss-public-ip-disabled
 info:
-  name: Azure VMSS Public IP Not Assigned
+  name: Azure VMSS Public IP 未Assigned（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that instances running within your Microsoft Azure virtual machine scale set (VMSS) are not configured with public IP addresses. Assigning public IP addresses to individual VMSS instances increases attack surface, making it harder to manage and secure the environment.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Instances with public IP addresses are more exposed to potential external attacks, increasing the security risks for the Azure environment.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Configure your VMSS to disable public IP address assignments to its instances. Ensure that all networking is handled through internal networking resources.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config

@@ -1,15 +1,16 @@
 id: gcloud-kms-public-access
 
 info:
-  name: Publicly Accessible Google Cloud KMS Keys
+  name: 公开可访问 Google Cloud KMS Keys（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that the IAM policy associated with your Google Cloud Key Management Service (KMS) keys restricts anonymous and/or public access. The KMS cryptographic keys are controlled by Cloud IAM policies, which should not include bindings for "allUsers" and "allAuthenticatedUsers" to prevent public internet access.
+  description: 该规则用于检查 GCP kms 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    If a KMS key is accessible to "allUsers" or "allAuthenticatedUsers", it means any internet user can access this cryptographic resource, potentially leading to unauthorized data access or manipulation.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Update the IAM policy for your KMS keys by removing any bindings that include "allUsers" or "allAuthenticatedUsers" to restrict access to authenticated and authorized users only.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://cloud.google.com/kms/docs/restricting-access
   tags: cloud,devops,gcp,gcloud,google-kms,gcp-cloud-config

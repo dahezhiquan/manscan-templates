@@ -1,15 +1,16 @@
 id: cloudfront-compress-object
 
 info:
-  name: CloudFront Compress Objects Automatically
+  name: CloudFront Compress Objects Automatically（云安全）
   author: DhiyaneshDK
   severity: low
-  description: |
-    Ensure that your Amazon CloudFront Content Delivery Network (CDN) distributions are configured to automatically compress content for web requests that include "Accept-Encoding: gzip" in the request header, in order to increase the websites/web applications performance and reduce bandwidth costs.
+  description: 该规则用于检查 AWS CloudFront 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Disabling "Compress Objects Automatically" in CloudFront can lead to increased data transfer costs and slower page load times, negatively impacting user experience and performance.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Enable "Compress Objects Automatically" in CloudFront to reduce data transfer sizes, enhance loading speeds, and improve overall performance for end users.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFront/compress-objects-automatically.html
     - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html

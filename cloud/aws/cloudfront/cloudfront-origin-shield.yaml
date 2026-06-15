@@ -1,15 +1,16 @@
 id: cloudfront-origin-shield
 
 info:
-  name: CloudFront Origin Shield - Not Enabled
+  name: CloudFront Origin Shield -未启用（云安全）
   author: DhiyaneshDK
   severity: info
-  description: |
-    Ensure that the Origin Shield performance optimization feature is enabled for all your Amazon CloudFront distributions in order to help reduce the load on your distribution's origin, improve its availability, and reduce its operating costs.
+  description: 该规则用于检查 AWS CloudFront 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not enabling CloudFront Origin Shield can lead to increased load on your origin server, higher latency, and greater costs due to more frequent requests during traffic spikes.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable CloudFront Origin Shield for your distributions to optimize cache efficiency, reduce load on your origin server, and improve content delivery performance during high traffic periods.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFront/enable-origin-shield.html
     - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html

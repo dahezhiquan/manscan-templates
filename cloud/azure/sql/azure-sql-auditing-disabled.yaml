@@ -1,14 +1,15 @@
 id: azure-sql-auditing-disabled
 info:
-  name: Azure SQL Server Auditing Not Enabled
+  name: Azure SQL Server 审计ing未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the "Auditing" feature is enabled within your Microsoft Azure SQL server configuration settings in order to monitor your SQL databases for security, compliance, and troubleshooting purposes. Microsoft Azure allows an SQL server to be created as a service. Enabling auditing at the server level ensures that all existing and newly created databases on that SQL server are audited.
+  description: 该规则用于检查 Azure SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failing to enable auditing for SQL servers can compromise security and compliance by missing critical monitoring on database activities.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "Auditing" feature in Azure SQL server settings to ensure comprehensive monitoring and compliance across all databases.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-sql/database/auditing-overview
   tags: cloud,devops,azure,microsoft,sql,azure-cloud-config

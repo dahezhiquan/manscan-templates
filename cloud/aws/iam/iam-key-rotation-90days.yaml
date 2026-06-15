@@ -1,10 +1,9 @@
 id: iam-key-rotation-90days
 info:
-  name: IAM Access Key Rotation - 90-Day Policy
+  name: IAM 访问 Key Rotation - 90-Day 策略（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Checks if IAM user access keys are rotated every 90 days to minimize accidental exposures and unauthorized access risks
+  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html
   metadata:

@@ -1,15 +1,16 @@
 id: eks-managed-policy-ecr-access
 
 info:
-  name: Use AWS-managed policy to access Amazon ECR Repositories
+  name: Use AWS-managed policy to access Amazon ECR Repositories（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that all EKS cluster node groups use the "AmazonEC2ContainerRegistryReadOnly" managed policy to access Amazon ECR repositories. This policy provides read-only access to Amazon EC2 Container Registry (ECR) repositories.
+  description: 该规则用于检查 AWS EKS 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Without the AmazonEC2ContainerRegistryReadOnly policy, EKS node groups cannot pull container images from ECR repositories, which will prevent pods from starting and running properly.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Attach the AmazonEC2ContainerRegistryReadOnly policy to the IAM role associated with your EKS node groups using either the AWS Console or AWS CLI.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/managed-policy-ecr-access.html
     - https://docs.aws.amazon.com/AmazonECR/latest/userguide/ecr_managed_policies.html

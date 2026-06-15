@@ -1,15 +1,16 @@
 id: gcloud-org-shared-vpc-subnets
 
 info:
-  name: Shared VPC Subnetworks Not Restricted
+  name: Shared VPC Subnetworks 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the set of shared VPC subnetworks that eligible Google Cloud resources can use, are defined using the "Restrict Shared VPC Subnetworks" constraint policy. The allowed list of VPC subnetworks must be specified in the following form: projects/<project-id>/regions/<subnetwork-region>/subnetworks/<subnetwork-name>. You can also define the list of allowed subnetworks in a project, folder, or organization.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    By default, eligible Google Cloud resources can use any shared Virtual Private Cloud (VPC) subnetwork. Without restrictions, resources could be deployed in unauthorized or non-compliant network segments.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Restrict Shared VPC Subnetworks" policy at the organization level to explicitly specify which VPC subnetworks can be used. Use the format projects/<project-id>/regions/<region>/subnetworks/<name> or under: prefix for broader scopes.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-shared-vps-subnetworks.html
     - https://cloud.google.com/vpc/docs/shared-vpc

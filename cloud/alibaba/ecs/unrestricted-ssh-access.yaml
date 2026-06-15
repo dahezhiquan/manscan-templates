@@ -1,11 +1,10 @@
 id: unrestricted-ssh-access
 
 info:
-  name: Unrestricted - SSH Access
+  name: Unrestricted - SSH 访问（云安全）
   author: DhiyaneshDK
   severity: high
-  description: |
-    Unrestricted SSH access allows anyone on the internet to attempt connections to your instance over port 22, posing a risk of brute force attacks, unauthorized access, and exploitation of SSH vulnerabilities. Limiting access to trusted IPs is essential to secure your instance.
+  description: 该规则用于检查 阿里云 ECS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ECS/unrestricted-ssh-access.html
     - https://www.alibabacloud.com/help/en/ecs/use-cases/best-practices-of-the-security-group

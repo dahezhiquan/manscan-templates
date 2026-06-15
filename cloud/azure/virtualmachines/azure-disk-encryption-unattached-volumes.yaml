@@ -1,14 +1,15 @@
 id: azure-disk-encryption-unattached-volumes
 info:
-  name: Azure Disk Encryption Not Enabled for Unattached Disk Volumes
+  name: Azure Disk 加密 未Enabled 的Unattached Disk Volumes（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your detached Microsoft Azure virtual machine (VM) disk volumes are encrypted using Azure Disk Encryption in order to meet security and compliance requirements. ADE encrypts the OS and data disks of Azure virtual machines (VMs) inside your VMs using the CPU via the DM-Crypt feature for Linux or the BitLocker feature for Windows. ADE is integrated with Azure Key Vault to help you control and manage the disk encryption keys and secrets. The unattached disk volumes encryption and decryption is handled transparently and does not require any additional action from you, your Azure virtual machine, or your application.
+  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Unencrypted detached disk volumes can expose sensitive data and violate compliance and security policies.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Encrypt all unattached disk volumes using Azure Disk Encryption integrated with Azure Key Vault to ensure data is protected even when disks are detached.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-cli
   tags: cloud,devops,azure,microsoft,disk-encryption,azure-cloud-config

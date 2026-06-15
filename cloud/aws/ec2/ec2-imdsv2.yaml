@@ -1,14 +1,15 @@
 id: ec2-imdsv2
 info:
-  name: Enforce IMDSv2 on EC2 Instances
+  name: Enforce IMDSv2 on EC2 Instances（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure all EC2 instances use Instance Metadata Service Version 2 (IMDSv2) for enhanced security when requesting instance metadata, protecting against certain types of attacks that target the older version, IMDSv1.
+  description: 该规则用于检查 AWS EC2 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using IMDSv1 can expose EC2 instances to server-side request forgery (SSRF) attacks, potentially allowing attackers to access sensitive instance metadata.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Modify the EC2 instance metadata options to set `HttpTokens` to `required`, enforcing the use of IMDSv2. This can be done via the AWS Management Console, CLI, or EC2 API.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html
   metadata:

@@ -1,15 +1,16 @@
 id: gcp-cloud-func-gen1-deprecated
 
 info:
-  name: Deprecated 1st Generation Google Cloud Functions
+  name: Deprecated 1st Generation Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that none of your Google Cloud functions are 1st (first) generation functions. 1st generation Google Cloud functions are considered deprecated and no longer receive updates or support, making them less secure, less performant, and lacking in new features compared to newer generations.
+  description: 该规则用于检查 GCP function 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using deprecated 1st generation functions can expose your applications to security vulnerabilities, degrade performance, and miss out on new features provided by newer generations.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Migrate all 1st generation Google Cloud functions to newer generation runtimes as recommended by Google to ensure continued support and access to the latest features and security enhancements.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/functions/docs/migrating
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config

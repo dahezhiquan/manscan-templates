@@ -1,14 +1,15 @@
 id: azure-keyvault-ssl-autorenewal-missing
 info:
-  name: Missing SSL Certificate Auto-Renewal in Azure Key Vaults
+  name: 缺失 SSL 证书 Auto-续期 中的Azure Key Vaults（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Microsoft Azure Key Vault service can renew your SSL certificates automatically to prevent application or service outages, credential leaks, or process violations that can disrupt your business. Ensure that your SSL certificates in Azure Key Vaults are set to auto-renew.
+  description: 该规则用于检查 Azure Key Vault 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not enabling auto-renewal for SSL certificates can lead to expired certificates, potentially causing outages and security risks.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure SSL certificates in Azure Key Vaults to automatically renew by setting the correct policies in the Azure portal or through Azure CLI.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/certificates/how-to-renew-certificate
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config

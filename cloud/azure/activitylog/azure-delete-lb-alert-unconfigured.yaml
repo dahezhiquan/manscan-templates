@@ -1,14 +1,15 @@
 id: azure-delete-lb-alert-unconfigured
 info:
-  name: Azure Delete Load Balancer Alert Not Configured
+  name: Azure Delete Load Balancer Alert 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that a Microsoft Azure activity log alert is fired whenever a "Delete Load Balancer" event is triggered within your cloud account. An Azure activity log alert fires each time the action event that matches the condition specified in the alert configuration is triggered. The alert condition that this conformity rule searches for is "Whenever the Activity Log has an event with Category='Administrative', Signal name='Delete Load Balancer (loadBalancers)'".
+  description: 该规则用于检查 Azure 活动日志 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Failing to configure alerts for "Delete Load Balancer" events can allow unauthorized or accidental deletions to go unnoticed, posing serious risks to network availability and security.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Ensure alert rules are properly configured to monitor and notify on "Delete Load Balancer" events by setting the alert condition to "Microsoft.Network/loadBalancers/delete" and attaching an action group for notifications.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
   tags: cloud,devops,azure,microsoft,load-balancer,azure-cloud-config

@@ -1,15 +1,16 @@
 id: gcloud-vuln-scan-missing
 
 info:
-  name: Artifact Registry Vulnerability Scanning Not Enabled
+  name: Artifact Registry Vulnerability Scanning未启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that vulnerability scanning for Google Cloud Artifact Registry repositories is enabled in order to find security weaknesses in your container images before deploying them and help prevent security breaches.
+  description: 该规则用于检查 GCP artifactregistry 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling vulnerability scanning on Artifact Registry repositories can expose your deployment to undiscovered security vulnerabilities, increasing the risk of security breaches.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the Container Scanning API for each Artifact Registry by visiting the API & services page in the Google Cloud Console and enabling `containerscanning.googleapis.com`.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/artifact-registry/docs/vulnerability-scanning
   tags: cloud,devops,gcp,gcloud,artifact-registry,container-scanning,gcp-cloud-config

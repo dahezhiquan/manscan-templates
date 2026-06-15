@@ -1,14 +1,15 @@
 id: cloudtrail-dup-logs
 info:
-  name: CloudTrail Duplicate Log Avoidance
+  name: CloudTrail Duplicate Log Avoidance（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure CloudTrail logging is configured to prevent duplicate recording of global service events across multiple trails.
+  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Duplicate log entries can lead to increased storage costs and complicate log analysis and anomaly detection efforts.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure only one multi-region trail to log global service events and disable global service logging for all other trails.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html
   metadata:

@@ -1,15 +1,16 @@
 id: route53-dnssec-signing-disabled
 
 info:
-  name: DNSSEC Signing for Route 53 Hosted Zones - Disabled
+  name: DNSSEC Signing 的Route 53 Hosted Zones -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Ensure that Domain Name System Security Extensions (DNSSEC) signing is enabled for your Amazon Route 53 public hosted zones in order to protect your domains against spoofing and cache poisoning attacks. By default, DNSSEC signing is not enabled for Route 53 hosted zones.
+  description: 该规则用于检查 AWS Route53 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Attackers can hijack the process of domain/IP lookup and redirect users to malicious web content through DNS hijacking and Man-In-The-Middle (MITM) attacks. DNSSEC security feature helps mitigate the risk of such attacks by encrypting signing DNS records.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Enable DNSSEC signing in the Route 53 console for the hosted zone, sign the zone with a strong key algorithm, and ensure all DNS records are published correctly.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Route53/enable-query-logging.html
     - https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-overview.html

@@ -1,10 +1,9 @@
 id: iam-root-mfa
 info:
-  name: MFA not enabled on AWS Root Account
+  name: MFA not enabled on AWS Root Account（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Checks if Multi-Factor Authentication (MFA) is enabled for the AWS root account
+  description: 该规则用于检查 AWS IAM 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config

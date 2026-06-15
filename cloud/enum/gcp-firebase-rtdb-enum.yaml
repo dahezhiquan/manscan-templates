@@ -1,11 +1,10 @@
 id: gcp-firebase-rtdb-enum
 
 info:
-  name: GCP Firebase Realtime Database - Cloud Enumeration
+  name: GCP Firebase Realtime Database - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: |
-    Searches for Firebase Realtime Databases in GCP.
+  description: 该规则用于检查 enum gcp-firebase-rtdb-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   metadata:
     verified: true
     max-request: 1

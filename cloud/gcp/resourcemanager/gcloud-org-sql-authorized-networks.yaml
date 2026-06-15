@@ -1,15 +1,16 @@
 id: gcloud-org-sql-authorized-networks
 
 info:
-  name: Cloud SQL Authorized Networks Not Restricted
+  name: Cloud SQL Authorized Networks 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Restrict Authorized Networks on Cloud SQL instances" policy is enforced for your Google Cloud Platform (GCP) organization to deny IAM members to add authorized networks in order to provide access to your security-critical SQL database instances. By default, authorized networks can be added to any Cloud SQL database instance.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Without restricting authorized networks, Cloud SQL instances can be configured to allow access from any IP address, potentially exposing databases to unauthorized access from the internet.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Enable the "Restrict Authorized Networks on Cloud SQL instances" policy at the organization level using the 'gcloud alpha resource-manager org-policies enable-enforce' command with the sql.restrictAuthorizedNetworks constraint.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-authorized-networks.html
     - https://cloud.google.com/sql/docs/mysql/authorize-networks

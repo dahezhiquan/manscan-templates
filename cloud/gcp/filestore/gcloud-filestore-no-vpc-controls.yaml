@@ -1,15 +1,16 @@
 id: gcloud-filestore-no-vpc-controls
 
 info:
-  name: Filestore Instance Not Protected by VPC Service Controls
+  name: Filestore Instance 未Protected by VPC Service Controls（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that VPC Service Controls are used to configure a security perimeter around your Google Cloud Filestore instances. VPC Service Controls is a powerful security tool that allows you to restrict access to your cloud resources, including Filestore instances, to specific networks and clients. This helps prevent data exfiltration and enhances the security posture of your cloud environment.
+  description: 该规则用于检查 GCP filestore 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without VPC Service Controls, Filestore instances may be vulnerable to unauthorized access and data exfiltration, as there is no security perimeter controlling data flow between resources.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure VPC Service Controls perimeter to protect your Filestore instances by including the Cloud Filestore API (file.googleapis.com) in the restricted services list and adding your project to the perimeter's protected resources.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/use-vpc-service-controls.html
     - https://cloud.google.com/vpc-service-controls/docs/supported-products

@@ -1,11 +1,10 @@
 id: access-logoss-disabled
 
 info:
-  name: Access Logging for OSS Buckets - Disabled
+  name: 访问 日志记录 的OSS Buckets -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Disabling access logging for OSS buckets reduces the ability to monitor and audit access, increasing the risk of undetected unauthorized activity.
+  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/enable-bucket-access-logging.html
     - https://www.alibabacloud.com/help/en/oss/user-guide/getting-started

@@ -1,15 +1,16 @@
 id: gcloud-org-allowed-apis
 
 info:
-  name: Google Cloud APIs and Services Not Restricted
+  name: Google Cloud APIs and Services 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that all the Google Cloud APIs and services restricted within your organization are defined using the "Restrict allowed Google Cloud APIs and services" organization policy. This constraint policy helps you achieve regulatory compliance by defining the set of cloud services and APIs that cannot be used within your GCP organization.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    By default, all Google Cloud APIs and services are allowed. Without restrictions, users can enable any API or service, potentially leading to increased attack surface and compliance violations.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Restrict allowed Google Cloud APIs and services" policy at the organization level to explicitly deny specific APIs. Note that only certain APIs can be restricted: compute.googleapis.com, deploymentmanager.googleapis.com, dns.googleapis.com, doubleclicksearch.googleapis.com, replicapool.googleapis.com, replicapoolupdater.googleapis.com, and resourceviews.googleapis.com.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/allowed-apis-and-services.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints

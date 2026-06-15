@@ -1,14 +1,15 @@
 id: azure-blob-service-logging-disabled
 info:
-  name: Azure Storage Blob Service Logging Not Enabled
+  name: Azure Storage Blob Service 日志记录未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Azure Storage Blob service logging is enabled for read, write, and delete requests. The Storage Blob service provides scalable, cost-efficient objective storage in the Azure cloud. Storage logging is performed server-side and allows details for both successful and failed requests to be recorded in the associated storage account. These logs contain the following information about the individual requests: timing information such as start time, end-to-end latency, server latency, authentication details, concurrency information, and the size of the request/response.
+  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not enabling logging for read, write, and delete operations on Azure Storage Blob can prevent tracking of data access and manipulation, thus reducing the ability to diagnose issues or detect breaches.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable logging for the Azure Storage Blob service by setting the 'read', 'write', and 'delete' attributes to true in the storage account settings.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config

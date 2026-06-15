@@ -1,14 +1,15 @@
 id: azure-vm-standard-ssd-required
 info:
-  name: Azure VM Premium SSD Not Required
+  name: Azure VM Premium SSD 未Required（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Microsoft Azure virtual machines (VMs) are using Standard SSD disk volumes instead of Premium SSD volumes for cost-effective storage that fits a broad range of workloads from web servers to enterprise applications that need consistent performance at lower IOPS levels. Unless you are running mission-critical applications or performance sensitive workloads that need more than 6000 IOPS or 750 MiB/s of throughput per VM disk volume, Cloud Conformity recommends converting your Premium SSD volumes to Standard SSD in order to lower the cost of your Azure monthly bill.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using Premium SSD volumes when not required can significantly increase the cost without providing necessary benefits for non-critical workloads, leading to inefficient resource utilization and budget overruns.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Convert any Premium SSD volumes to Standard SSD unless the workload requires high performance disk specifications. This can be achieved through Azure's portal or via CLI commands.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config

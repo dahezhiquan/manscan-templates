@@ -1,15 +1,16 @@
 id: gcloud-vm-serial-console-enabled
 
 info:
-  name: Interactive Serial Console Support Not Disabled
+  name: Interactive Serial Console Support Not未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Enable connecting to serial ports" configuration setting is disabled for all your production Google Compute Engine instances. The interactive serial console does not support IP-based access restrictions such as IP address whitelists. If enabled, clients can attempt to connect to your instance from any IP address if they know the username, SSH key, project ID, instance name and zone.
+  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    With interactive serial console enabled, instances are accessible from any IP address without IP-based restrictions, potentially allowing unauthorized access if credentials are compromised.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Disable interactive serial console support by setting the "serial-port-enable" metadata key to "false" for your VM instances to prevent unauthorized access through serial ports.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/disable-interactive-serial-console-support.html
     - https://cloud.google.com/compute/docs/instances/interacting-with-serial-console

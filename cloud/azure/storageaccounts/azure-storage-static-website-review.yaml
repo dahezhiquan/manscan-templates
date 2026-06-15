@@ -1,14 +1,15 @@
 id: azure-storage-static-website-review
 info:
-  name: Azure Storage Static Website Configuration Review
+  name: Azure Storage Static Website Configuration Review（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that all the Microsoft Azure Storage accounts configured to host static websites are regularly reviewed for security and compliance purposes. Upon enabling this rule on your Cloud Conformity console, you must specify the storage account or the list of storage accounts that are expected to host static content (HTML, CSS, JavaScript, and image files).
+  description: 该规则用于检查 Azure storageaccounts 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Failing to review storage accounts hosting static websites can lead to potential security risks and non-compliance with data handling standards.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Regularly review your Azure Storage accounts that host static websites and ensure they comply with security and data protection standards.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
   tags: cloud,devops,azure,microsoft,storage-account,azure-cloud-config

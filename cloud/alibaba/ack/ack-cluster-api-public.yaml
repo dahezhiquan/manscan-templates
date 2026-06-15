@@ -1,11 +1,10 @@
 id: ack-cluster-api-public
 
 info:
-  name: Public Access to ACK Cluster's API Server - Enabled
+  name: Public 访问 to ACK Cluster's API Server -已启用（云安全）
   author: ritikchaddha
   severity: high
-  description: |
-    Ensure that your ACK cluster's API server is not publicly accessible in order to avoid exposing private data and minimizing security risks. The level of access to your Kubernetes API server depends on your application use cases, however, for most use cases, the Kubernetes API Server should be accessible only from within your Virtual Private Cloud (VPC).
+  description: 该规则用于检查 阿里云 ACK 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/private-cluster.html
   metadata:

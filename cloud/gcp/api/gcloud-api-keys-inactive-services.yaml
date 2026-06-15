@@ -1,15 +1,16 @@
 id: gcloud-api-keys-inactive-services
 
 info:
-  name: API Keys Should Only Exist for Active Services
+  name: API Keys Should Only Exist 的Active Services（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that your Google Cloud projects are using the standard authentication flow as the preferred method for authentication, rather than relying on API keys. API keys are simple encrypted strings that can be used when calling certain APIs which don't need to access private user data. API keys should be exclusively employed for active services when alternative authentication methods are not accessible, otherwise deleted.
+  description: 该规则用于检查 GCP api 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using API keys for inactive services can expose your applications to unnecessary security risks. It is advisable to employ standard authentication methods and ensure that API keys are used judiciously and only for active services.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Review and ensure that API keys are only configured for active services. Delete or disable API keys associated with inactive or unnecessary services to minimize security risks.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/docs/authentication/api-keys
   tags: cloud,devops,gcp,gcloud,api-keys,gcp-cloud-config

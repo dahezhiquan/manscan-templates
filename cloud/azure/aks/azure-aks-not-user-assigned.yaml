@@ -1,14 +1,15 @@
 id: azure-aks-not-user-assigned
 info:
-  name: Azure AKS Managed Identity Not User-Assigned
+  name: Azure AKS Managed Identity 未User-Assigned（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Azure Kubernetes Service (AKS) clusters are using user-assigned managed identities for fine-grained control over access permissions.
+  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Not using user-assigned managed identities for AKS clusters can result in less granular control over access permissions, potentially leading to unauthorized access or misconfigurations.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure your AKS clusters to use user-assigned managed identities by updating the identity type in the AKS cluster settings and specifying the appropriate managed identities.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/use-managed-identity
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config

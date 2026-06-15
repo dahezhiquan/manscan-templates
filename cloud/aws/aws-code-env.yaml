@@ -1,10 +1,9 @@
 id: aws-code-env
 info:
-  name: AWS Cloud Environment Validation
+  name: AWS 云环境校验（云安全）
   author: princechaddha
   severity: info
-  description: |
-    Checks if AWS CLI is set up and all necessary tools are installed on the environment.
+  description: 检查当前环境是否已正确配置 AWS CLI 以及执行云安全基线检测所需的相关工具。
   reference:
     - https://aws.amazon.com/cli/
   metadata:

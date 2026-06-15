@@ -1,11 +1,10 @@
 id: aws-app-enum
 
 info:
-  name: AWS Apps - Cloud Enumeration
+  name: AWS Apps - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: |
-    Searches for AWS apps (WorkDocs, WorkMail, Connect, etc.)
+  description: 该规则用于检查 enum aws-app-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   metadata:
     verified: true
     max-request: 1

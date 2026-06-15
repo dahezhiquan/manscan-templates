@@ -1,13 +1,16 @@
 id: k8s-allow-privilege-escalation-set
 
 info:
-  name: Containers run with allowPrivilegeEscalation enabled
+  name: Containers run 使用allowPrivilegeEscalation enabled（云安全）
   author: princechaddha
   severity: critical
-  description: Checks for containers running with the allowPrivilegeEscalation flag enabled, which can increase security risks by allowing privileges to be escalated
+  description: 该规则用于检查 Kubernetes pods 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Enabling allowPrivilegeEscalation in container deployments can result in elevated privileges, potentially allowing attackers to gain further access to host resources. This poses significant security risks.
-  remediation: Ensure that the allowPrivilegeEscalation flag is set to false in all container configurations to minimize security risks
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+  remediation: |
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
   tags: cloud,devops,kubernetes,security,devsecops,containers,k8s,k8s-cluster-security

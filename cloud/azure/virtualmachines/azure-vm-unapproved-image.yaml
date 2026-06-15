@@ -1,14 +1,15 @@
 id: azure-vm-unapproved-image
 info:
-  name: Azure VM Not Using Approved Image
+  name: Azure VM 未Using Approved Image（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that all the Azure virtual machine (VM) instances necessary for your application stack are launched from an approved base Azure machine image, known as golden machine image, in order to enforce application security best practices, consistency, and save time when scaling your application.
+  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using unapproved machine images can lead to inconsistencies and potential security vulnerabilities in your application stack.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure all Azure VM instances are launched from approved machine images. Update any instances that are not using the approved images.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config

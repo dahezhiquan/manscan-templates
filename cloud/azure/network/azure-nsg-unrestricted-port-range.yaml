@@ -1,14 +1,15 @@
 id: azure-nsg-restricted-port-range
 info:
-  name: Restricted Port Range in Azure NSGs
+  name: Restricted Port Range 中的Azure NSGs（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that Azure network security groups (NSGs) do not have ranges of ports configured to allow inbound traffic, which can expose associated virtual machines to Denial-of-Service (DoS) or brute-force attacks. Only specific ports required by your application should be open following cloud security best practices.
+  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Having a range of ports open can increase the vulnerability to DoS and brute-force attacks, compromising the security of your Azure virtual machine instances.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Modify the NSG rules to only allow inbound traffic on necessary ports specific to your application requirements. This practice minimizes potential attack vectors.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config

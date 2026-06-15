@@ -1,16 +1,16 @@
 id: gcloud-gke-vpc-native-disabled
 
 info:
-  name: GKE Clusters Without VPC-Native Traffic Routing
+  name: GKE Clusters 未启用VPC-Native Traffic Routing（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that VPC-native traffic routing is enabled for your Google Kubernetes Engine (GKE) clusters. This feature enhances integration with Google Cloud's VPC, improving network performance, scalability, and security through the use of alias IP address ranges.
+  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without VPC-native traffic routing enabled, clusters lack enhanced network-level anti-spoofing checks, granular firewall controls for pods, and efficient direct access to hosted services. This can lead to reduced network performance and security capabilities.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Re-create your GKE clusters with VPC-native traffic routing using:
-    gcloud container clusters create CLUSTER_NAME --enable-ip-alias
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/alias-ips
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-vpc-native-traffic-routing.html

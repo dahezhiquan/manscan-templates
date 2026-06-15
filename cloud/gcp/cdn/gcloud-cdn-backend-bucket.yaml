@@ -1,15 +1,16 @@
 id: gcloud-cdn-backend-bucket
 
 info:
-  name: Check Cloud CDN Backend Bucket Configuration
+  name: 检查 Cloud CDN Backend Bucket Configuration（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the Cloud CDN origin associated with your Google Cloud load balancer points to a backend bucket instead of a backend service in order to provide enhanced performance, cost savings, simplified management, and the ability to customize caching rules.
+  description: 该规则用于检查 GCP cdn 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Using a backend service as the Cloud CDN origin instead of a backend bucket may lead to increased costs, complex management, and suboptimal caching configurations, impacting performance and operational efficiency.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Reconfigure the Cloud CDN origin to point to a backend bucket instead of a backend service by modifying the associated Google Cloud load balancer's URL map.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/cdn/docs/using-cdn
   tags: cloud,devops,gcp,gcloud,cloud-cdn,gcp-cloud-config

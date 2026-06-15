@@ -1,14 +1,15 @@
 id: azure-postgres-allow-azure-services-disabled
 info:
-  name: Azure PostgreSQL Access From Azure Services Disabled
+  name: Azure PostgreSQL 访问 From Azure Services未启用（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that the access from Microsoft Azure cloud services to Azure Database for PostgreSQL servers is disabled in order to secure access to PostgreSQL databases by allowing access from trusted Virtual Networks (Vnets) only.
+  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not restricting access to Azure Database for PostgreSQL servers from Azure services can expose sensitive database resources to potentially malicious traffic from within Azure, increasing the risk of breaches and data exposure.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure firewall rules to disable the "Allow access to Azure services" setting for Azure PostgreSQL Database servers to restrict access to trusted sources only.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-firewall-rules
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config

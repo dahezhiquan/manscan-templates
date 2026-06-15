@@ -1,11 +1,10 @@
 id: sse-smk-disabled
 
 info:
-  name: Server-Side Encryption with Service Managed Key - Disabled
+  name: Server-Side 加密 使用Service Managed Key -未启用（云安全）
   author: ritikchaddha
   severity: high
-  description: |
-    Ensure that Server-Side Encryption (SSE) is using customer-managed keys (CMKs) instead of service-managed keys to protect your OSS data at rest. SSE with customer-managed keys (also known as Bring Your Own Key - BYOK) enables you to have full control over the encryption and decryption process and meet strict compliance requirements.
+  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/enable-sse-with-service-key.html
   metadata:

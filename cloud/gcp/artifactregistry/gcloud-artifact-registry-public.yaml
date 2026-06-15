@@ -1,15 +1,16 @@
 id: gcloud-artifact-registry-public
 
 info:
-  name: Publicly Accessible Artifact Registry Repositories
+  name: 公开可访问 Artifact Registry Repositories（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Identify any publicly accessible Artifact Registry repositories within your Google Cloud account and update their IAM policy in order to protect against unauthorized access. To deny access from anonymous and public users, remove the bindings for "allUsers" and "allAuthenticatedUsers" members from the IAM policy associated with your repository.
+  description: 该规则用于检查 GCP artifactregistry 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Public accessibility of Artifact Registry repositories can lead to unauthorized data access or data leaks. Restricting access ensures that only authorized entities can view or manipulate the repositories.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Update the IAM policies for each Artifact Registry repository to remove "allUsers" and "allAuthenticatedUsers". This action will ensure that repositories are not exposed to any user on the internet or authenticated users not explicitly granted permission.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://cloud.google.com/artifact-registry/docs/managing/access-control
   tags: cloud,devops,gcp,gcloud,artifact-registry,gcp-cloud-config

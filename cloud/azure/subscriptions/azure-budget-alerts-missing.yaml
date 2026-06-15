@@ -1,14 +1,15 @@
 id: azure-budget-alerts-missing
 info:
-  name: Azure Budget Alerts Not Configured
+  name: Azure Budget Alerts 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Keeping the cost of your Microsoft Azure cloud infrastructure under control is vital for your organization. It's important to ensure that budget exceeding alerts are created to prevent unexpected expenditure within your Azure account.
+  description: 该规则用于检查 Azure subscriptions 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Lack of budget alerts can lead to unexpected costs, potentially exceeding budget limits without timely notifications.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Create and configure budget alerts in your Azure account to monitor and manage cloud expenditures effectively.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets
   tags: cloud,devops,azure,microsoft,budget,azure-cloud-config

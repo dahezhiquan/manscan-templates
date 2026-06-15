@@ -1,15 +1,16 @@
 id: gcloud-org-workload-identity
 
 info:
-  name: Workload Identity Cluster Creation Not Disabled
+  name: Workload Identity Cluster Creation Not未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Disable Workload Identity Cluster Creation" policy is enforced at the GCP organization level in order to require that any new Google Kubernetes Engine (GKE) clusters have the Workload Identity feature disabled at the time of their creation. This constraint policy is useful when you want to tightly control service account access in your organization by disabling Workload Identity in addition to service account creation and service account key creation.
+  description: 该规则用于检查 GCP resourcemanager 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    With Workload Identity enabled, GKE service can assert Kubernetes service account identities that can be authorized to access Google Cloud resources. This could lead to unintended access if not properly controlled.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the "Disable Workload Identity Cluster Creation" policy at the organization level using the 'gcloud alpha resource-manager org-policies enable-enforce' command with the iam.disableWorkloadIdentityClusterCreation constraint.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/disable-workload-identity-cluster-creation.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints

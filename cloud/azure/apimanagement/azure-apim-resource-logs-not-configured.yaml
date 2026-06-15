@@ -1,14 +1,15 @@
 id: azure-apim-resource-logs-not-configured
 info:
-  name: Azure API Management Service Resource Logs Not Configured
+  name: Azure API Management Service Resource Logs 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Azure API Management API services are configured to use resource logs to collect valuable information on API Management operations and errors. By enabling resource logs through a diagnostic setting, you can gather extensive information on the API requests received and handled by the Azure API Management service gateway.
+  description: 该规则用于检查 Azure apimanagement 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Failing to configure resource logs for Azure API Management services could result in a lack of visibility into API performance and errors, hindering effective management and troubleshooting.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure that resource logs are enabled by setting up diagnostic settings for each Azure API Management service instance. This should include capturing all logs related to API operations and errors.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-diagnostic-logs
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config

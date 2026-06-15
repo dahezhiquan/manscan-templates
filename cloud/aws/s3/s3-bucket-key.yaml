@@ -1,10 +1,9 @@
 id: s3-bucket-key
 info:
-  name: S3 Bucket Key not enabled
+  name: S3 Bucket Key not enabled（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    This template verifies if Amazon S3 buckets have bucket keys enabled to optimize the cost of AWS Key Management Service (SSE-KMS) for server-side encryption
+  description: 该规则用于检查 AWS S3 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
   metadata:

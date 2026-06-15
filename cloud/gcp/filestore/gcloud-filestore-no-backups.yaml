@@ -1,15 +1,16 @@
 id: gcloud-filestore-no-backups
 
 info:
-  name: Filestore Instance Not Using On-Demand Backup
+  name: Filestore Instance 未Using On-Demand Backup（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that on-demand backup and restore functionality is in use for your Google Cloud Filestore instances to ensure data protection, disaster recovery, and regulatory compliance. The backup and restore process does not consume provisioned capacity and has no impact on the performance and availability of your Filestore applications.
+  description: 该规则用于检查 GCP filestore 是否正确配置备份、快照、证书续期、密钥轮换或其他韧性保护措施，以降低中断、失效或数据恢复失败的风险。
   impact: |
-    Without backups, data loss from accidental deletion, corruption, or disaster events could lead to extended application downtime and inability to recover critical data.
+    - 缺少备份、续期、轮换或删除保护会增加服务中断、数据丢失或恢复失败的风险。
+    - 当故障、误操作或攻击发生时，业务可用性和恢复能力都会受到明显影响。
   remediation: |
-    Create on-demand backups for your Filestore instances using the 'gcloud filestore backups create' command or through the Google Cloud Console. Configure regular backup schedules to ensure point-in-time recovery capabilities.
+    - 启用备份、快照、版本控制、证书续期、密钥轮换或删除保护等韧性配置。
+    - 定期验证恢复流程和到期提醒机制，确保在故障或攻击发生时能够快速恢复。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/backup-and-restore.html
     - https://cloud.google.com/filestore/docs/backup-restore

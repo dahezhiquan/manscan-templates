@@ -1,15 +1,16 @@
 id: eks-endpoint-access
 
 info:
-  name: EKS Cluster Endpoint Public Access
+  name: EKS Cluster Endpoint Public 访问（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that your Amazon EKS cluster's Kubernetes API server endpoint is not publicly accessible from the Internet in order to avoid exposing private data and minimizing security risks.
+  description: 该规则用于检查 AWS EKS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Publicly accessible EKS cluster endpoints expose your Kubernetes API server to potential unauthorized access and attacks, increasing the risk of data breaches and security compromises.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Configure the EKS cluster endpoint access to be private or restrict public access to specific IP addresses. Use VPC endpoints and security groups to control access to the Kubernetes API server.
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/endpoint-access.html
     - https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html

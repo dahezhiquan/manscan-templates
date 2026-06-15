@@ -1,15 +1,16 @@
 id: gcloud-lifecycle-management-not-enabled
 
 info:
-  name: Enable Lifecycle Management for Cloud Storage Objects
+  name: Enable Lifecycle Management 的Cloud Storage Objects（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Google Cloud Storage buckets are configured with lifecycle management rules to optimize object management and reduce storage costs. Lifecycle management rules help automate actions such as downgrading or deleting older objects based on user-defined conditions.
+  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Without lifecycle management, your storage costs may increase due to older objects occupying space unnecessarily, and object management becomes less efficient.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Enable lifecycle management rules for your Cloud Storage buckets to automate actions like deleting or downgrading storage class of objects based on conditions.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/storage/docs/lifecycle
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,lifecycle-management,cost-optimization,gcp-cloud-config

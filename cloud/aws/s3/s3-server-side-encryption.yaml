@@ -1,10 +1,9 @@
 id: s3-server-side-encryption
 info:
-  name: Server-Side Encryption on Amazon S3 Buckets
+  name: Server-Side 加密 on Amazon S3 Buckets（云安全）
   author: princechaddha
   severity: high
-  description: |
-    This template verifies if Amazon S3 buckets have server-side encryption enabled for protecting sensitive content at rest, using either AWS S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS).
+  description: 该规则用于检查 AWS S3 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-encryption.html
   metadata:

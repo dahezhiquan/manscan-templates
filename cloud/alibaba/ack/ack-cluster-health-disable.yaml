@@ -1,11 +1,10 @@
 id: ack-cluster-health-disable
 
 info:
-  name: ACK Clusters Check - Disable
+  name: ACK Clusters 检查 - Disable（云安全）
   author: ritikchaddha
   severity: medium
-  description: |
-    Ensure that the Cluster Check feature is triggered at least once per week to guarantee proactive health monitoring for your ACK clusters, minimizing downtime and optimizing the reliability of your containerized applications. By default, Cluster Check is not automatically triggered, the cluster inspection can be started using the Container Service for Kubernetes (ACK) console.
+  description: 该规则用于检查 阿里云 ACK 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/cluster-check.html
   metadata:

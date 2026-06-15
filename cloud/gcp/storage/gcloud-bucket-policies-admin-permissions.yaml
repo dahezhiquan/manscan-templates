@@ -1,15 +1,16 @@
 id: gcloud-bucket-policies-admin-permissions
 
 info:
-  name: Check Bucket Policies with Administrative Permissions
+  name: 检查 Bucket 策略 使用Administrative Permissions（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that the IAM policy associated with your Google Cloud Storage buckets does not grant privileged, administrative permissions. This promotes the Principle of Least Privilege (POLP) by providing principals only the minimal access required to perform their tasks.
+  description: 该规则用于检查 GCP 存储账户 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Administrative permissions on Cloud Storage buckets can lead to unauthorized changes, data exposure, or potential misuse, violating security best practices.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Review and update IAM policies for your Google Cloud Storage buckets to remove roles such as roles/owner, roles/editor, or any roles containing "Admin" to adhere to the Principle of Least Privilege.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://cloud.google.com/storage/docs/access-control/iam
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,iam,security,polp,gcp-cloud-config

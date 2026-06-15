@@ -1,15 +1,16 @@
 id: eks-node-group-remote-access
 
 info:
-  name: EKS Node Group Remote Access Configuration
+  name: EKS Node Group Remote 访问 Configuration（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that Amazon EKS node groups are configured with appropriate remote access settings to maintain security and enable necessary administrative access.
+  description: 该规则用于检查 AWS EKS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Improper remote access configuration in EKS node groups can lead to security vulnerabilities or hinder necessary administrative access, potentially affecting cluster management and troubleshooting capabilities.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure remote access settings for EKS node groups by specifying appropriate SSH key pairs and source security groups to enable secure administrative access while maintaining security best practices.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/eks-node-group-remote-access.html
     - https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html

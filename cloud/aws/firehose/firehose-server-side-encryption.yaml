@@ -1,15 +1,16 @@
 id: firehose-server-side-encryption
 
 info:
-  name: Firehose Delivery Stream Server-Side Encryption - Disabled
+  name: Firehose Delivery Stream Server-Side 加密 -未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: |
-    Ensure that your Amazon Kinesis Data Firehose delivery streams are encrypted using Server-Side Encryption.
+  description: 该规则用于检查 AWS Firehose 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling server-side encryption for Firehose delivery streams can result in unencrypted data being stored, exposing sensitive information to unauthorized access and increasing the risk of data breaches.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable server-side encryption for Firehose delivery streams to ensure that data is securely encrypted at rest, protecting sensitive information from unauthorized access.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Firehose/delivery-stream-encrypted-with-kms-customer-master-keys.html
     - https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html

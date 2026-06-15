@@ -1,14 +1,15 @@
 id: azure-storage-private-endpoint-unconfigured
 info:
-  name: Azure Storage Private Endpoint Not Configured
+  name: Azure Storage Private Endpoint 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that private endpoints are configured for Microsoft Azure Storage accounts in order to allow clients and services to securely access data located over a network via an encrypted Private Link connection.
+  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not using private endpoints for Azure Storage accounts can expose sensitive data to potential breaches by allowing data transmission over less secure networks.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Configure private endpoints for your Azure Storage accounts to ensure secure access via Private Link.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config

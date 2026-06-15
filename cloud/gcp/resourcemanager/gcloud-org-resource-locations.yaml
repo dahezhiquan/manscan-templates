@@ -1,15 +1,16 @@
 id: gcloud-org-resource-locations
 
 info:
-  name: Resource Location Restrictions Not Configured
+  name: Resource Location Restrictions 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the locations where location-based cloud resources can be created within your GCP organization are defined using the "Google Cloud Platform - Resource Location Restriction" organization policy. This constraint policy helps you achieve regulatory compliance by explicitly defining the locations allowed to deploy Google Cloud resources for your organization. You can specify multi-regions such as "asia" and "europe" and individual regions such as "us-east1" or "europe-west2" as allowed locations.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Without location restrictions, cloud resources can be deployed to any location, potentially violating data residency requirements and regulatory compliance standards. This could lead to data being stored in unauthorized regions.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Configure the "Google Cloud Platform - Resource Location Restriction" policy at the organization level to explicitly specify allowed locations. Use the 'in:' prefix followed by location strings (e.g., in:us-locations, in:us-west1-locations) to define allowed regions.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/resource-location-restriction.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints

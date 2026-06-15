@@ -1,14 +1,16 @@
 id: k8s-enc-prov-conf
 
 info:
-  name: Ensure that encryption providers are configured
+  name: Ensure that encryption providers are configured（云安全）
   author: princechaddha
   severity: medium
-  description: Checks if encryption providers are appropriately configured in Kubernetes, ensuring that data at rest is secured.
+  description: 该规则用于检查 Kubernetes security-compliance 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
   impact: |
-    Misconfigured encryption providers can lead to unsecured data at rest, potentially exposing sensitive information to unauthorized access.
+    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
+    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
   remediation: |
-    Ensure that the encryption provider configuration file is set up correctly and referenced properly in the API server configuration. Encryption should be enabled and configured according to the security best practices.
+    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
+    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
   tags: cloud,devops,kubernetes,devsecops,encryption,k8s,k8s-cluster-security

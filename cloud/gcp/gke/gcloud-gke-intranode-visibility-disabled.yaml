@@ -1,16 +1,16 @@
 id: gcloud-gke-intranode-visibility-disabled
 
 info:
-  name: GKE Clusters Without Intranode Visibility Enabled
+  name: GKE Clusters 未启用Intranode Visibility已启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that intranode visibility is enabled for your Google Kubernetes Engine (GKE) clusters. This allows you to monitor and troubleshoot network traffic between pods running on the same node, enhancing both visibility and security. When enabled, packets exchanged between Pods are always processed by the VPC network.
+  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without intranode visibility enabled, you cannot capture flow logs, enforce firewall rules, or use packet mirroring for traffic between pods on the same node, limiting your ability to monitor and secure intra-node communications.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable intranode visibility for your GKE clusters using:
-    gcloud container clusters update CLUSTER_NAME --region=REGION --enable-intra-node-visibility
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/intranode-visibility
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-intranode-visibility.html

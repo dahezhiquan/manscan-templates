@@ -1,15 +1,16 @@
 id: gcloud-sql-trace-3625-enabled
 
 info:
-  name: Trace Flag 3625 Enabled in SQL Server Database Instances
+  name: SQL Server 数据库实例启用了 Trace Flag 3625（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that the 3625 trace flag is turned off for all your Google Cloud SQL Server database instances to follow security best practices. Trace flag 3625 controls the format of certain error messages, which may reveal sensitive information if enabled.
+  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Enabling the 3625 trace flag may expose sensitive information through detailed error messages, potentially violating security best practices and compliance requirements.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Disable the 3625 trace flag in your SQL Server database instance configuration to enhance security and protect sensitive information.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/flags
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,sqlserver,gcp-cloud-config

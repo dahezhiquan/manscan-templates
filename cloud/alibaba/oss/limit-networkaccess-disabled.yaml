@@ -1,11 +1,10 @@
 id: limit-networkaccess-disabled
 
 info:
-  name: Limit Network Access to Selected Networks - Disabled
+  name: Limit Network 访问 to Selected Networks -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Limit Network Access to Selected Networks in Alibaba OSS allows you to restrict access to your object storage service (OSS) to specific IP addresses or IP ranges, enhancing security by ensuring that only trusted networks can interact with your data."
+  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/publicly-accessible-oss-bucket.html
     - https://www.alibabacloud.com/help/en/oss/user-guide/block-public-access

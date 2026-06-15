@@ -1,15 +1,16 @@
 id: guardduty-findings
 
 info:
-  name: Open GuardDuty Findings
+  name: Open GuardDuty Findings（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Check for AWS GuardDuty findings and resolve them step by step to ensure that your AWS infrastructure is protected against security threats.
+  description: 该规则用于检查 AWS GuardDuty 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    GuardDuty findings indicate potential security threats, such as compromised instances, unauthorized access, or malicious activities within your AWS environment, requiring immediate investigation.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Investigate and respond to GuardDuty findings by analyzing the threat details and taking corrective actions, such as blocking malicious IPs, revoking compromised credentials, or isolating affected instances. Use AWS Security Hub or AWS Config for automated remediation where applicable.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/GuardDuty/findings.html
     - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html

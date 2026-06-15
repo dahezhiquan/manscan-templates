@@ -1,14 +1,15 @@
 id: azure-openai-managed-identity-not-used
 info:
-  name: Azure OpenAI Service Instance Managed Identity Not Used
+  name: Azure OpenAI Service Instance Managed Identity 未Used（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Azure OpenAI service instances are using system-assigned and/or user-assigned managed identities to allow secure access to other cloud protected resources such as Azure key vaults. Managed identities minimizes risks, simplifies management, and maintains compliance with evolving cloud services.
+  description: 该规则用于检查 Azure aiservices 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Not using managed identities can increase risks related to security and management, and hinder compliance with security best practices.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Configure your Azure OpenAI service instances to use either system-assigned or user-assigned managed identities to enhance security and simplify resource access management.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/cognitive-services/authentication
   tags: cloud,devops,azure,microsoft,openai,azure-cloud-config,ai

@@ -1,15 +1,16 @@
 id: gcloud-iam-admin-roles
 
 info:
-  name: IAM Users with Administrative Roles
+  name: IAM Users 使用Administrative Roles（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that IAM roles with privileged administrative permissions are not assigned to IAM identities (users, groups, and service accounts) to promote least privilege and provide your members (principals) the minimal access required to perform their tasks. When IAM members have administrator privileges (Owner and Editor roles, or roles containing "Admin" or "admin" in their names), they can access, create, and manage cloud resources.
+  description: 该规则用于检查 GCP IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Administrative roles grant excessive permissions that violate the principle of least privilege, potentially allowing users to perform unauthorized or accidental changes across resources.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Remove administrative roles (Owner, Editor, and roles containing "Admin" or "admin") from IAM members and replace them with more granular roles that follow the principle of least privilege.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/IAM/roles-with-admin-permissions.html
     - https://cloud.google.com/iam/docs/understanding-roles

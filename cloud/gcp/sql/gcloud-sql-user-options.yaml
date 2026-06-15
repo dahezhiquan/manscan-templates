@@ -1,15 +1,16 @@
 id: gcloud-sql-user-options
 
 info:
-  name: User Options Flag Enabled in Google Cloud SQL Server Instances
+  name: Google Cloud SQL Server 实例启用了 User Options 标志（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Checks if the "user options" database flag is configured for Google Cloud SQL Server instances, which can define global defaults for all database users.
+  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Configuring the "user options" database flag can lead to unintended global defaults for all database users, potentially causing performance issues or undesired behavior.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Disable the "user options" database flag for your Google Cloud SQL Server instances to avoid global defaults for all database users.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/configure-database-flags
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,sql-database-flags,gcp-cloud-config

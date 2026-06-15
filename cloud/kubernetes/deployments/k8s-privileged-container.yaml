@@ -1,14 +1,16 @@
 id: k8s-privileged-containers
 
 info:
-  name: Privileged Containers Found in Deployments
+  name: Privileged Containers Found 中的Deployments（云安全）
   author: princechaddha
   severity: critical
-  description: Checks for containers running in privileged mode within Kubernetes Deployments, and now also checks for user privileges and privilege escalation settings.
+  description: 该规则用于检查 Kubernetes deployments 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Running containers in privileged mode, as the root user, or with privilege escalation enabled can grant them access to host resources and could lead to security breaches if the container is compromised.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Ensure that no container in Kubernetes Deployments runs in privileged mode, as the root user, or with privilege escalation enabled. Modify the security context for each container to set `privileged: false`, `runAsUser` appropriately, and `allowPrivilegeEscalation: false`.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged
   tags: cloud,devops,kubernetes,k8s,devsecops,deployments,k8s-cluster-security

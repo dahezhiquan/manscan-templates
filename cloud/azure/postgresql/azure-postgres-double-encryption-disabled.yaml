@@ -1,14 +1,15 @@
 id: azure-postgres-double-encryption-disabled
 info:
-  name: Azure PostgreSQL Single Server Double Encryption Not Enabled
+  name: Azure PostgreSQL Single Server Double 加密未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that infrastructure double encryption is enabled for your Single Server Azure PostgreSQL database servers in order to add a second layer of encryption for your PostgreSQL databases using a different encryption algorithm which provides enhanced data protection.
+  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Lack of double encryption can lead to inadequate data protection and increased risk of data breach or unauthorized access.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable infrastructure double encryption on all your Azure PostgreSQL Single Server databases to ensure an additional layer of security.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-data-security-encryption
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config

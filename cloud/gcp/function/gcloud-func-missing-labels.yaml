@@ -1,15 +1,16 @@
 id: gcloud-func-missing-labels
 
 info:
-  name: Missing User-Defined Labels in Google Cloud Functions
+  name: 缺失 User-Defined Labels 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that user-defined labels are being used to tag, collect, and organize Google Cloud functions within your Google Cloud Platform (GCP) projects. User-defined labels are a lightweight and efficient way to group together related or associated cloud resources.
+  description: 该规则用于检查 GCP function 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Not using labels can lead to challenges in managing, identifying, and organizing resources, potentially increasing the complexity of operations and governance.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Define and apply user-defined labels to all Google Cloud functions to enhance resource management capabilities and improve operational efficiency.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/resource-manager/docs/creating-managing-labels
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config

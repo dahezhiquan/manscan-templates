@@ -1,16 +1,16 @@
 id: gcloud-gke-cost-allocation-disabled
 
 info:
-  name: GKE Clusters Without Cost Allocation Enabled
+  name: GKE Clusters 未启用Cost Allocation已启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that cost allocation is enabled for your Google Kubernetes Engine (GKE) clusters to gain detailed insights into resource usage. This feature allows you to break down resource consumption by Kubernetes namespaces and labels, making it easier to associate costs with specific entities and access detailed cost reports through billing data exported to BigQuery.
+  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Without cost allocation enabled, you lack detailed visibility into resource consumption and cost distribution across Kubernetes components, making it difficult to make informed decisions for cost optimization, budgeting, and chargeback allocation.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable cost allocation for your GKE clusters using:
-    gcloud container clusters update CLUSTER_NAME --region=REGION --enable-cost-allocation
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-cost-allocation.html

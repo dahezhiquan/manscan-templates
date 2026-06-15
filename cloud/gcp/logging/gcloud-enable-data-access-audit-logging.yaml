@@ -1,15 +1,16 @@
 id: gcloud-enable-data-access-audit-logging
 
 info:
-  name: Enable Data Access Audit Logging for All Critical Service APIs
+  name: Enable Data 访问 审计 日志记录 的All Critical Service APIs（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that data access audit logging is enabled for all critical service APIs in your Google Cloud project for security, compliance, and troubleshooting purposes. The critical service APIs that you can enable for your GCP project include but are not limited to Identity and Access Management (IAM) API (iam.googleapis.com), Compute Engine API (compute.googleapis.com), Cloud Storage (storage-component.googleapis.com), Google Cloud Pub/Sub API (pubsub.googleapis.com), Cloud Key Management Service (KMS) API (cloudkms.googleapis.com), and Cloud Logging API (logging.googleapis.com).
+  description: 该规则用于检查 GCP logging 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Without enabling data access audit logging, you may miss critical details for compliance, security investigations, and operational troubleshooting, exposing your environment to potential risks.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Configure the IAM policy of your Google Cloud project to include the "auditConfigs" configuration object that enables data access audit logging for all critical APIs.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://cloud.google.com/logging/docs/audit/configure-data-access
   tags: cloud,devops,gcp,gcloud,google-cloud-iam,gcp-cloud-config

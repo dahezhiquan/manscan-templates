@@ -1,15 +1,16 @@
 id: gcloud-org-uniform-bucket-access
 
 info:
-  name: Uniform Bucket-Level Access Not Enforced
+  name: Uniform Bucket-Level 访问 未Enforced（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that "Enforce uniform bucket-level access" policy is enabled for your Google Cloud Platform (GCP) organization in order to enforce uniform bucket-level access for all Google Cloud Storage buckets available in your organization. Enforcing uniform bucket-level access disables Access Control Lists (ACLs) for all Cloud Storage resources (buckets and objects) so that access is granted exclusively through Cloud IAM service.
+  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
   impact: |
-    Without enforced uniform bucket-level access, buckets may use legacy ACLs which are less secure and more complex to manage than Cloud IAM permissions, potentially leading to misconfigured access controls.
+    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
+    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
   remediation: |
-    Enable the "Enforce uniform bucket-level access" policy at the organization level using the 'gcloud alpha resource-manager org-policies enable-enforce' command with the storage.uniformBucketLevelAccess constraint.
+    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
+    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enforce-uniform-bucket-level-access-constraint.html
     - https://cloud.google.com/storage/docs/uniform-bucket-level-access

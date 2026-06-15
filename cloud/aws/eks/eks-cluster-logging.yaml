@@ -1,15 +1,16 @@
 id: eks-cluster-logging
 
 info:
-  name: Kubernetes Cluster Logging
+  name: Kubernetes Cluster 日志记录（云安全）
   author: princechaddha
   severity: low
-  description: |
-    Ensure that your Amazon Elastic Kubernetes Service (EKS) clusters have control plane logs enabled to publish API, audit, controller manager, scheduler and authenticator logs to AWS CloudWatch Logs.
+  description: 该规则用于检查 AWS EKS 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    Without control plane logging enabled, you lose visibility into API requests, authentication attempts, and cluster operations, making it difficult to monitor, troubleshoot, and audit cluster activities.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Enable control plane logging for your EKS cluster by configuring all log types (api, audit, authenticator, controllerManager, scheduler) in the cluster configuration.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/cluster-logging.html
     - https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html

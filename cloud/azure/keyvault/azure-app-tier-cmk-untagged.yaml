@@ -1,14 +1,15 @@
 id: azure-app-tier-cmk-untagged
 info:
-  name: Customer-Managed Key Not Tagged in Azure App Tier
+  name: Customer-Managed Key 未Tagged 中的Azure App Tier（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Ensure that a Customer-Managed Key (CMK), also known as Bring Your Own Key (BYOK), is created and configured for your Microsoft Azure application tier to meet cloud security and compliance requirements. The conformity rule assumes all Azure cloud resources in your app tier are tagged with <app_tier_tag>:<app_tier_tag_value>. The tag set for your Azure application tier must be pre-configured in the Cloud Conformity console.
+  description: 该规则用于检查 Azure Key Vault 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   impact: |
-    Not using properly tagged CMKs may lead to non-compliance with security standards and make cloud resources difficult to manage and audit.
+    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
+    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
   remediation: |
-    Ensure all Customer-Managed Keys used in the application tier are properly tagged according to organizational policies. Update the key's metadata through the Azure portal or Azure CLI.
+    - 参考云厂商安全基线和官方文档修正当前配置偏差。
+    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/keys/about-keys-details
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config

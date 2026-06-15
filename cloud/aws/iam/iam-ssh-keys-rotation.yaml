@@ -1,10 +1,9 @@
 id: iam-ssh-keys-rotation
 info:
-  name: SSH Key Rotation - 90-Day Policy
+  name: SSH Key Rotation - 90-Day 策略（云安全）
   author: princechaddha
   severity: high
-  description: |
-    Verifies that IAM SSH public keys are rotated every 90 days, enhancing security and preventing unauthorized access to AWS CodeCommit repositories
+  description: 该规则用于检查 AWS IAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/list-ssh-public-keys.html
   metadata:

@@ -1,15 +1,16 @@
 id: gcloud-vertexai-default-vpc
 
 info:
-  name: Default VPC Network In Use for Vertex AI Notebooks
+  name: Default VPC Network In Use 的Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that your Google Cloud Vertex AI notebook instances are not created within the default Virtual Private Cloud (VPC) network. The default VPC comes with predefined, over-permissive firewall rules that are not included in audit logging. While suitable for quick starts, complex production AI applications with multi-tier architectures may require private network segments or customization.
+  description: 该规则用于检查 GCP vertexai 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
   impact: |
-    The default VPC network comes with predefined, insecure firewall rules that allow broad internal access, SSH, RDP, and ICMP traffic from any source. Additionally, being an auto-mode network, it cannot be used with Cloud VPN or VPC Network Peering features.
+    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
+    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
   remediation: |
-    Re-create Vertex AI notebook instances in a custom VPC network with properly configured subnets and firewall rules. Use the 'gcloud workbench instances create' command with appropriate network and subnet parameters.
+    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
+    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/default-vpc-in-use.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/create-instance

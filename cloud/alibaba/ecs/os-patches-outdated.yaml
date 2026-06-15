@@ -1,11 +1,10 @@
 id: os-patches-outdated
 
 info:
-  name: OS Patches - Outdated
+  name: OS Patches -已过期（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: |
-    Ensure that the latest OS patches for ECS virtual machines (VM) instances are applied in order to mitigate security vulnerabilities and ensure optimal performance and stability.
+  description: 该规则用于检查 阿里云 ECS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ECS/apply-latest-os-patches.html
     - https://www.alibabacloud.com/help/en/security-center/user-guide/fix-software-vulnerabilities

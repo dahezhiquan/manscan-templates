@@ -1,15 +1,16 @@
 id: gcloud-vertexai-external-ip
 
 info:
-  name: External IP Addresses Assigned to Vertex AI Notebooks
+  name: External IP Addresses Assigned to Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    Ensure that external IP addresses are not assigned to your Google Cloud Vertex AI notebook instances, in order to help prevent data exfiltration, maintain network isolation, and meet stringent compliance requirements. Vertex AI notebook instances with an assigned external IP address can communicate with the public internet or resources in other VPC networks, which may violate security policies.
+  description: 该规则用于检查 GCP vertexai 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
   impact: |
-    Assigning external IP addresses to notebook instances exposes them directly to the Internet, bypassing certain security controls. This increases the risk of unauthorized access, potential vulnerabilities, and data exfiltration.
+    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
+    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
   remediation: |
-    Re-create Vertex AI notebook instances without external IP addresses using the 'gcloud workbench instances create' command with --disable-public-ip flag. Example: gcloud workbench instances create INSTANCE_NAME --disable-public-ip
+    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
+    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/prevent-external-ip-usage.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/manage-instance

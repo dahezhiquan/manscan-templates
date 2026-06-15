@@ -1,15 +1,16 @@
 id: gcloud-critical-service-apis-disabled
 
 info:
-  name: Critical Service APIs Not Enabled
+  name: Critical Service APIs未启用（云安全）
   author: princechaddha
   severity: critical
-  description: |
-    Ensure that critical service APIs are enabled for your GCP projects to gain access to essential functionalities and services provided by Google Cloud Platform (GCP), manage your project resources efficiently, enhance the security of your cloud environment, and track your usage and billing. The critical service APIs include, but are not limited to, Identity and Access Management (IAM) API, Compute Engine API, Cloud Storage, Google Cloud Pub/Sub API, Cloud Key Management Service (KMS) API, and Cloud Logging API.
+  description: 该规则用于检查 GCP api 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
-    Disabling critical service APIs can prevent the proper management and security of GCP resources, potentially leading to service disruptions or compromised security.
+    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
+    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
   remediation: |
-    Enable the necessary service APIs via the GCP Console or the gcloud command-line tool for each project where they are found to be disabled.
+    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
+    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/service-usage/docs/enable-disable
   tags: cloud,devops,gcp,gcloud,api-management,gcp-cloud-config

@@ -1,10 +1,9 @@
 id: s3-access-logging
 info:
-  name: S3 Bucket - Access Logging Not Enabled
+  name: S3 Bucket - 访问 日志记录未启用（云安全）
   author: princechaddha
   severity: medium
-  description: |
-    This template verifies if the Server Access Logging feature is enabled for Amazon S3 buckets, which is essential for tracking access requests for security and audit purposes.
+  description: 该规则用于检查 AWS S3 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-encryption.html
   metadata:

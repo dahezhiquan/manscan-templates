@@ -1,10 +1,11 @@
 id: internet-archive-account
 
 info:
-  name: Internet Archive Account User Name Information - Detect
+  name: Internet Archive 账号信息枚举（OSINT）
   author: dwisiswant0
   severity: info
-  description: Internet Archive Account user name information check was conducted.
+  description: |
+    对 Internet Archive 的账号资料进行 OSINT 枚举检查。模板请求公开路径 https://archive.org/details/@用户名，当响应状态为 200 且页面或响应内容命中 “<title>User Account” 等用户资料页特征时，判定目标账号资料可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

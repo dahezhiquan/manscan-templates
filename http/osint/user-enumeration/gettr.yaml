@@ -1,10 +1,11 @@
 id: gettr
 
 info:
-  name: Gettr User Name Information - Detect
+  name: Gettr 用户名信息枚举（OSINT）
   author: dwisiswant0
   severity: info
-  description: Gettr user name information check was conducted.
+  description: |
+    对 Gettr 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://api.gettr.com/s/user/用户名/exist，当响应状态为 200 且页面或响应内容命中 “success\":{” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

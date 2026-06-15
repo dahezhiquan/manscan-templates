@@ -1,10 +1,11 @@
 id: mastodon-chaossocial
 
 info:
-  name: Mastodon-Chaos.social User Name Information - Detect
+  name: Mastodon Chaos.social 用户名信息枚举（OSINT）
   author: dwisiswant0
   severity: info
-  description: Mastodon-Chaos.social user name information check was conducted.
+  description: |
+    对 Mastodon Chaos.social 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://chaos.social/@用户名，当响应状态为 200 且页面或响应内容命中 “@chaos.social) - chaos.socia...” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

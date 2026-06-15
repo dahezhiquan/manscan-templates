@@ -1,10 +1,11 @@
 id: moto-trip
 
 info:
-  name: Moto-trip User Name Information - Detect
+  name: Moto Trip 用户名信息枚举（OSINT）
   author: gl0bal01
   severity: info
-  description: Moto-trip user name information check was conducted.
+  description: |
+    对 Moto Trip 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://moto-trip.com/profil/用户名，当响应状态为 200 且页面或响应内容命中 “/profil/用户名”、“Membre” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

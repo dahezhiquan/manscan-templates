@@ -1,10 +1,11 @@
 id: mixi
 
 info:
-  name: Mixi User Name Information - Detect
+  name: Mixi 用户名信息枚举（OSINT）
   author: dwisiswant0
   severity: info
-  description: Mixi user name information check was conducted.
+  description: |
+    对 Mixi 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://mixi.jp/view_community.pl?id=用户名，当响应状态为 200 且页面或响应内容命中 “| mixiコミュニティ</title>” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

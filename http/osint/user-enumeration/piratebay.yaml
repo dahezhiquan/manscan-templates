@@ -1,7 +1,7 @@
 id: piratebay
 
 info:
-  name: Piratebay Username Information - Detect
+  name: The Pirate Bay 用户名信息枚举（OSINT）
   author: philippedelteil
   severity: info
   classification:

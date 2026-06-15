@@ -1,10 +1,11 @@
 id: uiuxdevsocial-mastodon-instance
 
 info:
-  name: Uiuxdev.social (Mastodon Instance) User Name Information - Detect
+  name: Uiuxdev.social (Mastodon Instance) 用户名信息枚举（OSINT）
   author: dwisiswant0
   severity: info
-  description: Uiuxdev.social (Mastodon Instance) user name information check was conducted.
+  description: |
+    对 Uiuxdev.social (Mastodon Instance) 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://uiuxdev.social/api/v1/accounts/lookup?acct=用户名，当响应状态为 200 且页面或响应内容命中 “display_name” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

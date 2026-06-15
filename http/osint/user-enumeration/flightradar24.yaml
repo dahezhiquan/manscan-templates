@@ -1,10 +1,11 @@
 id: flightradar24
 
 info:
-  name: Flightradar24 User Name Information - Detect
+  name: Flightradar24 用户名信息枚举（OSINT）
   author: gl0bal01
   severity: info
-  description: Flightradar24 user name information check was conducted.
+  description: |
+    对 Flightradar24 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://my.flightradar24.com/用户名，当响应状态为 200 且页面或响应内容命中 “<title>用户名 |”、“CONTINENTS” 等用户资料页特征时，判定目标用户名可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,11 +1,11 @@
 id: sessionize
 
 info:
-  name: Sessionize User Information - Detect
+  name: Sessionize 用户资料信息枚举（OSINT）
   author: rxerium
   severity: info
   description: |
-    Sessionize user profile information check was conducted.
+    对 Sessionize 的用户资料进行 OSINT 枚举检查。模板请求公开路径 https://sessionize.com/用户名，当响应状态为 200 且页面或响应内容命中 “alt="Sessionize">”、“profile” 等用户资料页特征时，判定目标用户资料可能存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

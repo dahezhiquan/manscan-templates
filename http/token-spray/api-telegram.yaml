@@ -1,10 +1,10 @@
 id: api-telegram
 
 info:
-  name: Telegram API Test
+  name: Telegram API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
-  description: Telegram bot API token
+  description: 该模板通过调用 Telegram API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://core.telegram.org/bots/api#making-requests
     - https://github.com/streaak/keyhacks?tab=readme-ov-file#telegram-bot-api-token

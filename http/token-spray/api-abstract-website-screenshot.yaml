@@ -1,10 +1,10 @@
 id: api-abstract-website-screenshot
 
 info:
-  name: Abstract Api Website Screenshot Test
+  name: Abstract API Website Screenshot Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Transform any URL into an image with Abstract's Website Screenshot API
+  description: 该模板通过调用 Abstract Website Screenshot API 验证提供的 token 是否有效，命中后通常表示可访问网页截图能力。
   reference:
     - https://www.abstractapi.com/api/website-screenshot-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-website-screenshot

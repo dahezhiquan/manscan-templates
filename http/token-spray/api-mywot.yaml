@@ -1,10 +1,10 @@
 id: api-mywot
 
 info:
-  name: My Web of Trust API
+  name: My Web of Trust API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: IP/domain/URL reputation
+  description: 该模板通过调用 My Web of Trust API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://support.mywot.com/hc/en-us/sections/360004477734-API-
     - https://github.com/daffainfo/all-about-apikey/tree/main/web-of-trust

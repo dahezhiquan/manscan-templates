@@ -1,10 +1,10 @@
 id: api-prexview
 
 info:
-  name: PrexView API Test
+  name: PrexView API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Data from XML or JSON to PDF, HTML or Image
+  description: 该模板通过调用 PrexView API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页截图能力。
   reference:
     - https://prexview.com/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/prexview

@@ -1,7 +1,7 @@
 id: api-slack
 
 info:
-  name: Slack API Test
+  name: Slack API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

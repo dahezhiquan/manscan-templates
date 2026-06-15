@@ -1,7 +1,7 @@
 id: api-bitly
 
 info:
-  name: Bitly API Test
+  name: Bitly API Token 可用性校验（token喷洒）
   author: zzeitlin,geeknik
   severity: info
   reference:

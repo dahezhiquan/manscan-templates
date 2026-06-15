@@ -1,7 +1,7 @@
 id: api-sslmate
 
 info:
-  name: SSLMate API Test
+  name: SSLMate API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   reference:

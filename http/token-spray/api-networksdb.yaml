@@ -1,10 +1,10 @@
 id: api-networksdb
 
 info:
-  name: NetworksDB API Test
+  name: NetworksDB API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
-  description: US Address Verification
+  description: 该模板通过调用 NetworksDB API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://networksdb.io/api/docs
   metadata:

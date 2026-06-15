@@ -1,10 +1,10 @@
 id: api-abstract-image-processing
 
 info:
-  name: Abstract Api Image Processing Test
+  name: Abstract API Image Processing Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Manage your images programmatically with this powerful API compress, convert, crop, resize, and more.
+  description: 该模板通过调用 Abstract Image Processing API 验证提供的 token 是否有效，命中后通常表示可访问图像压缩、转换、裁剪与缩放能力。
   reference:
     - https://www.abstractapi.com/api/image-processing-optimization-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-image-processing

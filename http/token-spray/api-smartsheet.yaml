@@ -1,10 +1,10 @@
 id: api-smartsheet
 
 info:
-  name: Smartsheet API Test
+  name: Smartsheet API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Allows you to programmatically access and Smartsheet data and account information
+  description: 该模板通过调用 Smartsheet API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问协作、任务或项目管理能力。
   reference:
     - https://smartsheet.redoc.ly/
     - https://github.com/daffainfo/all-about-apikey/tree/main/smartsheet

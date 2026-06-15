@@ -1,10 +1,10 @@
 id: api-alienvault
 
 info:
-  name: AlienVault Open Threat Exchange (OTX) API Test
+  name: AlienVault Open Threat Exchange (OTX) API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: IP/domain/URL reputation
+  description: 该模板通过调用 AlienVault Open Threat Exchange (OTX) API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问安全情报与资产查询能力。
   reference:
     - https://otx.alienvault.com/api
     - https://github.com/daffainfo/all-about-apikey/tree/main/alienvault-open-threat-exchange

@@ -1,7 +1,7 @@
 id: api-googlenearestroads
 
 info:
-  name: Google Nearest Roads API Test
+  name: Google Nearest Roads API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

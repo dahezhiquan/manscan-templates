@@ -1,7 +1,7 @@
 id: api-c99
 
 info:
-  name: C99 API Test
+  name: C99 API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: api-cloudflare
 
 info:
-  name: Cloudflare API Test
+  name: Cloudflare API Token 可用性校验（token喷洒）
   author: ffffffff0x
   severity: info
   reference:

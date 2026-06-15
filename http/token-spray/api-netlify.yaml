@@ -1,7 +1,7 @@
 id: api-netlify
 
 info:
-  name: Netlify API Test
+  name: Netlify API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

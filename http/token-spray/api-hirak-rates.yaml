@@ -1,10 +1,10 @@
 id: api-hirak-rates
 
 info:
-  name: Hirak Exchange Rates API Test
+  name: Hirak Exchange Rates API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Exchange rates between 162 currency & 300 crypto currency update each 5 min, accurate, no limits
+  description: 该模板通过调用 Hirak Exchange Rates API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问汇率、货币或金融校验能力。
   reference:
     - https://rates.hirak.site/
     - https://github.com/daffainfo/all-about-apikey/tree/main/hirak-exchange-rates

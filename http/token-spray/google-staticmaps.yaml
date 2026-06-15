@@ -1,7 +1,7 @@
 id: api-googlestaticmaps
 
 info:
-  name: Google Static Maps API Test
+  name: Google Static Maps API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

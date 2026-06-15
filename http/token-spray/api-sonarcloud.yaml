@@ -1,7 +1,7 @@
 id: api-sonarcloud
 
 info:
-  name: SonarCloud API Test
+  name: SonarCloud API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: api-craftmypdf
 
 info:
-  name: CraftMyPDF API Test
+  name: CraftMyPDF API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Generate PDF documents from templates with a drop-and-drop editor and a simple API
+  description: 该模板通过调用 CraftMyPDF API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问文档转换或 PDF 处理能力。
   reference:
     - https://pdflayer.com/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/craftmypdf

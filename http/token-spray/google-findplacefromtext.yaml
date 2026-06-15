@@ -1,7 +1,7 @@
 id: api-googlefindplacefromtext
 
 info:
-  name: Google Find Place From Text API Test
+  name: Google Find Place From Text API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

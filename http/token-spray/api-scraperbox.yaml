@@ -1,10 +1,10 @@
 id: api-scraperbox
 
 info:
-  name: ScraperBox API Test
+  name: ScraperBox API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Undetectable web scraping API
+  description: 该模板通过调用 ScraperBox API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页抓取与内容提取能力。
   reference:
     - https://scraperbox.com/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/scraperbox

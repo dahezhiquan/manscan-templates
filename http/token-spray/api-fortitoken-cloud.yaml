@@ -1,7 +1,7 @@
 id: api-fortitoken-cloud
 
 info:
-  name: FortiToken Cloud API Test
+  name: FortiToken Cloud API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

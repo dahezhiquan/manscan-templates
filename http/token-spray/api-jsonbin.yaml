@@ -1,10 +1,10 @@
 id: api-jsonbin
 
 info:
-  name: JSONBin API Test
+  name: JSONBin API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Free JSON storage service. Ideal for small scale Web apps, Websites and Mobile apps
+  description: 该模板通过调用 JSONBin API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问数据管理与集成能力。
   reference:
     - https://jsonbin.io/api-reference
     - https://github.com/daffainfo/all-about-apikey/tree/main/jsonbin

@@ -1,10 +1,10 @@
 id: api-trello
 
 info:
-  name: Trello API Test
+  name: Trello API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Boards, lists and cards to help you organize and prioritize your projects
+  description: 该模板通过调用 Trello API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问协作、任务或项目管理能力。
   reference:
     - https://developers.trello.com/
     - https://github.com/daffainfo/all-about-apikey/tree/main/trello

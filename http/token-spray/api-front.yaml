@@ -1,7 +1,7 @@
 id: api-front
 
 info:
-  name: Frontapp API
+  name: Frontapp API Token 可用性校验（token喷洒）
   author: Luqmaan Hadia [Luqiih](https://github.com/Luqiih)
   severity: info
   reference:

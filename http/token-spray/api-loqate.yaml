@@ -1,7 +1,7 @@
 id: api-loqate
 
 info:
-  name: Loqate API Test
+  name: Loqate API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

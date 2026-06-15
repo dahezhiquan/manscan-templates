@@ -1,7 +1,7 @@
 id: api-googleroutetotraveled
 
 info:
-  name: Google Route to Traveled API Test
+  name: Google Route to Traveled API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

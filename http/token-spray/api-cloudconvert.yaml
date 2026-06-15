@@ -1,10 +1,10 @@
 id: api-cloudconvert
 
 info:
-  name: CloudConvert API Test
+  name: CloudConvert API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Online file converter for audio, video, document, ebook, archive, image, spreadsheet, presentation
+  description: 该模板通过调用 CloudConvert API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问文档转换或 PDF 处理能力。
   reference:
     - https://cloudconvert.com/api/v2
     - https://github.com/daffainfo/all-about-apikey/tree/main/cloudconvert

@@ -1,10 +1,10 @@
 id: api-micro-user-service
 
 info:
-  name: Micro User Service API Test
+  name: Micro User Service API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: User management and authentication
+  description: 该模板通过调用 Micro User Service API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://m3o.com/user
     - https://github.com/daffainfo/all-about-apikey/tree/main/micro-user-service

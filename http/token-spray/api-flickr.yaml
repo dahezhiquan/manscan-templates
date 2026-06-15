@@ -1,7 +1,7 @@
 id: api-flickr
 
 info:
-  name: Flickr API Test
+  name: Flickr API Token 可用性校验（token喷洒）
   author: geeknik
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: api-leanix
 
 info:
-  name: LeanIX API Test
+  name: LeanIX API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

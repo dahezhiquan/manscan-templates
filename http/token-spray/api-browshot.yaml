@@ -1,10 +1,10 @@
 id: api-browshot
 
 info:
-  name: Browshot API Test
+  name: Browshot API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Easily make screenshots of web pages in any screen size, as any device
+  description: 该模板通过调用 Browshot API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页截图能力。
   reference:
     - https://browshot.com/api/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/browshot

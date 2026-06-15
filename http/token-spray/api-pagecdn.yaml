@@ -1,10 +1,10 @@
 id: api-pagecdn
 
 info:
-  name: PageCDN API Test
+  name: PageCDN API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Public API for javascript, css and font libraries on PageCDN
+  description: 该模板通过调用 PageCDN API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://pagecdn.com/docs/public-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/pagecdn

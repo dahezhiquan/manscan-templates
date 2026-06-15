@@ -1,7 +1,7 @@
 id: api-moonpay
 
 info:
-  name: MoonPay API Test
+  name: MoonPay API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   reference:

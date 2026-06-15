@@ -1,10 +1,10 @@
 id: api-abstract-vat-validation-rates
 
 info:
-  name: Abstract Api VAT Validation Rates Test
+  name: Abstract API VAT Validation Rates Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Stay compliant with our simple, reliable, and powerful API for all your domestic and cross-border sales.
+  description: 该模板通过调用 Abstract VAT Validation API 验证提供的 token 是否有效，命中后通常表示可访问 VAT 校验与税率查询能力。
   reference:
     - https://www.abstractapi.com/api/vat-validation-rates-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-vat-validation-rates

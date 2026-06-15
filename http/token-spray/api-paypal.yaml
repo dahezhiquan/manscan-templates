@@ -1,7 +1,7 @@
 id: api-paypal
 
 info:
-  name: PayPal API Test
+  name: PayPal API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

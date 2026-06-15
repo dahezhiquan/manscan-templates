@@ -1,10 +1,10 @@
 id: api-etherscan
 
 info:
-  name: Etherscan API Test
+  name: Etherscan API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Ethereum explorer API
+  description: 该模板通过调用 Etherscan API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
   reference:
     - https://docs.etherscan.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/etherscan

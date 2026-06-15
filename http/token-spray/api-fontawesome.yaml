@@ -1,7 +1,7 @@
 id: api-fontawesome
 
 info:
-  name: FontAwesome API Test
+  name: FontAwesome API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

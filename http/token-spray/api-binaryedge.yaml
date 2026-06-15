@@ -1,11 +1,11 @@
 id: api-binaryedge
 
 info:
-  name: BinaryEdge API Test
+  name: BinaryEdge API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   description: |
-    BinaryEdge combines Machine Learning and Cybersecurity techniques in a custom built platform to scan, acquire and classify public Internet data. This platform scans the entire public Internet space and creates real-time threat intelligence streams and reports about your company.
+    该模板通过调用 BinaryEdge API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问安全情报与资产查询能力。
   reference:
     - https://binaryedge.io
     - https://docs.binaryedge.io

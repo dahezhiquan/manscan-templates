@@ -1,10 +1,10 @@
 id: api-bible
 
 info:
-  name: API.Bible API Test
+  name: API.Bible API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Everything you need from the Bible in one discoverable place
+  description: 该模板通过调用 API.Bible API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://docs.api.bible
     - https://github.com/daffainfo/all-about-apikey/tree/main/api-bible

@@ -1,10 +1,10 @@
 id: api-blitapp
 
 info:
-  name: Blitapp API Test
+  name: Blitapp API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Schedule screenshots of web pages and sync them to your cloud storage
+  description: 该模板通过调用 Blitapp API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页截图能力。
   reference:
     - https://blitapp.com/api/
     - https://github.com/daffainfo/all-about-apikey/tree/main/blitapp

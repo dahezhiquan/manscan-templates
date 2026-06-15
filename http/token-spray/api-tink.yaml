@@ -1,7 +1,7 @@
 id: api-tink
 
 info:
-  name: Tink API Test
+  name: Tink API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

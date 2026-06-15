@@ -1,10 +1,10 @@
 id: api-blockchain
 
 info:
-  name: Blockchain API Test
+  name: Blockchain API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Bitcoin Payment, Wallet & Transaction Data
+  description: 该模板通过调用 Blockchain API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
   reference:
     - https://api.blockchain.com/v3/#/
     - https://github.com/daffainfo/all-about-apikey/tree/main/blockchain

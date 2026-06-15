@@ -1,10 +1,10 @@
 id: api-proxycrawl
 
 info:
-  name: ProxyCrawl API Test
+  name: ProxyCrawl API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Scraping and crawling anticaptcha service
+  description: 该模板通过调用 ProxyCrawl API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页抓取与内容提取能力。
   reference:
     - https://proxycrawl.com/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/proxycrawl

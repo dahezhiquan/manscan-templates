@@ -1,7 +1,7 @@
 id: api-pivotaltracker
 
 info:
-  name: PivotalTracker API Test
+  name: PivotalTracker API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

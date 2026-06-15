@@ -1,10 +1,10 @@
 id: api-bhagavadgita
 
 info:
-  name: Bhagavad Gita API Test
+  name: Bhagavad Gita API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Open Source Shrimad Bhagavad Gita API including 21+ authors translation in Sanskrit/English/Hindi
+  description: 该模板通过调用 Bhagavad Gita API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://docs.bhagavadgitaapi.in/
     - https://github.com/daffainfo/all-about-apikey/tree/main/bhagavad-gita

@@ -1,7 +1,7 @@
 id: api-googledirections
 
 info:
-  name: Google Directions API Test
+  name: Google Directions API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

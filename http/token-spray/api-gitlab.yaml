@@ -1,7 +1,7 @@
 id: api-gitlab
 
 info:
-  name: Gitlab API Test
+  name: Gitlab API Token 可用性校验（token喷洒）
   author: Adam Crosser
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: api-calendly
 
 info:
-  name: Calendly API Test
+  name: Calendly API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

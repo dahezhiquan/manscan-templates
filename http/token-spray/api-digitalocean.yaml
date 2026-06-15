@@ -1,7 +1,7 @@
 id: api-digitalocean
 
 info:
-  name: DigitalOcean API Test
+  name: DigitalOcean API Token 可用性校验（token喷洒）
   author: geeknik
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: api-googlebooks
 
 info:
-  name: Google Books API Test
+  name: Google Books API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Google Books
+  description: 该模板通过调用 Google Books API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://developers.google.com/books/docs/overview
     - https://github.com/daffainfo/all-about-apikey/tree/main/google-books

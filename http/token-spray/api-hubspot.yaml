@@ -1,7 +1,7 @@
 id: api-hubspot
 
 info:
-  name: HubSpot API Test
+  name: HubSpot API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

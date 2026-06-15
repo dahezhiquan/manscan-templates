@@ -1,10 +1,10 @@
 id: api-currencyscoop
 
 info:
-  name: CurrencyScoop API Test
+  name: CurrencyScoop API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Real-time and historical currency rates JSON API
+  description: 该模板通过调用 CurrencyScoop API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问汇率、货币或金融校验能力。
   reference:
     - https://currencyscoop.com/api-documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/currencyscoop

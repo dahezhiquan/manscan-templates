@@ -1,7 +1,7 @@
 id: api-giphy
 
 info:
-  name: Giphy API Test
+  name: Giphy API Token 可用性校验（token喷洒）
   author: geeknik
   severity: info
   reference:

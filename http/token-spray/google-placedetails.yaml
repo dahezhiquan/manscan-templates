@@ -1,7 +1,7 @@
 id: api-google-place-details
 
 info:
-  name: Google Place Details API Test
+  name: Google Place Details API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

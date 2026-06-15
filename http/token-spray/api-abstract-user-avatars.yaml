@@ -1,10 +1,10 @@
 id: api-abstract-user-avatars
 
 info:
-  name: Abstract Api User Avatars Test
+  name: Abstract API User Avatars Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Create highly customizable avatar images with a person's name or initials to improve your user experience.
+  description: 该模板通过调用 Abstract User Avatars API 验证提供的 token 是否有效，命中后通常表示可访问头像生成能力。
   reference:
     - https://www.abstractapi.com/api/user-avatar-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-user-avatars

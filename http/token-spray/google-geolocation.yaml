@@ -1,7 +1,7 @@
 id: api-googlegeolocation
 
 info:
-  name: Google Geolocation API Test
+  name: Google Geolocation API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

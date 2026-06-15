@@ -1,10 +1,10 @@
 id: api-abstract-phone-validation
 
 info:
-  name: Abstract Api Phone Validation Test
+  name: Abstract API Phone Validation Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Improve your contact rate and clean your lists with Abstract's industry-leading phone number validation API
+  description: 该模板通过调用 Abstract Phone Validation API 验证提供的 token 是否有效，命中后通常表示可访问手机号校验能力。
   reference:
     - https://www.abstractapi.com/api/phone-validation-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-phone-validation

@@ -1,7 +1,7 @@
 id: api-postmark
 
 info:
-  name: PostMark API Test
+  name: PostMark API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

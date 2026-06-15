@@ -1,11 +1,11 @@
 id: api-shodan
 
 info:
-  name: Shodan API Test
+  name: Shodan API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   description: |
-    Shodan is a search engine that lets users search for various types of servers connected to the internet using a variety of filters.
+    该模板通过调用 Shodan API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问安全情报与资产查询能力。
   reference:
     - https://shodan.io
     - https://developer.shodan.io

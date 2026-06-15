@@ -1,7 +1,7 @@
 id: api-ipinfo
 
 info:
-  name: IPinfo API Test
+  name: IPinfo API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
   reference:

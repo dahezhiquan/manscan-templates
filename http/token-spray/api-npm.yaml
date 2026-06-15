@@ -1,7 +1,7 @@
 id: api-npm
 
 info:
-  name: NPM API Test
+  name: NPM API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

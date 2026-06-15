@@ -1,7 +1,7 @@
 id: api-ipdata
 
 info:
-  name: IP Data API Test
+  name: IP Data API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
   reference:

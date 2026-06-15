@@ -1,7 +1,7 @@
 id: api-apigee-edge
 
 info:
-  name: Apigee Edge API Test
+  name: Apigee Edge API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

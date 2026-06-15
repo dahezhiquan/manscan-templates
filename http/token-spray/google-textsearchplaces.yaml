@@ -1,7 +1,7 @@
 id: api-googletextsearchplaces
 
 info:
-  name: Google Places Text Search API Test
+  name: Google Places Text Search API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

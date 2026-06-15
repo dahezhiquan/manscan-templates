@@ -1,10 +1,10 @@
 id: api-covalent
 
 info:
-  name: Covalent API Test
+  name: Covalent API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: https://github.com/daffainfo/all-about-apikey/tree/main/covalent
+  description: 该模板通过调用 Covalent API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://www.covalenthq.com/docs/api/
     - https://github.com/daffainfo/all-about-apikey/tree/main/covalent

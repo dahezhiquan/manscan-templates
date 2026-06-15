@@ -1,10 +1,10 @@
 id: api-mac-address-lookup
 
 info:
-  name: MAC Address Lookup API Test
+  name: MAC Address Lookup API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Retrieve vendor details and other information regarding a given MAC address or an OUI
+  description: 该模板通过调用 MAC Address Lookup API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问IP、网络或归属信息查询能力。
   reference:
     - https://macaddress.io/api
     - https://github.com/daffainfo/all-about-apikey/tree/main/mac-address-lookup

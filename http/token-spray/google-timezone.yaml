@@ -1,7 +1,7 @@
 id: api-googletimezone
 
 info:
-  name: Google Timezone API Test
+  name: Google Timezone API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

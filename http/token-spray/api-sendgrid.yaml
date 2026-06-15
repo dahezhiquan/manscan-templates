@@ -1,11 +1,11 @@
 id: api-sendgrid
 
 info:
-  name: Sendgrid API Test
+  name: Sendgrid API Token 可用性校验（token喷洒）
   author: zzeitlin,0xpugal
   severity: info
   description: |
-    A REST-like interface that enables you to send email at scale, ensuring your application can handle high-volume email with ease.
+    该模板通过调用 Sendgrid API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮件发送、投递或邮箱服务能力。
   reference:
     - https://www.twilio.com/docs/sendgrid/api-reference/how-to-use-the-sendgrid-v3-api
   metadata:

@@ -1,7 +1,7 @@
 id: api-google-drive
 
 info:
-  name: Google Drive API Test
+  name: Google Drive API Token 可用性校验（token喷洒）
   author: geeknik
   severity: info
   reference:

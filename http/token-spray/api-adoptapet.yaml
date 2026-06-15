@@ -1,10 +1,10 @@
 id: api-adoptapet
 
 info:
-  name: AdoptAPet API Test
+  name: AdoptAPet API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Resource to help get pets adopted
+  description: 该模板通过调用 AdoptAPet API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://www.adoptapet.com/public/apis/pet_list.html
     - https://github.com/daffainfo/all-about-apikey/tree/main/adoptapet

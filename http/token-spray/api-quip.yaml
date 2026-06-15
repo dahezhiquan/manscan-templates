@@ -1,10 +1,10 @@
 id: api-quip
 
 info:
-  name: Quip API Test
+  name: Quip API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: File Sharing and Storage for groups
+  description: 该模板通过调用 Quip API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://quip.com/dev/automation/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/quip

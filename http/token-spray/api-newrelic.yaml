@@ -1,7 +1,7 @@
 id: api-newrelic
 
 info:
-  name: New Relic Rest API
+  name: New Relic Rest API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
   reference:

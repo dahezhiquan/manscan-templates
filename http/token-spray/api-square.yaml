@@ -1,10 +1,10 @@
 id: api-square
 
 info:
-  name: Square API Test
+  name: Square API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
-  description: Easy way to take payments, manage refunds, and help customers checkout online
+  description: 该模板通过调用 Square API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问支付或身份验证能力。
   reference:
     - https://developer.squareup.com/explorer/square/locations-api/list-locations
     - https://github.com/daffainfo/all-about-apikey/tree/main/square

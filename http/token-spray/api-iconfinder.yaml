@@ -1,10 +1,10 @@
 id: api-iconfinder
 
 info:
-  name: IconFinder API Test
+  name: IconFinder API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Web Icons
+  description: 该模板通过调用 IconFinder API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://developer.iconfinder.com/reference/overview-1
     - https://github.com/daffainfo/all-about-apikey/tree/main/iconfinder

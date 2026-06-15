@@ -1,7 +1,7 @@
 id: api-googledistancematrix
 
 info:
-  name: Google Distance Matrix API Test
+  name: Google Distance Matrix API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

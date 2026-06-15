@@ -1,10 +1,10 @@
 id: api-holidayapi
 
 info:
-  name: Holiday API Test
+  name: Holiday API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Historical data regarding holidays
+  description: 该模板通过调用 Holiday API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问节假日数据能力。
   reference:
     - https://holidayapi.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/holiday-api

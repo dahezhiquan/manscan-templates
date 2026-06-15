@@ -1,7 +1,7 @@
 id: api-adafruit-io
 
 info:
-  name: Adafruit IO API Test
+  name: Adafruit IO API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

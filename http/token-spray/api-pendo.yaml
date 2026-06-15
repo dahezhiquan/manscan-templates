@@ -1,7 +1,7 @@
 id: api-pendo
 
 info:
-  name: Pendo API Test
+  name: Pendo API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

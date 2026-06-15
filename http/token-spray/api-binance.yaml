@@ -1,10 +1,10 @@
 id: api-binance
 
 info:
-  name: Binance REST API
+  name: Binance REST API Token 可用性校验（token喷洒）
   author: geeknik
   severity: info
-  description: Exchange for Trading Cryptocurrencies based in China
+  description: 该模板通过调用 Binance REST API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
   reference:
     - https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md
     - https://github.com/daffainfo/all-about-apikey/tree/main/binance

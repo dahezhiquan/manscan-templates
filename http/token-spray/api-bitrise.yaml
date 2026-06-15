@@ -1,10 +1,10 @@
 id: api-bitrise
 
 info:
-  name: Bitrise API Test
+  name: Bitrise API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Build tool and processes integrations to create efficient development pipelines
+  description: 该模板通过调用 Bitrise API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问构建、测试或交付流水线能力。
   reference:
     - https://api-docs.bitrise.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/bitrise

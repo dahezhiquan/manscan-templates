@@ -1,10 +1,10 @@
 id: api-petfinder
 
 info:
-  name: Petfinder API Test
+  name: Petfinder API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Petfinder is dedicated to helping pets find homes, another resource to get pets adopted
+  description: 该模板通过调用 Petfinder API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://www.petfinder.com/developers/v2/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/petfinder

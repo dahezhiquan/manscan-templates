@@ -1,11 +1,11 @@
 id: api-intelx
 
 info:
-  name: Intelligence X API Test
+  name: Intelligence X API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   description: |
-    Intelligence X is a search engine and data archive. Search Tor, I2P, data leaks and the public web by email, domain, IP, CIDR, Bitcoin address and more.
+    该模板通过调用 Intelligence X API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问安全情报与资产查询能力。
   reference:
     - https://intelx.io
     - https://github.com/IntelligenceX/SDK

@@ -1,11 +1,11 @@
 id: api-zoomeye
 
 info:
-  name: ZoomEye API Test
+  name: ZoomEye API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   description: |
-    ZoomEyeis a Cyberspace Search Engine recording information of devices, websites, services and components etc.
+    该模板通过调用 ZoomEye API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问安全情报与资产查询能力。
   reference:
     - https://zoomeye.org
     - https://zoomeye.org/doc

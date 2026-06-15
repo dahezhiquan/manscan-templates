@@ -1,7 +1,7 @@
 id: api-sentry
 
 info:
-  name: Sentry API Test
+  name: Sentry API Token 可用性校验（token喷洒）
   author: 0ri2N
   severity: info
   reference:

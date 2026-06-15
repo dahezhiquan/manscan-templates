@@ -1,7 +1,7 @@
 id: api-virustotal
 
 info:
-  name: VirusTotal API Test
+  name: VirusTotal API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: api-optimizely
 
 info:
-  name: Optimizely API Test
+  name: Optimizely API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

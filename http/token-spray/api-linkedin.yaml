@@ -1,7 +1,7 @@
 id: api-linkedin
 
 info:
-  name: LinkedIn API Test
+  name: LinkedIn API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

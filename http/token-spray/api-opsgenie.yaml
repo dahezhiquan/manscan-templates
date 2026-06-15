@@ -1,10 +1,10 @@
 id: api-opsgenie
 
 info:
-  name: OpsGenie API Test
+  name: OpsGenie API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
-  description: Forex currency market data
+  description: 该模板通过调用 OpsGenie API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问汇率、货币或金融校验能力。
   reference:
     - https://docs.opsgenie.com/docs/api-overview
   metadata:

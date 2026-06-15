@@ -1,10 +1,10 @@
 id: api-hunter
 
 info:
-  name: Hunter API Test
+  name: Hunter API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: API for domain search, professional email finder, author finder and email verifier
+  description: 该模板通过调用 Hunter API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮件发送、投递或邮箱服务能力。
   reference:
     - https://hunter.io/api-documentation/v2
     - https://github.com/daffainfo/all-about-apikey/tree/main/hunter

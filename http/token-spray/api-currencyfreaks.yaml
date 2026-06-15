@@ -1,10 +1,10 @@
 id: api-currencyfreaks
 
 info:
-  name: CurrencyFreaks API Test
+  name: CurrencyFreaks API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Provides current and historical currency exchange rates with free plan 1K requests/month
+  description: 该模板通过调用 CurrencyFreaks API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问汇率、货币或金融校验能力。
   reference:
     - https://currencyfreaks.com/documentation.html
     - https://github.com/daffainfo/all-about-apikey/tree/main/currencyfreaks

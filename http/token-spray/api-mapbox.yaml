@@ -1,7 +1,7 @@
 id: api-mapbox
 
 info:
-  name: Mapbox API Test
+  name: Mapbox API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

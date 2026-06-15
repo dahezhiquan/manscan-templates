@@ -1,10 +1,10 @@
 id: api-box
 
 info:
-  name: Box API Test
+  name: Box API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: File Sharing and Storage Service
+  description: 该模板通过调用 Box API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问文件存储与分发能力。
   reference:
     - https://developer.box.com/
     - https://github.com/daffainfo/all-about-apikey/tree/main/box

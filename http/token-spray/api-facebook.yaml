@@ -1,7 +1,7 @@
 id: api-facebook
 
 info:
-  name: Facebook API Test
+  name: Facebook API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

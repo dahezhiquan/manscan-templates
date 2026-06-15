@@ -1,7 +1,7 @@
 id: api-onelogin
 
 info:
-  name: OneLogin API Test
+  name: OneLogin API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

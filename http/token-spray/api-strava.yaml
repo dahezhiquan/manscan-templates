@@ -1,7 +1,7 @@
 id: api-strava
 
 info:
-  name: Strava API Test
+  name: Strava API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

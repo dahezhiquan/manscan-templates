@@ -1,7 +1,7 @@
 id: api-wakatime
 
 info:
-  name: WakaTime CI API Test
+  name: WakaTime CI API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

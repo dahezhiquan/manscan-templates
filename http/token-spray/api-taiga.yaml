@@ -1,7 +1,7 @@
 id: api-taiga
 
 info:
-  name: Taiga API Test
+  name: Taiga API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

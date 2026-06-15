@@ -1,10 +1,10 @@
 id: api-bitcoinaverage
 
 info:
-  name: BitcoinAverage API Test
+  name: BitcoinAverage API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Digital Asset Price Data for the blockchain industry
+  description: 该模板通过调用 BitcoinAverage API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
   reference:
     - https://apiv2.bitcoinaverage.com/
     - https://github.com/daffainfo/all-about-apikey/tree/main/bitcoinaverage

@@ -1,7 +1,7 @@
 id: api-deviantart
 
 info:
-  name: DeviantArt API Test
+  name: DeviantArt API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

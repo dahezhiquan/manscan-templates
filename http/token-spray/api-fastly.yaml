@@ -1,7 +1,7 @@
 id: api-fastly
 
 info:
-  name: Fastly API Test
+  name: Fastly API Token 可用性校验（token喷洒）
   author: Adam Crosser
   severity: info
   reference:

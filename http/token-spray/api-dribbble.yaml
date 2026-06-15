@@ -1,10 +1,10 @@
 id: api-dribbble
 
 info:
-  name: Dribbble API Test
+  name: Dribbble API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Dribbble is a self-promotion and social networking platform for digital designers and creatives
+  description: 该模板通过调用 Dribbble API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问社交媒体或内容平台能力。
   reference:
     - https://developer.dribbble.com/v2/
     - https://github.com/daffainfo/all-about-apikey/tree/main/dribbble

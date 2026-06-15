@@ -1,7 +1,7 @@
 id: api-nerdgraph
 
 info:
-  name: New Relic NerdGraph API Test
+  name: New Relic NerdGraph API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

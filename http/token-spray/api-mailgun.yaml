@@ -1,10 +1,10 @@
 id: api-mailgun
 
 info:
-  name: Mailgun API Test
+  name: Mailgun API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
-  description: Email Service
+  description: 该模板通过调用 Mailgun API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮件发送、投递或邮箱服务能力。
   reference:
     - https://documentation.mailgun.com/en/latest/api-intro.html
     - https://github.com/daffainfo/all-about-apikey/tree/main/mailgun

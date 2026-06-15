@@ -1,10 +1,10 @@
 id: api-intigriti-researcher
 
 info:
-  name: Intigriti-Researcher API Test
+  name: Intigriti-Researcher API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: info
-  description: The Intigriti researcher API can be used to query information about Programs you have access to via our platform and Program activities you have access to via our platform
+  description: 该模板通过调用 Intigriti-Researcher API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://kb.intigriti.com/en/articles/8529303-intigriti-researcher-api
   metadata:

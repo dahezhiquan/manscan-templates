@@ -1,7 +1,7 @@
 id: api-visualstudio
 
 info:
-  name: Visual Studio API Test
+  name: Visual Studio API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

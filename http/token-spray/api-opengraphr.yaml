@@ -1,10 +1,10 @@
 id: api-opengraphr
 
 info:
-  name: OpenGraphr API Test
+  name: OpenGraphr API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Really simple API to retrieve Open Graph data from an URL
+  description: 该模板通过调用 OpenGraphr API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://opengraphr.com/docs/1.0/overview
     - https://github.com/daffainfo/all-about-apikey/tree/main/opengraphr

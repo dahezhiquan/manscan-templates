@@ -1,7 +1,7 @@
 id: api-googlespeedlimit
 
 info:
-  name: Google Speed Limit API Test
+  name: Google Speed Limit API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   metadata:

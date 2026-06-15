@@ -1,7 +1,7 @@
 id: api-webex
 
 info:
-  name: Cisco Webex API Test
+  name: Cisco Webex API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
   reference:

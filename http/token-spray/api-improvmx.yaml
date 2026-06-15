@@ -1,10 +1,10 @@
 id: api-improvmx
 
 info:
-  name: ImprovMX API Test
+  name: ImprovMX API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: API for free email forwarding service
+  description: 该模板通过调用 ImprovMX API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮件发送、投递或邮箱服务能力。
   reference:
     - https://improvmx.com/api
     - https://github.com/daffainfo/all-about-apikey/tree/main/improvmx

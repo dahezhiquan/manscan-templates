@@ -1,7 +1,7 @@
 id: api-ipstack
 
 info:
-  name: IPStack API Test
+  name: IPStack API Token 可用性校验（token喷洒）
   author: zzeitlin
   severity: info
   reference:

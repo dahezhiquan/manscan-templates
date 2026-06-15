@@ -1,10 +1,10 @@
 id: api-dbt
 
 info:
-  name: dbt Cloud API - Test
+  name: dbt Cloud API Token 可用性校验（token喷洒）
   author: dwisiswant0
   severity: info
-  description: dbt Cloud API test was conducted.
+  description: 该模板通过调用 dbt Cloud API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问数据管理与集成能力。
   reference:
     - https://docs.getdbt.com/docs/introduction
   classification:

@@ -1,10 +1,10 @@
 id: api-abstract-company-enrichment
 
 info:
-  name: Abstract Api Company Enrichment Test
+  name: Abstract API Company Enrichment Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Enrich any domain or email with accurate company data, including headcount, location and industry.
+  description: 该模板通过调用 Abstract Company Enrichment API 验证提供的 token 是否有效，命中后通常表示可访问企业补全与公司信息查询能力。
   reference:
     - https://www.abstractapi.com/api/company-enrichment
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-company-enrichment

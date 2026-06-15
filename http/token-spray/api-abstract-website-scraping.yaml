@@ -1,10 +1,10 @@
 id: api-abstract-website-scraping
 
 info:
-  name: Abstract Api Web Scraping Test
+  name: Abstract API Web Scraping Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Scrape and extract data from any website, with powerful options like proxy / browser customization, CAPTCHA handling, ad blocking, and more.
+  description: 该模板通过调用 Abstract Website Scraping API 验证提供的 token 是否有效，命中后通常表示可访问网页抓取与内容提取能力。
   reference:
     - https://www.abstractapi.com/api/web-scraping-api
     - https://github.com/daffainfo/all-about-apikey/tree/main/abstract-website-scraping

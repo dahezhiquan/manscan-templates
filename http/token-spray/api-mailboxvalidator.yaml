@@ -1,10 +1,10 @@
 id: api-mailboxvalidator
 
 info:
-  name: MailboxValidator API Test
+  name: MailboxValidator API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Validate email address to improve deliverability
+  description: 该模板通过调用 MailboxValidator API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮箱校验能力。
   reference:
     - https://www.mailboxvalidator.com/api-email-free
     - https://github.com/daffainfo/all-about-apikey/tree/main/mailboxvalidator

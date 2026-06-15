@@ -1,10 +1,10 @@
 id: api-wordnik
 
 info:
-  name: Wordnik API Test
+  name: Wordnik API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: Dictionary Data
+  description: 该模板通过调用 Wordnik API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
   reference:
     - https://developer.wordnik.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/wordnik

@@ -1,10 +1,10 @@
 id: api-web3storage
 
 info:
-  name: Web3 Storage API Test
+  name: Web3 Storage API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: info
-  description: File Sharing and Storage for Free with 1TB Space
+  description: 该模板通过调用 Web3 Storage API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问文件存储与分发能力。
   reference:
     - https://docs.web3.storage/
     - https://github.com/daffainfo/all-about-apikey/tree/main/web3-storage

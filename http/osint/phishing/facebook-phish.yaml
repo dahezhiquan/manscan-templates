@@ -1,11 +1,11 @@
 id: facebook-phish
 
 info:
-  name: Facebook phishing Detection
+  name: Facebook 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Facebook phishing website was detected
+    检测到疑似仿冒 Facebook 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Facebook 的登录或账号页面特征，且当前主机不属于 facebook.com 官方域名时触发，用于识别借用 Facebook 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://facebook.com
   metadata:

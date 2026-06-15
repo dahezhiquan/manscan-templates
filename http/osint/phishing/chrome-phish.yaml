@@ -1,11 +1,11 @@
 id: chrome-phish
 
 info:
-  name: chrome phishing Detection
+  name: Chrome 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A chrome phishing website was detected
+    检测到疑似仿冒 Chrome 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Chrome 的官方服务页面特征，且当前主机不属于 google.com 官方域名时触发，用于识别借用 Chrome 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://www.google.com/intl/en_uk/chrome/
   metadata:

@@ -1,11 +1,11 @@
 id: auth0-phish
 
 info:
-  name: Auth0 phishing Detection
+  name: Auth0 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    An Auth0 phishing website was detected
+    检测到疑似仿冒 Auth0 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Auth0 的官方服务页面特征，且当前主机不属于 auth0.com 官方域名时触发，用于识别借用 Auth0 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://auth0.com
   metadata:

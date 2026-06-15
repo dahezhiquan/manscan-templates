@@ -1,11 +1,11 @@
 id: linear-phish
 
 info:
-  name: Linear phishing Detection
+  name: Linear 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Linear phishing website was detected
+    检测到疑似仿冒 Linear 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Linear 的品牌页面特征，且当前主机不属于 linear.app 官方域名时触发，用于识别借用 Linear 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://linear.app
   metadata:

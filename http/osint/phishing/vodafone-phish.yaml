@@ -1,11 +1,11 @@
 id: vodafone-phish
 
 info:
-  name: vodafone phishing Detection
+  name: Vodafone 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A vodafone phishing website was detected
+    检测到疑似仿冒 Vodafone 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Vodafone 的品牌页面特征，且当前主机不属于 vodafone.co.uk 官方域名时触发，用于识别借用 Vodafone 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://vodafone.co.uk
   metadata:

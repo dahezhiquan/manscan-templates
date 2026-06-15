@@ -1,11 +1,11 @@
 id: jetbrains-phish
 
 info:
-  name: JetBrains phishing Detection
+  name: JetBrains 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A JetBrains phishing website was detected
+    检测到疑似仿冒 JetBrains 的钓鱼网站。模板在目标页面返回 200、页面内容命中 JetBrains 的品牌页面特征，且当前主机不属于 jetbrains.com 官方域名时触发，用于识别借用 JetBrains 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://jetbrains.com
   metadata:

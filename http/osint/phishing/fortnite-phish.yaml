@@ -1,11 +1,11 @@
 id: fortnite-phish
 
 info:
-  name: Fortnite phishing Detection
+  name: Fortnite 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Fortnite phishing website was detected
+    检测到疑似仿冒 Fortnite 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Fortnite 的官方服务页面特征，且当前主机不属于 fortnite.com、epicgames.com 官方域名时触发，用于识别借用 Fortnite 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://fortnite.com
   metadata:

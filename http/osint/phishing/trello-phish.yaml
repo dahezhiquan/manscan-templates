@@ -1,11 +1,11 @@
 id: trello-phish
 
 info:
-  name: Trello phishing Detection
+  name: Trello 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Trello phishing website was detected
+    检测到疑似仿冒 Trello 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Trello 的品牌页面特征，且当前主机不属于 trello.com 官方域名时触发，用于识别借用 Trello 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://trello.com
   metadata:

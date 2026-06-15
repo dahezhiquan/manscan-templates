@@ -1,11 +1,11 @@
 id: ally-bank-phish
 
 info:
-  name: Ally Bank phishing Detection
+  name: Ally Bank 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    An Ally Bank phishing website was detected
+    检测到疑似仿冒 Ally Bank 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Ally Bank 的金融或支付页面特征，且当前主机不属于 ally.com 官方域名时触发，用于识别借用 Ally Bank 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://ally.com
   metadata:

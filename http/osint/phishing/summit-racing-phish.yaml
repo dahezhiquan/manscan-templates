@@ -1,11 +1,11 @@
 id: summit-racing-phish
 
 info:
-  name: Summit Racing phishing Detection
+  name: Summit Racing 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Summit Racing phishing website was detected
+    检测到疑似仿冒 Summit Racing 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Summit Racing 的品牌页面特征，且当前主机不属于 summitracing.com 官方域名时触发，用于识别借用 Summit Racing 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://summitracing.com
   metadata:

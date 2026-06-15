@@ -1,11 +1,11 @@
 id: tiktok-phish
 
 info:
-  name: tiktok phishing Detection
+  name: TikTok 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A tiktok phishing website was detected
+    检测到疑似仿冒 TikTok 的钓鱼网站。模板在目标页面返回 200、页面内容命中 TikTok 的品牌页面特征，且当前主机不属于 tiktok.com 官方域名时触发，用于识别借用 TikTok 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://tiktok.com
   metadata:

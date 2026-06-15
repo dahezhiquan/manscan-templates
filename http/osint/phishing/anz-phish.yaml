@@ -1,11 +1,11 @@
 id: anz-phish
 
 info:
-  name: ANZ phishing Detection
+  name: ANZ 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    An ANZ phishing website was detected
+    检测到疑似仿冒 ANZ 的钓鱼网站。模板在目标页面返回 200、页面内容命中 ANZ 的登录或账号页面特征，且当前主机不属于 anz.com 官方域名时触发，用于识别借用 ANZ 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://anz.com
   metadata:

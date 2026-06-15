@@ -1,11 +1,11 @@
 id: puma-phish
 
 info:
-  name: Puma phishing Detection
+  name: Puma 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A Puma phishing website was detected
+    检测到疑似仿冒 Puma 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Puma 的品牌页面特征，且当前主机不属于 puma.com 官方域名时触发，用于识别借用 Puma 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://puma.com
   metadata:

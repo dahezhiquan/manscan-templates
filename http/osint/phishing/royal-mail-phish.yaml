@@ -1,11 +1,11 @@
 id: royal-mail-phish
 
 info:
-  name: royal-mail phishing Detection
+  name: Royal Mail 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    A royal-mail phishing website was detected
+    检测到疑似仿冒 Royal Mail 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Royal Mail 的登录或账号页面特征，且当前主机不属于 royalmail.com 官方域名时触发，用于识别借用 Royal Mail 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://royalmail.com
   metadata:

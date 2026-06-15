@@ -1,21 +1,27 @@
-## Description
-
-This directory contains a collection of templates designed for the identification and analysis of phishing sites. These templates are specifically created to help OSINT analysts, threat researchers, and security professionals in discovering and studying phishing campaigns. 
+# 钓鱼网站识别与分析
 
 ## Usage
 
-The phishing templates are designed for targeted use and are not included in Nuclei's default scans. To incorporate these templates into your scan, you can specify them using the `-itags` flags as follows:
+钓鱼类模板属于定向专用模板，不会纳入 ManScan 默认扫描范围，通过如下命令执行钓鱼检测模版：
 
 ```console
-nuclei -u <host> -tags phishing -itags phishing
+manscan -u <host> -tags phishing
 ```
 
-For users interested in comprehensive Open Source Intelligence (OSINT) gathering, these phishing templates have been integrated into the OSINT scan profile. This enables a more detailed and focused analysis as part of broader security research efforts or investigative journalism. 
-To execute the OSINT scan configuration profile, which includes phishing checks among other templates, use the following command:
+## 钓鱼检测原理
 
-```console
-# Execute the OSINT scan configuration profile
-nuclei -u <host> -config ~/nuclei-templates/config/osint.yml
-```
+核心原理其实很直接：**“这个站点看起来像某个正规服务的登录页，但它又不是这个品牌的官方域名”**。ManScan 会对你给的目标 URL 发起
+HTTP 请求，然后用模板里的规则去判断是否满足这个条件。
 
-The integration of phishing templates into the OSINT scan profile allows for a more nuanced and in-depth approach to security research, aiding in the detection of emerging threats and the analysis of ongoing phishing campaigns.
+另外，这些模板通常还会开启：
+
+- `host-redirects: true`
+- `max-redirects: 2`
+
+这是因为很多钓鱼站会先跳转再落到最终伪造页面，所以模板会跟随少量重定向后再判断。
+
+不过需注意，它本质上是 **基于页面指纹的被动识别**，不是强证明，因此会有局限：
+
+- **误报**：某些安全研究页面、仿真演示页、合法镜像页也可能长得像官方登录页
+- **漏报**：如果钓鱼页做了动态渲染、混淆文本、图片化登录页，或者必须输入参数后才显示内容，普通 HTTP 模板可能抓不到
+- **不是利用型模板**：它不会去提交表单、测试凭据或和后台做深度交互，只是识别“疑似仿冒外观”

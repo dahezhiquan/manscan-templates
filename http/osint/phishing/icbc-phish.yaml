@@ -1,11 +1,11 @@
 id: icbc-phish
 
 info:
-  name: ICBC phishing Detection
+  name: ICBC 仿冒钓鱼网站（钓鱼网站识别）
   author: rxerium
   severity: info
   description: |
-    An ICBC phishing website was detected
+    检测到疑似仿冒 ICBC 的钓鱼网站。模板在目标页面返回 200、页面内容命中 ICBC 的品牌页面特征，且当前主机不属于 icbc.com.cn 官方域名时触发，用于识别借用 ICBC 品牌页面诱导用户信任的仿冒站点。
   reference:
     - https://icbc.com.cn
   metadata:

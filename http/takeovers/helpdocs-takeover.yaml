@@ -1,7 +1,7 @@
 id: helpdocs-takeover
 
 info:
-  name: HelpDocs Takeover Detection
+  name: HelpDocs 账号页面缺失接管检测（子域名接管）
   author: philippedelteil
   severity: high
   reference:

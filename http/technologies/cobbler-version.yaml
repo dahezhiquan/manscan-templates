@@ -1,10 +1,10 @@
 id: cobbler-version
 
 info:
-  name: Cobbler Version Detection
+  name: Cobbler 版本指纹识别（指纹识别）
   author: c-sh0
   severity: info
-  description: Obtain cobbler version information
+  description: 用于识别目标是否部署 Cobbler 版本 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,cobbler,api,discovery

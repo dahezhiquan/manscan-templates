@@ -1,10 +1,10 @@
 id: flexbe-takeover
 
 info:
-  name: Flexbe Subdomain Takeover
+  name: Flexbe 域名未配置接管检测（子域名接管）
   author: 0x_Akoko
   severity: high
-  description: Flexbe takeover was detected.
+  description: 检测 Flexbe 返回域名未配置错误且包含 Flexbe 标识的情况，表明目标域名可能仍指向 Flexbe 托管服务但未绑定站点，存在接管风险。
   reference:
     - https://web.archive.org/web/20211002185648/https://github.com/EdOverflow/can-i-take-over-xyz/issues/237
     - https://help.flexbe.com/domains/

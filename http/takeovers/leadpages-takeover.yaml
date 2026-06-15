@@ -1,10 +1,10 @@
 id: leadpages-takeover
 
 info:
-  name: Leadpages takeover detection
+  name: Leadpages 页面缺失接管检测（子域名接管）
   author: philippedelteil,mielverkerken
   severity: high
-  description: Leadpages takeover was detected.
+  description: 检测 Leadpages 返回页面无法找到、地址可能已移动等默认错误提示的情况，说明目标域名可能未绑定有效着陆页，存在被重新声明后接管的风险。
   reference:
     - https://www.youtube.com/watch?v=HRFplefT46U
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/166

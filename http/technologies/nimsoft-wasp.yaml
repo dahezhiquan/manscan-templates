@@ -1,10 +1,10 @@
 id: nimsoft-wasp
 
 info:
-  name: Nimsoft Wasp Detection
+  name: Nimsoft Wasp 指纹识别（指纹识别）
   author: Nullfuzz
   severity: info
-  description: Detect Nimsoft Wasp WebPage
+  description: 用于识别目标是否使用 Nimsoft Wasp，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: nimsoft,exposure,tech,discovery

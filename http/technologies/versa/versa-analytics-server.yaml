@@ -1,7 +1,7 @@
 id: versa-analytics-server
 
 info:
-  name: Versa Analytics Server Detection
+  name: Versa Analytics 服务器指纹识别（指纹识别）
   author: c-sh0
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: redirect-pizza-takeover
 info:
-  name: Redirect.pizza Subdomain Takeover Detection
+  name: Redirect.pizza 重定向域名接管检测（子域名接管）
   author: Ranjan Kumar
   severity: high
   description: |
-    Redirect.pizza subdomain takeover was detected.
+    检测 Redirect.pizza 自定义域名未关联有效重定向配置的情况，说明目标子域名可能仍指向 Redirect.pizza 服务，存在被重新声明并接管跳转行为的风险。
   reference:
     - https://redirect.pizza/docs
   metadata:

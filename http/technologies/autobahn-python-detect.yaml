@@ -1,7 +1,7 @@
 id: autobahn-python-detect
 
 info:
-  name: Autobahn-Python Webserver Detect
+  name: Autobahn-Python Web 服务器指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   classification:

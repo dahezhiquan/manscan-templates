@@ -1,10 +1,10 @@
 id: uptimerobot-takeover
 
 info:
-  name: uptimerobot takeover detection
+  name: UptimeRobot 自定义域名接管检测（子域名接管）
   author: pdteam
   severity: low
-  description: uptimerobot takeover was detected.
+  description: 检测 UptimeRobot 自定义域名返回 Caddy 服务端特征的情况，结合参考资料可用于识别未绑定或可重新绑定的公开状态页域名接管风险。
   reference:
     - https://exploit.linuxsec.org/uptimerobot-com-custom-domain-subdomain-takeover/
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/45

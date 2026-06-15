@@ -1,7 +1,7 @@
 id: default-redhat-test-page
 
 info:
-  name: Red Hat Enterprise Linux Test Page
+  name: Red Hat Enterprise Linux 测试页面指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   classification:

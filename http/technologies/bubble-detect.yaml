@@ -1,11 +1,11 @@
 id: bubble-detect
 
 info:
-  name: Bubble - Detect
+  name: Bubble 指纹识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    Detected the presence of Bubble, an AI-powered no-code app platform.
+    用于识别目标是否使用 Bubble，模板会结合特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://bubble.io/
   metadata:

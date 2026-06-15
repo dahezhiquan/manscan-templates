@@ -1,10 +1,10 @@
 id: fastjson-version
 
 info:
-  name: Fastjson Version Detection
+  name: Fastjson 版本指纹识别（指纹识别）
   author: yuansec
   severity: info
-  description: If the server returns an exception to the client,The fastjson version will be retrieved,Fastjson versions greater than 1.2.41,Contains the latest version(1.2.76).
+  description: 用于识别目标是否部署 Fastjson 版本 并提取相关版本或构建信息，模板会结合页面正文和版本或标识提取结果进行指纹匹配。
   reference:
     - https://blog.csdn.net/caiqiiqi/article/details/107907489
   metadata:

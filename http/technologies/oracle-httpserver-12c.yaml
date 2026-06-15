@@ -1,7 +1,7 @@
 id: oracle-httpserver12c
 
 info:
-  name: Oracle HTTPServer12c
+  name: Oracle HTTPServer12c 指纹识别（指纹识别）
   author: tess,dhiyaneshDK
   severity: info
   metadata:

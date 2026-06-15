@@ -1,10 +1,10 @@
 id: gemfury-takeover
 
 info:
-  name: Gemfury Takeover Detection
+  name: Gemfury 包仓库域名接管检测（子域名接管）
   author: pdteam,daffainfo
   severity: high
-  description: Gemfury takeover was detected.
+  description: 检测 Gemfury 自定义域名跳转到 404 页面的情况，说明该域名可能仍指向 Gemfury 但未绑定有效包仓库，存在被重新配置后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/154
   metadata:

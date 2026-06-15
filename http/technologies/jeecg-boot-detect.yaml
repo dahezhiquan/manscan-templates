@@ -1,7 +1,7 @@
 id: jeecg-boot-detect
 
 info:
-  name: Jeecg-Boot Detect
+  name: Jeecg-Boot 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   reference:

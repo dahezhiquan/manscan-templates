@@ -1,11 +1,11 @@
 id: nicegui-detect
 
 info:
-  name: NiceGUI Detection
+  name: NiceGUI 指纹识别（指纹识别）
   author: theamanrawat
   severity: info
   description: |
-    An instance running NiceGUI is detected by looking for specific HTTP headers.
+    用于识别目标是否部署 NiceGUI 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     shodan-query: "x-nicegui-content"

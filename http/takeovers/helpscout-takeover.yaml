@@ -1,10 +1,10 @@
 id: helpscout-takeover
 
 info:
-  name: helpscout takeover detection
+  name: Help Scout 公司配置缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: helpscout takeover was detected.
+  description: 检测 Help Scout 返回未找到公司配置的提示，表明目标子域名可能仍指向 Help Scout 但没有关联有效公司账号，存在被重新绑定后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

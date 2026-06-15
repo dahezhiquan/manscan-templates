@@ -1,11 +1,10 @@
 id: wordpress-passive-detection
 
 info:
-  name: WordPress Passive Detection - Plugins & Themes
+  name: WordPress 插件与主题被动枚举指纹识别（指纹识别）
   author: princechaddha
   severity: info
-  description: |
-    Passively enumerates WordPress plugins and themes through REST API discovery and HTML source analysis without brute-forcing, based on wpprobe methodology.
+  description: 用于被动枚举目标 WordPress 站点安装的插件和主题，模板会结合 REST API 发现结果、HTML 源码和常见资源路径进行指纹匹配。
   reference:
     - https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/
     - https://github.com/Chocapikk/wpprobe

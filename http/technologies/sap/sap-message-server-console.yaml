@@ -1,11 +1,11 @@
 id: sap-message-server-console
 
 info:
-  name: SAP Message Server Console - Exposure
+  name: SAP Message 服务器 控制台 - Exposure 指纹识别（指纹识别）
   author: LRVT,l4rm4nd
   severity: info
   description: |
-    Detected the SAP Message Server HTTP console on /msgserver. When accessed directly, the message server returns an HTML page.
+    用于识别目标暴露的 SAP Message 服务器 控制台 - Exposure，模板会结合 HTTP 响应头、页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   metadata:
     max-request: 1
     shodan-query: http.html:SAP Message Server

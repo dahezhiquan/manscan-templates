@@ -1,10 +1,10 @@
 id: cargocollective-takeover
 
 info:
-  name: CargoCollective Takeover Detection
+  name: Cargo Collective 站点缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: CargoCollective takeover was detected.
+  description: 检测 Cargo Collective 返回 404 与 notfound 页面特征的情况，表明目标域名可能指向已删除或未绑定的 Cargo Collective 站点，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/152
   metadata:

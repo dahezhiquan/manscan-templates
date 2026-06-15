@@ -1,11 +1,11 @@
 id: appdynamics-rum-detect
 
 info:
-  name: AppDynamics (Cisco) RUM - Detect
+  name: AppDynamics (Cisco) RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects AppDynamics (Cisco) End User Monitoring (EUM) artifacts.
+    用于识别目标是否使用 AppDynamics (Cisco) RUM，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://docs.appdynamics.com/appd/24.x/latest/en/end-user-monitoring/browser-monitoring/browser-real-user-monitoring
   metadata:

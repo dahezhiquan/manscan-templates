@@ -1,7 +1,7 @@
 id: wordpress-wp-rollback
 
 info:
-  name: WP Rollback – Rollback Plugins and Themes Detection
+  name: WP Rollback - Rollback Plugins and Themes 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

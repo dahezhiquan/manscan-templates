@@ -1,11 +1,11 @@
 id: nimplant-c2
 
 info:
-  name: NimPlant C2 Server - Detect
+  name: NimPlant C2 服务器指纹识别（指纹识别）
   author: ja1sh
   severity: info
   description: |
-    NimPlant is an open source light first-stage C2 implant written in Nim and Python. It is designed to be used as a starting point for those who want to develop their own custom C2 implants. NimPlant is fully customizable and lightweight, making it easy to integrate into existing C2 frameworks.
+    用于识别目标前端或应用中是否使用 NimPlant C2 服务器，模板会结合 HTTP 响应头和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://github.com/chvancooten/NimPlant
   metadata:

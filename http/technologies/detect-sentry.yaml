@@ -1,7 +1,7 @@
 id: detect-sentry
 
 info:
-  name: Detect Sentry Instance
+  name: Sentry 实例指纹识别（指纹识别）
   author: Sicksec,Shivam Kamboj
   severity: info
   reference:

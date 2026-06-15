@@ -1,7 +1,7 @@
 id: php-fusion-detect
 
 info:
-  name: PHP Fusion Detect
+  name: PHP Fusion 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

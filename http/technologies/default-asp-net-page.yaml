@@ -1,11 +1,11 @@
 id: default-asp-net-page
 
 info:
-  name: ASP.Net Default Page
+  name: ASP.Net 默认页面指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   description: |
-    Detected default ASP.NET application pages including both traditional and modern versions.
+    用于识别目标是否部署 ASP.Net 默认页面 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     shodan-query: http.title:"Home Page - My ASP.NET Application"

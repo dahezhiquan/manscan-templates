@@ -1,7 +1,7 @@
 id: firebase-detect
 
 info:
-  name: firebase detect
+  name: firebase 指纹识别（指纹识别）
   author: organiccrap
   severity: low
   reference:

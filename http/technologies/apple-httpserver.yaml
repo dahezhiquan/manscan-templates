@@ -1,7 +1,7 @@
 id: apple-httpserver
 
 info:
-  name: Apple HttpServer Detect
+  name: Apple HTTP 服务器指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

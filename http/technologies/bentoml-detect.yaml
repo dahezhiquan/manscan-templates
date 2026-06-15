@@ -1,11 +1,11 @@
 id: bentoml-detect
 
 info:
-  name: BentoML Prediction Service - Detection
+  name: BentoML Prediction 服务指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detected BentoML Prediction Service interface. BentoML was a platform for building, shipping, and scaling AI applications with any ML framework.
+    用于识别目标前端或应用中是否使用 BentoML Prediction 服务，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://www.bentoml.com/
     - https://github.com/bentoml/BentoML

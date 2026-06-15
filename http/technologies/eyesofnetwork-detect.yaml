@@ -1,10 +1,10 @@
 id: eyesofnetwork-detect
 
 info:
-  name: EyesOfNetwork Detect
+  name: EyesOfNetwork 指纹识别（指纹识别）
   author: praetorian-thendrickson
   severity: info
-  description: EyesOfNetwork detection
+  description: 用于识别目标是否使用 EyesOfNetwork，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://www.eyesofnetwork.com/en
   metadata:

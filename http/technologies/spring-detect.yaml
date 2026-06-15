@@ -1,7 +1,7 @@
 id: spring-detect
 
 info:
-  name: Java Spring Detection
+  name: Java Spring 指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
   reference:

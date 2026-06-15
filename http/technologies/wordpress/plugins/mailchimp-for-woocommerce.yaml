@@ -1,7 +1,7 @@
 id: wordpress-mailchimp-for-woocommerce
 
 info:
-  name: Mailchimp for WooCommerce Detection
+  name: Mailchimp for WooCommerce 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

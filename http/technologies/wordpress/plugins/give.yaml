@@ -1,7 +1,7 @@
 id: wordpress-give
 
 info:
-  name: Wordpress GiveWP Detection
+  name: WordPress GiveWP 指纹识别（指纹识别）
   author: mailler
   severity: info
   reference:

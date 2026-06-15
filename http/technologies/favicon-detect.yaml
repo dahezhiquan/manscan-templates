@@ -1,7 +1,7 @@
 id: favicon-detect
 
 info:
-  name: favicon-detection
+  name: favicon-detection 指纹识别（指纹识别）
   author: un-fmunozs,DhiyaneshDk,idealphase,rxerium
   severity: info
   reference:

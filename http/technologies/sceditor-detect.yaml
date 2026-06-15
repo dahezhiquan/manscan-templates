@@ -1,7 +1,7 @@
 id: sceditor-detect
 
 info:
-  name: SCEditor Detect
+  name: SCEditor 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

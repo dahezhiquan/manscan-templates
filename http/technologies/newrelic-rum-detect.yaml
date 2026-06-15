@@ -1,11 +1,11 @@
 id: newrelic-rum-detect
 
 info:
-  name: New Relic Browser Monitoring (RUM) - Tech Detect
+  name: New Relic Browser Monitoring (RUM) 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detected New Relic Browser Monitoring (RUM) agent artifacts
+    用于识别目标是否使用 New Relic Browser Monitoring (RUM)，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://docs.newrelic.com/docs/browser/
   metadata:

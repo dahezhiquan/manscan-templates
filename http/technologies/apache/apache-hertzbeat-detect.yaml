@@ -1,11 +1,11 @@
 id: apache-hertzbeat-detect
 
 info:
-  name: Apache Hertzbeat - Detect
+  name: Apache Hertzbeat 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Hertzbeat web application is in use, that is a real-time monitoring system with agentless, performance cluster, prometheus-compatible, custom monitoring and status page building capabilities.
+    用于识别目标是否使用 Apache Hertzbeat，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   classification:
     cpe: cpe:2.3:a:apache:hertzbeat:-:*:*:*:*:*:*:*
   metadata:

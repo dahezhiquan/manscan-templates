@@ -1,7 +1,7 @@
 id: wordpress-woo-inpost
 
 info:
-  name: InPost for WooCommerce Detection
+  name: InPost for WooCommerce 指纹识别（指纹识别）
   author: mailler
   severity: info
   reference:

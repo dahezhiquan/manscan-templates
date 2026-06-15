@@ -1,10 +1,10 @@
 id: kube-api-namespaces
 
 info:
-  name: Kube API Namespaces
+  name: Kube API Namespaces 指纹识别（指纹识别）
   author: sharath
   severity: info
-  description: Scans for kube namespaces
+  description: 用于识别目标是否使用 Kube API Namespaces，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,k8s,kubernetes,devops,kube,discovery

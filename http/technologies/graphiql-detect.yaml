@@ -1,10 +1,10 @@
 id: graphiql-detect
 
 info:
-  name: GraphiQL Detect
+  name: GraphiQL 指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
-  description: Detects the GraphiQL application
+  description: 用于识别目标是否使用 GraphiQL，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,graphiql,graphql,discovery

@@ -1,11 +1,11 @@
 id: apache-ozone-detect
 
 info:
-  name: Apache Ozone - Detect
+  name: Apache Ozone 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Ozone web application, a scalable, redundant, and distributed object store for Hadoop and Cloud-native environments.
+    用于识别目标是否使用 Apache Ozone，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   classification:
     cpe: cpe:2.3:a:apache:ozone:-:*:*:*:*:*:*:*
   metadata:

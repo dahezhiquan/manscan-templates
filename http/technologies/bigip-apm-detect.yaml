@@ -1,7 +1,7 @@
 id: bigip-apm-detect
 
 info:
-  name: BIGIP APM - Detect
+  name: BIGIP APM 指纹识别（指纹识别）
   author: nodauf
   severity: info
   reference:

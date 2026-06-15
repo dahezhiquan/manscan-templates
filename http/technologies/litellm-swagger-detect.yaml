@@ -1,11 +1,11 @@
 id: litellm-swagger-detect
 
 info:
-  name: LiteLLM API - Swagger UI Detection
+  name: LiteLLM API - Swagger UI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detects exposed LiteLLM API Swagger UI interface. LiteLLM is a unified API for 100+ LLM providers (OpenAI, Azure, Anthropic, etc.).
+    用于识别目标暴露的 LiteLLM API - Swagger UI，模板会结合页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://github.com/BerriAI/litellm
     - https://docs.litellm.ai/

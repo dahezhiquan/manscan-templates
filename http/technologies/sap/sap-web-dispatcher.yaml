@@ -1,10 +1,10 @@
 id: sap-web-dispatcher-detection
 
 info:
-  name: SAP Web Dispatcher detection
+  name: SAP Web Dispatcher 指纹识别（指纹识别）
   author: randomstr1ng
   severity: info
-  description: Detection of SAP Web Dispatcher service
+  description: 用于识别目标是否运行 SAP Web Dispatcher，模板会结合页面正文和特定路径或已知端点进行服务指纹匹配。
   metadata:
     max-request: 1
   tags: sap,webserver,proxy,tech,discovery

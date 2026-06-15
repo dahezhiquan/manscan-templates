@@ -1,7 +1,7 @@
 id: zap-rest-api-detect
 
 info:
-  name: ZAP Rest API Server Running
+  name: ZAP Rest API 服务器指纹识别（指纹识别）
   author: hahwul
   severity: info
   reference:

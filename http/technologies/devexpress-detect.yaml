@@ -1,11 +1,11 @@
 id: devexpress-detect
 
 info:
-  name: DevExpress - Detect
+  name: DevExpress 指纹识别（指纹识别）
   author: CravateRouge
   severity: info
   description: |
-    Detect DevExpress based on the existence of its HTTP handler for serving images, scripts, and other resources to the client side.
+    用于识别目标是否使用 DevExpress，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/DevExpress/aspnet-security-bestpractices/blob/master/SecurityBestPractices.WebForms/README.md#53-information-exposure-through-source-code
     - https://supportcenter.devexpress.com/ticket/details/q311748/dxr-axd-what-is-it-and-how-to-disable-it

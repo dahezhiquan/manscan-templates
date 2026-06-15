@@ -1,7 +1,7 @@
 id: vivotex-web-console-detect
 
 info:
-  name: VIVOTEK Web Console Detect
+  name: VIVOTEK Web 控制台指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

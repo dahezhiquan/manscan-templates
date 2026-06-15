@@ -1,7 +1,7 @@
 id: lighttpd-default
 
 info:
-  name: lighttpd Default Page
+  name: lighttpd 默认页面指纹识别（指纹识别）
   author: dhiyaneshDK
   severity: info
   classification:

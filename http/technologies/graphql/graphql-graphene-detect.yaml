@@ -1,6 +1,6 @@
 id: graphql-graphene-detect
 info:
-  name: Graphql Graphene Detect
+  name: Graphql Graphene 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

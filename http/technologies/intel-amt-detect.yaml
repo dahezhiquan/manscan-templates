@@ -1,11 +1,11 @@
 id: intel-amt-detect
 
 info:
-  name: Intel Active Management Technology Server Detection
+  name: Intel Active Management 技术 服务器指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detected Intel Active Management Technology (AMT) web interfaces by identifying the Server header in HTTP responses.
+    用于识别目标是否部署 Intel Active Management 技术 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-request: 1

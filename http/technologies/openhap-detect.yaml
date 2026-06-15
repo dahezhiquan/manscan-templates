@@ -1,7 +1,7 @@
 id: opnhap-detect
 
 info:
-  name: OpenHAP Detection
+  name: OpenHAP 指纹识别（指纹识别）
   author: fabaff
   severity: info
   reference:

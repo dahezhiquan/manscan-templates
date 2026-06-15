@@ -1,11 +1,11 @@
 id: directus-detect
 
 info:
-  name: Directus - Detect
+  name: Directus 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   description: |
-    Directus is a content manager with dynamic access API generation and transparent integration with the main databases.
+    用于识别目标是否使用 Directus，模板会结合 HTTP 响应头和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://directus.io/
   classification:

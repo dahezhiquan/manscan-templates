@@ -1,7 +1,7 @@
 id: owncloud-status-page
 
 info:
-  name: Owncloud StatusPage detection
+  name: Owncloud StatusPage 指纹识别（指纹识别）
   author: myztique,invisiblethreat
   severity: info
   classification:

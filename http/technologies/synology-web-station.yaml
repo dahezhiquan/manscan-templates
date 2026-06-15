@@ -1,10 +1,10 @@
 id: synology-web-station
 
 info:
-  name: Synology Web Station Page - Detect
+  name: Synology Web Station Page 指纹识别（指纹识别）
   author: dhiyaneshDK
   severity: info
-  description: Synology Web Station page was detected.
+  description: 用于识别目标是否使用 Synology Web Station Page，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://www.exploit-db.com/ghdb/7125
   classification:

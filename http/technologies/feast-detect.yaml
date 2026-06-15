@@ -1,11 +1,11 @@
 id: feast-detect
 
 info:
-  name: Feast Feature Store - Detect
+  name: Feast Feature Store 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detected Feast, an open-source feature store for managing and serving ML features.
+    用于识别目标是否使用 Feast Feature Store，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/feast-dev/feast
     - https://feast.dev/

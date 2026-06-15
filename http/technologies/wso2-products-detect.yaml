@@ -1,10 +1,10 @@
 id: wso2-products-detect
 
 info:
-  name: WSO2 Products - Detect
+  name: WSO2 Products 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: Try to detect the presence of a WSO2 products instance via the version endpoint
+  description: 用于识别目标是否部署 WSO2 Products 并提取相关版本或构建信息，模板会结合状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,wso2,discovery

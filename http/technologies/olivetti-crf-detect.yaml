@@ -1,7 +1,7 @@
 id: olivetti-crf-detect
 
 info:
-  name: Olivetti CRF Detect
+  name: Olivetti CRF 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   metadata:

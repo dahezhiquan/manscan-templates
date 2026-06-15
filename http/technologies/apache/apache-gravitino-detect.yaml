@@ -1,11 +1,11 @@
 id: apache-gravitino-detect
 
 info:
-  name: Apache Gravitino - Detect
+  name: Apache Gravitino 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Gravitino web application, world's most powerful open data catalog for building a high-performance, geo-distributed and federated metadata lake.
+    用于识别目标是否使用 Apache Gravitino，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
     vendor: apache

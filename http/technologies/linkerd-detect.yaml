@@ -1,7 +1,7 @@
 id: linkerd-badrule-detect
 
 info:
-  name: Linkerd detection via bad rule
+  name: Linkerd detection via bad rule 指纹识别（指纹识别）
   author: dudez
   severity: info
   reference:

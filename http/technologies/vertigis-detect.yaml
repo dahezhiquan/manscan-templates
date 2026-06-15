@@ -1,11 +1,11 @@
 id: vertigis-detect
 
 info:
-  name: VertiGIS - Detect
+  name: VertiGIS 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    VertiGIS products was detected.
+    用于识别目标是否运行 VertiGIS，模板会结合页面标题和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://www.vertigis.com/
   metadata:

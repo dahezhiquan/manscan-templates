@@ -1,7 +1,7 @@
 id: apache-karaf-panel
 
 info:
-  name: Apache Karaf Detect
+  name: Apache Karaf 指纹识别（指纹识别）
   author: s0obi
   severity: info
   classification:

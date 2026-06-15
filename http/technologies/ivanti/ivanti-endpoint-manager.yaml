@@ -1,11 +1,11 @@
 id: ivanti-endpoint-manager
 
 info:
-  name: Ivanti Endpoint Manager - Detect
+  name: Ivanti Endpoint Manager 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |
-    Detects the presence of Ivanti Endpoint Manager (formerly LANDesk Management Suite) servers.
+    用于识别目标是否运行 Ivanti Endpoint Manager，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行服务指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0

@@ -1,11 +1,11 @@
 id: neo4j-neodash-detect
 
 info:
-  name: Neo4j Neodash - Detect
+  name: Neo4j Neodash 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Neo4j Neodash web application, a Dashboard Builder for Neo4j.
+    用于识别目标是否使用 Neo4j Neodash，模板会结合页面标题和特定路径或已知端点进行技术指纹匹配。
   classification:
     cpe: cpe:2.3:a:neo4j:*:*:*:*:*:*:*:*:*
   metadata:

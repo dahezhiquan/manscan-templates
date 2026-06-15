@@ -1,10 +1,10 @@
 id: grav-cms-detect
 
 info:
-  name: Grav CMS Detect
+  name: Grav CMS 指纹识别（指纹识别）
   author: cyllective
   severity: info
-  description: Detects Grav CMS
+  description: 用于识别目标是否使用 Grav CMS，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://github.com/getgrav/grav
   metadata:

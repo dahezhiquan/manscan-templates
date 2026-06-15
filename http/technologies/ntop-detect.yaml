@@ -1,11 +1,10 @@
 id: ntop-detect
 
 info:
-  name: Ntop Detect Panel - Detect
+  name: Ntop 面板指纹识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: |
-    Ntop Detect panel was detected.
+  description: 用于识别目标暴露的 Ntop 面板，模板会结合页面标题、页面正文、状态码和特定路径判断是否存在对应管理界面特征。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

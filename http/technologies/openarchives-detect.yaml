@@ -1,11 +1,11 @@
 id: openarchives-detect
 
 info:
-  name: openarchives - Detection
+  name: openarchives 指纹识别（指纹识别）
   author: ZeroChill
   severity: info
   description: |
-    Detects Open Archives Initiative instance
+    用于识别目标是否使用 openarchives，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://www.openarchives.org/
   metadata:

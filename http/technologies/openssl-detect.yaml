@@ -1,7 +1,7 @@
 id: openssl-detect
 
 info:
-  name: Openssl Detect
+  name: Openssl 指纹识别（指纹识别）
   author: h4kux,princechaddha
   severity: info
   classification:

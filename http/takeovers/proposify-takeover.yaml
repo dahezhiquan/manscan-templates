@@ -1,10 +1,10 @@
 id: proposify-takeover
 
 info:
-  name: proposify takeover detection
+  name: Proposify 页面缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: proposify takeover was detected.
+  description: 检测 Proposify 返回默认支持联系提示的情况，表明目标域名可能仍指向 Proposify 但未绑定有效提案页面，存在被重新配置后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

@@ -1,11 +1,11 @@
 id: cvsweb-detect
 
 info:
-  name: CVSweb - Detect
+  name: CVSweb 指纹识别（指纹识别）
   author: lu4nx
   severity: info
   description: |
-    CVSweb is a WWW interface for CVS repositories with which you can browse a file hierarchy on your browser to view each file's revision history in a very handy manner.
+    用于识别目标是否部署 CVSweb 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://cvsweb.openbsd.org/
   classification:

@@ -1,11 +1,11 @@
 id: semantic-ui-detect
 
 info:
-  name: Semantic UI Framework - Detect
+  name: Semantic UI 框架指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects the presence of Semantic UI, a development framework that helps create beautiful, responsive layouts using human-friendly HTML.
+    用于识别目标前端或应用中是否使用 Semantic UI 框架，模板会结合页面正文和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://semantic-ui.com/
   metadata:

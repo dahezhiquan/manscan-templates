@@ -1,7 +1,7 @@
 id: express-default-page
 
 info:
-  name: Express Default Page
+  name: Express 默认页面指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   metadata:

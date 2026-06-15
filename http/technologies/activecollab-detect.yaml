@@ -1,7 +1,7 @@
 id: activecollab-detect
 
 info:
-  name: activecollab detect
+  name: activecollab 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: lucy-admin-panel
 
 info:
-  name: Lucy Security Admin Panel
+  name: Lucy Security 管理面板指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   metadata:

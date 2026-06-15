@@ -1,11 +1,11 @@
 id: gotweb-detect
 
 info:
-  name: GotWeb Detect
+  name: GotWeb 指纹识别（指纹识别）
   author: lu4nx
   severity: info
   description: |
-    Game of Trees (Got) is a version control system which prioritizes ease of use and simplicity over flexibility.
+    用于识别目标是否部署 GotWeb 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-request: 1

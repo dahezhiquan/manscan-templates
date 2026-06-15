@@ -1,11 +1,11 @@
 id: wuzhicms-detect
 
 info:
-  name: Wuzhicms Detected
+  name: Wuzhicms Detected 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
-  description: Wuzhicms was detected.
-  remediation: Ensure you are using the latest version and that all security patches have been applied.
+  description: 用于识别目标是否部署 Wuzhicms Detected 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  remediation: 建议升级到 Wuzhicms 最新版本，并确认已应用官方发布的所有安全补丁。
   reference:
     - https://www.cvedetails.com/vendor/17848/Wuzhicms.html
   classification:

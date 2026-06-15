@@ -1,11 +1,11 @@
 id: apostrophecms-detect
 
 info:
-  name: ApostropheCMS - Detect
+  name: ApostropheCMS 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detected the presence of ApostropheCMS, a full-stack content management system built on Node.js and MongoDB.
+    用于识别目标是否使用 ApostropheCMS，模板会结合页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://apostrophecms.com/
   metadata:

@@ -1,7 +1,7 @@
 id: wordpress-updraftplus
 
 info:
-  name: UpdraftPlus' WP Backup & Migration Plugin Detection
+  name: UpdraftPlus' WP Backup & Migration Plugin 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

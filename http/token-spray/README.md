@@ -1,19 +1,16 @@
-## About
+## Token 喷洒模版 ☠️
 
-This directory holds templates that have static API URL endpoints. Use these to test an API token against many API service endpoints. By providing token input using flag, Nuclei will test the token against all known API endpoints within the API templates, and return any successful results. By incorporating API checks as Nuclei Templates, users can test API keys that have no context (i.e., API keys that do not indicate for which API endpoint they are meant).
+当你手里拿到一个**来源不明的 token / API key** 时，可以调用此目录下的模版，ManScan 会把这个 token 去请求一批**预置好的静态 API 端点**，看看它对哪些服务有效，从而判断：**这个 token 属于哪个平台、是否可用、权限是否仍然有效**
 
 ## Usage
 
-token-spray are **self-contained** template and does not requires URLs as input as the API endpoints have static URLs predefined in the template. Each template in the `token-spray` directory assumes the input API token/s will be provided using CLI `var` flag.
+通过命令行参数传入 `Token`，然后批量跑这个目录的模版
 
 ```console
-# Running token-spray templates against a single token to test
-nuclei -t token-spray/ -var token=random-token-to-test -esc
+# 单个 Token 测试
+manscan -t token-spray/ -var token=random-token-to-test -esc
 
-# Running token-spray templates against a file containing multiple new line delimited tokens
-nuclei -t token-spray/ -var token=file_with_tokens.txt -esc
+# 批量测试
+manscan -t token-spray/ -var token=file_with_tokens.txt -esc
 ```
 
-## Credits
-
-These API testing templates were inspired by the [streaak/keyhacks](https://github.com/streaak/keyhacks) repository. The Bishop Fox [Continuous Attack Surface Testing (CAST)](https://www.bishopfox.com/continuous-attack-surface-testing/how-cast-works/) team created additional API templates for testing API keys uncovered during investigations. You are welcome to add new templates based on the existing format to cover more APIs.

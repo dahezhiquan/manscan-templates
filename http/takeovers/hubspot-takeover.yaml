@@ -1,10 +1,10 @@
 id: hubspot-takeover
 
 info:
-  name: hubspot takeover detection
+  name: HubSpot 域名未找到接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: hubspot takeover was detected.
+  description: 检测 HubSpot 返回 Domain not found 或系统中不存在该域名的提示，说明目标域名可能仍指向 HubSpot 但未绑定有效门户，存在子域名接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/59
     - https://hackerone.com/reports/335330

@@ -1,7 +1,7 @@
 id: emqx-detect
 
 info:
-  name: Emqx Detection
+  name: EMQX 指纹识别（指纹识别）
   author: For3stCo1d
   severity: info
   metadata:

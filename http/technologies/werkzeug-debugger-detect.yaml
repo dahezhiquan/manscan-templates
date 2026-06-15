@@ -1,7 +1,7 @@
 id: werkzeug-debugger-detect
 
 info:
-  name: Werkzeug debugger console
+  name: Werkzeug debugger console 指纹识别（指纹识别）
   author: pdteam
   severity: info
   metadata:

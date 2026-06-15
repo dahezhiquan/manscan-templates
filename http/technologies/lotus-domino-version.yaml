@@ -1,7 +1,7 @@
 id: lotus-domino-version
 
 info:
-  name: Lotus Domino Version Extractor
+  name: Lotus Domino 版本 Extractor 指纹识别（指纹识别）
   author: CasperGN
   severity: info
   metadata:

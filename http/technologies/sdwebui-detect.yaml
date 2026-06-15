@@ -1,11 +1,11 @@
 id: sdwebui-detect
 
 info:
-  name: Stable Diffusion WebUI - Detect
+  name: Stable Diffusion WebUI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-   Detected AUTOMATIC1111 Stable Diffusion WebUI instance. SD WebUI was the mostpopular open-source interface for Stable Diffusion image generation. Exposed instancesmay allow unauthenticated access to image generation capabilities and model files.
+    用于识别目标暴露的 Stable Diffusion WebUI，模板会结合页面正文判断是否存在对应技术或默认页面特征。
   reference:
     - https://github.com/AUTOMATIC1111/stable-diffusion-webui
   metadata:

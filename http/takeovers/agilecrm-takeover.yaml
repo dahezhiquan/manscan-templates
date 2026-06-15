@@ -1,10 +1,10 @@
 id: agilecrm-takeover
 
 info:
-  name: AgileCRM Takeover Detection
+  name: Agile CRM 未绑定子域名接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: agilecrm subdomain takeover was detected.
+  description: 检测 Agile CRM 自定义域名返回页面不可用提示的情况，说明目标域名可能保留悬空 DNS 配置，可被攻击者在 Agile CRM 中重新绑定后接管。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/145
   metadata:

@@ -1,7 +1,7 @@
 id: cloud-run-default-page
 
 info:
-  name: Google Cloud Run Default Page
+  name: Google Cloud Run 默认页面指纹识别（指纹识别）
   author: dhiyaneshDK
   severity: info
   reference:

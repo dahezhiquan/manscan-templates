@@ -1,7 +1,7 @@
 id: cloudflare-nginx-detect
 
 info:
-  name: Cloudflare Nginx Detect
+  name: Cloudflare Nginx 指纹识别（指纹识别）
   author: idealphase
   severity: info
   reference:

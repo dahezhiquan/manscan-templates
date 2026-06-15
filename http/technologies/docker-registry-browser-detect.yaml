@@ -1,11 +1,11 @@
 id: docker-registry-browser-detect
 
 info:
-  name: Docker Registry Browser - Detect
+  name: Docker Registry Browser 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    Detected the presence of Docker Registry Browser technology based on known paths and characteristic content in the HTTP response.
+    用于识别目标是否使用 Docker Registry Browser，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/klausmeyer/docker-registry-browser
   metadata:

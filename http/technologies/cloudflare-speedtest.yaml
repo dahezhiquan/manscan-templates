@@ -1,11 +1,11 @@
 id: cloudflare-speedtest
 
 info:
-  name: Cloudflare Speedtest - Detect
+  name: Cloudflare Speedtest 指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |
-    Detected the exposed default page of the Cloudflare Speedtest service.
+    用于识别目标暴露的 Cloudflare Speedtest，模板会结合页面正文和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   metadata:
     max-request: 1
     verified: true

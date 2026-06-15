@@ -1,11 +1,11 @@
 id: dell-dpi-panel
 
 info:
-  name: Dell DPI Remote Power Management - Detect
+  name: Dell DPI Remote Power Management 指纹识别（指纹识别）
   author: megamansec
   severity: info
   description: |
-    The Dell Metered Rack Power Distribution Unit distributes power to a server rack and are installed at the rear of a rack enclosure.
+    用于识别目标是否运行 Dell DPI Remote Power Management，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行服务指纹匹配。
   metadata:
     max-request: 1
   tags: tech,dell,dpi,rpm,discovery

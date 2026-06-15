@@ -1,11 +1,11 @@
 id: zk-framework-detect
 
 info:
-  name: ZK Framework - Detect
+  name: ZK 框架指纹识别（指纹识别）
   author: ErikOwen,Cursor
   severity: info
   description: |
-    Detects the presence of ZK JavaFramework and attempts to extract its version.
+    用于识别目标是否部署 ZK 框架 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.zkoss.org/
   classification:

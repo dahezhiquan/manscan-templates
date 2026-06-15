@@ -1,11 +1,11 @@
 id: bugzilla-detect
 
 info:
-  name: Bugzilla - Detect
+  name: Bugzilla 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Bugzilla server, official repository for the Bugzilla bug tracking system.
+    用于识别目标是否部署 Bugzilla 并提取相关版本或构建信息，模板会结合页面标题、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/bugzilla/bugzilla/
   classification:

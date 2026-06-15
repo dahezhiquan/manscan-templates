@@ -1,10 +1,10 @@
 id: bigcartel-takeover
 
 info:
-  name: Bigcartel Takeover Detection
+  name: Big Cartel 未绑定店铺接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Bigcartel takeover was detected.
+  description: 检测 Big Cartel 自定义域名返回找不到页面提示的情况，说明该域名可能未绑定有效店铺，存在被他人注册店铺并接管展示内容的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/158
   metadata:

@@ -1,7 +1,7 @@
 id: ibm-http-server
 
 info:
-  name: Default IBM HTTP Server
+  name: Default IBM HTTP 服务器指纹识别（指纹识别）
   author: dhiyaneshDK,pussycat0x
   severity: info
   classification:

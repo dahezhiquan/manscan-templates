@@ -1,11 +1,11 @@
 id: payloadcms-detect
 
 info:
-  name: PayloadCMS - Detect
+  name: PayloadCMS 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    PayloadCMS panel was detected. PayloadCMS is an open-source, headless CMS and application framework built with Node.js, React, and TypeScript.
+    用于识别目标是否使用 PayloadCMS，模板会结合页面标题、页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://payloadcms.com/
     - https://github.com/payloadcms/payload

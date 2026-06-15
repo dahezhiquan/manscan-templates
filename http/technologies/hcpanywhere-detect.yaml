@@ -1,11 +1,11 @@
 id: hcpanywhere-detect
 
 info:
-  name: HCP Anywhere - Detect
+  name: HCP Anywhere 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    HCP Anywhere was detected.
+    用于识别目标是否使用 HCP Anywhere，模板会结合 favicon 哈希和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://hcpanywhere.hds.com/portal/public/help-complete/en/cp_hcpaw_what_is.html
   metadata:

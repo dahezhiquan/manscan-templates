@@ -1,10 +1,10 @@
 id: netsweeper-webadmin-detect
 
 info:
-  name: Netsweeper WebAdmin - Detect
+  name: Netsweeper WebAdmin 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
-  description: Netsweeper WebAdmin was detected.
+  description: 用于识别目标是否使用 Netsweeper WebAdmin，模板会结合 HTTP 响应头、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,7 +1,7 @@
 id: wordpress-duplicate-post
 
 info:
-  name: Yoast Duplicate Post Detection
+  name: Yoast Duplicate Post 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

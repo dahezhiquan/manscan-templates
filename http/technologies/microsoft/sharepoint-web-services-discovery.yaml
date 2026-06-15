@@ -1,11 +1,11 @@
 id: sharepoint-web-services-discovery
 
 info:
-  name: Microsoft SharePoint - Web Services Discovery
+  name: Microsoft SharePoint - Web 服务 Discovery 指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |
-    Detected exposed SharePoint web services via /_vti_bin/spdisco.aspx endpoint
+    用于识别目标暴露的 Microsoft SharePoint - Web 服务 Discovery，模板会结合页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   metadata:
     max-request: 1
   tags: sharepoint,iis,microsoft,tech,discovery

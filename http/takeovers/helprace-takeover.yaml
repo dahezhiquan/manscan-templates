@@ -1,10 +1,10 @@
 id: helprace-takeover
 
 info:
-  name: Helprace Takeover Detection
+  name: Helprace 域名别名未配置接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Helprace takeover was detected.
+  description: 检测 Helprace 返回 Alias not configured 与管理员需配置域名别名的提示，说明目标域名可能未正确绑定到 HelpRace 账号，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/115
   metadata:

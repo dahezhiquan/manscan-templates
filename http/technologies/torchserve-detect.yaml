@@ -1,11 +1,11 @@
 id: torchserve-detect
 
 info:
-  name: TorchServe API Description - Detect
+  name: TorchServe API Description 指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |
-    Detects the presence of TorchServe APIs.
+    用于识别目标是否使用 TorchServe API Description，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   metadata:
     verified: true
     max-request: 1

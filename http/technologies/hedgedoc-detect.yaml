@@ -1,11 +1,11 @@
 id: hedgedoc-detect
 
 info:
-  name: HedgeDoc Collaborative Editor - Detect
+  name: HedgeDoc Collaborative Editor 指纹识别（指纹识别）
   author: Rupendra0
   severity: info
   description: |
-    HedgeDoc is an open-source, collaborative markdown editor for teams to share and co-edit notes in real time. This template detects publicly reachable HedgeDoc instances by fingerprinting unique branding markers and the dedicated Hedgedoc-Version response header.
+    用于识别目标是否部署 HedgeDoc Collaborative Editor 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://hedgedoc.org
     - https://github.com/hedgedoc/hedgedoc

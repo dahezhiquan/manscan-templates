@@ -1,10 +1,10 @@
 id: secui-waf-detect
 
 info:
-  name: SECUI WAF Panel - Detect
+  name: SECUI WAF 面板指纹识别（指纹识别）
   author: gy741
   severity: info
-  description: SECUI WAF panel was detected.
+  description: 用于识别目标暴露的 SECUI WAF 面板，模板会结合 favicon 哈希和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://www.secui.com/en/network/bluemaxng
   classification:

@@ -1,11 +1,11 @@
 id: imgproxy-detect
 
 info:
-  name: Imgproxy Detect
+  name: Imgproxy 指纹识别（指纹识别）
   author: userdehghani
   severity: info
   description: |
-    imgproxy is a fast and secure standalone server for resizing, processing, and converting images.
+    用于识别目标是否运行 Imgproxy，模板会结合页面正文和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://imgproxy.net/
   classification:

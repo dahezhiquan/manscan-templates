@@ -1,7 +1,7 @@
 id: default-apache-shiro
 
 info:
-  name: Apache Shiro Default Page
+  name: Apache Shiro 默认页面指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   classification:

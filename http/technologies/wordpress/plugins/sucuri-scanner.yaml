@@ -1,7 +1,7 @@
 id: wordpress-sucuri-scanner
 
 info:
-  name: Sucuri Security – Auditing, Malware Scanner and Security Hardening Detection
+  name: Sucuri Security - Auditing, Malware Scanner and Security Hardening 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

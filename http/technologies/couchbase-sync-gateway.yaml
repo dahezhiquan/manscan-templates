@@ -1,7 +1,7 @@
 id: couchbase-sync-gateway
 
 info:
-  name: Couchbase Sync Gateway
+  name: Couchbase Sync 网关指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   classification:

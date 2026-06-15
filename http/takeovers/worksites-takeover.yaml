@@ -1,10 +1,10 @@
 id: worksites-takeover
 
 info:
-  name: Worksites Takeover Detection
+  name: Worksites 站点缺失接管检测（子域名接管）
   author: melbadry9,dogasantos
   severity: high
-  description: Worksites takeover was detected.
+  description: 检测 Worksites.net 固定 IP 与 Company Not Found 等特征，表明目标域名可能指向未绑定公司站点的 Worksites 服务；参考资料显示可在平台中发布站点形成接管。
   reference:
     - https://melbadry9.gitbook.io/blog/dangling-dns/xyz-services/ddns-worksites
   metadata:

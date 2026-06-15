@@ -1,11 +1,11 @@
 id: beyondtrust-remotesupport-version
 
 info:
-  name: BeyondTrust Remote Support Version - Detect
+  name: BeyondTrust Remote Support 版本指纹识别（指纹识别）
   author: missing0x00
   severity: info
   description: |
-    Detects and extracts version information from BeyondTrust Remote Support installations by querying the /get_rdf endpoint.
+    用于识别目标是否部署 BeyondTrust Remote Support 版本 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:beyondtrust:remote_support:*:*:*:*:*:*:*:*
   metadata:

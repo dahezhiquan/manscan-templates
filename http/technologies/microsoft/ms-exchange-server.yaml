@@ -1,10 +1,10 @@
 id: ms-exchange-server
 
 info:
-  name: Microsoft Exchange Server Detect
+  name: Microsoft Exchange 服务器指纹识别（指纹识别）
   author: pikpikcu,dhiyaneshDK
   severity: info
-  description: Check for presence of Exchange Server using Outlook Web App path data.
+  description: 用于识别目标是否部署 Microsoft Exchange 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/GossiTheDog/scanning/blob/main/http-vuln-exchange.nse
   metadata:

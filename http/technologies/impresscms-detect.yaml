@@ -1,7 +1,7 @@
 id: impresscms-detect
 
 info:
-  name: ImpressCMS Detect
+  name: ImpressCMS 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

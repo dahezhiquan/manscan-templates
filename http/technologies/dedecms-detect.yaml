@@ -1,7 +1,7 @@
 id: dedecms-detect
 
 info:
-  name: DedeCMS Detect
+  name: DedeCMS 指纹识别（指纹识别）
   author: ritikchaddha,pphuahua
   severity: info
   classification:

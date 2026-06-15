@@ -1,11 +1,11 @@
 id: apache-shenyu-detect
 
 info:
-  name: Apache Shenyu Gateway Management System - Detect
+  name: Apache Shenyu 网关 管理系统指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Shenyu Gateway Management System, a Java native API Gateway for service proxy, protocol conversion and API governance.
+    用于识别目标是否部署 Apache Shenyu 网关 管理系统 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     vendor: apache

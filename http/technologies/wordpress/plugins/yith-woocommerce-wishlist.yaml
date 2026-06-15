@@ -1,7 +1,7 @@
 id: wordpress-yith-woocommerce-wishlist
 
 info:
-  name: YITH WooCommerce Wishlist Detection
+  name: YITH WooCommerce Wishlist 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

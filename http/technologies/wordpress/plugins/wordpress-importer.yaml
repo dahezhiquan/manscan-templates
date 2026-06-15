@@ -1,7 +1,7 @@
 id: wordpress-wordpress-importer
 
 info:
-  name: WordPress Importer Detection
+  name: WordPress Importer 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: herokuapp-detect
 
 info:
-  name: Detect websites using Herokuapp endpoints
+  name: Herokuapp endpoints 指纹识别（指纹识别）
   author: alifathi-h1,righettod
   severity: info
-  description: Detected endpoints might be vulnerable to subdomain takeover or disclose sensitive info
+  description: 用于识别目标是否部署 Herokuapp endpoints 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: heroku,tech,discovery

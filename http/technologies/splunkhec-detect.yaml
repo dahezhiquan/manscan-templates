@@ -1,11 +1,11 @@
 id: splunk-hec-detect
 
 info:
-  name: Splunk HEC - Detect
+  name: Splunk HEC 指纹识别（指纹识别）
   author: idealphase
   severity: info
   description: |
-    Splunk HCE (HTTP Event Collector (HEC)) was detected.
+    用于识别目标是否使用 Splunk HEC，模板会结合特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://dev.splunk.com/enterprise/docs/devtools/httpeventcollector/
     - https://community.splunk.com/t5/Getting-Data-In/How-to-check-if-an-HEC-is-up-or-not-before-posting-any-data-to/td-p/417404

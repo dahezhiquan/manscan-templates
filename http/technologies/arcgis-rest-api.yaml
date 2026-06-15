@@ -1,10 +1,10 @@
 id: arcgis-rest-api
 
 info:
-  name: ArcGIS Exposed REST API documentation
+  name: ArcGIS Exposed REST API 文档指纹识别（指纹识别）
   author: Podalirius
   severity: info
-  description: ArcGIS REST API documentation was discovered.
+  description: 用于识别目标暴露的 ArcGIS Exposed REST API 文档，模板会结合状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://enterprise.arcgis.com/en/
   classification:

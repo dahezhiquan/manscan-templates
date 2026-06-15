@@ -1,11 +1,11 @@
 id: weaviate-console-detect
 
 info:
-  name: Weaviate Console - Detect
+  name: Weaviate 控制台指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detected Weaviate Console interface. Weaviate was open-source vector database that stores data objects and vector embeddings for AI applications.
+    用于识别目标暴露的 Weaviate 控制台，模板会结合页面标题和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://weaviate.io/
     - https://github.com/weaviate/weaviate

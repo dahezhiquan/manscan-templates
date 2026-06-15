@@ -1,6 +1,6 @@
 id: graphql-tartiflette-detect
 info:
-  name: Graphql Tartiflette Detect
+  name: Graphql Tartiflette 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

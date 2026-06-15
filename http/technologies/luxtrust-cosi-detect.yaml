@@ -1,11 +1,11 @@
 id: luxtrust-cosi-detect
 
 info:
-  name: LuxTrust COSI - Detect
+  name: LuxTrust COSI 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-     LuxTrust COSI was detected.
+    用于识别目标是否使用 LuxTrust COSI，模板会结合特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://luxtrust.com/en/professionals/our-digital-solutions/sign-electronically
   metadata:

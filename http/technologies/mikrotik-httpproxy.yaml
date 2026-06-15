@@ -1,7 +1,7 @@
 id: mikrotik-httpproxy
 
 info:
-  name: MikroTik httpproxy
+  name: MikroTik httpproxy 指纹识别（指纹识别）
   author: its0x08,DhiyaneshDk
   severity: info
   classification:

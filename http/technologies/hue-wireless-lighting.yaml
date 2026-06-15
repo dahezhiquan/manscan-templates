@@ -1,11 +1,11 @@
 id: hue-wireless-lighting
 
 info:
-  name: Hue Personal Wireless Lighting - Detect
+  name: Hue Personal Wireless Lighting 指纹识别（指纹识别）
   author: ProjectDiscoveryAI
   severity: info
   description: |
-    This template detects the presence of Hue Personal Wireless Lighting systems by looking for specific welcome messages in the response.
+    用于识别目标是否使用 Hue Personal Wireless Lighting，模板会结合页面标题和特定路径或已知端点进行技术指纹匹配。
   metadata:
     verified: true
     max-request: 1

@@ -1,10 +1,10 @@
 id: anima-takeover
 
 info:
-  name: Anima Takeover Detection
+  name: Anima 未绑定站点接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Anima takeover was detected.
+  description: 检测 Anima 站点返回新建网站尚未就绪提示的情况，表明目标域名可能指向未被有效绑定的 Anima 项目，存在子域名接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/126
   metadata:

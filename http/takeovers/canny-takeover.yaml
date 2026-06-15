@@ -1,10 +1,10 @@
 id: canny-takeover
 
 info:
-  name: Canny Takeover Detection
+  name: Canny 公司空间缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Canny takeover was detected.
+  description: 检测 Canny 返回公司不存在提示的情况，表明目标域名可能仍解析到 Canny 但未关联有效公司空间，存在被重新创建组织后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/114
   metadata:

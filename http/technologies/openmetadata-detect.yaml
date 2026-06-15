@@ -1,11 +1,11 @@
 id: openmetadata-detect
 
 info:
-  name: OpenMetadata - Detect
+  name: OpenMetadata 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a OpenMetadata server, a unified metadata platform for data discovery, data observability, and data governance powered by a central metadata repository, in-depth column level lineage, and seamless team collaboration.
+    用于识别目标是否运行 OpenMetadata，模板会结合页面标题、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/open-metadata/OpenMetadata
   classification:

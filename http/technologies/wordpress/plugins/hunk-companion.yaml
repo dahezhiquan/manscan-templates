@@ -1,7 +1,7 @@
 id: wordpress-hunk-companion
 
 info:
-  name: Hunk Companion Detection
+  name: Hunk Companion 指纹识别（指纹识别）
   author: invisiblethreat
   severity: info
   reference:

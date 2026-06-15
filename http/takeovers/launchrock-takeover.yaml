@@ -1,10 +1,10 @@
 id: launchrock-takeover
 
 info:
-  name: Launchrock Takeover Detection
+  name: LaunchRock 页面缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Launchrock takeover was detected.
+  description: 检测 LaunchRock 返回默认错误页提示的情况，表明目标域名可能仍指向 LaunchRock 但未绑定有效启动页，存在被重新创建并接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/74
   metadata:

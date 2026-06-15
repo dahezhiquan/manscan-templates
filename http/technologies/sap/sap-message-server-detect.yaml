@@ -1,11 +1,11 @@
 id: sap-message-server-detect
 
 info:
-  name: SAP Message Server HTTP - Detect
+  name: SAP Message 服务器 HTTP 指纹识别（指纹识别）
   author: LRVT,l4rm4nd
   severity: info
   description: |
-    Detected SAP Message Server by sending an HTTP request to the root path and checking for SAP Message Server header.
+    用于识别目标是否部署 SAP Message 服务器 HTTP 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     shodan-query: http.html:SAP Message Server

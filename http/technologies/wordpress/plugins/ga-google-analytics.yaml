@@ -1,7 +1,7 @@
 id: wordpress-ga-google-analytics
 
 info:
-  name: GA Google Analytics – Connect Google Analytics to WordPress Detection
+  name: GA Google Analytics - Connect Google Analytics to WordPress 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

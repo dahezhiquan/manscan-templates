@@ -1,11 +1,11 @@
 id: atlassian-connect-descriptor
 
 info:
-  name: Atlassian Connect Descriptor - Detect
+  name: Atlassian Connect Descriptor 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    The app descriptor is a JSON file ( atlassian-connect. json ) that describes the app to the Atlassian application. The descriptor includes general information for the app, as well as the modules that the app wants to use or extend.
+    用于识别目标是否使用 Atlassian Connect Descriptor，模板会结合 HTTP 响应头、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://developer.atlassian.com/cloud/jira/platform/connect-app-descriptor/
   metadata:

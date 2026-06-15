@@ -1,7 +1,7 @@
 id: kingsoft-webserver-detect
 
 info:
-  name: Kingsoft Web Server Detect
+  name: Kingsoft Web 服务器指纹识别（指纹识别）
   author: princechaddha
   severity: info
   metadata:

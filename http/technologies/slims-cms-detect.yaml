@@ -1,10 +1,10 @@
 id: slims-cms-detect
 
 info:
-  name: Slims CMS - Detect
+  name: Slims CMS 指纹识别（指纹识别）
   author: nblirwn
   severity: info
-  description: Detects Senayan Library Management System (SLiMS) CMS
+  description: 用于识别目标是否使用 Slims CMS，模板会结合页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://github.com/slims
   metadata:

@@ -1,10 +1,10 @@
 id: elasticsearch-sql-client-detect
 
 info:
-  name: Elasticsearch - SQL Client Detection
+  name: Elasticsearch - SQL Client 指纹识别（指纹识别）
   author: pussycat0x
   severity: low
-  description: Elasticsearch detected SQL client.
+  description: 用于识别目标是否使用 Elasticsearch - SQL Client，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   classification:
     cpe: cpe:2.3:a:elastic:elasticsearch:*:*:*:*:*:*:*:*
   metadata:

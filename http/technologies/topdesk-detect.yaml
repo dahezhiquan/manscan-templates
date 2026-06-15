@@ -1,11 +1,11 @@
 id: topdesk-detect
 
 info:
-  name: TOPdesk - Detect
+  name: TOPdesk 指纹识别（指纹识别）
   author: darses
   severity: info
   description: |
-    Detects the use of TOPdesk, a web-based IT service management (ITSM) and helpdesk platform. Identification is based on unique page titles, HTML patterns.
+    用于识别目标是否部署 TOPdesk 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-requests: 1

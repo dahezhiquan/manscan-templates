@@ -1,11 +1,11 @@
 id: honeypot-detect
 
 info:
-  name: Honeypot Detection
+  name: Honeypot 指纹识别（指纹识别）
   author: j4vaovo
   severity: info
   description: |
-    Honeypot was Detected.
+    用于识别目标是否使用 Honeypot，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/zema1/yarx
   metadata:

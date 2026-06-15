@@ -1,11 +1,11 @@
 id: limesurvey-detect
 
 info:
-  name: LimeSurvey Survey Software - Detect
+  name: LimeSurvey Survey Software 指纹识别（指纹识别）
   author: Matt Galligan
   severity: info
   description: |
-    Limesurvey is the number one open-source survey software. Advanced features like branching and multiple question types make it a valuable partner for survey-creation.
+    用于识别目标是否使用 LimeSurvey Survey Software，模板会结合 favicon 哈希、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/LimeSurvey/LimeSurvey
   classification:

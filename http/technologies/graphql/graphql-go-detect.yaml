@@ -1,6 +1,6 @@
 id: graphql-go-detect
 info:
-  name: Graphql Go Detect
+  name: Graphql Go 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: nvidia-triton-detect
 
 info:
-  name: Triton Inference Server - Detect
+  name: Triton Inference 服务器指纹识别（指纹识别）
   author: mailler0xa
   severity: info
   description: |
-    Detected the NVIDIA Triton Inference Server, an open-source platform for serving AI/ML models. It supported multiple frameworks and exposed HTTP/gRPC endpoints for high-performance inferencing.
+    用于识别目标是否部署 Triton Inference 服务器 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/triton-inference-server/server
   metadata:

@@ -1,10 +1,10 @@
 id: teamwork-takeover
 
 info:
-  name: Teamwork Takeover Detection
+  name: Teamwork 站点缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Teamwork takeover was detected.
+  description: 检测 Teamwork 返回未找到站点提示的情况，说明目标子域名可能仍指向 Teamwork 但未绑定有效站点或账号，存在被重新配置后接管的风险。
   metadata:
     max-request: 1
   tags: takeover,teamwork,vuln

@@ -1,11 +1,11 @@
 id: rustfs-detect
 
 info:
-  name: Rustfs - Detect
+  name: Rustfs 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Rustfs server, a high-performance, distributed object storage system built in Rust.
+    用于识别目标是否运行 Rustfs，模板会结合页面标题、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/rustfs/rustfs
   classification:

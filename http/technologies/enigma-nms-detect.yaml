@@ -1,7 +1,7 @@
 id: enigma-nms-detect
 
 info:
-  name: Enigma NMS - Detection
+  name: Enigma NMS 指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   reference:

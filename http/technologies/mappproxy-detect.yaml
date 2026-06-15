@@ -1,11 +1,11 @@
 id: mappproxy-detect
 
 info:
-  name: Mapproxy - Detect
+  name: Mapproxy 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
   description: |
-    Checks for a running MapProxy instance and obtain version number. Also checks if the demo page is enabled. MapProxy is an open source proxy for geospatial data. It caches, accelerates and transforms data from existing map services and serves any desktop or web GIS client.
+    用于识别目标是否部署 Mapproxy 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/mapproxy/mapproxy
     - https://mapproxy.org

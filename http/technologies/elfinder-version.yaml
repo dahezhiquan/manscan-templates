@@ -1,11 +1,11 @@
 id: elfinder-version
 
 info:
-  name: elFinder 2.1.58 - Remote Code Execution
+  name: elFinder 2.1.58 远程代码执行特征指纹识别（指纹识别）
   author: idealphase
   severity: critical
-  description: elFinder 2.1.58 is vulnerable to remote code execution. This can allow an attacker to execute arbitrary code and commands on the server hosting the elFinder PHP connector, even with minimal configuration.
-  remediation: The issues were patched in version 2.1.59. As a workaround, ensure the connector is not exposed without authentication.
+  description: 用于识别目标是否部署 elFinder 2.1.58 远程代码执行特征 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  remediation: 建议升级到 elFinder 2.1.59 或更高版本；如暂无法升级，应确保 connector 不对未认证用户暴露。
   reference:
     - https://github.com/Studio-42/elFinder/
   classification:

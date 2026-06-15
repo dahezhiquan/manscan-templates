@@ -1,7 +1,7 @@
 id: elastic-beanstalk-detect
 
 info:
-  name: AWS Elastic Beanstalk Detect
+  name: AWS Elastic Beanstalk 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   metadata:

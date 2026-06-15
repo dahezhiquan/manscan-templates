@@ -1,7 +1,7 @@
 id: gohire-takeover
 
 info:
-  name: GoHire Takeover Detection
+  name: GoHire 招聘页面缺失接管检测（子域名接管）
   author: philippedelteil
   severity: high
   reference:

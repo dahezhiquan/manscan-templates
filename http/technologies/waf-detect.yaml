@@ -1,10 +1,10 @@
 id: waf-detect
 
 info:
-  name: WAF Detection
+  name: WAF 指纹识别（指纹识别）
   author: dwisiswant0,lu4nx
   severity: info
-  description: A web application firewall was detected.
+  description: 用于识别目标是否运行 WAF，模板会结合 HTTP 响应头、页面标题和页面正文进行服务指纹匹配。
   reference:
     - https://github.com/Ekultek/WhatWaf
   classification:

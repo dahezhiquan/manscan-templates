@@ -1,7 +1,7 @@
 id: vmware-horizon-version
 
 info:
-  name: Vmware Horizon Version Detect
+  name: Vmware Horizon 版本指纹识别（指纹识别）
   author: veshraj
   severity: info
   classification:

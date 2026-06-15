@@ -1,7 +1,7 @@
 id: utility-service-detect
 
 info:
-  name: Utility Services Administration - Detect
+  name: Utility 服务 Administration 指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   classification:

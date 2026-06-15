@@ -1,11 +1,11 @@
 id: sharepoint-lists-api-disclosure
 
 info:
-  name: Microsoft SharePoint - List API Disclosure
+  name: Microsoft SharePoint - List API Disclosure 指纹识别（指纹识别）
   author: theamanrawat
   severity: low
   description: |
-    Detected exposed SharePoint lists-api endpoint without proper authentication, exposing site content and metadata.
+    用于识别目标暴露的 Microsoft SharePoint - List API Disclosure，模板会结合页面标题和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://learn.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-lists-and-list-items-with-rest
   metadata:

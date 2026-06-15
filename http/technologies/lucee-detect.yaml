@@ -1,10 +1,10 @@
 id: lucee-detect
 
 info:
-  name: Detect Lucee
+  name: Lucee 指纹识别（指纹识别）
   author: geeknik,DhiyaneshDK
   severity: info
-  description: Lucee Server is a dynamic, Java based (JSR-223), tag and scripting language used for rapid web application development -- https://github.com/lucee/Lucee/
+  description: 用于识别目标是否部署 Lucee 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 2
     shodan-query: "html:\"Lucee\""

@@ -1,10 +1,10 @@
 id: surveysparrow-takeover
 
 info:
-  name: SurveySparrow takeover detection
+  name: SurveySparrow 账号缺失接管检测（子域名接管）
   author: philippedelteil
   severity: high
-  description: SurveySparrow takeover was detected.
+  description: 检测 SurveySparrow 返回账号不存在并带有产品标识的错误页面，说明目标域名可能仍指向 SurveySparrow 但未绑定有效账号，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/281
   metadata:

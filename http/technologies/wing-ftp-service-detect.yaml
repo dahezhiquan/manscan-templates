@@ -1,11 +1,11 @@
 id: wing-ftp-service-detect
 
 info:
-  name: Wing FTP Service - Detect
+  name: Wing FTP 服务指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |
-    The File Transfer Protocol (FTP) is a standard network protocol used to transfer computer files between a client and server on a computer network.
+    用于识别目标是否运行 Wing FTP 服务，模板会结合 HTTP 响应头和特定路径或已知端点进行服务指纹匹配。
   classification:
     cpe: cpe:2.3:a:wftpserver:wing_ftp_server:*:*:*:*:*:*:*:*
   metadata:

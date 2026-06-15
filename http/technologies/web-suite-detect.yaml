@@ -1,7 +1,7 @@
 id: web-suite-detect
 
 info:
-  name: Web Suite Detect
+  name: Web Suite 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

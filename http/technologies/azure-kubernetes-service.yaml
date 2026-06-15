@@ -1,7 +1,7 @@
 id: azure-kubernetes-service
 
 info:
-  name: Detect Azure Kubernetes Service
+  name: Azure Kubernetes 服务指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   metadata:

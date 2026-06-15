@@ -1,11 +1,11 @@
 id: dizquetv-detect
 
 info:
-  name: dizqueTV - Detect
+  name: dizqueTV 指纹识别（指纹识别）
   author: s4e-io
   severity: info
   description: |
-    An instance running dizqueTV was detected.
+    用于识别目标是否使用 dizqueTV，模板会结合 favicon 哈希、页面标题和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/vexorian/dizquetv
   metadata:

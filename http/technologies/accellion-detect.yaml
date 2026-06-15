@@ -1,11 +1,11 @@
 id: accellion-detect
 
 info:
-  name: Accellion - Detect
+  name: Accellion 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Dectection of Accellion File Transfer Appliance.
+    用于识别目标是否使用 Accellion，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     verified: true
     max-request: 1

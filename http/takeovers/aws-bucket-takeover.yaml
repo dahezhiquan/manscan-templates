@@ -1,9 +1,9 @@
 id: aws-bucket-takeover
 info:
-  name: AWS Bucket Takeover Detection
+  name: AWS S3 存储桶未创建接管检测（子域名接管）
   author: pdteam,pwnhxl,zy9ard3,venjaku
   severity: high
-  description: AWS Bucket takeover was detected.
+  description: 检测对象存储返回存储桶不存在且响应中包含 BucketName 的情况，表明目标自定义域名可能指向未创建的 AWS S3 存储桶，攻击者可尝试创建同名桶接管内容。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/36
   metadata:

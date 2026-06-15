@@ -1,10 +1,10 @@
 id: pagewiz-takeover
 
 info:
-  name: Pagewiz subdomain takeover
+  name: Pagewiz 着陆页缺失接管检测（子域名接管）
   author: brabbit10
   severity: high
-  description: Pagewiz takeover was detected.
+  description: 检测 Pagewiz 返回页面未找到且包含新建着陆页引导的提示，说明目标域名可能未绑定有效 Pagewiz 页面，存在被重新创建后接管的风险。
   reference:
     - https://help.pagewiz.com/hc/en-us/articles/115005391465-Page-URL
   metadata:

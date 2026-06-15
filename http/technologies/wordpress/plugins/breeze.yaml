@@ -1,7 +1,7 @@
 id: wordpress-breeze
 
 info:
-  name: Breeze – WordPress Cache Plugin Detection
+  name: Breeze - WordPress Cache Plugin 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: wordpress-health-check
 
 info:
-  name: Health Check & Troubleshooting Detection
+  name: Health Check & Troubleshooting 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

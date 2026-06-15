@@ -1,11 +1,11 @@
 id: confluence-detect
 
 info:
-  name: Confluence Detection
+  name: Confluence 指纹识别（指纹识别）
   author: philippedelteil,AdamCrosser,6mile
   severity: info
   description: |
-    This nuclei template is used to detect the presence of Confluence, a popular collaboration software.
+    用于识别目标是否部署 Confluence 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:atlassian:confluence_server:*:*:*:*:*:*:*:*
   metadata:

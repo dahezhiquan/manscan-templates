@@ -1,7 +1,7 @@
 id: akamai-detect
 
 info:
-  name: akamai cdn detection
+  name: akamai cdn 指纹识别（指纹识别）
   author: pdteam
   severity: info
   reference:

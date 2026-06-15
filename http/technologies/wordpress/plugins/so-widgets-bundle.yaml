@@ -1,7 +1,7 @@
 id: wordpress-so-widgets-bundle
 
 info:
-  name: SiteOrigin Widgets Bundle Detection
+  name: SiteOrigin Widgets Bundle 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

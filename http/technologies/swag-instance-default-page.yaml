@@ -1,10 +1,10 @@
 id: swag-instance-default-page
 
 info:
-  name: Swag Instance Default Page Panel - Detect
+  name: Swag 实例 默认页面 面板指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
-  description: Swag Instance Default Page panel was detected.
+  description: 用于识别目标暴露的 Swag 实例 默认页面 面板，模板会结合 HTTP 响应头、页面标题、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

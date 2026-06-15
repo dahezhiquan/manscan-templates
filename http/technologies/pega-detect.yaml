@@ -1,7 +1,7 @@
 id: pega-detect
 
 info:
-  name: Pega Infinity Detection
+  name: Pega Infinity 指纹识别（指纹识别）
   author: sshell
   severity: info
   metadata:

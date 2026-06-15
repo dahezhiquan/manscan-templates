@@ -1,11 +1,11 @@
 id: tibco-spotfire-services-detect
 
 info:
-  name: TIBCO Spotfire Statistics Services - Detect
+  name: TIBCO Spotfire Statistics 服务指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    TIBCO Spotfire Statistics Services was detected.
+    用于识别目标是否部署 TIBCO Spotfire Statistics 服务 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://docs.tibco.com/products/tibco-spotfire-statistics-services
   classification:

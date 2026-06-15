@@ -1,7 +1,7 @@
 id: cockpit-detect
 
 info:
-  name: Detect Agentejo Cockpit
+  name: Agentejo Cockpit 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   metadata:

@@ -1,7 +1,7 @@
 id: drupal-detect
 
 info:
-  name: Drupal - Detect
+  name: Drupal 指纹识别（指纹识别）
   author: 1nf1n7y,pathtaga
   severity: info
   classification:

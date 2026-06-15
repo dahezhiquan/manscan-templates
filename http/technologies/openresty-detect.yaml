@@ -1,10 +1,10 @@
 id: openresty-detect
 
 info:
-  name: OpenResty detection
+  name: OpenResty 指纹识别（指纹识别）
   author: jcockhren
   severity: info
-  description: Some deployments of OpenResty spill their version numbers.
+  description: 用于识别目标是否部署 OpenResty 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     shodan-query: product:"OpenResty"

@@ -1,7 +1,7 @@
 id: wordpress-user-role-editor
 
 info:
-  name: User Role Editor Detection
+  name: User Role Editor 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

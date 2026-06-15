@@ -1,10 +1,10 @@
 id: yeswiki-detect
 
 info:
-  name: YesWiki Panel - Detect
+  name: YesWiki 面板指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
-  description: YesWiki panel was detected.
+  description: 用于识别目标暴露的 YesWiki 面板，模板会结合页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,7 +1,7 @@
 id: wordpress-hostinger
 
 info:
-  name: Hostinger Tools Detection
+  name: Hostinger Tools 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

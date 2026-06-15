@@ -1,7 +1,7 @@
 id: wordpress-backwpup
 
 info:
-  name: BackWPup – WordPress Backup & Restore Plugin Detection
+  name: BackWPup - WordPress Backup & Restore Plugin 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

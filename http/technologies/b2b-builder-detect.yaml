@@ -1,7 +1,7 @@
 id: b2b-builder-detect
 
 info:
-  name: B2BBuilder Detect
+  name: B2BBuilder 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   classification:

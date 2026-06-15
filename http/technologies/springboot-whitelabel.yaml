@@ -1,7 +1,7 @@
 id: springboot-whitelabel
 
 info:
-  name: SpringBoot WhiteLabel Error Page - Detect
+  name: SpringBoot WhiteLabel 错误页指纹识别（指纹识别）
   author: Matt Miller
   severity: info
   reference:

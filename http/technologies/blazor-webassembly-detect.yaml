@@ -1,11 +1,11 @@
 id: blazor-webassembly-detect
 
 info:
-  name: Blazor WebAssembly - Detect
+  name: Blazor WebAssembly 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    Blazor WebAssembly application was detected.
+    用于识别目标是否部署 Blazor WebAssembly 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor
     - https://github.com/righettod/burp-piper-custom-scripts/issues/1

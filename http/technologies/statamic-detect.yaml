@@ -1,11 +1,11 @@
 id: statamic-detect
 
 info:
-  name: Statamic - Detect
+  name: Statamic 指纹识别（指纹识别）
   author: geeknik
   severity: info
   description: |
-    Statamic is the flat-first, Laravel + Git powered CMS designed for building beautiful, easy to manage websites.
+    用于识别目标是否使用 Statamic，模板会结合 HTTP 响应头和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://github.com/statamic/cms
   classification:

@@ -1,7 +1,7 @@
 id: magmi-detect
 
 info:
-  name: MAGMI (Magento Mass Importer) Plugin Detect
+  name: MAGMI (Magento Mass Importer) Plugin 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   classification:

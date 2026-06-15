@@ -1,10 +1,10 @@
 id: mashery-takeover
 
 info:
-  name: mashery takeover detection
+  name: Mashery 未识别域名接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: mashery takeover was detected.
+  description: 检测 Mashery 返回未识别域名提示的情况，表明目标子域名可能仍指向 Mashery 平台但未绑定有效 API 门户，存在重新配置接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/14
   metadata:

@@ -1,7 +1,7 @@
 id: bigip-config-utility
 
 info:
-  name: BIG-IP Configuration Utility detected
+  name: BIG-IP 配置工具指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   metadata:

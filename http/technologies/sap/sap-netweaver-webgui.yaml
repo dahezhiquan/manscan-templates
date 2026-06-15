@@ -1,10 +1,10 @@
 id: sap-netweaver-webgui
 
 info:
-  name: SAP NetWeaver WebGUI Detection
+  name: SAP NetWeaver WebGUI 指纹识别（指纹识别）
   author: randomstr1ng
   severity: info
-  description: Detection of SAP NetWeaver ABAP Webserver WebGUI
+  description: 用于识别目标是否运行 SAP NetWeaver WebGUI，模板会结合页面标题、页面正文和特定路径或已知端点进行服务指纹匹配。
   metadata:
     max-request: 1
   tags: sap,webserver,tech,discovery

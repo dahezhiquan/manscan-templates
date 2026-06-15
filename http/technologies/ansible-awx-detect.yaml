@@ -1,10 +1,10 @@
 id: ansible-awx-detect
 
 info:
-  name: Ansible AWX Detection
+  name: Ansible AWX 指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
-  description: Detects Ansible AWX Instance
+  description: 用于识别目标是否使用 Ansible AWX，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/ansible/awx
   metadata:

@@ -1,7 +1,7 @@
 id: empirecms-detect
 
 info:
-  name: EmpireCMS Detect
+  name: EmpireCMS 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   classification:

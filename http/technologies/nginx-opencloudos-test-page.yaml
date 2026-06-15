@@ -1,11 +1,11 @@
 id: nginx-opencloudos-test-page
 
 info:
-  name: Nginx Test Page for OpenCloudOS
+  name: Nginx 测试页面 for OpenCloudOS 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    OpenCloudOS test page was discovered.
+    用于识别目标是否使用 Nginx 测试页面 for OpenCloudOS，模板会结合页面标题和特定路径或已知端点进行技术指纹匹配。
   metadata:
     verified: true
     shodan-query: http.title:"OpenCloudOS"

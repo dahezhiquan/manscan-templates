@@ -1,11 +1,11 @@
 id: ivanti-epm-detect
 
 info:
-  name: Ivanti Endpoint Manager (EPM) - Detect
+  name: Ivanti Endpoint Manager (EPM) 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    An Ivanti Endpoint Manager was detected.
+    用于识别目标是否使用 Ivanti Endpoint Manager (EPM)，模板会结合 favicon 哈希和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://www.ivanti.com/en-gb/products/endpoint-manager
   metadata:

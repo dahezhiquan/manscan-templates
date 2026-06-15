@@ -1,11 +1,10 @@
 id: nexus-detect
 
 info:
-  name: Nexus Repository Manager (NRM) Instance Detection Template
+  name: Nexus Repository Manager (NRM) 实例指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    Try to detect the presence of a NRM instance via the REST API OpenDocument descriptor.
+  description: 用于识别目标是否部署 Nexus Repository Manager (NRM) 实例，模板会结合页面正文、状态码和特定路径进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:sonatype:nexus_repository_manager:*:*:*:*:*:*:*:*
   metadata:

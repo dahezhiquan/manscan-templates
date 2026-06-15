@@ -1,7 +1,7 @@
 id: wordpress-better-wp-security
 
 info:
-  name: Solid Security – Password, Two Factor Authentication, and Brute Force Protection Detection
+  name: Solid Security - Password, Two Factor Authentication, and Brute Force 防护指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

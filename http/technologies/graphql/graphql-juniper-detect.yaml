@@ -1,6 +1,6 @@
 id: graphql-juniper-detect
 info:
-  name: Graphql Juniper Detect
+  name: Graphql Juniper 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

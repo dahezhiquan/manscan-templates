@@ -1,7 +1,7 @@
 id: default-plesk-page
 
 info:
-  name: Plesk Default Test Page
+  name: Plesk 默认测试页面指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   classification:

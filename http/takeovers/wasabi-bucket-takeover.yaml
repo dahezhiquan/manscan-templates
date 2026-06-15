@@ -1,11 +1,11 @@
 id: wasabi-bucket-takeover
 
 info:
-  name: wasabi Bucket Takeover - Detection
+  name: Wasabi 存储桶未创建接管检测（子域名接管）
   author: philippedelteil
   severity: high
   description: |
-    wasabi Bucket takeover was detected.
+    检测 Wasabi 对象存储返回存储桶不存在且包含 BucketName 的情况，说明目标域名可能指向未创建的 Wasabi 存储桶，存在被创建同名桶后接管内容的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/417
   metadata:

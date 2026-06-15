@@ -1,11 +1,11 @@
 id: teccom-openmessaging-detect
 
 info:
-  name: TecConnect OpenMessaging Webservice Detection
+  name: TecConnect OpenMessaging Webservice 指纹识别（指纹识别）
   author: lunarcowboy
   severity: info
   description: |
-    TecCom TecConnect OpenMessaging webservice was detected.
+    用于识别目标是否使用 TecConnect OpenMessaging Webservice，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     verified: true
     shodan-query: html:"www.teccom-eu.net/wsdl"

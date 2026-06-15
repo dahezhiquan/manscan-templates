@@ -1,11 +1,11 @@
 id: uni-gui-framework
 
 info:
-  name: UniGUI Framework - Detect
+  name: UniGUI 框架指纹识别（指纹识别）
   author: serrapa
   severity: info
   description: |
-    Checks for the presence of UniGUI framework and extracts its version along with the Sencha Ext JS version.
+    用于识别目标是否部署 UniGUI 框架 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-request: 1

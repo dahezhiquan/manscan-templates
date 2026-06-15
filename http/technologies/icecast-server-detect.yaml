@@ -1,7 +1,7 @@
 id: icecast-server-detect
 
 info:
-  name: Icecast Streaming Media Server Detection
+  name: Icecast Streaming Media 服务器指纹识别（指纹识别）
   author: theamanrawat
   severity: info
   classification:

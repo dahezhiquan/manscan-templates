@@ -1,7 +1,7 @@
 id: wordpress-woocommerce-legacy-rest-api
 
 info:
-  name: WooCommerce Legacy REST API Detection
+  name: WooCommerce Legacy REST API 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: sprintful-takeover
 
 info:
-  name: Sprintful Takeover
+  name: Sprintful 日历账号停用接管检测（子域名接管）
   author: Mhdsamx
   severity: high
-  description: Sprintful takeover was detected.
+  description: 检测 Sprintful 返回日历账号停用、域名未配置默认页面等提示的情况，说明目标域名可能仍指向 Sprintful 但未关联有效日程页面，存在接管风险。
   metadata:
     max-request: 1
   tags: takeover,sprintful,vuln

@@ -1,10 +1,10 @@
 id: tilda-takeover
 
 info:
-  name: tilda takeover detection
+  name: Tilda 域名未配置接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Tilda takeover was detected.
+  description: 检测 Tilda 返回需要在站点设置中配置域名或订阅需续费的提示，说明目标域名可能仍指向 Tilda 但未绑定有效站点，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/155
   metadata:

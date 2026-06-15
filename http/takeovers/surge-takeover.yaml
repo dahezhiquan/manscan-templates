@@ -1,10 +1,10 @@
 id: surge-takeover
 
 info:
-  name: surge takeover detection
+  name: Surge 项目缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: surge takeover was detected.
+  description: 检测 Surge 返回 project not found 且状态码匹配的情况，说明目标域名可能仍指向 Surge 但对应项目不存在，存在被重新发布项目后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/198
   metadata:

@@ -1,10 +1,10 @@
 id: default-detect-generic
 
 info:
-  name: Default Web Application Detection
+  name: 默认 Web 应用指纹识别（指纹识别）
   author: andydoering
   severity: info
-  description: Catch-all for detecting default installations of web applications using common phrases found in default install pages
+  description: 用于识别目标暴露的 默认 Web 应用，模板会结合页面标题、页面正文和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   metadata:
     max-request: 1
   tags: tech,discovery

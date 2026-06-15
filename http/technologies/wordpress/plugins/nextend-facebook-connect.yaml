@@ -1,7 +1,7 @@
 id: wordpress-nextend-facebook-connect
 
 info:
-  name: Nextend Social Login and Register Detection
+  name: Nextend Social Login and Register 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

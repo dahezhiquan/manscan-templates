@@ -1,10 +1,10 @@
 id: oidc-detect
 
 info:
-  name: Detect OpenID Connect provider
+  name: OpenID Connect provider 指纹识别（指纹识别）
   author: jarijaas
   severity: info
-  description: Detects OpenID Connect providers. See https://en.wikipedia.org/wiki/OpenID_Connect
+  description: 用于识别目标是否使用 OpenID Connect provider，模板会结合状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,oidc,discovery

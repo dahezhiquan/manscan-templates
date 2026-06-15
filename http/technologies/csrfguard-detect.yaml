@@ -1,10 +1,10 @@
 id: csrf-guard-detect
 
 info:
-  name: OWASP CSRFGuard 3.x/4.x - Detect
+  name: OWASP CSRFGuard 3.x/4.x 指纹识别（指纹识别）
   author: forgedhallpass
   severity: info
-  description: OWASP CSRFGuard 3.x and 4.x were checked for whether token-per-page support is enabled based on default configuration.
+  description: 用于识别目标是否部署 OWASP CSRFGuard 3.x/4.x 并提取相关版本或构建信息，模板会结合版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/OWASP/www-project-csrfguard
   classification:

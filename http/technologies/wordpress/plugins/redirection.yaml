@@ -1,7 +1,7 @@
 id: wordpress-redirection
 
 info:
-  name: Redirection Detection
+  name: Redirection 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: cups-detect
 
 info:
-  name: CUPS - Detect
+  name: CUPS 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    An instance running CUPS was detected.
+    用于识别目标是否部署 CUPS 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-request: 1

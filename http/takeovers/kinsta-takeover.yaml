@@ -1,10 +1,10 @@
 id: kinsta-takeover
 
 info:
-  name: kinsta takeover detection
+  name: Kinsta 站点缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: kinsta takeover was detected.
+  description: 检测 Kinsta 返回 No Site For Domain 的情况，说明目标域名可能仍指向 Kinsta 但没有关联有效站点，存在被重新绑定后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

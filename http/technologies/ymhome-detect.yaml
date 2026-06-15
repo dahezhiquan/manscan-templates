@@ -1,7 +1,7 @@
 id: ymhome-detect
 
 info:
-  name: Ymhome-detect
+  name: ymhome 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   metadata:

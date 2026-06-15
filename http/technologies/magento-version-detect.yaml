@@ -1,11 +1,11 @@
 id: magento-version-detect
 
 info:
-  name: Magento Version Detect
+  name: Magento 版本指纹识别（指纹识别）
   author: sullo,dogancanbakir
   severity: info
   description: |
-    Magento version detection via version module and copyright text.
+    用于识别目标是否部署 Magento 版本 并提取相关版本或构建信息，模板会结合页面正文和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.magento.com/
     - https://magento.stackexchange.com/a/62966

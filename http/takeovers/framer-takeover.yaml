@@ -1,11 +1,11 @@
 id: framer-takeover
 
 info:
-  name: Framer Takeover Detection
+  name: Framer 站点缺失接管检测（子域名接管）
   author: Amjad Ali
   severity: high
   description: |
-    Framer takeover was detected.
+    检测 Framer 返回 Site Not Found 且内容类型为 HTML 的情况，说明目标自定义域名可能没有关联有效 Framer 站点，存在被重新绑定接管的风险。
   reference:
     - https://www.framer.com/developers/
   metadata:

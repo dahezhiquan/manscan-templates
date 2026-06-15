@@ -1,7 +1,7 @@
 id: intercom
 
 info:
-  name: Intercom widget detection
+  name: Intercom widget 指纹识别（指纹识别）
   author: tess
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: gstorage-detect
 
 info:
-  name: Google Bucket detection
+  name: Google Bucket 指纹识别（指纹识别）
   author: 0xTeles
   severity: info
   metadata:

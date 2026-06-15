@@ -1,11 +1,11 @@
 id: salesforce-b2c-commerce-webdav
 
 info:
-  name: Salesforce B2C Commerce WebDAV - Detection
+  name: Salesforce B2C Commerce WebDAV 指纹识别（指纹识别）
   author: batutahibnu17
   severity: info
   description: |
-    Detects Salesforce B2C Commerce WebDAV by checking for specific patterns in a 404 response.
+    用于识别目标前端或应用中是否使用 Salesforce B2C Commerce WebDAV，模板会结合页面正文、状态码和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://help.salesforce.com/s/articleView?id=cc.b2c_import_export_transaction_handling_and_feed_size.htm&type=5
   metadata:

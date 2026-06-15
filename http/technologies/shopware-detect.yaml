@@ -1,10 +1,10 @@
 id: shopware-detect
 
 info:
-  name: Shopware CMS detect
+  name: Shopware CMS 指纹识别（指纹识别）
   author: cyllective,pascalheidmann
   severity: info
-  description: Detects Shopware CMS
+  description: 用于识别目标是否使用 Shopware CMS，模板会结合页面标题、页面正文、状态码和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://github.com/shopware/shopware
     - https://github.com/shopware/platform

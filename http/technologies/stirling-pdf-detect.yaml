@@ -1,10 +1,10 @@
 id: stirling-pdf-detect
 
 info:
-  name: Stirling PDF - Detect
+  name: Stirling PDF 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: Stirling PDF was detected.
+  description: 用于识别目标是否使用 Stirling PDF，模板会结合 favicon 哈希、页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/Stirling-Tools/Stirling-PDF
   metadata:

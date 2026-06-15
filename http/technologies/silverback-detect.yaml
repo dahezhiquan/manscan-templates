@@ -1,7 +1,7 @@
 id: silverback-detect
 
 info:
-  name: Silverback MDM - Detection
+  name: Silverback MDM 指纹识别（指纹识别）
   author: nodauf
   severity: info
   reference:

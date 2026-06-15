@@ -1,10 +1,10 @@
 id: redmine-cli-detect
 
 info:
-  name: Detect Redmine CLI Configuration File
+  name: Redmine CLI Configuration File 指纹识别（指纹识别）
   author: geeknik
   severity: info
-  description: A small command-line utility to interact with Redmine - https://pypi.org/project/Redmine-CLI/
+  description: 用于识别目标是否使用 Redmine CLI Configuration File，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,redmine,discovery

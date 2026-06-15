@@ -1,7 +1,7 @@
 id: puppetdb-detect
 
 info:
-  name: PuppetDB Detection
+  name: PuppetDB 指纹识别（指纹识别）
   author: c-sh0
   severity: info
   reference:

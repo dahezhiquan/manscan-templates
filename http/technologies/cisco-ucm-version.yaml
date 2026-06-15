@@ -1,11 +1,11 @@
 id: cisco-ucm-detect
 
 info:
-  name: Cisco Unified Communications Manager - Detect
+  name: Cisco Unified Communications Manager 指纹识别（指纹识别）
   author: Morgan Robertson
   severity: info
   description: |
-    Detected the presence of the Cisco Unified Communications User Management portal.
+    用于识别目标是否部署 Cisco Unified Communications Manager 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#version
   metadata:

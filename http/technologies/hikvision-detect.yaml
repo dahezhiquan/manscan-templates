@@ -1,7 +1,7 @@
 id: hikvision-detect
 
 info:
-  name: Hikvision Panel
+  name: Hikvision 面板指纹识别（指纹识别）
   author: pdteam,its0x08
   severity: info
   metadata:

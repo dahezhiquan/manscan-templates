@@ -1,11 +1,11 @@
 id: citrix-xenmobile-version
 
 info:
-  name: Citrix XenMobile Version - Detect
+  name: Citrix XenMobile 版本指纹识别（指纹识别）
   author: Puben
   severity: info
   description: |
-    Template for XenMobile-detection (even if login-page is deactivated) and the specific version and rolling patch from js/app/init.js endpoint
+    用于识别目标是否部署 Citrix XenMobile 版本 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:citrix:xenmobile_server:*:*:*:*:*:*:*:*
   metadata:

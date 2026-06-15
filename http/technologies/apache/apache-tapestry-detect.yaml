@@ -1,7 +1,7 @@
 id: apache-tapestry-detect
 
 info:
-  name: Apache Tapestry Framework detect
+  name: Apache Tapestry 框架指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: livehelperchat-detect
 
 info:
-  name: Live Helper Chat Detect
+  name: Live Helper Chat 指纹识别（指纹识别）
   author: pikpikcu,ricardomaia
   severity: info
   classification:

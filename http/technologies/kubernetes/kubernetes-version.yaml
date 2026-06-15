@@ -1,10 +1,10 @@
 id: kubernetes-version
 
 info:
-  name: Kubernetes Version Exposure
+  name: Kubernetes 版本 Exposure 指纹识别（指纹识别）
   author: raesene,idealphase
   severity: info
-  description: Searches for exposed Kubernetes API servers which return version information unauthenticated. For Google Kubernetes Engine (GKE) and Amazon Elastic Kubernetes Service (EKS) this template will extract default patch version for you.
+  description: 用于识别目标是否部署 Kubernetes 版本 Exposure 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/release-notes
     - https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html

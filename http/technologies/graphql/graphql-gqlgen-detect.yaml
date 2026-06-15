@@ -1,6 +1,6 @@
 id: graphql-gqlgen-detect
 info:
-  name: Graphql Gqlgen Detect
+  name: Graphql Gqlgen 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

@@ -1,10 +1,10 @@
 id: github-takeover
 
 info:
-  name: Github Takeover Detection
+  name: GitHub Pages 站点缺失接管检测（子域名接管）
   author: pdteam,th3r4id
   severity: high
-  description: Github takeover was detected.
+  description: 检测 GitHub Pages 返回站点不存在或根路径缺少 index.html 的错误页面，并排除 GitHub 自有域名，表明目标自定义域名可能存在悬空 Pages 配置。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

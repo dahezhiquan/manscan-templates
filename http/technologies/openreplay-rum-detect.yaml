@@ -1,11 +1,11 @@
 id: openreplay-rum-detect
 
 info:
-  name: OpenReplay RUM - Tech Detect
+  name: OpenReplay RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects OpenReplay (formerly Asayer) Session Replay & RUM SDK implementation.
+    用于识别目标是否使用 OpenReplay RUM，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/openreplay/openreplay
     - https://docs.openreplay.com/en/sdk/

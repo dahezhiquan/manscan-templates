@@ -1,10 +1,10 @@
 id: zendesk-takeover
 
 info:
-  name: Zendesk Takeover Detection
+  name: Zendesk 帮助中心关闭接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Zendesk takeover was detected.
+  description: 检测 Zendesk 返回帮助中心不再存在或已关闭提示的情况，表明目标域名可能仍指向 Zendesk 但未关联有效帮助中心，存在被重新绑定后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/23
     - https://hackerone.com/reports/869605

@@ -1,7 +1,7 @@
 id: ranger-detection
 
 info:
-  name: Apache Ranger Detection
+  name: Apache Ranger 指纹识别（指纹识别）
   author: For3stCo1d
   severity: info
   reference:

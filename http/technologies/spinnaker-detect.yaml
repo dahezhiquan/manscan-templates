@@ -1,10 +1,10 @@
 id: spinnaker-detect
 
 info:
-  name: Spinnaker Detect
+  name: Spinnaker 指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
-  description: Detects the Spinnaker continuous delivery software
+  description: 用于识别目标是否使用 Spinnaker，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,spinnaker,discovery

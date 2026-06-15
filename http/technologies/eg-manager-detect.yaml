@@ -1,7 +1,7 @@
 id: eg-manager-detect
 
 info:
-  name: eG Manager Detect
+  name: eG Manager 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

@@ -1,7 +1,7 @@
 id: wordpress-really-simple-ssl
 
 info:
-  name: Really Simple Security – Simple and Performant Security (formerly Really Simple SSL) Detection
+  name: Really Simple Security - Simple and Performant Security (formerly Really Simple SSL) 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

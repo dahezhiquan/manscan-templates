@@ -1,7 +1,7 @@
 id: shiro-detect
 
 info:
-  name: Detect Shiro Framework
+  name: Shiro 框架指纹识别（指纹识别）
   author: AresX
   severity: info
   metadata:

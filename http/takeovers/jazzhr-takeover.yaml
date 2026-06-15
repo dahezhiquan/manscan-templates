@@ -1,10 +1,10 @@
 id: jazzhr-takeover
 
 info:
-  name: jazzhr takeover detection
+  name: JazzHR 账号停用接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: jazzhr takeover was detected.
+  description: 检测 JazzHR 返回账号不再活跃的提示，说明目标招聘子域名可能仍指向 JazzHR 但关联账号已停用，存在被重新配置后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

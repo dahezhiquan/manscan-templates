@@ -1,10 +1,10 @@
 id: aws-cloudfront-service
 
 info:
-  name: AWS Cloudfront service detection
+  name: AWS CloudFront 服务指纹识别（指纹识别）
   author: jiheon-dev
   severity: info
-  description: Detect websites using AWS cloudfront service
+  description: 用于识别目标是否使用 AWS CloudFront 服务，模板会结合特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: aws,tech,service,discovery

@@ -1,11 +1,11 @@
 id: caobox-cms-detect
 
 info:
-  name: Caobox CMS - Detect
+  name: Caobox CMS 指纹识别（指纹识别）
   author: Chirag Mistry
   severity: info
   description: |
-    Detects instances of Caobox CMS based on unique fingerprints and identifiers.
+    用于识别目标是否部署 Caobox CMS 并提取相关版本或构建信息，模板会结合页面标题、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     shodan-query:

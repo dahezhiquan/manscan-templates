@@ -1,10 +1,10 @@
 id: apache-detect
 
 info:
-  name: Apache Detection
+  name: Apache 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
-  description: Some Apache servers have the version on the response header. The OpenSSL version can be also obtained
+  description: 用于识别目标是否部署 Apache 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,apache,discovery

@@ -1,11 +1,11 @@
 id: matomo-rum-detect
 
 info:
-  name: Matomo (Piwik) RUM - Tech Detect
+  name: Matomo (Piwik) RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects Matomo (formerly Piwik) Web Analytics & RUM artifacts. Identifies Standard Tracking, Image Tracking, Tag Manager, and Cloud instances using strict matching.
+    用于识别目标前端或应用中是否使用 Matomo (Piwik) RUM，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://matomo.org/
     - https://developer.matomo.org/guides/tracking-javascript-guide

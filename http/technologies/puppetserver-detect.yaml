@@ -1,7 +1,7 @@
 id: puppetserver-detect
 
 info:
-  name: Puppetserver Detection
+  name: Puppetserver 指纹识别（指纹识别）
   author: c-sh0
   severity: info
   reference:

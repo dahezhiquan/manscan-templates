@@ -1,11 +1,11 @@
 id: bamboo-detect
 
 info:
-  name: Bamboo - Detection
+  name: Bamboo 指纹识别（指纹识别）
   author: bhutch
   severity: info
   description: |
-    Detect the presence of Bamboo, a CI/CD tool.
+    用于识别目标是否部署 Bamboo 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
   metadata:

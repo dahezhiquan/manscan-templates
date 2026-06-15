@@ -1,7 +1,7 @@
 id: shopizer-detect
 
 info:
-  name: Shopizer Detection
+  name: Shopizer 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

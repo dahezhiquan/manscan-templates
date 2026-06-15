@@ -1,7 +1,7 @@
 id: jellyfin-detect
 
 info:
-  name: Jellyfin detected
+  name: Jellyfin 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   classification:

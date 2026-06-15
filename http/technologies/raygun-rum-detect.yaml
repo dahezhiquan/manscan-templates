@@ -1,11 +1,11 @@
 id: raygun-rum-detect
 
 info:
-  name: Raygun RUM - Detect
+  name: Raygun RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects ACTIVE Raygun (Raygun4JS) Error Tracking & Real User Monitoring implementations.
+    用于识别目标是否使用 Raygun RUM，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://raygun.com/
   metadata:

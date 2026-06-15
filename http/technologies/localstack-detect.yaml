@@ -1,11 +1,11 @@
 id: localstack-detect
 
 info:
-  name: LocalStack - Detect
+  name: LocalStack 指纹识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |
-    LocalStack (localstack.cloud / github.com/localstack/localstack) is a local AWS cloud-service emulator widely used in development and CI. It typically listens on TCP 4566 and exposes an unauthenticated /_localstack/health endpoint that lists every emulated service and its enabled state. An exposed LocalStack on a non-loopback interface gives an attacker a fully-functional fake AWS account, including S3, SQS, IAM, SecretsManager and Lambda execution.
+    用于识别目标是否部署 LocalStack 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/localstack/localstack
     - https://docs.localstack.cloud/references/internal-endpoints/

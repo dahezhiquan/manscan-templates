@@ -1,11 +1,11 @@
 id: agent-zero-detect
 
 info:
-  name: Agent-Zero Application - Detect
+  name: Agent-Zero 应用指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |
-    Detected Agent-Zero AI agent framework installation.
+    用于识别目标是否部署 Agent-Zero 应用 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/agent0ai/agent-zero
   metadata:

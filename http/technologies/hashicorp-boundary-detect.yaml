@@ -1,10 +1,10 @@
 id: hashicorp-boundary-detect
 
 info:
-  name: HashiCorp Boundary Detect
+  name: HashiCorp Boundary 指纹识别（指纹识别）
   author: codexlynx
   severity: info
-  description: Detects HashiCorp Boundary
+  description: 用于识别目标是否使用 HashiCorp Boundary，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
   tags: tech,hashicorp,discovery

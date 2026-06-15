@@ -1,7 +1,7 @@
 id: lighttpd-placeholder-page
 
 info:
-  name: Lighttpd Placeholder Page
+  name: Lighttpd 占位页面指纹识别（指纹识别）
   author: idealphase
   severity: info
   classification:

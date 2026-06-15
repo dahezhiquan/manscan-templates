@@ -1,7 +1,7 @@
 id: php-detect
 
 info:
-  name: PHP Detect
+  name: PHP 指纹识别（指纹识别）
   author: y0no
   severity: info
   classification:

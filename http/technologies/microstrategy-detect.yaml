@@ -1,10 +1,10 @@
 id: microstrategy-detect
 
 info:
-  name: MicroStrategy Instances Detection Template
+  name: MicroStrategy 实例指纹识别（指纹识别）
   author: philippedelteil,Retr02332
   severity: info
-  description: Detect if MicroStrategy instances exist in your URLS
+  description: 用于识别目标是否部署 MicroStrategy 实例并提取相关版本信息，模板会结合页面正文、特定路径和版本提取结果进行指纹匹配。
   metadata:
     max-request: 16
   tags: microstrategy,panel,tech,discovery

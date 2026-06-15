@@ -1,10 +1,10 @@
 id: cargo-takeover
 
 info:
-  name: cargo takeover detection
+  name: Cargo 未绑定域名接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: cargo takeover was detected.
+  description: 检测 Cargo 自定义域名返回域名迁移或配置提示的情况，说明该子域名可能仍指向 Cargo 但未完成有效绑定，存在被重新配置并接管页面的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

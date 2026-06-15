@@ -1,7 +1,7 @@
 id: wordpress-yith-woocommerce-compare
 
 info:
-  name: YITH WooCommerce Compare Detection
+  name: YITH WooCommerce Compare 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

@@ -1,11 +1,11 @@
 id: apache-pinot-detect
 
 info:
-  name: Apache Pinot - Detect
+  name: Apache Pinot 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Pinot web application, A realtime distributed OLAP datastore.
+    用于识别目标是否使用 Apache Pinot，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   classification:
     cpe: cpe:2.3:a:apache:pinot:*:*:*:*:*:*:*:*
   metadata:

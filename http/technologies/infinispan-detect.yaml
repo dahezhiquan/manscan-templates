@@ -1,11 +1,11 @@
 id: infinispan-detect
 
 info:
-  name: Infinispan Console - Detection
+  name: Infinispan 控制台指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |
-    Infinispan is an open-source in-memory data grid by Red Hat that exposes a management console under `/console/welcome` and a REST API under `/rest/v2/` on the default port 11222. This template fingerprints Infinispan by matching the unique HTML console markers and the Digest authentication challenge from the REST API.
+    用于识别目标是否部署 Infinispan 控制台 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://infinispan.org/
     - https://infinispan.org/docs/stable/titles/rest/rest.html

@@ -1,11 +1,11 @@
 id: sitecore-cms
 
 info:
-  name: Sitecore CMS - Detect
+  name: Sitecore CMS 指纹识别（指纹识别）
   author: RandomDhiraj
   severity: info
   description: |
-    Detect Sitecore Content Management System (CMS) websites based on a redirect from the sitecore media handler URL pattern to the notfound.aspx page.
+    用于识别目标是否使用 Sitecore CMS，模板会结合 HTTP 响应头、页面标题、状态码和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://www.sitecore.com
   classification:

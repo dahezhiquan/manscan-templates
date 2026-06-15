@@ -1,10 +1,10 @@
 id: getresponse-takeover
 
 info:
-  name: Getresponse Takeover Detection
+  name: GetResponse 着陆页接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Getresponse takeover was detected.
+  description: 检测 GetResponse Landing Pages 默认推广文案的情况，表明目标域名可能指向 GetResponse 但未关联有效着陆页，可被重新绑定后接管。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/235
   metadata:

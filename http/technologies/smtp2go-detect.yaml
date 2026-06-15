@@ -1,7 +1,7 @@
 id: smtp2go-detect
 
 info:
-  name: SMTP2GO Detect
+  name: SMTP2GO 指纹识别（指纹识别）
   author: pikpikcu,righettod
   severity: info
   metadata:

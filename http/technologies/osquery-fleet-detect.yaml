@@ -1,10 +1,10 @@
 id: osquery-fleet-detect
 
 info:
-  name: OSQuery Fleet Detection Panel - Detect
+  name: OSQuery Fleet 面板指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
-  description: OSQuery Fleet Detection panel was detected.
+  description: 用于识别目标暴露的 OSQuery Fleet 面板，模板会结合 favicon 哈希、页面正文、状态码和特定路径判断是否存在对应控制台特征。
   reference:
     - https://fleetdm.com/
   classification:

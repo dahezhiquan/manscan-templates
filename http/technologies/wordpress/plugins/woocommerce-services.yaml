@@ -1,7 +1,7 @@
 id: wordpress-woocommerce-services
 
 info:
-  name: WooCommerce Tax (formerly WooCommerce Shipping & Tax) Detection
+  name: WooCommerce Tax (formerly WooCommerce Shipping & Tax) 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

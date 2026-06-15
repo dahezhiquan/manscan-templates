@@ -1,7 +1,7 @@
 id: sitecore-version
 
 info:
-  name: Sitecore version detection
+  name: Sitecore version 指纹识别（指纹识别）
   author: bernardofsr
   severity: info
   reference:

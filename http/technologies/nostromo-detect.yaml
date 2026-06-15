@@ -1,10 +1,10 @@
 id: nostromo-detect
 
 info:
-  name: Nostromo Web Server
+  name: Nostromo Web 服务器指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: Detected servers running the Nostromo web server by identifying the Server header in HTTP responses.
+  description: 用于识别目标是否部署 Nostromo Web 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     verified: true

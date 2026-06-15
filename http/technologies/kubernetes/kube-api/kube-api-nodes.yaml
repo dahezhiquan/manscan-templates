@@ -1,10 +1,10 @@
 id: kube-api-nodes
 
 info:
-  name: Kube API Nodes
+  name: Kube API Nodes 指纹识别（指纹识别）
   author: sharath,ritikchaddha
   severity: info
-  description: Scans for kube nodes
+  description: 用于识别目标是否部署 Kube API Nodes 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,k8s,kubernetes,devops,kube,discovery

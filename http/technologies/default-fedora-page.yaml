@@ -1,7 +1,7 @@
 id: default-fedora-page
 
 info:
-  name: Fedora Default Test Page
+  name: Fedora 默认测试页面指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   classification:

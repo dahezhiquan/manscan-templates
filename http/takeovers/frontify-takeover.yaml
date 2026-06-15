@@ -1,10 +1,10 @@
 id: frontify-takeover
 
 info:
-  name: frontify takeover detection
+  name: Frontify 页面缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: frontify takeover was detected.
+  description: 检测 Frontify 返回 404 页面与迷失提示的情况，表明目标域名可能仍指向 Frontify 但未关联有效品牌门户，存在被重新创建后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/170
   metadata:

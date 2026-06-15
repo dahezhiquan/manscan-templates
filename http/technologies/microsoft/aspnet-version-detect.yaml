@@ -1,11 +1,11 @@
 id: aspnet-version-detect
 
 info:
-  name: AspNet Version Disclosure - Detect
+  name: AspNet 版本 Disclosure 指纹识别（指纹识别）
   author: lucky0x0d,PulseSecurity.co.nz
   severity: info
   description: |
-    Detects version disclosed via 'X-AspNet-Version' header.
+    用于识别目标是否部署 AspNet 版本 Disclosure 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,7 +1,7 @@
 id: graylog-api-browser
 
 info:
-  name: Detect Graylog REST API
+  name: Graylog REST API 指纹识别（指纹识别）
   author: PR3R00T
   severity: info
   metadata:

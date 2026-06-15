@@ -1,10 +1,10 @@
 id: icecast-mediaserver-detect
 
 info:
-  name: Icecast Streaming Media Server Information Panel - Detect
+  name: Icecast Streaming Media 服务器 Information 面板指纹识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: Icecast Streaming Media Server information panel was detected.
+  description: 用于识别目标是否部署 Icecast Streaming Media 服务器 Information 面板 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

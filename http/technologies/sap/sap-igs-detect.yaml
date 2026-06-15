@@ -1,10 +1,10 @@
 id: sap-igs-detect
 
 info:
-  name: SAP Internet Graphics Server (IGS) Detection
+  name: SAP Internet Graphics 服务器 (IGS) 指纹识别（指纹识别）
   author: _generic_human_
   severity: info
-  description: Detection of SAP Internet Graphics Server (IGS)
+  description: 用于识别目标是否部署 SAP Internet Graphics 服务器 (IGS) 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: sap,tech,igs,discovery

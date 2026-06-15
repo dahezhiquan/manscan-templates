@@ -1,10 +1,10 @@
 id: matrix-detect
 
 info:
-  name: Matrix Server Detect
+  name: Matrix 服务器指纹识别（指纹识别）
   author: erethon
   severity: info
-  description: Detects Matrix servers based on .well-known entries. See https://en.wikipedia.org/wiki/Matrix_(protocol)
+  description: 用于识别目标是否部署 Matrix 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://spec.matrix.org/v1.3/server-server-api/#getwell-knownmatrixserver, https://spec.matrix.org/v1.3/client-server-api/#getwell-knownmatrixclient
   metadata:

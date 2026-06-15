@@ -1,7 +1,7 @@
 id: sql-server-reporting
 
 info:
-  name: Detect Microsoft SQL Server Reporting
+  name: Microsoft SQL 服务器 Reporting 指纹识别（指纹识别）
   author: puzzlepeaches
   severity: info
   metadata:

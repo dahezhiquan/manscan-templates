@@ -1,7 +1,7 @@
 id: bigip-detect
 
 info:
-  name: BIGIP - Detection
+  name: BIGIP 指纹识别（指纹识别）
   author: PR3R00T,0x240x23elu
   severity: info
   reference:

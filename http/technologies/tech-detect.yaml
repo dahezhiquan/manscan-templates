@@ -1,7 +1,7 @@
 id: tech-detect
 
 info:
-  name: Wappalyzer Technology Detection
+  name: Wappalyzer 技术指纹识别（指纹识别）
   author: hakluke,righettod,matejsmycka
   severity: info
   metadata:

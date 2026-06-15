@@ -1,7 +1,7 @@
 id: wondercms-detect
 
 info:
-  name: WonderCMS Detect
+  name: WonderCMS 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   metadata:

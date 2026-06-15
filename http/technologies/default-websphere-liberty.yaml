@@ -1,7 +1,7 @@
 id: default-websphere-liberty
 
 info:
-  name: WebSphere Liberty Default Page
+  name: WebSphere Liberty 默认页面指纹识别（指纹识别）
   author: oppsec
   severity: info
   classification:

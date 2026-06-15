@@ -1,7 +1,7 @@
 id: ecology-detect
 
 info:
-  name: Ecology Detection
+  name: Ecology 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   metadata:

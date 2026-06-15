@@ -1,7 +1,7 @@
 id: wordpress-wp-crontrol
 
 info:
-  name: WP Crontrol Detection
+  name: WP Crontrol 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

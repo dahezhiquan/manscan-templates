@@ -1,7 +1,7 @@
 id: moveit-transfer-detect
 
 info:
-  name: Moveit File Transfer - Detect
+  name: Moveit File Transfer 指纹识别（指纹识别）
   author: tess
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: pypiserver-detect
 
 info:
-  name: PyPI Server Detect
+  name: PyPI 服务器指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   classification:

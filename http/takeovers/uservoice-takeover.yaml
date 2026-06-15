@@ -1,10 +1,10 @@
 id: uservoice-takeover
 
 info:
-  name: Uservoice Takeover Detection
+  name: UserVoice 子域名可用接管检测（子域名接管）
   author: MiryangJung
   severity: high
-  description: Uservoice takeover was detected.
+  description: 检测 UserVoice 返回该子域名当前可用的提示，说明目标域名可能仍指向 UserVoice 但未被有效占用，存在被他人注册后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/163
     - https://hackerone.com/reports/269109

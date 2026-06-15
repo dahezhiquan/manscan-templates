@@ -1,10 +1,10 @@
 id: adobe-coldfusion-error-detect
 
 info:
-  name: Adobe ColdFusion Detector
+  name: Adobe ColdFusion 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
-  description: With this template we can detect a running ColdFusion instance due to an error page.
+  description: 用于识别目标是否使用 Adobe ColdFusion，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://twitter.com/PhilippeDelteil/status/1418622775829348358
   classification:

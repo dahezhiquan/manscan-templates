@@ -1,7 +1,7 @@
 id: squadcast-takeover
 
 info:
-  name: Squadcast Takeover Detection
+  name: Squadcast 状态页缺失接管检测（子域名接管）
   author: philippedelteil
   severity: high
   reference:

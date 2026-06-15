@@ -1,11 +1,11 @@
 id: geth-server-detect
 
 info:
-  name: Go Ethereum JSON-RPC HTTP Server - Detect
+  name: Go Ethereum JSON-RPC HTTP 服务器指纹识别（指纹识别）
   author: Nullfuzz
   severity: info
   description: |
-    Go-ethereum (aka Geth) is an Ethereum client built in Go. Geth runs a JSON-RPC HTTP server on port 8545/TCP
+    用于识别目标是否部署 Go Ethereum JSON-RPC HTTP 服务器 并提取相关版本或构建信息，模板会结合页面正文和版本或标识提取结果进行指纹匹配。
   reference:
     - https://geth.ethereum.org/docs
     - https://github.com/ethereum/go-ethereum

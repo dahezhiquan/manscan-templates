@@ -1,7 +1,7 @@
 id: monstracms-detect
 
 info:
-  name: MonstraCMS Detection
+  name: MonstraCMS 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   reference:

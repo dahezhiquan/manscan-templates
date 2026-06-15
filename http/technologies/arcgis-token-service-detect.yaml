@@ -1,10 +1,10 @@
 id: arcgis-token-service-detect
 
 info:
-  name: ArcGIS Token Service - Detect
+  name: ArcGIS 令牌服务指纹识别（指纹识别）
   author: HeeresS
   severity: info
-  description: Check for the existence of the ArcGIS Token Service on an ArcGIS server.
+  description: 用于识别目标是否运行 ArcGIS 令牌服务，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://enterprise.arcgis.com/en/
   classification:

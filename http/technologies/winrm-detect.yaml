@@ -1,11 +1,11 @@
 id: winrm-detect
 
 info:
-  name: Windows Remote Management - Detection
+  name: Windows Remote Management 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    Detects Windows Remote Management (WinRM) by checking HTTP response headers on ports 5985 (HTTP) and 5986 (HTTPS).
+    用于识别目标是否使用 Windows Remote Management，模板会结合 HTTP 响应头、状态码和特定路径或已知端点进行技术指纹匹配。
   metadata:
     max-request: 1
     verified: true

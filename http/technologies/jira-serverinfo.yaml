@@ -1,11 +1,11 @@
 id: jira-serverinfo
 
 info:
-  name: Jira Rest API Server Information
+  name: Jira Rest API 服务器 Information 指纹识别（指纹识别）
   author: pdteam,0x_Akoko
   severity: info
   description: |
-    Detected Jira REST API serverInfo endpoint is accessible without authentication, exposing sensitive server information including version, build number, server title, base URL, and server time.
+    用于识别目标是否部署 Jira Rest API 服务器 Information 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-server-info/
     - https://support.atlassian.com/jira/kb/restrict-unauthenticated-access-for-some-jira-endpoints/

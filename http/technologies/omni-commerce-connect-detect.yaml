@@ -1,10 +1,10 @@
 id: omni-commerce-connect-detect
 
 info:
-  name: Omni Commerce Connect (OCC) Rest APIs
+  name: Omni Commerce Connect (OCC) Rest APIs 指纹识别（指纹识别）
   author: TechbrunchFR
   severity: info
-  description: The Omni Commerce Connect (OCC) API exposes a broad set of commerce and data services. It enables you to integrate SAP Commerce functionality anywhere in your application landscape.
+  description: 用于识别目标是否使用 Omni Commerce Connect (OCC) Rest APIs，模板会结合页面标题、页面正文和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://help.sap.com/docs/SAP_COMMERCE/e5d7cec9064f453b84235dc582b886da/8c19ab00866910148f87bf32d4a60d38.html?locale=en-US
   metadata:

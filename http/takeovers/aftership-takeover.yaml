@@ -1,10 +1,10 @@
 id: aftership-takeover
 
 info:
-  name: Aftership - Subdomain Takeover Detection
+  name: AfterShip 未绑定子域名接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Aftership subdomain takeover was detected.
+  description: 检测 AfterShip 自定义域名返回站点不存在页面的情况，表明该子域名可能仍指向 AfterShip 但未绑定有效项目，存在被他人重新创建并接管内容的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

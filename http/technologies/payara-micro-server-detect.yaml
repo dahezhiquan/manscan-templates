@@ -1,7 +1,7 @@
 id: payara-micro-detect
 
 info:
-  name: Payara Micro Detect
+  name: Payara Micro 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

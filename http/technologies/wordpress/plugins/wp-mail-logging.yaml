@@ -1,7 +1,7 @@
 id: wordpress-wp-mail-logging
 
 info:
-  name: WP Mail Logging Detection
+  name: WP Mail Logging 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

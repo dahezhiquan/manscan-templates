@@ -1,7 +1,7 @@
 id: cisco-asa-detect
 
 info:
-  name: Cisco ASA - Detect
+  name: Cisco ASA 指纹识别（指纹识别）
   author: sdcampbell
   severity: info
   metadata:

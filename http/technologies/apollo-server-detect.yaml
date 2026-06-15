@@ -1,10 +1,10 @@
 id: apollo-server-detect
 
 info:
-  name: Apollo Server GraphQL Introspection - Detect
+  name: Apollo 服务器 GraphQL Introspection 指纹识别（指纹识别）
   author: idealphase
   severity: info
-  description: Apollo Server GraphQL introspection was detected.
+  description: 用于识别目标是否运行 Apollo 服务器 GraphQL Introspection，模板会结合 HTTP 响应头、页面正文、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/apollographql/apollo-server
   classification:

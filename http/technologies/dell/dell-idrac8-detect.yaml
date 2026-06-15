@@ -1,11 +1,11 @@
 id: dell-idrac8-detect
 
 info:
-  name: Detect Dell iDRAC8
+  name: Dell iDRAC8 指纹识别（指纹识别）
   author: kophjager007,mr-pmillz,0x_Akoko
   severity: info
   description: |
-    Detected The Integrated Dell Remote Access Controller, (iDRAC) is designed for secure local and remote server management and helps IT administrators deploy, update and monitor Dell EMC PowerEdge servers.
+    用于识别目标是否部署 Dell iDRAC8 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.dell.com/support/manuals/en-us/idrac7-8-with-lc-v2.40.40.40
   metadata:

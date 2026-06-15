@@ -1,7 +1,7 @@
 id: default-symfony-page
 
 info:
-  name: Symfony Default Page
+  name: Symfony 默认页面指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: graphql-detect
 
 info:
-  name: GraphQL API Detection
+  name: GraphQL API 指纹识别（指纹识别）
   author: nkxxkn,elsfa7110,ofjaaah,exceed
   severity: info
   metadata:

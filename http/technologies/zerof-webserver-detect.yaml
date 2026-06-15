@@ -1,7 +1,7 @@
 id: zerof-webserver-detect
 
 info:
-  name: ZEROF Web Server Detect
+  name: ZEROF Web 服务器指纹识别（指纹识别）
   author: princechaddha
   severity: info
   metadata:

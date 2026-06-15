@@ -1,7 +1,7 @@
 id: casaos-detection
 
 info:
-  name: CasaOS Detection
+  name: CasaOS 指纹识别（指纹识别）
   author: pdteam
   severity: info
   reference:

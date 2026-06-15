@@ -1,10 +1,10 @@
 id: cloudfoundry-detect
 
 info:
-  name: Cloudfoundry Detect
+  name: Cloudfoundry 指纹识别（指纹识别）
   author: uomogrande
   severity: info
-  description: Detects cloudfoundry based on response headers
+  description: 用于识别目标是否使用 Cloudfoundry，模板会结合 HTTP 响应头进行技术指纹匹配。
   reference:
     - https://docs.cloudfoundry.org/concepts/cf-routing-architecture.html
   metadata:

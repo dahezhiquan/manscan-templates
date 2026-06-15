@@ -1,7 +1,7 @@
 id: apache-guacamole
 
 info:
-  name: Apache Guacamole Login Page and version detection
+  name: Apache Guacamole 登录页 and version 指纹识别（指纹识别）
   author: r3dg33k
   severity: info
   metadata:

@@ -1,10 +1,10 @@
 id: readthedocs-takeover
 
 info:
-  name: Read the Docs Takeover Detection
+  name: Read the Docs 项目未知接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Read the Docs takeover was detected.
+  description: 检测 Read the Docs 返回项目未知提示的情况，表明目标域名可能仍指向 Read the Docs 但没有关联有效文档项目，存在被重新绑定后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/160
   metadata:

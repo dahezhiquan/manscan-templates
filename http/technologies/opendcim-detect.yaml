@@ -1,11 +1,11 @@
 id: opendcim-detect
 
 info:
-  name: openDCIM - Detect
+  name: openDCIM 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    openDCIM is a web-based data centre infrastructure management application.
+    用于识别目标是否使用 openDCIM，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://opendcim.org
     - https://github.com/opendcim/openDCIM

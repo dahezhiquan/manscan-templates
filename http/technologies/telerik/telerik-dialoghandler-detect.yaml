@@ -1,10 +1,10 @@
 id: telerik-dialoghandler-detect
 
 info:
-  name: Detect Telerik Web UI Dialog Handler
+  name: Telerik Web UI Dialog Handler 指纹识别（指纹识别）
   author: organiccrap,zhenwarx,nielsing
   severity: info
-  description: This template detects the Telerik Web UI Dialog Handler.
+  description: 用于识别目标是否使用 Telerik Web UI Dialog Handler，模板会结合状态码和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
     - https://github.com/bao7uo/dp_crypto

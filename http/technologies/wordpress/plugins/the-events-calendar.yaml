@@ -1,7 +1,7 @@
 id: wordpress-the-events-calendar
 
 info:
-  name: The Events Calendar Detection
+  name: The Events Calendar 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

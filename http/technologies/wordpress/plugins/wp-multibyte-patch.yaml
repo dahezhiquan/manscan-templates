@@ -1,7 +1,7 @@
 id: wordpress-wp-multibyte-patch
 
 info:
-  name: WP Multibyte Patch Detection
+  name: WP Multibyte Patch 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

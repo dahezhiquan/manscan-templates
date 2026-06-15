@@ -1,7 +1,7 @@
 id: wordpress-wp-super-cache
 
 info:
-  name: WP Super Cache Detection
+  name: WP Super Cache 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

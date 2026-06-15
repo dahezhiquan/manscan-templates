@@ -1,7 +1,7 @@
 id: wordpress-detect
 
 info:
-  name: WordPress Detect
+  name: WordPress 指纹识别（指纹识别）
   author: pdteam,daffainfo,ricardomaia,topscoder,AdamCrosser
   severity: info
   classification:

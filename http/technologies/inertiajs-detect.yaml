@@ -1,11 +1,11 @@
 id: inertiajs-detect
 
 info:
-  name: Inertia.js - Detect
+  name: Inertia.js 指纹识别（指纹识别）
   author: antonkulyk
   severity: info
   description: |
-    Detects Inertia.js, a stack for building single-page apps using classic server-side routing. Matching targets the server-rendered page payload embedded in the root element's data-page attribute (JSON with component, props, and url keys), which is the default integration pattern for adapters such as Laravel's inertia-laravel.
+    用于识别目标是否运行 Inertia.js，模板会结合页面正文和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://inertiajs.com/
     - https://github.com/inertiajs/inertia

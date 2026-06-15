@@ -1,7 +1,7 @@
 id: pi-hole-panel
 
 info:
-  name: Pi-hole Login Panel - Detect
+  name: Pi-hole 登录面板指纹识别（指纹识别）
   author: geeknik
   severity: info
   classification:

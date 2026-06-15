@@ -1,7 +1,7 @@
 id: default-glassfish-server-page
 
 info:
-  name: GlassFish Server Default Page
+  name: GlassFish 服务器 默认页面指纹识别（指纹识别）
   author: dhiyaneshDk,righettod
   severity: info
   classification:

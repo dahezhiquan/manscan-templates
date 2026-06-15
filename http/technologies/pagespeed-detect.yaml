@@ -1,7 +1,7 @@
 id: pagespeed-detect
 
 info:
-  name: Pagespeed Detection
+  name: Pagespeed 指纹识别（指纹识别）
   author: geeknik
   severity: info
   metadata:

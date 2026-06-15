@@ -1,11 +1,11 @@
 id: tableau-server-detect
 
 info:
-  name: Salesforce Tableau Server - Detect
+  name: Salesforce Tableau 服务器指纹识别（指纹识别）
   author: TechbrunchFR,aringo
   severity: info
   description: |
-    Detects Salesforce Tableau Server and extracts the buildid.
+    用于识别目标是否部署 Salesforce Tableau 服务器 并提取相关版本或构建信息，模板会结合 favicon 哈希、HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
     vendor: salesforce

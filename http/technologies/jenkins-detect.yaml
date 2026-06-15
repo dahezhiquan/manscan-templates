@@ -1,7 +1,7 @@
 id: jenkins-detect
 
 info:
-  name: Jenkins Detection
+  name: Jenkins 指纹识别（指纹识别）
   author: philippdelteil,daffainfo,c-sh0,AdamCrosser
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: wordpress-limit-login-attempts-reloaded
 
 info:
-  name: Limit Login Attempts Reloaded – Login Security, Brute Force Protection, Firewall Detection
+  name: Limit Login Attempts Reloaded - Login Security, Brute Force 防护, Firewall 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

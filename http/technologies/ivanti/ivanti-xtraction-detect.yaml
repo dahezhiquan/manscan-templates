@@ -1,11 +1,11 @@
 id: ivanti-xtraction-detect
 
 info:
-  name: Ivanti Xtraction - Detect
+  name: Ivanti Xtraction 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detects Ivanti Xtraction, a reporting and dashboard platform used with Ivanti products.
+    用于识别目标前端或应用中是否使用 Ivanti Xtraction，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行技术栈指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0

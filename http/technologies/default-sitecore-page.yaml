@@ -1,11 +1,11 @@
 id: sitecore-default-page
 
 info:
-  name: Sitecore Default Page - Detect
+  name: Sitecore 默认页面指纹识别（指纹识别）
   author: DhiyaneshDK,RandomDhiraj
   severity: info
   description: |
-    Detect Sitecore Content Management System (CMS).
+    用于识别目标暴露的 Sitecore 默认页面，模板会结合页面标题、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://www.sitecore.com/
   classification:

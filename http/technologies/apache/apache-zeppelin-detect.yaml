@@ -1,7 +1,7 @@
 id: apache-zeppelin-detect
 
 info:
-  name: Apache Zeppelin detect
+  name: Apache Zeppelin 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

@@ -1,10 +1,10 @@
 id: prtg-detect
 
 info:
-  name: Detect PRTG
+  name: PRTG 指纹识别（指纹识别）
   author: geeknik
   severity: info
-  description: Monitor all the systems, devices, traffic, and applications in your IT infrastructure -- https://www.paessler.com/prtg
+  description: 用于识别目标是否部署 PRTG 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 3
   tags: tech,prtg,discovery

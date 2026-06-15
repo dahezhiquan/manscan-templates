@@ -1,7 +1,7 @@
 id: wordpress-extendify
 
 info:
-  name: Extendify Detection
+  name: Extendify 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

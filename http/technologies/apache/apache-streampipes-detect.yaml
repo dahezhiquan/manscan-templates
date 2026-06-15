@@ -1,11 +1,11 @@
 id: apache-streampipes-detect
 
 info:
-  name: Apache StreamPipes - Detect
+  name: Apache StreamPipes 指纹识别（指纹识别）
   author: Alessandro Albani - DEVisions
   severity: info
   description: |
-    Checks for the presence of Apache StreamPipes by looking in the body or matching the favicon hash.
+    用于识别目标是否部署 Apache StreamPipes 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:apache:streampipes:*:*:*:*:*:*:*:*
   metadata:

@@ -1,6 +1,6 @@
 id: graphql-apollo-detect
 info:
-  name: Graphql Apollo Detect
+  name: Graphql Apollo 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

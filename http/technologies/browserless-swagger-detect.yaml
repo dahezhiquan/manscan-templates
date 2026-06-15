@@ -1,11 +1,11 @@
 id: browserless-swagger-detect
 
 info:
-  name: Browserless API Swagger - Detect
+  name: Browserless API Swagger 指纹识别（指纹识别）
   author: theamanrawat
   severity: info
   description: |
-    Detects exposed Browserless API Swagger UI interface. Browserless is a headless browser automation service that provides REST APIs for Chrome/Chromium-based browser operations including screenshots, PDFs, and web scraping.
+    用于识别目标暴露的 Browserless API Swagger，模板会结合页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - https://github.com/browserless/browserless
     - https://docs.browserless.io/

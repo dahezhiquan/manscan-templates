@@ -1,6 +1,6 @@
 id: graphql-ariadne-detect
 info:
-  name: Graphql Ariadne Detect
+  name: Graphql Ariadne 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   reference:

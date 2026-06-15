@@ -1,7 +1,7 @@
 id: basic-auth-detect
 
 info:
-  name: Basic Auth Detection
+  name: Basic Auth 指纹识别（指纹识别）
   author: w4cky_,bhutch
   severity: info
   metadata:

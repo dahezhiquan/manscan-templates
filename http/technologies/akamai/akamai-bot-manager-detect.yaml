@@ -1,11 +1,11 @@
 id: akamai-bot-manager-detect
 
 info:
-  name: Akamai Bot Manager Protection - Detect
+  name: Akamai Bot Manager 防护指纹识别（指纹识别）
   author: Fazle Arefin
   severity: info
   description: |
-    Checks if the website is protected by Akamai Bot Manager
+    用于判断目标是否启用了 Akamai Bot Manager 防护，模板会结合 HTTP 响应头和特定路径或已知端点进行指纹匹配。
   reference:
     - https://www.akamai.com/legal/manage-cookie-preferences
     - https://techdocs.akamai.com/identity-cloud/docs/hosted-login-cookies-and-local-storage-1

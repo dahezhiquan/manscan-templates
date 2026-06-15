@@ -1,10 +1,10 @@
 id: ghost-takeover
 
 info:
-  name: ghost takeover detection
+  name: Ghost 博客离线接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: ghost takeover was detected.
+  description: 检测 Ghost 返回 error.ghost.org 或 offline.ghost.org 的情况，说明目标域名可能指向未正常绑定或已离线的 Ghost 站点，存在被重新部署后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/89
   metadata:

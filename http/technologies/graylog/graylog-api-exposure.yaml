@@ -1,11 +1,11 @@
 id: graylog-api-exposure
 
 info:
-  name: Graylog REST API Endpoints - Exposure
+  name: Graylog REST API Endpoints - Exposure 指纹识别（指纹识别）
   author: Arqsz
   severity: info
   description: |
-    Graylog is a centralized log management solution. According to the official documentation, it exposes multiple endpoints (some by default).
+    用于识别目标是否运行 Graylog REST API Endpoints - Exposure，模板会结合特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://go2docs.graylog.org/5-0/setting_up_graylog/rest_api.html
     - https://gist.github.com/asachs01/f1f317b2924a688deb8ed2520a4520bd

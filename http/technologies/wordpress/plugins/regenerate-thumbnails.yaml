@@ -1,7 +1,7 @@
 id: wordpress-regenerate-thumbnails
 
 info:
-  name: Regenerate Thumbnails Detection
+  name: Regenerate Thumbnails 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

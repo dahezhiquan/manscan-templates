@@ -1,11 +1,11 @@
 id: laravel-eol
 
 info:
-  name: Laravel End-of-Life Detection
+  name: Laravel End-of-Life 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detected Laravel framework versions that had reached End-of-Life (EOL) and no longer received security updates.
+    用于识别目标是否部署 Laravel End-of-Life 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://endoflife.date/laravel
     - https://laravel.com/docs/releases

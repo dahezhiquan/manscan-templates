@@ -1,7 +1,7 @@
 id: default-oracle-application-page
 
 info:
-  name: Oracle Application Server Containers
+  name: Oracle 应用服务器 Containers 指纹识别（指纹识别）
   author: dhiyaneshDk,righettod
   severity: info
   metadata:

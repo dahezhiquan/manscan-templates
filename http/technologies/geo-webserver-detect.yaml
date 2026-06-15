@@ -1,10 +1,10 @@
 id: geo-webserver-detect
 
 info:
-  name: GeoWebServer Detector Panel - Detect
+  name: GeoWebServer 面板指纹识别（指纹识别）
   author: dhiyaneshDK,daffainfo
   severity: info
-  description: GeoWebServer Detector panel was detected.
+  description: 用于识别目标暴露的 GeoWebServer 面板并提取相关版本信息，模板会结合 HTTP 响应头、页面标题、状态码和特定路径进行指纹匹配。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

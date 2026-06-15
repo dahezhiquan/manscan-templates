@@ -1,10 +1,10 @@
 id: announcekit-takeover
 
 info:
-  name: Announcekit Takeover Detection
+  name: AnnounceKit 未绑定页面接管检测（子域名接管）
   author: melbadry9
   severity: high
-  description: Announcekit takeover was detected.
+  description: 检测 AnnounceKit 自定义域名返回 AnnounceKit 404 错误的情况，说明该域名可能仍解析到 AnnounceKit 但没有关联有效公告页面，可被重新配置后接管。
   reference:
     - https://blog.melbadry9.xyz/dangling-dns/xyz-services/dangling-dns-announcekit
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/228

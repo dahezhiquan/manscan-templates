@@ -1,7 +1,7 @@
 id: default-apache2-page
 
 info:
-  name: Apache2 Default Test Page
+  name: Apache2 默认测试页面指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
   classification:

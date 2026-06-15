@@ -1,7 +1,7 @@
 id: ispyconnect-detect
 
 info:
-  name: iSpyConnect - Detect
+  name: iSpyConnect 指纹识别（指纹识别）
   author: arafatansari
   severity: info
   classification:

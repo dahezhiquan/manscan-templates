@@ -1,11 +1,11 @@
 id: kubelet-metrics
 
 info:
-  name: Kubelet Metrics
+  name: Kubelet Metrics 指纹识别（指纹识别）
   author: sharath,righettod
   severity: info
   description: |
-    Kube Metrics Server was detected.
+    用于识别目标是否运行 Kubelet Metrics，模板会结合页面标题和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/kubernetes-sigs/metrics-server
   metadata:

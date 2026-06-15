@@ -1,11 +1,11 @@
 id: iparapheur-detect
 
 info:
-  name: Iparapheur - Detect
+  name: Iparapheur 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    iparapheur technology was detected.
+    用于识别目标是否使用 Iparapheur，模板会结合 favicon 哈希、页面标题、页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://www.libriciel.fr/logiciels/iparapheur/
   metadata:

@@ -1,7 +1,7 @@
 id: wordpress-unyson
 
 info:
-  name: Unyson Detection
+  name: Unyson 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

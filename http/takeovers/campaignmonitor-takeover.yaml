@@ -1,10 +1,10 @@
 id: campaignmonitor-takeover
 
 info:
-  name: CampaignMonitor Takeover Detection
+  name: Campaign Monitor 未绑定页面接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: CampaignMonitor takeover was detected.
+  description: 检测 Campaign Monitor 自定义域名返回默认营销页面特征的情况，说明该域名可能指向 Campaign Monitor 但未关联有效内容，存在被重新绑定后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/275
   metadata:

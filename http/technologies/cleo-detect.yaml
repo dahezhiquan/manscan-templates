@@ -1,11 +1,11 @@
 id: cleo-detect
 
 info:
-  name: Cleo Technology - Detect
+  name: Cleo 技术指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    This template detects Cleo technologies, including VLTrader, Harmony, and LexiCom, by inspecting response headers.It also extracts version information for each identified technology.
+    用于识别目标是否部署 Cleo 技术 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.cleo.com
   metadata:

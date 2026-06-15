@@ -1,10 +1,10 @@
 id: uberflip-takeover
 
 info:
-  name: Uberflip Takeover Detection
+  name: Uberflip 非 Hub 域名接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Uberflip takeover was detected.
+  description: 检测 Uberflip 返回非 Hub 域名且该 URL 不提供 Hub 的提示，表明目标域名可能仍指向 Uberflip 但未关联有效内容中心，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/150
     - https://hackerone.com/reports/863551

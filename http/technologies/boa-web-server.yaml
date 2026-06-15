@@ -1,11 +1,11 @@
 id: boa-web-server
 
 info:
-  name: Boa Web Server - Detect
+  name: Boa Web 服务器指纹识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    Boa is a single-tasking HTTP server. That means that unlike traditional web servers, it does not fork for each incoming connection, nor does it fork many copies of itself to handle multiple connections.
+    用于识别目标是否部署 Boa Web 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.microsoft.com/en-us/security/blog/2022/11/22/vulnerable-sdk-components-lead-to-supply-chain-risks-in-iot-and-ot-environments/
     - http://www.boa.org/

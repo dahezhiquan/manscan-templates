@@ -1,10 +1,10 @@
 id: adobe-coldfusion-detect
 
 info:
-  name: Adobe ColdFusion Detector
+  name: Adobe ColdFusion 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
-  description: With this template we can detect the version number of Coldfusion instances based on their logos.
+  description: 用于识别目标是否部署 Adobe ColdFusion 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cpe: cpe:2.3:a:adobe:coldfusion:*:*:*:*:*:*:*:*
   metadata:

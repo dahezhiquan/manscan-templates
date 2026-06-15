@@ -1,11 +1,11 @@
 id: centos-eol
 
 info:
-  name: CentOS EOL - Detect
+  name: CentOS EOL 指纹识别（指纹识别）
   author: staticnoise
   severity: info
   description: |
-    Detected CentOS systems that had reached End-of-Life (EOL) status by identifying outdated version information in HTTP response.
+    用于识别目标是否部署 CentOS EOL 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://endoflife.date/centos
     - https://blog.centos.org/2023/04/end-dates-are-coming-for-centos-stream-8-and-centos-linux-7/

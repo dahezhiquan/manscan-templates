@@ -1,10 +1,10 @@
 id: jsf-detect
 
 info:
-  name: JavaServer Faces Detection
+  name: JavaServer Faces 指纹识别（指纹识别）
   author: brenocss,Moritz Nentwig
   severity: info
-  description: Searches for JavaServer Faces content on a URL.
+  description: 用于识别目标前端或应用中是否使用 JavaServer Faces，模板会结合特定路径或已知端点进行技术栈指纹匹配。
   metadata:
     max-request: 1
   tags: jsf,tech,primefaces,richfaces,discovery

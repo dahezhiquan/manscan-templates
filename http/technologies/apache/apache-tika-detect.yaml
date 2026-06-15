@@ -1,11 +1,11 @@
 id: apache-tika-detect
 
 info:
-  name: Apache Tika - Detection
+  name: Apache Tika 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects an Apache Tika server, a toolkit that detects and extracts metadata and text from over a thousand different file types (such as PPT, XLS, and PDF).
+    用于识别目标是否部署 Apache Tika 并提取相关版本或构建信息，模板会结合页面标题、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/apache/tika/
   classification:

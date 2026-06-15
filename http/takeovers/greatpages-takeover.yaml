@@ -1,11 +1,11 @@
 id: greatpages-takeover
 
 info:
-  name: GreatPages - Takeover Detection
+  name: GreatPages 页面缺失接管检测（子域名接管）
   author: juliosmelo
   severity: high
   description: |
-    Detects potential subdomain takeover on GreatPages.com.br by identifying the default error message shown on unclaimed pages.
+    通过识别 GreatPages.com.br 未声明页面显示的默认 404 错误，检测目标子域名是否仍指向 GreatPages 但未绑定有效页面，从而判断潜在接管风险。
   reference:
     - https://greatpages.com.br
   metadata:

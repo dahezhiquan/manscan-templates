@@ -1,7 +1,7 @@
 id: landesk-csa
 
 info:
-  name: LANDESK(R) Cloud Services Appliance Detect
+  name: LANDESK(R) Cloud 服务 Appliance 指纹识别（指纹识别）
   author: 0xNirvana
   severity: info
   metadata:

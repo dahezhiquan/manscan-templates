@@ -1,11 +1,11 @@
 id: woodpecker-detect
 
 info:
-  name: Woodpecker - Detect
+  name: Woodpecker 指纹识别（指纹识别）
   author: righettod
   severity: info
   description: |
-    Woodpecker was detected — a lightweight, powerful CI/CD engine with great extensibility.
+    用于识别目标是否部署 Woodpecker 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/woodpecker-ci/woodpecker
     - https://woodpecker-ci.org/

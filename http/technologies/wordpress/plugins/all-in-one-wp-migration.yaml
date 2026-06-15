@@ -1,7 +1,7 @@
 id: wordpress-all-in-one-wp-migration
 
 info:
-  name: All-in-One WP Migration and Backup Detection
+  name: All-in-One WP Migration and Backup 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

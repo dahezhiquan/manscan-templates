@@ -1,10 +1,10 @@
 id: intercom-takeover
 
 info:
-  name: Intercom Takeover Detection
+  name: Intercom 帮助页面缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Intercom takeover was detected.
+  description: 检测 Intercom 返回页面不存在或保留错误页提示的情况，表明目标域名可能仍指向 Intercom 但未关联有效应用或帮助中心，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/69
   metadata:

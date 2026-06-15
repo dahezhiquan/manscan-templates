@@ -1,7 +1,7 @@
 id: wordpress-header-and-footer-scripts
 
 info:
-  name: Header and Footer Scripts Detection
+  name: Header and Footer Scripts 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

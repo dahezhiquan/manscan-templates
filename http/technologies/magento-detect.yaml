@@ -1,10 +1,10 @@
 id: magento-detect
 
 info:
-  name: Magento Detect
+  name: Magento 指纹识别（指纹识别）
   author: TechbrunchFR
   severity: info
-  description: Identify Magento
+  description: 用于识别目标是否使用 Magento，模板会结合特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://devdocs.magento.com/guides/v2.4/graphql/
   classification:

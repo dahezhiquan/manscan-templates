@@ -1,11 +1,11 @@
 id: apache-sling-detect
 
 info:
-  name: Apache Sling - Detect
+  name: Apache Sling 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Sling, a Java-based web framework designed for content-centric applications, using a RESTful approach to map URL requests directly to resources in a Java Content Repository (JCR).
+    用于识别目标前端或应用中是否使用 Apache Sling，模板会结合页面标题、状态码和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://github.com/apache/sling
   metadata:

@@ -1,7 +1,7 @@
 id: artica-web-proxy-detect
 
 info:
-  name: Artica Web Proxy Detect
+  name: Artica Web Proxy 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   metadata:

@@ -1,7 +1,7 @@
 id: wordpress-w3-total-cache
 
 info:
-  name: W3 Total Cache Detection
+  name: W3 Total Cache 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

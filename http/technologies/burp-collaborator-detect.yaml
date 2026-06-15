@@ -1,11 +1,11 @@
 id: burp-collaborator-detect
 
 info:
-  name: Burp Collaborator Server - Detect
+  name: Burp Collaborator 服务器指纹识别（指纹识别）
   author: lum8rjack
   severity: info
   description: |
-    Burp Collaborator server detected.
+    用于识别目标是否部署 Burp Collaborator 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://portswigger.net/burp/documentation/collaborator
   classification:

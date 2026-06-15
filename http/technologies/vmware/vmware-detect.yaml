@@ -1,10 +1,10 @@
 id: vmware-detect
 
 info:
-  name: VMware Detection
+  name: VMware 指纹识别（指纹识别）
   author: elouhi
   severity: info
-  description: Sends a POST request containing a SOAP payload to a vCenter server to obtain version information
+  description: 用于识别目标是否部署 VMware 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.pwndefend.com/2021/09/23/exposed-vmware-vcenter-servers-around-the-world-cve-2021-22005/
     - https://svn.nmap.org/nmap/scripts/vmware-version.nse

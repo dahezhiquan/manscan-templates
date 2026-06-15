@@ -1,11 +1,11 @@
 id: amazon-ecs-defualt-page
 
 info:
-  name: Amazon ECS Sample App Default Page - Detect
+  name: Amazon ECS 示例应用 默认页面指纹识别（指纹识别）
   author: Splint3r7
   severity: info
   description: |
-    Amazon ECS Sample App Default Page was detected.
+    用于识别目标暴露的 Amazon ECS 示例应用 默认页面，模板会结合页面标题和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   classification:
     cwe-id: CWE-200
   metadata:

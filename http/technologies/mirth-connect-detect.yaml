@@ -1,11 +1,11 @@
 id: mirth-connect-detect
 
 info:
-  name: Mirth Connect Admin Panel - Detect
+  name: Mirth Connect 管理面板指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Detects Mirth Connect Administrator panel.
+    用于识别目标暴露的 Mirth Connect 管理面板，模板会结合页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: glpi-status-page
 
 info:
-  name: GLPI Status Page - Detect
+  name: GLPI Status Page 指纹识别（指纹识别）
   author: canberbamber
   severity: info
   description: |
-    A php status page that indicates if local or ldap identity is used for glpi.
+    用于识别目标是否使用 GLPI Status Page，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://buildmedia.readthedocs.org/media/pdf/glpi-user-documentation/latest/glpi-user-documentation.pdf
   classification:

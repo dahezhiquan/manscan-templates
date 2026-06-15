@@ -1,7 +1,7 @@
 id: rsshub-detect
 
 info:
-  name: RSSHub Detect
+  name: RSSHub 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
   classification:

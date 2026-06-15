@@ -1,7 +1,7 @@
 id: wordpress-meta-box
 
 info:
-  name: Meta Box Detection
+  name: Meta Box 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

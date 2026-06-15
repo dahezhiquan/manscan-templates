@@ -1,11 +1,11 @@
 id: lobechat-detect
 
 info:
-  name: LobeChat - Detect
+  name: LobeChat 指纹识别（指纹识别）
   author: s4e-io
   severity: info
   description: |
-    An instance running LobeChat was detected.
+    用于识别目标是否使用 LobeChat，模板会结合 favicon 哈希和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/lobehub/lobe-chat
   metadata:

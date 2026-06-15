@@ -1,10 +1,10 @@
 id: websphere-detect
 
 info:
-  name: IBM WebSphere Application Server
+  name: IBM WebSphere 应用服务器指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: Detects servers running IBM WebSphere Application Server via the Server header.
+  description: 用于识别目标是否部署 IBM WebSphere 应用服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.ibm.com/products/websphere-application-server
   metadata:

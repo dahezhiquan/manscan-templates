@@ -1,7 +1,7 @@
 id: wordpress-mainwp-child
 
 info:
-  name: MainWP Child – Securely Connects to the MainWP Dashboard to Manage Multiple Sites Detection
+  name: MainWP Child - Securely Connects to the MainWP 控制台 to Manage Multiple Sites 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

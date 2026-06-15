@@ -1,11 +1,11 @@
 id: mongoose-server
 
 info:
-  name: Mongoose Server
+  name: Mongoose 服务器指纹识别（指纹识别）
   author: lu4nx
   severity: info
   description: |
-    Mongoose is a embedded web server
+    用于识别目标是否运行 Mongoose 服务器，模板会结合 HTTP 响应头、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/cesanta/mongoose
   classification:

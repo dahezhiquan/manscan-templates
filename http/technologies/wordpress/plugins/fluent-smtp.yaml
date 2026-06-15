@@ -1,7 +1,7 @@
 id: wordpress-fluent-smtp
 
 info:
-  name: FluentSMTP – WP SMTP Plugin with Amazon SES, SendGrid, MailGun, Postmark, Google and Any SMTP Provider Detection
+  name: FluentSMTP - WP SMTP Plugin with Amazon SES, SendGrid, MailGun, Postmark, Google and Any SMTP Provider 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

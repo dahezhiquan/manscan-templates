@@ -1,10 +1,10 @@
 id: smugmug-takeover
 
 info:
-  name: Smugmug Takeover Detection
+  name: SmugMug 页面缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Smugmug takeover was detected.
+  description: 检测 SmugMug 返回 Page Not Found 的 JSON 文本特征，说明目标域名可能仍指向 SmugMug 但未关联有效相册或站点，存在接管风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/60
   metadata:

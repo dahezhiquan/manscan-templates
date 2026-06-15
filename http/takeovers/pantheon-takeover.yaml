@@ -1,10 +1,10 @@
 id: pantheon-takeover
 
 info:
-  name: Pantheon Takeover Detection
+  name: Pantheon 站点缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Pantheon takeover was detected.
+  description: 检测 Pantheon 返回站点不存在的默认错误文案，表明目标域名可能仍指向 Pantheon 但未关联有效站点，存在被重新创建站点后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/24
     - https://medium.com/bug-bounty/how-i-took-over-several-stanford-subdomains-also-let-me-explain-you-the-pain-to-report-it-d84b08704be8

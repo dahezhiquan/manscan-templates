@@ -1,7 +1,7 @@
 id: wordpress-mailchimp-for-wp
 
 info:
-  name: MC4WP' Mailchimp for WordPress Detection
+  name: MC4WP' Mailchimp for WordPress 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

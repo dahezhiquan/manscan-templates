@@ -1,7 +1,7 @@
 id: connectwise-control-detect
 
 info:
-  name: ConnectWise Control  Detect
+  name: ConnectWise Control 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: apache-dubbo-detect
 
 info:
-  name: Apache dubbo detect
+  name: Apache dubbo 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   classification:

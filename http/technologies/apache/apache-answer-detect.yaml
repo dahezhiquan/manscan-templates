@@ -1,11 +1,11 @@
 id: apache-answer-detect
 
 info:
-  name: Apache Answer - Detection
+  name: Apache Answer 指纹识别（指纹识别）
   author: omranisecurity
   severity: info
   description: |
-    Detects Apache Answer version through API endpoit
+    用于识别目标是否部署 Apache Answer 并提取相关版本或构建信息，模板会结合 favicon 哈希、HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://answer.apache.org/
   classification:

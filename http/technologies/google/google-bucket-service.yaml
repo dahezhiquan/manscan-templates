@@ -1,7 +1,7 @@
 id: google-bucket-service
 
 info:
-  name: Detect websites using Google bucket storage
+  name: Google bucket storage 指纹识别（指纹识别）
   author: pdteam
   severity: info
   metadata:

@@ -1,7 +1,7 @@
 id: jboss-detect
 
 info:
-  name: JBoss detected
+  name: JBoss 指纹识别（指纹识别）
   author: daffainfo,idealphase
   severity: info
   metadata:

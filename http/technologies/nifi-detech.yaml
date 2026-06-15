@@ -1,7 +1,7 @@
 id: apache-nifi-detect
 
 info:
-  name: Apache NiFi detect
+  name: Apache NiFi 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
   metadata:

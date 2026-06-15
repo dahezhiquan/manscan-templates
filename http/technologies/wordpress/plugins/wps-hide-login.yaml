@@ -1,7 +1,7 @@
 id: wordpress-wps-hide-login
 
 info:
-  name: WPS Hide Login Detection
+  name: WPS Hide Login 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

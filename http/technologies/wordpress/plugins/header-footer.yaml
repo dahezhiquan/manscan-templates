@@ -1,7 +1,7 @@
 id: wordpress-header-footer
 
 info:
-  name: Head, Footer and Post Injections Detection
+  name: Head, Footer and Post Injections 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

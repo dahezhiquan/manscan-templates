@@ -1,7 +1,7 @@
 id: kodexplorer-detect
 
 info:
-  name: KodExplorer-detect
+  name: kodexplorer 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   classification:

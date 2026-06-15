@@ -1,11 +1,11 @@
 id: nextcloud-detect
 
 info:
-  name: Nextcloud Detect
+  name: Nextcloud 指纹识别（指纹识别）
   author: skeltavik
   severity: info
   description: |
-    Nextcloud is a suite of client-server software for creating and using file hosting services
+    用于识别目标是否部署 Nextcloud 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://nextcloud.com
   classification:

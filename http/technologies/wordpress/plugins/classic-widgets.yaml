@@ -1,7 +1,7 @@
 id: wordpress-classic-widgets
 
 info:
-  name: Classic Widgets Detection
+  name: Classic Widgets 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

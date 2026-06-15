@@ -1,7 +1,7 @@
 id: default-page-azure-container
 
 info:
-  name: Azure Container Instance Default Page
+  name: Azure Container 实例 默认页面指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   metadata:

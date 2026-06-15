@@ -1,10 +1,10 @@
 id: oracle-atg-commerce
 
 info:
-  name: Oracle ATG Commerce Panel - Detect
+  name: Oracle ATG Commerce 面板指纹识别（指纹识别）
   author: Dale Clarke
   severity: info
-  description: Oracle ATG Commerce panel was detected.
+  description: 用于识别目标是否部署 Oracle ATG Commerce 面板 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://docs.oracle.com/cd/E35319_01/Platform.10-2/ATGPlatformProgGuide/html/s0101introduction01.html
   classification:

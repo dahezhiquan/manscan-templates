@@ -1,7 +1,7 @@
 id: apache-cocoon-detect
 
 info:
-  name: Apache Cocoon detect
+  name: Apache Cocoon 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
   classification:

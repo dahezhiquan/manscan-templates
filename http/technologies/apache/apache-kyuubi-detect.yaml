@@ -1,11 +1,11 @@
 id: apache-kyuubi-detect
 
 info:
-  name: Apache Kyuubi - Detect
+  name: Apache Kyuubi 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Kyuubi server, a distributed and multi-tenant gateway to provide serverless SQL on data warehouses and lakehouses.
+    用于识别目标是否运行 Apache Kyuubi，模板会结合页面标题、状态码和特定路径或已知端点进行服务指纹匹配。
   reference:
     - https://github.com/apache/kyuubi/
   classification:

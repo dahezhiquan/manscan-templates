@@ -1,11 +1,11 @@
 id: aspnetmvc-version-disclosure
 
 info:
-  name: AspNetMvc Version - Detect
+  name: AspNetMvc 版本指纹识别（指纹识别）
   author: lucky0x0d,PulseSecurity.co.nz
   severity: info
   description: |
-    Detects version disclosed via 'X-AspNetMvc-Version' header.
+    用于识别目标是否部署 AspNetMvc 版本 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

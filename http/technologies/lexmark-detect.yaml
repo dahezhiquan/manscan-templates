@@ -1,7 +1,7 @@
 id: lexmark-detect
 
 info:
-  name: Lexmark Device Detect
+  name: Lexmark Device 指纹识别（指纹识别）
   author: princechaddha
   severity: info
   metadata:

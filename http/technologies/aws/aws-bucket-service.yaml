@@ -1,7 +1,7 @@
 id: aws-bucket-service
 
 info:
-  name: Detect websites using AWS bucket storage
+  name: AWS Bucket 存储服务指纹识别（指纹识别）
   author: pdteam
   severity: info
   metadata:

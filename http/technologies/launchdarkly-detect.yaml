@@ -1,11 +1,11 @@
 id: launchdarkly-detect
 
 info:
-  name: LaunchDarkly - Detect
+  name: LaunchDarkly 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |
-    Detects the presence of LaunchDarkly, a feature management and feature flag platform.
+    用于识别目标前端或应用中是否使用 LaunchDarkly，模板会结合页面正文和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://launchdarkly.com/
     - https://launchdarkly.com/docs/sdk/client-side/javascript

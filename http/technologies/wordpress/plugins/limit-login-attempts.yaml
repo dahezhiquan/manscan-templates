@@ -1,7 +1,7 @@
 id: wordpress-limit-login-attempts
 
 info:
-  name: Limit Login Attempts Detection
+  name: Limit Login Attempts 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

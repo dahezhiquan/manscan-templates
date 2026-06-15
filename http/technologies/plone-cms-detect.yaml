@@ -1,10 +1,10 @@
 id: plone-cms-detect
 
 info:
-  name: Plone CMS detect
+  name: Plone CMS 指纹识别（指纹识别）
   author: cyllective
   severity: info
-  description: Detects Plone CMS
+  description: 用于识别目标是否使用 Plone CMS，模板会结合页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
   reference:
     - https://github.com/plone/Products.CMFPlone
   metadata:

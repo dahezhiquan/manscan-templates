@@ -1,7 +1,7 @@
 id: wordpress-svg-support
 
 info:
-  name: SVG Support Detection
+  name: SVG Support 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

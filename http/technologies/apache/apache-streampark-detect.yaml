@@ -1,11 +1,11 @@
 id: apache-streampark-detect
 
 info:
-  name: Apache Streampark - Detect
+  name: Apache Streampark 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    Detects a Apache Streampark server, a easy-to-use streaming application development framework and operation platform.
+    用于识别目标前端或应用中是否使用 Apache Streampark，模板会结合页面标题、状态码和特定路径或已知端点进行技术栈指纹匹配。
   reference:
     - https://github.com/apache/streampark
   classification:

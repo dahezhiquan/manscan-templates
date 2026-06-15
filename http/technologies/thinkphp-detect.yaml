@@ -1,10 +1,10 @@
 id: thinkphp-detect
 
 info:
-  name: ThinkPHP - Detect
+  name: ThinkPHP 指纹识别（指纹识别）
   author: pwnhxl
   severity: info
-  description: ThinkPHP was detected.
+  description: 用于识别目标前端或应用中是否使用 ThinkPHP，模板会结合 HTTP 响应头、页面标题、页面正文和特定路径或已知端点进行技术栈指纹匹配。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

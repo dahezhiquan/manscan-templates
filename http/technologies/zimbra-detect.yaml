@@ -1,10 +1,10 @@
 id: zimbra-detect
 
 info:
-  name: Zimbra Detect
+  name: Zimbra 指纹识别（指纹识别）
   author: UdinChan
   severity: info
-  description: Send a GET request to js file on Zimbra server to obtain version information
+  description: 用于识别目标是否部署 Zimbra 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,zimbra,discovery

@@ -1,7 +1,7 @@
 id: wordpress-font-awesome
 
 info:
-  name: Font Awesome Detection
+  name: Font Awesome 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
   reference:

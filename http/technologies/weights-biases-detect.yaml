@@ -1,11 +1,11 @@
 id: weights-biases-detect
 
 info:
-  name: Weights & Biases - Detect
+  name: Weights & Biases 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |
-    Weights & Biases (W&B) instance was detected. W&B is a popular MLOps platform for experiment tracking, model versioning, and collaborative ML development. Self-hosted deployments expose the full experiment management interface.
+    用于识别目标是否部署 Weights & Biases 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/wandb/wandb
     - https://wandb.ai/

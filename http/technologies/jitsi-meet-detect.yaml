@@ -1,11 +1,11 @@
 id: jitsi-meet-detect
 
 info:
-  name: Jitsi Meet Page Detect
+  name: Jitsi Meet Page 指纹识别（指纹识别）
   author: DhiyaneshDk,righettod
   severity: info
   description: |
-     Jitsi was detected — a free open-source video conferencing software for web and mobile.
+    用于识别目标是否部署 Jitsi Meet Page 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://jitsi.org/
     - https://github.com/jitsi

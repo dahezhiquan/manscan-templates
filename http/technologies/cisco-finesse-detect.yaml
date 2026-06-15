@@ -1,11 +1,11 @@
 id: cisco-finesse-detect
 
 info:
-  name: Cisco Finesse - Detect
+  name: Cisco Finesse 指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |
-    Detected Cisco Finesse application and extracted version information from multiple sources.
+    用于识别目标是否部署 Cisco Finesse 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     verified: true
     max-request: 1

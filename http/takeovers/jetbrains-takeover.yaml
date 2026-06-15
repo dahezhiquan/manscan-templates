@@ -1,10 +1,10 @@
 id: jetbrains-takeover
 
 info:
-  name: Jetbrains Takeover Detection
+  name: JetBrains YouTrack 未注册实例接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: Jetbrains takeover was detected.
+  description: 检测 JetBrains InCloud YouTrack 返回实例未注册提示的情况，表明目标域名可能指向未声明的 YouTrack 云实例，存在被重新注册后接管的风险。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/pull/107
   metadata:

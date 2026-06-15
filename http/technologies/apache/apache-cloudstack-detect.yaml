@@ -1,10 +1,10 @@
 id: apache-cloudstack-detect
 
 info:
-  name: Apache CloudStack - Detect
+  name: Apache CloudStack 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: CloudStack is open-source Infrastructure-as-a-Service cloud computing software for creating, managing, and deploying infrastructure cloud services. It uses existing hypervisor platforms for virtualization, such as KVM, VMware vSphere, including ESXi and vCenter, XenServer/XCP and XCP-ng.
+  description: 用于识别目标是否运行 Apache CloudStack，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行服务指纹匹配。
   classification:
     cpe: cpe:2.3:a:apache:cloudstack:*:*:*:*:*:*:*:*
   metadata:

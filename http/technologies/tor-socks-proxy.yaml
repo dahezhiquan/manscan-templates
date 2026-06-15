@@ -1,7 +1,7 @@
 id: tor-socks-proxy
 
 info:
-  name: Detect tor SOCKS proxy
+  name: tor SOCKS proxy 指纹识别（指纹识别）
   author: geeknik
   severity: info
   metadata:

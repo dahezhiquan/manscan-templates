@@ -1,11 +1,11 @@
 id: chromecast-detect
 
 info:
-  name: Google Chromecast - Detect
+  name: Google Chromecast 指纹识别（指纹识别）
   author: LucianNitescu
   severity: info
   description: |
-    Searches for Google Chromecast via their eureka_info route.
+    用于识别目标是否使用 Google Chromecast，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
   reference:
     - https://github.com/thewhiteh4t/killcast/blob/ee81cfa03c963d47d3335770fcea2ca48bddeabf/killcast.py#L100C25-L100C43
     - https://rithvikvibhu.github.io/GHLocalApi/#section/Google-Home-Local-API/Authentication

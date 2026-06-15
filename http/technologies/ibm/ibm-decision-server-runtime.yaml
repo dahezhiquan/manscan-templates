@@ -1,11 +1,11 @@
 id: ibm-decision-server-runtime
 
 info:
-  name: IBM Decision Server Runtime Panel- Detect
+  name: IBM Decision 服务器 Runtime 面板指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   description: |
-    IBM Decision Server Runtime was detected.
+    用于识别目标是否部署 IBM Decision 服务器 Runtime 面板 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://www.ibm.com/docs/en/odm/8.10?topic=services-hosted-transparent-decision
   metadata:

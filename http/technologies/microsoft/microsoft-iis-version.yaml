@@ -1,10 +1,10 @@
 id: microsoft-iis-version
 
 info:
-  name: Microsoft IIS version detect
+  name: Microsoft IIS version 指纹识别（指纹识别）
   author: Wlayzz
   severity: info
-  description: Some Microsoft IIS servers have the version on the response header. Useful when you need to find specific CVEs on your targets.
+  description: 用于识别目标是否部署 Microsoft IIS version 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   metadata:
     max-request: 1
   tags: tech,microsoft,iis,discovery

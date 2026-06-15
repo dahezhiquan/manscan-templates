@@ -1,10 +1,10 @@
 id: angular-detect
 
 info:
-  name: Angular detect
+  name: Angular 指纹识别（指纹识别）
   author: TechbrunchFR
   severity: info
-  description: Angular is a development platform for building mobile and desktop web applications using Typescript/JavaScript and other languages.
+  description: 用于识别目标是否部署 Angular 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
   reference:
     - https://github.com/angular/angular
   classification:

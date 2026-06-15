@@ -1,7 +1,7 @@
 id: cloudflare-challenges-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Cloudflare Challenges
+  name: 内容安全策略 CSP 绕过 - Cloudflare Challenges（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

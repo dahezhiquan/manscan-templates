@@ -1,7 +1,7 @@
 id: erb-erubi-erubis-oob
 
 info:
-  name: Erb OR Erubi OR Erubis - Out of Band Template Injection
+  name: Erb OR Erubi OR Erubis 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

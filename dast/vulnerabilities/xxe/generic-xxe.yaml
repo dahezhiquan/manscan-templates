@@ -1,7 +1,7 @@
 id: generic-xxe
 
 info:
-  name: Generic XML External Entity - (XXE)
+  name: 通用 XML 外部实体 XXE 注入（DAST）
   author: pwnhxl,AmirHossein Raeisi
   severity: medium
   reference:

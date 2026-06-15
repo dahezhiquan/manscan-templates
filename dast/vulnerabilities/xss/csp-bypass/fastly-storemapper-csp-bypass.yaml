@@ -1,7 +1,7 @@
 id: fastly-storemapper-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Fastly StoreMapper
+  name: 内容安全策略 CSP 绕过 - Fastly StoreMapper（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

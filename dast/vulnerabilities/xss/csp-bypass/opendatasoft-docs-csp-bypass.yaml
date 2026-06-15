@@ -1,7 +1,7 @@
 id: opendatasoft-docs-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Opendatasoft Docs
+  name: 内容安全策略 CSP 绕过 - Opendatasoft Docs（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

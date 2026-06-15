@@ -1,7 +1,7 @@
 id: googleapis-blogger-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google APIs Blogger
+  name: 内容安全策略 CSP 绕过 - Google APIs Blogger（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

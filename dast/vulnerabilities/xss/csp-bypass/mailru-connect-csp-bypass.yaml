@@ -1,7 +1,7 @@
 id: mailru-connect-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Mail.ru Connect
+  name: 内容安全策略 CSP 绕过 - Mail.ru Connect（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

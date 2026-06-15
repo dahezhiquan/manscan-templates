@@ -1,7 +1,7 @@
 id: meteoprog-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Meteoprog
+  name: 内容安全策略 CSP 绕过 - Meteoprog（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: hatenaapis-bookmark-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Hatena APIs Bookmark
+  name: 内容安全策略 CSP 绕过 - Hatena APIs Bookmark（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

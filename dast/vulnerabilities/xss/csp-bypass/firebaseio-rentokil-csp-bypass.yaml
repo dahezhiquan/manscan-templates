@@ -1,7 +1,7 @@
 id: firebaseio-rentokil-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Firebaseio Rentokil
+  name: 内容安全策略 CSP 绕过 - Firebaseio Rentokil（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

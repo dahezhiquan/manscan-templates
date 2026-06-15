@@ -1,7 +1,7 @@
 id: clients6-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - clients6
+  name: 内容安全策略 CSP 绕过 - clients6（DAST）
   author: Jaenact
   severity: medium
   reference:

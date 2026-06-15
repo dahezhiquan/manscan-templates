@@ -1,7 +1,7 @@
 id: google-clients1-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google Clients1
+  name: 内容安全策略 CSP 绕过 - Google Clients1（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

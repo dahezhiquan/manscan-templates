@@ -1,7 +1,7 @@
 id: tornado-oob
 
 info:
-  name: Tornado - Out of Band Template Injection
+  name: Tornado 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

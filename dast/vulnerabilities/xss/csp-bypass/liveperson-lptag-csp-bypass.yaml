@@ -1,7 +1,7 @@
 id: liveperson-lptag-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - LivePerson LPTAG
+  name: 内容安全策略 CSP 绕过 - LivePerson LPTAG（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

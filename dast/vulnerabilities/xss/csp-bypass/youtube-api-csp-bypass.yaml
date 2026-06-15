@@ -1,7 +1,7 @@
 id: youtube-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - YouTube API
+  name: 内容安全策略 CSP 绕过 - YouTube API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

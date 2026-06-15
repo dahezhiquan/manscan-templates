@@ -1,11 +1,11 @@
 id: google-storage-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google Storage
+  name: 内容安全策略 CSP 绕过 - Google Storage（DAST）
   author: 0x_Akoko
   severity: medium
   description: |
-    CSP policy allows Google Storage (storage.googleapis.com) enabling malicious JavaScript execution by loading attacker-controlled files from whitelisted domain.
+    该模板检测 CSP 策略信任 Google Storage（storage.googleapis.com）时的绕过风险。若攻击者可加载白名单域名上的可控文件，可能执行恶意 JavaScript。
   reference:
     - https://0xn3va.gitbook.io/cheat-sheets/web-application/content-security-policy
     - https://huntr.com/bounties/6cea89d1-39dc-4023-82fa-821f566b841a

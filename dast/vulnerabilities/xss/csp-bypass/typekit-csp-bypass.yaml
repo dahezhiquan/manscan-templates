@@ -1,7 +1,7 @@
 id: typekit-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Typekit
+  name: 内容安全策略 CSP 绕过 - Typekit（DAST）
   author: Jaenact
   severity: medium
   reference:

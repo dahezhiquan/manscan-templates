@@ -1,11 +1,11 @@
 id: csv-injection
 
 info:
-  name: CSV Injection Detection
+  name: CSV 公式注入探测（DAST）
   author: DhiyaneshDK,ritikchaddha
   severity: medium
   description: |
-    A CSV injection detection template to identify and prevent CSV injection vulnerabilities by using various payloads that could be interpreted as formulas by spreadsheet applications.
+    该模板使用可被电子表格软件解释为公式的载荷检测 CSV 注入风险。若应用导出未转义的用户输入，打开 CSV 时可能执行外部引用或公式。
   tags: dast,csv,oast,vuln
 
 http:

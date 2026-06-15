@@ -1,7 +1,7 @@
 id: bing-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Bing API
+  name: 内容安全策略 CSP 绕过 - Bing API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

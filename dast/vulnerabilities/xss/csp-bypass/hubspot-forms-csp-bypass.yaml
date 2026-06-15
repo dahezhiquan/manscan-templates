@@ -1,7 +1,7 @@
 id: hubspot-forms-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - HubSpot Forms
+  name: 内容安全策略 CSP 绕过 - HubSpot Forms（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

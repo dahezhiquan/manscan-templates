@@ -1,7 +1,7 @@
 id: app-link-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - App Link
+  name: 内容安全策略 CSP 绕过 - App Link（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

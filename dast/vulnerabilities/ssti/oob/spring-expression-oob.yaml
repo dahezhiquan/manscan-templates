@@ -1,11 +1,11 @@
 id: spring-expression-oob
 
 info:
-  name: Spring Expression Language - Out of Band Template Injection
+  name: Spring Expression Language 带外服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    The Spring Expression Language (SpEL for short) is a powerful expression language that supports querying and manipulating an object graph at runtime. The language syntax is similar to Unified EL but offers additional features, most notably method invocation and basic string templating functionality.
+    该模板检测 Spring Expression Language（SpEL）带外模板注入。SpEL 支持运行时查询和操作对象图，并具备方法调用能力，未过滤表达式可能被滥用。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#spel---command-execution
   metadata:

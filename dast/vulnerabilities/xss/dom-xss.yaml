@@ -1,15 +1,15 @@
 id: dom-xss
 
 info:
-  name: DOM Cross Site Scripting
+  name: DOM 型跨站脚本 XSS（DAST）
   author: theamanrawat,AmirHossein Raeisi,dwisiswant0
   severity: medium
   description: |
-    Detects DOM-based Cross Site Scripting (XSS) vulnerabilities.
+    该模板检测 DOM 型跨站脚本（XSS）。当前端 JavaScript 将 URL、片段、存储或其他可控数据写入危险 DOM API 时，攻击者可在浏览器中执行脚本。
   impact: |
-    Allows attackers to execute malicious scripts in the victim's browser.
+    攻击者可在受害者浏览器中执行恶意脚本，窃取会话、读取页面数据或代替用户发起操作。
   remediation: |
-    Sanitize and validate user input to prevent script injection.
+    对进入 DOM 的数据进行上下文编码与校验，避免使用 innerHTML、document.write 等危险 API 处理不可信输入。
   tags: xss,dom,dast,headless,vuln
 
 variables:

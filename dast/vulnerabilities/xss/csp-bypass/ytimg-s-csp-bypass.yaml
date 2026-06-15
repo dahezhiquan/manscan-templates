@@ -1,7 +1,7 @@
 id: ytimg-s-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - YTImg S
+  name: 内容安全策略 CSP 绕过 - YTImg S（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

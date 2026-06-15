@@ -1,7 +1,7 @@
 id: angularjs-code-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - AngularJS Code
+  name: 内容安全策略 CSP 绕过 - AngularJS Code（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

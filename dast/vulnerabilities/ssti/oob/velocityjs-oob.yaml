@@ -1,7 +1,7 @@
 id: velocityjs-oob
 
 info:
-  name: VelocityJS 2.0.6 - Out of Band Template Injection
+  name: VelocityJS 2.0.6 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

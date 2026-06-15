@@ -1,7 +1,7 @@
 id: dotjs-oob
 
 info:
-  name: DotJS - Out of Band Template Injection
+  name: DotJS 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

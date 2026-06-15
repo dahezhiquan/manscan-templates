@@ -1,7 +1,7 @@
 id: ip-api-edns-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - IP-API EDNS
+  name: 内容安全策略 CSP 绕过 - IP-API EDNS（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: olark-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Olark API
+  name: 内容安全策略 CSP 绕过 - Olark API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

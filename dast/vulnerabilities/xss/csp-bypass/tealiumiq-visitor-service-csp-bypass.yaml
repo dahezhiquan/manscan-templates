@@ -1,7 +1,7 @@
 id: tealiumiq-visitor-service-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - TealiumIQ Visitor Service
+  name: 内容安全策略 CSP 绕过 - TealiumIQ Visitor Service（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: response-ssrf
 
 info:
-  name: Full Response SSRF Detection
+  name: 完整响应 SSRF 探测（DAST）
   author: pdteam,pwnhxl,j4vaovo,AmirHossein Raeisi
   severity: high
   reference:

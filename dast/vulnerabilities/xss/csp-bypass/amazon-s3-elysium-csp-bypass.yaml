@@ -1,7 +1,7 @@
 id: amazon-s3-elysium-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Amazon S3 Elysium
+  name: 内容安全策略 CSP 绕过 - Amazon S3 Elysium（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

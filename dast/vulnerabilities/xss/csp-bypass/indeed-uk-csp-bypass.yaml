@@ -1,7 +1,7 @@
 id: indeed-uk-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Indeed UK
+  name: 内容安全策略 CSP 绕过 - Indeed UK（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

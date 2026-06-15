@@ -1,7 +1,7 @@
 id: linux-lfi-fuzz
 
 info:
-  name: Local File Inclusion - Linux
+  name: Linux 本地文件包含模糊测试（DAST）
   author: DhiyaneshDK
   severity: high
   reference:

@@ -1,7 +1,7 @@
 id: googleapis-customsearch-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google APIs Custom Search
+  name: 内容安全策略 CSP 绕过 - Google APIs Custom Search（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

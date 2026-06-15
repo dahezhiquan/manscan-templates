@@ -1,15 +1,15 @@
 id: angular-client-side-template-injection
 
 info:
-  name: Angular Client-side-template-injection
+  name: Angular 客户端模板注入（DAST）
   author: theamanrawat
   severity: high
   description: |
-    Detects Angular client-side template injection vulnerability.
+    该模板检测 Angular 客户端模板注入。若用户输入被直接放入 Angular 表达式或模板上下文，浏览器端可能执行攻击者构造的表达式。
   impact: |
-    May lead to remote code execution or sensitive data exposure.
+    攻击者可能在受害者浏览器中执行脚本、读取页面数据，或在特定场景下触发更高危的客户端代码执行。
   remediation: |
-    Sanitize user inputs and avoid using user-controlled data in template rendering.
+    对用户输入进行上下文相关编码和校验，避免将可控数据直接作为 Angular 模板或表达式渲染。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/angularjs-client-side-template-injection/
     - https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs

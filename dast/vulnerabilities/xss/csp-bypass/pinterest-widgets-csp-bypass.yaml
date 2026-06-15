@@ -1,7 +1,7 @@
 id: pinterest-widgets-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Pinterest Widgets
+  name: 内容安全策略 CSP 绕过 - Pinterest Widgets（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

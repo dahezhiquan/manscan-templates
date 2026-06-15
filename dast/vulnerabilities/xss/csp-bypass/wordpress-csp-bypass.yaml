@@ -1,7 +1,7 @@
 id: wordpress-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - WordPress
+  name: 内容安全策略 CSP 绕过 - WordPress（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

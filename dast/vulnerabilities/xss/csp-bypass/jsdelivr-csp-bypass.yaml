@@ -1,7 +1,7 @@
 id: jsdelivr-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - jsDelivr
+  name: 内容安全策略 CSP 绕过 - jsDelivr（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

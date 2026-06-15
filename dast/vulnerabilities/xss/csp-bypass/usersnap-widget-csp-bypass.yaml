@@ -1,7 +1,7 @@
 id: usersnap-widget-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Usersnap Widget
+  name: 内容安全策略 CSP 绕过 - Usersnap Widget（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

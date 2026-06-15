@@ -1,7 +1,7 @@
 id: arkoselabs-client-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Arkose Labs Client API
+  name: 内容安全策略 CSP 绕过 - Arkose Labs Client API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

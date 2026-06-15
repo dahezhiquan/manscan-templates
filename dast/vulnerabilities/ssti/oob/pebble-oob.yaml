@@ -1,11 +1,11 @@
 id: pebble-oob
 
 info:
-  name: Pebble - Out of Band Template Injection
+  name: Pebble 带外服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Pebble is a Java templating engine inspired by Twig and similar to the Python Jinja Template Engine syntax. It features templates inheritance and easy-to-read syntax, ships with built-in autoescaping for security, and includes integrated support for internationalization.
+    该模板检测 Pebble 模板引擎中的带外服务端模板注入。Pebble 是受 Twig/Jinja 启发的 Java 模板引擎，错误渲染用户输入可能导致表达式执行或外带探测。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#pebble---code-execution
   metadata:

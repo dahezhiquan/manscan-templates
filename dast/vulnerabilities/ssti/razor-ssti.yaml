@@ -1,11 +1,11 @@
 id: razor-ssti
 
 info:
-  name: Razor - Server Side Template Injection
+  name: Razor 服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Razor is a server-side templating engine for ASP.NET Core, it is a powerful template engine that can run pure C# code. It allows for server-side template injection by exploiting the Razor syntax.
+    该模板检测 ASP.NET Core Razor 服务端模板注入。Razor 可在模板中运行 C# 代码，若不可信输入进入模板执行上下文，可能被利用执行服务端逻辑。
   reference:
     - https://www.yeswehack.com/learn-bug-bounty/server-side-template-injection-exploitation
   metadata:

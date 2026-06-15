@@ -1,7 +1,7 @@
 id: criteo-cas-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Criteo CAS
+  name: 内容安全策略 CSP 绕过 - Criteo CAS（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

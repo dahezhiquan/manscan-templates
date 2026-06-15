@@ -1,7 +1,7 @@
 id: baidu-passport-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Baidu Passport
+  name: 内容安全策略 CSP 绕过 - Baidu Passport（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

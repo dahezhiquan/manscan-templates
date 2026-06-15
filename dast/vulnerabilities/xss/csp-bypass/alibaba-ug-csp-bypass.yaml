@@ -1,7 +1,7 @@
 id: alibaba-ug-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Alibaba UG
+  name: 内容安全策略 CSP 绕过 - Alibaba UG（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: swiftype-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Swiftype API
+  name: 内容安全策略 CSP 绕过 - Swiftype API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

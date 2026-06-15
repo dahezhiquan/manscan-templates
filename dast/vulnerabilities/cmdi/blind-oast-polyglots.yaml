@@ -1,12 +1,11 @@
 id: cmdi-blind-oast-polyglot
 
 info:
-  name: Blind OS Command Injection
+  name: 盲 OS 命令注入 OAST 探测（DAST）
   author: pdteam,geeknik
   severity: high
   description: |
-    Potential blind OS command injection vulnerabilities, where the application constructs OS commands using unsanitized user input.
-    Successful exploitation could lead to arbitrary command execution on the system.
+    该模板使用 OAST 多语法载荷检测盲 OS 命令注入。目标应用若将未过滤用户输入拼接到系统命令中，即使 HTTP 响应无直接回显，也可能通过外带交互确认漏洞。
   reference:
     - https://portswigger.net/research/hunting-asynchronous-vulnerabilities
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Command%20Injection/README.md

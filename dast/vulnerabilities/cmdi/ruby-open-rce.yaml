@@ -1,11 +1,11 @@
 id: cmdi-ruby-open-rce
 
 info:
-  name: Ruby Kernel#open/URI.open RCE
+  name: Ruby Kernel#open/URI.open 远程代码执行（DAST）
   author: pdteam
   severity: high
   description: |
-    Ruby's Kernel#open and URI.open enables not only file access but also process invocation by prefixing a pipe symbol (e.g., open(“| ls”)). So, it may lead to Remote Code Execution by using variable input to the argument of Kernel#open and URI.open.
+    该模板检测 Ruby Kernel#open/URI.open 被不可信输入滥用时的远程代码执行风险。Ruby open 在参数以管道符开头时可触发进程调用，例如 open("| command")。
   reference:
     - https://bishopfox.com/blog/ruby-vulnerabilities-exploits
     - https://codeql.github.com/codeql-query-help/ruby/rb-kernel-open/

@@ -1,7 +1,7 @@
 id: yugiohmonstrosdeduelo-blogger-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Yugiohmonstrosdeduelo Blogger
+  name: 内容安全策略 CSP 绕过 - Yugiohmonstrosdeduelo Blogger（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

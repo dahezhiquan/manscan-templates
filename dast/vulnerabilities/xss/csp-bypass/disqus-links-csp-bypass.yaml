@@ -1,7 +1,7 @@
 id: disqus-links-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Disqus Links
+  name: 内容安全策略 CSP 绕过 - Disqus Links（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

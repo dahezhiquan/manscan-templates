@@ -1,11 +1,11 @@
 id: xinclude-injection
 
 info:
-  name: XInclude Injection - Detection
+  name: XInclude 注入探测（DAST）
   author: DhiyaneshDK,ritikchaddha
   severity: high
   description: |
-    XInclude is a part of the XML specification that allows an XML document to be built from sub-documents. You can place an XInclude attack within any data value in an XML document, so the attack can be performed in situations where you only control a single item of data that is placed into a server-side XML document.
+    该模板检测 XInclude 注入。XInclude 允许 XML 文档引用并组合外部子文档；当攻击者控制进入服务端 XML 的单个字段时，也可能插入 XInclude 语句读取本地或远程资源。
   reference:
     - https://d0pt3x.gitbook.io/passion/webapp-security/xxe-attacks/xinclude-attacks
   tags: dast,xxe,xinclude,vuln

@@ -1,7 +1,7 @@
 id: freemarker-oob
 
 info:
-  name: Freemarker 2.3.33 - Out of Band Template Injection
+  name: Freemarker 2.3.33 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK,ritikchaddha
   severity: high
   reference:

@@ -1,7 +1,7 @@
 id: dailymotion-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Dailymotion API
+  name: 内容安全策略 CSP 绕过 - Dailymotion API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

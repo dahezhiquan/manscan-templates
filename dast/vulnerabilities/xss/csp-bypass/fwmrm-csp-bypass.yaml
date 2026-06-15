@@ -1,7 +1,7 @@
 id: fwmrm-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - FWM RM
+  name: 内容安全策略 CSP 绕过 - FWM RM（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

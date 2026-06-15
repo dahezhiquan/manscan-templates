@@ -1,7 +1,7 @@
 id: virtualearth-dev-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Virtual Earth Dev
+  name: 内容安全策略 CSP 绕过 - Virtual Earth Dev（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

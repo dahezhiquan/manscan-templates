@@ -1,7 +1,7 @@
 id: vimeo-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Vimeo
+  name: 内容安全策略 CSP 绕过 - Vimeo（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

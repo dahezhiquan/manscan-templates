@@ -1,13 +1,11 @@
 id: sqli-error-based
 
 info:
-  name: Error based SQL Injection
+  name: 基于报错的 SQL 注入（DAST）
   author: geeknik,pdteam
   severity: critical
   description: |
-    Direct SQL Command Injection is a technique where an attacker creates or alters existing SQL commands to expose hidden data,
-    or to override valuable ones, or even to execute dangerous system level commands on the database host.
-    This is accomplished by the application taking user input and combining it with static parameters to build an SQL query .
+    该模板检测基于报错的 SQL 注入。应用将用户输入与静态 SQL 片段拼接后执行时，攻击者可构造语句触发数据库错误并从错误信息中提取结构或数据。
   metadata:
     max-request: 3
   tags: sqli,error,dast,vuln

@@ -1,7 +1,7 @@
 id: crlf-injection
 
 info:
-  name: CRLF Injection
+  name: CRLF 注入探测（DAST）
   author: pdteam
   severity: low
   metadata:

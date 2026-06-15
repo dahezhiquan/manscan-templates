@@ -1,7 +1,7 @@
 id: ipify-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Ipify API
+  name: 内容安全策略 CSP 绕过 - Ipify API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

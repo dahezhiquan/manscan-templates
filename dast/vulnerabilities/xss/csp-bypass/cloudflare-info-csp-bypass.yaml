@@ -1,7 +1,7 @@
 id: cloudflare-info-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Cloudflare Info
+  name: 内容安全策略 CSP 绕过 - Cloudflare Info（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

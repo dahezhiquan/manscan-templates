@@ -1,7 +1,7 @@
 id: codepen-oob
 
 info:
-  name: Codepen - Out of Band Template Injection
+  name: Codepen 带外服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   reference:

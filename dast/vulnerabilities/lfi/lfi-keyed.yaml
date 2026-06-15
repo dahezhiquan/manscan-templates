@@ -1,7 +1,7 @@
 id: lfi-keyed
 
 info:
-  name: LFI Detection - Keyed
+  name: 基于关键字的本地文件包含探测（DAST）
   author: pwnhxl
   severity: high
   reference:

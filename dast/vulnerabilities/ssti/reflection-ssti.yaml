@@ -1,7 +1,7 @@
 id: reflection-ssti
 
 info:
-  name: Reflected SSTI Arithmetic Based
+  name: 基于算术回显的 SSTI 探测（DAST）
   author: pdteam
   severity: medium
   reference:

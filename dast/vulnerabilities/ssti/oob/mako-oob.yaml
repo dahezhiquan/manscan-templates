@@ -1,7 +1,7 @@
 id: mako-oob
 
 info:
-  name: Mako - Out of Band Template Injection
+  name: Mako 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

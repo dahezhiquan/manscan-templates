@@ -1,7 +1,7 @@
 id: forismatic-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Forismatic API
+  name: 内容安全策略 CSP 绕过 - Forismatic API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

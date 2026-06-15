@@ -1,7 +1,7 @@
 id: bytedance-sso-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - ByteDance SSO
+  name: 内容安全策略 CSP 绕过 - ByteDance SSO（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

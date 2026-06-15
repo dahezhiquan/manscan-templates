@@ -1,7 +1,7 @@
 id: cookie-injection
 
 info:
-  name: Parameter based cookie injection
+  name: 基于参数的 Cookie 注入（DAST）
   author: pdteam
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: marketo-app-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Marketo App
+  name: 内容安全策略 CSP 绕过 - Marketo App（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: blade-oob
 
 info:
-  name: Laravel Blade 11.27.2 - Out of Band Template Injection
+  name: Laravel Blade 11.27.2 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

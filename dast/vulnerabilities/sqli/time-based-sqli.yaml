@@ -1,11 +1,11 @@
 id: time-based-sqli
 
 info:
-  name: Time-Based Blind SQL Injection
+  name: 基于时间的盲 SQL 注入（DAST）
   author: 0xKayala,Jaenact
   severity: critical
   description: |
-    Sends time-delay SQL payloads and measures response latency to confirm blind injection in various database engines, enabling data extraction without direct error messages.
+    该模板发送延时 SQL 载荷并测量响应时间，用于确认没有直接报错回显时的盲 SQL 注入，覆盖多种数据库延时函数。
   tags: time-based-sqli,sqli,dast,blind,vuln
 
 flow: http(1) && http(2)

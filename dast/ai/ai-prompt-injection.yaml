@@ -1,11 +1,11 @@
 id: ai-prompt-injection
 
 info:
-  name: AI Prompt Injection Detection
+  name: AI 提示词注入探测（DAST）
   author: princechaddha
   severity: high
   description: |
-    Tests for prompt injection vulnerabilities in AI systems that could lead to unauthorized actions.
+    该模板测试 AI 系统是否存在提示词注入风险，攻击者可能通过恶意输入覆盖原始指令、诱导越权操作或改变模型行为。
   tags: ai,dast
 
 variables:

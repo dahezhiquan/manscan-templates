@@ -1,7 +1,7 @@
 id: google-maps-api-ssl-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google Maps API SSL
+  name: 内容安全策略 CSP 绕过 - Google Maps API SSL（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

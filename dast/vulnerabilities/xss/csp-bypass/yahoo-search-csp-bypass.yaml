@@ -1,7 +1,7 @@
 id: yahoo-search-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Yahoo Search
+  name: 内容安全策略 CSP 绕过 - Yahoo Search（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

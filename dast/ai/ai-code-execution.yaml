@@ -1,11 +1,11 @@
 id: ai-code-execution
 
 info:
-  name: AI Code Execution Detection
+  name: AI 代码执行探测（DAST）
   author: princechaddha
   severity: high
   description: |
-    Detects attempts to make AI systems execute unauthorized code or create malicious containers.
+    该模板检测攻击者诱导 AI 系统执行未授权代码、创建恶意容器或触发危险运行时行为的尝试。
   metadata:
     max-request: 8
   tags: ai,rce,oast,dast

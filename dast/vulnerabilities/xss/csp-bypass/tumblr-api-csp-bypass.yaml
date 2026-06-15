@@ -1,7 +1,7 @@
 id: tumblr-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Tumblr API
+  name: 内容安全策略 CSP 绕过 - Tumblr API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

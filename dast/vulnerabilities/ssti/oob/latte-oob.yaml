@@ -1,7 +1,7 @@
 id: latte-oob
 
 info:
-  name: Latte 3.0.20 - Out of Band Template Injection
+  name: Latte 3.0.20 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

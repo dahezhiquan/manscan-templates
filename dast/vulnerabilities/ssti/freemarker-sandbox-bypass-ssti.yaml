@@ -1,11 +1,11 @@
 id: freemarker-sandbox-bypass-ssti
 
 info:
-  name: Freemarker < 2.3.30 Sandbox Bypass - Server Side Template Injection
+  name: FreeMarker 2.3.30 以下沙箱绕过 SSTI（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Apache FreeMarker™ is a template engine: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.) based on templates and changing data.
+    该模板检测 FreeMarker 2.3.30 以下版本的服务端模板注入沙箱绕过风险。FreeMarker 是 Java 模板引擎，若模板内容包含未过滤用户输入，可能被利用访问对象或执行危险操作。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#freemarker---sandbox-bypass
   metadata:

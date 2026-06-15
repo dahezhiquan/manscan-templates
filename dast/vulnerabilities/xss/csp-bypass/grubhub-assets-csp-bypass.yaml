@@ -1,7 +1,7 @@
 id: grubhub-assets-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Grubhub Assets
+  name: 内容安全策略 CSP 绕过 - Grubhub Assets（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

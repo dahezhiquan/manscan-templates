@@ -1,7 +1,7 @@
 id: google-translate-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google Translate
+  name: 内容安全策略 CSP 绕过 - Google Translate（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

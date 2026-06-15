@@ -1,7 +1,7 @@
 id: reflected-xss
 
 info:
-  name: Reflected Cross-Site Scripting
+  name: 反射型跨站脚本 XSS（DAST）
   author: pdteam,0xKayala,AmirHossein Raeisi
   severity: medium
   metadata:

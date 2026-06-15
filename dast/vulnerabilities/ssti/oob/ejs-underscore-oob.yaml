@@ -1,7 +1,7 @@
 id: ejs-underscore-oob
 
 info:
-  name: Ejs AND Underscore - Out of Band Template Injection
+  name: Ejs AND Underscore 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK
   severity: high
   reference:

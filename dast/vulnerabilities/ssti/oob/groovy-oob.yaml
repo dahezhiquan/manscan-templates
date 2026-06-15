@@ -1,11 +1,11 @@
 id: groovy-oob
 
 info:
-  name: Groovy - Out of Band Template Injection
+  name: Groovy 带外服务端模板注入（DAST）
   author: 0xAwali,DhiyaneshDK,ritikchaddha
   severity: high
   description: |
-    Apache Groovy is a dynamic language with optional static type checking. It is similar to languages like Python, Ruby, Perl, and Smalltalk. It can be used as a scripting language for the Java platform.
+    该模板检测 Groovy 模板/表达式环境中的带外服务端模板注入。Groovy 可作为 JVM 脚本语言使用，危险表达式可能触发命令执行或外带请求。
   reference:
     - https://docs.groovy-lang.org/
     - https://medium.com/@0xAwali/template-engines-injection-101-4f2fe59e5756

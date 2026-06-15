@@ -1,7 +1,7 @@
 id: blind-ssrf
 
 info:
-  name: Blind SSRF OAST Detection
+  name: 盲 SSRF OAST 探测（DAST）
   author: pdteam,AmirHossein Raeisi
   severity: medium
   metadata:

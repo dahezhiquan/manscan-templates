@@ -1,7 +1,7 @@
 id: adroll-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - AdRoll
+  name: 内容安全策略 CSP 绕过 - AdRoll（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,11 +1,11 @@
 id: jinjava-ssti
 
 info:
-  name: Jinjava - Server Side Template Injection
+  name: Jinjava 服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Jinjava is a Java-based template engine based on django template syntax, adapted to render jinja templates (at least the subset of jinja in use in HubSpot content).
+    该模板检测 Jinjava 服务端模板注入。Jinjava 是基于 Java 的模板引擎，语法参考 Django/Jinja；若模板内容包含不可信输入，可能执行攻击者控制的表达式。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#jinjava---command-execution
   metadata:

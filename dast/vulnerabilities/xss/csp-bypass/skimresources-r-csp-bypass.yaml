@@ -1,7 +1,7 @@
 id: skimresources-r-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - SkimResources R
+  name: 内容安全策略 CSP 绕过 - SkimResources R（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

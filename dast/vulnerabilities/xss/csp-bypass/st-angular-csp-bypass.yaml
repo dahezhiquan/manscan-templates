@@ -1,7 +1,7 @@
 id: st-angular-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - ST Angular
+  name: 内容安全策略 CSP 绕过 - ST Angular（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

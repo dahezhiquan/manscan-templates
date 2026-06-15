@@ -1,11 +1,11 @@
 id: twig-ssti
 
 info:
-  name: Twig - Server Side Template Injection
+  name: Twig 服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Twig, a PHP template engine, posed significant challenges in crafting a working payload due to its built-in and default configurations, particularly in string creation. However, by utilizing the block feature and the built-in _charset variable, Attacker successfully developed a payload by nesting these elements together.
+    该模板检测 PHP Twig 模板引擎的服务端模板注入。攻击者可利用模板块、内置变量和字符串构造技巧绕过默认限制并执行非预期表达式。
   reference:
     - https://www.yeswehack.com/learn-bug-bounty/server-side-template-injection-exploitation
   metadata:

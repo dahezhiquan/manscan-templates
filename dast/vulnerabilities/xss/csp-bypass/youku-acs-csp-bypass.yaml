@@ -1,7 +1,7 @@
 id: youku-acs-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Youku ACS
+  name: 内容安全策略 CSP 绕过 - Youku ACS（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

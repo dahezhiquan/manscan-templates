@@ -1,7 +1,7 @@
 id: yastatic-angular-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Yastatic Angular
+  name: 内容安全策略 CSP 绕过 - Yastatic Angular（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

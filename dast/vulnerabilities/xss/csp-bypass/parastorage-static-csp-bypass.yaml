@@ -1,7 +1,7 @@
 id: parastorage-static-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Parastorage Static
+  name: 内容安全策略 CSP 绕过 - Parastorage Static（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

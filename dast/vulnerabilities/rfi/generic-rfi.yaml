@@ -1,7 +1,7 @@
 id: generic-rfi
 
 info:
-  name: Generic Remote File Inclusion
+  name: 通用远程文件包含探测（DAST）
   author: m4lwhere
   severity: high
   reference:

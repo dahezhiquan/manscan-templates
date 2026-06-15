@@ -1,11 +1,11 @@
 id: jquery-cdn-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - jQuery CDN
+  name: 内容安全策略 CSP 绕过 - jQuery CDN（DAST）
   author: 0x_Akoko
   severity: medium
   description: |
-    CSP policy allows jQuery CDN which enables arbitrary JavaScript execution through vulnerable jQuery versions using parseHTML or $.get functions.
+    该模板检测 CSP 策略信任 jQuery CDN 时的绕过风险。旧版 jQuery 的 parseHTML、$.get 等行为可能被用于加载并执行攻击者控制的脚本。
   reference:
     - https://www.doyler.net/security-not-included/csp-bypass-via-jquery
     - https://github.com/jquery/jquery/issues/2432

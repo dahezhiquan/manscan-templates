@@ -1,11 +1,11 @@
 id: ai-data-exfiltration
 
 info:
-  name: AI Data Exfiltration Detection
+  name: AI 数据外泄探测（DAST）
   author: princechaddha
   severity: high
   description: |
-    Detects attempts to exfiltrate sensitive data through AI system responses.
+    该模板检测通过 AI 响应泄露敏感数据的尝试，例如诱导模型输出系统提示、上下文数据、凭据或其他受保护信息。
   tags: ai,dast,oast
 
 http:

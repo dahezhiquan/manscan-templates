@@ -1,7 +1,7 @@
 id: servicenow-kbcprod-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - ServiceNow KBCProd
+  name: 内容安全策略 CSP 绕过 - ServiceNow KBCProd（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

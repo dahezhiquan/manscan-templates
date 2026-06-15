@@ -1,7 +1,7 @@
 id: vk-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - VK API
+  name: 内容安全策略 CSP 绕过 - VK API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

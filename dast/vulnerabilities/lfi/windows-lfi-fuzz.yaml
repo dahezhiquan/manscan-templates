@@ -1,7 +1,7 @@
 id: windows-lfi-fuzz
 
 info:
-  name: Local File Inclusion - Windows
+  name: Windows 本地文件包含模糊测试（DAST）
   author: pussycat0x
   severity: high
   metadata:

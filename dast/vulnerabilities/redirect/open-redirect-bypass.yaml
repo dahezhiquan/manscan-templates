@@ -1,7 +1,7 @@
 id: open-redirect-bypass
 
 info:
-  name: Open Redirect Bypass
+  name: 开放重定向绕过探测（DAST）
   author: ritikchaddha
   severity: medium
   metadata:

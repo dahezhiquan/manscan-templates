@@ -1,7 +1,7 @@
 id: quantserve-segapi-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Quantserve SegAPI
+  name: 内容安全策略 CSP 绕过 - Quantserve SegAPI（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

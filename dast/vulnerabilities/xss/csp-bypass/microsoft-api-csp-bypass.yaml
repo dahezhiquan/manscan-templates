@@ -1,7 +1,7 @@
 id: microsoft-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Microsoft API
+  name: 内容安全策略 CSP 绕过 - Microsoft API（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

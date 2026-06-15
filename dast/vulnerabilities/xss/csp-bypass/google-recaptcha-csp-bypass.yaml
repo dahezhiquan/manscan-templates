@@ -1,7 +1,7 @@
 id: google-recaptcha-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Google reCAPTCHA
+  name: 内容安全策略 CSP 绕过 - Google reCAPTCHA（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

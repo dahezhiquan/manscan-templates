@@ -1,7 +1,7 @@
 id: azure-inno-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Azure Inno
+  name: 内容安全策略 CSP 绕过 - Azure Inno（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

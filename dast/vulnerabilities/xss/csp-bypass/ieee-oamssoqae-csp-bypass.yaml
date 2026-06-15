@@ -1,7 +1,7 @@
 id: ieee-oamssoqae-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - IEEE OAMSsoQAE
+  name: 内容安全策略 CSP 绕过 - IEEE OAMSsoQAE（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

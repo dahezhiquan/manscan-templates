@@ -1,7 +1,7 @@
 id: python-code-injection
 
 info:
-  name: Python Code Injection
+  name: Python 代码注入探测（DAST）
   author: ritikchaddha
   severity: high
   tags: python,dast,injection,cmdi,vuln

@@ -1,7 +1,7 @@
 id: quantserve-pixel-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Quantserve Pixel
+  name: 内容安全策略 CSP 绕过 - Quantserve Pixel（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,7 +1,7 @@
 id: carbonads-srv-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - CarbonAds SRV
+  name: 内容安全策略 CSP 绕过 - CarbonAds SRV（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

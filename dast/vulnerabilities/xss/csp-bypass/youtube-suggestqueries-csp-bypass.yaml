@@ -1,7 +1,7 @@
 id: youtube-suggestqueries-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - YouTube SuggestQueries
+  name: 内容安全策略 CSP 绕过 - YouTube SuggestQueries（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

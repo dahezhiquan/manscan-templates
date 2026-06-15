@@ -1,7 +1,7 @@
 id: samsung-shop-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass - Samsung Shop
+  name: 内容安全策略 CSP 绕过 - Samsung Shop（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:

@@ -1,11 +1,11 @@
 id: thymeleaf-oob
 
 info:
-  name: Thymeleaf - Out of Band Template Injection
+  name: Thymeleaf 带外服务端模板注入（DAST）
   author: ritikchaddha
   severity: high
   description: |
-    Thymeleaf template injection occurs when user input is embedded in a template without proper sanitization. This can lead to remote code execution through Thymeleaf's expression language features.
+    该模板检测 Thymeleaf 模板注入。若用户输入未经净化嵌入模板表达式，攻击者可能利用 Thymeleaf 表达式能力触发远程代码执行或外带请求。
   reference:
     - https://www.acunetix.com/blog/web-security-zone/exploiting-ssti-in-thymeleaf/
   metadata:

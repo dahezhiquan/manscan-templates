@@ -1,14 +1,15 @@
 id: winrm-allows-unencrypted-traffic
 
 info:
-  name: WinRM Allows Unencrypted Traffic
+  name: WinRM 允许未加密流量（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if Windows Remote Management (WinRM) is allowing unencrypted traffic, exposing sensitive data.
+  description: |
+    该模板检查 Windows Remote Management（WinRM）是否允许未加密通信。未加密 WinRM 会暴露管理数据。
   impact: |
-    Allowing unencrypted traffic in WinRM can expose sensitive information to attackers.
+    攻击者可截获敏感管理流量或凭据材料。
   remediation: |
-    Configure WinRM to require encrypted traffic by setting `AllowUnencrypted` to `False`.
+    将 AllowUnencrypted 设置为 False，并使用 HTTPS 或受保护通道。
   tags: winrm,unencrypted,traffic,code,windows-audit
 
 self-contained: true

@@ -1,11 +1,11 @@
 id: linux-world-writable-file
 
 info:
-  name: Linux World-Writable File Permission
+  name: Linux 全局可写文件权限异常（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    System files were configured with world-writable (chmod o+w) permissions.Malicious users could modify them, leading to privilege escalation, backdoors, or service disruption.
+    该模板检查系统文件是否存在全局可写权限。关键文件可被任意用户修改时，可能被用于提权、篡改配置或破坏系统。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,kisa

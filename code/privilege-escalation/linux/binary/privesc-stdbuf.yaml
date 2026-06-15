@@ -1,11 +1,11 @@
 id: privesc-stdbuf
 
 info:
-  name: stdbuf - Privilege Escalation
+  name: stdbuf 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The stdbuf command is used to modify the buffering operations of another command. It can be used to adjust the input/output buffering of a command, which can be useful for controlling the flow of data and improving the performance of certain operations.
+    该模板基于 GTFOBins 思路检测 `stdbuf` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `stdbuf` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/stdbuf/
   metadata:

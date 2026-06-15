@@ -1,14 +1,15 @@
 id: rdp-drive-redirection-allowed
 
 info:
-  name: Remote Desktop Users Can Redirect Drives
+  name: RDP 允许驱动器重定向（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if Remote Desktop users are allowed to redirect local drives, which can pose a security risk.
+  description: |
+    该模板检查远程桌面用户是否可重定向本地驱动器。驱动器重定向会在会话间暴露文件系统。
   impact: |
-    Allowing drive redirection during remote desktop sessions can expose sensitive files and data to remote users.
+    敏感文件可能在远程会话中泄露，攻击者也可能借此传入恶意工具。
   remediation: |
-    Disable drive redirection in Remote Desktop settings.
+    按需禁用 RDP 驱动器重定向，并限制剪贴板和设备重定向策略。
   tags: rdp,drive-redirection,code,windows-audit
 
 self-contained: true

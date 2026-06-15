@@ -1,11 +1,11 @@
 id: privesc-python
 
 info:
-  name: PHP - Privilege Escalation
+  name: python 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    Python is a high-level, general-purpose programming language known for its readability and simplicity. It is widely used for web development, scientific computing, artificial intelligence, and system automation. Python's versatility, extensive standard library, and large community make it a popular choice for a wide range of applications.
+    该模板基于 GTFOBins 思路检测 `python` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `python` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/python/
   metadata:

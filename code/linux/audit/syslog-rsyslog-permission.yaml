@@ -1,11 +1,11 @@
 id: syslog-rsyslog-permission
 
 info:
-  name: /etc/syslog and /etc/rsyslog.conf Permission Check
+  name: syslog/rsyslog 配置文件权限异常（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    The /etc/syslog.conf or /etc/rsyslog.conf file was not owned by root or had insecure permissions,allowing attackers to manipulate logging settings to evade detection.
+    该模板检查 /etc/syslog.conf 或 /etc/rsyslog.conf 的属主和权限。权限过宽可能允许攻击者篡改日志配置、隐藏活动轨迹。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

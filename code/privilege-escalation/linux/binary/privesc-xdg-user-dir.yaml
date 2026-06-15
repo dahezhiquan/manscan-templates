@@ -1,11 +1,11 @@
 id: privesc-xdg-user-dir
 
 info:
-  name: xdg-user-dir - Privilege Escalation
+  name: xdg-user-dir 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The xdg-user-dir command is used to retrieve the path of a user's special directories, such as the user's home directory, desktop directory, download directory, and others, based on the XDG Base Directory Specification.
+    该模板基于 GTFOBins 思路检测 `xdg-user-dir` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `xdg-user-dir` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/xdg-user-dir/
   metadata:

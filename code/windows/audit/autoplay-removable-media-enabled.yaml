@@ -1,14 +1,15 @@
 id: autoplay-removable-media-enabled
 
 info:
-  name: AutoPlay Enabled for Removable Media
+  name: 可移动介质自动播放已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if AutoPlay is enabled for removable media, which can automatically execute malicious software.
+  description: |
+    该模板检查可移动介质 AutoPlay 是否启用。插入 U 盘等设备时自动触发内容会增加恶意程序执行风险。
   impact: |
-    Enabling AutoPlay may allow the automatic execution of malware from external devices, increasing the attack surface.
+    攻击者可借助可移动介质诱导执行恶意文件并植入恶意软件。
   remediation: |
-    Disable AutoPlay for all removable media to mitigate potential security threats.
+    禁用所有驱动器的 AutoPlay/AutoRun，尤其是可移动介质。
   tags: windows,autoplay,removable-media,code,windows-audit
 
 self-contained: true

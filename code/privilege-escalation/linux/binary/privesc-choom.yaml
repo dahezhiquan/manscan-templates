@@ -1,11 +1,11 @@
 id: privesc-choom
 
 info:
-  name: choom - Privilege Escalation
+  name: choom 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    choom is a command-line utility in Linux that allows users to change the memory limits of a process. It can be used for privilege escalation by manipulating the memory limits of a process to gain elevated privileges.
+    该模板基于 GTFOBins 思路检测 `choom` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `choom` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/choom/
   metadata:

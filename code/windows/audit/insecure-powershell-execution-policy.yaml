@@ -1,17 +1,17 @@
 id: insecure-powershell-execution-policy
 
 info:
-  name: Insecure PowerShell Execution Policy - Detect
+  name: PowerShell 执行策略不安全（本地基线扫描）
   author: JeonSungHyun[nukunga]
   severity: medium
   description: |
-    Checks if the PowerShell Execution Policy is set to an insecure level, which could allow unauthorized or malicious scripts to run.
+    该模板检查 PowerShell Execution Policy 是否设置为不安全级别。过宽策略可能允许未授权或恶意脚本直接运行。
   reference:
     - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4
   impact: |
-    An insecure Execution Policy can allow unauthorized or malicious scripts to execute, increasing the risk of security breaches and system compromise.
+    攻击者更容易通过 PowerShell 执行载荷、建立持久化或绕过传统防护。
   remediation: |
-    Set execution policy to RemoteSigned or AllSigned according to your organization's policy.
+    将执行策略配置为 RemoteSigned、AllSigned 或组织认可的安全级别，并配合脚本日志。
   tags: windows,powershell,audit,code
 
 self-contained: true

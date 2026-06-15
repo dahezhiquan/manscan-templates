@@ -1,14 +1,15 @@
 id: smb-signing-not-required
 
 info:
-  name: SMB Signing Not Required
+  name: SMB 签名未强制要求（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if SMB signing is not required, exposing SMB communications to man-in-the-middle attacks.
+  description: |
+    该模板检查 SMB 通信是否未强制签名。未签名 SMB 流量可能被篡改或中继。
   impact: |
-    Not requiring SMB signing allows for tampering of data in transit, enabling man-in-the-middle attacks.
+    攻击者可实施中间人攻击、会话中继或数据篡改。
   remediation: |
-    Configure SMB to require security signatures for communication.
+    配置 SMB 客户端和服务器要求安全签名。
   tags: windows,smb,signing,code,windows-audit
 
 self-contained: true

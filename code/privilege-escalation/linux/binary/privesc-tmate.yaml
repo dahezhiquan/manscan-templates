@@ -1,11 +1,11 @@
 id: privesc-tmate
 
 info:
-  name: tmate - Privilege Escalation
+  name: tmate 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    tmate is a terminal multiplexer that allows multiple users to access and collaborate in the same terminal session.
+    该模板基于 GTFOBins 思路检测 `tmate` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `tmate` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/tmate/
   metadata:

@@ -1,11 +1,11 @@
 id: privesc-sash
 
 info:
-  name: sash - Privilege Escalation
+  name: sash 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    sash is a stand-alone shell that is commonly used for system recovery and maintenance. It provides a minimal set of commands and features, making it useful in situations where the regular shell environment may not be available or functional. sash is often used in emergency situations to troubleshoot and repair systems.
+    该模板基于 GTFOBins 思路检测 `sash` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `sash` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/sash/
   metadata:

@@ -1,15 +1,15 @@
 id: firewall-disabled
 
 info:
-  name: macOS Application Firewall Disabled
+  name: macOS 应用防火墙已禁用（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Verifies if the macOS application firewall is disabled, removing protection against unauthorized network access by applications.
+    该模板检查 macOS 应用防火墙是否关闭。防火墙关闭会减少对入站连接和应用网络访问的限制。
   impact: |
-    Disabling the firewall can allow malicious applications to make outbound connections and expose the system to network-based attacks.
+    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
   remediation: |
-    Enable the macOS application firewall to control network access for applications.
+    启用 macOS 应用防火墙，并按需配置允许的入站应用。
   tags: macos,audit,local,security
 
 self-contained: true

@@ -1,15 +1,15 @@
 id: insecure-homebrew-permissions
 
 info:
-  name: macOS World-Writable Homebrew Files
+  name: macOS Homebrew 文件全局可写（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Scans for world-writable files in the Homebrew directory that could be exploited for privilege escalation.
+    该模板检查 Homebrew 目录中是否存在全局可写文件。Homebrew 常用于安装开发工具，权限过宽会带来执行链风险。
   impact: |
-    World-writable files in the Homebrew directory can be modified by any user on the system, potentially leading to privilege escalation or execution of malicious code.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Review and correct the permissions of world-writable files in the Homebrew directory.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,homebrew
 
 self-contained: true

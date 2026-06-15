@@ -1,14 +1,15 @@
 id: remote-desktop-enabled-non-server
 
 info:
-  name: Remote Desktop Enabled on Non-Server OS
+  name: 非服务器系统启用远程桌面（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if Remote Desktop is enabled on workstation editions where it’s not required.
+  description: |
+    该模板检查工作站等非服务器版本是否启用远程桌面。无必要启用会扩大远程登录攻击面。
   impact: |
-    Enabling Remote Desktop on non-server OS could lead to unauthorized remote access.
+    攻击者可针对终端发起 RDP 爆破或利用漏洞获得访问。
   remediation: |
-    Disable Remote Desktop on non-server editions to reduce the risk of remote attacks.
+    在非服务器系统上禁用不需要的远程桌面，并通过集中管理工具替代。
   tags: windows,remote-desktop,network,code,windows-audit
 
 self-contained: true

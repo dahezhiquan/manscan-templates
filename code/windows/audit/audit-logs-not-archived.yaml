@@ -1,14 +1,15 @@
 id: audit-logs-not-archived
 
 info:
-  name: Audit Logs Not Archived When Full
+  name: 审计日志满时未归档（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if audit logs are not archived when full, leading to potential data loss.
+  description: |
+    该模板检查审计日志达到容量上限时是否未启用归档。日志未归档可能导致新事件覆盖旧事件或审计中断。
   impact: |
-    Failure to archive full logs could result in the loss of crucial audit data, hindering forensic analysis and incident response.
+    安全事件记录可能丢失，影响告警关联、合规留存和事件响应。
   remediation: |
-    Enable log archiving to preserve important security event data.
+    配置日志自动归档或集中转发，并设置合理的日志大小和保留策略。
   tags: windows,audit,code,windows-audit
 
 self-contained: true

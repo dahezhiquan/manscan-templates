@@ -1,14 +1,15 @@
 id: netbios-disabled
 
 info:
-  name: NetBIOS Disabled
+  name: NetBIOS 未在所有网卡禁用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Determine if NetBIOS over TCP/IP is disabled on all network adapters.
+  description: |
+    该模板检查所有网络适配器是否禁用 NetBIOS over TCP/IP。NetBIOS 会暴露名称解析和枚举面。
   impact: |
-    Enabling NetBIOS can expose systems to network-related attacks such as traffic interception and spoofing.
+    攻击者可利用 NetBIOS 进行主机枚举、名称投毒或凭据捕获。
   remediation: |
-    Disable NetBIOS on all network adapters to mitigate potential security risks.
+    在不需要的环境中禁用 NetBIOS over TCP/IP，并使用 DNS 替代旧式解析。
   tags: windows,netbios,network,security,code,windows-audit
 
 self-contained: true

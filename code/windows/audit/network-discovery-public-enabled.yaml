@@ -1,14 +1,15 @@
 id: network-discovery-public-disabled
 
 info:
-  name: Network Discovery Disabled on Public Networks
+  name: 公用网络网络发现配置不安全（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if network discovery is disabled on all public networks.
+  description: |
+    该模板检查公用网络配置下网络发现是否关闭。公用网络启用发现会暴露主机信息。
   impact: |
-    Disabling network discovery on public networks reduces the system's visibility and minimizes the attack surface, preventing potential unauthorized access.
+    攻击者可在不可信网络中发现主机、服务和共享资源。
   remediation: |
-    Ensure network discovery remains disabled on public networks to maintain secure network configurations.
+    关闭公用网络配置文件的网络发现，仅在受信任网络按需启用。
   tags: network,code,windows-audit
 
 self-contained: true

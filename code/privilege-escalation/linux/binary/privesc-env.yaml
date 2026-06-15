@@ -1,11 +1,11 @@
 id: privesc-env
 
 info:
-  name: env - Privilege Escalation
+  name: env 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    In Linux, the env command is used to display or modify the environment variables for a command. It can be used to set environment variables for a specific command or to print the current environment variables.
+    该模板基于 GTFOBins 思路检测 `env` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `env` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/env/
   metadata:

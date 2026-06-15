@@ -1,11 +1,11 @@
 id: privesc-cdist
 
 info:
-  name: Cdist - Privilege Escalation
+  name: cdist 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    cdist is a free software configuration management tool for Unix-like systems. It manages nodes over SSH using the Bourne Shell, and does not require any additional software to be installed on target nodes.
+    该模板基于 GTFOBins 思路检测 `cdist` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `cdist` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/cdist/
   metadata:

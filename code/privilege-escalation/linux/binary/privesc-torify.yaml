@@ -1,11 +1,11 @@
 id: privesc-torify
 
 info:
-  name: Torify - Privilege Escalation
+  name: torify 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    torify is a command-line utility that is used to transparently route network traffic through the Tor network. It is commonly used to anonymize the network connections of other command-line programs, allowing them to communicate over the Tor network for enhanced privacy and security.
+    该模板基于 GTFOBins 思路检测 `torify` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `torify` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/torify/
   metadata:

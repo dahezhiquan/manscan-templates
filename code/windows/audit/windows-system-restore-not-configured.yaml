@@ -1,14 +1,15 @@
 id: windows-system-restore-not-configured
 
 info:
-  name: System Restore Not Configured
+  name: 系统还原未配置（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if System Restore is not configured, which can prevent recovery from system issues.
+  description: |
+    该模板检查 System Restore 是否未配置。缺少还原点会降低错误变更或感染后的恢复能力。
   impact: |
-    Without System Restore, recovering from system failures may require more drastic measures like reinstallation.
+    系统故障或恶意修改后可能需要更高成本恢复，影响业务连续性。
   remediation: |
-    Configure System Restore to ensure you can roll back changes if needed.
+    按基线启用并配置系统还原，确保关键变更前生成还原点。
   tags: windows,code,windows-audit
 
 self-contained: true

@@ -1,15 +1,15 @@
 id: insecure-startup-items
 
 info:
-  name: macOS World-Writable Startup Items
+  name: macOS Startup Items 全局可写（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Identifies world-writable startup items on macOS that can be tampered with by unprivileged users.
+    该模板检查 macOS Startup Items 是否全局可写。启动项被篡改可能在系统启动时执行恶意代码。
   impact: |
-    World-writable startup items can be modified by any user on the system, potentially leading to privilege escalation or execution of malicious code.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Review and correct the permissions of world-writable startup items.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,startup
 
 self-contained: true

@@ -1,14 +1,15 @@
 id: device-guard-not-configured
 
 info:
-  name: Device Guard Not Configured
+  name: Device Guard 未配置（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if Device Guard is not configured, reducing protection against unauthorized code execution.
+  description: |
+    该模板检查 Device Guard 是否未配置。缺少代码完整性和应用控制策略会降低对未授权代码执行的防护。
   impact: |
-    Not configuring Device Guard reduces the system's ability to block unauthorized code execution.
+    攻击者更容易运行未经批准的脚本、驱动或可执行文件。
   remediation: |
-    Configure Device Guard to enhance system protection.
+    根据业务需要配置 Device Guard/Windows Defender Application Control 策略。
   tags: device-guard,code,windows-audit
 
 self-contained: true

@@ -1,17 +1,13 @@
 id: autofs-service
 
 info:
-  name: Ensure autofs Service is Not Installed
+  name: autofs 服务不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The autofs package provides the automounting service, which mounts file systems automatically on demand. If not explicitly required, having this service installed increases the system’s attack surface and should be avoided.
+    该模板检查本机是否安装了不必要的 自动挂载服务 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    - Ensure the `autofs` package is not installed unless explicitly required.
-    - To disable the service if present, run: sudo systemctl disable --now autofs 2>/dev/null || true
-    - To remove the package, run: sudo apt-get purge -y autofs
-    - To clean up dependencies, run: sudo apt-get autoremove -y
-    - To verify removal, run: dpkg-query -s autofs || echo "autofs not installed"
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

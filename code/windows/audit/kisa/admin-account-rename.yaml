@@ -1,16 +1,15 @@
 id: admin-account-rename
 
 info:
-  name: Administrator Account Rename Check
+  name: 默认管理员账户未重命名（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the default Administrator account has been renamed to help prevent targeted brute-force attacks.
+    该模板检查默认 Administrator 账户是否已重命名。默认名称固定，容易成为口令攻击目标。
   impact: |
-    Retaining the default Administrator account name gives attackers a predictable target for password guessing attempts on a privileged account.
+    攻击者可直接针对 Administrator 发起暴力破解或凭据填充。
   remediation: |
-    Rename the Administrator account using Local Security Policy or the following command-line instruction:
-    > wmic UserAccount where Name="administrator" call Rename Name="NEW_NAME"
+    重命名默认管理员账户，并结合禁用、强口令和审计策略降低风险。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,code,windows-audit,kisa

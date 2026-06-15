@@ -1,11 +1,11 @@
 id: linux-anonymous-ftp-enabled
 
 info:
-  name: Linux Anonymous FTP Access Enabled
+  name: Linux 匿名 FTP 访问已启用（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    FTP account allows malicious users to exploit it to log in anonymously and write to directories, potentially gaining unauthorized access or executing local exploits.This template checks for signs of anonymous FTP being enabled via /etc/passwd, vsFTPD, or ProFTPD configuration files.
+    该模板检查 FTP 是否允许匿名访问。匿名账号若具备读取或写入权限，可能被攻击者用于泄露文件或投放恶意内容。
   reference:
     - https://isms.kisa.or.kr
   metadata:

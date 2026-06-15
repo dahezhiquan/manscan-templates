@@ -1,11 +1,11 @@
 id: linux-legacy-services-enabled
 
 info:
-  name: DoS Vulnerable Service Enabled
+  name: 易受 DoS 影响的传统服务已启用（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Services such as echo, discard, daytime, and chargen were enabled on the system, allowing attackers to exploit them to extract system information or launch denial-of-service (DoS) attacks.These legacy services were required to be disabled unless explicitly needed.
+    该模板检查 echo、discard、daytime、chargen 等传统 inetd 服务是否启用。这些服务通常无业务价值，且可能被滥用于信息泄露、放大或拒绝服务攻击。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,kisa,compliance

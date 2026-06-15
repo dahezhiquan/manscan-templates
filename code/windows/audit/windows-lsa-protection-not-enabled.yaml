@@ -1,15 +1,15 @@
 id: windows-lsa-protection-not-enabled
 
 info:
-  name: LSA Protection Not Enabled or Not Configured
+  name: LSA 保护未启用或未配置（本地基线扫描）
   author: princechaddha
   severity: high
   description: |
-    Checks if LSA (Local Security Authority) protection is disabled or not configured.
+    该模板检查 Local Security Authority（LSA）保护是否未启用。缺少 LSA 保护会增加凭据转储风险。
   impact: |
-    Disabling or not configuring LSA protection can allow attackers to perform credential dumping.
+    攻击者可更容易从 LSASS 相关进程中提取凭据。
   remediation: |
-    Enable LSA protection to prevent malicious actors from dumping credentials from the system.
+    启用 LSA Protection（RunAsPPL）并结合 Credential Guard。
   tags: windows,lsa,code,windows-audit
 
 self-contained: true

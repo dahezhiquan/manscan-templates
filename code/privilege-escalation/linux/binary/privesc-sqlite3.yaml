@@ -1,11 +1,11 @@
 id: privesc-sqlite3
 
 info:
-  name: sqlite3 - Privilege Escalation
+  name: sqlite3 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    sqlite3 is a lightweight, self-contained, and serverless SQL database engine. It is widely used in embedded systems, mobile devices, and small to medium-sized applications.
+    该模板基于 GTFOBins 思路检测 `sqlite3` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `sqlite3` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/sqlite3/
   metadata:

@@ -1,11 +1,11 @@
 id: privesc-flock
 
 info:
-  name: Flock - Privilege Escalation
+  name: flock 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    flock is a command-line utility in Unix-like operating systems that is used to manage file locks. It can be used to synchronize access to a file among multiple processes, preventing conflicts and ensuring data integrity. Additionally, flock can be used in shell scripts to control access to critical sections of code.
+    该模板基于 GTFOBins 思路检测 `flock` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `flock` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/flock/
   metadata:

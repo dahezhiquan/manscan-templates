@@ -1,18 +1,15 @@
 id: autologon-control
 
 info:
-  name: Autologon Function Control Check
+  name: Autologon 功能未禁用（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the Autologon feature is disabled by verifying that the AutoAdminLogon registry value under
-    HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon is either missing or set to "0".
-    A value of "1" indicates that login credentials may be stored in the registry, creating a potential security risk.
+    该模板检查 AutoAdminLogon 注册表值，确认自动登录功能是否被禁用。启用自动登录通常意味着凭据被本地保存。
   impact: |
-    Enabling Autologon allows attackers with physical or remote access to retrieve stored login credentials, potentially resulting in unauthorized system access.
+    攻击者可读取或滥用保存的自动登录凭据进入系统。
   remediation: |
-    Disable Autologon by setting the AutoAdminLogon registry value to "0". This can be done using:
-    - Registry Editor: Go to HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Winlogon and set AutoAdminLogon to "0".
+    将 AutoAdminLogon 设置为禁用，并清理 DefaultPassword 等敏感注册表值。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: autologon,account-management,code,windows-audit,kisa

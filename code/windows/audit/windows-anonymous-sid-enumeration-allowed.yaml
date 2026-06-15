@@ -1,14 +1,15 @@
 id: windows-anonymous-sid-enumeration-allowed
 
 info:
-  name: Windows Allows Anonymous SID Enumeration
+  name: Windows 允许匿名 SID 枚举（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if anonymous users can enumerate Security Identifiers (SIDs), which can expose user information.
+  description: |
+    该模板检查 Windows 是否允许匿名枚举 SID。该信息可帮助攻击者识别账户和组。
   impact: |
-    Allowing anonymous SID enumeration can provide attackers with information to target specific users.
+    攻击者可利用枚举结果开展定向密码攻击或权限分析。
   remediation: |
-    Disable anonymous SID enumeration to protect sensitive user information.
+    禁用匿名 SID 枚举并启用匿名访问限制策略。
   tags: windows,anonymous,sid,security,code,windows-audit
 
 self-contained: true

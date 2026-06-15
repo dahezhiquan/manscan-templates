@@ -1,11 +1,11 @@
 id: unquoted-service-paths
 
 info:
-  name: Unquoted Service Paths
+  name: Windows 未加引号服务路径（本地基线扫描）
   author: domwhewell-sage
   severity: high
   description: |
-    Detects windows services with unquoted paths that contain spaces. This misconfiguration can lead to local privilege escalation via execution of a malicious binary placed in the path.
+    该模板检测 Windows 服务路径中包含空格但未加引号的配置。服务启动时可能按路径片段搜索可执行文件。
   reference:
     - https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#unquoted-service-paths
   metadata:

@@ -1,14 +1,15 @@
 id: unsigned-kernel-mode-drivers-allowed
 
 info:
-  name: Installation of Unsigned Kernel-Mode Drivers Allowed
+  name: 允许安装未签名内核模式驱动（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the system allows installation of unsigned kernel-mode drivers, which can be malicious.
+  description: |
+    该模板检查系统是否允许安装未签名内核模式驱动。内核驱动具备高权限，风险极高。
   impact: |
-    Unsigned kernel-mode drivers can be malicious and compromise system security.
+    恶意驱动可绕过安全软件、隐藏持久化或破坏系统稳定性。
   remediation: |
-    Restrict the installation of unsigned drivers by enforcing driver signature checks.
+    强制驱动签名校验，仅允许可信发布者签名的驱动。
   tags: drivers,kernel-mode,code,windows-audit
 
 self-contained: true

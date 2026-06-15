@@ -1,11 +1,11 @@
 id: privesc-node
 
 info:
-  name: Node - Privilege Escalation
+  name: node 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    Node.js is a popular open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It is commonly used for building scalable network applications and is known for its event-driven, non-blocking I/O model. Node.js is widely used for server-side scripting and has a large ecosystem of libraries and frameworks.
+    该模板基于 GTFOBins 思路检测 `node` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `node` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/node/
   metadata:

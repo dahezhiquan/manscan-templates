@@ -1,11 +1,11 @@
 id: nfs-insecure-exports
 
 info:
-  name: NFS Insecure Exports Check
+  name: NFS 导出配置不安全（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Verified whether access control was properly configured on NFS.Highlighted possibilities such as allowing all hosts, no_root_squash, or unrestricted all_squash that could let unauthorized users access shared directories.
+    该模板检查 NFS 导出是否存在允许所有主机、no_root_squash 或访问控制过宽等不安全配置。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

@@ -1,11 +1,11 @@
 id: privesc-cpulimit
 
 info:
-  name: CPUlimit - Privilege Escalation
+  name: cpulimit 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    cpulimit is a command-line utility in Linux that allows users to limit the CPU usage of a process. It can be used to control and limit the CPU usage of a specific process, which can be helpful in various scenarios such as preventing a process from consuming excessive CPU resources.
+    该模板基于 GTFOBins 思路检测 `cpulimit` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `cpulimit` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/cpulimit/
   metadata:

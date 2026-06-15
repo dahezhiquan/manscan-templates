@@ -1,7 +1,7 @@
 id: rw-shadow
 
 info:
-  name: /etc/shadow writable or readabel - Privilege Escalation
+  name: /etc/shadow 可读或可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   reference:

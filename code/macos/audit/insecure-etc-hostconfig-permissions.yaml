@@ -1,15 +1,15 @@
 id: insecure-etc-hostconfig-permissions
 
 info:
-  name: macOS Insecure /etc/hostconfig Permissions
+  name: macOS /etc/hostconfig 权限不安全（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Evaluates permissions on the /etc/hostconfig file used to configure system services on macOS.
+    该模板检查 /etc/hostconfig 权限。该文件用于历史系统服务配置，权限不当可能影响服务行为。
   impact: |
-    Insecure permissions on /etc/hostconfig could allow unauthorized users to modify the file and reconfigure system services.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Ensure that the /etc/hostconfig file is owned by root with a system group (wheel, admin, etc.) and has permissions of 0644 or more restrictive.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security
 
 self-contained: true

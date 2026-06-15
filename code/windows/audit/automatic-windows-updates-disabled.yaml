@@ -1,14 +1,15 @@
 id: automatic-windows-updates-disabled
 
 info:
-  name: Automatic Windows Updates Disabled
+  name: Windows 自动更新已禁用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if automatic Windows Updates are disabled.
+  description: |
+    该模板检查 Windows 自动更新是否关闭。关闭自动更新会导致系统长期缺少安全补丁。
   impact: |
-    Without regular updates, systems may miss important security patches.
+    已公开漏洞可能持续暴露，增加恶意软件、勒索软件和远程利用风险。
   remediation: |
-    Enable automatic Windows Updates to ensure timely updates for system security.
+    通过组策略或 Windows Update 配置启用自动下载和计划安装。
   tags: windows,updates,disabled,windows-audit
 
 self-contained: true

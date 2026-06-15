@@ -1,18 +1,15 @@
 id: account-lockout-threshold
 
 info:
-  name: Account Lockout Threshold Check
+  name: 账户锁定阈值配置不合规（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the account lockout threshold is configured to 5 or fewer invalid login attempts to reduce the risk of brute-force attacks.
+    该模板检查账户锁定阈值是否设置为 5 次或更少的无效登录尝试。阈值过高或未配置会增加暴力破解窗口。
   impact: |
-    An absent or misconfigured lockout threshold permits unlimited password guessing attempts, significantly increasing the risk of account compromise.
+    攻击者可进行更多密码猜测尝试，提升账户被破解概率。
   remediation: |
-    Set the lockout threshold using:
-    > net accounts /lockoutthreshold:5
-    or configure it via Local Security Policy under:
-    Account Lockout Policy → Account lockout threshold.
+    将账户锁定阈值配置为 5 次或更少，并设置合理锁定时长。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,code,windows-audit,kisa

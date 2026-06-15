@@ -1,11 +1,11 @@
 id: privesc-softlimit
 
 info:
-  name: softlimit - Privilege Escalation
+  name: softlimit 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The softlimit command is used in conjunction with the daemontools software to set resource limits for a process. It is commonly used to control the resource usage of a process, such as limiting its memory or CPU usage. The softlimit command helps in managing and controlling the resource consumption of a process, which can be useful for ensuring system stability and preventing resource exhaustion.
+    该模板基于 GTFOBins 思路检测 `softlimit` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `softlimit` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/softlimit/
   metadata:

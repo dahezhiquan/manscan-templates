@@ -1,11 +1,11 @@
 id: privesc-dc
 
 info:
-  name: dc - Privilege Escalation
+  name: dc 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    dc is a command-line calculator in Unix and Unix-like operating systems. It uses reverse Polish notation (RPN) and provides a simple and efficient way to perform arithmetic operations from the command line. It can be used for basic and advanced mathematical calculations, making it a handy tool for scripting and quick calculations in the terminal.
+    该模板基于 GTFOBins 思路检测 `dc` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `dc` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/dc/
   metadata:

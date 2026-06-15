@@ -1,11 +1,11 @@
 id: home-env-permission
 
 info:
-  name: User Home Directory and Shell Environment File Ownership & Permission
+  name: 用户家目录环境文件权限异常（本地基线扫描）
   author: songyaeji
   severity: medium
   description: |
-    Shell startup and environment files (e.g., .bashrc, .bash_profile, .bash_logout) were not owned by the user or root and had insecure write permissions.Malicious users could manipulate environment variables or inject commands.
+    该模板检查用户家目录中的 shell 启动和环境文件权限，例如 .bashrc、.bash_profile、.bash_logout。若文件可被其他用户写入，登录或开启 shell 时可能执行恶意命令。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,kisa

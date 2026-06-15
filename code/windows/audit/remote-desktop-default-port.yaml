@@ -1,15 +1,15 @@
 id: remote-desktop-default-port
 
 info:
-  name: Remote Desktop Listening Default Port - Detect
+  name: 远程桌面使用默认 3389 端口（本地基线扫描）
   author: asteria121
   severity: info
   description: |
-    The Remote Desktop Protocol (RDP) service listens on a default port (TCP 3389), which is commonly targeted by attackers.
+    该模板检查 RDP 是否监听默认 TCP 3389 端口。默认端口更容易被扫描和暴力破解。
   impact: |
-    Exposure of the default RDP port (TCP 3389) increases the risk of brute-force attacks and unauthorized access. This can lead to system compromise, data breaches, and ransomware deployment.
+    暴露默认端口会增加自动化攻击、密码喷洒和勒索软件入侵风险。
   remediation: |
-    Change the default RDP listening port to a non-standard port to reduce exposure.
+    将 RDP 置于 VPN/堡垒机后，限制来源；如策略要求，可改用非默认端口降低噪声。
   tags: windows,rdp,audit
 
 self-contained: true

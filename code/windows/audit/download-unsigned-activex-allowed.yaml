@@ -1,14 +1,15 @@
 id: download-unsigned-activex-allowed
 
 info:
-  name: Download of Unsigned ActiveX Controls Allowed
+  name: 允许下载未签名 ActiveX 控件（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if the system allows downloading and installing unsigned ActiveX controls.
+  description: |
+    该模板检查是否允许下载或安装未签名 ActiveX 控件。该配置会显著增加浏览器侧恶意控件执行风险。
   impact: |
-    Allowing unsigned ActiveX controls can lead to the execution of malicious code.
+    恶意 ActiveX 控件可能执行任意代码、窃取信息或破坏系统完整性。
   remediation: |
-    Disable the download and installation of unsigned ActiveX controls.
+    禁用未签名 ActiveX 控件下载，并优先停用不再需要的 ActiveX 支持。
   tags: activex,code-signing,code,windows-audit
 
 self-contained: true

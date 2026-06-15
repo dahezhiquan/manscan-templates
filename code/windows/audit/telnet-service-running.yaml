@@ -1,14 +1,15 @@
 id: telnet-service-misconfiguration
 
 info:
-  name: Check for Misconfigured Telnet Service
+  name: Telnet 服务配置不当（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the Telnet service is misconfigured.
+  description: |
+    该模板检查 Telnet 服务是否存在不安全运行或配置。Telnet 明文传输且不适合作为远程管理入口。
   impact: |
-    Misconfigured Telnet service can lead to security vulnerabilities.
+    攻击者可窃听凭据或利用弱口令访问系统。
   remediation: |
-    Ensure Telnet service is either properly configured or disabled.
+    禁用 Telnet 服务，改用 SSH 或受控远程管理通道。
   tags: windows,telnet,service,misconfigured,code,windows-audit
 
 self-contained: true

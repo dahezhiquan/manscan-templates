@@ -1,11 +1,11 @@
 id: privesc-nawk
 
 info:
-  name: nawk - Privilege Escalation
+  name: nawk 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    nawk is an implementation of the AWK programming language. It is a text-processing language that is commonly used for pattern scanning and processing of text files. nawk provides powerful features for data extraction, reporting, and manipulation, making it a valuable tool for text processing tasks in shell scripts and command-line environments.
+    该模板基于 GTFOBins 思路检测 `nawk` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `nawk` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/nawk/
   metadata:

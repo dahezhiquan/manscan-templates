@@ -1,11 +1,11 @@
 id: privesc-ionice
 
 info:
-  name: ionice - Privilege Escalation
+  name: ionice 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    ionice is a command-line utility in Linux that is used to set or get the I/O scheduling class and priority for a program. It allows users to control the I/O priority of a process, which can be useful for managing system resources and improving overall system performance.
+    该模板基于 GTFOBins 思路检测 `ionice` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `ionice` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/ionice/
   metadata:

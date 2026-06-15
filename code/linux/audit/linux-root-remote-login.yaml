@@ -1,11 +1,11 @@
 id: linux-root-remote-login
 
 info:
-  name: Linux Root Remote Login Enabled - Misconfig
+  name: Linux root 远程登录已启用（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Root remote login was enabled either through /etc/securetty or via SSH configuration.This misconfiguration increased the risk of unauthorized system access.
+    该模板检查 /etc/securetty 或 SSH 配置是否允许 root 远程登录。直接开放 root 登录会放大口令攻击和凭据泄露后的影响。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   metadata:

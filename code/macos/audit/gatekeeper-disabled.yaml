@@ -1,15 +1,15 @@
 id: gatekeeper-disabled
 
 info:
-  name: macOS Gatekeeper Disabled
+  name: macOS Gatekeeper 已禁用（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Checks if Gatekeeper is disabled on macOS, removing verification that downloaded applications are from identified developers.
+    该模板检查 macOS Gatekeeper 是否关闭。关闭后系统不会严格校验下载应用是否来自已识别开发者。
   impact: |
-    Disabling Gatekeeper allows the execution of applications from unverified sources, increasing the risk of malware infection.
+    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
   remediation: |
-    Enable Gatekeeper to ensure that only applications from identified developers can be run.
+    启用 Gatekeeper，仅允许运行来自 App Store 或已识别开发者的应用。
   tags: macos,audit,local,security
 
 self-contained: true

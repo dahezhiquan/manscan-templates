@@ -1,14 +1,15 @@
 id: smb-v1-enabled
 
 info:
-  name: SMB v1 Protocol Enabled
+  name: SMBv1 协议已启用（本地基线扫描）
   author: princechaddha
   severity: critical
-  description: Detects if SMB v1 protocol is enabled, which is vulnerable to numerous exploits.
+  description: |
+    该模板检查 SMBv1 是否启用。SMBv1 已废弃且存在大量已知攻击面。
   impact: |
-    SMB v1 is vulnerable to multiple attacks, including the infamous WannaCry ransomware.
+    系统可能暴露于 EternalBlue/WannaCry 类攻击和协议降级风险。
   remediation: |
-    Disable SMB v1 protocol to enhance the security of your system.
+    禁用 SMBv1，使用 SMBv2/v3，并移除依赖旧协议的系统。
   tags: windows,smb,network,protocol,code,windows-audit
 
 self-contained: true

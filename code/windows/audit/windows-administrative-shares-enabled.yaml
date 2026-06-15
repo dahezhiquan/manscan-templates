@@ -1,14 +1,15 @@
 id: windows-administrative-shares-enabled
 
 info:
-  name: Administrative Shares Enabled
+  name: Windows 管理共享已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if administrative shares (C$, D$, etc.) are enabled, which can pose a security risk.
+  description: |
+    该模板检查 C$、D$ 等管理共享是否启用。管理共享可远程访问磁盘根目录。
   impact: |
-    Enabling administrative shares can provide attackers with remote access to the system drives.
+    攻击者获取管理员凭据后可借助管理共享投放工具或窃取文件。
   remediation: |
-    Disable administrative shares to minimize exposure to remote attacks.
+    禁用不需要的管理共享，并限制远程管理访问来源。
   tags: windows,shares,administrative,code,windows-audit
 
 self-contained: true

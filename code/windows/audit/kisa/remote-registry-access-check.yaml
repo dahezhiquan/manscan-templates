@@ -1,18 +1,15 @@
 id: remote-registry-access-check
 
 info:
-  name: Remote Registry Service Disabled Check
+  name: Remote Registry 服务未禁用（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the Remote Registry Service is disabled to block remote access to the Windows registry. Allowing remote registry access can lead to unauthorized changes and pose a serious security risk.
+    该模板检查 Remote Registry 服务是否禁用。启用后远程用户可能访问或修改 Windows 注册表。
   impact: |
-    If the Remote Registry Service is enabled, attackers with administrative privileges could remotely access and modify registry settings, heightening the risk of system compromise.
+    攻击者可远程枚举配置、修改安全设置或植入持久化项。
   remediation: |
-    Disable the Remote Registry Service by setting its startup type to "Disabled" (Start value = 4) using one of the following methods:
-    - Registry Editor: Navigate to
-       - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RemoteRegistry and set the Start value to 4.
-        - Services Console: Locate the Remote Registry service, set its startup type to "Disabled", and stop the service.
+    禁用 Remote Registry 服务，或仅在受控维护窗口和可信来源下临时启用。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,registry,remote-access

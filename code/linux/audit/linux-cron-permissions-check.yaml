@@ -1,11 +1,11 @@
 id: linux-cron-permissions-check
 
 info:
-  name: Cron Access File Ownership & Permissions
+  name: Cron 访问控制文件权限异常（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    /etc/cron.allow and /etc/cron.deny (if present) were required to be owned by root (UID 0) with strict 640 permissions.If neither file existed, only the root user could use cron, which was considered the safe default behavior.
+    该模板检查 /etc/cron.allow 和 /etc/cron.deny 的属主与权限。权限过宽可能允许非授权用户影响计划任务访问控制。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,kisa,compliance

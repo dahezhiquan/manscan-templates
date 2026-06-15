@@ -1,14 +1,15 @@
 id: windows-installer-elevated-privileges
 
 info:
-  name: Windows Installer Elevated Privileges Enabled
+  name: Windows Installer 非管理员提权安装已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if Windows Installer runs with elevated privileges for non-admin users, which could be exploited.
+  description: |
+    该模板检查 Windows Installer 是否允许非管理员以提升权限安装软件。该配置可能被滥用执行高权限 MSI。
   impact: |
-    Elevated privileges for the Windows Installer may allow non-administrative users to install unauthorized software.
+    低权限用户可安装或运行恶意安装包获得更高权限。
   remediation: |
-    Disable elevated privileges for non-admin users in Windows Installer settings.
+    禁用 AlwaysInstallElevated 相关策略，并审计软件安装权限。
   tags: installer,elevated-privileges,code,windows-audit
 
 self-contained: true

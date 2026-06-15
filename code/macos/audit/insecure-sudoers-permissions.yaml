@@ -1,15 +1,15 @@
 id: insecure-sudoers-permissions
 
 info:
-  name: macOS Insecure /etc/sudoers Permissions
+  name: macOS /etc/sudoers 权限不安全（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Audits permissions on the /etc/sudoers file that defines which users can run commands with root privileges on macOS.
+    该模板检查 /etc/sudoers 权限。该文件控制 sudo 授权，权限过宽可能导致提权规则被篡改。
   impact: |
-    Insecure permissions on /etc/sudoers could allow unauthorized users to modify the file and grant themselves root privileges.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Ensure that the /etc/sudoers file is owned by root with a system group (wheel, admin, etc.) and has permissions of 0440 or more restrictive.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,sudo
 
 self-contained: true

@@ -1,14 +1,15 @@
 id: hyperv-enhanced-session-mode-enabled
 
 info:
-  name: Hyper-V Enhanced Session Mode Enabled
+  name: Hyper-V 增强会话模式已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Determines if Hyper-V Enhanced Session Mode is enabled unnecessarily.
+  description: |
+    该模板检查 Hyper-V Enhanced Session Mode 是否在无需时启用。该功能会扩展主机与虚拟机之间的剪贴板、磁盘和设备重定向能力。
   impact: |
-    Enabling Enhanced Session Mode unnecessarily can expose the virtual machine to additional risks by increasing attack surface.
+    不必要的会话增强可能扩大数据泄露和主客机边界滥用风险。
   remediation: |
-    Disable Enhanced Session Mode if not required.
+    仅在确有管理需求时启用增强会话模式，并限制可使用该功能的管理员。
   tags: windows,hyperv,code,windows-audit
 
 self-contained: true

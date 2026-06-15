@@ -1,11 +1,11 @@
 id: privesc-dash
 
 info:
-  name: Dash - Privilege Escalation
+  name: dash 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    dash is a POSIX-compliant shell that is commonly used as the default system shell on Debian-based systems. It is designed to be a lightweight and fast shell, suitable for scripting and system administration tasks. It aims to be compatible with the POSIX standard for shells, providing a minimalistic and efficient environment for running shell scripts.
+    该模板基于 GTFOBins 思路检测 `dash` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `dash` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/dash/
   metadata:

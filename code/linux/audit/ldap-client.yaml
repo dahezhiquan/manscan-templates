@@ -1,14 +1,13 @@
 id: ldap-client
 
 info:
-  name: Ensure LDAP Client is Not Installed
+  name: LDAP 客户端不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The ldap-utils package provides LDAP client utilities that allow systems to query and interact with LDAP directories.If not explicitly required, it should be removed to minimize the system’s attack surface and reduce security risks.
+    该模板检查本机是否安装了不必要的 LDAP 目录服务 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    - Ensure the ldap-utils package is not installed unless explicitly required.
-    - To remove the package, run: sudo apt-get remove ldap-utils -y
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

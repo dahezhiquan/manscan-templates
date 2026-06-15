@@ -1,11 +1,11 @@
 id: linux-rlogin-service
 
 info:
-  name: rlogin Service Should Be Disabled
+  name: rlogin 服务应禁用（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Assessed the operational status of the rlogin service on the system.Running rlogin could have allowed unauthorized users to gain access or extract sensitive information, representing a significant security risk.
+    该模板检查 rlogin 服务应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

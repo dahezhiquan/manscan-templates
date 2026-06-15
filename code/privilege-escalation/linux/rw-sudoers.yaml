@@ -1,7 +1,7 @@
 id: rw-sudoers
 
 info:
-  name: /etc/sudoers writable or readable - Privilege Escalation
+  name: /etc/sudoers 可读或可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   reference:

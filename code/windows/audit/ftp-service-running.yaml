@@ -1,14 +1,15 @@
 id: ftp-service-running
 
 info:
-  name: FTP Service Running
+  name: FTP 服务正在运行（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the FTP service is running.
+  description: |
+    该模板检查 Windows FTP 服务是否正在运行。若业务无需 FTP，暴露该服务会增加明文传输和弱口令攻击面。
   impact: |
-    FTP transmits data in plaintext, which can lead to unauthorized access and interception of credentials.
+    攻击者可尝试匿名访问、暴力破解或利用 FTP 服务漏洞。
   remediation: |
-    Disable the FTP service and use secure alternatives like SFTP.
+    停用不需要的 FTP 服务；如必须使用，强制加密、限制来源并开启审计。
   tags: windows,ftp,service,insecure,code,windows-audit
 
 self-contained: true

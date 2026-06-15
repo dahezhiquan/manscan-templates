@@ -1,14 +1,15 @@
 id: secure-boot-disabled
 
 info:
-  name: Secure Boot Not Enabled
+  name: Secure Boot 未启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if Secure Boot is disabled, increasing the risk of rootkit infections.
+  description: |
+    该模板检查 Secure Boot 是否禁用。未启用会降低启动链完整性保护。
   impact: |
-    Secure Boot prevents unauthorized bootloaders and operating systems from running, protecting against rootkits.
+    攻击者可植入 bootkit/rootkit 或加载未授权启动组件。
   remediation: |
-    Enable Secure Boot in the BIOS to prevent rootkit infections.
+    在 BIOS/UEFI 中启用 Secure Boot，并使用受信任启动组件。
   tags: secure-boot,uefi,code,windows-audit
 
 self-contained: true

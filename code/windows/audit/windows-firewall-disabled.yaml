@@ -1,14 +1,15 @@
 id: windows-firewall-disabled
 
 info:
-  name: Windows Firewall Disabled
+  name: Windows 防火墙已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if Windows Firewall is disabled on any network profile.
+  description: |
+    该模板检查任一网络配置文件下 Windows 防火墙是否关闭。防火墙关闭会暴露本机服务。
   impact: |
-    Disabling the firewall may leave the system vulnerable to external attacks.
+    攻击者可更容易访问本机开放端口并尝试利用漏洞。
   remediation: |
-    Ensure that the Windows Firewall is enabled for all network profiles.
+    为域、专用和公用网络配置文件启用 Windows 防火墙并配置最小允许规则。
   tags: windows,firewall,code,windows-audit
 
 self-contained: true

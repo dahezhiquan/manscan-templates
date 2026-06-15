@@ -1,14 +1,13 @@
 id: avahi-daemon
 
 info:
-  name: Ensure Avahi Daemon Service is Not Installed
+  name: Avahi Daemon 服务不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The avahi-daemon package provides mDNS/DNS-SD service discovery on local networks.In secure environments, it should only be installed when explicitly required, as it may expose unnecessary services.
+    该模板检查本机是否安装了不必要的 mDNS/DNS-SD 服务发现 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    - Ensure the `avahi-daemon` package is not installed unless explicitly required.
-    - To remove the package, run: sudo apt-get remove avahi-daemon -y
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

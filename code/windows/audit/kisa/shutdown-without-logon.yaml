@@ -1,17 +1,15 @@
 id: shutdown-without-logon
 
 info:
-  name: Shutdown Without Logon Check
+  name: 允许未登录关机（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the "Shutdown Without Logon" policy is disabled by confirming that the ShutdownWithoutLogon registry value is set to 0. If enabled, the system permits shutdown from the logon screen, increasing the risk of unauthorized shutdowns.
+    该模板检查“无需登录即可关机”策略。启用后任何具备物理或控制台访问的人都可能关闭系统。
   impact: |
-    When enabled, this setting permits unauthorized users to shut down the system without logging in, which can lead to service interruptions.
+    攻击者可造成拒绝服务或干扰正在运行的业务任务。
   remediation: |
-    Disable this policy by setting the ShutdownWithoutLogon registry value to 0 at:
-    - HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System
-    - Alternatively, configure the setting through the Local Security Policy.
+    禁用 ShutdownWithoutLogon，限制关机操作仅允许已认证授权用户执行。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,registry

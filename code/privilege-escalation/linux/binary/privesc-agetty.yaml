@@ -1,11 +1,11 @@
 id: privesc-agetty
 
 info:
-  name: agetty - Privilege Escalation
+  name: agetty 可被滥用进行本地提权（本地基线扫描）
   author: bobakabill
   severity: high
   description: |
-    The agetty command in Linux is used to invoke the /bin/login command for a given user. If the SUID bit is set, it can be used to gain a high-privilege s>
+    该模板基于 GTFOBins 思路检测 `agetty` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `agetty` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/agetty/
   metadata:

@@ -1,11 +1,11 @@
 id: privesc-run-parts
 
 info:
-  name: run-parts - Privilege Escalation
+  name: run-parts 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The run-parts command in Linux is used to run all the executable files in a directory. It is commonly used for running scripts or commands located in a specific directory, such as system maintenance scripts in /etc/cron.daily. The run-parts command provides a convenient way to execute multiple scripts or commands in a batch manner.
+    该模板基于 GTFOBins 思路检测 `run-parts` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `run-parts` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/run-parts/
   metadata:

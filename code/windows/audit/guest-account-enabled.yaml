@@ -1,14 +1,15 @@
 id: guest-account-enabled
 
 info:
-  name: Guest Account Enabled
+  name: Guest 来宾账户已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the Guest account is enabled.
+  description: |
+    该模板检查 Guest 账户是否启用。来宾账户通常权限较低但认证要求弱，容易被滥用为入口。
   impact: |
-    Enabling the Guest account can allow unauthorized users to access the system with minimal restrictions.
+    攻击者可利用来宾账户获取初始访问并枚举系统资源。
   remediation: |
-    Disable the Guest account to reduce the risk of unauthorized access.
+    禁用 Guest 账户，并确认共享和本地登录策略不允许来宾访问。
   tags: windows,user,account,guest,code,windows-audit
 
 self-contained: true

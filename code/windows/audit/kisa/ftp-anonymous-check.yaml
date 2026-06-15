@@ -1,18 +1,15 @@
 id: ftp-anonymous-check
 
 info:
-  name: Anonymous FTP Disabled Check
+  name: 匿名 FTP 未禁用（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure that anonymous FTP authentication is disabled on all FTP sites. Allowing anonymous access permits unauthenticated users to connect, which can lead to serious security vulnerabilities.
+    该模板检查所有 FTP 站点是否禁用匿名认证。允许匿名访问会让未认证用户连接并浏览资源。
   impact: |
-    If anonymous FTP is enabled, attackers can bypass authentication and potentially gain unauthorized access to FTP resources, posing a significant security risk.
+    攻击者可读取公开目录，或在写权限错误时上传恶意文件。
   remediation: |
-    Disable anonymous FTP authentication using IIS Manager:
-    - Open IIS Manager.
-    - Navigate to the FTP site → FTP Authentication.
-    - Set "Anonymous Authentication" to Disabled.
+    禁用匿名 FTP，仅允许经过身份验证且授权的账户访问。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: ftp,iis,security,code,windows-audit,kisa

@@ -1,11 +1,11 @@
 id: privesc-awk
 
 info:
-  name: awk - Privilege Escalation
+  name: awk 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    AWK is a domain-specific language designed for text processing and typically used as a data extraction and reporting tool. Like sed and grep, it is a filter, and is a standard feature of most Unix-like operating systems.
+    该模板基于 GTFOBins 思路检测 `awk` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `awk` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/awk/
   metadata:

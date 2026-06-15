@@ -1,14 +1,15 @@
 id: winrm-basic-auth-enabled
 
 info:
-  name: WinRM Basic Authentication Enabled
+  name: WinRM Basic 认证已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if Windows Remote Management (WinRM) allows basic (unencrypted) authentication.
+  description: |
+    该模板检查 WinRM 是否允许 Basic 认证。Basic 认证在未加密通道上会暴露凭据。
   impact: |
-    Basic authentication can expose credentials in plaintext, allowing attackers to intercept and exploit sensitive information.
+    攻击者可截获或重放凭据，获得远程管理访问。
   remediation: |
-    Disable Basic authentication and configure secure authentication mechanisms like Kerberos or certificate-based authentication.
+    禁用 Basic 认证，改用 Kerberos、证书认证或其他安全机制。
   tags: windows,winrm,code,windows-audit
 
 self-contained: true

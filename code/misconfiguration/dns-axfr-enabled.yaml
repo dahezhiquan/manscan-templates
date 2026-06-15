@@ -1,11 +1,11 @@
 id: dns-axfr-enabled
 
 info:
-  name: DNS Zone Transfer Check (AXFR)
+  name: DNS 区域传送 AXFR 已开放（本地基线扫描）
   author: matejsmycka
   severity: medium
   description: |
-    Checks if particular domain can be queried via DNS Zone Transfer (AXFR). An open zone transfer can disclose all DNS records for a zone, leading to information leakage.
+    该模板检查指定域名是否允许 DNS AXFR 区域传送。开放区域传送会一次性泄露该区域的 DNS 记录。
   reference:
     - https://beaglesecurity.com/blog/vulnerability/dns-zone-transfer.html
   metadata:

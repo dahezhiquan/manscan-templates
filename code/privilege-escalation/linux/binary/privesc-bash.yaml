@@ -1,11 +1,11 @@
 id: privesc-bash
 
 info:
-  name: Bash - Privilege Escalation
+  name: bash 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    Bash is a Unix shell and command language written by Brian Fox for the GNU Project as a free software replacement for the Bourne shell. The shell's name is an acronym for Bourne Again Shell, a pun on the name of the Bourne shell that it replaces and the notion of being born again.
+    该模板基于 GTFOBins 思路检测 `bash` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `bash` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/bash/
   metadata:

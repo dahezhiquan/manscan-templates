@@ -1,15 +1,15 @@
 id: insecure-cron-jobs
 
 info:
-  name: macOS World-Writable Cron Jobs
+  name: macOS Cron 任务全局可写（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Finds world-writable cron job files on macOS that can be modified by any user on the system.
+    该模板检查 macOS cron 任务文件是否全局可写。可写任务可能被普通用户篡改并在计划时间执行。
   impact: |
-    World-writable cron job files can be modified by any user on the system, potentially leading to privilege escalation or execution of malicious code.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Review and correct the permissions of world-writable cron job files.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,cron
 
 self-contained: true

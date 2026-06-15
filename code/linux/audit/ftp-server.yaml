@@ -1,14 +1,13 @@
 id: ftp-server
 
 info:
-  name: Ensure FTP Server Service is Not Installed
+  name: FTP Server 服务不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The vsftpd package provides an FTP server for file transfer services.Since FTP is unencrypted and insecure, it should only be installed when explicitly required.
+    该模板检查本机是否安装了不必要的 FTP 明文文件传输 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    - Ensure the `vsftpd` package is not installed unless explicitly required.
-    - To remove the package, run: sudo apt-get remove vsftpd -y
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

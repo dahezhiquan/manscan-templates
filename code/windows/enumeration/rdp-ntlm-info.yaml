@@ -1,11 +1,11 @@
 id: rdp-ntlm-info
 
 info:
-  name: RDP - NTLM Information Disclosure
+  name: RDP NTLM 信息泄露（本地基线扫描）
   author: matejsmycka
   severity: info
   description: |
-    The enumeration gathered NTLM-related information from remote RDP services with Network Level Authentication (NLA) enabled. By sending an incomplete authentication request, it disclosed details such as the target’s NetBIOS and DNS names, domain, product version, and system time, which proved useful for network reconnaissance and asset profiling.
+    该模板通过不完整的 CredSSP/NTLM 认证请求枚举启用 NLA 的 RDP 服务信息，可能返回 NetBIOS 名称、DNS 名称、域、系统版本和时间等数据。
   reference:
     - https://nmap.org/nsedoc/scripts/rdp-ntlm-info.html
     - https://svn.nmap.org/nmap/scripts/rdp-ntlm-info.nse

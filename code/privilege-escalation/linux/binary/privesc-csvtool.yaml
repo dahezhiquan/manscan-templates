@@ -1,11 +1,11 @@
 id: privesc-csvtool
 
 info:
-  name: csvtool - Privilege Escalation
+  name: csvtool 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    csvtool is a command-line utility in Unix-like operating systems that provides various tools for working with CSV (Comma-Separated Values) files. It can be used to manipulate, process, and analyze CSV data from the command line, making it a useful tool for tasks such as data extraction, transformation, and loading.
+    该模板基于 GTFOBins 思路检测 `csvtool` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `csvtool` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/csvtool/
   metadata:

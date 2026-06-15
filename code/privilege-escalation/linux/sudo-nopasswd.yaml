@@ -1,10 +1,11 @@
 id: sudo-nopasswd
 
 info:
-  name: Sudo NOPASSWD - Privilege Escalation
+  name: Sudo NOPASSWD 免密提权配置（本地基线扫描）
   author: daffainfo
   severity: high
-  description: Sudo configuration might allow a user to execute some command with another user's privileges without knowing the password.
+  description: |
+    该模板检查当前用户是否存在 sudo NOPASSWD 授权。若 sudoers 允许用户无需输入密码执行 root 命令，该配置可能被低权限账户直接滥用于本地提权。
   reference:
     - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#nopasswd
   metadata:

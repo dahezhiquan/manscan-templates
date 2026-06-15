@@ -1,15 +1,15 @@
 id: suid-sgid-files
 
 info:
-  name: macOS SUID/SGID Files Detection
+  name: macOS SUID/SGID 文件检测（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Discovers files with SUID or SGID permissions in user-writable directories (/usr/local, /opt, /Applications) that could be exploited for privilege escalation if misconfigured or vulnerable.
+    该模板检查用户可写目录中的 SUID/SGID 文件。此类文件若可被低权限用户影响，可能形成提权入口。
   impact: |
-    Misconfigured SUID/SGID executables in user-writable directories can be exploited by local users to gain elevated privileges.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Review the list of SUID/SGID files and remove the permissions if they are not necessary.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,privesc
 
 self-contained: true

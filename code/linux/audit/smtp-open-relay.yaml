@@ -1,11 +1,11 @@
 id: smtp-open-relay
 
 info:
-  name: Linux SMTP Open Relay Misconfigured
+  name: Linux SMTP 开放中继配置不当（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Sendmail and Postfix were checked for proper restrictions against unauthorized relay attempts. Improper configurations allowed attackers to abuse the server for spam or denial-of-service (DoS) attacks.
+    该模板检查 Sendmail/Postfix 是否存在开放中继。开放中继会允许未授权第三方借用服务器发送邮件。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

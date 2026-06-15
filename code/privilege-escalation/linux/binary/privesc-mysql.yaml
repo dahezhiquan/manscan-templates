@@ -1,11 +1,11 @@
 id: privesc-mysql
 
 info:
-  name: MySQL - Privilege Escalation
+  name: mysql 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    MySQL is an open-source relational database management system (RDBMS) that uses structured query language (SQL) for managing and manipulating data. It is widely used for web applications and is known for its reliability, ease of use, and performance. MySQL is a popular choice for database-driven applications and is supported on various platforms.
+    该模板基于 GTFOBins 思路检测 `mysql` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `mysql` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/mysql/
   metadata:

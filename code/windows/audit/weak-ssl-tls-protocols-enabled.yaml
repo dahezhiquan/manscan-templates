@@ -1,14 +1,15 @@
 id: weak-ssl-tls-protocols-enabled
 
 info:
-  name: Weak SSL/TLS Protocols Enabled
+  name: 弱 SSL/TLS 协议已启用（本地基线扫描）
   author: princechaddha
   severity: critical
-  description: Checks if weak SSL/TLS protocols (such as SSLv2 or SSLv3) are enabled on the system.
+  description: |
+    该模板检查系统是否启用 SSLv2、SSLv3 等弱协议。旧协议存在已知加密缺陷。
   impact: |
-    Weak SSL/TLS protocols are vulnerable to attacks, which could compromise the confidentiality and integrity of communications.
+    攻击者可实施降级、中间人或解密攻击，影响通信机密性和完整性。
   remediation: |
-    Disable weak SSL/TLS protocols like SSLv2 and SSLv3 and enforce the use of stronger versions such as TLS 1.2 or higher.
+    禁用 SSLv2/SSLv3 和过旧 TLS，强制使用 TLS 1.2 或更高版本。
   tags: windows,ssl,tls,protocol,code,windows-audit
 
 self-contained: true

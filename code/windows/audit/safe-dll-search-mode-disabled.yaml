@@ -1,14 +1,15 @@
 id: safe-dll-search-mode-disabled
 
 info:
-  name: Safe DLL Search Mode Disabled
+  name: 安全 DLL 搜索模式已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Determines if Safe DLL search mode is disabled.
+  description: |
+    该模板检查 Safe DLL Search Mode 是否禁用。禁用后应用更可能从不可信路径加载 DLL。
   impact: |
-    Disabling Safe DLL search mode may allow attackers to load malicious DLLs from untrusted locations.
+    攻击者可放置恶意 DLL 实现 DLL 劫持并执行代码。
   remediation: |
-    Enable Safe DLL search mode by setting the SafeDllSearchMode registry key to 1.
+    启用 SafeDllSearchMode，并减少可写目录中的应用加载风险。
   tags: windows,dll,code,windows-audit
 
 self-contained: true

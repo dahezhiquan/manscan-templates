@@ -1,11 +1,11 @@
 id: linux-account-lockout-threshold
 
 info:
-  name: Linux Account Lockout Threshold Check
+  name: Linux 账号锁定阈值未配置（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    The system did not enforce an account lockout threshold, leaving it exposed to brute-force attacks through unrestricted login attempts.
+    该模板检查系统是否强制账号登录失败锁定阈值。未配置锁定会允许攻击者持续进行密码猜测。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   metadata:

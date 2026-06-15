@@ -1,13 +1,13 @@
 id: ssh-gssapiauthentication-disabled
 
 info:
-  name: sshd GSSAPIAuthentication - Disabled
+  name: sshd GSSAPIAuthentication 未禁用（本地基线扫描）
   author: Th3l0newolf
   severity: low
   description: |
-    The GSSAPIAuthentication parameter in the SSH configuration file (sshd_config) controls whether GSSAPI-based user authentication is permitted. When enabled, it allows the use of Kerberos or other GSSAPI mechanisms for authenticating SSH connections.
-  remediation:
-    Disable GSSAPIAuthentication by editing /etc/ssh/sshd_config to set GSSAPIAuthentication no and restart SSH with sudo systemctl restart sshd.
+    该模板检查 sshd_config 中 GSSAPIAuthentication 是否按基线禁用。无需求时启用该机制会增加认证复杂度和潜在攻击面。
+  remediation: |
+    调整 SSH/登录配置，禁用不必要的信任认证和 root 远程登录，仅允许受控账户通过安全通道访问。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

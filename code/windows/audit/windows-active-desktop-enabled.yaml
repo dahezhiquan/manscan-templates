@@ -1,14 +1,15 @@
 id: windows-active-desktop-enabled
 
 info:
-  name: Active Desktop Enabled
+  name: Active Desktop 已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if Active Desktop is enabled, which can be exploited to deliver malicious content.
+  description: |
+    该模板检查 Active Desktop 是否启用。该旧功能可加载动态内容，增加恶意脚本或内容注入风险。
   impact: |
-    Enabling Active Desktop allows attackers to inject malicious content or scripts.
+    攻击者可能通过桌面内容投递恶意脚本或诱导用户执行。
   remediation: |
-    Disable Active Desktop unless it's specifically required.
+    除非确有业务需要，禁用 Active Desktop。
   tags: windows,active-desktop,security,code,windows-audit
 
 self-contained: true

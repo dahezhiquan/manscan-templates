@@ -1,18 +1,15 @@
 id: service-pack-check
 
 info:
-  name: Latest Service Pack Check
+  name: 系统补丁或服务包不是最新（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Confirm that the system is updated with the latest security patches and service packs. Regular updates help protect against known vulnerabilities.
+    该模板检查系统是否安装最新安全补丁和服务包。缺少补丁会暴露已知漏洞。
   impact: |
-    Neglecting to install the latest service packs or updates can leave the system vulnerable to exploits and security breaches.
+    攻击者可利用公开漏洞获取权限、执行代码或造成服务中断。
   remediation: |
-    Apply the latest service packs or build updates as follows:
-      - Windows Server 2012: Refer to https://support.microsoft.com/ko-kr/help/4009470
-      - Windows Server 2016: Refer to https://support.microsoft.com/ko-kr/help/4043454
-      - Windows Server 2019: Refer to https://support.microsoft.com/ko-kr/help/4581839
+    保持 Windows Update、服务包和安全补丁为最新，并建立定期补丁验证流程。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,service-pack,security,patch-management

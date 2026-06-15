@@ -1,11 +1,11 @@
 id: dns-zone-transfer-any
 
 info:
-  name: DNS Zone Transfer Allowed to Any Host
+  name: DNS 区域传送允许任意主机（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    DNS Zone Transfer configured with "allow-transfer { any; };" allowed unrestricted zone transfers.This exposed sensitive details like hostnames, network structure, and system data that attackers could use for reconnaissance and further attacks.
+    该模板检查 DNS 配置中是否存在 allow-transfer { any; }。允许任意主机进行区域传送会暴露域名、主机名、邮件服务器和内部地址等完整区域信息。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

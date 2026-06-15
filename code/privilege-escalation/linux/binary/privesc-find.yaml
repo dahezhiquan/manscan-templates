@@ -1,11 +1,11 @@
 id: privesc-find
 
 info:
-  name: find - Privilege Escalation
+  name: find 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The find command in Linux is used to search for files and directories in a directory hierarchy based on various criteria such as name, type, size, and permissions. It is a powerful tool for locating files and performing operations on them, such as executing commands or applying changes.
+    该模板基于 GTFOBins 思路检测 `find` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `find` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/find/
   metadata:

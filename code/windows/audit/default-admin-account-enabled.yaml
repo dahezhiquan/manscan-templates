@@ -1,15 +1,15 @@
 id: default-admin-account-enabled
 
 info:
-  name: Default Administrator Account Enabled
+  name: 默认 Administrator 账户已启用（本地基线扫描）
   author: boonchuan
   severity: medium
   description: |
-    Detected built-in Administrator account was enabled, which is a common target for brute-force and credential stuffing attacks.
+    该模板检测内置 Administrator 账户是否启用。该账户名称固定、权限高，是暴力破解和凭据填充的常见目标。
   impact: |
-    The default Administrator account has a well-known SID and is frequently targeted by attackers. Leaving it enabled increases the attack surface.
+    攻击者可针对默认管理员账户开展口令攻击，一旦成功将获得高权限控制。
   remediation: |
-    Disable the built-in Administrator account and use a separate named admin account for administrative tasks. Run: net user Administrator /active:no
+    禁用或重命名内置 Administrator 账户，并为必要管理员账户配置强口令和锁定策略。
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts

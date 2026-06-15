@@ -1,14 +1,15 @@
 id: audit-logging-disabled
 
 info:
-  name: Audit Logging Disabled
+  name: 审计日志记录已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Check if audit logging for critical events is disabled.
+  description: |
+    该模板检查关键安全事件的审计日志是否被禁用。缺少审计记录会降低对登录、权限变更和策略修改等行为的可见性。
   impact: |
-    Disabling audit logging can lead to a lack of traceability for security incidents and breaches.
+    恶意活动可能无法被及时发现，事后取证也会缺少关键证据。
   remediation: |
-    Enable audit logging for all critical security events to maintain a proper audit trail.
+    启用 Windows 审计策略，至少覆盖登录、对象访问、策略变更和账户管理事件。
   tags: windows,audit-logging,security,code,windows-audit
 
 self-contained: true

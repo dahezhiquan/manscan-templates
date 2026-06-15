@@ -1,11 +1,11 @@
 id: suid-sgid
 
 info:
-  name: Root SUID/SGID File Check
+  name: root SUID/SGID 文件检查（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Files owned by root with SUID or SGID permissions could have led to privilege escalation.if misconfigured. This template detected such files for further review.
+    该模板检查 root 拥有且设置 SUID/SGID 位的文件。此类文件若配置不当或存在漏洞，可能成为本地提权入口。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,privesc,kisas

@@ -1,15 +1,15 @@
 id: windows-auto-update-disabled
 
 info:
-  name: Windows Automatic Updates Disabled
+  name: Windows 自动更新已关闭（本地基线扫描）
   author: boonchuan
   severity: high
   description: |
-    Detected Windows automatic updates were found disabled, leaving the system vulnerable to unpatched security flaws.
+    该模板检测 Windows 自动更新被禁用。系统将无法自动获取关键安全补丁。
   impact: |
-    Systems without automatic updates will miss critical security patches, increasing exposure to known vulnerabilities and exploits.
+    缺少补丁会使主机持续暴露于已知漏洞和恶意软件攻击。
   remediation: |
-    Enable automatic updates via Group Policy: Computer Configuration > Administrative Templates > Windows Components > Windows Update > Configure Automatic Updates > set to Auto download and schedule install.
+    通过组策略启用自动更新，配置自动下载和计划安装。
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/windows/deployment/update/waas-wu-settings

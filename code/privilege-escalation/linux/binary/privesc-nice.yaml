@@ -1,11 +1,11 @@
 id: privesc-nice
 
 info:
-  name: Nice - Privilege Escalation
+  name: nice 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    In Unix-like operating systems, the nice command is used to execute a program with a modified scheduling priority. It allows users to start a process with a specified priority level, which can influence the allocation of CPU resources. This can be useful for managing system resources and controlling the impact of a process on system performance.
+    该模板基于 GTFOBins 思路检测 `nice` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `nice` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/nice/
   metadata:

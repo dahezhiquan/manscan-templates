@@ -1,11 +1,11 @@
 id: privesc-posh
 
 info:
-  name: posh - Privilege Escalation
+  name: posh 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    "posh" typically refers to the "Policy-compliant Ordinary SHell," which is a restricted shell designed to provide a limited set of commands and features for users with restricted access. It is often used in environments where users require limited functionality and access to system resources.
+    该模板基于 GTFOBins 思路检测 `posh` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `posh` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/posh/
   metadata:

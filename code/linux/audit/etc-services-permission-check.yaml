@@ -1,11 +1,11 @@
 id: etc-services-permission-check
 
 info:
-  name: /etc/services Permission Check
+  name: /etc/services 权限异常（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    The /etc/services file was not owned by root or had excessive permissions,allowing attackers to alter port assignments to redirect services or open unauthorized ports.
+    该模板检查 /etc/services 的属主和权限。若该文件不归 root 所有或权限过宽，攻击者可能篡改端口与服务名称映射，干扰审计和运维判断。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,code,audit,compliance,local

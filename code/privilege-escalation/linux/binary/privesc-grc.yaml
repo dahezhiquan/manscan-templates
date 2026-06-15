@@ -1,11 +1,11 @@
 id: privesc-grc
 
 info:
-  name: grc - Privilege Escalation
+  name: grc 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    grc is a command-line utility that enhances the output of other commands with color and style. It is commonly used to improve the readability of command output by adding color highlighting and formatting. grc can be configured to work with various commands and is often used to make log files and command output easier to interpret.
+    该模板基于 GTFOBins 思路检测 `grc` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `grc` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/grc/
   metadata:

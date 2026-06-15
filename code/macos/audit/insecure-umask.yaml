@@ -1,15 +1,15 @@
 id: insecure-umask
 
 info:
-  name: macOS Permissive Umask Configuration
+  name: macOS umask 配置过宽（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Verifies if the umask is configured with overly permissive values that create insecurely accessible files.
+    该模板检查 macOS umask 是否过于宽松。过宽 umask 会让新建文件或目录默认暴露给更多用户。
   impact: |
-    A permissive umask can result in new files being created with world-writable permissions, which can be a security risk.
+    不符合基线的配置会扩大本地攻击面，并削弱 macOS 主机的访问控制和审计能力。
   remediation: |
-    Set the umask to a more restrictive value to ensure that new files are created with secure permissions.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,umask
 
 self-contained: true

@@ -1,14 +1,15 @@
 id: winrm-enabled
 
 info:
-  name: Windows Remote Management (WinRM) Enabled
+  name: WinRM 已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if WinRM is enabled when not required.
+  description: |
+    该模板检查 WinRM 是否在无业务需求时启用。WinRM 提供远程命令和管理能力。
   impact: |
-    Enabling WinRM unnecessarily can expose the system to remote command execution attacks.
+    不必要的 WinRM 暴露会增加远程命令执行和凭据攻击面。
   remediation: |
-    Disable WinRM if it is not being used to reduce the attack surface.
+    如无远程管理需求，禁用 WinRM；如必须启用，限制来源并启用加密认证。
   tags: windows,winrm,code,windows-audit
 
 self-contained: true

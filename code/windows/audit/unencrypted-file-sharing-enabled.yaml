@@ -1,14 +1,15 @@
 id: unencrypted-file-sharing-enabled
 
 info:
-  name: Unencrypted File Sharing Enabled
+  name: 文件共享未启用加密（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if file sharing is enabled without encryption.
+  description: |
+    该模板检查文件共享是否未启用加密。未加密共享会暴露传输数据。
   impact: |
-    Unencrypted file sharing exposes sensitive data to interception, leading to potential data breaches.
+    攻击者可在网络中截获或篡改共享文件内容。
   remediation: |
-    Enable encryption for file sharing to ensure the confidentiality and integrity of shared files.
+    启用 SMB 加密或使用受保护通道传输敏感文件。
   tags: windows,file-sharing,encryption,code,windows-audit
 
 self-contained: true

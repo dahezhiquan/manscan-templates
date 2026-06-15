@@ -1,14 +1,15 @@
 id: rdp-nla-disabled
 
 info:
-  name: Network Level Authentication for RDP Disabled
+  name: RDP 网络级身份验证 NLA 已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if Network Level Authentication (NLA) for Remote Desktop Protocol is disabled, increasing the risk of unauthorized access.
+  description: |
+    该模板检查 RDP 是否禁用 Network Level Authentication（NLA）。未启用 NLA 会让服务在认证前暴露更多攻击面。
   impact: |
-    Disabling NLA for RDP exposes the system to potential unauthorized remote access and brute force attacks.
+    攻击者可更容易进行暴力破解、资源消耗或利用 RDP 漏洞。
   remediation: |
-    Enable Network Level Authentication (NLA) to secure remote desktop connections.
+    启用 RDP NLA，并限制 RDP 访问来源。
   tags: windows,rdp,nla,authentication,code,windows-audit
 
 self-contained: true

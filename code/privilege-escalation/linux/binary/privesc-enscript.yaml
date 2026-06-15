@@ -1,11 +1,11 @@
 id: privesc-enscript
 
 info:
-  name: enscript - Privilege Escalation
+  name: enscript 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    enscript is a command-line tool used for converting text files to PostScript format for printing. It provides various options for formatting and manipulating the output, making it a useful tool for generating high-quality printed documents from text files.
+    该模板基于 GTFOBins 思路检测 `enscript` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `enscript` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/enscript/
   metadata:

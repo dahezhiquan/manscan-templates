@@ -1,19 +1,15 @@
 id: crash-on-audit-fail
 
 info:
-  name: Shutdown on Audit Failure Check
+  name: 审计失败时关机策略配置不当（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure the "Shutdown on Audit Failure" policy is disabled.
-    The registry value should be set to "4,0" to prevent the system from shutting down if it cannot log security audit events.
-    If set to "4,1", the system will shut down on audit failure, which could result in a denial-of-service condition.
+    该模板检查“审计失败时关闭系统”策略。错误启用可能在日志写入失败时导致系统不可用。
   impact: |
-    Enabling this policy (value set to "4,1") may cause the system to shut down unexpectedly if audit logs cannot be written, potentially disrupting services and risking data loss.
+    攻击者或异常状态可能通过触发审计失败造成拒绝服务。
   remediation: |
-    Disable the policy by setting the CrashOnAuditFail value to "4,0". This can be done by:
-    - Using the Registry Editor: Navigate to HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System and set CrashOnAuditFail to "4,0".
-    - Through Local Security Policy: Set "Audit: Shut down system immediately if unable to log security audits" to Disabled.
+    按基线要求禁用该策略，并保障日志存储与转发可用。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,code,windows-audit,kisa,policy

@@ -1,14 +1,15 @@
 id: allow-untrusted-certificates
 
 info:
-  name: System Allows Untrusted Certificates
+  name: 系统允许安装不受信任证书（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if the system allows untrusted certificates to be installed.
+  description: |
+    该模板检查系统是否允许安装不受信任的证书。该配置会削弱证书信任链校验，可能让恶意根证书或伪造证书进入受信任存储。
   impact: |
-    Installing untrusted certificates can lead to man-in-the-middle attacks and data theft.
+    攻击者可借助不受信任证书实施中间人攻击、签名欺骗或恶意软件伪装。
   remediation: |
-    Ensure that untrusted certificates are blocked and only allow trusted certificates to be installed.
+    限制普通用户安装根证书，仅通过受控的企业证书策略分发可信证书。
   tags: certificates,untrusted,code,windows-audit
 
 self-contained: true

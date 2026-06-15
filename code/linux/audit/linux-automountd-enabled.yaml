@@ -1,11 +1,11 @@
 id: linux-automountd-enabled
 
 info:
-  name: Automountd Service Enabled
+  name: automountd 服务已启用（本地基线扫描）
   author: songyaeji
   severity: medium
   description: |
-    The automountd service, when enabled or running, allowed a local attacker to execute arbitrary commands with root privileges by exploiting automatic mount options. This misconfiguration led to local privilege escalation.
+    该模板检查 automountd 是否启用或运行。该服务历史上存在可被本地滥用的风险，在无业务需求时应禁用以降低提权面。
   reference:
     - https://isms.kisa.or.kr
   metadata:

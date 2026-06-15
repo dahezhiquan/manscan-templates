@@ -1,17 +1,15 @@
 id: ftp-directory-permission-check
 
 info:
-  name: FTP Directory Access Permission Check
+  name: FTP 目录权限配置不当（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure that the FTP home directory does not include the "Everyone" group in its access permissions. Granting access to this group may allow unauthorized users to view, modify, or tamper with FTP files.
+    该模板检查 FTP 主目录是否向 Everyone 组授予访问权限。过宽权限可能导致任意用户读取或写入文件。
   impact: |
-    Assigning access to the "Everyone" group for the FTP home directory can result in information exposure, file tampering, or unauthorized changes.
+    攻击者可上传 WebShell、篡改文件或窃取 FTP 目录中的数据。
   remediation: |
-    Remove the "Everyone" group from FTP home directory permissions using the following methods:
-    - IIS Manager: Review and adjust the FTP site's home directory settings.
-    - File Explorer: Right-click the directory, select "Properties" → go to the "Security" tab, and remove the "Everyone" group.
+    移除 Everyone 权限，仅授予必要用户或组最小访问权限。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: ftp,iis,security,windows,code,windows-audit,kisa

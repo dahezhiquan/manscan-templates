@@ -1,14 +1,15 @@
 id: remote-assistance-enabled
 
 info:
-  name: Check Remote Assistance Misconfiguration
+  name: 远程协助已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if Remote Assistance is enabled contrary to security policies.
+  description: |
+    该模板检查 Remote Assistance 是否违反安全策略启用。该功能允许他人远程协助控制会话。
   impact: |
-    Enabling Remote Assistance can lead to unauthorized access.
+    配置不当可能导致未授权远程访问或社工诱导控制。
   remediation: |
-    Disable Remote Assistance to comply with security policy.
+    如无业务需要，禁用 Remote Assistance 并审计远程支持工具。
   tags: remote-assistance, misconfiguration, windows-audit
 
 self-contained: true

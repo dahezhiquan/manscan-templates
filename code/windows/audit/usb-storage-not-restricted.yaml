@@ -1,14 +1,15 @@
 id: usb-storage-not-restricted
 
 info:
-  name: USB Storage Devices Not Restricted
+  name: USB 存储设备未限制（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if USB storage devices are allowed, potentially introducing security risks through external devices.
+  description: |
+    该模板检查是否允许不受限制使用 USB 存储设备。外接存储是数据外泄和恶意软件传播常见通道。
   impact: |
-    Allowing unrestricted USB storage access increases the risk of data exfiltration or malware introduction via external devices.
+    攻击者或内部人员可拷贝敏感数据，或通过 U 盘投递恶意文件。
   remediation: |
-    Restrict the use of USB storage devices to protect the system from external threats.
+    限制或禁用 USB 存储设备，必要时使用设备控制和审计策略。
   tags: windows,usb,storage,code,windows-audit
 
 self-contained: true

@@ -1,15 +1,15 @@
 id: filevault-disabled
 
 info:
-  name: macOS FileVault Disabled
+  name: macOS FileVault 已禁用（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Identifies if FileVault full-disk encryption is disabled on macOS, leaving data unprotected from unauthorized access.
+    该模板检查 macOS FileVault 全盘加密是否关闭。关闭后磁盘静态数据缺少系统级加密保护。
   impact: |
-    Disabling FileVault leaves the data on the disk unencrypted and vulnerable to theft or unauthorized access if the device is lost or stolen.
+    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
   remediation: |
-    Enable FileVault to encrypt the entire disk and protect the data at rest.
+    启用 FileVault 全盘加密，保护设备丢失或被盗时的静态数据。
   tags: macos,audit,local,security
 
 self-contained: true

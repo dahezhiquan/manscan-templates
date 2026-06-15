@@ -1,15 +1,15 @@
 id: insecure-etc-fstab-permissions
 
 info:
-  name: macOS Insecure /etc/fstab Permissions
+  name: macOS /etc/fstab 权限不安全（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Validates permissions on the /etc/fstab file that defines how disk partitions and filesystems are mounted on macOS.
+    该模板检查 /etc/fstab 权限，该文件定义文件系统挂载规则。权限过宽可能导致挂载行为被篡改。
   impact: |
-    Insecure permissions on /etc/fstab could allow unauthorized users to modify the file and mount malicious filesystems.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Ensure that the /etc/fstab file is owned by root with a system group (wheel, admin, etc.) and has permissions of 0644 or more restrictive.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security
 
 self-contained: true

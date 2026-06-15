@@ -1,11 +1,11 @@
 id: weak-service-binary-permissions
 
 info:
-  name: Weak Service Binary Permissions
+  name: Windows 服务二进制文件权限过弱（本地基线扫描）
   author: domwhewell-sage
   severity: high
   description: |
-    Detects weak Windows service binary permissions that could allow non-administrative users to modify the service binary, potentially leading to local privilege escalation.
+    该模板检测 Windows 服务二进制文件权限是否过弱。非管理员若可修改服务程序文件，可能替换为恶意二进制。
   reference:
     - https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#modify-service-binary-path
   tags: windows,services,code,windows-audit,privesc

@@ -1,14 +1,15 @@
 id: windows-defender-realtime-protection-disabled
 
 info:
-  name: Windows Defender Real-Time Protection Disabled
+  name: Windows Defender 实时保护已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if Windows Defender real-time protection is disabled.
+  description: |
+    该模板检查 Windows Defender 实时保护是否关闭。关闭后恶意文件和行为可能无法被及时拦截。
   impact: |
-    Disabling real-time protection increases the risk of malware infections.
+    系统感染恶意软件、勒索软件或后门的风险升高。
   remediation: |
-    Enable Windows Defender real-time protection to secure the system.
+    启用 Microsoft Defender 实时保护，并防止普通用户关闭安全防护。
   tags: windows,defender,windows-audit
 
 self-contained: true

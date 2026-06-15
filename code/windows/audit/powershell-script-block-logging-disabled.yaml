@@ -1,17 +1,17 @@
 id: powershell-script-block-logging-disabled
 
 info:
-  name: PowerShell Script Block Logging - Disabled
+  name: PowerShell 脚本块日志已禁用（本地基线扫描）
   author: JeonSungHyun[nukunga]
   severity: medium
   description: |
-    Disabling script block logging reduces visibility into executed scripts, making it harder to detect and investigate malicious PowerShell activity.
+    该模板检查 PowerShell Script Block Logging 是否禁用。禁用后难以记录和追踪实际执行的脚本内容。
   reference:
     - https://www.elastic.co/guide/en/security/7.17/prebuilt-rule-0-16-1-powershell-script-block-logging-disabled.html
   impact: |
-    Lack of script block logging allows malicious PowerShell activity to go unnoticed, increasing security risks and reducing forensic capabilities.
+    恶意 PowerShell 活动可能绕过检测，事件响应时缺少关键脚本证据。
   remediation: |
-    Enable PowerShell script block logging in Group Policy or Registry.
+    通过组策略或注册表启用脚本块日志，并将日志转发到集中审计平台。
   tags: windows,powershell,audit,code
 
 self-contained: true

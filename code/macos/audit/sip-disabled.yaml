@@ -1,15 +1,15 @@
 id: sip-disabled
 
 info:
-  name: macOS System Integrity Protection (SIP) Disabled
+  name: macOS 系统完整性保护 SIP 已禁用（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Validates whether System Integrity Protection (SIP) is disabled, removing critical restrictions on system modifications.
+    该模板检查 macOS System Integrity Protection（SIP）是否关闭。SIP 用于限制对系统关键路径和进程的修改。
   impact: |
-    Disabling SIP significantly weakens the security of the system, making it more vulnerable to malware and unauthorized modifications.
+    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
   remediation: |
-    Enable System Integrity Protection (SIP) to protect the system from unauthorized modifications.
+    重新启用 SIP，并避免在生产终端长期关闭系统完整性保护。
   tags: macos,audit,local,security
 
 self-contained: true

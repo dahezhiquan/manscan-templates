@@ -1,14 +1,15 @@
 id: windows-dep-disabled
 
 info:
-  name: Data Execution Prevention (DEP) Not Enabled
+  name: 数据执行保护 DEP 未启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if Data Execution Prevention (DEP) is not fully enabled for all programs.
+  description: |
+    该模板检查 Data Execution Prevention（DEP）是否未对所有程序启用。DEP 可缓解内存执行类攻击。
   impact: |
-    Disabling DEP allows certain types of memory-based attacks, such as buffer overflows.
+    禁用 DEP 会增加缓冲区溢出等内存漏洞被利用的成功率。
   remediation: |
-    Enable DEP for all programs to enhance memory protection.
+    为所有程序启用 DEP，并结合 ASLR 等缓解机制。
   tags: windows,security,dep,code,windows-audit
 
 self-contained: true

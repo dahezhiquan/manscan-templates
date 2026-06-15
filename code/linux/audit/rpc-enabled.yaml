@@ -1,11 +1,11 @@
 id: rpc-enabled
 
 info:
-  name: Unnecessary RPC Service (rstatd) Enabled
+  name: 不必要的 RPC 服务 rstatd 已启用（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Unnecessary RPC services like rstatd were enabled, allowing attackers to exploit buffer overflow, DoS, or remote execution vulnerabilities to gain root privileges and compromise the system.These services were expected to be disabled unless explicitly required.
+    该模板检查 不必要的 RPC 服务 rstatd 已启用 的本地安全基线状态，用于发现可能扩大攻击面、削弱访问控制或影响审计能力的配置。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,kisas

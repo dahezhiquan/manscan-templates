@@ -1,15 +1,15 @@
 id: insecure-launchd-jobs
 
 info:
-  name: macOS World-Writable Launchd Jobs
+  name: macOS launchd 任务全局可写（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Searches for world-writable launchd job files on macOS that allow modification by any user.
+    该模板检查 launchd 任务文件是否全局可写。launchd 任务可在系统或用户会话中自动执行。
   impact: |
-    World-writable launchd job files can be modified by any user on the system, potentially leading to privilege escalation or execution of malicious code.
+    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
   remediation: |
-    Review and correct the permissions of world-writable launchd job files.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,launchd
 
 self-contained: true

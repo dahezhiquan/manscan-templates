@@ -1,14 +1,15 @@
 id: windows-unsigned-drivers-allowed
 
 info:
-  name: Installation of Unsigned Drivers Allowed
+  name: 允许安装未签名驱动（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the system allows the installation of unsigned drivers.
+  description: |
+    该模板检查系统是否允许安装未签名驱动。未签名驱动来源不可验证，可能包含恶意或不稳定代码。
   impact: |
-    Allowing unsigned drivers increases the risk of malware or poorly constructed drivers being installed.
+    攻击者可加载恶意驱动获取内核级能力或破坏系统稳定性。
   remediation: |
-    Only allow the installation of signed drivers.
+    仅允许安装签名驱动，并启用驱动签名强制策略。
   tags: windows,code,windows-audit
 
 self-contained: true

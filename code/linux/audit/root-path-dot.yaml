@@ -1,11 +1,11 @@
 id: root-path-dot
 
 info:
-  name: Root PATH Contains Current Directory
+  name: root PATH 包含当前目录（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    root user’s PATH environment variable included the current directory (“.”).This allowed scripts or binaries in the working directory to be executed with root privileges. The misconfiguration resulted in potential privilege escalation and unsafe behavior.
+    该模板检查 root 用户 PATH 是否包含当前目录 .。若包含，root 在错误目录执行命令时可能优先运行攻击者放置的同名程序。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
     - https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/

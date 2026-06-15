@@ -1,11 +1,11 @@
 id: privesc-rpm
 
 info:
-  name: rpm - Privilege Escalation
+  name: rpm 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    rpm stands for "Red Hat Package Manager." It is a command-line package management utility used in Red Hat-based Linux distributions to install, update, and manage software packages. rpm is also used to query package information, verify package integrity, and perform various administrative tasks related to software packages.
+    该模板基于 GTFOBins 思路检测 `rpm` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `rpm` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/rpm/
   metadata:

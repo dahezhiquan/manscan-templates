@@ -1,14 +1,15 @@
 id: llmnr-disabled
 
 info:
-  name: LLMNR Disabled
+  name: LLMNR 未禁用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Determine if LLMNR (Link-Local Multicast Name Resolution) is disabled.
+  description: |
+    该模板检查 Link-Local Multicast Name Resolution（LLMNR）是否未禁用。LLMNR 可被用于名称解析投毒。
   impact: |
-    Enabling LLMNR can expose systems to man-in-the-middle attacks.
+    攻击者可在本地网络诱导主机泄露 NTLM 凭据并实施中间人攻击。
   remediation: |
-    Disable LLMNR to reduce the risk of such attacks.
+    通过组策略禁用 LLMNR，并优先使用受控 DNS 解析。
   tags: windows,llmnr,network,security,code,windows-audit
 
 self-contained: true

@@ -1,14 +1,15 @@
 id: uac-elevate-without-prompt
 
 info:
-  name: UAC Elevate Without Prompting Enabled
+  name: UAC 提权无需提示已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if User Account Control (UAC) elevates privileges without prompting, reducing security.
+  description: |
+    该模板检查 UAC 是否配置为提权时不提示。该配置削弱管理员操作确认。
   impact: |
-    Elevating privileges without prompting can allow unauthorized changes to the system.
+    恶意程序可更容易触发高权限更改而不被用户察觉。
   remediation: |
-    Configure UAC to prompt for administrative actions.
+    配置 UAC 对管理操作进行提示，并避免自动提升。
   tags: uac,privilege,code,windows-audit
 
 self-contained: true

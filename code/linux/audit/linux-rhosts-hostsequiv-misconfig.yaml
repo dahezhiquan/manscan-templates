@@ -1,11 +1,11 @@
 id: linux-rhosts-hostsequiv-misconfig
 
 info:
-  name: Rhosts and Hosts.equiv Misconfiguration Check
+  name: rhosts/hosts.equiv 配置不当（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    Assessed the presence and configuration of .rhosts and /etc/hosts.equiv files. Files with unsafe '+' entries, incorrect permissions, or improper ownership could have permitted unauthorized remote command execution via rlogin or rsh.
+    该模板检查 .rhosts 和 /etc/hosts.equiv 是否存在不安全的信任配置、+ 通配项或权限问题。此类信任文件可绕过正常认证边界。
   reference:
     - https://isms.kisa.or.kr
     - https://linux.die.net/man/5/hosts.equiv

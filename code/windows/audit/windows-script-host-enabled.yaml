@@ -1,14 +1,15 @@
 id: windows-script-host-enabled
 
 info:
-  name: Windows Script Host Enabled
+  name: Windows Script Host 已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if Windows Script Host is enabled, which can be used to run malicious scripts.
+  description: |
+    该模板检查 Windows Script Host 是否启用。WSH 可执行 VBScript/JScript，常被恶意脚本滥用。
   impact: |
-    Leaving Windows Script Host enabled may allow attackers to execute harmful scripts on the system.
+    攻击者可通过脚本投递恶意载荷、持久化或执行系统命令。
   remediation: |
-    Disable Windows Script Host by setting the Enabled registry key to 0.
+    如无业务需要，禁用 Windows Script Host 或限制脚本执行来源。
   tags: windows,code,windows-audit
 
 self-contained: true

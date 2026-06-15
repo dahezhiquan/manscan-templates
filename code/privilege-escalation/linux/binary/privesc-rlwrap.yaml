@@ -1,11 +1,11 @@
 id: privesc-rlwrap
 
 info:
-  name: rlwrap - Privilege Escalation
+  name: rlwrap 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    rlwrap is a utility that provides readline functionality to commands that lack it, allowing for command-line editing and history capabilities. It is commonly used to enhance the user experience when working with command-line tools that do not have built-in readline support.
+    该模板基于 GTFOBins 思路检测 `rlwrap` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `rlwrap` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/rlwrap/
   metadata:

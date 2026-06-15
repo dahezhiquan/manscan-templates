@@ -1,7 +1,7 @@
 id: writable-etc-passwd
 
 info:
-  name: /etc/passwd writable - Privilege Escalation
+  name: /etc/passwd 可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   reference:

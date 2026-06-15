@@ -1,11 +1,11 @@
 id: privesc-rpmverify
 
 info:
-  name: rpmverify - Privilege Escalation
+  name: rpmverify 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The rpmverify command is used to verify the integrity and authenticity of installed RPM packages on a Linux system. It checks the files in the installed packages against the information stored in the RPM database to detect any modifications or discrepancies. This helps ensure the security and stability of the system by identifying any unauthorized changes to the installed packages.
+    该模板基于 GTFOBins 思路检测 `rpmverify` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `rpmverify` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/rpmverify/
   metadata:

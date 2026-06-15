@@ -1,14 +1,15 @@
 id: windows-uac-disabled
 
 info:
-  name: User Account Control Disabled
+  name: 用户账户控制 UAC 已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if User Account Control (UAC) is disabled on the system.
+  description: |
+    该模板检查 User Account Control（UAC）是否关闭。UAC 关闭会减少管理员操作提示和隔离保护。
   impact: |
-    Disabling UAC can allow unauthorized changes to system settings, leading to security vulnerabilities.
+    恶意程序可更容易进行系统级修改，扩大入侵影响。
   remediation: |
-    Enable User Account Control to ensure that administrative actions require confirmation, enhancing security.
+    启用 UAC，并配置管理操作需要确认或凭据提示。
   tags: windows,uac,code,windows-audit
 
 self-contained: true

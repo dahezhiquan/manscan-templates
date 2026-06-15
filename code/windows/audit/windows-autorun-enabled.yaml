@@ -1,14 +1,15 @@
 id: windows-autorun-enabled
 
 info:
-  name: AutoRun Enabled
+  name: Windows AutoRun 已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if AutoRun is enabled for removable media.
+  description: |
+    该模板检查可移动介质 AutoRun 是否启用。插入设备时自动运行内容可能触发恶意代码。
   impact: |
-    Enabling AutoRun for removable media can lead to automatic execution of malicious software.
+    攻击者可利用 U 盘等介质自动执行恶意程序。
   remediation: |
-    Disable AutoRun to prevent potential malware from running automatically when a device is connected.
+    禁用 AutoRun，尤其是所有可移动驱动器。
   tags: windows,autorun,code,windows-audit
 
 self-contained: true

@@ -1,18 +1,15 @@
 id: dns-zone-transfer-check
 
 info:
-  name: DNS Zone Transfer Check
+  name: DNS 区域传送未限制（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure DNS zone transfers are restricted by verifying that the SecureSecondaries registry value is set to 2 for all active zones.
-    Unrestricted zone transfers can expose sensitive domain information, helping attackers map the network infrastructure.
+    该模板检查 Windows DNS 区域传送是否受限。未限制的区域传送会泄露完整 DNS 记录。
   impact: |
-    If DNS zone transfers are not properly restricted, attackers could access domain and zone details, which may aid in planning and launching further attacks against the network infrastructure.
+    攻击者可获取主机名、内部地址和服务布局，辅助后续攻击。
   remediation: |
-    Configure DNS zone transfer restrictions by:
-    - Disabling zone transfers entirely, or
-    - Restricting transfers to designated servers by setting the SecureSecondaries registry value to 2.
+    将 SecureSecondaries 配置为仅允许授权辅助 DNS 服务器进行区域传送。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,dns,zone-transfer

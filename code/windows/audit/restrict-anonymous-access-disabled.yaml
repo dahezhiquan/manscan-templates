@@ -1,14 +1,15 @@
 id: restrict-anonymous-access-disabled
 
 info:
-  name: Restrict Anonymous Access Disabled
+  name: 匿名访问限制已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if anonymous access restrictions are disabled.
+  description: |
+    该模板检查匿名访问限制是否禁用。禁用限制会允许未认证用户枚举更多系统信息。
   impact: |
-    Disabling restrictions on anonymous access could expose sensitive information and increase the attack surface.
+    攻击者可收集用户、共享和策略信息，辅助后续攻击。
   remediation: |
-    Enable anonymous access restrictions by setting the RestrictAnonymous registry key to 1 or 2.
+    将 RestrictAnonymous 配置为 1 或 2，并验证业务兼容性。
   tags: windows,anonymous-access,code,windows-audit
 
 self-contained: true

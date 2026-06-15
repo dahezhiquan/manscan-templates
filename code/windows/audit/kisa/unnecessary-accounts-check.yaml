@@ -1,17 +1,15 @@
 id: unnecessary-accounts-check
 
 info:
-  name: Unnecessary Accounts Detection
+  name: 存在不必要本地账户（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
-  description:
-    Identify local user accounts that deviate from default settings and could present security risks.
+  description: |
+    该模板识别偏离默认或业务需求的本地用户账户。不必要账户会扩大认证入口和权限管理复杂度。
   impact: |
-    Unmanaged accounts expand the attack surface, making credential-based attacks such as brute-force and password spraying more likely.
+    闲置或未知账户可能被攻击者猜解、接管或用于持久化。
   remediation: |
-    Delete unnecessary accounts by running:
-    - > net user [account_name] /delete
-    - Or disable them via Local Security Policy.
+    禁用或删除不需要的本地账户，并定期复核账户用途和所有者。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,security-audit,code,windows-audit,kisa

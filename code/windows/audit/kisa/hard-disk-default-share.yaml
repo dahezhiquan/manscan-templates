@@ -1,18 +1,15 @@
 id: hard-disk-default-share
 
 info:
-  name: Hard Disk Default Share Removal Check
+  name: 硬盘默认管理共享未移除（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure default administrative shares (e.g., C$, D$, Admin$) are disabled by verifying that the AutoShareServer registry value is set to 0.
-    Leaving these shares enabled can expose system resources to unauthorized access.
+    该模板检查 C$、D$、Admin$ 等默认管理共享是否被禁用。默认共享会提供远程访问系统磁盘的入口。
   impact: |
-   If the AutoShareServer registry value is set to 1 or default administrative shares (excluding IPC$) are present, attackers may exploit them to gain unauthorized access to system resources.
+    攻击者获取管理员凭据后可通过默认共享快速访问和投放文件。
   remediation: |
-    Permanently disable default administrative shares by setting the AutoShareServer registry value to 0 at:
-    - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\lanmanserver\parameters
-    - Additionally, remove any non-essential default shares using the appropriate system management tools.
+    按基线要求禁用不需要的默认管理共享，并限制远程管理来源。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: ftp,iis,code,windows-audit,kisa,share-permissions

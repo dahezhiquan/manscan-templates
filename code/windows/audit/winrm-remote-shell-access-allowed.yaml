@@ -1,14 +1,15 @@
 id: winrm-remote-shell-access-allowed
 
 info:
-  name: Remote Shell Access Allowed
+  name: WinRM 远程 Shell 访问已允许（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if remote shell access via WinRM is allowed, which can be exploited.
+  description: |
+    该模板检查 WinRM 是否允许远程 Shell 访问。该能力可远程执行命令。
   impact: |
-    Remote shell access could allow unauthorized access to critical system components.
+    攻击者一旦获得凭据即可远程控制系统并执行敏感操作。
   remediation: |
-    Disable remote shell access in WinRM.
+    禁用不必要的 WinRM 远程 Shell，或通过最小权限和来源限制进行控制。
   tags: winrm,remote-shell,code,windows-audit
 
 self-contained: true

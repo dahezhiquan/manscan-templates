@@ -1,14 +1,15 @@
 id: sticky-keys-enabled-login
 
 info:
-  name: Sticky Keys Enabled at Login Screen
+  name: 登录界面粘滞键已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verify if Sticky Keys are enabled before login, which can be exploited for unauthorized access.
+  description: |
+    该模板检查登录前 Sticky Keys 是否可用。该机制曾被滥用于替换系统二进制并绕过登录。
   impact: |
-    An attacker may abuse Sticky Keys to gain unauthorized access by replacing system binaries.
+    具备本地访问的攻击者可能利用辅助功能入口获取未授权命令执行。
   remediation: |
-    Disable Sticky Keys before login or implement a more secure method to prevent misuse.
+    禁用登录界面不必要的辅助功能热键，并保护系统文件完整性。
   tags: windows,sticky-keys,login,code,windows-audit
 
 self-contained: true

@@ -1,15 +1,15 @@
 id: ssh-service-running
 
 info:
-  name: macOS SSH Service Running
+  name: macOS SSH 服务正在运行（本地基线扫描）
   author: geeknik
   severity: info
   description: |
-    Checks if the SSH service (Remote Login) is running on the macOS system.
+    该模板检查 macOS Remote Login/SSH 服务是否运行。无需求时启用 SSH 会增加远程登录攻击面。
   impact: |
-    While not a vulnerability in itself, a running SSH service can be a potential attack vector if not properly configured and secured.
+    不必要的登录入口会增加未授权访问、暴力破解或设备丢失后的数据暴露风险。
   remediation: |
-    Disable the SSH service if it is not needed. If it is required, ensure that it is properly configured with strong passwords and key-based authentication.
+    如无远程管理需求，关闭 Remote Login/SSH；如必须启用，应限制来源并使用密钥认证。
   tags: macos,audit,local,security,ssh
 
 self-contained: true

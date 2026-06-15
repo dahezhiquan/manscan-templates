@@ -1,11 +1,11 @@
 id: writable-xinetdconf
 
 info:
-  name: /etc/(x)inetd.conf Permission Check
+  name: inetd/xinetd 配置文件权限异常（本地基线扫描）
   author: songyaeji
   severity: high
   description: |
-    The /etc/xinetd.conf or /etc/inetd.conf file was writable by non-root users, allowing them to register malicious services that executed with root privileges. This check verified that the file was owned by root and had secure permissions.
+    该模板检查 /etc/xinetd.conf 或 /etc/inetd.conf 是否可被非 root 用户写入。可写配置可能允许攻击者注册恶意服务并以高权限执行。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   tags: linux,code,audit,compliance,local

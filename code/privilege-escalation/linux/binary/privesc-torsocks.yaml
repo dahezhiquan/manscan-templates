@@ -1,11 +1,11 @@
 id: privesc-torsocks
 
 info:
-  name: Torsocks - Privilege Escalation
+  name: torsocks 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    torsocks is a wrapper that enables the use of the Tor network for any program, including those that do not natively support proxy settings. It intercepts and redirects network calls from the target program through the Tor network, providing a way to anonymize the network traffic of various applications.
+    该模板基于 GTFOBins 思路检测 `torsocks` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `torsocks` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/torsocks/
   metadata:

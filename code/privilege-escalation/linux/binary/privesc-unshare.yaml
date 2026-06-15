@@ -1,11 +1,11 @@
 id: privesc-unshare
 
 info:
-  name: Unshare - Privilege Escalation
+  name: unshare 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The unshare command is used to run a command in a new namespace, which can isolate various aspects of the system, such as the mount namespace, network namespace, user namespace, and more.
+    该模板基于 GTFOBins 思路检测 `unshare` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `unshare` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/unshare/
   metadata:

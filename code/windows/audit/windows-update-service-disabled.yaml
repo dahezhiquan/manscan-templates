@@ -1,14 +1,15 @@
 id: windows-update-service-disabled
 
 info:
-  name: Windows Update Service Disabled
+  name: Windows Update 服务已禁用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if the Windows Update service is disabled.
+  description: |
+    该模板检查 Windows Update 服务是否禁用。服务关闭会阻止系统接收安全更新。
   impact: |
-    Disabling Windows Update prevents the system from receiving important security patches, leaving it vulnerable.
+    主机将持续暴露于已修复漏洞，增加被利用风险。
   remediation: |
-    Ensure that the Windows Update service is enabled and configured properly.
+    启用并正确配置 Windows Update 服务，确保补丁可正常下载和安装。
   tags: windows,code,windows-audit
 
 self-contained: true

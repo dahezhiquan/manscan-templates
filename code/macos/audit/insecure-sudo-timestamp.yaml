@@ -1,15 +1,15 @@
 id: insecure-sudo-timestamp
 
 info:
-  name: macOS Excessive Sudo Timestamp Timeout
+  name: macOS sudo 时间戳超时过长（本地基线扫描）
   author: geeknik
   severity: medium
   description: |
-    Checks if the sudo timestamp timeout is configured to an excessively long duration (100+ minutes).
+    该模板检查 sudo timestamp_timeout 是否设置过长。超时时间过长会延长免密 sudo 窗口。
   impact: |
-    A long sudo timestamp can allow a user to execute commands with root privileges for an extended period of time without re-entering their password.
+    不符合基线的配置会扩大本地攻击面，并削弱 macOS 主机的访问控制和审计能力。
   remediation: |
-    Set the sudo timestamp to a reasonable value to reduce the risk of unauthorized access.
+    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
   tags: macos,audit,local,security,sudo
 
 self-contained: true

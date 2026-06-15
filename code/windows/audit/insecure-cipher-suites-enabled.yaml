@@ -1,14 +1,15 @@
 id: insecure-cipher-suites-enabled
 
 info:
-  name: Insecure Cipher Suites Enabled
+  name: 不安全加密套件已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if insecure cipher suites are enabled.
+  description: |
+    该模板检查系统是否启用了弱加密套件。弱套件可能使用过时算法或密钥交换方式。
   impact: |
-    Enabling insecure cipher suites can lead to weak encryption, making it easier for attackers to decrypt sensitive data.
+    攻击者可利用弱加密套件降低通信安全性，增加解密、篡改或中间人攻击风险。
   remediation: |
-    Disable insecure cipher suites such as those using RC4 or DES encryption.
+    禁用 RC4、3DES、EXPORT 等弱套件，优先启用现代 TLS 加密套件。
   tags: windows,cipher,security,code,windows-audit
 
 self-contained: true

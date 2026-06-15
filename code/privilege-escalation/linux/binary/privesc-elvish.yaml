@@ -1,11 +1,11 @@
 id: privesc-elvish
 
 info:
-  name: elvish - Privilege Escalation
+  name: elvish 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    elvish is a Unix shell that emphasizes expressiveness and extensibility. It aims to provide a more user-friendly and programmable shell experience, with features such as a powerful scripting language, a rich set of data types, and a clean and consistent syntax.
+    该模板基于 GTFOBins 思路检测 `elvish` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `elvish` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/elvish/
   metadata:

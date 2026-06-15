@@ -1,11 +1,11 @@
 id: sendmail-postfix-execution-restrictions
 
 info:
-  name: Sendmail/Postfix Execution Restrictions Misconfigured
+  name: Sendmail/Postfix 执行限制配置不当（本地基线扫描）
   author: songyaeji
   severity: medium
   description: |
-    General users were not restricted from executing Sendmail with the q option, and the Postfix binary lacked proper permission controls.This misconfiguration allowed unauthorized users to manipulate the mail queue or disrupt mail delivery.
+    该模板检查 Sendmail/Postfix 的执行权限限制。普通用户若可滥用邮件程序参数或二进制权限，可能影响邮件队列或触发非预期执行。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,sendmail,postfix,compliance

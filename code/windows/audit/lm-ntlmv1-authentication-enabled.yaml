@@ -1,14 +1,15 @@
 id: lm-ntlmv1-authentication-enabled
 
 info:
-  name: LM and NTLMv1 Authentication Enabled
+  name: LM/NTLMv1 认证已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if LM and NTLMv1 authentication protocols are enabled, which are insecure.
+  description: |
+    该模板检查是否允许 LM 或 NTLMv1 认证协议。这些旧协议缺少现代安全保护。
   impact: |
-    Legacy authentication methods such as LM and NTLMv1 are vulnerable to brute-force and pass-the-hash attacks.
+    攻击者可更容易中继、破解或降级认证流量。
   remediation: |
-    Disable LM and NTLMv1 and enforce NTLMv2 or Kerberos for secure authentication.
+    禁用 LM 和 NTLMv1，仅允许 NTLMv2 或更强认证机制。
   tags: lm,ntlmv1,authentication,code,windows-audit
 
 self-contained: true

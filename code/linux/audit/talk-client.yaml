@@ -1,13 +1,13 @@
 id: talk-client
 
 info:
-  name: Ensure Talk Client is Not Installed
+  name: Talk 客户端不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The talk package provides a client for user-to-user messaging on local or remote systems.Since it uses unencrypted communication, it should be removed to minimize security risks.
+    该模板检查本机是否安装了不必要的 Talk 用户消息 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    Ensure the talk package is not installed unless explicitly required.To remove the package, run: sudo apt-get remove talk -y
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

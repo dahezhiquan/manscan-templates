@@ -1,11 +1,11 @@
 id: privesc-ash
 
 info:
-  name: Ash - Privilege Escalation
+  name: ash 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    Ash allows the value of a variable to be set at the same time it is marked read only by writing readonly name=value With no arguments
+    该模板基于 GTFOBins 思路检测 `ash` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `ash` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/ash/
   metadata:

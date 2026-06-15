@@ -1,13 +1,13 @@
 id: ssh-hostbasedauth-disabled
 
 info:
-  name: Ensure SSH HostbasedAuthentication - Disabled
+  name: SSH HostbasedAuthentication 未禁用（本地基线扫描）
   author: Th3l0newolf
   severity: high
   description: |
-    The HostbasedAuthentication parameter determines whether SSH authentication is permitted using trusted hosts, based on entries in .rhosts or /etc/hosts.equiv, in combination with successful public key authentication from the client host.
+    该模板检查 SSH HostbasedAuthentication 是否按基线禁用。基于主机信任的认证依赖 .rhosts/hosts.equiv 等机制，容易因信任关系配置错误被滥用。
   remediation: |
-    Edit /etc/ssh/sshd_config to set 'HostbasedAuthentication no' and restart SSH service with 'sudo systemctl restart sshd'.
+    调整 SSH/登录配置，禁用不必要的信任认证和 root 远程登录，仅允许受控账户通过安全通道访问。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
     - https://docs.datadoghq.com/security/default_rules/def-000-fqw/

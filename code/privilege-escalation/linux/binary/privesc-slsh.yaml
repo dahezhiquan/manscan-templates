@@ -1,11 +1,11 @@
 id: privesc-slsh
 
 info:
-  name: slsh - Privilege Escalation
+  name: slsh 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    slsh is a command-line shell that is designed to provide a secure environment for executing shell commands. It is often used in scenarios where security and privilege separation are important, such as in web hosting environments or when running untrusted code. slsh aims to provide a secure and restricted shell environment for executing commands.
+    该模板基于 GTFOBins 思路检测 `slsh` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `slsh` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/slsh/
   metadata:

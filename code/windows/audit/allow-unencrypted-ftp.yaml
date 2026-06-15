@@ -1,14 +1,15 @@
 id: allow-unencrypted-ftp
 
 info:
-  name: Allow Unencrypted FTP
+  name: FTP 允许未加密连接（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Verifies if the FTP server allows unencrypted connections, which can expose sensitive data.
+  description: |
+    该模板检查 Windows FTP 服务是否允许未加密连接。若 FTP 未强制 TLS/SSL，用户名、口令和传输内容可能以明文形式在网络中暴露。
   impact: |
-    Allowing unencrypted FTP can expose credentials and data to attackers during transmission.
+    允许未加密 FTP 会增加凭据窃听、会话劫持和敏感文件泄露风险。
   remediation: |
-    Configure FTP to require encrypted connections using SSL/TLS.
+    配置 FTP 服务强制使用 FTPS/TLS，或停用不再需要的 FTP 服务。
   tags: ftp,windows,code,windows-audit
 
 self-contained: true

@@ -1,14 +1,15 @@
 id: auto-logon-enabled
 
 info:
-  name: AutoLogon Enabled
+  name: Windows 自动登录已启用（本地基线扫描）
   author: princechaddha
   severity: medium
-  description: Checks if automatic logon is enabled, allowing users to bypass login prompts.
+  description: |
+    该模板检查 Windows 自动登录配置。启用后系统可在启动时绕过交互式登录，通常还会保存可被读取或滥用的凭据。
   impact: |
-    AutoLogon can allow unauthorized users to access the system without authentication.
+    本地或远程攻击者可能利用自动登录凭据直接进入系统。
   remediation: |
-    Disable AutoLogon to ensure users are prompted for credentials.
+    禁用 AutoAdminLogon，清除注册表中保存的默认用户名、密码和域信息。
   tags: autologon,login,code,windows-audit
 
 self-contained: true

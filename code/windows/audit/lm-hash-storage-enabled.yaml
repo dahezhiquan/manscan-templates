@@ -1,14 +1,15 @@
 id: lm-hash-storage-enabled
 
 info:
-  name: LM Hash Storage Enabled
+  name: LM 哈希存储已启用（本地基线扫描）
   author: princechaddha
   severity: high
-  description: Checks if LM hashes are stored, which is an insecure practice.
+  description: |
+    该模板检查系统是否允许存储 LM 哈希。LM 哈希算法过弱，容易被快速破解。
   impact: |
-    Storing LM hashes can lead to easier password cracking due to the weak nature of the LM hashing algorithm.
+    攻击者获取哈希后可更容易还原明文密码。
   remediation: |
-    Disable LM hash storage by setting the NoLMHash registry key to prevent storing weak LM hashes.
+    禁用 LM 哈希存储，并在策略生效后强制用户更改密码。
   tags: windows,hashing,security,code,windows-audit
 
 self-contained: true

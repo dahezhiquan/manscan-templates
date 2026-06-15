@@ -1,17 +1,15 @@
 id: unnecessary-service-check
 
 info:
-  name: Unnecessary Service Removal Check
+  name: 不必要服务正在运行（本地基线扫描）
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    Ensure that unnecessary services such as Alerter, Clipbook, Messenger, and Simple TCP/IP Services are not running. If enabled, these services can expose the system to security vulnerabilities.
+    该模板检查 Alerter、Clipbook、Messenger、Simple TCP/IP Services 等不必要服务是否运行。遗留服务会增加攻击面。
   impact: |
-    Operating these services can offer attackers potential entry points to exploit the system, as they are known to have vulnerabilities.
+    攻击者可利用不必要服务的弱配置或漏洞进行信息收集、拒绝服务或远程攻击。
   remediation: |
-    To stop and disable these services, run:
-    > net stop [ServiceName]
-    > sc config [ServiceName] start= disabled
+    停止并禁用无业务需求的服务，仅保留必要系统组件。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: service-management,code,windows-audit,kisa

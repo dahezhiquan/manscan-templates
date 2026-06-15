@@ -1,11 +1,11 @@
 id: privesc-timeout
 
 info:
-  name: Timeout - Privilege Escalation
+  name: timeout 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    The timeout command is used to run a command with a specified time limit. It is commonly used to prevent a command from running indefinitely and to enforce a time restriction on its execution.
+    该模板基于 GTFOBins 思路检测 `timeout` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `timeout` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/timeout/
   metadata:

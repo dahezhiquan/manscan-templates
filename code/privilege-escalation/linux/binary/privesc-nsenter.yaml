@@ -1,11 +1,11 @@
 id: privesc-nsenter
 
 info:
-  name: Nsenter - Privilege Escalation
+  name: nsenter 可被滥用进行本地提权（本地基线扫描）
   author: daffainfo
   severity: high
   description: |
-    nsenter is a command-line utility in Linux that allows a user to enter into an existing namespace. It is commonly used for troubleshooting and managing namespaces in containerized environments. By using nsenter, users can enter into a specific namespace and execute commands within that namespace, which can be helpful for various system administration tasks.
+    该模板基于 GTFOBins 思路检测 `nsenter` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `nsenter` 后的身份，判断该二进制是否可能以 root 权限运行命令。
   reference:
     - https://gtfobins.github.io/gtfobins/nsenter/
   metadata:

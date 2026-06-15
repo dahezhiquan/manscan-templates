@@ -1,15 +1,15 @@
 id: auto-login-enabled
 
 info:
-  name: macOS Automatic Login Enabled
+  name: macOS 自动登录已启用（本地基线扫描）
   author: geeknik
   severity: high
   description: |
-    Checks if automatic login is enabled on macOS, allowing users to log in to the system without entering a password upon startup.
+    该模板检查 macOS 是否启用自动登录。启用后设备启动时无需输入密码即可进入指定用户会话。
   impact: |
-    Enabling automatic login can lead to unauthorized access to the user's account and data if the device is physically accessed.
+    不必要的登录入口会增加未授权访问、暴力破解或设备丢失后的数据暴露风险。
   remediation: |
-    Disable automatic login to require a password at startup and enhance physical security.
+    禁用自动登录或访客账户，确保访问设备需要强身份验证。
   tags: macos,audit,local,security
 
 self-contained: true

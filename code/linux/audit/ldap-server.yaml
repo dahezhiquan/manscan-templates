@@ -1,14 +1,13 @@
 id: ldap-server
 
 info:
-  name: Ensure LDAP Server Service is Not Installed
+  name: LDAP Server 服务不应安装（本地基线扫描）
   author: Th3l0newolf
   severity: info
   description: |
-    The slapd package provides the OpenLDAP server, which manages directory and identity services. If not explicitly required, having this service installed unnecessarily increases the system’s attack surface.
+    该模板检查本机是否安装了不必要的 LDAP 目录服务 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |
-    - Run: sudo apt-get remove slapd -y
-    - This removes the LDAP server package to reduce the system’s attack surface.
+    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

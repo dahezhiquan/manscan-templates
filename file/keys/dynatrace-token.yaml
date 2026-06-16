@@ -1,10 +1,11 @@
 id: dynatrace-token
 
 info:
-  name: Dynatrace Token - Detect
+  name: Dynatrace 令牌 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
-  description: Dynatrace token was detected.
+  description: |
+    该模板检测文件中暴露的 Dynatrace Token。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

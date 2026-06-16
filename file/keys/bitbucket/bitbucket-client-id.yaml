@@ -1,7 +1,7 @@
 id: bitbucket-client-id
 
 info:
-  name: BitBucket Client ID
+  name: BitBucket 客户端 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

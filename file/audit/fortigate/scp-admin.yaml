@@ -1,10 +1,11 @@
 id: scp-admin
 
 info:
-  name: Fortinet Admin-SCP Disabled - Detect
+  name: FortiGate Admin-SCP 配置检测（本地文件安全扫描）
   author: pussycat0x
   severity: info
-  description: Fortinet Admin-SCP functionality is recommended to be disabled by default. Enabling SCP allows download of the configuration file from the FortiGate as an alternative method of backing up the configuration file.
+  description: |
+    该模板检测 FortiGate Admin-SCP 配置。启用 SCP 可下载配置文件，若缺少控制可能泄露敏感设备配置。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
   classification:

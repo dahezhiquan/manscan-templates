@@ -1,13 +1,13 @@
 id: file-hide-last-login-information
 
 info:
-  name: Hide SSH Last Login Information
+  name: SSH 最后登录信息未隐藏（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    SSH last login information helps detect unauthorized access but may expose user activity details to attackers.
+    该模板检查 SSH 是否打印最后登录信息。该信息有助于用户发现异常访问，但也可能向攻击者泄露用户活动线索。
   remediation: |
-    Set PrintLastLog no in /etc/ssh/sshd_config to disable last login information and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置 PrintLastLog no，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209441

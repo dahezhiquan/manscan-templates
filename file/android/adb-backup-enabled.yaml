@@ -1,11 +1,13 @@
 id: adb-backup-enabled
 
 info:
-  name: ADB Backup Enabled
+  name: Android ADB 备份已启用（本地文件安全扫描）
   author: gaurang
   severity: low
-  description: ADB Backup is enabled, which allows the backup and restore of an app's private data.
-  remediation: Ensure proper access or disable completely.
+  description: |
+    该模板检测 Android 应用是否启用了 ADB Backup。启用后可能允许备份和恢复应用私有数据，增加本地数据被提取的风险。
+  remediation: |
+    如无明确调试或迁移需求，应在 AndroidManifest.xml 中禁用 allowBackup，并保护调试构建配置。
   reference:
     - https://adb-backup.com/
   classification:

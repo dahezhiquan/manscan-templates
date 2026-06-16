@@ -1,7 +1,7 @@
 id: shopify-public-access
 
 info:
-  name: Shopify Access Token (Public App)
+  name: Shopify 访问令牌 (Public App) 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

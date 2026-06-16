@@ -1,7 +1,7 @@
 id: fb-access-token
 
 info:
-  name: Facebook Access Token
+  name: Facebook 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

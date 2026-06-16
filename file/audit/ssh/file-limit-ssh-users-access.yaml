@@ -1,13 +1,13 @@
 id: file-limit-ssh-users-access
 
 info:
-  name: Limit SSH Users Access
+  name: SSH 用户访问未限制（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    Restricting SSH user access improves security by allowing only authorized users to connect, reducing the risk of unauthorized logins and potential attacks.
+    该模板检查 SSH 是否限制可登录用户。未限制时，所有本地账户都可能成为远程登录攻击面。
   remediation: |
-    Restrict SSH access by configuring AllowUsers or AllowGroups in /etc/ssh/sshd_config and restart the SSH service.
+    在 /etc/ssh/sshd_config 中配置 AllowUsers 或 AllowGroups，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://cloud.ibm.com/docs/ssh-keys?topic=ssh-keys-granting-ssh-access-to-a-user

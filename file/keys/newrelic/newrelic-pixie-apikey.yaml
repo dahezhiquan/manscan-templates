@@ -1,7 +1,7 @@
 id: newrelic-pixie-apikey
 
 info:
-  name: New Relic Pixie API Key
+  name: New Relic Pixie API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: newrelic-license
 
 info:
-  name: New Relic License Key
+  name: New Relic License 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

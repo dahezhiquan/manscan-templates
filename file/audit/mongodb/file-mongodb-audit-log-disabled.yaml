@@ -1,13 +1,13 @@
 id: file-mongodb-audit-log-disabled
 
 info:
-  name: MongoDB Audit Logging Disabled
+  name: MongoDB 审计日志未启用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Ensures MongoDB audit logging is enabled.
+    该模板检查 MongoDB 审计日志配置是否启用。审计日志缺失会影响对敏感操作和异常访问的追踪。
   remediation: |
-    Set 'auditLog.destination: file' and specify 'path' in /etc/mongod.conf.
+    在 /etc/mongod.conf 中设置 auditLog.destination 为 file 并指定 path。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/tutorial/configure-audit-filters/

@@ -1,7 +1,7 @@
 id: gitter-access-token
 
 info:
-  name: Gitter Access Token
+  name: Gitter 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

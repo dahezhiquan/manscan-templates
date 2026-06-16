@@ -1,7 +1,7 @@
 id: shopify-access-token
 
 info:
-  name: Shopify Access Token
+  name: Shopify 访问令牌 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: file,keys,token

@@ -1,13 +1,13 @@
 id: file-enable-ssh-privilege-separation
 
 info:
-  name: Enable Privilege Separation in SSH
+  name: SSH 权限分离未启用（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    Privilege separation in SSH enhances security by running the SSH daemon with minimal privileges, reducing the risk of privilege escalation. It limits the impact of vulnerabilities, preventing full system compromise if SSH is exploited.
+    该模板检查 SSH 权限分离配置。权限分离可限制 sshd 漏洞被利用后的影响范围，降低完全控制系统的风险。
   remediation: |
-    Set UsePrivilegeSeparation yes in /etc/ssh/sshd_config to enhance security and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置 UsePrivilegeSeparation yes，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/2023-09-13/finding/V-258010

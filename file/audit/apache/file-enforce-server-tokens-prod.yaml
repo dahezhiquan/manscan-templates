@@ -1,13 +1,13 @@
 id: file-enforce-server-tokens-prod
 
 info:
-  name: Enforce Apache2 ServerTokens Prod
+  name: Apache2 ServerTokens 未设置为 Prod（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    ServerTokens should be set to 'Prod' to prevent Apache from exposing version details in response headers.
+    该模板检查 Apache ServerTokens 是否设置为 Prod，以减少响应头中暴露的版本和组件细节。
   remediation: |
-    Set 'ServerTokens Prod' in the Apache configuration file and restart the service.
+    在 Apache 配置中设置 ServerTokens Prod，并重启服务。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#servertokens
   metadata:

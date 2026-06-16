@@ -1,7 +1,7 @@
 id: postman-api-key
 
 info:
-  name: Postman API Key
+  name: Postman API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

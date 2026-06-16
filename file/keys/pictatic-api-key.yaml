@@ -1,7 +1,7 @@
 id: pictatic-api-key
 
 info:
-  name: Pictatic API Key
+  name: Pictatic API 密钥 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: keys,file,token

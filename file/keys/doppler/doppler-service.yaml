@@ -1,7 +1,7 @@
 id: doppler-service
 
 info:
-  name: Doppler Service
+  name: Doppler Service 敏感信息检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

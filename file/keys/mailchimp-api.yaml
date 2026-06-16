@@ -1,7 +1,7 @@
 id: mailchimp-api-key
 
 info:
-  name: Mailchimp API Key
+  name: Mailchimp API 密钥 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: keys,file,token,mailchimp

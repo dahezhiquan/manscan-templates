@@ -1,7 +1,7 @@
 id: github-oauth-token
 
 info:
-  name: Github OAuth Access Token
+  name: Github OAuth 访问令牌 泄露检测（本地文件安全扫描）
   author: tanq16
   severity: high
   tags: file,keys,token,github

@@ -1,11 +1,11 @@
 id: openrouter-key
 
 info:
-  name: OpenRouter API Key
+  name: OpenRouter API 密钥泄露检测（本地文件安全扫描）
   author: mmqnym
   severity: info
   description: |
-    OpenRouter API Key was detected. OpenRouter API keys provide access to various AI models and services, and unauthorized access could lead to misuse of AI resources and potential data exposure.
+    该模板检测文件中暴露的 OpenRouter API 密钥。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

@@ -1,7 +1,7 @@
 id: droneci-access-token
 
 info:
-  name: Droneci Access Token
+  name: Droneci 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

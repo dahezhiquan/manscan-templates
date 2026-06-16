@@ -1,13 +1,13 @@
 id: file-mongodb-ssl-disabled
 
 info:
-  name: MongoDB SSL Disabled
+  name: MongoDB SSL/TLS 未启用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Ensures MongoDB uses SSL/TLS for secure connections.
+    该模板检查 MongoDB 是否强制使用 SSL/TLS 连接。未加密连接可能暴露认证和数据传输内容。
   remediation: |
-    Set 'net.ssl.mode: requireSSL' and define 'PEMKeyFile' in /etc/mongod.conf.
+    在 /etc/mongod.conf 中设置 net.ssl.mode 为 requireSSL 并配置 PEMKeyFile。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/tutorial/configure-ssl/

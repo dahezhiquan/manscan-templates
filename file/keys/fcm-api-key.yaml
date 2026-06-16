@@ -1,7 +1,7 @@
 id: fcm-api-key
 
 info:
-  name: Firebase Cloud Messaging Token
+  name: Firebase Cloud Messaging 令牌 泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: medium
   tags: file,keys,token,fcm,firebase,google

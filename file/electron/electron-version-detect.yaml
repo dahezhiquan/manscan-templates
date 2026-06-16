@@ -1,7 +1,7 @@
 id: electron-version-detect
 
 info:
-  name: Electron Version - Detect
+  name: Electron 版本识别（本地文件安全扫描）
   author: me9187
   severity: info
   reference:

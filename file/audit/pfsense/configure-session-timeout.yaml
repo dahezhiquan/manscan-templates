@@ -1,11 +1,11 @@
 id: configure-session-timeout
 
 info:
-  name: PfSense Configure Sessions Timeout Not Set - Detect
+  name: pfSense 会话超时未设置（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Configure sessions timeout is recommended to be enabled. An indefinite or even long session timeout window can increase the risk of an attacker abusing abandoned sessions and potentially being able to obtain sensitive information, modify data, and/or execute unauthorized operations.
+    该模板检测 pfSense 管理会话超时配置。会话无限期或过长会增加遗留会话被滥用的风险。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/advanced-admin.html
   classification:

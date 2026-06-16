@@ -1,7 +1,7 @@
 id: stripe-api-key
 
 info:
-  name: Stripe API Key
+  name: Stripe API 密钥 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: file,keys,token,stripe

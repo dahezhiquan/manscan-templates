@@ -1,7 +1,7 @@
 id: easypost-test-token
 
 info:
-  name: Easypost Test API Token
+  name: Easypost Test API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,10 +1,11 @@
 id: nodejs-framework-exceptions
 
 info:
-  name: Node.js Framework Exceptions
+  name: Node.js 框架异常日志检测（本地文件安全扫描）
   author: Aayush Dhakal
   severity: info
-  description: Detects suspicious Node.js framework exceptions that could indicate exploitation attempts
+  description: |
+    该模板检测可疑 Node.js 框架异常日志，这些异常可能反映应用错误、攻击探测或利用尝试。
   reference:
     - https://expressjs.com/en/guide/error-handling.html
     - https://nodejs.org/en/docs/guides

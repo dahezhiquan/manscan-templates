@@ -1,10 +1,11 @@
 id: tar-extraction
 
 info:
-  name: Path Injection Vulnerability in TAR Extraction
+  name: TAR 解压路径注入风险（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: info
-  description: Insecure TAR archive extraction can result in arbitrary path over write and can result in code injection.
+  description: |
+    该模板检测不安全 TAR 解压导致的路径覆盖风险。恶意归档可写入预期目录外的文件并造成代码注入。
   tags: file,nodejs
 file:
   - extensions:

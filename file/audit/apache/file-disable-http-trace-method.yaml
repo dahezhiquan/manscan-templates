@@ -1,13 +1,13 @@
 id: file-disable-http-trace-method
 
 info:
-  name: Disable Apache2 HTTP TRACE Method
+  name: Apache2 HTTP TRACE 方法未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    The HTTP TRACE method should be disabled to prevent Cross-Site Tracing (XST) attacks.
+    该模板检查 Apache 是否禁用 HTTP TRACE 方法。TRACE 开启可能被用于 Cross-Site Tracing XST 攻击并辅助窃取客户端信息。
   remediation: |
-    Add 'TraceEnable Off' in the Apache configuration file and restart the service.
+    在 Apache 配置中设置 TraceEnable Off，并重启服务。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#traceenable
   metadata:

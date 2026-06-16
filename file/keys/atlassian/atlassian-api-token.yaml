@@ -1,7 +1,7 @@
 id: atlassian-api-token
 
 info:
-  name: Atlassian API Token
+  name: Atlassian API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

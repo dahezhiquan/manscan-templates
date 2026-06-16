@@ -1,10 +1,11 @@
 id: exported-activities
 
 info:
-  name: Android Exported Activities - Detect
+  name: Android 导出 Activity 检测（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Detect exported (android:exported="true") activities in AndroidManifest.xml, excluding launcher activities and common Google/Jetpack libraries.
+  description: |
+    该模板检测 AndroidManifest.xml 中导出的 Activity，排除启动器和常见 Google/Jetpack 依赖组件。导出 Activity 可能被外部应用直接调用。
   tags: android,file,exportedcomponents
 
 file:

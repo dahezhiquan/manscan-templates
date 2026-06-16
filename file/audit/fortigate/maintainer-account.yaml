@@ -1,10 +1,11 @@
 id: maintainer-account
 
 info:
-  name: Fortinet Maintainer Account Not Implemented - Detect
+  name: FortiGate Maintainer 账户配置检测（本地文件安全扫描）
   author: pussycat0x
   severity: info
-  description: In Fortinet, if a FortiGate is compromised and the password is not recoverable, a maintainer account can be used by an administrator with physical access to log into CLI.
+  description: |
+    该模板检测 FortiGate maintainer 账户相关配置。该账户用于特定恢复场景，若策略不当可能带来物理访问下的管理风险。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
   classification:

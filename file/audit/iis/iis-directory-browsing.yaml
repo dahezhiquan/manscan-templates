@@ -1,11 +1,11 @@
 id: iis-directory-browsing
 
 info:
-  name: IIS Directory Browsing Detection
+  name: IIS 目录浏览未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Ensures IIS directory browsing is disabled to prevent exposure of file structures.
+    该模板检查 IIS 目录浏览是否关闭。目录浏览开启会暴露站点文件结构和敏感文件名。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/iis/
   tags: iis,windows,file,hardening

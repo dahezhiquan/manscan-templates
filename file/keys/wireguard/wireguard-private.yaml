@@ -1,7 +1,7 @@
 id: wireguard-private
 
 info:
-  name: WireGuard Private Key
+  name: WireGuard 私钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

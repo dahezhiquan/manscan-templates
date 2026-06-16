@@ -1,10 +1,11 @@
 id: webview-file-access-fromfileurl-java
 
 info:
-  name: Android WebView File Access from file URLs - Detect in Java sources
+  name: Android WebView file URL 文件访问检测 Java（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Android WebView File Access from file URLs enabling was detected - Java source version.
+  description: |
+    该模板在 Java 源码中检测 WebView 是否允许 file URL 发起文件访问。该配置可能让本地文件页面读取其他本地资源。
   tags: android,file,webview
 
 file:

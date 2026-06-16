@@ -1,7 +1,7 @@
 id: segment-public-api
 
 info:
-  name: Segment Public API Token
+  name: Segment Public API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

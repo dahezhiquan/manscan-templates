@@ -1,11 +1,11 @@
 id: node-integration-enabled
 
 info:
-  name: Electron Applications - Cross-Site Scripting & Remote Code Execution
+  name: Electron nodeIntegration 导致 XSS 到远程代码执行（本地文件安全扫描）
   author: me9187
   severity: critical
   description: |
-    Electron Applications is susceptible to remote code execution by way of cross-site scripting via nodeIntegration  by calling require('child_process').exec('COMMAND');.
+    该模板检测 Electron 应用中 nodeIntegration 开启带来的风险。若存在 XSS，攻击者可调用 require("child_process").exec 等 Node.js 能力执行命令。
   reference:
     - https://blog.yeswehack.com/yeswerhackers/exploitation/pentesting-electron-applications/
     - https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/electron-desktop-apps/index.html#rce-xss--nodeintegration

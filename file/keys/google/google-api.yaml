@@ -1,7 +1,7 @@
 id: google-api-key-file
 
 info:
-  name: Google API key
+  name: Google API 密钥敏感信息检测（本地文件安全扫描）
   author: gaurang
   severity: info
   tags: keys,file,token,google

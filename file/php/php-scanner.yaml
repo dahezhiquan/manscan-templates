@@ -1,7 +1,7 @@
 id: php-scanner
 
 info:
-  name: PHP Scanner
+  name: PHP 文件扫描（本地文件安全扫描）
   author: geeknik
   severity: info
   tags: php,file

@@ -1,13 +1,13 @@
 id: file-missing-nginx-rate-limiting
 
 info:
-  name: Missing Nginx Rate Limiting Configuration
+  name: Nginx 限速配置缺失（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Ensures that rate limiting is properly configured in Nginx to prevent excessive requests from a single client.
+    该模板检查 Nginx 是否配置请求速率限制。缺少限速可能导致单一客户端大量请求造成资源消耗或暴力尝试。
   remediation: |
-    Add 'limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;' in /etc/nginx/nginx.conf.
+    在 /etc/nginx/nginx.conf 中配置 limit_req_zone 和对应 limit_req 规则。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://nginx.org/en/docs/http/ngx_http_limit_req_module.html

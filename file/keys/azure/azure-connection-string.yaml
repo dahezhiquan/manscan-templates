@@ -1,7 +1,7 @@
 id: azure-connection-string
 
 info:
-  name: Azure Connection String
+  name: Azure 连接字符串 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

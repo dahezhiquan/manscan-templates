@@ -1,10 +1,11 @@
 id: suspicious-sql-error-messages
 
 info:
-  name: SQL - Error Messages
+  name: 可疑 SQL 错误信息检测（本地文件安全扫描）
   author: geeknik
   severity: critical
-  description: SQL error messages that indicate probing for an injection attack were detected.
+  description: |
+    该模板检测可能由 SQL 注入探测触发的数据库错误信息。此类错误会暴露数据库类型、语句结构或查询细节。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8

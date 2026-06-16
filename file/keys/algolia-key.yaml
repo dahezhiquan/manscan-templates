@@ -1,7 +1,7 @@
 id: algolia-key
 
 info:
-  name: Algolia API Key
+  name: Algolia API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

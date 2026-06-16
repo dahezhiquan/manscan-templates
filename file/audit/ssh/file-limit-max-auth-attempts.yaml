@@ -1,13 +1,13 @@
 id: file-limit-max-auth-attempts
 
 info:
-  name: Limit Maximum SSH Authentication Attempts
+  name: SSH 最大认证尝试次数未限制（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    Limiting maximum SSH authentication attempts reduces the risk of brute-force attacks by restricting failed login attempts, enhancing security against unauthorized access
+    该模板检查 SSH MaxAuthTries 配置。限制失败认证次数可降低暴力破解和密码喷洒风险。
   remediation: |
-    Set MaxAuthTries 3 in /etc/ssh/sshd_config to limit SSH authentication attempts and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置 MaxAuthTries 3，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.tenable.com/audits/items/CIS_Amazon_Linux_2_v3.0.0_L1.audit:82ddb0bcc7ddfddaae3ec0b408ffb225

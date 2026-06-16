@@ -1,13 +1,13 @@
 id: file-change-default-port
 
 info:
-  name: Change SSH Default Port
+  name: SSH 默认端口未变更（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Reduces Automated Attacks: Changing the default port can help avoid most automated attacks that target port 22.
+    该模板检查 SSH 是否仍使用默认端口。变更默认端口可减少针对 22 端口的自动化扫描和低质量暴力尝试。
   remediation: |
-    Set Port 2222 in /etc/ssh/sshd_config to change the default SSH port and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置非默认 Port，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://gcore.com/learning/how-to-change-ssh-port/

@@ -1,13 +1,13 @@
 id: file-disable-ssh-forwarding
 
 info:
-  name: Disable SSH Forwarding
+  name: SSH 转发功能未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    SSH forwarding can enhance security by encrypting traffic (X11, agent, or port forwarding), but it also poses risks if misused. Attackers with access to a compromised system can pivot to other machines, potentially escalating privileges or stealing credentials.
+    该模板检查 SSH X11、代理或端口转发配置。转发功能若被入侵账户滥用，可能成为横向移动或内网访问通道。
   remediation: |
-    Set X11Forwarding no and AllowTcpForwarding no in /etc/ssh/sshd_config to disable SSH forwarding and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置 X11Forwarding no 和 AllowTcpForwarding no，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
   metadata:

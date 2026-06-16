@@ -1,10 +1,11 @@
 id: content-scheme
 
 info:
-  name: Android Content Scheme - Detect
+  name: Android content URI Scheme 识别（本地文件安全扫描）
   author: gaurang
   severity: info
-  description: Android content scheme enabling was detected.
+  description: |
+    该模板检测 Android 应用是否启用 content URI Scheme。该能力可用于跨组件数据访问，配置不当时可能暴露内容提供者数据。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

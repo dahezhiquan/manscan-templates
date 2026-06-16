@@ -1,7 +1,7 @@
 id: mapbox-token
 
 info:
-  name: Mapbox Token
+  name: Mapbox 令牌 泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: medium
   reference:

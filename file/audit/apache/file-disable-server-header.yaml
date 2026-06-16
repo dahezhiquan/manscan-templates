@@ -1,13 +1,13 @@
 id: file-disable-server-header
 
 info:
-  name: Disable Apache2 Server Header
+  name: Apache2 Server 头信息未收敛（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Ensures that 'ServerTokens Prod' and 'ServerSignature Off' are correctly set in Apache to prevent server information leakage.
+    该模板检查 Apache 是否正确设置 ServerTokens Prod 和 ServerSignature Off，避免响应头或错误页泄露版本与模块信息。
   remediation: |
-    Set 'ServerTokens Prod' and 'ServerSignature Off' in Apache configuration and restart the service.
+    在 Apache 配置中设置 ServerTokens Prod 和 ServerSignature Off，并重启服务。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#servertokens
     - https://httpd.apache.org/docs/2.4/mod/core.html#serversignature

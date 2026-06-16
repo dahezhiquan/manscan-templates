@@ -1,10 +1,11 @@
 id: amazon-session-token
 
 info:
-  name: Amazon Session Token - Detect
+  name: Amazon 会话令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
-  description: Amazon session token was detected.
+  description: |
+    该模板检测文件中暴露的 Amazon Session Token。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/aws.yml
   classification:

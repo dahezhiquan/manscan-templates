@@ -1,11 +1,11 @@
 id: configure-service-timestamps-debug
 
 info:
-  name: Cisco Configure Service Timestamps for Debug - Detect
+  name: Cisco Debug 时间戳未配置（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    The configuration for service timestamps on Cisco devices was not implemented for debugging purposes. It's important to note that timestamps can be added to either debugging or logging messages independently.
+    该模板检测 Cisco 设备调试消息是否配置 service timestamps。缺少时间戳会降低故障排查和安全事件时间线分析能力。
   reference:
     - https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/service_timestamps.htm
   classification:

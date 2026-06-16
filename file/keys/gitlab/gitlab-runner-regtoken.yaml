@@ -1,7 +1,7 @@
 id: gitlab-runner-regtoken
 
 info:
-  name: GitLab Runner Registration Token
+  name: GitLab Runner 注册令牌泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

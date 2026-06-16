@@ -1,7 +1,7 @@
 id: flickr-access-token
 
 info:
-  name: Flickr Access Token
+  name: Flickr 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

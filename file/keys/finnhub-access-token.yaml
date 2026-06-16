@@ -1,7 +1,7 @@
 id: finnhub-access-token
 
 info:
-  name: Finnhub Access Token
+  name: Finnhub 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

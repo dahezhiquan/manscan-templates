@@ -1,10 +1,11 @@
 id: dom-invader-xss
 
 info:
-  name: DOM Invader - Cross-Site Scripting
+  name: DOM Invader 跨站脚本漏洞（本地文件安全扫描）
   author: geeknik
   severity: high
-  description: DOM Invader contains a cross-site scripting vulnerability in Sources & Sinks functionality.
+  description: |
+    该模板检测 DOM Invader Sources & Sinks 功能中的跨站脚本风险，命中表示相关输入流可能进入危险 DOM Sink。
   reference:
     - Inspired by https://portswigger.net/blog/introducing-dom-invader
   classification:

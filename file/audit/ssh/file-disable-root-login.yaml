@@ -1,13 +1,13 @@
 id: file-disable-root-login
 
 info:
-  name: Disable SSH Root Login
+  name: SSH root 直接登录未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    Disabling direct root login can help prevent unauthorized users from gaining full control over your system.
+    该模板检查 SSH 是否允许 root 直接登录。直接开放 root 登录会扩大暴力破解和凭据泄露后的影响。
   remediation: |
-    Set PermitRootLogin no in /etc/ssh/sshd_config to disable root login and restart the SSH service.
+    在 /etc/ssh/sshd_config 中设置 PermitRootLogin no，并重启 SSH 服务。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.tecmint.com/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/

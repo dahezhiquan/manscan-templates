@@ -1,11 +1,11 @@
 id: logging-enable
 
 info:
-  name: Cisco Logging Enable - Detect
+  name: Cisco 日志记录未启用（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Cisco logging 'logging enable' enable command enforces the monitoring of technology risks for organizations' network devices.
+    该模板检测 Cisco logging enable 配置。日志记录用于监控网络设备风险和保留安全事件证据。
   reference:
     - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/configuration/xe-16-6/config-mgmt-xe-16-6-book/cm-config-logger.pdf
   classification:

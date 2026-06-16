@@ -1,10 +1,11 @@
 id: improper-certificate-validation
 
 info:
-  name: Android Improper Certificate Validation - Detect
+  name: Android 证书校验不当检测（本地文件安全扫描）
   author: gaurang
   severity: medium
-  description: Android improper certificate validation was detected.
+  description: |
+    该模板检测 Android 应用中可能不安全的证书校验实现，例如弱化 TLS 验证、信任过宽或绕过证书链校验的逻辑。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

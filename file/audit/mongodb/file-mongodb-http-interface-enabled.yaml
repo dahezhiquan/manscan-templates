@@ -1,13 +1,13 @@
 id: file-mongodb-http-interface-enabled
 
 info:
-  name: MongoDB HTTP Interface Enabled
+  name: MongoDB HTTP 接口已启用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Checks if the MongoDB HTTP interface is enabled in /etc/mongod.conf.
+    该模板检查 /etc/mongod.conf 中 MongoDB HTTP 接口是否启用。该旧接口会增加不必要的管理暴露面。
   remediation: |
-    Set 'http.enabled: false' in /etc/mongod.conf and restart MongoDB.
+    在 /etc/mongod.conf 中设置 http.enabled 为 false，并重启 MongoDB。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/reference/configuration-options/

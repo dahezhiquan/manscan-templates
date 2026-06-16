@@ -1,13 +1,13 @@
 id: file-missing-nginx-hsts
 
 info:
-  name: Missing Nginx HSTS
+  name: Nginx HSTS 配置缺失（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Ensures that HSTS (Strict-Transport-Security) is enabled in Nginx.
+    该模板检查 Nginx 是否启用 HSTS。缺少 HSTS 可能允许用户被降级到 HTTP 或遭受中间人攻击。
   remediation: |
-    Add 'add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload";' in /etc/nginx/nginx.conf under the server block.
+    在 Nginx server 块中添加 Strict-Transport-Security 响应头，例如 max-age=31536000; includeSubDomains; preload。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security

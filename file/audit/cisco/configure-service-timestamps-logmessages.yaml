@@ -1,11 +1,11 @@
 id: configure-service-timestamps-logmessages
 
 info:
-  name: Cisco Configure Service Timestamps Log Messages - Detect
+  name: Cisco 日志消息时间戳未配置（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Cisco service timestamp configuration for log messages was not implemented.
+    该模板检测 Cisco 日志消息是否配置 service timestamps。缺少日志时间戳会影响审计、告警关联和事件响应。
   reference:
     - https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/service_timestamps.htm
   classification:

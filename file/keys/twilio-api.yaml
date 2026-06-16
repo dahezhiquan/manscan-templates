@@ -1,7 +1,7 @@
 id: twilio-api
 
 info:
-  name: Twilio API Key
+  name: Twilio API 密钥 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: file,keys,token

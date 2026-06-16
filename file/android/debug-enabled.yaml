@@ -1,10 +1,11 @@
 id: android-debug-enabled
 
 info:
-  name: Android Debug Enabled
+  name: Android 调试模式已启用（本地文件安全扫描）
   author: gaurang
   severity: low
-  description: Android debug enabling was detected.
+  description: |
+    该模板检测 Android 应用是否启用了调试配置。调试模式可能暴露调试接口、日志和运行时调试能力，不应出现在生产版本中。
   tags: android,file
 
 file:

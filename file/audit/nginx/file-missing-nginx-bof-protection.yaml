@@ -1,11 +1,11 @@
 id: file-missing-nginx-bof-protection
 
 info:
-  name: Missing Nginx Buffer Overflow Protection
+  name: Nginx 缓冲区保护配置缺失（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Ensures that buffer overflow protection is properly configured in Nginx to prevent large request attacks.
+    该模板检查 Nginx 是否配置请求缓冲区限制。缺少限制可能增加超大请求、缓冲区滥用或资源消耗风险。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://nginx.org/en/docs/http/ngx_http_proxy_module.html

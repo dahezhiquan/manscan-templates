@@ -1,7 +1,7 @@
 id: github-app-token
 
 info:
-  name: Github App Token
+  name: Github App 令牌 泄露检测（本地文件安全扫描）
   author: tanq16,DhiyaneshDK
   severity: medium
   tags: keys,file,token,github

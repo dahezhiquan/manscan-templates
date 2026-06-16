@@ -1,11 +1,11 @@
 id: set-hostname
 
 info:
-  name: PfSense Hostname Not Set - Detect
+  name: pfSense 主机名未设置（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    PfSense Hostname should be set so that other devices on the network can correctly identify it. The hostname is a unique identifier for the device.
+    该模板检测 pfSense 主机名是否正确设置。主机名是网络中识别设备的唯一标识，缺失会影响运维和审计。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/general.html
   classification:

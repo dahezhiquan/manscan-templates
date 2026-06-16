@@ -1,7 +1,7 @@
 id: databricks-api-token
 
 info:
-  name: Databricks API Token
+  name: Databricks API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

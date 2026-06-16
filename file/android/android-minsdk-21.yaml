@@ -1,11 +1,11 @@
 id: android-minsdk-21
 
 info:
-  name: AndroidManifest.xml minSdkVersion Set to 21 (Insecure Minimum SDK Version)
+  name: Android minSdkVersion 过低（本地文件安全扫描）
   author: Th3l0newolf
   severity: medium
   description: |
-    The AndroidManifest.xml file specifies the minSdkVersion as 21, which permits the application to run on devices with outdated Android versions. Older Android platforms may lack essential security features and are more likely to contain known vulnerabilities, increasing the overall risk to the application and its users.
+    该模板检测 AndroidManifest.xml 中 minSdkVersion 是否设置为 21。过低的最低 SDK 会允许应用运行在缺少现代安全特性的旧 Android 系统上。
   metadata:
     verified: true
     github-query: path:**/AndroidManifest.xml

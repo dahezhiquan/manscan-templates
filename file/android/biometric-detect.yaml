@@ -1,10 +1,11 @@
 id: biometric-detect
 
 info:
-  name: Android Biometric/Fingerprint - Detect
+  name: Android 生物识别权限识别（本地文件安全扫描）
   author: gaurang
   severity: info
-  description: Android Biometric/Fingerprint permission files were detected.
+  description: |
+    该模板检测 Android 应用中是否使用生物识别或指纹相关权限与组件，用于识别本地认证能力和相关安全边界。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

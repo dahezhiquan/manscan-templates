@@ -1,10 +1,11 @@
 id: webview-file-access-java
 
 info:
-  name: Android File Access - Detect in Java sources
+  name: Android WebView 文件访问检测 Java（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Android WebView File Access enabling was detected - Java source version.
+  description: |
+    该模板在 Java 源码中检测 WebView 是否启用文件访问。若加载不可信内容，可能造成本地文件读取或数据泄露。
   tags: android,file,webview
 
 file:

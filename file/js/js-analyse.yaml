@@ -1,11 +1,11 @@
 id: js-analyse
 
 info:
-  name: JS Analyse
+  name: JavaScript 文件安全分析（本地文件安全扫描）
   author: ayadim
   severity: info
   description: |
-    This process involves extracting tokens, endpoints, URIs, and variable names from the JS file and analyzing them for any potential weaknesses that could be exploited. By extracting and analyzing these elements, potential security threats can be identified, allowing for proactive measures to be taken to mitigate any risks associated with the application. This process can be used as part of a comprehensive bug-hunting strategy to ensure the security of an application.
+    该模板从 JS 文件中提取 token、接口端点、URI 和变量名等信息，并辅助发现可能被利用的敏感信息或弱点。
   metadata:
     verified: true
   tags: file,js-analyse,js

@@ -1,7 +1,7 @@
 id: square-access-token
 
 info:
-  name: Square Access Token
+  name: Square 访问令牌 泄露检测（本地文件安全扫描）
   author: gaurang,daffainfo
   severity: high
   tags: file,keys,token,square

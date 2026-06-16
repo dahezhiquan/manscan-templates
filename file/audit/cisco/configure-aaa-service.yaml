@@ -1,11 +1,11 @@
 id: configure-aaa-service
 
 info:
-  name: Cisco AAA Service Configuration - Detect
+  name: Cisco AAA 服务配置检测（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Cisco authentication, authorization and accounting service configuration was detected.
+    该模板检测 Cisco 设备是否配置 AAA 认证、授权与审计服务，用于评估网络设备访问控制和操作审计能力。
   reference:
     - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-a2.html#GUID-E05C2E00-C01E-4053-9D12-EC37C7E8EEC5
   classification:

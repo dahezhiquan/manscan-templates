@@ -1,7 +1,7 @@
 id: newrelic-pixie-deploykey
 
 info:
-  name: New Relic Pixie Deploy Key
+  name: New Relic Pixie Deploy 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

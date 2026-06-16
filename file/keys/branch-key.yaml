@@ -1,10 +1,11 @@
 id: branch-key
 
 info:
-  name: Branch.io Live Key - Detect
+  name: Branch.io Live 密钥 泄露检测（本地文件安全扫描）
   author: 0xh7ml
   severity: info
-  description: Branch.io live key token was detected.
+  description: |
+    该模板检测文件中暴露的 Branch.io Live Key。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   reference:
     - https://github.com/BranchMetrics/android-branch-deep-linking-attribution/issues/74
   classification:

@@ -1,7 +1,7 @@
 id: shopify-custom-token
 
 info:
-  name: Shopify Custom App Access Token
+  name: Shopify Custom App 访问令牌 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high
   tags: file,keys,token

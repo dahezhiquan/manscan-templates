@@ -1,7 +1,7 @@
 id: linkedin-id
 
 info:
-  name: Linkedin Client ID
+  name: Linkedin 客户端 ID 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: low
   tags: file,keys,token,linkedin

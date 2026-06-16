@@ -1,13 +1,13 @@
 id: file-disable-nginx-server-tokens
 
 info:
-  name: Disbale Nginx Server Tokens
+  name: Nginx server_tokens 未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Detects if 'server_tokens' is enabled in Nginx, which can reveal version information.
+    该模板检测 Nginx server_tokens 是否启用。开启后可能在响应中暴露版本信息，便于攻击者进行指纹识别。
   remediation: |
-    Set 'server_tokens off;' in /etc/nginx/nginx.conf and restart Nginx.
+    在 /etc/nginx/nginx.conf 中设置 server_tokens off; 并重启 Nginx。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens

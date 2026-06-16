@@ -1,11 +1,11 @@
 id: github-outdated-key
 
 info:
-  name: GitHub Outdated RSA SSH Host key
+  name: GitHub Outdated RSA SSH Host key 敏感信息检测（本地文件安全扫描）
   author: naglis
   severity: info
   description: |
-    At approximately 05:00 UTC on March 24, out of an abundance of caution, we replaced our RSA SSH host key used to secure Git operations for GitHub.com.
+    该模板检测 GitHub 已轮换的旧 RSA SSH 主机密钥。命中表示文件中可能包含过期或不应继续信任的 GitHub SSH 主机密钥材料。
   reference:
     - https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
     - https://web.archive.org/web/20230316194229/https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints

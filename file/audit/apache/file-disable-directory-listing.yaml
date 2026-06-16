@@ -1,13 +1,13 @@
 id: file-disable-directory-listing
 
 info:
-  name: Disable Apache2 Directory Listing
+  name: Apache2 目录列表未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Directory listing should be disabled to prevent unauthorized users from browsing server directories.
+    该模板检查 Apache 是否禁用目录列表。若目录列表开启，未授权用户可浏览服务器目录结构和文件名。
   remediation: |
-    Add 'Options -Indexes' in the Apache configuration file or .htaccess file.
+    在 Apache 配置或 .htaccess 中设置 Options -Indexes，并重载或重启服务。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#options
   metadata:

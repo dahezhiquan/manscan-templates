@@ -1,10 +1,11 @@
 id: generic-path-traversal
 
 info:
-  name: Generic - Path Traversal
+  name: 通用路径穿越风险（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: info
-  description: Untrusted user input in readFile()/readFileSync() can endup in Directory Traversal Attacks.
+  description: |
+    该模板检测 readFile()/readFileSync() 等文件读取调用中使用不可信输入的模式，可能导致目录穿越读取任意文件。
   tags: file,nodejs
 file:
   - extensions:

@@ -1,10 +1,11 @@
 id: exported-services
 
 info:
-  name: Android Exported Services - Detect
+  name: Android 导出 Service 检测（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Detect exported services in AndroidManifest.xml, excluding disabled and common Google/Jetpack library services.
+  description: |
+    该模板检测 AndroidManifest.xml 中导出的 Service，排除禁用项和常见 Google/Jetpack 依赖服务。导出服务可能被外部应用绑定或启动。
   tags: android,file,exportedcomponents
 
 file:

@@ -1,7 +1,7 @@
 id: google-storage-bucket
 
 info:
-  name: Google Storage Bucket - Detection
+  name: Google Storage Bucket 识别（本地文件安全扫描）
   author: Thabisocn
   severity: info
   metadata:

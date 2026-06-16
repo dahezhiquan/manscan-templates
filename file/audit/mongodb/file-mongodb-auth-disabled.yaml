@@ -1,11 +1,11 @@
 id: file-mongodb-auth-disabled
 
 info:
-  name: MongoDB Authentication Disabled
+  name: MongoDB 身份认证未启用（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Detects if MongoDB authentication is disabled or missing in mongod.conf. If 'authorization: enabled' is missing under 'security:', authentication is not enforced.
+    该模板检测 mongod.conf 中 MongoDB 身份认证是否缺失或关闭。若 security.authorization 未启用，数据库访问可能不需要认证。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/

@@ -1,7 +1,7 @@
 id: rubygems-key
 
 info:
-  name: RubyGems API Key
+  name: RubyGems API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

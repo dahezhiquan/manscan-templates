@@ -1,10 +1,11 @@
 id: cratesio-api-key
 
 info:
-  name: Crates.io API Key - Detect
+  name: Crates.io API 密钥泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
-  description: Crates.io API key was detected.
+  description: |
+    该模板检测文件中暴露的 Crates.io API 密钥。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/crates.io.yml
     - https://crates.io/data-access

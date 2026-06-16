@@ -1,7 +1,7 @@
 id: asp-webshell
 
 info:
-  name: ASP/ASP.NET Webshell - Detect
+  name: ASP/ASP.NET WebShell 检测（本地文件安全扫描）
   author: lu4nx
   severity: high
   reference:

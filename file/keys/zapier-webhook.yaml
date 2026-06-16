@@ -1,7 +1,7 @@
 id: zapier-webhook
 
 info:
-  name: Zapier Webhook
+  name: Zapier Webhook 地址泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: high
   reference:

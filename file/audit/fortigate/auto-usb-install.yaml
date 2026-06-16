@@ -1,10 +1,11 @@
 id: auto-usb-install
 
 info:
-  name: Fortinet Auto USB Installation Enabled - Detect
+  name: FortiGate Auto USB 安装已启用（本地文件安全扫描）
   author: pussycat0x
   severity: info
-  description: Via Fortinet Auto USB installation, an attacker with physical access to a FortiGate can load a new configuration or firmware using the USB port, thereby potentially being able to obtain sensitive information, modify data, and/or execute unauthorized operations.
+  description: |
+    该模板检测 FortiGate Auto USB 安装功能。攻击者若具备物理访问权限，可能通过 USB 加载配置或固件并影响设备安全。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   classification:

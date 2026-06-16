@@ -1,7 +1,7 @@
 id: github-personal-token
 
 info:
-  name: Github Personal Token
+  name: Github 个人令牌 泄露检测（本地文件安全扫描）
   author: geeknik
   severity: high
   tags: file,keys,token,github

@@ -1,10 +1,11 @@
 id: exported-providers
 
 info:
-  name: Android Exported Providers - Detect
+  name: Android 导出 Content Provider 检测（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Detects exported content providers declared in the app’s AndroidManifest.xml, excluding those added by dependency libraries.
+  description: |
+    该模板检测应用清单中导出的 Content Provider，排除依赖库自动添加的组件。导出 Provider 可能暴露本地数据访问接口。
   tags: android,file,exportedcomponents
 
 file:

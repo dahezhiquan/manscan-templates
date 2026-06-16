@@ -1,11 +1,11 @@
 id: enable-https-protocol
 
 info:
-  name: Pfsense Web Admin Management Portal HTTPS Not Set - Detect
+  name: pfSense Web 管理入口未强制 HTTPS（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    PfSense Web Admin Management Portal is recommended to be accessible using only HTTPS protocol. HTTP transmits all data, including passwords, in clear text over the network and provides no assurance of the identity of the hosts involved, making it possible for an attacker to obtain sensitive information, modify data, and/or execute unauthorized operations.
+    该模板检测 pfSense Web 管理入口是否仅允许 HTTPS。HTTP 会明文传输密码和管理数据，且无法验证服务端身份。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/advanced-admin.html
   classification:

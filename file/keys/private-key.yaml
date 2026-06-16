@@ -1,7 +1,7 @@
 id: private-key
 
 info:
-  name: Private Key Detect
+  name: 私钥泄露检测（本地文件安全扫描）
   author: gaurang,geeknik
   severity: high
   tags: file,keys,token

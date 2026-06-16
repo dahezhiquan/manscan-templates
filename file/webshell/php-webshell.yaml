@@ -1,7 +1,7 @@
 id: php-webshell
 
 info:
-  name: PHP Webshell - Detect
+  name: PHP WebShell 检测（本地文件安全扫描）
   author: lu4nx
   severity: high
   reference:

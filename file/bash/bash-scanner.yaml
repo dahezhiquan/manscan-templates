@@ -1,10 +1,11 @@
 id: bash-scanner
 
 info:
-  name: Bash Scanner
+  name: Bash 危险命令扫描（本地文件安全扫描）
   author: ransomsec
   severity: info
-  description: Indicator for bash Dangerous Commands – You Should Never Execute on Linux
+  description: |
+    该模板扫描 Bash 脚本或命令片段中的高危 Linux 命令特征，用于发现可能导致数据破坏、权限滥用或系统失稳的危险用法。
   reference:
     - https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/
     - https://phoenixnap.com/kb/dangerous-linux-terminal-commands

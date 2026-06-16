@@ -1,10 +1,11 @@
 id: python-scanner
 
 info:
-  name: Python Scanner
+  name: Python 危险函数扫描（本地文件安全扫描）
   author: majidmc2
   severity: info
-  description: Indicators for dangerous Python functions
+  description: |
+    该模板检测 Python 文件中的危险函数或高风险调用，用于发现动态执行、命令执行或不安全反序列化等风险线索。
   reference:
     - https://www.kevinlondon.com/2015/07/26/dangerous-python-functions.html
     - https://www.kevinlondon.com/2015/08/15/dangerous-python-functions-pt2.html

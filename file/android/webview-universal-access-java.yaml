@@ -1,10 +1,11 @@
 id: webview-universal-access-java
 
 info:
-  name: Android WebView Universal Access - Detect in Java sources
+  name: Android WebView Universal Access 检测 Java（本地文件安全扫描）
   author: 7h3b4dger
   severity: info
-  description: Android WebView Universal Access enabling was detected - Java source version.
+  description: |
+    该模板在 Java 源码中检测 WebView 是否启用 Universal Access。该配置允许 file URL 跨源访问网络或本地资源，风险较高。
   tags: android,file,webview
 
 file:

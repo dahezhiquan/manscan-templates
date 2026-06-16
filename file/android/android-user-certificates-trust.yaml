@@ -1,11 +1,11 @@
 id: android-user-certificates-trust
 
 info:
-  name: Android Trusts User Certificates
+  name: Android 信任用户证书配置（本地文件安全扫描）
   author: Th3l0newolf
   severity: medium
   description: |
-    The application is configured to trust user-added certificates, which may allow an attacker to perform MITM attacks.
+    该模板检测应用是否信任用户安装的证书。该配置可能让攻击者通过安装受控 CA 证书实施中间人攻击并拦截 HTTPS 流量。
   reference:
     - https://developer.android.com/training/articles/security-config#TrustingUserCerts
   tags: file,android

@@ -1,11 +1,11 @@
 id: url-extension-inspector
 
 info:
-  name: URL Extension Inspector
+  name: URL 扩展名检查（本地文件安全扫描）
   author: ayadim
   severity: unknown
   description: |
-    This template assists you in discovering intriguing extensions within a list of URLs.
+    该模板用于从 URL 列表中发现值得关注的文件扩展名，辅助识别备份文件、配置文件、脚本或潜在敏感资源。
   reference:
     - https://github.com/CYS4srl/CYS4-SensitiveDiscoverer/
   tags: file,url-analyse,urls,extension

@@ -1,11 +1,11 @@
 id: disable-pad-service
 
 info:
-  name: Cisco Disable PAD - Detect
+  name: Cisco PAD 服务未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: info
   description: |
-    Cisco PAD service has proven vulnerable to attackers. To reduce the risk of unauthorized access, organizations should implement a security policy restricting or disabling unnecessary access.
+    该模板检测 Cisco PAD 服务是否仍启用。该遗留服务通常不再需要，保留会增加未授权访问面。
   reference:
     - http://www.cisco.com/en/US/docs/ios-xml/ios/wan/command/wan-s1.html#GUID-C5497B77-3FD4-4D2F-AB08-1317D5F5473B
   classification:

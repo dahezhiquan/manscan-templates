@@ -1,7 +1,7 @@
 id: figma-access-token
 
 info:
-  name: Figma Personal Access Token
+  name: Figma Personal 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

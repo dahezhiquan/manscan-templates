@@ -1,10 +1,11 @@
 id: file-scheme
 
 info:
-  name: Android File Scheme - Detect
+  name: Android file URI Scheme 识别（本地文件安全扫描）
   author: gaurang
   severity: info
-  description: Android file scheme enabling was detected.
+  description: |
+    该模板检测 Android 应用是否启用 file URI Scheme。该能力若与 WebView 或外部输入结合，可能扩大本地文件访问风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

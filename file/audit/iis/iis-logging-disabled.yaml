@@ -1,11 +1,11 @@
 id: iis-logging-disabled
 
 info:
-  name: IIS Logging Disabled
+  name: IIS 日志记录已禁用（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Checks if IIS logging is disabled, which can hinder incident response.
+    该模板检查 IIS 日志是否被禁用。缺少访问日志会削弱入侵排查、溯源和合规审计能力。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/iis/
   tags: iis,windows,security,hardening,logging

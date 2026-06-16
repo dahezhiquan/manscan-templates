@@ -1,11 +1,11 @@
 id: pendo-api-key-exposure
 
 info:
-  name: Pendo API Key Exposure
+  name: Pendo API 密钥泄露检测（本地文件安全扫描）
   author: 0x_Akoko
   severity: medium
   description: |
-    Detected exposure of Pendo API keys within files or API responses.
+    该模板检测文件中暴露的 Pendo API 密钥。此类凭据一旦泄露，可能被用于访问对应 SaaS 平台或业务接口。
   reference:
     - https://support.pendo.io/hc/en-us/articles/9491198203547-Pendo-Integration-Key
   metadata:

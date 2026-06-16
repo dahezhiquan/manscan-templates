@@ -1,7 +1,7 @@
 id: bittrex-access-key
 
 info:
-  name: Bittrex Access Key
+  name: Bittrex Access 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

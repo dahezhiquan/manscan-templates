@@ -1,10 +1,11 @@
 id: webview-universal-access
 
 info:
-  name: Android WebView Universal Access - Detect
+  name: Android WebView Universal Access 检测（本地文件安全扫描）
   author: gaurang
   severity: medium
-  description: Android WebView Universal Access enabling was detected.
+  description: |
+    该模板检测 WebView Universal Access 配置。开启后 file URL 可能跨源访问其他资源，增加本地文件和敏感数据泄露风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

@@ -1,13 +1,13 @@
 id: file-disable-server-signature
 
 info:
-  name: Disable Apache Server Signature
+  name: Apache ServerSignature 未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: medium
   description: |
-    Disabling the server signature prevents Apache from revealing version details in error pages.
+    该模板检查 Apache ServerSignature 是否关闭。开启时错误页可能泄露 Apache 版本和主机信息。
   remediation: |
-    Set 'ServerSignature Off' in the Apache configuration file and restart the service.
+    在 Apache 配置中设置 ServerSignature Off，并重启服务。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#serversignature
   metadata:

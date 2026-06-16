@@ -1,11 +1,11 @@
 id: file-missing-nginx-xss-protection
 
 info:
-  name: Missing Nginx XSS Protection
+  name: Nginx XSS 保护响应头缺失（本地文件安全扫描）
   author: pussycat0x
   severity: high
   description: |
-    Ensures that XSS protection is enabled in Nginx by checking for the 'X-XSS-Protection' header.
+    该模板检查 Nginx 是否配置 X-XSS-Protection 等 XSS 防护响应头，用于增强旧浏览器客户端侧防护。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection

@@ -1,7 +1,7 @@
 id: perl-scanner
 
 info:
-  name: Perl File Scanner
+  name: Perl 文件扫描（本地文件安全扫描）
   author: geeknik
   severity: info
   tags: perl,file

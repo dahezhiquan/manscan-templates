@@ -1,7 +1,7 @@
 id: reactapp-username
 
 info:
-  name: React App Username
+  name: React App 用户名敏感信息检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

@@ -1,7 +1,7 @@
 id: dropbox-api-token
 
 info:
-  name: Dropbox API Token
+  name: Dropbox API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

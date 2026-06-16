@@ -1,7 +1,7 @@
 id: gitlab-personal-accesstoken
 
 info:
-  name: GitLab Personal Access Token
+  name: GitLab 个人访问令牌泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

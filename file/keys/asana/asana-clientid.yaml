@@ -1,7 +1,7 @@
 id: asana-clientid
 
 info:
-  name: Asana Client ID
+  name: Asana 客户端 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

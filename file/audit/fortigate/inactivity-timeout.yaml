@@ -1,10 +1,11 @@
 id: inactivity-timeout
 
 info:
-  name: Fortinet Inactivity Timeout Not Implemented - Detect
+  name: FortiGate 非活动超时未配置（本地文件安全扫描）
   author: pussycat0x
   severity: info
-  description: If Fortinet inactivity timeout functionality is disabled, an attacker can potentially obtain sensitive information, modify data, and/or execute unauthorized operations within that window if the administrator is away from the computer.
+  description: |
+    该模板检测 FortiGate 管理会话非活动超时。超时缺失或过长会增加管理员离开后会话被滥用的风险。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   classification:

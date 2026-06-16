@@ -1,7 +1,7 @@
 id: odbc-connection
 
 info:
-  name: ODBC Connection String
+  name: ODBC 连接字符串 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

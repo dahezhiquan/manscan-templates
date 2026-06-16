@@ -1,7 +1,7 @@
 id: jenkins-token
 
 info:
-  name: Jenkins Token or Crumb
+  name: Jenkins 令牌或 Crumb 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

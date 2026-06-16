@@ -1,13 +1,13 @@
 id: file-ssh-unrestricted-nonwhitelist
 
 info:
-  name: Unrestricted SSH Access from Non-Whitelisted IPs
+  name: SSH IP 白名单未配置（本地文件安全扫描）
   author: pussycat0x
   severity: unknown
   description: |
-    SSH access is not restricted to specific IP addresses, allowing connections from any source. This increases the risk of unauthorized access and brute-force attacks.
+    该模板检查 SSH 是否限制允许访问的来源 IP。缺少来源限制会扩大暴露面。
   remediation: |
-    Restrict SSH to specific IPs in /etc/ssh/sshd_config by setting ListenAddress <trusted-IP> and restarting the SSH service.
+    通过防火墙、TCP Wrapper 或 SSH 访问控制限制可信来源。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.cyberciti.biz/tips/howto-openssh-sshd-listen-multiple-ip-address.html

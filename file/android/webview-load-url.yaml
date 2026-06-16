@@ -1,10 +1,11 @@
 id: webview-load-url
 
 info:
-  name: WebView loadUrl - Detect
+  name: WebView loadUrl 使用检测（本地文件安全扫描）
   author: gaurang
   severity: info
-  description: WebView loadUrl usage was detected.
+  description: |
+    该模板检测 WebView loadUrl 的使用情况。若 URL 来源可控，可能加载不可信页面并触发 WebView 安全风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

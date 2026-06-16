@@ -1,7 +1,7 @@
 id: dropbox-longlived-token
 
 info:
-  name: Dropbox Long Lived API Token
+  name: Dropbox Long Lived API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: info
   reference:

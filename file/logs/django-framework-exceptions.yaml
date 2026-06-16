@@ -1,10 +1,11 @@
 id: django-framework-exceptions
 
 info:
-  name: Django Framework Exceptions
+  name: Django 框架异常日志检测（本地文件安全扫描）
   author: geeknik
   severity: medium
-  description: Detects suspicious Django web application framework exceptions that could indicate exploitation attempts
+  description: |
+    该模板检测可疑 Django Web 框架异常日志，这些异常可能表明漏洞探测、利用尝试或错误信息泄露。
   reference:
     - https://docs.djangoproject.com/en/1.11/ref/exceptions/
     - https://docs.djangoproject.com/en/1.11/topics/logging/#django-security

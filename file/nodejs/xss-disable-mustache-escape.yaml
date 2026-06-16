@@ -1,10 +1,11 @@
 id: xss-disable-mustache-escape
 
 info:
-  name: XSS Disable Mustache Escape
+  name: Mustache 转义禁用导致 XSS（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: info
-  description: Markup escaping disabled. This can be used with some template engines to escape disabling of HTML entities, which can lead to XSS attacks.
+  description: |
+    该模板检测模板引擎中禁用 HTML 实体转义的用法。关闭转义后，不可信输入可能直接进入页面并触发 XSS。
   tags: file,nodejs,mustache,xss
 file:
   - extensions:

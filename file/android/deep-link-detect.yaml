@@ -1,10 +1,11 @@
 id: deep-link-detect
 
 info:
-  name: Android Deep Link - Detect
+  name: Android 深度链接识别（本地文件安全扫描）
   author: Hardik-Solanki
   severity: info
-  description: Android deep link functionality was detected.
+  description: |
+    该模板检测 Android 应用中的 Deep Link 配置。深度链接若缺少校验，可能被外部输入触发敏感页面或业务动作。
   reference:
     - https://developer.android.com/training/app-links/deep-linking
     - https://www.geeksforgeeks.org/deep-linking-in-android-with-example/

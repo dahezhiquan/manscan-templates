@@ -1,7 +1,7 @@
 id: postmessage-outgoing-tracker
 
 info:
-  name: Postmessage Outgoing Tracker
+  name: 使用通配符目标的 postMessage 外发识别（headless）
   author: LogicalHunter
   severity: info
   reference:

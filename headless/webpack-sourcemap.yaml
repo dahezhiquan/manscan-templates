@@ -1,15 +1,17 @@
 id: webpack-sourcemap
 
 info:
-  name: Webpack Sourcemap
+  name: Webpack Source Map 暴露（headless）
   author: lucky0x0d,PulseSecurity.co.nz
   severity: low
   description: |
-    Detects if Webpack source maps are exposed.
+    该模板检测 Webpack 生成的 Source Map 是否对外可访问。命中通常意味着前端源码映射文件可被直接下载或推导获取。
   impact: |
-    Exposure of source maps can leak sensitive information about the application's source code and potentially aid attackers in identifying vulnerabilities.
+    - Source Map 暴露可能泄露未压缩源码、接口路径、调试信息或注释内容。
+    - 这些信息会降低逆向门槛，帮助攻击者更快定位敏感逻辑和可利用点。
   remediation: |
-    Ensure that Webpack source maps are not exposed to the public by configuring the server to restrict access to them.
+    - 生产环境中关闭不必要的 Source Map 生成，或仅保留内部可访问版本。
+    - 对 .map 文件路径实施严格访问控制，并清理已公开暴露的历史构建产物。
   reference:
     - https://pulsesecurity.co.nz/articles/javascript-from-sourcemaps
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Web_Page_Content_for_Information_Leakage

@@ -1,10 +1,11 @@
 id: sap-spartacus
 
 info:
-  name: SAP Spartacus detect
+  name: SAP Spartacus 技术识别（headless）
   author: TechbrunchFR
   severity: info
-  description: Spartacus is a lean, Angular-based JavaScript storefront for SAP Commerce Cloud that communicates exclusively through the Commerce REST API.
+  description: |
+    Spartacus 是面向 SAP Commerce Cloud 的轻量级 Angular 店面框架，主要通过 Commerce REST API 与后端交互。
   reference:
     - https://github.com/SAP/spartacus
   metadata:

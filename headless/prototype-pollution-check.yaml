@@ -1,7 +1,7 @@
 id: prototype-pollution-check
 
 info:
-  name: Prototype Pollution Check
+  name: 客户端原型污染检测（headless）
   author: pdteam
   severity: medium
   metadata:

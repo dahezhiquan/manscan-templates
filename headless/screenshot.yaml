@@ -1,10 +1,11 @@
 id: screenshot
 
 info:
-  name: Headless Http Screenshot
+  name: 页面截图采集（headless）
   author: V0idC0de,righettod,tarunKoyalwar
   severity: info
-  description: Takes a screenshot of the specified URLS.
+  description: |
+    该模板使用 headless 浏览器访问目标页面并保存完整截图，便于后续做资产识别、页面取证或人工复核。
   tags: headless,screenshot,discovery
 
 variables:

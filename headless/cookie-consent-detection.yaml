@@ -1,11 +1,11 @@
 id: cookie-consent-detection
 
 info:
-  name: Cookie Consent Detection
+  name: Cookie 同意弹窗识别（headless）
   author: rxerium
   severity: info
   description: |
-    This template detects the presence of cookie consent forms
+    该模板通过浏览器渲染页面并匹配常见提示文案，识别站点是否展示 Cookie 同意、隐私声明或偏好设置弹窗。
   tags: headless,cookie,detect,discovery
 
 headless:

@@ -1,7 +1,7 @@
 id: extract-urls
 
 info:
-  name: Extract URLs from HTML attributes
+  name: HTML 属性 URL 提取（headless）
   author: dwisiswant0
   severity: info
   tags: headless,extractor,discovery

@@ -1,7 +1,7 @@
 id: postmessage-tracker
 
 info:
-  name: Postmessage Tracker
+  name: postMessage 监听注册识别（headless）
   author: pdteam
   severity: info
   reference:

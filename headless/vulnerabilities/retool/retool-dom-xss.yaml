@@ -1,11 +1,11 @@
 id: retool-dom-xss
 
 info:
-  name: Retool <3.82.0 Edge OAuth Authorize - DOM Based XSS
+  name: Retool < 3.82.0 Edge OAuth 授权 DOM 跨站脚本漏洞（headless）
   author: rootxharsh,iamnoooob,pdresearch
   severity: high
   description: |
-    Retool versions less than 3.82.0-Edge are vulnerable to a DOM-based XSS vulnerability in the OAuth authorization flow.
+    该模板检测 Retool 3.82.0-Edge 以下版本在 OAuth 授权流程中的 DOM XSS。攻击者可通过构造恶意片段参数污染页面数据，并在受害者浏览器中触发脚本执行。
   metadata:
     verified: true
     max-request: 1

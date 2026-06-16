@@ -1,10 +1,11 @@
 id: window-name-domxss
 
 info:
-  name: window.name - DOM Cross-Site Scripting
+  name: window.name DOM 跨站脚本风险（headless）
   author: pdteam
   severity: high
-  description: The window-name is vulnerable to DOM based cross-site scripting.
+  description: |
+    该模板通过污染 window.name 并监控 innerHTML、eval、document.write 等危险汇点，检测页面是否会将 window.name 作为不可信输入引入 DOM，从而触发 DOM XSS。
   reference:
     - https://public-firing-range.appspot.com/dom/index.html
   classification:

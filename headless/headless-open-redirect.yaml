@@ -1,11 +1,11 @@
 id: headless-open-redirect
 
 info:
-  name: Open Redirect - Detect
+  name: 开放重定向检测（headless）
   author: theamanrawat
   severity: medium
   description: |
-    An open redirect was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
+    该模板通过 headless 浏览器访问多组重定向 payload，检测应用是否会将用户跳转到外部站点。若命中，说明攻击者可能借此将用户引导至钓鱼页、恶意下载页或伪造登录界面。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1

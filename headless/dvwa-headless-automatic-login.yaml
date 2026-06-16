@@ -1,7 +1,7 @@
 id: dvwa-headless-automatic-login
 
 info:
-  name: DVWA Headless Automatic Login
+  name: DVWA 默认凭据自动登录（headless）
   author: pdteam
   severity: high
   tags: headless,dvwa,vuln

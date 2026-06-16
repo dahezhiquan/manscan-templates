@@ -1,10 +1,11 @@
 id: js-libraries-detect
 
 info:
-  name: Common JS Libraries - Detection
+  name: 常见 JavaScript 库识别（headless）
   author: adamparsons,cbadke,ChetGan,ErikOwen,jacalynli,geeknik
   severity: info
-  description: Checks a target web app for inclusion of common JavaScript libraries
+  description: |
+    该模板通过浏览器上下文读取前端对象和版本特征，识别目标站点是否引入常见 JavaScript 库。
   metadata:
     max-request: 1
   tags: headless,tech,js,discovery

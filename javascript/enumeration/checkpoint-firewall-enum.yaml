@@ -1,7 +1,7 @@
 id: checkpoint-firewall-enum
 
 info:
-  name: Check Point Firewall - Detect
+  name: Check Point 防火墙识别（服务漏洞）
   author: pussycat0x
   severity: info
   reference:

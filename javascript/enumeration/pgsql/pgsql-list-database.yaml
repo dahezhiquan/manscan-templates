@@ -1,11 +1,11 @@
 id: pgsql-list-database
 
 info:
-  name: PostgreSQL List Database
+  name: PostgreSQL 数据库列表枚举（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    A single Postgres server process can manage multiple databases at the same time. Each database is stored as a separate set of files in its own directory within the server’s data directory.
+    该模板用于枚举 PostgreSQL 实例中的数据库列表，帮助识别租户与业务分布情况。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-list-password-hashes
     - https://launchbylunch.com/posts/2024/Jan/16/postgres-password-encryption/#postgresql-password-encryption-scram-sha-256

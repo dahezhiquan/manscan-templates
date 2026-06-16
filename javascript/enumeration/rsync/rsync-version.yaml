@@ -1,11 +1,11 @@
 id: rsync-version
 
 info:
-  name: Rsync Version - Detect
+  name: Rsync 版本识别（服务漏洞）
   author: DhiyaneshDK
   severity: info
   description: |
-    Identify the Version of the Rsync Protocol
+    该模板识别目标 Rsync 协议版本，用于评估兼容性与已知风险面。
   metadata:
     verified: true
     max-request: 1

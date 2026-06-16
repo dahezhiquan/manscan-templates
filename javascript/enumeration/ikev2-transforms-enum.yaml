@@ -1,11 +1,11 @@
 id: ikev2-transforms-enum
 
 info:
-  name: IKEv2 Supported Transforms - Enumeration
+  name: IKEv2 支持转换套件枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-   Enumerates supported IKEv2 encryption cipher suites by sending individual SA_INIT probes with single-algorithm proposals. Accepted ciphers return an SA payload response, while rejected ones return a NO_PROPOSAL_CHOSEN notification.
+    该模板通过单独发送不同算法组合的 SA_INIT 探测报文，枚举 IKEv2 端点支持的加密与交换套件。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296
     - https://www.iana.org/assignments/ikev2-parameters

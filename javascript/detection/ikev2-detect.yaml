@@ -1,11 +1,11 @@
 id: ikev2-detect
 
 info:
-  name: IKEv2 Service - Detection
+  name: IKEv2 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects IKEv2 services by sending a crafted IKE_SA_INIT request over UDP/500 and analyzing the response. Supports multiple cipher suites and DH groups for broad compatibility; any valid IKEv2 reply confirms the service.
+    该模板通过发送 IKE_SA_INIT 探测报文，识别目标是否运行 IKEv2 VPN 服务。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296
     - https://www.iana.org/assignments/ikev2-parameters

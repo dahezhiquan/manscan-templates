@@ -1,11 +1,11 @@
 id: minecraft-enum
 
 info:
-  name: Minecraft - enum
+  name: Minecraft 服务信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Minecraft server for some basic information about the host.The information that is queried is the Description, Maximum Number of Players, number of Online Players, Version number, and Protocol Number
+    该模板获取 Minecraft 服务端的描述、在线人数、版本号与协议编号等基础信息。
   reference:
     - https://github.com/sjhilt/Nmap-NSEs/blob/master/minecraft-info.nse
   metadata:

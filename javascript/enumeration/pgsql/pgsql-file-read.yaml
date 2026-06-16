@@ -1,11 +1,11 @@
 id: pgsql-file-read
 
 info:
-  name: PostgreSQL File Read
+  name: PostgreSQL 文件读取（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    Read and list the files within the PostgreSQL database,
+    该模板尝试通过 PostgreSQL 功能读取服务器本地文件，以判断数据库是否存在高危读取能力。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-file-read
   metadata:

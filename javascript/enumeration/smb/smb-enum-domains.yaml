@@ -1,11 +1,11 @@
 id: smb-enum-domains
 
 info:
-  name: SMB - Enum Domains
+  name: SMB 域枚举（服务漏洞）
   author: DhiyaneshDK
   severity: info
   description: |
-    SMB enumeration of domains is often part of the reconnaissance phase, where security professionals or attackers attempt to gather information about the target network to identify potential vulnerabilities.
+    该模板用于枚举 SMB 环境中的域信息，辅助识别目标网络的身份边界。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-enum-domains.html
   metadata:

@@ -1,11 +1,11 @@
 id: ssh-weakkey-exchange-algo
 
 info:
-  name: SSH Weak Key Exchange Algorithms Enabled
+  name: SSH 弱密钥交换算法启用（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    SSH Weak Key Exchange Algorithms Enabled indicates that the SSH server or client is configured to allow the use of less secure key exchange methods, posing a potential security risk during the establishment of secure connections. It's crucial to update configurations to prioritize stronger key exchange algorithms.
+    该模板检测 SSH 服务器是否启用了弱密钥交换算法。
   reference:
     - https://www.tenable.com/plugins/nessus/153953
   metadata:

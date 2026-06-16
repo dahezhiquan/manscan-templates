@@ -1,11 +1,11 @@
 id: pgsql-extensions-rce
 
 info:
-  name: PostgreSQL 8.1  Extensions - Remote Code Execution
+  name: PostgreSQL 扩展远程代码执行风险（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    PostgreSQL allows for extensions, which are modules providing extra functionality like functions, operators, or types. Starting from version 8.1, these extensions must be compiled with a special header for compatibility with PostgreSQL's extension mechanism.
+    该模板检测 PostgreSQL 扩展机制是否可被用于执行系统命令，识别高危远程代码执行面。
   reference:
     - https://www.dionach.com/postgresql-9-x-remote-command-execution/
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#using-libcso6

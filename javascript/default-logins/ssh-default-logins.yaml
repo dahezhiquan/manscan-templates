@@ -1,7 +1,7 @@
 id: ssh-default-logins
 
 info:
-  name: SSH - Default Logins
+  name: SSH 默认凭据检测（服务漏洞）
   author: tarunKoyalwar
   severity: critical
   metadata:

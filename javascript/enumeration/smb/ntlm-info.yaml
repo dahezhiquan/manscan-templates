@@ -1,11 +1,11 @@
 id: ntlm-info
 
 info:
-  name: NTLM Information - Detection
+  name: NTLM 信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Windows New Technology LAN Manager (NTLM) is a suite of security protocols offered by Microsoft to authenticate users' identity and protect the integrity and confidentiality of their activity. At its core, NTLM is a single sign on (SSO) tool that relies on a challenge-response protocol to confirm the user without requiring them to submit a password.
+    该模板通过 NTLM 协议响应枚举主机域、主机名与身份验证相关信息。
   reference:
     - https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/
   metadata:

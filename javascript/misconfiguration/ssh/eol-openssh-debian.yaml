@@ -1,11 +1,11 @@
 id: eol-openssh-debian
 
 info:
-  name: EOL Debian OpenSSH - Detect
+  name: EOL Debian OpenSSH 识别（服务漏洞）
   author: matejsmycka
   severity: medium
   description: |
-    Detected OpenSSH server banners that indicated End-of-Life (EOL) Debian releases (sarge, etch, lenny, squeeze, wheezy, jessie, stretch, buster). EOL systems no longer received official security updates.
+    该模板通过 SSH Banner 识别是否运行已停止维护的 Debian OpenSSH 版本。
   reference:
     - https://endoflife.date/debian
   metadata:

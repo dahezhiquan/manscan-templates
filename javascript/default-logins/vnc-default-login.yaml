@@ -1,11 +1,11 @@
 id: vnc-default-login
 
 info:
-  name: VNC Default Login
+  name: VNC 默认凭据检测（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    The VNC service had been accessed using easily guessed credentials.Weak credentials allowed unauthorized access to the VNC service.
+    该模板尝试通过常见默认凭据访问 VNC 服务，识别远程桌面是否存在出厂口令或弱认证问题。
   metadata:
     verified: true
     shodan-query: product:"vnc"

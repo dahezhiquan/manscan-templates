@@ -1,11 +1,11 @@
 id: mysql-user-enum
 
 info:
-  name: MySQL - User Enumeration
+  name: MySQL 用户枚举（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    Attempts to list all users on a MySQL server.
+    该模板尝试枚举 MySQL 服务中的用户信息，用于识别账号面与潜在高权限账户。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-users.html
   metadata:

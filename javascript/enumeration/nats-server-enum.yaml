@@ -1,11 +1,11 @@
 id: nats-server-enum
 
 info:
-  name: NATS Server - Detect
+  name: NATS 服务信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Extracts key information from exposed NATS (Neural Autonomic Transport System) servers by connecting directly and retrieving configuration details such as server ID, version, cluster name, and authentication requirements. Useful for network enumeration and assessing the security posture of NATS messaging infrastructure.
+    该模板直接连接 NATS Server 并读取版本、集群名称、认证要求等配置特征。
   metadata:
     verfied: true
     max-request: 1

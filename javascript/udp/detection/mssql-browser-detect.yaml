@@ -1,11 +1,11 @@
 id: mssql-browser-detect
 
 info:
-  name: MS-SQL Browser Service - Detect
+  name: MS-SQL Browser 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects Microsoft SQL Server Browser service on UDP port 1434 by triggering an SVR_RESP response with a 0x02 probe.Extracts instance details such as ServerName, InstanceName, SQL version, clustering status, and TCP port information.
+    该模板通过 UDP 1434 探测识别 Microsoft SQL Server Browser 服务，并提取实例细节。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://learn.microsoft.com/en-us/sql/tools/configuration-manager/sql-server-browser-service

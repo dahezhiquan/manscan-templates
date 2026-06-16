@@ -1,11 +1,11 @@
 id: apache-kvrocks-exposed
 
 info:
-  name: Apache Kvrocks - Exposed
+  name: Apache Kvrocks 未授权暴露（服务漏洞）
   author: icarot
   severity: high
   description: |
-   Detects if an Apache Kvrocks server is exposed with no authentication credentials, this application is a distributed key value NoSQL database that uses RocksDB as storage engine and is compatible with Redis protocol.
+    该模板检测 Apache Kvrocks 是否在无认证保护的情况下对外暴露。
   reference:
     - https://github.com/apache/kvrocks
   metadata:

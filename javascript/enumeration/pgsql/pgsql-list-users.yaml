@@ -1,11 +1,11 @@
 id: pgsql-list-users
 
 info:
-  name: PostgreSQL List Users
+  name: PostgreSQL 用户列表枚举（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    List users from Postgresql Database.
+    该模板用于枚举 PostgreSQL 用户列表，识别数据库中的账号面与潜在高权限角色。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-list-users
   metadata:

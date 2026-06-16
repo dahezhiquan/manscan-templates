@@ -1,11 +1,11 @@
 id: mysql-info
 
 info:
-  name: MySQL Info - Enumeration
+  name: MySQL 基本信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Connects to a MySQL server and prints information such as the protocol and version numbers
+    该模板连接 MySQL 服务并提取协议版本、服务版本等基础信息。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-info.html
   metadata:

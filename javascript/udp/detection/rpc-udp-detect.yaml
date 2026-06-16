@@ -1,11 +1,11 @@
 id: rpc-udp-detect
 
 info:
-  name: RPC Portmapper (UDP) - Detect
+  name: RPC Portmapper UDP 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects Sun RPC Portmapper (rpcbind) service on UDP port 111 using amap and Nmap RPC probes for reliable identification. An exposed Portmapper may reveal RPC services like NFS or NIS and enable further enumeration or attacks.
+    该模板通过 RPC 探测报文识别 UDP 111 上的 Portmapper/rpcbind 服务。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc1833

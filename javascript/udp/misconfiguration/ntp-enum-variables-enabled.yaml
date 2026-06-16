@@ -1,11 +1,11 @@
 id: ntp-enum-variables-enabled
 
 info:
-  name: NTP Enum Variables - Enabled
+  name: NTP 变量枚举已启用（服务漏洞）
   author: matejsmycka
   severity: info
   description: |
-    Detected an NTP server that had responded to control queries exposing version, processor, and system information through enumerated NTP variables.
+    该模板检测 NTP 服务器是否允许通过控制查询枚举变量信息。
   metadata:
     verified: true
     shodan-query: "system: port:123"

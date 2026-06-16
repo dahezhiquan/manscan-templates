@@ -1,11 +1,11 @@
 id: pgsql-default-db
 
 info:
-  name: Postgresql Default Database - Enumeration
+  name: PostgreSQL 默认数据库枚举（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    postgres is the default database you will connect to before you have created any other databases.
+    该模板枚举 PostgreSQL 默认数据库可访问性，用于识别默认实例暴露情况。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-database-name
   metadata:

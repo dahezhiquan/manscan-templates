@@ -1,11 +1,11 @@
 id: perforce-user-enumeration
 
 info:
-  name: Perforce Server - User Enumeration
+  name: Perforce 用户枚举（服务漏洞）
   author: Morgan Robertson
   severity: medium
   description: |
-    Detected Perforce server allowed anonymous user listing due to run.users.authorize being set to 0 (the default). The server returned a full list of users including usernames, email addresses, and full names without authentication. Both ASCII and Unicode server modes were affected. SSL-enforcing servers are not affected.
+    该模板检测 Perforce 是否允许匿名枚举用户列表，并返回用户名、邮箱与全名等敏感目录信息。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

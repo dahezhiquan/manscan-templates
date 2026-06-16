@@ -1,11 +1,11 @@
 id: db2-discover
 
 info:
-  name: Broadcast DB2 Discover
+  name: 广播 DB2 发现（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Attempts to discover DB2 servers on the network by sending a broadcast request to port 523/udp.
+    该模板通过广播探测识别网络中暴露的 DB2 服务节点。
   reference:
     - https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html
   metadata:

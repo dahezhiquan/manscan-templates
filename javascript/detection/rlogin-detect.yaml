@@ -1,11 +1,11 @@
 id: rlogin-detect
 
 info:
-  name: Rlogin Detect
+  name: rlogin 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    rlogin was a remote login protocol that allowed users to access UNIX systems over TCP port 513.  It transmitted credentials and session data in plaintext, which made it insecure and obsolete once SSH was introduced.
+    该模板用于识别已过时的 rlogin 远程登录服务，便于排查明文传输与遗留协议风险。
   reference:
     - https://www.ibm.com/docs/en/aix/7.1.0?topic=r-rlogin-command
   metadata:

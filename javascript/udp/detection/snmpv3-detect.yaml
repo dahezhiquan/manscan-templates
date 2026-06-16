@@ -1,11 +1,11 @@
 id: snmpv3-detect
 
 info:
-  name: SNMPv3 Fingerprint - Detect
+  name: SNMPv3 指纹识别（服务漏洞）
   author: matejsmycka
   severity: info
   description: |
-    SNMPv3 can leak information about the device even without proper authentication.Use `nmap -sU <ADDRESS> -p 161 --script snmp-info` to get more information.Engine IDs can help to determine one device with multiple interfaces.
+    该模板通过 SNMPv3 响应特征识别目标设备并提取基础指纹信息。
   reference:
     - https://support.huawei.com/enterprise/en/doc/EDOC1100174721/46bd64e2/snmpv3
     - https://pure.tudelft.nl/ws/portalfiles/portal/103172599/3487552.3487848.pdf

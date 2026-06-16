@@ -1,11 +1,11 @@
 id: oracle-tns-listener
 
 info:
-  name: Oracle TNS Listener - Detect
+  name: Oracle TNS 监听器识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Oracle clients communicate with the database using the Transparent Network Substrate (TNS) protocol. When the listener receives a connection request (tcp port 1521, by default), it starts up a new database process and establishes a connection between the client and the database.
+    该模板通过 TNS 协议请求识别 Oracle TNS 监听器是否开放，以确认数据库入口暴露情况。
   reference:
     - https://www.tenable.com/plugins/nessus/110053
   metadata:

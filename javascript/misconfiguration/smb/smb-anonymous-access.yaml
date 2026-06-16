@@ -1,11 +1,11 @@
 id: smb-anonymous-access
 
 info:
-  name: SMB Anonymous Access Detection
+  name: SMB 匿名访问检测（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    Detects anonymous access to SMB shares on a remote server.
+    该模板检测 SMB 共享是否允许匿名访问。
   reference:
     - https://wadcoms.github.io/wadcoms/SMBClient-List-Shares-Anonymous/
   metadata:

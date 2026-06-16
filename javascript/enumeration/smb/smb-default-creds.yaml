@@ -1,11 +1,11 @@
 id: smb-default-creds
 
 info:
-  name: SMB Default Credential - Bruteforce
+  name: SMB 默认凭据爆破（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    Attempts to guess username/password combinations over SMB.
+    该模板通过 SMB 协议尝试常见默认账号口令，识别文件共享服务是否存在弱凭据风险。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-brute.html
   metadata:

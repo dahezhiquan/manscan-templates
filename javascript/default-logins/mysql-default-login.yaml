@@ -1,11 +1,11 @@
 id: mysql-default-login
 
 info:
-  name: MySQL - Default Login
+  name: MySQL 默认凭据检测（服务漏洞）
   author: DhiyaneshDk,pussycat0x,ritikchaddha
   severity: high
   description: |
-    A MySQL service was accessed with easily guessed credentials.
+    该模板尝试使用常见默认凭据连接 MySQL 服务，识别是否存在出厂账号或弱口令配置。
   metadata:
     verified: true
     max-request: 21

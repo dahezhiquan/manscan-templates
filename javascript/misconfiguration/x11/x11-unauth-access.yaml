@@ -1,11 +1,11 @@
 id: x11-unauth-access
 
 info:
-  name: x11 - Unauthenticated Access
+  name: X11 未认证访问（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    To check if you can connect to a remote X server, send an X11 initial connection request to TCP port 6000+n (where n is the display number). The response success byte (0x00 or 0x01) indicates if you are allowed; if successful, the script will display "X server access is granted," confirming that an attacker can connect to the X server
+    该模板检测 X11 服务是否允许未认证远程访问图形显示接口。
   reference:
     - https://nmap.org/nsedoc/scripts/x11-access.html
     - https://book.hacktricks.xyz/network-services-pentesting/6000-pentesting-x11

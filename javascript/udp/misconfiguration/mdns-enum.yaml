@@ -1,11 +1,11 @@
 id: mDNS-enum
 
 info:
-  name: mDNS Enumeration
+  name: mDNS 枚举（服务漏洞）
   author: matejsmycka
   severity: low
   description: |
-    mDNS may disclose details about services running on a local network. When mDNS traffic is accessible from the public Internet, attackers can exploit it to map internal services. If exposure is suspected, perform enumeration with tools such as dig to collect additional information.
+    该模板通过 mDNS 枚举局域网服务信息，识别是否存在过度暴露的服务广播内容。
   metadata:
     verified: true
     shodan-query: port:5353

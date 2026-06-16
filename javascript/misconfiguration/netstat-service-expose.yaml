@@ -1,13 +1,14 @@
 id: netstat-service-expose
 
 info:
-  name: Netstat Service - Expose
+  name: Netstat 服务暴露（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    Port 15 (Netstat) was found exposed, which could have disclosed sensitive network and system information to unauthorized users.
+    该模板检测 Netstat 服务是否对外暴露。该类历史服务可能泄露网络状态与系统信息。
   impact: |
-    This exposure increased the risk of information gathering and potential exploitation by attackers.
+    - 远程用户可能直接获取网络连接、服务状态或系统运行细节。
+    - 这些信息可被用于资产画像、攻击面分析或后续定向利用。
   metadata:
     verified: true
     max-request: 1

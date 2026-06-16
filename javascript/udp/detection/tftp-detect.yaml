@@ -1,11 +1,11 @@
 id: tftp-detect
 
 info:
-  name: TFTP Service - Detection
+  name: TFTP 服务识别（服务漏洞）
   author: pussycat0x,matejsmycka
   severity: info
   description: |
-    Detect TFTP Service.
+    该模板识别目标是否开放 TFTP 服务。
   metadata:
     verified: true
     max-request: 1

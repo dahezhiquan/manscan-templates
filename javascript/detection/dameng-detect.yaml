@@ -1,11 +1,11 @@
 id: dameng-detect
 
 info:
-  name: Dameng Database - Detect
+  name: 达梦数据库识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    The Dameng (DMDB) Protocol Enumerator is a lightweight network reconnaissance tool designed to identify and fingerprint Dameng Database (DM/DM7/DM8) servers using their native wire-protocol.
+    该模板通过达梦数据库原生协议指纹识别目标是否开放 DM/DM7/DM8 数据库服务。
   metadata:
     verified: true
     max-request: 1

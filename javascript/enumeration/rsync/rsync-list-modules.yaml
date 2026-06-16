@@ -1,11 +1,11 @@
 id: rsync-list-modules
 
 info:
-  name: Rsync List Modules - Enumeration
+  name: Rsync 模块列表枚举（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    Lists modules available for rsync (remote file sync) synchronization.
+    该模板列举 Rsync 服务可用模块，帮助识别可能被同步或下载的目录范围。
   reference:
     - https://nmap.org/nsedoc/scripts/rsync-list-modules.html
   metadata:

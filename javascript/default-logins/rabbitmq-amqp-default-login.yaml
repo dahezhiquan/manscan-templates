@@ -1,15 +1,17 @@
 id: rabbitmq-amqp-default-login
 
 info:
-  name: RabbitMQ AMQP - Default Login
+  name: RabbitMQ AMQP 默认凭据检测（服务漏洞）
   author: DhiyaneshDK
   severity: high
   description: |
-    RabbitMQ server accepts connections with weak or default credentials over the AMQP 0-9-1 protocol (port 5672).Default credentials (guest/guest) or commonly used weak passwords were found, allowing unauthorized access to the message broker, its queues, exchanges, and all data flowing through them.
+    该模板通过 AMQP 协议尝试常见默认凭据连接 RabbitMQ，识别消息队列服务是否可被未经授权访问。
   impact: |
-    An attacker with valid AMQP credentials can connect to the broker, consume or publish messages,create/delete queues and exchanges, and potentially access sensitive application data.
+    - 具备有效 AMQP 凭据的攻击者可连接消息代理，读取或发布消息。
+    - 还可能创建、删除队列与交换机，并接触到敏感应用数据。
   remediation: |
-    Change default credentials immediately. Enforce strong password policies. Restrict the guest account to localhost connections only (RabbitMQ default behavior). Enable TLS for AMQP connections. Use vhosts for access isolation.
+    - 立即更改默认凭据，并强制执行强密码策略。
+    - 将 guest 账户限制为仅允许本机连接，启用 AMQP TLS，并使用 vhost 做访问隔离。
   reference:
     - https://www.rabbitmq.com/docs/access-control
     - https://www.rabbitmq.com/docs/passwords

@@ -1,7 +1,7 @@
 id: ssh-server-enumeration
 
 info:
-  name: SSH Server Software Enumeration
+  name: SSH 服务端软件枚举（服务漏洞）
   author: Ice3man543,tarunKoyalwar
   severity: info
   metadata:

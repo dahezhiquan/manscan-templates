@@ -1,11 +1,11 @@
 id: smb2-server-time
 
 info:
-  name: SMB2 Server Time - Detection
+  name: SMB2 服务器时间枚举（服务漏洞）
   author: DhiyaneshDK
   severity: info
   description: |
-    Trying to retrieve the present date of the system along with the initiation date of an SMB2 server.
+    该模板获取 SMB2 服务器当前时间与启动时间，辅助做时钟偏差与运行时长分析。
   reference:
     - https://nmap.org/nsedoc/scripts/smb2-time.html
   metadata:

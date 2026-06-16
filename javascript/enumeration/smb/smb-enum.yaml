@@ -1,12 +1,11 @@
 id: smb-enum
 
 info:
-  name: SMB - Enumeration
+  name: SMB 信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    SMS Information Extraction is a sophisticated and efficient system designed to retrieve critical information from a remote computer or device through short text messages. This technology enables users to remotely access essential details about a computer, such as its operating system (OS) version, computer name, and hostname,
-    all via SMS communication.
+    该模板通过 SMB 会话与服务接口枚举主机、共享与系统特征信息。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-security-mode.html
   metadata:

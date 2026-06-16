@@ -1,11 +1,11 @@
 id: postgres-default-logins
 
 info:
-  name: Postgres - Default Logins
+  name: PostgreSQL 默认凭据检测（服务漏洞）
   author: Ice3man
   severity: high
   description: |
-    Postgres service was accessed with easily guessed credentials.
+    该模板通过常见默认账号口令访问 PostgreSQL 服务，检测数据库是否存在弱认证风险。
   metadata:
     max-request: 9
     shodan-query: port:5432

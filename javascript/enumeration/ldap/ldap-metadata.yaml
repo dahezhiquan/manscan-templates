@@ -1,11 +1,11 @@
 id: ldap-metadata
 
 info:
-  name: LDAP Metadata - Enumeration
+  name: LDAP 元数据枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    LDAP metadata refers to the data that describes the structure, schema, and attributes of the LDAP directory
+    该模板用于枚举 LDAP 目录的元数据、Schema 与属性结构，以评估目录服务暴露面。
   reference:
     - https://docs.projectdiscovery.io/templates/protocols/javascript/modules/ldap.Metadata
   metadata:

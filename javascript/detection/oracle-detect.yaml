@@ -1,10 +1,10 @@
 id: oracle-detect
 
 info:
-  name: Oracle - Detection
+  name: Oracle 数据库服务识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Detects if a target host is running Oracle service on port 1521
+  description: 该模板通过 1521 端口的 Oracle 协议特征识别目标是否开放 Oracle 数据库服务。
   metadata:
     verified: true
     max-request: 1

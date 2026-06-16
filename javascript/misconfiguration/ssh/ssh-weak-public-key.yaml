@@ -1,11 +1,11 @@
 id: ssh-weak-public-key
 
 info:
-  name: SSH Host Keys < 2048 Bits Considered Weak
+  name: SSH 主机密钥小于 2048 位（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    SSH host keys with a bit length below 2048 are deemed weak, posing an increased vulnerability to security threats. Employing robust key lengths is crucial for fortifying the integrity of encrypted communication and thwarting potential exploits.
+    该模板检测 SSH 主机密钥长度是否低于 2048 位，从而识别弱密钥风险。
   reference:
     - https://www.tenable.com/plugins/nessus/153954
   metadata:

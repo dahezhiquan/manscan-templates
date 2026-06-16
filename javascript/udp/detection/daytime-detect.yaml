@@ -1,11 +1,11 @@
 id: daytime-detect
 
 info:
-  name: Daytime Service - Detect
+  name: Daytime 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects the Daytime service on UDP port 13 by requesting the current date and time in ASCII format as defined in RFC 867. This legacy protocol can expose system information and should be disabled to reduce attack surface.
+    该模板通过 RFC 867 约定的请求识别目标是否开放 UDP Daytime 服务。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc867

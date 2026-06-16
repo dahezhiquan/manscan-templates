@@ -1,11 +1,11 @@
 id: mssql-default-logins
 
 info:
-  name: Microsoft Sql - Default Logins
+  name: Microsoft SQL 默认凭据检测（服务漏洞）
   author: Ice3man543,tarunKoyalwar
   severity: high
   description: |
-    A MSSQL service was accessed with easily guessed credentials.
+    该模板通过 Microsoft SQL Server 协议尝试常见默认账号口令，检测数据库服务是否可被弱口令直接访问。
   metadata:
     max-request: 7
     shodan-query: port:1433

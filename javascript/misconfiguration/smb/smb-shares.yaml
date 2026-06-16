@@ -1,11 +1,11 @@
 id: smb-shares
 
 info:
-  name: SMB Shares - Enumeration
+  name: SMB 共享枚举（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    Attempts to list shares using the srvsvc.NetShareEnumAll MSRPC function and retrieve more information about them using srvsvc.NetShareGetInfo. If access to those functions is denied, a list of common share names are checked.
+    该模板尝试枚举 SMB 共享列表及其基础属性，用于识别暴露目录与访问边界。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-enum-shares.html
   metadata:

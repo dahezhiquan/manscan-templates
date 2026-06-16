@@ -1,11 +1,11 @@
 id: ssh-sha1-hmac-algo
 
 info:
-  name: SSH SHA-1 HMAC Algorithms Enabled
+  name: SSH SHA-1 HMAC 算法启用检测（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    The SSH server at the remote end is set up to allow the use of SHA-1 HMAC algorithms.
+    该模板检测 SSH 服务器是否允许使用基于 SHA-1 的 HMAC 算法。
   reference:
     - https://forums.ivanti.com/s/article/How-to-disable-SSH-SHA-1-HMAC-algorithms?language=en_US
   metadata:

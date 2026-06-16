@@ -1,11 +1,11 @@
 id: smb2-capabilities
 
 info:
-  name: smb2-capabilities - Enumeration
+  name: SMB2 能力枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Attempts to list the supported capabilities in a SMBv2 server for each enabled dialect.
+    该模板枚举 SMBv2 服务支持的能力标志与方言特性。
   reference:
     - https://nmap.org/nsedoc/scripts/smb2-capabilities.html
   metadata:

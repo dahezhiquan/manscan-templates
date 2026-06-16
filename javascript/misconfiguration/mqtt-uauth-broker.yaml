@@ -1,10 +1,10 @@
 id: unauth-mqtt-broker
 info:
-  name: MQTT Unauthenticated Broker - Detect
+  name: MQTT 未认证 Broker 检测（服务漏洞）
   author: matejsmycka
   severity: high
   description: |
-    Detects an unauthenticated MQTT broker and attempts to subscribe to the $SYS/# topic to enumerate broker and system information.
+    该模板检测 MQTT Broker 是否允许未认证连接，并尝试订阅系统主题以枚举运行信息。
   reference:
     - https://en.wikipedia.org/wiki/MQTT
     - https://github.com/kh4sh3i/MQTT-Pentesting

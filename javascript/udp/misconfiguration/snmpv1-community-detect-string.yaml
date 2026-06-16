@@ -1,11 +1,11 @@
 id: snmpv1-community-detect-string
 
 info:
-  name: SNMPv1 Public Community String - Detect
+  name: SNMPv1 public 团体字串检测（服务漏洞）
   author: matejsmycka
   severity: high
   description: |
-    SNMPv1 was configured with the default public community string, which allows unauthorized users to query system information. This may expose sensitive details such as network configuration, running processes, and device information.
+    该模板检测 SNMPv1 是否仍使用默认 public 团体字串，从而暴露未授权信息查询风险。
   reference:
     - https://hackers-arise.com/exploiting-snmpv1-for-reconnaissance/
     - https://hacktricks.boitatech.com.br/pentesting/pentesting-snmp

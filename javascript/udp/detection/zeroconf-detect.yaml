@@ -1,11 +1,11 @@
 id: zeroconf-detect
 
 info:
-  name: Zeroconf - Detect
+  name: Zeroconf 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Queried `_services._dns-sd._udp.local` over UDP/5353 and identified Zeroconf (mDNS/DNS-SD) services that were advertised locally.
+    该模板查询 _services._dns-sd._udp.local，识别目标是否通过 Zeroconf/mDNS 对外通告服务。
   reference:
     - https://en.wikipedia.org/wiki/Zero-configuration_networking
   metadata:

@@ -1,11 +1,11 @@
 id: ikev2-vid-version
 
 info:
-  name: IKEv2 Deep Vendor ID Version - Detection
+  name: IKEv2 Vendor ID 与版本识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detected valid IKEv1 VPN group names by sending Aggressive Mode probes with different IDi values. Extracts vendor, version, and capability details from IKEv2 Vendor ID and Notify payloads using a single unauthenticated exchange.
+    该模板解析 IKEv2 响应中的 Vendor ID 与通知载荷，识别设备厂商、版本与能力特征。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296#section-3.12
     - https://hacktricks.wiki/en/network-services-pentesting/ipsec-ike-vpn-pentesting.html

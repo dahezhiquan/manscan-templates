@@ -1,11 +1,11 @@
 id: rdp-detect
 
 info:
-  name: RDP - Detection
+  name: RDP 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects if a target host is running Remote Desktop Protocol (RDP) service on port 3389. This template helps identify Windows systems that have RDP enabled, which is commonly used for remote administration but can also be a security risk if not properly secured.
+    该模板通过远程桌面协商特征识别目标是否开放 RDP 服务。
   metadata:
     verified: true
     max-request: 1

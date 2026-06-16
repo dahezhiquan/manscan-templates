@@ -1,7 +1,7 @@
 id: mssql-detect
 
 info:
-  name: Microsoft SQL(mssql) - Detect
+  name: Microsoft SQL Server 服务识别（服务漏洞）
   author: Ice3man543,tarunKoyalwar
   severity: info
   metadata:

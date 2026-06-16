@@ -1,11 +1,11 @@
 id: perforce-info-disclosure
 
 info:
-  name: Perforce Server - Information Disclosure
+  name: Perforce 信息泄露枚举（服务漏洞）
   author: Morgan Robertson
   severity: medium
   description: |
-    Detected Perforce server exposed internal server information without authentication due to dm.info.hide being set to 0 (the default). Disclosed fields included the server version, server root path, internal server address, and license information. SSL-enforcing servers are not affected.
+    该模板检测 Perforce 是否在未认证情况下泄露服务器版本、根路径与许可证等内部信息。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

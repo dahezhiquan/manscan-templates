@@ -1,11 +1,11 @@
 id: ssh-weak-algo-supported
 
 info:
-  name: SSH Weak Algorithms Supported
+  name: SSH 弱算法支持检测（服务漏洞）
   author: pussycat0x
   severity: medium
   description: |
-    SSH weak algorithms are outdated cryptographic methods that pose security risks. Identifying and disabling these vulnerable algorithms is crucial for enhancing the overall security of SSH connections.
+    该模板检测 SSH 服务器是否支持已知安全性不足的弱算法。
   reference:
     - https://www.tenable.com/plugins/nessus/90317
   metadata:

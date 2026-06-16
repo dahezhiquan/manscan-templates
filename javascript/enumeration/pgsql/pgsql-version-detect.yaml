@@ -1,11 +1,11 @@
 id: pgsql-version-detect
 
 info:
-  name: Postgresql Version - Detect
+  name: PostgreSQL 版本识别（服务漏洞）
   author: pussycat0x
   severity: high
   description: |
-    Detect Postgresql Version.
+    该模板通过协议特征识别 PostgreSQL 服务版本。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-version
   metadata:

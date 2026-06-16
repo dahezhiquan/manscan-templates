@@ -1,11 +1,11 @@
 id: ssh-diffie-hellman-logjam
 
 info:
-  name: SSH Diffie-Hellman Modulus <= 1024 Bits
+  name: SSH Diffie-Hellman 模数小于等于 1024 位（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    SSH weak algorithms are outdated cryptographic methods that pose security risks. Identifying and disabling these vulnerable algorithms is crucial for enhancing the overall security of SSH connections.
+    该模板检测 SSH 服务器是否仍使用弱 Diffie-Hellman 模数，从而评估 Logjam 类降强度风险。
   reference:
     - https://access.redhat.com/solutions/4278651
   metadata:

@@ -1,11 +1,11 @@
 id: smb-version-detect
 
 info:
-  name: SMB Version - Detection
+  name: SMB 版本识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    SMB version detection involves identifying the specific Server Message Block protocol version used by a system or network. This process is crucial for ensuring compatibility and security, as different SMB versions may have distinct features and vulnerabilities.
+    该模板识别目标 SMB 协议版本，用于判断兼容性与潜在历史漏洞面。
   metadata:
     max-request: 1
     shodan-query: "port:445"

@@ -1,11 +1,11 @@
 id: ntp-version-detect
 
 info:
-  name: NTP Version Detection
+  name: NTP 版本识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detects if a target host is running NTP Service on port 123.
+    该模板通过 NTP 查询报文识别目标是否运行 NTP 服务，并提取相关版本特征。
   metadata:
     verified: true
     shodan-query: "NTP"

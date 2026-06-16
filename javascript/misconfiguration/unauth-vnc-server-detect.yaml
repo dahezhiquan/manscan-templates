@@ -1,11 +1,11 @@
 id: unauth-vnc-server-detect
 
 info:
-  name: Unauthenticated VNC  Server - Detect
+  name: VNC 未认证访问检测（服务漏洞）
   author: pussycat0x
   severity: critical
   description: |
-    The remote host had a VNC server that permitted access without requiring authentication.
+    该模板检测 VNC 服务是否允许在无认证情况下直接建立远程桌面会话。
   metadata:
     verified: true
     shodan-query: product:"vnc"

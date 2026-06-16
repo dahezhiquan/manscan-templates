@@ -1,11 +1,11 @@
 id: redis-default-logins
 
 info:
-  name: Redis - Default Logins
+  name: Redis 默认凭据检测（服务漏洞）
   author: tarunKoyalwar
   severity: high
   description: |
-    Redis service was accessed with easily guessed credentials.
+    该模板尝试使用常见默认口令连接 Redis 服务，识别是否存在弱口令或错误暴露的认证配置。
   metadata:
     max-request: 6
     shodan-query:

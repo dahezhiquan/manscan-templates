@@ -1,11 +1,11 @@
 id: samba-detect
 
 info:
-  name: Samba - Detection
+  name: Samba 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Samba allows file and print sharing between computers running Microsoft Windows and computers running Unix. It is an implementation of dozens of services and a dozen protocols, including: NetBIOS over TCP/IP (NBT) SMB (known as CIFS in some versions)
+    该模板通过 SMB/NetBIOS 响应特征识别目标是否运行 Samba 文件共享服务。
   metadata:
     max-request: 1
     shodan-query: "port:445"

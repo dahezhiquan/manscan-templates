@@ -1,7 +1,7 @@
 id: mysql-show-databases
 
 info:
-  name: MySQL - Show Databases
+  name: MySQL 数据库列表枚举（服务漏洞）
   author: DhiyaneshDk
   severity: high
   reference:

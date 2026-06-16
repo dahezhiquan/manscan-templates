@@ -1,11 +1,11 @@
 id: echo-detect
 
 info:
-  name: Echo Protocol  Detect
+  name: Echo 协议识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Echo is a protocol that is used for debugging and measurement. It works by sending back all the data that was received from the source. The protocol works on TCP and UDP, typically on port 7.
+    该模板通过发送回显数据并验证响应，识别目标是否开放 Echo 调试协议服务。
   reference:
     - https://en.wikipedia.org/wiki/Echo_Protocol
   metadata:

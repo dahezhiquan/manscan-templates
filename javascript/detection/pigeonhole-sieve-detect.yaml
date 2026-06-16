@@ -1,11 +1,11 @@
 id: pigeonhole-sieve-detect
 
 info:
-  name: Pigeonhole Sieve Service - Detect
+  name: Pigeonhole Sieve 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-      Pigeonhole Sieve is Dovecot’s plugin that implements the Sieve mail filtering language, allowing server-side email filtering at delivery. It adds extensions and ManageSieve support for user-friendly rule management.  metadata:
+    该模板用于识别 Dovecot Pigeonhole/ManageSieve 邮件过滤服务，判断目标是否开放相关规则管理接口。
   metadata:
     verified: true
     shodan-query: product:"Dovecot Pigeonhole sieve"

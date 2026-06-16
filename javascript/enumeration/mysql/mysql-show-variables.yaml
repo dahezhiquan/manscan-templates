@@ -1,10 +1,10 @@
 id: mysql-show-variables
 
 info:
-  name: MySQL - Show Variables
+  name: MySQL 变量信息枚举（服务漏洞）
   author: DhiyaneshDk
   severity: high
-  description: Attempts to show all variables on a MySQL server.
+  description: 该模板尝试枚举 MySQL 服务器的全部系统变量。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-variables.html
   metadata:

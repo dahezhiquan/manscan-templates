@@ -1,11 +1,11 @@
 id: mdns-ptzoptics-detect
 
 info:
-  name: PTZOptics Device via mDNS - Detect
+  name: 通过 mDNS 识别 PTZOptics 设备（服务漏洞）
   author: rxerium
   severity: info
   description: |
-    Detects PTZOptics camera devices exposed via mDNS (Multicast DNS) on port 5353. PTZOptics cameras broadcast mDNS service advertisements including SSH, SFTP, and NDI streaming services. These devices are commonly used for video conferencing and broadcast production.
+    该模板通过 mDNS 广播特征识别 PTZOptics 摄像设备及其相关服务暴露情况。
   metadata:
     verified: true
     max-request: 1

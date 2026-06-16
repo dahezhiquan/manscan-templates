@@ -1,11 +1,11 @@
 id: weblogic-iiop-detect
 
 info:
-  name: Weblogic IIOP Protocol Detection
+  name: Weblogic IIOP 协议识别（服务漏洞）
   author: F1tz
   severity: info
   description: |
-    The IIOP (Internet Inter-ORB Protocol) protocol makes it possible for distributed programs written in different programming languages to communicate over the Internet.
+    该模板通过网络响应特征识别目标是否开放 Weblogic IIOP Protocol 相关服务。
   metadata:
     max-request: 1
   tags: network,weblogic,detect,oracle,iiop,detection,tcp,discovery

@@ -1,11 +1,11 @@
 id: vmware-authentication-daemon
 
 info:
-  name: VMware Authentication Daemon Detection
+  name: VMware Authentication Daemon 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    vmauthd is the VMWare authentication daemon that is included with many VMWare products, including ESX(i), and Workstation.
+    该模板通过网络响应特征识别目标是否开放 VMware Authentication Daemon 相关服务。
   metadata:
     verified: true
     max-request: 1

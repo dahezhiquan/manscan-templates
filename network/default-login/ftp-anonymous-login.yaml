@@ -1,11 +1,11 @@
 id: ftp-anonymous-login
 
 info:
-  name: FTP Anonymous Login
+  name: FTP 匿名登录检测（服务漏洞）
   author: C3l3si4n,pussycat0x
   severity: medium
   description: |
-    Anonymous FTP access allows anyone to access your public_ftp folder, allowing unidentified visitors to download (and possibly upload) files on your website. Anonymous FTP creates the potential for a security hole for hackers and is not recommended.
+    该模板检测 FTP 服务是否允许匿名登录。命中说明未认证用户可能直接访问公开目录，甚至具备上传能力。
   reference:
     - https://tools.ietf.org/html/rfc2577
   metadata:

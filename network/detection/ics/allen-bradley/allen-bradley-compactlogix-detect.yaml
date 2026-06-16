@@ -1,11 +1,11 @@
 id: allen-bradley-compactlogix-detect
 
 info:
-  name: Allen-Bradley CompactLogix Series PLC - Detect
+  name: Allen-Bradley CompactLogix Series PLC 识别（服务漏洞）
   author: biero-el-corridor
   severity: info
   description: |
-    Detected Allen-Bradley CompactLogix series via the ENIP-CIP protocol using the -resp flag to view the PLC model.
+    该模板通过工业协议指纹识别目标是否运行 Allen-Bradley CompactLogix Series PLC 相关设备或控制系统。
   metadata:
     verified: true
     shodan-query: 'port:44818 "Vendor ID: Rockwell Automation/Allen-Bradley"'

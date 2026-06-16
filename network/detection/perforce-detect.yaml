@@ -1,11 +1,11 @@
 id: perforce-detection
 
 info:
-  name: Perforce Server - Detection
+  name: Perforce 服务 识别（服务漏洞）
   author: Morgan Robertson
   severity: info
   description: |
-    Detecetd Perforce server was identified by emulating the binary handshake of a "p4 info" command and matching server-side keywords in the response.
+    该模板通过网络响应特征识别目标是否开放 Perforce Server 相关服务。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

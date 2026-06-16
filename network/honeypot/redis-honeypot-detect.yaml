@@ -1,12 +1,11 @@
 id: redis-honeypot-detect
 
 info:
-  name: Redis Honeypot - Detect
+  name: Redis 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Redis honeypot has been identified.
-    The response to the 'QUIT' command differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 Redis Honeypot 蜜罐。
   classification:
     cpe: cpe:2.3:a:redis:redis:*:*:*:*:*:*:*:*
   metadata:

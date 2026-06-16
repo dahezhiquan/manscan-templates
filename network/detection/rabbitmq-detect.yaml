@@ -1,11 +1,11 @@
 id: rabbitmq-detect
 
 info:
-  name: RabbitMQ Detection
+  name: RabbitMQ 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    RabbitMQ is an open-source message-broker software that originally implemented the Advanced Message Queuing Protocol and has since been extended with a plug-in architecture to support Streaming Text Oriented Messaging Protocol, MQ Telemetry Transport, and other protocols.
+    该模板通过网络响应特征识别目标是否开放 RabbitMQ 相关服务。
   reference:
     - https://nmap.org/nsedoc/scripts/amqp-info.html
   metadata:

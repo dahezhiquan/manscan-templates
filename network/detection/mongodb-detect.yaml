@@ -1,11 +1,11 @@
 id: mongodb-detect
 
 info:
-  name: MongoDB Service - Detect
+  name: MongoDB 服务 识别（服务漏洞）
   author: pdteam
   severity: info
   description: |
-    MongoDB service was detected.
+    该模板通过网络响应特征识别目标是否开放 MongoDB Service 相关服务。
   reference:
     - https://github.com/orleven/Tentacle
   classification:

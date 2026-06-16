@@ -1,11 +1,11 @@
 id: ftp-detect
 
 info:
-  name: FTP Service - Detect
+  name: FTP 服务 识别（服务漏洞）
   author: Mys7ic
   severity: info
   description: |
-    FTP service was detected.
+    该模板通过网络响应特征识别目标是否开放 FTP Service 相关服务。
   reference:
     - https://www.rfc-editor.org/rfc/rfc959
   classification:

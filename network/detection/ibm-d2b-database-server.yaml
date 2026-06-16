@@ -1,11 +1,11 @@
 id: ibm-d2b-database-server
 
 info:
-  name: IBM DB2 Database Server - Detect
+  name: IBM DB2 Database 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    IBM DB2 Database Server panel was detected.
+    该模板通过网络响应特征识别目标是否开放 IBM DB2 Database Server 相关服务。
   reference:
     - https://nmap.org/nsedoc/scripts/db2-das-info.html
   classification:

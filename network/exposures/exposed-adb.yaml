@@ -1,10 +1,11 @@
 id: exposed-adb
 
 info:
-  name: Exposed Android Debug Bridge
+  name: Android Debug Bridge 暴露（服务漏洞）
   author: pdteam,pikpikcu
   severity: critical
-  description: An exposed Android debug bridge was discovered.
+  description: |
+    该模板检测 Android Debug Bridge 是否在网络侧直接开放。暴露的 ADB 端口可能允许远程控制设备、安装应用或访问数据。
   reference:
     - https://doublepulsar.com/root-bridge-how-thousands-of-internet-connected-android-devices-now-have-no-security-and-are-b46a68cb0f20
     - https://www.hackeracademy.org/how-to-hack-android-device-with-adb-android-debugging-bridge

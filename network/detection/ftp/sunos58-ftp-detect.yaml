@@ -1,9 +1,10 @@
 id: sunos58-ftp-detect
 info:
-  name: SunOS 5.8 FTP Service - Detect
+  name: SunOS 5.8 FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: SunOS 5.8 FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 SunOS 5.8 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "FTP server (SunOS 5.8)"

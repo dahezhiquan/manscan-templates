@@ -1,11 +1,11 @@
 id: shad0w-c2-jarm
 
 info:
-  name: Shad0w C2 JARM - Detect
+  name: Shad0w C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    SHAD0W is a modular C2 framework designed to successfully operate on mature environments.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Shad0w C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/bats3c/shad0w

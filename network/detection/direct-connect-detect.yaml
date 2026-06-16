@@ -1,7 +1,7 @@
 id: direct-connect-detect
 
 info:
-  name: Direct Connect P2P - Detect
+  name: Direct Connect 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   reference:

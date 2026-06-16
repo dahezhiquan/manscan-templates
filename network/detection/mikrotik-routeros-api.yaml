@@ -1,11 +1,11 @@
 id: mikrotik-routeros-api
 
 info:
-  name: MikroTik RouterOS API - Detect
+  name: MikroTik RouterOS API 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    MikroTik RouterOS API was detected.
+    该模板通过网络响应特征识别目标是否开放 MikroTik RouterOS API 相关服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

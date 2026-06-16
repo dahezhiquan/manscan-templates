@@ -1,11 +1,10 @@
 id: darktrack-rat-trojan
 
 info:
-  name: DarkTrack RAT Trojan - Detect
+  name: DarkTrack RAT 木马识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: |
-    DarkTrack is a malicious program classified as a Remote Access Trojan (RAT). This type of malware enables remote access and control over an infected device. The level of control these programs have varies, however, some can allow user-level manipulation of the affected machine.
+  description: 该模板通过协议特征或已知指纹识别目标是否与 DarkTrack RAT 木马相关的命令控制流量相匹配。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

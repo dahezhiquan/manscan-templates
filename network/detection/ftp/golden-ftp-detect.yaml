@@ -1,9 +1,10 @@
 id: golden-ftp-detect
 info:
-  name: Golden FTP Server Pro Service - Detect
+  name: Golden FTP 服务 Pro 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Golden FTP Server Pro service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Golden FTP Server Pro Service - Detect 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "Golden FTP Server Pro"

@@ -1,11 +1,11 @@
 id: apache-activemq-detect
 
 info:
-  name: Apache ActiveMQ Detection
+  name: Apache ActiveMQ 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Apache ActiveMQ is an open source message broker written in Java together with a full Java Message Service client. It provides "Enterprise Features" which in this case means fostering the communication from more than one client or server.
+    该模板通过网络响应特征识别目标是否开放 Apache ActiveMQ 相关服务。
   metadata:
     verified: true
     max-request: 1

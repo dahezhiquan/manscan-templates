@@ -1,11 +1,11 @@
 id: smtp-user-enum
 
 info:
-  name: SMTP User Enumeration
+  name: SMTP 用户枚举（服务漏洞）
   author: pussycat0x,userdehghani
   severity: medium
   description: |
-    enumerate the users on a SMTP server by issuing the VRFY/EXPN commands
+    该模板通过协议交互枚举 SMTP User Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-enum-users.html
   metadata:

@@ -1,11 +1,11 @@
 id: clamav-detect
 
 info:
-  name: ClamAV Server Detect
+  name: ClamAV 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Clam AntiVirus is a free software, cross-platform antimalware toolkit able to detect many types of malware, including viruses.
+    该模板通过网络响应特征识别目标是否开放 ClamAV Server 相关服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: axigen-mail-server-detect
 
 info:
-  name: Axigen Mail Server Detection
+  name: Axigen Mail 服务 识别（服务漏洞）
   author: pikpikcu
   severity: info
   description: |
-    Axigen Mail Server was detected.
+    该模板通过网络响应特征识别目标是否开放 Axigen Mail Server 相关服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,9 +1,10 @@
 id: blackmoon-free-ftp-detect
 info:
-  name: BlackMoon FTP Free Edition Service - Detect
+  name: BlackMoon FTP Free Edition 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: BlackMoon FTP Free Edition service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 BlackMoon FTP Free Edition Service - Detect 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "BlackMoon FTP Server - Free Edition"

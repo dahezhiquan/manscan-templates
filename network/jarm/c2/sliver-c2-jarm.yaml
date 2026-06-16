@@ -1,11 +1,11 @@
 id: sliver-c2-jarm
 
 info:
-  name: Sliver C2 JARM - Detect
+  name: Sliver C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. Sliver's implants support C2 over Mutual TLS (mTLS), WireGuard, HTTP(S), and DNS and are dynamically compiled with per-binary asymmetric encryption keys.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Sliver C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/BishopFox/sliver

@@ -1,9 +1,10 @@
 id: gene6-ftp-detect
 info:
-  name: Gene6 FTP Service - Detect
+  name: Gene6 FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Gene6 FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Gene6 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "Gene6 FTP Server"

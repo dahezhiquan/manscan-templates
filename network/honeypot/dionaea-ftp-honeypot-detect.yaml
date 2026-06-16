@@ -1,12 +1,11 @@
 id: dionaea-ftp-honeypot-detect
 
 info:
-  name: Dionaea FTP Honeypot - Detect
+  name: Dionaea FTP 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Dionaea FTP honeypot has been identified.
-    The response to the 'PASS' command differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea FTP Honeypot 蜜罐。
   metadata:
     max-request: 1
     vendor: dionaea

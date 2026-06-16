@@ -1,11 +1,11 @@
 id: jdwp-detect
 
 info:
-  name: Java Debug Wire Protocol - Detect
+  name: Java Debug Wire 协议 识别（服务漏洞）
   author: johnk3r
   severity: info
   description: |
-    JDWP, short for Java Debug Wire Protocol, is a standard feature in the Java platform, designed to help developers debug live applications. It allows remote inspection of threads, memory, and execution flow without restarting the application. To enable it, developers typically start the JVM with a flag like the one below. This setup tells the JVM to listen for debugger connections on port 5005 and accept incoming connections on all interfaces.
+    该模板通过网络响应特征识别目标是否开放 Java Debug Wire Protocol 相关服务。
   reference:
     - https://www.wiz.io/blog/exposed-jdwp-exploited-in-the-wild
   metadata:

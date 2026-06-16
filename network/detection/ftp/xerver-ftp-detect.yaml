@@ -1,9 +1,10 @@
 id: xerver-ftp-detect
 info:
-  name: Xerver Free FTP Service - Detect
+  name: Xerver Free FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Xerver Free FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Xerver Free 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "Xerver Free FTP Server"

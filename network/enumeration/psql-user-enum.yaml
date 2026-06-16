@@ -1,11 +1,11 @@
 id: psql-user-enum
 
 info:
-  name: PostgreSQL - User Enumeration
+  name: PostgreSQL 用户枚举（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    PSQL user enumeration.
+    该模板通过协议交互枚举 PostgreSQL - User Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
   reference:
     - https://medium.com/@netscylla/pentesters-guide-to-postgresql-hacking-59895f4f007
   metadata:

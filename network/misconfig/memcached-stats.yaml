@@ -1,11 +1,10 @@
 id: memcached-stats
 
 info:
-  name: Memcached stats disclosure
+  name: Memcached 统计信息泄露（服务漏洞）
   author: pdteam
   severity: low
-  description: |
-    Memcached stats is used to return server statistics such as PID, version, connections, etc.
+  description: 该模板用于检测 Memcached 服务是否允许未认证读取统计信息。命中说明运行状态、键数量和资源使用情况可能被外部直接探测。
   metadata:
     max-request: 1
   tags: network,memcached,misconfig,tcp,vuln

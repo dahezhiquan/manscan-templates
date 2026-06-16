@@ -1,11 +1,11 @@
 id: exposed-dockerd
 
 info:
-  name: Docker Daemon Exposed
+  name: Docker Daemon 暴露（服务漏洞）
   author: arafatansari
   severity: critical
   description: |
-    Docker Daemon exposed on the network map can help remote attacker to gain access to the Docker containers and potentially the host system.
+    该模板检测 Docker Daemon 是否在网络侧直接暴露。若未启用认证或仅依赖错误的边界配置，攻击者可能直接控制容器与宿主环境。
   metadata:
     verified: true
     max-request: 1

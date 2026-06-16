@@ -1,11 +1,11 @@
 id: unauth-java-message-broker-detect
 
 info:
-  name: Unauthenticated Java Message Broker - Detect
+  name: Unauthenticated Java Message Broker 识别（服务漏洞）
   author: matejsmycka
   severity: low
   description: |
-    Detection of a Java Message Service (JMS) broker, typically used by Oracle GlassFish Message Queue and Payara Application Server. This port should remain closed to the internet, as it enables unauthenticated access to messaging services.
+    该模板通过网络响应特征识别目标是否开放 Unauthenticated Java Message Broker 相关服务。
   metadata:
     verified: true
     shodan-query: product:"Java Message Service"

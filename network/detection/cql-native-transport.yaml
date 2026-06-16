@@ -1,11 +1,11 @@
 id: cql-native-transport
 
 info:
-  name: CQL Native Transport Detect
+  name: CQL Native 传输 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Native transport requests (NTR) are any requests made via the CQL Native Protocol. CQL Native Protocol is the way the Cassandra driver communicates with the server.
+    该模板通过网络响应特征识别目标是否开放 CQL Native Transport 相关服务。
   metadata:
     verified: true
     max-request: 1

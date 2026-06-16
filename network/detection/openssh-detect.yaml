@@ -1,11 +1,11 @@
 id: openssh-detect
 
 info:
-  name: OpenSSH Service - Detect
+  name: OpenSSH 服务 识别（服务漏洞）
   author: r3dg33k,daffainfo,iamthefrogy
   severity: info
   description: |
-    OpenSSH service was detected.
+    该模板通过网络响应特征识别目标是否开放 OpenSSH Service 相关服务。
   reference:
     - http://www.openwall.com/lists/oss-security/2016/08/01/2
     - http://www.openwall.com/lists/oss-security/2018/08/15/5

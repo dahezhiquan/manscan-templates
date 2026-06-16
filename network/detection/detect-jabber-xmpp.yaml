@@ -1,10 +1,11 @@
 id: detect-jabber-xmpp
 
 info:
-  name: Jabber XMPP Protocol - Detect
+  name: Jabber XMPP 协议 识别（服务漏洞）
   author: geeknik
   severity: info
-  description: Jabber XMPP protocol was detected.
+  description: |
+    该模板通过网络响应特征识别目标是否开放 Jabber XMPP Protocol 相关服务。
   reference:
     - https://datatracker.ietf.org/doc/html/rfc6120
   classification:

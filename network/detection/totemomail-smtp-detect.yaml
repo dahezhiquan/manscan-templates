@@ -1,11 +1,11 @@
 id: totemomail-smtp-detect
 
 info:
-  name: Totemomail SMTP Server Detection
+  name: Totemomail SMTP 服务 识别（服务漏洞）
   author: princechaddha,userdehghani
   severity: info
   description: |
-    Totemomail is a comprehensive email solution designed to address all aspects of digital communication security.
+    该模板通过网络响应特征识别目标是否开放 Totemomail SMTP Server 相关服务。
   metadata:
     max-request: 1
   tags: mail,smtp,network,totemomail,detect,detection,tcp,discovery

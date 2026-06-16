@@ -1,11 +1,11 @@
 id: beanstalk-service
 
 info:
-  name: Beanstalk Service - Detect
+  name: Beanstalk 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Beanstalk is a simple, fast work queue. Its interface is generic, but was originally designed for reducing the latency of page views in high-volume web applications by running time-consuming tasks asynchronously.
+    该模板通过协议交互枚举 Beanstalk 相关服务的版本、配置、用户或其他可公开获取的信息。
   reference:
     - https://jhadiary.wordpress.com/2016/05/18/beanstalk-helping-commands/
   metadata:

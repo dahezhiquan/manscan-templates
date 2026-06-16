@@ -1,15 +1,17 @@
 id: printers-info-leak
 
 info:
-  name: Unauthorized Printer Access
+  name: 打印机未授权访问（服务漏洞）
   author: pussycat0x,matejsmycka
   severity: info
   description: |
-    Unauthorized access to printers allows attackers to print, eavesdrop sensitive documents.
+    该模板检测网络打印设备是否允许未授权访问。命中说明打印任务、设备配置或文档内容可能被直接读取或操控。
   impact: |
-     Attackers can gain access to sensitive printed documents, manipulate print jobs, and potentially compromise printer security
+    - 攻击者可能查看、拦截或篡改敏感打印文档。
+    - 打印设备还可能被用作内网探测入口或进一步横向移动跳板。
   remediation: |
-     Implement proper network segmentation, disable unnecessary printer services, and ensure printers are not directly accessible from untrusted networks.
+    - 对打印设备实施网络分区，关闭不必要的远程服务。
+    - 为打印管理接口启用认证，并限制仅允许受信任网段访问。
   reference:
     - https://book.hacktricks.wiki/en/network-services-pentesting/9100-pjl.html
     - https://en.wikipedia.org/wiki/Printer_Job_Language

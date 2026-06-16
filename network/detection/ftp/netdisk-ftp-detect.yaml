@@ -1,9 +1,10 @@
 id: netdisk-ftp-detect
 info:
-  name: NET Disk FTP Service - Detect
+  name: NET Disk FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: NET Disk FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 NET Disk 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "NET Disk FTP Server ready"

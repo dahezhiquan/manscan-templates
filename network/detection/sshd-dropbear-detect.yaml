@@ -1,11 +1,11 @@
 id: sshd-dropbear-detect
 
 info:
-  name: Dropbear sshd Detection
+  name: Dropbear sshd 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Dropbear is a software package written by Matt Johnston that provides a Secure Shell-compatible server and client. It is designed as a replacement for standard OpenSSH for environments with low memory and processor resources, such as embedded systems
+    该模板通过网络响应特征识别目标是否开放 Dropbear sshd 相关服务。
   metadata:
     verified: true
     max-request: 1

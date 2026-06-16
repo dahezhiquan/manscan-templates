@@ -1,10 +1,11 @@
 id: exposed-redis
 
 info:
-  name: Redis Server - Unauthenticated Access
+  name: Redis 未认证访问（服务漏洞）
   author: pdteam
   severity: high
-  description: Redis server without any required authentication was discovered.
+  description: |
+    该模板检测 Redis 服务是否在无认证保护的情况下对外开放。命中通常意味着数据库、缓存内容和危险管理命令可被直接访问。
   reference:
     - https://redis.io/topics/security
   classification:

@@ -1,11 +1,11 @@
 id: nfs-v3-exposed
 
 info:
-  name: NFSv3 Exposed
+  name: NFSv3 暴露d 识别（服务漏洞）
   author: johnk3r
   severity: info
   description: |
-    This version of the protocol did not implement native encryption and transmitted all data in clear text over the network. Also, this version of NFSv3 relied on client IP address and UID/GID matching for authentication,mechanisms that were easily bypassed by attackers with control over their client machines.
+    该模板通过网络响应特征识别目标是否开放 NFSv3 Exposed 相关服务。
   reference:
     - https://medium.com/@zoomeye_team/threat-intell-report-nfs-exposed-the-silent-attack-vector-8aa4ea0cbce1
   metadata:

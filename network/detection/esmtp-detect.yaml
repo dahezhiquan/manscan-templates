@@ -1,11 +1,11 @@
 id: esmtp-detect
 
 info:
-  name: ESMTP - Detect
+  name: ESMTP 识别（服务漏洞）
   author: pussycat0x,userdehghani
   severity: info
   description: |
-    ESMTP was detected.
+    该模板通过网络响应特征识别目标是否开放 ESMTP 相关服务。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-open-relay.html
   classification:

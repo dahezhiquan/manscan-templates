@@ -1,11 +1,11 @@
 id: teamspeak3-detect
 
 info:
-  name: TeamSpeak 3 ServerQuery Detection
+  name: TeamSpeak 3 服务Query 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    ServerQuery is a commandline based administration tool/feature of TeamSpeak 3 server.
+    该模板通过网络响应特征识别目标是否开放 TeamSpeak 3 ServerQuery 相关服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: kafka-topics-list
 
 info:
-  name: Kafka Topics Enumeration
+  name: Kafka Topics 枚举（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Kafka topics are logical data streams that store and organize messages in Apache Kafka. They provide a way for data to be published, subscribed to, and processed by Kafka consumers.
+    该模板通过协议交互枚举 Kafka Topics Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,10 @@
 id: niagara-fox-info-enum
 
 info:
-  name: Niagara Fox Protocol Information Enumeration
+  name: Niagara Fox 协议信息枚举（服务漏洞）
   author: pussycat0x
   severity: info
-  description: |
-    Niagara Fox Protocol is a building automation protocol used between the Niagara software systems by Tridium.
+  description: 该模板通过协议交互枚举 Niagara Fox 服务返回的版本、主机与运行环境信息。
   reference:
     - https://nmap.org/nsedoc/scripts/fox-info.html
   metadata:

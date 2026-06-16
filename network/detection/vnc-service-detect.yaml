@@ -1,10 +1,11 @@
 id: vnc-service-detect
 
 info:
-  name: VNC Service Detection
+  name: VNC 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: A Virtual Network Computing (VNC) service was detected.
+  description: |
+    该模板通过网络响应特征识别目标是否开放 VNC Service 相关服务。
   classification:
     cwe-id: CWE-200
   metadata:

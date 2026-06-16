@@ -1,11 +1,11 @@
 id: finger-detect
 
 info:
-  name: Finger Daemon Detection
+  name: Finger Daemon 识别（服务漏洞）
   author: DhiyaneshDK
   severity: info
   description: |
-    The finger daemon runs on TCP port 79. The client will (in the case of remote hosts) open a connection to port 79.
+    该模板通过网络响应特征识别目标是否开放 Finger Daemon 相关服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: bluecoat-telnet-proxy-detect
 
 info:
-  name: BlueCoat Telnet Proxy - Detect
+  name: BlueCoat Telnet 代理 识别（服务漏洞）
   author: righettod
   severity: info
   description: |
-    Detects Blue Coat telnet proxy services.
+    该模板通过网络响应特征识别目标是否开放 BlueCoat Telnet Proxy 相关服务。
   reference:
     - https://en.wikipedia.org/wiki/Blue_Coat_Systems
     - https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/about-ssl-proxy.html

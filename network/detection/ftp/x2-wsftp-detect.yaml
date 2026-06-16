@@ -1,9 +1,10 @@
 id: x2-wsftp-detect
 info:
-  name: X2 WS_FTP Service - Detect
+  name: X2 WS_FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: X2 WS_FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 X2 WS_ 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "X2 WS_FTP Server"

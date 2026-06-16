@@ -1,11 +1,11 @@
 id: bitvise-detect
 
 info:
-  name: SSH Bitvise Service - Detect
+  name: SSH Bitvise 服务 识别（服务漏洞）
   author: abdullahisik
   severity: info
   description: |
-    Bitvise SSH service was detected.
+    该模板通过网络响应特征识别目标是否开放 SSH Bitvise Service 相关服务。
   reference:
     - https://www.bitvise.com/
     - https://vulners.com/openvas/OPENVAS:1361412562310813387

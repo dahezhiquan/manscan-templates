@@ -1,10 +1,11 @@
 id: msmq-detect
 
 info:
-  name: MSMQ (Microsoft Message Queuing Service) Remote - Detect
+  name: MSMQ (Microsoft Message Queuing 服务) Remote 识别（服务漏洞）
   author: bhutch
   severity: info
-  description: Detects remote MSMQ services. Public exposure of this service may be a misconfiguration.
+  description: |
+    该模板通过网络响应特征识别目标是否开放 MSMQ (Microsoft Message Queuing Service) Remote 相关服务。
   reference:
     - https://www.shadowserver.org/what-we-do/network-reporting/accessible-msmq-service-report/
     - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-mqqb/f9bbe350-d70b-4e90-b9c7-d39328653166

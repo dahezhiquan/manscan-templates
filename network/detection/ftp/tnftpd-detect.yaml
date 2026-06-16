@@ -1,11 +1,11 @@
 id: tnftpd-detect
 
 info:
-  name: TNFTPD Service - Detect
+  name: TNFTPD 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    TNFTPD Service service was detected.
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 TNFTPD Service - Detect 相关 FTP 服务实现。
   metadata:
     verified: true
     max-request: 1

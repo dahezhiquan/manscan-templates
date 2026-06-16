@@ -1,11 +1,11 @@
 id: aws-sftp-detect
 
 info:
-  name: AWS SFTP Service - Detect
+  name: AWS SFTP 服务 识别（服务漏洞）
   author: johnk3r
   severity: info
   description: |
-    AWS-SFTP service was detected.
+    该模板通过网络响应特征识别目标是否开放 AWS SFTP Service 相关服务。
   reference:
     - https://aws.amazon.com/pt/about-aws/whats-new/2018/11/aws-transfer-for-sftp-fully-managed-sftp-for-s3/
   classification:

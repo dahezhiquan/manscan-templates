@@ -1,11 +1,11 @@
 id: rtsp-detect
 
 info:
-  name: RTSP - Detect
+  name: RTSP 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    RTSP was detected.
+    该模板通过网络响应特征识别目标是否开放 RTSP 相关服务。
   reference:
     - https://nmap.org/nsedoc/scripts/rtsp-methods.html
   classification:

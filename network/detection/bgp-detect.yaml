@@ -1,11 +1,11 @@
 id: bgp-detect
 
 info:
-  name: BGP Detection
+  name: BGP 识别（服务漏洞）
   author: danfaizer
   severity: info
   description: |
-    The remote host is running BGP, a popular routing protocol. This indicates that the remote host is probably a network router.
+    该模板通过网络响应特征识别目标是否开放 BGP 相关服务。
   reference:
     - https://www.acunetix.com/vulnerabilities/network/vulnerability/bgp-detection/
     - https://www.tenable.com/plugins/nessus/11907

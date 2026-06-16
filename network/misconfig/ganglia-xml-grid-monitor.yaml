@@ -1,10 +1,11 @@
 id: ganglia-xml-grid-monitor
 
 info:
-  name: Ganglia XML Grid Monitor
+  name: Ganglia XML Grid Monitor（服务漏洞）
   author: geeknik
   severity: low
-  description: Ganglia is a scalable distributed monitoring system for high-performance computing systems such as clusters and Grids.
+  description: |
+    该模板用于检测 Ganglia XML Grid Monitor 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
   reference:
     - http://ganglia.info/
   metadata:

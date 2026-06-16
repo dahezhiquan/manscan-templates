@@ -1,9 +1,10 @@
 id: medusa-ftp-detect
 info:
-  name: Medusa Async FTP Service - Detect
+  name: Medusa Async FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Medusa Async FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Medusa Async 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "FTP server (Medusa Async"

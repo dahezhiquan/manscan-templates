@@ -1,11 +1,11 @@
 id: fortinet-fgfm-detect
 
 info:
-  name: Fortinet FGFM protocol - Detect
+  name: Fortinet FGFM protocol 识别（服务漏洞）
   author: johnk3r
   severity: info
   description: |
-    FortiGate to FortiManager Protocol (FGFM) was detected.
+    该模板通过网络响应特征识别目标是否开放 Fortinet FGFM protocol 相关服务。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/529217/fortios-ports-and-protocols
   metadata:

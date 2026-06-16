@@ -1,11 +1,11 @@
 id: schneider-modicon-580-detect
 
 info:
-  name: Schneider Electric Modicon 580 Series PLC - Detect
+  name: Schneider Electric Modicon 580 Series PLC 识别（服务漏洞）
   author: biero-el-corridor
   severity: info
   description: |
-    Detected Schneider Electric Modicon 580 series PLCs by identifying the BME P58 signature via the UMAS protocol over Modbus TCP (port 502).The Modicon 580 series is part of Schneider Electric’s industrial automation product line used in Industrial Control Systems (ICS).
+    该模板通过工业协议指纹识别目标是否运行 Schneider Electric Modicon 580 Series PLC 相关设备或控制系统。
   metadata:
     verified: true
     max-request: 2

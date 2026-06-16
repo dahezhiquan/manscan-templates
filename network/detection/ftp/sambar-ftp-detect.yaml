@@ -1,11 +1,11 @@
 id: sambar-ftp-detect
 
 info:
-  name: Sambar FTP Service - Detect
+  name: Sambar FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    The File Transfer Protocol (FTP) is a standard network protocol that transfers computer files between a client and server on a computer network.
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Sambar 相关 FTP 服务实现。
   metadata:
     max-request: 1
     shodan-query: "Sambar FTP Server"

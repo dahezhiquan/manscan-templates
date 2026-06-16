@@ -1,11 +1,11 @@
 id: exim-detect
 
 info:
-  name: Exim - Detect
+  name: Exim 识别（服务漏洞）
   author: ricardomaia,userdehghani
   severity: info
   description: |
-    Exim can accept messages from remote hosts using SMTP over TCP/IP, and as well as from local processes. It handles local deliveries to mailbox files or to pipes attached to commands, as well as remote SMTP deliveries to other hosts.
+    该模板通过网络响应特征识别目标是否开放 Exim 相关服务。
   reference:
     - https://www.exim.org/docs.html
   classification:

@@ -1,11 +1,11 @@
 id: iplanet-imap-detect
 
 info:
-  name: iPlanet Messaging Server IMAP Protocol - Detection
+  name: iPlanet Messaging 服务 IMAP 协议 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    iPlanet Messaging Server IMAP protocol was detected.
+    该模板通过网络响应特征识别目标是否开放 iPlanet Messaging Server IMAP Protocol 相关服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

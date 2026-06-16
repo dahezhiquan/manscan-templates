@@ -1,12 +1,11 @@
 id: mailoney-honeypot-detect
 
 info:
-  name: Mailoney Honeypot - Detect
+  name: Mailoney 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Mailoney (SMTP) honeypot has been identified.
-    The response to the 'HELP' command differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 Mailoney Honeypot 蜜罐。
   metadata:
     max-request: 1
     vendor: mailoney

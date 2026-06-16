@@ -1,12 +1,11 @@
 id: cowrie-ssh-honeypot-detect
 
 info:
-  name: Cowrie SSH Honeypot - Detect
+  name: Cowrie SSH 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Cowrie (or Twisted) SSH honeypot has been identified.
-    The response to a wrong SSH version differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 Cowrie SSH Honeypot 蜜罐。
   metadata:
     max-request: 1
     vendor: cowrie

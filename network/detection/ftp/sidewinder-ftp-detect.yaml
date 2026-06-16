@@ -1,9 +1,10 @@
 id: sidewinder-ftp-detect
 info:
-  name: Sidewinder FTP Proxy Service - Detect
+  name: Sidewinder FTP 代理 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Sidewinder FTP Proxy service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 Sidewinder FTP Proxy Service - Detect 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: "Sidewinder ftp proxy"

@@ -1,7 +1,7 @@
 id: afp-server-detect
 
 info:
-  name: AFP Server Detect
+  name: AFP 服务识别（服务漏洞）
   author: pussycat0x
   severity: info
   reference:

@@ -1,13 +1,11 @@
 id: clamav-unauth
 
 info:
-  name: ClamAV Server - Unauthenticated Access
+  name: ClamAV 服务 未认证访问（服务漏洞）
   author: dwisiswant0
   severity: high
   description: |
-    ClamAV server 0.99.2, and possibly other previous versions, allow the execution
-    of dangerous service commands without authentication. Specifically, the command 'SCAN'
-    may be used to list system files and the command 'SHUTDOWN' shut downs the service.
+    该模板用于检测 ClamAV Server 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
   reference:
     - https://seclists.org/nmap-dev/2016/q2/201
     - https://bugzilla.clamav.net/show_bug.cgi?id=11585

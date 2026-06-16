@@ -1,11 +1,10 @@
 id: smtp-commands-enum
 
 info:
-  name: SMTP Commands Enumeration
+  name: SMTP 命令枚举（服务漏洞）
   author: pussycat0x,userdehghani,AV-IO
   severity: info
-  description: |
-    Attempts to use EHLO and HELP to gather the Extended commands supported by an SMTP server.
+  description: 该模板通过协议交互枚举 SMTP 服务支持的命令与可公开获取的响应特征。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-commands.html
   metadata:

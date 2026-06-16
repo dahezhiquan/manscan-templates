@@ -1,10 +1,10 @@
 id: sap-router-info-leak
 
 info:
-  name: SAPRouter - Routing information leak
+  name: SAPRouter 路由信息泄露（服务漏洞）
   author: randomstr1ng
   severity: critical
-  description: SAPRouter contains an information leakage vulnerability.
+  description: 该模板用于检测 SAPRouter 是否向未授权访问者泄露路由与网络拓扑相关信息。
   reference:
     - https://securityforeveryone.com/tools/saprouter-routing-information-leakage-vulnerability-scanner
     - https://support.sap.com/en/tools/connectivity-tools/saprouter.html

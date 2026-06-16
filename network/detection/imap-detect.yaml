@@ -1,11 +1,11 @@
 id: imap-detect
 
 info:
-  name: IMAP - Detect
+  name: IMAP 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    IMAP was detected.
+    该模板通过网络响应特征识别目标是否开放 IMAP 相关服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

@@ -1,11 +1,11 @@
 id: clockwatch-enterprise-rce
 
 info:
-  name: ClockWatch Enterprise - Remote Code Execution
+  name: ClockWatch Enterprise 远程代码执行漏洞（服务漏洞）
   author: gy741
   severity: critical
   description: |
-    ClockWatch Enterprise is susceptible to remote code execution.
+    该模板检测 ClockWatch Enterprise 的远程代码执行风险。命中说明攻击者可能通过网络侧交互触发命令执行。
   reference:
     - https://blog.grimm-co.com/2021/07/old-dog-same-tricks.html
   classification:

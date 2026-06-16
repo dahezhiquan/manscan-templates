@@ -1,11 +1,11 @@
 id: famatech-radmin-detect
 
 info:
-  name: Famatech Radmin - Detect
+  name: Famatech Radmin 识别（服务漏洞）
   author: matejsmycka
   severity: info
   description: |
-    Detected the Famatech Radmin service running on TCP port 4899. It was used as zero-configuration remote control software.
+    该模板通过网络响应特征识别目标是否开放 Famatech Radmin 相关服务。
   reference:
     - https://www.famatech.com/
     - https://seclists.org/nmap-dev/2008/q1/89

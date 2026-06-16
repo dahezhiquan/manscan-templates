@@ -1,11 +1,11 @@
 id: generic-c2-jarm
 
 info:
-  name: Generic C2 JARM - Detect
+  name: Generic C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Detect C2 Servers with JARM Hashes
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Generic C2 相关命令控制基础设施。
   reference:
     - https://github.com/MichaelKoczwara/C2JARM
   metadata:

@@ -1,10 +1,11 @@
 id: riak-detect
 
 info:
-  name: Riak Detection
+  name: Riak 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: Riak is a distributed NoSQL key-value data store that offers high availability, fault tolerance, operational simplicity, and scalability.
+  description: |
+    该模板通过网络响应特征识别目标是否开放 Riak 相关服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,9 +1,10 @@
 id: 3com-ftp-detect
 info:
-  name: 3Com 3CDaemon FTP Service - Detect
+  name: 3Com 3CDaemon FTP 服务 识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: 3Com 3CDaemon FTP service was detected.
+  description: |
+    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 3Com 3CDaemon 相关 FTP 服务实现。
   metadata:
     verified: true
     shodan-query: 3Com 3CDaemon FTP

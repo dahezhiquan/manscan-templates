@@ -1,11 +1,11 @@
 id: allen-bradley-micro800-detect
 
 info:
-  name: Allen-Bradley Micro800 Series PLC - Detect
+  name: Allen-Bradley Micro800 Series PLC 识别（服务漏洞）
   author: biero-el-corridor
   severity: info
   description: |
-    Detected Allen-Bradley (Rockwell Automation) Micro800 series PLCs by identifying the 2080- model prefix via the EtherNet/IP CIP protocol over port 44818. The Micro800 series is a compact PLC family widely used in industrial automation and control systems.
+    该模板通过工业协议指纹识别目标是否运行 Allen-Bradley Micro800 Series PLC 相关设备或控制系统。
   metadata:
     shodan-query: 'port:44818 "Vendor ID: Rockwell Automation/Allen-Bradley"'
   tags: ics,allen-bradley,micro800,detect,network,tcp

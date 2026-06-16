@@ -1,11 +1,11 @@
 id: rtl-tcp-server-detect
 
 info:
-  name: RTL-TCP Server Detection
+  name: RTL-TCP 服务 识别（服务漏洞）
   author: RandomRobbie
   severity: info
   description: |
-    Discovers RTL-TCP servers utilized for Software Defined Radio (SDR). RTL-TCP enables remote access to RTL-SDR dongles via TCP connections. These servers are compatible with SDR applications such as SDR#, GQRX, CubicSDR, and others
+    该模板通过网络响应特征识别目标是否开放 RTL-TCP Server 相关服务。
   reference:
     - https://github.com/steve-m/librtlsdr
     - https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr

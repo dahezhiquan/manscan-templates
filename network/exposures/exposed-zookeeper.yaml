@@ -1,10 +1,11 @@
 id: exposed-zookeeper
 
 info:
-  name: Apache ZooKeeper - Unauthenticated Access
+  name: Apache ZooKeeper 未认证访问（服务漏洞）
   author: pdteam
   severity: high
-  description: Apache ZooKeeper was able to be accessed without any required authentication.
+  description: |
+    该模板检测 Apache ZooKeeper 是否允许未认证访问管理接口。命中说明节点状态、配置信息或协调数据可能被直接读取甚至修改。
   reference:
     - https://zookeeper.apache.org/security.html
   metadata:

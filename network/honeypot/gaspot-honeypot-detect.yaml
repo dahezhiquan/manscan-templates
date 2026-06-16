@@ -1,12 +1,11 @@
 id: gaspot-honeypot-detect
 
 info:
-  name: GasPot Honeypot - Detect
+  name: GasPot 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A GasPot honeypot has been identified.
-    The response to the '^AI21400' command differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 GasPot Honeypot 蜜罐。
   metadata:
     max-request: 1
     vendor: gaspot

@@ -1,11 +1,11 @@
 id: sap-router-detect
 
 info:
-  name: SAProuter - Detect
+  name: SAProuter 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    The SAProuter is a proxy program that controls and secures communication between SAP systems and external networks.
+    该模板通过网络响应特征识别目标是否开放 SAProuter 相关服务。
   metadata:
     verified: true
     shodan-query: product:"SAProuter"

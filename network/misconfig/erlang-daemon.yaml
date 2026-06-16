@@ -1,11 +1,11 @@
 id: erlang-daemon
 
 info:
-  name: Erlang Port Mapper Daemon
+  name: Erlang Port Mapper Daemon（服务漏洞）
   author: pussycat0x,daffainfo
   severity: low
   description: |
-    The erlang port mapper daemon is used to coordinate distributed erlang instances. His job is to keep track of which node name listens on which address. Hence, epmd map symbolic node names to machine addresses.
+    该模板用于检测 Erlang Port Mapper Daemon 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
   reference:
     - https://nmap.org/nsedoc/scripts/epmd-info.html
     - https://book.hacktricks.xyz/network-services-pentesting/4369-pentesting-erlang-port-mapper-daemon-epmd

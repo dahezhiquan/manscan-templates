@@ -1,11 +1,11 @@
 id: checkmk-info-disclosure
 
 info:
-  name: Checkmk Agent Info Disclosure
+  name: Checkmk Agent 信息泄露（服务漏洞）
   author: ivaldivieso,s4e-io
   severity: medium
   description: |
-    The Checkmk agent had exposed sensitive system information on TCP port 6556 without requiring authentication.
+    该模板检测 Checkmk Agent 是否在 TCP 6556 端口无认证暴露系统信息。命中意味着主机指标、服务状态与环境信息可能被直接收集。
   reference:
     - https://medium.com/@Th3hound/the-hidden-danger-of-the-exposed-checkmk-agent-mapping-your-infrastructure-for-attackers-151cc2180e73
   metadata:

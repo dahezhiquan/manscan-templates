@@ -1,11 +1,11 @@
 id: openclaw-exposure
 
 info:
-  name: Openclaw (formerly Clawdbot / Moltbot) - Detect
+  name: Openclaw (formerly Clawdbot / Moltbot) 识别（服务漏洞）
   author: rxerium,fullstackpotato
   severity: info
   description: |
-    Clawdbot Gateway service was detected exposing configuration information via mDNS including DNS settings, gateway details, and service configuration.
+    该模板用于识别 Openclaw (formerly Clawdbot / Moltbot) - Detect 相关服务是否因暴露或认证缺失而可被未授权访问。
   classification:
     cwe-id: CWE-200
   metadata:

@@ -1,12 +1,11 @@
 id: mythic-c2-jarm
 
 info:
-  name: Mythic C2 JARM - Detect
+  name: Mythic C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    A cross-platform, post-exploit, red teaming framework built with python3, docker, docker-compose, and a web browser UI.
-    It's designed to provide a collaborative and user friendly interface for operators, managers, and reporting throughout red teaming.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Mythic C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/

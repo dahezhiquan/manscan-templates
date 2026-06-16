@@ -1,11 +1,11 @@
 id: rsyncd-service-detect
 
 info:
-  name: Rsyncd Service - Detect
+  name: Rsyncd 服务 识别（服务漏洞）
   author: vsh00t,geeknik
   severity: info
   description: |
-    Rsyncd service was detected.
+    该模板通过网络响应特征识别目标是否开放 Rsyncd Service 相关服务。
   reference:
     - https://linux.die.net/man/1/rsync
   classification:

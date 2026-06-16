@@ -1,10 +1,11 @@
 id: tidb-unauth
 
 info:
-  name: TiDB - Unauthenticated Access
+  name: TiDB 未认证访问（服务漏洞）
   author: lu4nx
   severity: high
-  description: TiDB server was able to be accessed because no authentication was required.
+  description: |
+    该模板用于检测 TiDB 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
   metadata:
     max-request: 1
     zoomeye-query: '"tidb" && port=4000'

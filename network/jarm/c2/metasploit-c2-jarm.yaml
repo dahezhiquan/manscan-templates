@@ -1,11 +1,11 @@
 id: metasploit-c2-jarm
 
 info:
-  name: Metasploit C2 JARM - Detect
+  name: Metasploit C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    A Metasploit Framework is a powerful tool that provides a universal interface to work with vulnerability exploit code. It has to exploit code for a wide range of vulnerabilities that impact web servers, OSes, network equipment, and everything in between. Metasploit which serves as both exploitation and C2 frameworks.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Metasploit C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/

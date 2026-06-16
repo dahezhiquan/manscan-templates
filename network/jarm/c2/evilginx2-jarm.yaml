@@ -1,11 +1,11 @@
 id: evilginx2-jarm
 
 info:
-  name: EvilGinx2 JARM - Detect
+  name: EvilGinx2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Evilginx2 is a man-in-the-middle attack framework used for phishing login credentials along with session cookies which in turn allows bypassing 2-factor authentication protection.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 EvilGinx2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/kgretzky/evilginx2

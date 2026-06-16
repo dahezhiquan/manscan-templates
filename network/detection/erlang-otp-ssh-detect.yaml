@@ -1,11 +1,11 @@
 id: erlang-otp-ssh-detect
 
 info:
-  name: Erlang/OTP SSH Server - Detect
+  name: Erlang/OTP SSH 服务 识别（服务漏洞）
   author: darses
   severity: info
   description: |
-    Detects Erlang/OTP SSH servers and parses the version number from the banner.
+    该模板通过网络响应特征识别目标是否开放 Erlang/OTP SSH Server 相关服务。
   metadata:
     shodan-query: 'SSH-2.0-Erlang'
     max-request: 1

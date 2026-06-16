@@ -1,11 +1,11 @@
 id: mikrotik-ssh-detect
 
 info:
-  name: MikroTik RouterOS SSH - Detect
+  name: MikroTik RouterOS SSH 识别（服务漏洞）
   author: staticnoise
   severity: info
   description: |
-    MikroTik RouterOS SSH was detected.
+    该模板通过网络响应特征识别目标是否开放 MikroTik RouterOS SSH 相关服务。
   reference:
     - http://www.openwall.com/lists/oss-security/2016/08/01/2
     - http://www.openwall.com/lists/oss-security/2018/08/15/5

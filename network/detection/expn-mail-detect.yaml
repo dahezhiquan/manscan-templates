@@ -1,11 +1,11 @@
 id: expn-mail-detect
 
 info:
-  name: EXPN Mail Server Detect
+  name: EXPN Mail 服务 识别（服务漏洞）
   author: r3dg33k,userdehghani
   severity: info
   description: |
-    The "EXPN" can be used by attackers to learn about valid usernames on the target system. On some SMTP servers, EXPN can be used to show the subscribers of a mailing list subscription lists are generally considered to be sensitive information.
+    该模板通过网络响应特征识别目标是否开放 EXPN Mail Server 相关服务。
   metadata:
     max-request: 1
   tags: mail,expn,network,detect,smtp,detection,tcp,discovery

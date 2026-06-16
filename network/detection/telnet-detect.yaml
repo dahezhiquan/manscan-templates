@@ -1,11 +1,11 @@
 id: telnet-detect
 
 info:
-  name: Telnet Detection
+  name: Telnet 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Telnet is a network protocol used to virtually access a computer and to provide a two-way, collaborative and text-based communication channel between two machines.
+    该模板通过网络响应特征识别目标是否开放 Telnet 相关服务。
   metadata:
     verified: true
     max-request: 1

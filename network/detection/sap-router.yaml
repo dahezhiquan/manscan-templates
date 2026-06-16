@@ -1,11 +1,11 @@
 id: sap-router
 
 info:
-  name: SAPRouter Detection
+  name: SAPRouter 识别（服务漏洞）
   author: randomstr1ng
   severity: info
   description: |
-    SAProuter is a software application that provides a remote connection between our customer's network and SAP.
+    该模板通过网络响应特征识别目标是否开放 SAPRouter 相关服务。
   metadata:
     max-request: 1
   tags: network,sap,detect,saprouter,detection,tcp,discovery

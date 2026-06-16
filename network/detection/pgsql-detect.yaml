@@ -1,11 +1,11 @@
 id: pgsql-detect
 
 info:
-  name: PostgreSQL Authentication - Detect
+  name: PostgreSQL Authentication 识别（服务漏洞）
   author: nybble04,geeknik
   severity: info
   description: |
-    PostgreSQL authentication error messages which could reveal information useful in formulating further attacks were detected.
+    该模板通过网络响应特征识别目标是否开放 PostgreSQL Authentication 相关服务。
   reference:
     - https://www.postgresql.org/docs/current/errcodes-appendix.html
     - https://www.postgresql.org/docs/current/client-authentication-problems.html

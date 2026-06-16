@@ -1,11 +1,11 @@
 id: activemq-openwire-transport-detect
 
 info:
-  name: ActiveMQ OpenWire Transport Detection
+  name: ActiveMQ OpenWire 传输 识别（服务漏洞）
   author: pussycat0x,ret2src
   severity: info
   description: |
-    OpenWire is the native protocol that Apache ActiveMQ uses. It is designed for performance and size on the wire - sacrificing some ease of implementation with higher performance and reduced network bandwidth as a priority.
+    该模板通过网络响应特征识别目标是否开放 ActiveMQ OpenWire Transport 相关服务。
   metadata:
     verified: true
     max-request: 1

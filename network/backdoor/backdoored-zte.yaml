@@ -1,11 +1,10 @@
 id: backdoored-zte
 
 info:
-  name: ZTE Router Panel - Detect
+  name: ZTE 路由器后门面板识别（服务漏洞）
   author: its0x08
   severity: critical
-  description: |
-    Multiple ZTE router panels were detected. These routers have a telnet-hardcoded backdoor account that spawns root shell.
+  description: 该模板用于识别存在已知 Telnet 硬编码后门账户的 ZTE 路由器管理面板。命中通常意味着设备可能被后门凭据直接获取 root 权限命令行访问。
   reference:
     - https://www.exploit-db.com/ghdb/7179
   classification:

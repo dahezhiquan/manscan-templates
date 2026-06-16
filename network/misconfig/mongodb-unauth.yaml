@@ -1,11 +1,14 @@
 id: mongodb-unauth
 
 info:
-  name: MongoDB - Unauthenticated Access
+  name: MongoDB 未认证访问（服务漏洞）
   author: pdteam
   severity: high
-  description: MongoDB was able to be accessed with no password. Note that MongoDB does not require a password by default.
-  remediation: Enable Authentication in MongoDB
+  description: |
+    该模板检测 MongoDB 是否在未启用认证的情况下对外开放。命中说明数据库内容可能在无口令保护下被直接访问。
+  remediation: |
+    - 为 MongoDB 启用认证并限制管理网络访问。
+    - 检查历史暴露期间是否已有未授权读取、写入或删除行为。
   reference:
     - https://github.com/orleven/Tentacle
     - https://book.hacktricks.wiki/en/network-services-pentesting/27017-27018-mongodb.html

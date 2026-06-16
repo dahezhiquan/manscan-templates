@@ -1,11 +1,11 @@
 id: adsb-ultrafeeder-detect
 
 info:
-  name: ADSB Ultrafeeder Beast Mode - Detection
+  name: ADSB Ultrafeeder Beast Mode 识别（服务漏洞）
   author: Random-Robbie
   severity: info
   description: |
-    Detected ADS-B (Automatic Dependent Surveillance–Broadcast) ultrafeeders operating with the Beast Mode protocol on port 30005. These devices capture aircraft transponder signals using software-defined radios (SDRs) and distribute the decoded data over the internet.
+    该模板通过网络响应特征识别目标是否开放 ADSB Ultrafeeder Beast Mode 相关服务。
   reference:
     - https://github.com/flightaware/dump1090
     - https://github.com/wiedehopf/readsb

@@ -1,11 +1,10 @@
 id: darkcomet-trojan
 
 info:
-  name: DarkComet Trojan - Detect
+  name: DarkComet 木马识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: |
-    DarkComet is a remote access trojan (RAT) developed by Jean-Pierre Lesueur (known as DarkCoderSc[2]), an independent programmer and computer security coder from France. Although the RAT was developed back in 2008, it began to proliferate at the start of 2012.
+  description: 该模板通过协议特征或已知指纹识别目标是否与 DarkComet 木马相关的命令控制流量相匹配。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

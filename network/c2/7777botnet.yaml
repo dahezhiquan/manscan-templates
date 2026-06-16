@@ -1,7 +1,7 @@
 id: 7777botnet-detect
 
 info:
-  name: 7777-Botnet - Detect
+  name: 7777 僵尸网络识别（服务漏洞）
   author: johnk3r
   severity: info
   reference:

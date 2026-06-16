@@ -1,15 +1,17 @@
 id: weblogic-t3-detect
 
 info:
-  name: Weblogic T3 Protocol Detection
+  name: Weblogic T3 协议识别（服务漏洞）
   author: F1tz,milo2012,wdahlenb
   severity: info
   description: |
-    T3 is the protocol used to transport information between WebLogic servers and other types of Java programs.
+    该模板通过网络响应特征识别目标是否开放 Weblogic T3 Protocol 相关服务。
   impact: |
-    May indicate potential exposure to Weblogic T3 Protocol vulnerabilities
+    - 命中通常意味着目标对外暴露了可被继续探测或针对性利用的网络服务。
+    - 该结果可作为后续版本识别、弱配置检查或漏洞验证的前置依据。
   remediation: |
-    Ensure proper configuration and security measures are in place for Weblogic T3 Protocol
+    - 核查该服务是否确需对当前网络开放，并限制仅允许受信任来源访问。
+    - 结合版本、认证与加密配置继续评估是否存在更高风险问题。
   metadata:
     max-request: 2
   tags: network,weblogic,detect,t3,oracle,detection,tcp,discovery

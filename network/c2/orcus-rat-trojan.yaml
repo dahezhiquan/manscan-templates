@@ -1,11 +1,10 @@
 id: orcus-rat-trojan
 
 info:
-  name: Orcus RAT Trojan - Detect
+  name: Orcus RAT 木马识别（服务漏洞）
   author: pussycat0x
   severity: info
-  description: |
-    Orcus has been advertised as a Remote Administration Tool (RAT) since early 2016. It has all the features that would be expected from a RAT and probably more. The long list of the commands is documented on their website. But what separates Orcus from the others is its capability to load custom plugins developed by users, as well as plugins that are readily available from the Orcus repository.
+  description: 该模板通过协议特征或已知指纹识别目标是否与 Orcus RAT 木马相关的命令控制流量相匹配。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

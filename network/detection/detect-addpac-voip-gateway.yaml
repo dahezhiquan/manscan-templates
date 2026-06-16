@@ -1,11 +1,11 @@
 id: detect-addpac-voip-gateway
 
 info:
-  name: AddPac GSM VoIP Gateway Panel - Detect
+  name: AddPac GSM VoIP 网关 面板 识别（服务漏洞）
   author: geeknik
   severity: info
   description: |
-    AddPac GSM VoIP Gateway panel was detected.
+    该模板通过网络响应特征识别目标是否开放 AddPac GSM VoIP Gateway Panel 相关服务。
   reference:
     - http://www.addpac.com/addpac_eng2/down.php?file=505_f16.pdf
   classification:

@@ -1,11 +1,11 @@
 id: smtp-detect
 
 info:
-  name: SMTP Detection
+  name: SMTP 识别（服务漏洞）
   author: pussycat0x,userdehghani
   severity: info
   description: |
-    SMTP is part of the application layer of the TCP/IP protocol. Using a process called “store and forward,” SMTP moves your email on and across networks.
+    该模板通过网络响应特征识别目标是否开放 SMTP 相关服务。
   metadata:
     max-request: 1
   tags: network,service,smtp,detect,mail,detection,tcp,discovery

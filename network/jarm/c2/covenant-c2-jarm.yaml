@@ -1,11 +1,11 @@
 id: covenant-c2-jarm
 
 info:
-  name: Covenant C2 JARM - Detect
+  name: Covenant C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier,and serve as a collaborative command and control platform for red teamers.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Covenant C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://twitter.com/MichalKoczwara/status/1548685058403360770

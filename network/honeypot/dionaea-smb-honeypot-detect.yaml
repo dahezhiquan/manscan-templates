@@ -1,12 +1,11 @@
 id: dionaea-smb-honeypot-detect
 
 info:
-  name: Dionaea SMB Honeypot - Detect
+  name: Dionaea SMB 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
   severity: info
   description: |
-    A Dionaea SMB honeypot has been identified.
-    The response to an SMB connection packet differs from real installations, signaling a possible deceptive setup.
+    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea SMB Honeypot 蜜罐。
   metadata:
     max-request: 1
     vendor: dionaea

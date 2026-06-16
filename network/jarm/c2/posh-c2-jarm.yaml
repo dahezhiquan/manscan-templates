@@ -1,11 +1,11 @@
 id: posh-c2-jarm
 
 info:
-  name: Posh C2 JARM - Detect
+  name: Posh C2 JARM 识别（服务漏洞）
   author: pussycat0x
   severity: info
   description: |
-    PoshC2 is a proxy aware C2 framework used to aid penetration testers with red teaming, post-exploitation and lateral movement.
+    该模板通过 JARM TLS 指纹识别目标是否可能为 Posh C2 相关命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://twitter.com/MichalKoczwara/status/1551639708949692416

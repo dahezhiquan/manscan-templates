@@ -1,11 +1,10 @@
 id: ssl-issuer
 
 info:
-  name: Detect SSL Certificate Issuer
+  name: SSL 证书颁发者提取（证书安全）
   author: Lingtren
   severity: info
-  description: |
-    Extract the issuer's organization from the target's certificate. Issuers are entities which sign and distribute certificates.
+  description: 该模板从目标证书中提取颁发者组织信息，用于识别证书签发机构及其信任来源。
   metadata:
     max-request: 1
   tags: ssl,tls,discovery

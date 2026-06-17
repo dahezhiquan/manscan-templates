@@ -1,11 +1,10 @@
 id: posh-c2
 
 info:
-  name: Posh C2 - Detect
+  name: PoshC2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    PoshC2 is a proxy aware C2 framework used to aid penetration testers with red teaming, post-exploitation and lateral movement.
+  description: 该模板通过证书颁发者字段识别目标是否可能与 PoshC2 命令控制平台相关。命中通常意味着远端使用了该框架常见的证书标识。
   reference:
     - https://twitter.com/MichalKoczwara/status/1551639708949692416
     - https://poshc2.readthedocs.io/en/latest/

@@ -1,7 +1,7 @@
 id: fortiweb-certificate
 
 info:
-  name: Fortinet FortiWEB Certificate - Detect
+  name: Fortinet FortiWeb 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

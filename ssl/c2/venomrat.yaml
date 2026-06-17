@@ -1,7 +1,7 @@
 id: venomrat
 
 info:
-  name: VenomRAT - Detect
+  name: VenomRAT 证书识别（证书安全）
   author: pussycat0x
   severity: info
   reference:

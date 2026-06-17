@@ -1,7 +1,7 @@
 id: fortiddos-certificate
 
 info:
-  name: Fortinet FortiDDoS Certificate - Detect
+  name: Fortinet FortiDDoS 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

@@ -1,11 +1,10 @@
 id: onimai-rat-c2
 
 info:
-  name: Onimai RAT C2 SSL Certificate - Detect
+  name: Onimai RAT C2 证书识别（证书安全）
   author: worldwidefuckfest
   severity: info
-  description: |
-    Onimai is a relatively new closed-source Remote Administration Trojan (RAT) based on Quasar.
+  description: 该模板通过证书颁发者字段识别目标是否可能与 Onimai RAT 命令控制基础设施相关。命中说明目标使用了该家族典型的证书命名特征。
   metadata:
     verified: true
     max-request: 1

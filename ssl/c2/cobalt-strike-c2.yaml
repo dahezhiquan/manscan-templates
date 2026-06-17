@@ -1,11 +1,10 @@
 id: cobalt-strike-c2
 
 info:
-  name: Cobalt Strike C2 - Detect
+  name: Cobalt Strike C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    Cobalt Strike gives you a post-exploitation agent and covert channels to emulate a quiet long-term embedded actor in your customer's network.
+  description: 该模板通过 SSL 证书序列号特征识别目标是否可能与 Cobalt Strike 命令控制基础设施相关。命中可作为红队设施或恶意 C2 资产的初步研判线索。
   reference:
     - https://blog.sekoia.io/hunting-and-detecting-cobalt-strike/
   metadata:

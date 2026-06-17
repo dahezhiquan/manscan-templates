@@ -1,11 +1,10 @@
 id: mismatched-ssl-certificate
 
 info:
-  name: Mismatched SSL Certificate
+  name: SSL 证书主机名不匹配（证书安全）
   author: pdteam
   severity: info
-  description: |
-    Mismatched certificates occur when there is inconsistency between the common name to which the certificate was issued and the domain name in the URL. This issue impacts the trust value of the affected website.
+  description: 该模板检测访问主机名与证书中的 CN 或 SAN 是否不一致。命中说明证书并非为当前访问域名签发，客户端无法正确完成主机身份校验。
   reference:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-certificate-name-hostname-mismatch/
   metadata:

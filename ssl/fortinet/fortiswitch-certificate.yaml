@@ -1,7 +1,7 @@
 id: fortiswitch-certificate
 
 info:
-  name: Fortinet FortiSwitch Certificate - Detect
+  name: Fortinet FortiSwitch 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

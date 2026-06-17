@@ -1,11 +1,10 @@
 id: covenant-c2-ssl
 
 info:
-  name: Covenant C2 SSL - Detect
+  name: Covenant C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier,and serve as a collaborative command and control platform for red teamers.
+  description: 该模板通过证书主题字段识别目标是否可能与 Covenant 命令控制平台相关。命中说明远端证书与该框架默认或常见部署特征相匹配。
   reference:
     - https://twitter.com/MichalKoczwara/status/1548685058403360770
   metadata:

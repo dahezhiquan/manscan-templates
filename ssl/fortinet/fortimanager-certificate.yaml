@@ -1,7 +1,7 @@
 id: fortimanager-certificate
 
 info:
-  name: Fortinet FortiManager Certificate - Detect
+  name: Fortinet FortiManager 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

@@ -1,11 +1,10 @@
 id: untrusted-root-certificate
 
 info:
-  name: Untrusted Root Certificate - Detect
+  name: 不受信任根证书检测（证书安全）
   author: pussycat0x
   severity: low
-  description: |
-    A root certificate is a digital certificate issued by a trusted certificate authority that acts as a basis for other digital certificates. An untrusted root certificate is a certificate that is issued by an authority that is not trusted by the computer, and therefore cannot be used to authenticate websites or other digital certificates.
+  description: 该模板检测目标证书链是否锚定到客户端默认不信任的根证书。命中说明证书链无法被常见操作系统或浏览器正常验证，访问时通常会出现信任告警。
   reference:
     - https://www.sslmarket.com/ssl/trusted-and-untrusted-certificate
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-untrusted-root-certificate/

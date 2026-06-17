@@ -1,14 +1,13 @@
 id: self-signed-ssl
 
 info:
-  name: Self Signed SSL Certificate
+  name: 自签名 SSL 证书（证书安全）
   author: righettod,pdteam
   severity: low
-  description: |
-    self-signed certificates are public key certificates that are not issued by a certificate authority. These self-signed
-    certificates are easy to make and do not cost money. However, they do not provide any trust value.
+  description: 该模板检测目标是否使用自签名 SSL/TLS 证书。自签名证书虽然便于测试或内网部署，但默认不受客户端信任，容易引发证书告警并削弱身份校验可靠性。
   remediation: |
-    Purchase or generate a proper SSL certificate for this service.
+    - 在正式环境中使用由受信任 CA 签发的证书替换自签名证书。
+    - 若必须在内网使用自签名证书，应通过受控方式将根证书分发到所有受信终端，并做好证书生命周期管理。
   reference:
     - https://www.rapid7.com/db/vulnerabilities/ssl-self-signed-certificate/
   metadata:

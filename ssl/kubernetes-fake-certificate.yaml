@@ -1,12 +1,11 @@
 id: kubernetes-fake-certificate
 
 info:
-  name: Kubernetes Fake Ingress Certificate - Detect
+  name: Kubernetes 默认伪造 Ingress 证书识别（证书安全）
   author: kchason
   severity: low
-  description: |
-    Kubernetes Fake Ingress Certificate is a feature in Kubernetes that allows users to create and use fake or self-signed SSL/TLS certificates for testing purposes without having to obtain a real SSL/TLS certificate from a trusted Certificate Authority (CA).
-  remediation: Purchase or generate a proper SSL certificate for this service.
+  description: 该模板检测目标是否使用 `Kubernetes Ingress Controller Fake Certificate` 默认测试证书。命中通常说明生产入口仍在使用占位证书或自签临时证书，而非面向实际域名签发的正式证书。
+  remediation: 为对应的 Ingress 服务配置与实际域名匹配、且由受信任 CA 签发的正式 SSL/TLS 证书。
   reference:
     - https://snyk.io/blog/setting-up-ssl-tls-for-kubernetes-ingress/
   metadata:

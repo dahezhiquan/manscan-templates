@@ -1,10 +1,10 @@
 id: weak-cipher-suites
 
 info:
-  name: Weak Cipher Suites Detection
+  name: 弱密码套件检测（证书安全）
   author: pussycat0x
   severity: low
-  description: A weak cipher is defined as an encryption/decryption algorithm that uses a key of insufficient length. Using an insufficient length for a key in an encryption/decryption algorithm opens up the possibility (or probability) that the encryption scheme could be broken.
+  description: 该模板检测目标是否支持密钥长度不足、算法强度偏弱或已不再推荐使用的 TLS 密码套件。命中说明连接可能协商到容易被降级、破解或加密强度不足的套件。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
     - http://ciphersuite.info

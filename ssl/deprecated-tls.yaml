@@ -1,13 +1,13 @@
 id: deprecated-tls
 
 info:
-  name: Deprecated TLS Detection
+  name: 弃用 TLS/SSL 协议检测（证书安全）
   author: righettod,forgedhallpass
   severity: info
-  description: |
-    Both TLS 1.1 and SSLv3 are deprecated in favor of stronger encryption.
+  description: 该模板检测目标是否仍支持已弃用的 SSLv3、TLS 1.0 或 TLS 1.1 协议版本。命中说明服务端仍允许使用过时的加密协商方式建立连接。
   remediation: |
-    Update the web server's TLS configuration to disable TLS 1.1 and SSLv3.
+    - 在服务端 TLS 配置中禁用 SSLv3、TLS 1.0 和 TLS 1.1，仅保留更安全的 TLS 1.2 或 TLS 1.3。
+    - 同步检查负载均衡、CDN、反向代理和中间件配置，避免旧协议在链路中被重新启用。
   reference:
     - https://ssl-config.mozilla.org/#config=intermediate
   metadata:

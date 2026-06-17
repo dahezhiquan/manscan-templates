@@ -1,11 +1,10 @@
 id: wildcard-tls
 
 info:
-  name: Wildcard TLS Certificate
+  name: 通配符 TLS 证书识别（证书安全）
   author: lucky0x0d
   severity: info
-  description: |
-    Checks a sites certificate to see if there are wildcard CN or SAN entries.
+  description: 该模板检测证书的 CN 或 SAN 中是否包含通配符条目。命中说明同一证书可能被多个子域共用，需要结合部署边界评估私钥泄露和横向影响范围。
   reference:
     - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html#carefully-consider-the-use-of-wildcard-certificates
   metadata:

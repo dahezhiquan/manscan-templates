@@ -1,7 +1,7 @@
 id: fortiauthenticator-certificate
 
 info:
-  name: Fortinet FortiAuthenticator Certificate - Detect
+  name: Fortinet FortiAuthenticator 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

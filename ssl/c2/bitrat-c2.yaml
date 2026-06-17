@@ -1,11 +1,10 @@
 id: bitrat-c2
 
 info:
-  name: Bitrat C2 - Detect
+  name: BitRAT C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    BitRAT is a fairly recent, notorious remote access trojan (RAT) marketed on underground cybercriminal web markets and forums since Feb 2021. The RAT is particularly well known for its social media presence and functionality such as: Data exfiltration. Execution of payloads with bypasses.
+  description: 该模板通过证书颁发者字段识别目标是否可能与 BitRAT 命令控制基础设施相关。命中说明远端证书指纹与该家族常见部署特征相符。
   reference:
     https://github.com/thehappydinoa/awesome-censys-queries#bitrat--
   metadata:

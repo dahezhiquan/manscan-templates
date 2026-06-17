@@ -1,11 +1,10 @@
 id: revoked-ssl-certificate
 
 info:
-  name: Revoked SSL Certificate - Detect
+  name: 已吊销 SSL 证书检测（证书安全）
   author: pussycat0x
   severity: low
-  description: |
-    Certificate revocation is the act of invalidating a TLS/SSL before its scheduled expiration date. A certificate should be revoked immediately when its private key shows signs of being compromised. It should also be revoked when the domain for which it was issued is no longer operational.
+  description: 该模板检测目标是否仍在使用已被吊销且尚未过期的 SSL/TLS 证书。证书被吊销通常意味着私钥泄露、证书误签发或对应业务身份已不再可信。
   reference:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/revoked-ssl-certificate/
     - https://www.tenable.com/plugins/nnm/5837

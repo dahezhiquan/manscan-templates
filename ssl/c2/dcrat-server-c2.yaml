@@ -1,11 +1,10 @@
 id: dcrat-server-c2
 
 info:
-  name: DcRat Server C2 - Detect
+  name: DcRat C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    DCRat uses a modular framework that deploys separate executables for each module, most of which are compiled . net binaries programmed in C#.
+  description: 该模板通过证书颁发者字段识别目标是否可能与 DcRat 命令控制基础设施相关。命中通常意味着其证书命名方式与该恶意家族常见样式一致。
   reference:
     - https://github.com/thehappydinoa/awesome-censys-queries#dcrat--
   metadata:

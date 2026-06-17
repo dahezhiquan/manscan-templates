@@ -1,11 +1,10 @@
 id: shadowpad-c2
 
 info:
-  name: ShadowPad C2 Infrastructure - Detect
+  name: ShadowPad C2 基础设施识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    ShadowPad constitutes various plugins having specific functionality and the malware has the capability to “plug” or “unplug” these plugins at run-time in shellcode format. It can also load additional plugins dynamically from the C2 server when required.
+  description: 该模板通过 SSL 证书主题字段识别目标是否可能与 ShadowPad 命令控制基础设施相关。命中说明远端证书与该家族常见的伪造主题信息相匹配。
   metadata:
     verified: "true"
     max-request: 1

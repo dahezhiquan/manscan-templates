@@ -1,11 +1,10 @@
 id: havoc-c2
 
 info:
-  name: Havoc C2 - Detect
+  name: Havoc C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    Havoc is a modern and malleable post-exploitation command and control framework,
+  description: 该模板通过 SSL 证书主题字段中的特定特征识别目标是否可能与 Havoc 命令控制框架相关。命中可用于辅助发现红队或恶意 C2 设施。
   reference:
     - https://github.com/HavocFramework/Havoc
     - https://github.com/montysecurity/C2-Tracker

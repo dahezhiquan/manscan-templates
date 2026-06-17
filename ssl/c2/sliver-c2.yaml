@@ -1,11 +1,10 @@
 id: sliver-c2
 
 info:
-  name: Sliver C2 - Detect
+  name: Sliver C2 证书识别（证书安全）
   author: johnk3r
   severity: info
-  description: |
-    Sliver is a Command and Control (C2) system made for penetration testers, red teams, and advanced persistent threats. It generates implants (slivers) that can run on virtually every architecture out there, and securely manage these connections through a central server
+  description: 该模板通过证书主题与颁发者特征识别目标是否可能与 Sliver 命令控制基础设施相关。命中可用于辅助发现红队框架或恶意 C2 部署。
   reference:
     - https://malpedia.caad.fkie.fraunhofer.de/details/win.sliver
   metadata:

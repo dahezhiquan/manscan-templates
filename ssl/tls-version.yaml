@@ -1,12 +1,10 @@
 id: tls-version
 
 info:
-  name: TLS Version - Detect
+  name: TLS 版本识别（证书安全）
   author: pdteam,pussycat0x
   severity: info
-  description: |
-    TLS version detection is a security process used to determine the version of the Transport Layer Security (TLS) protocol used by a computer or server.
-    It is important to detect the TLS version in order to ensure secure communication between two computers or servers.
+  description: 该模板通过协商握手识别目标支持的 TLS 协议版本，可用于判断服务端启用了哪些 SSL/TLS 加密版本以及后续风险面。
   metadata:
     max-request: 4
   tags: ssl,tls,discovery

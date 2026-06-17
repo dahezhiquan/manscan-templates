@@ -1,7 +1,7 @@
 id: fortigate-certificate
 
 info:
-  name: Fortinet FortiGate Certificate - Detect
+  name: Fortinet FortiGate 证书识别（证书安全）
   author: johnk3r
   severity: info
   metadata:

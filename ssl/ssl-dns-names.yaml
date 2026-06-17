@@ -1,11 +1,10 @@
 id: ssl-dns-names
 
 info:
-  name: SSL DNS Names
+  name: SSL 证书 DNS 名称提取（证书安全）
   author: pdteam
   severity: info
-  description: |
-    Extract the Subject Alternative Name (SAN) from the target's certificate. SAN facilitates the usage of additional hostnames with the same certificate.
+  description: 该模板提取目标证书中的 Subject Alternative Name（SAN）DNS 名称，用于识别该证书可覆盖的主机名范围。
   metadata:
     max-request: 1
   tags: ssl,tls,vuln

@@ -1,11 +1,10 @@
 id: insecure-cipher-suite-detect
 
 info:
-  name: Insecure Cipher Suite Detection
+  name: 不安全密码套件检测（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    Weak ciphers are those encryption algorithms vulnerable to attack, often as a result of an insufficient key length.
+  description: 该模板检测目标是否支持明显不安全的 TLS 密码套件，例如空加密、匿名密钥交换或已知强度不足的组合。命中说明客户端可能协商到易被降级或破解的加密参数。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
   metadata:

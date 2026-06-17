@@ -1,11 +1,10 @@
 id: metasploit-c2
 
 info:
-  name: Metasploit C2 - Detect
+  name: Metasploit C2 证书识别（证书安全）
   author: pussycat0x
   severity: info
-  description: |
-    A Metasploit Framework is a powerful tool that provides a universal interface to work with vulnerability exploit code. It has to exploit code for a wide range of vulnerabilities that impact web servers, OSes, network equipment, and everything in between. Metasploit which serves as both exploitation and C2 frameworks.
+  description: 该模板通过证书颁发者字段识别目标是否可能与 Metasploit 命令控制基础设施相关。命中说明对端使用了该框架常见的自签名 CA 特征。
   reference:
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
   metadata:

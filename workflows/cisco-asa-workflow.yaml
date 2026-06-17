@@ -1,9 +1,9 @@
 id: cisco-asa-workflow
 
 info:
-  name: Cisco ASA Security Checks
+  name: Cisco ASA 安全检查工作流（工作流）
   author: flag007
-  description: A simple workflow that runs all Cisco ASA related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Cisco ASA 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/cisco/cisco-asa-panel.yaml
     subtemplates:

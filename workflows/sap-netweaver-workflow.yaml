@@ -1,9 +1,9 @@
 id: sap-netweaver-workflow
 
 info:
-  name: SAP NetWaver Security Checks
+  name: SAP NetWeaver 安全检查工作流（工作流）
   author: dwisiswant0
-  description: A simple workflow that runs all SAP NetWaver related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 SAP NetWeaver 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/sap/sap-netweaver-detect.yaml
     subtemplates:

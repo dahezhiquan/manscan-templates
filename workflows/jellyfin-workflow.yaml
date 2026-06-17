@@ -1,9 +1,9 @@
 id: jellyfin-workflow
 
 info:
-  name: Jellyfin Security Checks
+  name: Jellyfin 安全检查工作流（工作流）
   author: dwisiswant0
-  description: A simple workflow that runs all Jellyfin related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Jellyfin 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/jellyfin-detect.yaml
     subtemplates:

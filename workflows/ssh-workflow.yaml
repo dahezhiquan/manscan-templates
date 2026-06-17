@@ -1,9 +1,9 @@
 id: ssh-workflow
 
 info:
-  name: SSH Security Checks
+  name: SSH 安全检查工作流（工作流）
   author: pussycat0x
-  description: A simple workflow that runs all SSH related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 SSH 相关的 nuclei 模板。
 workflows:
   - template: network/detection/openssh-detect.yaml
     subtemplates:

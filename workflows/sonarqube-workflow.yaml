@@ -1,9 +1,9 @@
 id: sonarqube-workflow
 
 info:
-  name: SonarQube Security Checks
+  name: SonarQube 安全检查工作流（工作流）
   author: daffainfo
-  description: A simple workflow that runs all SonarQube related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 SonarQube 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/sonarqube-login.yaml
     subtemplates:

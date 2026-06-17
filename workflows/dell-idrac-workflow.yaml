@@ -1,9 +1,9 @@
 id: dell-idrac-workflow
 
 info:
-  name: Dell iDRAC Security Checks
+  name: Dell iDRAC 安全检查工作流（工作流）
   author: kophjager007,megamansec
-  description: A workflow to identify Dell iDRAC instances and run all related nuclei templates.
+  description: 该工作流用于识别 Dell iDRAC 实例，并运行与其相关的 nuclei 模板进行进一步安全检查。
 workflows:
   - template: http/technologies/dell/dell-idrac6-detect.yaml
     subtemplates:

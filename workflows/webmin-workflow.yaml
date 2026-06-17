@@ -1,9 +1,9 @@
 id: webmin-workflow
 
 info:
-  name: Webmin Security Checks
+  name: Webmin 安全检查工作流（工作流）
   author: daffainfo
-  description: A simple workflow that runs all Webmin related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Webmin 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/webmin-panel.yaml
     subtemplates:

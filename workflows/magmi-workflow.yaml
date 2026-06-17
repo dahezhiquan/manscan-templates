@@ -1,9 +1,9 @@
 id: magmi-workflow
 
 info:
-  name: MAGMI Security Checks
+  name: MAGMI 安全检查工作流（工作流）
   author: dwisiswant0,daffainfo
-  description: A simple workflow that runs all MAGMI related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 MAGMI 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/magmi-detect.yaml
     subtemplates:

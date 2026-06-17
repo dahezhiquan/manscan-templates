@@ -1,9 +1,9 @@
 id: mysql-workflow
 
 info:
-  name: MySQL Security Checks
+  name: MySQL 安全检查工作流（工作流）
   author: pussycat0x
-  description: A simple workflow that runs all MySQL related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 MySQL 相关的 nuclei 模板。
 workflows:
   - template: network/detection/mysql-detect.yaml
     subtemplates:

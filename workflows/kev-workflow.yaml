@@ -1,8 +1,8 @@
 id: kev-workflow
 
 info:
-  name: KEV Workflow
+  name: 已知在野利用漏洞检测工作流（工作流）
   author: king-alexander
-  description: This workflow runs the relevant Nuclei templates to detect Known Exploited Vulnerabilities.
+  description: 该工作流会运行与 KEV 相关的 Nuclei 模板，用于检测已被公开确认存在在野利用的漏洞。
 workflows:
   - tags: kev

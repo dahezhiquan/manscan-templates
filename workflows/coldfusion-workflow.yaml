@@ -1,9 +1,9 @@
 id: coldfusion-workflow
 
 info:
-  name: Adobe ColdFusion Security Checks
+  name: Adobe ColdFusion 安全检查工作流（工作流）
   author: daffainfo
-  description: A simple workflow that runs all Adobe ColdFusion related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Adobe ColdFusion 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/coldfusion-administrator-login.yaml
     subtemplates:

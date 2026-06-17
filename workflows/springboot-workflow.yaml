@@ -1,9 +1,9 @@
 id: springboot-workflow
 
 info:
-  name: Spring Boot Security Checks
+  name: Spring Boot 安全检查工作流（工作流）
   author: dwisiswant0
-  description: A simple workflow that runs all Spring Boot related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Spring Boot 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/springboot-actuator.yaml
     subtemplates:

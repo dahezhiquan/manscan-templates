@@ -1,9 +1,9 @@
 id: opensis-workflow
 
 info:
-  name: OpenSIS Security Checks
+  name: OpenSIS 安全检查工作流（工作流）
   author: daffainfo
-  description: A simple workflow that runs all OpenSIS related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 OpenSIS 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/opensis-panel.yaml
     subtemplates:

@@ -1,9 +1,9 @@
 id: concrete-workflow
 
 info:
-  name: Concrete Security Checks
+  name: Concrete 安全检查工作流（工作流）
   author: dhiyaneshDK
-  description: A simple workflow that runs all Concrete related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Concrete 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/concrete5/concrete5-panel.yaml
     subtemplates:

@@ -1,9 +1,9 @@
 id: ftp-workflow
 
 info:
-  name: FTP Security Checks
+  name: FTP 安全检查工作流（工作流）
   author: Mys7ic
-  description: A simple workflow that runs all FTP related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 FTP 相关的 nuclei 模板。
 
 workflows:
   - template: network/detection/ftp-detect.yaml

@@ -1,9 +1,9 @@
 id: cherokee-workflow
 
 info:
-  name: Cherokee Security Checks
+  name: Cherokee 安全检查工作流（工作流）
   author: daffainfo
-  description: A simple workflow that runs all Cherokee related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Cherokee 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/tech-detect.yaml
     matchers:

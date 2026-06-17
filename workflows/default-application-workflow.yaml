@@ -1,9 +1,9 @@
 id: default-application-workflow
 
 info:
-  name: Default Web Application Detection
+  name: 默认 Web 应用识别工作流（工作流）
   author: andydoering
-  description: Detects default installations of web applications
+  description: 该工作流用于识别常见 Web 应用、服务器和框架的默认安装页面，以发现仍处于默认部署状态的资产。
 
 workflows:
   - template: http/technologies/apache/default-apache-test-all.yaml

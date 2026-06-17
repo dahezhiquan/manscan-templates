@@ -1,9 +1,9 @@
 id: worksite-takeover-workflow
 
 info:
-  name: Worksite Takeover Workflow
+  name: Worksite 子域名接管确认工作流（工作流）
   author: pdteam
-  description: A simple workflow that runs DNS based detection to filter hosts running Worksite and do further HTTP based check to confirm takeover.
+  description: 该工作流会先通过 DNS 特征筛选指向 Worksite 服务的主机，再结合 HTTP 检查进一步确认自定义域名是否存在接管风险。
   reference:
     - https://melbadry9.gitbook.io/blog/dangling-dns/xyz-services/ddns-worksites
 

@@ -1,9 +1,9 @@
 id: phoenix-contact-workflow
 
 info:
-  name: Phoenix Contact Security Checks
+  name: Phoenix Contact 安全检查工作流（工作流）
   author: inokii
-  description: A simple workflow that runs all Phoenix Contact related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Phoenix Contact 相关的 nuclei 模板。
 
 workflows:
   - template: http/exposed-panels/phoenix-contact-charx-panel.yaml

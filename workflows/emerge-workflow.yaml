@@ -1,8 +1,8 @@
 id: emerge-workflow
 
 info:
-  name: eMerge Checks
+  name: eMerge 安全检查工作流（工作流）
   author: DhiyaneshDk
-  description: A simple workflow that runs all eMerge related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 eMerge 相关的 nuclei 模板。
 workflows:
   - tags: emerge

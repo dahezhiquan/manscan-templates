@@ -1,9 +1,9 @@
 id: google-api-token-usage-enumeration
 
 info:
-  name: Google API Token Usage Enumeration
+  name: Google API Key 使用能力枚举工作流（工作流）
   author: tanq16
-  description: This template is a workflow that allows enumeration of usage capabilities for an exposed Google API Key. A key found or discovered in front-end or source code can be validated for authorization of use and can also be used to make multiple requests and produce high bills for the owner if usage is unrestricted
+  description: 该工作流用于枚举已暴露 Google API Key 的可用权限范围。当前端页面或源代码中发现此类密钥后，可借助相关模板验证其是否可被未授权调用；如果调用范围未受限制，攻击者还可能批量发起请求，给密钥所有者带来异常 API 消耗和高额账单风险。
 workflows:
   - template: http/token-spray/google-autocomplete.yaml
 

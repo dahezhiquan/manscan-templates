@@ -1,10 +1,10 @@
 id: nacos-workflow
 
 info:
-  name: Nacos Security Checks
+  name: Nacos 安全检查工作流（工作流）
   author: Co5mos
   description: |
-    A simple workflow that runs all Nacos related nuclei templates on a given target.
+    该工作流会在给定目标上运行所有与 Nacos 相关的 nuclei 模板。
 
 workflows:
   - template: http/technologies/nacos-version.yaml

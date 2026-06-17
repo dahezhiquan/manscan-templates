@@ -1,9 +1,9 @@
 id: sysaid-workflow
 
 info:
-  name: SysAid Security Checks
+  name: SysAid 安全检查工作流（工作流）
   author: pdteam
-  description: A simple workflow that runs all SysAid related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 SysAid 相关的 nuclei 模板。
 workflows:
   - template: http/exposed-panels/sysaid-panel.yaml
     subtemplates:

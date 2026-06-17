@@ -1,9 +1,9 @@
 id: bigip-workflow
 
 info:
-  name: F5 BIG-IP Security Checks
+  name: F5 BIG-IP 安全检查工作流（工作流）
   author: dwisiswant0
-  description: A simple workflow that runs all BigIP related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 F5 BIG-IP 相关的 nuclei 模板。
 workflows:
   - template: http/technologies/bigip-config-utility-detect.yaml
     subtemplates:

@@ -1,9 +1,9 @@
 id: samsung-wlan-ap-workflow
 
 info:
-  name: Samsung Wlan AP (WEA453e) Checks
+  name: Samsung Wlan AP (WEA453e) 安全检查工作流（工作流）
   author: pikpikcu
-  description: A simple workflow that runs all samsung WlanAP related nuclei templates on a given target.
+  description: 该工作流会在给定目标上运行所有与 Samsung Wlan AP (WEA453e) 相关的 nuclei 模板。
 workflows:
   - template: http/default-logins/samsung/
 

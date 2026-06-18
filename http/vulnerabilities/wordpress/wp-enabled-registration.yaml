@@ -1,7 +1,7 @@
 id: wp-enabled-registration
 
 info:
-  name: WordPress user registration enabled
+  name: WordPress 用户注册开放
   author: Ratnadip Gajbhiye,ritikchaddha
   severity: info
   metadata:

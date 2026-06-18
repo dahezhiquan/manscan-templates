@@ -1,7 +1,7 @@
 id: wordpress-xmlrpc-listmethods
 
 info:
-  name: Wordpress XML-RPC List System Methods
+  name: WordPress XML-RPC 系统方法枚举
   author: 0ut0fb4nd
   severity: info
   metadata:

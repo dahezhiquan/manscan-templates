@@ -1,7 +1,7 @@
 id: wordpress-xmlrpc-detect
 
 info:
-  name: WordPress XMLRPC
+  name: WordPress XML-RPC 接口暴露
   author: udit_thakkur
   severity: info
   metadata:

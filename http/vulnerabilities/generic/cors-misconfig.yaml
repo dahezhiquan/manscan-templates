@@ -1,7 +1,7 @@
 id: cors-misconfig
 
 info:
-  name: CORS Misconfiguration
+  name: 跨域资源共享（CORS）配置错误
   author: nadino,g4l1t0,convisoappsec,pdteam,breno_css,nodauf,amirmsafari
   severity: info
   reference:

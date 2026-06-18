@@ -1,7 +1,7 @@
 id: jenkins-async-people
 
 info:
-  name: Jenkins panel async-people
+  name: Jenkins async-people 面板暴露
   author: nadino
   severity: info
   reference:

@@ -1,0 +1,45 @@
+id: generic-token-default-login
+
+info:
+  name: 通用 Token 登录接口默认口令登录（弱口令）
+  author: guohongquan_dxm
+  severity: high
+  description: |
+    该模板用于检测一类以 `/login` 接口接收 JSON 用户名密码，并在认证成功后返回 Token 的 Web 应用是否仍在使用未修改的默认口令。若命中，攻击者可直接获取有效会话令牌，进一步访问受保护接口、读取敏感数据或执行未授权操作。
+  metadata:
+    max-request: 1
+  tags: default-login,auth,token,misconfig,vuln
+
+variables:
+  username: ADMIN
+  password: ADMIN
+
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}/login"
+
+    headers:
+      Content-Type: application/json
+
+    body: |
+      {"username":"{{username}}","password":"{{password}}"}
+
+    redirects: true
+    max-redirects: 2
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)"(?:access_)?token"\s*:'
+
+      - type: word
+        part: content_type
+        words:
+          - application/json
+
+      - type: status
+        status:
+          - 200

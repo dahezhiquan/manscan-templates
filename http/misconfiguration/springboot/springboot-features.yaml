@@ -1,7 +1,7 @@
 id: springboot-features
 
 info:
-  name: 检测s Springboot Features Actuator
+  name: 检测 Springboot Features Actuator
   author: DhiyaneshDK
   severity: low
   description: |

@@ -1,0 +1,67 @@
+id: nacos-cluster-nodes-info-leak
+
+info:
+  name: Alibaba Nacos - 集群节点敏感信息泄露漏洞
+  author: dahe
+  severity: low
+  description: |
+    Alibaba Nacos 的集群节点查询接口在未授权访问时可能返回注册中心节点信息。攻击者可请求 /nacos/v1/core/cluster/nodes 获取节点 IP、端口、Raft 通信端口、运行状态和版本等内容，从而暴露内网拓扑与服务发现基础设施信息。
+  impact: |
+    - 攻击者可枚举 Nacos 集群节点、内网 IP、服务端口、Raft 端口和版本信息，为后续内网探测、版本漏洞利用或横向移动提供线索。
+    - 当 Nacos 管理端暴露在公网且接口无需认证时，返回的集群状态和节点地址可能泄露注册中心部署结构，扩大攻击面。
+  remediation: |
+    - 升级到 Nacos 2.3.0 或更高受支持版本，并确认该接口需要管理员权限或已被访问控制保护。
+    - 开启 Nacos 服务端鉴权，修改默认密钥和默认账号口令，避免未授权用户访问管理类 OpenAPI。
+    - 通过防火墙、反向代理或网关 ACL 限制 Nacos 管理端及 /v1/core/cluster/nodes、/nacos/v1/core/cluster/nodes 等敏感接口的访问来源。
+  reference:
+    - https://nacos.io/blog/faq/nacos-user-question-history11845/
+    - https://github.com/alibaba/nacos/issues/7872
+    - https://github.com/alibaba/nacos/issues/8015
+    - https://github.com/alibaba/nacos/issues/10583
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    shodan-query: title:"Nacos"
+    fofa-query: app="NACOS"
+    product: nacos
+    vendor: alibaba
+  tags: nacos,alibaba,info-leak,exposure,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/nacos/v1/core/cluster/nodes"
+      - "{{BaseURL}}/v1/core/cluster/nodes"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: regex
+        part: body
+        regex:
+          - '"code"\s*:\s*200'
+          - '"data"\s*:\s*\['
+          - '"ip"\s*:\s*"(?:\d{1,3}\.){3}\d{1,3}"'
+          - '"port"\s*:\s*\d+'
+          - '"state"\s*:\s*"(?:UP|DOWN)"'
+          - '"address"\s*:\s*"(?:\d{1,3}\.){3}\d{1,3}:\d+"'
+        condition: and
+
+      - type: word
+        part: body
+        words:
+          - '"raftPort"'
+          - '"abilities"'
+          - '"version"'
+        condition: or

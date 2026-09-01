@@ -4,12 +4,22 @@ info:
   name: Nacos 1.x - 认证绕过漏洞
   author: taielab,pikpikcu,SleepingBag945
   severity: critical
-  description: Nacos 1.x - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    Alibaba Nacos 1.x 在鉴权开启后，若仍保留默认服务端身份标识或对服务端请求头信任过度，攻击者可伪造 `serverIdentity: security` 请求头绕过认证并访问用户管理接口。该模板通过请求 `/nacos/v1/auth/users` 或 `/v1/auth/users`，并结合返回中的 `totalCount`、`username`、`password`、`pagesAvailable` 以及 JSON/200 特征，验证目标是否仍可被绕过。
+  impact: |
+    - 攻击者可在未登录状态下枚举用户并读取密码哈希，进一步进行口令破解或账号接管。
+    - 一旦拿到可用账号，攻击者可继续访问控制台、修改配置、创建用户，甚至接管 Nacos 管理能力。
+  remediation: |
+    - 升级到已修复版本，并参考官方鉴权文档关闭或收紧 user-agent 白名单能力，避免继续依赖默认 `serverIdentity` / `security` 配置。
+    - 将 `/nacos/v1/auth/users` 等管理接口限制在可信内网或管理员可达范围内，避免直接暴露到公网。
+    - 修复后立即审计现有账户、Token 和配置变更记录，发现异常账户或历史访问痕迹应及时轮换凭据并清理。
   reference:
     - https://github.com/alibaba/nacos/issues/4593
     - https://nacos.io/en-us/docs/auth.html
-    - https://zhuanlan.zhihu.com/p/602021283
+    - https://nacos.io/docs/latest/guide/user/auth/
+    - https://nacos.io/blog/faq/nacos-user-question-history15416/
   classification:
+    cwe-id: CWE-290
     cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
   metadata:
     verified: true

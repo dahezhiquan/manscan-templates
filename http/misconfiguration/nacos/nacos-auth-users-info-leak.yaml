@@ -3,7 +3,7 @@ id: nacos-auth-users-info-leak
 info:
   name: Alibaba Nacos 未授权用户信息泄露
   author: dahe
-  severity: high
+  severity: medium
   description: |
     Alibaba Nacos 在未开启或未正确校验鉴权时，`/nacos/v1/auth/users` 接口可能直接返回用户列表信息。攻击者可在未登录状态下获取用户名及密码哈希，进而辅助口令攻击、账号枚举和后续权限滥用。
   impact: |

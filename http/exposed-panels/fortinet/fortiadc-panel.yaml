@@ -1,0 +1,45 @@
+id: fortiadc-panel
+
+info:
+  name: FortiADC 登录面板识别（暴露面识别）
+  author: DhiyaneshDk
+  severity: info
+  description: 该模板通过识别 FortiADC 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  reference:
+    - https://www.fortinet.com/products/application-delivery-controller/fortiadc
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+    cpe: cpe:2.3:a:fortinet:fortiadc:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: fortinet
+    product: fortiadc
+    shodan-query:
+      - title:"FortiADC"
+      - http.title:"fortiadc"
+    fofa-query: title="fortiadc"
+    google-query: intitle:"fortiadc"
+  tags: panel,fortinet,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/ui/#navigate/Login"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<title>FortiADC</title>"
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100a1c1019fd53fc656f2d83d7c4326d683cd52f87c7cc048be4152ae9cc65c3319022100f4b2c4cbfe49007a328b70e08fa67733c19bbcbeecc5a52accc329f2adcd5891:922c64590222798bb761d5b6d8e72950

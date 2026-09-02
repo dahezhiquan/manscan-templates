@@ -1,0 +1,38 @@
+id: okiok-sfiler-portal
+
+info:
+  name: OKIOK S-Filer Portal 登录面板识别（暴露面识别）
+  author: johnk3r
+  severity: info
+  description: 该模板通过识别 OKIOK S-Filer Portal 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    shodan-query: http.title:"S-Filer"
+  tags: okiok,panel,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/sfiler/Login.action"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - "<title>S-Filer Portal - Login</title>"
+        part: body
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '<br\/>S\-Filer\/([A-Za-z 0-9.]+)<\/p>'
+# digest: 4a0a0047304502203b11cd4cee66c73530282592f366268b210de15cc528dc4efe45d467cb18b4360221009a4dd07b50a9bc8bd2fb5c10ed2d7f820845615ecbfeaf0687f86197adc5f578:922c64590222798bb761d5b6d8e72950

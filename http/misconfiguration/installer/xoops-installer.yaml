@@ -1,0 +1,28 @@
+id: xoops-installer
+
+info:
+  name: XOOPS Installation Wizard 面板识别（暴露面识别）
+  author: princechaddha
+  severity: high
+  description: 该模板通过识别 XOOPS Installation Wizard 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  classification:
+    cpe: cpe:2.3:a:xoops:xoops:*:*:*:*:*:*:*:*
+  metadata:
+    max-request: 1
+    vendor: xoops
+    product: xoops
+  tags: misconfig,install,exposure,xoops,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/install/page_start.php"
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        regex:
+          - "(?i)(<title>(.*)XOOPS Installation Wizard(.*)</title>)"
+          - "(?i)(<title>(.*)XOOPS 安裝精靈(.*)</title>)"
+        condition: or
+# digest: 4a0a00473045022100b5c0140dc3b04634fb6dfe9fa5afcc56ec09dc153ad9bf67054d86c85b3bf47f02204a7f6f85034e949833f1f3e33f9917f8d385087f6b6b7474dfab372694b5a749:922c64590222798bb761d5b6d8e72950

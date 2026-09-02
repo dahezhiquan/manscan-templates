@@ -1,0 +1,34 @@
+id: nuuo-network-login
+
+info:
+  name: NUUO 网络录像机登录面板（IOT）
+  author: dhiyaneshDK
+  severity: info
+  description: |
+    检测到 NUUO 网络视频录像机登录面板。该页面暴露可能泄露视频监控基础设施入口，并增加口令攻击风险。
+  reference:
+    - https://www.exploit-db.com/ghdb/6840
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: iot,panel,nuuo,edb,discovery
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '<title>NUUO Network Video Recorder Login</title>'
+        part: body
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a004730450221008f7d3c360b6b5a54fedf36da1d1271b668581efc010d59f6d6b669546de402d4022028fd4e7c3d32cddab6d0a7988a5fec3ca6ec7f78eaf35be4cbeea70f813a18e0:922c64590222798bb761d5b6d8e72950

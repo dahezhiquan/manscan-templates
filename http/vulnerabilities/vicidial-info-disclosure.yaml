@@ -1,0 +1,41 @@
+id: vicidial-info-disclosure
+
+info:
+  name: VICIdial 信息泄露漏洞（CVE-2021-28854）
+  author: pdteam
+  severity: high
+  description: |-
+    VICIdial 信息泄露漏洞 存在安全漏洞。未经授权的攻击者可通过 /agc/vicidial_mysqli_errors.txt 获取系统、配置或业务相关敏感信息，为后续攻击提供支撑。该模板通过请求 /agc/vicidial_mysqli_errors.txt，并结合响应中的 text/plain、HTTP 200、vdc_db_query 等特征进行验证。
+  impact: |-
+    - 攻击者可获取版本、配置、账户、路径或业务数据等敏感信息，为后续利用提供支撑。
+    - 这类信息泄露往往会降低其他攻击的利用门槛，并加速攻击路径构建。
+  remediation: |-
+    - 尽快将 VICIdial 信息泄露漏洞 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
+    - 关闭不必要的调试输出、错误回显和目录暴露接口，并为敏感资源增加认证与最小化信息披露策略。
+  reference:
+    - https://github.com/JHHAX/VICIdial
+  metadata:
+    max-request: 1
+  tags: sqli,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/agc/vicidial_mysqli_errors.txt"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - 'text/plain'
+        part: header
+
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        words:
+          - 'vdc_db_query'
+        part: body
+# digest: 4a0a0047304502203f02fa9c423257ea653bc3c3cfb74f007ae001d43489119c4909d015f28cc7e2022100ee29276792f8f817f56e92ce66d0cbb316b96df839b1239fd1853944191e04b2:922c64590222798bb761d5b6d8e72950

@@ -1,0 +1,61 @@
+id: wix-detect
+
+info:
+  name: Wix 指纹识别（指纹识别）
+  author: Chirag Mistry
+  severity: info
+  description: |
+    用于识别目标是否部署 Wix 并提取相关版本或构建信息，模板会结合 favicon 哈希、HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  metadata:
+    verified: true
+    max-request: 8
+  tags: wix,detect,tech
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+      - "{{BaseURL}}/robots.txt"
+      - "{{BaseURL}}/sitemap.xml"
+      - "{{BaseURL}}/favicon.ico"
+      - "{{BaseURL}}/_static/"
+      - "{{BaseURL}}/wix-api"
+      - "{{BaseURL}}/user/login"
+      - "{{BaseURL}}/wix.js"
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: response
+        words:
+          - "Powered by Wix"
+          - "X-Wix-Request-Id"
+          - "Wix Static Site"
+          - "wixsite.com"
+        condition: or
+        case-insensitive: true
+
+      - type: status
+        status:
+          - 200
+          - 403
+          - 404
+        condition: or
+
+    extractors:
+      - type: regex
+        part: body
+        name: version
+        regex:
+          - 'Wix.com ([0-9.]+)'
+          - 'Wix version ([0-9.]+)'
+          - 'Wix Static Site Version ([0-9.]+)'
+
+      - type: regex
+        part: body
+        name: wix_id
+        regex:
+          - 'wix-id=([a-z0-9]+)'
+          - 'siteid="([a-zA-Z0-9]+)"'
+# digest: 4b0a00483046022100c5aa23f34274a9ce991d28d81fc204496cd0c556c301e978ac06a5f4b06f25e3022100eefcc2a27a161ec53b7a0c85816c4b868e009bb8bb7c39944b35b591e86ed0af:922c64590222798bb761d5b6d8e72950

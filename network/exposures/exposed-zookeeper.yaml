@@ -8,9 +8,18 @@ info:
     该模板检测 Apache ZooKeeper 是否允许未认证访问管理接口。命中说明节点状态、配置信息或协调数据可能被直接读取甚至修改。
   reference:
     - https://zookeeper.apache.org/security.html
+    - https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands
+    - https://github.com/h1thub/Unauthorized-zookeeper
+  classification:
+    cwe-id: CWE-306
   metadata:
-    max-request: 1
+    verified: true
+    max-request: 2
+    shodan-query: 'X-Powered-By: ZooKeeper'
+    fofa-query: protocol="zookeeper"
   tags: network,zookeeper,unauth,exposure,tcp,discovery
+
+flow: tcp(1) || tcp(2)
 
 tcp:
   - inputs:
@@ -25,4 +34,39 @@ tcp:
       - type: word
         words:
           - "zookeeper.version"
-# digest: 4a0a004730450221009c44b5f530cfc18cbf470145be3ccd938c24546154a445810c7765f8877107630220673bdcd121e86cc1797ecf4146a71979452bba610e48c0760fe5b73dee78c406:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        regex:
+          - "zookeeper\\.version=([^\r\n]+)"
+
+  - inputs:
+      - data: "0000002d000000000000000000000000000075300000000000000000000000100000000000000000000000000000000000"
+        type: hex
+        read: 1024
+
+      - data: "0000000e0000000100000008000000012f00"
+        type: hex
+        read: 4096
+
+    host:
+      - "{{Hostname}}"
+    port: 2181
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "zookeeper"
+
+      - type: dsl
+        dsl:
+          - "len(raw) > 70"
+
+    extractors:
+      - type: regex
+        part: raw
+        regex:
+          - "zookeeper"
+# digest: 490a00463044022067a8ae96b6af41ed2c2281ce8824b87b062940f238002c2aecdd80273a11cd6002207da35a41411385ca92e243240ea4cf9e8d9f7546a62e6cbeaf14152370aa6877:922c64590222798bb761d5b6d8e72950

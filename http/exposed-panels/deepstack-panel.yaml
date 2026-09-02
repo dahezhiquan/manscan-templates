@@ -1,11 +1,11 @@
 id: deepstack-panel
 
 info:
-  name: DeepStack AI Server Panel - Detect
+  name: DeepStack AI 服务器面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    DeepStack, an open-source, self-hosted computer-vision (AI) server that provides object, face, and scene detection APIs, commonly deployed alongside home-automation stacks such as Home Assistant and Frigate on port 5000, was detected. An exposed, unauthenticated DeepStack landing/activation page was identified.
+  description: |-
+    检测到 DeepStack。DeepStack 是一个开源、自托管的计算机视觉（AI）服务器，提供物体、人脸和场景检测 API，常与 Home Assistant、Frigate 等家庭自动化组件一同部署在 5000 端口。发现一个处于暴露状态且无需认证即可访问的 DeepStack 登录/激活页面。
   reference:
     - https://github.com/johnolafenwa/DeepStack
     - https://deepstack.cc

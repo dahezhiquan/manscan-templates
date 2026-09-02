@@ -1,9 +1,9 @@
 id: phpldapadmin-workflow
 
 info:
-  name: phpLDAPadmin Secutiry Checks
+  name: phpLDAPadmin 安全检查（工作流）
   author: SadDrummer
-  description: A simple workflow that runs all LDAP related nuclei templates on a given target.
+  description: 一个简单的工作流，用于在给定目标上运行所有与 LDAP 相关的 nuclei 模板。
 
 workflows:
   - template: http/exposed-panels/phpldapadmin-panel.yaml

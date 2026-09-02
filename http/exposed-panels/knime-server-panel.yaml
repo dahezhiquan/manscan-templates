@@ -1,11 +1,11 @@
 id: knime-server-panel
 
 info:
-  name: KNIME Server / Business Hub WebPortal - Detect
+  name: KNIME Server / Business Hub WebPortal - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    KNIME Server (and its successor KNIME Business Hub), a commercial platform from KNIME AG for deploying, executing, and managing data-science and machine learning workflows built in the KNIME Analytics Platform, was detected. An exposed WebPortal login page was identified, including white-labeled/rebranded deployments, via their underlying static asset paths.
+  description: |-
+    检测到 KNIME Server（及其后继产品 KNIME Business Hub），这是 KNIME AG 推出的商业平台，用于部署、执行和管理在 KNIME Analytics Platform 中构建的数据科学与机器学习工作流。通过其底层静态资源路径识别出暴露的 WebPortal 登录页，包括白标/品牌定制化部署。
   reference:
     - https://www.knime.com/knime-software/knime-server
     - https://www.knime.com/knime-business-hub

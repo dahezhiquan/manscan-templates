@@ -1,15 +1,15 @@
 id: gdm-screen-lock-idle-check
 
 info:
-  name: Ensure GDM Screen Locks When the User is Idle
+  name: 确保用户在空闲时 GDM 屏幕锁定（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether the screen is configured to lock after a period of user inactivity.
-  remediation: |
-    Configure the screen lock settings to meet your organization's security policy:
-      - Set `lock-delay` to 5 seconds or less.
-      - Set `idle-delay` to 900 seconds (15 minutes) or less and ensure it is not disabled.
+  description: |-
+    此模板检查是否配置了在一段用户无操作时间后锁定屏幕。
+  remediation: |-
+    根据组织的安全策略配置屏幕锁定设置：
+      - 将 `lock-delay` 设置为 5 秒或更短。
+      - 将 `idle-delay` 设置为 900 秒（15 分钟）或更短，并确保其未被禁用。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,screensaver,screenlock,audit

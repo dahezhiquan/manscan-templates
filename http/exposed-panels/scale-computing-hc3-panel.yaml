@@ -1,11 +1,11 @@
 id: scale-computing-hc3-panel
 
 info:
-  name: Scale Computing HC3 - Login Panel
+  name: Scale Computing HC3 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Scale Computing HC3 web management login panel was detected. HC3, now part of the SC//HyperCore virtualization suite, provides hyperconverged compute, storage, and virtualization management.
+  description: |-
+    检测到 Scale Computing HC3 Web 管理登录面板。HC3 现已并入 SC//HyperCore 虚拟化套件，提供超融合计算、存储和虚拟化管理。
   reference:
     - https://www.scalecomputing.com/sc-platform
   metadata:

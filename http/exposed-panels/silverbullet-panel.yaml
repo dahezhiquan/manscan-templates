@@ -1,11 +1,11 @@
 id: silverbullet-panel
 
 info:
-  name: SilverBullet Panel - Detect
+  name: SilverBullet 面板检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    SilverBullet (silverbullet.md / github.com/silverbulletmd/silverbullet) is an open-source self-hosted, browser-based markdown notes and personal knowledge database. Instances left without authentication expose the full note space for reading and editing.
+  description: |-
+    SilverBullet（silverbullet.md / github.com/silverbulletmd/silverbullet）是一款开源的自托管、基于浏览器的 Markdown 笔记和个人知识库应用。未启用认证的实例会将完整的笔记空间暴露给任意读写。
   reference:
     - https://github.com/silverbulletmd/silverbullet
     - https://silverbullet.md/

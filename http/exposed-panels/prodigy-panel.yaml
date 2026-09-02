@@ -1,11 +1,11 @@
 id: prodigy-panel
 
 info:
-  name: Prodigy Annotation Tool - Unauthenticated Exposure
+  name: Prodigy 标注工具 - 未授权暴露（暴露面识别）
   author: rxerium
   severity: medium
-  description: |
-    Prodigy, a commercial scriptable annotation tool by Explosion AI used to label training data for machine learning and NLP models, was detected. Its local web server (default port 8080, built on uvicorn/FastAPI) ships with no built-in authentication or user accounts by default and is designed to run on localhost or a trusted network. The annotation UI was found directly reachable to unauthenticated visitors.
+  description: |-
+    检测到 Explosion AI 开发的商业可脚本化标注工具 Prodigy，该工具用于为机器学习及 NLP 模型标注训练数据。其本地 Web 服务器（默认端口 8080，基于 uvicorn/FastAPI 构建）默认不内置任何身份认证或用户账户，设计初衷为仅在 localhost 或可信网络内运行。检测发现其标注 UI 可被未授权访客直接访问。
   reference:
     - https://prodi.gy
     - https://prodi.gy/docs

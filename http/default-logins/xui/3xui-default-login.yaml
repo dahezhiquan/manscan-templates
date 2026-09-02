@@ -1,11 +1,11 @@
 id: 3xui-default-login
 
 info:
-  name: 3X-UI - Default Login
+  name: 3X-UI 默认登录（弱口令）
   author: mapioe
   severity: high
-  description: |
-    Detected 3X-UI contains default credentials admin/admin. An attacker can obtain access to the admin panel and manage VPN configurations, modify data, and execute unauthorized operations.
+  description: |-
+    检测到 3X-UI 存在默认凭据 admin/admin。攻击者可获取管理员面板访问权限，管理 VPN 配置、修改数据并执行未授权操作。
   reference:
     - https://github.com/MHSanaei/3x-ui
     - https://github.com/MHSanaei/3x-ui/wiki/Installation

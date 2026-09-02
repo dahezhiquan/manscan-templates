@@ -1,11 +1,11 @@
 id: documenso-panel
 
 info:
-  name: Documenso Panel - Detect
+  name: Documenso 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Documenso, an open source document signing platform and self-hosted DocuSign alternative built with React Router and a Prisma backend, was identified.
+  description: |-
+    检测到 Documenso——一个开源文档签署平台，作为 DocuSign 的自托管替代方案，基于 React Router 构建，后端使用 Prisma。
   reference:
     - https://github.com/documenso/documenso
     - https://documenso.com/

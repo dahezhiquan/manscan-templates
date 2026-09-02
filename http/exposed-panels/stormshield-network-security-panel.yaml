@@ -1,13 +1,11 @@
 id: stormshield-network-security-panel
 
 info:
-  name: Stormshield Network Security - Login Panel
+  name: Stormshield Network Security - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Stormshield Network Security (SNS) is a French network security appliance providing
-    firewall, IPS, VPN, and web filtering capabilities. Its web management portal is
-    frequently exposed on non-standard ports.
+  description: |-
+    Stormshield Network Security (SNS) 是一款法国网络安全设备，提供防火墙、IPS、VPN 和网页过滤功能。其 Web 管理门户经常暴露在非标准端口上。
   reference:
     - https://www.stormshield.com/products/network-security/
   metadata:

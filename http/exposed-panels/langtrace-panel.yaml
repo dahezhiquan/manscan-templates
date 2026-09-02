@@ -1,11 +1,11 @@
 id: langtrace-panel
 
 info:
-  name: Langtrace Panel - Detect
+  name: Langtrace 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Langtrace, an open-source, OpenTelemetry-based observability platform for LLM applications that provides tracing, monitoring, and analytics for LLM, vector database, and framework calls, was detected. An exposed, self-hosted Langtrace dashboard instance was identified, which typically redirected unauthenticated requests to a login page.
+  description: |-
+    检测到 Langtrace，这是一款基于 OpenTelemetry 的开源 LLM 应用可观测性平台，可对 LLM、向量数据库及框架调用提供追踪、监控与分析。识别出一个暴露的自托管 Langtrace 仪表盘实例，该实例通常会将未认证请求重定向到登录页。
   reference:
     - https://github.com/Scale3-Labs/langtrace
     - https://langtrace.ai

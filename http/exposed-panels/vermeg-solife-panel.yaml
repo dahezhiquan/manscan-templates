@@ -1,11 +1,11 @@
 id: vermeg-solife-panel
 
 info:
-  name: Vermeg Solife Panel - Detect
+  name: Vermeg Solife 面板检测（暴露面识别）
   author: righettod
   severity: info
-  description: |
-     Vermeg Solife was detected - A life insurance solution with cash, tax, legal, and claims management to boost operational efficiency and ensure compliance.
+  description: |-
+    检测到 Vermeg Solife —— 一款人寿保险解决方案，提供现金、税务、法律和理赔管理，以提升运营效率并确保合规。
   reference:
     - https://www.vermeg.com/solutions/solife/
   metadata:

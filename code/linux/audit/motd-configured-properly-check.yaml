@@ -1,15 +1,13 @@
 id: motd-configured-properly-check
 
 info:
-  name: Ensure Message of the Day is Configured Properly
+  name: 确保每日消息（MOTD）配置正确（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |
-    This template checks whether the Message of the Day (MOTD) is configured
-    without exposing system information.
-  remediation: |
-    Edit `/etc/motd` and remove any operating system, kernel, architecture,
-    or version information that could disclose system details.
+  description: |-
+    此模板检查每日消息（MOTD）是否已正确配置，且不会泄露系统信息。
+  remediation: |-
+    编辑 `/etc/motd`，删除任何可能泄露系统详情的操作系统、内核、架构或版本信息。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,motd,banner,audit

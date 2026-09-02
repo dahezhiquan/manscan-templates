@@ -1,11 +1,11 @@
 id: linkding-panel
 
 info:
-  name: Linkding Panel - Detect
+  name: Linkding 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    linkding (github.com/sissbruecker/linkding) is a popular open-source self-hosted bookmark manager built on Django. Default Docker port 9090. Exposed instances may reveal users' saved bookmarks, tags, and archived pages.
+  description: |-
+    linkding（github.com/sissbruecker/linkding）是一款基于 Django 构建的流行开源自托管书签管理器。默认 Docker 端口为 9090。暴露的实例可能泄露用户保存的书签、标签及归档页面。
   reference:
     - https://github.com/sissbruecker/linkding
     - https://linkding.link/

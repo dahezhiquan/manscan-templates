@@ -1,11 +1,11 @@
 id: dahua-icc-default-login
 
 info:
-  name: Dahua ICC Default Login
+  name: 大华 ICC 默认登录（弱口令）
   author: DhiyaneshDk
   severity: high
-  description: |
-    Dahua ICC Intelligent IoT Integrated Management Platform contains default credentials. An attacker can authenticate to the platform using known default username and password combinations and obtain a valid access token.
+  description: |-
+    大华 ICC 智慧物联综合管理平台存在默认凭据。攻击者可使用已知的默认用户名和密码组合进行身份认证，从而获得有效的访问令牌。
   reference:
     - https://www.dahuasecurity.com/
   metadata:

@@ -1,11 +1,11 @@
 id: asustor-adm-panel
 
 info:
-  name: ASUSTOR ADM - Login Panel
+  name: ASUSTOR ADM - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    ASUSTOR Data Master network-attached storage management login panel was detected.
+  description: |-
+    检测到 ASUSTOR Data Master 网络附加存储管理登录面板。
   reference:
     - https://www.asustor.com/admv2
   metadata:

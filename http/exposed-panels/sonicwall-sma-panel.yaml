@@ -1,11 +1,11 @@
 id: sonicwall-sma-panel
 
 info:
-  name: SonicWall Secure Mobile Access (SMA) Panel - Detection
+  name: SonicWall Secure Mobile Access (SMA) 面板 - 检测（暴露面识别）
   author: DhiyaneshDk
   severity: info
-  description: |
-    Detected SonicWall Secure Mobile Access (SMA) appliances — an enterprise SSL-VPN gateway for secure remote access (SMA 1000/6200/7200 series).
+  description: |-
+    检测到 SonicWall Secure Mobile Access (SMA) 设备——一款面向安全远程访问的企级 SSL-VPN 网关（SMA 1000/6200/7200 系列）。
   reference:
     - https://www.sonicwall.com/products/remote-access/
     - https://www.sonicwall.com/support/technical-documentation/?category=Secure%20Remote%20Access

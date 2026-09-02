@@ -1,11 +1,11 @@
 id: ddwrt-panel
 
 info:
-  name: DD-WRT - Router Panel
+  name: DD-WRT - 路由器管理面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    DD-WRT router management panel detected.
+  description: |-
+    检测到 DD-WRT 路由器管理面板。
   reference:
     - https://dd-wrt.com/
   metadata:

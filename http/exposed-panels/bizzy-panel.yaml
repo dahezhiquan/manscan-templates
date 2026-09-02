@@ -1,11 +1,11 @@
 id: bizzy-panel
 
 info:
-  name: BIZZY Login - Panel
+  name: BIZZY 登录 - 面板（暴露面识别）
   author: Kazgangap
   severity: info
-  description: |
-    BIZZY login Panel was detected. BIZZY is a vulnerability management platform.
+  description: |-
+    检测到 BIZZY 登录面板。BIZZY 是一个漏洞管理平台。
   classification:
     cwe-id: CWE-200
   metadata:

@@ -1,12 +1,11 @@
 id: array-networks-ssl-vpn-panel
 
 info:
-  name: Array Networks SSL VPN - Login Panel
+  name: Array Networks SSL VPN - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Array Networks AG Series SSL VPN appliances provide enterprise remote access.
-    The web login portal (Pilot) is typically accessible on port 8889 or via /prx/ paths.
+  description: |-
+    Array Networks AG 系列 SSL VPN 设备为企业提供远程访问。其 Web 登录门户（Pilot）通常位于端口 8889 或通过 /prx/ 路径访问。
   reference:
     - https://www.arraynetworks.com/products/ag-series.html
   metadata:

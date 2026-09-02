@@ -1,11 +1,11 @@
 id: open-socks-proxy
 
 info:
-  name: Open SOCKS4/SOCKS5 proxy
+  name: 开放的 SOCKS4/SOCKS5 代理（服务漏洞）
   author: snicket2100
   severity: medium
-  description: |
-    The host accepts unauthenticated SOCKS4/SOCKS5 connections and can proxy TCP traffic to external destinations. This could allow abuse for anonymization, spam, scanning, or network pivoting. Verification was performed by successfully connecting to 1.1.1.1:80 through the proxy.
+  description: |-
+    该主机接受未经认证的 SOCKS4/SOCKS5 连接，并可为外部目标代理 TCP 流量。此漏洞可能被滥用，用于匿名化、发送垃圾邮件、扫描或网络渗透。验证方式为通过该代理成功连接至 1.1.1.1:80。
   reference:
     - https://www.rfc-editor.org/rfc/rfc1928
     - https://en.wikipedia.org/wiki/Open_proxy

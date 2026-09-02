@@ -1,11 +1,11 @@
 id: rustdesk-server-pro-panel
 
 info:
-  name: RustDesk Server Pro - Login Panel
+  name: RustDesk Server Pro - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    RustDesk Server Pro administrative web console was detected.
+  description: |-
+    已检测到 RustDesk Server Pro 管理 Web 控制台。
   reference:
     - https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/
     - https://github.com/rustdesk/rustdesk-server-pro

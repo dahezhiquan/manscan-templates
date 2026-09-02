@@ -1,11 +1,11 @@
 id: karakeep-panel
 
 info:
-  name: Karakeep Panel - Detect
+  name: Karakeep 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Detected Karakeep (formerly Hoarder) was a self-hosted bookmark-everything app for links, notes and images with AI-based tagging and full text search, usually served on TCP 3000.
+  description: |-
+    检测到 Karakeep（原名为 Hoarder），这是一个自托管的万能收藏应用，可用于收藏链接、笔记和图片，支持基于 AI 的标签和全文搜索，通常运行在 TCP 3000 端口。
   reference:
     - https://github.com/karakeep-app/karakeep
     - https://docs.karakeep.app/api/karakeep-api/

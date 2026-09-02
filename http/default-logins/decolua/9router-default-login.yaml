@@ -1,11 +1,11 @@
 id: 9router-default-login
 
 info:
-  name: 9Router - Default Login
+  name: 9Router 默认登录（弱口令）
   author: 0x_Akoko
   severity: high
-  description: |
-    Detected 9Router AI coding proxy was using default credentials (password 123456). 9Router ships with a hardcoded initial password that grants full dashboard access including connected provider API keys, OAuth tokens, and model routing configuration.
+  description: |-
+    检测到 9Router AI 编码代理正在使用默认凭据（密码 123456）。9Router 内置硬编码初始密码，可提供完整仪表盘访问权限，包括已连接提供商的 API 密钥、OAuth 令牌和模型路由配置。
   reference:
     - https://github.com/decolua/9router
     - https://deepwiki.com/decolua/9router/13.1-authentication-and-token-issues

@@ -1,11 +1,11 @@
 id: gargoyle-router-detect
 
 info:
-  name: Gargoyle Router Management Utility - Detect
+  name: Gargoyle 路由器管理工具检测（IOT）
   author: K3ysTr0K3R
   severity: info
-  description: |
-    Detected Gargoyle router management interfaces.
+  description: |-
+    检测到 Gargoyle 路由器管理界面。
   reference:
     - https://www.gargoyle-router.com/
   metadata:

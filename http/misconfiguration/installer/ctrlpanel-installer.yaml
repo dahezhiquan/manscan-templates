@@ -1,10 +1,10 @@
 id: ctrlpanel-installer
 
 info:
-  name: CtrlPanel Installer Exposure
+  name: CtrlPanel 安装程序暴露
   author: theamanrawat
   severity: high
-  description: CtrlPanel is susceptible to the Installation page exposure due to misconfiguration.
+  description: 由于配置错误，CtrlPanel 的安装页面存在暴露风险。
   metadata:
     verified: true
     max-request: 1

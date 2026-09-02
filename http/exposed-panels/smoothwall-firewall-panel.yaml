@@ -1,11 +1,11 @@
 id: smoothwall-firewall-panel
 
 info:
-  name: Smoothwall Firewall - Login Panel
+  name: Smoothwall 防火墙 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Smoothwall is a UK-based firewall and web filtering appliance commonly deployed in schools, local authorities, and enterprises for internet safety and network security management.
+  description: |-
+    Smoothwall 是一家总部位于英国的防火墙和网页过滤设备厂商，广泛部署于学校、地方政府和企业，用于互联网安全与网络安全防护管理。
   reference:
     - https://www.smoothwall.com/
   metadata:

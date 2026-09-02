@@ -1,11 +1,11 @@
 id: directus-api-exposure
 
 info:
-  name: Directus Server Info - Unauthenticated Fingerprint
+  name: Directus 服务器信息 - 未认证指纹泄露（暴露面识别）
   author: RootKaito
   severity: info
-  description: |
-    Directus /server/info endpoint is exposed without authentication, leaking project metadata and license configuration.
+  description: |-
+    Directus 的 /server/info 接口在未认证的情况下暴露，泄露了项目元数据和许可证配置。
   reference:
     - https://directus.io/docs/api/server
   classification:

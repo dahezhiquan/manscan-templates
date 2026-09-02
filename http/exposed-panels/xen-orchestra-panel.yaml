@@ -1,11 +1,11 @@
 id: xen-orchestra-panel
 
 info:
-  name: Xen Orchestra - Login Panel
+  name: Xen Orchestra 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Xen Orchestra central management and backup web interface was detected.
+  description: |-
+    检测到 Xen Orchestra 集中管理与备份的 Web 界面。
   reference:
     - https://docs.xcp-ng.org/management/manage-at-scale/xo-web-ui/
     - https://github.com/vatesfr/xen-orchestra

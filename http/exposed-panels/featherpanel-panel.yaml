@@ -1,11 +1,11 @@
 id: featherpanel-panel
 
 info:
-  name: FeatherPanel Panel - Detect
+  name: 检测 FeatherPanel 面板（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    FeatherPanel login interface was detected.
+  description: |-
+    检测到 FeatherPanel 登录界面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

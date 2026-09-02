@@ -1,11 +1,11 @@
 id: budibase-admin-installer
 
 info:
-  name: Budibase - Admin Installer
+  name: Budibase - 管理员安装程序
   author: 0x_Akoko
   severity: high
-  description: |
-    Detected Budibase admin setup checklist endpoint was publicly accessible with no admin user created, allowing unauthenticated users to complete setup and gain full platform control.
+  description: |-
+    检测到 Budibase 管理员安装检查清单端点公开可访问，且尚未创建管理员用户，允许未认证用户完成安装设置并获取平台的完全控制权。
   reference:
     - https://github.com/Budibase/budibase
   metadata:

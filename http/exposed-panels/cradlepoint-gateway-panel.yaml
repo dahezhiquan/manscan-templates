@@ -1,13 +1,11 @@
 id: cradlepoint-gateway-panel
 
 info:
-  name: CradlePoint Gateway - Login Panel
+  name: CradlePoint 网关 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    CradlePoint (an Ericsson company) produces cellular-connected SD-WAN and VPN
-    gateway appliances. The web administration interface is commonly exposed on
-    port 8080.
+  description: |-
+    CradlePoint（爱立信旗下公司）生产基于蜂窝网络的 SD-WAN 与 VPN 网关设备。其 Web 管理界面通常暴露在 8080 端口。
   reference:
     - https://cradlepoint.com/products/netcloud-manager/
   metadata:

@@ -1,11 +1,11 @@
 id: elfiq-panel
 
 info:
-  name: Elfiq Link Balancer - Login Panel
+  name: Elfiq Link Balancer - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Elfiq Link Balancer management login panel detected.
+  description: |-
+    检测到 Elfiq Link Balancer 管理登录面板。
   reference:
     - https://www.elfiq.com/
   metadata:

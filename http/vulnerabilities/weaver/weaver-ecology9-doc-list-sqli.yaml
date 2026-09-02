@@ -1,13 +1,13 @@
 id: weaver-ecology9-doc-list-sqli
 
 info:
-  name: Weaver E-cology9 api/doc/out/more/list SQL Injection
+  name: Weaver E-cology9 api/doc/out/more/list SQL 注入
   author: DhiyaneshDk
   severity: high
-  description: |
-    Weaver E-cology9 contains a SQL injection vulnerability in the `/api/doc/out/more/list` endpoint. A crafted request can trigger backend SQL execution and generate a temporary `sessionkey`, which can subsequently be used with the `/api/ec/dev/table/counts` endpoint to retrieve query results and confirm successful exploitation.
-  impact: |
-    Successful exploitation may allow an unauthenticated attacker to extract sensitive information from the underlying database.
+  description: |-
+    Weaver E-cology9 的 `/api/doc/out/more/list` 端点存在 SQL 注入漏洞。精心构造的请求可触发后端执行 SQL，并生成一个临时的 `sessionkey`，随后可配合 `/api/ec/dev/table/counts` 端点获取查询结果，从而确认利用成功。
+  impact: |-
+    成功利用后，未认证的攻击者可能从底层数据库中窃取敏感信息。
   reference:
     - https://1diot9.github.io/2026/05/13/泛微e9分析思路/#测绘指纹
   metadata:

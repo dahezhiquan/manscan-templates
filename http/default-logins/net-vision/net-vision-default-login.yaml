@@ -1,11 +1,11 @@
 id: net-vision-default-login
 
 info:
-  name: Net Vision UPS Monitor - Default Login
+  name: Net Vision UPS 监控器默认登录（弱口令）
   author: Th3l0newolf
   severity: high
-  description: |
-    Net Vision UPS Monitor default credentials were detected.
+  description: |-
+    检测到 Net Vision UPS 监控器存在默认凭据。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cwe-id: CWE-798

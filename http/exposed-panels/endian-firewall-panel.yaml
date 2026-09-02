@@ -1,13 +1,11 @@
 id: endian-firewall-panel
 
 info:
-  name: Endian Firewall - Login Panel
+  name: Endian Firewall - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Endian Firewall Community is an open-source UTM (Unified Threat Management) appliance
-    and VPN gateway. The web management interface is commonly exposed on port 10443 with
-    a self-signed certificate.
+  description: |-
+    Endian Firewall Community 是一款开源 UTM（统一威胁管理）设备兼 VPN 网关。其 Web 管理界面通常暴露在 10443 端口，并配有自签名证书。
   reference:
     - https://www.endian.com/community/overview/
   metadata:

@@ -1,11 +1,11 @@
 id: ecessa-panel
 
 info:
-  name: Ecessa WANworX - Login Panel
+  name: Ecessa WANworX - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Ecessa WANworX management panel detected.
+  description: |-
+    检测到 Ecessa WANworX 管理面板。
   reference:
     - https://www.ecessa.com/
   metadata:

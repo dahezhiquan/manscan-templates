@@ -1,11 +1,11 @@
 id: vllm-openai-api-exposed
 
 info:
-  name: vLLM OpenAI-Compatible API - Unauthenticated Exposure
+  name: vLLM OpenAI 兼容 API - 未认证暴露（暴露面识别）
   author: fsoppelsa
   severity: medium
-  description: |
-    Detects a vLLM inference server exposing its OpenAI-compatible API without authentication. The /v1/models endpoint returns the list of served models and is reachable by any unauthenticated client, allowing model enumeration and unauthorized inference (resource abuse / cost and information exposure). vLLM does not enable an API key by default; it is only enforced when the server is started with --api-key.
+  description: |-
+    检测到 vLLM 推理服务器未经认证便暴露其 OpenAI 兼容 API。/v1/models 接口会返回已提供模型的列表，任何未认证客户端都可访问，导致模型枚举和未授权推理（资源滥用 / 成本与信息泄露）。vLLM 默认不启用 API key，仅当服务器以 --api-key 参数启动时才会强制校验。
   reference:
     - https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
     - https://github.com/vllm-project/vllm

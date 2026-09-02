@@ -1,11 +1,11 @@
 id: dawarich-detect
 
 info:
-  name: Dawarich - Detect
+  name: Dawarich - 检测（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Dawarich is a self-hosted location history and timeline application (Google Timeline alternative). The unauthenticated /api/v1/health endpoint returns a status payload together with the X-Dawarich-Response and X-Dawarich-Version headers, which identify the instance and disclose its version.
+  description: |-
+    Dawarich 是一个自托管的定位历史与时间线应用（Google Timeline 的替代方案）。未认证的 /api/v1/health 端点会返回状态负载，并附带 X-Dawarich-Response 和 X-Dawarich-Version 响应头，可用于识别该实例并泄露其版本号。
   reference:
     - https://github.com/Freika/dawarich
     - https://dawarich.app/

@@ -1,13 +1,11 @@
 id: sangfor-ngaf-panel
 
 info:
-  name: Sangfor Next-Generation Application Firewall (NGAF) - Login Panel
+  name: 深信服下一代应用防火墙（NGAF）- 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Sangfor NGAF is a next-generation application firewall and SSL VPN gateway by
-    Sangfor Technologies. It is widely deployed in APAC and China-based enterprises.
-    The management portal is frequently exposed on non-standard ports.
+  description: |-
+    深信服 NGAF 是深信服科技推出的下一代应用防火墙和 SSL VPN 网关，广泛应用于亚太地区及中国企业。其管理门户经常暴露在非标准端口上。
   reference:
     - https://www.sangfor.com/en/product/network-security/next-gen-application-firewall
   metadata:

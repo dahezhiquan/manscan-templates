@@ -1,11 +1,11 @@
 id: pingfederate-login-panel
 
 info:
-  name: PingFederate - Login Panel
+  name: PingFederate - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    PingFederate is an enterprise federation server for single sign-on and identity management. The administrative login panel was detected.
+  description: |-
+    PingFederate 是一款用于单点登录和身份管理的企业联合认证服务器。检测到其管理登录面板。
   reference:
     - https://docs.pingidentity.com/pingfederate/latest/getting_started_with_pingfederate/pf_get_started_w_pf.html
   metadata:

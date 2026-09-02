@@ -1,11 +1,11 @@
 id: determined-ai-panel
 
 info:
-  name: Determined AI Panel - Detect
+  name: Determined AI 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Determined AI, an open-source deep learning training platform that provides distributed training, hyperparameter tuning, and experiment tracking through a web-based UI and a REST/gRPC-gateway API served by the "master" component, was detected by matching the application title and meta description served at the application root.
+  description: |-
+    通过匹配应用根路径返回的应用标题和 meta 描述，检测到 Determined AI。它是一款开源深度学习训练平台，提供分布式训练、超参数调优与实验追踪功能，并可通过基于 Web 的 UI 以及由 "master" 组件提供的 REST/gRPC-gateway API 访问。
   reference:
     - https://github.com/determined-ai/determined
     - https://docs.determined.ai

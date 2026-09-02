@@ -1,11 +1,11 @@
 id: bytebase-auth-panel
 
 info:
-  name: Bytebase Auth - Panel Detect
+  name: Bytebase 认证 - 面板识别（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Bytebase authentication interface was discovered.
+  description: |-
+    发现 Bytebase 认证界面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

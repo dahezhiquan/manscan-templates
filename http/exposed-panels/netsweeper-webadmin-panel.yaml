@@ -1,11 +1,11 @@
 id: netsweeper-webadmin-panel
 
 info:
-  name: Netsweeper WebAdmin - Login Panel
+  name: Netsweeper WebAdmin - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Netsweeper is an internet content filtering and web policy management platform used by ISPs, governments, educational institutions, and enterprises to enforce acceptable use policies and restrict access to harmful content.
+  description: |-
+    Netsweeper 是一款互联网内容过滤与 Web 策略管理平台，被 ISP、政府机构、教育机构和企事业单位用于执行可接受使用策略，并限制对有害内容的访问。
   reference:
     - https://www.netsweeper.com/
   metadata:

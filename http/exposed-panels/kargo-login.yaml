@@ -1,10 +1,10 @@
 id: kargo-login
 
 info:
-  name: Kargo Login Panel - Detect
+  name: Kargo 登录面板 - 检测（暴露面识别）
   author: theamanrawat
   severity: info
-  description: Kargo login panel was detected.
+  description: 检测到 Kargo 登录面板。
   reference:
     - https://github.com/akuity/kargo
   classification:

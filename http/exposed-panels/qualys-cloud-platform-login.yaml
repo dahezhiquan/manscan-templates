@@ -1,10 +1,10 @@
 id: qualys-cloud-platform-login
 
 info:
-  name: Qualys Cloud Platform Login Panel - Detect
+  name: Qualys 云平台登录面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: Qualys Cloud Platform login panel was detected.
+  description: 已检测到 Qualys 云平台登录面板。
   reference:
     - https://www.qualys.com/cloud-platform/
   classification:

@@ -1,13 +1,13 @@
 id: issue-file-permissions-check
 
 info:
-  name: Ensure Access to /etc/issue is Configured
+  name: 确保 /etc/issue 的访问权限已正确配置（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether /etc/issue has secure ownership and permissions.
-  remediation: |
-    Set the ownership and permissions on `/etc/issue`:
+  description: |-
+    此模板检查 /etc/issue 是否具有安全的属主和权限。
+  remediation: |-
+    设置 `/etc/issue` 的属主和权限：
       sudo chown root:root /etc/issue
       sudo chmod 644 /etc/issue
   reference:

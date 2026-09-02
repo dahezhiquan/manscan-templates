@@ -1,13 +1,11 @@
 id: fortinet-fortianalyzer-panel
 
 info:
-  name: Fortinet FortiAnalyzer - Login Panel
+  name: Fortinet FortiAnalyzer 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Fortinet FortiAnalyzer is a centralised log management and analytics platform for
-    Fortinet security devices. The web management console is commonly internet-exposed
-    on ports 443, 10443, 9443, or 4443.
+  description: |-
+    Fortinet FortiAnalyzer 是面向 Fortinet 安全设备的集中式日志管理与分析平台。其 Web 管理控制台通常暴露于公网的 443、10443、9443 或 4443 端口。
   reference:
     - https://www.fortinet.com/products/management/fortianalyzer
   metadata:

@@ -1,11 +1,11 @@
 id: sglang-detect
 
 info:
-  name: SGLang - Detect
+  name: SGLang - 检测（指纹识别）
   author: insidetrust,hdm
   severity: info
-  description: |
-    Detects SGLang, a high-performance LLM serving framework that provides an OpenAI-compatible API (default port 30000). This template identifies SGLang by checking for the unique /get_model_info endpoint (returning "model_path" and "is_generation") and Prometheus metrics prefixed with "sglang:". An unauthenticated server exposes inference access and reveals the underlying model path, which is extracted if found.
+  description: |-
+    检测 SGLang，一个提供 OpenAI 兼容 API 的高性能 LLM 服务框架（默认端口 30000）。该模板通过检查独特的 /get_model_info 端点（返回 "model_path" 和 "is_generation"）以及以 "sglang:" 为前缀的 Prometheus 指标来识别 SGLang。未认证的服务器会暴露推理访问权限，并泄露底层模型路径，若发现则予以提取。
   reference:
     - https://github.com/sgl-project/sglang
     - https://docs.sglang.ai/backend/openai_api_completions.html

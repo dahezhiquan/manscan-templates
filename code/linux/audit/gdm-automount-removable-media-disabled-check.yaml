@@ -1,13 +1,13 @@
 id: gdm-automount-removable-media-disabled-check
 
 info:
-  name: Ensure GDM Automatic Mounting of Removable Media is Disabled
+  name: 确保 GDM 已禁用可移动媒体自动挂载（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether automatic mounting of removable media is disabled.
-  remediation: |
-    Disable automatic mounting and automatic opening of removable media in GDM.
+  description: |-
+    此模板检查是否已禁用可移动媒体的自动挂载。
+  remediation: |-
+    在 GDM 中禁用可移动媒体的自动挂载和自动打开功能。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,media,automount,audit

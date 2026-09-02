@@ -1,11 +1,11 @@
 id: docmost-panel
 
 info:
-  name: Docmost Panel - Detect
+  name: Docmost 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Detected Docmost (docmost.com / github.com/docmost/docmost) was an open-source self-hosted wiki and documentation collaboration platform. Default Docker port 3000. Exposed instances may reveal internal spaces, pages and workspace member details.
+  description: |-
+    检测到 Docmost（docmost.com / github.com/docmost/docmost），这是一个开源、自托管的 Wiki 和文档协作平台。默认 Docker 端口为 3000。暴露的实例可能会泄露内部空间、页面以及工作区成员信息。
   reference:
     - https://github.com/docmost/docmost
     - https://docmost.com/

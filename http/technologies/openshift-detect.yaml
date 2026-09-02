@@ -1,11 +1,11 @@
 id: openshift-detect
 
 info:
-  name: OpenShift Monitoring Plugin - Detect
+  name: OpenShift 监控插件检测（指纹识别）
   author: righettod
   severity: info
-  description: |
-     OpenShift Monitoring Plugin was detected - This plugin enables frontend UI based on feature flags passed to the backend
+  description: |-
+    检测到 OpenShift 监控插件——该插件基于传递给后端的特性开关启用前端 UI。
   reference:
     - https://github.com/openshift/monitoring-plugin
   metadata:

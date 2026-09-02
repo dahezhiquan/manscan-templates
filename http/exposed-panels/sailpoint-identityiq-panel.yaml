@@ -1,11 +1,11 @@
 id: sailpoint-identityiq-panel
 
 info:
-  name: SailPoint IdentityIQ - Login Panel
+  name: SailPoint IdentityIQ - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    SailPoint IdentityIQ is an identity governance and administration platform. The IdentityIQ web login panel was detected.
+  description: |-
+    SailPoint IdentityIQ 是一个身份治理与管理平台。检测到其 Web 登录面板。
   reference:
     - https://documentation.sailpoint.com/identityiq/help/
   metadata:

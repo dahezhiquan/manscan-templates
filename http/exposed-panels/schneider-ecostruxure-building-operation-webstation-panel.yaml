@@ -1,11 +1,11 @@
 id: schneider-ecostruxure-building-operation-webstation-panel
 
 info:
-  name: Schneider EcoStruxure Building Operation WebStation - Login Panel
+  name: 施耐德 EcoStruxure Building Operation WebStation - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Schneider Electric EcoStruxure Building Operation WebStation interface was detected.
+  description: |-
+    检测到施耐德电气 EcoStruxure Building Operation WebStation 接口。
   reference:
     - https://www.se.com/ww/en/product-range/62111-ecostruxure-building-operation/
   metadata:

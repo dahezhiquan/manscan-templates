@@ -1,11 +1,11 @@
 id: wallos-panel
 
 info:
-  name: Wallos Panel - Detect
+  name: Wallos 面板检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Wallos is an open source, self hosted personal subscription tracker. The login panel exposes the product title and a version string on its static asset references.
+  description: |-
+    Wallos 是一款开源、可自托管的个人订阅跟踪工具。其登录面板会通过静态资源引用暴露产品标题和版本字符串。
   reference:
     - https://github.com/ellite/Wallos
     - https://wallosapp.com/

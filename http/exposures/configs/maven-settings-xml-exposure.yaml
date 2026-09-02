@@ -1,11 +1,11 @@
 id: maven-settings-xml-exposure
 
 info:
-  name: Apache Maven settings.xml Credentials - Exposure
+  name: Apache Maven settings.xml 凭据暴露（暴露面识别）
   author: ChrisJr404
   severity: high
-  description: |
-    Detected An Apache Maven settings.xml file is exposed. The server section of this file stores the credentials Maven uses to authenticate to remote repositories and distribution servers, so a public copy can leak repository usernames and passwords.
+  description: |-
+    检测到 Apache Maven 的 settings.xml 文件已暴露。该文件的 server 部分存储了 Maven 用于向远程仓库和分发服务器认证的凭据，因此公开副本可能泄漏仓库的用户名和密码。
   reference:
     - https://maven.apache.org/settings.html
     - https://maven.apache.org/guides/mini/guide-encryption.html

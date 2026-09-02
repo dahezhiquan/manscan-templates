@@ -1,11 +1,11 @@
 id: thegreenbowvpn-panel
 
 info:
-  name: TheGreenBow VPN - Login Panel
+  name: TheGreenBow VPN - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    TheGreenBow VPN Client login panel detected.
+  description: |-
+    检测到 TheGreenBow VPN 客户端登录面板。
   reference:
     - https://www.thegreenbowvpn.com/
   metadata:

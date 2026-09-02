@@ -1,11 +1,11 @@
 id: pingaccess-detect
 
 info:
-  name: PingAccess - Detect
+  name: PingAccess 检测（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    PingAccess is an identity-aware access management proxy. A PingAccess response page was detected.
+  description: |-
+    PingAccess 是一种身份感知的访问管理代理。检测到了 PingAccess 响应页面。
   reference:
     - https://www.pingidentity.com/en/resources/downloads/pingaccess.html
   metadata:

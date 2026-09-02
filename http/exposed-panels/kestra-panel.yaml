@@ -1,11 +1,11 @@
 id: kestra-panel
 
 info:
-  name: Kestra Login - Panel Detect
+  name: Kestra 登录面板 - 检测（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Kestra login interface was discovered.
+  description: |-
+    检测到 Kestra 登录界面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

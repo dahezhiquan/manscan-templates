@@ -1,11 +1,11 @@
 id: verba-panel
 
 info:
-  name: Verba (The Golden RAGtriever) Panel - Detect
+  name: Verba（The Golden RAGtriever）面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Verba, also known as "The Golden RAGtriever", an open-source retrieval-augmented generation (RAG) chat application built by Weaviate that ships a Next.js frontend backed by a FastAPI/uvicorn server and is commonly deployed on port 8000, was detected via a unique compiled CSS class name present in the shipped frontend bundle.
+  description: |-
+    Verba，又称“The Golden RAGtriever”，是 Weaviate 构建的开源检索增强生成（RAG）聊天应用，采用 Next.js 前端并后接 FastAPI/uvicorn 服务器，通常部署在 8000 端口。通过前端捆绑包中特有的编译后 CSS 类名即可识别该应用。
   reference:
     - https://github.com/weaviate/Verba
     - https://weaviate.io

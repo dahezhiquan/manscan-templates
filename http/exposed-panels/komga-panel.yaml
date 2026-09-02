@@ -1,11 +1,11 @@
 id: komga-panel
 
 info:
-  name: Komga Panel - Detect
+  name: Komga 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Komga (komga.org / github.com/gotson/komga) is a self-hosted media server for comics, mangas, BDs and eBooks. Default Docker port 25600. Exposed instances present a login panel and may reveal hosted library contents.
+  description: |-
+    Komga（komga.org / github.com/gotson/komga）是一款自托管的漫画、日漫、BD 及电子书媒体服务器。默认 Docker 端口为 25600。暴露的实例会呈现登录面板，并可能泄露所托管的馆藏内容。
   reference:
     - https://github.com/gotson/komga
     - https://komga.org/

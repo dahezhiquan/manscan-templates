@@ -1,11 +1,11 @@
 id: vikunja-detect
 
 info:
-  name: Vikunja - Detect
+  name: Vikunja - 检测（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Detects Vikunja instances through the unauthenticated info API endpoint and extracts the running version. Vikunja is a self hosted to-do and project management application.
+  description: |-
+    通过未认证的 info API 端点检测 Vikunja 实例并提取运行版本。Vikunja 是一款自托管的待办事项与项目管理应用。
   reference:
     - https://vikunja.io/
     - https://github.com/go-vikunja/vikunja

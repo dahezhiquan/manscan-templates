@@ -18,6 +18,7 @@
 - 严格按照 `CODE_STYLE.md` 约定处理目录、`id`、文件名、`info`、`reference`、`metadata`、`tags`、协议块顺序与匹配逻辑。
 - 优先控制误报，先证明漏洞，再设计匹配器。
 - 模版内容必须可读、可维护、可复核，不能只追求“能跑”。
+- 新增模版前，必须先根据 `POC` 内容判断仓库中是否已经存在相同或高度相似的模版；优先复用、合并或改造已有模版，避免重复新增。
 - 如果 `CODE_STYLE.md` 与个人习惯冲突，以 `CODE_STYLE.md` 为准。
 
 ## 汉化模板要求
@@ -47,6 +48,39 @@
 - 这里的“用户指定的后缀”必须原样拼接到中文漏洞名称后面。
 - 名称要自然、专业、准确，不能只是生硬直译。
 - 如果模板中存在 `variables` 里的 `name` 字段，不要改动；这里只修改 `info.name`。
+
+#### 目录后缀规则
+
+- 汉化模板时，`info.name` 还必须按所在目录追加固定后缀。
+- 同一模板只能使用一个后缀，禁止重复拼接相同后缀，也禁止叠加多个目录后缀。
+- 若原始 `name` 已经包含对应后缀语义，仍只保留一次，不要重复写。
+
+固定对应关系如下：
+
+- `cloud/` -> `（云安全）`
+- `code/` -> `（本地基线扫描）`
+- `dast/` -> `（DAST）`
+- `dns/` -> `（dns）`
+- `file/` -> `（本地文件安全扫描）`
+- `headless/` -> `（headless）`
+- `javascript/` -> `（服务漏洞）`
+- `network/` -> `（服务漏洞）`
+- `ssl/` -> `（证书安全）`
+- `workflows/` -> `（工作流）`
+- `http/cnvd/` -> `（CNVD-编号）`，例如 `（CNVD-2018-13393）`
+- `http/credential-stuffing/` -> `（撞库）`
+- `http/cves/` -> `（CVE-编号）`，例如 `（CVE-2005-3128）`
+- `http/default-logins/` -> `（弱口令）`
+- `http/exposed-panels/` -> `（暴露面识别）`
+- `http/exposures/` -> `（暴露面识别）`
+- `http/global-matchers/` -> `（全局模版）`
+- `http/honeypot/` -> `（蜜罐识别）`
+- `http/iot/` -> `（IOT）`
+- `http/osint/phishing/` -> `（钓鱼网站识别）`
+- `http/osint/user-enumeration/` -> `（OSINT）`
+- `http/takeovers/` -> `（子域名接管）`
+- `http/technologies/` -> `（指纹识别）`
+- `http/token-spray/` -> `（token喷洒）`
 
 #### `description` / `impact` / `remediation`
 

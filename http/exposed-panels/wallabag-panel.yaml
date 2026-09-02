@@ -1,11 +1,11 @@
 id: wallabag-panel
 
 info:
-  name: Wallabag Panel - Detect
+  name: Wallabag 面板检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    wallabag (wallabag.org / github.com/wallabag/wallabag) is a popular open-source self-hosted read-it-later application built on Symfony. The login page and the anonymous /api/info.json endpoint expose the running instance and its version.
+  description: |-
+    wallabag（wallabag.org / github.com/wallabag/wallabag）是一款基于 Symfony 构建的热门开源自托管稍后阅读应用。其登录页面和匿名 /api/info.json 端点会暴露运行实例及其版本信息。
   reference:
     - https://github.com/wallabag/wallabag
     - https://wallabag.org/

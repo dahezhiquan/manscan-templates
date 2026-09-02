@@ -1,11 +1,11 @@
 id: atera-customer-portal
 
 info:
-  name: Atera Customer Portal - Login Panel
+  name: Atera 客户门户 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Atera customer portal login interface was detected.
+  description: |-
+    检测到 Atera 客户门户登录界面。
   reference:
     - https://support.atera.com/hc/en-us
   metadata:

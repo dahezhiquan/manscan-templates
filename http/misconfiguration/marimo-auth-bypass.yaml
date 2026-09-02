@@ -1,13 +1,12 @@
 id: marimo-unauth
 
 info:
-  name: motionEye Partial - Authentication Bypass
+  name: motionEye 部分 - 认证绕过
   author: pussycat0x
   severity: critical
-  description: |
-    A path traversal vulnerability allows unauthenticated attackers to access protected resources and bypass authentication controls.
-  impact:
-    Attackers can steal administrator credentials without logging in, potentially leading to full administrative account compromise.
+  description: |-
+    路径遍历漏洞允许未认证攻击者访问受保护资源并绕过认证控制。
+  impact: 攻击者可在未登录的情况下窃取管理员凭据，可能导致管理员账户被完全接管。
   reference:
     - https://github.com/advisories/GHSA-phv5-334h-mxcw
   metadata:

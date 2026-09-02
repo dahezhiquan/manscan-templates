@@ -1,11 +1,11 @@
 id: stackstorm-web-ui-panel
 
 info:
-  name: StackStorm Web UI - Panel Detect
+  name: StackStorm Web UI - 面板检测（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    StackStorm Web UI interface was discovered.
+  description: |-
+    发现 StackStorm Web UI 界面。
   reference:
     - https://stackstorm.com/
   metadata:

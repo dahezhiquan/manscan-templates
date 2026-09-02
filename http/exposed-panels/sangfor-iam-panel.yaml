@@ -1,11 +1,11 @@
 id: sangfor-iam-panel
 
 info:
-  name: Sangfor Internet Access Management - Login Panel
+  name: 深信服上网行为管理 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Sangfor Internet Access Management (IAM) is a network access control and web filtering appliance from Sangfor Technologies used for managing internet access policies and user authentication in enterprise environments.
+  description: |-
+    深信服上网行为管理（IAM）是深信服科技推出的网络接入控制与网页过滤设备，用于企业环境中管理互联网访问策略和用户身份认证。
   reference:
     - https://www.sangfor.com/en/product/internet-access-management
   metadata:

@@ -1,11 +1,11 @@
 id: deskpro-on-default-page
 
 info:
-  name: Deskpro On-Premise Controller - Default Page Detect
+  name: Deskpro 本地部署控制器 - 默认页面识别（指纹识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Deskpro On-Premise Controller default page detected.
+  description: |-
+    检测到 Deskpro 本地部署控制器的默认页面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

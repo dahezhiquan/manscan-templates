@@ -1,11 +1,11 @@
 id: aim-panel
 
 info:
-  name: Aim Panel - Detect
+  name: Aim 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Aim, an open-source, self-hosted AI/ML experiment tracking tool used to log, query, and visualize machine learning training runs, was detected by matching its distinctive web UI page title and meta description, thereby minimizing false positives associated with the generic term "Aim".
+  description: |-
+    Aim 是一款开源、可自托管的 AI/ML 实验跟踪工具，用于记录、查询和可视化机器学习训练运行。本次通过匹配其独特的 Web UI 页面标题和 meta 描述检测到该工具，从而降低了通用词 "Aim" 带来的误报。
   reference:
     - https://github.com/aimhubio/aim
     - https://aimstack.io

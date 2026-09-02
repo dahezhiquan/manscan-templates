@@ -1,11 +1,11 @@
 id: arthas-web-console
 
 info:
-  name: Alibaba Arthas Web Console - Detect
+  name: 阿里巴巴 Arthas Web 控制台 - 检测（暴露面识别）
   author: wujiecong
   severity: info
-  description: |
-   Detected Alibaba Arthas web console interface was detected. Arthas is a Java diagnostic tool that can expose a web-based console when enabled.
+  description: |-
+    检测到阿里巴巴 Arthas Web 控制台界面。Arthas 是一款 Java 诊断工具，启用后可能会暴露基于 Web 的控制台。
   reference:
     - https://arthas.aliyun.com/doc/web-console.html
   metadata:

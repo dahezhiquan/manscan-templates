@@ -1,11 +1,11 @@
 id: godaddy-parked-domain
 
 info:
-  name: GoDaddy Parked Domain - Subdomain Takeover
+  name: GoDaddy 停放域名 - 子域名接管（子域名接管）
   author: ritikchaddha
   severity: medium
-  description: |
-    Detects potential subdomain takeover when a subdomain's CNAME points to a domain that is parked or listed for sale on GoDaddy. An attacker could purchase the target domain and gain full control over the subdomain, enabling phishing, cookie theft, or malicious content serving.
+  description: |-
+    当子域名的 CNAME 指向在 GoDaddy 上停放或挂牌出售的域名时，检测到潜在的子域名接管风险。攻击者可以购买目标域名并完全控制该子域名，从而实现钓鱼、窃取 Cookie 或投放恶意内容。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover
     - https://cheatsheetseries.owasp.org/cheatsheets/Subdomain_Takeover_Prevention_Cheat_Sheet.html

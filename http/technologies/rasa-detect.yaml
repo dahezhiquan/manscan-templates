@@ -1,11 +1,11 @@
 id: rasa-detect
 
 info:
-  name: Rasa Open Source - Detect
+  name: Rasa Open Source - 检测（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    Rasa Open Source, an open-source conversational AI framework used to build chatbots and voice assistants that exposes a REST server (default port 5005) for intent parsing and webhook-driven conversations, was detected. Exposed unauthenticated instances may have allowed interaction with the assistant's conversation endpoints and disclosed internal version and configuration information.
+  description: |-
+    检测到 Rasa Open Source，一个用于构建聊天机器人和语音助手的开源对话式 AI 框架，它暴露了一个用于意图解析和 Webhook 驱动对话的 REST 服务器（默认端口 5005）。暴露的未认证实例可能允许与助手的对话端点交互，并泄露内部版本和配置信息。
   reference:
     - https://github.com/RasaHQ/rasa
     - https://rasa.com/docs/rasa/

@@ -1,11 +1,11 @@
 id: shiori-panel
 
 info:
-  name: Shiori Bookmark Manager - Detect
+  name: Shiori 书签管理器 - 检测（暴露面识别）
   author: johnk3r
   severity: info
-  description: |
-    Detected A Shiori bookmark manager panel.
+  description: |-
+    检测到 Shiori 书签管理器面板。
   reference:
     - https://github.com/nicholasgasior/goshiori
   metadata:

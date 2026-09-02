@@ -1,11 +1,11 @@
 id: fiftyone-panel
 
 info:
-  name: FiftyOne Panel - Detect
+  name: 检测 FiftyOne 面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    FiftyOne, an open-source dataset visualization and curation tool for computer vision workflows built by Voxel51, was detected. The app ships with no authentication by default, so any exposed instance directly served browsable dataset content (images, labels, metadata) to unauthenticated visitors. The instance was identified by matching its distinctive page title, meta description, and UI-specific element IDs.
+  description: |-
+    检测到 FiftyOne——由 Voxel51 构建的、用于计算机视觉工作流的开源数据集可视化与整理工具。该应用默认不启用认证，因此任何暴露的实例都会将可浏览的数据集内容（图像、标签、元数据）直接呈现给未认证访客。本次通过匹配其特有的页面标题、meta description 及界面专属元素 ID 识别该实例。
   reference:
     - https://github.com/voxel51/fiftyone
     - https://docs.voxel51.com

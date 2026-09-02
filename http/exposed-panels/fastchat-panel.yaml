@@ -1,11 +1,11 @@
 id: fastchat-panel
 
 info:
-  name: FastChat Panel - Detect
+  name: 检测 FastChat 面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    FastChat, an open platform by LMSYS for training, serving, and evaluating large language model based chatbots (used by Vicuna and Chatbot Arena), was detected. An exposed, unauthenticated FastChat Gradio-based web demo instance ("Chat with Open Large Language Models") was identified.
+  description: |-
+    检测到 FastChat——由 LMSYS 开发的开放平台，用于训练、部署和评估基于大语言模型的聊天机器人（被 Vicuna 和 Chatbot Arena 使用）。发现一个暴露在公网、无需认证的 FastChat 基于 Gradio 的 Web 演示实例（"Chat with Open Large Language Models"）。
   reference:
     - https://github.com/lm-sys/FastChat
     - https://github.com/lm-sys/FastChat/blob/main/fastchat/serve/gradio_web_server.py

@@ -1,11 +1,11 @@
 id: rubrik-panel
 
 info:
-  name: Rubrik - Login Panel
+  name: Rubrik - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Rubrik appliance web management login panel was detected. Rubrik provides data protection, backup, recovery, and cyber resilience capabilities.
+  description: |-
+    已检测到 Rubrik 设备 Web 管理登录面板。Rubrik 提供数据保护、备份、恢复及网络弹性能力。
   reference:
     - https://www.rubrik.com/
   metadata:

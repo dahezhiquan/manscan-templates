@@ -1,11 +1,11 @@
 id: kubeflow-katib-panel
 
 info:
-  name: Kubeflow Katib Panel - Detect
+  name: Kubeflow Katib 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Kubeflow Katib, a Kubernetes-native project for automated machine learning (AutoML) that performs hyperparameter tuning, early stopping, and neural architecture search, was detected. Its web UI is normally served under the /katib/ path behind the Kubeflow Central Dashboard, fronted by an Istio/OIDC auth proxy, so unauthenticated exposure is uncommon but was identified on this instance.
+  description: |-
+    检测到 Kubeflow Katib，这是一个 Kubernetes 原生的自动化机器学习（AutoML）项目，用于执行超参数调优、早停和神经架构搜索。其 Web UI 通常通过 Kubeflow Central Dashboard 在 /katib/ 路径下提供，前端由 Istio/OIDC 认证代理保护，因此未认证暴露并不常见，但在该实例上被识别出存在此情况。
   reference:
     - https://github.com/kubeflow/katib
     - https://www.kubeflow.org/docs/components/katib/

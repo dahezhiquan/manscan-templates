@@ -1,11 +1,11 @@
 id: nuget-config-exposure
 
 info:
-  name: NuGet.config Package Source Credentials - Exposure
+  name: NuGet.config 包源凭据暴露（暴露面识别）
   author: ChrisJr404
   severity: high
-  description: |
-    Detected A NuGet.config file with a packageSourceCredentials section is exposed. NuGet stores per-feed authentication in this section and often keeps it as a ClearTextPassword, so a public copy leaks the username and password used to reach private package feeds.
+  description: |-
+    检测到包含 packageSourceCredentials 部分的 NuGet.config 文件已暴露。NuGet 在该部分中存储每个源的认证信息，并常以 ClearTextPassword 形式保存，因此公开副本会泄漏用于访问私有包源的用户名和密码。
   reference:
     - https://learn.microsoft.com/en-us/nuget/reference/nuget-config-file
     - https://learn.microsoft.com/en-us/nuget/consume-packages/consuming-packages-authenticated-feeds

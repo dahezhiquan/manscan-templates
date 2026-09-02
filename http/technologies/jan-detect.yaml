@@ -1,11 +1,11 @@
 id: jan-detect
 
 info:
-  name: Jan AI - Detect
+  name: Jan AI 检测（指纹识别）
   author: insidetrust,hdm
   severity: info
-  description: |
-    Detects the Jan AI local server, an open-source ChatGPT alternative that runs models locally and exposes a Cortex-powered, OpenAI-compatible API (default port 1337).
+  description: |-
+    检测 Jan AI 本地服务器。Jan AI 是一款开源 ChatGPT 替代方案，在本地运行模型，并暴露一个由 Cortex 驱动、兼容 OpenAI 的 API（默认端口 1337）。
   reference:
     - https://github.com/janhq/jan
     - https://jan.ai/docs/server

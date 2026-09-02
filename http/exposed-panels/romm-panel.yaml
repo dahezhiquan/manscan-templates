@@ -1,11 +1,11 @@
 id: romm-panel
 
 info:
-  name: RomM Panel - Detect
+  name: RomM 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    RomM (romm.app / github.com/rommapp/romm) is a popular open-source self-hosted ROM manager and player. The unauthenticated /api/heartbeat endpoint returns a JSON config snapshot including the running version, enabled metadata sources, and hosted platforms. Exposed instances leak this configuration and point to a browsable ROM library.
+  description: |-
+    RomM（romm.app / github.com/rommapp/romm）是一款流行的开源自托管 ROM 管理器与播放器。其未授权访问的 /api/heartbeat 端点返回包含当前运行版本、已启用元数据源及托管平台的 JSON 配置快照。暴露的实例会泄露此配置信息，并指向可浏览的 ROM 库。
   reference:
     - https://github.com/rommapp/romm
     - https://romm.app/

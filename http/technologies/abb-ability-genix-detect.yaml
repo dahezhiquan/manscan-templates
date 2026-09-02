@@ -1,11 +1,11 @@
 id: abb-ability-genix-detect
 
 info:
-  name: ABB Ability Genix Industrial Analytics and AI Suite - Detect
+  name: ABB Ability Genix 工业分析与人工智能套件 - 检测（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    ABB Ability Genix industrial analytics and artificial intelligence management portal was detected.
+  description: |-
+    检测到 ABB Ability Genix 工业数据分析与人工智能管理门户。
   reference:
     - https://new.abb.com/process-automation/genix
   metadata:

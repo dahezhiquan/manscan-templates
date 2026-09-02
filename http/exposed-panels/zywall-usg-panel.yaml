@@ -1,11 +1,11 @@
 id: zywall-usg-panel
 
 info:
-  name: ZyXEL ZyWALL USG - Login Panel
+  name: ZyXEL ZyWALL USG - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    ZyXEL ZyWALL USG firewall login panel detected.
+  description: |-
+    检测到 ZyXEL ZyWALL USG 防火墙登录面板。
   reference:
     - https://www.zyxel.com/
   metadata:

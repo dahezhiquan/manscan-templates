@@ -1,11 +1,11 @@
 id: weaver-getemdslist-disclosure
 
 info:
-  name: Weaver E-cology getEmDsList Sensitive Information Disclosure
+  name: Weaver E-cology getEmDsList 敏感信息泄露
   author: DhiyaneshDk
   severity: high
-  description: |
-    Weaver E-cology10 contains a sensitive information disclosure vulnerability in the `/papi/em/transform/getEmDsList` endpoint. An unauthenticated attacker can access the endpoint to retrieve datasource-related information such as `dsKey`, `dsValue`, and `deleteType`.
+  description: |-
+    Weaver E-cology10 在 `/papi/em/transform/getEmDsList` 端点存在敏感信息泄露漏洞。未认证攻击者可访问该端点，获取 `dsKey`、`dsValue` 和 `deleteType` 等数据源相关信息。
   reference:
     - https://mp.weixin.qq.com/s/tZvq6vlbDO1_eQHvX-bQbQ
   metadata:

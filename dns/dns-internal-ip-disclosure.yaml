@@ -1,11 +1,11 @@
 id: dns-internal-ip-disclosure
 
 info:
-  name: Public DNS Resolving to Private IP Addresses
+  name: 公共 DNS 解析到私有 IP 地址（dns）
   author: infosec-asish,DevamShah
   severity: info
-  description: |
-    Detected when a public domain's DNS A records resolved to private or reserved IP addresses, potentially revealing internal network topology to external parties.
+  description: |-
+    当公共域名的 DNS A 记录解析到私有或保留 IP 地址时触发检测，这可能将内部网络拓扑暴露给外部人员。
   reference:
     - https://tools.ietf.org/html/rfc1918
     - https://tools.ietf.org/html/rfc6598

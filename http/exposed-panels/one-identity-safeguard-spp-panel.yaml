@@ -1,11 +1,11 @@
 id: one-identity-safeguard-spp-panel
 
 info:
-  name: One Identity Safeguard for Privileged Passwords - Login Panel
+  name: One Identity Safeguard for Privileged Passwords - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    One Identity Safeguard for Privileged Passwords is a privileged password vault and session management platform. The login panel was detected.
+  description: |-
+    One Identity Safeguard for Privileged Passwords 是一款特权密码保险库与会话管理平台。检测到其登录面板。
   reference:
     - https://support.oneidentity.com/technical-documents/one-identity-safeguard-for-privileged-passwords
   metadata:

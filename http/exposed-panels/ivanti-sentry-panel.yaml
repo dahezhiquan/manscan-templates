@@ -1,11 +1,11 @@
 id: ivanti-sentry-panel
 
 info:
-  name: Ivanti Sentry Panel - Detect
+  name: Ivanti Sentry 面板 - 检测（暴露面识别）
   author: DhiyaneshDk
   severity: info
-  description: |
-    Ivanti Sentry panel was detected.
+  description: |-
+    检测到 Ivanti Sentry 面板。
   metadata:
     verified: true
     max-request: 1

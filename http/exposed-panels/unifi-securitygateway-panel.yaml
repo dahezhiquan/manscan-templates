@@ -1,11 +1,11 @@
 id: unifi-securitygateway-panel
 
 info:
-  name: Ubiquiti UniFi Security Gateway - Login Panel
+  name: Ubiquiti UniFi Security Gateway - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Ubiquiti UniFi Security Gateway management panel detected.
+  description: |-
+    检测到 Ubiquiti UniFi Security Gateway 管理面板。
   reference:
     - https://www.ui.com/
   metadata:

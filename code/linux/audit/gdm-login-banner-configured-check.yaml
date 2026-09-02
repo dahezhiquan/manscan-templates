@@ -1,14 +1,13 @@
 id: gdm-login-banner-configured-check
 
 info:
-  name: Ensure GDM Login Banner is Configured
+  name: 确保已配置 GDM 登录横幅（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |
-    This template checks whether the GDM login banner is enabled and configured.
-  remediation: |
-    Enable the GDM login banner and configure an appropriate warning message
-    according to your organization's security policy.
+  description: |-
+    此模板检查 GDM 登录横幅是否已启用并配置。
+  remediation: |-
+    启用 GDM 登录横幅，并根据组织安全策略配置适当的警告消息。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,banner,audit

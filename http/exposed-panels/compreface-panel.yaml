@@ -1,11 +1,11 @@
 id: compreface-panel
 
 info:
-  name: CompreFace Panel - Detect
+  name: CompreFace 面板检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    CompreFace, an open-source face recognition platform by Exadel that provides face detection, recognition, and verification services through a web UI and REST API, was detected. The exposed login/panel instance was identified, which by default requires no authentication to reach the initial UI.
+  description: |-
+    检测到 CompreFace，这是 Exadel 开发的开源人脸识别平台，通过 Web UI 和 REST API 提供人脸检测、识别与验证服务。其暴露的登录/管理面板实例存在，该面板默认无需认证即可访问初始界面。
   reference:
     - https://github.com/exadel-inc/CompreFace
     - https://exadel.com/compreface/

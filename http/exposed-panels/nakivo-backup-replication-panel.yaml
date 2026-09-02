@@ -1,11 +1,11 @@
 id: nakivo-backup-replication-panel
 
 info:
-  name: NAKIVO Backup & Replication - Login Panel
+  name: NAKIVO 备份与复制 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    NAKIVO Backup & Replication web management login panel was detected. NAKIVO provides backup, recovery, replication, and disaster recovery capabilities for virtual, physical, cloud, and SaaS workloads.
+  description: |-
+    检测到 NAKIVO Backup & Replication 的 Web 管理登录面板。NAKIVO 为虚拟化、物理、云及 SaaS 工作负载提供备份、恢复、复制和灾难恢复能力。
   reference:
     - https://www.nakivo.com/
     - https://helpcenter.nakivo.com/User-Guide/Content/Home.htm

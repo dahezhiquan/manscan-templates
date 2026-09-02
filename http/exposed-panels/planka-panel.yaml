@@ -1,11 +1,11 @@
 id: planka-panel
 
 info:
-  name: Planka Panel - Detect
+  name: Planka 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Planka is an open source kanban-style project management board. The login panel was detected.
+  description: |-
+    Planka 是一款开源的看板式项目管理工具。已检测到其登录面板。
   reference:
     - https://planka.app/
     - https://github.com/plankanban/planka

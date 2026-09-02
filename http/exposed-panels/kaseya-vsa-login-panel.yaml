@@ -1,11 +1,11 @@
 id: kaseya-vsa-login-panel
 
 info:
-  name: Kaseya VSA - Login Panel
+  name: Kaseya VSA - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Kaseya Virtual System Administrator (VSA) login panel was detected.
+  description: |-
+    检测到 Kaseya 虚拟系统管理员（VSA）登录面板。
   reference:
     - https://www.kaseya.com/products/vsa/
   metadata:

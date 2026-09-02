@@ -1,16 +1,13 @@
 id: remote-login-warning-banner-configured-check
 
 info:
-  name: Ensure Remote Login Warning Banner is Configured Properly
+  name: 确保远程登录警告横幅配置正确（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |
-    This template checks whether the remote login warning banner is configured
-    without exposing system information.
-  remediation: |
-    Edit `/etc/issue.net` and remove any operating system, kernel, architecture,
-    or version information that could disclose system details. Configure the
-    banner according to your organization's security policy.
+  description: |-
+    此模板检查远程登录警告横幅是否已正确配置，且不会泄露系统信息。
+  remediation: |-
+    编辑 `/etc/issue.net`，删除任何可能泄露系统详情的操作系统、内核、架构或版本信息。根据组织安全策略配置横幅内容。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,issue.net,banner,audit

@@ -1,11 +1,11 @@
 id: ibm-webmethods-panel
 
 info:
-  name: IBM webMethods Integration Login Panel - Detect
+  name: IBM webMethods 集成登录面板 - 检测（暴露面识别）
   author: infosec.asish
   severity: info
-  description: |
-    Identified an exposed IBM or Software AG webMethods login panel
+  description: |-
+    发现了一个暴露在外的 IBM 或 Software AG webMethods 登录面板。
   reference:
     - https://www.ibm.com/products/webmethods-hybrid-integration
   metadata:

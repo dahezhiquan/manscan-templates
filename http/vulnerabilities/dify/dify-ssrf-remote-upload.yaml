@@ -1,11 +1,11 @@
 id: dify-ssrf-remote-upload
 
 info:
-  name: Dify < 1.13.0 - Unauthenticated SSRF via Remote File Upload
+  name: Dify < 1.13.0 - 通过远程文件上传的未认证 SSRF
   author: 0x_Akoko
   severity: high
-  description: |
-    Detected Dify prior to 1.13.0 is vulnerable to unauthenticated Server-Side Request Forgery via the /console/api/remote-files/upload endpoint. The endpoint accepted a user-controlled URL parameter and issued HTTP requests from the server without authentication or SSRF protections such as private IP blocking.
+  description: |-
+    检测到 1.13.0 之前的 Dify 版本存在未认证的服务端请求伪造漏洞，位于 `/console/api/remote-files/upload` 端点。该端点接受用户可控的 URL 参数，并在未进行认证、也无私有 IP 拦截等 SSRF 防护的情况下由服务器发起 HTTP 请求。
   reference:
     - https://github.com/langgenius/dify/security/advisories/GHSA-8235-vv5j-mmvg
   classification:

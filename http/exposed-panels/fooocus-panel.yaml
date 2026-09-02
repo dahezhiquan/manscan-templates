@@ -1,11 +1,11 @@
 id: fooocus-panel
 
 info:
-  name: Fooocus Panel - Detect
+  name: 检测 Fooocus 面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Fooocus, an open-source, offline Stable Diffusion image-generation UI built on Gradio and focused on simplified prompt-based image generation, was detected by matching its Fooocus-branded page metadata together with the embedded Gradio config, thereby avoiding collisions with other Gradio apps (ComfyUI, text-generation-webui, etc.) that commonly share the same port.
+  description: |-
+    检测到 Fooocus——一个基于 Gradio 构建的开源、离线 Stable Diffusion 图像生成界面，专注于简化的基于提示词的图像生成。本次通过匹配其 Fooocus 品牌页面元数据及内嵌的 Gradio 配置来识别，从而避免与其他常共享同一端口的 Gradio 应用（如 ComfyUI、text-generation-webui 等）发生混淆。
   reference:
     - https://github.com/lllyasviel/Fooocus
   metadata:

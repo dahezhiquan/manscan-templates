@@ -1,11 +1,11 @@
 id: seldon-core-detect
 
 info:
-  name: Seldon Core - Detect
+  name: Seldon Core - 检测（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    Seldon Core, an open-source MLOps/LLMOps framework for deploying, monitoring, and scaling machine learning models on Kubernetes, was detected. Its Pipeline Gateway component, which routes inference requests between chained model pipelines, exposed an unauthenticated status endpoint returning a fixed JSON banner and a matching Server response header. Exposed instances may have revealed internal ML pipeline configuration and provided a foothold for further probing of the inference API.
+  description: |-
+    检测到 Seldon Core，一个用于在 Kubernetes 上部署、监控和扩展机器学习模型的开源 MLOps/LLMOps 框架。其 Pipeline Gateway 组件（负责在链式模型流水线之间路由推理请求）暴露了一个未认证的状态端点，返回固定的 JSON 横幅和匹配的 Server 响应头。暴露的实例可能泄露内部 ML 流水线配置，并为进一步探测推理 API 提供立足点。
   reference:
     - https://github.com/SeldonIO/seldon-core
     - https://docs.seldon.ai/seldon-core-2

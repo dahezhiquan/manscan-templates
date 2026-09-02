@@ -1,11 +1,11 @@
 id: homebox-detect
 
 info:
-  name: Homebox - Detect
+  name: Homebox 检测（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Homebox, a self-hosted home inventory and organization system, was detected via its unauthenticated /api/v1/status endpoint.
+  description: |-
+    通过其无需认证的 /api/v1/status 端点检测到 Homebox——一个自托管的家庭物品管理与整理系统。
   reference:
     - https://github.com/sysadminsmedia/homebox
     - https://homebox.software

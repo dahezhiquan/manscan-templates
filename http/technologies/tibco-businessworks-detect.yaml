@@ -1,11 +1,11 @@
 id: tibco-businessworks-detect
 
 info:
-  name: TIBCO BusinessWorks - Detect
+  name: TIBCO BusinessWorks - 检测（指纹识别）
   author: righettod
   severity: info
-  description: |
-    TIBCO BusinessWorks was detected - an enterprise integration and application development platform used to connect systems and data across an organization.
+  description: |-
+    检测到 TIBCO BusinessWorks——一个用于连接整个组织系统与数据的企业集成和应用程序开发平台。
   reference:
     - https://docs.tibco.com/products/tibco-activematrix-businessworks
     - https://www.tibco.com/content/dam/tibco/documents/data-sheet/tibco-businessworks.pdf

@@ -1,11 +1,11 @@
 id: openremote-detect
 
 info:
-  name: OpenRemote IoT Platform - Detection
+  name: OpenRemote 物联网平台检测（IOT）
   author: pussycat0x
   severity: info
-  description: |
-    Detects exposed OpenRemote IoT platform instances by checking login page titles, API endpoints, and specific OpenRemote UI artifacts. OpenRemote isan open-source IoT platform with a Keycloak-backed auth system.
+  description: |-
+    通过检查登录页面标题、API 端点以及特定的 OpenRemote UI 特征，检测暴露的 OpenRemote 物联网平台实例。OpenRemote 是一个开源物联网平台，其认证系统基于 Keycloak 构建。
   reference:
     - https://github.com/openremote/openremote
     - https://openremote.io

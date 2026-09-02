@@ -1,12 +1,11 @@
 id: headscale-panel
 
 info:
-  name: Headscale - Login Panel
+  name: Headscale - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Headscale is an open-source, self-hosted implementation of the Tailscale control server.
-    It manages WireGuard-based mesh VPN networks and exposes a web UI for administration.
+  description: |-
+    Headscale 是 Tailscale 控制服务器的开源自托管实现，用于管理基于 WireGuard 的网状 VPN 网络，并提供用于行政管理的 Web 界面。
   reference:
     - https://github.com/juanfont/headscale
     - https://headscale.net

@@ -1,11 +1,11 @@
 id: cyberoam-firewall-panel
 
 info:
-  name: Cyberoam Firewall - Login Panel
+  name: Cyberoam 防火墙 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Cyberoam UTM firewall login panel detected.
+  description: |-
+    检测到 Cyberoam UTM 防火墙登录面板。
   reference:
     - https://www.cyberoam.com/
   metadata:

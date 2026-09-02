@@ -1,11 +1,11 @@
 id: inventree-panel
 
 info:
-  name: InvenTree Panel - Detect
+  name: InvenTree 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    InvenTree (inventree.org / github.com/inventree/InvenTree) is an open-source inventory management system. Its API root at /api/ is reachable without authentication and returns server metadata including the running version, exposing internet-facing instances.
+  description: |-
+    InvenTree（inventree.org / github.com/inventree/InvenTree）是一款开源的库存管理系统。其 API 根路径 /api/ 无需认证即可访问，并返回包含运行版本在内的服务器元数据，导致面向互联网的实例被暴露。
   reference:
     - https://github.com/inventree/InvenTree
     - https://inventree.org/

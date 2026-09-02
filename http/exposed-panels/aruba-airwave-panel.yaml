@@ -1,11 +1,11 @@
 id: aruba-airwave-panel
 
 info:
-  name: Aruba AirWave Management Platform - Login Panel
+  name: Aruba AirWave 管理平台 - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Aruba AirWave Management Platform web management interface was detected.
+  description: |-
+    检测到 Aruba AirWave 管理平台的 Web 管理界面。
   reference:
     - https://www.arubanetworks.com/products/network-management-operations/airwave/
   metadata:

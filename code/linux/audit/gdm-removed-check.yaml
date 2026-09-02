@@ -1,13 +1,13 @@
 id: gdm-removed-check
 
 info:
-  name: Ensure GDM is Removed
+  name: 确保已移除 GDM（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether the GNOME Display Manager (GDM) is installed.
-  remediation: |
-    Remove the GDM package if it is not required:
+  description: |-
+    此模板检查是否安装了 GNOME Display Manager（GDM）。
+  remediation: |-
+    如果不需要 GDM 包，请将其移除：
       sudo apt remove gdm3 -y
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux

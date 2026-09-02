@@ -1,11 +1,11 @@
 id: deskpro-default-page
 
 info:
-  name: Deskpro Private Controller - Default Page Detect
+  name: Deskpro Private Controller - 默认页检测（指纹识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Deskpro Private Controller default page detected.
+  description: |-
+    检测到 Deskpro Private Controller 默认页面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

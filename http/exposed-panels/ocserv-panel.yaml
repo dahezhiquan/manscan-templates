@@ -1,14 +1,11 @@
 id: ocserv-panel
 
 info:
-  name: OpenConnect VPN Server (ocserv) - Detect
+  name: OpenConnect VPN 服务器 (ocserv) - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    OpenConnect VPN Server (ocserv) is an open-source VPN server compatible with
-    Cisco AnyConnect clients. It uses DTLS and TLS for secure connectivity and
-    is commonly exposed on port 443 or 4443. The server header can expose
-    OpenConnect or ocserv-specific markers.
+  description: |-
+    OpenConnect VPN 服务器 (ocserv) 是一款兼容 Cisco AnyConnect 客户端的开源 VPN 服务器，使用 DTLS 和 TLS 保障安全连接，通常暴露于端口 443 或 4443。服务器响应头可能泄露 OpenConnect 或 ocserv 相关的特征标识。
   reference:
     - https://gitlab.com/openconnect/ocserv
     - https://ocserv.gitlab.io/www/

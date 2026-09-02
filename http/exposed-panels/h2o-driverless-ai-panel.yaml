@@ -1,11 +1,11 @@
 id: h2o-driverless-ai-panel
 
 info:
-  name: H2O Driverless AI Panel - Detect
+  name: H2O Driverless AI 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    H2O Driverless AI, a commercial automated machine learning (AutoML) platform that provides a web UI typically served on port 12345 for building and deploying machine learning models, was detected. An exposed H2O Driverless AI login panel was identified. It is distinct from H2O Wave and H2O-3/Flow, which are separate H2O.ai products with different branding, ports, and UIs.
+  description: |-
+    检测到 H2O Driverless AI，这是一款商业自动化机器学习（AutoML）平台，通常通过 12345 端口提供 Web 界面，用于构建和部署机器学习模型。发现了一个暴露在外的 H2O Driverless AI 登录面板。该产品区别于 H2O Wave 和 H2O-3/Flow，后者属于 H2O.ai 的独立产品，具有不同的品牌、端口和界面。
   reference:
     - https://h2o.ai/platform/ai-cloud/make/driverless-ai/
     - https://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/index.html

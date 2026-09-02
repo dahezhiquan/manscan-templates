@@ -1,11 +1,11 @@
 id: victoriametrics-vmagent-api-exposure
 
 info:
-  name: VictoriaMetrics vmagent - Unauthenticated Targets Exposure
+  name: VictoriaMetrics vmagent - 未认证 Targets 暴露（暴露面识别）
   author: RootKaito
   severity: low
-  description: |
-    VictoriaMetrics vmagent targets endpoint is exposed without authentication, leaking internal service inventory and scrape configuration.
+  description: |-
+    VictoriaMetrics vmagent 的 targets 接口在未认证的情况下暴露，泄露了内部服务清单和抓取配置。
   reference:
     - https://docs.victoriametrics.com/victoriametrics/vmagent/
   classification:

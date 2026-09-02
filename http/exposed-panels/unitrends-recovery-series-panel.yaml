@@ -1,11 +1,11 @@
 id: unitrends-recovery-series-panel
 
 info:
-  name: Unitrends Recovery Series - Login Panel
+  name: Unitrends Recovery Series - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Unitrends Recovery Series backup appliance web management login panel was detected.
+  description: |-
+    检测到 Unitrends Recovery Series 备份设备 Web 管理登录面板。
   reference:
     - https://www.unitrends.com/products/backup-and-disaster-recovery/backup-appliance/
   metadata:

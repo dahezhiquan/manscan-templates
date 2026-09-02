@@ -1,12 +1,11 @@
 id: wg-easy-panel
 
 info:
-  name: WireGuard Easy (wg-easy) - Login Panel
+  name: WireGuard Easy (wg-easy) 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    wg-easy is the easiest way to run WireGuard VPN with a web-based admin UI.
-    It exposes a management interface for creating and managing WireGuard peers.
+  description: |-
+    wg-easy 是运行 WireGuard VPN 的最简单方式，提供基于 Web 的管理界面，用于创建和管理 WireGuard 对端。
   reference:
     - https://github.com/wg-easy/wg-easy
   metadata:

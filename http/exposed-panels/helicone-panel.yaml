@@ -1,11 +1,11 @@
 id: helicone-panel
 
 info:
-  name: Helicone Panel - Detect
+  name: Helicone 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Helicone, an open-source LLM observability platform that provides logging, monitoring, and analytics for LLM applications and is commonly self-hosted via Docker, was detected. An exposed, unauthenticated Helicone web dashboard instance was identified.
+  description: |-
+    检测到 Helicone，这是一款开源 LLM 可观测性平台，为 LLM 应用提供日志记录、监控与分析功能，通常通过 Docker 自托管部署。发现了一个暴露在外、未经认证的 Helicone Web 仪表盘实例。
   reference:
     - https://github.com/Helicone/helicone
     - https://helicone.ai

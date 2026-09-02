@@ -1,11 +1,11 @@
 id: jotty-page-login-panel
 
 info:
-  name: jotty·page Login - Panel Detect
+  name: jotty·page 登录 - 面板检测（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    jotty·page login interface was discovered.
+  description: |-
+    发现 jotty·page 登录界面。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

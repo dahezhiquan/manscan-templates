@@ -1,11 +1,11 @@
 id: docuseal-detect
 
 info:
-  name: DocuSeal Detect
+  name: DocuSeal 识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    DocuSeal, an open source document filling and signing platform, was detected via the application theme attribute and site metadata exposed on the root page.
+  description: |-
+    通过在根页面暴露的应用主题属性和站点元数据，识别出 DocuSeal——一款开源的文档填写与签署平台。
   reference:
     - https://github.com/docusealco/docuseal
     - https://www.docuseal.com

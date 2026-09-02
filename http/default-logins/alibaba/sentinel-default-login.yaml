@@ -1,11 +1,11 @@
 id: sentinel-default-login
 
 info:
-  name: Alibaba Sentinel - Default Login
+  name: Alibaba Sentinel - 默认登录（弱口令）
   author: wujiecong
   severity: high
-  description: |
-    Alibaba Sentinel versions 1.6.0 and later may expose a basic login interface with default credentials sentinel/sentinel. This template checks for that default login behavior on affected versions.
+  description: |-
+    Alibaba Sentinel 1.6.0 及更高版本可能暴露一个基础登录界面，默认凭据为 sentinel/sentinel。本模板用于检测受影响版本上的默认登录行为。
   reference:
     - https://github.com/alibaba/sentinel
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-35876

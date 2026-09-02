@@ -1,11 +1,11 @@
 id: google-iap-detect
 
 info:
-  name: Google Identity-Aware Proxy (IAP) - Detect
+  name: Google 身份感知代理（IAP）检测（指纹识别）
   author: davidfegyver
   severity: info
-  description: |
-    Detected whether the target was protected by Google's Identity-Aware Proxy (IAP). IAP provided application-level access control for services running on Google Cloud. When IAP intercepted an unauthenticated request, it set the X-Goog-Iap-Generated-Response header and redirected the request to Google OAuth. The second request followed the redirects to the consent screen and extracted the OAuth client_id, application owner, contact email, and display name.
+  description: |-
+    检测目标是否受到 Google 身份感知代理（IAP）保护。IAP 为运行在 Google Cloud 上的服务提供应用层访问控制。当 IAP 拦截到未认证请求时，会设置 X-Goog-Iap-Generated-Response 请求头并将请求重定向至 Google OAuth。随后发出的第二次请求跟随重定向进入同意页面，并从中提取 OAuth client_id、应用所有者、联系邮箱及显示名称。
   reference:
     - https://cloud.google.com/iap/docs/concepts-overview
     - https://cloud.google.com/iap/docs/query-parameters-and-headers-howto#detecting_responses

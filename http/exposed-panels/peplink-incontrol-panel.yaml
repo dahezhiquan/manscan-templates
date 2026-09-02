@@ -1,11 +1,11 @@
 id: peplink-incontrol-panel
 
 info:
-  name: Peplink InControl - Login Panel
+  name: Peplink InControl - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Peplink InControl is a centralised cloud-based SD-WAN and device management platform for Peplink routers and access points, enabling remote configuration, monitoring, and SpeedFusion VPN management across distributed sites.
+  description: |-
+    Peplink InControl 是一款面向 Peplink 路由器和接入点的集中式云端 SD-WAN 与设备管理平台，支持对分散站点进行远程配置、监控以及 SpeedFusion VPN 管理。
   reference:
     - https://www.peplink.com/products/incontrol2/
   metadata:

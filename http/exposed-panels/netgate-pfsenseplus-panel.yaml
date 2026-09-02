@@ -1,11 +1,11 @@
 id: netgate-pfsenseplus-panel
 
 info:
-  name: Netgate pfSense Plus - Login Panel
+  name: Netgate pfSense Plus - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Netgate pfSense Plus firewall login panel detected.
+  description: |-
+    检测到 Netgate pfSense Plus 防火墙登录面板。
   reference:
     - https://www.netgate.com/
   metadata:

@@ -1,11 +1,11 @@
 id: zulip-login-panel
 
 info:
-  name: Zulip Login Panel
+  name: Zulip 登录面板（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Zulip login panel was discovered.
+  description: |-
+    检测到 Zulip 登录面板。
   metadata:
     verified: true
     product: zulip

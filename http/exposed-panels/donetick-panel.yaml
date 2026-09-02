@@ -1,11 +1,11 @@
 id: donetick-panel
 
 info:
-  name: Donetick Panel - Detect
+  name: Donetick 面板 - 检测（暴露面识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Donetick (donetick.com / github.com/donetick/donetick) is an open-source self-hosted task and chore manager with a Go backend and a React frontend. Default Docker port 2021. Exposed instances may reveal household task lists, members, and schedules.
+  description: |-
+    Donetick（donetick.com / github.com/donetick/donetick）是一个开源的自托管任务与家务管理工具，后端使用 Go，前端使用 React，默认 Docker 端口为 2021。暴露的实例可能泄露家庭任务清单、成员信息及日程安排。
   reference:
     - https://github.com/donetick/donetick
     - https://donetick.com/

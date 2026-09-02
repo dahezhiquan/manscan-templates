@@ -1,11 +1,11 @@
 id: maxkb-panel
 
 info:
-  name: MaxKB Panel - Detect
+  name: MaxKB 面板 - 检测（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    MaxKB, an open-source RAG-based knowledge base and LLM chatbot platform, was detected.
+  description: |-
+    检测到 MaxKB，一款基于 RAG 的开源知识库与 LLM 聊天机器人平台。
   reference:
     - https://github.com/1Panel-dev/MaxKB
   metadata:

@@ -1,13 +1,11 @@
 id: hillstone-ssl-vpn-panel
 
 info:
-  name: Hillstone Networks SSL VPN - Login Panel
+  name: Hillstone Networks SSL VPN - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Hillstone Networks SSL VPN (SG-6000 series) is an enterprise network security
-    gateway with SSL VPN capabilities. The web login portal is frequently exposed
-    on standard HTTPS ports.
+  description: |-
+    Hillstone Networks SSL VPN（SG-6000 系列）是一款具备 SSL VPN 能力的企业网络安全网关。其 Web 登录门户常在标准 HTTPS 端口上暴露。
   reference:
     - https://www.hillstonenet.com/products/next-generation-firewalls/
   metadata:

@@ -1,15 +1,15 @@
 id: windows-command-injection
 
 info:
-  name: Windows Command Injection - Generic Detection
+  name: Windows 命令注入 - 通用检测（DAST）
   author: Jaenact
   severity: high
-  description: |
-    Detected potential OS command injection on Windows targets by replacing query parameter values with command separator payloads and identifying successful command execution through output patterns from `dir`, `whoami`, `systeminfo`, or response time delays induced via `ping`.
-  impact: |
-    Successful exploitation allows arbitrary command execution on the underlying Windows system, leading to full server compromise, data exfiltration, privilege escalation, and denial of service.
-  remediation: |
-    Never pass user-controlled input directly to cmd.exe or PowerShell. Use parameterized APIs or language-native functions instead of system()/exec(). Apply strict allowlist input validation and enforce least-privilege execution contexts for application processes.
+  description: |-
+    通过使用命令分隔符载荷替换查询参数值，检测到 Windows 目标上潜在的操作系统命令注入，并通过 `dir`、`whoami`、`systeminfo` 等命令的输出模式，或通过 `ping` 引发的响应时间延迟来确认命令执行成功。
+  impact: |-
+    成功利用可在底层 Windows 系统上执行任意命令，导致服务器完全沦陷、数据窃取、权限提升以及拒绝服务。
+  remediation: |-
+    切勿将用户可控输入直接传递给 cmd.exe 或 PowerShell。应使用参数化 API 或语言原生函数，而非 system()/exec()。对输入实施严格的白名单校验，并为应用程序进程强制采用最小权限执行上下文。
   reference:
     - https://owasp.org/www-community/attacks/Command_Injection
     - https://cwe.mitre.org/data/definitions/78.html

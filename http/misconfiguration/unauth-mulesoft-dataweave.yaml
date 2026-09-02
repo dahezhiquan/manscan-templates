@@ -1,11 +1,11 @@
 id: unauth-mulesoft-dataweave
 
 info:
-  name: MuleSoft DataWeave Interactive Learning Environment - Unauthenticated Access
+  name: MuleSoft DataWeave 交互式学习环境 - 未授权访问
   author: Th3l0newolf
   severity: high
-  description: |
-    The MuleSoft DataWeave Interactive Learning Environment is publicly accessible without authentication
+  description: |-
+    MuleSoft DataWeave 交互式学习环境无需身份验证即可公开访问。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cwe-id: CWE-94

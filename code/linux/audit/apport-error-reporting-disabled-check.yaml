@@ -1,16 +1,16 @@
 id: apport-error-reporting-disabled-check
 
 info:
-  name: Ensure Automatic Error Reporting is Not Enabled
+  name: 确保未启用自动错误报告（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether the Apport automatic error reporting service is enabled.
-  remediation: |
-    Disable Apport by editing `/etc/default/apport` and setting:
+  description: |-
+    此模板检查 Apport 自动错误报告服务是否已启用。
+  remediation: |-
+    通过编辑 `/etc/default/apport` 并设置以下内容来禁用 Apport：
       enabled=0
 
-    If Apport is not required, remove it:
+    如果不需要 Apport，请将其移除：
       sudo apt remove apport -y
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux

@@ -1,13 +1,11 @@
 id: silver-peak-edgeconnect-panel
 
 info:
-  name: Silver Peak / HPE Aruba EdgeConnect - Orchestrator Panel
+  name: Silver Peak / HPE Aruba EdgeConnect - Orchestrator 管理面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Silver Peak (now HPE Aruba Networking) EdgeConnect SD-WAN Orchestrator is a
-    centralised management platform for EdgeConnect SD-WAN appliances. The web portal
-    is commonly exposed on HTTPS ports including 8443.
+  description: |-
+    Silver Peak（现为 HPE Aruba Networking）EdgeConnect SD-WAN Orchestrator 是用于管理 EdgeConnect SD-WAN 设备的中央管理平台。其 Web 门户通常暴露在包括 8443 在内的 HTTPS 端口上。
   reference:
     - https://www.arubanetworks.com/products/sd-wan/
   metadata:

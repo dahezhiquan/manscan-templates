@@ -1,11 +1,11 @@
 id: miniflux-panel
 
 info:
-  name: Miniflux - Login Panel
+  name: Miniflux - 登录面板（暴露面识别）
   author: ashish-cybersec
   severity: info
-  description: |
-    Miniflux is a minimalist and opinionated self-hosted feed reader written in Go. The login panel was detected.
+  description: |-
+    Miniflux 是一款用 Go 编写的、极简且立场鲜明的自托管 RSS 阅读器。检测到其登录面板。
   reference:
     - https://miniflux.app/docs/index.html
   metadata:

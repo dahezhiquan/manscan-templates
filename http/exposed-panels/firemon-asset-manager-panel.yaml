@@ -1,11 +1,11 @@
 id: firemon-asset-manager-panel
 
 info:
-  name: FireMon Asset Manager - Login Panel
+  name: FireMon Asset Manager 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    FireMon Asset Manager is a network security management platform that provides visibility, policy management, and compliance reporting for firewalls, routers, and other network security infrastructure.
+  description: |-
+    FireMon Asset Manager 是一款网络安全安全管理平台，为防火墙、路由器及其他网络安全基础设施提供可视化、策略管理和合规性报告功能。
   reference:
     - https://www.firemon.com/
   metadata:

@@ -1,11 +1,11 @@
 id: johnson-controls-default-login
 
 info:
-  name: Johnson Controls Frick Quantum HD Compressors - Default Login
+  name: Johnson Controls Frick Quantum HD 压缩机默认登录（弱口令）
   author: mister-joe
   severity: high
-  description: |
-    Detected Johnson Controls Frick Quantum HD Compressor control panels are accessible with default PIN credentials. These are industrial refrigeration controllers used in cold storage and food processing facilities. Default PINs allow full control of the compressor system.
+  description: |-
+    检测到 Johnson Controls Frick Quantum HD 压缩机控制面板可通过默认 PIN 凭据访问。这些工业制冷控制器用于冷库和食品加工设施。默认 PIN 允许对压缩机组进行完全控制。
   reference:
     - https://www.johnsoncontrols.com/industrial-refrigeration/frick-control-panels-and-control-systems/quantum-hd-industrial-refrigeration-control-panel
   classification:

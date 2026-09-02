@@ -1,11 +1,11 @@
 id: seaweedfs-unauth
 
 info:
-  name: SeaweedFS Filer - Unauthenticated Access
+  name: SeaweedFS Filer - 未授权访问
   author: Th3l0newolf
   severity: high
-  description: |
-    SeaweedFS Filer interface is exposed without authentication.Unauthenticated users may be able to upload, modify, or access files, potentially leading to malicious file hosting, data exposure, or remote compromise.
+  description: |-
+    SeaweedFS Filer 接口未经过身份验证即对外暴露。未授权用户可能能够上传、修改或访问文件，从而导致恶意文件托管、数据泄露或远程入侵。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cwe-id: CWE-306

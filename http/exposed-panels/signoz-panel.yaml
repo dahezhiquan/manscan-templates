@@ -1,11 +1,11 @@
 id: signoz-panel
 
 info:
-  name: SigNoz Panel - Detect
+  name: SigNoz 面板检测（暴露面识别）
   author: ChrisJr404,rxerium
   severity: info
-  description: |
-    SigNoz is an open-source observability platform for metrics, traces and logs. It ships a React frontend and a Go query service that exposes an unauthenticated version endpoint at /api/v1/version.
+  description: |-
+    SigNoz 是一款开源的监控平台，用于指标、追踪和日志。它包含一个 React 前端和一个 Go 查询服务，后者在 /api/v1/version 暴露了一个无需认证的版本接口。
   reference:
     - https://github.com/SigNoz/signoz
     - https://signoz.io/

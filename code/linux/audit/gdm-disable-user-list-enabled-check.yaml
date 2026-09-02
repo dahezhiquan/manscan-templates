@@ -1,14 +1,13 @@
 id: gdm-disable-user-list-enabled-check
 
 info:
-  name: Ensure GDM disable-user-list Option is Enabled
+  name: 确保 GDM 的 disable-user-list 选项已启用（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |
-    This template checks whether the GDM disable-user-list option is enabled.
-  remediation: |
-    Enable the `disable-user-list` option in GDM to prevent displaying the
-    list of local users on the login screen.
+  description: |-
+    此模板检查 GDM 的 disable-user-list 选项是否已启用。
+  remediation: |-
+    在 GDM 中启用 `disable-user-list` 选项，防止在登录屏幕上显示本地用户列表。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,login,audit

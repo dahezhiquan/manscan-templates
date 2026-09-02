@@ -1,11 +1,11 @@
 id: chatwoot-super-admin-panel
 
 info:
-  name: Chatwoot Super Admin Panel - Detect
+  name: Chatwoot 超级管理员面板 - 识别（暴露面识别）
   author: RootKaito
   severity: info
-  description: |
-    Chatwoot Super Admin login panel was detected.
+  description: |-
+    检测到 Chatwoot 超级管理员登录面板。
   reference:
     - https://www.chatwoot.com/
     - https://github.com/chatwoot/chatwoot

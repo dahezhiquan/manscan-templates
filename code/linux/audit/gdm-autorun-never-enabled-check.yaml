@@ -1,14 +1,13 @@
 id: gdm-autorun-never-enabled-check
 
 info:
-  name: Ensure GDM autorun-never is Enabled
+  name: 确保 GDM 的 autorun-never 已启用（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether GDM is configured to disable autorun for removable media.
-  remediation: |
-    Enable the `autorun-never` setting to prevent automatic execution of content
-    from removable media.
+  description: |-
+    此模板检查 GDM 是否配置为对可移动媒体禁用自动运行。
+  remediation: |-
+    启用 `autorun-never` 设置，防止内容从可移动媒体自动执行。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,autorun,media,audit

@@ -1,11 +1,11 @@
 id: buffalo-terastation-pro-panel
 
 info:
-  name: Buffalo TeraStation Pro - Login Panel
+  name: Buffalo TeraStation Pro - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Buffalo TeraStation Pro network-attached storage management panel was detected.
+  description: |-
+    检测到 Buffalo TeraStation Pro 网络附加存储管理面板。
   reference:
     - https://www.buffaloamericas.com/products/category/network-attached-storage
   metadata:

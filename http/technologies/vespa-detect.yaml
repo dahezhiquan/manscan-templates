@@ -1,11 +1,11 @@
 id: vespa-detect
 
 info:
-  name: Vespa - Detect
+  name: Vespa - 检测（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    Vespa, an open-source big-data serving engine used for low-latency search, recommendation, and vector/embedding retrieval, increasingly deployed as the retrieval backend in AI and RAG (retrieval-augmented generation) pipelines, was detected. Exposed config-server or container endpoints could have leaked application deployment metadata, cluster status, and version information, and may have allowed unauthenticated access to indexed/vectorized data if the query API was left open.
+  description: |-
+    检测到 Vespa，一个用于低延迟搜索、推荐和向量/嵌入检索的开源大数据服务引擎，越来越多地作为 AI 和 RAG（检索增强生成）流水线中的检索后端进行部署。暴露的 config-server 或容器端点可能泄露应用部署元数据、集群状态和版本信息，并且如果查询 API 保持开放，可能允许未认证访问索引化/向量化数据。
   reference:
     - https://vespa.ai/
     - https://github.com/vespa-engine/vespa

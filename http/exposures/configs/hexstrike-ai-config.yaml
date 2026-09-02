@@ -1,11 +1,11 @@
 id: hexstrike-ai-config
 
 info:
-  name: HexStrike AI MCP Agents - Config
+  name: HexStrike AI MCP Agents 配置（暴露面识别）
   author: icarot
   severity: info
-  description: |
-    HexStrike AI MCP Agents server config page exposure.
+  description: |-
+    HexStrike AI MCP Agents 服务器配置页面暴露。
   reference:
     - https://github.com/0x4m4/hexstrike-ai
   metadata:

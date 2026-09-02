@@ -1,11 +1,11 @@
 id: simplehelp-login-panel
 
 info:
-  name: SimpleHelp - Login Panel
+  name: SimpleHelp - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    SimpleHelp remote support and management login panel was detected.
+  description: |-
+    检测到 SimpleHelp 远程支持与管理登录面板。
   reference:
     - https://simple-help.com/
   metadata:

@@ -1,11 +1,11 @@
 id: easy-timepro-panel
 
 info:
-  name: easy TimePro Login - Panel
+  name: easy TimePro 登录页面 - 面板（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    easy TimePro login panel was discovered.
+  description: |-
+    发现 easy TimePro 登录面板。
   metadata:
     verified: true
     product: easy-timepro

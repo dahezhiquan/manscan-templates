@@ -1,11 +1,11 @@
 id: litellm-default-login
 
 info:
-  name: LiteLLM - Default Login
+  name: LiteLLM 默认登录（弱口令）
   author: icarot
   severity: high
-  description: |
-    LiteLLM enables default admin credential. An attacker can execute unauthorized operations.
+  description: |-
+    LiteLLM 启用了默认管理员凭据。攻击者可借此执行未授权操作。
   reference:
     - https://github.com/BerriAI/litellm
   metadata:

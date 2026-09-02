@@ -1,11 +1,11 @@
 id: mealie-detect
 
 info:
-  name: Mealie - Detect
+  name: Mealie 检测（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    Detects Mealie instances through the unauthenticated about API endpoint and extracts the running version. Mealie is a self hosted recipe manager and meal planner.
+  description: |-
+    通过未认证的 about API 端点检测 Mealie 实例，并提取其运行版本。Mealie 是一款自托管的食谱管理与膳食规划工具。
   reference:
     - https://mealie.io/
     - https://github.com/mealie-recipes/mealie

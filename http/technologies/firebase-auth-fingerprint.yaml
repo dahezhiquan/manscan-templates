@@ -1,11 +1,11 @@
 id: firebase-auth-fingerprint
 
 info:
-  name: Firebase Authentication - Fingerprint
+  name: Firebase 身份认证 - 指纹识别（指纹识别）
   author: zomasec,zomaxsec
   severity: info
-  description: |
-    Identifies applications using Firebase for authentication by requesting the auth helper script and checking for Firebase license, SDK version, and terms-of-service references.
+  description: |-
+    通过请求认证辅助脚本并检查 Firebase 许可证、SDK 版本和服务条款引用，识别使用 Firebase 进行身份认证的应用。
   reference:
     - https://firebase.google.com/docs/auth/web/redirect-best-practices
   metadata:

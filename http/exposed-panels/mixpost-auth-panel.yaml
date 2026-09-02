@@ -1,11 +1,11 @@
 id: mixpost-auth-panel
 
 info:
-  name: Mixpost Auth Login - Panel Detect
+  name: Mixpost 认证登录 - 面板检测（暴露面识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    Mixpost authentication interface was discovered.
+  description: |-
+    发现 Mixpost 认证接口。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

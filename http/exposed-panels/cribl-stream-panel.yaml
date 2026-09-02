@@ -1,11 +1,11 @@
 id: cribl-stream-panel
 
 info:
-  name: Cribl Stream - Login Panel
+  name: Cribl Stream - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Cribl Stream, formerly known as Cribl LogStream, web interface was detected.
+  description: |-
+    检测到 Cribl Stream（原名 Cribl LogStream）的 Web 界面。
   reference:
     - https://docs.cribl.io/stream/
   metadata:

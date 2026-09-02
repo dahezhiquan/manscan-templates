@@ -1,11 +1,11 @@
 id: cyberstrikeai-panel
 
 info:
-  name: Ed1s0nZ CyberStrikeAI - Panel
+  name: Ed1s0nZ CyberStrikeAI - 控制面板（暴露面识别）
   severity: info
   author: darses
-  description: |
-    Ed1s0nZ CyberStrikeAI panel was detected.
+  description: |-
+    检测到 Ed1s0nZ CyberStrikeAI 控制面板。
   reference:
     - https://github.com/Ed1s0nZ/CyberStrikeAI
   metadata:

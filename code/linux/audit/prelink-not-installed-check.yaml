@@ -1,16 +1,13 @@
 id: prelink-not-installed-check
 
 info:
-  name: Ensure Prelink is Not Installed
+  name: 确保未安装 Prelink（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |
-    This template checks whether the prelink package is installed.
-    Prelink modifies binaries to decrease application startup time, but it
-    interferes with file integrity monitoring and is not recommended on
-    secure systems.
-  remediation: |
-    Remove the prelink package if it is installed:
+  description: |-
+    此模板检查 prelink 包是否已安装。Prelink 通过修改二进制文件来减少应用程序启动时间，但会干扰文件完整性监控，因此不建议在安全系统上使用。
+  remediation: |-
+    如果已安装，请移除 prelink 包：
       sudo apt remove prelink -y
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux

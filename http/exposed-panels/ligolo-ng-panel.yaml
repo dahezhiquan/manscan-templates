@@ -1,11 +1,11 @@
 id: ligolo-ng-panel
 
 info:
-  name: Ligolo-ng Panel - Detect
+  name: Ligolo-ng 面板 - 检测（暴露面识别）
   author: Kazgangap
   severity: info
-  description: |
-    Ligolo-ng panel was detected.
+  description: |-
+    检测到 Ligolo-ng 面板。
   reference:
     - https://github.com/nicocha30/ligolo-ng
   metadata:

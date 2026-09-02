@@ -1,15 +1,15 @@
 id: drupal-eol
 
 info:
-  name: Drupal End-of-Life - Detect
+  name: Drupal 生命周期结束（EOL）- 识别（指纹识别）
   author: CyberTechSea
   severity: info
-  description: |
-    Detected Drupal versions that have reached End-of-Life (EOL) and no longer receive security updates. Drupal 7, 8 and 9 are entirely unsupported. For Drupal 10 and 11 only the most recent minor branches receive security coverage, so older minors are reported as EOL.
-  impact: |
-    Unsupported Drupal releases no longer receive security advisories or patches, so newly disclosed vulnerabilities remain permanently exploitable.
-  remediation: |
-    Upgrade to a Drupal release still covered by security support, as published in the Drupal core release cycle policy.
+  description: |-
+    检测到已到达生命周期结束（EOL）且不再接收安全更新的 Drupal 版本。Drupal 7、8 和 9 已完全不再支持。对于 Drupal 10 和 11，只有最近的次要分支获得安全覆盖，因此较旧的次要版本会被报告为 EOL。
+  impact: |-
+    不受支持的 Drupal 版本不再接收安全通告或补丁，因此新披露的漏洞将长期处于可被利用的状态。
+  remediation: |-
+    升级到仍受安全支持的 Drupal 版本，具体以 Drupal 核心发布周期策略公布的信息为准。
   reference:
     - https://endoflife.date/drupal
     - https://www.drupal.org/about/core/policies/core-release-cycles/schedule

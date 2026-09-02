@@ -1,11 +1,11 @@
 id: ubiquiti-edgerouter-panel
 
 info:
-  name: Ubiquiti EdgeRouter - Login Panel
+  name: Ubiquiti EdgeRouter - 登录面板（暴露面识别）
   author: rxerium
   severity: info
-  description: |
-    Ubiquiti EdgeRouter is an enterprise-grade router with advanced routing capabilities and VPN features, running EdgeOS (Ubiquiti's Vyatta-based firmware).
+  description: |-
+    Ubiquiti EdgeRouter 是一款企业级路由器，具备高级路由能力与 VPN 功能，运行基于 Vyatta 的 EdgeOS 固件。
   reference:
     - https://www.ui.com/edgemax/edgerouter/
   metadata:

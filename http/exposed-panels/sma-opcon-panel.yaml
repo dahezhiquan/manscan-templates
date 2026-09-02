@@ -1,11 +1,11 @@
 id: sma-opcon-panel
 
 info:
-  name: SMA OpCon Panel - Detect
+  name: SMA OpCon 面板检测（暴露面识别）
   author: righettod
   severity: info
-  description: |
-     SMA OpCon was detected — a workload automation and orchestration software.
+  description: |-
+    检测到 SMA OpCon——一款工作负载自动化和编排软件。
   reference:
     - https://smatechnologies.com/product-opcon
   metadata:

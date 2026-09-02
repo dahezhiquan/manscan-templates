@@ -1,10 +1,10 @@
 id: ctrlpanel-panel
 
 info:
-  name: CtrlPanel Login Panel - Detect
+  name: CtrlPanel 登录面板检测（暴露面识别）
   author: theamanrawat
   severity: info
-  description: CtrlPanel login panel was detected.
+  description: 检测到 CtrlPanel 登录面板。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

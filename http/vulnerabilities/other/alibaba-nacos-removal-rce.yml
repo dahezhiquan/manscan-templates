@@ -1,0 +1,34 @@
+id: alibaba-nacos-removal-rce
+info:
+  name: Alibaba Nacos removal 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-1374034
+    vendor: alibaba
+    product: nacos
+  tags: rce,vuln,alibaba,nacos
+variables:
+  r1: '{{to_lower(rand_text_alpha(20))}}'
+  r2: '{{to_lower(rand_text_alpha(20))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/nacos/v1/cs/ops/data/removal'
+      - '{{BaseURL}}/v1/cs/ops/data/removal'
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="file"; filename="{{r1}}"
+      Content-Type: application/octet-stream
+
+      {{r2}}
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, ''"data":null'') && contains(body, ''"code":500'') && !contains(body, ''Limited to embedded storage mode'')'

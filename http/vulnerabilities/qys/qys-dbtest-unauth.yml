@@ -1,0 +1,20 @@
+id: qys-dbtest-unauth
+info:
+  name: 契约锁电子签章系统 /api/setup/dbtest 接口未授权访问
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-2098559
+    vendor: qys
+    product: qys
+  tags: unauth,vuln,qys
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/setup/dbtest'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "code") && contains(body, "100") && contains(body, "message") && contains(body, "\u8BF7") && contains(header, "application/json")'

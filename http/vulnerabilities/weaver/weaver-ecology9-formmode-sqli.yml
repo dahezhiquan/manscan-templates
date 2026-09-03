@@ -1,0 +1,19 @@
+id: weaver-ecology9-formmode-sqli
+info:
+  name: 泛微 Ecology 9 formmode 接口 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: weaver
+    product: ecology9
+  tags: sqli,vuln,weaver,ecology9
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/weaver/weaver.formmode.setup.FormmodeFieldBrowserServlet'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, "try{top.location.href=''/login/Login.jsp?gopage=") && contains(body, "catch(e)")'

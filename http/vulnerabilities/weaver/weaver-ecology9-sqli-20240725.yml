@@ -1,0 +1,21 @@
+id: weaver-ecology9-sqli-20240725
+info:
+  name: 泛微 Ecology 9 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    cpe: weaver:e-cology-oa
+    vuln-id: CT-1388197
+    vendor: weaver
+    product: ecology9
+  tags: sqli,vuln,weaver,ecology9,oa
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/security/checksec20240725.jsp'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 404 && contains(header, "ecology_JSessionid")'

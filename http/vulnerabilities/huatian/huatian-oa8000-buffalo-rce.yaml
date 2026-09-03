@@ -1,0 +1,31 @@
+id: huatian-oa8000-buffalo-rce
+info:
+  name: 华天动力 OA8000 buffalo 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: huatian
+    product: oa8000
+  tags: rce,vuln,huatian
+flow: http(1) || http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/OAapp/bfapp/buffalo/'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 500 && contains(body, "Buffalo worker support POST only!") && contains(body, "net.buffalo.service.BuffaloWorker.validate")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/OAapp/bfapp/buffalo/'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 500 && contains(body, "net.buffalo.service.NoSuchServiceException:") && contains(body, "net.buffalo.service.BuffaloWorker.processRequest")'

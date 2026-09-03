@@ -1,0 +1,23 @@
+id: smartbi-address-auth-bypass
+info:
+  name: SmartBI address 接口 - 认证绕过漏洞
+  author: chaitin
+  severity: high
+  reference:
+    - https://stack.chaitin.com/techblog/detail?id=142
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-817703
+    vendor: smartbi
+    product: smartbi
+  tags: auth-bypass,vuln,smartbi
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/smartbi/smartbix/api/monitor/setEngineAddress'
+      - '{{BaseURL}}/smartbix/api/monitor/setEngineAddress'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "Request method ''GET'' not supported") && contains(body, ''smartbix.SmartbiXException'')'

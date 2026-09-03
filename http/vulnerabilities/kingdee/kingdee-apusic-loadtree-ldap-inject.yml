@@ -1,0 +1,26 @@
+id: kingdee-apusic-loadtree-ldap-inject
+info:
+  name: 金蝶 loadtree 接口 - LDAP 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-1014499
+    vendor: kingdee
+    product: aas
+  tags: ldap-injection,vuln,kingdee,ldap
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/admin//protect/jndi/loadTree'
+      - '{{BaseURL}}/appmonitor//protect/jndi/loadTree'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: |
+      jndiName=
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(header, "big5") && contains(body, ''{"jndiName":"jms","'')'

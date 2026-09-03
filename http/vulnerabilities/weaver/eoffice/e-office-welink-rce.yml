@@ -1,0 +1,23 @@
+id: e-office-welink-rce
+info:
+  name: 泛微 E-Office welink 接口 - 远程代码执行漏洞
+  author: Chaitin
+  severity: critical
+  reference:
+  - https://stack.chaitin.com/techblog/detail/158
+  metadata:
+    verified: true
+    max-request: 1
+    vuln-id: CT-898014
+    vendor: weaver
+    product: e-office
+  tags: rce,vuln,weaver,e-office
+http:
+- method: POST
+  path:
+  - '{{BaseURL}}/eoffice10/server/public/api/welink/welink-move'
+  redirects: false
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(raw, "{\"code\":\"0x000013\",\"message\":\"api\\u9519\\u8bef\"}")'

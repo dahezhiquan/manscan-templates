@@ -1,0 +1,32 @@
+id: bessystem-console-deserialization-feature
+info:
+  name: 宝兰德 BES Console - 反序列化漏洞
+  author: Chaitin
+  severity: critical
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1415459
+    vendor: bessystem
+    product: console
+  tags: deserialization,vuln,bessystem
+variables:
+  data: '{{hex_decode("")}}'
+flow: http(1) && http(2)
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/__bes'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 302 && contains(header, "/__bes/")'
+  - method: GET
+    path:
+      - '{{BaseURL}}/__bes/__ejb'
+    redirects: false
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'

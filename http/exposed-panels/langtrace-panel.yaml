@@ -1,7 +1,7 @@
 id: langtrace-panel
 
 info:
-  name: Langtrace 面板 - 检测（暴露面识别）
+  name: Langtrace 面板 - 检测（指纹识别）
   author: rxerium
   severity: info
   description: |-

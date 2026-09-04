@@ -1,7 +1,7 @@
 id: nacos-info-leak
 
 info:
-  name: Nacos - 信息泄露漏洞
+  name: Nacos - 信息泄露漏洞（指纹识别）
   author: s4e-io
   severity: high
   description: Nacos - 信息泄露 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。

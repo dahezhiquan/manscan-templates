@@ -1,7 +1,7 @@
 id: openremote-detect
 
 info:
-  name: OpenRemote 物联网平台检测（IOT）
+  name: OpenRemote 物联网平台检测（指纹识别）
   author: pussycat0x
   severity: info
   description: |-

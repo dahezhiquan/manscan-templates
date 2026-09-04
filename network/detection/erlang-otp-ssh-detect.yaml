@@ -1,7 +1,7 @@
 id: erlang-otp-ssh-detect
 
 info:
-  name: Erlang/OTP SSH 服务 识别（服务漏洞）
+  name: Erlang/OTP SSH 服务 识别（指纹识别）
   author: darses
   severity: info
   description: |

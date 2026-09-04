@@ -1,7 +1,7 @@
 id: matomo-panel
 
 info:
-  name: Matomo 面板识别（暴露面识别）
+  name: Matomo 面板识别（指纹识别）
   author: Arr0way,userdehghani
   severity: info
   description: |

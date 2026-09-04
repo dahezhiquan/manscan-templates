@@ -1,7 +1,7 @@
 id: web-viewer-panel
 
 info:
-  name: Web Viewer for Samsung DVR 识别（暴露面识别）
+  name: Web Viewer for Samsung DVR 识别（指纹识别）
   author: JustaAcat
   severity: info
   classification:

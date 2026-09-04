@@ -1,7 +1,7 @@
 id: kasm-login-panel
 
 info:
-  name: Kasm 登录面板识别（暴露面识别）
+  name: Kasm 登录面板识别（指纹识别）
   author: lum8rjack
   severity: info
   description: |

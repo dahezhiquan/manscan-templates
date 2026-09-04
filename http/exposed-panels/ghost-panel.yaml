@@ -1,7 +1,7 @@
 id: ghost-panel
 
 info:
-  name: Ghost 面板识别（暴露面识别）
+  name: Ghost 面板识别（指纹识别）
   author: userdehghani
   severity: info
   description: |

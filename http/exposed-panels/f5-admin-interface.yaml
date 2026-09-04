@@ -1,7 +1,7 @@
 id: f5-admin-interface
 
 info:
-  name: F5 Admin Interface 识别（暴露面识别）
+  name: F5 Admin Interface 识别（指纹识别）
   author: drewvravick,righettod
   severity: info
   description: |

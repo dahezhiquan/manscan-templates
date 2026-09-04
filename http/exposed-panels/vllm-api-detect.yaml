@@ -1,7 +1,7 @@
 id: vllm-api-detect
 
 info:
-  name: vLLM OpenAI-Compatible Server 识别（暴露面识别）
+  name: vLLM OpenAI-Compatible Server 识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |

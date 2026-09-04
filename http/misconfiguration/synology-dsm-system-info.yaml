@@ -1,7 +1,7 @@
 id: synology-dsm-system-info
 
 info:
-  name: Syno日志y DSM System Info 检测
+  name: Syno日志y DSM System Info 检测（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |

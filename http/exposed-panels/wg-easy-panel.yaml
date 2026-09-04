@@ -1,7 +1,7 @@
 id: wg-easy-panel
 
 info:
-  name: WireGuard Easy (wg-easy) 登录面板（暴露面识别）
+  name: WireGuard Easy (wg-easy) 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

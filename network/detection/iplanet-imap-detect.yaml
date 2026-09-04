@@ -1,7 +1,7 @@
 id: iplanet-imap-detect
 
 info:
-  name: iPlanet Messaging 服务 IMAP 协议 识别（服务漏洞）
+  name: iPlanet Messaging 服务 IMAP 协议 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

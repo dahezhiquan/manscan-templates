@@ -1,7 +1,7 @@
 id: veracore-panel
 
 info:
-  name: Veracore 登录识别（暴露面识别）
+  name: Veracore 登录识别（指纹识别）
   author: rxerium
   severity: info
   description: |

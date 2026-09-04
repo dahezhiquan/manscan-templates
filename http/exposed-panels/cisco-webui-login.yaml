@@ -1,7 +1,7 @@
 id: cisco-webui-login
 
 info:
-  name: Cisco Web UI 登录识别（暴露面识别）
+  name: Cisco Web UI 登录识别（指纹识别）
   author: drewvravick
   severity: info
   description: |

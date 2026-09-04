@@ -1,7 +1,7 @@
 id: homebridge-panel
 
 info:
-  name: Homebridge 面板识别（暴露面识别）
+  name: Homebridge 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

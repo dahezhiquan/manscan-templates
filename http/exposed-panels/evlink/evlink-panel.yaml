@@ -1,7 +1,7 @@
 id: evlink-panel
 
 info:
-  name: EVlink Local Controller - 识别（暴露面识别）
+  name: EVlink Local Controller - 识别（指纹识别）
   author: ritikchaddha
   severity: info
   metadata:

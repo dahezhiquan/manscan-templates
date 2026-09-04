@@ -1,7 +1,7 @@
 id: ws_ftp-ssh-detect
 
 info:
-  name: WS_FTP-SSH 服务 识别（服务漏洞）
+  name: WS_FTP-SSH 服务 识别（指纹识别）
   author: johnk3r
   severity: info
   description: |

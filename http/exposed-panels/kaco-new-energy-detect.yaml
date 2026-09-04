@@ -1,7 +1,7 @@
 id: kaco-new-energy-detect
 
 info:
-  name: KACO New Energy Solar Inverter 识别（暴露面识别）
+  name: KACO New Energy Solar Inverter 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

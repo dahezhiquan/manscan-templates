@@ -1,7 +1,7 @@
 id: ship-manager-dnv
 
 info:
-  name: Ship Manager DNV 面板（暴露面识别）
+  name: Ship Manager DNV 面板（指纹识别）
   author: rxerium
   severity: info
   description: |

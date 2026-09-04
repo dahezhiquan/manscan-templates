@@ -1,7 +1,7 @@
 id: aim-panel
 
 info:
-  name: Aim 面板 - 检测（暴露面识别）
+  name: Aim 面板 - 检测（指纹识别）
   author: rxerium
   severity: info
   description: |-

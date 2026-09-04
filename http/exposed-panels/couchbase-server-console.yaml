@@ -1,7 +1,7 @@
 id: couchbase-server-console
 
 info:
-  name: Couchbase Server Console 识别（暴露面识别）
+  name: Couchbase Server Console 识别（指纹识别）
   author: Th3l0newolf
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: mikrotik-ftp-server-detect
 
 info:
-  name: MikroTik FTP server 识别（服务漏洞）
+  name: MikroTik FTP server 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

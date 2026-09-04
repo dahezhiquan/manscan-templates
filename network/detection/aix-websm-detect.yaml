@@ -1,7 +1,7 @@
 id: aix-websm-detect
 
 info:
-  name: AIX WebSM 识别（服务漏洞）
+  name: AIX WebSM 识别（指纹识别）
   author: righettod
   severity: info
   description: |

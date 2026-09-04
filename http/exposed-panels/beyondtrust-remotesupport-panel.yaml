@@ -1,7 +1,7 @@
 id: beyondtrust-remotesupport-panel
 
 info:
-  name: BeyondTrust Remote Support 面板识别（暴露面识别）
+  name: BeyondTrust Remote Support 面板识别（指纹识别）
   author: darses
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: ms-exchange-web-service
 
 info:
-  name: Microsoft Exchange Web Service 识别（暴露面识别）
+  name: Microsoft Exchange Web Service 识别（指纹识别）
   author: bhutch,userdehghani
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: servicenow-panel
 
 info:
-  name: ServiceNow 登录面板识别（暴露面识别）
+  name: ServiceNow 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

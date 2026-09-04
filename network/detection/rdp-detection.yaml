@@ -1,7 +1,7 @@
 id: rdp-detection
 
 info:
-  name: Windows Remote Desktop 协议 识别（服务漏洞）
+  name: Windows Remote Desktop 协议 识别（指纹识别）
   author: princechaddha
   severity: info
   description: |

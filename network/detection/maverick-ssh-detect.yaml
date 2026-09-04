@@ -1,7 +1,7 @@
 id: maverick-ssh-detect
 
 info:
-  name: Maverick SSH 服务 识别（服务漏洞）
+  name: Maverick SSH 服务 识别（指纹识别）
   author: johnk3r
   severity: info
   description: |

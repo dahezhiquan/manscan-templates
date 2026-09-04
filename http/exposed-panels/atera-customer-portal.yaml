@@ -1,7 +1,7 @@
 id: atera-customer-portal
 
 info:
-  name: Atera 客户门户 - 登录面板（暴露面识别）
+  name: Atera 客户门户 - 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

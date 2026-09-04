@@ -1,7 +1,7 @@
 id: mitel-micollab-panel
 
 info:
-  name: Mitel MiCollab 登录面板识别（暴露面识别）
+  name: Mitel MiCollab 登录面板识别（指纹识别）
   author: righettod,darses
   severity: info
   description: |

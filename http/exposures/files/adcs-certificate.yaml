@@ -1,7 +1,7 @@
 id: adcs-certificate
 
 info:
-  name: Microsoft AD CS Web Enrollment 检测（暴露面识别）
+  name: Microsoft AD CS Web Enrollment 检测（指纹识别）
   author: pastaga,defte,atomiczsec
   severity: info
   description: |

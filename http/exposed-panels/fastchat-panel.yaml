@@ -1,7 +1,7 @@
 id: fastchat-panel
 
 info:
-  name: 检测 FastChat 面板（暴露面识别）
+  name: 检测 FastChat 面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

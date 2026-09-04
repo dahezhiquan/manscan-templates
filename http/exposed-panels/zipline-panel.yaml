@@ -1,7 +1,7 @@
 id: zipline-panel
 
 info:
-  name: Diced Zipline 识别（暴露面识别）
+  name: Diced Zipline 识别（指纹识别）
   author: icarot
   severity: info
   description: |

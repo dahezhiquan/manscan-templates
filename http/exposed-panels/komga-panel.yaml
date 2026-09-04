@@ -1,7 +1,7 @@
 id: komga-panel
 
 info:
-  name: Komga 面板 - 检测（暴露面识别）
+  name: Komga 面板 - 检测（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-

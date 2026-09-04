@@ -1,7 +1,7 @@
 id: seafile-api
 
 info:
-  name: Seafile API 检测（暴露面识别）
+  name: Seafile API 检测（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: meddream-dicom-viewer-panel
 
 info:
-  name: MedDream DICOM Viewer 面板（暴露面识别）
+  name: MedDream DICOM Viewer 面板（指纹识别）
   author: darses
   severity: info
   description: |

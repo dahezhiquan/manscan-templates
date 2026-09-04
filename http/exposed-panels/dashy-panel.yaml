@@ -1,7 +1,7 @@
 id: dashy-panel
 
 info:
-  name: Dashy 面板识别（暴露面识别）
+  name: Dashy 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   reference:

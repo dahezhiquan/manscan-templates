@@ -1,7 +1,7 @@
 id: cisco-webex-meetings-panel
 
 info:
-  name: Cisco Webex Meetings 面板（暴露面识别）
+  name: Cisco Webex Meetings 面板（指纹识别）
   author: Eyonn
   severity: info
   description: 该模板通过识别 Cisco Webex Meetings 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。

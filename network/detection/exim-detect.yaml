@@ -1,7 +1,7 @@
 id: exim-detect
 
 info:
-  name: Exim 识别（服务漏洞）
+  name: Exim 识别（指纹识别）
   author: ricardomaia,userdehghani
   severity: info
   description: |

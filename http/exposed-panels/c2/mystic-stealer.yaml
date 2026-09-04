@@ -1,7 +1,7 @@
 id: mystic-stealer
 
 info:
-  name: Mystic Stealer 面板识别（暴露面识别）
+  name: Mystic Stealer 面板识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

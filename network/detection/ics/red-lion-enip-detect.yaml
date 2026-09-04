@@ -1,7 +1,7 @@
 id: red-lion-enip-detect
 
 info:
-  name: Red Lion ENIP 识别（服务漏洞）
+  name: Red Lion ENIP 识别（指纹识别）
   author: biero-el-corridor
   severity: info
   description: |

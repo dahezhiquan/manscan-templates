@@ -1,7 +1,7 @@
 id: actifio-panel
 
 info:
-  name: Actifio Resource Center 面板（暴露面识别）
+  name: Actifio Resource Center 面板（指纹识别）
   author: Splint3r7
   severity: info
   description: |

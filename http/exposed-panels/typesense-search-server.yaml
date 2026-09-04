@@ -1,7 +1,7 @@
 id: typesense-search-server
 
 info:
-  name: Typesense Search Server 识别（暴露面识别）
+  name: Typesense Search Server 识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |

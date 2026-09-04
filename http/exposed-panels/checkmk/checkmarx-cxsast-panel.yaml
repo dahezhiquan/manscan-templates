@@ -1,7 +1,7 @@
 id: checkmarx-cxsast-panel
 
 info:
-  name: Checkmarx 登录面板识别（暴露面识别）
+  name: Checkmarx 登录面板识别（指纹识别）
   author: joanbonon,righettod
   severity: info
   description: |

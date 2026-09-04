@@ -1,7 +1,7 @@
 id: usergate-ngfw-admin-panel
 
 info:
-  name: UserGate NGFW/UTM Admin 面板识别（暴露面识别）
+  name: UserGate NGFW/UTM Admin 面板识别（指纹识别）
   author: darses
   severity: info
   description: |

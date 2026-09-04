@@ -1,7 +1,7 @@
 id: supabase-studio-panel
 
 info:
-  name: Supabase Studio 面板识别（暴露面识别）
+  name: Supabase Studio 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: romm-panel
 
 info:
-  name: RomM 面板 - 检测（暴露面识别）
+  name: RomM 面板 - 检测（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-

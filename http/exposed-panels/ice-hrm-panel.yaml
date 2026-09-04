@@ -1,7 +1,7 @@
 id: ice-hrm-panel
 
 info:
-  name: ICE HRM 登录识别（暴露面识别）
+  name: ICE HRM 登录识别（指纹识别）
   author: Th3l0newolf
   severity: info
   description: |

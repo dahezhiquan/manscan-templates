@@ -1,7 +1,7 @@
 id: tplink-r470t-panel
 
 info:
-  name: TP-LINK Router R470T 识别（暴露面识别）
+  name: TP-LINK Router R470T 识别（指纹识别）
   author: ritikchaddha
   severity: info
   metadata:

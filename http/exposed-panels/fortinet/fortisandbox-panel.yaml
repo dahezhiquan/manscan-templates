@@ -1,7 +1,7 @@
 id: fortinet-fortisandbox-panel
 
 info:
-  name: Fortinet FortiSandbox 面板识别（暴露面识别）
+  name: Fortinet FortiSandbox 面板识别（指纹识别）
   author: Umut ÖZEN,rxerium
   severity: info
   description: |

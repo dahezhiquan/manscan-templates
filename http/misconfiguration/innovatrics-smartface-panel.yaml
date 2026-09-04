@@ -1,7 +1,7 @@
 id: unauth-innovatrics-smartface-panel
 
 info:
-  name: 未授权 SmartFace 面板 检测
+  name: 未授权 SmartFace 面板 检测（指纹识别）
   author: matejsmycka
   severity: medium
   description: |

@@ -1,7 +1,7 @@
 id: apache-ozone-conf
 
 info:
-  name: Apache Ozone 暴露（暴露面识别）
+  name: Apache Ozone 暴露（指纹识别）
   author: icarot
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: filegator-panel
 
 info:
-  name: FileGator 面板识别（暴露面识别）
+  name: FileGator 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   reference:

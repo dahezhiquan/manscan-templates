@@ -1,7 +1,7 @@
 id: knime-server-panel
 
 info:
-  name: KNIME Server / Business Hub WebPortal - 检测（暴露面识别）
+  name: KNIME Server / Business Hub WebPortal - 检测（指纹识别）
   author: rxerium
   severity: info
   description: |-

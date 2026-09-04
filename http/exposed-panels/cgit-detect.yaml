@@ -1,7 +1,7 @@
 id: cgit-detect
 
 info:
-  name: cgit Web Interface - 识别（暴露面识别）
+  name: cgit Web Interface - 识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |

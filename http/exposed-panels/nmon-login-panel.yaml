@@ -1,7 +1,7 @@
 id: nmon-login-panel
 
 info:
-  name: nMon 面板识别（暴露面识别）
+  name: nMon 面板识别（指纹识别）
   author: Th3l0newolf
   severity: info
   description: |

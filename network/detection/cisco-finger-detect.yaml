@@ -1,7 +1,7 @@
 id: cisco-finger-detect
 
 info:
-  name: Cisco Finger Daemon 识别（服务漏洞）
+  name: Cisco Finger Daemon 识别（指纹识别）
   author: pussycat0x
   severity: low
   description: |

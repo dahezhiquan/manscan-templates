@@ -1,7 +1,7 @@
 id: detect-addpac-voip-gateway
 
 info:
-  name: AddPac GSM VoIP 网关 面板 识别（服务漏洞）
+  name: AddPac GSM VoIP 网关 面板 识别（指纹识别）
   author: geeknik
   severity: info
   description: |

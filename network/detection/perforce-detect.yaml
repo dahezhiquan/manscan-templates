@@ -1,7 +1,7 @@
 id: perforce-detection
 
 info:
-  name: Perforce 服务 识别（服务漏洞）
+  name: Perforce 服务 识别（指纹识别）
   author: Morgan Robertson
   severity: info
   description: |

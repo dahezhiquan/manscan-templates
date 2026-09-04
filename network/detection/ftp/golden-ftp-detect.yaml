@@ -1,6 +1,6 @@
 id: golden-ftp-detect
 info:
-  name: Golden FTP 服务 Pro 服务 识别（服务漏洞）
+  name: Golden FTP 服务 Pro 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

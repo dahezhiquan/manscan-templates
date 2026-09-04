@@ -1,7 +1,7 @@
 id: osasi-panel
 
 info:
-  name: OSASI Login 面板（暴露面识别）
+  name: OSASI Login 面板（指纹识别）
   author: biero-el-corridor
   severity: info
   description: |

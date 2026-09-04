@@ -1,7 +1,7 @@
 id: torrent-magnet-detect
 
 info:
-  name: Torrent Magnet 链接检测
+  name: Torrent Magnet 链接检测（指纹识别）
   author: rxerium
   severity: info
   description: |

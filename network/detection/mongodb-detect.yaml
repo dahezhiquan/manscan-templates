@@ -1,7 +1,7 @@
 id: mongodb-detect
 
 info:
-  name: MongoDB 服务 识别（服务漏洞）
+  name: MongoDB 服务 识别（指纹识别）
   author: pdteam
   severity: info
   description: |

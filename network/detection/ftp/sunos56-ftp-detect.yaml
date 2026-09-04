@@ -1,6 +1,6 @@
 id: sunos56-ftp-detect
 info:
-  name: SunOS 5.6 FTP 服务 识别（服务漏洞）
+  name: SunOS 5.6 FTP 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

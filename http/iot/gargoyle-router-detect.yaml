@@ -1,7 +1,7 @@
 id: gargoyle-router-detect
 
 info:
-  name: Gargoyle 路由器管理工具检测（IOT）
+  name: Gargoyle 路由器管理工具检测（指纹识别）
   author: K3ysTr0K3R
   severity: info
   description: |-

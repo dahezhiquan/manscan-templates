@@ -1,7 +1,7 @@
 id: riak-detect
 
 info:
-  name: Riak 识别（服务漏洞）
+  name: Riak 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

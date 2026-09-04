@@ -1,7 +1,7 @@
 id: appsuite-panel
 
 info:
-  name: Appsuite 登录面板识别（暴露面识别）
+  name: Appsuite 登录面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   classification:

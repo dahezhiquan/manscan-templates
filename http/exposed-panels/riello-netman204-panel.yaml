@@ -1,7 +1,7 @@
 id: riello-netman204-panel
 
 info:
-  name: Riello UPS NetMan 204 面板识别（暴露面识别）
+  name: Riello UPS NetMan 204 面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |

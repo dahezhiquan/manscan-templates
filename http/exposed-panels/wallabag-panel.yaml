@@ -1,7 +1,7 @@
 id: wallabag-panel
 
 info:
-  name: Wallabag 面板检测（暴露面识别）
+  name: Wallabag 面板检测（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-

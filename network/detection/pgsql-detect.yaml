@@ -1,7 +1,7 @@
 id: pgsql-detect
 
 info:
-  name: PostgreSQL Authentication 识别（服务漏洞）
+  name: PostgreSQL Authentication 识别（指纹识别）
   author: nybble04,geeknik
   severity: info
   description: |

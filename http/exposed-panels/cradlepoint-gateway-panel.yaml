@@ -1,7 +1,7 @@
 id: cradlepoint-gateway-panel
 
 info:
-  name: CradlePoint 网关 - 登录面板（暴露面识别）
+  name: CradlePoint 网关 - 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

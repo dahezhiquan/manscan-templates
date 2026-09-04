@@ -1,7 +1,7 @@
 id: ibm-decision-server-console
 
 info:
-  name: IBM Decision Server Console 面板识别（暴露面识别）
+  name: IBM Decision Server Console 面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   description: |

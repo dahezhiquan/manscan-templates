@@ -1,7 +1,7 @@
 id: friendica-panel
 
 info:
-  name: Friendica 面板识别（暴露面识别）
+  name: Friendica 面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

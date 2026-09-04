@@ -1,7 +1,7 @@
 id: sanity-studio-panel
 
 info:
-  name: Sanity Studio 面板识别（暴露面识别）
+  name: Sanity Studio 面板识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |

@@ -1,6 +1,6 @@
 id: sidewinder-ftp-detect
 info:
-  name: Sidewinder FTP 代理 服务 识别（服务漏洞）
+  name: Sidewinder FTP 代理 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

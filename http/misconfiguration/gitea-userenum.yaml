@@ -1,7 +1,7 @@
 id: gitea-userenum
 
 info:
-  name: Gitea 用户枚举
+  name: Gitea 用户枚举（指纹识别）
   author: icarot
   severity: low
   description: |

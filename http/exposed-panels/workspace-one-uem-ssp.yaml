@@ -1,7 +1,7 @@
 id: workspace-one-uem-ssp
 
 info:
-  name: VMware Workspace ONE UEM Airwatch Self-Service Portal 识别（暴露面识别）
+  name: VMware Workspace ONE UEM Airwatch Self-Service Portal 识别（指纹识别）
   author: KoratSec
   severity: info
   description: |

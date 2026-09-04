@@ -1,7 +1,7 @@
 id: tools4ever-ssrpm-panel
 
 info:
-  name: Tools4Ever Self-Service Reset Password Manager 面板（暴露面识别）
+  name: Tools4Ever Self-Service Reset Password Manager 面板（指纹识别）
   severity: info
   author: darses
   description: |

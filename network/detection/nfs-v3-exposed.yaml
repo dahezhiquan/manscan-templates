@@ -1,7 +1,7 @@
 id: nfs-v3-exposed
 
 info:
-  name: NFSv3 暴露d 识别（服务漏洞）
+  name: NFSv3 暴露d 识别（指纹识别）
   author: johnk3r
   severity: info
   description: |

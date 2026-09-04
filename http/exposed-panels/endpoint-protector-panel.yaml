@@ -1,7 +1,7 @@
 id: endpoint-protector-panel
 
 info:
-  name: Endpoint Protector 登录面板识别（暴露面识别）
+  name: Endpoint Protector 登录面板识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

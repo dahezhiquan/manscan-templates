@@ -1,7 +1,7 @@
 id: cisco-ucm-selfcare-portal
 
 info:
-  name: Cisco Unified Communications Self-Service User Portal - 识别（暴露面识别）
+  name: Cisco Unified Communications Self-Service User Portal - 识别（指纹识别）
   author: Morgan Robertson
   severity: info
   description: |

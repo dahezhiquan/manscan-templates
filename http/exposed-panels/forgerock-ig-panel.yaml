@@ -1,7 +1,7 @@
 id: forgerock-ig-panel
 
 info:
-  name: ForgeRock IG Login/Welcome Page 识别（暴露面识别）
+  name: ForgeRock IG Login/Welcome Page 识别（指纹识别）
   author: r3dg33k
   severity: info
   description: |

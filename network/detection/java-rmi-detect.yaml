@@ -1,7 +1,7 @@
 id: java-rmi-detect
 
 info:
-  name: Java Remote Method Invocation 协议 识别（服务漏洞）
+  name: Java Remote Method Invocation 协议 识别（指纹识别）
   author: F1tz
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: macos-server-panel
 
 info:
-  name: macOS Server 面板识别（暴露面识别）
+  name: macOS Server 面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   metadata:

@@ -1,7 +1,7 @@
 id: topaccess-panel
 
 info:
-  name: Toshiba TopAccess 面板识别（暴露面识别）
+  name: Toshiba TopAccess 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   reference:

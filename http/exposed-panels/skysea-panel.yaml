@@ -1,7 +1,7 @@
 id: skysea-panel
 
 info:
-  name: SKYSEA Client View 面板识别（暴露面识别）
+  name: SKYSEA Client View 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: vmware-aria-panel
 
 info:
-  name: VMware Aria Operations 登录识别（暴露面识别）
+  name: VMware Aria Operations 登录识别（指纹识别）
   author: rxerium
   severity: info
   description: |

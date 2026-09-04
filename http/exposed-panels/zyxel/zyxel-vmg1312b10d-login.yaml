@@ -1,7 +1,7 @@
 id: zyxel-vmg1312b10d-login
 
 info:
-  name: Zyxel VMG1312-B10D - Login 识别（暴露面识别）
+  name: Zyxel VMG1312-B10D - Login 识别（指纹识别）
   author: princechaddha
   severity: info
   classification:

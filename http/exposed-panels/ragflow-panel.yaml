@@ -1,7 +1,7 @@
 id: ragflow-panel
 
 info:
-  name: RAGFlow 面板识别（暴露面识别）
+  name: RAGFlow 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

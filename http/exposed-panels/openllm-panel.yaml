@@ -1,7 +1,7 @@
 id: openllm-panel
 
 info:
-  name: OpenLLM 面板识别（暴露面识别）
+  name: OpenLLM 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

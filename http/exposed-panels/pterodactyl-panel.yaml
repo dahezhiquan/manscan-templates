@@ -1,7 +1,7 @@
 id: pterodactyl-panel
 
 info:
-  name: Pterodactyl game server 面板（暴露面识别）
+  name: Pterodactyl game server 面板（指纹识别）
   severity: info
   author: darses
   description: |

@@ -1,7 +1,7 @@
 id: ip-webcam
 
 info:
-  name: IP Webcam 查看页面暴露（IOT）
+  name: IP Webcam 查看页面暴露（指纹识别）
   author: gy741
   severity: low
   description: |

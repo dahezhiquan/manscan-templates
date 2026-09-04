@@ -1,7 +1,7 @@
 id: donetick-panel
 
 info:
-  name: Donetick 面板 - 检测（暴露面识别）
+  name: Donetick 面板 - 检测（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-

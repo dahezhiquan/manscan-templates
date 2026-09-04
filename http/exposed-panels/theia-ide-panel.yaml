@@ -1,7 +1,7 @@
 id: theia-ide-panel
 
 info:
-  name: Eclipse Theia IDE 面板识别（暴露面识别）
+  name: Eclipse Theia IDE 面板识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |

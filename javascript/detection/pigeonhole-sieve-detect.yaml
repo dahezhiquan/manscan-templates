@@ -1,7 +1,7 @@
 id: pigeonhole-sieve-detect
 
 info:
-  name: Pigeonhole Sieve 服务识别（服务漏洞）
+  name: Pigeonhole Sieve 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

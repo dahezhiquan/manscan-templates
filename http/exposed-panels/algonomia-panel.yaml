@@ -1,7 +1,7 @@
 id: algonomia-panel
 
 info:
-  name: Algonomia Leaf Platform 面板识别（暴露面识别）
+  name: Algonomia Leaf Platform 面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

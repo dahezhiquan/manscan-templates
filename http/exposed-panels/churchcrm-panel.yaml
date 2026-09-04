@@ -1,7 +1,7 @@
 id: churchcrm-panel
 
 info:
-  name: ChurchCRM 面板识别（暴露面识别）
+  name: ChurchCRM 面板识别（指纹识别）
   author: Kazgangap
   severity: info
   description: |

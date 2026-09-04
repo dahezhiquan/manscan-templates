@@ -1,7 +1,7 @@
 id: huawei-holosense-panel
 
 info:
-  name: Huawei HoloSens SDC 面板（暴露面识别）
+  name: Huawei HoloSens SDC 面板（指纹识别）
   severity: info
   author: darses
   description: |

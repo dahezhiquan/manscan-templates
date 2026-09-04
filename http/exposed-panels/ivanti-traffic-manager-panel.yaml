@@ -1,7 +1,7 @@
 id: ivanti-traffic-manager-panel
 
 info:
-  name: Ivanti Traffic Manager 面板识别（暴露面识别）
+  name: Ivanti Traffic Manager 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

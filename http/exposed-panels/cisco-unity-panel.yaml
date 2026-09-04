@@ -1,7 +1,7 @@
 id: cisco-unity-panel
 
 info:
-  name: Cisco Unity Connection 面板识别（暴露面识别）
+  name: Cisco Unity Connection 面板识别（指纹识别）
   author: HeeresS
   severity: info
   description: |

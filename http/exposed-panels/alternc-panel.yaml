@@ -1,7 +1,7 @@
 id: alternc-panel
 
 info:
-  name: AlternC Desktop 面板识别（暴露面识别）
+  name: AlternC Desktop 面板识别（指纹识别）
   author: Splint3r7
   severity: info
   description: |

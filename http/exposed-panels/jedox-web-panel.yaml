@@ -1,7 +1,7 @@
 id: jedox-web-panel
 
 info:
-  name: Jedox Web 登录面板识别（暴露面识别）
+  name: Jedox Web 登录面板识别（指纹识别）
   author: Team Syslifters / Christoph MAHRL,Aron MOLNAR,Patrick PIRKER,Michael WEDL
   severity: info
   description: |

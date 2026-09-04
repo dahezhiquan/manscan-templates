@@ -1,7 +1,7 @@
 id: emqx-panel
 
 info:
-  name: EMQX 登录面板识别（暴露面识别）
+  name: EMQX 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

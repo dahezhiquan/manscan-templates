@@ -1,7 +1,7 @@
 id: amprion-gridloss-panel
 
 info:
-  name: Amprion Grid Loss 登录面板识别（暴露面识别）
+  name: Amprion Grid Loss 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

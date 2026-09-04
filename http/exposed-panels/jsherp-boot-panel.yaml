@@ -1,7 +1,7 @@
 id: jsherp-boot-panel
 
 info:
-  name: JshERP Boot 面板识别（暴露面识别）
+  name: JshERP Boot 面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   classification:

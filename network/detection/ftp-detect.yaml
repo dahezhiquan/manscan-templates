@@ -1,7 +1,7 @@
 id: ftp-detect
 
 info:
-  name: FTP 服务 识别（服务漏洞）
+  name: FTP 服务 识别（指纹识别）
   author: Mys7ic
   severity: info
   description: |

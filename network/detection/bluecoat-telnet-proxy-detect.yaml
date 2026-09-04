@@ -1,7 +1,7 @@
 id: bluecoat-telnet-proxy-detect
 
 info:
-  name: BlueCoat Telnet 代理 识别（服务漏洞）
+  name: BlueCoat Telnet 代理 识别（指纹识别）
   author: righettod
   severity: info
   description: |

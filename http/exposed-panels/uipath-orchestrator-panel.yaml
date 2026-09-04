@@ -1,7 +1,7 @@
 id: uipath-orchestrator-panel
 
 info:
-  name: UiPath Orchestrator 登录面板识别（暴露面识别）
+  name: UiPath Orchestrator 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

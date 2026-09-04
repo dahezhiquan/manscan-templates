@@ -1,7 +1,7 @@
 id: bitbucket-panel
 
 info:
-  name: Bitbucket 面板识别（暴露面识别）
+  name: Bitbucket 面板识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: |

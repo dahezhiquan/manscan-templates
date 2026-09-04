@@ -1,7 +1,7 @@
 id: docuware-panel
 
 info:
-  name: DocuWare 识别（暴露面识别）
+  name: DocuWare 识别（指纹识别）
   author: righettod
   severity: info
   description: |

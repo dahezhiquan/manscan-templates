@@ -1,7 +1,7 @@
 id: openshift-oauth-proxy-panel
 
 info:
-  name: OpenShift OAuth Proxy 面板识别（暴露面识别）
+  name: OpenShift OAuth Proxy 面板识别（指纹识别）
   author: r3dg33k
   severity: info
   description: |

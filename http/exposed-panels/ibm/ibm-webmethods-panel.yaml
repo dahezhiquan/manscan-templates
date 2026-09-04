@@ -1,7 +1,7 @@
 id: ibm-webmethods-panel
 
 info:
-  name: IBM webMethods 集成登录面板 - 检测（暴露面识别）
+  name: IBM webMethods 集成登录面板 - 检测（指纹识别）
   author: infosec.asish
   severity: info
   description: |-

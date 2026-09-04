@@ -1,7 +1,7 @@
 id: netflix-conductor-version
 
 info:
-  name: Netflix Conductor 版本信息检测
+  name: Netflix Conductor 版本信息检测（指纹识别）
   author: c-sh0
   severity: info
   description: |

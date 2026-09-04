@@ -1,7 +1,7 @@
 id: modicon-info
 
 info:
-  name: Schneider Modicon PLC 信息泄露（服务漏洞）
+  name: Schneider Modicon PLC 信息泄露（指纹识别）
   author: biero-el-corridor
   severity: info
   description: |

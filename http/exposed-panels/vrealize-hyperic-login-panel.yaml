@@ -1,7 +1,7 @@
 id: vrealize-hyperic-panel
 
 info:
-  name: vRealize Hyperic 登录面板识别（暴露面识别）
+  name: vRealize Hyperic 登录面板识别（指纹识别）
   author: Charles D
   severity: info
   description: |

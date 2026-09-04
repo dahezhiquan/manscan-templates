@@ -1,7 +1,7 @@
 id: opentouch-multimediaservices-panel
 
 info:
-  name: OpenTouch Multimedia Services 识别（暴露面识别）
+  name: OpenTouch Multimedia Services 识别（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: sysaid-panel
 
 info:
-  name: SysAid 登录面板识别（暴露面识别）
+  name: SysAid 登录面板识别（指纹识别）
   author: pdteam,darses
   severity: info
   description: |

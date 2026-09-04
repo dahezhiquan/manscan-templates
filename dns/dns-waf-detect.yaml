@@ -1,7 +1,7 @@
 id: dns-waf-detect
 
 info:
-  name: DNS WAF 识别（dns）
+  name: DNS WAF 识别（指纹识别）
   author: lu4nx
   severity: info
   description: |

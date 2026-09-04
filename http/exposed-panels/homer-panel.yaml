@@ -1,7 +1,7 @@
 id: homer-panel
 
 info:
-  name: Homer 面板识别（暴露面识别）
+  name: Homer 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

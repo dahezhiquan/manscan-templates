@@ -1,7 +1,7 @@
 id: nextcloud-install
 
 info:
-  name: Nextcloud 暴露 安装
+  name: Nextcloud 暴露 安装（指纹识别）
   author: skeltavik
   severity: high
   description: |

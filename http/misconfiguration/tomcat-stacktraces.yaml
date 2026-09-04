@@ -1,7 +1,7 @@
 id: tomcat-stacktraces
 
 info:
-  name: Tomcat 堆栈跟踪s 启用
+  name: Tomcat 堆栈跟踪s 启用（指纹识别）
   author: lucky0x0d
   severity: low
   description: |

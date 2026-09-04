@@ -1,7 +1,7 @@
 id: compreface-panel
 
 info:
-  name: CompreFace 面板检测（暴露面识别）
+  name: CompreFace 面板检测（指纹识别）
   author: rxerium
   severity: info
   description: |-

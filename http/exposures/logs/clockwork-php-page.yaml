@@ -1,7 +1,7 @@
 id: clockwork-php-page
 
 info:
-  name: Clockwork PHP 页面暴露（暴露面识别）
+  name: Clockwork PHP 页面暴露（指纹识别）
   author: organiccrap
   severity: high
   description: |

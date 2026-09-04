@@ -1,7 +1,7 @@
 id: weblogic-t3-detect
 
 info:
-  name: Weblogic T3 协议识别（服务漏洞）
+  name: Weblogic T3 协议识别（指纹识别）
   author: F1tz,milo2012,wdahlenb
   severity: info
   description: |

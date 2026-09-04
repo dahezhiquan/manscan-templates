@@ -1,7 +1,7 @@
 id: microfocus-lifecycle-panel
 
 info:
-  name: Micro Focus Application Lifecycle Management 面板（暴露面识别）
+  name: Micro Focus Application Lifecycle Management 面板（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: ibm-security-verify-panel
 
 info:
-  name: IBM Security Verify Access Login 面板（暴露面识别）
+  name: IBM Security Verify Access Login 面板（指纹识别）
   author: johnk3r
   severity: info
   description: |

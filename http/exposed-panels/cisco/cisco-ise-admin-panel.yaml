@@ -1,7 +1,7 @@
 id: cisco-ise-admin-panel
 
 info:
-  name: Cisco ISE Admin 登录面板识别（暴露面识别）
+  name: Cisco ISE Admin 登录面板识别（指纹识别）
   author: bhutch
   severity: info
   description: |

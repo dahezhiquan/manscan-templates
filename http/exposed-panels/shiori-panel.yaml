@@ -1,7 +1,7 @@
 id: shiori-panel
 
 info:
-  name: Shiori 书签管理器 - 检测（暴露面识别）
+  name: Shiori 书签管理器 - 检测（指纹识别）
   author: johnk3r
   severity: info
   description: |-

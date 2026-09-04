@@ -1,7 +1,7 @@
 id: neocase-hrportal-panel
 
 info:
-  name: Neocase HR Portal 登录面板识别（暴露面识别）
+  name: Neocase HR Portal 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: axigen-mail-server-detect
 
 info:
-  name: Axigen Mail 服务 识别（服务漏洞）
+  name: Axigen Mail 服务 识别（指纹识别）
   author: pikpikcu
   severity: info
   description: |

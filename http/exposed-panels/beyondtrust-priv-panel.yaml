@@ -1,7 +1,7 @@
 id: beyondtrust-priv-panel
 
 info:
-  name: BeyondTrust Privileged Remote Access 面板（暴露面识别）
+  name: BeyondTrust Privileged Remote Access 面板（指纹识别）
   author: righettod
   severity: info
   description: |

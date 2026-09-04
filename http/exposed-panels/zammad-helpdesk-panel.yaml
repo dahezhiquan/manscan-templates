@@ -1,7 +1,7 @@
 id: zammad-helpdesk-panel
 
 info:
-  name: Zammad Helpdesk 面板识别（暴露面识别）
+  name: Zammad Helpdesk 面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

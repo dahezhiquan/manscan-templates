@@ -1,7 +1,7 @@
 id: bgp-detect
 
 info:
-  name: BGP 识别（服务漏洞）
+  name: BGP 识别（指纹识别）
   author: danfaizer
   severity: info
   description: |

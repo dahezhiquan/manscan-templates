@@ -1,7 +1,7 @@
 id: prodigy-panel
 
 info:
-  name: Prodigy 标注工具 - 未授权暴露（暴露面识别）
+  name: Prodigy 标注工具 - 未授权暴露（指纹识别）
   author: rxerium
   severity: medium
   description: |-

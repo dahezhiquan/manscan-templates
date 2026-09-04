@@ -1,7 +1,7 @@
 id: cvat-panel
 
 info:
-  name: CVAT Computer Vision Annotation Tool 识别（暴露面识别）
+  name: CVAT Computer Vision Annotation Tool 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

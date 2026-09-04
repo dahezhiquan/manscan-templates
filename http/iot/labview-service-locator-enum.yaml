@@ -1,7 +1,7 @@
 id: labview-service-locator-enum
 
 info:
-  name: LabVIEW/NI Service Locator 枚举（IOT）
+  name: LabVIEW/NI Service Locator 枚举（指纹识别）
   author: matejsmycka
   severity: info
   reference:

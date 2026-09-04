@@ -1,7 +1,7 @@
 id: wd-mycloud-panel
 
 info:
-  name: WD My Cloud 面板识别（暴露面识别）
+  name: WD My Cloud 面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   reference:

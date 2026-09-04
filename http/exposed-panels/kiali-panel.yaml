@@ -1,7 +1,7 @@
 id: kiali-panel
 
 info:
-  name: Kiali 识别（暴露面识别）
+  name: Kiali 识别（指纹识别）
   author: righettod
   severity: info
   description: |

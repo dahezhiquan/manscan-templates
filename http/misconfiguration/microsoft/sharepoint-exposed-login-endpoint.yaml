@@ -1,7 +1,7 @@
 id: sharepoint-exposed-login-endpoint
 
 info:
-  name: Microsoft Sha仓库int 暴露 登录端点
+  name: Microsoft Sha仓库int 暴露 登录端点（指纹识别）
   author: pussycat0x
   severity: info
   description: |

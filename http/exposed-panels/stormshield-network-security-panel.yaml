@@ -1,7 +1,7 @@
 id: stormshield-network-security-panel
 
 info:
-  name: Stormshield Network Security - 登录面板（暴露面识别）
+  name: Stormshield Network Security - 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

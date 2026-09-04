@@ -1,7 +1,7 @@
 id: akhq-panel
 
 info:
-  name: AKHQ 面板识别（暴露面识别）
+  name: AKHQ 面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   description: |

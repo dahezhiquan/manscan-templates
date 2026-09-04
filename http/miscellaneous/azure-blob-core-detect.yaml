@@ -1,7 +1,7 @@
 id: azure-blob-core-detect
 
 info:
-  name: Azure Blob Core 服务引用检测
+  name: Azure Blob Core 服务引用检测（指纹识别）
   author: ProjectDiscoveryAI
   severity: info
   description: |

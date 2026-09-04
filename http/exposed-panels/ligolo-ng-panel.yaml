@@ -1,7 +1,7 @@
 id: ligolo-ng-panel
 
 info:
-  name: Ligolo-ng 面板 - 检测（暴露面识别）
+  name: Ligolo-ng 面板 - 检测（指纹识别）
   author: Kazgangap
   severity: info
   description: |-

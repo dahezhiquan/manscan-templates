@@ -1,7 +1,7 @@
 id: navicat-server-panel
 
 info:
-  name: Navicat On-Prem Server 面板识别（暴露面识别）
+  name: Navicat On-Prem Server 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: telecontrol-server-basic-panel
 
 info:
-  name: Telecontrol Server Basic 面板识别（暴露面识别）
+  name: Telecontrol Server Basic 面板识别（指纹识别）
   author: Kazgangap
   severity: info
   description: |

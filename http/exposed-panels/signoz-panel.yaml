@@ -1,7 +1,7 @@
 id: signoz-panel
 
 info:
-  name: SigNoz 面板检测（暴露面识别）
+  name: SigNoz 面板检测（指纹识别）
   author: ChrisJr404,rxerium
   severity: info
   description: |-

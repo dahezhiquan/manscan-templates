@@ -1,6 +1,6 @@
 id: nucleus-ftp-detect
 info:
-  name: Nucleus FTP 服务 识别（服务漏洞）
+  name: Nucleus FTP 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

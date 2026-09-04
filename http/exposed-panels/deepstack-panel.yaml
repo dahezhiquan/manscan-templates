@@ -1,7 +1,7 @@
 id: deepstack-panel
 
 info:
-  name: DeepStack AI 服务器面板 - 检测（暴露面识别）
+  name: DeepStack AI 服务器面板 - 检测（指纹识别）
   author: rxerium
   severity: info
   description: |-

@@ -1,6 +1,6 @@
 id: macosx-ftp-detect
 info:
-  name: Mac OS X 服务 FTP 服务 识别（服务漏洞）
+  name: Mac OS X 服务 FTP 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

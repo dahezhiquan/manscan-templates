@@ -1,7 +1,7 @@
 id: ni-web-based-panel
 
 info:
-  name: NI Web-based Configuration & Monitoring 识别（暴露面识别）
+  name: NI Web-based Configuration & Monitoring 识别（指纹识别）
   author: DhiyaneshDK,matejsmycka
   severity: info
   metadata:

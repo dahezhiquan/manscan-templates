@@ -1,7 +1,7 @@
 id: mitel-nupoint-panel
 
 info:
-  name: Mitel NuPoint Unified Messaging 面板识别（暴露面识别）
+  name: Mitel NuPoint Unified Messaging 面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: monsta-ftp-detect
 
 info:
-  name: Monsta FTP 识别（暴露面识别）
+  name: Monsta FTP 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

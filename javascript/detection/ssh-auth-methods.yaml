@@ -1,7 +1,7 @@
 id: ssh-auth-methods
 
 info:
-  name: SSH 认证方式识别（服务漏洞）
+  name: SSH 认证方式识别（指纹识别）
   author: Ice3man543
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: grandstream-grp-panel
 
 info:
-  name: Grandstream GRP Web 管理面板（IOT）
+  name: Grandstream GRP Web 管理面板（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |

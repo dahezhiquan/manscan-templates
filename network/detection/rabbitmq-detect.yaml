@@ -1,7 +1,7 @@
 id: rabbitmq-detect
 
 info:
-  name: RabbitMQ 识别（服务漏洞）
+  name: RabbitMQ 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

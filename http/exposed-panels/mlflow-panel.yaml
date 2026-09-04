@@ -1,7 +1,7 @@
 id: mlflow-panel
 
 info:
-  name: MLflow 面板识别（暴露面识别）
+  name: MLflow 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

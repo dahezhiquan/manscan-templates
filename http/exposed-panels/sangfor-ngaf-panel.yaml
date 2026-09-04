@@ -1,7 +1,7 @@
 id: sangfor-ngaf-panel
 
 info:
-  name: 深信服下一代应用防火墙（NGAF）- 登录面板（暴露面识别）
+  name: 深信服下一代应用防火墙（NGAF）- 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

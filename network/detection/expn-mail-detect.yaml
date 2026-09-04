@@ -1,7 +1,7 @@
 id: expn-mail-detect
 
 info:
-  name: EXPN Mail 服务 识别（服务漏洞）
+  name: EXPN Mail 服务 识别（指纹识别）
   author: r3dg33k,userdehghani
   severity: info
   description: |

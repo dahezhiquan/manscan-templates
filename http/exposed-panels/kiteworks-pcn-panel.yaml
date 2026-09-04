@@ -1,7 +1,7 @@
 id: kiteworks-pcn-panel
 
 info:
-  name: Kiteworks PCN 面板识别（暴露面识别）
+  name: Kiteworks PCN 面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

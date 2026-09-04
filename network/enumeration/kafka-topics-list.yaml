@@ -1,7 +1,7 @@
 id: kafka-topics-list
 
 info:
-  name: Kafka Topics 枚举（服务漏洞）
+  name: Kafka Topics 枚举（指纹识别）
   author: pussycat0x
   severity: info
   description: |

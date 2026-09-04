@@ -1,7 +1,7 @@
 id: serge-panel
 
 info:
-  name: Serge 面板识别（暴露面识别）
+  name: Serge 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

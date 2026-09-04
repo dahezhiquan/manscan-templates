@@ -1,7 +1,7 @@
 id: ajp-protocol-detect
 
 info:
-  name: AJP 协议识别（服务漏洞）
+  name: AJP 协议识别（指纹识别）
   author: pussycat0x
   severity: info
   reference:

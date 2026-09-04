@@ -1,7 +1,7 @@
 id: wildix-collaboration-panel
 
 info:
-  name: Wildix Collaboration 面板识别（暴露面识别）
+  name: Wildix Collaboration 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

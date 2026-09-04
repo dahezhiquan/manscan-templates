@@ -1,7 +1,7 @@
 id: js-libraries-detect
 
 info:
-  name: 常见 JavaScript 库识别（headless）
+  name: 常见 JavaScript 库识别（指纹识别）
   author: adamparsons,cbadke,ChetGan,ErikOwen,jacalynli,geeknik
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: lockself-panel
 
 info:
-  name: LockSelf 登录面板识别（暴露面识别）
+  name: LockSelf 登录面板识别（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: infoblox-nios-panel
 
 info:
-  name: Infoblox NIOS 登录面板识别（暴露面识别）
+  name: Infoblox NIOS 登录面板识别（指纹识别）
   author: EgemenKochisarli
   severity: info
   description: |

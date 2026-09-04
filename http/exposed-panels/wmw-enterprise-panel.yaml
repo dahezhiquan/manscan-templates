@@ -1,7 +1,7 @@
 id: wmw-enterprise-panel
 
 info:
-  name: WMW Enterprise 登录面板识别（暴露面识别）
+  name: WMW Enterprise 登录面板识别（指纹识别）
   author: Matt Galligan
   severity: info
   description: |

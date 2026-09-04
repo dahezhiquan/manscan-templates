@@ -1,7 +1,7 @@
 id: sap-router
 
 info:
-  name: SAPRouter 识别（服务漏洞）
+  name: SAPRouter 识别（指纹识别）
   author: randomstr1ng
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: unauth-etcd-server
 
 info:
-  name: Etcd 服务器 未授权 访问
+  name: Etcd 服务器 未授权 访问（指纹识别）
   author: sharath,pussycat0x
   severity: high
   description: |

@@ -1,7 +1,7 @@
 id: yacht-panel
 
 info:
-  name: Yacht 登录面板识别（暴露面识别）
+  name: Yacht 登录面板识别（指纹识别）
   author: Fur1na
   severity: info
   description: |

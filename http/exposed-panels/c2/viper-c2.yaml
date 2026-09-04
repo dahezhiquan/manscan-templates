@@ -1,7 +1,7 @@
 id: viper-c2
 
 info:
-  name: Viper C2 识别（暴露面识别）
+  name: Viper C2 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

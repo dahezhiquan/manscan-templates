@@ -1,6 +1,6 @@
 id: oracle-xmldb-ftp-detect
 info:
-  name: Oracle XML DB FTP 服务 识别（服务漏洞）
+  name: Oracle XML DB FTP 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

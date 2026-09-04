@@ -1,7 +1,7 @@
 id: nexpose-panel
 
 info:
-  name: Rapid7 Nexpose VM Security Console 识别（暴露面识别）
+  name: Rapid7 Nexpose VM Security Console 识别（指纹识别）
   author: johnk3r
   severity: info
   description: |

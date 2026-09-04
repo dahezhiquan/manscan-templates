@@ -1,7 +1,7 @@
 id: deep-sea-electronics-dse855-detect
 
 info:
-  name: Deep Sea Electronics DSE 855 Generator Controller 识别（暴露面识别）
+  name: Deep Sea Electronics DSE 855 Generator Controller 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

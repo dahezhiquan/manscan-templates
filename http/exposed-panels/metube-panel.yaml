@@ -1,7 +1,7 @@
 id: metube-detect
 
 info:
-  name: MeTube Instance 识别（暴露面识别）
+  name: MeTube Instance 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

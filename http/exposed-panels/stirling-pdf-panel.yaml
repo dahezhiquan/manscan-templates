@@ -1,7 +1,7 @@
 id: stirling-pdf-panel
 
 info:
-  name: Stirling PDF 面板识别（暴露面识别）
+  name: Stirling PDF 面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |

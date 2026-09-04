@@ -1,7 +1,7 @@
 id: cookie-consent-detection
 
 info:
-  name: Cookie 同意弹窗识别（headless）
+  name: Cookie 同意弹窗识别（指纹识别）
   author: rxerium
   severity: info
   description: |

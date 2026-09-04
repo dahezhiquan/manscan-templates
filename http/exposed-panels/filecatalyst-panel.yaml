@@ -1,7 +1,7 @@
 id: filecatalyst-panel
 
 info:
-  name: FileCatalyst File Transfer Solution 识别（暴露面识别）
+  name: FileCatalyst File Transfer Solution 识别（指纹识别）
   author: DhiyaneshDK
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: papercut-ng-panel
 
 info:
-  name: PaperCut NG 面板识别（暴露面识别）
+  name: PaperCut NG 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |

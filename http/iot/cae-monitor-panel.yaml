@@ -1,7 +1,7 @@
 id: cae-monitor-panel
 
 info:
-  name: CAE Monitoring 登录面板（IOT）
+  name: CAE Monitoring 登录面板（指纹识别）
   author: biero-el-corridor
   severity: info
   description: |

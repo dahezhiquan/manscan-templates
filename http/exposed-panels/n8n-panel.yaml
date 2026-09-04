@@ -1,7 +1,7 @@
 id: n8n-panel
 
 info:
-  name: n8n 面板识别（暴露面识别）
+  name: n8n 面板识别（指纹识别）
   author: userdehghani,rxerium
   severity: info
   description: |

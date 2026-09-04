@@ -1,7 +1,7 @@
 id: reportico-admin-panel
 
 info:
-  name: Reportico Administration Page 识别（暴露面识别）
+  name: Reportico Administration Page 识别（指纹识别）
   author: geeknik
   severity: info
   description: |

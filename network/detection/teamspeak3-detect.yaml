@@ -1,7 +1,7 @@
 id: teamspeak3-detect
 
 info:
-  name: TeamSpeak 3 服务Query 识别（服务漏洞）
+  name: TeamSpeak 3 服务Query 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

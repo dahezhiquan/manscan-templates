@@ -1,7 +1,7 @@
 id: spotweb-login-panel
 
 info:
-  name: SpotWeb 登录面板识别（暴露面识别）
+  name: SpotWeb 登录面板识别（指纹识别）
   author: theamanrawat
   severity: info
   classification:

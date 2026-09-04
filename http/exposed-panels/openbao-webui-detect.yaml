@@ -1,7 +1,7 @@
 id: openbao-webui-detect
 
 info:
-  name: OpenBao Web UI 面板识别（暴露面识别）
+  name: OpenBao Web UI 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: autoset-detect
 
 info:
-  name: AutoSet Page 识别（暴露面识别）
+  name: AutoSet Page 识别（指纹识别）
   author: MaStErCho
   severity: info
   reference:

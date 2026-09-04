@@ -1,7 +1,7 @@
 id: windows-admin-center-panel
 
 info:
-  name: Windows Admin Center Panel - 识别（暴露面识别）
+  name: Windows Admin Center Panel - 识别（指纹识别）
   author: darses
   severity: info
   description: |

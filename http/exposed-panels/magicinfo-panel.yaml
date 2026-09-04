@@ -1,7 +1,7 @@
 id: magicinfo-panel
 
 info:
-  name: Samsung MagicINFO 面板识别（暴露面识别）
+  name: Samsung MagicINFO 面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |

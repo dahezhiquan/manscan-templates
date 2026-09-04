@@ -1,7 +1,7 @@
 id: headscale-panel
 
 info:
-  name: Headscale - 登录面板（暴露面识别）
+  name: Headscale - 登录面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

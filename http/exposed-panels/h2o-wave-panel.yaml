@@ -1,7 +1,7 @@
 id: h2o-wave-panel
 
 info:
-  name: H2O Wave ML Application Server 识别（暴露面识别）
+  name: H2O Wave ML Application Server 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

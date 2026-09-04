@@ -1,7 +1,7 @@
 id: wing-ftp-detect
 
 info:
-  name: Wing FTP 服务 识别（服务漏洞）
+  name: Wing FTP 服务 识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |

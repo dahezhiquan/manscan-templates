@@ -1,7 +1,7 @@
 id: maestro-listserv-panel
 
 info:
-  name: Maestro LISTSERV 识别（暴露面识别）
+  name: Maestro LISTSERV 识别（指纹识别）
   author: righettod
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: myq-panel
 
 info:
-  name: MyQ Print Server 面板识别（暴露面识别）
+  name: MyQ Print Server 面板识别（指纹识别）
   author: darses
   severity: info
   metadata:

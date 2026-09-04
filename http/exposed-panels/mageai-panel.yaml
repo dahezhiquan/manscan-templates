@@ -1,7 +1,7 @@
 id: mageai-panel
 
 info:
-  name: Mage AI 面板识别（暴露面识别）
+  name: Mage AI 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |

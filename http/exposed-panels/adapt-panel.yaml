@@ -1,7 +1,7 @@
 id: adapt-panel
 
 info:
-  name: Adapt Authoring Tool 面板（暴露面识别）
+  name: Adapt Authoring Tool 面板（指纹识别）
   author: Splint3r7
   severity: info
   description: |

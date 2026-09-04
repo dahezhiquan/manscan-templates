@@ -1,7 +1,7 @@
 id: arize-phoenix-panel
 
 info:
-  name: Arize Phoenix 识别（暴露面识别）
+  name: Arize Phoenix 识别（指纹识别）
   author: rxerium
   severity: info
   description: |

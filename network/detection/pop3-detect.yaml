@@ -1,7 +1,7 @@
 id: pop3-detect
 
 info:
-  name: POP3 协议 识别（服务漏洞）
+  name: POP3 协议 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

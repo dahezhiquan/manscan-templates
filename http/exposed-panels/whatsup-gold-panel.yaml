@@ -1,7 +1,7 @@
 id: whatsup-gold-panel
 
 info:
-  name: Whatsup Gold 登录面板识别（暴露面识别）
+  name: Whatsup Gold 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |

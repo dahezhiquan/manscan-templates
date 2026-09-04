@@ -1,7 +1,7 @@
 id: dialogic-xms-console
 
 info:
-  name: Dialogic XMS Admin Console 识别（暴露面识别）
+  name: Dialogic XMS Admin Console 识别（指纹识别）
   author: ritikchaddha
   severity: info
   classification:

@@ -1,7 +1,7 @@
 id: linkding-panel
 
 info:
-  name: Linkding 面板 - 检测（暴露面识别）
+  name: Linkding 面板 - 检测（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-

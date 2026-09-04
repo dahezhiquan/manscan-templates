@@ -1,7 +1,7 @@
 id: aem-forms-panel
 
 info:
-  name: Adobe Experience Manager Forms 面板（暴露面识别）
+  name: Adobe Experience Manager Forms 面板（指纹识别）
   author: darses
   severity: info
   description: |

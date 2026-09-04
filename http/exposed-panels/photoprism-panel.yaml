@@ -1,7 +1,7 @@
 id: photoprism-panel
 
 info:
-  name: PhotoPrism 面板识别（暴露面识别）
+  name: PhotoPrism 面板识别（指纹识别）
   author: rxerium,ritikchaddha
   severity: info
   description: |

@@ -1,7 +1,7 @@
 id: airbyte-panel
 
 info:
-  name: Airbyte 面板识别（暴露面识别）
+  name: Airbyte 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |

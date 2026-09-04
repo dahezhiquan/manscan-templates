@@ -1,7 +1,7 @@
 id: brother-printer-detect
 
 info:
-  name: Brother 打印机面板（IOT）
+  name: Brother 打印机面板（指纹识别）
   author: pussycat0x
   severity: low
   description: |

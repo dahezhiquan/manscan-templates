@@ -1,7 +1,7 @@
 id: sap-netweaver-cet-detect
 
 info:
-  name: SAP NetWeaver Composition Environment Tools 识别（暴露面识别）
+  name: SAP NetWeaver Composition Environment Tools 识别（指纹识别）
   author: ap3r
   severity: info
   description: |

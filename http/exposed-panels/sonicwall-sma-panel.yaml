@@ -1,7 +1,7 @@
 id: sonicwall-sma-panel
 
 info:
-  name: SonicWall Secure Mobile Access (SMA) 面板 - 检测（暴露面识别）
+  name: SonicWall Secure Mobile Access (SMA) 面板 - 检测（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |-

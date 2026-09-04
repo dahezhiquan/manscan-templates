@@ -1,7 +1,7 @@
 id: dotnet-remoting-service-detect
 
 info:
-  name: Microsoft .NET Remoting httpd 识别（服务漏洞）
+  name: Microsoft .NET Remoting httpd 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

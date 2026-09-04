@@ -1,6 +1,6 @@
 id: cleo-vlproxy-ftp-detect
 info:
-  name: Cleo VL代理 FTP 服务 识别（服务漏洞）
+  name: Cleo VL代理 FTP 服务 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |

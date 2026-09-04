@@ -3,7 +3,7 @@ id: struts-ognl-console
 info:
   name: Apache Struts OGNL 控制台
   author: DhiyaneshDK
-  severity: unknown
+  severity: critical
   description: |
     检测到 Apache Struts OGNL 控制台。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   remediation: |
@@ -36,4 +36,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022015099dde4b0b11dd5aa31a6668d53aedcd0a768c9c8c5a0a254761e5b3b5d024022075246148e0af5bb289b4e9b9293ec26dde9ed438f200a415eb1152fffadb7bf2:922c64590222798bb761d5b6d8e72950

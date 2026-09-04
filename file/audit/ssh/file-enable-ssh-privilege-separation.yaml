@@ -3,7 +3,7 @@ id: file-enable-ssh-privilege-separation
 info:
   name: SSH 权限分离未启用（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: medium
   description: |
     该模板检查 SSH 权限分离配置。权限分离可限制 sshd 漏洞被利用后的影响范围，降低完全控制系统的风险。
   remediation: |
@@ -29,4 +29,3 @@ file:
         words:
           - "UsePrivilegeSeparation yes"
         negative: true
-# digest: 4a0a0047304502204138a392da7e1ca0ae7950b517d190c3578c7fdf8c122ba6e13854cc5bb07100022100904df0df0b65201e4173587731e1bd58ab68465ad4bac022d488c7e945cce4ab:922c64590222798bb761d5b6d8e72950

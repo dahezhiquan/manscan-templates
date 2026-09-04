@@ -3,7 +3,7 @@ id: symfony-fragment
 info:
   name: Symfony fragment 检测
   author: Palanichamy_perumal,TechbrunchFR
-  severity: unknown
+  severity: high
   description: |
     检测到 Symfony fragment 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
@@ -35,4 +35,3 @@ http:
           - "contains(body, 'Symfony') || contains(body, '403 Forbidden')"
           - "(\"8b2f83102bc96e5068d36df80301a64d\" == md5(body)) || (\"4df206fbc337c398c3b669172934c8cb\" == md5(body))"
         condition: and
-# digest: 4b0a00483046022100c3a6f08252f0bc0753a3612af06e6cbc6cd3304ef59973b6c3528faf92bee49c022100c431ceddca474b2e98d6c4ab78161adbb2217fab0691bfa131e9d6971f421bf0:922c64590222798bb761d5b6d8e72950

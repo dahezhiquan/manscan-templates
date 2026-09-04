@@ -3,7 +3,7 @@ id: file-limit-ssh-users-access
 info:
   name: SSH 用户访问未限制（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: medium
   description: |
     该模板检查 SSH 是否限制可登录用户。未限制时，所有本地账户都可能成为远程登录攻击面。
   remediation: |
@@ -29,4 +29,3 @@ file:
         words:
           - "AllowUsers"
         negative: true
-# digest: 4a0a00473045022100d4653c20bd62d6002b435d4eabe0d4c380a9995ffd37827139cd2f705abee49202205e31667183e2c8327613b0c8875101d12ee7827b5189f13ada6b246087fd81c8:922c64590222798bb761d5b6d8e72950

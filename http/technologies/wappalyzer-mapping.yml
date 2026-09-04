@@ -1,5 +1,5 @@
-# This is custom wappalyzer tech to tags mapping file used with nuclei automatic scan (-as)
-# This additional configurable mapping file used to cover known edge cases that possibly have missed or not possible to map in automatic manner
+# 当 wappalyzer 中的技术名称与模版中可用的标签不同时，可能会错过更多相关的标签来执行
+# 为了改进这一点，可以在这个配置文件中自定义技术到标签的映射
 # For more details: https://github.com/projectdiscovery/nuclei/issues/1749
 # Mapping file format:
 # tech: tags1,tags2

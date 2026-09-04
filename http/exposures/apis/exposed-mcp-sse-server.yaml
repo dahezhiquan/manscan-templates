@@ -3,7 +3,7 @@ id: exposed-mcp-sse-server
 info:
   name: MCP SSE API 暴露 检测（暴露面识别）
   author: domwhewell-sage
-  severity: unknown
+  severity: medium
   description: |
     检测到对外可访问的 MCP SSE API 暴露。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
   reference:
@@ -40,4 +40,3 @@ http:
         name: message_endpoint
         regex:
           - 'data: ([/?_=a-zA-Z0-9-]+)'
-# digest: 4b0a00483046022100eeae685f5b49cd0d4142345e206b1ef5342f2fea5afaa1b9c35575a7917ba4b1022100b9b92eaa4b3113344b9a19b099e339ed84cc81d58cc19e002cc39d6850b0706a:922c64590222798bb761d5b6d8e72950

@@ -3,7 +3,7 @@ id: hfs-exposure
 info:
   name: HFS 面板 暴露
   author: tess,darses
-  severity: unknown
+  severity: low
   classification:
     cpe: cpe:2.3:a:rejetto:http_file_server:*:*:*:*:*:*:*:*
   metadata:
@@ -52,4 +52,3 @@ http:
         part: header
         kval:
           - Server
-# digest: 4a0a00473045022100807fa8c6616962fc0bf8a8e1277132d33574de5b1d3be952cb471828ebf37f69022050528e3272814579ad4e73d2c70e1d9dca5cf4f97386981709c31d27bad598cc:922c64590222798bb761d5b6d8e72950

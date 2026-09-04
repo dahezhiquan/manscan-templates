@@ -3,7 +3,7 @@ id: ssrf-via-proxy
 info:
   name: 通过代理触发的 SSRF 检测
   author: geeknik,petergrifin
-  severity: unknown
+  severity: high
   reference:
     - https://github.com/geeknik/the-nuclei-templates/blob/main/ssrf-by-proxy.yaml
     - https://twitter.com/HusseiN98D/status/1649006265450782720
@@ -44,4 +44,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022064cf1b249bf50c50a62098e075f67bff5db266d0d0263f08a6e91ba01ada44b6022100bb5ed1aae508cdf7f1c0951d01fea54f78779ae4097d084cabd865847bb2f3a3:922c64590222798bb761d5b6d8e72950

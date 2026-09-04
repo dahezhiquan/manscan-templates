@@ -3,7 +3,7 @@ id: file-limit-ssh-group
 info:
   name: SSH 登录组访问未限制（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: medium
   description: |
     该模板检查 SSH 是否仅允许授权用户组登录。限制组访问可减少远程登录攻击面。
   remediation: |
@@ -29,4 +29,3 @@ file:
         words:
           - "AllowGroups"
         negative: true
-# digest: 490a0046304402201bf46836cc1c9c0d678530c5166f58c9e6d2be6bde12ee9df19c3f611ecacd7f022011099d6e8891b6948a096831ef5eab2e747b1fe16de30f10dd8d50fc27c0ea37:922c64590222798bb761d5b6d8e72950

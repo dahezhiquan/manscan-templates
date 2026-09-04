@@ -3,7 +3,7 @@ id: file-disable-sshp-protocol
 info:
   name: SSH Protocol 1 未禁用（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: high
   description: |
     该模板检查是否仍允许 SSH Protocol 1。该协议缺少现代加密和完整性保护，容易遭受中间人和会话劫持攻击。
   remediation: |
@@ -29,4 +29,3 @@ file:
         words:
           - "Protocol 2"
         negative: true
-# digest: 4b0a00483046022100df321d349e00834fe6ee106774d32184d6aeec1c921f5c7bbbe76fe436bbf86202210098eb1f0ac12461bbda59911610b7fec2f6a87c5f808390253ae4aa05b52a8012:922c64590222798bb761d5b6d8e72950

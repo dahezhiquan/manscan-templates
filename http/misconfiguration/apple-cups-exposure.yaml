@@ -3,7 +3,7 @@ id: apple-cups-exposure
 info:
   name: Apple CUPS Sources 暴露
   author: DhiyaneshDK
-  severity: unknown
+  severity: low
   description: |
     检测到 Apple CUPS Sources 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:
@@ -33,4 +33,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220072cf9ea5cb2b525f5da0c8ad76d0e3bea59470839b6732f8da4fa7312647f55022037aba7dc561c28669ee68c2d809f09dede9d9d69b103703076c2f011d2906a31:922c64590222798bb761d5b6d8e72950

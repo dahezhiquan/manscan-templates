@@ -3,7 +3,7 @@ id: file-idle-timeout-interval
 info:
   name: SSH 空闲会话超时未设置（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: low
   description: |
     该模板检查 SSH ClientAliveInterval 等空闲超时配置。缺少超时会让无人值守会话长期保持开放。
   remediation: |
@@ -31,4 +31,3 @@ file:
           - "ClientAliveCountMax"
         condition: or
         negative: true
-# digest: 4a0a00473045022015133b4487142ff83a65980780210a8b78377c08d5939d117b528ec49b78f98b022100d2edb3ca543c655c9bd84f3888309b4a20c40557074dd405bcea1df996c843a2:922c64590222798bb761d5b6d8e72950

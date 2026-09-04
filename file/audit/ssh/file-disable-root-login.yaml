@@ -3,7 +3,7 @@ id: file-disable-root-login
 info:
   name: SSH root 直接登录未禁用（本地文件安全扫描）
   author: pussycat0x
-  severity: unknown
+  severity: high
   description: |
     该模板检查 SSH 是否允许 root 直接登录。直接开放 root 登录会扩大暴力破解和凭据泄露后的影响。
   remediation: |
@@ -23,4 +23,3 @@ file:
       - type: word
         words:
           - "PermitRootLogin yes"
-# digest: 4b0a0048304602210095f832f934bcf5d2aa65398bb50cc4d2f81d335f8c2522a05b0922f906e24f39022100e10c5047a0952c1df8f5ce6b985ad5db5454c674cf35cc9e32156c4beebce5b6:922c64590222798bb761d5b6d8e72950

@@ -3,7 +3,7 @@ id: cloudflare-transform-via-url-injection
 info:
   name: Cloudflare Transform via URL 图片注入
   author: j3ssie
-  severity: unknown
+  severity: low
   description: |
     Cloudflare 的 Transform via URL 功能在配置不当时可能允许攻击者通过构造 URL 向访问者展示任意图片内容。该行为可被用于钓鱼、页面篡改或品牌冒充等攻击场景。
   remediation: |
@@ -39,4 +39,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a004630440220559ef961d3ead6110e2d82d29e272cd6d36ffcdc96f69690ca1bfefb45d3ec250220708755146d6c263c242fca462f049ac4579c39c5b2dcfd12861196846a70b34a:922c64590222798bb761d5b6d8e72950

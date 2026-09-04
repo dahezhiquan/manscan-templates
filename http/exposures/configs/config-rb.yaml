@@ -3,7 +3,7 @@ id: config-rb
 info:
   name: Ruby 配置文件检测（暴露面识别）
   author: DhiyaneshDK
-  severity: unknown
+  severity: high
   description: 检测到对外可访问的 Ruby 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
   metadata:
     verified: true
@@ -31,4 +31,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a0046304402207358f896e208480399e21a8f0f86d8078a2705dc43b27cae05469c345f6adfa502206cc9319d987e385a7b94794b8fe3b1b908c9d27df6dca10576b126f0cd109401:922c64590222798bb761d5b6d8e72950

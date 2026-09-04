@@ -4,6 +4,7 @@ info:
   name: AEM 指纹识别（指纹识别）
   author: shifacyclewala,hackergautam
   severity: info
+  description: 用于识别目标是否部署 Adobe Experience Manager。模板通过 AEM 登录 favicon 的 mmh3 哈希进行指纹匹配，并结合首页中的 Adobe Experience Manager 欢迎文案作为补充识别方式。
   reference:
     - https://twitter.com/brsn76945860/status/1171233054951501824
     - https://gist.github.com/yehgdotnet/b9dfc618108d2f05845c4d8e28c5fc6a
@@ -13,7 +14,7 @@ info:
   classification:
     cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
+    max-request: 2
     vendor: adobe
     product: experience_manager
     shodan-query: http.component:"Adobe Experience Manager"
@@ -30,4 +31,15 @@ http:
       - type: dsl
         dsl:
           - "status_code==200 && (\"-144483185\" == mmh3(base64_py(body)))"
-# digest: 4a0a00473045022100cd405398aa759c4f950a80bfc097e625ea9be0082566a28bbc3ac757861c0c8d02204080864bde532a50bc5a572ffac5d31d04c3cc9340d3a49f2ac3fbdc314440fd:922c64590222798bb761d5b6d8e72950
+
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    redirects: true
+    max-redirects: 2
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Welcome to Adobe Experience Manager"

@@ -3,7 +3,7 @@ id: aem-crx-browser
 info:
   name: Adobe AEM CRX Browser 暴露
   author: dhiyaneshDk
-  severity: unknown
+  severity: high
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   metadata:
@@ -32,4 +32,3 @@ http:
       - type: status
         status:
           - 200
-# digest: 490a00463044022058a5ef73245eae4e86e7581aa40c1675ae298d8ae767a39f902d3a78ed913ee4022051580096ebe858b5580d99f3d7c1255e86e415ed5894fcc3c37f260cd506c193:922c64590222798bb761d5b6d8e72950

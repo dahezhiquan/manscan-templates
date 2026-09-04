@@ -3,7 +3,7 @@ id: ai-safety-bypass
 info:
   name: AI 安全控制绕过探测（DAST）
   author: princechaddha
-  severity: unknown
+  severity: medium
   description: |
     该模板测试 AI 系统安全控制是否可被角色扮演、编码、分步诱导等方式绕过，从而输出受限制内容或执行不应允许的动作。
   tags: ai,dast
@@ -39,4 +39,3 @@ http:
         part: body
         words:
           - '{{md5(string)}}'
-# digest: 4a0a00473045022100e1099038600aa0d1a457ced8ac43883469253ba6e9e576ecbf667e7d3b9881ba022034d8600297126e4cf93efc2a01fc89269edf6088fa48b11837e30f528a6d42e3:922c64590222798bb761d5b6d8e72950

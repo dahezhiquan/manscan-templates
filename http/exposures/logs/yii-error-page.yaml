@@ -3,7 +3,7 @@ id: yii-error-page
 info:
   name: Yii Error 页面 Detct 泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: unknown
+  severity: medium
   description: 检测到可直接访问的 Yii Error 页面 Detct。日志、异常页面或调试输出通常会泄露堆栈信息、内部路径、查询语句、账号标识、令牌片段或业务数据，不应向未授权用户开放。
   classification:
     cpe: cpe:2.3:a:yii_software:yii:*:*:*:*:*:*:*:*
@@ -30,4 +30,3 @@ http:
       - type: status
         status:
           - 500
-# digest: 490a0046304402202a9eaf82ec101084357b54523da680ee20f37d7f70c93337394e00ba0380b221022058a45b9754183c52c11363ad4f9e83e67039df55775932d07ffda119b8d3c139:922c64590222798bb761d5b6d8e72950

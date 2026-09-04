@@ -2,7 +2,7 @@ id: dns-rebinding
 info:
   name: DNS Rebinding 攻击检测（dns）
   author: ricardomaia
-  severity: unknown
+  severity: medium
   description: |
     该模板通过检查 DNS 响应是否解析到私有 IPv4 或 IPv6 地址来识别 DNS Rebinding 风险。攻击者可借此让浏览器访问内网地址或本地服务。
   reference:
@@ -47,4 +47,3 @@ dns:
         group: 1
         regex:
           - "IN\\s+AAAA\\s+(fd[0-9a-fA-F]{2}(:[0-9a-fA-F]{0,4}){0,7})"
-# digest: 4a0a00473045022100ac451bbde4048889b3f7dc0bec3cbb9c9abb869124583b1cd69761fe53addaf00220510640413804275277c5a3671c53aed13cc418afc28837ae3994e644aa6fa904:922c64590222798bb761d5b6d8e72950

@@ -3,7 +3,7 @@ id: directory-listing-no-host-header
 info:
   name: 目录列出 No Host 头
   author: kazet
-  severity: unknown
+  severity: medium
   description: |
     检测到 目录列出 No Host 头。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
   metadata:
@@ -41,4 +41,3 @@ http:
           - 'contains_any(body,"<title>Index of","<title>Directory listing of")'
           - 'status_code == 200'
         condition: and
-# digest: 490a0046304402201235a7cbb230295e8ddabb0a2545a4b8bf08b6a136f5411327488db589034719022007ae48ead5b65f7ad1cb27e450e2511625a3fe5b1fac509da984c73e975108b8:922c64590222798bb761d5b6d8e72950

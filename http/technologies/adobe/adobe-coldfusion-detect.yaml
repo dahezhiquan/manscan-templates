@@ -4,12 +4,14 @@ info:
   name: Adobe ColdFusion 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
-  description: 用于识别目标是否部署 Adobe ColdFusion 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: 用于识别目标是否部署 Adobe ColdFusion。模板会优先通过 CFIDE 管理端静态资源的哈希特征识别 ColdFusion 版本，并通过构造不存在的 .cfm 路径检测 ColdFusion 默认错误页特征作为补充指纹。
+  reference:
+    - https://twitter.com/PhilippeDelteil/status/1418622775829348358
   classification:
     cpe: cpe:2.3:a:adobe:coldfusion:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 6
+    max-request: 7
     vendor: adobe
     product: coldfusion
     shodan-query: http.component:"Adobe ColdFusion"
@@ -68,4 +70,18 @@ http:
         name: "coldfusion-mx-7"
         dsl:
           - "status_code==200 && (\"cb594e69af5ba15bca453f76aca53615\" == md5(body))"
-# digest: 490a0046304402205bfafc8e68b1a0498bd725b66897165dddac19af47d78cbe3a22efa6b597908902200131a4b744412bdda9b22d5b0806095918b1ef1b011c748739567ec1fd745b71:922c64590222798bb761d5b6d8e72950
+
+  - method: GET
+    path:
+      - "{{BaseURL}}/_something_.cfm"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - 'ColdFusion documentation'
+
+      - type: status
+        status:
+          - 404

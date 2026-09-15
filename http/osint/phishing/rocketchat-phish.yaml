@@ -10,7 +10,7 @@ info:
     - https://rocket.chat
   metadata:
     max-request: 1
-  tags: phishing,rocketchat,communication,osint,discovery
+  tags: phishing,rocket.chat,communication,osint,discovery
 http:
   - method: GET
     path:

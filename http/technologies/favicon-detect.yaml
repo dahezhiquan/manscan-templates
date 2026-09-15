@@ -1227,7 +1227,7 @@ http:
           - "status_code==200 && (\"1703788174\" == mmh3(base64_py(body)))"
 
       - type: dsl
-        name: "rocket-chat"
+        name: "rocket.chat"
         dsl:
           - "status_code==200 && (\"225632504\" == mmh3(base64_py(body)))"
 

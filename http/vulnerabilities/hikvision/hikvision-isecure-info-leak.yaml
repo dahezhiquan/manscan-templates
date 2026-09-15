@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="HIKVISION-综合安防管理平台"
-  tags: infoleak,iot,hikvision,vuln
+  tags: info-leak,iot,hikvision,vuln
 
 http:
   - method: GET

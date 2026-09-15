@@ -11,7 +11,7 @@ info:
     verified: false
     max-request: 2
     fofa-query: body= "/wp-content/plugins/jetpack/"
-  tags: wp,wordpress,wp-plugin,wp-scan,jetpack,ssrf
+  tags: wp,wordpress,wp-plugin,wpscan,jetpack,ssrf
 
 flow: http(1) && http(2)
 

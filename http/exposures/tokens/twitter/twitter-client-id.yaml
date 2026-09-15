@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: twitter,exposure,tokens,vuln
+  tags: twitter,exposure,token,vuln
 
 http:
   - method: GET

@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: dropbox,exposure,tokens,vuln
+  tags: dropbox,exposure,token,vuln
 
 http:
   - method: GET

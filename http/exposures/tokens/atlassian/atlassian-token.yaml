@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: atlassian,exposure,tokens,vuln
+  tags: atlassian,exposure,token,vuln
 
 http:
   - method: GET

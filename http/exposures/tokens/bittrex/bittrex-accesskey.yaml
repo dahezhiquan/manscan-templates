@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: bittrex,exposure,tokens,accesskey,vuln
+  tags: bittrex,exposure,token,accesskey,vuln
 
 http:
   - method: GET

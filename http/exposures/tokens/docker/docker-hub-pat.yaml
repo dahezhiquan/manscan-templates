@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: docker,exposure,tokens,vuln
+  tags: docker,exposure,token,vuln
 
 http:
   - method: GET

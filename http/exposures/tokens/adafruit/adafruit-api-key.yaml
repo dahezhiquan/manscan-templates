@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: adafruit,exposure,tokens,vuln
+  tags: adafruit,exposure,token,vuln
 
 http:
   - method: GET

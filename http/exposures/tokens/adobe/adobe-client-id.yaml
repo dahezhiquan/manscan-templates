@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: adobe,exposure,tokens,vuln
+  tags: adobe,exposure,token,vuln
 
 http:
   - method: GET

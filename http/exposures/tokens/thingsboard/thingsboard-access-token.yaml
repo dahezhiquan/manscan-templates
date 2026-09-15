@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: thingsboard,exposure,tokens,vuln
+  tags: thingsboard,exposure,token,vuln
 
 http:
   - method: GET

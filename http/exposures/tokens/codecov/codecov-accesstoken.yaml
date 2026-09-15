@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: codecov,exposure,tokens,vuln
+  tags: codecov,exposure,token,vuln
 
 http:
   - method: GET

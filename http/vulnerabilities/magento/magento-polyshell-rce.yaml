@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 5
     shodan-query: html:"Magento_PageCache"
-  tags: magento,file-upload,rce,intrusive
+  tags: magento,fileupload,rce,intrusive
 
 flow: http(1) && http(2) && http(3) && http(4)
 

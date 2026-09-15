@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 3
     fofa-query: body="/wp-content/plugins/simple-file-list/"
-  tags: wordpress,wp-plugin,wp,rce,file-upload,intrusive,simple-file-list,vuln
+  tags: wordpress,wp-plugin,wp,rce,fileupload,intrusive,simple-file-list,vuln
 
 variables:
   filepath: '{{rand_base(7, "abcdefghi")}}'

@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     shodan-query: http.component:"joomla"
-  tags: joomla,misconfiguration,fpd,disclosure
+  tags: joomla,misconfig,fpd,disclosure
 
 flow: http(1) && http(2)
 

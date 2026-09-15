@@ -17,7 +17,7 @@ info:
     vendor: selenium
     product: selenium
     shodan-query: "/wd/hub"
-  tags: misconfig,selenium,misconfiguration,rce,chromium,vuln
+  tags: misconfig,selenium,rce,chromium,vuln
 
 http:
   - method: GET

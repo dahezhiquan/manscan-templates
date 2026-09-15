@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="万户网络-ezOFFICE"
-  tags: wanhu,oa,smartupload,file-upload,vuln
+  tags: wanhu,oa,smartupload,fileupload,vuln
 
 http:
   - method: GET

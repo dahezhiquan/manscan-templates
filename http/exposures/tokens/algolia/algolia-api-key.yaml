@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: algolia,exposure,tokens,vuln
+  tags: algolia,exposure,token,vuln
 
 http:
   - method: GET

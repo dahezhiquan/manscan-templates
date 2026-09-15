@@ -6,7 +6,7 @@ info:
   severity: info
   classification:
     cwe-id: CWE-540
-  tags: pinata,exposure,api-keys,tokens,vuln
+  tags: pinata,exposure,apikey,token,vuln
 
 http:
   - method: GET

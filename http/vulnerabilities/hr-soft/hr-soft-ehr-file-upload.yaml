@@ -9,7 +9,7 @@ info:
     vuln-id: CT-1382961
     vendor: hr_soft
     product: ehr
-  tags: file-upload,vuln,ehr
+  tags: fileupload,vuln,ehr
 variables:
   s1: '{{rand_int(1000000, 2000000)}}'
   s2: '{{rand_int(1000000, 2000000)}}'

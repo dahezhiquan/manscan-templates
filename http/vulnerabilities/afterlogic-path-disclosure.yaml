@@ -23,7 +23,7 @@ info:
     fofa-query:
       - "X-Server: AfterlogicDAVServer"
       - "x-server: afterlogicdavserver"
-  tags: afterlogic,path,disclosure,AfterLogic,vuln
+  tags: afterlogic,path,disclosure,vuln
 
 http:
   - raw:

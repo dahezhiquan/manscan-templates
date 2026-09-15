@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body="/scripts/weglot.js" || body="/js/weglot.js" || body="Weglot.initialize" && body="api_key"
-  tags: exposure,weglot,api-key,secret,js,misconfig
+  tags: exposure,weglot,apikey,secret,js,misconfig
 
 http:
   - method: GET

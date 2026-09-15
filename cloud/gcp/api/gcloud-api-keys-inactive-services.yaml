@@ -13,7 +13,7 @@ info:
     - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://cloud.google.com/docs/authentication/api-keys
-  tags: cloud,devops,gcp,gcloud,api-keys,gcp-cloud-config
+  tags: cloud,devops,gcp,gcloud,apikey,gcp-cloud-config
 
 flow: |
   code(1)

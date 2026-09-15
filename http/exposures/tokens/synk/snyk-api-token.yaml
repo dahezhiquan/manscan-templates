@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: snyk,exposure,tokens,vuln
+  tags: snyk,exposure,token,vuln
 
 http:
   - method: GET

@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: okta,exposure,tokens,vuln
+  tags: okta,exposure,token,vuln
 
 http:
   - method: GET

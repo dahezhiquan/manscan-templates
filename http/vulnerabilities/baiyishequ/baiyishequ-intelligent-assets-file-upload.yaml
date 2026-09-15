@@ -11,7 +11,7 @@ info:
     vuln-id: CT-1387311
     vendor: baiyishequ
     product: intelligent-assets
-  tags: file-upload,vuln,baiyishequ
+  tags: fileupload,vuln,baiyishequ
 variables:
   s1: '{{to_lower(rand_text_alpha(20))}}'
   s2: '{{to_lower(rand_text_alpha(20))}}'

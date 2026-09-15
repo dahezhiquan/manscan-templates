@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: huggingface,exposure,tokens,vuln,ai
+  tags: huggingface,exposure,token,vuln,ai
 
 http:
   - method: GET

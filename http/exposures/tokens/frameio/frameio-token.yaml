@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: frameio,exposure,tokens,vuln
+  tags: frameio,exposure,token,vuln
 
 http:
   - method: GET

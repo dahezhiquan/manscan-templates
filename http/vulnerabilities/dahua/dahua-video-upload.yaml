@@ -10,7 +10,7 @@ info:
     max-request: 2
     vendor: dahua
     product: dahua
-  tags: file-upload,vuln,dahua
+  tags: fileupload,vuln,dahua
 variables:
   rStr1: '{{md5(to_lower(rand_text_alpha(8)))}}'
   rStr2: '{{to_lower(rand_text_alpha(8))}}'

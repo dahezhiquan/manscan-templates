@@ -15,7 +15,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: truenas,exposure,tokens,vuln
+  tags: truenas,exposure,token,vuln
 
 http:
   - method: GET

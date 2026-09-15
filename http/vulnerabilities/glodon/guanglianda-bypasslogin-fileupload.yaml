@@ -11,7 +11,7 @@ info:
     vuln-id: CT-845402
     vendor: glodon
     product: linkworks
-  tags: file-upload,vuln,glodon
+  tags: fileupload,vuln,glodon
 variables:
   s1: '{{to_lower(rand_text_alpha(8))}}'
   s2: '{{to_lower(rand_text_alpha(8))}}'

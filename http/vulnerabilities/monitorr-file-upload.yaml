@@ -30,7 +30,7 @@ info:
     product: monitorr
     shodan-query: http.favicon.hash:"-211006074"
     fofa-query: "icon_hash=\"-211006074\""
-  tags: file-upload,intrusive,monitorr,vuln
+  tags: fileupload,intrusive,monitorr,vuln
 variables:
   file: "{{to_lower(rand_text_alpha(5))}}"
 

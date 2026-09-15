@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: etsy,exposure,tokens,accesskey,vuln
+  tags: etsy,exposure,token,accesskey,vuln
 
 http:
   - method: GET

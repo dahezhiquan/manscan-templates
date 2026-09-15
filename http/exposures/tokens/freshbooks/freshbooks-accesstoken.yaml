@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: freshbooks,exposure,tokens,vuln
+  tags: freshbooks,exposure,token,vuln
 
 http:
   - method: GET

@@ -12,7 +12,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 21
-  tags: exposure,backup,sql-server,vuln
+  tags: exposure,backup,sqlserver,vuln
 
 http:
   - method: GET

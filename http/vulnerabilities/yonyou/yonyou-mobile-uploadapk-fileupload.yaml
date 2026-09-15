@@ -10,7 +10,7 @@ info:
     max-request: 2
     vendor: yonyou
     product: mobile
-  tags: file-upload,vuln,yonyou
+  tags: fileupload,vuln,yonyou
 variables:
   rfilename: '{{to_lower(rand_text_alpha(4))}}'
   s1: '{{rand_int(40000, 44800)}}'

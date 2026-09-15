@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 2
     fofa-query: app="用友-UFIDA-NC"
-  tags: yonyou,file-upload,intrusive,vuln
+  tags: yonyou,fileupload,intrusive,vuln
 variables:
   file_name: "{{to_upper(rand_text_alphanumeric(5))}}.jsp"
   file_content: "{{randstr}}"

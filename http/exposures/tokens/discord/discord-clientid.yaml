@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: discord,exposure,tokens,clientid,vuln
+  tags: discord,exposure,token,clientid,vuln
 
 http:
   - method: GET

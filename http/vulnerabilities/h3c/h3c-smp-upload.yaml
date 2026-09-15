@@ -8,7 +8,7 @@ info:
     max-request: 3
     vendor: h3c
     product: smp
-  tags: file-upload,vuln,h3c,smp
+  tags: fileupload,vuln,h3c,smp
 variables:
   n1: '{{to_lower(rand_text_alpha(20))}}'
   n2: '{{to_lower(rand_text_alpha(20))}}'

@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: datadog,exposure,tokens,vuln
+  tags: datadog,exposure,token,vuln
 
 http:
   - method: GET

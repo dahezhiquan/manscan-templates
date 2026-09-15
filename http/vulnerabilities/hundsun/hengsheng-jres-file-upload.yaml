@@ -9,7 +9,7 @@ info:
     vuln-id: CT-839348
     vendor: hundsun
     product: jres-cloud
-  tags: file-upload,vuln,hundsun
+  tags: fileupload,vuln,hundsun
 variables:
   filename: '{{to_lower(rand_text_alpha(6))}}'
   s1: '{{rand_int(1000, 1500)}}'

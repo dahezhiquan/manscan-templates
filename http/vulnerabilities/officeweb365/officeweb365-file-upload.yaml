@@ -9,7 +9,7 @@ info:
     vuln-id: CT-756407
     vendor: officeweb365
     product: officeweb365
-  tags: file-upload,vuln,officeweb365
+  tags: fileupload,vuln,officeweb365
 variables:
   s2: '{{to_lower(rand_text_alpha(8))}}'
   s3: '{{to_lower(rand_text_alpha(8))}}'

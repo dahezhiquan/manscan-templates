@@ -11,7 +11,7 @@ info:
     vuln-id: CT-949212
     vendor: kingdee
     product: erp
-  tags: file-upload,vuln,kingdee
+  tags: fileupload,vuln,kingdee
 variables:
   s1: '{{rand_int(10000, 99999)}}'
   s2: '{{to_lower(rand_text_alpha(8))}}'

@@ -10,7 +10,7 @@ info:
     配置不当可能导致未授权远程访问或社工诱导控制。
   remediation: |
     如无业务需要，禁用 Remote Assistance 并审计远程支持工具。
-  tags: remote-assistance, misconfiguration, windows-audit
+  tags: remote-assistance,misconfig,windows-audit
 
 self-contained: true
 

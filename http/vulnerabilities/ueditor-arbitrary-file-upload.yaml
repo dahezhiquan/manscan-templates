@@ -17,7 +17,7 @@ info:
     fofa-query: body="ueditor"
     vendor: baidu
     product: ueditor
-  tags: ueditor,file-upload,rce,intrusive,vuln
+  tags: ueditor,fileupload,rce,intrusive,vuln
 
 variables:
   filename: "{{rand_base(5)}}"

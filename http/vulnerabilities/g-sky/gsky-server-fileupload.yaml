@@ -9,7 +9,7 @@ info:
     vuln-id: CT-1108782
     vendor: gsky
     product: server
-  tags: file-upload,vuln,gsky
+  tags: fileupload,vuln,gsky
 variables:
   rfilename: '{{to_lower(rand_text_alpha(4))}}'
   r1: '{{md5(to_lower(rand_text_alpha(8)))}}'

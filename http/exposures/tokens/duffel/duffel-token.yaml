@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: duffel,exposure,tokens,vuln
+  tags: duffel,exposure,token,vuln
 
 http:
   - method: GET

@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: flickr,exposure,tokens,vuln
+  tags: flickr,exposure,token,vuln
 
 http:
   - method: GET

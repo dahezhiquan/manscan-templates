@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     fofa-query: title="U9-登录"
-  tags: unauth,file-upload,yonyou,u9,rce
+  tags: unauth,fileupload,yonyou,u9,rce
 
 variables:
   filename: '{{rand_base(5)}}.ashx'

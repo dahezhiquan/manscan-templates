@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: facebook,exposure,tokens,vuln
+  tags: facebook,exposure,token,vuln
 
 http:
   - method: GET

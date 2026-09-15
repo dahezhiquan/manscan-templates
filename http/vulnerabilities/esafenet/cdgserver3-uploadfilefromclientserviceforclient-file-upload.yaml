@@ -10,7 +10,7 @@ info:
     max-request: 2
     vendor: esafenet
     product: cdgserver3
-  tags: file-upload,vuln,cdgserver3
+  tags: fileupload,vuln,cdgserver3
 variables:
   s1: '{{to_lower(rand_text_alpha(8))}}'
 flow: http(1) && http(2)

@@ -16,7 +16,7 @@ info:
     shodan-query: "http.component:\"prestashop\""
     product: ap_pagebuilder
     vendor: apollotheme
-  tags: intrusive,file-upload,cartabandonmentpro,prestashop,vuln
+  tags: intrusive,fileupload,cartabandonmentpro,prestashop,vuln
 
 flow: http(1) && http(2)
 

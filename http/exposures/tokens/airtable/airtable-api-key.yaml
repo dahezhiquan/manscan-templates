@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: airtable,exposure,tokens,vuln
+  tags: airtable,exposure,token,vuln
 
 http:
   - method: GET

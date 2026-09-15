@@ -9,7 +9,7 @@ info:
     vuln-id: CT-1396215
     vendor: hikvision
     product: isecure-center
-  tags: file-upload,vuln,hikvision
+  tags: fileupload,vuln,hikvision
 variables:
   r0: '{{to_lower(rand_text_alpha(8))}}'
   r1: '{{to_lower(rand_text_alpha(20))}}'

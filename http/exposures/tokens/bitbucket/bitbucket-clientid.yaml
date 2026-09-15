@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: bitbucket,exposure,tokens,clientid,vuln
+  tags: bitbucket,exposure,token,clientid,vuln
 
 http:
   - method: GET

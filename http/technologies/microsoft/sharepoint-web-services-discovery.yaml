@@ -1,7 +1,7 @@
-id: sharepoint-web-services-discovery
+id: sharepoint-web-services-find
 
 info:
-  name: Microsoft SharePoint - Web 服务 Discovery 指纹识别（指纹识别）
+  name: Microsoft SharePoint - Web 服务指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |

@@ -15,7 +15,7 @@ info:
     vendor: mintplex-labs
     product: anything-llm
     shodan-query: http.title:"AnythingLLM | Your personal LLM trained on anything"
-  tags: panel,anythingllm,detect,discovery,ai,llm
+  tags: panel,anything-llm,detect,discovery,ai,llm
 
 http:
   - method: GET

@@ -16,7 +16,7 @@ info:
     product: webaccess_scada
     shodan-query: http.title:"Advantech WebAccess"
     fofa-query: title="Advantech WebAccess" || body="broadWeb"
-  tags: panel,ics,scada,hmi,advantech,webaccess,discovery
+  tags: panel,ics,scada,hmi,advantech,web-access,discovery
 
 http:
   - method: GET

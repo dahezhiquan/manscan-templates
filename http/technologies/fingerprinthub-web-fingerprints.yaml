@@ -6085,7 +6085,7 @@ http:
 
       - type: word
         condition: and
-        name: jeecgboot
+        name: jeecg-boot
         words:
           - JeecgBoot
           - polyfill_

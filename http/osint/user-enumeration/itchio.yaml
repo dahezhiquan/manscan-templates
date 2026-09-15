@@ -12,7 +12,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: osint,osint-gaming,itchio,discovery
+  tags: osint,osint-gaming,itch-io,discovery
 
 self-contained: true
 

@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: token-spray,ticketmaster
+  tags: token-spray,ticket-master
 
 self-contained: true
 

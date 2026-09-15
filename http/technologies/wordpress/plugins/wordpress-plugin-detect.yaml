@@ -41982,7 +41982,7 @@ http:
         condition: and
 
       - type: dsl
-        name: user-meta
+        name: User Meta
         dsl:
           - 'regex("/plugins/user-meta/", body)'
           - 'status_code == 200'
@@ -61309,7 +61309,7 @@ http:
         condition: and
 
       - type: dsl
-        name: easyappointments
+        name: easy-appointments
         dsl:
           - 'regex("/plugins/easyappointments/", body)'
           - 'status_code == 200'

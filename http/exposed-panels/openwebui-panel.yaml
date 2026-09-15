@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
-  tags: panel,openwebui,login,detect,discovery
+  tags: panel,open-webui,login,detect,discovery
 
 http:
   - method: GET

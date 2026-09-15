@@ -11,7 +11,7 @@ info:
     vuln-id: CT-5432124
     vendor: jeecg
     product: jeecg-boot
-  tags: rce,vuln,jeecgboot
+  tags: rce,vuln,jeecg-boot
 variables:
   s1: '{{rand_int(10000000, 20000000)}}'
   s2: '{{rand_int(1000000, 2000000)}}'

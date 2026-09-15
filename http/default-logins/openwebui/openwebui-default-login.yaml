@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: http.favicon.hash:-286484075
     fofa-query: icon_hash:"-286484075"
-  tags: default-login,vuln,openwebui
+  tags: default-login,vuln,open-webui
 
 variables:
   username: admin@localhost

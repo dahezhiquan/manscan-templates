@@ -12,7 +12,7 @@ info:
     - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-tls
-  tags: cloud,devops,azure,microsoft,servicebus,azure-cloud-config
+  tags: cloud,devops,azure,microsoft,service-bus,azure-cloud-config
 
 flow: |
   code(1);

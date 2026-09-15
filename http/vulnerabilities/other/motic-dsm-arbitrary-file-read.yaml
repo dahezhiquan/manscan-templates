@@ -14,7 +14,7 @@ info:
     vendor: xiamen-motic
     product: moticdsm
     fofa-query: icon_hash="617142232"
-  tags: moticdsm,lfi,file-read,vuln
+  tags: moticdsm,lfi,lfr,vuln
 
 flow: http(1) && http(2)
 

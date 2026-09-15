@@ -15,7 +15,7 @@ info:
     shodan-query: title:"OpenMetadata"
     vendor: open-metadata
     product: openmetadata
-  tags: openmetadata,open-metadata,userenum,discovery
+  tags: openmetadata,user-enum,discovery
 
 http:
   - raw:

@@ -11,7 +11,7 @@ info:
     vuln-id: CT-838935
     vendor: kingdee
     product: erp
-  tags: file-read,vuln,kingdee
+  tags: lfr,vuln,kingdee
 http:
   - method: GET
     path:

@@ -12,7 +12,7 @@ info:
     - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
-  tags: cloud,devops,azure,microsoft,sqlserver,azure-cloud-config
+  tags: cloud,devops,azure,microsoft,mssql,azure-cloud-config
 
 flow: |
   code(1);

@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 2
     fofa-query: app="畅捷通-TPlus"
-  tags: yonyou,chanjet,upload,intrusive,vuln
+  tags: yonyou,chanjet,fileupload,intrusive,vuln
 
 http:
   - raw:

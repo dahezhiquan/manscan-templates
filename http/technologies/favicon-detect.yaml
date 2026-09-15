@@ -76,7 +76,7 @@ http:
           - "status_code==200 && (\"99395752\" == mmh3(base64_py(body)))"
 
       - type: dsl
-        name: "spring-boot"
+        name: "springboot"
         dsl:
           - "status_code==200 && (\"116323821\" == mmh3(base64_py(body)))"
 
@@ -2392,7 +2392,7 @@ http:
           - "status_code==200 && (\"-1702769256\" == mmh3(base64_py(body)))"
 
       - type: dsl
-        name: "node-red"
+        name: "nodered"
         dsl:
           - "status_code==200 && (\"321591353\" == mmh3(base64_py(body)))"
 

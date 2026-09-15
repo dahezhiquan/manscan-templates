@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: agegate,unauth,wpscan,packetstorm,wp-plugin,redirect,wordpress,wp,vuln
+  tags: age-gate,unauth,wpscan,packetstorm,wp-plugin,redirect,wordpress,wp,vuln
 
 http:
   - method: POST

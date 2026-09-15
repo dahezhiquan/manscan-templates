@@ -8,7 +8,7 @@ info:
     max-request: 1
     vendor: yonyou
     product: ksoav9
-  tags: file-read,vuln,yonyou,ksoav9
+  tags: lfr,vuln,yonyou,ksoav9
 http:
   - method: POST
     path:

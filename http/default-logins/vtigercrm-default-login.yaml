@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"Powered by vtiger CRM"
-  tags: default-login,vtiger,vtiger_crm,vuln
+  tags: default-login,vtiger,vtiger-crm,vuln
 
 variables:
   username: admin

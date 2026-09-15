@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: "X-OWA-Version"
-  tags: tech,msexchange,eol
+  tags: tech,ms-exchange,eol
 
 http:
   - method: GET

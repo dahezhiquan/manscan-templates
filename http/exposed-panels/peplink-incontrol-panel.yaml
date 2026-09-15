@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Peplink InControl"'
-  tags: panel,peplink,incontrol,sd-wan,vpn
+  tags: panel,peplink,incontrol,sdwan,vpn
 
 http:
   - method: GET

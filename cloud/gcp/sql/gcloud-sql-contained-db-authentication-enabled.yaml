@@ -13,7 +13,7 @@ info:
     - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/flags
-  tags: cloud,devops,gcp,gcloud,google-cloud-sql,sqlserver,gcp-cloud-config
+  tags: cloud,devops,gcp,gcloud,google-cloud-sql,mssql,gcp-cloud-config
 
 flow: |
   code(1)

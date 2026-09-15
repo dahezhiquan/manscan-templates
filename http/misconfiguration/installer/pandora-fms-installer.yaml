@@ -16,7 +16,7 @@ info:
     vendor: pandorafms
     product: pandora_fms
     fofa-query: body="Pandora FMS - Installation Wizard"
-  tags: misconfig,install,exposure,pandora-fms,vuln
+  tags: misconfig,install,exposure,pandorafms,vuln
 
 http:
   - method: GET

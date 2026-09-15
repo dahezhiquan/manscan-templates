@@ -500,7 +500,7 @@ http:
         part: response
 
       - type: regex
-        name: paloalto
+        name: palo-alto
         regex:
           - 'has.been.blocked.in.accordance.with.company.policy'
           - '.>Virus.Spyware.Download.Blocked<.'

@@ -2708,7 +2708,7 @@ http:
           - "Server: cybozu-ws"
 
       - type: word
-        name: d-link
+        name: dlink
         words:
           - D-Link Systems, Inc
 
@@ -7984,12 +7984,12 @@ http:
           - <title>Nacos</title>
 
       - type: word
-        name: nagios-xi
+        name: nagiosxi
         words:
           - click the link below to get started using nagios xi.
 
       - type: word
-        name: nagios-xi
+        name: nagiosxi
         words:
           - /nagiosxi/images/favicon.ico
 
@@ -9125,7 +9125,7 @@ http:
           - panasonic_logo.gif
 
       - type: word
-        name: pandora-fms
+        name: pandorafms
         words:
           - title="pandora rss feed
 
@@ -14320,7 +14320,7 @@ http:
           - alt="xunruicms"
 
       - type: word
-        name: xxl-job
+        name: xxljob
         words:
           - 分布式任务调度平台XXL-JOB
 

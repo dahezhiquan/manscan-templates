@@ -416,7 +416,7 @@ dns:
 
       - type: word
         part: answer
-        name: digital-ocean
+        name: digitalocean
         words:
           - ondigitalocean.app
 

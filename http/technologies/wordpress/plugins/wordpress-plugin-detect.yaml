@@ -375665,7 +375665,7 @@ http:
         condition: and
 
       - type: dsl
-        name: key-vault
+        name: keyvault
         dsl:
           - 'regex("/plugins/key-vault/", body)'
           - 'status_code == 200'

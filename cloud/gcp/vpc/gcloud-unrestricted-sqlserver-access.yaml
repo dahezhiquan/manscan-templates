@@ -13,7 +13,7 @@ info:
     - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
-  tags: cloud,devops,gcp,gcloud,vpc,firewall,security,sqlserver,gcp-cloud-config
+  tags: cloud,devops,gcp,gcloud,vpc,firewall,security,mssql,gcp-cloud-config
 
 flow: |
   code(1)

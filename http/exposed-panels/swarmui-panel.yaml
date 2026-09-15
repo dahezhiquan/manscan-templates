@@ -14,7 +14,7 @@ info:
     vendor: mcmonkeyprojects
     product: SwarmUI
     shodan-query: 'http.title:"SwarmUI"'
-  tags: panel,swarmui,stablediffusion,ai,image-generation,detect,discovery
+  tags: panel,swarmui,stable-diffusion,ai,image-generation,detect,discovery
 
 http:
   - method: GET

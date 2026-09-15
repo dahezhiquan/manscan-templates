@@ -15,7 +15,7 @@ info:
     shodan-query: '"ChromaDB"'
     product: chromadb
     vendor: chroma-core
-  tags: chromadb,exposure,misconfig,unauth,ai,ml,vectordb
+  tags: chromadb,exposure,misconfig,unauth,ai,ml,vector-db
 
 http:
   - raw:

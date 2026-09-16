@@ -20,7 +20,7 @@ info:
     publicwww-query: "/wp-content/themes/realestate-7/"
     product: real_estate_7
     vendor: contempothemes
-  tags: packetstorm,wordpress,wp-theme,wp,xss,realestate,vuln
+  tags: packetstorm,wordpress,wp-theme,xss,realestate,vuln
 
 http:
   - method: GET

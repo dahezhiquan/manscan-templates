@@ -23,7 +23,7 @@ info:
     google-query: inurl:/wp-content/plugins/gallery-plugin/
     product: gallery
     vendor: bestwebsoft
-  tags: wp,wp-plugin,wordpress,wpscan,fileupload,intrusive,vuln
+  tags: wordpress,wp-plugin,wpscan,fileupload,intrusive,vuln
 
 variables:
   filename: "{{to_lower(rand_text_alpha(5))}}"

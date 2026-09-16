@@ -15,7 +15,7 @@ info:
     product: cmb2
     framework: wordpress
     fofa-query: body="/wp-content/plugins/cmb2/"
-  tags: wp,wordpress,wp-plugin,fpd,cmb2,exposure
+  tags: wordpress,wp-plugin,fpd,cmb2,exposure
 
 http:
   - method: GET

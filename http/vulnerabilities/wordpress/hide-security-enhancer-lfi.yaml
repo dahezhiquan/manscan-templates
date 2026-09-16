@@ -17,7 +17,7 @@ info:
     cwe-id: CWE-22,CWE-73
   metadata:
     max-request: 1
-  tags: wordpress,wp-plugin,lfi,wp,vuln
+  tags: wordpress,wp-plugin,lfi,vuln
 
 http:
   - method: GET

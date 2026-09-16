@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     publicwww-query: "/wp-content/plugins/portrait-archiv-shop/"
-  tags: wpscan,packetstorm,wordpress,wp-plugin,wp,portrait-archiv-shop,xss,vuln
+  tags: wpscan,packetstorm,wordpress,wp-plugin,portrait-archiv-shop,xss,vuln
 
 http:
   - raw:

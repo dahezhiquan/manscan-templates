@@ -21,7 +21,7 @@ info:
     vendor: michael
     product: table-of-contents-plus
     fofa-query: body="wp-content/plugins/table-of-contents-plus"
-  tags: wp,wordpress,wp-plugin,table-of-contents-plus,fpd,exposure
+  tags: wordpress,wp-plugin,table-of-contents-plus,fpd,exposure
 
 http:
   - method: GET

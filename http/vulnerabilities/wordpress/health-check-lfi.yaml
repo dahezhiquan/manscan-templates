@@ -18,7 +18,7 @@ info:
     cwe-id: CWE-23
   metadata:
     max-request: 2
-  tags: lfi,wp,wordpress,wp-plugin,authenticated,lfr,wpscan,vuln
+  tags: lfi,wordpress,wp-plugin,authenticated,lfr,wpscan,vuln
 
 http:
   - raw:

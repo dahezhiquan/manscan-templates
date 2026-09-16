@@ -12,7 +12,7 @@ info:
     cwe-id: CWE-23,CWE-73
   metadata:
     max-request: 1
-  tags: wp-theme,lfi,wp,packetstorm,wpscan,wordpress,vuln
+  tags: wp-theme,lfi,wordpress,packetstorm,wpscan,vuln
 
 http:
   - method: GET

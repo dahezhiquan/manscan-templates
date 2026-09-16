@@ -22,7 +22,7 @@ info:
     verified: true
     max-requests: 1
     public-www: "/wp-content/plugins/caldera-forms/"
-  tags: wordpress,wp,wp-plugin,caldera-forms,xss,vuln,wpscan
+  tags: wordpress,wp-plugin,caldera-forms,xss,vuln,wpscan
 
 flow: http(1) && http(2)
 

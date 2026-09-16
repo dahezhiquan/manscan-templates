@@ -15,7 +15,7 @@ info:
     verified: true
     max-requests: 1
     public-www: "/wp-content/plugins/popup-maker/"
-  tags: debug,wordpress,wp,wp-plugin,popup-maker,fpd
+  tags: debug,wordpress,wp-plugin,popup-maker,fpd
 
 http:
   - method: GET

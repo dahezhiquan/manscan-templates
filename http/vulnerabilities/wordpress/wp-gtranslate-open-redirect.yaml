@@ -25,7 +25,7 @@ info:
     product: gtranslate
     framework: wordpress
     fofa-query: body="/wp-content/plugins/gtranslate"
-  tags: wordpress,wp,wp-plugin,gtranslate,redirect,vuln
+  tags: wordpress,wp-plugin,gtranslate,redirect,vuln
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     product: oceanwp
     framework: wordpress
     fofa-query: body="/wp-content/themes/oceanwp/"
-  tags: wp,wordpress,wp-theme,fpd,oceanwp,exposure
+  tags: wordpress,wp-theme,fpd,oceanwp,exposure
 
 http:
   - method: GET

@@ -14,7 +14,7 @@ info:
     cwe-id: CWE-80
   metadata:
     max-request: 1
-  tags: xss,wp,wordpress,wp-theme,avada,wpscan,vuln
+  tags: xss,wordpress,wp-theme,avada,wpscan,vuln
 
 http:
   - method: GET

@@ -22,7 +22,7 @@ info:
     vendor: wpchill
     product: gallery_photoblocks
     publicwww-query: "/wp-content/plugins/photoblocks-grid-gallery/"
-  tags: wordpress,wpscan,photoblocks,wp-plugin,wp,xss,vuln
+  tags: wordpress,wpscan,photoblocks,wp-plugin,xss,vuln
 
 http:
   - raw:

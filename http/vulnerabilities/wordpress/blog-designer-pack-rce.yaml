@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 3
     google-query: inurl:"/wp-content/plugins/blog-designer-pack/"
-  tags: wordpress,wp-plugin,lfi,wp,blog-designer-pack,rce,intrusive,vuln
+  tags: wordpress,wp-plugin,lfi,blog-designer-pack,rce,intrusive,vuln
 variables:
   randomstr: "{{randstr_1}}"
   marker: "{{base64(randomstr)}}"

@@ -14,7 +14,7 @@ info:
     cwe-id: CWE-434
   metadata:
     max-request: 2
-  tags: wp-plugin,rce,fileupload,unauth,wpscan,msf,wordpress,ait-csv,wp,intrusive,vuln
+  tags: wp-plugin,rce,fileupload,unauth,wpscan,msf,wordpress,ait-csv,intrusive,vuln
 
 variables:
   string: "ait-csv-import-export-rce"

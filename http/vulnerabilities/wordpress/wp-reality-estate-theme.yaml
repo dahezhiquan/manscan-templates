@@ -20,7 +20,7 @@ info:
     max-request: 1
     publicwww-query: /wp-content/themes/reality/
     google-query: inurl:"/wp-content/themes/reality/"
-  tags: wpscan,xss,wordpress,wp,wp-theme,reality,estate,vuln
+  tags: wpscan,xss,wordpress,wp-theme,reality,estate,vuln
 
 http:
   - method: GET

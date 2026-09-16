@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 3
-  tags: redirect,packetstorm,seatreg,wp-plugin,wp,wordpress,authenticated,vuln
+  tags: redirect,packetstorm,seatreg,wp-plugin,wordpress,authenticated,vuln
 
 http:
   - raw:

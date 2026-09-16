@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: time-based-sqli,wpscan,sqli,wp,wp-plugin,wordpress,leaguemanager,unauth,vuln
+  tags: time-based-sqli,wpscan,sqli,wordpress,wp-plugin,leaguemanager,unauth,vuln
 
 http:
   - raw:

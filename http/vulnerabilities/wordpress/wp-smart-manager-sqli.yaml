@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 2
     publicwww-query: "/wp-content/plugins/smart-manager-for-wp-e-commerce/"
-  tags: time-based-sqli,wpscan,wp,wp-plugin,wordpress,smart-manager-for-wp-e-commerce,sqli,vuln
+  tags: time-based-sqli,wpscan,wordpress,wp-plugin,smart-manager-for-wp-e-commerce,sqli,vuln
 
 http:
   - raw:

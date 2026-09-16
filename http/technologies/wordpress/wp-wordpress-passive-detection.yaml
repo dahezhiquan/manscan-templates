@@ -18,7 +18,7 @@ info:
     product: wordpress
     shodan-query:
       - http.component:"wordpress"
-  tags: tech,wordpress,cms,wp,plugin,theme,discovery,passive,enum
+  tags: tech,wordpress,cms,plugin,theme,discovery,passive,enum
 
 http:
   - method: GET

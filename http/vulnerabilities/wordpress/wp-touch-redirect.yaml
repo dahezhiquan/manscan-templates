@@ -15,7 +15,7 @@ info:
     vendor: bravenewcode
     product: wptouch
     google-query: "inurl:/wp-content/plugins/wptouch"
-  tags: wp-plugin,wp,packetstorm,wptouch,unauth,redirect,wordpress,vuln
+  tags: wp-plugin,wordpress,packetstorm,wptouch,unauth,redirect,vuln
 
 http:
   - method: GET

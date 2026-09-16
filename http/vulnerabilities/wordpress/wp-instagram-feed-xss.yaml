@@ -19,7 +19,7 @@ info:
     verified: false
     max-requests: 2
     public-www: "/wp-content/plugins/instagram-feed/"
-  tags: wordpress,wp,instagram-feed,xss,authenticated
+  tags: wordpress,instagram-feed,xss,authenticated
 
 flow: http(1) && http(2)
 

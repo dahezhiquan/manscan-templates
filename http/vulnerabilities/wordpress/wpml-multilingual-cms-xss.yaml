@@ -16,7 +16,7 @@ info:
     max-request: 1
     shodan-query: html:"/wp-content/plugins/sitepress-multilingual-cms"
     fofa-query: body="/wp-content/plugins/sitepress-multilingual-cms"
-  tags: wordpress,wp,wp-plugin,wpml,xss,sitepress-multilingual-cms
+  tags: wordpress,wp-plugin,wpml,xss,sitepress-multilingual-cms
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     product: wordpress-seo
     framework: wordpress
     fofa-query: body="/wp-content/plugins/wordpress-seo/"
-  tags: wp,wordpress,wp-plugin,fpd,yoast,seo,exposure
+  tags: wordpress,wp-plugin,fpd,yoast,seo,exposure
 
 http:
   - method: GET

@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-79,CWE-83
   metadata:
     max-request: 1
-  tags: wp,wordpress,wp-plugin,xss,wpscan,vuln
+  tags: wordpress,wp-plugin,xss,wpscan,vuln
 
 http:
   - method: GET

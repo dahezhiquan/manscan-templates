@@ -1,4 +1,4 @@
-id: etcd-version
+id: kubernetes-k8s-etcd-version
 
 info:
   name: Etcd 版本指纹识别（指纹识别）

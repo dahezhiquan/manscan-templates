@@ -1,4 +1,4 @@
-id: kubernetes-operational-view-detect
+id: k8s-kubernetes-operational-view-detect
 
 info:
   name: Kubernetes Operational View 指纹识别（指纹识别）

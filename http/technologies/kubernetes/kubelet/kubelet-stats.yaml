@@ -1,4 +1,4 @@
-id: kubelet-stats
+id: kubernetes-k8s-kubelet-stats
 
 info:
   name: Kubelet Stats 指纹识别（指纹识别）

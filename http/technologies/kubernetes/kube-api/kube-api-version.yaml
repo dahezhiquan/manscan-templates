@@ -1,4 +1,4 @@
-id: kube-api-version
+id: kubernetes-k8s-kube-api-version
 
 info:
   name: Kube API 版本指纹识别（指纹识别）

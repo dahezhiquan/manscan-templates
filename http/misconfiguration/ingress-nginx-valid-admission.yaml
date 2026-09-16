@@ -1,4 +1,4 @@
-id: ingress-nginx-valid-admission
+id: k8s-ingress-nginx-valid-admission
 
 info:
   name: Kubernetes Ingress Nginx Valid AdmissionReview 检测（指纹识别）

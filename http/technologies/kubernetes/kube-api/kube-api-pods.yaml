@@ -1,4 +1,4 @@
-id: kube-api-pods
+id: kubernetes-k8s-kube-api-pods
 
 info:
   name: Kube API Pods 指纹识别（指纹识别）

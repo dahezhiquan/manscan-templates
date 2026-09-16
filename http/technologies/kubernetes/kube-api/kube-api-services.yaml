@@ -1,4 +1,4 @@
-id: kube-api-services
+id: kubernetes-k8s-kube-api-services
 
 info:
   name: Kube API 服务指纹识别（指纹识别）

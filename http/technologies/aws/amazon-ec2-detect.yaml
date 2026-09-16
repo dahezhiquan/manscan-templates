@@ -1,4 +1,4 @@
-id: amazon-ec2-detect
+id: aws-amazon-ec2-detect
 
 info:
   name: Amazon EC2 服务器指纹识别（指纹识别）

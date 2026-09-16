@@ -1,4 +1,4 @@
-id: kube-api-deployments
+id: kubernetes-k8s-kube-api-deployments
 
 info:
   name: Kube API Deployments 指纹识别（指纹识别）

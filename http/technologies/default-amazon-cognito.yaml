@@ -1,4 +1,4 @@
-id: default-amazon-cognito
+id: aws-default-amazon-cognito
 
 info:
   name: Amazon Cognito Developer Authentication Sample 指纹识别（指纹识别）

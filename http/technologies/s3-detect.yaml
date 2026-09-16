@@ -1,4 +1,4 @@
-id: s3-detect
+id: aws-s3-detect
 
 info:
   name: Amazon-S3 Bucket 指纹识别（指纹识别）

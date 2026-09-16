@@ -1,4 +1,4 @@
-id: kubeflow-pipelines-panel
+id: kubernetes-kubeflow-pipelines-panel
 
 info:
   name: Kubeflow Pipelines 面板识别（指纹识别）

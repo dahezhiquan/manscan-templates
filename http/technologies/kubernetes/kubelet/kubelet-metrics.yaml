@@ -1,4 +1,4 @@
-id: kubelet-metrics
+id: kubernetes-k8s-kubelet-metrics
 
 info:
   name: Kubelet Metrics 指纹识别（指纹识别）

@@ -1,4 +1,4 @@
-id: kubernetes-mirantis
+id: k8s-kubernetes-mirantis
 
 info:
   name: Mirantis Kubernetes Engine 面板识别（指纹识别）

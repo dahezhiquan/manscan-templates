@@ -1,4 +1,4 @@
-id: wordpress-limit-login-attempts
+id: wp-plugin-wordpress-limit-login-attempts
 
 info:
   name: Limit Login Attempts 指纹识别（指纹识别）

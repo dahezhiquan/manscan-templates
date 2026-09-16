@@ -1,4 +1,4 @@
-id: kube-api-nodes
+id: kubernetes-k8s-kube-api-nodes
 
 info:
   name: Kube API Nodes 指纹识别（指纹识别）

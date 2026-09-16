@@ -1,4 +1,4 @@
-id: kubelet-scan
+id: kubernetes-k8s-kubelet-scan
 
 info:
   name: Kubelet Running Pods 指纹识别（指纹识别）

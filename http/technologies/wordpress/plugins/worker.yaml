@@ -1,4 +1,4 @@
-id: wordpress-worker
+id: wp-plugin-wordpress-worker
 
 info:
   name: ManageWP Worker 指纹识别（指纹识别）

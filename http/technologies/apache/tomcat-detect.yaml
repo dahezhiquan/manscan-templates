@@ -1,4 +1,4 @@
-id: tomcat-detect
+id: apache-tomcat-detect
 
 info:
   name: Tomcat 指纹识别（指纹识别）

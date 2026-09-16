@@ -1,4 +1,4 @@
-id: azure-kubernetes-service
+id: k8s-azure-kubernetes-service
 
 info:
   name: Azure Kubernetes 服务指纹识别（指纹识别）

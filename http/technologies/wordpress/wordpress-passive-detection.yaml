@@ -1,4 +1,4 @@
-id: wordpress-passive-detection
+id: wp-wordpress-passive-detection
 
 info:
   name: WordPress 插件与主题被动枚举指纹识别（指纹识别）

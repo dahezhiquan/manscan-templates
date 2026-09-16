@@ -1,4 +1,4 @@
-id: netscaler-aaa-login
+id: citrix-netscaler-aaa-login
 
 info:
   name: NetScaler AAA 登录面板识别（指纹识别）

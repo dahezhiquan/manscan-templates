@@ -1,4 +1,4 @@
-id: unauth-etcd-server
+id: kubernetes-k8s-unauth-etcd-server
 
 info:
   name: Etcd 服务器 未授权 访问（指纹识别）

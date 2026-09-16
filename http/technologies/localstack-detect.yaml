@@ -1,4 +1,4 @@
-id: localstack-detect
+id: aws-localstack-detect
 
 info:
   name: LocalStack 指纹识别（指纹识别）

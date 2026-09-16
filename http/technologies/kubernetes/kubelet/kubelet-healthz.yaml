@@ -1,4 +1,4 @@
-id: kubelet-healthz
+id: kubernetes-k8s-kubelet-healthz
 
 info:
   name: Kubelet Healthz 指纹识别（指纹识别）

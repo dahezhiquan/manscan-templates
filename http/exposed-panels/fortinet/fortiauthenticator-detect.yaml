@@ -1,4 +1,4 @@
-id: fortiauthenticator-detect
+id: fortinet-fortiauthenticator-detect
 
 info:
   name: FortiAuthenticator 识别（指纹识别）

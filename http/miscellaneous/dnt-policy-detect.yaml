@@ -1,4 +1,4 @@
-id: dnt-policy-detect
+id: compliance-dnt-policy-detect
 
 info:
   name: Do Not Track 策略声明检测（指纹识别）

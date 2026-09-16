@@ -1,4 +1,4 @@
-id: esmtp-detect
+id: mail-esmtp-detect
 
 info:
   name: ESMTP 识别（指纹识别）

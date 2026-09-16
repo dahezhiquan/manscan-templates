@@ -1,4 +1,4 @@
-id: openshift-oauth-proxy-panel
+id: redhat-openshift-oauth-proxy-panel
 
 info:
   name: OpenShift OAuth Proxy 面板识别（指纹识别）

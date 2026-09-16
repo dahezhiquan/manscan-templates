@@ -1,4 +1,4 @@
-id: exim-detect
+id: mail-smtp-exim-detect
 
 info:
   name: Exim 识别（指纹识别）

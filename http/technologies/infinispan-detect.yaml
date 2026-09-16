@@ -1,4 +1,4 @@
-id: infinispan-detect
+id: redhat-infinispan-detect
 
 info:
   name: Infinispan 控制台指纹识别（指纹识别）

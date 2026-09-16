@@ -1,4 +1,4 @@
-id: google-iap-detect
+id: identity-google-iap-detect
 
 info:
   name: Google 身份感知代理（IAP）检测（指纹识别）

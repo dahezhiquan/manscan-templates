@@ -1,4 +1,4 @@
-id: seldon-core-detect
+id: ml-seldon-core-detect
 
 info:
   name: Seldon Core - 检测（指纹识别）

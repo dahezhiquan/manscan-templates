@@ -1,4 +1,4 @@
-id: ikev2-detect
+id: vpn-ikev2-detect
 
 info:
   name: IKEv2 服务识别（指纹识别）

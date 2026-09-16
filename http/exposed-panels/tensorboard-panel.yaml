@@ -1,4 +1,4 @@
-id: tensorboard-panel
+id: ml-tensorboard-panel
 
 info:
   name: TensorBoard 面板识别（指纹识别）

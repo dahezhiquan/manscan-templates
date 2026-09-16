@@ -1,4 +1,4 @@
-id: kubeflow-katib-panel
+id: ml-kubeflow-katib-panel
 
 info:
   name: Kubeflow Katib 面板 - 检测（指纹识别）

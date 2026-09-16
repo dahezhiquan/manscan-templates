@@ -1,4 +1,4 @@
-id: cortex-xsoar-login
+id: paloaltonetworks-cortex-xsoar-login
 
 info:
   name: Cortex XSOAR 登录面板识别（指纹识别）

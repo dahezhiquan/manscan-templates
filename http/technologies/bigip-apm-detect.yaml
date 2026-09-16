@@ -1,4 +1,4 @@
-id: bigip-apm-detect
+id: f5-bigip-apm-detect
 
 info:
   name: BIGIP APM 指纹识别（指纹识别）

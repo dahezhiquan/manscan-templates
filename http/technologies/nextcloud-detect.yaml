@@ -1,4 +1,4 @@
-id: nextcloud-detect
+id: storage-nextcloud-detect
 
 info:
   name: Nextcloud 指纹识别（指纹识别）

@@ -1,4 +1,4 @@
-id: zywall-ftp-detect
+id: firewall-zywall-ftp-detect
 info:
   name: ZyWALL FTP 服务 识别（指纹识别）
   author: pussycat0x

@@ -1,4 +1,4 @@
-id: pop3-detect
+id: mail-pop3-detect
 
 info:
   name: POP3 协议 识别（指纹识别）

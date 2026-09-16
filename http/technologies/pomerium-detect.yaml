@@ -1,4 +1,4 @@
-id: pomerium-detect
+id: sso-pomerium-detect
 
 info:
   name: Pomerium 指纹识别（指纹识别）

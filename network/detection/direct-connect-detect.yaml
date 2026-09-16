@@ -1,4 +1,4 @@
-id: direct-connect-detect
+id: dc-direct-connect-detect
 
 info:
   name: Direct Connect 服务识别（指纹识别）

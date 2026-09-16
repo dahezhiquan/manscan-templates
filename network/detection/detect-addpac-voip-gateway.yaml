@@ -1,4 +1,4 @@
-id: detect-addpac-voip-gateway
+id: telnet-detect-addpac-voip-gateway
 
 info:
   name: AddPac GSM VoIP 网关 面板 识别（指纹识别）

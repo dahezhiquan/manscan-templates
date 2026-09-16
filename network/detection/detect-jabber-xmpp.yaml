@@ -1,4 +1,4 @@
-id: detect-jabber-xmpp
+id: messaging-detect-jabber-xmpp
 
 info:
   name: Jabber XMPP 协议 识别（指纹识别）

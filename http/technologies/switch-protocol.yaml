@@ -1,4 +1,4 @@
-id: switch-protocol
+id: websocket-switch-protocol
 
 info:
   name: Switching Protocol 指纹识别（指纹识别）

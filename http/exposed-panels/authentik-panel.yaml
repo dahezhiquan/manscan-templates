@@ -1,4 +1,4 @@
-id: authentik-panel
+id: sso-authentik-panel
 
 info:
   name: Authentik 面板识别（指纹识别）

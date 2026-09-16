@@ -1,4 +1,4 @@
-id: snap7-honeypot-default-config
+id: ics-snap7-honeypot-default-config
 
 info:
   name: Snap7 蜜罐默认配置识别（指纹识别）

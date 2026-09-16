@@ -1,4 +1,4 @@
-id: aws-amazon-detect
+id: cloudfront-aws-amazon-detect
 
 info:
   name: AWS 服务指纹识别（指纹识别）

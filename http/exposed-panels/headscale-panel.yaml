@@ -1,4 +1,4 @@
-id: headscale-panel
+id: vpn-wireguard-headscale-panel
 
 info:
   name: Headscale - 登录面板（指纹识别）

@@ -1,4 +1,4 @@
-id: imap-detect
+id: mail-imap-detect
 
 info:
   name: IMAP 识别（指纹识别）

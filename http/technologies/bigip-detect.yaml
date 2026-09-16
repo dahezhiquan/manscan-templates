@@ -1,4 +1,4 @@
-id: bigip-detect
+id: f5-bigip-detect
 
 info:
   name: BIGIP 指纹识别（指纹识别）

@@ -1,4 +1,4 @@
-id: axigen-mail-server-detect
+id: smtp-axigen-mail-server-detect
 
 info:
   name: Axigen Mail 服务 识别（指纹识别）

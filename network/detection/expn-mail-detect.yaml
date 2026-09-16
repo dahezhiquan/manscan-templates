@@ -1,4 +1,4 @@
-id: expn-mail-detect
+id: smtp-expn-mail-detect
 
 info:
   name: EXPN Mail 服务 识别（指纹识别）

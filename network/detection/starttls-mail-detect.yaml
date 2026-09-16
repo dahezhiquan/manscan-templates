@@ -1,4 +1,4 @@
-id: starttls-mail-detect
+id: smtp-starttls-mail-detect
 
 info:
   name: STARTTLS Mail 服务 识别（指纹识别）

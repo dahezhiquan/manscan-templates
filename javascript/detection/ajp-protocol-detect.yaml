@@ -1,4 +1,4 @@
-id: ajp-protocol-detect
+id: tomcat-ajp-protocol-detect
 
 info:
   name: AJP 协议识别（指纹识别）

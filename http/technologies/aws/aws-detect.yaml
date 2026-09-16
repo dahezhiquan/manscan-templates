@@ -1,4 +1,4 @@
-id: aws-detect
+id: aws-amazon-detect
 
 info:
   name: AWS 服务指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,x-ray,captcha,dynamodb,kms,discovery
+  tags: tech,aws,amazon,alb,cloudfront,codebuild,gateway,captcha,dynamodb,kms,discovery
 
 http:
   - method: GET

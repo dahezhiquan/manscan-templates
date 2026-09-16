@@ -1,4 +1,4 @@
-id: torchserve-detect
+id: pytorch-torchserve-detect
 
 info:
   name: TorchServe API Description 指纹识别（指纹识别）

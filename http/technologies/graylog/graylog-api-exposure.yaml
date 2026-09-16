@@ -1,4 +1,4 @@
-id: graylog-api-exposure
+id: graylog-api-swagger-exposure
 
 info:
   name: Graylog REST API Endpoints - Exposure 指纹识别（指纹识别）

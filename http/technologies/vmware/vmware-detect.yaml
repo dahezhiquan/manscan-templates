@@ -1,4 +1,4 @@
-id: vmware-detect
+id: vmware-vcenter-detect
 
 info:
   name: VMware 指纹识别（指纹识别）

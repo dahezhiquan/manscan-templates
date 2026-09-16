@@ -1,4 +1,4 @@
-id: confluence-detect
+id: atlassian-confluence-detect
 
 info:
   name: Confluence 指纹识别（指纹识别）

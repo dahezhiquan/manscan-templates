@@ -1,4 +1,4 @@
-id: weblogic-iiop-detect
+id: oracle-weblogic-iiop-detect
 
 info:
   name: Weblogic IIOP 协议识别（指纹识别）

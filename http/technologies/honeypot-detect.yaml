@@ -1,4 +1,4 @@
-id: honeypot-detect
+id: honeypot-cti-detect
 
 info:
   name: Honeypot 指纹识别（指纹识别）

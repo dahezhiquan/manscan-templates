@@ -1,4 +1,4 @@
-id: weblogic-t3-detect
+id: oracle-weblogic-t3-detect
 
 info:
   name: Weblogic T3 协议识别（指纹识别）

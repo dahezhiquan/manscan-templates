@@ -1,4 +1,4 @@
-id: cql-native-transport
+id: cql-cassandra-native-transport
 
 info:
   name: CQL Native 传输 识别（指纹识别）

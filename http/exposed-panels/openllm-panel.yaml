@@ -1,4 +1,4 @@
-id: openllm-panel
+id: bentoml-openllm-panel
 
 info:
   name: OpenLLM 面板识别（指纹识别）

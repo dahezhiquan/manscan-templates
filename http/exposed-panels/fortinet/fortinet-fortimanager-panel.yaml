@@ -1,4 +1,4 @@
-id: fortinet-fortimanager-panel
+id: fortios-fortinet-fortimanager-panel
 
 info:
   name: Fortinet FortiManager 面板识别（指纹识别）

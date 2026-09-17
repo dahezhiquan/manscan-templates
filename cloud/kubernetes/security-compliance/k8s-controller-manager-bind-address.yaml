@@ -14,7 +14,7 @@ info:
   reference:
     - https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/
     - Cloud Vulnerability Assessment Guide(2024) by KISA
-  tags: cloud,devops,kubernetes,devsecops,kube-controller-manager,bind-address,hardening,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,kube-controller-manager,bind-address,hardening,k8s-cluster-security
 
 variables:
   component: "kube-controller-manager"

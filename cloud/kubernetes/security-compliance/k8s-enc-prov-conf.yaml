@@ -13,7 +13,7 @@ info:
     - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
-  tags: cloud,devops,kubernetes,devsecops,encryption,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,encryption,k8s-cluster-security
 
 variables:
   argument: "encryption-provider-config"

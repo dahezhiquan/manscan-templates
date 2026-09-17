@@ -13,7 +13,7 @@ info:
     - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
   reference:
     - https://kubernetes.io/docs/admin/kube-apiserver/
-  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s-cluster-security
 
 variables:
   argument: "tls-cert-file or tls-private-key-file"

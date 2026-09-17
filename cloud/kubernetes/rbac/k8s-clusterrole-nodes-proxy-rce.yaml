@@ -13,7 +13,7 @@ info:
     - 限制对 Kubelet 10250 端口的网络访问，并结合 NetworkPolicy 等机制收敛访问路径。
   reference:
     - https://grahamhelton.com/blog/nodes-proxy-rce
-  tags: cloud,devops,kubernetes,devsecops,rbac,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,rbac,k8s-cluster-security
 
 flow: |
   code(1);

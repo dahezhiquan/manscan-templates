@@ -13,7 +13,7 @@ info:
     - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
-  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s-cluster-security
 
 variables:
   argument: "--token-auth-file"

@@ -13,7 +13,7 @@ info:
     - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://kubernetes.io/docs/concepts/services-networking/network-policies/
-  tags: cloud,devops,kubernetes,devsecops,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,k8s-cluster-security
 
 flow: |
   code(1);

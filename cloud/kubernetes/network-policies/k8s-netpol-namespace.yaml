@@ -13,7 +13,7 @@ info:
     - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
   reference:
     - https://kubernetes.io/docs/concepts/services-networking/network-policies/
-  tags: cloud,devops,kubernetes,devsecops,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,k8s-cluster-security
 
 flow: |
   code(1);

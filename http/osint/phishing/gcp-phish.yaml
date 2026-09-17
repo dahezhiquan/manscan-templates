@@ -10,7 +10,7 @@ info:
     - https://cloud.google.com
   metadata:
     max-request: 1
-  tags: phishing,gcp,google-cloud,cloud,osint,discovery
+  tags: phishing,gcp,cloud,osint,discovery
 http:
   - method: GET
     path:

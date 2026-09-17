@@ -6,7 +6,7 @@ info:
   severity: info
   metadata:
     max-request: 1
-  tags: tech,azure,k8s,kubernetes,discovery
+  tags: tech,azure,kubernetes,discovery
 
 http:
   - method: GET

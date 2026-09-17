@@ -6,7 +6,7 @@ info:
   description: 该规则用于检查 Kubernetes kubernetes-code-env.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
   reference:
     - https://kubernetes.io/
-  tags: cloud,devops,kubernetes,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,k8s-cluster-security
 
 self-contained: true
 code:

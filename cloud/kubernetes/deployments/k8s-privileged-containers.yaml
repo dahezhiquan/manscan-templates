@@ -13,7 +13,7 @@ info:
     - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
   reference:
     - https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged
-  tags: cloud,devops,kubernetes,k8s,devsecops,deployments,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,deployments,k8s-cluster-security
 
 flow: |
   code(1);

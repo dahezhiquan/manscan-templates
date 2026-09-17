@@ -13,7 +13,7 @@ info:
     - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
   reference:
     - https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
-  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s-cluster-security
 
 variables:
   argument: "--anonymous-auth=false"

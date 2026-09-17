@@ -13,7 +13,7 @@ info:
     - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
   reference:
     - https://kubernetes.io/docs/tasks/debug-application-cluster/audit/
-  tags: cloud,devops,kubernetes,devsecops,api-server,k8s,k8s-cluster-security
+  tags: cloud,devops,kubernetes,devsecops,api-server,k8s-cluster-security
 
 variables:
   argument: "audit-log-path"

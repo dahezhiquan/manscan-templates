@@ -14,7 +14,7 @@ info:
     max-request: 4
     shodan-query: eBridge_JSessionid
     fofa-query: app="泛微云桥e-Bridge"
-  tags: eBridge,weaver,oa,lfi,lfr,intrusive,vuln
+  tags: ebridge,weaver,oa,lfi,lfr,intrusive,vuln
 
 http:
   - raw:

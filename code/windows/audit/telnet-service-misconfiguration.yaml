@@ -1,4 +1,4 @@
-id: telnet-service-misconfiguration
+id: telnet-service-misconfig
 
 info:
   name: Telnet 服务配置不当（本地基线扫描）
@@ -10,7 +10,7 @@ info:
     攻击者可窃听凭据或利用弱口令访问系统。
   remediation: |
     禁用 Telnet 服务，改用 SSH 或受控远程管理通道。
-  tags: windows,telnet,service,misconfigured,code,windows-audit
+  tags: windows,telnet,service,misconfig,code,windows-audit
 
 self-contained: true
 

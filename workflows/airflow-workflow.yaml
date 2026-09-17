@@ -3,7 +3,7 @@ id: airflow-workflow
 info:
   name: Apache Airflow 安全检查工作流（工作流）
   author: pdteam
-  description: 该工作流会在给定目标上运行所有与 Apache Airflow 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 Apache Airflow 相关的 manscan 模板。
 workflows:
   - template: http/technologies/apache/airflow-detect.yaml
     subtemplates:

@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:137
-  tags: netbios,nbt,nbstat,windows,smb,network,js,udp,detection
+  tags: netbios,nbt,nbstat,windows,smb,network,js,udp,detect
 
 javascript:
   - pre-condition: |

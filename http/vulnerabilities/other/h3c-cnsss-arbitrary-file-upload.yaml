@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: header="/selfservice"
-  tags: h3c,lfi,instrusive,fileupload,vuln
+  tags: h3c,lfi,intrusive,fileupload,vuln
 
 variables:
   filename: "{{rand_base(10)}}"

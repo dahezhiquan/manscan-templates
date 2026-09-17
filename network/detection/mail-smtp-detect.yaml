@@ -8,7 +8,7 @@ info:
     该模板通过网络响应特征识别目标是否开放 SMTP 相关服务。
   metadata:
     max-request: 1
-  tags: network,service,smtp,detect,mail,detection,tcp,discovery
+  tags: network,service,smtp,detect,mail,tcp,discovery
 
 tcp:
   - inputs:

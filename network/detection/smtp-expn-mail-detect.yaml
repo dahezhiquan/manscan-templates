@@ -8,7 +8,7 @@ info:
     该模板通过网络响应特征识别目标是否开放 EXPN Mail Server 相关服务。
   metadata:
     max-request: 1
-  tags: mail,expn,network,detect,smtp,detection,tcp,discovery
+  tags: mail,expn,network,detect,smtp,tcp,discovery
 
 tcp:
   - inputs:

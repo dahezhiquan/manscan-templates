@@ -3,7 +3,7 @@ id: ldap-workflow
 info:
   name: LDAP 安全检查工作流（工作流）
   author: pussycat0x
-  description: 该工作流会在给定目标上运行所有与 LDAP 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 LDAP 相关的 manscan 模板。
 workflows:
   - template: javascript/enumeration/ldap/ldap-metadata.yaml
     subtemplates:

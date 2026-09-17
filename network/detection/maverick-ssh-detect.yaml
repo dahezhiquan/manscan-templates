@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: Maverick_SSHD
-  tags: network,ssh,detect,detection,tcp,discovery
+  tags: network,ssh,detect,tcp,discovery
 
 tcp:
   - host:

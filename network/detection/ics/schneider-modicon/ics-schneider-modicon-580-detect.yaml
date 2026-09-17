@@ -1,4 +1,4 @@
-id: ics-schneider-modicon-580-detect
+id: ics-schneider-electric-modicon-580-detect
 
 info:
   name: Schneider Electric Modicon 580 Series PLC 识别（指纹识别）
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: port:502 "P58"
-  tags: ics,schenider,modicon,detect,network
+  tags: ics,schneider-electric,modicon,detect,network
 
 tcp:
   - inputs:

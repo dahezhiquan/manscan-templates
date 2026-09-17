@@ -3,7 +3,7 @@ id: yonyou-ufida-nc-workflow
 info:
   name: Yonyou Ufida NC 安全检查工作流（工作流）
   author: Arm!tage
-  description: 该工作流会在给定目标上运行所有与 Yonyou Ufida NC 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 Yonyou Ufida NC 相关的 manscan 模板。
 workflows:
   - template: http/technologies/fingerprinthub-web-fingerprints.yaml
     matchers:

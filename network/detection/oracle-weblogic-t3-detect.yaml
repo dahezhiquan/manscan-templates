@@ -14,7 +14,7 @@ info:
     - 结合版本、认证与加密配置继续评估是否存在更高风险问题。
   metadata:
     max-request: 2
-  tags: network,weblogic,detect,t3,oracle,detection,tcp,discovery
+  tags: network,weblogic,detect,t3,oracle,tcp,discovery
 
 tcp:
   - inputs:

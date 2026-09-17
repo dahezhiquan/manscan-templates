@@ -3,6 +3,6 @@ id: ruijie-workflow
 info:
   name: Ruijie 安全检查工作流（工作流）
   author: pikpikcu
-  description: 该工作流会在给定目标上运行所有与 Ruijie 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 Ruijie 相关的 manscan 模板。
 workflows:
   - tags: ruijie

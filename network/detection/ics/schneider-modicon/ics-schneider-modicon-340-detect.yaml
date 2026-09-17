@@ -1,4 +1,4 @@
-id: ics-schneider-modicon-340-detect
+id: ics-schneider-electric-modicon-340-detect
 
 info:
   name: Schneider Electric Modicon 340 Series PLC 识别（指纹识别）
@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: port:502 "P34"
-  tags: ics,schenider,modicon,detect,network
+  tags: ics,schneider-electric,modicon,detect,network
 
 tcp:
   - inputs:

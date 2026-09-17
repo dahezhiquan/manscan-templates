@@ -16,7 +16,7 @@ info:
     vendor: chubin
     fofa-query: title="cheat.sh"
     shodan-query: title:"cheat.sh"
-  tags: tech,cheatsh,detection,devtools
+  tags: tech,cheatsh,detect,devtools
 
 http:
   - method: GET

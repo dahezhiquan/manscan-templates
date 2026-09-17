@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Riak"
-  tags: network,oss,detect,riak,nosql,detection,tcp,discovery
+  tags: network,oss,detect,riak,nosql,tcp,discovery
 tcp:
   - inputs:
       - data: 0000000107

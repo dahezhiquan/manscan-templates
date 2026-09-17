@@ -12,7 +12,7 @@ info:
     max-request: 1
     shodan-query:
       - http.component:"wordpress"
-  tags: tech,wordpress,theme,detection,wp-theme,discovery
+  tags: tech,wordpress,theme,detect,wp-theme,discovery
 
 http:
   - method: GET

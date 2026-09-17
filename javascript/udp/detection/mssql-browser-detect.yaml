@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:1434
-  tags: mssql,microsoft,sql,database,network,js,udp,detection
+  tags: mssql,microsoft,sql,database,network,js,udp,detect
 
 javascript:
   - pre-condition: |

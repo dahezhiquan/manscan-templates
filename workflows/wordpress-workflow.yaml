@@ -3,7 +3,7 @@ id: wordpress-workflow
 info:
   name: WordPress 安全检查工作流（工作流）
   author: kiblyn11,zomsop82
-  description: 该工作流会在给定目标上运行所有与 WordPress 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 WordPress 相关的 manscan 模板。
 workflows:
   - template: http/technologies/wordpress-detect.yaml
     subtemplates:

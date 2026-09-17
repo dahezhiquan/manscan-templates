@@ -3,8 +3,8 @@ id: pgsql-workflow
 info:
   name: PgSQL 安全检查工作流（工作流）
   author: pussycat0x
-  description: 该工作流会在给定目标上运行所有与 PgSQL 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 PgSQL 相关的 manscan 模板。
 workflows:
   - template: network/detection/pgsql-detect.yaml
     subtemplates:
-      - tags: pgsql
+      - tags: postgresql

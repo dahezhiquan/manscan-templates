@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"ActiveMQ OpenWire transport"
-  tags: network,activemq,detect,openwire,detection,tcp,discovery
+  tags: network,activemq,detect,openwire,tcp,discovery
 tcp:
   - inputs:
       - data: "VERSION"

@@ -10,7 +10,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: network,vnc,service,detect,detection,tcp,discovery
+  tags: network,vnc,service,detect,tcp,discovery
 
 tcp:
   - inputs:

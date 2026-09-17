@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"TiTiler"
-  tags: titiler,oast,obb,ssrf,vuln
+  tags: titiler,oast,oob,ssrf,vuln
 
 http:
   - raw:

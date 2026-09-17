@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Cisco fingerd"
-  tags: network,finger,detect,cisco,detection,tcp,discovery
+  tags: network,finger,detect,cisco,tcp,discovery
 tcp:
   - inputs:
       - data: "\n"

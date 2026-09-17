@@ -3,7 +3,7 @@ id: apache-workflow
 info:
   name: Apache 安全检查工作流（工作流）
   author: philippedelteil
-  description: 该工作流会在给定目标上运行所有与 Apache 相关的 nuclei 模板。
+  description: 该工作流会在给定目标上运行所有与 Apache 相关的 manscan 模板。
 workflows:
   - template: http/technologies/apache/apache-detect.yaml
     subtemplates:

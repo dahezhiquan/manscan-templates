@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: network,jabber,xmpp,messaging,detect,detection,tcp,discovery
+  tags: network,jabber,xmpp,messaging,detect,tcp,discovery
 
 tcp:
   - inputs:

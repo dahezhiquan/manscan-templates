@@ -10,7 +10,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: 'product:"Microsoft ftpd"'
-  tags: network,ftp,sambar,detect,detection,tcp,discovery
+  tags: network,ftp,sambar,detect,tcp,discovery
 
 tcp:
   - inputs:

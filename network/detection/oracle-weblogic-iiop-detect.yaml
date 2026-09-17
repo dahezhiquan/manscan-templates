@@ -8,7 +8,7 @@ info:
     该模板通过网络响应特征识别目标是否开放 Weblogic IIOP Protocol 相关服务。
   metadata:
     max-request: 1
-  tags: network,weblogic,detect,oracle,iiop,detection,tcp,discovery
+  tags: network,weblogic,detect,oracle,iiop,tcp,discovery
 tcp:
   - inputs:
       - data: "{{hex_decode('47494f50010200030000001700000002000000000000000b4e616d6553657276696365')}}"

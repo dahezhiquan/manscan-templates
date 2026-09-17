@@ -20,7 +20,7 @@ info:
     product: astrbot
     shodan-query: html:"<title>AstrBot"
     fofa-query: body="<title>AstrBot"
-  tags: astrbot, default-login
+  tags: astrbot,default-login
 
 flow: http(1) && http(2)
 

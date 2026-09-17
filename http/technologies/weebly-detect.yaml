@@ -9,7 +9,7 @@ info:
   metadata:
     max-request: 7
     shodan-query: product:"Weebly"
-  tags: weebly, detect, tech
+  tags: weebly,detect,tech
 
 http:
   - method: GET

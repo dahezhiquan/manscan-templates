@@ -7,7 +7,7 @@ info:
   reference:
     - https://nmap.org/nsedoc/scripts/afp-serverinfo.html
   metadata:
-    verfied: true
+    verified: true
     shodan-query: 'AFP'
     max-request: 1
   tags: network,enum,afp,discovery

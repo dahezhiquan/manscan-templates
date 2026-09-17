@@ -7,7 +7,7 @@ info:
   reference:
     - https://tomcat.apache.org/connectors-doc/ajp/ajpv13a.html
   metadata:
-    verfied: true
+    verified: true
     shodan-query: 'port:8009 product:"Apache Tomcat"'
     max-request: 1
   tags: js,network,detect,tomcat,apache,tcp,discovery

@@ -7,7 +7,7 @@ info:
   reference:
     - https://en.wikipedia.org/wiki/Direct_Connect_(protocol)
   metadata:
-    verfied: true
+    verified: true
     shodan-query: product:"Direct Connect P2P"
     max-request: 1
   tags: js,network,detect,dc,direct-connect,p2p,discovery

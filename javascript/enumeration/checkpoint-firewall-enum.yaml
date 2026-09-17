@@ -7,7 +7,7 @@ info:
   reference:
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/checkpoint_hostname.rb
   metadata:
-    verfied: true
+    verified: true
     shodan-query: "product:\"Check Point Firewall\""
     max-request: 1
   tags: js,network,firewall,checkpoint,enum,discovery

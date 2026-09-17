@@ -15,7 +15,7 @@ info:
     product: devtron
     shodan-query: http.title:"Devtron"
     fofa-query: title="Devtron"
-  tags: javascript,config,exposure,devtron
+  tags: js,config,exposure,devtron
 
 http:
   - method: GET

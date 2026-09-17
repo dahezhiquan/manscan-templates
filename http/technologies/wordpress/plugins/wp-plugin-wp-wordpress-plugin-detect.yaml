@@ -18658,7 +18658,7 @@ http:
         condition: and
 
       - type: dsl
-        name: amazon-web-services
+        name: aws
         dsl:
           - 'regex("/plugins/amazon-web-services/", body)'
           - 'status_code == 200'

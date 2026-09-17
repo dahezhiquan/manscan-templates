@@ -1,4 +1,4 @@
-id: ics-modicon-info
+id: schneider-electric-ics-modicon-info
 
 info:
   name: Schneider Modicon PLC 信息泄露（指纹识别）
@@ -9,7 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: "Device Identification: Schneider Electric"
-  tags: ics,modicon,schneider,detect,network,tcp
+  tags: ics,modicon,schneider-electric,detect,network,tcp
 
 tcp:
   - inputs:

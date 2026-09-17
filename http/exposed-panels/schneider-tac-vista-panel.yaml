@@ -14,7 +14,7 @@ info:
     vendor: Schneider Electric
     product: tac-vista
     shodan-query: 'http.title:"TAC Vista"'
-  tags: panel,schneider,tac,vista,ics,bms,discovery
+  tags: panel,schneider-electric,tac,vista,ics,bms,discovery
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     vendor: Schneider Electric
     product: clearscada
     shodan-query: 'http.title:"ClearSCADA"'
-  tags: panel,ics,scada,schneider,clearscada,discovery
+  tags: panel,ics,scada,schneider-electric,clearscada,discovery
 
 http:
   - method: GET

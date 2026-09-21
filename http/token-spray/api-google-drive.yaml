@@ -3,7 +3,7 @@ id: api-google-drive
 info:
   name: Google Drive API Token 可用性校验（token喷洒）
   author: geeknik
-  severity: info
+  severity: high
   reference:
     - https://developers.google.com/drive/api/guides/about-sdk
   metadata:

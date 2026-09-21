@@ -3,7 +3,7 @@ id: ikev2-transforms-enum
 info:
   name: IKEv2 支持转换套件枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板通过单独发送不同算法组合的 SA_INIT 探测报文，枚举 IKEv2 端点支持的加密与交换套件。
   reference:

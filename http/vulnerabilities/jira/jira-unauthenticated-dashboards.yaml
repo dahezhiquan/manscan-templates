@@ -5,7 +5,7 @@ id: jira-unauthenticated-dashboards
 info:
   name: Jira - 未授权访问漏洞
   author: TechbrunchFR
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
   metadata:

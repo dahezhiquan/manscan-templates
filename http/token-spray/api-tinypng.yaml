@@ -3,7 +3,7 @@ id: api-tinypng
 info:
   name: TinyPNG API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://tinypng.com/developers
   metadata:

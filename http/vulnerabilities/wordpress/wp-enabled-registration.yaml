@@ -3,7 +3,7 @@ id: wp-enabled-registration
 info:
   name: WordPress 用户注册开放
   author: Ratnadip Gajbhiye,ritikchaddha
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: wordpress,vuln

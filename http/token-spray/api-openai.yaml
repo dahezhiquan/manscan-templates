@@ -3,7 +3,7 @@ id: api-openai
 info:
   name: OpenAI API Token 可用性校验（token喷洒）
   author: geeknik
-  severity: info
+  severity: high
   reference:
     - https://platform.openai.com/docs/api-reference
   metadata:

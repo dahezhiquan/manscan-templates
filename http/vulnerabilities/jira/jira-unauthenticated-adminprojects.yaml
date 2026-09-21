@@ -3,7 +3,7 @@ id: jira-unauthenticated-adminprojects
 info:
   name: Jira - 未授权访问漏洞
   author: TESS
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:atlassian:jira:*:*:*:*:*:*:*:*
   metadata:

@@ -3,7 +3,7 @@ id: api-hubspot
 info:
   name: HubSpot API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://legacydocs.hubspot.com/docs/methods/owners/get_owners
   metadata:

@@ -3,7 +3,7 @@ id: api-fastly
 info:
   name: Fastly API Token 可用性校验（token喷洒）
   author: Adam Crosser
-  severity: info
+  severity: high
   reference:
     - https://developer.fastly.com/reference/api/
   metadata:

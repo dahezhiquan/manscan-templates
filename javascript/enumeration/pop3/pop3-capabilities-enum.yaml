@@ -3,7 +3,7 @@ id: pop3-capabilities-enum
 info:
   name: POP3 能力枚举（服务漏洞）
   author: pussycat0x,daffainfo
-  severity: info
+  severity: low
   description: |
     该模板通过 CAPA 命令枚举 POP3 服务支持的能力与实现信息。
   reference:

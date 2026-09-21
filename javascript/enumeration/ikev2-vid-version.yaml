@@ -3,7 +3,7 @@ id: ikev2-vid-version
 info:
   name: IKEv2 Vendor ID 与版本识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板解析 IKEv2 响应中的 Vendor ID 与通知载荷，识别设备厂商、版本与能力特征。
   reference:

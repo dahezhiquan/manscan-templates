@@ -3,7 +3,7 @@ id: api-optimizely
 info:
   name: Optimizely API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://library.optimizely.com/docs/api/app/v2/index.html
   metadata:

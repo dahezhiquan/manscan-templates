@@ -3,7 +3,7 @@ id: minecraft-enum
 info:
   name: Minecraft 服务信息枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板获取 Minecraft 服务端的描述、在线人数、版本号与协议编号等基础信息。
   reference:

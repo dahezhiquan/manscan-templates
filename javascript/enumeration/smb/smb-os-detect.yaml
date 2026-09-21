@@ -3,7 +3,7 @@ id: smb-os-detect
 info:
   name: SMB 操作系统识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板通过 SMB 指纹信息识别目标主机操作系统特征。
   reference:

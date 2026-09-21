@@ -3,7 +3,7 @@ id: jenkins-async-people
 info:
   name: Jenkins async-people 面板暴露
   author: nadino
-  severity: info
+  severity: medium
   reference:
     - https://bugs.eclipse.org/bugs/show_bug.cgi?id=564944
     - https://issues.jenkins.io/browse/JENKINS-30107

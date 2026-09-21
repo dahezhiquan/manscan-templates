@@ -3,7 +3,7 @@ id: wordpress-tmm-db-migrate
 info:
   name: WordPress ThemeMarkers 数据迁移备份文件泄露
   author: dwisiswant0
-  severity: info
+  severity: medium
   metadata:
     max-request: 1
   tags: wordpress,wp-plugin,backup,vuln

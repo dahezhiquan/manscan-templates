@@ -3,7 +3,7 @@ id: smb-enum
 info:
   name: SMB 信息枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板通过 SMB 会话与服务接口枚举主机、共享与系统特征信息。
   reference:

@@ -3,7 +3,7 @@ id: smb-v1-supported
 info:
   name: SMBv1 支持识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测目标是否仍支持 SMBv1，以评估遗留协议暴露风险。
   reference:

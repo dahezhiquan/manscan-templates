@@ -3,7 +3,7 @@ id: api-fontawesome
 info:
   name: FontAwesome API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://fontawesome.com/v6.0/docs/apis/graphql/get-started
   metadata:

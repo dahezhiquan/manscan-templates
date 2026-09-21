@@ -3,7 +3,7 @@ id: wordpress-xmlrpc-listmethods
 info:
   name: WordPress XML-RPC 系统方法枚举
   author: 0ut0fb4nd
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: wordpress,vuln

@@ -3,7 +3,7 @@ id: api-userstack
 info:
   name: User Stack API Token 可用性校验（token喷洒）
   author: 0xpugal
-  severity: info
+  severity: high
   reference:
     - https://userstack.com/documentation
   metadata:

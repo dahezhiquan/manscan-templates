@@ -3,7 +3,7 @@ id: afp-server-detect
 info:
   name: AFP 服务识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   reference:
     - https://nmap.org/nsedoc/scripts/afp-serverinfo.html
   metadata:

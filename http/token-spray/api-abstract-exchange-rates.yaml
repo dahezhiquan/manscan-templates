@@ -3,7 +3,7 @@ id: api-abstract-exchange-rates
 info:
   name: Abstract API Exchange Rates Token 可用性校验（token喷洒）
   author: daffainfo
-  severity: info
+  severity: high
   description: 该模板通过调用 Abstract Exchange Rates API 验证提供的 token 是否有效，命中后通常表示可访问实时或历史汇率数据能力。
   reference:
     - https://www.abstractapi.com/api/exchange-rate-api

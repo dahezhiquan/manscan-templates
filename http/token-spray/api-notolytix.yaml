@@ -3,7 +3,7 @@ id: api-notolytix
 info:
   name: Notolytix API Token 可用性校验（token喷洒）
   author: 0xPugal
-  severity: info
+  severity: high
   reference:
     - https://notolytix.com/
   metadata:

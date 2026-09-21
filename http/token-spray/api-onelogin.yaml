@@ -3,7 +3,7 @@ id: api-onelogin
 info:
   name: OneLogin API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://developers.onelogin.com/api-docs/2/getting-started/dev-overview
   metadata:

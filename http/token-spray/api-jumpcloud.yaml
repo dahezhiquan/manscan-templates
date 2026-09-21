@@ -3,7 +3,7 @@ id: api-jumpcloud
 info:
   name: JumpCloud API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://docs.jumpcloud.com/1.0/authentication-and-authorization/api-key
   metadata:

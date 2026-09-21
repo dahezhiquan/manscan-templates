@@ -3,7 +3,7 @@ id: ntp-version-detect
 info:
   name: NTP 版本识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板通过 NTP 查询报文识别目标是否运行 NTP 服务，并提取相关版本特征。
   metadata:

@@ -3,7 +3,7 @@ id: api-ticketmaster
 info:
   name: Ticket Master API Token 可用性校验（token喷洒）
   author: 0xpugal
-  severity: info
+  severity: high
   reference:
     - https://developer.ticketmaster.com/products-and-docs/apis/getting-started/
   metadata:

@@ -3,7 +3,7 @@ id: cpppo-ethernetip-cip-honeypot
 info:
   name: CPPPO Ethernet/IP CIP 蜜罐默认配置识别（服务漏洞）
   author: biero-el-corridor
-  severity: info
+  severity: low
   description: 该模板通过异常协议响应和默认特征识别目标是否为采用默认配置的 CPPPO Ethernet/IP CIP 蜜罐。
   reference:
     - https://github.com/claroty/enip-stack-detector

@@ -3,7 +3,7 @@ id: ldap-default-login
 info:
   name: LDAP 默认凭据爆破（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: high
   description: |
     该模板通过 LDAP 绑定尝试常见默认账号口令，识别目录服务是否存在出厂凭据或弱口令风险。
   metadata:

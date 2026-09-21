@@ -3,7 +3,7 @@ id: snmpv3-detect
 info:
   name: SNMPv3 指纹识别（服务漏洞）
   author: matejsmycka
-  severity: info
+  severity: low
   description: |
     该模板通过 SNMPv3 响应特征识别目标设备并提取基础指纹信息。
   reference:

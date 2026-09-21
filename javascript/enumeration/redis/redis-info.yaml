@@ -3,7 +3,7 @@ id: redis-info
 info:
   name: Redis 信息枚举（服务漏洞）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   description: |
     该模板通过 INFO 等响应特征枚举 Redis 实例的版本、架构与运行信息。
   reference:

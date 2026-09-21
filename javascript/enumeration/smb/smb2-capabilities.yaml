@@ -3,7 +3,7 @@ id: smb2-capabilities
 info:
   name: SMB2 能力枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板枚举 SMBv2 服务支持的能力标志与方言特性。
   reference:

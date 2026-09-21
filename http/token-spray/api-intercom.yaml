@@ -3,7 +3,7 @@ id: api-intercom
 info:
   name: Intercom API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://developers.intercom.com/building-apps/docs/rest-api-reference
   metadata:

@@ -3,7 +3,7 @@ id: jira-unauthenticated-resolutions
 info:
   name: Jira - 未授权访问漏洞
   author: TESS
-  severity: info
+  severity: medium
   metadata:
     max-request: 1
     shodan-query: http.component:"Atlassian Jira"

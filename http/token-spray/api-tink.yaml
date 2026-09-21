@@ -3,7 +3,7 @@ id: api-tink
 info:
   name: Tink API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://docs.tink.com/api
   metadata:

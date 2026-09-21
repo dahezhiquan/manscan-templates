@@ -3,7 +3,7 @@ id: cors-misconfig
 info:
   name: 跨域资源共享（CORS）配置错误
   author: nadino,g4l1t0,convisoappsec,pdteam,breno_css,nodauf,amirmsafari
-  severity: info
+  severity: medium
   reference:
     - https://portswigger.net/web-security/cors
     - https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet

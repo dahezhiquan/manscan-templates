@@ -3,7 +3,7 @@ id: api-debounce
 info:
   name: DeBounce API Token 可用性校验（token喷洒）
   author: 0ri2N
-  severity: info
+  severity: high
   reference:
     - https://developers.debounce.io/reference/api-key-authentication
     - https://debounce.io

@@ -3,7 +3,7 @@ id: smb-enum-domains
 info:
   name: SMB 域枚举（服务漏洞）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   description: |
     该模板用于枚举 SMB 环境中的域信息，辅助识别目标网络的身份边界。
   reference:

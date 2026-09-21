@@ -3,7 +3,7 @@ id: api-instagramgraph
 info:
   name: Instagram Graph API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://developers.facebook.com/docs/instagram-api/getting-started
   metadata:

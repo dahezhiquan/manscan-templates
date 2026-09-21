@@ -3,7 +3,7 @@ id: api-cloudflare
 info:
   name: Cloudflare API Token 可用性校验（token喷洒）
   author: ffffffff0x
-  severity: info
+  severity: high
   reference:
     - https://dash.cloudflare.com/profile/api-tokens
   metadata:

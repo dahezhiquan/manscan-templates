@@ -3,7 +3,7 @@ id: api-github
 info:
   name: GitHub API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://docs.github.com/en/rest/reference/users
   metadata:

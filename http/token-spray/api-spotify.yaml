@@ -3,7 +3,7 @@ id: api-spotify
 info:
   name: Spotify API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://developer.spotify.com/documentation/general/guides/authorization-guide/
   metadata:

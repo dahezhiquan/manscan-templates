@@ -3,7 +3,7 @@ id: obsolete-ssh-version
 info:
   name: 过时 SSH 版本识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   reference:
     - https://nmap.org/nsedoc/scripts/sshv1.html
   metadata:

@@ -3,7 +3,7 @@ id: ntlm-info
 info:
   name: NTLM 信息枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板通过 NTLM 协议响应枚举主机域、主机名与身份验证相关信息。
   reference:

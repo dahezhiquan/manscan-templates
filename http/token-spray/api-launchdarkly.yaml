@@ -3,7 +3,7 @@ id: api-launchdarkly
 info:
   name: LaunchDarkly REST API Token 可用性校验（token喷洒）
   author: Luqmaan Hadia
-  severity: info
+  severity: high
   reference:
     - https://apidocs.launchdarkly.com/
   metadata:

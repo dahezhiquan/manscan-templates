@@ -3,7 +3,7 @@ id: api-fortitoken-cloud
 info:
   name: FortiToken Cloud API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://docs.fortinet.com/document/fortitoken-cloud/latest/rest-api/456035/overview
   metadata:

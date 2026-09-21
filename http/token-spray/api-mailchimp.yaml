@@ -3,7 +3,7 @@ id: api-mailchimp
 info:
   name: Mailchimp API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://mailchimp.com/developer/transactional/docs/smtp-integration/#credentials-and-configuration
   metadata:

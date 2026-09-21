@@ -3,7 +3,7 @@ id: api-buildkite
 info:
   name: Buildkite API Token 可用性校验（token喷洒）
   author: zzeitlin
-  severity: info
+  severity: high
   reference:
     - https://buildkite.com/docs/apis/rest-api/user
   metadata:

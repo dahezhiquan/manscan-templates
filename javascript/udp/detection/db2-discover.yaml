@@ -3,7 +3,7 @@ id: db2-discover
 info:
   name: 广播 DB2 发现（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板通过广播探测识别网络中暴露的 DB2 服务节点。
   reference:

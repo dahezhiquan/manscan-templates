@@ -3,7 +3,7 @@ id: niagara-fox-info-enum
 info:
   name: Niagara Fox 协议信息枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: 该模板通过协议交互枚举 Niagara Fox 服务返回的版本、主机与运行环境信息。
   reference:
     - https://nmap.org/nsedoc/scripts/fox-info.html

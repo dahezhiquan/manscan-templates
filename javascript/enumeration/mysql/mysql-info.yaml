@@ -3,7 +3,7 @@ id: mysql-info
 info:
   name: MySQL 基本信息枚举（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板连接 MySQL 服务并提取协议版本、服务版本等基础信息。
   reference:

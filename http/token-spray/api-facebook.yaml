@@ -3,7 +3,7 @@ id: api-facebook
 info:
   name: Facebook API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://developers.facebook.com/tools/explorer/
   metadata:

@@ -3,7 +3,7 @@ id: api-leanix
 info:
   name: LeanIX API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://docs.leanix.net/docs/rest-api
   metadata:

@@ -3,7 +3,7 @@ id: printers-info-leak
 info:
   name: 打印机未授权访问（服务漏洞）
   author: pussycat0x,matejsmycka
-  severity: info
+  severity: medium
   description: |
     该模板检测网络打印设备是否允许未授权访问。命中说明打印任务、设备配置或文档内容可能被直接读取或操控。
   impact: |

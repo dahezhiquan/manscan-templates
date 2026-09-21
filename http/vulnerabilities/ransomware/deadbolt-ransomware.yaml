@@ -3,7 +3,7 @@ id: deadbolt-ransomware
 info:
   name: Deadbolt Ransomware 检测
   author: pdteam
-  severity: info
+  severity: high
   metadata:
     max-request: 1
   tags: ransomware,deadbolt,vuln

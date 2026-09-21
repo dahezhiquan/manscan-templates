@@ -3,7 +3,7 @@ id: api-virustotal
 info:
   name: VirusTotal API Token 可用性校验（token喷洒）
   author: daffainfo
-  severity: info
+  severity: high
   reference:
     - https://developers.virustotal.com/reference
     - https://github.com/daffainfo/all-about-apikey/blob/main/Anti%20Malware/VirusTotal.md

@@ -3,7 +3,7 @@ id: checkpoint-firewall-enum
 info:
   name: Check Point 防火墙识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: low
   reference:
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/checkpoint_hostname.rb
   metadata:

@@ -9,7 +9,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.html:SAP Message Server
-  tags: sap,discovery,recon
+  tags: sap,discovery,recon,detect
 
 http:
   - method: GET

@@ -3,7 +3,7 @@ id: smb2-server-time
 info:
   name: SMB2 服务器时间枚举（服务漏洞）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   description: |
     该模板获取 SMB2 服务器当前时间与启动时间，辅助做时钟偏差与运行时长分析。
   reference:

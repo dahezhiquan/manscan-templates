@@ -3,7 +3,7 @@ id: cobalt-strike-c2-jarm
 info:
   name: Cobalt Strike C2 JARM 识别（服务漏洞）
   author: pussycat0x
-  severity: info
+  severity: high
   description: |
     该模板通过 JARM TLS 指纹识别目标是否可能为 Cobalt Strike C2 相关命令控制基础设施。
   reference:

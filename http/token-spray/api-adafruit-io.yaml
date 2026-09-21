@@ -3,7 +3,7 @@ id: api-adafruit-io
 info:
   name: Adafruit IO API Token 可用性校验（token喷洒）
   author: dwisiswant0
-  severity: info
+  severity: high
   reference:
     - https://io.adafruit.com/api/docs/
   metadata:

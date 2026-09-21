@@ -3,7 +3,7 @@ id: dlink-850L-info-leak
 info:
   name: D-Link DIR-850L 账户信息泄露
   author: pikpikcu
-  severity: info
+  severity: high
   reference:
     - https://xz.aliyun.com/t/2941
   metadata:

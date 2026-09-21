@@ -3,7 +3,7 @@ id: zhiyuan-oa-info-leak
 info:
   name: 致远 OA A6-s 用户信息泄露
   author: pikpikcu
-  severity: info
+  severity: medium
   reference:
     - https://github.com/apachecn/sec-wiki/blob/c73367f88026f165b02a1116fe1f1cd2b8e8ac37/doc/unclassified/zhfly3351.md
   metadata:

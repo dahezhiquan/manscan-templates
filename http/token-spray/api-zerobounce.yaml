@@ -3,7 +3,7 @@ id: api-zerobounce
 info:
   name: Zerobounce API Token 可用性校验（token喷洒）
   author: 0xpugal
-  severity: info
+  severity: high
   reference:
     - https://www.zerobounce.net/docs/email-validation-api-quickstart
   metadata:

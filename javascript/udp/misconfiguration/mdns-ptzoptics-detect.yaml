@@ -3,7 +3,7 @@ id: mdns-ptzoptics-detect
 info:
   name: 通过 mDNS 识别 PTZOptics 设备（服务漏洞）
   author: rxerium
-  severity: info
+  severity: medium
   description: |
     该模板通过 mDNS 广播特征识别 PTZOptics 摄像设备及其相关服务暴露情况。
   metadata:

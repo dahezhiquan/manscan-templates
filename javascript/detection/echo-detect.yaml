@@ -1,9 +1,9 @@
 id: echo-detect
 
 info:
-  name: Echo 协议识别（服务漏洞）
+  name: Echo 协议识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板通过发送回显数据并验证响应，识别目标是否开放 Echo 调试协议服务。
   reference:
@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "port:7"
-  tags: echo,network,js,udp,discovery
+  tags: echo,network,js,udp,discovery,detect
 
 javascript:
   - pre-condition: |

@@ -3,7 +3,7 @@ id: dwr-index-detect
 info:
   name: DWR detect test page 指纹识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: 用于识别目标暴露的 DWR detect test page，模板会结合页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
   reference:
     - http://aetherlab.net/2012/09/experiences-in-pentesting-dwr/

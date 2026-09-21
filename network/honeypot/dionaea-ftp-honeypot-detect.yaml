@@ -3,7 +3,7 @@ id: dionaea-ftp-honeypot-detect
 info:
   name: Dionaea FTP 蜜罐识别（服务漏洞）
   author: UnaPibaGeek
-  severity: low
+  severity: info
   description: |
     该模板通过异常协议响应或默认特征识别目标是否为 Dionaea FTP Honeypot 蜜罐。
   metadata:

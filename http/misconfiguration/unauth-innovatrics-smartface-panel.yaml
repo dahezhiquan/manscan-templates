@@ -1,7 +1,7 @@
 id: unauth-innovatrics-smartface-panel
 
 info:
-  name: 未授权 SmartFace 面板 检测（指纹识别）
+  name: 未授权 SmartFace 面板 检测
   author: matejsmycka
   severity: medium
   description: |
@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:-1410437493
-  tags: panel,smartface,login,detect,vuln
+  tags: panel,smartface,login,vuln
 
 flow: http(1) && http(2)
 

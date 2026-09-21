@@ -1,7 +1,7 @@
 id: storage-nextcloud-install
 
 info:
-  name: Nextcloud 暴露 安装（指纹识别）
+  name: Nextcloud 暴露 安装
   author: skeltavik
   severity: high
   description: |
@@ -10,7 +10,7 @@ info:
     - https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
   metadata:
     max-request: 1
-  tags: tech,nextcloud,storage,misconfig,vuln
+  tags: nextcloud,storage,misconfig,vuln
 
 http:
   - method: GET

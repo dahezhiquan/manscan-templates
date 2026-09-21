@@ -1,9 +1,9 @@
 id: snmpv3-detect
 
 info:
-  name: SNMPv3 指纹识别（服务漏洞）
+  name: SNMPv3 指纹识别（指纹识别）
   author: matejsmycka
-  severity: low
+  severity: info
   description: |
     该模板通过 SNMPv3 响应特征识别目标设备并提取基础指纹信息。
   reference:
@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"SNMP"
-  tags: js,udp,network,snmp
+  tags: js,udp,network,snmp,detect
 
 javascript:
   - pre-condition: |

@@ -1,7 +1,7 @@
 id: enumeration-gitea-userenum
 
 info:
-  name: Gitea 用户枚举（指纹识别）
+  name: Gitea 用户枚举
   author: icarot
   severity: low
   description: |
@@ -13,7 +13,7 @@ info:
     vendor: gitea
     product: gitea
     shodan-query: title:"Gitea"
-  tags: tech,gitea,enumeration
+  tags: gitea,enumeration
 
 http:
   - method: GET

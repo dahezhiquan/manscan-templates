@@ -3,7 +3,7 @@ id: json-server
 info:
   name: Json 服务器指纹识别（指纹识别）
   author: DhiyaneshDK
-  severity: low
+  severity: info
   reference:
     - https://www.exploit-db.com/ghdb/4550
   metadata:

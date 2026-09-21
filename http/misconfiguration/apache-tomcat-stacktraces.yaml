@@ -1,7 +1,7 @@
 id: apache-tomcat-stacktraces
 
 info:
-  name: Tomcat 堆栈跟踪启用（指纹识别）
+  name: Tomcat 堆栈跟踪启用
   author: lucky0x0d
   severity: low
   description: |
@@ -15,7 +15,7 @@ info:
     vendor: apache
     product: tomcat
     shodan-query: title:"Apache Tomcat"
-  tags: misconfig,tech,tomcat,apache,vuln
+  tags: misconfig,tomcat,apache,vuln
 
 http:
   - method: GET

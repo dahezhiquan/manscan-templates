@@ -1,7 +1,7 @@
 id: k8s-ingress-nginx-valid-admission
 
 info:
-  name: Kubernetes Ingress Nginx Valid AdmissionReview 检测（指纹识别）
+  name: Kubernetes Ingress Nginx Valid AdmissionReview 检测
   author: burso
   severity: high
   description: |
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ssl:"ingress-nginx" port:8443
-  tags: tech,kubernetes,ingress,nginx,vuln
+  tags: kubernetes,ingress,nginx,vuln
 
 variables:
   string: "{{to_lower(rand_base(5))}}"

@@ -1,7 +1,7 @@
 id: kubernetes-k8s-unauth-etcd-server
 
 info:
-  name: Etcd 服务器 未授权 访问（指纹识别）
+  name: Etcd 服务器 未授权 访问
   author: sharath,pussycat0x
   severity: high
   description: |
@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"etcd"
-  tags: tech,kubernetes,devops,etcd,unauth,anonymous,misconfig,vuln
+  tags: kubernetes,devops,etcd,unauth,anonymous,misconfig,vuln
 
 http:
   - method: GET

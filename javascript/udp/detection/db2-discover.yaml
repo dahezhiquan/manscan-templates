@@ -1,9 +1,9 @@
 id: db2-discover
 
 info:
-  name: 广播 DB2 发现（服务漏洞）
+  name: 广播 DB2 发现（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板通过广播探测识别网络中暴露的 DB2 服务节点。
   reference:
@@ -12,7 +12,7 @@ info:
     shodan-query: port:523
     verified: true
     max-request: 1
-  tags: ibm,network,js,udp,discovery
+  tags: ibm,network,js,udp,discovery,detect
 
 javascript:
   - pre-condition: |

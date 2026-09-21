@@ -1,7 +1,7 @@
 id: filemanager-tiny-file-manager-unauth
 
 info:
-  name: Tiny 文件 Manager 未授权 访问（指纹识别）
+  name: Tiny 文件 Manager 未授权 访问
   author: ritikchaddha,HuTa0
   severity: medium
   description: |
@@ -11,7 +11,7 @@ info:
     max-request: 1
     shodan-query: title:"Tiny File Manager"
     zoomeye-query: app="Tiny File Manager"
-  tags: misconfig,filemanager,detect,vuln
+  tags: misconfig,filemanager,vuln
 
 http:
   - method: GET

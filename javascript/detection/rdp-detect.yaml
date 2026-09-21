@@ -1,16 +1,16 @@
 id: rdp-detect
 
 info:
-  name: RDP 服务识别（服务漏洞）
+  name: RDP 服务识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板通过远程桌面协商特征识别目标是否开放 RDP 服务。
   metadata:
     verified: true
     max-request: 1
     shodan-query: port:"3389"
-  tags: js,network,rdp,info,enum,discovery
+  tags: js,network,rdp,info,enum,discovery,detect
 
 javascript:
   - code: |

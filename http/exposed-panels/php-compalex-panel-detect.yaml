@@ -1,7 +1,7 @@
 id: php-compalex-panel-detect
 
 info:
-  name: Compalex 面板识别（指纹识别）
+  name: Compalex 面板识别（暴露面识别）
   author: MaStErCho
   severity: medium
   reference:
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 15
     shodan-query: title:"COMPALEX"
-  tags: tech,php,compalex,sql,panel,discovery
+  tags: php,compalex,sql,panel,discovery
 
 http:
   - method: GET

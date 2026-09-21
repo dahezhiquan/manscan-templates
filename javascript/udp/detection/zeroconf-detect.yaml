@@ -1,9 +1,9 @@
 id: zeroconf-detect
 
 info:
-  name: Zeroconf 服务识别（服务漏洞）
+  name: Zeroconf 服务识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板查询 _services._dns-sd._udp.local，识别目标是否通过 Zeroconf/mDNS 对外通告服务。
   reference:
@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     zoomeye-query: service="zeroconf"
-  tags: zeroconf,network,js,udp,discovery
+  tags: zeroconf,network,js,udp,discovery,detect
 
 javascript:
 

@@ -3,7 +3,7 @@ id: firebase-detect
 info:
   name: firebase 指纹识别（指纹识别）
   author: organiccrap
-  severity: low
+  severity: info
   reference:
     - http://ghostlulz.com/google-exposed-firebase-database/
   metadata:

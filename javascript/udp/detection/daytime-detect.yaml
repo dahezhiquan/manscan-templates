@@ -1,9 +1,9 @@
 id: daytime-detect
 
 info:
-  name: Daytime 服务识别（服务漏洞）
+  name: Daytime 服务识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板通过 RFC 867 约定的请求识别目标是否开放 UDP Daytime 服务。
   reference:
@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:13
-  tags: daytime,legacy,network,js,udp
+  tags: daytime,legacy,network,js,udp,detect
 
 javascript:
   - pre-condition: |

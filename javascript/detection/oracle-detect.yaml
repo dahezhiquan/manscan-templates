@@ -1,15 +1,15 @@
 id: oracle-detect
 
 info:
-  name: Oracle 数据库服务识别（服务漏洞）
+  name: Oracle 数据库服务识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: 该模板通过 1521 端口的 Oracle 协议特征识别目标是否开放 Oracle 数据库服务。
   metadata:
     verified: true
     max-request: 1
     shodan-query: oracle port:1521
-  tags: js,network,oracle,info,enum,discovery
+  tags: js,network,oracle,info,enum,discovery,detect
 
 javascript:
   - code: |

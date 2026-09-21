@@ -1,16 +1,16 @@
 id: tftp-detect
 
 info:
-  name: TFTP 服务识别（服务漏洞）
+  name: TFTP 服务识别（指纹识别）
   author: pussycat0x,matejsmycka
-  severity: low
+  severity: info
   description: |
     该模板识别目标是否开放 TFTP 服务。
   metadata:
     verified: true
     max-request: 1
     shodan-query: "port:69"
-  tags: js,tftp,udp,network,discovery
+  tags: js,tftp,udp,network,discovery,detect
 javascript:
   - pre-condition: |
       isUDPPortOpen(Host,Port);

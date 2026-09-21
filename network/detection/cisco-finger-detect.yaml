@@ -3,7 +3,7 @@ id: cisco-finger-detect
 info:
   name: Cisco Finger Daemon 识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
     该模板通过网络响应特征识别目标是否开放 Cisco Finger Daemon 相关服务。
   metadata:

@@ -3,7 +3,7 @@ id: express-lfr
 info:
   name: Express 本地文件读取风险（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
-  severity: info
+  severity: medium
   description: |
     该模板检测 Express render() 与 hbs 模板组合中由不可信输入导致的任意文件读取风险。
   tags: file,nodejs,express,lfr

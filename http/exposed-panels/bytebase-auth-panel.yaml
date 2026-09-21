@@ -3,7 +3,7 @@ id: bytebase-auth-panel
 info:
   name: Bytebase 认证 - 面板识别（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     发现 Bytebase 认证界面。
   classification:

@@ -3,7 +3,7 @@ id: strong-ciphers
 info:
   name: HTTPS/SSH 强加密套件未启用（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测 FortiGate HTTPS/SSH 是否使用强加密套件。弱加密可能被本地网络攻击者破解或降级利用。
   reference:

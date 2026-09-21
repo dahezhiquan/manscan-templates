@@ -3,7 +3,7 @@ id: webview-addjavascript-interface
 info:
   name: Android WebView addJavascriptInterface 使用检测（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: medium
   description: |
     该模板检测 WebView 是否调用 addJavascriptInterface。该接口会将 Java 对象暴露给 JavaScript，低版本或不可信页面中可能导致代码执行风险。
   classification:

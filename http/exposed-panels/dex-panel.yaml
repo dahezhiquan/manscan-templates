@@ -3,7 +3,7 @@ id: dex-panel
 info:
   name: Dex Authentication 面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   reference:
     - https://dexidp.io
   classification:

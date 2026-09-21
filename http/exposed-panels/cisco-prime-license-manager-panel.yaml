@@ -3,7 +3,7 @@ id: cisco-prime-license-manager-panel
 info:
   name: Cisco Prime License Manager 识别（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   reference:
     - https://www.cisco.com/c/en/us/support/cloud-systems-management/prime-license-manager/series.html
   description: |

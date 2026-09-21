@@ -3,7 +3,7 @@ id: misp-panel
 info:
   name: MISP Threat Intelligence Sharing Platform 面板识别（暴露面识别）
   author: johnk3r,darses
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:misp:misp:*:*:*:*:*:*:*:*
   metadata:

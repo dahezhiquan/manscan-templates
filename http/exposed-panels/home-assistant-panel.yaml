@@ -3,7 +3,7 @@ id: home-assistant-panel
 info:
   name: Home Assistant 面板（暴露面识别）
   author: fabaff,daffainfo,lum8rjack
-  severity: info
+  severity: low
   reference:
     - https://www.home-assistant.io/
   classification:

@@ -3,7 +3,7 @@ id: okta-api
 info:
   name: Okta API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/okta.yml
     - https://devforum.okta.com/t/api-token-length/5519

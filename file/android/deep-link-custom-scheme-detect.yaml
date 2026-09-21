@@ -3,7 +3,7 @@ id: deep-link-custom-scheme-detect
 info:
   name: Android 自定义 Scheme 深度链接识别（本地文件安全扫描）
   author: 7h3b4dger
-  severity: info
+  severity: low
   description: |
     该模板检测 Deep Link intent-filter 中声明的非 http/https 自定义 URI Scheme，用于识别可能被外部应用唤起的入口。
   tags: android,file,deeplink

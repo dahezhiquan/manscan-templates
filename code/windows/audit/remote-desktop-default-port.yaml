@@ -3,7 +3,7 @@ id: remote-desktop-default-port
 info:
   name: 远程桌面使用默认 3389 端口（本地基线扫描）
   author: asteria121
-  severity: info
+  severity: low
   description: |
     该模板检查 RDP 是否监听默认 TCP 3389 端口。默认端口更容易被扫描和暴力破解。
   impact: |

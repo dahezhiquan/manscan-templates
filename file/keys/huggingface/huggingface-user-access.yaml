@@ -3,7 +3,7 @@ id: huggingface-user-access
 info:
   name: HuggingFace User 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/huggingface.yml
     - https://huggingface.co/docs/hub/security-tokens

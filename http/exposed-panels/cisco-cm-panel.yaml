@@ -3,7 +3,7 @@ id: cisco-cm-panel
 info:
   name: Cisco Unified CM Console 面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   reference:
     - https://www.cisco.com/c/en_uk/products/unified-communications/unified-communications-manager-callmanager/index.html
   description: |

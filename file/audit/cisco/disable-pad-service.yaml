@@ -3,7 +3,7 @@ id: disable-pad-service
 info:
   name: Cisco PAD 服务未禁用（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 Cisco PAD 服务是否仍启用。该遗留服务通常不再需要，保留会增加未授权访问面。
   reference:

@@ -3,7 +3,7 @@ id: admzip-path-overwrite
 info:
   name: adm-zip 路径覆盖风险（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
-  severity: info
+  severity: medium
   description: |
     该模板检测使用 adm-zip 进行不安全 ZIP 解压的代码模式。攻击者可通过恶意压缩包路径覆盖任意文件，进一步造成代码注入。
   tags: file,nodejs,admzip

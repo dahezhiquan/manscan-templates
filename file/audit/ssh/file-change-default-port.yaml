@@ -3,7 +3,7 @@ id: file-change-default-port
 info:
   name: SSH 默认端口未变更（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检查 SSH 是否仍使用默认端口。变更默认端口可减少针对 22 端口的自动化扫描和低质量暴力尝试。
   remediation: |

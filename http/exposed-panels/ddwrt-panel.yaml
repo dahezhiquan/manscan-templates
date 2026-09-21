@@ -3,7 +3,7 @@ id: ddwrt-panel
 info:
   name: DD-WRT - 路由器管理面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 DD-WRT 路由器管理面板。
   reference:

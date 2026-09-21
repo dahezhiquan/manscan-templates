@@ -3,7 +3,7 @@ id: fbi-seized-nameserver
 info:
   name: FBI 扣押域名服务器识别（dns）
   author: rxerium
-  severity: info
+  severity: low
   description: |
     该模板检测域名是否使用执法机构扣押相关的 nameserver。命中通常表示域名可能因恶意活动、犯罪调查或封禁处置被接管。
   classification:

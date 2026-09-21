@@ -3,7 +3,7 @@ id: adafruit-key
 info:
   name: Adafruit API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adafruit-api-key.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adafruit-api-key.go

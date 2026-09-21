@@ -3,7 +3,7 @@ id: forcepoint-login-panel
 info:
   name: Forcepoint 登录面板识别（暴露面识别）
   author: husain
-  severity: info
+  severity: low
   reference:
     - https://www.forcepoint.com/product/email-security
   classification:

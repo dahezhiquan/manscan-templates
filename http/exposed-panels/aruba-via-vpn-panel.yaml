@@ -3,7 +3,7 @@ id: aruba-via-vpn-panel
 info:
   name: Aruba VIA VPN - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     Aruba VIA（虚拟内部网访问）是 HPE Aruba 的 SSL VPN 客户端和网关解决方案。其 Web 管理门户通常在端口 4343 上暴露登录界面。
   reference:

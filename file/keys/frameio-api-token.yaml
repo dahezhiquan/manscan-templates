@@ -3,7 +3,7 @@ id: frameio-api-token
 info:
   name: Frameio API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/frameio-api-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/frameio-api-token.go

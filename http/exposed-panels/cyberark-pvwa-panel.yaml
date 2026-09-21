@@ -3,7 +3,7 @@ id: cyberark-pvwa-panel
 info:
   name: CyberArk Password Vault Web Access - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     CyberArk Password Vault Web Access（PVWA）是 CyberArk Privileged Access Manager 的 Web 界面。检测到 PVWA 登录面板。
   reference:

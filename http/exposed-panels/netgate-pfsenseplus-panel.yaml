@@ -3,7 +3,7 @@ id: netgate-pfsenseplus-panel
 info:
   name: Netgate pfSense Plus - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 Netgate pfSense Plus 防火墙登录面板。
   reference:

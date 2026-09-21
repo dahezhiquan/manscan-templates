@@ -3,7 +3,7 @@ id: flutterwave-public-key
 info:
   name: Flutterwave 公钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-public-key.go
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-public-key.yaml

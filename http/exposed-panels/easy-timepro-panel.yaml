@@ -3,7 +3,7 @@ id: easy-timepro-panel
 info:
   name: easy TimePro 登录页面 - 面板（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     发现 easy TimePro 登录面板。
   metadata:

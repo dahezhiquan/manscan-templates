@@ -3,7 +3,7 @@ id: rhadamanthys-stealer-panel
 info:
   name: Rhadamanthys Stealer C2 面板识别（暴露面识别）
   author: ritikchaddha
-  severity: info
+  severity: high
   reference:
     - https://twitter.com/0xperator/status/1677873700610162690
     - https://github.com/alex14324/Rhadamanthys-Stealer

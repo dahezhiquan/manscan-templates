@@ -3,7 +3,7 @@ id: auto-usb-install
 info:
   name: FortiGate Auto USB 安装已启用（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测 FortiGate Auto USB 安装功能。攻击者若具备物理访问权限，可能通过 USB 加载配置或固件并影响设备安全。
   reference:

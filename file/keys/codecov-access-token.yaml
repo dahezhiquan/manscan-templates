@@ -3,7 +3,7 @@ id: codecov-access-token
 info:
   name: Codecov 访问令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/codecov-access-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/codecov-access-token.go

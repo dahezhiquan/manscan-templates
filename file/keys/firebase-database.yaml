@@ -3,7 +3,7 @@ id: firebase-database
 info:
   name: Firebase Database Detect 敏感信息检测（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: low
   tags: file,keys,token,firebase
 file:
   - extensions:

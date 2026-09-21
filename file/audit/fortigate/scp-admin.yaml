@@ -3,7 +3,7 @@ id: scp-admin
 info:
   name: FortiGate Admin-SCP 配置检测（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 FortiGate Admin-SCP 配置。启用 SCP 可下载配置文件，若缺少控制可能泄露敏感设备配置。
   reference:

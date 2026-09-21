@@ -3,7 +3,7 @@ id: atlassian-api-token
 info:
   name: Atlassian API 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/atlassian-api-token.go
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/atlassian-api-token.yaml

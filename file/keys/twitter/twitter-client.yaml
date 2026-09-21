@@ -3,7 +3,7 @@ id: twitter-client
 info:
   name: Twitter 客户端 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/twitter.yml
     - https://developer.twitter.com/en/docs/authentication/overview

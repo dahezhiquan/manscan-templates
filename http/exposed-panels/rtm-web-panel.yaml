@@ -3,7 +3,7 @@ id: rtm-web-panel
 info:
   name: RTM WEB 面板（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   metadata:
     verified: true
     max-request: 1

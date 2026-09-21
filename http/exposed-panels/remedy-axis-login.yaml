@@ -3,7 +3,7 @@ id: remedy-axis-login
 info:
   name: Remedy Axis 登录面板识别（暴露面识别）
   author: tess
-  severity: info
+  severity: medium
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

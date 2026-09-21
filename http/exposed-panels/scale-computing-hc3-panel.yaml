@@ -3,7 +3,7 @@ id: scale-computing-hc3-panel
 info:
   name: Scale Computing HC3 - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: low
   description: |-
     检测到 Scale Computing HC3 Web 管理登录面板。HC3 现已并入 SC//HyperCore 虚拟化套件，提供超融合计算、存储和虚拟化管理。
   reference:

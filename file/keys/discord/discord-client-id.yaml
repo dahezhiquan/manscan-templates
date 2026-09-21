@@ -3,7 +3,7 @@ id: discord-client-id
 info:
   name: Discord 客户端 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/discord-client-id.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/discord-client-id.go

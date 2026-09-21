@@ -3,7 +3,7 @@ id: github-outdated-key
 info:
   name: GitHub Outdated RSA SSH Host key 敏感信息检测（本地文件安全扫描）
   author: naglis
-  severity: info
+  severity: low
   description: |
     该模板检测 GitHub 已轮换的旧 RSA SSH 主机密钥。命中表示文件中可能包含过期或不应继续信任的 GitHub SSH 主机密钥材料。
   reference:

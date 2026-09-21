@@ -3,7 +3,7 @@ id: qdpm-login-panel
 info:
   name: qdPM 登录面板（暴露面识别）
   author: theamanrawat
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:qdpm:qdpm:*:*:*:*:*:*:*:*
   metadata:

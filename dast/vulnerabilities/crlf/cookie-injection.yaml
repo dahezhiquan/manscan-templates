@@ -3,7 +3,7 @@ id: cookie-injection
 info:
   name: 基于参数的 Cookie 注入（DAST）
   author: pdteam
-  severity: info
+  severity: medium
   reference:
     - https://www.invicti.com/blog/web-security/understanding-cookie-poisoning-attacks/
     - https://docs.imperva.com/bundle/on-premises-knowledgebase-reference-guide/page/cookie_injection.htm

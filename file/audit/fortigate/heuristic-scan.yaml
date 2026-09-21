@@ -3,7 +3,7 @@ id: heuristic-scan
 info:
   name: FortiGate 启发式扫描未配置（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 FortiGate 启发式扫描配置。启发式扫描可辅助发现未知恶意文件，未启用会降低恶意内容拦截能力。
   reference:

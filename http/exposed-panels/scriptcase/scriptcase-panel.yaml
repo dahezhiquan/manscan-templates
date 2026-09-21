@@ -3,7 +3,7 @@ id: scriptcase-panel
 info:
   name: ScriptCase 面板识别（暴露面识别）
   author: Ricardo Maia (Brainfork)
-  severity: info
+  severity: low
   reference:
     - https://www.scriptcase.com.br
     - https://www.scriptcase.net

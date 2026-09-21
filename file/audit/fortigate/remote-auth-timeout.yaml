@@ -3,7 +3,7 @@ id: remote-auth-timeout
 info:
   name: FortiGate 远程认证超时未设置（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 FortiGate 远程认证超时配置。未设置超时会扩大管理员离开设备时的会话滥用窗口。
   reference:

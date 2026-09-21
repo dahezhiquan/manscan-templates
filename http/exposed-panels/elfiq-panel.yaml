@@ -3,7 +3,7 @@ id: elfiq-panel
 info:
   name: Elfiq Link Balancer - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: low
   description: |-
     检测到 Elfiq Link Balancer 管理登录面板。
   reference:

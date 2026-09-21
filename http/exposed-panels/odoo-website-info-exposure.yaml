@@ -3,7 +3,7 @@ id: odoo-website-info-exposure
 info:
   name: Odoo Website - 信息泄露（暴露面识别）
   author: aushack
-  severity: info
+  severity: medium
   description: |
     该模板用于识别 Odoo Website 相关暴露入口或页面特征。若命中，说明目标可能对外公开了可访问的管理或信息接口，存在进一步泄露系统信息、配置数据或服务细节的风险。
   metadata:

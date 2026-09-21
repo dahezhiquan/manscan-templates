@@ -3,7 +3,7 @@ id: linkedin-client
 info:
   name: LinkedIn 客户端 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/linkedin.yml
     - https://docs.microsoft.com/en-us/linkedin/shared/api-guide/best-practices/secure-applications

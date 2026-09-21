@@ -3,7 +3,7 @@ id: telegram-token
 info:
   name: Telegram Bot 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/telegram.yml
     - https://core.telegram.org/bots/api

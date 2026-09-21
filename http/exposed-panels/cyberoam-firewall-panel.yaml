@@ -3,7 +3,7 @@ id: cyberoam-firewall-panel
 info:
   name: Cyberoam 防火墙 - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 Cyberoam UTM 防火墙登录面板。
   reference:

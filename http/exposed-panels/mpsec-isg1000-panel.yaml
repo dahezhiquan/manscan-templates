@@ -3,7 +3,7 @@ id: mpsec-isg1000-panel
 info:
   name: MPSec ISG1000 Security Gateway 面板识别（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 1

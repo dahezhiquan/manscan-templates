@@ -3,7 +3,7 @@ id: featherpanel-panel
 info:
   name: 检测 FeatherPanel 面板（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     检测到 FeatherPanel 登录界面。
   classification:

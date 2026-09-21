@@ -3,7 +3,7 @@ id: trend-micro-deep-security-panel
 info:
   name: Trend Micro Deep Security Manager - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     Trend Micro Deep Security Manager 是一款企业级服务器安全平台，可为物理、虚拟和云环境提供入侵检测、反恶意软件、防火墙及完整性监控能力。
   reference:

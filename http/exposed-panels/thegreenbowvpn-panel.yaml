@@ -3,7 +3,7 @@ id: thegreenbowvpn-panel
 info:
   name: TheGreenBow VPN - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 TheGreenBow VPN 客户端登录面板。
   reference:

@@ -3,7 +3,7 @@ id: sonicwall-analytics-panel
 info:
   name: SonicWall Analytics 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     SonicWall Analytics（原 SGMS）是 SonicWall 的集中式网络安全分析与报告平台，用于聚合和可视化部署 SonicWall 防火墙的威胁数据。
   reference:

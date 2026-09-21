@@ -3,7 +3,7 @@ id: maintainer-account
 info:
   name: FortiGate Maintainer 账户配置检测（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测 FortiGate maintainer 账户相关配置。该账户用于特定恢复场景，若策略不当可能带来物理访问下的管理风险。
   reference:

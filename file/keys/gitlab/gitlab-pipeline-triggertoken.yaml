@@ -3,7 +3,7 @@ id: gitlab-pipeline-triggertoken
 info:
   name: GitLab Pipeline Trigger 令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/gitlab.yml
     - https://docs.gitlab.com/ee/ci/triggers/

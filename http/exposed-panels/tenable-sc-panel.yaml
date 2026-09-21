@@ -3,7 +3,7 @@ id: tenable-sc-panel
 info:
   name: Tenable Security Center - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 Tenable Security Center（原 Tenable.sc 和 SecurityCenter）Web 管理界面。
   reference:

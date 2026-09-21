@@ -3,7 +3,7 @@ id: sophos-web-appliance
 info:
   name: Sophos Web Appliance 面板识别（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: low
   reference:
     - https://docs.sophos.com/nsg/swa/help/en-us/nsg/swa/concepts/AboutYourAppliance.html
   classification:

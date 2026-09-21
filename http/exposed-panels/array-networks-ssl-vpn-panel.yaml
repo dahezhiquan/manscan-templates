@@ -3,7 +3,7 @@ id: array-networks-ssl-vpn-panel
 info:
   name: Array Networks SSL VPN - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     Array Networks AG 系列 SSL VPN 设备为企业提供远程访问。其 Web 登录门户（Pilot）通常位于端口 8889 或通过 /prx/ 路径访问。
   reference:

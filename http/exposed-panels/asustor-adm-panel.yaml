@@ -3,7 +3,7 @@ id: asustor-adm-panel
 info:
   name: ASUSTOR ADM - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 ASUSTOR Data Master 网络附加存储管理登录面板。
   reference:

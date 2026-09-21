@@ -3,7 +3,7 @@ id: configure-dns-server
 info:
   name: pfSense DNS over TLS 未配置（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 pfSense DNS 是否建议配置为 TLS 传输。DNS over TLS 可防止中间方查看 DNS 查询内容，并增强对预期 DNS 服务器的验证。
   reference:

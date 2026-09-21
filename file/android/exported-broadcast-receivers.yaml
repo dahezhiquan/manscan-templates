@@ -3,7 +3,7 @@ id: exported-broadcast-receivers
 info:
   name: Android 导出 Broadcast Receiver 检测（本地文件安全扫描）
   author: 7h3b4dger
-  severity: info
+  severity: medium
   description: |
     该模板检测 AndroidManifest.xml 中导出的 Broadcast Receiver，排除禁用项和常见 Google/Jetpack 依赖组件。
   tags: android,file,exportedcomponents

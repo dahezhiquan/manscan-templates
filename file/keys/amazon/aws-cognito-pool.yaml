@@ -3,7 +3,7 @@ id: aws-cognito-pool
 info:
   name: Amazon Web Services Cognito 池 ID 敏感信息检测（本地文件安全扫描）
   author: gaurang,zeroc00i
-  severity: info
+  severity: low
   description: |
     该模板检测文件中暴露的 Amazon Web Services Cognito Pool ID。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   classification:

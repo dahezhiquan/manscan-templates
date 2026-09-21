@@ -3,7 +3,7 @@ id: gitlab-runner-regtoken
 info:
   name: GitLab Runner 注册令牌泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/gitlab.yml
     - https://docs.gitlab.com/runner/security/

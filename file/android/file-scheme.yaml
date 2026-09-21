@@ -3,7 +3,7 @@ id: file-scheme
 info:
   name: Android file URI Scheme 识别（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: low
   description: |
     该模板检测 Android 应用是否启用 file URI Scheme。该能力若与 WebView 或外部输入结合，可能扩大本地文件访问风险。
   classification:

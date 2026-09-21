@@ -3,7 +3,7 @@ id: dynamic-registered-broadcast-receiver
 info:
   name: Android 动态广播接收器注册识别（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: low
   description: |
     该模板检测 Android 应用是否动态注册 Broadcast Receiver。动态广播接收器若未限制来源，可能接收非预期广播或被滥用触发逻辑。
   classification:

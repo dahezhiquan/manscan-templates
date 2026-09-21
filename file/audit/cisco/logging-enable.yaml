@@ -3,7 +3,7 @@ id: logging-enable
 info:
   name: Cisco 日志记录未启用（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 Cisco logging enable 配置。日志记录用于监控网络设备风险和保留安全事件证据。
   reference:

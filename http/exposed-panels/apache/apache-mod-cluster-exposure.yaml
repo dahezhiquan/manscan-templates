@@ -3,7 +3,7 @@ id: apache-mod-cluster-exposure
 info:
   name: Apache `mod_proxy_cluster` Cluster Manager Interface 暴露（暴露面识别）
   author: oleveloper
-  severity: info
+  severity: medium
   description: |
     该模板用于识别 Apache `mod_proxy_cluster` Cluster Manager Interface 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
   reference:

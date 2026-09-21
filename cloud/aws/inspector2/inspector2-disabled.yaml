@@ -3,7 +3,7 @@ id: inspector2-disabled
 info:
   name: Amazon Inspector 2 -未启用（云安全）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   description: 该规则用于检查 AWS Inspector2 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
   impact: |
     - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。

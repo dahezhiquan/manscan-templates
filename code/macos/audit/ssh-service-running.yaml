@@ -3,7 +3,7 @@ id: ssh-service-running
 info:
   name: macOS SSH 服务正在运行（本地基线扫描）
   author: geeknik
-  severity: info
+  severity: medium
   description: |
     该模板检查 macOS Remote Login/SSH 服务是否运行。无需求时启用 SSH 会增加远程登录攻击面。
   impact: |

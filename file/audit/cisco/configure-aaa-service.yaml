@@ -3,7 +3,7 @@ id: configure-aaa-service
 info:
   name: Cisco AAA 服务配置检测（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测 Cisco 设备是否配置 AAA 认证、授权与审计服务，用于评估网络设备访问控制和操作审计能力。
   reference:

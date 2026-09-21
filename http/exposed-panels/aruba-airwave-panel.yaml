@@ -3,7 +3,7 @@ id: aruba-airwave-panel
 info:
   name: Aruba AirWave 管理平台 - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: low
   description: |-
     检测到 Aruba AirWave 管理平台的 Web 管理界面。
   reference:

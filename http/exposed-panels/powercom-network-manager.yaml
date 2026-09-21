@@ -3,7 +3,7 @@ id: powercom-network-manager
 info:
   name: PowerCom Network Manager 面板识别（暴露面识别）
   author: pussycat0x
-  severity: info
+  severity: low
   metadata:
     verified: true
     max-request: 1

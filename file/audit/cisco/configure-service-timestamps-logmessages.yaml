@@ -3,7 +3,7 @@ id: configure-service-timestamps-logmessages
 info:
   name: Cisco 日志消息时间戳未配置（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: low
   description: |
     该模板检测 Cisco 日志消息是否配置 service timestamps。缺少日志时间戳会影响审计、告警关联和事件响应。
   reference:

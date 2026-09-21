@@ -3,7 +3,7 @@ id: schneider-ecostruxure-building-operation-webstation-panel
 info:
   name: 施耐德 EcoStruxure Building Operation WebStation - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到施耐德电气 EcoStruxure Building Operation WebStation 接口。
   reference:

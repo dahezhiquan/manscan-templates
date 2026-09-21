@@ -3,7 +3,7 @@ id: ibm-openadmin-panel
 info:
   name: IBM OpenAdmin Tool 面板（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   metadata:
     verified: "true"
     max-request: 1

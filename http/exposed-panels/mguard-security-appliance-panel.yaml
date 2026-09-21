@@ -3,7 +3,7 @@ id: mguard-security-appliance-panel
 info:
   name: mGuard 安全设备 - 面板（暴露面识别）
   author: righettod
-  severity: info
+  severity: medium
   description: |-
     检测到 mGuard 安全设备——一种工业防火墙/安全路由器，用于保护机器、PLC、HMI 及工业网络。
   reference:

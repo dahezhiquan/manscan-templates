@@ -3,7 +3,7 @@ id: yellowfin-panel
 info:
   name: Yellowfin Information Collaboration 识别（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:yellowfinbi:yellowfin:*:*:*:*:*:*:*:*
   metadata:

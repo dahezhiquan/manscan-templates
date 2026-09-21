@@ -3,7 +3,7 @@ id: bizzy-panel
 info:
   name: BIZZY 登录 - 面板（暴露面识别）
   author: Kazgangap
-  severity: info
+  severity: low
   description: |-
     检测到 BIZZY 登录面板。BIZZY 是一个漏洞管理平台。
   classification:

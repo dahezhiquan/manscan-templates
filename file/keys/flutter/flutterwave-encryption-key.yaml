@@ -3,7 +3,7 @@ id: flutterwave-encryption-key
 info:
   name: Flutterwave 加密密钥泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-encryption-key.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-encryption-key.go

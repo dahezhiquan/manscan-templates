@@ -3,7 +3,7 @@ id: python-scanner
 info:
   name: Python 危险函数扫描（本地文件安全扫描）
   author: majidmc2
-  severity: info
+  severity: medium
   description: |
     该模板检测 Python 文件中的危险函数或高风险调用，用于发现动态执行、命令执行或不安全反序列化等风险线索。
   reference:

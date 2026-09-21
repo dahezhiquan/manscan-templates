@@ -3,7 +3,7 @@ id: sangfor-iam-panel
 info:
   name: 深信服上网行为管理 - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     深信服上网行为管理（IAM）是深信服科技推出的网络接入控制与网页过滤设备，用于企业环境中管理互联网访问策略和用户身份认证。
   reference:

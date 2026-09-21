@@ -3,7 +3,7 @@ id: tar-extraction
 info:
   name: TAR 解压路径注入风险（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
-  severity: info
+  severity: medium
   description: |
     该模板检测不安全 TAR 解压导致的路径覆盖风险。恶意归档可写入预期目录外的文件并造成代码注入。
   tags: file,nodejs

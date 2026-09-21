@@ -3,7 +3,7 @@ id: mixpost-auth-panel
 info:
   name: Mixpost 认证登录 - 面板检测（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     发现 Mixpost 认证接口。
   classification:

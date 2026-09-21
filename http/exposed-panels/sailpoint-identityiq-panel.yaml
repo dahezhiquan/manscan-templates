@@ -3,7 +3,7 @@ id: sailpoint-identityiq-panel
 info:
   name: SailPoint IdentityIQ - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     SailPoint IdentityIQ 是一个身份治理与管理平台。检测到其 Web 登录面板。
   reference:

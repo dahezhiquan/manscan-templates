@@ -3,7 +3,7 @@ id: amazon-account-id
 info:
   name: Amazon Web Services 账户 ID 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   description: |
     该模板检测文件中暴露的 Amazon Web Services Account ID。此类凭据一旦泄露，可能被用于访问对应云服务、代码仓库、SaaS 平台或业务接口。
   reference:

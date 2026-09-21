@@ -3,7 +3,7 @@ id: jotty-page-login-panel
 info:
   name: jotty·page 登录 - 面板检测（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     发现 jotty·page 登录界面。
   classification:

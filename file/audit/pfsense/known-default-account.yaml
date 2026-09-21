@@ -3,7 +3,7 @@ id: known-default-account
 info:
   name: pfSense 默认账户未清理（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: high
   description: |
     该模板检测 pfSense 是否存在已知默认账户。攻击者可利用默认账户字典尝试登录设备管理界面。
   reference:

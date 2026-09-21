@@ -3,7 +3,7 @@ id: js-analyse
 info:
   name: JavaScript 文件安全分析（本地文件安全扫描）
   author: ayadim
-  severity: info
+  severity: medium
   description: |
     该模板从 JS 文件中提取 token、接口端点、URI 和变量名等信息，并辅助发现可能被利用的敏感信息或弱点。
   metadata:

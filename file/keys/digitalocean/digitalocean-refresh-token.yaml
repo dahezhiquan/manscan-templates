@@ -3,7 +3,7 @@ id: digitalocean-refresh-token
 info:
   name: DigitalOcean 刷新令牌 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/rules/digitalocean.yml
     - https://docs.digitalocean.com/reference/api/

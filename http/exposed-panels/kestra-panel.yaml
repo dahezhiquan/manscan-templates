@@ -3,7 +3,7 @@ id: kestra-panel
 info:
   name: Kestra 登录面板 - 检测（暴露面识别）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     检测到 Kestra 登录界面。
   classification:

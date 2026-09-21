@@ -3,7 +3,7 @@ id: webview-javascript-enabled
 info:
   name: WebView JavaScript 启用检测（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: low
   description: |
     该模板检测 WebView 是否启用 JavaScript。若 WebView 加载不可信内容，JavaScript 能力可能扩大 XSS、桥接接口滥用或本地数据访问风险。
   classification:

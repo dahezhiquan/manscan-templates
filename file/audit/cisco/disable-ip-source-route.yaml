@@ -3,7 +3,7 @@ id: disable-ip-source-route
 info:
   name: Cisco IP Source-Route 未禁用（本地文件安全扫描）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     该模板检测 Cisco IP source-route 配置。源路由曾被用于绕过正常路由路径、探测网络或辅助未授权操作。
   remediation: |

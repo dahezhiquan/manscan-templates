@@ -3,7 +3,7 @@ id: grafana-cloud-api-token
 info:
   name: Grafana Cloud API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.go

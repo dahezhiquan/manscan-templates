@@ -3,7 +3,7 @@ id: ftp-client
 info:
   name: FTP 客户端不应安装（本地基线扫描）
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |
     该模板检查本机是否安装了不必要的 FTP 明文文件传输 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
   remediation: |

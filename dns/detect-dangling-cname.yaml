@@ -3,7 +3,7 @@ id: detect-dangling-cname
 info:
   name: 悬空 CNAME 记录检测（dns）
   author: pdteam,nytr0gen
-  severity: info
+  severity: medium
   description: |
     该模板检测可能悬空的 CNAME 记录。常见原因是 DNS 记录仍指向已删除、不再使用或未完成绑定的外部服务，可能导致子域名接管风险。
   reference:

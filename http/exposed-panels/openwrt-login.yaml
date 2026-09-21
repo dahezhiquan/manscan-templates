@@ -3,7 +3,7 @@ id: openwrt-login
 info:
   name: Opentwrt Login / Configuration Interface 面板识别（暴露面识别）
   author: For3stCo1d,TechbrunchFR
-  severity: info
+  severity: medium
   reference:
     - https://openwrt.org
     - https://github.com/openwrt/luci

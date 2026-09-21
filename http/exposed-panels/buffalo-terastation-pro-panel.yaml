@@ -3,7 +3,7 @@ id: buffalo-terastation-pro-panel
 info:
   name: Buffalo TeraStation Pro - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     检测到 Buffalo TeraStation Pro 网络附加存储管理面板。
   reference:

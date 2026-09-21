@@ -3,7 +3,7 @@ id: s3-bucket
 info:
   name: S3 Bucket Detect 敏感信息检测（本地文件安全扫描）
   author: gaurang
-  severity: info
+  severity: low
   tags: file,keys,token,bucket
 file:
   - extensions:

@@ -3,7 +3,7 @@ id: xcp-ng-xo-lite-panel
 info:
   name: XCP-ng XO Lite 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: low
   description: |-
     检测到 XO Lite 本地管理界面，由 XCP-ng 服务器直接托管。
   reference:

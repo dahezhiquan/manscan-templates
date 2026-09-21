@@ -3,7 +3,7 @@ id: sophos-utm-panel
 info:
   name: Sophos UTM 用户门户 - 登录面板（暴露面识别）
   author: rxerium
-  severity: info
+  severity: medium
   description: |-
     Sophos UTM（统一威胁管理）在 8443/5443 端口暴露用户门户接口，用于 SSL VPN 客户端访问和自助服务。
   reference:

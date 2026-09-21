@@ -3,7 +3,7 @@ id: ivanti-sentry-panel
 info:
   name: Ivanti Sentry 面板 - 检测（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   description: |-
     检测到 Ivanti Sentry 面板。
   metadata:

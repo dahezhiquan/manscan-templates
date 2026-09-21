@@ -3,7 +3,7 @@ id: prestashop-module-fuzz
 info:
   name: Prestashop 模块枚举
   author: meme-lord
-  severity: info
+  severity: low
   metadata:
     max-request: 639
   tags: fuzz,prestashop,fuzzing,vuln

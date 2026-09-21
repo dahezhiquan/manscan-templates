@@ -3,7 +3,7 @@ id: pki-validation-exposure
 info:
   name: Well-Known PKI 验证目录暴露
   author: rxerium
-  severity: info
+  severity: low
   description: |
     检测 CA/B Forum 证书签发 HTTP 验证目录中的 PKI validation 文件或路径。该目录通常用于域名控制权验证。
   impact: |

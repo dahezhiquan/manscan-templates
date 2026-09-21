@@ -3,7 +3,7 @@ id: xff-403-bypass
 info:
   name: X-Forwarded-For 403 绕过检测
   author: vavkamil
-  severity: info
+  severity: medium
   description: 该模板通过注入 X-Forwarded-For 内网地址，检测部署在 Nginx、Apache 代理或负载均衡后的 403 受限端点是否可被绕过。
   metadata:
     max-request: 3

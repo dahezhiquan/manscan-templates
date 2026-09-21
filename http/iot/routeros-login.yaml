@@ -3,7 +3,7 @@ id: routeros-login
 info:
   name: RouterOS 路由器登录面板（IOT）
   author: dhiyaneshDK,idealphase
-  severity: info
+  severity: medium
   description: |
     检测到 RouterOS 路由器登录面板。该页面暴露可用于确认 MikroTik/RouterOS 设备入口，并增加远程口令探测或管理面攻击面。
   classification:

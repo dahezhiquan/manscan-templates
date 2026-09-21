@@ -3,7 +3,7 @@ id: gpc-json
 info:
   name: Global Privacy Control 策略文件披露
   author: MihhailSokolov
-  severity: info
+  severity: low
   description: |
     检测网站是否定义 Global Privacy Control (GPC) 策略文件。该文件用于表达站点对用户隐私控制信号的支持和处理方式。
   metadata:

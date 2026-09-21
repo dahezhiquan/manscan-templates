@@ -3,7 +3,7 @@ id: http-trace
 info:
   name: HTTP TRACE 方法启用检测
   author: nodauf
-  severity: info
+  severity: low
   reference:
     - https://www.blackhillsinfosec.com/three-minutes-with-the-http-trace-method/
   metadata:

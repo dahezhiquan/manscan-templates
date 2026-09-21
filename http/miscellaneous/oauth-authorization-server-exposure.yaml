@@ -3,7 +3,7 @@ id: oauth-authorization-server-exposure
 info:
   name: Well-Known OAuth 授权服务器元数据暴露
   author: rxerium
-  severity: info
+  severity: low
   description: |
     检测 OAuth 2.0 授权服务器元数据 (RFC 8414)。该元数据用于公开授权端点、令牌端点、支持的算法和能力信息。
   impact: |

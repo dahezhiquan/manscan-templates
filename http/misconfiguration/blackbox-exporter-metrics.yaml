@@ -3,7 +3,7 @@ id: blackbox-exporter-metrics
 info:
   name: Blackbox 导出器 指标 暴露
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 1

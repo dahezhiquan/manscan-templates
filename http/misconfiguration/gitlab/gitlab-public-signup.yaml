@@ -3,7 +3,7 @@ id: gitlab-public-signup
 info:
   name: GitLab 公开注册
   author: pdteam,axrk
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
   metadata:

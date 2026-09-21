@@ -3,7 +3,7 @@ id: aem-querybuilder-feed-servlet
 info:
   name: AEM QueryBuilder Feed Servlet 检测
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   reference:
     - https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/querybuilder-predicate-reference.html
   metadata:

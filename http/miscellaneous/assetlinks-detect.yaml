@@ -3,7 +3,7 @@ id: assetlinks-detect
 info:
   name: Android Asset Links 配置检测
   author: rxerium
-  severity: info
+  severity: low
   description: |
     检测目标服务器是否存在 .well-known/assetlinks.json 文件。该文件用于 Android 应用通过 Digital Asset Links 协议声明应用与网站域名之间的可信关联。
   reference:

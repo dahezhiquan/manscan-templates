@@ -3,7 +3,7 @@ id: octoprint-3dprinter
 info:
   name: OctoPrint 3D 打印机面板（IOT）
   author: Matthew Nickerson (b0than) @ Layer 8 Security
-  severity: info
+  severity: medium
   description: |
     检测到 OctoPrint 3D 打印机管理面板。该入口用于控制和监控 3D 打印作业，暴露后可能泄露打印任务或设备控制入口。
   classification:

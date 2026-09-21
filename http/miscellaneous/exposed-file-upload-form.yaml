@@ -3,7 +3,7 @@ id: exposed-file-upload-form
 info:
   name: 文件上传表单暴露检测
   author: geeknik
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:creativedream_file_uploader_project:creativedream_file_uploader:*:*:*:*:*:*:*:*
   metadata:

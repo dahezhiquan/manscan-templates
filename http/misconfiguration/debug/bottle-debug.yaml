@@ -3,7 +3,7 @@ id: bottle-debug
 info:
   name: Bottle 调试模式 启用
   author: viondexd
-  severity: info
+  severity: medium
   reference:
     - https://bottlepy.org/docs/dev/tutorial.html#debug-mode
   classification:

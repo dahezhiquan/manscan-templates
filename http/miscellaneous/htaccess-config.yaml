@@ -3,7 +3,7 @@ id: htaccess-config
 info:
   name: HTaccess 配置文件暴露检测
   author: Yash Anand @yashanand155
-  severity: info
+  severity: medium
   metadata:
     max-request: 6
   tags: miscellaneous,misc,config,vuln

@@ -3,7 +3,7 @@ id: aem-bg-servlet
 info:
   name: AEM BG Servlets 检测
   author: DhiyaneshDk
-  severity: info
+  severity: low
   reference:
     - https://www.slideshare.net/0ang3el/hunting-for-security-bugs-in-aem-webapps-129262212
   classification:

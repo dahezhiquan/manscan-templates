@@ -3,7 +3,7 @@ id: exposed-docker-api
 info:
   name: 暴露 Docker API
   author: furkansenan,dwisiswant0
-  severity: info
+  severity: high
   metadata:
     max-request: 2
   tags: docker,unauth,devops,misconfig,vuln

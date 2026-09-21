@@ -3,7 +3,7 @@ id: kong-status-endpoint
 info:
   name: Kong API Gateway Internal 状态 Endpoint
   author: Amjad Ali
-  severity: info
+  severity: medium
   description: |
     检测到 Kong API Gateway Internal 状态 Endpoint。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
   reference:

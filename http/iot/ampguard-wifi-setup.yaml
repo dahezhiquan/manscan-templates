@@ -3,7 +3,7 @@ id: ampguard-wifi-setup
 info:
   name: AmpGuard WiFi 配置面板（IOT）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     检测到 AmpGuard WiFi 配置面板。该页面通常用于无线安全或防护设备的初始配置，暴露在公网时可能泄露设备部署状态和管理入口。
   metadata:

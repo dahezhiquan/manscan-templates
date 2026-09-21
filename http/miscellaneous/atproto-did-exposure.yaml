@@ -3,7 +3,7 @@ id: atproto-did-exposure
 info:
   name: Well-Known ATProto DID 暴露
   author: rxerium
-  severity: info
+  severity: low
   description: |
     检测 Bluesky/AT Protocol 使用的 .well-known/atproto-did 资源。该资源用于将域名与 AT Protocol 的去中心化标识符关联。
   impact: |

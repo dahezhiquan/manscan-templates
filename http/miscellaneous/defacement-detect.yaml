@@ -3,7 +3,7 @@ id: defacement-detect
 info:
   name: 网页篡改内容检测
   author: ricardomaia
-  severity: info
+  severity: high
   description: |
     该模板通过常见路径和响应正文规则检测网页篡改内容，同时识别 spamdexing、黑客行动主义签名和篡改文本片段。路径与正则规则来源于公开研究和经验规则，适合用于发现已被入侵或被恶意替换内容的页面。
   reference:

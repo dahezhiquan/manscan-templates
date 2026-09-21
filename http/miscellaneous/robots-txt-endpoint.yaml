@@ -3,7 +3,7 @@ id: robots-txt-endpoint
 info:
   name: robots.txt 端点探测
   author: CasperGN,pdteam,TheZakMan
-  severity: info
+  severity: low
   metadata:
     max-request: 1
     verified: true

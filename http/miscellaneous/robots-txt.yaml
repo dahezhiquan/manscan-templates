@@ -3,7 +3,7 @@ id: robots-txt
 info:
   name: robots.txt 文件检测
   author: CasperGN,TheZakMan
-  severity: info
+  severity: low
   metadata:
     max-request: 2
   tags: miscellaneous,misc,generic,vuln

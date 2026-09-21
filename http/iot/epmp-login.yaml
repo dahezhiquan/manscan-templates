@@ -3,7 +3,7 @@ id: epmp-login
 info:
   name: ePMP 2000 登录面板（IOT）
   author: dhiyaneshDk
-  severity: info
+  severity: medium
   description: |
     检测到 ePMP 2000 登录面板。该设备通常用于无线宽带网络，公开暴露会增加无线接入设备被口令攻击或配置探测的风险。
   reference:

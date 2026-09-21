@@ -3,7 +3,7 @@ id: security-txt
 info:
   name: security.txt 文件检测
   author: bad5ect0r,noraj
-  severity: info
+  severity: low
   description: |
     检测类似 robots.txt 的 security.txt 文件。该文件面向希望报告安全问题的人员，通常定义漏洞披露联系渠道、安全策略和报告要求。
   reference:

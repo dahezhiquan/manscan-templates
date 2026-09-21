@@ -3,7 +3,7 @@ id: aem-login-status
 info:
   name: AEM 登录 状态
   author: DhiyaneshDk
-  severity: info
+  severity: low
   description: |
     检测到 AEM 登录 状态。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
   reference:

@@ -3,7 +3,7 @@ id: database-error
 info:
   name: 数据库 错误
   author: dhiyaneshDK
-  severity: info
+  severity: low
   metadata:
     max-request: 1
     shodan-query: http.title:"Database Error"

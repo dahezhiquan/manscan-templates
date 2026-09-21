@@ -3,7 +3,7 @@ id: waf-fuzz
 info:
   name: WAF 模糊识别
   author: dwisiswant0,lu4nx,Myst7ic
-  severity: info
+  severity: low
   description: 该模板向目标发送多类带有攻击特征的测试载荷，并依据拦截页面、响应头或返回内容中的指纹特征识别 Web 应用防火墙类型。
   reference:
     - https://github.com/Ekultek/WhatWaf

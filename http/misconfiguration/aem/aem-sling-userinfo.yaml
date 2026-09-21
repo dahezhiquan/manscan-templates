@@ -3,7 +3,7 @@ id: aem-sling-userinfo
 info:
   name: Adobe AEM Sling 用户 Info Servlet 暴露
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   classification:

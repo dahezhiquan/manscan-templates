@@ -3,7 +3,7 @@ id: jboss-web-console
 info:
   name: JBoss 管理 控制台 服务器 Information Page 检测
   author: dhiyaneshDK
-  severity: info
+  severity: medium
   description: |
     检测到 JBoss 管理 控制台 服务器 Information Page 检测。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:

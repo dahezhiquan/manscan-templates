@@ -3,7 +3,7 @@ id: adobe-connect-version
 info:
   name: Adobe Connect Central Version 检测
   author: dhiyaneshDk
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: adobe,misconfig,vuln

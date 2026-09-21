@@ -3,7 +3,7 @@ id: internal-ip-disclosure
 info:
   name: Internal IP 泄露
   author: WillD96
-  severity: info
+  severity: low
   reference:
     - https://support.kemptechnologies.com/hc/en-us/articles/203522429-How-to-Mitigate-Against-Internal-IP-Address-Domain-Name-Disclosure-In-Real-Server-Redirect
   metadata:

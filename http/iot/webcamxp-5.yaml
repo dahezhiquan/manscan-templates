@@ -3,7 +3,7 @@ id: webcamxp-5
 info:
   name: WebcamXP 5 登录面板（IOT）
   author: dhiyaneshDK
-  severity: info
+  severity: medium
   description: |
     检测到 WebcamXP 5 登录面板。该页面与摄像头视频管理服务相关，暴露后可能成为摄像头访问或配置探测入口。
   reference:

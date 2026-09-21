@@ -3,7 +3,7 @@ id: clientaccesspolicy
 info:
   name: Silverlight 跨域策略文件检测
   author: emadshanab
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: miscellaneous,misc,vuln

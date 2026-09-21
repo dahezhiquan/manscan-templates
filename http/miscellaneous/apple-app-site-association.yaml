@@ -3,7 +3,7 @@ id: apple-app-site-association
 info:
   name: Apple App Site Association 端点收集
   author: panch0r3d
-  severity: info
+  severity: low
   metadata:
     max-request: 3
   tags: miscellaneous,misc,apple,vuln

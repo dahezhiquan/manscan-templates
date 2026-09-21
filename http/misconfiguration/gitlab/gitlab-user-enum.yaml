@@ -3,7 +3,7 @@ id: gitlab-user-enum
 info:
   name: GitLab 用户枚举
   author: Suman_Kar
-  severity: info
+  severity: medium
   reference:
     - https://github.com/danielmiessler/SecLists/blob/master/Usernames/Names/malenames-usa-top1000.txt
   metadata:

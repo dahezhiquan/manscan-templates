@@ -3,7 +3,7 @@ id: apc-ups-login
 info:
   name: APC UPS 登录面板（IOT）
   author: droberson
-  severity: info
+  severity: medium
   description: |
     检测到 APC UPS 登录面板。该界面用于管理不间断电源设备，暴露后可帮助攻击者识别供电基础设施的型号与远程管理入口。
   classification:

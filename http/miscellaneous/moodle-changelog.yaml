@@ -3,7 +3,7 @@ id: moodle-changelog
 info:
   name: Moodle Changelog 文件检测
   author: oppsec,lap1nou
-  severity: info
+  severity: low
   description: |
     检测 Moodle changelog 文件是否可访问。该文件记录核心库和 API 变更，可被用于推断 Moodle 版本及潜在受影响范围。
   reference:

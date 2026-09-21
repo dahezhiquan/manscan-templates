@@ -3,7 +3,7 @@ id: spnego-detect
 info:
   name: SPNEGO 认证检测
   author: lady_bug,ruppde
-  severity: info
+  severity: low
   description: |
     检测目标是否启用 SPNEGO (Simple and Protected GSSAPI Negotiation Mechanism)。该机制基于 GSSAPI，常用于 Windows/Kerberos 环境中的 HTTP 单点登录协商认证。
   reference:

@@ -3,7 +3,7 @@ id: email-extractor
 info:
   name: 电子邮件地址提取
   author: panch0r3d
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: miscellaneous,misc,email,generic,discovery

@@ -3,7 +3,7 @@ id: nginx-status
 info:
   name: Nginx 状态页
   author: dhiyaneshDK
-  severity: info
+  severity: medium
   metadata:
     max-request: 2
   tags: misconfig,nginx,status,vuln

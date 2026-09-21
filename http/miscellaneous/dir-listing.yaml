@@ -3,7 +3,7 @@ id: dir-listing
 info:
   name: 目录列出启用检测
   author: _harleo,pentest_swissky,hczdmr
-  severity: info
+  severity: medium
   reference:
     - https://portswigger.net/kb/issues/00600100_directory-listing
   classification:

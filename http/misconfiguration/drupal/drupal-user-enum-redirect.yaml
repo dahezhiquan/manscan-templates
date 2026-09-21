@@ -3,7 +3,7 @@ id: drupal-user-enum-redirect
 info:
   name: Drupal 用户枚举 [Redirect]
   author: 0w4ys
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:drupal:drupal:*:*:*:*:*:*:*:*
   metadata:

@@ -3,7 +3,7 @@ id: loytec-device
 info:
   name: Loytec 设备信息面板（IOT）
   author: pussycat0x
-  severity: info
+  severity: medium
   description: |
     检测到 Loytec 设备信息面板。该页面可用于识别楼宇自动化或控制设备，并可能暴露设备型号和管理入口。
   classification:

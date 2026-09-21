@@ -3,7 +3,7 @@ id: liveview-axis-camera
 info:
   name: AXIS 网络摄像机实时画面识别（IOT）
   author: dhiyaneshDK,f1she3
-  severity: info
+  severity: medium
   description: |
     检测到 AXIS 网络摄像机实时画面页面。该页面暴露可能导致摄像头画面或监控环境信息被未授权访问。
   reference:

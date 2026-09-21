@@ -3,7 +3,7 @@ id: drupal-user-enum-ajax
 info:
   name: Drupal 用户枚举ration [Ajax]
   author: 0w4ys
-  severity: info
+  severity: low
   metadata:
     max-request: 4
     shodan-query:

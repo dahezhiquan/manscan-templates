@@ -3,7 +3,7 @@ id: zebra-printer-detect
 info:
   name: Zebra 打印机面板识别（IOT）
   author: gy741
-  severity: info
+  severity: low
   description: |
     检测到 Zebra 打印机面板。该模板通过 Zebra Technologies 页面特征识别条码、标签或工业打印设备的 Web 管理入口。
   reference:

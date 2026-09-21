@@ -3,7 +3,7 @@ id: network-camera-detect
 info:
   name: 网络摄像机面板识别（IOT）
   author: iamthefrogy
-  severity: info
+  severity: medium
   description: |
     检测到网络摄像机管理或查看面板。该模板用于识别在线摄像设备，公开访问可能暴露设备入口和监控资产信息。
   metadata:

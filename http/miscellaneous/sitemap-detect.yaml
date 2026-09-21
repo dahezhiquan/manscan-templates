@@ -3,7 +3,7 @@ id: sitemap-detect
 info:
   name: Sitemap 文件检测
   author: houdinis
-  severity: info
+  severity: low
   description: |
     检测站点地图文件。sitemap 用于描述网站页面、视频和其他文件及其关系，可帮助搜索引擎或扫描器了解站点结构。
   metadata:

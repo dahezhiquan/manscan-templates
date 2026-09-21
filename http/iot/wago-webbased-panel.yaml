@@ -3,7 +3,7 @@ id: wago-webbased-panel
 info:
   name: WAGO Web-Based Management 面板（IOT）
   author: biero-el-corridor
-  severity: info
+  severity: medium
   description: |
     检测到 WAGO Web-Based Management 面板。该入口用于 WAGO 工业网络或控制设备管理，公网暴露可能泄露工业设备管理面。
   metadata:

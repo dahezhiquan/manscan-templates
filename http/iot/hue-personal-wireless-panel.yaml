@@ -3,7 +3,7 @@ id: hue-personal-wireless-panel
 info:
   name: Philips HUE 个人无线照明面板（IOT）
   author: Hardik-Solanki
-  severity: info
+  severity: medium
   description: |
     检测到 Philips HUE 个人无线照明面板。该面板用于智能照明系统管理，暴露后可能泄露物联网照明设备的控制入口。
   classification:

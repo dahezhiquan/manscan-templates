@@ -3,7 +3,7 @@ id: deprecated-feature-policy
 info:
   name: 已废弃 Feature-Policy 响应头检测
   author: ritikchaddha
-  severity: info
+  severity: low
   description: |
     检测 HTTP 响应中是否仍使用已废弃的 Feature-Policy 头。该响应头已被 Permissions-Policy 替代，虽然部分浏览器仍为兼容性保留支持，但建议迁移到 Permissions-Policy 以避免策略失效或维护风险。
   reference:

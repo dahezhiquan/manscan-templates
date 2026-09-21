@@ -3,7 +3,7 @@ id: prometheus-targets
 info:
   name: Prometheus targets API endpoint 检测
   author: geeknik
-  severity: info
+  severity: medium
   description: |
     检测到 Prometheus targets API endpoint 检测。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
   reference:

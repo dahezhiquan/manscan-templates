@@ -3,7 +3,7 @@ id: seafile-public-registration
 info:
   name: Sea文件 Public 注册已启用
   author: theamanrawat
-  severity: info
+  severity: low
   description: |
     检测到 Sea文件 Public 注册已启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
   reference:

@@ -3,7 +3,7 @@ id: old-copyright
 info:
   name: 旧版权年份页面检测
   author: geeknik
-  severity: info
+  severity: low
   metadata:
     verified: true
     max-request: 1

@@ -3,7 +3,7 @@ id: gitlab-public-snippets
 info:
   name: GitLab public snippets 检测
   author: pdteam
-  severity: info
+  severity: medium
   reference:
     - https://gist.github.com/vysecurity/20311c29d879e0aba9dcffbe72a88b10
     - https://twitter.com/intigriti/status/1375078783338876929

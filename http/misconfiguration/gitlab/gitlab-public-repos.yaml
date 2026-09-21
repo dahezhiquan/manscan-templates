@@ -3,7 +3,7 @@ id: gitlab-public-repos
 info:
   name: GitLab public 仓库itories
   author: ldionmarcil
-  severity: info
+  severity: medium
   reference:
     - https://twitter.com/ldionmarcil/status/1370052344562470922
     - https://github.com/ldionmarcil/gitlab-unauth-parser

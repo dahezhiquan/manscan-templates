@@ -3,7 +3,7 @@ id: microsoft-azure-error
 info:
   name: Microsoft Azure Web App 404 错误页检测
   author: dhiyaneshDK
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:microsoft:azure_app_service_on_azure_stack:*:*:*:*:*:*:*:*
   metadata:

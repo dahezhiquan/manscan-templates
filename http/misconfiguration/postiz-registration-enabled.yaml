@@ -3,7 +3,7 @@ id: postiz-registration-enabled
 info:
   name: Postiz - 用户注册已启用
   author: Th3l0newolf
-  severity: info
+  severity: low
   description: |-
     Postiz 注册页面暴露于公网，允许公开创建账户。不受限制的注册可能使未经授权的用户创建账户。
   classification:

@@ -3,7 +3,7 @@ id: xml-schema-detect
 info:
   name: XML Schema 检测
   author: alph4byt3
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: miscellaneous,misc,generic,vuln

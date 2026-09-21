@@ -3,7 +3,7 @@ id: mta-sts-exposure
 info:
   name: Well-Known MTA-STS 策略暴露
   author: rxerium
-  severity: info
+  severity: low
   description: |
     检测 SMTP MTA-STS 策略文件 (RFC 8461)。该文件用于声明邮件服务器的 TLS 传输安全策略。
   impact: |

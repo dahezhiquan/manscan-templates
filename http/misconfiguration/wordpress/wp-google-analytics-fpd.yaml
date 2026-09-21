@@ -3,7 +3,7 @@ id: wp-google-analytics-fpd
 info:
   name: WordPress Google Analytics 完整路径泄露
   author: 0x_Akoko
-  severity: info
+  severity: low
   description: |
     检测到 WordPress Google Analytics 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
   reference:

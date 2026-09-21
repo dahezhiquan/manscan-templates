@@ -3,7 +3,7 @@ id: options-method
 info:
   name: OPTIONS 方法允许检测
   author: pdteam
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: miscellaneous,misc,generic,vuln

@@ -3,7 +3,7 @@ id: twitter-client-id
 info:
   name: Twitter 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/twitter.yml
     - https://developer.twitter.com/en/docs/authentication/overview

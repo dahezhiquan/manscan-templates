@@ -3,7 +3,7 @@ id: droneci-accesstoken
 info:
   name: Droneci 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/droneci-access-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/droneci-access-token.go

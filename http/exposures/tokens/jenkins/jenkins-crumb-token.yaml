@@ -3,7 +3,7 @@ id: jenkins-crumb-token
 info:
   name: Jenkins 令牌 or Crumb 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/jenkins.yml
     - https://www.jenkins.io/blog/2018/07/02/new-api-token-system/

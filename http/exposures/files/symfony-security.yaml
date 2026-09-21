@@ -3,7 +3,7 @@ id: symfony-security
 info:
   name: Symfony security.YML 文件泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   classification:
     cpe: cpe:2.3:a:sensiolabs:symfony:*:*:*:*:*:*:*:*
   metadata:

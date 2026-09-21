@@ -3,7 +3,7 @@ id: shopify-customapp-token
 info:
   name: Shopify 访问令牌 (Custom App) 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/shopify.yml
     - https://shopify.dev/apps/auth

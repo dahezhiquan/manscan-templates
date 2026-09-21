@@ -3,7 +3,7 @@ id: sass-lint
 info:
   name: Sass Lint 文件暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   reference:
     - https://github.com/sasstools/sass-lint/blob/develop/docs/sass-lint.yml
   metadata:

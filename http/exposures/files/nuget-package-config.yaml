@@ -3,7 +3,7 @@ id: nuget-package-config
 info:
   name: NuGet Package.配置 文件泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   reference:
     - https://learn.microsoft.com/en-us/nuget/reference/packages-config
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt

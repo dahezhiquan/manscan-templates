@@ -3,7 +3,7 @@ id: pinata-api-key
 info:
   name: Pinata API 密钥 Expose 泄露（暴露面识别）
   author: 0xpugal
-  severity: info
+  severity: high
   classification:
     cwe-id: CWE-540
   tags: pinata,exposure,apikey,token,vuln

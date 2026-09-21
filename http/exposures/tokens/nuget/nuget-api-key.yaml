@@ -3,7 +3,7 @@ id: nuget-api-key
 info:
   name: NuGet API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/nuget.yml
     - https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package#create-api-keys

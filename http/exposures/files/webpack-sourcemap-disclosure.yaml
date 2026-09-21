@@ -3,7 +3,7 @@ id: webpack-sourcemap-disclosure
 info:
   name: Webpack Sourcemap 泄露（暴露面识别）
   author: dhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     max-request: 2
   tags: exposure,files,vuln

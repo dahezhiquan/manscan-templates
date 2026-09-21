@@ -3,7 +3,7 @@ id: grafana-cloud-token
 info:
   name: Grafana Cloud API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.go

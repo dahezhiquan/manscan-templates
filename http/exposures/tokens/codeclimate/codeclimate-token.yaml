@@ -3,7 +3,7 @@ id: codeclimate-token
 info:
   name: CodeClimate 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/codeclimate.yml
     - https://github.com/codeclimate/ruby-test-reporter/issues/34

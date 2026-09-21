@@ -3,7 +3,7 @@ id: glpi-status-domain-disclosure
 info:
   name: GLPI 状态 Domain 泄露（暴露面识别）
   author: dogasantos
-  severity: info
+  severity: medium
   metadata:
     max-request: 3
   tags: glpi,exposure,status,files,vuln

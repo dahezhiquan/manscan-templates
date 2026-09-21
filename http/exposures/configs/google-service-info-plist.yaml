@@ -3,7 +3,7 @@ id: google-service-info-plist
 info:
   name: GoogleService-Info.plist 检测（暴露面识别）
   author: cyberguy-somnath
-  severity: info
+  severity: medium
   description: |-
     GoogleService-Info.plist 文件包含 Firebase 项目的敏感信息，包括 Google App ID、Project ID、Client ID、Client Secret 以及 Reversed Client ID。该文件用于在 iOS 应用中认证 Firebase SDK。
   remediation: |-

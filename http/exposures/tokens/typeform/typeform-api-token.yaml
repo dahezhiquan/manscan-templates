@@ -3,7 +3,7 @@ id: typeform-api-token
 info:
   name: Typeform API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/typeform-api-token.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/typeform-api-token.yaml

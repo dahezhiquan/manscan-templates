@@ -3,7 +3,7 @@ id: postman-key
 info:
   name: Postman API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/rules/postman.yml
     - https://learning.postman.com/docs/developer/intro-api/

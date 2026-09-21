@@ -3,7 +3,7 @@ id: openai-api-key
 info:
   name: OpenAI API 密钥泄露（暴露面识别）
   author: DhiyaneshDK,Chemo850
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/openai.yml
     - https://platform.openai.com/docs/api-reference

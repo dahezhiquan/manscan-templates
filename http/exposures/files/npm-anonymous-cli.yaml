@@ -3,7 +3,7 @@ id: npm-anonymous-cli
 info:
   name: NPM 匿名 CLI 指标暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
   metadata:

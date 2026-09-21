@@ -3,7 +3,7 @@ id: sumologic-access-token
 info:
   name: Sumologic 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sumologic-access-token.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sumologic-access-token.yaml

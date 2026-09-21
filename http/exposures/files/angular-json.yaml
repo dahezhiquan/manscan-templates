@@ -3,7 +3,7 @@ id: angular-json
 info:
   name: Angular JSON 文件暴露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: low
   classification:
     cpe: cpe:2.3:a:angularjs:angular:*:*:*:*:node.js:*:*:*
   metadata:

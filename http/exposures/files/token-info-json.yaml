@@ -3,7 +3,7 @@ id: token-info-json
 info:
   name: 令牌 Info JSON 文件泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   classification:
     cpe: cpe:2.3:a:sample_token_project:sample_token:*:*:*:*:*:*:*:*
   metadata:

@@ -3,7 +3,7 @@ id: mailchimp-access-key-value
 info:
   name: Mailchimp API Value 泄露（暴露面识别）
   author: puzzlepeaches
-  severity: info
+  severity: high
   reference:
     - https://mailchimp.com/help/about-api-keys/
   metadata:

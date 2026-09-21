@@ -3,7 +3,7 @@ id: cargo-toml-file
 info:
   name: Cargo TOML 文件泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: low
   reference:
     - https://doc.rust-lang.org/cargo/reference/manifest.html
   classification:

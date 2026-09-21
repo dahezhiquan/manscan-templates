@@ -3,7 +3,7 @@ id: thumbs-db-disclosure
 info:
   name: Thumbs DB 泄露（暴露面识别）
   author: dhiyaneshDk
-  severity: info
+  severity: low
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/thumbs-db-disclosure.json
   metadata:

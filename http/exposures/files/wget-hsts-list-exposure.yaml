@@ -3,7 +3,7 @@ id: wget-hsts-list-exposure
 info:
   name: WGET HSTS 列表 暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 1

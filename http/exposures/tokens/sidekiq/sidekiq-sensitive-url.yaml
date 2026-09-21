@@ -3,7 +3,7 @@ id: sidekiq-sensitive-url
 info:
   name: Sidekiq Sensitive URL 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sidekiq-sensitive-url.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sidekiq-sensitive-url.yaml

@@ -3,7 +3,7 @@ id: insecure-crossdomain
 info:
   name: Insecure cross-domain.XML 文件泄露（暴露面识别）
   author: Borna Nematzadeh,nadino
-  severity: info
+  severity: medium
   reference:
     - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
   metadata:

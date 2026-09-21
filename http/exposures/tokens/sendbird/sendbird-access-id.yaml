@@ -3,7 +3,7 @@ id: sendbird-access-id
 info:
   name: SendBird Access ID 暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sendbird-access-id.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sendbird-access-id.yaml

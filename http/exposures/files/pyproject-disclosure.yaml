@@ -3,7 +3,7 @@ id: pyproject-disclosure
 info:
   name: Pyproject 泄露（暴露面识别）
   author: dhiyaneshDk
-  severity: info
+  severity: medium
   reference:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/pyproject-disclosure.json
   metadata:

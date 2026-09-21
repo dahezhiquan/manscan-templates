@@ -3,7 +3,7 @@ id: thingsboard-access-token
 info:
   name: ThingsBoard 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/thingsboard.yml
     - https://thingsboard.io/docs/paas/reference/http-api/

@@ -3,7 +3,7 @@ id: keycloak-json
 info:
   name: Keycloak JSON 文件泄露（暴露面识别）
   author: oppsec
-  severity: info
+  severity: high
   metadata:
     max-request: 1
   tags: exposure,keycloak,config,files,vuln

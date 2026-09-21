@@ -3,7 +3,7 @@ id: routes-ini
 info:
   name: routes.INI 文件暴露（暴露面识别）
   author: geeknik
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 15

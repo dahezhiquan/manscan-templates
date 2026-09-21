@@ -3,7 +3,7 @@ id: webpack-mix-js
 info:
   name: Webpack Mix 文件泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:webpack.js:webpack:*:*:*:*:node.js:*:*:*
   metadata:

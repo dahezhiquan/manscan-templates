@@ -3,7 +3,7 @@ id: sentry-access-token
 info:
   name: Sentry 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sentry-access-token.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sentry-access-token.yaml

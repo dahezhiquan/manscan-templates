@@ -3,7 +3,7 @@ id: desktop-ini-exposure
 info:
   name: desktop.INI 暴露（暴露面识别）
   author: dhiyaneshDk
-  severity: info
+  severity: low
   metadata:
     max-request: 1
     shodan-query: 'html:"desktop.ini"'

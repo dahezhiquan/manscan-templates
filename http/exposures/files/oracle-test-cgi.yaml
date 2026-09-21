@@ -3,7 +3,7 @@ id: oracle-test-cgi
 info:
   name: Oracle Application Server test-cgi 页面泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:oracle:http_server:*:*:*:*:*:*:*:*
   metadata:

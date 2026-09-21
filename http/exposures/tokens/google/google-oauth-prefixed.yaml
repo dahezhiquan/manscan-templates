@@ -3,7 +3,7 @@ id: google-oauth-prefixed
 info:
   name: Google OAuth 客户端密钥 (prefixed) 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/google.yml
   metadata:

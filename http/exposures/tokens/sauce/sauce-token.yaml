@@ -3,7 +3,7 @@ id: sauce-token
 info:
   name: Sauce 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/sauce.yml
     - https://docs.saucelabs.com/dev/api/

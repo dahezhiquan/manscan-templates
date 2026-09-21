@@ -3,7 +3,7 @@ id: lua-runtime-error
 info:
   name: LUA Runtime Error 页面 泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     max-request: 1
     fofa-query: 'title="Error 500: LUA Runtime Error"'

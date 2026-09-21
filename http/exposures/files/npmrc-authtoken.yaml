@@ -3,7 +3,7 @@ id: npmrc-authtoken
 info:
   name: Hardcoded .npmrc AuthToken 泄露（暴露面识别）
   author: geeknik
-  severity: info
+  severity: high
   reference:
     - https://docs.npmjs.com/cli/v8/configuring-npm/npmrc
     - https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry

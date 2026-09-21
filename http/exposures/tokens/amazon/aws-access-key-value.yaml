@@ -3,7 +3,7 @@ id: aws-access-key-value
 info:
   name: AWS Access Key ID 暴露（暴露面识别）
   author: Swissky
-  severity: info
+  severity: low
   metadata:
     max-request: 1
   tags: exposure,token,aws,amazon,vuln

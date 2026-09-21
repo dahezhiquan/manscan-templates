@@ -3,7 +3,7 @@ id: twitch-api-token
 info:
   name: Twitch API 密钥 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/twitch-api-token.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/twitch-api-token.yaml

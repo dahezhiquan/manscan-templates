@@ -3,7 +3,7 @@ id: vbulletin-path-disclosure
 info:
   name: vBulletin Full Path 泄露（暴露面识别）
   author: MaStErChO
-  severity: info
+  severity: medium
   reference:
     - https://github.com/OWASP/vbscan/blob/master/modules/pathdisclure.pl
   classification:

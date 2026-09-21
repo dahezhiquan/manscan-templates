@@ -3,7 +3,7 @@ id: zendesk-key
 info:
   name: Zendesk 密钥泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/zendesk-secret-key.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/zendesk-secret-key.go

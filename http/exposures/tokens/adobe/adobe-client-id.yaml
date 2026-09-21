@@ -3,7 +3,7 @@ id: adobe-client-id
 info:
   name: Adobe 客户端 ID 暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adobe-client-id.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/adobe-client-id.go

@@ -3,7 +3,7 @@ id: react-app-username
 info:
   name: React App Username 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: low
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/react.yml
     - https://create-react-app.dev/docs/adding-custom-environment-variables/

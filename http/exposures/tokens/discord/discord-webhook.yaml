@@ -3,7 +3,7 @@ id: discord-webhook
 info:
   name: Discord Webhook 泄露（暴露面识别）
   author: Ice3man, apapedulimu
-  severity: info
+  severity: high
   metadata:
     max-request: 1
   tags: exposure,token,discord,vuln

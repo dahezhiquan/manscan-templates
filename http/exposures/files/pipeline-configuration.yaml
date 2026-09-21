@@ -3,7 +3,7 @@ id: pipeline-configuration
 info:
   name: Pipeline 配置暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:jenkins:pipeline\\:*:*:*:*:*:*:*:*
   metadata:

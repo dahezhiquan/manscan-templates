@@ -3,7 +3,7 @@ id: jotform-api-key
 info:
   name: Jotform API 密钥泄露（暴露面识别）
   author: Shankar Acharya
-  severity: info
+  severity: high
   reference:
     - https://www.jotform.com/help/253-how-to-create-a-jotform-api-key/
   metadata:

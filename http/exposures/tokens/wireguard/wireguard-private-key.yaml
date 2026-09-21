@@ -3,7 +3,7 @@ id: wireguard-private-key
 info:
   name: WireGuard 私钥 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/wireguard.yml
     - https://www.wireguard.com/quickstart/

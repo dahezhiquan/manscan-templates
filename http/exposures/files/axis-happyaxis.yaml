@@ -3,7 +3,7 @@ id: axis-happyaxis
 info:
   name: Axis Happyaxis 暴露（暴露面识别）
   author: dogasantos
-  severity: info
+  severity: medium
   metadata:
     max-request: 4
   tags: axis,axis2,middleware,exposure,apache,files,vuln

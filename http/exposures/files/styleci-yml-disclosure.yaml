@@ -3,7 +3,7 @@ id: styleci-yml-disclosure
 info:
   name: StyleCi YAML 文件泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 1

@@ -3,7 +3,7 @@ id: google-oauth-access-key
 info:
   name: Google OAuth 访问密钥泄露（暴露面识别）
   author: Ice3man
-  severity: info
+  severity: high
   metadata:
     max-request: 1
   tags: exposure,token,google,vuln

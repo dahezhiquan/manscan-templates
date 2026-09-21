@@ -3,7 +3,7 @@ id: picatic-api-key
 info:
   name: Picatic API 密钥泄露（暴露面识别）
   author: Ice3man
-  severity: info
+  severity: high
   classification:
     cwe-id: CWE-540
   metadata:

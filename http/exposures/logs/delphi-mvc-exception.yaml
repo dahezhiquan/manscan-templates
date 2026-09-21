@@ -3,7 +3,7 @@ id: delphi-mvc-exception
 info:
   name: Delphi MVC 异常 页面 泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     max-request: 1
     fofa-query: html:"DMVCFramework Exception"

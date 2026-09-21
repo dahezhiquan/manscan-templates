@@ -3,7 +3,7 @@ id: zoho-webhook-token
 info:
   name: Zoho Webhook 泄露（暴露面识别）
   author: Ice3man
-  severity: info
+  severity: high
   metadata:
     max-request: 1
   tags: exposure,token,zoho,vuln

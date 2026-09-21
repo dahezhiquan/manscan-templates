@@ -3,7 +3,7 @@ id: facebook-access-token
 info:
   name: Facebook 访问令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/facebook.yml
     - https://developers.facebook.com/docs/facebook-login/access-tokens/

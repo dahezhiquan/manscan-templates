@@ -3,7 +3,7 @@ id: build-properties
 info:
   name: Build Properties 文件暴露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     verified: true
     max-request: 3

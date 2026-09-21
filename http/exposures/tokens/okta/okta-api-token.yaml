@@ -3,7 +3,7 @@ id: okta-api-token
 info:
   name: Okta API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/okta.yml
     - https://devforum.okta.com/t/api-token-length/5519

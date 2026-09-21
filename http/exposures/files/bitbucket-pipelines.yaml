@@ -3,7 +3,7 @@ id: bitbucket-pipelines
 info:
   name: BitBucket Pipelines 配置暴露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:atlassian:bitbucket:*:*:*:*:*:*:*:*
   metadata:

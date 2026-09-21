@@ -3,7 +3,7 @@ id: scalingo-api-token
 info:
   name: Scalingo API 令牌泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/scalingo-api-token.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/scalingo-api-token.yaml

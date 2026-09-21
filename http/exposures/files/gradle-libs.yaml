@@ -3,7 +3,7 @@ id: gradle-libs
 info:
   name: Gradle Library Version 泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: medium
   classification:
     cpe: cpe:2.3:a:gradle:gradle:*:*:*:*:*:*:*:*
   metadata:

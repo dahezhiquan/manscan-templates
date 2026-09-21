@@ -3,7 +3,7 @@ id: dependency-track-api
 info:
   name: Dependency Track API 密钥泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/dependency_track.yml
     - https://docs.dependencytrack.org/integrations/rest-api/

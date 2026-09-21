@@ -3,7 +3,7 @@ id: redmine-settings
 info:
   name: Redmine settings.YML 文件泄露（暴露面识别）
   author: DhiyaneshDK
-  severity: info
+  severity: high
   reference:
     - https://www.exploit-db.com/ghdb/5796
   classification:

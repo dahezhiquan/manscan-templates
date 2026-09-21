@@ -3,7 +3,7 @@ id: action-controller-exception
 info:
   name: Action Controller 异常 页面 泄露（暴露面识别）
   author: DhiyaneshDk
-  severity: info
+  severity: medium
   metadata:
     max-request: 1
     fofa-query: 'title="Action Controller: Exception caught"'

@@ -3,7 +3,7 @@ id: metasploit-c2
 info:
   name: Metasploit C2 证书识别（证书安全）
   author: pussycat0x
-  severity: info
+  severity: high
   description: 该模板通过证书颁发者字段识别目标是否可能与 Metasploit 命令控制基础设施相关。命中说明对端使用了该框架常见的自签名 CA 特征。
   reference:
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/

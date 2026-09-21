@@ -3,7 +3,7 @@ id: asyncrat-c2
 info:
   name: AsyncRAT C2 证书识别（证书安全）
   author: johnk3r
-  severity: info
+  severity: high
   description: 该模板通过 SSL/TLS 证书颁发者字段识别目标是否可能与 AsyncRAT 命令控制基础设施相关。命中特征通常反映了该恶意家族常见的证书命名习惯。
   reference:
     - https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat

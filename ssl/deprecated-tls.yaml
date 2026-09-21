@@ -3,7 +3,7 @@ id: deprecated-tls
 info:
   name: 弃用 TLS/SSL 协议检测（证书安全）
   author: righettod,forgedhallpass
-  severity: info
+  severity: medium
   description: 该模板检测目标是否仍支持已弃用的 SSLv3、TLS 1.0 或 TLS 1.1 协议版本。命中说明服务端仍允许使用过时的加密协商方式建立连接。
   remediation: |
     - 在服务端 TLS 配置中禁用 SSLv3、TLS 1.0 和 TLS 1.1，仅保留更安全的 TLS 1.2 或 TLS 1.3。

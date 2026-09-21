@@ -3,7 +3,7 @@ id: bitrat-c2
 info:
   name: BitRAT C2 证书识别（证书安全）
   author: pussycat0x
-  severity: info
+  severity: high
   description: 该模板通过证书颁发者字段识别目标是否可能与 BitRAT 命令控制基础设施相关。命中说明远端证书指纹与该家族常见部署特征相符。
   reference:
     https://github.com/thehappydinoa/awesome-censys-queries#bitrat--

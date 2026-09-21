@@ -3,7 +3,7 @@ id: icedid
 info:
   name: IcedID 基础设施证书识别（证书安全）
   author: pussycat0x
-  severity: info
+  severity: high
   description: 该模板通过证书主题字段识别目标是否可能与 IcedID（BokBot）相关基础设施匹配。命中说明远端证书与该家族常见部署特征一致。
   metadata:
     verified: "true"

@@ -1,7 +1,7 @@
 id: ikev2-vid-version
 
 info:
-  name: IKEv2 Vendor ID 与版本识别（服务漏洞）
+  name: IKEv2 Vendor ID 与版本识别（指纹识别）
   author: pussycat0x
   severity: low
   description: |
@@ -15,7 +15,7 @@ info:
     max-request: 1
     shodan-query: "port:500 product:IKE"
     fofa-query: "port=\"500\" && protocol=\"isakmp\""
-  tags: js,network,udp,ikev2,ipsec,vpn,ike,enum
+  tags: js,network,udp,ikev2,ipsec,vpn,ike,enum,detect
 
 javascript:
   - pre-condition: |

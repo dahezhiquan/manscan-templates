@@ -1,7 +1,7 @@
 id: smb-version-detect
 
 info:
-  name: SMB 版本识别（服务漏洞）
+  name: SMB 版本识别（指纹识别）
   author: pussycat0x
   severity: low
   description: |
@@ -11,7 +11,7 @@ info:
     shodan-query: "port:445"
     product: dionaea
     vendor: dionaea
-  tags: js,network,smb,enum,discovery
+  tags: js,network,smb,enum,discovery,detect
 
 javascript:
   - pre-condition: |

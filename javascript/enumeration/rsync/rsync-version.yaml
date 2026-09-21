@@ -1,7 +1,7 @@
 id: rsync-version
 
 info:
-  name: Rsync 版本识别（服务漏洞）
+  name: Rsync 版本识别（指纹识别）
   author: DhiyaneshDK
   severity: low
   description: |
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:"873"
-  tags: js,network,rsync,enum,discovery
+  tags: js,network,rsync,enum,discovery,detect
 
 javascript:
   - pre-condition: |

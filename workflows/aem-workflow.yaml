@@ -5,6 +5,6 @@ info:
   author: dhiyaneshDK
   description: 该工作流会在给定目标上运行所有与 Adobe Experience Manager 相关的 manscan 模板。
 workflows:
-  - template: http/technologies/aem-detect.yaml
+  - template: http/technologies/adobe-aem-detect.yaml
     subtemplates:
       - tags: aem

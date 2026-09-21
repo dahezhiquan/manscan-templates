@@ -5,6 +5,6 @@ info:
   author: daffainfo
   description: 该工作流会在给定目标上运行所有与 CirCarLife 相关的 manscan 模板。
 workflows:
-  - template: http/misconfiguration/installer/circarlife-setup.yaml
+  - template: http/misconfiguration/installer/circarlife-installer.yaml
     subtemplates:
       - tags: circarlife

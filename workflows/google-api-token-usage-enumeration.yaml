@@ -5,48 +5,48 @@ info:
   author: tanq16
   description: 该工作流用于枚举已暴露 Google API Key 的可用权限范围。当前端页面或源代码中发现此类密钥后，可借助相关模板验证其是否可被未授权调用；如果调用范围未受限制，攻击者还可能批量发起请求，给密钥所有者带来异常 API 消耗和高额账单风险。
 workflows:
-  - template: http/token-spray/google-autocomplete.yaml
+  - template: http/token-spray/api-googleautocomplete.yaml
 
-  - template: http/token-spray/google-books.yaml
+  - template: http/token-spray/api-googlebooks.yaml
 
-  - template: http/token-spray/google-customsearch.yaml
+  - template: http/token-spray/api-googlecustomsearch.yaml
 
-  - template: http/token-spray/google-directions.yaml
+  - template: http/token-spray/api-googledirections.yaml
 
-  - template: http/token-spray/google-elevation.yaml
+  - template: http/token-spray/api-googleelevation.yaml
 
-  - template: http/token-spray/google-fcm.yaml
+  - template: http/token-spray/api-googlefcm.yaml
 
-  - template: http/token-spray/google-findplacefromtext.yaml
+  - template: http/token-spray/api-googlefindplacefromtext.yaml
 
-  - template: http/token-spray/google-gedistancematrix.yaml
+  - template: http/token-spray/api-googledistancematrix.yaml
 
-  - template: http/token-spray/google-geocode.yaml
+  - template: http/token-spray/api-googlegeocode.yaml
 
-  - template: http/token-spray/google-geolocation.yaml
+  - template: http/token-spray/api-googlegeolocation.yaml
 
-  - template: http/token-spray/google-mapsembed.yaml
+  - template: http/token-spray/api-googlemapsembed.yaml
 
-  - template: http/token-spray/google-mapsembedadvanced.yaml
+  - template: http/token-spray/api-googlemapsembedadvanced.yaml
 
-  - template: http/token-spray/google-nearbysearch.yaml
+  - template: http/token-spray/api-googlenearbysearch.yaml
 
-  - template: http/token-spray/google-nearestroads.yaml
+  - template: http/token-spray/api-googlenearestroads.yaml
 
-  - template: http/token-spray/google-placedetails.yaml
+  - template: http/token-spray/api-google-place-details.yaml
 
-  - template: http/token-spray/google-placesphoto.yaml
+  - template: http/token-spray/api-googleplacesphoto.yaml
 
-  - template: http/token-spray/google-playablelocations.yaml
+  - template: http/token-spray/api-googleplayablelocations.yaml
 
-  - template: http/token-spray/google-routetotraveled.yaml
+  - template: http/token-spray/api-googleroutetotraveled.yaml
 
-  - template: http/token-spray/google-speedlimit.yaml
+  - template: http/token-spray/api-googlespeedlimit.yaml
 
-  - template: http/token-spray/google-staticmaps.yaml
+  - template: http/token-spray/api-googlestaticmaps.yaml
 
-  - template: http/token-spray/google-streetview.yaml
+  - template: http/token-spray/api-googlestreetview.yaml
 
-  - template: http/token-spray/google-timezone.yaml
+  - template: http/token-spray/api-googletimezone.yaml
 
-  - template: http/token-spray/google-textsearchplaces.yaml
+  - template: http/token-spray/api-googletextsearchplaces.yaml

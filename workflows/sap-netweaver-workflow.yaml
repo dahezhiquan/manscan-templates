@@ -5,7 +5,7 @@ info:
   author: dwisiswant0
   description: 该工作流会在给定目标上运行所有与 SAP NetWeaver 相关的 manscan 模板。
 workflows:
-  - template: http/technologies/sap/sap-netweaver-detect.yaml
+  - template: http/technologies/sap/webserver-sap-netweaver-detect.yaml
     subtemplates:
       - template: http/cves/2020/CVE-2020-6287.yaml
 

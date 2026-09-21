@@ -8,6 +8,6 @@ info:
     - https://melbadry9.gitbook.io/blog/dangling-dns/xyz-services/ddns-worksites
 
 workflows:
-  - template: dns/worksites-detection.yaml
+  - template: dns/detect-worksites.yaml
     subtemplates:
       - template: http/takeovers/worksites-takeover.yaml

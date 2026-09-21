@@ -5,6 +5,6 @@ info:
   author: micha3lb3n
   description: 该工作流会在给定目标上运行所有与 Jira 相关的 manscan 模板。
 workflows:
-  - template: http/technologies/jira-detect.yaml
+  - template: http/technologies/atlassian-jira-detect.yaml
     subtemplates:
       - tags: jira

@@ -5,6 +5,6 @@ info:
   author: pathtaga
   description: 该工作流会在给定目标上运行所有与 Tomcat 相关的 manscan 模板。
 workflows:
-  - template: http/technologies/apache/tomcat-detect.yaml
+  - template: http/technologies/apache/apache-tomcat-detect.yaml
     subtemplates:
       - tags: tomcat

@@ -21,6 +21,7 @@ http:
     redirects: false
     matchers:
       - type: dsl
+        internal: true
         dsl:
           - 'status_code == 302'
   - method: POST
@@ -37,6 +38,7 @@ http:
       ------WebKitFormBoundary{{rboundary}}--
     matchers:
       - type: dsl
+        internal: true
         dsl:
           - 'status_code == 200 && contains(body, "logoImg")'
   - method: GET

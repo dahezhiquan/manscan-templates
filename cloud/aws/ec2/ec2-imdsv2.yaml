@@ -1,19 +1,21 @@
 id: ec2-imdsv2
 info:
-  name: Enforce IMDSv2 on EC2 Instances（云安全）
+  name: EC2 实例未强制使用 IMDSv2（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS EC2 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: EC2 实例未强制使用 IMDSv2 是一类实例元数据服务防护不足风险，实例仍允许使用 IMDSv1 访问临时凭据和元数据。IMDSv2 通过会话令牌降低 SSRF 等路径直接获取实例角色凭据的风险。模板枚举 EC2 实例 ID 后读取 `MetadataOptions.HttpTokens`，当值为 `optional` 时判定未强制使用 IMDSv2。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 存在 SSRF 或本机进程被利用时，攻击者更容易尝试访问实例元数据并获取临时凭据。
+    - 如果实例角色权限较高，泄露的临时凭据可能被用于访问其他 AWS 资源。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将 EC2 实例元数据选项中的 `HttpTokens` 设置为 `required`，强制使用 IMDSv2。
+    - 验证实例内应用和代理均兼容 IMDSv2 token 获取流程，再批量推广到生产实例。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 variables:
   region: "us-east-1"

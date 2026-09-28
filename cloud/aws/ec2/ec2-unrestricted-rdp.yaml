@@ -1,17 +1,20 @@
 id: ec2-unrestricted-rdp
 info:
-  name: Restrict EC2 RDP 访问（云安全）
+  name: EC2 安全组对公网开放 RDP 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 RDP 端口是一类远程管理入口暴露风险，TCP 3389 面向任意来源会显著增加密码爆破、凭据喷洒和远程桌面漏洞利用风险。RDP 应通过堡垒机、VPN 或 SSM 等受控路径访问。模板通过 `describe-security-groups` 筛选 3389 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - Windows 实例可能遭受互联网级爆破和漏洞利用，导致主机被接管。
+    - 攻击者获得远程桌面访问后，可窃取凭据、植入持久化并横向移动。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 3389 端口入站规则，仅允许堡垒机、VPN 或可信运维网段访问。
+    - 优先使用 SSM Session Manager，启用 MFA、强口令和主机登录审计。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

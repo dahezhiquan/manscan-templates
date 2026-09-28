@@ -1,17 +1,20 @@
 id: ec2-unrestricted-mssql
 info:
-  name: Unrestricted 访问 to SQL on EC2（云安全）
+  name: EC2 安全组对公网开放 Microsoft SQL Server 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 Microsoft SQL Server 端口是一类数据库服务暴露风险，TCP 1433 面向任意来源会增加账号爆破、数据库探测和漏洞利用风险。数据库端口通常应仅对应用私有子网或受控管理网络开放。模板通过 `describe-security-groups` 筛选 1433 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - SQL Server 可被互联网扫描和爆破，弱口令或漏洞可能导致数据库被接管。
+    - 数据库暴露会增加敏感数据泄露、篡改和勒索攻击风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 1433 端口入站规则，仅允许应用层或受控运维网络访问。
+    - 强化数据库认证、补丁、审计和传输加密，避免数据库服务直接暴露。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

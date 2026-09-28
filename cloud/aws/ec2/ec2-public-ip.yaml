@@ -1,19 +1,21 @@
 id: ec2-public-ip
 info:
-  name: Public IP on EC2 Instances（云安全）
+  name: EC2 实例绑定公网 IP（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 实例绑定公网 IP 是一类公网暴露面扩大风险，实例网络接口可直接从互联网寻址。即使安全组限制了端口，公网地址仍会增加扫描、误配置暴露和后续攻击面。模板枚举 EC2 实例 ID 后读取网络接口公网地址关联信息，当 `IpOwnerId` 包含 `amazon` 时判定实例存在 AWS 分配的公网 IP。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 实例更容易被互联网扫描和指纹识别，安全组误配置时会快速暴露服务。
+    - 管理服务、调试端口或业务端口若同时开放，可能导致未授权访问或横向入口被建立。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对不需要公网访问的实例移除公网 IP，并放置在私有子网中。
+    - 通过负载均衡、堡垒机、SSM Session Manager 或 VPN 提供受控访问路径。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses
   metadata:
     max-request: 2
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 variables:
   region: "us-east-1"

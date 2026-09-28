@@ -1,19 +1,22 @@
 id: eks-aws-managed-iam-policy
 
 info:
-  name: Use AWS-managed policy to manage AWS resources（云安全）
+  name: EKS 集群角色未使用推荐 AWS 托管策略（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EKS 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: EKS 集群角色未使用推荐 AWS 托管策略是一类集群控制面 IAM 权限配置风险，集群可能缺少 AWS 维护的必要权限边界和服务集成权限。错误或自定义不完整的角色策略可能导致集群管理 AWS 资源失败，也可能引入过宽授权。模板枚举 EKS 集群并读取 `cluster.roleArn`，再检查该角色附加策略中是否缺少 `arn:aws:iam::aws:policy/AmazonEKSClusterPolicy`。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 集群控制面可能无法正常管理所需 AWS 资源，影响集群创建、升级或运行稳定性。
+    - 自定义策略若过宽或长期未维护，可能增加 EKS 控制面角色被滥用的影响范围。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 为 EKS 集群 IAM 角色附加 AWS 推荐的 `AmazonEKSClusterPolicy`，并移除不必要的过宽权限。
+    - 定期审计集群角色的附加策略和信任策略，确保权限满足服务需求且不过度授权。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/eks-aws-managed-iam-policy.html
     - https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

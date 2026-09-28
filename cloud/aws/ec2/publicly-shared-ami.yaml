@@ -1,19 +1,21 @@
 id: publicly-shared-ami
 info:
-  name: Publicly Shared AMI（云安全）
+  name: EC2 AMI 被公开共享（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 AMI 被公开共享是一类镜像资产泄露风险，任何 AWS 账户都可能基于该镜像启动实例。AMI 可能包含系统配置、软件版本、脚本、密钥残留或敏感业务文件，公开共享会扩大信息泄露和供应链滥用风险。模板枚举当前账户自有 AMI 后读取 `Images[*].Public`，当值为 `true` 时判定 AMI 已公开。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 镜像中的配置、软件清单、历史文件或凭据残留可能被外部账户获取。
+    - 攻击者可分析镜像弱点，针对基于同一 AMI 部署的实例制定攻击路径。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 取消不必要的 AMI 公开共享，仅向明确需要的 AWS 账户或组织共享。
+    - 发布镜像前清理凭据、日志、临时文件和敏感配置，并建立 AMI 共享审批流程。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ami,aws-cloud-config
 variables:
   region: "us-east-1"

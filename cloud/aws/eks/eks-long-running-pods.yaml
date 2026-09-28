@@ -1,19 +1,22 @@
 id: eks-long-running-pods
 
 info:
-  name: EKS Long Running Pods（云安全）
+  name: EKS 存在长时间运行的 Pod（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS EKS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: EKS 存在长时间运行的 Pod 是一类工作负载补丁和运行状态管理风险，长期未重建的 Pod 可能继续运行旧镜像、旧配置或未刷新凭据。Kubernetes Pod 本身是短生命周期对象，过长运行时间通常意味着滚动更新、镜像更新或节点维护流程可能不足。模板更新 kubeconfig 后查询所有命名空间中 Running 状态的 Pod，并通过创建时间筛选运行超过 `days` 阈值的对象。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 长时间运行的 Pod 可能错过基础镜像、依赖包和运行时配置更新。
+    - 凭据、配置或挂载内容长期不刷新，可能增加泄露后的持续有效时间和运维漂移风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对长期运行的工作负载执行滚动重启或重新部署，确保镜像和配置处于受控版本。
+    - 建立镜像更新、节点维护和凭据轮换流程，并为关键命名空间设置运行时长巡检。
   reference:
     - https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
     - https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

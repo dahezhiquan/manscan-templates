@@ -1,17 +1,20 @@
 id: ec2-unrestricted-smtp
 info:
-  name: Unrestricted SMTP 访问 中的EC2（云安全）
+  name: EC2 安全组对公网开放 SMTP 端口（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 SMTP 端口是一类邮件服务滥用风险，TCP 25 面向任意来源可能被用于开放中继探测、垃圾邮件发送或邮件服务漏洞攻击。SMTP 服务应只对必要邮件系统或受信任来源开放。模板通过 `describe-security-groups` 筛选 25 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 邮件服务可能被滥用发送垃圾邮件，导致 IP 声誉下降或服务受限。
+    - 暴露的 SMTP 服务可能遭受枚举、爆破或漏洞利用，影响邮件系统安全。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 25 端口入站规则，仅允许必要邮件网关或可信来源访问。
+    - 禁用开放中继，启用认证、速率限制、日志审计和反滥用策略。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

@@ -1,17 +1,20 @@
 id: ec2-unrestricted-ssh
 info:
-  name: Unrestricted SSH 访问 中的EC2（云安全）
+  name: EC2 安全组对公网开放 SSH 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 SSH 端口是一类远程管理入口暴露风险，TCP 22 面向任意来源会显著增加凭据爆破、密钥泄露后滥用和 SSH 服务漏洞利用风险。SSH 应通过堡垒机、VPN、SSM Session Manager 或可信运维网段访问。模板通过 `describe-security-groups` 筛选 22 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - Linux 实例可能遭受互联网级爆破和漏洞利用，导致主机被接管。
+    - 攻击者获得 SSH 访问后，可窃取云凭据、植入后门并进一步横向移动。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 22 端口入站规则，仅允许堡垒机、VPN 或可信运维网段访问。
+    - 优先使用 SSM Session Manager，禁用密码登录并定期轮换 SSH 密钥。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

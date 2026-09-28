@@ -1,19 +1,22 @@
 id: dms-version-upgrade
 
 info:
-  name: DMS Auto Minor Version Upgrade（云安全）
+  name: DMS 自动小版本升级未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS DMS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: DMS 自动小版本升级未启用是一类补丁与稳定性维护风险，复制实例可能无法自动获得兼容的小版本修复。小版本通常包含缺陷修复、安全更新或引擎稳定性改进，长期关闭会增加迁移任务运行风险。模板先枚举 DMS 复制实例 ARN，再读取 `ReplicationInstances[*].AutoMinorVersionUpgrade`，当值为 `false` 时判定未启用自动小版本升级。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 复制实例可能长期停留在旧小版本，错过兼容范围内的缺陷修复和安全改进。
+    - 手工升级流程遗漏时，迁移链路稳定性和安全基线会持续落后。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 DMS 复制实例启用自动小版本升级，并结合维护窗口控制升级时间。
+    - 对关键迁移任务保留升级前验证和回退预案，确保补丁应用不会影响业务连续性。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/DMS/auto-minor-version-upgrade.html
     - https://docs.aws.amazon.com/cli/latest/reference/dms/index.html
+  metadata:
+    vendor: amazon
+    product: dms
   tags: cloud,devops,aws,amazon,dms,aws-cloud-config
 
 variables:

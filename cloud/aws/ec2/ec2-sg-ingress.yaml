@@ -1,19 +1,21 @@
 id: ec2-sg-ingress
 info:
-  name: Unrestricted 访问 on Uncommon EC2 Ports（云安全）
+  name: EC2 安全组入站规则对所有地址开放（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组入站规则对所有地址开放是一类公网入站访问控制不足风险，实例端口可能接受来自任意 IPv4 或 IPv6 地址的连接。安全组是实例网络边界的关键控制，过宽入站规则会放大暴力破解、漏洞扫描和未授权访问风险。模板枚举含公网入站规则的安全组并读取 `IpPermissions`，当规则包含 `0.0.0.0/0` 或 `::/0` 时判定命中。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 暴露端口可能被互联网扫描、爆破或利用，尤其是管理、数据库和内部服务端口。
+    - 一旦实例服务存在弱认证或漏洞，攻击者可能获得初始访问并进一步横向移动。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 按最小权限收敛安全组入站 CIDR，仅允许可信办公网、VPN、负载均衡或必要对端访问。
+    - 对管理端口优先使用 SSM Session Manager、堡垒机或私有网络访问，避免直接面向公网。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 variables:
   region: "us-east-1"

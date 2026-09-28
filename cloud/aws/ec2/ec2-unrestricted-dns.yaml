@@ -1,17 +1,20 @@
 id: ec2-unrestricted-dns
 info:
-  name: Unrestricted DNS 访问 中的EC2（云安全）
+  name: EC2 安全组对公网开放 DNS 端口（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 DNS 端口是一类名称解析服务暴露风险，端口 53 面向任意来源可能被用于开放递归解析、反射放大或域名枚举。除权威 DNS 或明确设计的解析入口外，EC2 上的 DNS 服务通常不应无差别暴露。模板通过 `describe-security-groups` 筛选 53 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 开放 DNS 服务可能被滥用于反射放大攻击，产生异常流量和声誉风险。
+    - 内部域名或解析行为可能被外部枚举，暴露网络结构和服务信息。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 53 端口入站规则，或仅保留明确需要的权威 DNS 服务入口。
+    - 禁用开放递归解析，并限制解析服务只接受受信任网段请求。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

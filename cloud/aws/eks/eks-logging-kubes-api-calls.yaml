@@ -1,19 +1,22 @@
 id: eks-logging-kubes-api-calls
 
 info:
-  name: Enable CloudTrail 日志记录 的Kubernetes API Calls（云安全）
+  name: EKS API 调用未通过 CloudTrail 持续记录（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EKS 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: EKS API 调用未通过 CloudTrail 持续记录是一类 AWS 控制面审计缺失风险，针对 Amazon EKS 的 API 操作可能无法持续投递到审计日志。CloudTrail 可记录调用主体、来源 IP、时间和请求信息，缺失时会影响 EKS 集群生命周期操作的追踪。模板枚举 CloudTrail trail 名称并读取 `get-trail-status` 的 `IsLogging`，当值为 `false` 时判定相关审计记录未持续开启。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - EKS 集群创建、更新、删除等控制面 API 调用可能缺少持续审计记录。
+    - 发生异常变更或凭据滥用时，安全团队难以还原调用主体和来源。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 确保至少一个覆盖 EKS 所在区域的 CloudTrail trail 处于 logging 状态。
+    - 将 CloudTrail 日志集中投递到受控位置，并为高风险 EKS API 操作配置告警。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/eks-logging-kubes-api-calls.html
     - https://docs.aws.amazon.com/eks/latest/userguide/logging-using-cloudtrail.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

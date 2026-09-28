@@ -1,17 +1,20 @@
 id: ec2-unrestricted-ftp
 info:
-  name: Restrict EC2 FTP 访问（云安全）
+  name: EC2 安全组对公网开放 FTP 端口（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 FTP 端口是一类明文文件传输服务暴露风险，端口 20/21 面向互联网会增加凭据泄露、爆破和未授权文件访问风险。FTP 缺少默认传输加密，通常应被 SFTP、FTPS 或受控传输通道替代。模板通过 `describe-security-groups` 筛选 20/21 端口且来源为 `0.0.0.0/0` 的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - FTP 凭据和文件内容可能以明文传输，被中间网络窃听或篡改。
+    - 暴露的 FTP 服务可能被爆破、匿名访问或利用服务端漏洞获取文件系统访问。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 20/21 端口入站规则，停止直接暴露 FTP 服务。
+    - 使用 SFTP、FTPS 或私有网络传输方案，并限制来源 IP 和账号权限。
   reference:
     - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#security-group-rules
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,ec2,aws-cloud-config
 
 variables:

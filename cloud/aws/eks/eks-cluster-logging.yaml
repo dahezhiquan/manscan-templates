@@ -1,19 +1,22 @@
 id: eks-cluster-logging
 
 info:
-  name: Kubernetes Cluster 日志记录（云安全）
+  name: EKS 控制平面日志未完整启用（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 AWS EKS 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: EKS 控制平面日志未完整启用是一类 Kubernetes 控制面审计与可观测性缺失风险，API server、audit、authenticator 等日志缺失会削弱异常操作追踪能力。控制平面日志是调查权限滥用、配置变更和集群异常的重要证据来源。模板枚举 EKS 集群后读取 `cluster.logging.clusterLogging[*].enabled`，当存在 `false` 或没有启用项时判定日志未完整开启。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 集群 API 调用、认证失败或审计事件可能缺少日志证据，影响入侵调查。
+    - 安全团队难以及时发现异常资源创建、权限变更和可疑控制面操作。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 EKS 集群启用所需控制平面日志类型，至少覆盖 audit、api 和 authenticator 等关键日志。
+    - 将日志集中到 CloudWatch Logs 或安全日志平台，并配置保留周期、告警和访问控制。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/cluster-logging.html
     - https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

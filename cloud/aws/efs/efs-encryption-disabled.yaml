@@ -1,19 +1,22 @@
 id: efs-encryption-disabled
 
 info:
-  name: EFS 加密 -未启用（云安全）
+  name: EFS 文件系统未启用加密（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS EFS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: EFS 文件系统未启用加密是一类共享文件存储静态数据保护不足风险，文件系统中的业务文件可能缺少 KMS 加密边界。EFS 常被多个工作负载挂载共享，未加密会扩大敏感文件在底层存储层面的暴露风险。模板枚举 EFS 文件系统 ID 后读取 `FileSystems[*].Encrypted`，当值为 `false` 时判定文件系统未启用加密。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 共享文件系统中的业务数据缺少静态加密保护，可能不满足内部或行业合规要求。
+    - 无法通过 KMS key policy 和密钥审计对文件系统数据访问边界进行统一治理。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 新建 EFS 文件系统时启用静态加密，并选择符合组织要求的 KMS 密钥。
+    - 对既有未加密文件系统，规划迁移到启用加密的新文件系统并验证挂载和权限配置。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/ElastiCache/in-transit-and-at-rest-encryption.html
     - https://docs.aws.amazon.com/efs/latest/ug/encryption.html
+  metadata:
+    vendor: amazon
+    product: efs
   tags: cloud,devops,aws,amazon,efs-encryption-disabled,aws-cloud-config
 
 variables:

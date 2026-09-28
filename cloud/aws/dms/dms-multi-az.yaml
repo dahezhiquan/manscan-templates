@@ -1,19 +1,22 @@
 id: dms-multi-az
 
 info:
-  name: DMS Multi-AZ未启用（云安全）
+  name: DMS 复制实例未启用 Multi-AZ（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS DMS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: AWS DMS 复制实例未启用 Multi-AZ 是一类迁移链路高可用能力不足风险，实例所在可用区故障时可能影响持续复制或迁移任务。Multi-AZ 可为复制实例提供备用可用区承载能力，降低单可用区故障导致的数据同步中断。模板先枚举 DMS 复制实例 ARN，再读取 `ReplicationInstances[*].MultiAZ`，当值为 `false` 时判定未启用 Multi-AZ。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 可用区故障或实例维护期间，数据库迁移、同步任务可能中断或延迟。
+    - 对生产迁移或持续复制链路而言，单可用区部署会降低业务连续性和恢复能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对关键 DMS 复制实例启用 Multi-AZ，并在维护窗口内验证切换和任务恢复表现。
+    - 将复制实例高可用配置纳入迁移方案评审和持续巡检，避免生产链路使用单可用区实例。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/DMS/multi-az.html
     - https://docs.aws.amazon.com/cli/latest/reference/dms/describe-replication-instances.html
+  metadata:
+    vendor: amazon
+    product: dms
   tags: cloud,devops,aws,amazon,dms,aws-cloud-config
 
 variables:

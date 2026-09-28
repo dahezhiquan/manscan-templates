@@ -1,17 +1,20 @@
 id: ec2-unrestricted-opensearch
 info:
-  name: Unrestricted OpenSearch 访问（云安全）
+  name: EC2 安全组对公网开放 OpenSearch 端口（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS EC2 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: EC2 安全组对公网开放 OpenSearch 端口是一类搜索与分析服务暴露风险，9200 端口面向任意来源可能导致索引数据被枚举、查询或篡改。OpenSearch/Elasticsearch 类服务通常应位于私有网络，并通过应用层或受控代理访问。模板通过 `describe-security-groups` 筛选 9200 端口且来源为公网网段的入站规则，并输出命中的安全组 ID。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 搜索索引中的日志、业务文档或个人数据可能被未授权查询和导出。
+    - 攻击者可能利用暴露的 API 修改索引、删除数据或进一步攻击后端服务。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向公网的 9200 端口入站规则，仅允许应用层或受控管理网段访问。
+    - 为 OpenSearch 启用认证授权、TLS、审计日志和索引级访问控制。
   reference:
     - https://en.wikipedia.org/wiki/OpenSearch
+  metadata:
+    vendor: amazon
+    product: ec2
   tags: cloud,devops,aws,amazon,opensearch,aws-cloud-config
 
 variables:

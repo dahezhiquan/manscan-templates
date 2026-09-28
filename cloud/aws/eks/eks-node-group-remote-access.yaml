@@ -1,19 +1,22 @@
 id: eks-node-group-remote-access
 
 info:
-  name: EKS Node Group Remote 访问 Configuration（云安全）
+  name: EKS 节点组启用远程访问配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EKS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: EKS 节点组启用远程访问配置是一类工作节点管理面暴露风险，托管节点组可能配置了 SSH 远程访问入口。节点通常承载 Pod、凭据和集群网络权限，直接远程登录能力会扩大被爆破或凭据泄露后的影响。模板枚举 EKS 集群和节点组后读取 `nodegroup.remoteAccess`，当该配置不为 `null` 时判定节点组启用了远程访问。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 节点 SSH 入口可能被扫描、爆破或凭据滥用，导致工作节点被接管。
+    - 攻击者控制节点后可能读取本地凭据、影响 Pod 或进一步攻击集群网络。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对托管节点组禁用不必要的远程访问配置，优先使用 SSM Session Manager 等受控运维方式。
+    - 如确需 SSH，限制来源安全组和 CIDR，使用短期凭据并开启主机访问审计。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/eks-node-group-remote-access.html
     - https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

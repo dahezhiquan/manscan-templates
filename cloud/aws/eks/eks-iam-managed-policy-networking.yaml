@@ -1,19 +1,22 @@
 id: eks-iam-managed-policy-networking
 
 info:
-  name: Use AWS-managed policy to Manage Networking Resources（云安全）
+  name: EKS 节点角色未使用推荐 CNI 托管策略（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS EKS 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: EKS 节点角色未使用推荐 CNI 托管策略是一类集群网络组件 IAM 权限配置风险，Amazon VPC CNI 可能缺少管理弹性网卡和 Pod IP 地址所需的标准权限。自定义或缺失策略可能导致 Pod 网络异常，过宽策略则扩大节点角色被滥用后的影响。模板枚举集群和节点组，读取 `nodegroup.nodeRole` 后检查角色附加策略中是否缺少 `arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy`。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - VPC CNI 权限不足可能导致 Pod 网络分配失败、节点不可用或工作负载异常。
+    - 节点角色权限设计不当会扩大被攻陷节点对 VPC 网络资源的影响范围。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 为需要运行 VPC CNI 的节点角色附加 AWS 推荐的 `AmazonEKS_CNI_Policy` 或等效最小权限策略。
+    - 定期审计节点角色附加策略，移除不必要的通配权限和历史遗留权限。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/aws/EKS/eks-iam-managed-policy-networking.html
     - https://docs.aws.amazon.com/eks/latest/userguide/cni-iam-role.html
+  metadata:
+    vendor: amazon
+    product: eks
   tags: cloud,devops,aws,amazon,eks,aws-cloud-config
 
 variables:

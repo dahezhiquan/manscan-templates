@@ -1,10 +1,16 @@
 id: unattached-vminstance-encryption-disabled
 
 info:
-  name: 加密 的VM Instance Disks -未启用（云安全）
+  name: 阿里云 ECS 实例云盘未启用加密（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 ECS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: ECS 实例挂载的系统盘或数据盘未启用加密时，实例业务数据和系统数据缺少 KMS 静态数据保护。模板先从 DescribeDisks 提取已挂载磁盘的 InstanceId，再按实例查询云盘详情，当存在 InstanceId 非空且 Encrypted 为 false 的磁盘时判定该实例云盘未启用加密。
+  impact: |
+    - 实例系统盘或数据盘中的业务数据、配置、日志和凭据可能在快照、镜像复制或磁盘迁移过程中以未加密形式保留。
+    - 不满足静态数据加密要求的实例会增加数据泄露、合规审计不通过和密钥治理缺失风险。
+  remediation: |
+    - 对系统盘，先创建自定义镜像并复制为加密镜像，再基于加密镜像重建实例或替换操作系统。
+    - 对数据盘，创建快照并复制为加密快照，再创建新的加密数据盘并迁移数据；生产变更前应验证兼容性和回滚方案。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ECS/encrypt-vm-instance-disks.html
     - https://www.alibabacloud.com/help/en/ecs/user-guide/encrypt-a-system-disk
@@ -12,6 +18,8 @@ info:
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: ecs
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,ecs
 
 variables:

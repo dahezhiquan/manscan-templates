@@ -1,16 +1,24 @@
 id: multi-region-logging-disabled
 
 info:
-  name: Global Service (Multi-Region) 日志记录 -未启用（云安全）
+  name: 阿里云 ActionTrail 全地域日志记录未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 ActionTrail 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云 ActionTrail 未配置全地域 Trail 时，跨地域和全局服务的 API 活动可能无法被统一记录，影响账号级操作可见性。模板调用 DescribeTrails 检查已启用的 Trail，当返回结果中不存在 TrailRegion 为 All 的配置时，判定全地域日志记录未启用。
+  impact: |
+    - 仅记录单地域事件会造成审计盲区，跨地域资源变更、权限操作或异常 API 调用可能缺少集中证据。
+    - 安全团队难以及时关联账号级活动，影响入侵调查、合规审计和云资产治理。
+  remediation: |
+    - 在 ActionTrail 控制台将至少一个 Trail 的 Home Region 配置为 All Regions，并确保 Trail Status 为 Enabled。
+    - 也可使用 UpdateTrail 将 --TrailRegion 设置为 All，并确认日志投递到受保护的 OSS、SLS 或 MaxCompute 存储目标。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ActionTrail/enable-multi-region-trails.html
     - https://www.alibabacloud.com/help/en/actiontrail/product-overview/services-that-work-with-actiontrail
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: actiontrail
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,actiontrail
 
 variables:

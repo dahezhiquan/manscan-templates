@@ -1,16 +1,24 @@
 id: os-patches-outdated
 
 info:
-  name: OS Patches -已过期（云安全）
+  name: 阿里云 ECS 操作系统补丁未及时修复（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 ECS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: ECS 实例存在 Security Center 检测到的 CVE 类软件漏洞时，说明操作系统或软件包补丁未及时应用，可能被已知漏洞利用。模板调用 aliyun sas DescribeVulList --Type cve 查询漏洞列表，当返回漏洞记录且 TotalCount 不为 0 时判定存在待修复的操作系统补丁风险。
+  impact: |
+    - 未修复的系统或软件漏洞可能被用于远程代码执行、权限提升、信息泄露或服务拒绝攻击。
+    - 生产主机长期滞后补丁会扩大攻击面，并增加漏洞管理、基线合规和应急响应压力。
+  remediation: |
+    - 在 Security Center 中执行漏洞扫描，评估 CVE 影响范围、业务兼容性和是否需要重启后，再按维护窗口修复。
+    - 对重要业务主机先创建快照或备份，在测试环境验证补丁兼容性；修复后复扫确认漏洞记录清零或风险已被接受。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ECS/apply-latest-os-patches.html
     - https://www.alibabacloud.com/help/en/security-center/user-guide/fix-software-vulnerabilities
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: ecs
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,ecs
 
 variables:

@@ -1,16 +1,24 @@
 id: unattached-disk-encryption-disabled
 
 info:
-  name: 加密 的Unattached Disks -未启用（云安全）
+  name: 阿里云 ECS 未挂载云盘未启用加密（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 ECS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云 ECS 未挂载数据盘如果未启用云盘加密，静态数据在快照、迁移或误授权场景下更容易暴露。模板调用 DescribeDisks 查询 Status 为 Available 的云盘，当返回结果包含 Encrypted 为 false 的磁盘时，判定未挂载云盘未启用加密。
+  impact: |
+    - 未挂载云盘中的业务数据、配置文件或凭据残留缺少 KMS 保护，资产交接或误操作时可能造成数据泄露。
+    - 由未加密云盘创建的副本或迁移流程可能延续明文存储风险，影响静态数据合规要求。
+  remediation: |
+    - 新建加密云盘时启用 Encrypted 并选择合适的 KMS KeyId，再将原云盘数据迁移到加密云盘。
+    - 迁移完成并验证数据完整性后，释放不再需要的未加密云盘；禁止删除或禁用仍被加密资源依赖的 KMS 密钥。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ECS/encrypt-unattached-disks.html
     - https://www.alibabacloud.com/help/en/ecs/user-guide/encrypt-a-data-disk
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: ecs
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,ecs
 
 variables:

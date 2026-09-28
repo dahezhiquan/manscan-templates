@@ -1,19 +1,21 @@
 id: nacl-outbound-restrict
 info:
-  name: Unrestricted NACL Outbound Traffic（云安全）
+  name: NACL 出站流量未限制（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: VPC Network ACL 出站 allow 规则未限制端口范围时，子网资源可向外建立更宽泛的连接，削弱出站访问控制。该模板枚举 network ACL，并检查 Egress=true、RuleAction=allow 的规则是否缺少 PortRange。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 被入侵实例可能更容易向外连接命令控制、下载载荷或外传数据。
+    - 出站边界过宽会降低网络分段和数据泄露防护能力。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 按业务需要限制 NACL 出站协议、端口和目标 CIDR。
+    - 对敏感子网配合安全组、路由表、代理或 egress firewall 进行出站访问治理。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

@@ -1,13 +1,21 @@
 id: s3-mfa-delete-check
 info:
-  name: S3 Bucket MFA Delete Configuration 检查（云安全）
+  name: S3 Bucket MFA Delete 未配置（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 AWS S3 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: S3 MFA Delete 可要求使用 MFA 才能永久删除对象版本或暂停 versioning，适合保护关键备份和审计数据。该模板枚举 bucket，并检查 get-bucket-versioning 返回的 MFADelete 是否为 null。
+  impact: |
+    - 拥有足够权限的身份在凭据泄露或误操作场景下可直接删除历史版本。
+    - 对备份、日志和合规归档 bucket 而言，缺少 MFA Delete 会降低防篡改和恢复能力。
+  remediation: |
+    - 对承载关键备份或审计数据的 versioning bucket 启用 MFA Delete。
+    - 收敛 s3:DeleteObjectVersion、s3:PutBucketVersioning 等高危权限，并配合 Object Lock 或备份策略提升保护强度。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-versioning.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

@@ -1,13 +1,21 @@
 id: s3-bucket-key
 info:
-  name: S3 Bucket Key not enabled（云安全）
+  name: S3 Bucket Key 未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS S3 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: S3 Bucket Key 可在使用 SSE-KMS 时降低对 AWS KMS 的请求量并简化加密成本治理；未启用时，KMS 调用和权限依赖会更频繁。该模板检查 bucket 加密规则中 SSEAlgorithm 为 aws:kms 时 BucketKeyEnabled 是否为 false。
+  impact: |
+    - 高频对象读写会产生更多 KMS 请求，增加成本并放大 KMS 权限或配额异常对业务的影响。
+    - 加密链路治理缺少 bucket key 优化，可能不符合组织对大规模 S3 加密的成本和运维基线。
+  remediation: |
+    - 对使用 SSE-KMS 的 S3 bucket 启用 Bucket Key。
+    - 同步复核 KMS key policy、bucket 默认加密和访问审计，确保加密配置持续有效。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

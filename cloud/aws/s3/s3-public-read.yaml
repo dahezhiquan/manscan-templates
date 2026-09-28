@@ -1,14 +1,22 @@
 id: s3-public-read
 
 info:
-  name: S3 Bucket 使用Public READ 访问（云安全）
+  name: S3 Bucket ACL 允许公共 READ（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: S3 ACL 对 AllUsers 授予 READ 时，匿名互联网用户可能读取 bucket 中的对象数据。该模板枚举 bucket ACL，并匹配 AllUsers 组的 Permission 是否为 READ。
+  impact: |
+    - bucket 中的对象可能被任何人直接访问，造成敏感文件、备份或日志泄露。
+    - 公开读权限还可能导致数据被搜索引擎、扫描器或第三方长期缓存。
+  remediation: |
+    - 移除 AllUsers 的 READ ACL 授权，仅向明确可信主体授予读取权限。
+    - 启用 S3 Block Public Access，检查静态网站托管等确需公开的场景是否已做内容隔离。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-acl.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

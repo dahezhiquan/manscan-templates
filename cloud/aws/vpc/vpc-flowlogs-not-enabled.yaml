@@ -1,19 +1,21 @@
 id: vpc-flowlogs-not-enabled
 info:
-  name: VPC Flow Logs未启用（云安全）
+  name: VPC Flow Logs 未启用（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 AWS VPC 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: VPC Flow Logs 可记录网络接口、子网或 VPC 的流量元数据，用于安全分析、排障和合规审计。该模板枚举 VPC，并检查 describe-flow-logs 返回是否为空数组。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 横向移动、异常出站连接或拒绝流量缺少网络层审计证据。
+    - 发生安全事件或网络故障时，团队难以还原通信双方、端口和流量趋势。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为关键 VPC、子网或 ENI 启用 VPC Flow Logs，并输出到 CloudWatch Logs 或 S3。
+    - 设置日志保留、访问控制和异常流量告警，确保网络审计数据可检索、可追踪。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

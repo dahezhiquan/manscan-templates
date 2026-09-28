@@ -3,11 +3,19 @@ info:
   name: AWS 云环境校验（云安全）
   author: princechaddha
   severity: info
-  description: 检查当前环境是否已正确配置 AWS CLI 以及执行云安全基线检测所需的相关工具。
+  description: AWS 云安全基线模板依赖 AWS CLI 获取账号与资源配置，并依赖 jq 等本地工具解析命令输出；环境未满足时会导致后续检测失败或结果不完整。该模板通过 sts get-caller-identity 验证 AWS CLI 凭据可用，并检查 jq 是否已安装。
+  impact: |
+    - AWS CLI 凭据或本地解析工具缺失会导致云配置检测无法覆盖目标账号资源。
+    - 扫描前置环境不完整可能造成误判、漏报或自动化巡检中断。
+  remediation: |
+    - 正确安装并配置 AWS CLI，确保当前身份具备执行只读安全基线检查所需的最小权限。
+    - 安装 jq 等模板依赖工具，并在执行批量检测前运行环境校验模板确认依赖可用。
   reference:
     - https://aws.amazon.com/cli/
   metadata:
     max-request: 2
+    vendor: amazon
+    product: aws-cli
   tags: cloud,devops,aws,amazon,aws-cloud-config
 
 variables:

@@ -1,14 +1,22 @@
 id: sns-topic-public-accessible
 
 info:
-  name: Public 访问 of SNS Topics via 策略（云安全）
+  name: SNS Topic Policy 允许公共访问（云安全）
   author: Ritesh_Gohil(#L4stPL4Y3R)
   severity: high
-  description: 该规则用于检查 AWS SNS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: SNS topic policy 中 Principal 为 * 且 Effect 为 Allow、又没有 Condition 约束时，可能允许外部主体对 topic 执行策略授予的操作。该模板读取 Attributes.Policy，并匹配公共 Allow 语句且排除包含 Condition 的策略。
+  impact: |
+    - Topic 可能被未授权主体订阅、发布或执行其他被策略允许的操作，造成消息泄露或滥发。
+    - 公共 topic policy 会扩大事件分发和控制面攻击面，增加业务告警被干扰的风险。
+  remediation: |
+    - 移除 topic policy 中面向 * 的非必要 Allow 语句，仅授权明确可信主体。
+    - 对确需跨账号访问的场景使用 SourceArn、SourceAccount、aws:PrincipalOrgID 等条件限制并持续审计。
   reference:
     - https://docs.aws.amazon.com/sns/latest/api/API_GetTopicAttributes.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: sns
   tags: cloud,devops,aws,amazon,sns,aws-cloud-config
 
 flow: |

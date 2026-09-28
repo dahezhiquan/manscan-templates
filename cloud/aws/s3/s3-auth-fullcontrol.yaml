@@ -1,13 +1,21 @@
 id: s3-auth-fullcontrol
 info:
-  name: Restrict S3 Buckets FULL_CONTROL 访问 的Authenticated Users（云安全）
+  name: S3 Bucket 向 AuthenticatedUsers 授予 FULL_CONTROL（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS S3 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: S3 ACL 将 FULL_CONTROL 授予 AuthenticatedUsers 组时，任何 AWS 账号身份都可能获得 bucket 的完全 ACL 权限，明显突破预期访问边界。该模板枚举 bucket ACL，并匹配 AuthenticatedUsers 组的 Permission 是否为 FULL_CONTROL。
+  impact: |
+    - 外部 AWS 账号可能读取或修改 ACL，进一步扩大 bucket 访问范围。
+    - 攻击者可借此破坏对象访问控制、制造持久化共享或造成敏感数据泄露。
+  remediation: |
+    - 移除 AuthenticatedUsers 组的 FULL_CONTROL 授权，改用 bucket policy 或 IAM policy 精确授予可信主体。
+    - 优先启用 S3 Block Public Access 和 Object Ownership 的 Bucket owner enforced 模式，减少 ACL 带来的公开授权风险。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

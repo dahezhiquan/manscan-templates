@@ -1,19 +1,21 @@
 id: vpc-endpoints-not-deployed
 info:
-  name: VPC Endpoints 未Deployed（云安全）
+  name: VPC Endpoint 未部署（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: VPC Endpoint 可让 VPC 内资源通过私有连接访问支持的 AWS 服务，减少对公网路径、NAT 或 Internet Gateway 的依赖。该模板枚举 VPC，并检查对应 VPC 的 endpoint 列表是否为空。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 私有工作负载访问 AWS 服务时可能经过公网出口或 NAT，增加网络暴露面和出站治理复杂度。
+    - 无法通过 endpoint policy 对服务访问进行更细粒度的私有通道控制。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为需要私有访问的 AWS 服务部署 Gateway Endpoint 或 Interface Endpoint。
+    - 为 endpoint 配置最小权限 policy，并更新路由表、安全组和 DNS 设置以使用私有访问路径。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

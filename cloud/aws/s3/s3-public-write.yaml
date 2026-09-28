@@ -1,13 +1,21 @@
 id: s3-public-write
 info:
-  name: S3 Bucket 使用Public WRITE 访问（云安全）
+  name: S3 Bucket ACL 允许公共 WRITE（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: S3 ACL 对 AllUsers 授予 WRITE 时，匿名互联网用户可能向 bucket 写入、覆盖或删除对象，属于高危公开写入配置。该模板检查 bucket ACL 中 AllUsers 组是否具有 WRITE 权限。
+  impact: |
+    - 攻击者可上传恶意文件、篡改业务对象或制造存储成本消耗。
+    - 公开写入可能进一步被用于钓鱼、恶意软件托管或供应链污染。
+  remediation: |
+    - 移除 AllUsers 的 WRITE 授权，并审计 bucket 中近期新增或修改的对象。
+    - 启用 S3 Block Public Access，使用身份、条件和最小权限策略控制写入来源。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-acl.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

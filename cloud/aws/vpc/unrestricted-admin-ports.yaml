@@ -1,19 +1,21 @@
 id: unrestricted-admin-ports
 info:
-  name: Unrestricted Admin Port 访问（云安全）
+  name: NACL 管理端口对公网开放（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: NACL 入站规则允许 0.0.0.0/0 访问 SSH 22 或 RDP 3389 等管理端口时，子网管理面会暴露给互联网来源。该模板枚举 network ACL，并匹配入站 allow 规则中的公网 CIDR 与 22/3389 端口。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 子网内管理服务更容易遭受暴力破解、漏洞扫描和凭据攻击。
+    - 管理端口公网暴露会放大实例安全组误配置或弱凭据带来的账号接管风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除 NACL 中对 0.0.0.0/0 开放 22/3389 的入站 allow 规则，仅允许堡垒机、VPN 或可信管理网段。
+    - 优先使用 AWS Systems Manager Session Manager、VPN 或零信任访问方案替代公网管理端口。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

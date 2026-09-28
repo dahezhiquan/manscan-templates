@@ -1,13 +1,21 @@
 id: s3-bucket-policy-public-access
 info:
-  name: Public 访问 of S3 Buckets via 策略（云安全）
+  name: S3 Bucket Policy 允许公共访问（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 AWS S3 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: S3 bucket policy 中 Principal 为 * 且 Effect 为 Allow 时，可能允许匿名或任意 AWS 主体访问 bucket 资源。该模板枚举 bucket policy，并用正则匹配允许公共主体的策略语句。
+  impact: |
+    - bucket 内对象可能被未授权读取、枚举、覆盖或删除，具体取决于公开策略授予的 Action。
+    - 敏感数据一旦通过 bucket policy 暴露，可能被互联网自动化扫描和批量下载。
+  remediation: |
+    - 移除 Principal 为 * 的非必要 Allow 语句，改为仅授权明确的 AWS account、role 或 service principal。
+    - 启用 S3 Block Public Access，并通过 Access Analyzer 或定期审计发现公开 bucket policy。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-policy.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

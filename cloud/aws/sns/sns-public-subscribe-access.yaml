@@ -1,12 +1,21 @@
 id: sns-public-subscribe-access
 
 info:
-  name: Public Subscription 访问 of SNS Topics via 策略（云安全）
+  name: SNS Topic Policy 允许公共订阅（云安全）
   author: Ritesh_Gohil(#L4stPL4Y3R)
   severity: high
-  description: 该规则用于检查 AWS SNS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: SNS topic policy 允许 Principal 为 * 且 Action 为 SNS:Subscribe 时，外部主体可能订阅主题并接收消息。该模板枚举 topics，读取 Attributes.Policy，并匹配无 Condition 限制的公共 Subscribe 授权。
+  impact: |
+    - 未授权订阅者可能接收业务通知、事件数据或系统告警，造成信息泄露。
+    - 恶意订阅还可能扩大消息分发面，增加告警噪声和合规审计压力。
+  remediation: |
+    - 移除面向 * 的 SNS:Subscribe 授权，改为仅允许可信 AWS account、role 或受控协议端点订阅。
+    - 为 topic policy 增加必要的 Condition 限制，并定期审计订阅列表和策略变更。
   reference:
     - https://docs.aws.amazon.com/sns/latest/api/API_GetTopicAttributes.html
+  metadata:
+    vendor: amazon
+    product: sns
   tags: cloud,devops,aws,amazon,sns,aws-cloud-config
 
 flow: |

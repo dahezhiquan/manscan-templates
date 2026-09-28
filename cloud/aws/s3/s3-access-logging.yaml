@@ -1,13 +1,21 @@
 id: s3-access-logging
 info:
-  name: S3 Bucket - 访问 日志记录未启用（云安全）
+  name: S3 Bucket 访问日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS S3 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: S3 Server Access Logging 可记录 bucket 级访问请求，未启用时会缺少对象访问、来源和请求者等基础审计线索。该模板枚举 S3 bucket，并检查 get-bucket-logging 的 LoggingEnabled 是否为 null。
+  impact: |
+    - 未记录 bucket 访问日志会削弱对异常下载、枚举和误操作的追踪能力。
+    - 发生数据泄露或权限滥用时，安全团队难以还原访问来源、时间和请求路径。
+  remediation: |
+    - 为关键 S3 bucket 启用 Server Access Logging，并将日志写入独立、受保护的日志 bucket。
+    - 对日志 bucket 配置最小权限、生命周期和完整性保护，避免审计记录被篡改或提前删除。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-encryption.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

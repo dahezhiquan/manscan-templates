@@ -1,13 +1,21 @@
 id: s3-versioning
 info:
-  name: S3 Bucket Versioning not已启用（云安全）
+  name: S3 Bucket Versioning 未启用（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 AWS S3 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: S3 Versioning 可保留对象多个版本，帮助从误删、覆盖或部分攻击行为中恢复数据。该模板枚举 bucket，并检查 get-bucket-versioning 的 Status 是否为 null 或 Suspended。
+  impact: |
+    - 对象被误删或覆盖后可能无法恢复到历史版本。
+    - 勒索、错误同步或批量删除事件发生时，缺少 versioning 会显著降低数据恢复能力。
+  remediation: |
+    - 为关键 S3 bucket 启用 Versioning，并结合生命周期规则管理历史版本成本。
+    - 对备份和审计场景进一步考虑 MFA Delete 或 Object Lock，提升防删除和防篡改能力。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 
 flow: |

@@ -1,19 +1,22 @@
 id: sqs-encryption-disabled
 
 info:
-  name: Queue Server Side 加密 -未启用（云安全）
+  name: SQS Queue 服务端加密未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 AWS SQS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: SQS 服务端加密用于保护队列消息静态数据；未启用时，消息内容不符合预期的加密和密钥审计要求。该模板枚举 queue URL，并检查 SqsManagedSseEnabled 是否为 false。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 队列中的业务事件、任务参数或敏感消息在静态存储层缺少明确加密保护。
+    - 缺少 KMS 或 SQS 托管 SSE 配置会削弱密钥治理、审计和合规证明能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 SQS queue 启用服务端加密，可选择 SQS 托管 SSE 或 AWS KMS key。
+    - 检查生产者、消费者和 KMS key policy 的最小权限，确保启用加密后业务可正常收发消息。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/SQS/server-side-encryption.html
     - http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html
+  metadata:
+    vendor: amazon
+    product: sqs
   tags: cloud,devops,aws,amazon,sqs,aws-cloud-config
 
 variables:

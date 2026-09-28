@@ -1,19 +1,21 @@
 id: nat-gateway-use
 info:
-  name: Managed NAT Gateway Usage（云安全）
+  name: VPC 未使用托管 NAT Gateway（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 托管 NAT Gateway 可为私有子网资源提供受控出站互联网访问，避免实例直接暴露公网入口；VPC 中缺少可用 NAT Gateway 时，私有工作负载可能依赖不一致的出站方案。该模板枚举 VPC，并检查可用状态的 NAT Gateway 列表是否为空。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 私有子网资源可能被迫使用公网 IP、临时 NAT 实例或不受控路由进行出站访问。
+    - 出站路径缺少统一治理会影响补丁下载、依赖访问、日志上报和网络审计。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 根据业务需要在 VPC 中部署高可用 NAT Gateway，并为私有子网配置指向 NAT Gateway 的默认路由。
+    - 对无需互联网出站的工作负载优先使用 VPC Endpoint，减少经过公网的服务访问。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

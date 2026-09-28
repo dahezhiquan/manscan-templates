@@ -1,19 +1,21 @@
 id: vpc-endpoint-exposed
 info:
-  name: 暴露 VPC Endpoint（云安全）
+  name: VPC Endpoint Policy 允许公共主体访问（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: VPC Endpoint policy 中 Principal 或 AWS 为 * 且缺少 Condition 约束时，可能允许过宽主体经 endpoint 访问后端 AWS 服务。该模板枚举 VPC endpoint，并检查 PolicyDocument 是否包含公共主体且不包含 Condition。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 不必要的主体可能通过 endpoint 访问 S3、DynamoDB 或其他服务资源，绕过预期网络边界。
+    - Endpoint policy 过宽会削弱私有访问通道的最小权限控制。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 VPC Endpoint policy 限制到明确的 principal、action 和 resource。
+    - 对跨账号或组织访问添加 aws:PrincipalOrgID、aws:SourceVpce 等条件，并定期审计 endpoint policy。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

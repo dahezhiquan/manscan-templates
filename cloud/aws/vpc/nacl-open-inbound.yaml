@@ -1,19 +1,21 @@
 id: nacl-open-inbound
 info:
-  name: Open Inbound NACL Traffic（云安全）
+  name: NACL 入站流量过度开放（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: VPC Network ACL 允许入站流量且未限制端口范围时，会削弱子网层网络边界控制。该模板枚举 network ACL，并检查入站 Egress=false、RuleAction=allow 的规则中是否缺少 PortRange。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 子网内资源可能暴露更多协议或端口，增加被扫描和利用的机会。
+    - 即使安全组较严格，过宽 NACL 也会降低分层防御效果并增加误配置影响范围。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将 NACL 入站 allow 规则限制到业务必需的端口、协议和来源 CIDR。
+    - 定期审计默认 NACL 和自定义 NACL，避免使用缺少端口边界的宽泛入站规则。
   reference:
     - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpc,aws-cloud-config
 variables:
   region: "us-east-1"

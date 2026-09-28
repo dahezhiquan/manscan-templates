@@ -1,19 +1,21 @@
 id: vpn-tunnel-down
 info:
-  name: AWS VPN Tunnel Down（云安全）
+  name: AWS Site-to-Site VPN Tunnel 处于 DOWN 状态（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AWS Site-to-Site VPN tunnel 处于 DOWN 状态表示 VPN 连接的冗余通道不可用或中断，可能影响混合云网络连通性。该模板枚举可用 VPN connection，并检查 VgwTelemetry.Status 是否包含 DOWN。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 单条或多条 tunnel 中断会降低 VPN 冗余能力，故障时可能导致本地数据中心与 VPC 通信中断。
+    - 混合云链路不稳定可能影响应用访问、日志传输、备份复制和应急运维。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 检查客户网关、公网链路、IKE/IPsec 参数和 BGP 路由状态，恢复 DOWN 状态的 VPN tunnel。
+    - 为 VPN tunnel 状态配置 CloudWatch 告警，并验证双 tunnel 冗余和故障切换流程。
   reference:
     - https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNConnections.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: vpc
   tags: cloud,devops,aws,amazon,vpn,aws-cloud-config
 variables:
   region: "us-east-1"

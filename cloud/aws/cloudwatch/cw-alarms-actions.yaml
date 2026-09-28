@@ -1,19 +1,21 @@
 id: cw-alarms-actions
 info:
-  name: CloudWatch Alarms Actions已启用（云安全）
+  name: CloudWatch 告警动作未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS CloudWatch 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: CloudWatch 告警动作被禁用是一类监控响应失效风险，已配置的通知、扩缩容或自动化处理不会在 ALARM 状态下执行。团队可能误以为告警链路仍然有效，从而形成隐性监控缺口。模板枚举告警后读取 `MetricAlarms[*].ActionsEnabled`，当值为 `false` 时判定告警动作未启用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 指标异常可能不会触发通知、自动扩缩容或自动化修复，延误故障和安全事件响应。
+    - 团队可能误以为告警仍在工作，导致监控覆盖出现隐性缺口。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对应启用 CloudWatch 告警动作，确认 `ActionsEnabled` 为 `true`。
+    - 复核告警动作目标、订阅状态和权限配置，并通过测试告警验证响应链路。
   reference:
     - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: cloudwatch
   tags: cloud,devops,aws,amazon,cloudwatch,aws-cloud-config
 variables:
   region: "us-east-1"

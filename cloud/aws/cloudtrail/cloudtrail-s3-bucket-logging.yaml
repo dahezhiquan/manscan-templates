@@ -1,19 +1,21 @@
 id: cloudtrail-s3-bucket-logging
 info:
-  name: CloudTrail S3 日志记录（云安全）
+  name: CloudTrail 日志桶访问日志未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: CloudTrail 日志桶访问日志未启用是一类日志存储位置审计缺失风险，对 CloudTrail 日志桶本身的读取、写入和删除访问可能缺少独立记录。发生未授权访问或日志篡改尝试时，缺少桶访问日志会降低取证能力。模板获取 trail 关联的 `S3BucketName` 后调用 `aws s3api get-bucket-logging --query LoggingEnabled`，当返回 `null` 时判定访问日志未配置。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 对 CloudTrail 日志桶本身的访问行为缺少记录，可能无法发现未授权读取或删除尝试。
+    - 日志存储位置发生异常访问时，取证人员会缺少桶级访问证据。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 CloudTrail 日志桶启用 S3 Server Access Logging 或等效的集中化访问审计能力。
+    - 将访问日志投递到独立、受控的目标桶，并配置权限、加密和生命周期策略。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html
   metadata:
     max-request: 3
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,cloudtrail,aws-cloud-config
 variables:
   region: "ap-south-1"

@@ -1,19 +1,21 @@
 id: cw-alarm-action-set
 info:
-  name: CloudWatch Alarm Action 未Set（云安全）
+  name: CloudWatch 告警未配置 ALARM 动作（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS CloudWatch 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: CloudWatch 告警缺少 ALARM 动作是一类监控响应链路缺失风险，指标异常只能改变告警状态而不会触发通知或自动化处置。关键资源告警没有动作时，故障或安全异常可能长时间无人响应。模板枚举告警名称后读取 `MetricAlarms[*].AlarmActions[]`，当返回为空数组时判定该告警没有配置触发动作。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 关键指标异常可能无法通知运维或安全团队，导致故障和攻击迹象发现延迟。
+    - 自动扩缩容、事件响应或工单联动等流程可能不会按预期触发。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为关键 CloudWatch 告警配置合适的 ALARM 动作，例如 SNS 通知、Auto Scaling 或自动化响应。
+    - 定期测试告警触发链路，确认订阅、权限和下游处理流程可用。
   reference:
     - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: cloudwatch
   tags: cloud,devops,aws,amazon,cloudwatch,aws-cloud-config
 variables:
   region: "us-east-1"

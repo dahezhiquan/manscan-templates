@@ -1,19 +1,21 @@
 id: cloudtrail-mfa-delete
 info:
-  name: CloudTrail MFA Delete（云安全）
+  name: CloudTrail 日志桶未启用 MFA Delete（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: CloudTrail 日志桶未启用 MFA Delete 是一类审计日志删除保护不足风险，删除对象版本或修改版本控制状态时缺少额外认证门槛。若具备足够 S3 权限的主体误删或恶意删除日志对象，审计证据完整性会受到影响。模板先获取 trail 关联的 `S3BucketName`，再调用 `aws s3api get-bucket-versioning --query MFADelete`，当返回 `null` 时判定未启用 MFA Delete。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 拥有足够 S3 权限的主体可能更容易删除 CloudTrail 日志对象版本或修改版本控制状态。
+    - 审计日志缺少额外删除保护，会削弱安全事件后的取证完整性和抗抵赖能力。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 在满足运维条件的情况下，为 CloudTrail 日志桶启用版本控制和 MFA Delete。
+    - 同时收紧日志桶删除权限，结合对象锁、跨账户日志归档或备份策略提升日志不可篡改性。
   reference:
     - https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html
   metadata:
     max-request: 3
+    vendor: amazon
+    product: s3
   tags: cloud,devops,aws,amazon,s3,aws-cloud-config
 variables:
   region: "ap-south-1"

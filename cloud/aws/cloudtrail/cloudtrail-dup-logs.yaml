@@ -1,19 +1,21 @@
 id: cloudtrail-dup-logs
 info:
-  name: CloudTrail Duplicate Log Avoidance（云安全）
+  name: CloudTrail 全局服务事件重复记录检查（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: CloudTrail 全局服务事件重复记录是一类审计噪声与成本控制风险，常见于多个 trail 同时记录 IAM、STS 等全局服务事件的环境。重复投递会增加存储和分析成本，并干扰告警去重和取证时间线整理。模板读取 `trailList[*].IncludeGlobalServiceEvents`，当值为 `true` 时命中，用于排查可能产生重复全局事件日志的 trail。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 多个 trail 同时记录全局服务事件时，IAM、STS 等全局服务操作可能被重复投递。
+    - 重复日志会增加存储、分析和告警成本，并可能干扰事件去重与取证时间线整理。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 在多 trail 环境中明确只由一个合适的 trail 记录全局服务事件。
+    - 调整其他 trail 的全局服务事件配置，并验证审计覆盖不会因此产生空白。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: cloudtrail
   tags: cloud,devops,aws,amazon,cloudtrail,aws-cloud-config
 variables:
   region: "ap-south-1"

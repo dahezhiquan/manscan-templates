@@ -1,19 +1,22 @@
 id: stack-notification-disabled
 
 info:
-  name: CloudFormation Stack 通知 -未启用（云安全）
+  name: CloudFormation 栈通知未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS cloudformation 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: CloudFormation 栈通知未启用是一类基础设施变更可观测性风险，会使栈创建、更新和删除事件缺少主动通知链路。关键栈发生失败更新、资源替换或异常操作时，团队可能无法及时获知。模板枚举 CREATE_COMPLETE 状态的栈，并读取 `Stacks[*].NotificationARNs[]`，当返回为空数组时判定该栈未配置 SNS 通知。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 栈创建、更新或删除过程中的失败事件可能无法及时通知到运维或安全团队。
+    - 对关键基础设施的变更缺少主动告警，会延长故障和异常配置的发现时间。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为关键 CloudFormation 栈配置合适的 SNS 通知主题，并确认订阅方可正常接收事件。
+    - 将通知配置纳入栈创建和更新流程，避免新建栈遗漏事件通知。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFormation/cloudformation-stack-notification.html
     - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html
+  metadata:
+    vendor: amazon
+    product: cloudformation
   tags: cloud,devops,aws,amazon,cloudformation,aws-cloud-config
 
 variables:

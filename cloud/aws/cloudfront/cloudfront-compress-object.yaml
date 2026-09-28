@@ -1,19 +1,22 @@
 id: cloudfront-compress-object
 
 info:
-  name: CloudFront Compress Objects Automatically（云安全）
+  name: CloudFront 对象自动压缩未启用（云安全）
   author: DhiyaneshDK
   severity: low
-  description: 该规则用于检查 AWS CloudFront 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: CloudFront 对象自动压缩未启用是一类边缘分发性能与可用性配置缺陷，会增加可压缩内容的传输体积。高流量或跨地域访问场景下，额外带宽消耗可能放大源站压力和访问延迟。模板枚举分配 ID 后读取 `DistributionConfig.CacheBehaviors.Items[*].Compress`，当返回 `False` 时判定自动压缩未启用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 静态资源未压缩会增加传输体积，影响用户访问性能和源站/边缘流量成本。
+    - 在流量突增时，额外带宽消耗可能放大源站压力并降低服务韧性。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对适合压缩的缓存行为启用 CloudFront `Compress` 配置。
+    - 确认源站、缓存策略和客户端 `Accept-Encoding` 支持预期压缩格式，并验证关键资源的响应结果。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFront/compress-objects-automatically.html
     - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html
+  metadata:
+    vendor: amazon
+    product: cloudfront
   tags: cloud,devops,aws,amazon,cloudfront,aws-cloud-config
 
 variables:

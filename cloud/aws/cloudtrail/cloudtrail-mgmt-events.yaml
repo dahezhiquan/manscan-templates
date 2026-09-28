@@ -1,19 +1,21 @@
 id: cloudtrail-mgmt-events
 info:
-  name: CloudTrail Management Events 日志记录未启用（云安全）
+  name: CloudTrail 管理事件日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS CloudTrail 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: CloudTrail 管理事件日志未启用是一类控制面审计缺失风险，账户配置变更、权限调整和资源管理 API 调用可能无法被记录。缺少管理事件会直接影响入侵调查、误操作追踪和合规审计。模板调用 `get-event-selectors` 并读取 `EventSelectors[*].IncludeManagementEvents`，当值为 `false` 时判定管理事件日志关闭。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - IAM、网络、计算和存储等控制面变更可能无法被该 trail 捕获。
+    - 入侵调查中会缺少关键 API 调用证据，影响攻击路径还原和责任追踪。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为关键账户和区域的 CloudTrail trail 启用管理事件记录。
+    - 根据审计需求配置读写事件范围，并将日志投递到集中、安全、可检索的位置。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: cloudtrail
   tags: cloud,devops,aws,amazon,cloudtrail,aws-cloud-config
 variables:
   region: "ap-south-1"

@@ -1,15 +1,25 @@
 id: alibaba-cloud-code-env
 
 info:
-  name: 阿里云环境校验（云安全）
+  name: 阿里云 CLI 扫描环境校验（云安全）
   author: DhiyaneshDK
   severity: info
-  description: 检查当前环境是否已正确配置阿里云 CLI 以及执行云安全基线检测所需的相关工具。
+  description: 该模板用于校验运行阿里云云安全基线模板所需的本地执行环境是否可用，并不代表具体云资源存在漏洞。模板先通过 aliyun sts GetCallerIdentity 验证 Alibaba Cloud CLI 凭据和账号上下文，再分别检查 jq 与 ossutil 是否已安装；三项均满足时，说明后续依赖 aliyun、jq 和 ossutil 的云配置检测具备基本运行条件。
+  impact: |
+    - 如果 Alibaba Cloud CLI 未配置或凭据无效，后续云资源基线模板无法枚举目标资源，可能导致扫描失败或结果为空。
+    - 如果 jq 或 ossutil 缺失，依赖 JSON 解析、OSS Bucket 查询和对象存储配置检查的模板可能无法执行，造成漏检或误判。
+    - 如果 CLI 当前账号或区域上下文不符合预期，扫描结果可能对应错误账号或错误地域，影响风险归属和整改判断。
+  remediation: |
+    - 安装并配置 Alibaba Cloud CLI，使用 `aliyun sts GetCallerIdentity` 确认当前凭据、账号和权限范围符合扫描目标。
+    - 安装 jq 与 ossutil，并确认它们可在执行模板的 PATH 中被调用。
+    - 为扫描凭据授予只读且覆盖目标云服务的最小权限，并在扫描前确认 region、Profile 和账号上下文。
   reference:
     - https://github.com/aliyun/aliyun-cli
   metadata:
     max-request: 3
     verified: true
+    vendor: alibaba
+    product: aliyun-cli
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config
 
 variables:

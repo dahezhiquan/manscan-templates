@@ -1,19 +1,21 @@
 id: acm-cert-renewal-45days
 info:
-  name: ACM 证书 Pre-expiration 续期（云安全）
+  name: ACM 证书 45 天内到期（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS ACM 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: ACM 已签发证书 45 天内到期是一类证书生命周期预警风险，通常意味着续期、验证或替换流程需要提前介入。若证书未满足 ACM 托管续期条件，或导入证书缺少人工轮换计划，到期后可能导致 HTTPS 服务中断。模板先枚举 ISSUED 状态的证书 ARN，再读取 `Certificate.NotAfter`，当证书剩余有效期小于 45 天时输出证书 ARN。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 证书到期后，依赖该证书的 HTTPS 服务可能出现访问失败、客户端报错或自动化调用中断。
+    - 提前量不足会增加证书续期失败后的应急处置压力，尤其影响多区域或多服务复用证书的场景。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 检查 ACM 托管续期状态，确保相关域名验证记录仍然存在且可解析。
+    - 对导入证书或不满足自动续期条件的证书，提前签发新证书并完成依赖服务切换。
   reference:
     - https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: acm
   tags: cloud,devops,aws,amazon,acm,aws-cloud-config
 variables:
   region: "us-east-1"

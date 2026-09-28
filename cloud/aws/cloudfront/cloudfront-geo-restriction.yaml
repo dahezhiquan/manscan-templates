@@ -1,19 +1,22 @@
 id: cloudfront-geo-restriction
 
 info:
-  name: CloudFront 地域限制 -未启用（云安全）
+  name: CloudFront 地域限制未启用（云安全）
   author: DhiyaneshDK
   severity: low
-  description: 该规则用于检查 AWS CloudFront 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: CloudFront 地域限制未启用是一类内容访问范围控制不足风险，适用于内容受版权、合规、出口管制或业务区域约束的场景。缺少地理位置限制时，分发内容可能被非预期地区访问并扩大滥用流量面。模板读取 `DistributionConfig.Restrictions.GeoRestriction.RestrictionType`，当值为 `none` 时判定未使用允许列表或拒绝列表。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 受版权、合规或业务策略约束的内容可能被非授权地区访问。
+    - 面向特定地区的业务入口暴露范围扩大，可能增加滥用流量和合规处置成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据业务要求为 CloudFront 分配配置地理位置允许列表或拒绝列表。
+    - 对需要更精细访问控制的场景，结合 AWS WAF、自定义鉴权或应用层授权策略。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFront/geo-restriction.html
     - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/georestrictions.html
+  metadata:
+    vendor: amazon
+    product: cloudfront
   tags: cloud,devops,aws,amazon,cloudfront,aws-cloud-config
 
 variables:

@@ -1,19 +1,22 @@
 id: cloudfront-viewer-policy
 
 info:
-  name: CloudFront Viewer Protocol 策略（云安全）
+  name: CloudFront Viewer 协议允许 HTTP（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS CloudFront 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: CloudFront Viewer 协议允许 HTTP 是一类客户端到边缘节点的明文传输风险，访问者可通过未加密 HTTP 请求分发内容。该配置可能暴露 Cookie、令牌、查询参数或页面内容，并增加会话劫持和内容篡改风险。模板读取 `DistributionConfig.CacheBehaviors.Items[*].ViewerProtocolPolicy`，当值为 `allow-all` 时判定未强制 HTTPS。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 访问者请求可能通过明文 HTTP 传输，暴露 Cookie、令牌、查询参数或页面内容。
+    - 未强制 HTTPS 会增加会话劫持、内容篡改和合规审计失败的风险。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 将 viewer 协议策略调整为 `redirect-to-https` 或 `https-only`。
+    - 确认自定义域名证书、缓存行为和应用跳转逻辑一致，避免迁移后出现访问循环或资源混合内容。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFront/viewer-protocol-policy.html
     - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html
+  metadata:
+    vendor: amazon
+    product: cloudfront
   tags: cloud,devops,aws,amazon,cloudfront,aws-cloud-config
 
 variables:

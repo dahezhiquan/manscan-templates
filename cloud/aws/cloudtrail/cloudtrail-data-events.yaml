@@ -1,19 +1,21 @@
 id: cloudtrail-data-events
 info:
-  name: CloudTrail S3 Data Events 日志记录（云安全）
+  name: CloudTrail S3 数据事件日志未启用（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 AWS CloudTrail 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: CloudTrail 未记录 S3 数据事件是一类对象级审计缺失风险，S3 对象读取、写入和删除等数据面操作可能不会被纳入审计。对于存放敏感数据的桶，缺少数据事件会削弱泄露排查和对象变更追踪能力。模板枚举 trail 名称后调用 `get-event-selectors`，读取 `EventSelectors[*].DataResources[]`，当返回为空数组时判定未配置数据事件记录。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - S3 对象级读取、写入或删除等操作可能不会进入 CloudTrail 审计视图。
+    - 发生数据泄露或异常对象操作时，取证人员可能缺少关键访问链路和调用主体证据。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为包含敏感数据或关键业务数据的 S3 存储桶启用 CloudTrail 数据事件记录。
+    - 将数据事件日志集中投递到受控日志账户或安全湖，并结合告警规则监控高风险对象操作。
   reference:
     - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: cloudtrail
   tags: cloud,devops,aws,amazon,s3,cloudtrail,aws-cloud-config
 variables:
   region: "ap-south-1"

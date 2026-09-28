@@ -1,19 +1,22 @@
 id: stack-policy-not-inuse
 
 info:
-  name: CloudFormation Stack 策略 - Not已使用（云安全）
+  name: CloudFormation 栈策略未使用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS cloudformation 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: CloudFormation 栈策略缺失是一类基础设施变更保护不足风险，关键资源在栈更新期间可能缺少显式拒绝规则。没有栈策略时，数据库、网络边界等资源更容易被误更新、替换或删除。模板枚举栈名称后调用 `get-stack-policy`，当响应中未出现 `StackPolicyBody` 和 `Effect` 时判定未使用栈策略。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 栈更新操作可能意外修改、替换或删除数据库、网络边界等关键资源。
+    - 在多人协作或自动化部署场景中，缺少栈策略会降低对高价值资源的变更约束。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为包含关键资源的 CloudFormation 栈配置栈策略，明确拒绝不应被更新的资源操作。
+    - 在执行受控变更时临时调整策略，并在变更完成后恢复保护规则。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFormation/cloudformation-stack-policy.html
     - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html
+  metadata:
+    vendor: amazon
+    product: cloudformation
   tags: cloud,devops,aws,amazon,cloudformation,aws-cloud-config
 
 variables:

@@ -1,19 +1,22 @@
 id: stack-termination-disabled
 
 info:
-  name: CloudFormation Termination 保护 -未启用（云安全）
+  name: CloudFormation 终止保护未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS cloudformation 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: CloudFormation 终止保护未启用是一类关键基础设施误删除风险，具备删除权限的主体可能直接删除承载生产资源的栈。对生产环境或共享基础设施而言，缺少终止保护会降低防止误操作和异常删除的防线。模板枚举 CREATE_COMPLETE 状态的栈，并读取 `Stacks[*].EnableTerminationProtection`，当值为 `false` 时判定终止保护缺失。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 关键基础设施栈可能被误删除，导致关联资源和业务能力中断。
+    - 攻击者或误操作账户若具备删除权限，缺少终止保护会降低最后一道删除防线。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对生产环境、共享基础设施和关键业务栈启用 CloudFormation 终止保护。
+    - 将终止保护状态纳入部署流水线和基线巡检，确保新建关键栈默认启用保护。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/CloudFormation/stack-termination-protection.html
     - http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html
+  metadata:
+    vendor: amazon
+    product: cloudformation
   tags: cloud,devops,aws,amazon,cloudformation,aws-cloud-config
 
 variables:

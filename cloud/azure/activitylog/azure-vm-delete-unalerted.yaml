@@ -1,17 +1,20 @@
 id: azure-vm-delete-unalerted
 info:
-  name: Azure Virtual Machine Delete Alert 未Configured（云安全）
+  name: Azure 虚拟机删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 虚拟机删除操作未配置 Activity Log 告警时，计算实例及其运行环境可能被破坏而不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.Compute/virtualMachines/delete 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 删除虚拟机可能导致业务中断、未备份数据丢失和取证材料缺失。
+    - 攻击者删除工作负载后，缺少告警会延长恢复时间并掩盖入侵路径。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对虚拟机删除操作的 Activity Log Alert，并绑定计算资源应急响应 Action Group。
+    - 限制删除权限，启用资源锁、备份和恢复演练，确保删除事件可被及时阻断和追踪。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,virtual-machines,azure-cloud-config
 
 flow: |

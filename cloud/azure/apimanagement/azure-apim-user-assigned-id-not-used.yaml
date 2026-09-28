@@ -1,17 +1,20 @@
 id: azure-apim-user-assigned-id-not-used
 info:
-  name: Azure API Management User-Assigned Managed Identity 未Configured（云安全）
+  name: Azure API Management 未使用用户分配托管身份（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure apimanagement 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: APIM 实例仅使用系统分配身份或未配置托管身份时，无法使用具有稳定标识和独立生命周期的用户分配托管身份访问 Key Vault 等 Azure 资源。该模板查询 identity.type，并在返回 SystemAssigned 或 none 时报告未使用用户分配身份。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - APIM 重建或迁移后系统身份可能变化，依赖该身份的授权需要重新配置，造成服务调用失败或恢复延迟。
+    - 无法预先授权和跨资源复用稳定身份时，复杂部署中的密钥访问、权限审批和生命周期管理更难控制。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为需要独立生命周期或稳定主体标识的 APIM 场景创建 UserAssigned 身份，并仅授予所需资源范围的最小权限。
+    - 限制用户分配身份的复用范围，定期审计角色分配、Key Vault 访问和身份删除后的残留授权。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/how-to-use-managed-service-identity
+  metadata:
+    vendor: microsoft
+    product: azure-api-management
   tags: cloud,devops,azure,microsoft,apim,azure-cloud-config
 
 flow: |

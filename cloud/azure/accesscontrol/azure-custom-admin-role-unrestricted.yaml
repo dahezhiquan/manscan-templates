@@ -1,17 +1,20 @@
 id: azure-custom-admin-role-unrestricted
 info:
-  name: Azure Subscription Administrator Custom Role Unrestricted 访问（云安全）
+  name: Azure 自定义管理员角色权限过度宽泛（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 访问控制 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure RBAC 自定义角色若在订阅或更高范围内授予通配操作权限，会形成接近管理员级别的控制面访问能力，偏离最小权限原则。该模板枚举自定义角色，读取 assignableScopes 与 permissions.actions，并在作用域包含根级路径且 actions 包含 * 时命中。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 被分配该角色的身份可能管理大量 Azure 资源，凭据泄露后会快速扩大为订阅级控制面风险。
+    - 过宽自定义角色会削弱职责分离、审批边界和审计可解释性。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 拆分自定义角色权限，仅保留业务必需的 resource provider 操作，避免使用 * 通配授权。
+    - 将 assignableScopes 限制到必要的资源组或资源范围，并定期审计高权限自定义角色分配。
   reference:
     - https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles
+  metadata:
+    vendor: microsoft
+    product: azure-rbac
   tags: cloud,devops,azure,microsoft,role-based-access,azure-cloud-config
 
 flow: |

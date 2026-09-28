@@ -1,17 +1,20 @@
 id: azure-appservice-client-cert-disabled
 info:
-  name: Azure App Service Client 证书 未Required（云安全）
+  name: Azure App Service 未要求客户端证书（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未启用客户端证书要求时，HTTPS 客户端无需提供受信证书即可建立应用层访问，无法使用双向 TLS 对调用方进行强身份校验。该模板枚举 Web App，查询 clientCertEnabled，并在返回 false 时报告未要求客户端证书。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 依赖设备证书、服务证书或内部客户端身份的接口可能被非授权客户端调用。
+    - 即使应用启用了普通登录，缺少客户端证书也会削弱机器到机器通信的第二道身份边界。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对需要双向 TLS 的 App Service 应用启用客户端证书要求，并配置受信任的根证书和证书链。
+    - 建立证书签发、轮换、吊销和过期告警流程，同时在应用中校验证书主体或扩展属性。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-certificate#require-incoming-certificate
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

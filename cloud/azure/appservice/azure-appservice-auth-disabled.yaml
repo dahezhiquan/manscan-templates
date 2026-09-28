@@ -1,17 +1,20 @@
 id: azure-appservice-auth-disabled
 info:
-  name: Azure App Service Authentication未启用（云安全）
+  name: Azure App Service 身份认证未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未启用内置身份认证时，应用需要自行实现登录、令牌校验和未授权访问控制，容易出现认证逻辑遗漏或实现不一致。该模板枚举 Web App，查询 auth.enabled，并在返回 false 时报告未启用应用服务认证。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未认证或认证绕过的请求可能直接访问业务接口、管理功能和敏感数据。
+    - 多个应用自行维护认证逻辑会增加会话、令牌、重定向和权限校验缺陷的累积风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据应用身份模型启用 App Service Authentication，并接入 Microsoft Entra ID 或其他受信任身份提供方。
+    - 配置未认证请求处理、令牌受众和回调地址，完成端到端授权测试后再限制应用自定义的重复认证逻辑。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/overview-authentication-authorization
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

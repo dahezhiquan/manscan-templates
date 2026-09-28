@@ -1,17 +1,20 @@
 id: azure-appservice-insights-not-enabled
 info:
-  name: Azure App Service Application Insights未启用（云安全）
+  name: Azure App Service 未接入 Application Insights（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure App Service 未配置 Application Insights 连接字符串或旧版检测键时，应用请求、异常、依赖和性能遥测无法接入 Azure Monitor。该模板枚举 Web App，读取应用设置，并在同时缺少 APPLICATIONINSIGHTS_CONNECTION_STRING 和 APPINSIGHTS_INSTRUMENTATIONKEY 时报告未接入 Application Insights。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 应用异常、异常访问、性能退化和依赖故障可能无法及时发现，安全事件响应和根因分析会延迟。
+    - 缺少集中遥测会削弱可用性告警、异常行为关联和攻击影响范围评估能力。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 创建或选择受控的 Application Insights 资源，将连接字符串安全注入 App Service 应用设置。
+    - 为遥测配置访问控制、采样、保留期限和告警规则，避免将连接字符串或敏感请求数据写入日志和代码。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,application-insights,azure-cloud-config
 
 flow: |

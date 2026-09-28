@@ -1,17 +1,20 @@
 id: azure-appservice-always-on-disabled
 info:
-  name: Azure App Service Always On未启用（云安全）
+  name: Azure App Service Always On 未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未启用 Always On 时，应用在空闲后可能被卸载，首次请求需要重新加载进程和依赖，增加冷启动延迟。该模板枚举 Web App，查询 alwaysOn，并在返回 false 时报告配置未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 定时任务、后台处理和长连接可能因应用休眠而延迟、中断或丢失执行窗口。
+    - 频繁冷启动会增加响应时间和资源波动，影响依赖低延迟或持续运行的业务可用性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对需要持续运行、低延迟响应或后台任务的 App Service 应用启用 Always On。
+    - 结合应用计划层级、健康检查和性能监控评估资源成本，确认启用后不会掩盖应用自身的进程退出问题。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-common
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

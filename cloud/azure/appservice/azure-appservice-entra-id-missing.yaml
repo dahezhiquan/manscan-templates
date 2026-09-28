@@ -1,17 +1,20 @@
 id: azure-appservice-entra-id-missing
 info:
-  name: Azure App Service Microsoft Entra ID 未Configured（云安全）
+  name: Azure App Service 托管身份未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未配置托管身份时，应用访问 Key Vault、存储和其他 Azure 资源通常需要长期密钥或服务主体凭据。该模板枚举 Web App，查询 identity principalId，并在命令结果为空时报告未配置托管身份。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 长期凭据可能被写入应用设置、代码或部署流水线，泄露后可被用于访问关联 Azure 资源。
+    - 缺少工作负载身份会增加密钥分发、轮换和权限回收成本，导致权限范围难以持续审计。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 App Service 启用系统分配或用户分配托管身份，并通过 Azure RBAC 授予访问依赖资源所需的最小权限。
+    - 迁移应用凭据后轮换或撤销旧密钥，检查应用设置、流水线和日志中的残留敏感信息。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/overview-managed-identity
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

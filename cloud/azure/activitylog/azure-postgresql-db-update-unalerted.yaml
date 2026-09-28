@@ -1,17 +1,20 @@
 id: azure-postgresql-db-update-unalerted
 info:
-  name: Azure PostgreSQL Database Create/Update Alert 未Configured（云安全）
+  name: Azure PostgreSQL 数据库创建或更新告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL 数据库创建或更新可能改变网络、认证、备份和参数配置；未配置 Activity Log 告警时，数据库控制面变更可能不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.DBforPostgreSQL/servers/databases/write 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 未授权更新可能放宽数据库访问边界、关闭安全设置或改变备份策略。
+    - 异常数据库资源创建可能增加数据泄露、资源滥用和成本失控风险。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对 PostgreSQL 数据库写入和更新操作的 Activity Log Alert，并接入变更审批流程。
+    - 限制数据库管理权限，持续审计网络、身份、备份和参数组等高风险配置变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

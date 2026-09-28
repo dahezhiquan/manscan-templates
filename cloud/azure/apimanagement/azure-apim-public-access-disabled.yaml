@@ -1,17 +1,20 @@
 id: azure-apim-public-access-disabled
 info:
-  name: Azure API Management 使用 Private Endpoint 时公有网络访问未禁用（云安全）
+  name: Azure API Management 公共网络访问未禁用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure apimanagement 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: APIM 实例启用公共网络访问时，即使已规划 Private Endpoint，管理面或网关仍可能从公共入口到达，网络隔离边界不完整。该模板枚举 APIM 实例，查询 publicNetworkAccess，并在返回 Enabled 时报告公共网络访问未禁用。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 公共入口扩大 API 网关和管理接口的可达范围，增加扫描、凭据滥用和异常调用风险。
+    - 私有网络策略可能被公共旁路削弱，导致访问审计、出口控制和敏感后端保护难以统一落实。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 在确认 Private Endpoint、私有 DNS 和内部路由正常后，将 APIM 的 publicNetworkAccess 设置为 Disabled。
+    - 通过 Entra ID、网络安全组、最小权限和网关策略限制管理面及 API 调用，持续验证不存在公共旁路。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-protect-backend-with-private-link
+  metadata:
+    vendor: microsoft
+    product: azure-api-management
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config
 
 flow: |

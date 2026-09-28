@@ -1,17 +1,20 @@
 id: azure-entra-id-guest-users-unmonitored
 info:
-  name: Azure Entra ID Guest Users Unmonitored（云安全）
+  name: Azure Entra ID 存在未监控的 Guest 用户（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure Entra ID 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Microsoft Entra ID Guest 用户用于外部协作，若缺少持续审查和监控，外部身份可能在项目结束后仍保留访问能力。该模板通过 az ad user list 查询 userType 为 Guest 的用户，并在返回 Guest 用户对象时提示需要审计。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 外部协作账号可能长期保留对应用、组或资源的访问权限，形成权限残留。
+    - Guest 用户被接管后可借助已有授权访问内部数据或参与横向移动。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 定期执行 Guest 用户访问评审，移除不再需要的外部身份和组成员关系。
+    - 对 Guest 用户启用条件访问、MFA、登录风险监控和邀请/协作策略限制。
   reference:
     - https://docs.microsoft.com/en-us/azure/active-directory/external-identities/
+  metadata:
+    vendor: microsoft
+    product: entra-id
   tags: cloud,devops,azure,microsoft,entra-id,azure-cloud-config
 
 self-contained: true

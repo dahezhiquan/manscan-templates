@@ -1,17 +1,20 @@
 id: azure-postgresql-db-delete-unalerted
 info:
-  name: Azure PostgreSQL Database Delete Alert 未Configured（云安全）
+  name: Azure PostgreSQL 数据库删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL 数据库删除操作未配置 Activity Log 告警时，数据库被误删或被滥用权限删除可能无法及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.DBforPostgreSQL/servers/databases/delete 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 攻击者或误操作删除数据库后，安全团队可能无法及时触发阻断和恢复流程。
+    - 缺少删除审计告警会延长数据不可用时间，并增加数据恢复和责任追踪难度。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对 PostgreSQL 数据库删除操作的 Activity Log Alert，并绑定安全团队的 Action Group。
+    - 同步配置数据库备份、删除保护和告警升级流程，确保删除事件可被及时遏制和恢复。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

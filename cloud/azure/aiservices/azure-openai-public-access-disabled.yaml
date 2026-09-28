@@ -1,17 +1,20 @@
 id: azure-openai-public-access-disabled
 info:
-  name: Azure OpenAI Public Network 访问 Not未启用（云安全）
+  name: Azure OpenAI 公共网络访问未禁用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aiservices 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure OpenAI 服务实例启用公共网络访问且默认网络 ACL 为 Allow 或未设置时，服务可能从不受限制的网络位置接收请求。该模板枚举 kind 为 OpenAI 的服务实例，查询 properties.networkAcls.defaultAction 和 properties.publicNetworkAccess；当默认动作允许或为空且公共网络访问为 Enabled 时命中。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 公共网络上的攻击者可能持续探测服务并利用泄露的密钥或令牌调用模型，造成提示词、响应数据泄露和配额消耗。
+    - 过宽的网络入口会削弱纵深防御，使身份凭据泄露后的越权调用和异常流量更难被阻断。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 按业务需要关闭 Azure OpenAI 的公共网络访问，优先通过 Private Endpoint 和私有 DNS 提供服务访问。
+    - 如暂时必须保留公共入口，将默认网络 ACL 设置为 Deny，仅允许受信任 IP 范围，并结合 Entra ID、RBAC 和密钥轮换控制调用权限。
   reference:
     - https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows
+  metadata:
+    vendor: microsoft
+    product: azure-openai
   tags: cloud,devops,azure,microsoft,openai,azure-cloud-config,ai
 
 flow: |

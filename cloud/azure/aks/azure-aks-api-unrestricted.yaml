@@ -1,17 +1,20 @@
 id: azure-aks-api-unrestricted
 info:
-  name: Azure AKS API Server 访问 Unrestricted（云安全）
+  name: Azure AKS API Server 未限制授权 IP 范围（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aks 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: AKS API Server 未配置授权 IP 范围时，控制平面入口可能从更广泛的公网位置接收连接，增加凭据滥用和控制面探测风险。该模板枚举 AKS 集群，查询 apiServerAccessProfile.authorizedIpRanges，并在返回结果未包含有效授权 IP 范围时报告问题。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可从非受信网络持续探测 Kubernetes API，并在窃取 kubeconfig、令牌或其他凭据后尝试控制集群。
+    - 控制平面暴露面过大，会增加暴力尝试、漏洞利用和异常管理操作的发现与阻断难度。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为 AKS API Server 配置仅覆盖办公出口、运维跳板机和 CI/CD 出口的授权 IP 范围。
+    - 对高敏感集群优先使用 Private Cluster，并结合 Entra ID、RBAC 和最小权限控制 API 访问。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/api-server-authorized-ip-ranges
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config
 
 flow: |

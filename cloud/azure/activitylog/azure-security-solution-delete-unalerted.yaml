@@ -1,17 +1,20 @@
 id: azure-security-solution-delete-unalerted
 info:
-  name: Azure Security Solution Delete Alert 未Configured（云安全）
+  name: Azure 安全解决方案删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Microsoft.Security 安全解决方案删除可能移除资源上的安全保护或 Defender 集成；未配置 Activity Log 告警时，保护能力下降可能不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.Security/securitySolutions/delete 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 删除安全解决方案可能使恶意软件、漏洞或配置风险失去持续检测。
+    - 保护组件被移除后，攻击者可能获得更长的活动窗口，事件响应也会缺少关键线索。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对安全解决方案删除操作的 Activity Log Alert，并接入 Defender 和 SOC 响应流程。
+    - 限制安全解决方案删除权限，定期验证 Defender 保护状态和相关安全连接是否仍然存在。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,security-solution,azure-cloud-config
 
 flow: |

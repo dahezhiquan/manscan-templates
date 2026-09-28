@@ -1,17 +1,20 @@
 id: azure-nsg-delete-unalerted
 info:
-  name: Azure Network Security Group Delete Alert 未Configured（云安全）
+  name: Azure NSG 删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: NSG 删除操作未配置 Activity Log 告警时，子网和网卡的网络边界可能被移除而不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.Network/networkSecurityGroups/delete 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 删除 NSG 可能使关联资源失去预期网络过滤，扩大攻击面或造成服务不可达。
+    - 攻击者删除网络边界后若无告警，安全团队难以及时恢复原有控制。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对 NSG 删除操作的 Activity Log Alert，并将告警接入即时响应渠道。
+    - 限制 NSG 删除权限，使用资源锁和变更审批保护承载关键工作负载的网络资源。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,network-security-group,azure-cloud-config
 
 flow: |

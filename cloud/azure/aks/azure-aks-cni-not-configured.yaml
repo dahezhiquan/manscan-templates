@@ -1,17 +1,20 @@
 id: azure-aks-cni-not-configured
 info:
-  name: Azure AKS 未Using CNI Mode（云安全）
+  name: Azure AKS 未使用 Azure CNI 网络模式（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AKS 集群使用 Kubenet 而不是 Azure CNI 时，Pod 通常通过节点地址转换和路由表接入网络，不能直接从 Azure 虚拟网络子网获得地址。该模板查询 networkProfile.networkPlugin，当返回 kubenet 时判定未配置 Azure CNI 网络模式。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - Pod 与 Azure 虚拟网络资源的直连和分段能力受限，可能使网络安全组、路由和审计策略难以按工作负载粒度落地。
+    - 在需要严格网络隔离、私有服务访问或精细出站控制的场景中，Kubenet 配置可能增加横向移动和数据外传的管控难度。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 根据业务网络隔离需求选择 Azure CNI，并为 Pod 地址预留足够的虚拟网络子网空间。
+    - 在迁移或重建集群前验证网络策略、NSG、路由、负载均衡器和私有终结点连通性，避免切换造成业务中断。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/configure-azure-cni
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config
 
 flow: |

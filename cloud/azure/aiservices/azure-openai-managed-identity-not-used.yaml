@@ -1,17 +1,20 @@
 id: azure-openai-managed-identity-not-used
 info:
-  name: Azure OpenAI Service Instance Managed Identity 未Used（云安全）
+  name: Azure OpenAI 服务实例未使用托管身份（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure aiservices 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure OpenAI 服务实例未配置托管身份时，应用通常需要依赖资源密钥或其他长期凭据访问服务，凭据管理和轮换压力更大。该模板枚举 kind 为 OpenAI 的服务实例，并调用 Azure CLI 查询其身份配置；当 IdentityType 返回 null 或 None 时判定未使用托管身份。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 资源密钥被写入代码、配置文件或日志后，可能被用于调用模型、消耗配额，甚至造成敏感提示词和业务数据泄露。
+    - 长期凭据依赖人工分发和轮换，增加凭据失控、权限过宽及异常调用难以及时识别的风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 Azure OpenAI 资源启用系统分配或用户分配的托管身份，并通过 Microsoft Entra ID 和 Azure RBAC 授予调用所需的最小权限。
+    - 在完成身份迁移后限制或轮换旧资源密钥，审计令牌使用范围，并持续监控异常调用和权限变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/cognitive-services/authentication
+  metadata:
+    vendor: microsoft
+    product: azure-openai
   tags: cloud,devops,azure,microsoft,openai,azure-cloud-config,ai
 
 flow: |

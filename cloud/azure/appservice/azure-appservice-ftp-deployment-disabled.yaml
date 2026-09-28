@@ -1,17 +1,20 @@
 id: azure-appservice-ftp-deployment-disabled
 info:
-  name: Azure App Service Plain FTP Deployment未启用（云安全）
+  name: Azure App Service FTP 部署入口未禁用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 的 ftpsState 为 AllAllowed 时，部署端点同时允许 FTP 和 FTPS，明文 FTP 可能被用于传输发布凭据和应用文件。该模板枚举 Web App，查询 ftpsState，并在返回 AllAllowed 时报告 FTP 部署入口仍处于允许状态。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - FTP 传输可能泄露发布凭据、源代码、配置文件和部署包，攻击者可进一步篡改应用内容。
+    - 发布凭据被窃取后，攻击者可能植入后门、读取应用数据或破坏线上版本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 禁止普通 FTP 部署，仅保留组织确需使用的 FTPS，并优先采用受控的 CI/CD 部署方式。
+    - 轮换已用于 FTP/S 的发布凭据，限制部署账户权限并审计发布端点的登录和文件变更记录。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/deploy-ftp
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

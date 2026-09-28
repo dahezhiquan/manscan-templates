@@ -1,17 +1,20 @@
 id: azure-vm-poweroff-unalerted
 info:
-  name: Azure Virtual Machine Power Off Alert 未Configured（云安全）
+  name: Azure 虚拟机关机告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 虚拟机关机会停止操作系统和工作负载运行，未配置 Activity Log 告警时，异常关机可能不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.Compute/virtualMachines/powerOff/action 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 生产虚拟机被异常关机可能造成服务中断、未提交数据丢失和任务失败。
+    - 攻击者可借助关机破坏监控、代理或取证环境，扩大事件响应难度。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对虚拟机关机操作的 Activity Log Alert，并将告警发送到业务和安全值班渠道。
+    - 限制关机权限，结合应用健康检查、自动恢复和变更审批及时恢复异常停止的实例。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,virtual-machines,azure-cloud-config
 
 flow: |

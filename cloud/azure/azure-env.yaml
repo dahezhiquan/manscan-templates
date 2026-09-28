@@ -3,11 +3,19 @@ info:
   name: Azure 云环境校验（云安全）
   author: princechaddha
   severity: info
-  description: 检查当前环境是否已正确配置 Azure CLI 以及执行云安全基线检测所需的相关工具。
+  description: Azure 云安全基线模板依赖 Azure CLI 获取订阅、资源和 Entra ID 配置；如果 CLI 未登录或上下文不可用，后续检测会失败或覆盖不完整。该模板执行 az account show，并通过 homeTenantId 字段确认当前 Azure CLI 会话可用。
+  impact: |
+    - Azure CLI 环境未就绪会导致云配置扫描无法读取目标订阅和租户信息。
+    - 自动化巡检可能因此中断，或因凭据上下文错误产生漏报和误判。
+  remediation: |
+    - 安装并登录 Azure CLI，确认当前账号、租户和订阅上下文符合本次扫描范围。
+    - 为扫描身份授予只读安全基线检查所需的最小权限，并在批量检测前运行环境校验。
   reference:
     - https://portal.azure.com/
   metadata:
     max-request: 2
+    vendor: microsoft
+    product: azure-cli
   tags: cloud,devops,microsoft,azure,azure-cloud-config
 
 self-contained: true

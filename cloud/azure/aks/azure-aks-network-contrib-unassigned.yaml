@@ -1,17 +1,20 @@
 id: azure-aks-network-contrib-unassigned
 info:
-  name: Azure AKS Network Contributor Role Unassigned（云安全）
+  name: Azure AKS 未分配 Network Contributor 网络权限（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure aks 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: AKS 集群资源范围未发现 Network Contributor 角色分配时，集群身份可能无法按需管理负载均衡器、网络接口或相关网络资源。该模板先获取集群资源 ID，再查询该范围的角色分配，并在结果为空且不包含 Network Contributor 时报告问题。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 服务发布、负载均衡和网络变更可能因权限不足失败，导致应用不可达或故障恢复延迟。
+    - 为绕过权限错误而临时授予订阅级 Owner 或 Contributor 等过宽角色，会扩大身份被滥用后的横向影响范围。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 按 AKS 当前网络架构将所需 Network Contributor 权限授予正确的集群托管身份，并尽量收敛到必要资源范围。
+    - 验证角色分配主体、作用域和变更审计，禁止用订阅级高权限角色替代具体网络操作权限。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/manage-azure-rbac
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config
 
 flow: |

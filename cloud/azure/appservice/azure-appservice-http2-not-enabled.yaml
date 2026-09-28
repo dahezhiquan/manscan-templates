@@ -1,17 +1,20 @@
 id: azure-appservice-http2-not-enabled
 info:
-  name: Azure App Service HTTP/2未启用（云安全）
+  name: Azure App Service HTTP/2 未启用（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未启用 HTTP/2 时，客户端无法使用该协议的多路复用和头部压缩能力，可能影响高并发 HTTPS 应用的连接效率。该模板枚举 Web App，查询 http20Enabled，并在返回 false 时报告 HTTP/2 未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 高并发请求可能产生更多连接和握手开销，增加延迟及应用服务资源消耗。
+    - 依赖 HTTP/2 的客户端体验、流式传输或连接复用能力可能退化。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在应用和客户端兼容的前提下启用 App Service HTTP/2，并确保应用通过 HTTPS 访问。
+    - 变更后监控协议协商、响应延迟、错误率和资源消耗，避免将性能问题误判为应用故障。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-language-http2
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

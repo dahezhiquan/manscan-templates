@@ -1,17 +1,20 @@
 id: azure-custom-owner-role-unrestricted
 info:
-  name: Azure Custom Owner Role Available（云安全）
+  name: Azure 自定义 Owner 角色作用域过宽（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure 访问控制 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure 自定义角色若在根范围或订阅级范围授予所有操作权限，实质上会形成自定义 Owner 类角色。该模板枚举自定义角色，并检查 assignableScopes 是否覆盖根或订阅范围且 actions 为 *。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 角色一旦被分配给错误主体，会授予对大量资源的创建、修改和删除能力。
+    - 自定义 Owner 类角色容易绕过内置角色治理，增加权限蔓延和审计盲区。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除或重构不必要的自定义 Owner 类角色，改用内置角色或最小权限自定义角色。
+    - 对必须保留的高权限角色启用审批、PIM、到期分配和定期访问评审。
   reference:
     - https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles
+  metadata:
+    vendor: microsoft
+    product: azure-rbac
   tags: cloud,devops,azure,microsoft,role-management,azure-cloud-config
 
 flow: |

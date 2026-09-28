@@ -1,17 +1,20 @@
 id: azure-apim-system-assigned-identity-unconfigured
 info:
-  name: Azure API Management Service System-Assigned Managed Identity 未Configured（云安全）
+  name: Azure API Management 未配置系统分配托管身份（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure apimanagement 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: APIM 实例未使用系统分配托管身份时，访问 Key Vault、证书或其他 Azure 资源可能需要长期密钥或人工维护的服务主体凭据。该模板查询 identity.type，并在返回 UserAssigned 或 none 时报告未配置系统分配托管身份。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 长期凭据可能被写入配置或脚本并被滥用，导致 Key Vault 机密、证书或后端资源被未授权读取。
+    - 缺少与 APIM 生命周期绑定的身份会增加权限回收、凭据轮换和异常访问审计成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 APIM 启用系统分配托管身份，并通过 Azure RBAC 或 Key Vault 权限模型授予所需的最小权限。
+    - 迁移完成后停用或轮换旧凭据，审计身份的角色范围、密钥访问记录和后端资源授权。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-managed-service-identity
+  metadata:
+    vendor: microsoft
+    product: azure-api-management
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-aks-api-version-not-latest
 info:
-  name: Azure AKS Kubernetes API Version 未Latest（云安全）
+  name: Azure AKS Kubernetes API 版本存在可用升级（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AKS 集群的 Kubernetes API 版本存在可用升级而未及时更新时，集群可能继续运行在缺少最新安全修复和兼容性改进的版本上。该模板调用 az aks get-upgrades 获取升级信息，当返回结果包含非空 upgrades 数组时判定仍有可用 API 版本升级。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 旧版控制平面可能缺少针对已知问题的修复，并与新版客户端、插件或安全策略产生兼容性风险。
+    - 长期不升级会压缩后续迁移窗口，增加一次性升级导致业务中断、回滚困难或节点不一致的概率。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 按 AKS 支持矩阵和升级路径在测试环境验证目标版本，再分阶段升级控制平面和节点池。
+    - 升级前检查 PodDisruptionBudget、存储和网络插件兼容性，并安排监控、回滚和业务验收流程。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,kubernetes,azure-cloud-config
 
 flow: |

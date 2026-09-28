@@ -1,17 +1,20 @@
 id: azure-apim-resource-logs-not-configured
 info:
-  name: Azure API Management Service Resource Logs 未Configured（云安全）
+  name: Azure API Management 资源日志未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure apimanagement 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: APIM 实例未配置 Azure Monitor 诊断设置时，网关请求、错误、管理操作和性能事件可能无法发送到集中日志目标。该模板枚举 APIM 实例，并通过 az monitor diagnostic-settings list 查询 Microsoft.ApiManagement/service 资源；当返回空数组时报告未配置资源日志。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - API 滥用、异常认证、策略绕过和后端错误缺少可检索证据，安全事件发现与溯源会明显延迟。
+    - 无法基于请求量、延迟和失败率建立告警，可能使性能故障和数据访问异常持续扩大。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 APIM 配置 Azure Monitor 诊断设置，并将必要的网关、审计、性能和错误日志发送到 Log Analytics 或受控存储。
+    - 对日志目标启用访问控制、保留期限和告警规则，避免日志本身泄露令牌、密钥或敏感请求内容。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-use-diagnostic-logs
+  metadata:
+    vendor: microsoft
+    product: azure-api-management
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config
 
 flow: |

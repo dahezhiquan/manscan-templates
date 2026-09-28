@@ -1,17 +1,20 @@
 id: azure-appservice-ftps-only-not-enabled
 info:
-  name: Azure App Service FTPS-Only 访问未启用（云安全）
+  name: Azure App Service 未强制仅使用 FTPS（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 未强制 FTPS-only 时，FTP 部署端点可能同时接受明文 FTP 和加密 FTPS。该模板枚举 Web App，查询 ftpsState，并在返回 AllAllowed 时报告未强制仅使用 FTPS。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 明文 FTP 可能暴露发布用户名、密码、文件内容和应用配置，导致应用被未授权读取或篡改。
+    - 发布通道被利用后，攻击者可绕过应用层防护直接写入恶意代码或持久化文件。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 App Service 的 ftpsState 设置为 FTPSOnly，禁用普通 FTP 访问。
+    - 轮换发布凭据并限制其权限，确认 CI/CD 工具、运维客户端和防火墙规则均使用加密部署通道。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-ftp
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

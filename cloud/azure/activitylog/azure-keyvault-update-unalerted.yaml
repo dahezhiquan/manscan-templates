@@ -1,17 +1,20 @@
 id: azure-keyvault-update-unalerted
 info:
-  name: Azure Key Vault Update Alert 未Configured（云安全）
+  name: Azure Key Vault 更新告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Key Vault 更新操作可能改变网络访问、权限、密钥和机密保护设置；未配置 Activity Log 告警时，敏感控制面变更可能长期不被发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.KeyVault/vaults/write 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 未授权更新可能放宽 Key Vault 网络或访问策略，使机密和密钥暴露给不必要的主体。
+    - 关键配置被篡改后，应用可能出现认证失败、证书失效或数据保护边界下降。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对 Key Vault 写入和更新操作的 Activity Log Alert，并将通知接入变更审批和安全审计。
+    - 限制 Key Vault 管理权限，启用诊断日志和配置漂移检测，及时回滚未经批准的变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

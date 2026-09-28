@@ -1,17 +1,20 @@
 id: azure-iam-role-resource-lock-unassigned
 info:
-  name: Azure IAM Role 的资源锁ing 未Assigned（云安全）
+  name: Azure IAM 角色缺少资源锁管理权限（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure 访问控制 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Azure 资源锁用于防止关键资源被误删或误改；承担资源保护职责的自定义 IAM 角色若未包含 Microsoft.Authorization/locks 的读写删除权限，且该角色已被分配给主体，可能无法管理资源锁。该模板枚举自定义角色，检查锁权限是否缺失，并确认角色存在实际分配。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 负责资源治理的身份可能无法创建、查看或移除资源锁，影响关键资源防误删能力。
+    - 资源锁职责与角色权限不匹配会造成运维流程失败，或使生产资源长期缺少删除保护。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 为承担资源锁管理职责的自定义角色显式添加 locks/read、locks/write 和 locks/delete 等必要操作。
+    - 复核已分配自定义角色的职责边界，避免权限缺失或过度授权，并对关键资源启用适当锁定策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/role-based-access-control/custom-roles
+  metadata:
+    vendor: microsoft
+    product: azure-rbac
   tags: cloud,devops,azure,microsoft,resource-lock,azure-cloud-config
 
 flow: |

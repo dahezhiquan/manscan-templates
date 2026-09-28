@@ -1,17 +1,20 @@
 id: azure-policy-assignment-delete-unalerted
 info:
-  name: Azure 策略 Assignment Delete Alert 未Configured（云安全）
+  name: Azure 策略分配删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Azure Policy assignment 删除会移除管理组、订阅或资源组范围内的策略约束；未配置 Activity Log 告警时，安全基线可能被撤销而不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查 condition 是否缺少 Microsoft.Authorization/policyAssignments/delete 操作条件。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 删除策略分配可能使资源绕过加密、网络隔离、标签或审计等组织控制。
+    - 攻击者可利用策略缺口部署高风险资源或隐藏后续持久化操作。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 创建针对策略分配删除操作的 Activity Log Alert，并将通知接入策略变更响应流程。
+    - 限制删除权限，启用策略保护和定期合规评估，发现未授权删除后及时恢复分配。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,policy-assignment,azure-cloud-config
 
 flow: |

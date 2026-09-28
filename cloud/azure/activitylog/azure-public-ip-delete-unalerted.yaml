@@ -1,17 +1,20 @@
 id: azure-public-ip-delete-unalerted
 info:
-  name: Azure Public IP Delete Alert 未Configured（云安全）
+  name: Azure 公共 IP 删除告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 公共 IP 删除操作未配置 Activity Log 告警时，公网入口、管理地址或服务依赖的地址资源可能被删除而不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查告警条件是否缺少 Microsoft.Network/publicIPAddresses/delete 操作。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 删除公共 IP 可能导致服务不可达、管理通道中断或依赖固定地址的访问策略失效。
+    - 恶意删除还可能掩盖攻击痕迹，增加恢复、DNS 切换和网络排障成本。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 创建针对公共 IP 删除操作的 Activity Log Alert，并接入网络和安全运维告警渠道。
+    - 限制公共 IP 删除权限，使用资源锁、变更审批和依赖关系盘点保护关键地址资源。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,public-ip,azure-cloud-config
 
 flow: |

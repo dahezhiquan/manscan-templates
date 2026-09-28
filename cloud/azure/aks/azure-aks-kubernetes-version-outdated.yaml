@@ -1,17 +1,20 @@
 id: azure-aks-kubernetes-version-outdated
 info:
-  name: Azure AKS Kubernetes Version 未Latest（云安全）
+  name: Azure AKS Kubernetes 版本存在可用升级（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AKS 集群当前 Kubernetes 版本落后于 Azure 提供的可升级版本时，集群可能错过安全补丁、稳定性修复和受支持版本的维护周期。该模板调用 az aks get-upgrades，并在输出包含 upgrades 数组时报告存在可用 Kubernetes 版本升级。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 运行在旧版本上的控制平面和节点可能暴露于已知缺陷，且无法获得部分新版本的安全能力与平台支持。
+    - 版本差距扩大后，插件、Admission 控制器和工作负载 API 兼容性问题可能集中出现，增加升级中断风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 依据 AKS 生命周期和官方升级路径制定定期升级计划，先在预生产集群验证工作负载和插件兼容性。
+    - 分阶段升级控制平面与节点池，检查 PodDisruptionBudget、容量、备份和回滚方案，升级后复核安全策略。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/kubernetes-service
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,kubernetes,azure-cloud-config
 
 flow: |

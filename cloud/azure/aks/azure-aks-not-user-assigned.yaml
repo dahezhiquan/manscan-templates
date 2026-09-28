@@ -1,17 +1,20 @@
 id: azure-aks-not-user-assigned
 info:
-  name: Azure AKS Managed Identity 未User-Assigned（云安全）
+  name: Azure AKS 未使用用户分配托管身份（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AKS 集群仅使用 SystemAssigned 且未配置 UserAssigned 身份时，集群身份会与资源生命周期绑定，可能不符合需要独立管理和预授权身份的部署基线。该模板查询 identity，并在 type 为 SystemAssigned 且 userAssignedIdentities 为 null 时报告问题。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 集群重建或迁移后系统分配身份会变化，依赖该主体的 Azure RBAC 授权需要重新配置，可能造成权限中断或恢复延迟。
+    - 无法将身份独立于集群进行轮换、预授权和跨资源协作时，复杂部署中的权限生命周期管理更困难。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对需要稳定身份标识或独立生命周期管理的集群创建 UserAssigned 身份，并仅授予必要的 Azure RBAC 权限。
+    - 限制用户分配身份的复用范围，定期审计角色分配和集群删除后的残留授权，避免为方便复用而授予过宽权限。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/use-managed-identity
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config
 
 flow: |

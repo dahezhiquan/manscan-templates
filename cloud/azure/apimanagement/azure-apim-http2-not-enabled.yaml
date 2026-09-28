@@ -1,17 +1,20 @@
 id: azure-apim-http2-not-enabled
 info:
-  name: Azure API Management HTTP/2 Support未启用（云安全）
+  name: Azure API Management HTTP/2 支持未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure apimanagement 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure API Management 网关未启用 HTTP/2 时，客户端无法使用该协议提供的连接复用和传输效率，可能影响高并发 API 的性能与资源利用。该模板枚举 APIM 实例，查询 customProperties，并在 Microsoft.WindowsAzure.ApiManagement.Gateway.Protocols.Server.Http2 为 False 时报告问题。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 高并发场景下连接建立和请求复用效率可能下降，增加网关延迟、连接开销和扩容压力。
+    - 依赖 HTTP/2 特性的客户端或 API 集成可能出现性能退化或兼容性差异。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在确认客户端、网关 SKU 和后端兼容后启用 APIM 网关 HTTP/2 支持。
+    - 变更后通过真实 API 流量验证协议协商、延迟、连接复用和错误率，并纳入配置基线持续检查。
   reference:
     - https://docs.microsoft.com/en-us/azure/api-management/api-management-howto-http2
+  metadata:
+    vendor: microsoft
+    product: azure-api-management
   tags: cloud,devops,azure,microsoft,api-management,azure-cloud-config
 
 flow: |

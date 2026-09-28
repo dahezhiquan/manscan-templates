@@ -1,17 +1,20 @@
 id: azure-aks-entra-id-unintegrated
 info:
-  name: Azure AKS Microsoft Entra ID Integration 未Configured（云安全）
+  name: Azure AKS 未配置 Microsoft Entra ID 集成（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aks 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AKS 控制平面未集成 Microsoft Entra ID 时，集群用户认证无法统一依托组织身份目录、条件访问和集中生命周期管理。该模板查询 aadProfile，并在返回为空时判定未配置 Microsoft Entra ID 集成。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 用户可能依赖长期有效的本地管理员凭据或共享 kubeconfig，增加凭据泄露、离职账号残留和权限回收不及时的风险。
+    - 缺少统一身份审计和多因素认证后，管理员操作更难关联到个人，异常集群访问的追踪与响应会变慢。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 AKS 启用 Microsoft Entra ID 控制平面认证，并使用组织用户或组管理集群访问权限。
+    - 结合 Azure RBAC、Kubernetes RBAC、条件访问和最小权限原则限制高危操作，逐步淘汰共享管理员凭据。
   reference:
     - https://docs.microsoft.com/en-us/azure/aks/managed-aad
+  metadata:
+    vendor: microsoft
+    product: azure-kubernetes-service
   tags: cloud,devops,azure,microsoft,aks,azure-cloud-config
 
 flow: |

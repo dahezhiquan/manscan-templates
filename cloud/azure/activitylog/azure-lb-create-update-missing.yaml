@@ -1,17 +1,20 @@
 id: azure-lb-create-update-missing
 info:
-  name: Azure Load Balancer Create or Update Alert 未Configured（云安全）
+  name: Azure 负载均衡器创建或更新告警未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 活动日志 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 负载均衡器创建或更新可能改变公网入口、监听规则和后端流量分发；未配置 Activity Log 告警时，网络暴露面变化可能不被及时发现。该模板枚举已启用的 Activity Log Alert，并检查告警条件集合是否缺少 Microsoft.Network/loadBalancers/write 操作。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未授权更新可能将流量导向恶意或错误后端，或扩大服务的公网暴露范围。
+    - 缺少创建和更新告警会延迟对入口变更、配置漂移和异常资源部署的响应。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 创建针对负载均衡器创建和更新操作的 Activity Log Alert，并配置安全团队 Action Group。
+    - 对监听器、后端池和公网前端变更实施审批、最小权限和配置基线校验。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,load-balancer,azure-cloud-config
 
 flow: |

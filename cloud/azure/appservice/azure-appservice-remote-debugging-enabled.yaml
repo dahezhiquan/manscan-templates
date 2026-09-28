@@ -1,17 +1,20 @@
 id: azure-appservice-remote-debugging-enabled
 info:
-  name: Azure App Service Remote Debugging已启用（云安全）
+  name: Azure App Service 远程调试已启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 启用远程调试时，调试通道会扩大运行中应用的管理和代码诊断能力，不适合长期用于生产环境。该模板枚举 Web App，查询 remoteDebuggingEnabled，并在返回 true 时报告远程调试已启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 获得部署权限或调试通道访问权限的攻击者可能读取进程信息、配置和敏感数据，甚至影响应用执行。
+    - 调试接口长期暴露会扩大管理面，并可能绕过正常发布审批和变更审计流程。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 生产环境关闭 remoteDebuggingEnabled，仅在受控排障窗口临时启用并设置明确的回滚时间。
+    - 限制部署和运维权限，审计调试连接、应用设置和文件变更，并在排障完成后轮换可能暴露的凭据。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-remote-debug
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

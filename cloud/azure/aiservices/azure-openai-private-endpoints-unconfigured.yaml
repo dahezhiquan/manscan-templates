@@ -1,17 +1,20 @@
 id: azure-openai-private-endpoints-unconfigured
 info:
-  name: Azure OpenAI Service Instances 未Using Private Endpoints（云安全）
+  name: Azure OpenAI 服务实例未配置专用终结点（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure aiservices 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure OpenAI 服务实例未配置 Private Endpoint 时，客户端可能通过公共终结点访问 AI 服务，网络隔离和出站控制能力会受到限制。该模板枚举 kind 为 OpenAI 的服务实例，查询 properties.privateEndpointConnections；当返回空数组 [] 时判定未配置专用终结点。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 公共终结点扩大了服务的可达范围，增加未授权调用、凭据滥用和敏感提示词或响应数据外泄的风险。
+    - 无法将访问限制在受控虚拟网络内时，网络审计、出站过滤和数据边界控制会更难落实。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在承载工作负载的虚拟网络中为 Azure OpenAI 创建 Private Endpoint，并配置对应的私有 DNS 解析和网络路由。
+    - 结合服务支持情况关闭公共网络访问或收紧网络 ACL，并验证应用仅能通过预期的私有路径访问服务。
   reference:
     - https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview
+  metadata:
+    vendor: microsoft
+    product: azure-openai
   tags: cloud,devops,azure,microsoft,openai,azure-cloud-config,ai
 
 flow: |

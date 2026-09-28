@@ -1,17 +1,20 @@
 id: azure-appservice-tls-latest-version-missing
 info:
-  name: Azure App Service TLS Latest Version 未Configured（云安全）
+  name: Azure App Service 未配置 TLS 1.2（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure appservice 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure App Service 的最小 TLS 版本未配置为 1.2 时，应用可能接受较旧的 TLS 协议，降低传输加密的安全基线。该模板枚举 Web App，查询 minTlsVersion，并在结果不包含 1.2 时报告版本配置不足。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 旧版 TLS 协议可能允许较弱的密码套件和已不推荐的协商方式，增加降级、窃听和中间人攻击风险。
+    - 不符合 TLS 1.2 基线可能导致合规检查失败，并与现代客户端或依赖服务的安全策略不一致。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 App Service 的 minTlsVersion 设置为 1.2，并确认自定义域名、客户端和后端依赖均支持该版本。
+    - 配置变更后检查证书、协议协商和客户端错误，逐步淘汰仍使用旧 TLS 版本的调用方。
   reference:
     - https://docs.microsoft.com/en-us/azure/app-service/configure-ssl-bindings#enforce-https
+  metadata:
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,devops,azure,microsoft,appservice,azure-cloud-config
 
 flow: |

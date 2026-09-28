@@ -1,15 +1,23 @@
 id: kubernetes-dashboard-enabled
 
 info:
-  name: Kubernetes Dashboard 的ACK Clusters -已启用（云安全）
+  name: 阿里云ACK 集群启用了 Kubernetes Dashboard（云安全）
   author: ritikchaddha
   severity: medium
-  description: 该规则用于检查 阿里云 ACK 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云ACK 集群中启用 Kubernetes Dashboard 会增加 Web 管理入口暴露面；该组件通常具备较高权限，若认证、授权或访问控制配置不当，攻击者可能借此扩大对集群资源的控制。模板枚举集群后调用 DescribeClusterAddonsVersion，当返回结果包含 kubernetes-dashboard 时判定该组件处于启用状态。
+  impact: |
+    - 暴露额外的集群管理界面，可能被用于探测、凭据攻击或绕过常规运维入口。
+    - 如果 Dashboard 绑定了高权限 ServiceAccount，被攻陷后可能导致工作负载、Secret、配置和命名空间资源被查看或篡改。
+  remediation: |
+    - 在 ACK 控制台的 Helm 或应用管理页面删除 kubernetes-dashboard，并清理对应 Release 记录。
+    - 如确有临时使用需求，应限制访问来源、最小化 RBAC 权限，并在使用后及时下线该组件。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/disable-kubernetes-dashboard.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

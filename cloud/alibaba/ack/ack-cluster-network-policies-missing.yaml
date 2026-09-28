@@ -1,15 +1,23 @@
 id: ack-cluster-network-policies-missing
 
 info:
-  name: Cluster Support 的Network 策略 - 缺失（云安全）
+  name: 阿里云ACK 集群缺少 NetworkPolicy 支持（云安全）
   author: ritikchaddha
   severity: medium
-  description: 该规则用于检查 阿里云 ACK 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云ACK 集群未使用支持 NetworkPolicy 的 Terway 网络插件时，无法在集群层面可靠执行 Kubernetes 网络策略，Pod 间默认访问面会更宽。模板读取 ACK 集群列表，当 Network 字段存在但不是 terway-eniip 时，判定该集群缺少可用于强制网络策略的插件支持。
+  impact: |
+    - 无法通过 Kubernetes NetworkPolicy 对命名空间、Pod 和服务间流量实施精细化访问控制。
+    - 受陷工作负载更容易在集群内部横向访问其他服务，削弱多业务、多租户或敏感工作负载隔离能力。
+  remediation: |
+    - 新建或迁移 ACK 集群时选择 Terway 作为 Network Plug-in，并启用 Support for NetworkPolicy。
+    - 对已不支持原地切换网络插件的集群，应规划业务迁移窗口，重建为支持 NetworkPolicy 的目标集群后再下线旧集群。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/enable-network-policy-support.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

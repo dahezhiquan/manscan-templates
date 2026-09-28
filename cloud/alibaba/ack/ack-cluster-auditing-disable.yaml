@@ -1,15 +1,23 @@
 id: ack-cluster-auditing-disable
 
 info:
-  name: Cluster 审计ing 使用Simple Log Service -未启用（云安全）
+  name: 阿里云ACK 集群审计未启用 Simple Log Service（云安全）
   author: ritikchaddha
   severity: low
-  description: 该规则用于检查 阿里云 ACK 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云 Container Service for Kubernetes (ACK) 集群未启用基于 Simple Log Service 的集群审计时，kube-apiserver、Ingress 和集群操作事件缺少集中留存与检索能力，安全排查、变更追踪和事后取证会受到影响。模板先枚举 ACK 集群，再读取单个集群的 meta_data，当 AuditProjectName 为空时判定该集群未配置审计日志项目。
+  impact: |
+    - 集群关键操作和 API 访问事件无法被持续集中记录，异常变更、越权操作或攻击痕迹可能难以及时发现。
+    - 发生安全事件时缺少可检索的审计证据，影响根因分析、合规审计和责任追踪。
+  remediation: |
+    - 在 ACK 控制台的“集群审计”中为目标集群选择或创建同地域的 Simple Log Service Project，并启用集群审计。
+    - 定期检查 AuditProjectName 是否已绑定有效日志项目，并确认日志采集、存储周期和访问权限符合组织审计要求。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/enable-log-service.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

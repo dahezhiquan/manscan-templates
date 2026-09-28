@@ -1,15 +1,23 @@
 id: ack-cluster-network-policies-disable
 
 info:
-  name: Enforced Cluster Support 的Network 策略 -未启用（云安全）
+  name: 阿里云ACK 集群 NetworkPolicy 支持未启用（云安全）
   author: ritikchaddha
   severity: medium
-  description: 该规则用于检查 阿里云 ACK 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云ACK 集群已使用 Terway 网络插件但未启用 NetworkPolicy 时，Pod 默认缺少基于策略的东西向流量隔离，应用之间的访问边界难以强制执行。模板先筛选 Network 为 terway-eniip 的集群，再读取集群 meta_data，当 Terway 插件配置中的 NetworkPolicy 为 false 时判定网络策略支持未启用。
+  impact: |
+    - 集群内 Pod 和服务之间可能保持默认互通，受陷工作负载更容易横向访问其他命名空间或后端服务。
+    - 无法通过 Kubernetes NetworkPolicy 落实微隔离、最小访问和合规分区要求，增加多租户或多业务集群的隔离风险。
+  remediation: |
+    - 对已安装 Terway 的 ACK 集群，在 kube-system 命名空间的 eni-config 中将 disable_network_policy 设置为 false。
+    - 对未使用 Terway 的集群，应按业务窗口重新创建或迁移到启用 Terway 且勾选 Support for NetworkPolicy 的 ACK 集群。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/enable-network-policy-support.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

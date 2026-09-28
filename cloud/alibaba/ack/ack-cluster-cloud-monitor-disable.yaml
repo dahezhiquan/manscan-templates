@@ -1,15 +1,23 @@
 id: ack-cluster-cloud-monitor-disable
 
 info:
-  name: Cloud Monitor 的ACK Clusters - Disable（云安全）
+  name: 阿里云ACK 集群未启用 Cloud Monitor（云安全）
   author: ritikchaddha
   severity: medium
-  description: 该规则用于检查 阿里云 ACK 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 阿里云 ACK 集群节点池未启用 Cloud Monitor 时，ECS 节点上的监控 Agent 不会采集 CPU、内存、磁盘等运行指标，集群容量、节点健康和应用异常可能缺少及时观测。模板枚举 ACK 集群后查询 nodepools，当 nodepools.kubernetes_config.cms_enabled 为 false 时判定 Cloud Monitor 未启用。
+  impact: |
+    - 运维团队可能无法及时发现节点资源耗尽、异常负载、磁盘压力或监控盲区，增加业务中断和故障定位成本。
+    - 缺少节点级监控数据会削弱告警、趋势分析和事件响应能力，影响生产集群稳定性。
+  remediation: |
+    - 在 ACK 控制台对应节点池的节点配置中启用 Cloud Monitor，并安装 CloudMonitor Agent 到 ECS 节点。
+    - 也可通过 ACK API 修改节点池配置，将 cms_enabled 设置为 true，并在变更后确认监控数据已进入 Cloud Monitor 控制台。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/enable-cloud-monitor.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

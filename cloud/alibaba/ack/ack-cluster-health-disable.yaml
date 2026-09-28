@@ -1,15 +1,23 @@
 id: ack-cluster-health-disable
 
 info:
-  name: ACK Clusters 检查 - Disable（云安全）
+  name: 阿里云ACK 集群健康检查未定期执行（云安全）
   author: ritikchaddha
   severity: medium
-  description: 该规则用于检查 阿里云 ACK 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 阿里云ACK 集群健康检查未定期执行时，集群升级、组件状态、迁移兼容性和运行健康问题可能无法被主动发现。模板枚举 ACK 集群后调用 /clusters/$cluster/checks 查询检查记录，当返回检查状态信息但未发现 Succeeded 状态时，判定该集群缺少成功的健康检查记录。
+  impact: |
+    - 集群潜在配置缺陷、组件异常或升级阻断项可能长期未被识别，增加故障、升级失败和业务中断概率。
+    - 运维团队缺少近期健康检查结果，难以及时评估集群可靠性和容器化应用运行风险。
+  remediation: |
+    - 在 ACK 控制台的 Cluster Check 中定期执行 Upgrade Check、Component Check、Migration Check 等检查项。
+    - 也可通过 /clusters/[cluster_id]/checks 触发检查任务，并跟踪 finished_at 与 status，确保至少每周存在成功完成的检查记录。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-ACK/cluster-check.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: ack
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,ack
 
 variables:

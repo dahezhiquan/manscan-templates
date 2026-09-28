@@ -1,16 +1,24 @@
 id: mysql-audit-disabled
 
 info:
-  name: MySQL Database Instances - SQL 审计ing未启用（云安全）
+  name: 阿里云 RDS MySQL SQL 审计未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: RDS MySQL 实例未启用 SQL 审计时，数据库查询、登录和数据变更行为缺少集中记录，难以及时发现异常访问。模板枚举 MySQL 引擎实例后调用 DescribeSQLCollectorPolicy，当 SQLCollectorStatus 为 Disabled 时判定 SQL 审计未启用。
+  impact: |
+    - 敏感数据查询、批量导出、异常 DDL/DML 操作可能缺少审计证据。
+    - 安全事件和误操作调查时难以还原具体 SQL、访问账号和发生时间。
+  remediation: |
+    - 在 RDS 控制台为 MySQL 实例启用 SQL Explorer and Audit，并按数据敏感级别设置日志保留周期。
+    - 限制审计日志查看权限，并定期复核审计功能状态和存储成本。
   reference:
     - https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-mysql/use-the-sql-explorer-and-audit-feature-on-an-apsaradb-rds-for-mysql-instance
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RDS/enable-mysql-audit-logs.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: rds
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-rds
 
 variables:

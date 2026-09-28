@@ -1,10 +1,16 @@
 id: access-logoss-disabled
 
 info:
-  name: 访问 日志记录 的OSS Buckets -未启用（云安全）
+  name: 阿里云 OSS Bucket 访问日志未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云 OSS Bucket 未启用访问日志时，对象读取、写入和删除等访问行为缺少可追溯记录，安全排查和异常访问分析会受到影响。模板枚举 OSS Bucket 后调用 aliyun oss logging --method get，当返回 LoggingEnabled 且 TargetBucket 为空时判定访问日志未配置。
+  impact: |
+    - 无法持续记录 Bucket 访问来源、对象操作和请求行为，异常下载、越权访问或误操作可能难以及时定位。
+    - 发生数据泄露或对象篡改事件时缺少完整日志证据，影响审计取证和责任追踪。
+  remediation: |
+    - 在 OSS 控制台为目标 Bucket 启用访问日志，配置专用日志存储 Bucket 和合理的日志前缀。
+    - 对日志 Bucket 设置最小权限、生命周期和防删除策略，避免日志被业务用户覆盖或清理。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/enable-bucket-access-logging.html
     - https://www.alibabacloud.com/help/en/oss/user-guide/getting-started
@@ -12,6 +18,8 @@ info:
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: oss
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,alibaba-oss
 
 variables:

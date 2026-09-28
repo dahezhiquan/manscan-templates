@@ -1,16 +1,24 @@
 id: mssql-audit-disabled
 
 info:
-  name: Microsoft SQL Server Database Instances - SQL 审计ing未启用（云安全）
+  name: 阿里云 RDS SQL Server SQL 审计未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: RDS SQL Server 实例未启用 SQL 审计时，数据库访问、查询和变更行为缺少集中审计记录。模板枚举 SQLServer 引擎实例后调用 DescribeSQLCollectorPolicy，当 SQLCollectorStatus 为 Disabled 时判定 SQL 审计未启用。
+  impact: |
+    - 无法有效追踪敏感表访问、异常查询、批量导出或高危变更操作。
+    - 数据库安全事件发生后缺少可检索的 SQL 审计证据，影响合规和取证。
+  remediation: |
+    - 在 RDS 控制台为 SQL Server 实例启用 SQL Explorer and Audit 或对应 SQL 审计能力。
+    - 设置合适的日志保留周期和访问权限，定期检查审计采集是否持续生效。
   reference:
     - https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-mysql/use-the-sql-explorer-and-audit-feature-on-an-apsaradb-rds-for-mysql-instance
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RDS/enable-sql-server-audit-logs.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: rds
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-rds
 
 variables:

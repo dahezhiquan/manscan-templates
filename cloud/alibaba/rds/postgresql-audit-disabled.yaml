@@ -1,16 +1,24 @@
 id: postgresql-audit-disabled
 
 info:
-  name: PostgreSQL Database Instances - SQL 审计ing未启用（云安全）
+  name: 阿里云 RDS PostgreSQL SQL 审计未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: RDS PostgreSQL 实例未启用 SQL 审计时，SQL 执行和数据访问行为缺少集中审计记录，影响异常查询发现和合规追踪。模板枚举 PostgreSQL 引擎实例后调用 DescribeSQLCollectorPolicy，当 SQLCollectorStatus 为 Disabled 时判定 SQL 审计未启用。
+  impact: |
+    - 数据库访问和变更行为缺少可检索记录，难以及时发现越权查询、批量读取或异常修改。
+    - 入侵调查和合规审计时无法完整还原数据库层面的操作链路。
+  remediation: |
+    - 在 RDS 控制台为 PostgreSQL 实例启用 SQL Explorer and Audit 或对应 SQL 审计能力。
+    - 配置合理的保留周期、告警规则和访问权限，确保审计日志可用且不被无关人员访问。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RDS/enable-postgres-audit-logs.html
     - https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-the-sql-explorer-and-audit-feature-on-an-apsaradb-rds-for-postgresql-instance
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: rds
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-rds
 
 variables:

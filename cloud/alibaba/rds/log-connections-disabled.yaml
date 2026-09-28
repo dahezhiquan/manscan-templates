@@ -1,16 +1,24 @@
 id: log-connections-disabled
 
 info:
-  name: PostgreSQL "log_connections" Parameter -未启用（云安全）
+  name: 阿里云 RDS PostgreSQL log_connections 未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: RDS PostgreSQL 未启用 log_connections 参数时，数据库连接建立事件不会被完整记录，影响登录追踪和异常连接排查。模板枚举 RDS 实例后读取运行参数，当 log_connections 的 ParameterValue 为 off 时判定连接日志未启用。
+  impact: |
+    - 无法准确追踪数据库连接来源、时间和用户，暴力尝试或异常客户端连接可能被忽略。
+    - 安全事件调查时缺少连接建立证据，影响账号滥用和应用异常定位。
+  remediation: |
+    - 通过 RDS 参数模板或实例参数配置将 log_connections 设置为 on。
+    - 在变更窗口应用参数并关注日志量增长，确保日志存储和保留周期满足审计要求。
   reference:
     - https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/use-a-parameter-template-to-configure-the-parameters-of-apsaradb-rds-for-postgresql-instances
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RDS/enable-log-connections-for-postgresql.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: rds
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-rds
 
 variables:

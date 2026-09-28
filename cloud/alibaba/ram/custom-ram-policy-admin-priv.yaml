@@ -1,16 +1,24 @@
 id: custom-ram-policy-admin-priv
 
 info:
-  name: Custom RAM 策略 With完全管理权限（云安全）
+  name: 阿里云 RAM 自定义策略授予完全管理权限（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 阿里云 RAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RAM 自定义策略如果允许 Action 为 * 且 Resource 为 *，会向被绑定主体授予账号范围内的完全管理权限，违背最小权限原则。模板枚举 Custom 类型策略并读取策略内容，当 Effect 为 Allow、Action 为 *、Resource 为 * 同时存在时判定该自定义策略具备完全管理权限。
+  impact: |
+    - 被绑定该策略的 RAM 用户、用户组或角色可管理几乎所有云资源，凭据泄露后可能导致账号级接管。
+    - 权限边界过宽会增加误操作、越权访问和审计追责难度。
+  remediation: |
+    - 拆分自定义策略，仅授予业务所需服务、操作和资源范围，避免使用 Action:* 与 Resource:* 的组合。
+    - 定期审计 RAM 策略绑定关系，移除长期不用或权限过宽的自定义策略。
   reference:
     - https://www.alibabacloud.com/help/en/ram/user-guide/create-a-custom-policy
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RAM/policies-with-full-administrative-privileges.html
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: ram
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-ram
 
 variables:

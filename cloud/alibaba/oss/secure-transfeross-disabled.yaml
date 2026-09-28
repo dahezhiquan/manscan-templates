@@ -1,16 +1,24 @@
 id: secure-transfeross-disabled
 
 info:
-  name: 安全传输 的OSS Buckets -未启用（云安全）
+  name: 阿里云 OSS Bucket 未强制安全传输（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: OSS Bucket Policy 未强制 acs:SecureTransport 时，客户端可能通过非 HTTPS 方式访问对象，传输链路存在被窃听或篡改的风险。模板枚举 Bucket 后读取 bucket-policy，当策略包含 Resource 和 Principal 但缺少 acs:SecureTransport 条件时判定未强制安全传输。
+  impact: |
+    - 对象数据、签名 URL 或访问凭据可能在非加密链路中暴露，增加中间人攻击风险。
+    - 业务难以证明对象访问全程使用加密传输，影响敏感数据和合规场景要求。
+  remediation: |
+    - 在 Bucket Policy 中添加拒绝非 HTTPS 请求的规则，使用 acs:SecureTransport 条件强制安全传输。
+    - 检查业务 SDK、工具和第三方集成，确保全部使用 HTTPS Endpoint 访问 OSS。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/enable-secure-transfer.html
     - https://www.alibabacloud.com/help/en/oss/user-guide/use-bucket-policy-to-grant-permission-to-access-oss/
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: oss
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,alibaba-oss
 
 variables:

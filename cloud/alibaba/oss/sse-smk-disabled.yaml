@@ -1,15 +1,23 @@
 id: sse-smk-disabled
 
 info:
-  name: Server-Side 加密 使用Service Managed Key -未启用（云安全）
+  name: 阿里云 OSS 服务端加密未使用服务托管密钥（云安全）
   author: ritikchaddha
   severity: high
-  description: 该规则用于检查 阿里云 OSS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: OSS Bucket 服务端加密未使用符合预期的服务托管密钥时，Bucket 可能绑定了其他云服务密钥或不符合组织加密基线。模板提取 Bucket 加密配置中的 KMSMasterKeyID，并通过 KMS ListAliasesByKeyId 检查密钥别名，当命中特定非 OSS 服务托管别名时判定服务托管密钥配置不符合要求。
+  impact: |
+    - 对象静态数据的密钥来源与预期不一致，可能导致密钥权限边界、审计责任和运维流程混乱。
+    - 加密配置漂移会增加跨服务误用密钥和合规复核失败的风险。
+  remediation: |
+    - 按数据分级选择 OSS 支持的服务托管密钥或客户管理密钥，并重新配置 Bucket 默认服务端加密。
+    - 定期核对 Bucket SSE 配置与 KMS Key Alias，确保密钥用途、授权范围和加密策略一致。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-OSS/enable-sse-with-service-key.html
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: oss
   tags: cloud,devops,aliyun,alibaba,aliyun-cloud-config,oss
 
 variables:

@@ -1,16 +1,24 @@
 id: security-plan-disabled
 
 info:
-  name: Security Center Plan -未启用（云安全）
+  name: 阿里云安全中心未启用高级防护版本（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 安全中心 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 阿里云安全中心未启用 Advanced 或 Enterprise 等高级版本时，部分漏洞修复、检测响应和高级防护能力可能不可用。模板调用 DescribeVersionConfig，当 IsPaidUser 为 false 且 Version 为 1 时判定当前账号未配置高级防护版本。
+  impact: |
+    - 服务器漏洞修复、高级威胁检测或自动化处置能力可能受限，降低云主机安全运营能力。
+    - 对生产资产较多的账号，基础版本可能无法满足持续漏洞治理和合规要求。
+  remediation: |
+    - 根据资产规模和风险要求升级安全中心到 Advanced、Enterprise 或更高版本。
+    - 升级后复核漏洞扫描、基线检查、告警通知和响应策略是否按预期启用。
   reference:
     - https://www.alibabacloud.com/help/en/security-center/product-overview/upgrade-and-downgrade-security-center
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-SecurityCenter/security-center-plan.html
   metadata:
     max-request: 1
     verified: true
+    vendor: alibaba
+    product: security-center
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,security-center
 
 variables:

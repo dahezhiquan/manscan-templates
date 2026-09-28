@@ -1,16 +1,24 @@
 id: transparent-encryption-disabled
 
 info:
-  name: Transparent Data 加密 -未启用（云安全）
+  name: 阿里云 RDS 透明数据加密未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 阿里云 RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: RDS 实例未启用 Transparent Data Encryption (TDE) 时，数据库表空间、表或索引等静态数据缺少透明加密保护。模板枚举 RDS 实例后调用 DescribeDBInstanceTDE，当 TDEStatus 为 Disabled 时判定透明数据加密未启用。
+  impact: |
+    - 数据库静态数据、备份或底层存储介质在未授权访问场景下缺少额外加密保护。
+    - 对高敏数据实例，未启用 TDE 可能不满足静态数据加密和合规要求。
+  remediation: |
+    - 在 RDS 控制台为支持的实例启用 TDE，并根据引擎要求配置 KMS 密钥和需要加密的对象。
+    - 启用前确认数据库版本、存储类型、性能影响和回滚限制，生产实例应先完成测试验证。
   reference:
     - https://www.alibabacloud.com/help/en/rds/apsaradb-rds-for-postgresql/enable-tde-for-an-apsaradb-rds-for-postgresql-instance-and-use-tde
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/alibaba-cloud/AlibabaCloud-RDS/enable-sql-database-tde.html
   metadata:
     max-request: 2
     verified: true
+    vendor: alibaba
+    product: rds
   tags: cloud,devops,aliyun,alibaba,alibaba-cloud-config,alibaba-rds
 
 variables:

@@ -1,19 +1,21 @@
 id: rds-backup-enable
 info:
-  name: RDS Automated Backup 检查（云安全）
+  name: RDS 自动备份保留期为 0（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 是否正确配置备份、快照、证书续期、密钥轮换或其他韧性保护措施，以降低中断、失效或数据恢复失败的风险。
+  description: RDS BackupRetentionPeriod 为 0 表示实例未保留自动备份，无法使用按时间点恢复能力。该模板枚举 RDS 实例，并在备份保留期返回 0 时报告风险。
   impact: |
-    - 缺少备份、续期、轮换或删除保护会增加服务中断、数据丢失或恢复失败的风险。
-    - 当故障、误操作或攻击发生时，业务可用性和恢复能力都会受到明显影响。
+    - 数据库发生误操作、数据损坏或安全事件后，恢复选项会明显受限。
+    - 缺少自动备份会增加业务中断时间，并可能造成不可逆的数据丢失。
   remediation: |
-    - 启用备份、快照、版本控制、证书续期、密钥轮换或删除保护等韧性配置。
-    - 定期验证恢复流程和到期提醒机制，确保在故障或攻击发生时能够快速恢复。
+    - 为关键 RDS 实例配置大于 0 的自动备份保留期，并结合业务 RPO/RTO 确定天数。
+    - 定期执行恢复验证，确认备份链路、权限和加密设置均可用。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

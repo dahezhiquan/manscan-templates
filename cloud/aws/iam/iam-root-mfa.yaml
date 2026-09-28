@@ -1,13 +1,21 @@
 id: iam-root-mfa
 info:
-  name: MFA not enabled on AWS Root Account（云安全）
+  name: AWS Root 账号未启用 MFA（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS IAM 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: AWS root account 拥有账号级最高权限，未启用 MFA 时仅依赖根用户口令保护。该模板读取 account summary 中的 AccountMFAEnabled，并在值为 0 时报告风险。
+  impact: |
+    - 根账号凭据一旦泄露，攻击者可执行关闭安全控制、修改账单和接管账号等高影响操作。
+    - 缺少 MFA 会显著降低根账号的防护强度，不符合 AWS 安全最佳实践。
+  remediation: |
+    - 立即为 root account 绑定硬件或虚拟 MFA，并将根账号凭据纳入严格离线保管流程。
+    - 避免日常使用 root account，使用具备最小权限和审计能力的 IAM role 或 IAM Identity Center 账号执行管理操作。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html
+  metadata:
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config
-
 self-contained: true
 code:
   - engine:

@@ -1,21 +1,23 @@
 id: rds-backtrack-disabled
 
 info:
-  name: AWS RDS Backtrack -未启用（云安全）
+  name: Aurora MySQL Backtrack 未启用（云安全）
   author: DhiyaneshDK
   severity: low
-  description: 该规则用于检查 AWS RDS 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Aurora MySQL Backtrack 可在不还原快照的情况下将集群回退到指定时间点，适合快速恢复误操作造成的数据变更。该模板枚举 Aurora MySQL 集群，并检查 BacktrackWindow 是否为空数组。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 误删、误更新或应用缺陷造成的数据破坏需要依赖快照恢复，恢复时间更长。
+    - 在恢复窗口要求较短的业务中，缺少 Backtrack 会降低数据库韧性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对适用的 Aurora MySQL 集群启用 Backtrack，并设置符合业务恢复目标的 BacktrackWindow。
+    - 同时保留自动备份和快照策略，定期演练不同场景下的恢复流程。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/RDS/backtrack.html
     - https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Managing.Backtrack.html
+  metadata:
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

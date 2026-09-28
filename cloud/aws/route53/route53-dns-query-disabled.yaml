@@ -1,21 +1,23 @@
 id: route53-dns-query-disabled
 
 info:
-  name: DNS Query 日志记录 的Route 53 Hosted Zones -未启用（云安全）
+  name: Route 53 公有托管区域 DNS 查询日志未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS Route53 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Route 53 DNS query logging 可记录公有托管区域收到的 DNS 查询，帮助分析解析异常、滥用和流量来源；未启用时，域名解析层缺少关键审计数据。该模板筛选公有 hosted zone，并检查 QueryLoggingConfigs 是否为空数组。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - DNS 枚举、异常解析流量或域名滥用行为难以及时追踪。
+    - 发生可用性或安全事件时，缺少查询日志会增加溯源和影响范围评估难度。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为公有 Route 53 hosted zone 启用 query logging，并将日志发送到合适的 CloudWatch Logs log group。
+    - 配置日志保留、访问控制和告警分析规则，持续监控异常 DNS 查询模式。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Route53/enable-query-logging.html
     - https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-overview.html
+  metadata:
+    vendor: amazon
+    product: route53
   tags: cloud,devops,aws,amazon,route53,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

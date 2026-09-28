@@ -1,21 +1,23 @@
 id: guardduty-not-enabled
 
 info:
-  name: GuardDuty未启用（云安全）
+  name: GuardDuty 未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS GuardDuty 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Amazon GuardDuty 是基于威胁情报和行为分析的托管威胁检测服务；未启用时，账号缺少对异常 API、恶意 IP、凭据滥用和部分数据源活动的持续检测。该模板调用 list-detectors，并在 DetectorIds 为空数组时命中。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 云账号中的异常访问、横向移动和恶意活动可能无法及时产生检测发现。
+    - 后续事件响应缺少 GuardDuty findings 作为调查入口，增加发现时间和取证成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在所有启用区域开启 GuardDuty，并根据组织结构配置委派管理员和成员账号集中管理。
+    - 同时启用适用的数据源保护能力，并将 findings 接入 Security Hub、EventBridge 或现有告警流程。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/GuardDuty/guardduty-enabled.html
     - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_settingup.html
+  metadata:
+    vendor: amazon
+    product: guardduty
   tags: cloud,devops,aws,amazon,guardduty,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

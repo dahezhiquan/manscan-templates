@@ -1,21 +1,23 @@
 id: firehose-server-destination-encryption
 
 info:
-  name: Firehose Delivery Stream Destination 加密 -未启用（云安全）
+  name: Firehose 目标存储加密未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS Firehose 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Amazon Data Firehose 目标端加密未配置时，投递到 S3 等目的地的数据缺少显式的服务端加密约束和密钥审计能力。该模板枚举 delivery stream，并检查 ExtendedS3 目标的 EncryptionConfiguration 是否返回 NoEncryption。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 日志、事件或业务数据在落盘到目标存储时可能缺少预期的 KMS 密钥保护，增加敏感数据泄露后的影响范围。
+    - 缺少客户管理密钥时，密钥轮换、访问审计和合规证明能力会变弱。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Firehose 目标存储启用服务端加密，并按敏感度选择 AWS KMS 客户管理密钥。
+    - 同步检查目标 S3 bucket 的默认加密、bucket policy 和 KMS key policy，确保投递链路持续满足加密要求。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Firehose/delivery-stream-destination-encryption.html
     - https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html
+  metadata:
+    vendor: amazon
+    product: firehose
   tags: cloud,devops,aws,amazon,firehose,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

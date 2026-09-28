@@ -1,19 +1,21 @@
 id: rds-gp-ssd-usage
 info:
-  name: RDS General Purpose SSD Usage（云安全）
+  name: RDS 使用 Provisioned IOPS SSD 存储（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: RDS 实例使用 io1 Provisioned IOPS SSD 时通常意味着更高成本和更严格的容量/性能规划要求；若业务不需要专用 IOPS，可能偏离成本与运维基线。该模板枚举 RDS 实例并检查 StorageType 是否为 io1。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 不必要的 io1 存储会增加数据库运行成本，并可能掩盖容量规划或性能基线异常。
+    - 存储类型与业务需求不匹配时，后续扩容、预算和资源治理都会更难统一管理。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 评估命中的 RDS 实例是否确实需要 Provisioned IOPS，必要时迁移到 gp3/gp2 等更合适的通用型 SSD。
+    - 为高性能存储建立审批和标签说明，持续跟踪成本、IOPS 利用率和容量趋势。
   reference:
     - https://aws.amazon.com/rds/features/storage/
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

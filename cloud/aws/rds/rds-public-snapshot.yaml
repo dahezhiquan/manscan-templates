@@ -1,19 +1,21 @@
 id: rds-public-snapshot
 info:
-  name: RDS Public Snapshot Exposure（云安全）
+  name: RDS 手动快照公开共享（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RDS 手动快照属性中包含 all 时，表示快照向所有 AWS 账号公开共享，可能暴露完整数据库数据。该模板枚举手动快照并检查 DBSnapshotAttributes 中是否出现 all。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 任何 AWS 账号都可能复制或恢复公开快照，导致数据库内容大规模泄露。
+    - 快照通常包含历史敏感数据，即使生产库已修复访问控制，泄露风险仍会持续存在。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 立即移除快照 restore 属性中的 all，仅向必要的可信账号共享。
+    - 审计历史手动快照和复制快照，避免包含敏感数据的快照被公开或跨账号过度共享。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

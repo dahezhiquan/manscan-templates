@@ -1,21 +1,23 @@
 id: route53-dnssec-signing-disabled
 
 info:
-  name: DNSSEC Signing 的Route 53 Hosted Zones -未启用（云安全）
+  name: Route 53 托管区域 DNSSEC 签名未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS Route53 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: DNSSEC signing 可为托管区域 DNS 响应提供可验证的完整性和来源认证；未启用时，解析结果缺少 DNSSEC 保护。该模板枚举 hosted zone，并检查 get-dnssec 返回的 ServeSignature 是否为 NOT_SIGNING。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 支持 DNSSEC 验证的解析链路无法验证该区域记录的完整性，增加缓存投毒或解析篡改风险。
+    - 对高价值域名而言，缺少 DNSSEC 会降低域名解析层面的信任保障。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 在 Route 53 hosted zone 中启用 DNSSEC signing，并正确配置 KSK、ZSK 和父区 DS 记录。
+    - 启用后监控 DNSSEC 状态和密钥轮换流程，避免签名故障影响域名解析。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Route53/enable-query-logging.html
     - https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/monitoring-overview.html
+  metadata:
+    vendor: amazon
+    product: route53
   tags: cloud,devops,aws,amazon,route53,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

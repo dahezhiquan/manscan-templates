@@ -1,19 +1,21 @@
 id: aurora-delete-protect
 info:
-  name: Aurora Cluster Deletion 保护（云安全）
+  name: Aurora 集群删除保护未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS RDS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Aurora 集群删除保护可阻止数据库被直接删除，降低误操作或被盗用权限造成的数据面中断风险。该模板枚举 Aurora 集群，并检查 DeletionProtection 是否为 false。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 管理员误操作、脚本错误或攻击者滥用权限可能删除集群，造成数据服务中断。
+    - 在缺少可用备份或恢复演练的场景下，业务恢复时间和数据丢失风险会显著增加。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为生产和关键 Aurora 集群启用 DeletionProtection。
+    - 配合最小权限、变更审批和备份恢复演练，降低数据库被意外删除后的影响。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBInstanceDeletionProtection.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,aurora,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

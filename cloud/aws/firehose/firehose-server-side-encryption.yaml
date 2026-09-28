@@ -1,21 +1,23 @@
 id: firehose-server-side-encryption
 
 info:
-  name: Firehose Delivery Stream Server-Side 加密 -未启用（云安全）
+  name: Firehose Delivery Stream 服务端加密未启用（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 AWS Firehose 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Amazon Data Firehose delivery stream 的服务端加密用于保护流中缓冲和处理的数据；未启用时，数据在 Firehose 服务侧处理阶段缺少预期的加密控制。该模板检查 DeliveryStreamEncryptionConfiguration.KeyType 是否为 null。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 包含日志、指标或业务事件的流数据在服务侧缓冲期间保护不足，可能不满足内部数据保护或合规要求。
+    - 无法通过 KMS 密钥策略、审计日志和轮换机制对 Firehose 数据处理链路进行细粒度管控。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Firehose delivery stream 启用服务端加密，优先使用符合组织策略的 AWS KMS key。
+    - 为相关 IAM principal、Firehose 服务角色和 KMS key policy 配置最小必要权限，并定期审计加密状态。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/Firehose/delivery-stream-encrypted-with-kms-customer-master-keys.html
     - https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html
+  metadata:
+    vendor: amazon
+    product: firehose
   tags: cloud,devops,aws,amazon,firehose,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

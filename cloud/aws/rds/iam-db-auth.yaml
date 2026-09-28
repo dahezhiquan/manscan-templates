@@ -1,19 +1,21 @@
 id: iam-db-auth
 info:
-  name: IAM Database Authentication（云安全）
+  name: RDS IAM 数据库认证未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS RDS 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: RDS IAM Database Authentication 可用 IAM 身份和临时令牌替代长期数据库口令；未启用时，MySQL 或 PostgreSQL 实例仍主要依赖静态数据库凭据。该模板枚举相关引擎实例，并检查 IAMDatabaseAuthenticationEnabled 是否为 false。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 长期数据库口令泄露后可能被持续使用，且难以细粒度纳入 IAM 审计和条件控制。
+    - 无法利用临时认证令牌、IAM 策略和集中身份治理收敛数据库访问。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 在支持的 RDS MySQL 或 PostgreSQL 实例上启用 IAM Database Authentication。
+    - 为数据库访问配置最小权限 IAM policy，逐步替换长期共享数据库口令。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

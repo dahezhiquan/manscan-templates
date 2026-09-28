@@ -1,19 +1,21 @@
 id: rds-event-sub
 info:
-  name: RDS Security Group Event 通知s（云安全）
+  name: RDS 安全组事件订阅未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: RDS db-security-group 事件订阅可帮助发现数据库安全组相关变更；未启用时，网络访问控制变化缺少及时通知。该模板检查 SourceType 为 db-security-group 的事件订阅是否为空。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 数据库访问控制变化可能未被及时感知，增加错误开放或未授权访问窗口。
+    - 安全组相关事件缺少审计通知，影响事后调查和变更追踪。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 db-security-group SourceType 创建 RDS event subscription，并订阅配置变更等关键事件。
+    - 将安全组变更通知接入集中告警和变更审计流程，及时复核异常开放规则。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html
+  metadata:
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
-
 variables:
   region: "ap-northeast-1"
 

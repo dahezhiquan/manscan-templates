@@ -1,13 +1,21 @@
 id: ssl-cert-renewal
 info:
-  name: SSL/TLS 证书 中的AWS IAM about to expire 中的30 days（云安全）
+  name: IAM SSL/TLS 证书将在 30 天内过期（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS IAM 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: IAM server certificate 即将过期时，依赖该证书的 TLS 入口可能在到期后出现连接失败或证书信任错误。该模板列出 IAM server certificates，并筛选 Expiration 距当前时间小于 30 天的证书。
+  impact: |
+    - 证书到期会导致客户端访问失败、服务可用性下降或紧急变更。
+    - 如果缺少续期预案，团队可能在临近到期时被迫执行高风险人工操作。
+  remediation: |
+    - 在证书到期前完成续期或替换，优先使用 ACM 托管证书以简化自动续期。
+    - 建立证书到期监控、负责人标记和变更窗口，避免关键入口证书临期失效。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html
+  metadata:
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,ssl,tls,aws-cloud-config
-
 self-contained: true
 code:
   - engine:

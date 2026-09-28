@@ -1,19 +1,21 @@
 id: rds-snapshot-encryption
 info:
-  name: RDS Snapshot 加密（云安全）
+  name: RDS 手动快照未加密（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS RDS 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: RDS 快照未加密时，备份数据缺少 KMS 静态加密保护，快照复制、共享或长期留存都会扩大敏感数据暴露面。该模板枚举手动快照，并检查 Encrypted 是否为 false。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 数据库备份中的敏感数据在快照层缺少加密边界，泄露后影响范围较大。
+    - 未加密快照难以满足合规要求，并限制后续安全共享和跨账号复制策略。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 通过复制快照并启用加密的方式生成加密快照，确认可恢复后删除未加密副本。
+    - 为新建数据库和快照流程强制启用 KMS 加密，并定期审计手动快照状态。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_EncryptSnapshot.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

@@ -1,15 +1,22 @@
 id: iam-full-admin-privileges
 info:
-  name: Overly Permissive IAM 策略（云安全）
+  name: IAM 本地策略权限过度宽泛（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: IAM 策略同时允许 Action 为 * 且 Resource 为 * 时，等同授予全局管理权限，明显偏离最小权限原则。该模板枚举本地策略并读取策略版本，匹配 Allow、Action:* 和 Resource:* 的组合。
+  impact: |
+    - 绑定该策略的身份可修改或删除大量云资源，凭据泄露后会快速演变为账号级控制面风险。
+    - 权限边界过宽会削弱审计、职责分离和变更控制效果。
+  remediation: |
+    - 按业务任务拆分策略，仅授予必要 service、action 和 resource 范围。
+    - 对确需管理员权限的角色增加审批、MFA、短期凭据和权限边界等补偿控制。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config
-
 flow: |
   code(1)
   for(let PolicyName of iterate(template.policies)){

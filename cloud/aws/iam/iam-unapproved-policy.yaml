@@ -1,13 +1,21 @@
 id: iam-unapproved-policy
 info:
-  name: Unapproved IAM 策略 Attachments（云安全）
+  name: IAM 使用未批准策略（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 未经批准的托管策略被附加到身份后，可能授予超出业务所需的权限；该模板当前检查 AWS 托管策略 AmazonRDSFullAccess 的 AttachmentCount，非 0 时判定存在未批准策略使用。
+  impact: |
+    - 被附加的高权限策略可能允许身份创建、修改或删除 RDS 资源，增加误操作和凭据滥用影响面。
+    - 权限例外无法被统一治理时，最小权限和职责分离要求会被削弱。
+  remediation: |
+    - 审查附加 AmazonRDSFullAccess 的用户、组或角色，替换为按任务定制的最小权限策略。
+    - 建立批准清单和自动化检测流程，对新增高权限策略附加行为进行告警或阻断。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html
+  metadata:
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,ssl,tls,aws-cloud-config
-
 self-contained: true
 code:
   - engine:

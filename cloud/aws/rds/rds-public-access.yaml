@@ -1,21 +1,23 @@
 id: rds-public-access
 
 info:
-  name: RDS 公开可访问 -已启用（云安全）
+  name: RDS 实例公网可访问（云安全）
   author: DhiyaneshDK
   severity: high
-  description: 该规则用于检查 AWS RDS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RDS 实例设置为 PubliclyAccessible 会为数据库分配可公网路由的入口，若安全组或凭据控制不严，数据库可能暴露给互联网扫描和攻击。该模板枚举实例并检查 PubliclyAccessible 是否为 true。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 数据库服务可能被公网枚举、暴力破解或利用弱口令/漏洞攻击。
+    - 一旦凭据泄露或安全组开放过宽，敏感数据泄露和破坏性操作风险显著增加。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将数据库部署在私有子网并关闭 PubliclyAccessible，必要访问通过 VPN、堡垒机或私有连接进入。
+    - 收敛安全组入站规则，仅允许明确可信来源访问数据库端口，并启用审计日志。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/RDS/rds-publicly-accessible.html
     - http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.html
+  metadata:
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

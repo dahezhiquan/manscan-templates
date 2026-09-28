@@ -1,19 +1,21 @@
 id: rds-ri-payment-fail
 info:
-  name: RDS RI Payment Failure（云安全）
+  name: RDS 预留实例付款失败（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: RDS Reserved DB Instance 处于 payment-failed 状态时，预留购买或续费未成功，可能导致预期容量折扣和预算规划失效。该模板枚举 reserved DB instances，并检查 State 是否为 payment-failed。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 数据库成本可能回落到按需计费，造成预算超支或财务告警。
+    - 付款失败反映账号账单或采购流程异常，可能影响后续资源采购和合规运营。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 检查 AWS Billing、付款方式和预留实例订单状态，修复失败付款原因。
+    - 将 RI 状态纳入成本治理监控，确保财务负责人及时处理 payment-failed 事件。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

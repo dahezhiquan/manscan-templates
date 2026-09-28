@@ -1,21 +1,23 @@
 id: elb-delete-protection-disabled
 
 info:
-  name: ELB Delete 保护 -未启用（云安全）
+  name: ELB 删除保护未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS ELB 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: AWS Elastic Load Balancing 的删除保护用于防止负载均衡器被误删或被拥有控制面权限的攻击者删除；未启用时，关键入口资源缺少操作防护边界。该模板枚举 ELBv2 负载均衡器，并检查 deletion_protection.enabled 属性是否为 false。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 误操作、自动化脚本错误或被盗用的高权限凭据可能直接删除负载均衡器，导致业务入口中断。
+    - 攻击者在取得云控制面权限后更容易破坏流量入口和可用性，增加恢复与排障成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为生产和关键环境的 Application Load Balancer、Network Load Balancer 或 Gateway Load Balancer 启用 deletion_protection.enabled。
+    - 限制可修改或删除负载均衡器的 IAM 权限，并将该配置纳入持续合规检查。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/ELBv2/enable-gwlb-deletion-protection.html
     - https://awscli.amazonaws.com/v2/documentation/api/latest/reference/elbv2/index.html
+  metadata:
+    vendor: amazon
+    product: elb
   tags: cloud,devops,aws,amazon,elb,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

@@ -1,15 +1,22 @@
 id: iam-mfa-enable
 info:
-  name: MFA not enabled 的AWS IAM Console User（云安全）
+  name: IAM 控制台用户未启用 MFA（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS IAM 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: IAM 控制台用户未绑定 MFA 时，账号仅依赖口令保护，口令泄露、复用或钓鱼会直接导致控制台访问。该模板枚举 IAM 用户并调用 list-mfa-devices，在 MFADevices 为空时报告风险。
+  impact: |
+    - 攻击者获取口令后可直接登录 AWS 控制台，执行权限范围内的资源操作。
+    - 高权限用户缺少 MFA 会显著提高账号接管和横向移动风险。
+  remediation: |
+    - 为所有需要控制台登录的 IAM 用户强制启用 MFA，尤其是管理员和运维用户。
+    - 通过 IAM policy 或身份中心策略限制未通过 MFA 的敏感操作，并清理不再需要控制台登录的用户。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/list-mfa-devices.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config
-
 flow: |
   code(1)
   for(let UserName of iterate(template.users)){

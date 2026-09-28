@@ -1,19 +1,21 @@
 id: rds-public-subnet
 info:
-  name: RDS Instance Private Subnet（云安全）
+  name: RDS 实例位于公网路由子网（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS RDS 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RDS 实例所在子网若通过 0.0.0.0/0 路由到 Internet Gateway，数据库网络位置具备公网出入口暴露条件。该模板枚举实例子网，并检查关联路由表是否同时包含 igw- 和 0.0.0.0/0。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 即使数据库当前未公开访问，后续安全组或 PubliclyAccessible 配置变化也可能迅速造成公网暴露。
+    - 数据库与公网路由共处会增加网络边界误配置和攻击面扩大风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 RDS 实例迁移到没有 Internet Gateway 默认路由的私有子网。
+    - 通过私有子网路由、NAT、VPN、Direct Connect 或堡垒机满足必要管理访问，并持续审计路由表变化。
   reference:
     - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Subnets
   metadata:
     max-request: 3
+    vendor: amazon
+    product: rds
   tags: cloud,devops,aws,amazon,rds,aws-cloud-config
 variables:
   region: "ap-northeast-1"

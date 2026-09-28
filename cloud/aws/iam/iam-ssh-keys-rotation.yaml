@@ -1,15 +1,22 @@
 id: iam-ssh-keys-rotation
 info:
-  name: SSH Key Rotation - 90-Day 策略（云安全）
+  name: IAM SSH 公钥超过 90 天未轮换（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 AWS IAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: IAM 用户的 SSH public key 可用于 CodeCommit 等服务访问，长期不轮换会扩大密钥泄露或人员变动后的滥用窗口。该模板枚举 IAM 用户的 SSH public keys，并筛选 UploadDate 早于 90 天的 key。
+  impact: |
+    - 泄露或离职人员遗留的 SSH key 可能继续访问代码仓库或相关资源。
+    - 密钥缺少生命周期管理会增加审计难度，并削弱凭据泄露后的快速处置能力。
+  remediation: |
+    - 轮换超过组织期限的 IAM SSH public key，删除未知、停用或不再使用的 key。
+    - 优先采用集中身份认证和短期凭据方案，并将 SSH key 年龄纳入定期审计。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/iam/list-ssh-public-keys.html
   metadata:
     max-request: 2
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,ssh,aws-cloud-config
-
 flow: |
   code(1)
   for(let UserName of iterate(template.users)){

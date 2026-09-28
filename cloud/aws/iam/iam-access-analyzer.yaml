@@ -1,13 +1,21 @@
 id: iam-access-analyzer
 info:
-  name: IAM 访问 Analyzer is not Used（云安全）
+  name: IAM Access Analyzer 未使用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 AWS IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: IAM Access Analyzer 可分析资源策略并识别授予外部主体的访问权限；未配置 analyzer 时，账号缺少对跨账号或公网可访问资源策略的持续可见性。该模板调用 accessanalyzer list-analyzers，并在返回空数组时命中。
+  impact: |
+    - S3、KMS、SQS、Lambda 等资源策略中的外部访问授权可能长期未被发现。
+    - 权限治理依赖人工审查，容易遗漏跨账号信任关系和过度共享资源。
+  remediation: |
+    - 在账号或组织层启用 IAM Access Analyzer，并覆盖需要审计的区域。
+    - 定期审查 analyzer findings，对不必要的外部访问授权执行收敛或显式归档。
   reference:
     - https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/list-analyzers.html
+  metadata:
+    vendor: amazon
+    product: iam
   tags: cloud,devops,aws,amazon,iam,aws-cloud-config
-
 self-contained: true
 code:
   - engine:

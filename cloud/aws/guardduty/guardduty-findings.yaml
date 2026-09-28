@@ -1,21 +1,23 @@
 id: guardduty-findings
 
 info:
-  name: Open GuardDuty Findings（云安全）
+  name: GuardDuty 存在未处理发现项（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS GuardDuty 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Amazon GuardDuty findings 表示账号、工作负载或数据源中出现了可疑行为、恶意活动或异常访问迹象；长期未处理会削弱威胁响应闭环。该模板枚举 detector 后调用 list-findings，并在返回非空 finding ID 时报告风险。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 可疑 API 调用、凭据滥用、恶意软件或数据侦察活动可能未被及时处置，扩大攻击停留时间。
+    - 安全团队难以区分已确认风险和历史噪声，影响事件优先级判断与审计追踪。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 在 GuardDuty 控制台或告警流程中逐项研判 open finding，并按严重程度完成遏制、调查和修复。
+    - 对已确认无风险或已完成处置的 finding 执行归档，并建立 EventBridge、Security Hub 或工单联动流程。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/GuardDuty/findings.html
     - https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html
+  metadata:
+    vendor: amazon
+    product: guardduty
   tags: cloud,devops,aws,amazon,guardduty,aws-cloud-config
-
 variables:
   region: "us-west-2"
 

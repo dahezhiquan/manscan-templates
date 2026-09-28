@@ -1,17 +1,20 @@
 id: azure-keyvault-network-unrestricted
 info:
-  name: Unrestricted Network 访问 to Azure Key Vaults（云安全）
+  name: Azure Key Vault 允许不受限公网访问（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure Key Vault 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Key Vault 的网络安全策略可以限制密钥、证书和机密终结点的来源。允许公网访问会使承载高价值凭据的服务端点暴露在公共网络中，增加探测和错误配置被利用的机会。本模板查询 properties.publicNetworkAccess，并在值为 Enabled 或未返回值时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可从互联网持续探测 Key Vault 端点，增加凭据滥用、权限配置缺陷和数据访问接口被利用的风险。
+    - 一旦身份或网络规则存在错误，可能导致密钥、证书私钥或机密被读取，进而影响依赖服务和业务数据。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 不需要公网访问时关闭 publicNetworkAccess，并通过 Private Endpoint、虚拟网络服务终结点或防火墙规则限制来源。
+    - 同时使用 Microsoft Entra ID、RBAC 和最小权限控制数据面访问，避免把网络限制当作唯一防线。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/general/network-security
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

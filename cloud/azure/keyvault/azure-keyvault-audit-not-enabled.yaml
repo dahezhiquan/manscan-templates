@@ -1,17 +1,20 @@
 id: azure-keyvault-audit-not-enabled
 info:
-  name: Enable 审计Event 日志记录 的Azure Key Vaults（云安全）
+  name: Azure Key Vault 未启用审计日志（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure Key Vault 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: Azure Key Vault 保存密钥、证书和机密，诊断设置中的 AuditEvent 日志可记录对这些对象的访问和管理活动。未配置诊断日志会削弱对读取、修改和删除操作的追踪能力。本模板查询 Key Vault 资源的诊断设置日志，并在结果为空数组 [] 时报告未发现审计日志配置。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 对密钥、证书和机密的异常读取、修改或删除可能无法及时发现，形成高价值数据访问的审计盲区。
+    - 发生凭据泄露或密钥滥用后，缺少操作证据会增加事件溯源、责任认定和合规取证难度。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 为每个 Key Vault 创建诊断设置，将 AuditEvent 发送到 Log Analytics、Event Hub 或受控存储，并按要求设置保留期限。
+    - 对高风险密钥读取、权限变更和删除操作配置告警，同时限制日志工作区的读取和删除权限，防止审计记录被一并篡改。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/general/overview-security
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

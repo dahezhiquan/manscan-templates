@@ -1,17 +1,20 @@
 id: azure-database-tier-cmk-absent
 info:
-  name: Customer-Managed Key 未Configured 的Azure Database Tier（云安全）
+  name: Azure Key Vault 数据库层密钥缺少必要标签（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure Key Vault 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure Key Vault 密钥标签用于记录密钥用途、所属数据库、环境和责任人等管理元数据。启用的数据库层密钥没有标签时，数据库加密密钥的归属、轮换和审计难以自动确认。本模板列出启用的密钥并查询 tags，在返回空对象 {} 时报告缺少数据库层密钥标签。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 数据库客户管理密钥可能无法与具体数据服务和责任团队对应，增加误授权、误删或错误轮换导致数据库不可用的风险。
+    - 缺少标签会削弱加密资产盘点、合规证明和到期或轮换告警能力，延长异常处置时间。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为每个数据库层密钥补充数据库标识、环境、用途、责任人和数据分级等必需标签，不要在标签中写入密钥或连接凭据。
+    - 使用 Azure Policy 或自动化流程校验新建密钥的标签完整性，并定期审计既有密钥与数据库加密配置的对应关系。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/keys/about-keys
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,azure-key-vault,azure-cloud-config
 
 flow: |

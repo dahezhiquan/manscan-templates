@@ -1,17 +1,20 @@
 id: azure-functionapp-public-exposure
 info:
-  name: 暴露 Azure Functions（云安全）
+  name: Azure Functions 允许公网访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure functions 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Functions 的入站网络配置决定客户端是否可以从公共网络连接函数应用。公网访问开启时，HTTP 触发器和管理入口的暴露面扩大，若身份认证或应用代码存在缺陷，可能被外部攻击者直接利用。本模板查询 publicNetworkAccess，并在值为 Enabled 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 函数端点可被互联网持续探测和调用，增加未授权访问、漏洞利用、接口刷写和资源耗尽风险。
+    - 如果函数能够访问存储、数据库或密钥服务，端点被攻破后可能形成敏感数据泄露和云内横向移动路径。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 不需要公网入站时关闭 publicNetworkAccess，并使用 Private Endpoint、访问限制或受控网络接入。
+    - 必须提供公网服务时，强制使用 Microsoft Entra ID 或函数密钥认证，限制来源范围，并为异常调用配置告警。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-functions/functions-networking-options
+  metadata:
+    vendor: microsoft
+    product: azure-functions
   tags: cloud,devops,azure,microsoft,functionapp,azure-cloud-config
 
 flow: |

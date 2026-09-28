@@ -1,17 +1,20 @@
 id: azure-app-tier-cmk-untagged
 info:
-  name: Customer-Managed Key 未Tagged 中的Azure App Tier（云安全）
+  name: Azure Key Vault 应用层密钥缺少必要标签（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure Key Vault 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure Key Vault 密钥支持使用标签记录用途、所属应用、环境和责任人等管理元数据。启用的应用层密钥没有标签时，自动化识别、轮换和审计流程难以确认其归属。本模板列出启用的密钥并查询 tags，在返回空对象 {} 时报告缺少应用层密钥标签。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 无法可靠区分应用层客户管理密钥的用途和责任边界，可能导致错误授权、误删、误轮换或停用生产密钥。
+    - 标签缺失会削弱密钥资产盘点、合规审计和生命周期告警能力，使高价值密钥长期处于不可见状态。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为每个应用层密钥补充统一的应用、环境、用途、责任人和数据分级标签，避免把机密内容直接写入标签。
+    - 使用 Azure Policy 或自动化巡检强制新建密钥带有必需标签，并定期复核已有密钥及其版本的归属和生命周期。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/keys/about-keys-details
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

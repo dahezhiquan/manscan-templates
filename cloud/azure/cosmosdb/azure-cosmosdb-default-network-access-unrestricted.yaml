@@ -1,17 +1,20 @@
 id: azure-cosmosdb-default-network-access-unrestricted
 info:
-  name: Azure Cosmos DB Default Network 访问 Unrestricted（云安全）
+  name: Azure Cosmos DB 允许不受限公网网络访问（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure cosmosdb 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Cosmos DB 的公网访问开关决定数据库终结点是否可从公共网络发起连接。开启公网访问会扩大数据库端点的暴露面，若网络规则或身份控制配置不严，攻击者可能尝试枚举资源、滥用凭据或访问敏感数据。本模板查询账户的 publicNetworkAccess 和 virtualNetworkRules，并在 publicNetworkAccess 为 Enabled 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 数据库端点持续暴露在公共网络中，增加凭据滥用、网络探测和未授权访问的机会。
+    - 一旦身份认证、IP 规则或虚拟网络规则存在缺陷，可能导致数据读取、篡改、删除或业务中断。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 不需要公网访问时关闭 publicNetworkAccess，并优先通过 Private Endpoint 或受控虚拟网络访问。
+    - 必须保留公网访问时，使用最小化的 IP 白名单、虚拟网络规则和强身份认证，并持续审计访问日志。
   reference:
     - https://docs.microsoft.com/en-us/azure/cosmos-db/how-to-configure-firewall-vnet
+  metadata:
+    vendor: microsoft
+    product: azure-cosmos-db
   tags: cloud,devops,azure,microsoft,cosmosdb,azure-cloud-config
 
 flow: |

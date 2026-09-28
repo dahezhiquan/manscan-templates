@@ -1,17 +1,20 @@
 id: azure-keyvault-cert-transparency-missing
 info:
-  name: 缺失 证书 Transparency 中的Azure Key Vaults（云安全）
+  name: Azure Key Vault 证书未启用证书透明度（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure Key Vault 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 证书透明度（Certificate Transparency，CT）通过公开日志帮助域名所有者和安全团队发现错误签发或滥发的公网证书。证书策略关闭 CT 时，异常证书的外部发现和监测能力会下降。本模板读取 policy.issuerParameters.certificateTransparency，并在值为 false 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 错误签发的公网证书可能更晚被发现，攻击者可利用其冒充业务域名实施钓鱼、中间人攻击或流量劫持。
+    - 缺少透明度记录会削弱证书资产监测和事件响应的外部证据来源。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对互联网信任链中的公网证书启用 certificateTransparency，并确认所用签发机构支持该策略。
+    - 对内部 CA 或不适用 CT 的证书记录明确例外，结合证书库存、到期监控和域名监测补足发现能力。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/certificates/how-to-enable-certificate-transparency
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

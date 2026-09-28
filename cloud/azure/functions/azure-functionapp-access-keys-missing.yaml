@@ -1,17 +1,20 @@
 id: azure-functionapp-access-keys-missing
 info:
-  name: Azure Function 访问 Keys Configuration（云安全）
+  name: Azure Functions HTTP 触发器缺少函数访问密钥（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure functions 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Functions 的 HTTP 触发器可使用函数密钥或主机密钥限制调用方；未配置密钥时，依赖密钥认证的触发器将缺少一层访问控制。本模板列出函数应用的 functionKeys，并在返回空对象 {} 时报告。该检测应结合函数的 authLevel 和其他身份认证配置判断是否确需密钥保护。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 若 HTTP 触发器未配置其他认证且允许匿名或错误放宽访问级别，攻击者可能直接调用函数。
+    - 未授权调用可能造成敏感数据读取、后端操作滥用、计算资源消耗或业务接口被刷写。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对需要密钥认证的 HTTP 触发器配置函数密钥或主机密钥，并将 authLevel 设置为 function 或 admin，而非 anonymous。
+    - 优先结合 Microsoft Entra ID、访问限制或 API 网关实施身份认证；密钥应安全存储、定期轮换并避免写入代码或日志。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=csharp
+  metadata:
+    vendor: microsoft
+    product: azure-functions
   tags: cloud,devops,azure,microsoft,functionapp,azure-cloud-config
 
 flow: |

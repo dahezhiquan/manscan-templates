@@ -1,17 +1,20 @@
 id: azure-keyvault-trusted-ms-unrestricted
 info:
-  name: Key Vault Trusted Microsoft Services 访问 未Configured（云安全）
+  name: Azure Key Vault 未配置受信任 Microsoft 服务访问例外（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure Key Vault 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Key Vault 的 networkAcls.bypass 用于决定受信任的 Microsoft 服务是否可以绕过保管库防火墙；值为 None 表示未允许该类服务绕过。本模板查询该字段，并在匹配到 "None" 时报告未配置受信任服务访问例外。是否应启用取决于实际依赖服务和组织网络基线。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 需要受信任 Azure 服务访问保管库时，过于严格的 bypass 配置可能导致备份、部署、监控或集成任务失败。
+    - 团队为绕过访问失败而直接放开公网网络或扩大防火墙范围，可能反而增加密钥、证书和机密暴露面。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 先盘点确需访问 Key Vault 的 Azure 服务；有明确依赖时将 bypass 设置为 AzureServices，并保留公网访问限制、RBAC 和审计。
+    - 若没有受信任服务依赖，应保留 None 并记录基线例外，避免为通过检查而扩大网络访问范围。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/general/network-security
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

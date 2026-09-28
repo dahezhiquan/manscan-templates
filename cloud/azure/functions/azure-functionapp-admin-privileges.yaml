@@ -1,17 +1,20 @@
 id: azure-functionapp-admin-privileges
 info:
-  name: Azure Functions 使用Admin Privileges（云安全）
+  name: Azure Functions 托管身份被授予高危管理角色（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure functions 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Azure Functions 可使用用户分配的托管身份访问 Microsoft Entra ID 保护的 Azure 资源，无需在代码中保存长期凭据。本模板枚举函数应用的用户分配身份及其角色分配，并在发现 Owner、Contributor、User Access Administrator 或 Role Based Access Control Administrator 角色时报告，表示应用身份超出常规运行所需的最小权限范围。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 函数代码、依赖包或运行环境被利用后，攻击者可能取得托管身份令牌并继承高危角色权限。
+    - 受影响身份可能被用于修改资源、读取敏感数据、创建持久化权限或进一步控制订阅中的其他服务。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 删除函数应用不需要的 Owner、Contributor、User Access Administrator 和 Role Based Access Control Administrator 角色。
+    - 将必要权限收敛到具体资源和操作范围，按应用或环境拆分托管身份，并通过 PIM 或定期权限审计管理临时高权。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference
+  metadata:
+    vendor: microsoft
+    product: azure-functions
   tags: cloud,devops,azure,microsoft,functionapp,azure-cloud-config
 
 flow: |

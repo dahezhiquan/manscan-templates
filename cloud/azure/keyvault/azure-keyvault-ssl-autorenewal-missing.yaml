@@ -1,17 +1,20 @@
 id: azure-keyvault-ssl-autorenewal-missing
 info:
-  name: 缺失 SSL 证书 Auto-续期 中的Azure Key Vaults（云安全）
+  name: Azure Key Vault 证书未配置自动续期（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure Key Vault 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Key Vault 证书生命周期动作支持在到期前自动续期，也可仅发送 EmailContacts 通知。本模板读取 policy.lifetimeActions[*].action.actionType，在匹配到 EmailContacts 时按当前检测逻辑报告未配置自动续期，表示证书至少存在邮件通知动作，但未按该规则确认 AutoRenew 动作。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 证书到期前若没有可靠的自动续期和部署流程，可能造成 TLS 服务、双向认证或下游 API 调用中断。
+    - 仅依赖邮件通知还要求人工及时处理，容易因告警遗漏、权限问题或发布延迟导致证书过期。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在证书 lifetimeActions 中配置 actionType 为 AutoRenew 的动作，并设置足够的 daysBeforeExpiry 提前期。
+    - 保留 EmailContacts 作为辅助告警，定期验证签发机构、Key Vault 权限、部署流水线和续期结果。
   reference:
     - https://docs.microsoft.com/en-us/azure/key-vault/certificates/how-to-renew-certificate
+  metadata:
+    vendor: microsoft
+    product: azure-key-vault
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

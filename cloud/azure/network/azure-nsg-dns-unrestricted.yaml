@@ -1,17 +1,20 @@
 id: azure-nsg-dns-unrestricted
 info:
-  name: Unrestricted DNS 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 DNS 端口 53（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: DNS 服务使用 UDP/TCP 53 提供名称解析；将该端口对互联网开放会扩大解析服务的暴露面，并可能暴露内部域名、遭受递归滥用或被用于反射放大攻击。本模板查询入站允许的 TCP 或 UDP 53 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 外部攻击者可能枚举内部主机名和服务信息，或利用配置错误的解析器发起递归查询和反射流量。
+    - DNS 服务被滥用或压垮后，应用可能出现解析失败、连接延迟和业务不可用。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 仅向受信任的 DNS 客户端开放必要的 UDP/TCP 53 规则，关闭不需要的公网解析入口。
+    - 禁止对互联网提供开放递归解析，使用分离 DNS、访问控制和查询速率限制降低滥用风险。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

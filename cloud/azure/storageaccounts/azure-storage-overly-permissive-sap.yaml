@@ -3,15 +3,18 @@ info:
   name: Azure Storage Overly Permissive Stored 访问 策略（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure storageaccounts 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Azure Storage 容器的 Stored Access Policy 可集中约束服务 SAS 的权限、有效期和撤销；缺少该策略时，依赖账户密钥签发的 SAS 往往难以单独撤销和统一审计。本模板枚举存储账户和容器并执行 az storage container policy list，在返回空对象 {} 时报告未配置 Stored Access Policy；该结果本身不代表容器公开，仍需结合实际 SAS 使用情况复核。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 泄露的长期 SAS 或账户密钥可能持续访问容器，且缺少服务端策略时难以及时撤销，增加数据读取、写入和删除风险。
+    - 对不受控的 SAS 缺少统一权限和有效期治理，会削弱访问审计、密钥轮换和事件响应能力。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 结合业务需求创建最小权限的 Stored Access Policy，限制服务 SAS 的权限和有效期，并建立策略变更审计。
+    - 优先使用 Microsoft Entra 身份和用户委托 SAS；对已有账户密钥和 SAS 进行盘点、轮换与撤销。若账户不使用 SAS，应记录该检测项的业务例外。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-nsg-ftp-unrestricted
 info:
-  name: Unrestricted FTP 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 FTP 端口 20 和 21（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: FTP 使用 TCP 20 和 21 传输文件及控制命令，传统 FTP 通常以明文传输凭据和数据。将这两个端口对互联网开放会使文件服务暴露于扫描、撞库和协议攻击。本模板查询入站允许的 TCP 20 或 21 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 凭据和文件内容可能被窃听，攻击者还可能通过弱口令、匿名访问或服务漏洞读取、篡改和投递文件。
+    - 被入侵的文件传输服务可能成为恶意软件投递和内部主机横向移动的入口。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 关闭面向互联网的 FTP 端口，优先迁移到 SFTP 或配置经过加密保护的 FTPS。
+    - 必须保留 FTP 时限制来源地址、关闭匿名登录、强制强认证，并对传输日志和文件权限进行审计。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

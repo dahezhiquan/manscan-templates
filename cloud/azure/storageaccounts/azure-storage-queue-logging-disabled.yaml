@@ -3,15 +3,18 @@ info:
   name: Azure Storage Queue 日志记录未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Storage Queue 日志可记录队列消息的读取、写入和删除请求；关闭这些操作的日志会削弱对消息滥用、批量清理和异常访问的审计能力。本模板枚举存储账户并执行 az storage logging show --services q，在 delete、read 和 write 均为 false 时报告 Queue 服务未启用操作日志。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未授权读取、注入、删除或批量清空消息的行为可能无法及时发现，攻击者可借此干扰异步任务和业务流程。
+    - 发生消息泄露、篡改或丢失后，缺少操作日志会削弱溯源、影响评估和事件响应能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据审计和事件响应需求启用 Queue 服务的 read、write 和 delete 日志，并配置日志保留、访问控制和集中分析。
+    - 将队列操作日志接入异常访问和批量删除告警，同时评估日志成本与敏感数据脱敏要求。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/queues/storage-queues-introduction
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,storage-queue,azure-cloud-config
 
 flow: |

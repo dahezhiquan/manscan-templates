@@ -1,17 +1,20 @@
 id: azure-blob-soft-delete-disabled
 info:
-  name: Azure Blob Storage 软删除未启用（云安全）
+  name: Azure Blob Storage Blob 软删除未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Blob 软删除在 Blob 被删除或覆盖后保留可恢复版本，可降低误删、恶意删除和勒索软件破坏造成的数据损失。本模板枚举存储账户并查询 Blob delete policy 的 enabled 字段，在返回 false 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 攻击者或误操作删除 Blob 后，数据可能无法恢复，影响业务文件、备份和审计证据的完整性。
+    - 缺少恢复窗口会增加勒索软件、批量删除和错误发布造成的业务中断及数据丢失风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 Blob 软删除并根据数据恢复目标设置合理保留天数，同时配置容器软删除和版本控制等配套能力。
+    - 定期执行删除和恢复演练，限制能够永久清理软删除数据的权限并监控策略变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/soft-delete-overview
+  metadata:
+    vendor: microsoft
+    product: azure-blob-storage
   tags: cloud,devops,azure,microsoft,blob-storage,azure-cloud-config
 
 flow: |

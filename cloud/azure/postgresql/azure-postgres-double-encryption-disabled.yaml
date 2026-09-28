@@ -1,17 +1,20 @@
 id: azure-postgres-double-encryption-disabled
 info:
-  name: Azure PostgreSQL Single Server Double 加密未启用（云安全）
+  name: Azure PostgreSQL 基础设施双重加密未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure PostgreSQL Single Server 的 infrastructureEncryption 用于在平台存储加密之外增加基础设施层加密，关闭时会减少静态数据保护的纵深。本模板枚举 PostgreSQL 服务器并查询 infrastructureEncryption，仅当返回值为 Disabled 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 存储介质、备份或底层基础设施暴露时，数据库文件和临时数据缺少额外加密层保护。
+    - 对受监管或高敏感数据场景，单层静态加密可能无法满足组织的纵深防御和合规要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 按业务和服务能力启用 infrastructureEncryption，并确认新建或迁移方案是否需要在实例创建阶段完成配置。
+    - 对无法原地启用的现有实例，规划到支持该能力的安全配置实例迁移，并在迁移前验证备份和恢复流程。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-data-security-encryption
+  metadata:
+    vendor: microsoft
+    product: azure-postgresql
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

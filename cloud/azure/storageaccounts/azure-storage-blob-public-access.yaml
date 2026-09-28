@@ -1,17 +1,20 @@
 id: azure-storage-blob-public-access
 info:
-  name: Azure Storage Blob Public 访问 Not未启用（云安全）
+  name: Azure Storage Blob 公共访问已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Storage 账户的 allowBlobPublicAccess 为 true 时，容器和 Blob 可以被配置为匿名读取，公共数据与敏感数据混用时容易产生意外暴露。本模板枚举存储账户并查询 allowBlobPublicAccess，在返回 true 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未授权用户可能读取公开容器中的文件、备份、日志或业务数据，造成数据泄露和隐私合规风险。
+    - 公开对象也可能被用于投放恶意文件、收集业务信息或支撑后续针对内部系统的攻击。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 allowBlobPublicAccess 设置为 false，并检查已有容器的 public access 设置，撤销不必要的匿名访问。
+    - 对必须公开发布的内容使用隔离账户和明确的内容审核流程，禁止将敏感数据放入公共容器。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-disallow-access
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,storage,azure-cloud-config
 
 flow: |

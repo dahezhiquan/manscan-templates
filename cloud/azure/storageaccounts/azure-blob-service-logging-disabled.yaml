@@ -1,17 +1,20 @@
 id: azure-blob-service-logging-disabled
 info:
-  name: Azure Storage Blob Service 日志记录未启用（云安全）
+  name: Azure Blob 服务读写删除日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Storage Analytics 可记录 Blob 服务的读取、写入和删除请求，关闭这些日志会减少对数据访问和破坏行为的审计能力。本模板枚举存储账户并执行 az storage logging show --services b，在 delete、read 和 write 均为 false 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未授权读取、批量下载、恶意覆盖和删除操作可能无法及时发现，攻击者可延长数据访问或破坏窗口。
+    - 发生数据泄露或删除事件后，缺少请求日志会削弱溯源、影响评估和恢复决策能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 按审计需求启用 Blob 服务的 read、write 和 delete 日志，并将日志账户纳入访问控制和保留管理。
+    - 评估日志量与成本，避免无效请求造成日志放大，同时把关键操作接入告警和事件响应流程。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-analytics-logging
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-diag-logs-not-enabled
 info:
-  name: Diagnostic Logs 未Enabled 的Azure Resources（云安全）
+  name: Azure 资源诊断日志未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure monitor 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure 资源诊断设置用于收集资源日志、平台指标和审计事件；未配置时，资源级运行活动和异常行为缺少集中记录。本模板枚举 Azure 资源并执行 az monitor diagnostic-settings list，在返回空数组时报告该资源未配置诊断设置。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 资源异常、权限滥用和配置变更可能无法及时发现，延长攻击者在环境中的驻留时间。
+    - 缺少审计证据会削弱事件调查、根因分析和合规取证能力，导致安全事件影响范围难以确认。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为需要审计的资源创建诊断设置，按资源类型启用必要日志类别和平台指标。
+    - 将日志发送到 Log Analytics、事件中心或受控存储账户，并设置保留期、访问权限和告警规则。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/logs/diagnostic-logs-overview
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,diagnostic-logs,azure-cloud-config
 
 flow: |

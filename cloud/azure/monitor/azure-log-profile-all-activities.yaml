@@ -1,17 +1,20 @@
 id: azure-log-profile-all-activities
 info:
-  name: Azure Log Profile 缺失 Critical Activity Categories（云安全）
+  name: Azure Monitor 日志配置关键活动类别检查（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure monitor 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Monitor 日志配置中的 Write、Delete 和 Action 活动类别用于记录资源创建或更新、删除以及控制面操作，缺少这些类别会降低变更审计覆盖。本模板先枚举日志配置，再查询每个配置的 categories；当前匹配器在返回结果同时包含 Write、Delete 和 Action 时命中，命中后应结合实际输出复核类别是否确实缺失或配置异常。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 资源变更、删除和管理操作可能无法完整追踪，攻击者利用控制面权限后更容易隐藏行为。
+    - 审计范围不足会延长事件发现和调查时间，并影响对误操作、恶意删除和策略变更的责任认定。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 复核命中的日志配置，确保 Write、Delete 和 Action 等组织要求的活动类别均被正确采集和导出。
+    - 将活动日志发送到具备访问控制和长期留存能力的目标，并通过测试事件验证类别、目的地和告警链路。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/platform/activity-log-collect
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,log-profile,azure-cloud-config
 
 flow: |

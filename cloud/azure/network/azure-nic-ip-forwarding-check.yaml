@@ -1,17 +1,20 @@
 id: azure-nic-ip-forwarding-check
 info:
-  name: Review Network Interfaces 使用IP Forwarding已启用（云安全）
+  name: Azure 网络接口启用 IP 转发（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure network 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure 网络接口启用 IP 转发后，可接收发往其他地址的流量并将其转发，适用于防火墙、路由器等网络虚拟设备；普通工作负载通常不需要该能力。本模板遍历网络接口并查询 enableIpForwarding，在返回 true 时报告该配置。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 非网络设备启用转发后，可能成为绕过预期网络边界、转发异常流量或进行横向探测的节点。
+    - 若接口所属虚拟机被入侵，攻击者可能利用其转发能力扩大可达网络范围，增加内部资源暴露风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对普通计算工作负载关闭 enableIpForwarding，仅对明确承担路由或安全设备职责的接口保留。
+    - 对必要例外限制 NSG、路由表和管理权限，并定期核对接口用途及其可达网段。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/ip-forwarding
+  metadata:
+    vendor: microsoft
+    product: azure-network-interface
   tags: cloud,devops,azure,microsoft,nic,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-nsg-rdp-unrestricted
 info:
-  name: Unrestricted RDP 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 RDP 端口 3389（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RDP 使用 TCP 3389 提供 Windows 远程桌面访问；将该端口对互联网开放会把主机登录面直接暴露给扫描、口令攻击和远程桌面漏洞利用。本模板查询入站允许的 TCP 3389 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能通过弱口令、凭据填充或未修复漏洞取得交互式主机访问权限。
+    - 主机被控制后可能导致勒索、敏感数据窃取、持久化和云内横向移动。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 TCP 3389 入站规则，优先通过 Bastion、VPN 或受限跳板机管理 Windows 主机。
+    - 强制多因素认证、网络级身份验证和账户锁定策略，限制管理源地址并及时安装系统补丁。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

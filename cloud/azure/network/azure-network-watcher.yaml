@@ -1,17 +1,20 @@
 id: azure-network-watcher
 info:
-  name: Azure Network Watcher Service未启用（云安全）
+  name: Azure Network Watcher 未在所有区域启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Network Watcher 提供网络监控、连接故障排查、路由诊断和日志相关能力，是 Azure IaaS 网络可观测性的重要组件。未在承载虚拟机和虚拟网络的区域启用时，网络异常、错误路由和安全事件的定位会缺少必要证据。本模板执行 az network watcher list，并在结果为空数组 [] 时报告未在所有区域发现 Network Watcher。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 网络连通性、下一跳和连接故障可能无法及时诊断，导致业务中断和恢复时间延长。
+    - 缺少网络流量与拓扑分析能力会削弱对异常通信、横向移动和错误暴露面的发现与取证。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在每个实际使用 IaaS 资源的 Azure 区域启用 Network Watcher，并确认实例处于可用状态。
+    - 按需启用 NSG 流日志、连接监视和诊断工具，将日志发送到集中化且受访问控制的存储或 Log Analytics。
   reference:
     - https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-watcher
   tags: cloud,devops,azure,microsoft,network-watcher,azure-cloud-config
 
 self-contained: true

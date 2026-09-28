@@ -3,15 +3,18 @@ info:
   name: Azure Storage Default Network 访问 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Storage 的 networkRuleSet.defaultAction 为 Allow 时，存储账户网络 ACL 默认允许来自公共网络的请求，访问边界主要依赖身份认证、SAS 和其他数据平面权限控制。本模板枚举存储账户并查询 defaultAction，在返回 "Allow" 时报告默认网络访问未收敛；该结果不等同于绕过认证或允许匿名读取。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 存储数据平面持续可从公网到达，会扩大凭据、SAS 或应用漏洞遭利用后的数据枚举、下载和写入攻击面。
+    - 一旦访问凭据泄露，攻击者可从任意网络发起访问，数据外传和恶意修改更难通过网络边界阻断。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对不需要公网访问的账户将 defaultAction 设置为 Deny，并按业务需要配置虚拟网络、IP 规则或 Private Endpoint。
+    - 复核现有客户端、SAS 和身份权限，确认收紧网络规则后业务仍可用，并持续审计网络 ACL 的变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-network-security
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,storage,azure-cloud-config
 
 flow: |

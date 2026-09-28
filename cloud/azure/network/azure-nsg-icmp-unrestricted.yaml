@@ -1,17 +1,20 @@
 id: azure-nsg-icmp-unrestricted
 info:
-  name: Unrestricted ICMP 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 ICMP（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: ICMP 常用于连通性探测、错误通知和网络诊断，但允许互联网任意来源访问会暴露主机和网络边界的响应特征。本模板查询入站允许的 ICMP NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可据此识别活动主机、网络拓扑和可达资源，为后续端口扫描、漏洞利用和横向移动提供信息。
+    - 大量 ICMP 请求还可能消耗网络和主机资源，干扰正常诊断并造成可用性下降。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 关闭面向互联网的任意来源 ICMP 入站规则，仅向监控网段或运维网络开放必要类型。
+    - 对必须保留的探测流量配置速率限制和监控，避免将 ICMP 作为唯一的可用性判断依据。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

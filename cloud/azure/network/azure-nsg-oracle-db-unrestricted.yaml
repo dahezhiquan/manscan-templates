@@ -1,17 +1,20 @@
 id: azure-nsg-oracle-db-unrestricted
 info:
-  name: Unrestricted Oracle Database 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 Oracle 数据库端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Oracle Database Listener 通常使用 TCP 1521；将该端口对互联网开放会把数据库连接入口暴露给扫描、认证攻击和监听器漏洞利用。本模板查询入站允许的 TCP 1521 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能枚举服务、尝试窃取数据库凭据，或利用配置和软件缺陷读取、篡改业务数据。
+    - 数据库被控制后可能影响依赖应用，并成为访问其他云资源或内部主机的跳板。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 TCP 1521 入站规则，使用专用子网、VPN 或 Private Endpoint 访问 Oracle。
+    - 限制 Listener 来源和数据库账户权限，启用加密连接、补丁管理及异常登录监控。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

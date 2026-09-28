@@ -1,17 +1,20 @@
 id: azure-postgres-connection-throttling-disabled
 info:
-  name: Azure PostgreSQL Server Connection Throttling未启用（云安全）
+  name: Azure PostgreSQL 连接限流未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure PostgreSQL 的 connection_throttling 参数用于在连接尝试过于频繁时限制连接建立，关闭该控制会削弱数据库对连接洪泛和异常认证尝试的抑制能力。本模板枚举 PostgreSQL 服务器并查询 connection_throttling 配置，在返回值为 off 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 攻击者可以更高频率地发起连接和认证尝试，增加口令猜测、凭据验证和连接资源耗尽的风险。
+    - 在连接数或计算资源紧张时，异常连接流量可能影响正常业务连接，造成数据库性能下降或服务不可用。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 connection_throttling 设置为 on，并在变更后验证应用连接池和业务峰值下的兼容性。
+    - 同时通过网络访问控制、强密码或身份认证策略和监控告警限制异常来源，避免仅依赖参数限流。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-server-parameters
+  metadata:
+    vendor: microsoft
+    product: azure-postgresql
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-servicebus-public-access-disabled
 info:
-  name: Azure Service Bus Public Network 访问未启用（云安全）
+  name: Azure Service Bus 公网访问限制未配置（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure Service Bus 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Service Bus 命名空间启用 publicNetworkAccess 且未配置 IP 规则时，公网客户端仍可到达消息服务的网络入口，扩大凭据攻击和消息数据暴露面。本模板枚举命名空间并查询 network-rule-set，仅当 publicNetworkAccess 为 Enabled 且 ipRules 为空时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可从公网持续探测命名空间并针对身份认证、共享访问签名或应用凭据发起攻击。
+    - 凭据被滥用后，攻击者可能读取、注入或删除消息，干扰异步业务流程并造成敏感数据泄露。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对不需要公网访问的命名空间关闭 publicNetworkAccess，并优先通过 Private Endpoint 和受信任虚拟网络连接。
+    - 如必须保留公网入口，配置明确的 IP 规则、最小权限身份和共享访问策略，并持续审计网络规则变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-networking
+  metadata:
+    vendor: microsoft
+    product: azure-service-bus
   tags: cloud,devops,azure,microsoft,service-bus,azure-cloud-config
 
 flow: |

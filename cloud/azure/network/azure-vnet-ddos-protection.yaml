@@ -1,17 +1,20 @@
 id: azure-vnet-ddos-protection
 info:
-  name: Azure VNet DDoS Unprotected 检查（云安全）
+  name: Azure 虚拟网络未配置 DDoS 防护（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure network 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 面向公网的 Azure 应用可能遭受分布式拒绝服务攻击，攻击者通过耗尽带宽、连接或计算资源使合法用户无法访问。Azure DDoS Protection 可为受保护虚拟网络中的公网终结点提供流量检测和缓解能力。本模板查询虚拟网络的 provisioningState，并在输出匹配 false 时按现有检测逻辑报告 DDoS 防护未配置。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 公网应用遭受攻击时，可能出现延迟升高、连接失败、服务不可用和业务收入损失。
+    - 没有专用 DDoS 缓解能力时，攻击流量可能与正常流量争用资源，扩大故障范围并增加应急处置压力。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为承载公网终结点的虚拟网络关联 Azure DDoS Protection 计划，并确认公网 IP 和应用架构满足适用条件。
+    - 同时配置 WAF、负载均衡、速率限制和监控告警；DDoS Protection 不能替代应用层输入校验和容量设计。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/ddos-protection-overview
+  metadata:
+    vendor: microsoft
+    product: azure-ddos-protection
   tags: cloud,devops,azure,microsoft,ddos,azure-cloud-config
 
 flow: |

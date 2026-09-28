@@ -1,17 +1,20 @@
 id: azure-nsg-smtp-unrestricted
 info:
-  name: Unrestricted SMTP 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 SMTP 端口 25（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: SMTP 通常使用 TCP 25 传输邮件；将该端口对互联网开放可能使邮件服务遭受枚举、认证攻击和垃圾邮件滥用。本模板查询入站允许的 TCP 25 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能探测账户和邮件域名，利用弱认证发送垃圾邮件，或通过服务漏洞取得主机访问权限。
+    - 邮件服务被滥用会损害域名信誉、影响正常投递，并增加钓鱼和恶意附件传播风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 仅向已知邮件网关或必要的对等服务器开放 TCP 25，关闭面向任意互联网来源的入站规则。
+    - 禁止开放中继，启用强认证、反垃圾策略和连接速率限制，并监控异常投递行为。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-defender-auto-provisioning-disabled
 info:
-  name: Azure Defender 的Cloud Automatic Provisioning未启用（云安全）
+  name: Microsoft Defender for Cloud 自动预配未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure securitycenter 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Microsoft Defender for Cloud 的自动预配用于为支持的 Azure 资源自动配置安全监控代理或相关数据收集能力，关闭后新资源可能未及时纳入安全监控。本模板执行 az security auto-provisioning-setting list，并在 autoProvision 返回 Off 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 虚拟机和其他支持资源可能缺少安全遥测，导致漏洞、恶意行为和配置偏差无法及时被 Defender for Cloud 发现。
+    - 监控覆盖不完整会形成检测盲区，延迟告警、响应和事件调查，并削弱统一安全策略的执行效果。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在 Defender for Cloud 环境设置中开启适用资源的自动预配，并确认监控代理、工作区和数据收集规则配置正确。
+    - 对已存在但未纳管的资源执行补充部署和健康检查，持续监控代理状态、覆盖范围及卸载变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-auto-provisioning
+  metadata:
+    vendor: microsoft
+    product: defender-for-cloud
   tags: cloud,devops,azure,microsoft,defender-for-cloud,azure-cloud-config
 
 self-contained: true

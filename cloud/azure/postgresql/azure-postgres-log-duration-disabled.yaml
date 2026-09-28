@@ -1,17 +1,20 @@
 id: azure-postgres-log-duration-disabled
 info:
-  name: Azure PostgreSQL Log Duration未启用（云安全）
+  name: Azure PostgreSQL 语句执行时长日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure PostgreSQL 的 log_duration 参数用于记录已完成语句的执行时长，关闭后会减少识别慢查询、异常批量操作和资源消耗突增的运行线索。本模板枚举 PostgreSQL 服务器并查询 log_duration，在返回值为 off 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 恶意或异常查询造成的性能下降可能无法及时与具体语句关联，延长业务中断和故障恢复时间。
+    - 对数据库滥用、数据批量读取或资源消耗型攻击的检测和事后取证能力会下降。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 log_duration 设置为 on，并将日志接入集中式日志平台进行检索、告警和留存。
+    - 结合业务负载设置合理的日志过滤和保留策略，避免高频短语句产生过量日志。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-server-logs
+  metadata:
+    vendor: microsoft
+    product: azure-postgresql
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

@@ -1,17 +1,20 @@
 id: azure-nsg-udp-unrestricted
 info:
-  name: Unrestricted UDP 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放任意 UDP 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: UDP 无连接且常用于 DNS、媒体、发现和自定义协议；允许互联网任意来源访问 UDP 端口会使多个无状态服务同时暴露。本模板查询入站允许的 UDP NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可探测未登记的 UDP 服务，利用协议缺陷、伪造源地址或反射放大造成数据泄露和服务中断。
+    - 宽泛 UDP 规则还可能绕过仅针对 TCP 设计的审计和访问控制，扩大横向移动路径。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除任意来源的 UDP 入站规则，仅开放业务明确需要的端口、协议和来源网段。
+    - 对 UDP 服务启用应用层认证、速率限制和反射放大防护，并持续审计规则关联资源。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

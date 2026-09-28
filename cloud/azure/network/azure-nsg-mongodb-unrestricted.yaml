@@ -1,17 +1,20 @@
 id: azure-nsg-mongodb-unrestricted
 info:
-  name: Unrestricted MongoDB 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 MongoDB 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: MongoDB 常用 TCP 27017 至 27019 提供数据库和分片相关服务；将这些端口对互联网开放会把数据平面直接暴露给外部扫描和认证攻击。本模板查询入站允许的 TCP 27017、27018 或 27019 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 弱认证、匿名访问或数据库漏洞可能导致集合数据被读取、篡改、删除，甚至取得主机执行能力。
+    - 数据库被破坏或资源耗尽会造成应用故障，并可能暴露连接凭据和业务敏感数据。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 MongoDB 端口规则，优先使用 Private Endpoint、专用子网或 VPN 访问数据库。
+    - 启用强认证和传输加密，限制数据库账户权限，并仅允许应用所在网段访问必要端口。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

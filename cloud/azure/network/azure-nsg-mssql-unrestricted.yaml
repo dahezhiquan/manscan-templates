@@ -1,17 +1,20 @@
 id: azure-nsg-mssql-unrestricted
 info:
-  name: Unrestricted MS SQL Server 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 Microsoft SQL Server 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Microsoft SQL Server 通常使用 TCP 1433 提供数据库连接；将该端口对互联网开放会使数据库服务持续暴露于扫描、口令攻击和协议漏洞利用。本模板查询入站允许的 TCP 1433 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能通过弱口令、凭据泄露或 SQL Server 漏洞读取、修改和删除数据库内容。
+    - 数据库权限被突破后，可能进一步访问应用主机、执行高权限操作或造成业务中断。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 TCP 1433 入站规则，使用 Private Endpoint、VPN 或应用专用子网连接数据库。
+    - 强制加密连接和强认证，将数据库账户权限收敛到业务所需范围，并监控异常登录。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

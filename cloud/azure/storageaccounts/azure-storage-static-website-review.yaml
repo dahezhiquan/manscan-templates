@@ -3,15 +3,18 @@ info:
   name: Azure Storage Static Website Configuration Review（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure Storage staticWebsite.enabled 为 true 时，账户启用了静态网站功能，网站内容通常通过静态网站终结点公开提供；该配置本身是业务能力而非确定性漏洞。本模板枚举存储账户并查询 staticWebsite.enabled，在返回 true 时报告启用状态，需结合 $web 容器内容、访问边界和业务用途进一步审查。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 若将敏感文件、源代码、备份或内部配置放入静态网站容器，可能被匿名访问并造成数据泄露。
+    - 公开网站账户与其他业务数据共用时，错误上传、内容篡改或配置疏漏会扩大暴露面；仅启用功能并不等于已发生泄露。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 确认静态网站确有业务需要，并审查 $web 容器中的文件、发布流程和访问日志，禁止放置敏感数据。
+    - 对需要身份认证或私有访问的内容改用具备访问控制的服务；将公开站点与内部存储账户隔离，并持续审计内容和权限变更。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,storage-account,azure-cloud-config
 
 flow: |

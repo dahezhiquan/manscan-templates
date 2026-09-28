@@ -1,17 +1,20 @@
 id: azure-nsg-ssh-unrestricted
 info:
-  name: Unrestricted SSH 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 SSH 端口 22（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: SSH 使用 TCP 22 提供远程管理和文件传输；将其对互联网开放会让主机持续暴露于账号枚举、口令攻击和 SSH 服务漏洞利用。本模板查询入站允许的 TCP 22 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能通过弱口令、泄露私钥或未修复漏洞取得远程 shell 和文件访问权限。
+    - 主机被入侵后，可能造成凭据窃取、持久化、数据外泄及云内横向移动。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 TCP 22 规则，优先通过 Bastion、VPN 或专用跳板机进行管理。
+    - 禁止密码登录、使用受保护的短期密钥或证书，限制管理源地址并及时更新 SSH 和操作系统补丁。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

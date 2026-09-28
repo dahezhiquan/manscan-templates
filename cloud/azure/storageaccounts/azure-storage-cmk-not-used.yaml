@@ -1,17 +1,20 @@
 id: azure-storage-cmk-not-used
 info:
-  name: Azure Storage Account 未Using CMK（云安全）
+  name: Azure Storage 未使用客户管理密钥（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure storageaccounts 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: Azure Storage 的客户管理密钥用于将静态数据加密密钥的轮换、撤销和访问审批纳入组织密钥治理。本模板枚举存储账户并查询 encryption.keyVaultProperties.keyName，在输出为空时报告未使用客户管理密钥。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 依赖平台托管密钥的账户无法独立证明组织对加密根密钥的控制，可能不符合高敏感数据的治理要求。
+    - 密钥轮换、吊销和数据访问审批受平台策略约束，增加合规审计和租户隔离压力。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 在 Key Vault 或 Managed HSM 中准备客户管理密钥，并授予存储账户受管身份所需的最小权限。
+    - 配置并验证客户管理密钥、自动轮换、密钥不可用告警和灾难恢复流程，再迁移生产账户。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-encryption-keys-manage?tabs=portal
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config
 
 flow: |

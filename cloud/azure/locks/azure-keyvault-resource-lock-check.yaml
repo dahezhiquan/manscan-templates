@@ -1,17 +1,20 @@
 id: azure-keyvault-resource-lock-check
 info:
-  name: Azure Key Vault 资源锁未启用（云安全）
+  name: Azure Key Vault 未配置必要资源锁（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure 资源锁 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Resource Manager 资源锁可以阻止 Key Vault 被意外删除或修改，且锁的约束优先于普通用户权限。本模板遍历 Key Vault 资源并查询 az lock list，在返回空列表或匹配 CanNotDelete、ReadOnly 等锁级别关键字时按现有逻辑报告资源锁配置异常。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 没有合适的删除锁时，误操作或被盗用的管理权限可能直接删除 Key Vault，造成密钥、证书和机密不可用。
+    - 过度宽松或错误的锁级别会削弱基础设施保护；ReadOnly 还可能阻断正常的密钥轮换、网络策略和权限更新。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对生产 Key Vault 至少配置 CanNotDelete 锁，并根据变更流程评估是否需要临时使用 ReadOnly。
+    - 将锁的创建、删除和变更纳入受控审批与告警，定期确认锁作用域覆盖正确资源且不影响必要运维操作。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources
+  metadata:
+    vendor: microsoft
+    product: azure-resource-lock
   tags: cloud,devops,azure,microsoft,keyvault,azure-cloud-config
 
 flow: |

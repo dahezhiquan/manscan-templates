@@ -1,17 +1,20 @@
 id: azure-monitor-diagnostic-unrestricted
 info:
-  name: Azure Monitor Diagnostic Settings 的Subscription Activity Log Export 检查（云安全）
+  name: Azure Monitor 订阅活动日志导出未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure monitor 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure 订阅活动日志记录控制面资源操作，未将其导出到 Log Analytics、事件中心或受控存储时，默认留存周期和集中审计能力有限。本模板执行 az monitor diagnostic-settings subscription list，并在订阅级诊断设置返回空数组时报告未配置活动日志导出。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 订阅级资源创建、权限变更、删除和策略操作可能无法长期留存，攻击者的控制面活动更难被追踪。
+    - 缺少集中导出会降低跨资源关联分析、实时告警和合规取证能力，导致事件响应延迟。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为订阅配置活动日志诊断设置，将日志导出到受控的 Log Analytics 工作区、事件中心或存储账户。
+    - 为日志目标设置最小权限、加密和合理保留期，并验证高风险控制面操作能够被检索和告警。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,monitor,azure-cloud-config
 
 self-contained: true

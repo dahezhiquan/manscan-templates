@@ -1,17 +1,20 @@
 id: azure-blob-anonymous-access-disabled
 info:
-  name: Azure Blob Anonymous 访问未启用（云安全）
+  name: Azure Blob 匿名公共访问已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Storage 账户允许 Blob 公共访问时，容器或 Blob 可能被配置为无需 Azure 身份认证即可读取，敏感文件和备份数据存在意外公开风险。本模板枚举存储账户并查询 allowBlobPublicAccess，在返回值为 true 时报告账户未禁止匿名 Blob 访问。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者无需有效账户即可读取公开容器中的业务文件、日志、备份或静态资源。
+    - 泄露的数据可能包含个人信息、密钥材料和内部配置，并可被用于进一步攻击云内资源。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将存储账户的 allowBlobPublicAccess 设置为 false，并逐个复核现有容器的公共访问级别。
+    - 对确需公开发布的内容使用专用账户或明确的发布流程，禁止在含敏感数据的账户中混用公共容器。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/anonymous-read-access-prevent
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config
 
 flow: |

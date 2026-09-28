@@ -1,17 +1,20 @@
 id: azure-blob-lifecycle-not-enabled
 info:
-  name: Azure Blob Storage Lifecycle Management未启用（云安全）
+  name: Azure Blob Storage 生命周期管理未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Blob 生命周期管理通过规则自动分层、归档或删除不再使用的数据，缺少管理策略会使过期数据长期保留并增加存储暴露面。本模板枚举非经典 Storage 账户并执行 management-policy show，在 stderr 返回 No ManagementPolicy found for account 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 过期备份、临时文件和历史数据可能长期存在，增加敏感信息被误共享或被攻击者获取的时间窗口。
+    - 存储容量和成本持续增长，也会使数据保留、删除和合规生命周期管理失控。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据数据分类和业务保留要求创建 Blob 管理策略，配置分层、归档、删除和快照清理规则。
+    - 在策略生效前评估恢复需求和最小保留期限，并持续审计策略变更和执行结果。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-lifecycle-management-concepts
+  metadata:
+    vendor: microsoft
+    product: azure-blob-storage
   tags: cloud,devops,azure,microsoft,blob-storage,azure-cloud-config
 
 flow: |

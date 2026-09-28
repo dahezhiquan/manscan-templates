@@ -1,17 +1,20 @@
 id: azure-diagnostic-categories-misconfigured
 info:
-  name: Diagnostic Settings Categories on Azure Resources not configured（云安全）
+  name: Azure 诊断设置关键日志类别未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure monitor 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Azure Monitor 诊断设置按日志类别控制管理、Security、Alert 和 Policy 等控制面事件是否写入目标位置，类别被禁用会造成审计覆盖缺口。本模板查询订阅级诊断设置的 logs 字段，并在返回结果包含 enabled 为 false 时报告配置不合规。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 管理操作、策略变更、安全事件或告警相关活动可能没有日志记录，攻击者的控制面行为更难被发现。
+    - 日志类别缺失会影响告警联动、变更追踪和事后取证，并可能造成合规审计失败。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 在订阅级诊断设置中按审计需求启用 Administrative、Security、Alert 和 Policy 等必要类别。
+    - 确认日志发送目标、保留策略和访问权限有效，并为高风险控制面事件配置告警和响应流程。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-monitor/essentials/diagnostic-settings
+  metadata:
+    vendor: microsoft
+    product: azure-monitor
   tags: cloud,devops,azure,microsoft,diagnostic,azure-cloud-config
 
 self-contained: true

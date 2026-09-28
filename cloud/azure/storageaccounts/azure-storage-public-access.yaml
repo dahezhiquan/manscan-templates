@@ -3,15 +3,18 @@ info:
   name: Azure Storage 公开可访问 Web Containers（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure storageaccounts 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Azure Monitor 订阅级诊断设置可能将活动日志写入 Storage 账户的 insights-operational-logs 容器；该容器的 publicAccess 为 container 时，容器内日志可被匿名读取。本模板枚举订阅诊断设置，获取其 storageAccountId，再查询 insights-operational-logs 的 properties.publicAccess，在返回 container 时报告日志容器公开可访问。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未授权用户可能读取活动日志中的资源名称、订阅标识、操作记录和错误信息，辅助枚举环境与构造后续攻击。
+    - 日志若包含敏感参数或租户内部信息，公开读取会造成信息泄露，并削弱对审计数据访问边界的控制。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 insights-operational-logs 容器的公共访问级别设置为 Private，并检查账户级 allowBlobPublicAccess 和现有容器 ACL。
+    - 对存储诊断日志的账户启用网络限制、Private Endpoint 和最小权限访问，随后核验诊断设置仍能正常写入并设置合理保留期。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,storage,azure-cloud-config
 
 flow: |

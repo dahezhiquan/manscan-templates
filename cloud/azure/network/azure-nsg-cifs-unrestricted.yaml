@@ -1,17 +1,20 @@
 id: azure-nsg-cifs-unrestricted
 info:
-  name: Unrestricted CIFS 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 CIFS 端口 445（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: CIFS/SMB 通常使用 TCP 445 承载文件共享和 Windows 网络服务，直接暴露在互联网会扩大远程文件服务的攻击面，并可能暴露共享资源或遭受口令喷洒和协议漏洞利用。本模板查询入站允许的 TCP 445 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可对 SMB 服务进行扫描、认证尝试和漏洞探测，可能导致共享文件泄露或主机被进一步控制。
+    - 被攻陷的文件服务可能成为凭据窃取、恶意文件传播和云内横向移动的入口。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 TCP 445 入站允许规则，仅通过私有网络、VPN 或明确的受信任源地址访问。
+    - 对必须提供文件共享的场景启用最小权限、强认证和 SMB 安全策略，并持续审计访问日志。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

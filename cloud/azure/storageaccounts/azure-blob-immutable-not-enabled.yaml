@@ -3,15 +3,18 @@ info:
   name: Azure Blob 不可变存储未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Blob 不可变存储通过基于时间的保留策略或法定保留防止 Blob 在保留期内被修改和删除，适用于备份、审计记录及合规数据。本模板枚举账户中的容器，并在 hasImmutabilityPolicy 和 hasLegalHold 均为 false 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 获得写入权限的攻击者或误操作人员可能删除、覆盖或篡改备份和审计文件，破坏恢复与取证证据。
+    - 在勒索软件或内部滥用场景中，缺少不可变保护会降低组织恢复业务和证明数据完整性的能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对需要防篡改的容器配置基于时间的保留策略或法定保留，并根据业务和法规要求设置保留期限。
+    - 将不可变配置纳入备份恢复演练和权限审计，避免普通写入权限覆盖保留策略治理。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/blobs/immutable-storage
+  metadata:
+    vendor: microsoft
+    product: azure-blob-storage
   tags: cloud,devops,azure,microsoft,azure-blob-storage,azure-cloud-config
 
 flow: |

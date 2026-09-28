@@ -1,17 +1,20 @@
 id: azure-postgres-log-connections-disabled
 info:
-  name: Azure PostgreSQL Log Connections未启用（云安全）
+  name: Azure PostgreSQL 连接日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure PostgreSQL 的 log_connections 参数用于记录客户端连接和认证相关事件，关闭后无法持续获得连接来源和连接时间等审计信息。本模板枚举 PostgreSQL 服务器并查询 log_connections，在返回值为 off 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 异常来源、异常时段或异常连接行为可能无法及时关联，增加凭据滥用和未授权访问的发现难度。
+    - 发生数据泄露或账号入侵后，缺少连接审计记录会削弱取证、溯源和责任认定能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 log_connections 设置为 on，并将 PostgreSQL 日志发送到具备访问控制和完整性保护的集中式平台。
+    - 配置日志保留期、异常连接告警和敏感字段保护，避免审计日志被未授权读取或长期缺失。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/concepts-server-logs
+  metadata:
+    vendor: microsoft
+    product: azure-postgresql
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

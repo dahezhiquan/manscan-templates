@@ -1,17 +1,20 @@
 id: azure-postgres-log-checkpoints-disabled
 info:
-  name: Azure PostgreSQL Flexible Server log_checkpoints未启用（云安全）
+  name: Azure PostgreSQL Flexible Server 检查点日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure PostgreSQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure PostgreSQL Flexible Server 的 log_checkpoints 参数用于记录检查点执行信息，关闭后会减少对写入压力、检查点耗时和恢复行为的审计线索。本模板枚举 Flexible Server 并查询 log_checkpoints，在返回值为 off 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 数据库出现性能抖动、恢复异常或异常写入时，运维人员缺少关键时间线，可能延长定位和恢复时间。
+    - 检查点相关行为无法被纳入数据库审计和容量分析，异常资源消耗可能更晚被发现。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 log_checkpoints 设置为 on，并将日志接入集中式日志平台，设置合理的保留期和访问权限。
+    - 结合日志量、存储成本和生产负载评估采集级别，避免因日志策略不当影响数据库性能。
   reference:
     - https://docs.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-server-parameters
+  metadata:
+    vendor: microsoft
+    product: azure-postgresql
   tags: cloud,devops,azure,microsoft,postgresql,azure-cloud-config
 
 flow: |

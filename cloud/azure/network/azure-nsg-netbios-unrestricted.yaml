@@ -1,17 +1,20 @@
 id: azure-nsg-netbios-unrestricted
 info:
-  name: Unrestricted NetBIOS 访问 中的Azure NSGs（云安全）
+  name: Azure NSG 对互联网开放 NetBIOS 端口（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: NetBIOS 使用 UDP 137、138 和 TCP 139 提供名称解析、数据报及会话服务，属于不应直接暴露在互联网的传统 Windows 网络协议。本模板查询入站允许的 TCP 139 或 UDP 137/138 NSG 规则，并在来源地址为 *、internet 或 any 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 公开 NetBIOS 可能泄露主机名、工作组和共享信息，并为口令攻击、SMB 攻击和横向移动提供入口。
+    - 受影响主机的共享资源或凭据被利用后，可能造成敏感文件泄露和内部网络扩散。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向互联网的 NetBIOS 入站规则，优先使用现代名称解析和私有网络通信。
+    - 对遗留依赖限制到专用网段，关闭不需要的文件共享服务并审计共享权限和异常认证。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

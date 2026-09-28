@@ -3,15 +3,18 @@ info:
   name: Azure Storage Table 日志记录未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure storageaccounts 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Storage Table 日志可记录表实体的读取、写入和删除请求；关闭这些操作的日志会削弱对数据枚举、篡改和批量删除的审计能力。本模板枚举存储账户并执行 az storage logging show --services t，在 delete、read 和 write 均为 false 时报告 Table 服务未启用操作日志。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未授权读取、修改或删除表实体的行为可能无法及时发现，攻击者可借此窃取业务数据或破坏应用状态。
+    - 缺少操作日志会降低异常访问检测、事件溯源和数据恢复决策的准确性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据审计和事件响应需求启用 Table 服务的 read、write 和 delete 日志，并配置日志保留、访问控制和集中分析。
+    - 将表操作日志接入异常读取、批量删除和权限滥用告警，同时评估日志成本与敏感数据保护要求。
   reference:
     - https://docs.microsoft.com/en-us/azure/storage/tables/table-storage-overview
+  metadata:
+    vendor: microsoft
+    product: azure-storage
   tags: cloud,devops,azure,microsoft,azure-storage,azure-cloud-config
 
 flow: |

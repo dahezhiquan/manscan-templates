@@ -1,17 +1,20 @@
 id: azure-redis-nonssl-port-disabled
 info:
-  name: Azure Redis Cache In-Transit 加密未启用（云安全）
+  name: Azure Cache for Redis 非 SSL 端口已启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure redis 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Cache for Redis 启用非 SSL 端口时，客户端可以绕过 TLS 连接缓存服务，传输中的凭据、命令和缓存数据可能以明文传输。本模板枚举 Redis 实例并查询 enableNonSslPort，在返回值为 true 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 同一网络路径上的攻击者可能窃听或篡改 Redis 命令、访问令牌和缓存内容。
+    - 被截获的 Redis 凭据或会话信息可能被用于读取、修改缓存数据，甚至进一步影响依赖缓存的应用会话。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 enableNonSslPort 设置为 false，强制客户端使用 TLS 端口，并更新连接字符串和证书校验配置。
+    - 变更前确认所有客户端均支持 TLS，迁移完成后通过网络规则限制非必要的缓存访问来源。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-configure#ssl-ports
+  metadata:
+    vendor: microsoft
+    product: azure-cache-for-redis
   tags: cloud,devops,azure,microsoft,redis,azure-cloud-config
 
 flow: |

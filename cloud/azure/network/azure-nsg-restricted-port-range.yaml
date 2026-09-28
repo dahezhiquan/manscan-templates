@@ -1,17 +1,20 @@
 id: azure-nsg-restricted-port-range
 info:
-  name: Restricted Port Range 中的Azure NSGs（云安全）
+  name: Azure NSG 允许过宽入站端口范围（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure network 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: NSG 入站规则应只开放业务确需使用的端口；过宽的连续端口范围会让大量潜在服务同时可达，增加未知服务和临时管理端口暴露的机会。本模板查询入站允许规则，并在端口范围为 0-65535、80-8080 或 111-32800 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可扫描并利用范围内未被资产清单覆盖的服务、调试端口和管理接口。
+    - 单条宽范围规则还可能掩盖更具体的拒绝规则缺失，扩大入站攻击面和横向移动路径。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将端口范围拆分为业务实际需要的最小端口集合，并删除 0-65535 等过宽规则。
+    - 对管理端口使用专用源地址和跳板网络，定期审计 NSG 优先级、关联资源和未使用规则。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview
+  metadata:
+    vendor: microsoft
+    product: azure-network-security-group
   tags: cloud,devops,azure,microsoft,nsg,azure-cloud-config
 
 flow: |

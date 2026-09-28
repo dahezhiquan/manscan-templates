@@ -1,17 +1,20 @@
 id: azure-sql-va-emails-unconfigured
 info:
-  name: Azure SQL Classic VA Emails Unconfigured（云安全）
+  name: Azure SQL 漏洞评估通知邮箱未配置（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure SQL 漏洞评估通过扫描数据库弱点并向指定管理员发送结果，通知邮箱未配置时，发现的高风险配置和漏洞可能无法及时交付给责任团队。本模板枚举 SQL 服务器并查询漏洞评估配置，在返回结果包含空的 emails 数组时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 数据库漏洞评估结果可能无人接收，导致弱口令、过度权限和暴露配置长期未整改。
+    - 缺少通知闭环会延迟安全响应，并使漏洞评估无法有效支持合规证明和风险跟踪。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在 Azure SQL 漏洞评估配置中设置安全团队或数据库责任人的通知邮箱，并确认邮件投递可达。
+    - 同时配置定期扫描、结果存储和告警升级流程，避免仅依赖单一邮箱而造成通知失效。
   reference:
     - https://docs.microsoft.com/en-us/azure/azure-sql/database/security-overview
+  metadata:
+    vendor: microsoft
+    product: azure-sql-database
   tags: cloud,devops,azure,microsoft,mssql,azure-cloud-config
 
 flow: |

@@ -4,10 +4,18 @@ info:
   name: GCP Buckets - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum gcp-bucket-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Google Cloud Storage bucket 名称在全局命名空间中唯一，直接访问对应主机名可用于判断 bucket 是否存在。本模板请求 {{wordlist}}.storage.googleapis.com，返回 200 表示 bucket 可能公开可读，返回 403 表示 bucket 受保护但名称存在。
+  impact: |
+    - bucket 名称泄露会帮助攻击者推断项目、环境和数据类型，继续枚举备份、日志、构建产物等云存储资源。
+    - 返回 200 的 bucket 可能允许匿名读取对象或目录信息；返回 403 也会暴露存储资产存在性。
+  remediation: |
+    - 复核命中的 bucket 是否属于本组织，并确认公开访问场景和对象权限均经过审批。
+    - 启用 Public Access Prevention 和 Uniform bucket-level access，收敛 IAM 授权并清理不再使用的 bucket。
   metadata:
     verified: true
     max-request: 1
+    vendor: google
+    product: google-cloud-storage
   tags: cloud,enum,cloud-enum,gcp,discovery
 
 self-contained: true

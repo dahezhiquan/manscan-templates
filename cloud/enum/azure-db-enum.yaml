@@ -4,10 +4,18 @@ info:
   name: Azure Databases - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum azure-db-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure 数据库服务会使用 database.windows.net 下的公开 DNS 名称暴露连接端点。本模板对 {{wordlist}}.database.windows.net 发起 A 记录查询，并在 DNS 响应中出现 A 记录时报告该 Azure 数据库端点名称存在。
+  impact: |
+    - 数据库端点名称被枚举后，攻击者可确认云资产命名规则，并针对登录、网络访问控制或弱口令开展进一步验证。
+    - 若数据库启用了公网访问且防火墙规则过宽，命中的端点可能成为数据库暴露面的入口。
+  remediation: |
+    - 复核命中的数据库端点是否属于本组织，清理不再使用的实例和 DNS 命名。
+    - 优先使用 Private Endpoint 或限制公共网络访问，并收敛数据库防火墙、身份认证和最小权限配置。
   metadata:
     verified: true
     max-request: 1
+    vendor: microsoft
+    product: azure-sql-database
   tags: cloud,enum,cloud-enum,azure,dns,discovery
 
 self-contained: true

@@ -4,10 +4,18 @@ info:
   name: Azure Virtual Machines - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum azure-vm-cloud-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure 虚拟机或云服务的公网 DNS 名称通常位于区域化的 cloudapp.azure.com 域名下。本模板按内置 Azure 区域枚举 {{wordlist}}.{{regionname}}.cloudapp.azure.com，并在 DNS 响应包含 A 记录时报告对应公网端点存在。
+  impact: |
+    - 命中结果会暴露虚拟机或云服务的公网入口及所在区域，帮助攻击者梳理云资产分布。
+    - 若关联公网 IP 的安全组、NSG 或服务端口配置过宽，后续可能出现远程管理端口、业务端口或旧服务暴露。
+  remediation: |
+    - 复核命中的公网 DNS 和区域是否符合资产台账，删除不再使用的公共 IP、DNS 标签和云服务资源。
+    - 使用 NSG、Azure Firewall、JIT 访问或私有网络限制入站流量，避免管理端口直接暴露到互联网。
   metadata:
     verified: true
     max-request: 1
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,cloud-enum,azure,fuzz,enum,dns,discovery
 
 self-contained: true

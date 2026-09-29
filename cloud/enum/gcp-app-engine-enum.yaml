@@ -4,10 +4,18 @@ info:
   name: GCP App Engine (Appspot) - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum gcp-app-engine-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Google App Engine 默认应用域名通常位于 appspot.com 下。本模板请求 {{wordlist}}.appspot.com，返回 200 时报告应用公开可访问，返回 302 且跳转位置包含 login 时报告应用存在但受登录保护。
+  impact: |
+    - App Engine 应用名被确认后，攻击者可推断 GCP 项目或服务命名，并继续查找公开接口、旧版本或认证入口。
+    - 返回 200 的应用可能直接暴露业务页面或 API；受保护应用虽然需要登录，仍会泄露目标应用存在性。
+  remediation: |
+    - 复核命中的 App Engine 应用是否属于本组织，停用无业务需要的服务、版本和默认入口。
+    - 对非公开应用启用 Identity-Aware Proxy、强认证和最小权限，按需限制 ingress 与后端 API 访问。
   metadata:
     verified: true
     max-request: 1
+    vendor: google
+    product: google-app-engine
   tags: enum,cloud,cloud-enum,gcp,discovery
 
 self-contained: true

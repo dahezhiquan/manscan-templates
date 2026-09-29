@@ -4,10 +4,18 @@ info:
   name: Azure Websites - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum azure-website-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure App Service 默认站点会使用 azurewebsites.net 子域名提供访问入口。本模板请求 {{wordlist}}.azurewebsites.net，并在返回 200 或 302 时报告对应 Azure Website 或 App Service 应用存在且可达。
+  impact: |
+    - 攻击者可通过命中结果枚举组织的 Web 应用、测试站点或登录跳转入口，扩大暴露面分析范围。
+    - 若站点缺少认证、访问限制或仍保留调试/测试内容，可能进一步导致敏感页面、接口或配置泄露。
+  remediation: |
+    - 核对命中的 azurewebsites.net 站点是否属于本组织，关闭不再使用的 App Service 应用和部署槽。
+    - 对非公开应用启用身份认证、访问限制、专用终结点或 WAF，并检查默认域名是否应继续开放。
   metadata:
     verified: true
     max-request: 1
+    vendor: microsoft
+    product: azure-app-service
   tags: cloud,enum,azure,discovery
 
 self-contained: true

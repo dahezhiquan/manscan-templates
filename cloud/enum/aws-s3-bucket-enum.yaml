@@ -4,10 +4,18 @@ info:
   name: AWS S3 Buckets - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum aws-s3-bucket-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Amazon S3 bucket 名称在全局命名空间中唯一，直接访问对应主机名可用于判断 bucket 是否存在。本模板请求 {{wordlist}}.s3.amazonaws.com，返回 200 表示 bucket 可能公开可读，返回 403 表示 bucket 受保护但名称存在。
+  impact: |
+    - bucket 名称被确认后，攻击者可围绕组织命名规则继续枚举备份、日志、静态资源等云存储资产。
+    - 返回 200 的 bucket 可能允许匿名读取或列目录，存在敏感对象泄露风险；返回 403 也会暴露资产存在性。
+  remediation: |
+    - 复核命中的 bucket 是否属于本组织，并确认公开访问、静态网站托管和对象权限均符合业务预期。
+    - 启用 S3 Block Public Access，收敛 bucket policy、ACL 和 IAM 授权，避免使用过于可预测的 bucket 命名。
   metadata:
     verified: true
     max-request: 1
+    vendor: amazon
+    product: s3
   tags: cloud,enum,cloud-enum,aws,discovery
 
 self-contained: true

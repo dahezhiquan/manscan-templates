@@ -4,10 +4,18 @@ info:
   name: AWS Apps - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum aws-app-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: AWS 应用入口域名位于 awsapps.com，常用于组织应用门户或联合登录入口；可访问的子域会暴露组织使用的 AWS 应用入口命名。本模板对 {{wordlist}}.awsapps.com 发起 HTTPS 请求，并在返回 200 或 302 时报告该 AWS App 域名已注册或可达。
+  impact: |
+    - 攻击者可据此确认组织云身份入口和命名规则，辅助钓鱼、账号枚举或后续定向攻击。
+    - 若入口配置了弱认证、错误重定向或公开应用，进一步复核可能发现身份访问面暴露。
+  remediation: |
+    - 复核命中的 awsapps.com 子域是否属于本组织，确认应用入口、重定向和身份提供方配置符合预期。
+    - 对公开可访问的应用入口启用强认证、MFA、条件访问和最小权限，并将不再使用的入口下线。
   metadata:
     verified: true
     max-request: 1
+    vendor: amazon
+    product: aws-apps
   tags: cloud,enum,cloud-enum,aws,discovery
 
 self-contained: true

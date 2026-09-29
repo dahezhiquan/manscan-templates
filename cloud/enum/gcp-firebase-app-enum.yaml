@@ -4,10 +4,18 @@ info:
   name: GCP Firebase Apps - Cloud Enumeration（云安全）
   author: initstring
   severity: info
-  description: 该规则用于检查 enum gcp-firebase-app-enum.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Firebase Hosting 默认站点通常使用 firebaseapp.com 子域名对外提供内容。本模板请求 {{wordlist}}.firebaseapp.com，并在返回 200 时报告对应 Firebase 应用或托管站点存在且可公开访问。
+  impact: |
+    - 命中结果可暴露 Firebase 项目或应用命名，帮助攻击者定位前端站点、静态资源和后端 API 线索。
+    - 若站点包含测试内容、客户端配置或未限制的后端调用入口，可能进一步暴露项目标识、API key 或业务接口。
+  remediation: |
+    - 复核命中的 Firebase Hosting 站点是否属于本组织，删除无用站点和过期发布内容。
+    - 检查托管内容、Firebase 配置和后端 API 授权，确保敏感功能依赖服务端鉴权与安全规则控制。
   metadata:
     verified: true
     max-request: 1
+    vendor: google
+    product: firebase-hosting
   tags: enum,cloud,cloud-enum,gcp,discovery
 
 self-contained: true

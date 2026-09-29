@@ -4,16 +4,19 @@ info:
   name: GKE Node Pools 未启用Auto-Upgrade已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE 节点池未启用 auto-upgrade 时，节点 Kubernetes 版本和安全补丁可能长期滞后。本模板枚举集群和节点池，并检查 management.autoUpgrade，配置为空或缺失时报告节点池未启用自动升级。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 节点可能持续运行包含已知漏洞或不受支持的 Kubernetes 组件版本。
+    - 手工升级遗漏会扩大集群版本漂移，增加兼容性和安全维护成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为节点池启用 auto-upgrade，并结合维护窗口和排空策略降低升级对业务的影响。
+    - 对暂不启用自动升级的节点池建立手工升级计划和版本合规告警。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/node-auto-upgrades
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-auto-upgrade.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,updates,maintenance,gcp-cloud-config
 
 flow: |

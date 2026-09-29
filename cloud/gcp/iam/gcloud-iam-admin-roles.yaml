@@ -4,16 +4,19 @@ info:
   name: IAM Users 使用Administrative Roles（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 项目级 Owner、Editor 或名称包含 admin/Admin 的角色通常具备广泛管理权限，授予普通用户会偏离最小权限原则。本模板检查项目 IAM policy 中符合这些条件的 bindings，出现 role 字段时报告存在管理类角色授权。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 用户账号被攻破后，攻击者可能创建资源、修改 IAM、读取敏感数据或关闭安全控制。
+    - 管理权限过度集中会增加误操作和越权变更风险，削弱职责分离和审计效果。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 移除普通用户不必要的 Owner、Editor 和管理员类角色，改用按职责拆分的预定义角色或自定义角色。
+    - 对确需管理员权限的身份使用受控组、临时授权、审批流程和多因素认证，并定期复核 IAM bindings。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/IAM/roles-with-admin-permissions.html
     - https://cloud.google.com/iam/docs/understanding-roles
+  metadata:
+    vendor: google
+    product: cloud-iam
   tags: cloud,devops,gcp,gcloud,iam,security,admin,permissions,gcp-cloud-config
 
 flow: |

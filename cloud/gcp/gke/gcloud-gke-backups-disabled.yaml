@@ -4,16 +4,19 @@ info:
   name: GKE Clusters 未启用Backups已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE Backup for GKE 未启用时，集群工作负载和状态数据缺少托管备份恢复能力。本模板枚举集群并检查 addonsConfig.gkeBackupAgentConfig.enabled，字段为空时报告集群未启用备份组件。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 集群误删、配置损坏、勒索攻击或区域故障后，工作负载恢复时间和数据丢失风险增加。
+    - 灾难恢复演练、合规保留和跨集群迁移能力会受到限制。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为关键 GKE 集群启用 Backup for GKE，并配置备份计划、保留周期和恢复范围。
+    - 定期执行恢复演练，确认命名空间、持久卷和关键应用配置可恢复。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/backup-restore
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-cluster-backups.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,backup,disaster-recovery,gcp-cloud-config
 
 flow: |

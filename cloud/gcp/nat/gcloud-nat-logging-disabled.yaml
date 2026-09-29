@@ -4,15 +4,18 @@ info:
   name: Cloud NAT 网关日志记录未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP nat 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Cloud NAT 日志可记录私有实例的出站连接、错误和地址转换信息，未启用会影响网络排障和安全取证。本模板枚举网络、Cloud Router 和 NAT 网关，并检查 logConfig.enable，值为 False 时报告 NAT 日志关闭。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 私有工作负载的异常外连、扫描或数据外传行为缺少 NAT 层记录，降低检测和溯源能力。
+    - 出站连接失败或地址池耗尽等问题也更难排查，可能影响业务可用性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Cloud NAT 网关启用日志记录，并根据成本和可见性要求选择错误日志或连接日志范围。
+    - 将 NAT 日志接入集中监控和告警，关注异常目的地、连接失败和地址耗尽事件。
   reference:
     - https://cloud.google.com/nat/docs/logging
+  metadata:
+    vendor: google
+    product: cloud-nat
   tags: cloud,devops,gcp,gcloud,google-cloud-nat,gcp-cloud-config
 
 flow: |

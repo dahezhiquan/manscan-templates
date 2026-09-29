@@ -4,16 +4,19 @@ info:
   name: GKE Clusters With Client 证书 Authentication已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE 控制面启用客户端证书认证会保留较难统一治理的凭据入口，官方更推荐使用 IAM 与现代认证方式。本模板检查 masterAuth.clientCertificateConfig.issueClientCertificate，值为 True 时报告集群启用了客户端证书认证。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 客户端证书泄露后可能被用于访问 Kubernetes API，轮换和吊销管理复杂度较高。
+    - 认证入口不统一会增加审计、权限治理和应急处置难度。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 禁用新集群的客户端证书签发，使用 IAM、RBAC 和受控 kubeconfig 访问集群。
+    - 对已启用的集群评估迁移方案，轮换并清理不再需要的客户端证书。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/disable-client-certificate.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,authentication,gcp-cloud-config
 
 flow: |

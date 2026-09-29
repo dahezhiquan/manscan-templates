@@ -4,15 +4,18 @@ info:
   name: DNSSEC RSASHA1 Algorithm Deprecated（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP dns 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud DNS 托管区域的 DNSSEC 配置若仍使用 RSASHA1 zone signing，说明签名算法已落后于当前安全基线。本模板检查 dnssecConfig，同时匹配 rsasha1 和 zoneSigning 时报告区域签名使用已弃用算法。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 弱签名算法会降低 DNSSEC 对解析记录完整性的保护强度，并可能引发合规整改要求。
+    - 未来客户端或解析器策略收紧时，过时算法可能影响域名解析可信度。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 Cloud DNS 托管区域的 DNSSEC zone signing 算法迁移到更安全的受支持算法。
+    - 按 DNSSEC 变更流程更新父区 DS 记录，并验证签名链完整性。
   reference:
     - https://cloud.google.com/dns/docs/dnssec-configuring
+  metadata:
+    vendor: google
+    product: cloud-dns
   tags: cloud,devops,gcp,gcloud,dns,dnssec,gcp-cloud-config,discovery
 
 flow: |

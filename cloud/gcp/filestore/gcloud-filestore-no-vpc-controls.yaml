@@ -4,16 +4,19 @@ info:
   name: Filestore Instance 未Protected by VPC Service Controls（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP filestore 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: VPC Service Controls 可为 Filestore API 访问建立服务边界，降低数据从受控环境外泄的风险。本模板枚举 Access Context Manager perimeter，并检查 restrictedServices 是否包含 file.googleapis.com，未包含时报告 Filestore 未受 VPC Service Controls 保护。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - Filestore 管理 API 缺少服务边界约束，受保护项目与外部环境之间的数据访问控制更弱。
+    - 对敏感数据环境，缺少 VPC Service Controls 会增加凭据滥用和跨边界访问风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将 file.googleapis.com 纳入合适的 VPC Service Controls perimeter，并验证访问级别和桥接配置。
+    - 对不适用服务边界的项目记录例外，并使用 IAM、网络和审计日志补偿控制。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/use-vpc-service-controls.html
     - https://cloud.google.com/vpc-service-controls/docs/supported-products
+  metadata:
+    vendor: google
+    product: filestore
   tags: cloud,devops,gcp,gcloud,filestore,security,networking,vpc,gcp-cloud-config
 
 flow: |

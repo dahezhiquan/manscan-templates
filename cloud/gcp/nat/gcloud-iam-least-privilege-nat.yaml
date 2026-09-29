@@ -4,16 +4,19 @@ info:
   name: Least Privilege 访问 的Cloud NAT Management（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP nat 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Cloud NAT 管理权限应限制给确有网络运维职责的身份，Owner、Editor 或 compute.networkAdmin 会带来过宽的网络控制能力。本模板检查项目 IAM policy bindings，发现这些高权限角色时报告 Cloud NAT 管理相关的过度授权。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 身份被攻破后，攻击者可能修改 NAT、路由、子网或防火墙相关配置，影响出站访问路径和网络边界。
+    - 过宽网络权限会增加误操作和越权变更风险，削弱职责分离。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 移除非必要的 Owner、Editor 和 compute.networkAdmin 授权，改用满足具体任务的最小权限角色。
+    - 对网络管理权限使用受控组、审批流程和定期审计，关键操作启用变更记录和告警。
   reference:
     - https://cloud.google.com/iam/docs/understanding-roles
     - https://cloud.google.com/nat/docs/overview
+  metadata:
+    vendor: google
+    product: cloud-nat
   tags: cloud,devops,gcp,gcloud,iam,cloud-nat,gcp-cloud-config
 
 flow: |

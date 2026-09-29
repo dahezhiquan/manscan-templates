@@ -4,15 +4,18 @@ info:
   name: 公开可访问 Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud Functions IAM policy 若包含 allUsers 或 allAuthenticatedUsers，函数可能被匿名用户或所有 Google 账号调用。本模板枚举函数并读取 IAM policy，匹配公共成员时报告函数公开可访问。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未授权用户可能直接触发函数逻辑，造成数据泄露、业务操作滥用、费用增加或下游系统被调用。
+    - 如果函数包含管理动作或信任调用来源，公开访问会显著扩大攻击面。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 从函数 IAM policy 中移除 allUsers 和 allAuthenticatedUsers，仅向明确身份授予调用权限。
+    - 对确需公开的函数增加应用层鉴权、速率限制、日志监控和输入校验。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-access-iam
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

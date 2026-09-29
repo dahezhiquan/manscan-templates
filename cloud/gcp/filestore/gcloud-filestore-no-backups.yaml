@@ -4,16 +4,19 @@ info:
   name: Filestore Instance 未Using On-Demand Backup（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP filestore 是否正确配置备份、快照、证书续期、密钥轮换或其他韧性保护措施，以降低中断、失效或数据恢复失败的风险。
+  description: Filestore 实例没有按需备份时，文件共享数据在误删、勒索或区域故障后恢复能力不足。本模板枚举 Filestore 实例，并按 sourceInstance 查询备份列表，返回空数组时报告实例缺少备份。
   impact: |
-    - 缺少备份、续期、轮换或删除保护会增加服务中断、数据丢失或恢复失败的风险。
-    - 当故障、误操作或攻击发生时，业务可用性和恢复能力都会受到明显影响。
+    - 文件数据被误删、篡改或加密后，缺少可用备份会显著延长恢复时间甚至造成永久丢失。
+    - 灾难恢复和合规保留要求可能无法满足，影响关键业务连续性。
   remediation: |
-    - 启用备份、快照、版本控制、证书续期、密钥轮换或删除保护等韧性配置。
-    - 定期验证恢复流程和到期提醒机制，确保在故障或攻击发生时能够快速恢复。
+    - 为关键 Filestore 实例建立备份策略，并定期验证备份可恢复性。
+    - 将备份保留周期、跨区域恢复和删除保护纳入数据保护基线。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/backup-and-restore.html
     - https://cloud.google.com/filestore/docs/backup-restore
+  metadata:
+    vendor: google
+    product: filestore
   tags: cloud,devops,gcp,gcloud,filestore,security,backup,disaster-recovery,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Logs Router 加密 使用Customer-Managed Keys未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP logging 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Logs Router 未配置客户管理密钥时，日志路由相关数据使用 Google 默认加密，无法满足需要自行控制密钥生命周期的场景。本模板检查组织级 logging cmek-settings，并在 kmsKeyName 返回 null 时报告未启用 CMEK。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 组织无法通过自有 KMS 密钥控制日志路由数据的加密、轮换、禁用和销毁流程。
+    - 对金融、政企或强监管环境，缺少 CMEK 可能不满足密钥托管和可审计控制要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在组织级 Logs Router 配置 CMEK，并授予 Cloud Logging 服务代理使用对应 KMS key 的权限。
+    - 建立密钥轮换、禁用影响评估和访问审计流程，避免错误停用导致日志路由异常。
   reference:
     - https://cloud.google.com/logging/docs/routing/managed-encryption
+  metadata:
+    vendor: google
+    product: cloud-logging
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,gcp-cloud-config
 
 self-contained: true

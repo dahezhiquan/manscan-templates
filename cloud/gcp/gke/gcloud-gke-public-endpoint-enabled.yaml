@@ -4,13 +4,19 @@ info:
   name: GKE Clusters 使用Public Control Plane Endpoints（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: GKE 控制面公开端点开启时，Kubernetes API Server 可经公网访问，依赖授权网络和认证策略进行防护。本模板检查 privateClusterConfig.enablePrivateEndpoint，未启用私有端点且响应包含 endpoint 时报告控制面公网端点可用。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 控制面 API 暴露在公网后，更容易受到扫描、凭据攻击和配置失误影响。
+    - 若授权网络、身份认证或 RBAC 配置不严，攻击者可能进一步访问或控制集群资源。
+  remediation: |
+    - 启用私有控制面端点或严格限制 master authorized networks，仅允许可信管理网络访问。
+    - 强化 IAM、RBAC、审计日志和管理员访问流程，定期复核公网端点暴露必要性。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/clusters-with-private-endpoints.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,networking,gcp-cloud-config
 
 flow: |

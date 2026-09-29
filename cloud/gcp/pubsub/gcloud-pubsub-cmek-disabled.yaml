@@ -4,15 +4,18 @@ info:
   name: Pub/Sub Topics 未Encrypted 使用Customer-Managed 加密 Keys（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP pubsub 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Pub/Sub topic 未使用客户管理密钥时，消息数据由 Google 默认加密，组织无法自行控制密钥生命周期和访问审计。本模板枚举项目 topics，并检查 kmsKeyName，返回 null 时报告该 topic 未启用 CMEK。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 对敏感消息流，缺少 CMEK 会降低组织对密钥轮换、禁用、销毁和访问审计的控制力。
+    - 需要客户托管密钥的合规场景可能无法满足加密治理要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为承载敏感数据的 Pub/Sub topic 配置 CMEK，并授予 Pub/Sub 服务代理使用对应 KMS key 的权限。
+    - 建立密钥轮换和禁用影响评估流程，确保订阅者、发布者和日志监控在启用 CMEK 后运行正常。
   reference:
     - https://cloud.google.com/pubsub/docs/encryption
+  metadata:
+    vendor: google
+    product: google-cloud-pubsub
   tags: cloud,devops,gcp,gcloud,google-cloud-pubsub,gcp-cloud-config
 
 flow: |

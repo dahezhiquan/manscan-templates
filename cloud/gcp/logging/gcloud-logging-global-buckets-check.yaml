@@ -4,15 +4,18 @@ info:
   name: 日志记录 Buckets 未Configured 使用Global Location（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP logging 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Cloud Logging bucket 未使用 global 位置时，可能不符合统一日志路由和跨区域审计留存要求。本模板枚举项目日志 bucket，并通过名称路径判断是否包含 /global/，不包含时报告该 bucket 未配置为 global location。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 日志位置不符合组织基线时，集中查询、跨区域事件响应和数据驻留控制可能出现偏差。
+    - 多位置日志 bucket 会增加权限、保留策略和导出路径的管理复杂度。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 按组织日志架构使用 global 位置的 Logging bucket，或确认并记录需要使用区域位置的业务例外。
+    - 统一复核日志 bucket 的位置、保留期、访问控制和导出策略，避免项目间配置漂移。
   reference:
     - https://cloud.google.com/logging/docs/export/configure_export_v2
+  metadata:
+    vendor: google
+    product: cloud-logging
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,logging-buckets,gcp-cloud-config
 
 flow: |

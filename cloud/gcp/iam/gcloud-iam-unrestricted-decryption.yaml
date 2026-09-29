@@ -4,16 +4,19 @@ info:
   name: IAM Users 使用Unrestricted Data Decryption Permissions（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP IAM 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 在项目层级授予 Cloud KMS 解密相关角色且缺少 IAM Conditions，会让成员对范围内密钥具备过宽的解密能力。本模板检查 cloudkms.cryptoKeyDecrypter、cryptoOperator 和 cryptoKeyEncrypterDecrypter 角色绑定，并在未发现 condition 字段时报告无限制解密权限。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 身份被滥用后，攻击者可能解密受 KMS 保护的数据或绕过按密钥、资源、时间设定的访问边界。
+    - 过宽的解密权限会削弱敏感数据分区隔离和合规审计可信度。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 KMS 解密权限限制到具体 key ring、crypto key 或业务身份，并使用 IAM Conditions 约束访问条件。
+    - 移除项目级过宽角色绑定，定期审计 KMS IAM policy 中的解密和加解密角色。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/IAM/decryption-with-all-keys-not-allowed.html
     - https://cloud.google.com/kms/docs/reference/permissions-and-roles
+  metadata:
+    vendor: google
+    product: cloud-iam
   tags: cloud,devops,gcp,gcloud,iam,security,encryption,kms,gcp-cloud-config
 
 flow: |

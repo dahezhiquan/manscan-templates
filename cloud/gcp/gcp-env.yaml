@@ -4,9 +4,18 @@ info:
   name: GCP Environment 校验（云安全）
   author: princechaddha
   severity: info
-  description: 该规则用于检查 GCP gcp-env.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 本模板用于确认本机 Google Cloud CLI 已配置可用账号，是执行后续 GCP 云配置检测的前置环境校验。模板运行 gcloud config get-value account，并在输出包含账号标识时报告当前 CLI 登录态可用。
+  impact: |
+    - 若 gcloud 未配置有效账号，后续依赖 CLI 的 GCP 配置检测无法枚举项目和资源，可能造成扫描结果缺失。
+    - 使用错误账号或项目上下文会导致检测覆盖范围偏离预期。
+  remediation: |
+    - 使用 gcloud auth login 或 gcloud auth application-default login 配置正确账号，并确认具备所需只读审计权限。
+    - 在扫描前复核 gcloud config 当前账号、项目和组织范围，避免误扫或漏扫。
   reference:
     - https://console.cloud.google.com/
+  metadata:
+    vendor: google
+    product: google-cloud-cli
   tags: cloud,devops,google,gcp,gcp-cloud-config
 
 self-contained: true

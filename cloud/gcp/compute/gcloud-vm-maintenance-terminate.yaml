@@ -4,16 +4,19 @@ info:
   name: VM Instance Maintenance 策略 Set to Terminate（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP compute 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Compute Engine 实例的 onHostMaintenance 设置为 TERMINATE 时，宿主机维护期间实例会被终止而不是实时迁移。本模板枚举 VM 并检查 scheduling.onHostMaintenance，命中 TERMINATE 时报告维护策略可能影响可用性。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 宿主机维护事件可能直接中断实例，影响未做冗余的业务进程和长时间运行任务。
+    - 生产工作负载需要额外依赖应用层重试、实例组或调度策略才能降低维护中断影响。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 对需要持续运行的 VM 将 onHostMaintenance 设置为 MIGRATE，并验证机型和配置支持实时迁移。
+    - 对必须使用 TERMINATE 的特殊实例记录例外，并通过冗余部署、检查点或任务重试降低中断风险。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/configure-maintenance-behavior.html
     - https://cloud.google.com/compute/docs/instances/setting-instance-scheduling-options
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,reliability,maintenance,gcp-cloud-config
 
 flow: |

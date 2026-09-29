@@ -4,15 +4,18 @@ info:
   name: Enable Data 访问 审计 日志记录 的All Critical Service APIs（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP logging 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Data Access audit logs 记录对数据的读取、写入和管理访问，关键服务未启用会造成数据访问审计缺口。本模板检查项目 IAM policy，若缺少 auditConfigs 且存在 bindings，则报告项目未为服务启用数据访问审计日志。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 对敏感数据的读取、导出或权限使用可能无法被完整记录，影响入侵调查和合规证明。
+    - 数据访问异常缺少日志信号时，告警规则和威胁检测难以及时发现滥用行为。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为关键 Google Cloud 服务启用 Data Access audit logs，并明确 ADMIN_READ、DATA_READ、DATA_WRITE 的记录范围。
+    - 将审计日志集中保存并配置访问异常告警，同时评估日志量和保留成本。
   reference:
     - https://cloud.google.com/logging/docs/audit/configure-data-access
+  metadata:
+    vendor: google
+    product: cloud-logging
   tags: cloud,devops,gcp,gcloud,google-cloud-iam,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: No Serverless VPC 访问 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud Functions 未配置 Serverless VPC Access Connector 时，函数无法通过受控私网路径访问 VPC 内资源或统一出站网络。本模板枚举函数并检查 vpcConnector，值为 null 时报告函数未配置 Serverless VPC Access。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 函数访问数据库、缓存或内部 API 时可能被迫走公网或临时放宽网络访问控制。
+    - 缺少统一 VPC 出站路径会削弱防火墙、NAT、审计和私有服务访问策略。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为需要访问私有资源的函数配置 Serverless VPC Access Connector，并按需设置出站流量策略。
+    - 对无需 VPC 访问的函数记录例外，确保其依赖资源不需要通过公网暴露。
   reference:
     - https://cloud.google.com/functions/docs/connecting-vpc
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

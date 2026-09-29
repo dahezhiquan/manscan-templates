@@ -4,16 +4,19 @@ info:
   name: Shielded VM Security Features未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Shielded VM 的 vTPM 和 Integrity Monitoring 可帮助发现启动链或内核级篡改；未完整启用会降低实例完整性保护。本模板枚举 VM 并检查 enableVtpm 与 enableIntegrityMonitoring，发现 false 或 null 时报告 Shielded VM 功能未完整启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 实例启动完整性和运行环境变更难以及时发现，增加低层级持久化或镜像篡改的侦测盲区。
+    - 对高敏感工作负载，未启用 Shielded VM 功能可能不满足组织强化基线。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对支持的实例启用 vTPM 和 Integrity Monitoring，并优先使用受信任的镜像和实例模板。
+    - 对不兼容的旧实例制定迁移计划，并监控 Shielded VM 完整性告警。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/enable-shielded-vm.html
     - https://cloud.google.com/compute/docs/instances/modifying-shielded-vm
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,shielded-vm,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: GKE Security Posture Dashboard未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE Security Posture 可集中分析集群配置和工作负载安全状态，未启用会降低集群风险可见性。本模板检查 securityPostureConfig.mode，值为 DISABLED 时报告 Security Posture Dashboard 未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 集群配置偏差、工作负载风险和安全建议无法集中呈现，延迟漏洞和错误配置发现。
+    - 安全团队缺少统一的集群态势数据，影响优先级排序和整改跟踪。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 按组织治理范围启用 GKE Security Posture，并配置相应检测级别和查看权限。
+    - 将安全态势结果接入告警和整改流程，定期复核高风险发现。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/security-posture
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-and-configure-security-posture.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,monitoring,gcp-cloud-config
 
 flow: |

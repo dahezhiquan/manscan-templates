@@ -4,16 +4,19 @@ info:
   name: Block Project-Wide SSH Keys未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 未阻止 project-wide SSH keys 的实例会继承项目元数据中的 SSH 公钥，可能让不需要访问该实例的用户获得登录能力。本模板检查实例 metadata.items，未发现实例级阻断配置时报告未启用 Block Project-Wide SSH Keys。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 项目级 SSH key 范围过大时，实例访问权限难以按业务和人员精确隔离。
+    - 离职、权限调整或共享密钥残留可能继续影响所有继承项目级 SSH key 的实例。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 在实例元数据中启用 block-project-ssh-keys，改用 OS Login 或实例级 SSH key 精准授权。
+    - 清理项目元数据中的历史 SSH key，并将 SSH 访问纳入 IAM 和审计流程。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/enable-block-project-wide-ssh-keys.html
     - https://cloud.google.com/compute/docs/instances/adding-removing-ssh-keys
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,ssh,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Cloud NAT Gateways 未Configured 使用Reserved Static IPs（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP nat 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Cloud NAT 未配置保留静态外部 IP 时，出站源地址可能随自动分配地址变化，影响第三方 allowlist、审计和变更控制。本模板枚举网络、路由器和 NAT 网关，并检查 natIps 字段，返回 null 时报告未使用 reserved static IP。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 出站源 IP 不稳定会导致外部服务 allowlist 失效，或让异常流量归因和审计变得困难。
+    - 地址变化可能引发业务连接中断、合规记录不一致或临时放宽外部访问控制。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Cloud NAT 分配并绑定 reserved static external IP，确保关键出站流量源地址稳定。
+    - 将 NAT 出站 IP 纳入资产清单、第三方 allowlist 和变更流程，定期复核地址使用情况。
   reference:
     - https://cloud.google.com/nat/docs/using-nat
+  metadata:
+    vendor: google
+    product: cloud-nat
   tags: cloud,devops,gcp,gcloud,google-cloud-nat,gcp-cloud-config
 
 flow: |

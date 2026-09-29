@@ -4,15 +4,18 @@ info:
   name: Inactive Service Accounts 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud Functions 绑定已禁用、不可访问或异常的服务账号时，函数调用 Google Cloud 资源可能失败，也可能暴露身份治理缺口。本模板读取函数 serviceConfig.serviceAccountEmail，并通过 gcloud iam service-accounts describe 检查服务账号状态或错误响应。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 函数可能因服务账号不可用而执行失败，影响依赖该函数的事件处理、API 或自动化流程。
+    - 异常服务账号绑定会增加权限归属不清、部署漂移和故障排查难度。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将函数切换到活动且用途明确的专用服务账号，并按最小权限授予 IAM 角色。
+    - 清理或恢复异常服务账号，复核函数部署流程中服务账号选择和权限审批。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-access-iam
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

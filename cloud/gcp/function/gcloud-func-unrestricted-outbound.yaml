@@ -4,15 +4,18 @@ info:
   name: Unrestricted Outbound Network 访问 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud Functions 出站流量未限制到受控 VPC 路径时，函数可能直接访问公网或绕过集中出口策略。本模板枚举函数并检查 serviceConfig.vpcConnectorEgressSettings，字段为空或为 ALL_TRAFFIC 时报告函数出站网络访问配置需要复核。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 函数被滥用后可能直接访问外部地址，增加数据外传、恶意回连或绕过网络审计的风险。
+    - 未统一出口路径会削弱防火墙、NAT、DLP 和流量日志等集中控制。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 根据业务需要配置 Serverless VPC Access 和合适的 egress settings，将敏感函数出站流量纳入受控网络。
+    - 对确需公网访问的函数限制目标域名、API 权限和调用凭据，并启用日志监控。
   reference:
     - https://cloud.google.com/functions/docs/networking/network-settings
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

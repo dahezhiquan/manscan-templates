@@ -4,15 +4,18 @@ info:
   name: Cloud NAT 未Enabled 的Private Subnets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP nat 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 私有子网需要 Cloud NAT 才能在不分配外部 IP 的情况下访问互联网或 Google API，未覆盖 NAT 可能迫使实例使用公网地址或导致出站受阻。本模板枚举网络、子网、路由器和 NAT 网关，并在启用 privateIpGoogleAccess 的子网未出现在 NAT subnetworks 中时报告未启用 Cloud NAT。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 工作负载可能通过分配外部 IP 解决出站访问，扩大互联网暴露面。
+    - 私有实例访问补丁源、容器仓库或外部依赖失败时，可能影响更新、部署和业务稳定性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为需要出站访问的私有子网配置 Cloud NAT，并明确覆盖的 subnetworks 和 IP ranges。
+    - 移除不必要的实例外部 IP，结合防火墙、路由和日志策略控制出站访问。
   reference:
     - https://cloud.google.com/nat/docs/overview
+  metadata:
+    vendor: google
+    product: cloud-nat
   tags: cloud,devops,gcp,gcloud,google-cloud-nat,gcp-cloud-config
 
 flow: |

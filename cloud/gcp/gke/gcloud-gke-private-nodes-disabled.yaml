@@ -4,16 +4,19 @@ info:
   name: GKE 集群未启用私有节点（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE 未启用私有节点时，节点可能拥有外部可达路径，扩大集群工作负载的网络暴露面。本模板枚举集群并检查 networkConfig.defaultEnablePrivateNodes，值为 false 时报告集群未启用私有节点。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 节点网络暴露面更大，可能增加被扫描、误配置访问或绕过集中入口控制的风险。
+    - 工作负载出入站路径更难统一通过私有网络和受控网关治理。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为新集群启用 private nodes，并通过 NAT、Private Google Access 或私有连接满足必要出站访问。
+    - 对既有集群评估迁移方案，收敛节点公网入口和防火墙规则。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/private-clusters
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-private-nodes.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,networking,gcp-cloud-config
 
 flow: |

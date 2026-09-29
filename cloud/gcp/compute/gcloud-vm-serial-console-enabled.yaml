@@ -4,16 +4,19 @@ info:
   name: Interactive Serial Console Support Not未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Interactive serial console 可用于低层级实例访问和故障排查，非必要启用会增加管理入口。本模板检查实例元数据中 serial-port-enable 是否为 true，命中时报告交互式串行控制台已启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 攻击者若获得相应 IAM 权限，可能通过串行控制台绕过常规网络访问路径操作实例。
+    - 额外管理入口会增加审计和权限治理复杂度，尤其对生产实例不易持续监控。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在非排障场景关闭 serial-port-enable，仅在受控变更窗口临时启用。
+    - 限制具备串行端口访问能力的 IAM 角色，并审计历史串行控制台使用记录。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/disable-interactive-serial-console-support.html
     - https://cloud.google.com/compute/docs/instances/interacting-with-serial-console
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,serial-console,gcp-cloud-config
 
 flow: |

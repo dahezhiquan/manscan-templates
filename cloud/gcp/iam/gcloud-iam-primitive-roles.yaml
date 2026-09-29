@@ -4,15 +4,18 @@ info:
   name: Minimize the Use of Primitive Roles（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Primitive roles（Owner、Editor、Viewer）权限范围过宽，难以满足按资源和职责精确授权的要求。本模板遍历项目 IAM bindings，发现 roles/owner、roles/editor 或 roles/viewer 被使用时输出对应成员和项目。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - Owner 或 Editor 被滥用时可能导致资源接管、权限扩散和安全配置被篡改。
+    - Viewer 也可能暴露项目结构、资源清单和部分元数据，增加后续攻击侦察价值。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 用服务级预定义角色或自定义角色替代 primitive roles，仅授予完成任务所需的最小权限。
+    - 对仍需保留的 primitive roles 建立例外审批和定期复核，优先通过组而不是个人账号管理授权。
   reference:
     - https://cloud.google.com/iam/docs/understanding-roles
+  metadata:
+    vendor: google
+    product: cloud-iam
   tags: cloud,devops,gcp,gcloud,google-cloud-iam,gcp-cloud-config
 
 flow: |

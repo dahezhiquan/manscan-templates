@@ -4,15 +4,18 @@ info:
   name: HTTP(S) 负载均衡器日志记录未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP loadbalancing 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: HTTP(S) 负载均衡器后端日志可记录请求、延迟和后端响应信息，是排查攻击流量和异常访问的重要依据。本模板从 URL map 解析默认 backend service，并检查 logConfig.enable，值为 false 时报告该后端未启用负载均衡日志。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 攻击扫描、异常请求、后端错误和流量峰值缺少可审计记录，延迟检测和取证。
+    - 多业务共用负载均衡路径时，日志缺失会影响访问溯源、SLO 分析和合规留痕。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 HTTP(S) 负载均衡器 backend service 启用 logConfig，并按业务需要配置采样率。
+    - 将负载均衡日志导出到集中日志平台，配置关键状态码、异常流量和后端错误告警。
   reference:
     - https://cloud.google.com/load-balancing/docs/https
+  metadata:
+    vendor: google
+    product: cloud-load-balancing
   tags: cloud,devops,gcp,gcloud,google-cloud-load-balancing,gcp-cloud-config
 
 flow: |

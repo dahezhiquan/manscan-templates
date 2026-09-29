@@ -4,16 +4,19 @@ info:
   name: IP Forwarding 未Disabled 的VM Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Compute Engine 实例启用 IP forwarding 后可转发非本机目的地址的流量，通常只应出现在 NAT、代理或安全设备场景。本模板枚举 VM 并检查 canIpForward，值为 true 时报告实例启用了 IP 转发。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 被入侵的实例可能被用作流量转发、绕过网络边界或辅助横向移动的节点。
+    - 非预期转发会增加路由和防火墙排障复杂度，削弱网络隔离策略的可控性。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对普通业务 VM 关闭 IP forwarding，仅在明确的 NAT、路由、防火墙或代理设备上启用。
+    - 复核启用实例的路由、服务账号和防火墙规则，记录业务用途并纳入持续巡检。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/disable-ip-forwarding.html
     - https://cloud.google.com/vpc/docs/using-routes
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,networking,ip-forwarding,gcp-cloud-config
 
 flow: |

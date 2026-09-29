@@ -4,16 +4,19 @@ info:
   name: Filestore Instance Client 访问 未Restricted by IP（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP filestore 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Filestore 的 NFS export 未配置客户端 IP 限制时，允许访问所在网络的更多客户端挂载文件共享。本模板枚举 Filestore 实例并检查 fileShares[].nfsExportOptions，字段为 null 时报告客户端访问未按 IP 限制。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 同一网络内非预期主机可能访问共享文件，造成敏感文件读取、篡改或删除风险。
+    - 缺少客户端范围限制会扩大被入侵主机横向访问 Filestore 数据的机会。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为 Filestore 文件共享配置 nfsExportOptions，仅允许明确的客户端 IP 或网段访问。
+    - 结合 VPC 防火墙、专用子网和最小权限主机策略限制 NFS 访问来源。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/restrict-client-access.html
     - https://cloud.google.com/filestore/docs/access-control
+  metadata:
+    vendor: google
+    product: filestore
   tags: cloud,devops,gcp,gcloud,filestore,security,networking,access-control,gcp-cloud-config
 
 flow: |

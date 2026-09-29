@@ -4,15 +4,18 @@ info:
   name: Service Account Roles at Project Level（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP IAM 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 将服务账号使用或令牌创建类角色授予到项目层级，会让成员可作用于项目内更大范围的服务账号，偏离最小权限原则。本模板遍历项目 IAM bindings，并通过脚本检查 Service Account User 与 Token Creator 等服务账号操作角色的项目级授权。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 成员可能冒用多个服务账号或为其创建访问令牌，扩大横向移动和权限提升空间。
+    - 项目级授权难以体现具体业务边界，增加权限复核和异常访问定位难度。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 将 Service Account User、Service Account Token Creator 等角色限制到具体服务账号资源级别。
+    - 按工作负载和自动化任务拆分服务账号，定期审计项目级服务账号相关角色绑定。
   reference:
     - https://cloud.google.com/iam/docs/understanding-roles
+  metadata:
+    vendor: google
+    product: cloud-iam
   tags: cloud,devops,gcp,gcloud,google-cloud-iam,gcp-cloud-config
 
 flow: |

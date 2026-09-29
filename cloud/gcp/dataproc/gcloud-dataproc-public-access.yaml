@@ -4,16 +4,19 @@ info:
   name: Dataproc Cluster 公开可访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP dataproc 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Dataproc 集群配置外部 IP 时，集群节点可能通过公网暴露管理或数据处理服务。本模板枚举集群并读取集群配置，匹配外部访问相关布尔值为 false 的配置时报告集群可能使用外部 IP 公开可达。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - Dataproc 节点、作业接口或依赖服务可能被公网扫描，增加未授权访问和漏洞利用风险。
+    - 数据处理环境通常接触原始数据、临时结果和服务账号权限，公网暴露会扩大数据泄露影响面。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为 Dataproc 集群启用内部 IP 或私有网络访问，避免为节点分配不必要的外部 IP。
+    - 使用 VPC 防火墙、专用子网、Private Google Access 和最小权限服务账号限制集群访问路径。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Dataproc/publicly-accessible-dataproc-clusters.html
     - https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/network
+  metadata:
+    vendor: google
+    product: dataproc
   tags: cloud,devops,gcp,gcloud,dataproc,security,networking,public-access,gcp-cloud-config
 
 flow: |

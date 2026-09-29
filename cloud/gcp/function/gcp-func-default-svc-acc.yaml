@@ -4,15 +4,18 @@ info:
   name: Google Cloud Functions Using Default Service Account（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP function 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Cloud Functions 使用默认服务账号时，多个函数可能共享同一身份，容易偏离最小权限原则。本模板检查 serviceConfig.serviceAccountEmail，匹配 appspot 或 developer 默认服务账号时报告函数使用默认服务账号。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 任一函数被利用后，攻击者可能借助默认服务账号访问同身份授权的其他云资源。
+    - 默认身份难以体现函数的具体业务职责，增加审计归因和权限收敛难度。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 为不同函数或业务域创建专用服务账号，并仅授予函数实际需要的 IAM 角色。
+    - 逐步替换默认服务账号绑定，复核默认服务账号上残留的高权限角色。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-access-iam
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

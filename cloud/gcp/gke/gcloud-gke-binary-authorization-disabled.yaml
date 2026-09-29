@@ -4,16 +4,19 @@ info:
   name: GKE Clusters 未启用Binary Authorization已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Binary Authorization 可在 GKE 部署前验证镜像是否符合签名和准入策略，未启用会削弱供应链准入控制。本模板枚举集群并检查 binaryAuthorization.evaluationMode，值为 DISABLED 或为空时报告未启用 Binary Authorization。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 未签名、未经验证或来自非可信构建流程的镜像更容易进入集群运行。
+    - 镜像供应链被污染时，缺少准入阻断会增加恶意容器落地风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 GKE 集群启用 Binary Authorization，并配置 attestor、策略和例外审批流程。
+    - 将镜像签名、漏洞扫描和部署准入纳入 CI/CD 流水线。
   reference:
     - https://cloud.google.com/binary-authorization/docs/overview
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-binary-authorization.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,container,authorization,gcp-cloud-config
 
 flow: |

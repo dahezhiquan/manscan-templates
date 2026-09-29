@@ -4,15 +4,18 @@ info:
   name: No Customer-Managed 加密 Keys 中的Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: Cloud Functions 未配置 Customer-Managed Encryption Key 时，函数相关数据和构建制品无法通过客户 KMS 密钥进行独立生命周期控制。本模板枚举函数并检查 kmsKeyName，值为 null 时报告函数未使用 CMEK。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 敏感函数代码、配置或运行数据缺少客户侧密钥轮换、禁用和访问审计能力。
+    - 对强合规环境，未使用 CMEK 可能不满足客户管理密钥和密钥隔离要求。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 为需要密钥自主控制的函数配置 Cloud KMS CMEK，并授予服务代理使用密钥所需权限。
+    - 对既有函数制定重新部署或迁移计划，统一部署模板中的 kmsKeyName 配置。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-encryption-keys
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

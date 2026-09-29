@@ -4,15 +4,18 @@ info:
   name: Google Cloud Functions 自动运行时安全更新未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP function 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Google Cloud Functions 的运行时与服务配置需要纳入持续基线管理，避免函数长期以不完整配置运行。本模板枚举函数并读取 serviceConfig.minInstanceCount，字段为 null 时作为当前基线不满足的证据报告该函数需要复核运行时安全更新和实例配置。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 函数运行时和实例配置未纳入基线时，安全更新、容量预热和稳定性要求可能被忽略。
+    - 对关键函数而言，配置缺口会增加冷启动、运行时过期或安全维护遗漏带来的风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 复核函数运行时版本、安全更新策略和最小实例配置，确保符合组织基线。
+    - 将 Cloud Functions 配置纳入 IaC 或部署流水线，避免新函数缺少必要运行时安全配置。
   reference:
     - https://cloud.google.com/functions/docs/securing/managing-security
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

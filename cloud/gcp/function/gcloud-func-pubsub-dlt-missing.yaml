@@ -4,15 +4,18 @@ info:
   name: Configure Dead Lettering 的Pub/Sub-Triggered Functions（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 GCP function 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Pub/Sub 触发链路缺少死信或失败处理配置时，反复失败的事件可能阻塞处理或丢失排障上下文。本模板枚举函数并检查 eventTrigger.pubsubTopic，字段为 null 时作为 Pub/Sub 触发和死信配置缺失线索进行报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 失败消息可能反复重试或难以隔离，影响事件处理稳定性和故障恢复。
+    - 缺少死信主题会降低问题消息保留、分析和人工补偿处理能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Pub/Sub 触发的函数配置合适的重试、死信主题和告警策略。
+    - 复核命中函数的 event trigger 配置，确保事件来源、失败处理和消息保留策略符合业务要求。
   reference:
     - https://cloud.google.com/functions/docs/calling/pubsub#retry
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

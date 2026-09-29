@@ -4,15 +4,18 @@ info:
   name: Deprecated 1st Generation Google Cloud Functions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP function 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud Functions 第 1 代运行环境相较第 2 代在运行时能力、扩展性和安全治理能力上更受限，长期保留会增加维护成本。本模板枚举函数并检查 environment 字段，字段为空时按模板逻辑报告疑似第 1 代函数需要迁移复核。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 旧一代函数可能无法使用较新的运行时、安全配置和运维能力，增加后续升级与治理难度。
+    - 长期保留旧架构函数会造成平台能力不一致，影响监控、网络和身份控制统一落地。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 评估命中函数的触发器、运行时、权限和网络配置，按官方迁移指南迁移到 Cloud Functions 第 2 代。
+    - 迁移前后验证事件触发、环境变量、密钥、服务账号和监控告警配置。
   reference:
     - https://cloud.google.com/functions/docs/migrating
+  metadata:
+    vendor: google
+    product: cloud-functions
   tags: cloud,devops,gcp,gcloud,google-cloud-functions,gcp-cloud-config
 
 flow: |

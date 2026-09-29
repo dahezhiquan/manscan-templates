@@ -4,15 +4,18 @@ info:
   name: Export All Log Entries Using Sinks 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP logging 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 日志 sink 用于将项目日志导出到集中存储、SIEM 或长期归档位置，缺少全量导出会影响跨项目审计。本模板列出项目 logging sinks，并以 filter 为空的接收器作为全量日志导出配置的检查信号。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 关键日志可能只保留在项目本地，安全团队无法集中关联查询或长期归档。
+    - 项目删除、权限误改或保留期不足时，缺少外部导出会增加日志丢失风险。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为项目、文件夹或组织配置 logging sink，将需要保留的日志导出到集中且受控的目标。
+    - 根据审计目标设置合适的 filter、接收端权限和保留策略，并定期验证 sink 是否持续工作。
   reference:
     - https://cloud.google.com/logging/docs/export/configure_export_v2
+  metadata:
+    vendor: google
+    product: cloud-logging
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,gcp-cloud-config
 
 flow: |

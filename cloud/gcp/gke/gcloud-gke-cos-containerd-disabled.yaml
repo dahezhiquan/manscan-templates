@@ -4,16 +4,19 @@ info:
   name: GKE Clusters 未Using Container-Optimized OS（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE 节点池未使用 COS_CONTAINERD 镜像时，可能偏离 Google 推荐的容器优化节点运行环境。本模板枚举节点池并检查 config.imageType，未包含 COS_CONTAINERD 时报告节点池未使用 Container-Optimized OS with containerd。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 节点操作系统和容器运行时可能缺少针对 GKE 优化的默认安全加固和维护路径。
+    - 运行时类型不统一会增加节点维护、漏洞响应和兼容性管理成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将节点池迁移到 COS_CONTAINERD 镜像类型，并在升级前验证工作负载兼容性。
+    - 在节点池创建模板中固定推荐镜像类型，持续巡检非标准节点池。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/concepts/node-images
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/use-cos-containerd.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,containers,gcp-cloud-config
 
 flow: |

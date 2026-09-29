@@ -4,16 +4,19 @@ info:
   name: GKE Clusters 未Using Confidential Nodes（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Confidential GKE Nodes 通过机密计算能力加强节点运行时数据保护，适合承载敏感工作负载。本模板枚举集群和节点池，并检查 confidentialNodes.enabled，字段为空时报告节点池未启用 Confidential Nodes。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 节点上运行的敏感工作负载缺少额外的内存加密和机密计算保护。
+    - 对受监管数据处理场景，未启用 Confidential Nodes 可能不满足组织安全基线。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为承载敏感工作负载的节点池启用 Confidential GKE Nodes，并确认区域、机型和镜像兼容性。
+    - 对不适用的节点池记录例外，并通过调度约束隔离敏感工作负载。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-confidential-gke-nodes.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,security,encryption,gcp-cloud-config
 
 flow: |

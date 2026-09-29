@@ -4,15 +4,18 @@ info:
   name: Dangling DNS Records 检查（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP dns 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud DNS 中残留的悬空记录可能指向已释放或未绑定的云资源，形成域名接管或错误流量转发风险。本模板枚举托管区域和记录集，并结合外部地址状态检查，发现可疑残留记录时报告 Dangling DNS Record。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可能重新占用被 DNS 指向的云资源，从而接管子域名或接收用户流量。
+    - 残留记录会导致业务访问异常、证书签发混乱和安全监控误判。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 核对命中的 DNS 记录与实际云资源绑定关系，删除不再使用或指向失效资源的记录。
+    - 在资源下线流程中同步清理 DNS、负载均衡和外部地址，并定期巡检悬空记录。
   reference:
     - https://cloud.google.com/dns/docs
+  metadata:
+    vendor: google
+    product: cloud-dns
   tags: cloud,devops,gcp,gcloud,dns,gcp-cloud-config,discovery
 
 flow: |

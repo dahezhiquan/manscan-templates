@@ -4,15 +4,18 @@ info:
   name: DNSSEC 未Enabled 的Google Cloud DNS Zones（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP dns 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: DNSSEC 可为 Cloud DNS 托管区域提供 DNS 响应完整性验证，降低记录被伪造或篡改的风险。本模板枚举 managed zones，并检查 dnssecConfig.state，值为 off 时报告该区域未启用 DNSSEC。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 解析链路缺少 DNSSEC 保护时，用户可能更容易受到 DNS 欺骗、缓存投毒或流量劫持影响。
+    - 对关键域名或合规要求场景，未启用 DNSSEC 会降低域名解析可信度。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为需要保护的 Cloud DNS 公共托管区域启用 DNSSEC，并在注册商侧正确发布 DS 记录。
+    - 启用后监控签名状态和密钥轮换，避免配置错误导致域名解析失败。
   reference:
     - https://cloud.google.com/dns/docs/dnssec
+  metadata:
+    vendor: google
+    product: cloud-dns
   tags: cloud,devops,gcp,gcloud,dns,gcp-cloud-config,discovery
 
 flow: |

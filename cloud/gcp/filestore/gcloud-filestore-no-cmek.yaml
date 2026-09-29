@@ -4,16 +4,19 @@ info:
   name: Filestore Instance 未Using Customer-Managed 加密 Keys（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP filestore 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: Filestore 实例未使用 Customer-Managed Encryption Key 时，共享文件数据无法通过客户管理密钥进行独立生命周期控制。本模板枚举实例并检查 kmsKeyName，值为 null 时报告该实例未使用 CMEK。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 敏感文件共享缺少客户侧密钥轮换、禁用和访问审计能力，可能不满足加密合规要求。
+    - 多团队共享的文件存储若密钥治理不一致，会增加数据隔离和应急处置难度。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 为敏感 Filestore 实例配置 Cloud KMS CMEK，并授予 Filestore 服务代理密钥使用权限。
+    - 对现有实例制定迁移或重建计划，统一实例创建模板中的加密配置。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/Filestore/instances-encrypted-with-cmeks.html
     - https://cloud.google.com/filestore/docs/encryption
+  metadata:
+    vendor: google
+    product: filestore
   tags: cloud,devops,gcp,gcloud,filestore,security,encryption,cmek,gcp-cloud-config
 
 flow: |

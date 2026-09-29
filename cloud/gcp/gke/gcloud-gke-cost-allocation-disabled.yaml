@@ -4,16 +4,19 @@ info:
   name: GKE Clusters 未启用Cost Allocation已启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP gke 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: GKE Cost Allocation 未启用时，集群成本难以按命名空间和标签细分到团队或应用。本模板枚举集群并检查 costManagementConfig.enabled，字段为空时报告集群未启用成本分摊。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 无法精确识别高成本命名空间或工作负载，影响容量治理和成本异常排查。
+    - 成本归属不清会削弱团队资源责任边界和预算控制。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 GKE 集群启用 cost allocation，并规范命名空间、Pod 和资源标签。
+    - 将成本报告纳入团队预算和容量治理流程，定期处理异常消耗。
   reference:
     - https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-usage-metering
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/GKE/enable-cost-allocation.html
+  metadata:
+    vendor: google
+    product: google-kubernetes-engine
   tags: cloud,devops,gcp,gcloud,gke,kubernetes,cost,monitoring,gcp-cloud-config
 
 flow: |

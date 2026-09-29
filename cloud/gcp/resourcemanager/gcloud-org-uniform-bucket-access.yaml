@@ -4,16 +4,19 @@ info:
   name: Uniform Bucket-Level 访问 未Enforced（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Uniform bucket-level access 未在组织层强制时，Cloud Storage bucket 仍可能使用对象 ACL，导致对象级权限与 IAM 权限并存。本模板检查 storage.uniformBucketLevelAccess 组织策略 booleanPolicy，返回空对象 {} 时报告未强制统一桶级访问。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 对象 ACL 可能造成难以发现的单对象公开或越权访问，削弱集中 IAM 管理效果。
+    - 权限模型混用会增加审计复杂度，访问问题和数据泄露排查更困难。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 启用 storage.uniformBucketLevelAccess 组织策略，强制新建和现有 bucket 使用统一桶级访问。
+    - 迁移前清点依赖对象 ACL 的应用，改用 IAM、条件授权和受控服务账号。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enforce-uniform-bucket-level-access-constraint.html
     - https://cloud.google.com/storage/docs/uniform-bucket-level-access
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,storage,bucket,gcp-cloud-config
 
 flow: |

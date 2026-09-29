@@ -4,15 +4,18 @@ info:
   name: Default VPC Network已使用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: default VPC 通常随项目自动创建，可能包含不符合组织基线的默认子网和防火墙规则。本模板检查项目网络列表，发现名称为 default 的 VPC 时报告默认网络仍在使用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 工作负载可能部署在未按业务边界设计的网络中，增加横向访问和公网暴露风险。
+    - 默认网络存在会削弱网络架构一致性，影响防火墙、路由和日志治理。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将资源迁移到按组织基线设计的自定义 VPC，并删除不再需要的 default VPC。
+    - 在组织层限制默认网络创建，确保新项目使用受控网络模板。
   reference:
     - https://cloud.google.com/vpc/docs/vpc
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,google-cloud-vpc,networking,security,gcp-cloud-config
 
 flow: |

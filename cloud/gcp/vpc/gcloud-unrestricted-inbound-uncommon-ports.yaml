@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted Inbound 访问 on Uncommon Ports（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 非常用端口向全网开放通常表示临时服务、调试端口或自定义管理接口暴露，容易绕过既有安全基线和监控规则。本模板枚举入站防火墙规则，匹配未禁用、来源包含 0.0.0.0/0 且放行端口不在常见服务端口清单内的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未登记的服务端口可能暴露调试接口、临时应用或高权限管理面，增加未知攻击面。
+    - 安全监控和资产台账可能无法准确覆盖这些端口，导致异常访问长期缺乏告警。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 审查命中的非常用端口业务必要性，删除临时规则或将来源限制为可信网段。
+    - 对确需开放的自定义服务补充资产登记、身份认证、TLS 和访问日志监控。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,security,networking,gcp-cloud-config
 
 flow: |

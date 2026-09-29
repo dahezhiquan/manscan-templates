@@ -4,16 +4,19 @@ info:
   name: Resource Location Restrictions 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 组织未限制资源位置时，项目可在任意区域或多区域创建资源，可能违反数据驻留和运营边界要求。本模板检查 gcp.resourceLocations 组织策略 listPolicy.allValues，值为 ALLOW 时报告资源位置未受限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 敏感数据或工作负载可能被部署到不符合监管、合同或延迟要求的位置。
+    - 资源分散到未批准区域会增加成本治理、灾备设计和安全监控复杂度。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 gcp.resourceLocations 组织策略，仅允许业务和合规批准的位置。
+    - 对需要跨区域部署的场景记录例外依据，并定期核对资源实际位置和策略继承情况。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/resource-location-restriction.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,compliance,location,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: Detailed 审计 日志记录 Mode未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Detailed audit logging mode 可增强 Cloud Storage 等资源的审计细节，未启用会降低对数据访问和管理操作的可见性。本模板检查 gcp.detailedAuditLoggingMode 组织策略 booleanPolicy，返回空对象 {} 时报告详细审计日志模式未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 数据访问和对象操作缺少更细粒度审计证据，影响泄露调查、责任追踪和合规留痕。
+    - 安全检测规则可用字段减少，可能延迟发现异常访问模式。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 gcp.detailedAuditLoggingMode 组织策略，并确认日志接收端、保留期和访问控制满足要求。
+    - 将详细审计日志接入集中分析和告警流程，定期验证关键数据访问场景的日志完整性。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enable-detailed-audit-logging.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,audit,logging,gcp-cloud-config
 
 flow: |

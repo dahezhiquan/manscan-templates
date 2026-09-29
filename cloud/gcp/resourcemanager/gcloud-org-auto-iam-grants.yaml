@@ -4,16 +4,19 @@ info:
   name: Automatic IAM Role Grants 的Default Service Accounts Not未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 默认服务账号自动获得 IAM 角色会使新项目或服务账号继承过宽权限，偏离最小权限原则。本模板检查 iam.automaticIamGrantsForDefaultServiceAccounts 组织策略的 booleanPolicy，返回空对象 {} 时报告未禁用自动授权。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 默认服务账号可能获得 Editor 等高权限，工作负载被攻破后可直接滥用项目资源。
+    - 自动授权降低了权限来源的可解释性，增加后续权限收敛和审计成本。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 iam.automaticIamGrantsForDefaultServiceAccounts 约束以禁用默认服务账号自动授权。
+    - 复核已有默认服务账号权限，按工作负载实际需求改授最小权限角色。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/disable-automatic-role-grants.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,iam,organization,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: Shared VPC Subnetworks 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Shared VPC subnetworks 未受限制时，服务项目资源可能连接到任意共享子网，破坏预期网络分区。本模板检查 compute.restrictSharedVpcSubnetworks 组织策略 listPolicy.allValues，值为 ALLOW 时报告共享 VPC 子网未受限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 工作负载可能接入不匹配的安全域或路由环境，增加横向访问和数据流向失控风险。
+    - 未限制共享子网会让网络团队难以执行集中分段、IP 管理和访问策略。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 compute.restrictSharedVpcSubnetworks，仅允许使用经批准的 Shared VPC subnetworks。
+    - 按环境、业务和敏感级别划分共享子网，并定期复核服务项目关联关系。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-shared-vps-subnetworks.html
     - https://cloud.google.com/vpc/docs/shared-vpc
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,networking,vpc,gcp-cloud-config
 
 flow: |

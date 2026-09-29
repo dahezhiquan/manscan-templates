@@ -4,16 +4,19 @@ info:
   name: Private Service Connect Endpoints 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Private Service Connect 可通过私有端点访问 Google API、第三方或自建服务，减少流量经公网暴露的需求。项目未配置 PSC 端点时，敏感服务访问可能继续依赖公网路径或更宽泛的网络出口控制。本模板查询项目中 target 匹配 serviceAttachments 的转发规则，返回空列表时报告未配置 PSC 端点。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 服务访问可能缺少私有连接边界，增加公网暴露、出口路径绕行和访问控制复杂度。
+    - 对需要私有化访问的关键服务，未使用 PSC 会削弱网络隔离和合规证明能力。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为需要私有访问的 Google API、生产者服务或第三方服务规划并创建 Private Service Connect 端点。
+    - 配合 DNS、IAM、路由和防火墙策略验证访问路径仅经过预期私有连接。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VPC/vpc-with-private-service-connect-endpoints.html
     - https://cloud.google.com/vpc/docs/private-service-connect
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,networking,security,psc,gcp-cloud-config
 
 flow: |

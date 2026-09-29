@@ -4,16 +4,19 @@ info:
   name: Organization 策略 的Allowed External IPs 未Configured（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 组织未限制 VM 外部 IP 使用时，任意实例可能被分配公网地址并扩大互联网暴露面。本模板检查 compute.vmExternalIpAccess 组织策略的有效 listPolicy.allValues，值为 ALLOW 时报告外部 IP 未受限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 新建或变更实例可能绕过既定网络入口，通过公网直接暴露 SSH、RDP 或业务服务。
+    - 公网地址分配缺少统一治理时，资产盘点、攻击面收敛和防火墙策略复核都会更困难。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 compute.vmExternalIpAccess 组织策略，仅允许批准的实例或项目使用外部 IP。
+    - 对必须公网访问的实例补充防火墙来源限制、访问审计和例外审批记录。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/allowed-external-ips.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,networking,organization,gcp-cloud-config
 
 flow: |

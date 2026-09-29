@@ -4,15 +4,18 @@ info:
   name: Enforce Public 访问 Prevention 的Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP 存储账户 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Public Access Prevention 可阻止 bucket 或对象被授予公开访问，未启用时更容易因 IAM 或 ACL 误配置导致数据公开。本模板检查 bucket public_access_prevention 字段，未返回 inherited 或 enforced 时报告未启用公开访问防护。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - allUsers 或 allAuthenticatedUsers 授权可能导致敏感对象被匿名访问或下载。
+    - 缺少防护栏会增加人为误配置导致公开泄露的概率。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 在 bucket 或组织层启用 Public Access Prevention，优先使用 enforced 模式保护敏感 bucket。
+    - 同时清理历史公开 IAM/ACL 授权，并定期审计公开访问状态。
   reference:
     - https://cloud.google.com/storage/docs/public-access-prevention
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,security,public-access-prevention,gcp-cloud-config
 
 flow: |

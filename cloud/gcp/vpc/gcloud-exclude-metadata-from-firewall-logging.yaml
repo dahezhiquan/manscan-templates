@@ -4,15 +4,18 @@ info:
   name: Exclude Metadata from Firewall 日志记录（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Firewall Rules Logging 记录过多元数据时可能把实例、标签或网络上下文暴露到日志中，增加敏感信息泄露面。本模板检查防火墙规则 logConfig，发现启用日志且 metadata 为 INCLUDE_ALL_METADATA 时报告未排除元数据。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 防火墙日志可能包含过多资源上下文，扩大日志访问者可见的基础设施信息。
+    - 敏感元数据进入集中日志后，会增加最小化采集、权限控制和合规处理难度。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 将防火墙规则日志的 metadata 配置为 EXCLUDE_ALL_METADATA，除非确有调查需求。
+    - 对需要保留元数据的规则限制日志访问权限，并定期复核采集字段和保留期限。
   reference:
     - https://cloud.google.com/vpc/docs/using-firewall-rules-logging
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,google-cloud-vpc,firewall-logging,security,gcp-cloud-config
 
 flow: |

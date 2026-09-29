@@ -4,15 +4,18 @@ info:
   name: Enable 日志记录 的VPC Firewall Rules（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: VPC 防火墙规则日志可记录命中规则的连接元数据，是排查异常访问、验证策略效果和事后取证的重要依据。未启用日志时，即使规则仍在放行或拒绝流量，也难以及时发现异常网络行为。本模板遍历项目中的 VPC 网络和防火墙规则，匹配处于启用状态且 logConfig enable 为 false 的规则。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 安全团队无法从防火墙层面还原命中规则、连接方向和流量来源，影响入侵排查与合规审计。
+    - 错误开放的端口或异常扫描可能长期不可见，延缓响应并扩大横向移动窗口。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为关键 VPC 防火墙规则启用 Firewall Rules Logging，并按隐私要求选择是否包含元数据。
+    - 将防火墙日志集中到 Cloud Logging 或 SIEM，并为高风险端口、广泛来源和拒绝异常配置告警。
   reference:
     - https://cloud.google.com/vpc/docs/using-firewall-rules-logging
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,google-cloud-vpc,firewall-logging,security,gcp-cloud-config
 
 flow: |

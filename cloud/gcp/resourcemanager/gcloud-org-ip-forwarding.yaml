@@ -4,16 +4,19 @@ info:
   name: VM IP Forwarding 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: VM IP forwarding 允许实例转发非自身目的地址流量，未限制时任意实例都可能被配置为路由器或流量中转点。本模板检查 compute.vmCanIpForward 组织策略 listPolicy.allValues，值为 ALLOW 时报告 IP forwarding 未受限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 被攻破或误配置实例可能转发流量，绕过预期网络边界、监控路径或分段策略。
+    - 未受控的流量转发会增加横向移动、数据外传和网络排障复杂度。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 compute.vmCanIpForward 组织策略，仅允许经批准的网络设备或安全实例启用 IP forwarding。
+    - 对允许转发的实例实施专用服务账号、严格防火墙、路由审计和变更审批。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enable-ip-forwarding-restriction-policy.html
     - https://cloud.google.com/vpc/docs/using-instance-ip-forwarding
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,networking,ip-forwarding,gcp-cloud-config
 
 flow: |

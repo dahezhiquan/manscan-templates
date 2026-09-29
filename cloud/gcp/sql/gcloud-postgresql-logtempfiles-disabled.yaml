@@ -4,15 +4,18 @@ info:
   name: PostgreSQL 数据库实例未启用 log_temp_files 标志（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: PostgreSQL log_temp_files 可记录临时文件使用情况，帮助发现高成本查询和异常资源消耗。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 log_temp_files 的值，匹配 -1 时报告临时文件日志被禁用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 大量临时文件导致的磁盘压力、慢查询或异常资源消耗缺少可追踪证据。
+    - 安全团队难以及时发现可疑的大规模排序、哈希或数据处理行为。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 设置合适的 log_temp_files 阈值，记录超过基线的临时文件使用情况。
+    - 将临时文件日志与磁盘、查询性能和连接来源指标结合分析，及时处理异常 SQL。
   reference:
     - https://cloud.google.com/sql/docs/postgres/configure-database-flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,google-cloud-sql,gcp-cloud-config
 
 flow: |

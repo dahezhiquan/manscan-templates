@@ -4,15 +4,18 @@ info:
   name: MySQL 数据库实例启用了 Local Infile（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: MySQL local_infile 允许客户端通过 LOAD DATA LOCAL INFILE 读取本地文件并导入数据，启用后会增加客户端文件泄露和误用风险。本模板检查 Cloud SQL MySQL 实例 databaseFlags 中 local_infile 的值，并在匹配 on 时报告该标志已启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 恶意或被劫持的数据库连接可能诱导客户端读取本地文件，造成敏感文件内容泄露。
+    - 不必要的数据导入能力会扩大 SQL 客户端和应用连接链路的攻击面。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在 Cloud SQL MySQL 实例上关闭 local_infile，除非业务确实需要该导入能力。
+    - 对必须启用的场景限制数据库账号权限、客户端来源和导入流程，并监控异常 LOAD DATA 使用。
   reference:
     - https://cloud.google.com/sql/docs/mysql/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,mysql,gcp-cloud-config
 
 flow: |

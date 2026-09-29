@@ -4,16 +4,19 @@ info:
   name: OS Login 未Required（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: OS Login 可将 Compute Engine SSH 访问统一到 IAM 和审计体系，组织未强制启用时项目仍可能依赖分散的 SSH key 元数据。本模板检查 compute.requireOsLogin 组织策略 booleanPolicy，返回空对象 {} 时报告未强制要求 OS Login。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 实例或项目元数据中的 SSH key 可能长期残留，离职、权限变更或密钥泄露后难以及时收敛。
+    - SSH 登录行为无法充分依赖 IAM 条件、组织账号生命周期和集中审计。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 启用 compute.requireOsLogin 组织策略，统一通过 OS Login 管理 Compute Engine SSH 访问。
+    - 清理项目和实例元数据中的旧 SSH key，并结合 IAM、MFA 和审计日志管理登录权限。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/enquire-os-login.html
     - https://cloud.google.com/compute/docs/oslogin
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,compute,ssh,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: Default VPC Network In Use 的Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP vertexai 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Vertex AI notebook 使用 default VPC 时，可能继承默认网络和防火墙规则，偏离组织自定义网络分段要求。本模板检查 gceSetup.networkInterfaces[].network，命中 networks/default 时报告 notebook 使用默认 VPC。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - Notebook 可能接入未按业务和数据敏感度划分的网络，增加横向访问风险。
+    - 默认网络规则和路由不一定符合组织对 AI 数据处理环境的隔离要求。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 将 Vertex AI notebook 部署到经过审批的自定义 VPC 和子网。
+    - 配置最小必要防火墙规则、私有访问和网络日志，避免使用 default VPC 承载敏感工作负载。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/default-vpc-in-use.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/create-instance
+  metadata:
+    vendor: google
+    product: vertex-ai
   tags: cloud,devops,gcp,gcloud,vertexai,networking,security,vpc,gcp-cloud-config,ai
 
 flow: |

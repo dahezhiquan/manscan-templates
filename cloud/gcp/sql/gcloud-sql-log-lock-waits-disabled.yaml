@@ -4,15 +4,18 @@ info:
   name: PostgreSQL 数据库实例未启用 log_lock_waits 标志（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: PostgreSQL log_lock_waits 可记录长时间等待锁的语句，帮助发现阻塞、异常事务和潜在拒绝服务风险。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 log_lock_waits 的值，匹配 off 时报告锁等待日志未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 长事务、恶意锁定或应用缺陷造成的阻塞缺少日志证据，故障定位和责任追踪更困难。
+    - 锁等待问题可能演变为性能下降或业务不可用，且不易被安全监控及时发现。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 log_lock_waits，并结合 deadlock_timeout、慢查询日志和数据库性能指标进行分析。
+    - 对反复出现的锁等待来源建立告警和优化流程，及时处理异常事务或低效 SQL。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

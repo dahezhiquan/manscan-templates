@@ -4,15 +4,18 @@ info:
   name: Log Statement Flag 未Configured Properly 的PostgreSQL Database Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL log_statement 控制语句日志记录范围，未显式配置会使数据库审计粒度不明确。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中的 log_statement，返回 null 时报告该标志未正确配置。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 关键 DDL 或数据变更语句可能缺少审计记录，影响误操作和恶意操作追踪。
+    - 如果实际配置过宽，也可能把大量 SQL 和参数写入日志，带来敏感信息暴露风险。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 PostgreSQL 实例显式设置符合组织审计要求的 log_statement 值。
+    - 平衡审计覆盖和敏感信息暴露风险，并将日志发送到集中、受控的存储位置。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,logging,gcp-cloud-config
 
 flow: |

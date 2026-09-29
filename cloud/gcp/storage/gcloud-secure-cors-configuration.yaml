@@ -4,15 +4,18 @@ info:
   name: Secure CORS Configuration 的Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Cloud Storage CORS 配置决定哪些浏览器源可跨域访问 bucket，对外提供 Web 资源时应明确限制允许来源。本模板检查 cors_config[].origin，返回 null 时报告 CORS 未设置或来源配置不符合预期。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - CORS 配置缺失可能导致合法 Web 客户端无法安全访问资源，或因后续临时放宽配置引入风险。
+    - 来源控制不清晰会增加跨域访问误配、数据暴露和前端集成问题。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 为需要跨域访问的 bucket 配置明确的 CORS origins、methods 和 headers，避免使用过宽来源。
+    - 对不需要浏览器跨域访问的 bucket 保持无 CORS 配置，并通过应用层或受控代理访问。
   reference:
     - https://cloud.google.com/storage/docs/configuring-cors
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,cors,security,gcp-cloud-config
 
 flow: |

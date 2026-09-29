@@ -4,16 +4,19 @@ info:
   name: Idle Shutdown 未Enabled 的Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP vertexai 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Vertex AI notebook 未配置 idle shutdown 时，空闲实例会持续运行并保留访问入口、凭据和运行中资源。本模板检查 gceSetup.metadata.idle-timeout-seconds，返回 null 时报告未启用空闲自动关闭。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 无人使用的 Notebook 仍可能被滥用进行数据访问、算力消耗或持久化操作。
+    - 长期开机增加成本，并扩大未维护环境的暴露窗口。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 配置 idle-timeout-seconds 或等效空闲关闭策略，自动停止长时间未使用的 notebook。
+    - 对需要长时间运行的任务使用受控作业环境，并记录例外与负责人。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/enable-idle-shutdown.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/manage-instance
+  metadata:
+    vendor: google
+    product: vertex-ai
   tags: cloud,devops,gcp,gcloud,vertexai,cost-optimization,gcp-cloud-config,ai
 
 flow: |

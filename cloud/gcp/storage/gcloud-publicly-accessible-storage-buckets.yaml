@@ -4,15 +4,18 @@ info:
   name: 检查 的公开可访问 Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP 存储账户 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud Storage bucket IAM policy 中包含 allUsers 或 allAuthenticatedUsers 会让匿名用户或任意已认证用户访问桶资源。本模板执行 gsutil iam get，并检查 bindings.members 是否包含公开主体。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 敏感对象可能被外部用户枚举、下载或滥用，造成数据泄露和合规事件。
+    - 公开写入或管理权限还可能导致恶意内容上传、对象篡改或服务成本增加。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 从 bucket IAM policy 中移除 allUsers 和 allAuthenticatedUsers，仅向明确主体授予最小权限。
+    - 启用 Public Access Prevention，并使用统一桶级访问减少 ACL 与 IAM 混用风险。
   reference:
     - https://cloud.google.com/storage/docs/access-control/iam
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,iam,security,public-access,gcp-cloud-config
 
 flow: |

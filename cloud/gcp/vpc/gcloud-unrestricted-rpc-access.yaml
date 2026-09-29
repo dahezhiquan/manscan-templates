@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted RPC 访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: RPC 端口常与 Windows 管理、文件共享和远程服务调用相关，公网开放会增加服务枚举、凭据攻击和远程代码执行风险。本模板枚举入站防火墙规则，匹配未禁用、来源包含 0.0.0.0/0 且放行 135 端口的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可利用 RPC 入口枚举主机服务、域信息或触发相关组件漏洞。
+    - 暴露的 Windows 管理面可能被用于横向移动、权限提升和恶意软件传播。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向 0.0.0.0/0 的 135 入站规则，仅允许可信管理网段或私有网络访问。
+    - 对 Windows 管理协议使用 VPN、IAP 或堡垒机隔离，并持续更新系统补丁。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,security,rpc,gcp-cloud-config
 
 flow: |

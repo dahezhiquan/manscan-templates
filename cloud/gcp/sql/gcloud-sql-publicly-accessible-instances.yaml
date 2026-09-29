@@ -4,15 +4,18 @@ info:
   name: 公开可访问 Cloud SQL Database Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud SQL 同时启用公网 IPv4 并允许 0.0.0.0/0 授权网络时，数据库连接入口会向互联网开放。本模板检查 settings.ipConfiguration.ipv4Enabled 是否为 true，并继续检查 authorizedNetworks 是否包含 0.0.0.0/0。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 数据库可能被互联网扫描、爆破或利用弱账号和漏洞攻击，导致数据泄露或服务中断。
+    - 公开授权网络会削弱防火墙边界，使凭据泄露后的攻击门槛明显降低。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除 0.0.0.0/0 授权网络，优先使用私有 IP、Private Service Connect 或受控代理访问 Cloud SQL。
+    - 对确需公网访问的实例仅允许明确可信来源，并强制 SSL/TLS、强认证和连接日志监控。
   reference:
     - https://cloud.google.com/sql/docs/mysql/configure-ip
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,networking,security,gcp-cloud-config
 
 flow: |

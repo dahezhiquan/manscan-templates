@@ -4,15 +4,18 @@ info:
   name: SQL Server 数据库实例启用了外部脚本（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: SQL Server external scripts enabled 允许执行外部脚本运行时，启用后会显著扩大数据库实例的代码执行面。本模板检查 Cloud SQL SQL Server 实例 databaseFlags 中 external scripts enabled 的值，匹配 on 时报告该功能已启用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 高权限数据库用户或被攻破账号可能利用外部脚本能力执行非预期代码或访问额外资源。
+    - 外部脚本运行时会增加补丁、依赖、权限和审计复杂度，扩大攻击面。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 关闭 external scripts enabled，除非业务有明确且受控的分析脚本需求。
+    - 对必须启用的场景限制数据库权限、脚本来源和执行账号，并配置审计和变更审批。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,mssql,gcp-cloud-config
 
 flow: |

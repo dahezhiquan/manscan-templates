@@ -4,15 +4,18 @@ info:
   name: Cloud SQL Database Instances 使用Public IPs（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud SQL 实例配置 Public IP 会使数据库拥有公网连接入口，即使配合授权网络也会扩大攻击面。本模板检查实例 ipAddresses[].type，发现 PRIMARY 公网地址时报告该实例未仅使用私有 IP。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 数据库公网入口可能被扫描、爆破或利用配置缺陷攻击，增加数据泄露和服务中断风险。
+    - 公网访问路径会绕过统一私网访问架构，增加防火墙、授权网络和证书管理复杂度。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 优先为 Cloud SQL 实例使用 Private IP、Private Service Connect 或受控代理访问。
+    - 对必须保留公网入口的实例，严格限制 authorized networks、强制 SSL/TLS 并持续监控访问来源。
   reference:
     - https://cloud.google.com/sql/docs/mysql/configure-private-ip
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,networking,security,gcp-cloud-config
 
 flow: |

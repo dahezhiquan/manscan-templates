@@ -4,15 +4,18 @@ info:
   name: 公开可访问 Pub/Sub Topics（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP pubsub 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Pub/Sub topic IAM policy 中包含 allUsers 或 allAuthenticatedUsers 会让匿名或任意已认证用户获得主题相关权限。本模板枚举项目 topic，并检查 IAM policy members 是否包含这些公开主体。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未授权用户可能发布、读取相关元数据或根据所授角色影响消息流，导致数据泄露、垃圾消息注入或业务干扰。
+    - 公开授权会绕过项目身份边界，增加消息系统被枚举和滥用的概率。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 从 Pub/Sub topic IAM policy 中移除 allUsers 和 allAuthenticatedUsers。
+    - 仅向明确的服务账号、组或受控身份授予最小 Pub/Sub 角色，并定期审计 topic 级授权。
   reference:
     - https://cloud.google.com/pubsub/docs/access-control
+  metadata:
+    vendor: google
+    product: google-cloud-pubsub
   tags: cloud,devops,gcp,gcloud,google-cloud-pubsub,gcp-cloud-config
 
 flow: |

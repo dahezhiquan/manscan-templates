@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted DNS 访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: DNS 服务不应通过 VPC 防火墙向全网开放，否则可能被外部主机滥用为开放解析器，也可能成为探测、放大攻击或 DNS 隧道流量的入口。本模板枚举各网络的入站防火墙规则，匹配未禁用、来源包含 0.0.0.0/0 且放行 53 端口的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 外部攻击者可以直接访问内部 DNS 服务，执行域名枚举、递归解析滥用或 DNS 隧道通信。
+    - 暴露的解析服务可能被用于反射放大攻击，带来流量费用、信誉和可用性风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 移除面向 0.0.0.0/0 的 DNS 入站放行规则，仅允许可信网段或必要的转发器访问 53 端口。
+    - 对 DNS 解析服务启用最小权限网络边界，并结合日志监控异常解析量和外部来源。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,dns,security,networking,gcp-cloud-config
 
 flow: |

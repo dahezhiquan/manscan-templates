@@ -4,16 +4,19 @@ info:
   name: Google Cloud APIs and Services 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 组织未限制可启用的 Google Cloud APIs and Services 时，项目可开启任意服务，增加未授权服务使用和攻击面扩张风险。本模板检查组织策略 serviceuser.services 的有效 listPolicy.allValues，值为 ALLOW 时报告未限制服务启用范围。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 项目成员可能启用未经过安全评审的服务，引入新的公网入口、数据处理路径或费用风险。
+    - 安全团队难以维持统一服务清单和合规边界，事件响应时也更难判断服务使用是否经过批准。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 serviceuser.services 组织策略，仅允许经过审批的 Google Cloud 服务被启用。
+    - 建立服务启用审批和例外流程，并定期复核组织策略继承效果。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/allowed-apis-and-services.html
     - https://cloud.google.com/resource-manager/docs/organization-policy/org-policy-constraints
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,api,services,gcp-cloud-config
 
 flow: |

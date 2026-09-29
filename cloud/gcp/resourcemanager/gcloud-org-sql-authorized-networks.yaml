@@ -4,16 +4,19 @@ info:
   name: Cloud SQL Authorized Networks 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Cloud SQL authorized networks 未在组织层限制时，实例可配置过宽来源网络，甚至形成公网可访问数据库入口。本模板检查 sql.restrictAuthorizedNetworks 组织策略 booleanPolicy，返回空对象 {} 时报告未限制 Cloud SQL 授权网络。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 数据库可能允许来自非受信任 IP 范围的连接，增加暴力破解、漏洞利用和数据泄露风险。
+    - 授权网络缺少组织约束会导致项目间访问策略不一致，增加审计和整改成本。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 启用 sql.restrictAuthorizedNetworks 组织策略，并限制可配置的 Cloud SQL authorized networks。
+    - 优先使用私有 IP、VPC 连接和最小来源范围，定期清理不再需要的公网来源。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-authorized-networks.html
     - https://cloud.google.com/sql/docs/mysql/authorize-networks
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,sql,networking,gcp-cloud-config
 
 flow: |

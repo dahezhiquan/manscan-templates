@@ -4,15 +4,18 @@ info:
   name: Configure Retention 策略 使用Bucket Lock 的Log Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: 用于日志导出的 Cloud Storage bucket 未配置 Retention Policy 和 Bucket Lock 时，日志可被过早删除或篡改，影响审计完整性。本模板枚举项目 logging sinks，并对目标 bucket 执行 gsutil retention get，返回 no Retention Policy 时报告未配置保留策略。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 攻击者或误操作可能删除关键日志，导致入侵调查、责任追踪和合规审计缺少证据。
+    - 日志保留策略不固定会让项目间留存期限不一致，影响集中取证。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为日志 bucket 配置合适的 Retention Policy，并在确认期限后使用 Bucket Lock 固化策略。
+    - 限制日志 bucket 管理权限，定期验证保留策略、访问控制和日志写入状态。
   reference:
     - https://cloud.google.com/storage/docs/bucket-lock
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-logging,retention,bucket-lock,security,gcp-cloud-config
 
 flow: |

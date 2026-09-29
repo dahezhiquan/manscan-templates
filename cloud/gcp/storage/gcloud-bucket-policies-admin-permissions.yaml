@@ -4,15 +4,18 @@ info:
   name: 检查 Bucket 策略 使用Administrative Permissions（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP 存储账户 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Cloud Storage bucket IAM policy 中包含 Owner、Editor、Storage Admin 或其他 admin 类角色时，授权范围通常超过对象读写所需权限。本模板枚举 bucket 并读取 IAM bindings，命中 roles/owner、roles/editor、roles/storage.admin 或 roles/admin 时报告存在管理员级授权。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 被授权主体可修改对象、IAM policy、生命周期或加密配置，导致数据泄露、删除或持久化访问。
+    - 管理员权限过宽会增加误操作和越权变更风险，削弱桶级最小权限治理。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 移除 bucket policy 中不必要的管理员角色，改用 Storage Object Viewer/Creator/Admin 等最小必要角色。
+    - 使用受控组或服务账号管理访问，并定期审计 bucket IAM bindings。
   reference:
     - https://cloud.google.com/storage/docs/access-control/iam
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,iam,security,polp,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Enable Object Versioning 的Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 是否正确配置备份、快照、证书续期、密钥轮换或其他韧性保护措施，以降低中断、失效或数据恢复失败的风险。
+  description: Cloud Storage object versioning 可保留对象历史版本，降低误删、覆盖或恶意篡改后的恢复难度。本模板执行 gsutil versioning get，返回 Suspended 时报告 bucket 未启用对象版本控制。
   impact: |
-    - 缺少备份、续期、轮换或删除保护会增加服务中断、数据丢失或恢复失败的风险。
-    - 当故障、误操作或攻击发生时，业务可用性和恢复能力都会受到明显影响。
+    - 对象被误删或覆盖后可能无法恢复到先前版本，造成数据丢失。
+    - 勒索、供应链错误或批量覆盖事件发生时，缺少版本会显著降低恢复能力。
   remediation: |
-    - 启用备份、快照、版本控制、证书续期、密钥轮换或删除保护等韧性配置。
-    - 定期验证恢复流程和到期提醒机制，确保在故障或攻击发生时能够快速恢复。
+    - 为关键 bucket 启用 object versioning，并结合生命周期规则管理旧版本保留期限和成本。
+    - 定期演练对象恢复流程，确认删除、覆盖和版本回滚权限受控。
   reference:
     - https://cloud.google.com/storage/docs/object-versioning
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,object-versioning,backup,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Automatic Storage Increase Limit 未Configured 的Cloud SQL（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud SQL 自动存储扩容未配置上限时，实例存储可能在异常写入或日志增长下持续扩张，带来成本和容量治理风险。本模板检查 settings.storageAutoResizeLimit，匹配 0 时报告自动扩容上限未配置或无限制。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 异常数据写入、日志暴增或应用缺陷可能导致存储持续增长，产生不可预期费用。
+    - 没有上限会削弱容量变更控制，使成本告警和容量规划更难执行。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 Cloud SQL 自动存储扩容设置符合业务容量规划的 storageAutoResizeLimit。
+    - 配置磁盘使用率、增长速度和费用告警，并定期复核上限是否与业务峰值匹配。
   reference:
     - https://cloud.google.com/sql/docs/configure-storage
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,storage,gcp-cloud-config
 
 flow: |

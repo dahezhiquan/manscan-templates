@@ -4,15 +4,18 @@ info:
   name: SQL Server 数据库实例启用了 Trace Flag 3625（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: SQL Server Trace Flag 3625 会限制错误消息返回细节，通常只应在明确需要减少信息泄露时受控启用；长期启用可能影响故障诊断和审计一致性。本模板枚举 Cloud SQL SQL Server 实例，并检查 databaseFlags 中 3625 的值，匹配 on 时报告该跟踪标志已启用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 错误信息被过度裁剪时，数据库故障、安全事件和应用异常可能缺少必要诊断上下文。
+    - 非基线 trace flag 会增加运维差异和变更审计难度。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 复核 Trace Flag 3625 的业务必要性；无明确例外时关闭该数据库 flag。
+    - 对必须启用的实例记录例外原因、影响范围和复核周期，并验证监控和故障诊断流程不受影响。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,mssql,gcp-cloud-config
 
 flow: |

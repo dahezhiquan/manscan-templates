@@ -4,15 +4,18 @@ info:
   name: Log Error Verbosity Flag 未Configured Properly 的PostgreSQL Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: PostgreSQL log_error_verbosity 控制错误日志详细程度，未按要求配置会影响数据库问题排查和安全事件取证。本模板枚举 Cloud SQL PostgreSQL 实例，并从 databaseFlags 中提取 log_error_verbosity，返回 null 时报告该标志未正确配置。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 错误日志可能缺少足够上下文，导致异常查询、认证失败或应用错误难以及时定位。
+    - 日志详细程度不一致会削弱跨实例审计分析和事件响应质量。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 Cloud SQL PostgreSQL 实例显式配置符合组织日志基线的 log_error_verbosity 值。
+    - 在调整日志详细程度后复核日志量、敏感信息暴露风险和集中日志解析规则。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,logging,gcp-cloud-config
 
 flow: |

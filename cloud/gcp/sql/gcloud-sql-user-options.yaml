@@ -4,15 +4,18 @@ info:
   name: Google Cloud SQL Server 实例启用了 User Options 标志（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: SQL Server user options 会为所有连接设置默认会话选项，非零或非基线值可能改变应用会话行为并造成难以追踪的权限、事务或兼容性问题。本模板检查 Cloud SQL SQL Server 实例 databaseFlags 中 user options 的值，匹配 1 到 100 的数值时报告该标志已启用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 全局会话选项可能改变事务隔离、ANSI 行为或查询执行结果，导致应用异常或安全审计误判。
+    - 非标准数据库 flag 会增加故障排查、变更回滚和跨环境一致性维护成本。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将 user options 恢复为组织批准的基线值，避免在实例层设置不必要的全局会话选项。
+    - 如业务必须使用特定选项，应在应用连接或会话级控制，并记录例外与测试结果。
   reference:
     - https://cloud.google.com/sql/docs/sqlserver/configure-database-flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,sql-database-flags,gcp-cloud-config
 
 flow: |

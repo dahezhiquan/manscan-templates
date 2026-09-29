@@ -4,16 +4,19 @@ info:
   name: Pub/Sub Subscription Cross-Project 访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP pubsub 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Pub/Sub subscription 被授予跨项目或不受信任成员访问时，消息消费链路可能超出项目边界控制。本模板枚举项目订阅并读取 subscription IAM policy，发现绑定成员中包含邮箱形式主体时报告存在需要复核的跨项目访问授权。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 外部或非预期项目身份可能读取、确认或管理订阅消息，造成敏感事件流泄露或消费链路被干扰。
+    - 订阅权限跨项目分散后，权限审计、责任归属和异常消费定位都会变得困难。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 复核 subscription IAM policy，移除不受信任或不再需要的跨项目成员。
+    - 使用受控组或服务账号授予最小权限，并通过条件、项目边界和定期审计限制消息访问范围。
   reference:
     - https://cloud.google.com/pubsub/docs/access-control
     - https://cloudone.trendmicro.com/docs/conformity
+  metadata:
+    vendor: google
+    product: google-cloud-pubsub
   tags: cloud,devops,gcp,gcloud,google-cloud-pubsub,gcp-cloud-config
 
 flow: |

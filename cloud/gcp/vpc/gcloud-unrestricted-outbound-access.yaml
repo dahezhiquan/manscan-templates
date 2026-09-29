@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted Outbound 访问 on All Ports（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: VPC 出站规则允许所有端口访问全网会放宽工作负载外联边界，降低数据外泄、恶意回连和命令控制流量的拦截能力。本模板枚举出站防火墙规则，匹配未禁用、目标包含 0.0.0.0/0 且允许全端口范围的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 被攻陷的实例可不受限制地连接外部地址，便于数据外传、下载工具或建立持久化通道。
+    - 合规环境中难以证明最小出站访问原则，增加供应链回连和第三方服务滥用风险。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 按业务依赖收敛出站目标和端口，仅允许必要的 API、更新源、代理或私有服务地址。
+    - 使用 Cloud NAT、代理网关、VPC Service Controls 和日志告警统一治理外联流量。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,security,networking,gcp-cloud-config
 
 flow: |

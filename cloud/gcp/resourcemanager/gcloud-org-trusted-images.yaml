@@ -4,16 +4,19 @@ info:
   name: Trusted Image Projects 未Defined（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: 未限制可信镜像项目时，用户可从任意可访问镜像创建 Compute Engine 实例，可能引入未加固或来源不可信的系统镜像。本模板检查 compute.trustedImageProjects 组织策略 listPolicy.allValues，值为 ALLOW 时报告未定义可信镜像项目限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 工作负载可能使用包含漏洞、恶意软件、弱配置或未批准代理的镜像启动。
+    - 镜像来源不统一会削弱补丁管理、基线加固和软件供应链审计。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 compute.trustedImageProjects，仅允许从受信任镜像项目创建实例。
+    - 建立黄金镜像发布、漏洞扫描、签名校验和弃用流程，定期清理未批准镜像使用。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/disk-image-restriction.html
     - https://cloud.google.com/compute/docs/images/restricting-image-access
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,compute,images,gcp-cloud-config
 
 flow: |

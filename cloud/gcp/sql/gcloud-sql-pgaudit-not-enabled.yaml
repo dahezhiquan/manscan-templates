@@ -4,15 +4,18 @@ info:
   name: pg审计 Flags 未Enabled 的PostgreSQL Instances 中的Cloud SQL（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: pgAudit 可为 PostgreSQL 提供更细粒度的数据库审计日志，未启用会降低对敏感操作的可见性。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 cloudsql.enable_pgaudit 的值，匹配 off 时报告 pgAudit 未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - DDL、权限变更和敏感数据访问可能缺少足够审计证据，影响入侵调查和合规证明。
+    - 数据库内部滥用行为更难与账号、来源和具体语句关联。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 cloudsql.enable_pgaudit，并按审计目标配置 pgaudit.log 等相关参数。
+    - 将 pgAudit 日志导出到集中日志平台，设置权限变更、批量访问和异常语句告警。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

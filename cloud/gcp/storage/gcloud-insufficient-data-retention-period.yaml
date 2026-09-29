@@ -4,15 +4,18 @@ info:
   name: 检查 的Sufficient Data Retention Period 的Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud Storage bucket 未配置足够保留期或保留策略未锁定时，关键数据和日志可能被过早删除。本模板对 bucket 执行 gsutil retention get，返回 no Retention Policy 时报告缺少足够的数据保留配置。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 误删、恶意删除或勒索攻击后，组织可能无法按要求恢复或证明历史数据完整性。
+    - 不满足合规留存期限会影响审计、取证和法律保全。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 根据数据分类和合规要求配置 bucket Retention Policy，并在确认无误后锁定策略。
+    - 对不同数据类型设置明确保留期限，定期复核 bucket 的保留策略和删除权限。
   reference:
     - https://cloud.google.com/storage/docs/bucket-lock
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,retention,security,compliance,gcp-cloud-config
 
 flow: |

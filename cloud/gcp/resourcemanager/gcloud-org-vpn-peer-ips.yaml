@@ -4,16 +4,19 @@ info:
   name: VPN Peer IP Addresses 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: VPN peer IP 未受限制时，项目可配置任意对端 IP 建立 VPN 连接，可能接入未批准网络。本模板检查 compute.restrictVpnPeerIPs 组织策略 listPolicy.allValues，值为 ALLOW 时报告 VPN peer IP 未受限制。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 未授权 VPN 对端可能将云网络连接到不可信环境，扩大横向访问和数据外传路径。
+    - VPN 对端缺少集中清单时，事件响应和网络变更审计会明显受阻。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 配置 compute.restrictVpnPeerIPs，仅允许批准的 VPN peer IP 地址。
+    - 对 VPN 连接建立审批、标签和监控，定期核对对端地址、共享密钥和路由范围。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-vpn-peer-ips.html
     - https://cloud.google.com/vpc/docs/using-vpn
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,networking,vpn,gcp-cloud-config
 
 flow: |

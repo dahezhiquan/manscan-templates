@@ -4,15 +4,18 @@ info:
   name: Enable Cloud DNS 日志记录 的VPC Networks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Cloud DNS logging 可记录 VPC 内 DNS 查询，帮助发现恶意域名访问、数据外传和异常服务发现行为。本模板枚举网络关联的 DNS policy，并检查 enableLogging，值为 False 时报告 DNS 日志未启用。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 恶意域名解析、命令控制通信或异常服务发现请求可能缺少检测证据。
+    - 网络事件调查时无法基于 DNS 查询还原工作负载访问意图和时间线。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为关键 VPC 的 DNS policy 启用 DNS logging，并将日志接入集中分析平台。
+    - 配置可疑域名、异常查询量和非常规解析来源告警。
   reference:
     - https://cloud.google.com/dns/docs/policies
+  metadata:
+    vendor: google
+    product: cloud-dns
   tags: cloud,devops,gcp,gcloud,google-cloud-dns,logging,security,gcp-cloud-config
 
 flow: |

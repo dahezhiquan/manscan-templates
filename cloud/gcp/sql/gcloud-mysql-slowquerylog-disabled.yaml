@@ -4,15 +4,18 @@ info:
   name: MySQL 数据库服务器慢查询日志未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: MySQL slow_query_log 可记录执行耗时较长的查询，帮助发现异常访问、低效查询和潜在滥用行为。本模板检查 Cloud SQL MySQL 实例 settings.databaseFlags，并在输出中匹配 off 时报告慢查询日志未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 慢查询、异常扫描或高成本查询缺少日志证据，数据库性能问题和可疑访问更难定位。
+    - 安全和运维团队无法基于慢查询日志建立容量优化、异常检测和审计分析。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Cloud SQL MySQL 实例启用 slow_query_log，并按业务特征配置 long_query_time 等相关参数。
+    - 将慢查询日志纳入集中日志分析，定期复核异常查询来源和性能影响。
   reference:
     - https://cloud.google.com/sql/docs/mysql/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,gcp-cloud-config
 
 flow: |

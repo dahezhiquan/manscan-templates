@@ -4,15 +4,18 @@ info:
   name: PostgreSQL 数据库实例启用了 log_executor_stats（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL log_executor_stats 会输出执行器性能统计，通常用于临时调试，长期启用会增加日志噪声和性能开销。本模板枚举 Cloud SQL PostgreSQL 实例并检查 databaseFlags 中 log_executor_stats 的值，匹配 on 时报告该统计日志已启用。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 大量执行器统计日志可能掩盖真正的安全事件和数据库错误，增加日志存储与分析成本。
+    - 额外统计开销可能影响高负载实例性能，并暴露查询执行细节。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 关闭 Cloud SQL PostgreSQL 实例的 log_executor_stats，仅在临时诊断窗口中按需启用。
+    - 如需性能分析，优先使用受控的监控指标、Query Insights 或短期采样，并在完成后恢复基线配置。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

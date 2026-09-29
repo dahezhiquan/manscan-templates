@@ -4,15 +4,18 @@ info:
   name: SSL/TLS 未Enforced 的Cloud SQL Incoming Connections（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 是否正确启用传输中或静态数据加密、证书校验及安全协议配置，防止敏感数据在存储或通信过程中被窃听、篡改或滥用。
+  description: Cloud SQL 未强制 SSL/TLS 时，客户端可使用未加密连接访问数据库，传输中的凭据和数据可能被窃听。本模板检查 settings.ipConfiguration.sslMode，值为 ALLOW_UNENCRYPTED_AND_ENCRYPTED 时报告入站连接未强制加密。
   impact: |
-    - 未正确启用加密或安全协议时，敏感数据可能在传输或存储过程中被窃听、窃取或篡改。
-    - 这还可能导致不满足行业合规要求，增加数据泄露与法律责任风险。
+    - 数据库凭据、查询内容和返回数据可能在网络路径上被监听或篡改。
+    - 混合允许加密和未加密连接会削弱合规证明，并让客户端误配置长期存在。
   remediation: |
-    - 启用厂商推荐的加密方案，并优先使用更安全的协议、算法或客户管理密钥。
-    - 同时检查相关证书、密钥与依赖服务的生命周期管理，确保配置持续有效。
+    - 将 Cloud SQL sslMode 配置为仅允许加密连接，并更新客户端连接配置和证书管理。
+    - 迁移前识别仍使用明文连接的应用，完成切换后监控连接失败和未加密访问尝试。
   reference:
     - https://cloud.google.com/sql/docs/mysql/configure-ssl-instance
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,gcp-cloud-config
 
 flow: |

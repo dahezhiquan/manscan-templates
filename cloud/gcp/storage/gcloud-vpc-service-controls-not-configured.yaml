@@ -4,15 +4,18 @@ info:
   name: Use VPC Service Controls 的Cloud Storage Buckets（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: VPC Service Controls 可为 Cloud Storage 等服务建立服务边界，降低凭据泄露后的数据外传风险。本模板枚举 Access Context Manager perimeters，并检查 restrictedServices 是否包含 storage.googleapis.com。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 敏感 bucket 缺少服务边界保护时，被盗凭据可能从边界外访问或复制数据。
+    - 项目间数据流动缺少统一边界控制，增加数据外传和合规审计难度。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为承载敏感数据的项目配置 VPC Service Controls perimeter，并将 storage.googleapis.com 加入 restricted services。
+    - 测试业务访问路径和例外规则，避免服务边界影响合法数据处理流程。
   reference:
     - https://cloud.google.com/vpc-service-controls/docs/overview
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,vpc-service-controls,security,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: Default Google-Managed 加密 的Cloud SQL 未Restricted（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP resourcemanager 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Cloud SQL 未限制默认 Google-managed encryption 时，新实例可不使用客户管理密钥，削弱组织对数据库加密密钥生命周期的控制。本模板检查 sql.disableDefaultEncryptionCreation 组织策略 booleanPolicy，返回空对象 {} 时报告未禁止默认加密创建。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 组织无法对 Cloud SQL 数据库加密密钥执行自主管理、轮换、禁用和销毁流程。
+    - 对需要 CMEK 的监管或客户要求场景，默认 Google-managed encryption 可能不满足合规基线。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 sql.disableDefaultEncryptionCreation 组织策略，要求新建 Cloud SQL 实例使用客户管理密钥。
+    - 为数据库项目准备 KMS key、服务代理权限、轮换计划和密钥禁用影响评估流程。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ResourceManager/restrict-default-encryption-for-sql-instances.html
     - https://cloud.google.com/sql/docs/mysql/customer-managed-encryption-keys
+  metadata:
+    vendor: google
+    product: resource-manager
   tags: cloud,devops,gcp,gcloud,resourcemanager,security,sql,encryption,cmk,gcp-cloud-config
 
 flow: |

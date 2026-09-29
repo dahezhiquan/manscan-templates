@@ -4,15 +4,18 @@ info:
   name: Define Index Page Suffix and Error Page 的Bucket Website Configuration（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 用于托管静态网站的 Cloud Storage bucket 需要明确 index page suffix 和 error page，否则可能出现错误响应不一致或对象路径暴露。本模板枚举 bucket 并执行 gsutil web get，返回 has no website configuration 时报告静态网站配置缺失。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 公开网站 bucket 缺少标准错误页和首页配置时，用户可能看到不一致错误信息或对象结构线索。
+    - 对外站点配置不完整会增加运维误判和内容暴露风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对用于静态网站托管的 bucket 配置 index page suffix 和 error page。
+    - 如果 bucket 不应托管网站，移除公开访问和网站用途配置，改为受控访问。
   reference:
     - https://cloud.google.com/storage/docs/hosting-static-website
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,website-config,static-website,gcp-cloud-config
 
 flow: |

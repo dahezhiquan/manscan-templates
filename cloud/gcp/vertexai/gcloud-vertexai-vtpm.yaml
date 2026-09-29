@@ -4,16 +4,19 @@ info:
   name: Virtual Trusted Platform Module 未Enabled 的Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP vertexai 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: vTPM 可为 Shielded VM 提供可信度量和密钥保护能力，Vertex AI notebook 未启用时完整性验证能力受限。本模板检查 gceSetup.shieldedInstanceConfig.enableVtpm，输出包含 shieldedInstanceConfig 空对象时报告 vTPM 未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 实例启动度量和可信状态验证能力不足，难以及时发现底层篡改。
+    - 对处理敏感数据和模型的 notebook，运行环境信任链不完整会削弱整体安全基线。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为 Vertex AI notebook 启用 Shielded VM vTPM。
+    - 将 vTPM 与 Secure Boot、Integrity Monitoring 一起纳入 notebook 创建基线。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/enable-vtpm.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/manage-instance
+  metadata:
+    vendor: google
+    product: vertex-ai
   tags: cloud,devops,gcp,gcloud,vertexai,security,vtpm,gcp-cloud-config,ai
 
 flow: |

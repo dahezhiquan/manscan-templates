@@ -4,15 +4,18 @@ info:
   name: Log Min Error Statement Flag 未Configured Properly 的PostgreSQL Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL log_min_error_statement 决定哪些级别的错误语句会被记录，未显式配置会导致实例日志基线不一致。本模板枚举 Cloud SQL PostgreSQL 实例，并从 databaseFlags 中提取 log_min_error_statement，返回 null 时报告该标志未正确配置。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 错误语句记录级别不明确时，认证异常、语法攻击或应用错误可能缺少足够上下文。
+    - 多实例日志粒度不一致会影响集中审计、异常检测和事件取证。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 Cloud SQL PostgreSQL 实例显式配置符合组织基线的 log_min_error_statement 值。
+    - 调整后复核日志量和敏感语句暴露风险，并将配置纳入数据库参数基线检查。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,logging,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Enable Lifecycle Management 的Cloud Storage Objects（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Cloud Storage lifecycle management 可按年龄、版本和状态自动迁移或删除对象，缺失时容易造成过期数据长期留存。本模板执行 gsutil lifecycle get，返回 no lifecycle configuration 时报告 bucket 未启用生命周期管理。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 过期、临时或旧版本对象长期保留会增加数据暴露面和存储成本。
+    - 缺少自动化生命周期策略会让数据保留依赖人工清理，容易产生合规偏差。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 bucket 配置生命周期规则，按数据分类自动归档、降级存储或删除过期对象。
+    - 定期复核生命周期规则与业务保留要求、Bucket Lock 和版本控制策略是否一致。
   reference:
     - https://cloud.google.com/storage/docs/lifecycle
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,lifecycle-management,cost-optimization,gcp-cloud-config
 
 flow: |

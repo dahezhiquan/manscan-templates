@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted SMTP 访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: SMTP 端口对公网开放可能使实例被滥用为邮件中继、钓鱼投递或垃圾邮件发送节点，也会暴露邮件服务自身漏洞。本模板枚举入站防火墙规则，匹配未禁用、来源包含 0.0.0.0/0 且放行 25 端口的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 未授权来源可能探测或滥用 SMTP 服务，造成垃圾邮件、账号爆破和域名信誉受损。
+    - 邮件服务漏洞或错误中继配置可能导致敏感邮件泄露、钓鱼投递和业务阻断。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 删除面向 0.0.0.0/0 的 25 入站规则，仅允许可信邮件网关或必要业务源访问。
+    - 使用受管邮件服务或邮件网关，启用认证、反滥用策略、TLS 和发送速率监控。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,security,smtp,gcp-cloud-config
 
 flow: |

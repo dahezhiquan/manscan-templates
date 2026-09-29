@@ -4,15 +4,18 @@ info:
   name: 检查 的VPC Firewall Rules 使用Port Ranges（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP VPC 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 防火墙规则使用过宽端口范围会扩大可达服务集合，弱化最小权限网络访问控制，尤其在入站方向容易暴露未预期服务。本模板枚举 VPC 入站防火墙规则，匹配未禁用且 allowed.ports 中包含从 0 起始或 80 到 8080 这类宽范围端口的规则。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 单条规则可能同时暴露多个业务和管理端口，增加被扫描、误访问和漏洞利用的机会。
+    - 宽范围端口规则难以审计真实业务必要性，容易掩盖临时服务或遗留服务。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将端口范围拆分为明确的最小端口集合，仅保留业务确需的协议和端口。
+    - 对宽范围规则执行定期复核，结合来源范围、目标标签和日志验证实际使用情况。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,security,networking,gcp-cloud-config
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: PostgreSQL 数据库实例启用了 log_parser_stats（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: PostgreSQL log_parser_stats 会记录解析器统计信息，适合短期调试，不适合作为生产环境长期配置。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 log_parser_stats 的值，匹配 on 时报告该统计日志已启用。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 解析器统计日志会增加日志噪声和存储成本，降低关键安全日志的可见性。
+    - 长期启用可能暴露查询结构和执行细节，并对数据库性能造成额外负担。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 关闭 log_parser_stats，仅在受控诊断期间临时启用。
+    - 使用 Query Insights、监控指标或短期采样完成性能分析后，及时恢复安全基线。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

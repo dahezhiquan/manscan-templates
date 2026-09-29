@@ -4,15 +4,18 @@ info:
   name: PostgreSQL 数据库实例未启用 log_hostname 标志（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: PostgreSQL log_hostname 可在连接日志中记录客户端主机名，增强来源识别能力。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 log_hostname 的值，匹配 off 时报告该标志未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 连接日志缺少主机名信息时，安全团队更难将可疑数据库访问关联到具体客户端或应用节点。
+    - 来源识别不足会影响事件调查、访问基线分析和异常连接告警。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 按组织审计要求启用 log_hostname，并评估反向解析带来的性能和可靠性影响。
+    - 同时启用连接日志并确保日志被集中保存，便于关联客户端身份和访问来源。
   reference:
     - https://cloud.google.com/sql/docs/postgres/configure-instance-settings
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: External IP Addresses Assigned to Vertex AI Notebooks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP vertexai 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Vertex AI notebook 分配外部 IP 会扩大互联网暴露面，尤其在处理敏感数据集或凭据时风险更高。本模板检查 gceSetup.disablePublicIp，返回 null 时报告实例仍允许外部 IP。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - Notebook 服务、开发端口或运行环境可能被互联网扫描和攻击。
+    - 外部 IP 增加数据外传和凭据暴露风险，也绕过私网访问治理。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 禁用 Vertex AI notebook 外部 IP，使用私有网络、IAP、VPN 或受控代理访问。
+    - 对确需公网访问的环境限制来源、启用强认证和日志监控，并定期复核必要性。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/VertexAI/prevent-external-ip-usage.html
     - https://cloud.google.com/vertex-ai/docs/workbench/user-managed/manage-instance
+  metadata:
+    vendor: google
+    product: vertex-ai
   tags: cloud,devops,gcp,gcloud,vertexai,security,networking,gcp-cloud-config,ai
 
 flow: |

@@ -4,15 +4,18 @@ info:
   name: Log Disconnections Flag 未Enabled 的PostgreSQL Instances（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP SQL 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: PostgreSQL log_disconnections 可记录会话断开信息，便于追踪连接生命周期和异常断连。本模板检查 Cloud SQL PostgreSQL 实例 databaseFlags 中 log_disconnections 的值，匹配 off 时报告未启用断连日志。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 异常断连、短连接风暴或可疑连接行为缺少完整记录，影响安全调查和稳定性分析。
+    - 无法准确关联连接开始和结束时间，降低审计和资源消耗分析质量。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 启用 log_disconnections，并与 log_connections 配合记录 PostgreSQL 会话生命周期。
+    - 将连接日志纳入集中分析，配置异常断连、连接量突增和来源异常告警。
   reference:
     - https://cloud.google.com/sql/docs/postgres/flags
+  metadata:
+    vendor: google
+    product: cloud-sql
   tags: cloud,devops,gcp,gcloud,google-cloud-sql,postgresql,gcp-cloud-config
 
 flow: |

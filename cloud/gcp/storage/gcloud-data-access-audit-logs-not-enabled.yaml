@@ -4,15 +4,18 @@ info:
   name: Enable Data 访问 审计 Logs 的Cloud Storage（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP 存储账户 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: Cloud Storage Data Access audit logs 可记录对象读取、写入和管理访问，未启用会造成数据访问审计缺口。本模板检查项目 IAM policy 的 auditConfigs，验证 ADMIN_READ、DATA_READ、DATA_WRITE 与 allServices 配置是否满足审计要求。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 对象读取、下载、写入或删除行为可能缺少完整审计记录，影响数据泄露调查。
+    - 安全团队无法基于访问日志及时发现异常批量访问或跨地域访问模式。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 storage.googleapis.com 或 allServices 启用 Data Access audit logs，覆盖 ADMIN_READ、DATA_READ 和 DATA_WRITE。
+    - 将审计日志集中保存并配置异常对象访问、批量下载和权限变更告警。
   reference:
     - https://cloud.google.com/logging/docs/audit
+  metadata:
+    vendor: google
+    product: cloud-storage
   tags: cloud,devops,gcp,gcloud,google-cloud-storage,audit-logs,security,gcp-cloud-config
 
 flow: |

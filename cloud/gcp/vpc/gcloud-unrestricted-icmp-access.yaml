@@ -4,15 +4,18 @@ info:
   name: 检查 的Unrestricted ICMP 访问（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP VPC 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: ICMP 对连通性诊断有用，但向全网开放会暴露主机存活状态和网络边界信息，增加被扫描与测绘的概率。本模板枚举入站防火墙规则，匹配未禁用、来源包含 0.0.0.0/0 且允许 ICMP 协议的规则。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可以更容易识别公网可达资产，为后续端口扫描和漏洞利用提供目标。
+    - 大范围 ICMP 暴露可能被用于网络探测、路径分析或异常流量放大，削弱边界隐蔽性。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 将 ICMP 入站来源限制为运维监控、负载均衡健康检查或可信诊断网段。
+    - 对确需公网 ICMP 的资源设置最小范围规则，并结合日志监控异常探测行为。
   reference:
     - https://cloud.google.com/vpc/docs/firewalls
+  metadata:
+    vendor: google
+    product: cloud-vpc
   tags: cloud,devops,gcp,gcloud,vpc,firewall,icmp,security,networking,gcp-cloud-config
 
 flow: |

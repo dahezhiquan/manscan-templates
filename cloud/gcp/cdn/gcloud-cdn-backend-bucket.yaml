@@ -4,15 +4,18 @@ info:
   name: 检查 Cloud CDN Backend Bucket Configuration（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP cdn 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 以静态内容为主的 Cloud CDN 场景通常应使用 backend bucket 作为 Cloud Storage 源站；URL map 指向 backend service 可能表示 CDN 源站类型与基线不一致。本模板枚举 URL map，并在 defaultService 中出现 backendServices 时报告使用 backend service 作为 CDN 源站。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 源站类型不符合静态内容基线时，可能绕过针对 Cloud Storage 源站的访问控制、缓存和审计策略。
+    - 配置偏差会增加排障和治理复杂度，尤其是在期望统一使用 backend bucket 的环境中。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 根据业务形态确认 CDN 源站类型，静态资源场景优先改用 backend bucket 并绑定正确的 Cloud Storage bucket。
+    - 如确需使用 backend service，记录例外理由并确保源站访问控制、TLS 和日志配置满足同等基线。
   reference:
     - https://cloud.google.com/cdn/docs/using-cdn
+  metadata:
+    vendor: google
+    product: cloud-cdn
   tags: cloud,devops,gcp,gcloud,cloud-cdn,gcp-cloud-config
 
 flow: |

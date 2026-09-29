@@ -4,15 +4,18 @@ info:
   name: API Keys Should Only Exist 的Active Services（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 GCP api 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 长期保留未使用或用途不清的 Google Cloud API Key 会增加凭据暴露面。本模板遍历项目并通过 gcloud alpha services api-keys list 枚举 API Key，只要返回 uid 即报告项目中存在需要复核的 API Key。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 闲置或未归属的 API Key 容易被遗忘在代码、配置或旧客户端中，泄露后仍可能被用于访问已启用服务。
+    - API Key 数量失控会增加轮换、归属确认和异常调用溯源成本。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 定期审计 API Key 的用途、最后使用时间和负责人，删除不再被活动服务使用的密钥。
+    - 为保留的 API Key 增加应用限制、API restrictions、标签和轮换流程。
   reference:
     - https://cloud.google.com/docs/authentication/api-keys
+  metadata:
+    vendor: google
+    product: api-keys
   tags: cloud,devops,gcp,gcloud,apikey,gcp-cloud-config
 
 flow: |

@@ -4,16 +4,19 @@ info:
   name: Instance Group Autohealing未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Managed Instance Group 未配置 autohealing 时，异常或失联实例不会基于健康检查自动重建，影响服务自愈能力。本模板枚举托管实例组，并检查 autoHealingPolicies.healthCheck 是否为 null，命中时报告未启用自动修复。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 故障实例可能长时间留在实例组中，导致容量下降、错误率升高或负载均衡后端不稳定。
+    - 需要人工发现并恢复实例，延长故障恢复时间并增加运维遗漏风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为托管实例组配置合适的健康检查和 autohealing policy，确保异常实例可自动重建。
+    - 定期验证健康检查路径、阈值和实例模板，避免误判导致无效重启或自愈失效。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/enable-instance-group-autohealing.html
     - https://cloud.google.com/compute/docs/instance-groups/autohealing-instances
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,reliability,instance-groups,autohealing,gcp-cloud-config
 
 flow: |

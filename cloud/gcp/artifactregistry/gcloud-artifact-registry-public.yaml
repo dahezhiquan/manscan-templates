@@ -4,15 +4,18 @@ info:
   name: 公开可访问 Artifact Registry Repositories（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP artifactregistry 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: Artifact Registry 仓库如果 IAM 成员包含 allUsers 或 allAuthenticatedUsers，制品可能被匿名用户或所有 Google 账号访问。本模板枚举项目仓库并读取仓库 IAM policy，匹配这些公共成员时报告仓库存在公开访问配置。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 容器镜像、包或构建产物可能被未授权下载，泄露业务代码、依赖版本、镜像层文件或内部配置。
+    - 公开仓库还可能被用于供应链侦察，帮助攻击者定位可利用组件和部署流程。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 从 Artifact Registry 仓库 IAM policy 中移除 allUsers 和 allAuthenticatedUsers 授权。
+    - 按团队、流水线或服务账号授予最小必要角色，并审计历史制品中是否包含敏感内容。
   reference:
     - https://cloud.google.com/artifact-registry/docs/managing/access-control
+  metadata:
+    vendor: google
+    product: artifact-registry
   tags: cloud,devops,gcp,gcloud,artifact-registry,gcp-cloud-config
 
 flow: |

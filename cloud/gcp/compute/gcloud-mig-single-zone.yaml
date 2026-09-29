@@ -4,16 +4,19 @@ info:
   name: Managed Instance Group 未Configured 的Multiple Zones（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 GCP compute 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 托管实例组仅部署在单一区域或未配置多区域分布时，无法抵御单可用区故障。本模板枚举 MIG，并检查 distributionPolicy.zones 是否为 null，命中时报告实例组未配置跨多个 zone 分布。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 单 zone 故障、维护或资源耗尽可能导致整个实例组容量不可用。
+    - 高可用服务缺少区域级冗余，会增加业务中断和恢复时间。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 对承载关键业务的 MIG 使用 regional managed instance group，并配置多个 zone 的分布策略。
+    - 结合负载均衡、自动扩缩容和容量预留验证跨 zone 故障转移效果。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/mig-multiple-zones.html
     - https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,reliability,mig,zones,gcp-cloud-config
 
 flow: |

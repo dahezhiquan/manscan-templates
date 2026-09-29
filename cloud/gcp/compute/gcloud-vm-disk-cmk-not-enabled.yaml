@@ -4,15 +4,18 @@ info:
   name: Virtual Machine Disk 加密 使用Customer-Managed Keys未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Compute Engine 磁盘未使用 Customer-Managed Key 加密时，组织无法对磁盘数据密钥进行自主轮换、禁用和权限审计。本模板枚举实例及其磁盘，并检查 diskEncryptionKey.kmsKeyName 是否为 null，命中时报告磁盘未使用 CMK。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 敏感磁盘数据无法通过 Cloud KMS 实现客户侧密钥生命周期控制，降低密钥隔离和审计能力。
+    - 对受监管工作负载，未使用客户管理密钥可能不满足加密基线或合规要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为敏感 VM 磁盘使用 Cloud KMS CMEK，并确保 Compute Engine 服务代理具备对应密钥使用权限。
+    - 对现有磁盘制定重建或快照迁移计划，统一实例模板中的磁盘加密配置。
   reference:
     - https://cloud.google.com/compute/docs/disks/customer-managed-encryption
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,encryption,cmk,security,gcp-cloud-config
 
 flow: |

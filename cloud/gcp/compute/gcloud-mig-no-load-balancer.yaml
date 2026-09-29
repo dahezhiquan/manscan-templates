@@ -4,16 +4,19 @@ info:
   name: Managed Instance Group 未Using Load Balancer（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 GCP compute 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 托管实例组未关联负载均衡后端服务时，流量分发、健康检查和容量管理可能不符合高可用基线。本模板枚举 MIG，并在 backend-services 中找不到对应实例组引用时报告该实例组未接入负载均衡。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 实例组可能依赖直接访问或手工流量切换，故障转移和扩缩容效果受限。
+    - 缺少统一负载均衡入口会影响 TLS、日志、WAF 或访问控制等集中安全策略落地。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 将需要对外或跨服务承载流量的 MIG 添加到合适的 backend service，并配置健康检查。
+    - 对确认为批处理或内部用途的 MIG 记录例外，并确保网络访问路径和监控方式符合预期。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/mig-load-balancer-check.html
     - https://cloud.google.com/compute/docs/instance-groups/adding-an-instance-group-to-a-load-balancer
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,reliability,mig,load-balancer,gcp-cloud-config
 
 flow: |

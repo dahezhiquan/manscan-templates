@@ -4,15 +4,18 @@ info:
   name: Unrestricted API Key Usage（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP api 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 未设置应用限制或 API 限制的 Google Cloud API Key 可被任意来源复用，泄露后更容易被滥用。本模板枚举项目 API Key，并检查 restrictions 字段是否为 null，命中时报告该 API Key 未配置限制条件。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 攻击者可在任意客户端或服务器环境中复用泄露的 API Key，调用关联项目中允许的 API。
+    - 未受限密钥可能导致异常费用、配额耗尽、服务滥用，并扩大客户端配置泄露后的影响面。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 为 API Key 同时配置应用限制和 API restrictions，例如 HTTP referrer、IP、Android 或 iOS 应用限制。
+    - 删除不再使用的 API Key，轮换无法确认用途的密钥，并通过监控发现异常调用。
   reference:
     - https://cloud.google.com/docs/authentication/api-keys#restricting_api_keys
+  metadata:
+    vendor: google
+    product: api-keys
   tags: cloud,devops,gcp,gcloud,apikey,gcp-cloud-config
 
 flow: |

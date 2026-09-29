@@ -4,16 +4,19 @@ info:
   name: Auto-Delete 未Disabled 的VM Instance Persistent Disks（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: VM 持久磁盘启用 autoDelete 后，实例删除时磁盘会随之删除；对需要保留数据的工作负载可能造成数据丢失。本模板枚举虚拟机并检查 disks[].autoDelete，发现 true 时报告存在随实例自动删除的持久磁盘。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 误删实例或自动化清理可能连带删除磁盘，导致业务数据、日志或取证证据丢失。
+    - 未按数据重要性区分启动盘和数据盘会增加恢复成本，并可能影响备份合规要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对需要保留的数据盘关闭 autoDelete，并通过快照、备份和生命周期策略管理数据。
+    - 对可重建的临时盘保留 autoDelete 时记录例外，确保实例删除流程不会影响持久业务数据。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/disable-auto-delete.html
     - https://cloud.google.com/compute/docs/disks/add-persistent-disk
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,storage,disk,gcp-cloud-config
 
 flow: |

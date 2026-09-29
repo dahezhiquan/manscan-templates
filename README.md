@@ -12,13 +12,14 @@
 ## 📌 阅读导航
 
 - 想尽快跑起来：看 [🚀 快速开始](#-快速开始)
+- 想确认依赖和文件类型：看 [🧰 技术栈与核心文件类型](#-技术栈与核心文件类型)
 - 想了解仓库里都放了什么：看 [🧱 目录结构](#-目录结构)
 - 想知道模板怎么提交更稳：看 [🛠️ 开发规范](#-开发规范)
 - 想排查常见问题：看 [❓ 常见问题](#-常见问题)
 
 ## 📦 项目简介
 
-这个仓库不是传统意义上的应用服务，而是一套可长期维护的扫描规则库。当前快照下，仓库中包含约 `13,000+` 个 `YAML` 配置文件，其中包括 `206` 个工作流和 `20` 个扫描配置文件，覆盖 `http`、`network`、`dns`、`ssl`、`javascript`、`dast`、`cloud`、`code`、`file` 等多个方向。
+这个仓库不是传统意义上的应用服务，而是一套可长期维护的扫描规则库。当前快照下，仓库中包含约 `13,700+` 个模板与配置文件，其中包括 `207` 个工作流和 `20` 个扫描配置文件，覆盖 `http`、`network`、`dns`、`ssl`、`javascript`、`dast`、`cloud`、`code`、`file` 等多个方向。
 
 仓库的核心目标不是“尽量多扫”，而是围绕以下几个方向持续演进：
 
@@ -34,8 +35,9 @@
 推荐准备以下环境：
 
 - `git`
-- `manscan` 可执行文件
-- 可选：如果你就在当前仓库环境中操作，也可以直接使用根目录里的 `./manscan`
+- `manscan` 可执行文件，并确保它已经加入 `PATH`
+
+当前仓库主要存放模板、配置和辅助资源，不随附 `manscan` 可执行文件。如果本机没有安装或没有配置 `PATH`，下面的命令会提示 `command not found: manscan`。
 
 ### 克隆仓库
 
@@ -96,6 +98,19 @@ manscan -duc -validate -lfa -ud "$(pwd)" -w workflows/ -ept code -et helpers/pay
 ```
 
 这条命令适合在大批量修改后做整体自检，用来提前发现模板语法、工作流引用或本地 payload 路径问题。
+
+## 🧰 技术栈与核心文件类型
+
+本仓库以模板资产为主，没有传统应用项目常见的后端服务、前端构建链或数据库依赖。当前可确认的核心组成如下：
+
+| 类型 | 主要文件或目录 | 用途 |
+| --- | --- | --- |
+| ManScan / nuclei 风格模板 | `http/`、`network/`、`dns/`、`ssl/`、`javascript/`、`dast/`、`cloud/`、`code/`、`file/` | 定义漏洞检测、指纹识别、配置错误检查、暴露面发现等扫描逻辑 |
+| 工作流 | `workflows/*.yaml` | 按产品或场景串联多个模板，常用于“先识别、再验证”的批量扫描 |
+| 扫描配置 | `profiles/*.yml` | 按扫描目的筛选模板、协议类型、严重级别和排除规则 |
+| 辅助资源 | `helpers/` | 存放 payload、wordlist、swagger 文件等模板运行时可复用资源 |
+| 规范文档 | `AGENTS.md`、`CODE_STYLE.md`、`SYNTAX-REFERENCE.md` | 约束模板编写、字段顺序、命名、匹配器与自检方式 |
+| 标签资料 | `自动模板映射标签清单.md`、`模板标签统计.md` | 维护模板标签映射与统计，新增或修改标签时需要同步更新 |
 
 ## 🧱 目录结构
 
@@ -224,6 +239,20 @@ manscan -duc -validate -lfa -ud "$(pwd)" -w workflows/ -ept code -et helpers/pay
 - 再检查缩进、字段拼写、协议块层级是否符合当前语法
 - 如果模板依赖本地文件，确认引用路径是否真实存在
 
+### 提示 `command not found: manscan`
+
+常见原因：
+
+- 本机尚未安装 `manscan`
+- `manscan` 已安装，但所在目录没有加入 `PATH`
+- 当前 Shell 会话还没有重新加载环境变量
+
+排查建议：
+
+- 先执行 `command -v manscan` 确认系统能否找到可执行文件
+- 如果使用的是手动下载的二进制文件，确认文件具有可执行权限
+- 配置 `PATH` 后重新打开终端，或重新加载对应的 Shell 配置文件
+
 ### 模板能运行，但结果明显误报
 
 常见原因：
@@ -254,11 +283,12 @@ manscan -duc -validate -lfa -ud "$(pwd)" -w workflows/ -ept code -et helpers/pay
 
 不推荐把它当成常规编辑入口。这个文件当前就是默认排除策略的载体，而且文件头已经声明会被自动更新。更稳妥的做法是把你的本地差异化排除逻辑放进自定义 profile 或扫描命令参数中。
 
-
 ## 📚 相关文档
 
-- [AGENTS.md](AGENTS.md)
-- [CODE_STYLE.md](CODE_STYLE.md)
-- [SYNTAX-REFERENCE.md](SYNTAX-REFERENCE.md)
-- [profiles/README.md](profiles/README.md)
-- [LICENSE.md](LICENSE.md)
+- [AGENTS.md](AGENTS.md)：仓库级 AI 协作规则与模板处理约束。
+- [CODE_STYLE.md](CODE_STYLE.md)：新增、修改和 Review 漏洞模板时应遵守的编写规范。
+- [SYNTAX-REFERENCE.md](SYNTAX-REFERENCE.md)：模板语法、字段和协议块参考。
+- [profiles/README.md](profiles/README.md)：Profile 文件的用途和常见配置说明。
+- [自动模板映射标签清单.md](自动模板映射标签清单.md)：模板标签与自动映射资料。
+- [模板标签统计.md](模板标签统计.md)：仓库标签统计结果。
+- [LICENSE.md](LICENSE.md)：项目许可证信息。

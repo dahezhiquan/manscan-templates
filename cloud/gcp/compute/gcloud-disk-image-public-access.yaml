@@ -4,16 +4,19 @@ info:
   name: Disk Images Publicly Shared（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 GCP compute 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: 自定义 Compute Engine 镜像如果授予 allAuthenticatedUsers 访问权限，所有 Google Cloud 认证用户都可能发现并使用该镜像。本模板枚举项目自定义镜像并读取 IAM policy，匹配 allAuthenticatedUsers 时报告磁盘镜像被公开共享。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 镜像中可能包含系统配置、预装软件、脚本、凭据残留或敏感业务数据，公开共享会造成信息泄露。
+    - 攻击者可基于镜像内容分析运行环境和弱点，为后续攻击或供应链滥用提供线索。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 从自定义镜像 IAM policy 中移除 allAuthenticatedUsers，仅向明确项目、组或服务账号授权。
+    - 复核已公开镜像是否包含敏感数据，必要时删除镜像、重建干净版本并轮换可能暴露的凭据。
   reference:
     - https://www.trendmicro.com/cloudoneconformity/knowledge-base/gcp/ComputeEngine/publicly-shared-disk-images.html
     - https://cloud.google.com/compute/docs/images/managing-access-custom-images
+  metadata:
+    vendor: google
+    product: compute-engine
   tags: cloud,devops,gcp,gcloud,compute,security,storage,disk-images,gcp-cloud-config
 
 flow: |

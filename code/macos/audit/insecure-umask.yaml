@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS umask 是否过于宽松。过宽 umask 会让新建文件或目录默认暴露给更多用户。
+    umask 配置过宽会让新建文件或目录默认授予过多组用户或其他用户权限，敏感文件可能在创建时即被非授权读取或修改。模板执行 `umask` 并匹配不符合基线的宽松值，命中时表示默认权限掩码不安全。
   impact: |
-    不符合基线的配置会扩大本地攻击面，并削弱 macOS 主机的访问控制和审计能力。
+    - 新建文件可能默认对其他用户可读或可写，导致敏感配置、密钥或业务数据泄露。
+    - 过宽目录权限会增加本地篡改和横向访问风险。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 将系统和用户 shell 初始化文件中的 umask 调整为组织基线，例如 `027` 或更严格。
+    - 检查已创建的敏感文件权限，修复历史遗留的过宽访问位。
   tags: macos,audit,local,security,umask
 
 self-contained: true

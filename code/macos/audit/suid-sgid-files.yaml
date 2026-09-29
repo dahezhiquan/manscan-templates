@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查用户可写目录中的 SUID/SGID 文件。此类文件若可被低权限用户影响，可能形成提权入口。
+    用户可写或第三方路径中的 SUID/SGID 文件会在执行时带有额外权限，若文件存在漏洞或可被替换，可能成为本地提权入口。模板在 `/usr/local`、`/opt`、`/Applications` 中查找带 SUID/SGID 位的文件，匹配到结果时要求复核。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可能利用脆弱的特权文件提升权限或绕过访问控制。
+    - 第三方目录中的异常 SUID/SGID 文件也可能成为持久化和隐藏入口。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 建立 SUID/SGID 允许清单，移除第三方路径中非必要的特权位。
+    - 校验命中文件来源和完整性，更新或卸载存在风险的应用。
   tags: macos,audit,local,security,privesc
 
 self-contained: true

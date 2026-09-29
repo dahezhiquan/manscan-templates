@@ -4,10 +4,14 @@ info:
   name: 确保 GDM 的 autorun-never 已启用（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查 GDM 是否配置为对可移动媒体禁用自动运行。
-  remediation: |-
-    启用 `autorun-never` 设置，防止内容从可移动媒体自动执行。
+  description: |
+    GDM 未启用 `autorun-never` 时，可移动介质中的自动运行行为可能触发应用或脚本入口，增加恶意介质攻击面。CIS Ubuntu 基线要求禁用自动运行；模板读取 `org.gnome.desktop.media-handling autorun-never`，值不是 `true` 时命中 Policy-Fail。
+  impact: |
+    - 用户插入未知介质时，恶意内容更容易被自动或半自动触发。
+    - 共享桌面环境中，自动运行会放大物理接触带来的终端入侵风险。
+  remediation: |
+    - 通过 GDM/dconf 策略启用 `autorun-never=true`。
+    - 对可移动介质建立准入和恶意文件扫描流程，避免绕过终端安全控制。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,autorun,media,audit

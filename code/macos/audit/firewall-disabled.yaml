@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS 应用防火墙是否关闭。防火墙关闭会减少对入站连接和应用网络访问的限制。
+    macOS 应用防火墙关闭后，系统对入站连接和应用监听行为的限制会减少，未知或不必要服务更容易被网络侧访问。模板执行 `socketfilterfw --getglobalstate`，匹配 `Firewall is disabled. (State = 0)` 时表示防火墙未启用。
   impact: |
-    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
+    - 同网段攻击者可能直接探测或连接本机开放服务。
+    - 终端离开可信网络后，缺少主机侧入站访问控制会扩大暴露面。
   remediation: |
-    启用 macOS 应用防火墙，并按需配置允许的入站应用。
+    - 启用 macOS 应用防火墙，并按业务需要维护允许的入站应用。
+    - 对高风险终端启用隐身模式和集中策略，定期审计本机监听服务。
   tags: macos,audit,local,security
 
 self-contained: true

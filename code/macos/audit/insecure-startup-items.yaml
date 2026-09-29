@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS Startup Items 是否全局可写。启动项被篡改可能在系统启动时执行恶意代码。
+    Startup Items 会在系统启动阶段执行，若相关文件全局可写，普通用户可能植入启动执行逻辑。模板检查 `/System/Library/StartupItems/` 和 `/Library/StartupItems/` 下具有 other-write 权限的文件，匹配到结果时表示启动项权限不安全。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 攻击者可通过启动项实现持久化，并在系统启动时自动执行恶意代码。
+    - 启动阶段执行的内容被篡改可能影响系统完整性和可用性。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 移除 Startup Items 的全局可写权限，并清理不再使用的历史启动项。
+    - 对启动项内容和属主进行完整性核验，优先使用受管的 launchd 机制。
   tags: macos,audit,local,security,startup
 
 self-contained: true

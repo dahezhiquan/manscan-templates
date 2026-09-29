@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS Guest 访客账户是否启用。启用后任何人都可能在设备上建立临时会话。
+    macOS 访客用户启用后，任何能接触设备的人都可能创建临时会话，增加本地滥用和数据暴露风险。模板读取 `com.apple.loginwindow GuestEnabled`，当值为 `1` 时表示访客账户已启用。
   impact: |
-    不必要的登录入口会增加未授权访问、暴力破解或设备丢失后的数据暴露风险。
+    - 未授权人员可在不具备正式账号的情况下使用设备资源和网络环境。
+    - 访客会话可能绕过组织对用户身份、日志和数据访问的管控。
   remediation: |
-    禁用自动登录或访客账户，确保访问设备需要强身份验证。
+    - 禁用 Guest User，并确保登录窗口仅允许授权账号。
+    - 配合屏幕锁定、FileVault 和设备管理策略降低物理接触风险。
   tags: macos,audit,local,security
 
 self-contained: true

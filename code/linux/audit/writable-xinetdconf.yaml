@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/xinetd.conf 或 /etc/inetd.conf 是否可被非 root 用户写入。可写配置可能允许攻击者注册恶意服务并以高权限执行。
+    `/etc/xinetd.conf` 或 `/etc/inetd.conf` 可被非 root 写入时，攻击者可能注册、修改或启用网络服务，并借助 inetd/xinetd 以更高权限运行恶意入口。模板通过 `stat` 检查两个配置文件是否为 `root:root` 且权限为 `600`、`640` 或 `644`，不满足时表示配置文件权限异常。
+  impact: |
+    - 本地攻击者可能植入新的网络服务，实现持久化、远程访问或权限提升。
+    - inetd/xinetd 服务配置被篡改会扩大主机暴露面并干扰审计。
+  remediation: |
+    - 将 `/etc/xinetd.conf` 和 `/etc/inetd.conf` 属主设置为 `root:root`，权限设置为 `644` 或更严格。
+    - 审计 xinetd/inetd 服务条目，禁用不必要服务并重载守护进程。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   tags: linux,code,audit,compliance,local

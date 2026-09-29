@@ -4,10 +4,14 @@ info:
   name: 确保 GDM 已禁用可移动媒体自动挂载（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查是否已禁用可移动媒体的自动挂载。
-  remediation: |-
-    在 GDM 中禁用可移动媒体的自动挂载和自动打开功能。
+  description: |
+    GDM 自动挂载和自动打开可移动媒体会让插入的外部介质立即暴露给桌面会话，增加恶意文件、伪装设备或未授权数据拷贝风险。CIS Ubuntu 基线建议禁用该行为；模板读取 `org.gnome.desktop.media-handling` 的 `automount` 与 `automount-open`，两者未同时为 `false` 时命中 Policy-Fail。
+  impact: |
+    - 恶意或未知来源介质可能在用户会话中自动呈现，诱导执行或读取敏感文件。
+    - 设备丢失、共用终端或值守不足场景下，数据外带和介质污染风险会上升。
+  remediation: |
+    - 通过 GDM/dconf 策略将 `automount` 和 `automount-open` 设置为 `false`。
+    - 对生产桌面和共享终端统一下发桌面策略，并限制可移动介质使用。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,media,automount,audit

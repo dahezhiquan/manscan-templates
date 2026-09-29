@@ -4,12 +4,14 @@ info:
   name: 确保用户在空闲时 GDM 屏幕锁定（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查是否配置了在一段用户无操作时间后锁定屏幕。
-  remediation: |-
-    根据组织的安全策略配置屏幕锁定设置：
-      - 将 `lock-delay` 设置为 5 秒或更短。
-      - 将 `idle-delay` 设置为 900 秒（15 分钟）或更短，并确保其未被禁用。
+  description: |
+    GDM 屏幕锁定策略过宽会让已登录会话在无人值守时继续暴露，物理接触者可能直接访问用户数据和业务系统。CIS Ubuntu 基线要求较短的空闲锁定窗口；模板读取 `lock-delay` 和 `idle-delay`，未满足锁定延迟不超过 5 秒且空闲时间不超过 900 秒时命中 Policy-Fail。
+  impact: |
+    - 无人值守终端可能被直接操作，造成数据查看、命令执行或会话劫持。
+    - 共享办公、运维跳板或生产终端中，过长空闲窗口会放大物理安全风险。
+  remediation: |
+    - 将 `lock-delay` 设置为 5 秒或更短，将 `idle-delay` 设置为 900 秒或更短且不禁用。
+    - 通过集中桌面策略强制屏幕锁定，并定期审计策略生效情况。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,screensaver,screenlock,audit

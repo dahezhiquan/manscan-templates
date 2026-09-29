@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 Linux Finger 服务已启用 的本地安全基线状态，用于发现可能扩大攻击面、削弱访问控制或影响审计能力的配置。
+    Finger 服务会暴露本地用户、登录状态和账户备注等枚举信息，现代 Linux 主机通常不应启用。该风险可能由 xinetd 配置 `disable = no` 或 systemd 中 finger 服务处于 active 状态导致；模板同时检查 `/etc/xinetd.d/finger` 和 systemd 服务状态，输出 `[VULNERABLE]` 时表示服务仍可用。
+  impact: |
+    - 远程攻击者可枚举有效用户名、登录时间和用户信息，为密码猜测或社工攻击提供素材。
+    - 暴露过时服务会扩大主机攻击面，并增加后续漏洞利用机会。
+  remediation: |
+    - 禁用或卸载 Finger 服务，确保 `/etc/xinetd.d/finger` 中 `disable = yes`。
+    - 如系统使用 systemd，停止并禁用 finger 相关服务，同时在边界防火墙阻断访问。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,code,audit,compliance,kisas

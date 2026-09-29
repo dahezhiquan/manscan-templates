@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/cron.allow 和 /etc/cron.deny 的属主与权限。权限过宽可能允许非授权用户影响计划任务访问控制。
+    Cron 访问控制文件权限异常会影响哪些用户可创建计划任务，若 `/etc/cron.allow` 或 `/etc/cron.deny` 可被非 root 修改，攻击者可能绕过计划任务使用限制。模板检查这两个文件的属主是否为 root 且权限是否为 640，发现异常时输出 `[WARN]` 并命中基线问题。
+  impact: |
+    - 本地用户可能通过篡改 cron 访问控制获得计划任务执行能力。
+    - 错误授权会为持久化、定时执行恶意脚本或权限提升链条提供入口。
+  remediation: |
+    - 将 `/etc/cron.allow` 和 `/etc/cron.deny` 属主设置为 root，权限设置为 `640`。
+    - 优先使用 allow 列表明确授权可使用 cron 的账号，并定期审计计划任务。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,kisa,compliance

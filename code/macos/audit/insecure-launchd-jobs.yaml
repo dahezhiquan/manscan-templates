@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 launchd 任务文件是否全局可写。launchd 任务可在系统或用户会话中自动执行。
+    launchd 任务会在系统启动或用户会话中自动加载，任务文件全局可写会给普通用户提供持久化和自动执行入口。模板检查系统与用户 LaunchDaemons/LaunchAgents 目录中具有 other-write 权限的任务文件，匹配到结果时表示 launchd 任务权限不安全。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可篡改 plist 任务，在启动、登录或定时条件下执行恶意命令。
+    - 自动加载机制被污染后，可能形成持久化、权限提升或防御绕过。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 移除 launchd 任务文件的全局可写权限，确保系统任务由 root 或授权管理员维护。
+    - 审计可疑 plist 的 Program/ProgramArguments、RunAtLoad 和 WatchPaths 等字段。
   tags: macos,audit,local,security,launchd
 
 self-contained: true

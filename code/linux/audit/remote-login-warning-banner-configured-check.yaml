@@ -4,10 +4,14 @@ info:
   name: 确保远程登录警告横幅配置正确（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |-
-    此模板检查远程登录警告横幅是否已正确配置，且不会泄露系统信息。
-  remediation: |-
-    编辑 `/etc/issue.net`，删除任何可能泄露系统详情的操作系统、内核、架构或版本信息。根据组织安全策略配置横幅内容。
+  description: |
+    远程登录横幅若泄露系统版本、内核或发行版标识，会在认证前向网络访问者暴露主机指纹。CIS Ubuntu 基线建议 `/etc/issue.net` 仅提供授权警告；模板检查该文件是否包含 `\v`、`\r`、`\m`、`\s` 或发行版 ID，命中 Policy-Fail 表示远程横幅配置不当。
+  impact: |
+    - 未认证远程访问者可获取系统指纹，用于漏洞匹配和定向攻击。
+    - 登录前缺少合规警告或混入系统信息，会削弱授权边界提示。
+  remediation: |
+    - 清理 `/etc/issue.net` 中的系统信息变量和发行版标识。
+    - 配置授权使用警告，并在 SSH、telnet 等远程服务中引用受控横幅文件。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,issue.net,banner,audit

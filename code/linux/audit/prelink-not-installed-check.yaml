@@ -4,11 +4,14 @@ info:
   name: 确保未安装 Prelink（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查 prelink 包是否已安装。Prelink 通过修改二进制文件来减少应用程序启动时间，但会干扰文件完整性监控，因此不建议在安全系统上使用。
-  remediation: |-
-    如果已安装，请移除 prelink 包：
-      sudo apt remove prelink -y
+  description: |
+    Prelink 会修改二进制文件以优化加载性能，但会影响文件完整性校验和安全审计结果，现代系统中通常不再建议使用。CIS Ubuntu 基线建议不安装 prelink；模板通过 `dpkg-query -s prelink` 检查软件包是否存在，命中 Policy-Fail 表示不符合基线。
+  impact: |
+    - 二进制被预链接修改后，完整性基线和入侵检测结果可能失真。
+    - 过时优化组件会增加补丁维护和兼容性风险。
+  remediation: |
+    - 卸载 `prelink` 包，并在卸载前按系统要求恢复已预链接的二进制文件。
+    - 重新运行文件完整性检查，更新可信基线。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,prelink,package,audit

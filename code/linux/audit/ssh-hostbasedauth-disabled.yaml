@@ -5,9 +5,13 @@ info:
   author: Th3l0newolf
   severity: high
   description: |
-    该模板检查 SSH HostbasedAuthentication 是否按基线禁用。基于主机信任的认证依赖 .rhosts/hosts.equiv 等机制，容易因信任关系配置错误被滥用。
+    SSH HostbasedAuthentication 会基于主机信任关系进行认证，若启用，受信主机或 DNS/主机密钥配置异常可能导致未授权访问。CIS Ubuntu 基线建议禁用主机认证；模板检查 `/etc/ssh/sshd_config` 中是否显式设置 `HostbasedAuthentication yes`，命中 Policy-Fail 表示风险存在。
+  impact: |
+    - 攻击者一旦控制受信主机或伪造信任关系，可能绕过常规用户认证。
+    - 主机信任机制会增加横向移动风险，并削弱单用户级别的审计边界。
   remediation: |
-    调整 SSH/登录配置，禁用不必要的信任认证和 root 远程登录，仅允许受控账户通过安全通道访问。
+    - 在 `/etc/ssh/sshd_config` 中设置 `HostbasedAuthentication no` 或保持默认禁用，并重载 sshd。
+    - 清理遗留的 hostbased/rhosts 信任配置，统一使用密钥、MFA 和集中授权。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
     - https://docs.datadoghq.com/security/default_rules/def-000-fqw/

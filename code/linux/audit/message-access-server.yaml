@@ -5,9 +5,13 @@ info:
   author: Th3l0newolf
   severity: low
   description: |
-    该模板检查本机是否安装了不必要的 相关网络或系统组件 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
+    邮件访问服务会提供 IMAP/POP3 等邮箱读取入口，非邮件服务器主机上安装该组件会扩大账号暴力破解和邮件数据访问面。CIS Ubuntu 基线建议移除不必要的邮件访问服务；模板通过 `dpkg-query -s dovecot-imapd` 检查软件包是否安装，命中 Policy-Fail 表示不符合基线。
+  impact: |
+    - 增加系统攻击面，可能引入不必要的监听端口、服务发现能力或旧式协议入口。
+    - 在访问控制、补丁或日志监控不足时，攻击者可能借此进行枚举、横向移动、数据暴露或服务滥用。
   remediation: |
-    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
+    - 如无明确业务需求，卸载 `dovecot-imapd` 或对应软件包，并清理残留服务配置。
+    - 如必须保留，限制访问来源和可用范围，启用加密认证，并纳入补丁、日志和基线审计。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

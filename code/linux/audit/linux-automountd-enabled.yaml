@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: medium
   description: |
-    该模板检查 automountd 是否启用或运行。该服务历史上存在可被本地滥用的风险，在无业务需求时应禁用以降低提权面。
+    automountd 自动挂载服务运行时会按需挂载文件系统，若无业务需求，可能被恶意挂载点、网络共享或配置错误扩大本地文件系统攻击面。模板通过进程检查确认 `automountd` 是否正在运行，命中 `[VULNERABLE]` 表示服务仍启用。
+  impact: |
+    - 攻击者可能利用自动挂载行为诱导访问不可信文件系统或暴露内部共享。
+    - 不必要的挂载服务会增加权限边界、可用性和审计复杂度。
+  remediation: |
+    - 如无需求，停止并禁用 automount/automountd 相关服务，卸载对应组件。
+    - 如必须使用，限制挂载来源、挂载选项和访问权限，并审计自动挂载配置。
   reference:
     - https://isms.kisa.or.kr
   metadata:

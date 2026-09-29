@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 /etc/sudoers 权限。该文件控制 sudo 授权，权限过宽可能导致提权规则被篡改。
+    `/etc/sudoers` 控制 sudo 提权授权，权限不安全会让本地攻击者篡改特权规则，直接获得管理员能力。模板检查该文件是否不符合 root 管理且只读的基线权限，命中时表示 sudoers 权限异常。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可能添加免密 sudo、扩大命令授权或隐藏恶意提权规则。
+    - sudo 授权被篡改会导致特权边界失效，影响所有本机管理员操作审计。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 使用 `visudo` 维护 `/etc/sudoers`，确保属主为 root 且权限为 `440` 或更严格。
+    - 审计 sudoers 和 `/etc/sudoers.d/` 内容，移除异常授权和免密规则。
   tags: macos,audit,local,security,sudo
 
 self-contained: true

@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 sudo timestamp_timeout 是否设置过长。超时时间过长会延长免密 sudo 窗口。
+    sudo 时间戳超时过长会延长用户输入密码后的免密 sudo 窗口，终端被接触或会话被劫持时更容易被滥用。模板检查 `/etc/sudoers` 中 `timestamp_timeout`，当配置为三位数及以上时表示免密窗口明显过长。
   impact: |
-    不符合基线的配置会扩大本地攻击面，并削弱 macOS 主机的访问控制和审计能力。
+    - 攻击者获取已解锁会话后，可在较长时间内直接执行 sudo 操作。
+    - 过长的提权缓存会削弱特权操作的即时身份验证和审计边界。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 将 `timestamp_timeout` 调整为组织基线允许的较短时间，或在高敏环境设置为 0。
+    - 使用 `visudo` 修改 sudoers，并结合屏幕锁定和终端会话超时策略。
   tags: macos,audit,local,security,sudo
 
 self-contained: true

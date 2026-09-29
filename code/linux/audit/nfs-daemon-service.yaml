@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 NFS 服务守护进程应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
+    NFS 服务会通过网络导出文件系统，若非专用文件共享主机仍运行 NFS 守护进程，会暴露额外文件访问入口。模板通过 systemd 检查 `nfs-server`，或在非 systemd 环境检查 `nfsd` 进程，输出 `[VULNERABLE]` 时表示 NFS 服务处于活动状态。
+  impact: |
+    - 未授权或配置错误的 NFS 访问可能导致文件读取、写入或敏感目录暴露。
+    - NFS 相关 RPC 服务会增加网络攻击面和访问控制复杂度。
+  remediation: |
+    - 如无业务需求，停止并禁用 `nfs-server`/`nfsd`，卸载 NFS 服务端组件。
+    - 如必须提供共享，限制客户端来源、导出路径和挂载权限，并审计 `/etc/exports`。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 .rhosts 和 /etc/hosts.equiv 是否存在不安全的信任配置、+ 通配项或权限问题。此类信任文件可绕过正常认证边界。
+    `.rhosts` 和 `/etc/hosts.equiv` 会建立基于主机或用户的远程信任关系，配置过宽时可绕过密码认证直接信任远程来源。模板检查 `/etc/hosts.equiv` 与用户 `.rhosts` 是否存在 `+` 通配信任、非 root/用户属主或过宽权限，输出 `[WARN]` 时表示存在不安全信任配置。
+  impact: |
+    - 攻击者可伪造或滥用受信主机关系，绕过常规登录认证。
+    - 通配信任和可写信任文件会显著扩大横向移动和远程登录风险。
+  remediation: |
+    - 删除 `.rhosts` 和 `/etc/hosts.equiv` 中的 `+` 通配项，尽量禁用 r 系列信任机制。
+    - 将信任文件权限收敛到最小范围，确保属主为 root 或对应用户，并优先使用 SSH 密钥与集中授权。
   reference:
     - https://isms.kisa.or.kr
     - https://linux.die.net/man/5/hosts.equiv

@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: medium
   description: |
-    该模板检查 Sendmail/Postfix 的执行权限限制。普通用户若可滥用邮件程序参数或二进制权限，可能影响邮件队列或触发非预期执行。
+    Sendmail/Postfix 执行限制配置不当会让邮件队列或邮件程序被非授权用户滥用，甚至在权限设置异常时形成命令执行或本地提权入口。模板检查 sendmail 是否缺少 `restrictqrun`，检查 `/usr/sbin/postfix` 权限是否符合预期，并检查相关二进制是否带有异常 SUID/SGID 位。
+  impact: |
+    - 本地用户可能滥用邮件队列执行能力或投递机制，绕过访问控制。
+    - 邮件程序权限过宽或带特权位时，可能扩大到本地提权、垃圾邮件投递或持久化风险。
+  remediation: |
+    - 在 sendmail 配置中启用队列运行限制，例如 `restrictqrun`，并重新加载服务。
+    - 收紧 Postfix/Sendmail 二进制权限，移除非必要 SUID/SGID 位，并确认仅授权用户可执行管理操作。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,sendmail,postfix,compliance

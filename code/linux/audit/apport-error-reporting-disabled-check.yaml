@@ -4,14 +4,14 @@ info:
   name: 确保未启用自动错误报告（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查 Apport 自动错误报告服务是否已启用。
-  remediation: |-
-    通过编辑 `/etc/default/apport` 并设置以下内容来禁用 Apport：
-      enabled=0
-
-    如果不需要 Apport，请将其移除：
-      sudo apt remove apport -y
+  description: |
+    Apport 自动错误报告可能收集崩溃上下文、进程信息和路径细节，服务器环境中启用后可能造成敏感运行信息外传或留存。CIS Ubuntu 基线建议在非桌面调试场景禁用该功能；模板检查 `apport` 包及 `/etc/default/apport` 中 `enabled` 是否为非 0，命中 Policy-Fail 表示自动错误报告仍处于启用状态。
+  impact: |
+    - 崩溃报告可能包含进程参数、文件路径、用户环境或其他敏感诊断信息。
+    - 自动上报或本地留存调试数据会增加隐私泄露和合规审计压力。
+  remediation: |
+    - 在 `/etc/default/apport` 中设置 `enabled=0`，并确认服务不会自动启动。
+    - 服务器或生产环境如无调试需求，卸载 `apport` 包并清理历史崩溃报告。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,apport,error-reporting,audit

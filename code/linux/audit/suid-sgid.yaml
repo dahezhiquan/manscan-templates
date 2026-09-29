@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 root 拥有且设置 SUID/SGID 位的文件。此类文件若配置不当或存在漏洞，可能成为本地提权入口。
+    root 拥有的 SUID/SGID 文件会在执行时获得文件属主或属组权限，若数量异常、来源不明或存在漏洞，可能成为本地提权入口。模板查找系统中 root 属主且带 SUID/SGID 位的普通文件，并输出前若干结果供基线复核。
+  impact: |
+    - 存在漏洞或可被低权限用户影响的特权程序可能被利用获取 root 权限。
+    - 未经批准的 SUID/SGID 文件会增加持久化和权限绕过风险。
+  remediation: |
+    - 建立允许清单，仅保留业务和系统必需的 SUID/SGID 文件。
+    - 移除异常文件的特权位，修复属主和权限，并对来源不明文件进行完整性和恶意代码检查。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,privesc,kisas

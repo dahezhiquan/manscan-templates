@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 Sendmail/Postfix 是否存在开放中继。开放中继会允许未授权第三方借用服务器发送邮件。
+    SMTP 开放中继会允许外部或未授权来源借用服务器转发邮件，容易被用于垃圾邮件、钓鱼投递和域名信誉滥用。模板分别检查 Sendmail、Postfix 和 Exim 的中继限制配置，缺少拒绝中继、`mynetworks` 过宽或 `hostlist relay_from_hosts` 包含 `*` 时输出 `[VULNERABLE]`。
+  impact: |
+    - 服务器可能被滥用为垃圾邮件或钓鱼邮件中继，导致 IP、域名和邮件信誉受损。
+    - 开放中继可能引发黑名单封禁、业务邮件投递失败和合规事件。
+  remediation: |
+    - 按邮件系统类型配置明确的中继拒绝策略，仅允许受信网段或认证用户中继。
+    - 检查 Sendmail、Postfix、Exim 的 relay/mynetworks/hostlist 配置，修改后重新加载服务并进行外部中继测试。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 NIS+ 服务应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
+    NIS+ 相关守护进程属于旧式网络身份服务组件，继续运行会带来过时信任机制和目录信息暴露风险。模板通过 systemd 或进程列表检查 `rpc.yppasswdd`、`rpc.yppupdated`、`ypxfrd` 是否运行，输出 `[VULNERABLE]` 时表示 NIS+ 服务仍启用。
+  impact: |
+    - 目录和账号相关信息可能被非预期访问，用于进一步身份攻击。
+    - 旧式服务增加 RPC 暴露面，并削弱主机最小化基线。
+  remediation: |
+    - 停止并禁用 NIS+ 相关守护进程，移除不再使用的服务包。
+    - 使用受支持的身份管理方案替代，并通过防火墙阻断遗留 RPC 访问。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

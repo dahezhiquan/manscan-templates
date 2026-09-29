@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查系统是否强制账号登录失败锁定阈值。未配置锁定会允许攻击者持续进行密码猜测。
+    账号登录失败锁定阈值缺失会允许攻击者持续进行在线密码猜测，尤其在 SSH、控制台或集中认证入口暴露时风险更高。KISA/CSAP 基线要求通过 PAM 强制失败锁定；模板检查 `system-auth`、`password-auth`、`common-auth` 中是否配置 `pam_tally2.so` 或 `pam_faillock.so`，仅输出 `no-lockout-config` 时表示未配置锁定机制。
+  impact: |
+    - 暴力破解和密码喷洒可长期持续，增加弱口令账号被接管概率。
+    - 缺少失败锁定会削弱登录审计响应能力，使异常尝试更难被及时阻断。
+  remediation: |
+    - 在 PAM 中配置 `pam_faillock.so` 或等效机制，设置失败次数、锁定时间和自动解锁策略。
+    - 将账号锁定策略与 SSH、控制台和集中认证入口统一，并监控连续失败登录事件。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   metadata:

@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 macOS System Integrity Protection（SIP）是否关闭。SIP 用于限制对系统关键路径和进程的修改。
+    System Integrity Protection（SIP）用于限制对系统关键路径、内核扩展和受保护进程的修改，长期关闭会削弱 macOS 的核心完整性防护。模板执行 `csrutil status`，匹配 `System Integrity Protection status: disabled.` 时表示 SIP 已禁用。
   impact: |
-    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
+    - 恶意软件或本地攻击者更容易修改系统受保护位置和关键进程行为。
+    - 关闭 SIP 会降低系统完整性、恶意软件防护和取证可信度。
   remediation: |
-    重新启用 SIP，并避免在生产终端长期关闭系统完整性保护。
+    - 在恢复环境中重新启用 SIP，并避免在生产终端长期关闭。
+    - 如因调试短期关闭，完成维护后立即恢复，并审计关闭期间的系统变更。
   tags: macos,audit,local,security
 
 self-contained: true

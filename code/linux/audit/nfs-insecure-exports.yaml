@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 NFS 导出是否存在允许所有主机、no_root_squash 或访问控制过宽等不安全配置。
+    NFS 导出配置过宽会让远程客户端以不受控方式访问共享目录，`no_root_squash` 或通配主机导出尤其容易造成权限边界失效。模板检查 `/etc/exports` 中是否存在 `no_root_squash`、`*` 通配访问或需要复核的 `all_squash` 配置，命中 `[VULNERABLE]` 时表示导出策略不安全。
+  impact: |
+    - 远程客户端可能以 root 身份影响共享文件，造成数据篡改或权限提升。
+    - 对所有主机开放导出会扩大敏感文件泄露和横向访问风险。
+  remediation: |
+    - 移除 `no_root_squash`，按最小范围指定允许访问的客户端主机或网段。
+    - 对共享目录使用只读、root squash、最小权限和防火墙限制，并执行 `exportfs -ra` 重新加载配置。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

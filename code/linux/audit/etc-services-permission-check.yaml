@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/services 的属主和权限。若该文件不归 root 所有或权限过宽，攻击者可能篡改端口与服务名称映射，干扰审计和运维判断。
+    `/etc/services` 维护端口与服务名称映射，属主或权限异常会让非授权用户篡改服务标识，干扰运维排障、审计分析和安全工具判断。模板通过 `stat` 检查该文件是否归 `root:root` 所有且权限为 `600`、`640` 或 `644`，不满足时表示本地基线异常。
+  impact: |
+    - 本地攻击者可能修改端口名称映射，掩盖异常通信或误导日志分析。
+    - 权限过宽会破坏系统关键配置文件的完整性基线。
+  remediation: |
+    - 将 `/etc/services` 属主和属组设置为 `root:root`。
+    - 将权限收敛到 `644` 或更严格值，并排查是否存在异常变更来源。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,code,audit,compliance,local

@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/syslog.conf 或 /etc/rsyslog.conf 的属主和权限。权限过宽可能允许攻击者篡改日志配置、隐藏活动轨迹。
+    syslog/rsyslog 配置文件控制日志接收、转发和存储规则，权限异常会让攻击者篡改日志策略、关闭关键日志或重定向审计数据。模板通过 `stat` 检查 `/etc/rsyslog.conf` 和 `/etc/syslog.conf` 是否为 `root:root` 且权限为 `600`、`640` 或 `644`。
+  impact: |
+    - 攻击者可能削弱或篡改日志记录，影响入侵发现、溯源和合规审计。
+    - 日志转发目标被修改后，敏感日志可能泄露或丢失。
+  remediation: |
+    - 将 syslog/rsyslog 配置文件属主设置为 `root:root`，权限设置为 `644` 或更严格。
+    - 审计日志配置内容，确认关键日志仍被记录并转发到可信日志平台。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

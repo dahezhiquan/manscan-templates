@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/hosts 是否可被非 root 用户写入。若可写，攻击者可伪造域名解析并重定向合法访问。
+    `/etc/hosts` 可被非 root 写入时，本地域名解析可被篡改，攻击者能够将内部服务、更新源或认证端点重定向到恶意地址。模板通过 `stat` 检查 `/etc/hosts` 是否为 `root:root` 且权限为 `600`、`640` 或 `644`，不满足时表示本地域名映射文件权限异常。
+  impact: |
+    - 本地攻击者可劫持域名解析，诱导访问恶意服务或拦截敏感流量。
+    - 被篡改的 hosts 文件会影响补丁下载、认证、日志上报和业务连接。
+  remediation: |
+    - 将 `/etc/hosts` 属主和属组设置为 `root:root`，权限设置为 `644` 或更严格。
+    - 审计文件内容和修改时间，清除未授权解析项并追踪变更来源。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   metadata:

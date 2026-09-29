@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 macOS 是否启用自动登录。启用后设备启动时无需输入密码即可进入指定用户会话。
+    macOS 自动登录会在设备启动后直接进入指定用户会话，绕过开机后的交互式身份验证，设备丢失或被短暂接触时风险很高。模板读取 `com.apple.loginwindow autoLoginUser`，当该键存在且不是 “does not exist” 时表示自动登录已启用。
   impact: |
-    不必要的登录入口会增加未授权访问、暴力破解或设备丢失后的数据暴露风险。
+    - 未授权人员可在无需密码的情况下访问用户桌面、文件和已登录应用。
+    - 自动登录会削弱 FileVault、屏幕锁定和账号审计带来的保护效果。
   remediation: |
-    禁用自动登录或访客账户，确保访问设备需要强身份验证。
+    - 禁用自动登录，确保启动和唤醒后均需要用户凭据。
+    - 对移动办公设备启用 FileVault、强密码和屏幕锁定策略。
   tags: macos,audit,local,security
 
 self-contained: true

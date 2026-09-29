@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 /etc/exports 权限，该文件用于配置 NFS 导出。权限过宽可能导致共享配置被篡改。
+    `/etc/exports` 控制 NFS 导出规则，权限不安全会让本地攻击者修改共享路径、客户端范围或 root 映射策略。模板检查该文件是否存在且不符合 root 管理的只读基线权限，命中时表示 NFS 导出配置文件权限异常。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可能扩大 NFS 共享范围，导致远程文件读取、写入或权限绕过。
+    - 被篡改的导出规则可能暴露敏感目录或破坏共享完整性。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 将 `/etc/exports` 属主设置为 root，并使用只允许管理员写入的严格权限。
+    - 审计 NFS 导出内容，移除通配主机、过宽写权限和不必要的 `no_root_squash`。
   tags: macos,audit,local,security,nfs
 
 self-contained: true

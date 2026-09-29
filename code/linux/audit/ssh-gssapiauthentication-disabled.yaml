@@ -5,9 +5,13 @@ info:
   author: Th3l0newolf
   severity: low
   description: |
-    该模板检查 sshd_config 中 GSSAPIAuthentication 是否按基线禁用。无需求时启用该机制会增加认证复杂度和潜在攻击面。
+    SSHD 启用 GSSAPIAuthentication 会引入基于 Kerberos/GSSAPI 的认证路径，若环境未使用或配置不完整，可能增加认证复杂度和信息泄露面。CIS Ubuntu 基线建议在无需求时禁用该选项；模板通过 `sshd -T` 获取有效配置，`gssapiauthentication` 未为 `no` 时命中 Policy-Fail。
+  impact: |
+    - 不必要的认证机制会扩大 SSH 暴露面，并可能泄露域或 Kerberos 相关环境信息。
+    - 认证链路复杂化会增加误配置和排障成本。
   remediation: |
-    调整 SSH/登录配置，禁用不必要的信任认证和 root 远程登录，仅允许受控账户通过安全通道访问。
+    - 在 SSHD 有效配置中设置 `GSSAPIAuthentication no`，并重载或重启 sshd。
+    - 如确需 GSSAPI，限制适用主机和用户范围，并确保 Kerberos 基础设施安全。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

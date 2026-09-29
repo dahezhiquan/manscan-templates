@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: medium
   description: |
-    该模板检查 TFTP 服务应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
+    TFTP 缺少认证和加密保护，适合受控网络中的简单文件分发，但不应在普通主机或生产环境中默认启用。模板检查 `/etc/xinetd.d/tftp` 是否存在且未设置 `disable = yes`，命中 `[VULNERABLE]` 表示 TFTP 服务未被禁用。
+  impact: |
+    - 未授权用户可能读取或写入 TFTP 目录中的文件，造成配置泄露或恶意文件投放。
+    - 明文传输会暴露文件内容，并可能被用于网络设备配置窃取。
+  remediation: |
+    - 禁用 TFTP xinetd 服务，设置 `disable = yes` 并重载 xinetd，或卸载 TFTP 服务端。
+    - 如必须使用，限制源地址、根目录和文件权限，并隔离在专用管理网络。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,code,audit,compliance,kisas

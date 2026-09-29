@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS Remote Login/SSH 服务是否运行。无需求时启用 SSH 会增加远程登录攻击面。
+    macOS Remote Login/SSH 服务运行时会开放远程 shell 登录入口，若无远程管理需求，会增加密码猜测和远程攻击面。模板通过 `launchctl print system/com.openssh.sshd` 检查 `com.openssh.sshd` 是否处于 running 状态，命中时表示 SSH 服务正在运行。
   impact: |
-    不必要的登录入口会增加未授权访问、暴力破解或设备丢失后的数据暴露风险。
+    - 未授权来源可能尝试暴力破解、凭据填充或利用 SSH 配置弱点。
+    - 暴露远程 shell 会增加终端被横向访问和持久化的风险。
   remediation: |
-    如无远程管理需求，关闭 Remote Login/SSH；如必须启用，应限制来源并使用密钥认证。
+    - 如无需求，关闭 Remote Login/SSH 服务。
+    - 如必须启用，限制来源地址，优先使用密钥认证，禁用弱认证并开启登录审计。
   tags: macos,audit,local,security,ssh
 
 self-contained: true

@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 echo、discard、daytime、chargen 等传统 inetd 服务是否启用。这些服务通常无业务价值，且可能被滥用于信息泄露、放大或拒绝服务攻击。
+    echo、discard、chargen、daytime、time 等传统 xinetd 服务通常已无生产必要，且可能被滥用于反射、放大、枚举或拒绝服务场景。模板检查 `/etc/xinetd.d/` 下这些服务是否配置 `disable = no`，发现任一启用项时输出 `[VULNERABLE]`。
+  impact: |
+    - 旧式测试服务可能被用于网络探测、反射流量或资源消耗攻击。
+    - 不必要的 xinetd 入口会增加主机暴露面和安全运维负担。
+  remediation: |
+    - 禁用或删除 echo、discard、chargen、daytime、time 等传统服务配置。
+    - 停止并重载 xinetd，使用防火墙阻断遗留端口，并确认无业务依赖。
   reference:
     - https://isms.kisa.or.kr
   tags: local,linux,audit,kisa,compliance

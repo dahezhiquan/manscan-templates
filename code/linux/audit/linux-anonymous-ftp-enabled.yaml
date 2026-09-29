@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 FTP 是否允许匿名访问。匿名账号若具备读取或写入权限，可能被攻击者用于泄露文件或投放恶意内容。
+    匿名 FTP 允许未认证用户访问文件传输服务，若目录权限或上传策略配置不当，可能造成敏感文件泄露、恶意文件投放或存储空间滥用。模板检查 `/etc/passwd` 中是否存在 `ftp` 用户，并分别匹配 vsftpd、proftpd、pure-ftpd 的匿名访问配置，输出 `[VULNERABLE]` 时表示匿名访问风险存在。
+  impact: |
+    - 未认证用户可能读取、上传或覆盖 FTP 目录中的文件，造成数据泄露或恶意内容托管。
+    - 匿名入口可能被用于横向侦察、跳板传输或消耗磁盘资源。
+  remediation: |
+    - 禁用 FTP 匿名登录，移除不需要的 `ftp` 用户和匿名别名配置。
+    - 如必须提供公开下载，使用只读隔离目录、最小权限账户、日志审计和网络访问限制。
   reference:
     - https://isms.kisa.or.kr
   metadata:

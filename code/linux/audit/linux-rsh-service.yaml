@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 rsh 服务应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
+    rsh 服务 属于 r 系列旧式远程访问服务，依赖主机信任或明文认证，容易导致凭据泄露和未授权远程执行。模板检查 `/etc/xinetd.d/rsh` 是否存在 `disable = no` 配置，命中 `[VULNERABLE]` 表示该服务仍被启用。
+  impact: |
+    - 远程攻击者可能利用弱认证或信任关系获得 shell 访问。
+    - 明文传输和旧式访问控制会增加凭据泄露、横向移动和审计缺失风险。
+  remediation: |
+    - 禁用 `/etc/xinetd.d/rsh` 中的服务项，设置 `disable = yes`，并重载 xinetd。
+    - 卸载 r 系列服务端组件，使用 SSH 等具备加密和强认证能力的替代方案。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

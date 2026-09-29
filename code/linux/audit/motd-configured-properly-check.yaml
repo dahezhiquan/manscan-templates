@@ -4,10 +4,14 @@ info:
   name: 确保每日消息（MOTD）配置正确（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |-
-    此模板检查每日消息（MOTD）是否已正确配置，且不会泄露系统信息。
-  remediation: |-
-    编辑 `/etc/motd`，删除任何可能泄露系统详情的操作系统、内核、架构或版本信息。
+  description: |
+    MOTD 若包含系统版本、内核或架构信息，会在登录后暴露环境指纹，增加攻击者进行针对性利用和横向侦察的便利。CIS Ubuntu 基线建议 MOTD 不展示敏感系统标识；模板检查 `/etc/motd` 是否包含 `\v`、`\r`、`\m`、`\s` 或发行版 ID，命中 Policy-Fail 表示配置不符合基线。
+  impact: |
+    - 登录用户可直接获取系统版本和平台信息，便于选择漏洞、工具和后续攻击路径。
+    - 在共享账号或受限账号场景下，过多系统信息会扩大最小权限之外的可见面。
+  remediation: |
+    - 移除 `/etc/motd` 中的系统版本、内核、架构和发行版变量。
+    - 仅保留必要的运维或授权提示，并定期检查动态 MOTD 生成脚本。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,motd,banner,audit

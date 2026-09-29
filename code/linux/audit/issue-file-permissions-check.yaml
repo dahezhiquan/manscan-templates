@@ -4,12 +4,14 @@ info:
   name: 确保 /etc/issue 的访问权限已正确配置（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查 /etc/issue 是否具有安全的属主和权限。
-  remediation: |-
-    设置 `/etc/issue` 的属主和权限：
-      sudo chown root:root /etc/issue
-      sudo chmod 644 /etc/issue
+  description: |
+    `/etc/issue` 用于本地登录前显示提示信息，权限或属主不当会允许非授权用户修改登录横幅，植入误导内容或泄露系统信息。CIS Ubuntu 基线要求该文件由 root 管理且权限不宽于 644；模板通过 `stat` 检查 UID、GID 和权限，任一不符合时命中 Policy-Fail。
+  impact: |
+    - 本地攻击者可能篡改登录前提示，隐藏警告信息或诱导用户泄露凭据。
+    - 权限过宽会破坏系统登录边界相关文件的完整性。
+  remediation: |
+    - 将 `/etc/issue` 属主和属组设置为 root。
+    - 将权限设置为 `644` 或更严格，并检查内容不得泄露系统版本、内核或内部标识。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,issue,permissions,audit

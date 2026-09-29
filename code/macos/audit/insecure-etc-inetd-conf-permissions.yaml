@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 /etc/inetd.conf 权限。该文件若可写，攻击者可能注册或修改 inetd 服务。
+    `/etc/inetd.conf` 控制 inetd 管理的网络服务，权限不安全会让本地攻击者注册或修改网络入口。模板检查该文件是否存在且不符合 root 管理的只读基线权限，命中时表示 inetd 配置文件权限异常。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可能启用恶意或不必要的网络服务，形成远程访问入口。
+    - 被篡改的 inetd 配置会扩大主机暴露面并削弱审计可信度。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 将 `/etc/inetd.conf` 属主设置为 root，并使用只允许管理员写入的严格权限。
+    - 审计 inetd 服务条目，禁用遗留服务并确认系统未加载异常配置。
   tags: macos,audit,local,security
 
 self-contained: true

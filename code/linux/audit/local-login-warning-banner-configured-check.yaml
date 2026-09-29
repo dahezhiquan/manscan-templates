@@ -4,10 +4,14 @@ info:
   name: 确保本地登录警告横幅配置正确（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |-
-    此模板检查本地登录警告横幅是否已正确配置，且不会泄露系统信息。
-  remediation: |-
-    编辑 `/etc/issue`，删除任何可能泄露系统详情的操作系统、内核、架构或版本信息。根据组织安全策略配置横幅内容。
+  description: |
+    本地登录横幅若包含系统版本、内核或发行版标识，会向未认证用户泄露环境指纹，便于攻击者选择针对性漏洞和口令策略。CIS Ubuntu 基线建议登录前提示仅保留授权告知内容；模板检查 `/etc/issue` 是否包含 `\v`、`\r`、`\m`、`\s` 或发行版 ID，命中 Policy-Fail 表示横幅泄露系统信息。
+  impact: |
+    - 未认证本地访问者可获取系统类型和版本线索，降低后续攻击成本。
+    - 合规警告内容被系统指纹替代时，会削弱授权边界提示。
+  remediation: |
+    - 清理 `/etc/issue` 中的动态系统信息变量和发行版标识。
+    - 配置符合组织要求的授权使用警告文本，并保持文件属主和权限受控。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,issue,banner,audit

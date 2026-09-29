@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 Homebrew 目录中是否存在全局可写文件。Homebrew 常用于安装开发工具，权限过宽会带来执行链风险。
+    Homebrew 目录中存在全局可写文件时，普通用户可能篡改开发工具、库文件或脚本，进而影响后续命令执行链。模板在 `brew --prefix` 下查找具有 other-write 权限的普通文件，匹配到结果时表示 Homebrew 文件权限不安全。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 攻击者可替换或修改常用工具和库文件，在开发或运维命令执行时植入恶意逻辑。
+    - 被污染的 Homebrew 组件可能影响多个项目、脚本和用户会话。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 移除 Homebrew 文件的全局可写权限，并修复异常属主。
+    - 重新安装或校验可疑包，限制对 Homebrew 前缀目录的写入人员范围。
   tags: macos,audit,local,security,homebrew
 
 self-contained: true

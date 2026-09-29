@@ -4,12 +4,14 @@ info:
   name: 确保 /etc/issue.net 的访问权限已正确配置（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查 /etc/issue.net 是否具有安全的属主和权限。
-  remediation: |-
-    设置 `/etc/issue.net` 的属主和权限：
-      sudo chown root:root /etc/issue.net
-      sudo chmod 644 /etc/issue.net
+  description: |
+    `/etc/issue.net` 用于远程登录前提示信息，权限或属主不当会让非授权用户篡改远程登录横幅或植入误导内容。CIS Ubuntu 基线要求该文件由 root 管理且权限不宽于 644；模板通过 `stat` 检查 UID、GID 和权限，任一不符合时命中 Policy-Fail。
+  impact: |
+    - 远程登录入口的提示内容可能被篡改，影响安全告知和审计边界。
+    - 攻击者可能借助被修改的横幅进行欺骗或隐藏异常登录环境。
+  remediation: |
+    - 将 `/etc/issue.net` 属主和属组设置为 root。
+    - 将权限设置为 `644` 或更严格，并清理会暴露系统版本或内部信息的内容。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,issue.net,permissions,audit

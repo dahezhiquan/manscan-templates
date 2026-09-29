@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 NIS 服务应禁用 是否仍在运行或启用。该类传统远程服务通常缺少加密和细粒度访问控制，在现代基线中应保持禁用。
+    NIS 服务使用较旧的网络身份信息分发机制，认证和传输保护较弱，运行在现代主机上会暴露账号目录和信任关系风险。模板通过 systemd 或进程列表检查 `ypserv`、`ypbind` 是否运行，输出 `[VULNERABLE]` 时表示 NIS 服务仍启用。
+  impact: |
+    - 攻击者可能枚举账号、组和网络身份信息，辅助密码攻击或横向移动。
+    - 旧式信任模型容易削弱集中身份管理和访问控制边界。
+  remediation: |
+    - 停止并禁用 `ypserv`、`ypbind` 等 NIS 服务，卸载不需要的 NIS 包。
+    - 迁移到更安全的目录或身份服务，并限制残留配置文件权限。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,kisa,compliance

@@ -4,11 +4,14 @@ info:
   name: 确保已移除 GDM（本地基线扫描）
   author: Th3l0newolf
   severity: medium
-  description: |-
-    此模板检查是否安装了 GNOME Display Manager（GDM）。
-  remediation: |-
-    如果不需要 GDM 包，请将其移除：
-      sudo apt remove gdm3 -y
+  description: |
+    GNOME Display Manager 会提供图形登录界面和桌面会话入口，服务器或无图形需求主机保留 GDM 会增加本地登录和桌面组件攻击面。CIS Ubuntu 基线建议移除不必要的显示管理器；模板通过 `dpkg-query -s gdm3` 检查软件包是否安装，命中 Policy-Fail 表示不符合基线。
+  impact: |
+    - 增加图形登录、桌面组件和本地交互面，可能引入额外漏洞和配置风险。
+    - 服务器环境中不必要的 GUI 组件会扩大补丁、审计和访问控制负担。
+  remediation: |
+    - 如无图形登录需求，卸载 `gdm3` 并清理关联桌面组件。
+    - 如必须保留，限制本地物理访问，强化屏幕锁定、登录审计和补丁管理。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,gdm3,package,audit

@@ -4,10 +4,14 @@ info:
   name: 确保已配置 GDM 登录横幅（本地基线扫描）
   author: Th3l0newolf
   severity: low
-  description: |-
-    此模板检查 GDM 登录横幅是否已启用并配置。
-  remediation: |-
-    启用 GDM 登录横幅，并根据组织安全策略配置适当的警告消息。
+  description: |
+    GDM 登录横幅缺失会削弱系统使用告知、授权边界提示和合规留痕要求，在受监管环境中不符合安全基线。CIS Ubuntu 基线建议启用并配置登录警告消息；模板检查 `banner-message-enable` 是否为 `true` 且 `banner-message-text` 非空，不满足时命中 Policy-Fail。
+  impact: |
+    - 使用者在登录前无法看到授权使用和监控提示，影响组织安全告知与合规证明。
+    - 终端被误用或未授权访问时，缺少明确的使用边界声明。
+  remediation: |
+    - 启用 GDM 登录横幅，并配置符合组织要求的授权使用警告文本。
+    - 使用集中策略管理桌面登录提示，定期检查横幅内容不泄露系统版本或内部信息。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   tags: cis,linux,ubuntu,gdm,banner,audit

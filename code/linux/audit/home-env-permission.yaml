@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: medium
   description: |
-    该模板检查用户家目录中的 shell 启动和环境文件权限，例如 .bashrc、.bash_profile、.bash_logout。若文件可被其他用户写入，登录或开启 shell 时可能执行恶意命令。
+    用户家目录中的 shell 启动文件会在登录或打开 shell 时执行，若属主错误或可被其他用户写入，攻击者可植入命令实现持久化或窃取会话信息。模板遍历 `/home` 下用户的 `.bashrc`、`.bash_profile`、`.bash_logout`，检查属主是否为 root 或用户本人，并匹配组/其他用户可写权限。
+  impact: |
+    - 本地攻击者可篡改其他用户的 shell 初始化流程，等待目标登录后执行恶意命令。
+    - 可导致凭据窃取、环境变量污染、持久化或权限提升链条扩大。
+  remediation: |
+    - 将相关 shell 启动文件属主恢复为用户本人或 root，并移除组/其他用户写权限。
+    - 排查异常内容和最近修改记录，必要时重置用户环境文件并审计本地账号权限。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,kisa

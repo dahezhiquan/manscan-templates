@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 macOS Gatekeeper 是否关闭。关闭后系统不会严格校验下载应用是否来自已识别开发者。
+    Gatekeeper 会限制来自未知开发者或未签名来源的应用运行，关闭后用户更容易执行未经校验的软件。模板执行 `spctl --status`，匹配 `assessments disabled` 时表示 Gatekeeper 已禁用。
   impact: |
-    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
+    - 恶意或篡改应用更容易被运行，增加终端感染和凭据窃取风险。
+    - 绕过应用来源校验会削弱组织的软件准入和合规控制。
   remediation: |
-    启用 Gatekeeper，仅允许运行来自 App Store 或已识别开发者的应用。
+    - 重新启用 Gatekeeper，仅允许运行来自 App Store 或已识别开发者的应用。
+    - 对例外软件使用受控审批流程，不长期关闭系统评估能力。
   tags: macos,audit,local,security
 
 self-contained: true

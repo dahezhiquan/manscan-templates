@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检查 macOS cron 任务文件是否全局可写。可写任务可能被普通用户篡改并在计划时间执行。
+    macOS cron 任务文件若全局可写，普通用户可篡改定时任务内容，并等待系统或用户按计划执行。模板查找 `/etc/crontab` 和 `/var/at/tabs/` 中具有 other-write 权限的任务文件，匹配到权限位时表示存在不安全 cron 文件。
   impact: |
-    本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 本地攻击者可能篡改可自动执行或高权限相关文件，造成持久化、权限提升或配置破坏。
+    - 关键配置完整性受损后，系统行为和审计结果可能被误导。
   remediation: |
-    收紧相关文件或目录权限，移除全局可写位，确保关键配置仅由 root 或授权管理员维护。
+    - 移除全局可写位，确保关键文件和目录仅由 root 或授权管理员维护。
+    - 对已发现的异常文件核验内容、属主和最近修改记录，必要时从可信基线恢复。
   tags: macos,audit,local,security,cron
 
 self-contained: true

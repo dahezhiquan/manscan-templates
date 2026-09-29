@@ -5,11 +5,13 @@ info:
   author: geeknik
   severity: high
   description: |
-    该模板检查 macOS FileVault 全盘加密是否关闭。关闭后磁盘静态数据缺少系统级加密保护。
+    FileVault 是 macOS 的全盘加密能力，关闭后设备磁盘离线状态下缺少系统级加密保护，丢失或被拆盘时数据更容易暴露。模板执行 `fdesetup status`，匹配 `FileVault is Off.` 时表示全盘加密未启用。
   impact: |
-    关键 macOS 安全控制关闭会降低数据保护、应用校验或系统完整性防护能力。
+    - 设备丢失、被盗或维修流转时，离线读取磁盘数据的风险显著增加。
+    - 本地账号密码无法替代静态数据加密保护，敏感文件和缓存可能被直接访问。
   remediation: |
-    启用 FileVault 全盘加密，保护设备丢失或被盗时的静态数据。
+    - 启用 FileVault 并妥善托管恢复密钥。
+    - 将 FileVault 状态纳入终端合规策略，对未加密设备限制访问敏感业务。
   tags: macos,audit,local,security
 
 self-contained: true

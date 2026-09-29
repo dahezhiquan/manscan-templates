@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 /etc/securetty 或 SSH 配置是否允许 root 远程登录。直接开放 root 登录会放大口令攻击和凭据泄露后的影响。
+    允许 root 远程登录会让最高权限账号直接暴露在网络登录入口，一旦凭据泄露或被暴力破解，攻击者可立即获得完整系统控制权。模板检查 `/etc/securetty` 是否允许 `pts/*`，并检查 `sshd_config` 是否设置 `PermitRootLogin yes`，任一命中表示 root 远程登录风险存在。
+  impact: |
+    - root 凭据被猜解或泄露后会直接导致主机完全失陷。
+    - 绕过普通账号到特权账号的分层审计，降低操作溯源能力。
+  remediation: |
+    - 禁止 root 直接远程登录，设置 `PermitRootLogin no` 或使用受控的 `prohibit-password` 策略。
+    - 使用普通账号登录后通过 sudo 提权，并结合多因素认证、来源限制和审计记录。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
   metadata:

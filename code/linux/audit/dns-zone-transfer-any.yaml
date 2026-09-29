@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 DNS 配置中是否存在 allow-transfer { any; }。允许任意主机进行区域传送会暴露域名、主机名、邮件服务器和内部地址等完整区域信息。
+    DNS 区域传送若允许任意主机访问，会暴露域名、主机名、邮件服务器和内部地址等完整区域信息，为攻击者绘制内部网络拓扑提供便利。该风险通常由 `allow-transfer { any; }` 等过宽配置导致；模板读取 `/etc/named.conf` 并匹配 `allow-transfer { any; }`，命中时表示区域传送访问控制不符合基线。
+  impact: |
+    - 攻击者可批量获取子域名、主机角色和邮件路由信息，用于进一步侦察和定向攻击。
+    - 内部命名、隐藏服务或环境标识可能被泄露，削弱 DNS 边界和资产隐藏能力。
+  remediation: |
+    - 将 `allow-transfer` 限制为授权的从 DNS 服务器地址，避免使用 `any`。
+    - 配合 TSIG、网络访问控制和防火墙策略限制 TCP/53 区域传送来源。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,kisa,audit,compliance

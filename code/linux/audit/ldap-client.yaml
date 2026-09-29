@@ -5,9 +5,13 @@ info:
   author: Th3l0newolf
   severity: low
   description: |
-    该模板检查本机是否安装了不必要的 LDAP 目录服务 组件。若系统没有明确业务需求，保留该组件会增加本地基线暴露面和后续被误用的风险。
+    LDAP 客户端工具可连接目录服务并查询账号、组和组织信息，非必要安装会增加目录信息被误查或凭据被明文配置的风险。CIS Ubuntu 基线建议移除不必要的 LDAP 客户端；模板通过 `dpkg-query` 检查 `ldap-utils` 是否安装，命中 Policy-Fail 表示不符合基线。
+  impact: |
+    - 增加主机误用高风险协议或旧式信任机制的机会，可能暴露凭据、会话内容或内部连接信息。
+    - 攻击者在获得低权限落点后，可能利用已安装客户端辅助横向连接、数据传输或绕过组织基线管控。
   remediation: |
-    如无明确业务需求，卸载对应软件包；如必须保留，应限制访问来源并纳入补丁和审计管理。
+    - 如无明确业务需求，卸载 `ldap-utils` 或对应软件包，并清理残留服务配置。
+    - 如必须保留，限制访问来源和可用范围，启用加密认证，并纳入补丁、日志和基线审计。
   reference:
     - https://www.cisecurity.org/benchmark/ubuntu_linux
   metadata:

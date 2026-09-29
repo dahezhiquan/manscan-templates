@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 不必要的 RPC 服务 rstatd 已启用 的本地安全基线状态，用于发现可能扩大攻击面、削弱访问控制或影响审计能力的配置。
+    rstatd 等旧式 RPC 服务会暴露主机运行状态和统计信息，且常通过 xinetd 或 systemd 以网络服务形式开放，现代基线通常要求禁用。模板检查 `/etc/xinetd.d/rstatd` 是否设置 `disable = no`，并检查 systemd 中 rstatd 是否活动，命中 `[VULNERABLE]` 表示服务仍启用。
+  impact: |
+    - 攻击者可获取系统运行状态信息，用于侦察、指纹识别或攻击准备。
+    - 遗留 RPC 服务会扩大网络暴露面，并可能受旧漏洞或弱访问控制影响。
+  remediation: |
+    - 禁用 rstatd 及不必要的 RPC 服务，设置 xinetd `disable = yes` 并停止 systemd 服务。
+    - 使用防火墙限制 RPC 相关端口，仅保留明确业务需要的服务。
   reference:
     - https://isms.kisa.or.kr
   tags: linux,local,audit,compliance,kisas

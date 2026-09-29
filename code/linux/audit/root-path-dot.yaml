@@ -5,7 +5,13 @@ info:
   author: songyaeji
   severity: high
   description: |
-    该模板检查 root 用户 PATH 是否包含当前目录 .。若包含，root 在错误目录执行命令时可能优先运行攻击者放置的同名程序。
+    root 用户的 `PATH` 包含当前目录会让相对命令解析优先命中工作目录中的同名文件，攻击者可通过投放恶意可执行文件诱导 root 执行。模板检查当前 `PATH` 中是否存在 `.`、空路径或末尾当前目录模式，输出 `dot-in-path` 时表示存在提权风险。
+  impact: |
+    - 本地攻击者可在可写目录放置同名命令，等待 root 在该目录执行常用命令时触发。
+    - 该配置会破坏特权命令执行的可预测性，增加本地提权和误操作风险。
+  remediation: |
+    - 从 root 的 `PATH` 中移除 `.`、空路径和相对目录，优先使用绝对系统路径。
+    - 检查 `/root/.profile`、`/root/.bashrc`、`/etc/profile` 等文件，清理会污染 PATH 的配置。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/
     - https://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/

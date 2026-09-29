@@ -5,7 +5,13 @@ info:
   author: daffainfo
   severity: high
   description: |
-    该模板基于 GTFOBins 思路检测 `cdist` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `cdist` 后的身份，判断该二进制是否可能以 root 权限运行命令。
+    `cdist` 具备执行子命令、启动 shell、解释脚本或继承高权限上下文的能力时，若被 sudo 免密授权、错误设置 SUID/能力位或出现在高权限自动化流程中，普通用户可能借此获得 root 命令执行。GTFOBins 记录了这类二进制的提权用法；模板先确认当前用户不是 root，再通过 `cdist shell -s whoami`、`sudo cdist shell -s whoami` 等方式执行 `whoami`，当高权限路径返回 `root` 时判定存在可利用的本地提权路径。
+  impact: |
+    - 低权限用户可能直接获得 root 命令执行能力，读取或修改受保护文件、植入持久化项并关闭安全控制。
+    - 若该二进制出现在 sudoers、SUID/SGID 文件或自动化任务中，攻击者可绕过预期的最小权限边界并扩大入侵影响。
+  remediation: |
+    - 从 sudoers 和自动化任务中移除 `cdist` 的免密或通配授权，必须保留时使用绝对路径、固定参数和最小权限账户。
+    - 清理 `cdist` 上非必要的 SUID/SGID/capability 权限，定期使用 `sudo -l`、`find -perm` 和文件完整性检查复核高风险二进制。
   reference:
     - https://gtfobins.github.io/gtfobins/cdist/
   metadata:

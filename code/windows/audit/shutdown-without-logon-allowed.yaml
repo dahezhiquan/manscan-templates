@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查系统是否允许在未登录状态下关机。该配置可被本地人员造成服务中断。
+    该配置可被本地人员造成服务中断。对应基线项为“系统是否允许在未登录状态下关机”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` 的 `ShutdownWithoutLogon` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者或未授权人员可关闭系统，造成拒绝服务。
+    - 攻击者或未授权人员可关闭系统，造成拒绝服务。
+    - 日志缺失会降低入侵发现、事件溯源和合规取证能力。
   remediation: |
-    仅允许已登录且授权用户执行关机操作。
+    - 仅允许已登录且授权用户执行关机操作。
+    - 确认日志容量、归档和集中转发链路可用，并监控审计策略被关闭的情况。
   tags: windows,shutdown,logon,code,windows-audit
 
 self-contained: true

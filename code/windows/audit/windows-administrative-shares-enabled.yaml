@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 C$、D$ 等管理共享是否启用。管理共享可远程访问磁盘根目录。
+    管理共享可远程访问磁盘根目录。对应基线项为“C$、D$ 等管理共享是否启用”；模板读取 SMB 服务或共享配置，检查协议、签名、加密或管理共享是否符合基线。
   impact: |
-    攻击者获取管理员凭据后可借助管理共享投放工具或窃取文件。
+    - 攻击者获取管理员凭据后可借助管理共享投放工具或窃取文件。
   remediation: |
-    禁用不需要的管理共享，并限制远程管理访问来源。
+    - 禁用不需要的管理共享，并限制远程管理访问来源。
   tags: windows,shares,administrative,code,windows-audit
 
 self-contained: true

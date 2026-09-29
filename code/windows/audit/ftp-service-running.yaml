@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Windows FTP 服务是否正在运行。若业务无需 FTP，暴露该服务会增加明文传输和弱口令攻击面。
+    若业务无需 FTP，暴露该服务会增加明文传输和弱口令攻击面。对应基线项为“Windows FTP 服务是否正在运行”；模板查询 `ftpsvc` 服务状态，并结合输出匹配判断服务是否处于不安全状态。
   impact: |
-    攻击者可尝试匿名访问、暴力破解或利用 FTP 服务漏洞。
+    - 攻击者可尝试匿名访问、暴力破解或利用 FTP 服务漏洞。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    停用不需要的 FTP 服务；如必须使用，强制加密、限制来源并开启审计。
+    - 停用不需要的 FTP 服务；如必须使用，强制加密、限制来源并开启审计。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   tags: windows,ftp,service,insecure,code,windows-audit
 
 self-contained: true

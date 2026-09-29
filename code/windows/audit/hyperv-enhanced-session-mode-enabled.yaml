@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Hyper-V Enhanced Session Mode 是否在无需时启用。该功能会扩展主机与虚拟机之间的剪贴板、磁盘和设备重定向能力。
+    该功能会扩展主机与虚拟机之间的剪贴板、磁盘和设备重定向能力。对应基线项为“Hyper-V Enhanced Session Mode 是否在无需时启用”；模板执行本地检查命令并以 `EnhancedSessionMode: VMBus` 等输出作为命中依据。
   impact: |
-    不必要的会话增强可能扩大数据泄露和主客机边界滥用风险。
+    - 不必要的会话增强可能扩大数据泄露和主客机边界滥用风险。
   remediation: |
-    仅在确有管理需求时启用增强会话模式，并限制可使用该功能的管理员。
+    - 仅在确有管理需求时启用增强会话模式，并限制可使用该功能的管理员。
   tags: windows,hyperv,code,windows-audit
 
 self-contained: true

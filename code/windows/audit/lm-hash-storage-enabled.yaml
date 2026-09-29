@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查系统是否允许存储 LM 哈希。LM 哈希算法过弱，容易被快速破解。
+    LM 哈希算法过弱，容易被快速破解。对应基线项为“系统是否允许存储 LM 哈希”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `NoLMHash` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者获取哈希后可更容易还原明文密码。
+    - 攻击者获取哈希后可更容易还原明文密码。
+    - 凭据保护不足会增加横向移动、远程登录和离线破解风险。
   remediation: |
-    禁用 LM 哈希存储，并在策略生效后强制用户更改密码。
+    - 禁用 LM 哈希存储，并在策略生效后强制用户更改密码。
+    - 变更策略后清理历史凭据，并轮换可能受影响的账户密码。
   tags: windows,hashing,security,code,windows-audit
 
 self-contained: true

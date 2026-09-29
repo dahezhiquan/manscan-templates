@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查匿名用户是否可以枚举 Security Account Manager（SAM）账户。该配置会向未认证访问者暴露本地账户信息。
+    该配置会向未认证访问者暴露本地账户信息。对应基线项为“匿名用户是否可以枚举 Security Account Manager（SAM）账户”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `RestrictAnonymousSAM` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可收集用户名并开展密码喷洒、暴力破解或定向社工攻击。
+    - 攻击者可收集用户名并开展密码喷洒、暴力破解或定向社工攻击。
   remediation: |
-    启用匿名访问限制，禁止匿名枚举 SAM 账户和共享信息。
+    - 启用匿名访问限制，禁止匿名枚举 SAM 账户和共享信息。
   tags: windows,sam,enumeration,anonymous,code,windows-audit
 
 self-contained: true

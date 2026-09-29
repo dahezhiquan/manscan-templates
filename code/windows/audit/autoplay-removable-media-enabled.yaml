@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查可移动介质 AutoPlay 是否启用。插入 U 盘等设备时自动触发内容会增加恶意程序执行风险。
+    插入 U 盘等设备时自动触发内容会增加恶意程序执行风险。对应基线项为“可移动介质 AutoPlay 是否启用”；模板读取注册表 `HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers` 的 `DisableAutoplay` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可借助可移动介质诱导执行恶意文件并植入恶意软件。
+    - 攻击者可借助可移动介质诱导执行恶意文件并植入恶意软件。
   remediation: |
-    禁用所有驱动器的 AutoPlay/AutoRun，尤其是可移动介质。
+    - 禁用所有驱动器的 AutoPlay/AutoRun，尤其是可移动介质。
   tags: windows,autoplay,removable-media,code,windows-audit
 
 self-contained: true

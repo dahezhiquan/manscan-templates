@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查是否允许下载或安装未签名 ActiveX 控件。该配置会显著增加浏览器侧恶意控件执行风险。
+    该配置会显著增加浏览器侧恶意控件执行风险。对应基线项为“是否允许下载或安装未签名 ActiveX 控件”；模板读取注册表 `HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0` 的 `1004` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    恶意 ActiveX 控件可能执行任意代码、窃取信息或破坏系统完整性。
+    - 恶意 ActiveX 控件可能执行任意代码、窃取信息或破坏系统完整性。
   remediation: |
-    禁用未签名 ActiveX 控件下载，并优先停用不再需要的 ActiveX 支持。
+    - 禁用未签名 ActiveX 控件下载，并优先停用不再需要的 ActiveX 支持。
   tags: activex,code-signing,code,windows-audit
 
 self-contained: true

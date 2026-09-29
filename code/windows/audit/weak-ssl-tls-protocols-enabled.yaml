@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: critical
   description: |
-    该模板检查系统是否启用 SSLv2、SSLv3 等弱协议。旧协议存在已知加密缺陷。
+    旧协议存在已知加密缺陷。对应基线项为“系统是否启用 SSLv2、SSLv3 等弱协议”；模板执行本地检查命令并以 `Weak SSL/TLS protocols enabled` 等输出作为命中依据。
   impact: |
-    攻击者可实施降级、中间人或解密攻击，影响通信机密性和完整性。
+    - 攻击者可实施降级、中间人或解密攻击，影响通信机密性和完整性。
+    - 弱协议或弱套件会增加降级攻击、中间人攻击和加密数据被破解的风险。
   remediation: |
-    禁用 SSLv2/SSLv3 和过旧 TLS，强制使用 TLS 1.2 或更高版本。
+    - 禁用 SSLv2/SSLv3 和过旧 TLS，强制使用 TLS 1.2 或更高版本。
+    - 统一禁用旧协议和弱套件，保留 TLS 1.2/1.3 及组织批准的现代加密套件。
   tags: windows,ssl,tls,protocol,code,windows-audit
 
 self-contained: true

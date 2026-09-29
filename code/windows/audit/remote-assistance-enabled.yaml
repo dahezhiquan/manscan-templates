@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Remote Assistance 是否违反安全策略启用。该功能允许他人远程协助控制会话。
+    该功能允许他人远程协助控制会话。对应基线项为“Remote Assistance 是否违反安全策略启用”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Remote Assistance` 的 `fAllowToGetHelp` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    配置不当可能导致未授权远程访问或社工诱导控制。
+    - 配置不当可能导致未授权远程访问或社工诱导控制。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    如无业务需要，禁用 Remote Assistance 并审计远程支持工具。
+    - 如无业务需要，禁用 Remote Assistance 并审计远程支持工具。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   tags: remote-assistance,misconfig,windows-audit
 
 self-contained: true

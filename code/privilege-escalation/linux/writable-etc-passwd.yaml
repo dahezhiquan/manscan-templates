@@ -4,6 +4,14 @@ info:
   name: /etc/passwd 可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
+  description: |
+    `/etc/passwd` 保存本地账户、UID、shell 和主目录等身份基础信息，若普通用户可写，攻击者可添加 UID 0 账户、修改登录 shell 或破坏认证数据。模板直接检查 `/etc/passwd` 是否可写，输出 `Writable` 且未出现 `Not writable` 时判定存在本地提权风险。
+  impact: |
+    - 攻击者可添加或修改特权账户，获得 root 级别登录入口。
+    - 账号数据库被篡改会影响系统登录、服务账户运行和审计可信度。
+  remediation: |
+    - 将 `/etc/passwd` 属主恢复为 `root:root`，权限设置为 `644` 或更严格，并移除异常 ACL。
+    - 审计文件内容和修改历史，清除异常 UID 0 账户并轮换可能受影响的凭据。
   reference:
     - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#writable-etcpasswd
   metadata:

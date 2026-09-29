@@ -5,7 +5,13 @@ info:
   author: bobakabill
   severity: high
   description: |
-    该模板基于 GTFOBins 思路检测 `agetty` 是否可在本地被滥用于提权。模板会对比当前用户与直接/通过 sudo 执行 `agetty` 后的身份，判断该二进制是否可能以 root 权限运行命令。
+    `agetty` 如果被错误设置 SUID/SGID 位，会让普通用户借助该二进制继承更高有效权限执行命令，是典型的本地提权暴露面。GTFOBins 将其归为可被滥用的提权二进制；模板在常见系统路径中查找名为 `agetty` 且带 SUID/SGID 权限的文件，发现命中路径时判定需要复核。
+  impact: |
+    - 低权限用户可能直接获得 root 命令执行能力，读取或修改受保护文件、植入持久化项并关闭安全控制。
+    - 若该二进制出现在 sudoers、SUID/SGID 文件或自动化任务中，攻击者可绕过预期的最小权限边界并扩大入侵影响。
+  remediation: |
+    - 从 sudoers 和自动化任务中移除 `agetty` 的免密或通配授权，必须保留时使用绝对路径、固定参数和最小权限账户。
+    - 清理 `agetty` 上非必要的 SUID/SGID/capability 权限，定期使用 `sudo -l`、`find -perm` 和文件完整性检查复核高风险二进制。
   reference:
     - https://gtfobins.github.io/gtfobins/agetty/
   metadata:

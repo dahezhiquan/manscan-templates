@@ -5,13 +5,13 @@ info:
   author: JeonSungHyun[nukunga]
   severity: medium
   description: |
-    该模板检查 PowerShell Execution Policy 是否设置为不安全级别。过宽策略可能允许未授权或恶意脚本直接运行。
+    PowerShell Execution Policy 过宽时，未签名或来自不可信来源的脚本更容易在终端上直接运行，削弱脚本执行管控。对应基线项为“PowerShell Execution Policy 是否设置为不安全级别”；模板枚举 PowerShell 各作用域 Execution Policy，发现 `Bypass` 或 `Unrestricted` 时判定脚本执行策略过宽。
   reference:
     - https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.4
   impact: |
-    攻击者更容易通过 PowerShell 执行载荷、建立持久化或绕过传统防护。
+    - 攻击者更容易通过 PowerShell 执行载荷、建立持久化或绕过传统防护。
   remediation: |
-    将执行策略配置为 RemoteSigned、AllSigned 或组织认可的安全级别，并配合脚本日志。
+    - 将执行策略配置为 RemoteSigned、AllSigned 或组织认可的安全级别，并配合脚本日志。
   tags: windows,powershell,audit,code
 
 self-contained: true

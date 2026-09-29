@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Windows 启动文件夹中是否存在未授权脚本或可执行文件。此类文件会在用户登录时自动运行。
+    此类文件会在用户登录时自动运行。对应基线项为“Windows 启动文件夹中是否存在未授权脚本或可执行文件”；模板枚举系统启动文件夹内容，发现 `.exe` 或 `.ps1` 等自启动文件时判定需要复核。
   impact: |
-    恶意脚本可实现持久化、凭据窃取或横向移动。
+    - 恶意脚本可实现持久化、凭据窃取或横向移动。
   remediation: |
-    清理非授权启动项，限制普通用户写入启动目录，并使用应用控制策略。
+    - 清理非授权启动项，限制普通用户写入启动目录，并使用应用控制策略。
   tags: windows,startup,autorun,code,windows-audit
 
 self-contained: true

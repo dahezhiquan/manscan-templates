@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Windows Installer 是否允许非管理员以提升权限安装软件。该配置可能被滥用执行高权限 MSI。
+    该配置可能被滥用执行高权限 MSI。对应基线项为“Windows Installer 是否允许非管理员以提升权限安装软件”；模板读取注册表 `HKLM:\Software\Policies\Microsoft\Windows\Installer` 的 `AlwaysInstallElevated` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    低权限用户可安装或运行恶意安装包获得更高权限。
+    - 低权限用户可安装或运行恶意安装包获得更高权限。
   remediation: |
-    禁用 AlwaysInstallElevated 相关策略，并审计软件安装权限。
+    - 禁用 AlwaysInstallElevated 相关策略，并审计软件安装权限。
   tags: installer,elevated-privileges,code,windows-audit
 
 self-contained: true

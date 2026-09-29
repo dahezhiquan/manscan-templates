@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查系统是否允许安装未签名内核模式驱动。内核驱动具备高权限，风险极高。
+    内核驱动具备高权限，风险极高。对应基线项为“系统是否允许安装未签名内核模式驱动”；模板读取注册表 `HKLM:\SOFTWARE\Policies\Microsoft\Windows\DriverInstall` 的 `BehaviorOnFailedVerify` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    恶意驱动可绕过安全软件、隐藏持久化或破坏系统稳定性。
+    - 恶意驱动可绕过安全软件、隐藏持久化或破坏系统稳定性。
   remediation: |
-    强制驱动签名校验，仅允许可信发布者签名的驱动。
+    - 强制驱动签名校验，仅允许可信发布者签名的驱动。
   tags: drivers,kernel-mode,code,windows-audit
 
 self-contained: true

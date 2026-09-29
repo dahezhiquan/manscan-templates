@@ -5,7 +5,13 @@ info:
   author: domwhewell-sage
   severity: high
   description: |
-    该模板检测 Windows 服务路径中包含空格但未加引号的配置。服务启动时可能按路径片段搜索可执行文件。
+    Windows 服务可执行路径包含空格但未加引号时，服务启动会按路径片段尝试解析可执行文件，攻击者若能在上级目录写入同名程序，可能实现本地提权。模板通过 WMI 枚举非系统服务的 `PathName`，筛选包含空格且未以引号包裹的服务路径并输出服务名。
+  impact: |
+    - 本地低权限用户可能在可写目录投放恶意可执行文件，等待服务重启后以服务账户权限运行。
+    - 若目标服务以 LocalSystem 或高权限账户运行，成功利用会导致主机完全失陷。
+  remediation: |
+    - 为包含空格的服务二进制路径添加双引号，并确保路径各级目录不可被普通用户写入。
+    - 审计服务账户权限和启动模式，修复后重启服务验证实际 `ImagePath`。
   reference:
     - https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#unquoted-service-paths
   metadata:

@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查可移动介质 AutoRun 是否启用。插入设备时自动运行内容可能触发恶意代码。
+    插入设备时自动运行内容可能触发恶意代码。对应基线项为“可移动介质 AutoRun 是否启用”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer` 的 `NoDriveTypeAutoRun` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可利用 U 盘等介质自动执行恶意程序。
+    - 攻击者可利用 U 盘等介质自动执行恶意程序。
   remediation: |
-    禁用 AutoRun，尤其是所有可移动驱动器。
+    - 禁用 AutoRun，尤其是所有可移动驱动器。
   tags: windows,autorun,code,windows-audit
 
 self-contained: true

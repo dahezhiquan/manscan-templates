@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Guest 账户是否启用。来宾账户通常权限较低但认证要求弱，容易被滥用为入口。
+    来宾账户通常权限较低但认证要求弱，容易被滥用为入口。对应基线项为“Guest 账户是否启用”；模板执行本地检查命令并以 `False` 等输出作为命中依据。
   impact: |
-    攻击者可利用来宾账户获取初始访问并枚举系统资源。
+    - 攻击者可利用来宾账户获取初始访问并枚举系统资源。
   remediation: |
-    禁用 Guest 账户，并确认共享和本地登录策略不允许来宾访问。
+    - 禁用 Guest 账户，并确认共享和本地登录策略不允许来宾访问。
   tags: windows,user,account,guest,code,windows-audit
 
 self-contained: true

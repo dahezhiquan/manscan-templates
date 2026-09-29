@@ -5,13 +5,15 @@ info:
   author: JeonSungHyun[nukunga]
   severity: medium
   description: |
-    该模板检查 PowerShell Script Block Logging 是否禁用。禁用后难以记录和追踪实际执行的脚本内容。
+    PowerShell Script Block Logging 禁用后，系统难以记录和追踪实际执行的脚本内容，攻击者使用 PowerShell 执行命令时更不容易留下完整审计证据。对应基线项为“PowerShell Script Block Logging 是否禁用”；模板读取注册表 `HKLM:\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging`，结合命中值判断策略是否不符合基线。
   reference:
     - https://www.elastic.co/guide/en/security/7.17/prebuilt-rule-0-16-1-powershell-script-block-logging-disabled.html
   impact: |
-    恶意 PowerShell 活动可能绕过检测，事件响应时缺少关键脚本证据。
+    - 恶意 PowerShell 活动可能绕过检测，事件响应时缺少关键脚本证据。
+    - 日志缺失会降低入侵发现、事件溯源和合规取证能力。
   remediation: |
-    通过组策略或注册表启用脚本块日志，并将日志转发到集中审计平台。
+    - 通过组策略或注册表启用脚本块日志，并将日志转发到集中审计平台。
+    - 确认日志容量、归档和集中转发链路可用，并监控审计策略被关闭的情况。
   tags: windows,powershell,audit,code
 
 self-contained: true

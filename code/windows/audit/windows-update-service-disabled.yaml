@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Windows Update 服务是否禁用。服务关闭会阻止系统接收安全更新。
+    服务关闭会阻止系统接收安全更新。对应基线项为“Windows Update 服务是否禁用”；模板查询 `wuauserv` 服务状态，并结合输出匹配判断服务是否处于不安全状态。
   impact: |
-    主机将持续暴露于已修复漏洞，增加被利用风险。
+    - 主机将持续暴露于已修复漏洞，增加被利用风险。
+    - 缺少安全更新会让主机持续暴露于已公开漏洞和恶意软件攻击。
   remediation: |
-    启用并正确配置 Windows Update 服务，确保补丁可正常下载和安装。
+    - 启用并正确配置 Windows Update 服务，确保补丁可正常下载和安装。
+    - 建立补丁窗口和失败告警机制，确保安全更新可下载、安装并完成重启。
   tags: windows,code,windows-audit
 
 self-contained: true

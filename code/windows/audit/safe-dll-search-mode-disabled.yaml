@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Safe DLL Search Mode 是否禁用。禁用后应用更可能从不可信路径加载 DLL。
+    禁用后应用更可能从不可信路径加载 DLL。对应基线项为“Safe DLL Search Mode 是否禁用”；模板读取注册表 `HKLM:\System\CurrentControlSet\Control\Session Manager` 的 `SafeDllSearchMode` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可放置恶意 DLL 实现 DLL 劫持并执行代码。
+    - 攻击者可放置恶意 DLL 实现 DLL 劫持并执行代码。
   remediation: |
-    启用 SafeDllSearchMode，并减少可写目录中的应用加载风险。
+    - 启用 SafeDllSearchMode，并减少可写目录中的应用加载风险。
   tags: windows,dll,code,windows-audit
 
 self-contained: true

@@ -5,11 +5,11 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 Alerter、Clipbook、Messenger、Simple TCP/IP Services 等不必要服务是否运行。遗留服务会增加攻击面。
+    遗留服务会增加攻击面。对应基线项为“Alerter、Clipbook、Messenger、Simple TCP/IP Services 等不必要服务是否运行”；模板查询 `$svc` 服务状态，并结合输出匹配判断服务是否处于不安全状态。
   impact: |
-    攻击者可利用不必要服务的弱配置或漏洞进行信息收集、拒绝服务或远程攻击。
+    - 攻击者可利用不必要服务的弱配置或漏洞进行信息收集、拒绝服务或远程攻击。
   remediation: |
-    停止并禁用无业务需求的服务，仅保留必要系统组件。
+    - 停止并禁用无业务需求的服务，仅保留必要系统组件。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: service-management,code,windows-audit,kisa

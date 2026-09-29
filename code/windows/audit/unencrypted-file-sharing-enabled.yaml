@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查文件共享是否未启用加密。未加密共享会暴露传输数据。
+    未加密共享会暴露传输数据。对应基线项为“文件共享是否未启用加密”；模板读取 SMB 服务或共享配置，检查协议、签名、加密或管理共享是否符合基线。
   impact: |
-    攻击者可在网络中截获或篡改共享文件内容。
+    - 攻击者可在网络中截获或篡改共享文件内容。
   remediation: |
-    启用 SMB 加密或使用受保护通道传输敏感文件。
+    - 启用 SMB 加密或使用受保护通道传输敏感文件。
   tags: windows,file-sharing,encryption,code,windows-audit
 
 self-contained: true

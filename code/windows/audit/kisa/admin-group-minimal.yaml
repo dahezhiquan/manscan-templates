@@ -5,11 +5,11 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 Administrators 组是否仅包含必要账户。过多成员会扩大高权限攻击面。
+    过多成员会扩大高权限攻击面。对应基线项为“Administrators 组是否仅包含必要账户”；模板解析本地 Administrators 组成员数量，发现超过必要账户时判定管理员组过宽。
   impact: |
-    任一多余管理员账户被攻破都可能导致整台主机被完全控制。
+    - 任一多余管理员账户被攻破都可能导致整台主机被完全控制。
   remediation: |
-    移除非必要管理员成员，采用最小权限和按需提权机制。
+    - 移除非必要管理员成员，采用最小权限和按需提权机制。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,code,windows-audit,kisa,admin-group

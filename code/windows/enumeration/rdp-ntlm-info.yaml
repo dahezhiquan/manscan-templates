@@ -5,7 +5,13 @@ info:
   author: matejsmycka
   severity: medium
   description: |
-    该模板通过不完整的 CredSSP/NTLM 认证请求枚举启用 NLA 的 RDP 服务信息，可能返回 NetBIOS 名称、DNS 名称、域、系统版本和时间等数据。
+    启用 NLA 的 RDP 服务在 CredSSP/NTLM 协商阶段可能返回主机名、域名、DNS 名称、系统版本和时间等环境信息，未认证攻击者可据此完成资产指纹识别。模板构造不完整的 NTLM 认证请求连接目标 RDP 端口，并解析返回的 AV_PAIR 字段输出 NetBIOS、DNS、域和版本信息。
+  impact: |
+    - 攻击者可在无需登录的情况下识别域、主机命名规则和系统版本，辅助漏洞匹配、密码喷洒和横向移动规划。
+    - 暴露的时间和域信息可帮助攻击者校准认证攻击或绕过部分环境假设。
+  remediation: |
+    - 仅向可信来源暴露 RDP，使用 VPN、访问控制列表或跳板机限制 3389 访问。
+    - 保持 RDP/NLA 补丁更新，隐藏不必要的远程桌面入口，并监控未认证枚举流量。
   reference:
     - https://nmap.org/nsedoc/scripts/rdp-ntlm-info.html
     - https://svn.nmap.org/nmap/scripts/rdp-ntlm-info.nse

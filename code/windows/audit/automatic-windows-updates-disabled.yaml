@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Windows 自动更新是否关闭。关闭自动更新会导致系统长期缺少安全补丁。
+    关闭自动更新会导致系统长期缺少安全补丁。对应基线项为“Windows 自动更新是否关闭”；模板读取注册表 `HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU` 的 `NoAutoUpdate` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    已公开漏洞可能持续暴露，增加恶意软件、勒索软件和远程利用风险。
+    - 已公开漏洞可能持续暴露，增加恶意软件、勒索软件和远程利用风险。
+    - 缺少安全更新会让主机持续暴露于已公开漏洞和恶意软件攻击。
   remediation: |
-    通过组策略或 Windows Update 配置启用自动下载和计划安装。
+    - 通过组策略或 Windows Update 配置启用自动下载和计划安装。
+    - 建立补丁窗口和失败告警机制，确保安全更新可下载、安装并完成重启。
   tags: windows,updates,disabled,windows-audit
 
 self-contained: true

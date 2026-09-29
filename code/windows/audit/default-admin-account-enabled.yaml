@@ -5,11 +5,11 @@ info:
   author: boonchuan
   severity: medium
   description: |
-    该模板检测内置 Administrator 账户是否启用。该账户名称固定、权限高，是暴力破解和凭据填充的常见目标。
+    该账户名称固定、权限高，是暴力破解和凭据填充的常见目标。对应基线项为“内置 Administrator 账户是否启用”；模板枚举本地用户账户和 SID，检查默认管理员名称、额外账户或启用状态是否符合基线。
   impact: |
-    攻击者可针对默认管理员账户开展口令攻击，一旦成功将获得高权限控制。
+    - 攻击者可针对默认管理员账户开展口令攻击，一旦成功将获得高权限控制。
   remediation: |
-    禁用或重命名内置 Administrator 账户，并为必要管理员账户配置强口令和锁定策略。
+    - 禁用或重命名内置 Administrator 账户，并为必要管理员账户配置强口令和锁定策略。
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/local-accounts

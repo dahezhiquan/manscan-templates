@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Local Security Authority（LSA）保护是否未启用。缺少 LSA 保护会增加凭据转储风险。
+    缺少 LSA 保护会增加凭据转储风险。对应基线项为“Local Security Authority（LSA）保护是否未启用”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `RunAsPPL` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可更容易从 LSASS 相关进程中提取凭据。
+    - 攻击者可更容易从 LSASS 相关进程中提取凭据。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    启用 LSA Protection（RunAsPPL）并结合 Credential Guard。
+    - 启用 LSA Protection（RunAsPPL）并结合 Credential Guard。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: windows,lsa,code,windows-audit
 
 self-contained: true

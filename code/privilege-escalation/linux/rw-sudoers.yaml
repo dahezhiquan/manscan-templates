@@ -4,6 +4,14 @@ info:
   name: /etc/sudoers 可读或可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
+  description: |
+    `/etc/sudoers` 控制 sudo 提权授权，普通用户若可读会泄露可滥用的提权规则，若可写则可直接添加免密 root 授权。模板先确认当前用户不是 root，再检查 `/etc/sudoers` 是否对当前上下文可读或可写，输出 `Either readable or writable` 且未出现安全结果时判定权限异常。
+  impact: |
+    - 攻击者可发现或植入 sudo 提权规则，扩大到 root 权限。
+    - sudoers 被篡改会破坏特权操作审计和最小权限边界。
+  remediation: |
+    - 使用 `visudo` 管理 sudoers，将 `/etc/sudoers` 权限设置为 `440`，属主和属组保持 root。
+    - 审计 `/etc/sudoers.d/`、异常 ACL 和免密授权，移除不必要的通配命令。
   reference:
     - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html?highlight=%2Fetc%2Fsudoers#etcsudoers-etcsudoersd
   metadata:

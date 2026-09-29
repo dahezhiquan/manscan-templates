@@ -5,11 +5,11 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 C$、D$、Admin$ 等默认管理共享是否被禁用。默认共享会提供远程访问系统磁盘的入口。
+    默认共享会提供远程访问系统磁盘的入口。对应基线项为“C$、D$、Admin$ 等默认管理共享是否被禁用”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Services\lanmanserver\parameters` 的 `AutoShareServer` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者获取管理员凭据后可通过默认共享快速访问和投放文件。
+    - 攻击者获取管理员凭据后可通过默认共享快速访问和投放文件。
   remediation: |
-    按基线要求禁用不需要的默认管理共享，并限制远程管理来源。
+    - 按基线要求禁用不需要的默认管理共享，并限制远程管理来源。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: ftp,iis,code,windows-audit,kisa,share-permissions

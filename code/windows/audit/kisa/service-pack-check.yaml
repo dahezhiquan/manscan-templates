@@ -5,11 +5,13 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查系统是否安装最新安全补丁和服务包。缺少补丁会暴露已知漏洞。
+    缺少补丁会暴露已知漏洞。对应基线项为“系统是否安装最新安全补丁和服务包”；模板执行本地检查命令并以 `SERVICE_PACK_VULNERABLE` 等输出作为命中依据。
   impact: |
-    攻击者可利用公开漏洞获取权限、执行代码或造成服务中断。
+    - 攻击者可利用公开漏洞获取权限、执行代码或造成服务中断。
+    - 缺少安全更新会让主机持续暴露于已公开漏洞和恶意软件攻击。
   remediation: |
-    保持 Windows Update、服务包和安全补丁为最新，并建立定期补丁验证流程。
+    - 保持 Windows Update、服务包和安全补丁为最新，并建立定期补丁验证流程。
+    - 建立补丁窗口和失败告警机制，确保安全更新可下载、安装并完成重启。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,service-pack,security,patch-management

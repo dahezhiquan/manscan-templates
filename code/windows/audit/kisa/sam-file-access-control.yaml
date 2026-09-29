@@ -5,11 +5,11 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 %SystemRoot%\system32\config\SAM 文件权限是否仅允许 Administrators 和 SYSTEM 完全访问。
+    SAM 文件访问控制不安全（本地基线扫描） 表示主机存在不符合安全基线的配置，可能削弱访问控制、审计能力或系统防护边界。对应基线项为“%SystemRoot%\system32\config\SAM 文件权限是否仅允许 Administrators 和 SYSTEM 完全访问”；模板执行本地检查命令并以 `SAM_ACCESS_VULNERABLE` 等输出作为命中依据。
   impact: |
-    过宽权限可能让攻击者复制 SAM 数据库并离线破解本地账户哈希。
+    - 过宽权限可能让攻击者复制 SAM 数据库并离线破解本地账户哈希。
   remediation: |
-    收紧 SAM 文件 ACL，确保仅 Administrators 和 SYSTEM 具有必要权限。
+    - 收紧 SAM 文件 ACL，确保仅 Administrators 和 SYSTEM 具有必要权限。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: sam,account-management,code,windows-audit,kisa

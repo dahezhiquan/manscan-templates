@@ -5,7 +5,13 @@ info:
   author: domwhewell-sage
   severity: high
   description: |
-    该模板检测 Windows 服务二进制文件权限是否过弱。非管理员若可修改服务程序文件，可能替换为恶意二进制。
+    Windows 服务二进制文件权限过宽时，非管理员用户可替换服务程序，服务下次启动后恶意二进制会以服务账户权限执行。模板枚举非系统服务路径，读取二进制 ACL，发现非管理员主体拥有 Write、Modify 或 FullControl 权限时输出可写服务信息。
+  impact: |
+    - 攻击者可替换服务二进制实现持久化或本地提权，尤其是服务以 LocalSystem、NetworkService 或域高权限账户运行时。
+    - 被篡改服务可能在系统启动、服务重启或管理员维护时自动触发。
+  remediation: |
+    - 收紧服务二进制及其目录 ACL，仅允许 Administrators、SYSTEM 和受控部署账户写入。
+    - 对已命中的服务校验文件完整性、恢复可信二进制，并复核服务账户是否遵循最小权限。
   reference:
     - https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html#modify-service-binary-path
   tags: windows,services,code,windows-audit,privesc

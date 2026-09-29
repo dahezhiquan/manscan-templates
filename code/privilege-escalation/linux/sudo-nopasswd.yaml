@@ -5,7 +5,13 @@ info:
   author: daffainfo
   severity: high
   description: |
-    该模板检查当前用户是否存在 sudo NOPASSWD 授权。若 sudoers 允许用户无需输入密码执行 root 命令，该配置可能被低权限账户直接滥用于本地提权。
+    sudo NOPASSWD 授权允许用户无需再次验证即可执行指定 root 命令，若命令范围过宽或包含可执行 shell 的二进制，会成为直接本地提权路径。模板执行 `sudo -l` 查看当前用户 sudo 权限，匹配 `(root) NOPASSWD:` 时判定存在免密 sudo 授权需要复核。
+  impact: |
+    - 低权限账户被接管后，攻击者可立即执行授权命令并可能扩展为 root shell。
+    - 免密授权会削弱敏感操作的二次验证和审计边界，尤其在命令包含通配符或脚本解释器时风险更高。
+  remediation: |
+    - 移除非必要的 `NOPASSWD` 规则，敏感命令应要求重新输入密码或使用集中提权审批。
+    - 对必须保留的 sudo 规则限定绝对路径、固定参数和最小命令集合，避免授权 shell、编辑器、解释器和文件写入工具。
   reference:
     - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#nopasswd
   metadata:

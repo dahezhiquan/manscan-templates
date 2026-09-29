@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 WinRM 是否允许远程 Shell 访问。该能力可远程执行命令。
+    该能力可远程执行命令。对应基线项为“WinRM 是否允许远程 Shell 访问”；模板读取 `WSMan:\localhost\Shell` 配置，结合命中值判断 WinRM 策略是否过宽。
   impact: |
-    攻击者一旦获得凭据即可远程控制系统并执行敏感操作。
+    - 攻击者一旦获得凭据即可远程控制系统并执行敏感操作。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    禁用不必要的 WinRM 远程 Shell，或通过最小权限和来源限制进行控制。
+    - 禁用不必要的 WinRM 远程 Shell，或通过最小权限和来源限制进行控制。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   tags: winrm,remote-shell,code,windows-audit
 
 self-contained: true

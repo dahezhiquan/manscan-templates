@@ -5,7 +5,13 @@ info:
   author: matejsmycka
   severity: medium
   description: |
-    该模板检查指定域名是否允许 DNS AXFR 区域传送。开放区域传送会一次性泄露该区域的 DNS 记录。
+    DNS AXFR 区域传送开放会让非授权客户端一次性获取某个 DNS 区域的完整记录，包括主机名、子域、邮件服务器和内部地址线索。该问题通常由权威 DNS 未限制允许传送的从服务器来源导致；模板对目标域名解析权威 NS 后执行 `dig axfr`，当返回 `XFR size` 记录数时判定区域传送可被获取。
+  impact: |
+    - 攻击者可快速枚举域名资产、内部命名规则和关键服务入口，用于后续漏洞利用、钓鱼或横向侦察。
+    - 暴露的 DNS 结构可能泄露未公开系统、测试环境或管理入口，削弱资产隐藏和访问边界。
+  remediation: |
+    - 在权威 DNS 上将 AXFR 仅限制给授权的从 DNS 服务器，避免对任意来源开放区域传送。
+    - 使用 TSIG、ACL 和防火墙限制 TCP/53 访问，并定期从外部网络验证 AXFR 是否被拒绝。
   reference:
     - https://beaglesecurity.com/blog/vulnerability/dns-zone-transfer.html
   metadata:

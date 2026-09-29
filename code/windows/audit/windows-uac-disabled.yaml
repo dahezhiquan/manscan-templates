@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 User Account Control（UAC）是否关闭。UAC 关闭会减少管理员操作提示和隔离保护。
+    UAC 关闭会减少管理员操作提示和隔离保护。对应基线项为“User Account Control（UAC）是否关闭”；模板读取注册表 `HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System` 的 `EnableLUA` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    恶意程序可更容易进行系统级修改，扩大入侵影响。
+    - 恶意程序可更容易进行系统级修改，扩大入侵影响。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    启用 UAC，并配置管理操作需要确认或凭据提示。
+    - 启用 UAC，并配置管理操作需要确认或凭据提示。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: windows,uac,code,windows-audit
 
 self-contained: true

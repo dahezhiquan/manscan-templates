@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Data Execution Prevention（DEP）是否未对所有程序启用。DEP 可缓解内存执行类攻击。
+    DEP 可缓解内存执行类攻击。对应基线项为“Data Execution Prevention（DEP）是否未对所有程序启用”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management` 的 `EnableDEP` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    禁用 DEP 会增加缓冲区溢出等内存漏洞被利用的成功率。
+    - 禁用 DEP 会增加缓冲区溢出等内存漏洞被利用的成功率。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    为所有程序启用 DEP，并结合 ASLR 等缓解机制。
+    - 为所有程序启用 DEP，并结合 ASLR 等缓解机制。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: windows,security,dep,code,windows-audit
 
 self-contained: true

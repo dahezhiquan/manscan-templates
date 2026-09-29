@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Windows 是否允许匿名枚举 SID。该信息可帮助攻击者识别账户和组。
+    该信息可帮助攻击者识别账户和组。对应基线项为“Windows 是否允许匿名枚举 SID”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `AnonymousSidNameTranslation` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可利用枚举结果开展定向密码攻击或权限分析。
+    - 攻击者可利用枚举结果开展定向密码攻击或权限分析。
   remediation: |
-    禁用匿名 SID 枚举并启用匿名访问限制策略。
+    - 禁用匿名 SID 枚举并启用匿名访问限制策略。
   tags: windows,anonymous,sid,security,code,windows-audit
 
 self-contained: true

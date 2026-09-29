@@ -5,11 +5,13 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查“审计失败时关闭系统”策略。错误启用可能在日志写入失败时导致系统不可用。
+    错误启用可能在日志写入失败时导致系统不可用。对应基线项为““审计失败时关闭系统”策略”；模板导出本地安全策略并解析关键权限/账户策略项，命中不合规标记时判定存在配置风险。
   impact: |
-    攻击者或异常状态可能通过触发审计失败造成拒绝服务。
+    - 攻击者或异常状态可能通过触发审计失败造成拒绝服务。
+    - 日志缺失会降低入侵发现、事件溯源和合规取证能力。
   remediation: |
-    按基线要求禁用该策略，并保障日志存储与转发可用。
+    - 按基线要求禁用该策略，并保障日志存储与转发可用。
+    - 确认日志容量、归档和集中转发链路可用，并监控审计策略被关闭的情况。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: account-management,code,windows-audit,kisa,policy

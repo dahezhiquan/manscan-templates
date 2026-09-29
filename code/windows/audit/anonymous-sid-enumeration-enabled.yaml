@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查匿名用户是否可以枚举安全标识符（SID）。暴露 SID 会帮助攻击者映射本地用户、组和权限关系。
+    暴露 SID 会帮助攻击者映射本地用户、组和权限关系。对应基线项为“匿名用户是否可以枚举安全标识符（SID）”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `EveryoneIncludesAnonymous` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可利用 SID 信息识别高价值账户并辅助后续口令攻击。
+    - 攻击者可利用 SID 信息识别高价值账户并辅助后续口令攻击。
   remediation: |
-    通过本地安全策略或注册表禁用匿名 SID 枚举。
+    - 通过本地安全策略或注册表禁用匿名 SID 枚举。
   tags: windows,code,windows-audit
 
 self-contained: true

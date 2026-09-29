@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Secure Boot 是否禁用。未启用会降低启动链完整性保护。
+    未启用会降低启动链完整性保护。对应基线项为“Secure Boot 是否禁用”；模板调用 `Confirm-SecureBootUEFI`，返回 `False` 时判定 Secure Boot 未启用。
   impact: |
-    攻击者可植入 bootkit/rootkit 或加载未授权启动组件。
+    - 攻击者可植入 bootkit/rootkit 或加载未授权启动组件。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    在 BIOS/UEFI 中启用 Secure Boot，并使用受信任启动组件。
+    - 在 BIOS/UEFI 中启用 Secure Boot，并使用受信任启动组件。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: secure-boot,uefi,code,windows-audit
 
 self-contained: true

@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Windows 自动登录配置。启用后系统可在启动时绕过交互式登录，通常还会保存可被读取或滥用的凭据。
+    启用后系统可在启动时绕过交互式登录，通常还会保存可被读取或滥用的凭据。对应基线项为“Windows 自动登录配置”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon` 的 `AutoAdminLogon` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    本地或远程攻击者可能利用自动登录凭据直接进入系统。
+    - 本地或远程攻击者可能利用自动登录凭据直接进入系统。
+    - 日志缺失会降低入侵发现、事件溯源和合规取证能力。
   remediation: |
-    禁用 AutoAdminLogon，清除注册表中保存的默认用户名、密码和域信息。
+    - 禁用 AutoAdminLogon，清除注册表中保存的默认用户名、密码和域信息。
+    - 确认日志容量、归档和集中转发链路可用，并监控审计策略被关闭的情况。
   tags: autologon,login,code,windows-audit
 
 self-contained: true

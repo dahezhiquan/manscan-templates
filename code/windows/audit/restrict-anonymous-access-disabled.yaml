@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查匿名访问限制是否禁用。禁用限制会允许未认证用户枚举更多系统信息。
+    禁用限制会允许未认证用户枚举更多系统信息。对应基线项为“匿名访问限制是否禁用”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `RestrictAnonymous` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可收集用户、共享和策略信息，辅助后续攻击。
+    - 攻击者可收集用户、共享和策略信息，辅助后续攻击。
   remediation: |
-    将 RestrictAnonymous 配置为 1 或 2，并验证业务兼容性。
+    - 将 RestrictAnonymous 配置为 1 或 2，并验证业务兼容性。
   tags: windows,anonymous-access,code,windows-audit
 
 self-contained: true

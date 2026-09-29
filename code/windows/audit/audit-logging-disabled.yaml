@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查关键安全事件的审计日志是否被禁用。缺少审计记录会降低对登录、权限变更和策略修改等行为的可见性。
+    缺少审计记录会降低对登录、权限变更和策略修改等行为的可见性。对应基线项为“关键安全事件的审计日志是否被禁用”；模板使用 `AuditPol` 查询账户登录和账户管理审计类别，匹配 `No Auditing` 项时判定审计缺失。
   impact: |
-    恶意活动可能无法被及时发现，事后取证也会缺少关键证据。
+    - 恶意活动可能无法被及时发现，事后取证也会缺少关键证据。
+    - 日志缺失会降低入侵发现、事件溯源和合规取证能力。
   remediation: |
-    启用 Windows 审计策略，至少覆盖登录、对象访问、策略变更和账户管理事件。
+    - 启用 Windows 审计策略，至少覆盖登录、对象访问、策略变更和账户管理事件。
+    - 确认日志容量、归档和集中转发链路可用，并监控审计策略被关闭的情况。
   tags: windows,audit-logging,security,code,windows-audit
 
 self-contained: true

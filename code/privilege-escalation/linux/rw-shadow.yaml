@@ -4,6 +4,14 @@ info:
   name: /etc/shadow 可读或可写导致本地提权（本地基线扫描）
   author: daffainfo
   severity: high
+  description: |
+    `/etc/shadow` 保存本地账户密码哈希和过期策略，普通用户若可读或可写该文件，可能离线破解口令或直接篡改哈希实现本地提权。模板先确认当前用户不是 root，再检查 `/etc/shadow` 是否对当前上下文可读或可写，输出 `Either readable or writable` 且未出现安全结果时判定权限异常。
+  impact: |
+    - 攻击者可读取密码哈希并离线破解，获取本地账户或可复用凭据。
+    - 若具备写权限，可替换密码哈希、清空口令或破坏账号策略，从而获得特权访问。
+  remediation: |
+    - 将 `/etc/shadow` 属主恢复为 `root:shadow` 或发行版默认值，并将权限收敛到 `640`、`600` 或更严格。
+    - 排查异常 ACL、备份文件和最近修改记录，必要时轮换受影响账户密码。
   reference:
     - https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html#passwdshadow-files
     - https://man7.org/linux/man-pages/man5/shadow.5.html

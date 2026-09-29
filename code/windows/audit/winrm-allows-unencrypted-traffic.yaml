@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Windows Remote Management（WinRM）是否允许未加密通信。未加密 WinRM 会暴露管理数据。
+    未加密 WinRM 会暴露管理数据。对应基线项为“Windows Remote Management（WinRM）是否允许未加密通信”；模板读取 `WSMan:\localhost\Service` 配置，结合命中值判断 WinRM 策略是否过宽。
   impact: |
-    攻击者可截获敏感管理流量或凭据材料。
+    - 攻击者可截获敏感管理流量或凭据材料。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    将 AllowUnencrypted 设置为 False，并使用 HTTPS 或受保护通道。
+    - 将 AllowUnencrypted 设置为 False，并使用 HTTPS 或受保护通道。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   tags: winrm,unencrypted,traffic,code,windows-audit
 
 self-contained: true

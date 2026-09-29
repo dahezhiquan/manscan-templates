@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 UAC 是否配置为提权时不提示。该配置削弱管理员操作确认。
+    该配置削弱管理员操作确认。对应基线项为“UAC 是否配置为提权时不提示”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` 的 `ConsentPromptBehaviorAdmin` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    恶意程序可更容易触发高权限更改而不被用户察觉。
+    - 恶意程序可更容易触发高权限更改而不被用户察觉。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    配置 UAC 对管理操作进行提示，并避免自动提升。
+    - 配置 UAC 对管理操作进行提示，并避免自动提升。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: uac,privilege,code,windows-audit
 
 self-contained: true

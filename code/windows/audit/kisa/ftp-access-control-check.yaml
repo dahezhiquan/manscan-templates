@@ -5,11 +5,13 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 FTP 是否配置 IP 地址过滤。缺少来源限制会让非授权网络访问 FTP 服务。
+    缺少来源限制会让非授权网络访问 FTP 服务。对应基线项为“FTP 是否配置 IP 地址过滤”；模板读取 IIS/FTP WebAdministration 配置，检查认证、TLS 或访问控制项是否处于不安全状态。
   impact: |
-    攻击者可从不可信网络尝试登录、枚举或利用 FTP 服务。
+    - 攻击者可从不可信网络尝试登录、枚举或利用 FTP 服务。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    配置 FTP IP 地址和域限制，仅允许可信管理或业务网段访问。
+    - 配置 FTP IP 地址和域限制，仅允许可信管理或业务网段访问。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: ftp,iis,security,windows,code,windows-audit,kisa

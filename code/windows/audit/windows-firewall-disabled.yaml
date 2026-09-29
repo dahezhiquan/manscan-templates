@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查任一网络配置文件下 Windows 防火墙是否关闭。防火墙关闭会暴露本机服务。
+    防火墙关闭会暴露本机服务。对应基线项为“任一网络配置文件下 Windows 防火墙是否关闭”；模板执行本地检查命令并以 `False` 等输出作为命中依据。
   impact: |
-    攻击者可更容易访问本机开放端口并尝试利用漏洞。
+    - 攻击者可更容易访问本机开放端口并尝试利用漏洞。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    为域、专用和公用网络配置文件启用 Windows 防火墙并配置最小允许规则。
+    - 为域、专用和公用网络配置文件启用 Windows 防火墙并配置最小允许规则。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: windows,firewall,code,windows-audit
 
 self-contained: true

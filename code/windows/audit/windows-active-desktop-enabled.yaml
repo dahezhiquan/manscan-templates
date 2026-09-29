@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查 Active Desktop 是否启用。该旧功能可加载动态内容，增加恶意脚本或内容注入风险。
+    该旧功能可加载动态内容，增加恶意脚本或内容注入风险。对应基线项为“Active Desktop 是否启用”；模板读取注册表 `HKCU:\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer` 的 `NoActiveDesktop` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可能通过桌面内容投递恶意脚本或诱导用户执行。
+    - 攻击者可能通过桌面内容投递恶意脚本或诱导用户执行。
   remediation: |
-    除非确有业务需要，禁用 Active Desktop。
+    - 除非确有业务需要，禁用 Active Desktop。
   tags: windows,active-desktop,security,code,windows-audit
 
 self-contained: true

@@ -5,11 +5,11 @@ info:
   author: boonchuan
   severity: high
   description: |
-    该模板检测 Microsoft Office 宏限制是否未配置。宏是钓鱼文档投递恶意代码的常见载体。
+    宏是钓鱼文档投递恶意代码的常见载体。对应基线项为“Microsoft Office 宏限制是否未配置”；模板读取注册表 `HKCU:\Software\Policies\Microsoft\Office\16.0\$app\Security` 的 `VBAWarnings` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    用户打开恶意文档后可能执行宏载荷，导致凭据窃取或主机感染。
+    - 用户打开恶意文档后可能执行宏载荷，导致凭据窃取或主机感染。
   remediation: |
-    通过组策略阻止来自互联网的宏，仅允许签名且可信的宏运行。
+    - 通过组策略阻止来自互联网的宏，仅允许签名且可信的宏运行。
   reference:
     - https://www.cyber.gov.au/acsc/view-all-content/publications/essential-eight-maturity-model
     - https://learn.microsoft.com/en-us/deployoffice/security/internet-macros-blocked

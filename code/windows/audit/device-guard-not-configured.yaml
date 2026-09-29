@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Device Guard 是否未配置。缺少代码完整性和应用控制策略会降低对未授权代码执行的防护。
+    缺少代码完整性和应用控制策略会降低对未授权代码执行的防护。对应基线项为“Device Guard 是否未配置”；模板查询 `Win32_DeviceGuard` 状态，检查 Credential Guard、Device Guard 或 VBS 安全服务是否配置并运行。
   impact: |
-    攻击者更容易运行未经批准的脚本、驱动或可执行文件。
+    - 攻击者更容易运行未经批准的脚本、驱动或可执行文件。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    根据业务需要配置 Device Guard/Windows Defender Application Control 策略。
+    - 根据业务需要配置 Device Guard/Windows Defender Application Control 策略。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: device-guard,code,windows-audit
 
 self-contained: true

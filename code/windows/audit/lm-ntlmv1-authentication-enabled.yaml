@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查是否允许 LM 或 NTLMv1 认证协议。这些旧协议缺少现代安全保护。
+    这些旧协议缺少现代安全保护。对应基线项为“是否允许 LM 或 NTLMv1 认证协议”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Lsa` 的 `LmCompatibilityLevel` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可更容易中继、破解或降级认证流量。
+    - 攻击者可更容易中继、破解或降级认证流量。
+    - 凭据保护不足会增加横向移动、远程登录和离线破解风险。
   remediation: |
-    禁用 LM 和 NTLMv1，仅允许 NTLMv2 或更强认证机制。
+    - 禁用 LM 和 NTLMv1，仅允许 NTLMv2 或更强认证机制。
+    - 变更策略后清理历史凭据，并轮换可能受影响的账户密码。
   tags: lm,ntlmv1,authentication,code,windows-audit
 
 self-contained: true

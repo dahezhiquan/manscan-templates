@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查系统是否允许安装未签名驱动。未签名驱动来源不可验证，可能包含恶意或不稳定代码。
+    未签名驱动来源不可验证，可能包含恶意或不稳定代码。对应基线项为“系统是否允许安装未签名驱动”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\Driver Signing`，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可加载恶意驱动获取内核级能力或破坏系统稳定性。
+    - 攻击者可加载恶意驱动获取内核级能力或破坏系统稳定性。
   remediation: |
-    仅允许安装签名驱动，并启用驱动签名强制策略。
+    - 仅允许安装签名驱动，并启用驱动签名强制策略。
   tags: windows,code,windows-audit
 
 self-contained: true

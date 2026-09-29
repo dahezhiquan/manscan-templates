@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 RDP 是否禁用 Network Level Authentication（NLA）。未启用 NLA 会让服务在认证前暴露更多攻击面。
+    未启用 NLA 会让服务在认证前暴露更多攻击面。对应基线项为“RDP 是否禁用 Network Level Authentication（NLA）”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp` 的 `UserAuthentication` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可更容易进行暴力破解、资源消耗或利用 RDP 漏洞。
+    - 攻击者可更容易进行暴力破解、资源消耗或利用 RDP 漏洞。
+    - 远程入口暴露或协议保护不足会增加暴力破解、中间人攻击和远程控制风险。
   remediation: |
-    启用 RDP NLA，并限制 RDP 访问来源。
+    - 启用 RDP NLA，并限制 RDP 访问来源。
+    - 限制访问来源，优先使用加密和强认证，并关闭无业务需求的远程服务。
   tags: windows,rdp,nla,authentication,code,windows-audit
 
 self-contained: true

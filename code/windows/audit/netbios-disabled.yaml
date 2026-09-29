@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: medium
   description: |
-    该模板检查所有网络适配器是否禁用 NetBIOS over TCP/IP。NetBIOS 会暴露名称解析和枚举面。
+    NetBIOS 会暴露名称解析和枚举面。对应基线项为“所有网络适配器是否禁用 NetBIOS over TCP/IP”；模板执行本地检查命令并以 `NetBIOS is misconfigured or enabled` 等输出作为命中依据。
   impact: |
-    攻击者可利用 NetBIOS 进行主机枚举、名称投毒或凭据捕获。
+    - 攻击者可利用 NetBIOS 进行主机枚举、名称投毒或凭据捕获。
   remediation: |
-    在不需要的环境中禁用 NetBIOS over TCP/IP，并使用 DNS 替代旧式解析。
+    - 在不需要的环境中禁用 NetBIOS over TCP/IP，并使用 DNS 替代旧式解析。
   tags: windows,netbios,network,security,code,windows-audit
 
 self-contained: true

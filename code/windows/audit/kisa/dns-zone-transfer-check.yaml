@@ -5,11 +5,11 @@ info:
   author: nukunga[SungHyunJeon]
   severity: medium
   description: |
-    该模板检查 Windows DNS 区域传送是否受限。未限制的区域传送会泄露完整 DNS 记录。
+    未限制的区域传送会泄露完整 DNS 记录。对应基线项为“Windows DNS 区域传送是否受限”；模板读取注册表 `HKLM:\SOFTWARE\Microsoft\WindowsNT\CurrentVersion\DNS Server\Zones`，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可获取主机名、内部地址和服务布局，辅助后续攻击。
+    - 攻击者可获取主机名、内部地址和服务布局，辅助后续攻击。
   remediation: |
-    将 SecureSecondaries 配置为仅允许授权辅助 DNS 服务器进行区域传送。
+    - 将 SecureSecondaries 配置为仅允许授权辅助 DNS 服务器进行区域传送。
   reference:
     - https://isms.kisa.or.kr/main/csap/notice/?boardId=bbs_0000000000000004&mode=view&cntId=85
   tags: code,windows-audit,kisa,dns,zone-transfer

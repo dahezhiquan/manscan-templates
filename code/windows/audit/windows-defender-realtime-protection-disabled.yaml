@@ -5,11 +5,13 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 Windows Defender 实时保护是否关闭。关闭后恶意文件和行为可能无法被及时拦截。
+    关闭后恶意文件和行为可能无法被及时拦截。对应基线项为“Windows Defender 实时保护是否关闭”；模板读取 Microsoft Defender 偏好设置，匹配实时保护关闭状态时判定防护缺失。
   impact: |
-    系统感染恶意软件、勒索软件或后门的风险升高。
+    - 系统感染恶意软件、勒索软件或后门的风险升高。
+    - 核心防护关闭会降低恶意代码拦截、提权缓解和系统完整性保护能力。
   remediation: |
-    启用 Microsoft Defender 实时保护，并防止普通用户关闭安全防护。
+    - 启用 Microsoft Defender 实时保护，并防止普通用户关闭安全防护。
+    - 通过安全基线、MDM 或组策略强制启用对应防护，并监控被关闭或回退的情况。
   tags: windows,defender,windows-audit
 
 self-contained: true

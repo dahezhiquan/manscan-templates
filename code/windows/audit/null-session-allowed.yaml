@@ -5,11 +5,11 @@ info:
   author: princechaddha
   severity: high
   description: |
-    该模板检查 NullSessionPipes 等配置是否允许空会话。空会话会向未认证访问者暴露命名管道或资源。
+    空会话会向未认证访问者暴露命名管道或资源。对应基线项为“NullSessionPipes 等配置是否允许空会话”；模板读取注册表 `HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters` 的 `NullSessionPipes` 值，结合命中值判断策略是否不符合基线。
   impact: |
-    攻击者可未认证枚举系统信息并辅助后续攻击。
+    - 攻击者可未认证枚举系统信息并辅助后续攻击。
   remediation: |
-    清理 NullSessionPipes 配置，禁用空会话访问并启用匿名访问限制。
+    - 清理 NullSessionPipes 配置，禁用空会话访问并启用匿名访问限制。
   tags: windows,null-session,code,windows-audit
 
 self-contained: true

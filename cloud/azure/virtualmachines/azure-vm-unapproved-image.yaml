@@ -3,15 +3,18 @@ info:
   name: Azure VM 未Using Approved Image（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure VM 使用经过批准的镜像有助于统一补丁、恶意软件防护、基线和软件供应链治理；storageProfile.imageReference.id 为空时，本模板无法确认实例来自组织登记的共享镜像或版本。本模板枚举虚拟机并查询该字段，在返回 ImageId 为 null 时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 未经批准的自定义镜像可能包含过期组件、后门、残留凭据或不符合组织配置的安全设置。
+    - 镜像来源不可追溯会削弱补丁响应、漏洞排查、取证和实例重建的一致性。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 使用 Azure Compute Gallery 或经安全评审的 Marketplace 镜像部署，并记录镜像版本、来源和批准状态。
+    - 对现有实例执行镜像内容和软件清单审查，完成迁移或重建前轮换残留凭据并纳入镜像发布流水线。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/overview
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

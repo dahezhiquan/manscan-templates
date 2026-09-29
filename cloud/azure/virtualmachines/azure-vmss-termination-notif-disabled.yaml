@@ -3,15 +3,18 @@ info:
   name: Azure VMSS Instance Termination 通知s未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: VMSS termination notification 通过 Scheduled Events 在实例被删除、重启或重新部署前通知工作负载；terminateNotificationProfile.enable 为 null 时，本模板无法确认该通知已启用。本模板枚举规模集并查询该字段，在返回 null 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 实例被平台回收或更新时，应用可能来不及刷新状态、持久化数据和转移任务，造成请求失败或数据处理不完整。
+    - 无法提前记录实例终止事件会削弱故障排查、业务连续性和安全事件时间线分析。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为需要优雅退出的 VMSS 启用 terminate notification profile，设置合理的通知超时并让应用轮询 Scheduled Events。
+    - 将终止事件接入日志和告警，验证应用能完成连接摘除、状态持久化和任务转移，不要把通知当作数据备份替代品。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-terminate-notification
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

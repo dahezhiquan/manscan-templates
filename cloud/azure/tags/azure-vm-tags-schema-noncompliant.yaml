@@ -3,15 +3,18 @@ info:
   name: Azure VM Tags Schema Non-compliant（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Azure tags 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Azure 资源标签承载业务归属、环境、数据分类和成本治理信息；虚拟机缺少约定的 Name 标签或标签结构不符合组织规范时，会削弱资产盘点、责任追踪和策略筛选能力。本模板枚举虚拟机并查询资源标签，在标签结果为空或不包含 Name 时报告不符合当前检查条件。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 无法准确识别资源归属和环境时，安全告警、漏洞修复和应急隔离可能被延误或分派错误。
+    - 标签缺失还会影响成本分摊、备份策略、数据治理和基于标签的自动化访问控制。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 按组织标签架构为虚拟机补充 Name 及环境、业务、负责人和数据分类等必需标签，统一键名和值格式。
+    - 在资源部署流水线和 Azure Policy 中强制标签继承或拒绝缺失标签的资源，并定期清理失效标签。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/tagging
+  metadata:
+    vendor: microsoft
+    product: azure-resource-tags
   tags: cloud,devops,azure,microsoft,azure-vm,azure-cloud-config
 
 flow: |

@@ -3,15 +3,18 @@ info:
   name: Azure VM Managed Identity 未Assigned（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure VM 的 Managed Identity 可让应用使用短期 Entra 令牌访问 Key Vault、Storage 等服务，避免在代码或磁盘中保存长期凭据。本模板枚举虚拟机并查询 identity，在 IdentityConfig 返回 null 时报告未配置托管身份。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 应用可能退回使用账户密钥、连接字符串或服务主体密码，凭据泄露后难以及时撤销并可能影响多个资源。
+    - 缺少工作负载身份还会削弱按资源隔离权限、审计调用来源和自动轮换凭据的能力。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 按应用依赖配置系统分配或用户分配的 Managed Identity，并仅授予目标资源所需的最小 RBAC 权限。
+    - 迁移应用使用 Entra 令牌后删除旧密钥和连接字符串，审计身份令牌访问并设置权限定期评审。
   reference:
     - https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,vm,azure-cloud-config
 
 flow: |

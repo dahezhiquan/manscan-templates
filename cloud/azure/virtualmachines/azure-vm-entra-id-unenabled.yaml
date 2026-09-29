@@ -3,15 +3,18 @@ info:
   name: Azure VM Microsoft Entra ID Authentication未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VM 安装 Microsoft Entra ID 登录扩展后，可使用 Entra 身份、条件访问和集中审计替代本地长期凭据。本模板枚举虚拟机并查询扩展名称，在匹配 AADLoginForWindows 或 AADLoginForLinux 时报告已启用该扩展；命中结果应结合模板语义复核登录配置和实际平台支持情况。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 若未使用 Entra 登录，管理员可能依赖本地账号和 SSH 密钥，离职、轮换和集中撤销更难管理。
+    - 本地凭据泄露后，攻击者可直接登录主机并利用主机身份访问其他 Azure 资源。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在支持的 Windows 或 Linux VM 上安装正确的 Entra 登录扩展，并为登录主体授予最小的 VM 登录角色。
+    - 配置条件访问、MFA、PIM 和登录审计，禁用不必要的本地管理员、密码登录和长期共享凭据。
   reference:
     - https://docs.microsoft.com/en-us/azure/active-directory/develop/
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,entra-id,azure-cloud-config
 
 flow: |

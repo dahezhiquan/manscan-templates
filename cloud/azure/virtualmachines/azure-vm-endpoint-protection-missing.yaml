@@ -3,15 +3,18 @@ info:
   name: Azure VM Endpoint 保护 未Installed（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VM 若未安装受支持的端点保护扩展，主机可能缺少恶意软件检测、实时防护和主机入侵告警。本模板枚举虚拟机并查询扩展名称，在存在扩展列表但未发现 EndpointSecurity、TrendMicroDSA、Antimalware、EndpointProtection、SCWPAgent、PortalProtectExtension 或 FileSecurity 等名称时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 恶意程序、凭据窃取和持久化行为可能在主机上运行而未被及时发现，攻击者可进一步横向移动。
+    - 缺少端点遥测会削弱事件调查、隔离和恢复能力，尤其影响承载敏感业务的虚拟机。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据操作系统和组织标准安装并启用 Microsoft Defender for Endpoint 或批准的第三方端点保护扩展。
+    - 验证扩展 provisioning 状态、策略下发、签名更新和告警上报，限制扩展管理权限并纳入持续监控。
   reference:
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-intro
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,endpoint-protection,azure-cloud-config
 
 flow: |

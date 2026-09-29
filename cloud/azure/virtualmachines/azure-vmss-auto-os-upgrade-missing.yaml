@@ -3,15 +3,18 @@ info:
   name: Azure VMSS Automatic OS Upgrade未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VMSS Automatic OS Image Upgrade 可在经过验证的情况下滚动更新实例操作系统镜像；upgradePolicy.automaticOsUpgradePolicy.enableAutomaticOsUpgrade 为 null 时，本模板无法确认自动升级已启用。本模板枚举规模集并查询该字段，在返回 AutomaticOsUpgrades 为 null 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 安全补丁和镜像修复可能长期滞后，已知操作系统漏洞被利用后会影响多个规模集实例。
+    - 手工更新容易出现实例版本漂移、维护窗口遗漏和不一致回滚，延长漏洞暴露时间。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对支持的 VMSS 启用 Automatic OS Image Upgrade，配置健康探测、滚动升级策略和失败回滚验证。
+    - 对不适合自动升级的工作负载记录例外，建立补丁 SLA、镜像版本盘点和手工升级审计。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

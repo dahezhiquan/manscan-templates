@@ -3,15 +3,18 @@ info:
   name: Azure VM JIT 即时 访问未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Just-in-Time VM access 通过按需、限时开放管理端口减少 SSH 和 RDP 的持续暴露；没有匹配的 JIT 策略时，管理端口可能长期暴露在网络边界。本模板枚举虚拟机并查询 JIT policy 关联的虚拟机 ID，在返回空数组 [] 时报告未发现 JIT 保护关联。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 持续开放的 SSH、RDP 或其他管理端口容易被扫描、暴力破解和漏洞利用，凭据泄露后可能导致主机接管。
+    - 主机被攻破后，攻击者可利用实例身份、网络连通性和本地凭据横向访问云内资源。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为需要远程管理的 VM 配置 Defender for Cloud Just-in-Time policy，限制允许端口、来源 IP、最长开放时间和审批主体。
+    - 同时通过 NSG、跳板机、Entra 登录和 MFA 限制管理访问，定期审计 JIT 策略和临时开放记录。
   reference:
     - https://docs.microsoft.com/en-us/azure/security-center/security-center-just-in-time
+  metadata:
+    vendor: microsoft
+    product: defender-for-cloud
   tags: cloud,devops,azure,microsoft,security-center,azure-cloud-config
 
 flow: |

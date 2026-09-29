@@ -3,15 +3,18 @@ info:
   name: Azure VM Disk Volumes BYOK 加密未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VM 磁盘使用客户管理密钥时，组织可以控制密钥的轮换、撤销和访问审批；缺少 keyEncryptionKey.keyUrl 时，模板无法确认磁盘采用 BYOK。本模板枚举虚拟机，查询磁盘加密设置中的 keyUrl，并在命令错误输出包含 Azure Disk Encryption is not enabled 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 对受监管或高敏感数据，组织可能无法独立控制静态加密所依赖的密钥生命周期，导致治理和审计证据不足。
+    - 密钥撤销、租户隔离和离职交接受平台托管策略约束，增加数据访问边界失控的风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在 Key Vault 或 Managed HSM 中准备客户管理密钥，配置虚拟机加密所需的受管身份和最小权限。
+    - 先在非生产实例验证密钥轮换、不可用恢复、备份和扩容流程，再为目标磁盘启用 BYOK 并持续审计密钥访问。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-customer-managed-keys
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

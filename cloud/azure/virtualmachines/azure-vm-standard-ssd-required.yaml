@@ -3,15 +3,18 @@ info:
   name: Azure VM Premium SSD 未Required（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure Premium SSD 提供更高的 IOPS、吞吐和可预测性能，适合关键业务虚拟机；本模板枚举 VM，查询操作系统盘和数据盘的 managedDisk.storageAccountType，并在结果包含 Premium_LRS 时报告未满足模板设定的 Premium SSD 检查条件。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 磁盘性能不足可能造成数据库延迟、应用超时和批处理积压，进一步影响业务可用性。
+    - 在高峰期通过临时扩容或未规划的迁移补救，可能增加变更风险和数据恢复压力。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 结合磁盘 IOPS、吞吐、延迟和业务等级评估是否需要 Premium SSD，确认 VM 大小支持目标磁盘类型后迁移或更换磁盘。
+    - 变更前验证快照、备份、加密、缓存和高可用配置，避免仅按模板命中结果盲目升级存储规格。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

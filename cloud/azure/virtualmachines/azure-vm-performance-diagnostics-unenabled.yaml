@@ -3,15 +3,18 @@ info:
   name: Azure VM Performance Diagnostics Feature未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Performance Diagnostics 扩展可采集虚拟机 CPU、内存、磁盘和网络等性能数据，帮助识别异常负载和可用性问题。本模板枚举虚拟机及扩展，匹配 AzurePerformanceDiagnosticsLinux 且排除 provisioning 状态 Succeeded，用于发现扩展缺失或未成功运行的实例。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 主机性能异常、资源耗尽和潜在拒绝服务迹象可能无法及时发现，影响故障定位和恢复速度。
+    - 诊断扩展未成功运行会造成监控盲区，使异常进程、磁盘耗尽或网络拥塞更难与安全事件关联。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 在支持的 Linux VM 上安装并修复 Azure Performance Diagnostics 扩展，确认 provisioning 状态为 Succeeded。
+    - 将性能数据发送到受控监控工作区，限制扩展和日志读取权限，并结合异常 CPU、磁盘和网络指标配置告警。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/performance-diagnostics
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

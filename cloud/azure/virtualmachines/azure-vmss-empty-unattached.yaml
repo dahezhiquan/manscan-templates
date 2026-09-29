@@ -3,15 +3,18 @@ info:
   name: Azure Virtual Machine Scale Sets Empty and Unattached（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure VMSS 没有任何实例时，可能是已废弃、部署失败或仅保留配置的空规模集。本模板枚举规模集并执行 az vmss list-instances，在返回空数组 [] 时报告当前规模集无实例。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 遗留规模集可能保留网络接口、负载均衡、身份和高权限部署配置，扩大资产盘点和误操作风险。
+    - 若业务误以为空规模集仍提供保护，故障或攻击发生时可能没有可用实例承载流量。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 核对变更、发布和自动扩缩容记录，确认规模集是否仍有用途；无用途时删除规模集及关联网络、磁盘和身份资源。
+    - 仍需保留时修复部署或扩缩容策略，补充负责人、生命周期标签和空规模集告警。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

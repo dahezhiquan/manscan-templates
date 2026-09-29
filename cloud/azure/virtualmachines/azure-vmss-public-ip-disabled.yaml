@@ -3,15 +3,18 @@ info:
   name: Azure VMSS Public IP 未Assigned（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: VMSS 实例公共 IP 会使实例直接获得公网可达地址，扩大管理和应用入口；本模板枚举规模集并执行 az vmss list-instance-public-ips，在返回空数组 [] 时报告未发现实例公网 IP，属于针对模板命名的反向检查结果，需结合实际业务语义复核。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 若实例实际配置公网 IP，SSH、RDP、管理接口或应用端口可能被互联网扫描和利用，主机被接管后可横向访问云内资源。
+    - 即使没有公网 IP，错误依赖公共负载均衡或出站 NAT 也可能造成边界判断失真。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 对不需要直接公网访问的 VMSS 移除实例公共 IP，使用 Private Link、内部负载均衡、跳板机或受控出站方案。
+    - 对必须公开的服务仅通过 WAF、负载均衡、NSG、JIT 和最小端口规则暴露，并持续验证实际 IP 与入口清单。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-networking
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

@@ -3,15 +3,18 @@ info:
   name: Azure VM SSH Authentication Type 未Using Keys（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Linux Azure VM 的 disablePasswordAuthentication 为 false 时，SSH 仍允许口令认证，攻击者可通过撞库、暴力破解或泄露密码尝试登录。本模板枚举虚拟机并查询 osProfile.linuxConfiguration.disablePasswordAuthentication，在返回 false 时报告未强制使用密钥认证。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - SSH 口令被猜中或复用后，攻击者可直接获得主机 shell，窃取数据、植入持久化程序并利用实例身份横向访问云资源。
+    - 暴露在公网的 SSH 端口还会持续受到自动化扫描和密码喷洒，增加账号锁定和主机资源消耗。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 将 disablePasswordAuthentication 设置为 true，使用短期、可轮换的 SSH 密钥或 Microsoft Entra 登录。
+    - 通过 NSG、JIT、跳板机和来源限制收敛 SSH 暴露面，删除共享密码并审计现有本地账户和密钥。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,vm,azure-cloud-config
 
 flow: |

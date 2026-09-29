@@ -3,15 +3,18 @@ info:
   name: Azure VMSS Load Balancer Unassociated（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: VMSS 网络配置中的 loadBalancerBackendAddressPools 用于把实例加入负载均衡后端；查询结果为空时，模板未发现规模集网卡与负载均衡后端池的关联。本模板枚举规模集并在返回 [] 时报告未关联 Load Balancer。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 依赖负载均衡入口的实例可能无法接收业务流量，造成服务中断或扩缩容后实例不可用。
+    - 网络路径与安全探测未关联时，团队可能通过临时公网入口暴露实例，扩大攻击面。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 核对规模集是否应提供负载均衡服务；需要时将网卡 IP 配置加入正确的后端池并配置健康探测和 NSG。
+    - 无需入口的内部规模集应明确记录用途，禁止为解决流量问题临时分配不受控的公网 IP。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-load-balancer
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

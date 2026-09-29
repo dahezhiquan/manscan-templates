@@ -3,15 +3,18 @@ info:
   name: Azure Budget Alerts 未Configured（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure subscriptions 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Cost Management 预算告警用于在实际或预测支出达到阈值时通知责任人；未配置预算时，异常资源消耗、密钥滥用或加密货币挖矿可能持续产生费用而未被及时发现。本模板执行 az consumption budget list，在返回空数组 [] 时报告当前订阅未发现预算。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 被盗凭据、误配置资源或恶意部署造成的异常费用可能持续累积，直到账单周期结束才被发现。
+    - 成本失控还可能导致预算耗尽、关键服务被迫停用，并增加云资源滥用事件的处置难度。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为订阅和关键资源组创建按实际及预测成本触发的预算，配置多个阈值和负责人的 Action Group 通知。
+    - 将预算告警与成本异常检测、资源创建审计和凭据泄露响应流程联动，并定期确认通知渠道有效。
   reference:
     - https://docs.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets
+  metadata:
+    vendor: microsoft
+    product: azure-cost-management
   tags: cloud,devops,azure,microsoft,budget,azure-cloud-config
 
 self-contained: true

@@ -3,15 +3,18 @@ info:
   name: Azure VMSS Health 监控未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VMSS Application Health 扩展为滚动升级和自动修复提供实例健康信号；缺少 ApplicationHealthLinux 或 healthRepairExtension 时，平台无法可靠判断实例是否可接收流量。本模板枚举规模集并查询扩展名称，在扩展列表存在但未匹配这些名称时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 不健康实例可能继续接收请求，造成间歇性故障、数据处理错误或服务可用性下降。
+    - 自动升级和自动修复缺少可靠健康门槛时，可能扩大故障范围或将异常版本快速传播到实例池。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 安装并配置 Application Health 扩展或适用的健康修复扩展，提供不依赖外部脆弱链路的健康探测端点。
+    - 将健康状态接入滚动升级、自动修复和负载均衡策略，并监控扩展 provisioning 状态与探测失败原因。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-health-extension
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machine-scale-sets
   tags: cloud,devops,azure,microsoft,vmss,azure-cloud-config
 
 flow: |

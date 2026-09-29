@@ -3,15 +3,18 @@ info:
   name: Azure Disk 加密 未Enabled 的Unattached Disk Volumes（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: 未挂载的 Azure Managed Disk 仍可能保留历史业务数据、凭据和备份内容；其 encryptionSettingsCollection 为 null 时，模板无法确认旧版磁盘加密配置。本模板枚举 diskState 为 Unattached 的磁盘，查询 encryptionSettingsCollection，并在返回 null 时报告未发现该加密配置。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 获得磁盘读取、快照或导出权限的攻击者可能离线读取残留数据，造成敏感信息泄露。
+    - 长期闲置磁盘还会扩大未盘点资产和数据保留范围，增加误共享、误删除及合规处置风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 先确认磁盘是否仍需保留；不需要时按数据保留要求安全删除，并同步清理相关快照和备份。
+    - 需要保留时启用适用的服务器端加密或客户管理密钥，限制磁盘和快照权限并建立闲置磁盘定期复核。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-cli
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,disk-encryption,azure-cloud-config
 
 flow: |

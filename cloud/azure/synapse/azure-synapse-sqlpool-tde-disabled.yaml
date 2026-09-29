@@ -3,15 +3,18 @@ info:
   name: Azure Synapse Analytics SQL Pool Transparent Data 加密未启用（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure synapse 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Synapse dedicated SQL pool 的透明数据加密可保护持久化数据、临时文件和备份；状态为 Disabled 时，静态数据缺少服务端加密保护。本模板枚举 Synapse workspace 和 SQL pool，查询当前透明数据加密状态，并在输出包含 "Disabled" 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 获取存储介质、备份或快照的攻击者可能直接分析未加密的数据，造成业务数据和个人信息泄露。
+    - 未启用 TDE 还可能导致数据仓库不满足组织的静态数据保护和合规要求。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为每个受支持的 dedicated SQL pool 启用透明数据加密，并确认状态变为 Enabled。
+    - 结合数据分类评估客户管理密钥、密钥轮换和 Key Vault 访问控制要求，启用后持续监控加密状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is
+  metadata:
+    vendor: microsoft
+    product: azure-synapse-analytics
   tags: cloud,devops,azure,microsoft,synapse,azure-cloud-config
 
 flow: |

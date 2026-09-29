@@ -3,15 +3,18 @@ info:
   name: Azure VM Web-Tier Disk Volumes 未Encrypted（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Web Tier VM 的磁盘可能保存网站代码、配置、访问日志和本地凭据；未启用磁盘加密时，获得磁盘介质、快照或备份访问权的主体可能离线读取数据。本模板筛选 web_tier_tag 为约定值的虚拟机，执行磁盘加密查询，并在标准错误中匹配 Azure Disk Encryption is not enabled 时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 网站源码、连接字符串、会话材料和日志泄露后，攻击者可能获取应用凭据并进一步进入后端或云资源。
+    - 未加密磁盘还会增加快照共享、备份复制和主机退役过程中的数据泄露风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 Web Tier VM 的操作系统和数据磁盘启用 Azure Disk Encryption 或适用的服务器端加密。
+    - 审计快照、备份、镜像和 Storage 访问权限，完成加密后轮换可能已暴露的应用密钥并持续验证状态。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/linux/encrypt-disks
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,azure-vm,azure-cloud-config
 
 flow: |

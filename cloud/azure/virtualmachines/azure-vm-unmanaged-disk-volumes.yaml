@@ -3,15 +3,18 @@ info:
   name: Azure VM Unmanaged Disk Volumes Detected（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Azure Managed Disks 提供平台化的磁盘生命周期、加密、快照和访问治理；VM 的 osDisk 或 dataDisks 缺少 managedDisk.id 时，仍可能使用非托管 VHD。本模板查询磁盘 ID，在匹配 null 或空数组时报告未使用托管磁盘。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 非托管 VHD 依赖 Storage 账户 ACL 和 Blob 访问控制，若账户或容器暴露，磁盘数据可能被下载或篡改。
+    - 旧式 VHD 的加密、备份、快照、监控和生命周期治理较分散，增加数据泄露、恢复失败和遗留资源风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 评估业务兼容性后将非托管 VHD 迁移到 Managed Disks，并为目标磁盘启用适用的加密和备份策略。
+    - 迁移期间限制源 Storage 账户网络和访问权限，完成校验后删除不再需要的 VHD、快照和访问密钥。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

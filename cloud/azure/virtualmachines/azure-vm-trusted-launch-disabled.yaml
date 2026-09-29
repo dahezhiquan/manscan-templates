@@ -3,15 +3,18 @@ info:
   name: Azure VM Trusted Launch未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure Trusted Launch 通过安全启动、虚拟 TPM 和来宾证明增强 VM 启动链保护；securityProfile 为空或 secureBootEnabled 为 false 时，模板无法确认这些防护已启用。本模板枚举虚拟机并查询 securityProfile，在匹配相应 JSON 特征时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 启动盘或引导组件被篡改时，攻击者可能在操作系统安全控制之前加载持久化代码，窃取凭据并隐藏恶意行为。
+    - 缺少启动完整性证明会削弱对高敏感主机、密钥服务和合规环境的信任验证能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 对支持的 VM 大小、镜像和区域启用 Trusted Launch、Secure Boot 和 vTPM，并在变更前确认驱动兼容性。
+    - 将启动完整性、来宾证明和密钥访问纳入监控；不支持迁移的旧实例应记录例外并加强磁盘、端点和登录防护。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/trusted-launch
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machine,azure-cloud-config
 
 flow: |

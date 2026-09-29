@@ -3,15 +3,18 @@ info:
   name: Azure VM 客户机级诊断未启用（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Azure virtualmachines 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Azure VM 客户机级诊断可采集操作系统内的性能、事件和应用遥测；缺少 guest diagnostics 配置时，主机内部异常和安全事件可能无法集中分析。本模板枚举虚拟机，查询 resources.settings.ladCfg.diagnosticMonitorConfiguration，并在返回 null 时报告未发现客户机诊断配置。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 恶意登录、异常进程、资源耗尽和应用故障缺少遥测时，攻击者驻留时间可能延长，事件调查证据也会不足。
+    - 诊断缺失会降低对横向移动、数据外传和主机配置漂移的发现能力。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 根据操作系统和监控架构启用 Azure Monitor Agent 或适用的客户机诊断配置，选择必要的日志和指标类别。
+    - 将诊断数据发送到受控 Log Analytics 工作区，配置最小权限、保留期、脱敏和针对异常主机行为的告警。
   reference:
     - https://docs.microsoft.com/en-us/azure/virtual-machines/windows/diagnostics
+  metadata:
+    vendor: microsoft
+    product: azure-virtual-machines
   tags: cloud,devops,azure,microsoft,virtual-machines,azure-cloud-config
 
 flow: |

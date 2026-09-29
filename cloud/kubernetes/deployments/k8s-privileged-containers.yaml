@@ -4,17 +4,19 @@ info:
   name: Privileged Containers Found 中的Deployments（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 Kubernetes deployments 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Deployment 中运行 privileged 容器会授予容器接近宿主机 root 的能力，显著削弱容器隔离边界。本模板枚举 Deployment 的容器安全上下文，发现 securityContext.privileged 为 true 时报告。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 容器逃逸、访问宿主机设备或修改内核相关配置的风险显著上升。
+    - 一旦应用被攻陷，攻击者可能进一步控制节点并影响同节点其他工作负载。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 移除 privileged 配置，按最小权限拆分所需能力、设备和挂载。
+    - 使用 Pod Security Admission、OPA/Gatekeeper 或 Kyverno 阻止非例外工作负载使用 privileged。
   reference:
     - https://kubernetes.io/docs/concepts/policy/pod-security-policy/#privileged
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,deployments,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

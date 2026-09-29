@@ -4,16 +4,19 @@ info:
   name: ElastiCache Redis Multi-AZ -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS ElastiCache 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: ElastiCache Redis/Valkey Multi-AZ 可在可用区故障时降低缓存服务中断风险，是生产缓存高可用的重要配置。本模板枚举指定区域的 replication group，并在 MultiAZ 字段返回 disabled 时报告未启用 Multi-AZ。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 单个可用区故障或主节点异常时，缓存服务可能出现更长时间不可用。
+    - 依赖缓存承载会话、限流、队列或热点数据的业务可能出现级联故障。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为生产 Redis/Valkey replication group 启用 Multi-AZ，并确保副本分布在不同可用区。
+    - 定期演练故障转移，确认客户端连接、DNS 刷新和重试策略能够适配主从切换。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/ElastiCache/elasticache-multi-az.html
     - https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html
+  metadata:
+    vendor: amazon
+    product: elasticache
   tags: cloud,devops,aws,amazon,elasticache,aws-cloud-config
 
 variables:

@@ -4,16 +4,19 @@ info:
   name: ElastiCache Automatic Backups -未启用（云安全）
   author: DhiyaneshDK
   severity: medium
-  description: 该规则用于检查 AWS ElastiCache 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: Amazon ElastiCache 自动备份可按日创建缓存备份，在故障或误操作后用于恢复到新的缓存实例。未启用自动备份时，Redis/Valkey 复制组缺少可用恢复点。本模板枚举指定区域的 ElastiCache replication group，并在 SnapshotRetentionLimit 为 0 时报告自动备份未启用。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 缓存节点故障、误删除或数据损坏时，无法从近期快照快速恢复业务数据。
+    - 需要保留会话、令牌、队列或业务缓存状态的场景中，恢复时间和数据丢失范围会扩大。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 为关键 ElastiCache replication group 启用自动备份，并设置符合业务 RPO 的 SnapshotRetentionLimit。
+    - 定期验证备份可恢复性，并将备份保留策略纳入变更和合规审计。
   reference:
     - https://www.trendmicro.com/cloudoneconformity-staging/knowledge-base/aws/ElastiCache/enable-automatic-backups.html
     - https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-automatic.html
+  metadata:
+    vendor: amazon
+    product: elasticache
   tags: cloud,devops,aws,amazon,elasticache,aws-cloud-config
 
 variables:

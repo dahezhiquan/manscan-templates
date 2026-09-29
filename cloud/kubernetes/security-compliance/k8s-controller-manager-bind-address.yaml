@@ -4,18 +4,20 @@ info:
   name: Ensure kube-controller-manager --bind-address is set to localhost（云安全）
   author: songyaeji
   severity: high
-  description: 该规则用于检查 Kubernetes security-compliance 相关安全控制、保护能力或合规配置是否处于未启用、缺失或未正确配置状态，以降低持续暴露风险并提升整体云安全基线。
+  description: kube-controller-manager 未绑定到 localhost 可能使其健康检查或指标接口暴露到非本机网络。本模板读取 kube-controller-manager 启动命令，发现未设置 --bind-address=127.0.0.1 或 --bind-address=::1 时报告。
   impact: |
-    - 关键安全控制缺失会降低防护深度，使风险长期处于不可见或不可控状态。
-    - 这类配置问题通常不会立即触发故障，但会显著增加后续入侵、横向移动或合规违规的概率。
+    - 控制面组件接口可能被非预期来源访问，泄露指标、版本或运行状态信息。
+    - 暴露的组件接口增加控制面攻击面和横向探测风险。
   remediation: |
-    - 按厂商最佳实践启用缺失的安全控制、保护功能或基线配置。
-    - 将该类配置纳入持续巡检与自动化合规检查，避免后续资源再次以不安全默认值部署。
+    - 将 kube-controller-manager 的 --bind-address 设置为 127.0.0.1 或 ::1。
+    - 如果需要远程监控，通过受控代理、认证和网络策略暴露指标。
   reference:
     - https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/
     - Cloud Vulnerability Assessment Guide(2024) by KISA
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,kube-controller-manager,bind-address,hardening,k8s-cluster-security
-
 variables:
   component: "kube-controller-manager"
 

@@ -3,11 +3,19 @@ info:
   name: Kubernetes Cluster 校验（云安全）
   author: princechaddha
   severity: info
-  description: 该规则用于检查 Kubernetes kubernetes-code-env.yaml 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 本模板用于确认 kubectl 已能连接 Kubernetes API Server，是执行后续集群配置检测的前置环境校验。模板运行 kubectl version，并通过 Server Version 输出提取 API Server 版本，命中后说明当前上下文可访问集群。
+  impact: |
+    - 若 kubectl 未连接到目标集群，后续依赖 API 查询的 Kubernetes 检测将无法覆盖真实资源。
+    - 使用错误 kubeconfig 或上下文会导致扫描结果对应到错误集群。
+  remediation: |
+    - 配置正确的 kubeconfig 和 kubectl context，并确认当前身份具备只读审计所需权限。
+    - 扫描前核对集群名称、API Server 地址和 Server Version，避免误扫或漏扫。
   reference:
     - https://kubernetes.io/
+  metadata:
+    vendor: kubernetes
+    product: kubectl
   tags: cloud,devops,kubernetes,k8s-cluster-security
-
 self-contained: true
 code:
   - engine:

@@ -4,17 +4,19 @@ info:
   name: Ensure etcd-cafile argument set（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: etcd 未设置可信 CA 文件会削弱客户端或对端证书校验，增加中间人攻击和未授权连接风险。本模板读取 kube-system 中 etcd Pod 启动命令，发现包含 etcd 但缺少 etcd-cafile 参数时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - etcd 与客户端之间的 TLS 信任链不完整，敏感集群状态数据可能被窃听或篡改。
+    - 攻击者可能利用弱校验连接 etcd，进一步读取或修改集群关键数据。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 etcd 配置 etcd-cafile，并确保客户端证书由可信 CA 签发。
+    - 定期轮换 CA 和证书，限制 etcd 监听地址与网络访问来源。
   reference:
     - https://etcd.io/docs/v3.5/op-guide/security/
+  metadata:
+    vendor: kubernetes
+    product: etcd
   tags: cloud,devops,kubernetes,devsecops,etcd,k8s-cluster-security
-
 variables:
   argument: "etcd-cafile"
 

@@ -4,17 +4,19 @@ info:
   name: Ensure audit-log-path set（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes security-compliance 是否启用了日志记录、审计、监控或告警能力，以确保能够及时发现异常行为并满足审计与取证要求。
+  description: kube-apiserver 未设置 audit-log-path 会导致 API 审计日志无法按文件路径输出，影响对高危操作的追踪和取证。本模板读取 kube-system 中 kube-apiserver Pod 启动命令，发现包含 kube-apiserver 但缺少 audit-log-path 参数时报告。
   impact: |
-    - 缺少日志、审计或告警能力会削弱对异常活动的发现、响应与取证能力。
-    - 安全事件可能因此长时间不被察觉，扩大影响范围并增加溯源难度。
+    - 创建、删除、授权变更等 API 操作缺少完整审计记录，安全事件难以及时发现和还原。
+    - 合规审计无法证明关键控制面操作的可追溯性。
   remediation: |
-    - 启用必要的日志、审计、监控和告警能力，并确保日志输出到集中化、可审计的位置。
-    - 为高风险事件设置实时通知与响应流程，避免关键安全事件长期无感知。
+    - 为 kube-apiserver 配置 audit-log-path，并配套 audit-policy-file、日志轮转和集中采集。
+    - 定期验证审计日志包含关键资源和高风险动词。
   reference:
     - https://kubernetes.io/docs/tasks/debug-application-cluster/audit/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,api-server,k8s-cluster-security
-
 variables:
   argument: "audit-log-path"
 

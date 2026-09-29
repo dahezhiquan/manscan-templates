@@ -4,17 +4,19 @@ info:
   name: Set appropriate seccomp profile（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes deployments 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: seccomp 可限制容器可调用的 Linux 系统调用，降低内核攻击面。本模板枚举 Deployment 容器安全上下文，命中未使用 RuntimeDefault 或 DockerDefault seccompProfile 的容器。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 容器可访问更宽的系统调用集合，增加内核漏洞利用和逃逸风险。
+    - 缺少统一 seccomp 基线会导致不同工作负载隔离强度不一致。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 Pod 或容器设置 seccompProfile.type 为 RuntimeDefault，必要时使用经过验证的 Localhost 配置。
+    - 通过 Pod Security Admission 或策略引擎强制默认 seccomp 配置。
   reference:
     - https://kubernetes.io/docs/tutorials/clusters/seccomp/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,containers,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

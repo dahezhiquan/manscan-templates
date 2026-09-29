@@ -4,17 +4,19 @@ info:
   name: Image Tag should be fixed - not latest or blank（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Kubernetes deployments 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Deployment 使用 latest 或空镜像标签会让实际运行镜像随仓库状态变化，削弱供应链可追溯性和变更可控性。本模板枚举容器 image 字段，命中标签为空或为 latest 的 Deployment。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 相同配置在不同时间可能拉取不同镜像，导致不可预测变更和回滚困难。
+    - 被污染或误推的 latest 镜像可能快速影响生产工作负载。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 使用不可变版本标签或镜像 digest 固定部署内容。
+    - 在 CI/CD 中阻止 latest 或空标签进入生产，并保留镜像签名与漏洞扫描记录。
   reference:
     - https://kubernetes.io/docs/concepts/containers/images/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,deployments,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

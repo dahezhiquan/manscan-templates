@@ -4,17 +4,19 @@ info:
   name: Ensure kube-apiserver --anonymous-auth is explicitly disabled（云安全）
   author: songyaeji
   severity: high
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否存在公开暴露、未受限访问或匿名可访问等高风险配置，避免敏感数据、管理接口或网络服务直接暴露在公网。
+  description: kube-apiserver 未显式设置 --anonymous-auth=false 时，匿名请求处理行为可能不符合安全基线，增加未认证访问面。本模板多种方式读取 kube-apiserver 启动命令，发现缺少 --anonymous-auth=false 时报告。
   impact: |
-    - 公开暴露的资源可能被未授权访问、枚举、下载或恶意利用。
-    - 一旦涉及管理接口、对象存储或数据库服务，可能进一步导致数据泄露、权限滥用或业务中断。
+    - 匿名主体可能访问允许 system:anonymous 的 API 路径，造成信息泄露或被误授权利用。
+    - 错误 RBAC 绑定与匿名访问叠加时，可能扩大未认证操作能力。
   remediation: |
-    - 收敛公网暴露面，仅允许受信任网络、IP 范围或必要身份访问相关资源。
-    - 对对象存储、负载均衡、数据库或控制台接口启用更严格的访问控制与网络隔离策略。
+    - 在 kube-apiserver 启动参数中显式设置 --anonymous-auth=false。
+    - 审计 ClusterRoleBinding，避免向 system:anonymous 或 system:unauthenticated 授予不必要权限。
   reference:
     - https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s-cluster-security
-
 variables:
   argument: "--anonymous-auth=false"
 

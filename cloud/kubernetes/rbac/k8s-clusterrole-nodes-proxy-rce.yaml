@@ -4,17 +4,19 @@ info:
   name: ClusterRoles 使用高风险 nodes/proxy GET 权限（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检测 Kubernetes ClusterRole 是否授予 `nodes/proxy` 资源的 `GET` 权限。由于 Kubelet 在 WebSocket 握手阶段仅校验初始 GET 请求，这类权限可能被滥用以对容器执行命令，形成高危利用路径。
+  description: ClusterRole 授予 nodes/proxy 的 get 权限可能被滥用访问 Kubelet 代理接口；公开研究指出该权限在特定 WebSocket 握手路径下可形成对容器执行命令的高危利用链。本模板枚举 ClusterRole 规则，匹配核心 API 组中 resources 包含 nodes/proxy 或通配符且 verbs 包含 get 或通配符的角色。
   impact: |
-    - 拥有该权限且可访问 Kubelet 10250 端口的主体，可能在任意容器中执行命令。
-    - 这会绕过预期的 RBAC 控制边界，并削弱对相关高危操作的审计能力。
+    - 拥有该 ClusterRole 的主体可能通过 API Server 代理访问 Kubelet，在容器中执行命令。
+    - 该路径可能绕过预期审计和权限边界，导致节点与工作负载被进一步控制。
   remediation: |
-    - 除非确有必要，否则应从 ClusterRole 中移除 `nodes/proxy` 资源的 `GET` 权限。
-    - 限制对 Kubelet 10250 端口的网络访问，并结合 NetworkPolicy 等机制收敛访问路径。
+    - 从非必要 ClusterRole 中移除 nodes/proxy 的 get 权限和相关通配授权。
+    - 限制 Kubelet 10250 访问路径，审计 ClusterRoleBinding 并最小化绑定主体。
   reference:
     - https://grahamhelton.com/blog/nodes-proxy-rce
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,rbac,k8s-cluster-security
-
 flow: |
   code(1);
   for (let role of template.items) {

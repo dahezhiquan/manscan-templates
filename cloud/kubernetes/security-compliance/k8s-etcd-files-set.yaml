@@ -4,17 +4,19 @@ info:
   name: Ensure etcd cert and key set（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: etcd 未配置服务端证书和私钥会导致传输层身份认证不足，影响集群状态存储的机密性和完整性。本模板读取 etcd 启动命令，发现缺少 etcd-certfile 或 etcd-keyfile 时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 客户端与 etcd 通信可能缺少强 TLS 身份保护，增加凭据和集群数据泄露风险。
+    - 未加固的 etcd 接口一旦暴露，可能导致整个集群状态被读取或篡改。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为 etcd 配置 etcd-certfile 和 etcd-keyfile，并启用客户端证书认证。
+    - 保护证书私钥文件权限，限制 etcd 端口仅对控制面组件开放。
   reference:
     - https://etcd.io/docs/v3.4.0/op-guide/security/
+  metadata:
+    vendor: kubernetes
+    product: etcd
   tags: cloud,devops,kubernetes,devsecops,etcd,k8s-cluster-security
-
 variables:
   argument: "etcd-certfile or etcd-keyfile"
 

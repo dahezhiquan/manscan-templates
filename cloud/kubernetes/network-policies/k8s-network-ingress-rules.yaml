@@ -4,17 +4,19 @@ info:
   name: Define network ingress rules（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes network-policies 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: NetworkPolicy 缺少 ingress 规则时，策略无法明确限制进入 Pod 的来源和端口，容易形成过宽访问面。本模板枚举所有 NetworkPolicy，发现 spec.ingress 为空或缺失时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 未经授权的 Pod 或命名空间可能访问敏感服务，增加横向移动和服务枚举风险。
+    - 入站访问缺少显式边界会削弱零信任分段和合规证明能力。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 为敏感工作负载配置默认拒绝 ingress，并按来源 Pod、命名空间和端口最小放行。
+    - 结合应用拓扑和连接日志验证 NetworkPolicy 未阻断必要流量。
   reference:
     - https://kubernetes.io/docs/concepts/services-networking/network-policies/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,security,k8s-cluster-security
-
 flow: |
   code(1);
   for (let policy of template.items) {

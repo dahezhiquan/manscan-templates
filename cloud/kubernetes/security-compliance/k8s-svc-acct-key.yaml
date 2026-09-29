@@ -4,17 +4,19 @@ info:
   name: Ensure service-account-key-file set（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: kube-apiserver 缺少 service-account-key-file 会影响服务账号令牌签名验证，削弱令牌认证链路的可靠性。本模板读取 kube-apiserver 启动命令，发现缺少 service-account-key-file 参数时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - API Server 可能无法按预期验证服务账号令牌签名，导致工作负载身份认证异常或安全边界不清。
+    - 密钥管理不规范会增加令牌伪造、误信任或轮换困难风险。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 配置 service-account-key-file，并妥善保护和轮换服务账号签名密钥。
+    - 在高可用 API Server 节点间保持密钥配置一致。
   reference:
     - https://kubernetes.io/docs/admin/kube-apiserver/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,security,devsecops,api-server,k8s-cluster-security
-
 variables:
   argument: "service-account-key-file"
 

@@ -4,17 +4,19 @@ info:
   name: Host PID Namespace Sharing（云安全）
   author: princechaddha
   severity: critical
-  description: 该规则用于检查 Kubernetes pods 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Pod 启用 hostPID 会共享宿主机进程命名空间，使容器能够观察节点进程列表和部分进程信息。本模板枚举 Pod，并在 hostPID 为 true 时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 容器可能枚举宿主机进程、收集敏感运行信息或辅助权限提升攻击。
+    - 被攻陷容器可更容易定位节点关键进程和同节点工作负载。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 除受控诊断组件外禁用 hostPID。
+    - 通过 Pod Security Admission、OPA/Gatekeeper 或 Kyverno 阻止普通工作负载使用 hostPID。
   reference:
     - https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,pods,k8s-cluster-security
-
 flow: |
   code(1);
   for (let pod of template.items) {

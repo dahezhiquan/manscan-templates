@@ -4,17 +4,19 @@ info:
   name: Host ports should not be used（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes deployments 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Deployment 使用 hostPort 会把容器端口直接绑定到节点网络命名空间，绕过部分 Kubernetes Service 抽象和端口调度隔离。本模板枚举 Deployment 容器端口配置，发现任意 container.ports.hostPort 即报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 同一节点端口可能被固定占用，影响调度弹性并增加端口冲突。
+    - 服务直接暴露在节点网络上，可能绕过预期的 Service、Ingress 或 NetworkPolicy 控制。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 优先使用 Service、Ingress、Gateway 或 NodePort/LoadBalancer 等受控暴露方式替代 hostPort。
+    - 确需 hostPort 时限制调度节点、端口范围和来源访问，并记录业务例外。
   reference:
     - https://kubernetes.io/docs/concepts/services-networking/service/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,deployments,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

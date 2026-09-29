@@ -4,17 +4,19 @@ info:
   name: 检查s if service-account-issuer is correctly configured（云安全）
   author: princechaddha
   severity: medium
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: kube-apiserver 缺少 service-account-issuer 会影响 Bound ServiceAccount Token 的发行者标识和令牌验证一致性。本模板读取 kube-apiserver 启动命令，发现缺少 service-account-issuer 参数时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 服务账号令牌的受众和发行者校验可能不完整，影响工作负载身份信任边界。
+    - 外部系统验证 Kubernetes 服务账号令牌时可能出现不一致或弱校验。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 在 kube-apiserver 中配置稳定且唯一的 service-account-issuer。
+    - 同步配置 service-account-signing-key-file 和 API audiences，验证新旧令牌兼容性。
   reference:
     - https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,api-server,k8s-cluster-security
-
 variables:
   argument: "service-account-issuer"
 

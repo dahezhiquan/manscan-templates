@@ -4,17 +4,19 @@ info:
   name: Minimize container added capabilities（云安全）
   author: princechaddha
   severity: high
-  description: 该规则用于检查 Kubernetes deployments 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: Deployment 为容器添加额外 Linux capabilities 会扩大容器进程权限边界，可能突破默认隔离假设。本模板枚举 Deployment，发现 securityContext.capabilities.add 非空时报告。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 额外能力可能允许网络配置、挂载、原始套接字或其他高危操作，增加逃逸和横向移动风险。
+    - 被攻陷容器可利用多余 capability 扩大对节点或网络的影响。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 移除不必要的 capabilities.add，并优先显式 drop ALL 后按需添加最小能力。
+    - 用策略引擎限制高危 capability，并对例外工作负载建立审批记录。
   reference:
     - https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,deployments,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

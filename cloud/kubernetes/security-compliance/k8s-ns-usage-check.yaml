@@ -4,17 +4,19 @@ info:
   name: Ensure namespaces are utilized（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Kubernetes security-compliance 相关资源是否满足推荐的云安全与合规配置要求，命中通常表示当前配置仍存在可改进的风险项。
+  description: 未合理使用 Kubernetes 命名空间会削弱资源、权限、网络和配额的隔离能力。本模板读取 namespaces 列表，并根据输出内容判断集群是否未体现命名空间使用。
   impact: |
-    - 当前配置偏离推荐的云安全基线，可能增加攻击面、审计缺口或运维失误带来的风险。
-    - 具体影响取决于受影响资源的重要性、暴露范围以及周边安全控制是否到位。
+    - 不同环境或团队资源混杂，RBAC、配额和 NetworkPolicy 难以按边界实施。
+    - 误操作和过宽权限可能影响更多工作负载，增加审计复杂度。
   remediation: |
-    - 参考云厂商安全基线和官方文档修正当前配置偏差。
-    - 建议结合资源标签、自动化检测与周期性审计，持续跟踪该类风险项的整改状态。
+    - 按业务、环境或团队划分命名空间，并配置 ResourceQuota、LimitRange、RBAC 和 NetworkPolicy。
+    - 避免将生产工作负载集中在 default 命名空间。
   reference:
     - https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,namespaces,k8s-cluster-security
-
 variables:
   argument: "namespaces"
 

@@ -4,17 +4,19 @@ info:
   name: Image Pull 策略 set to Always（云安全）
   author: princechaddha
   severity: low
-  description: 该规则用于检查 Kubernetes deployments 相关身份、权限或口令安全策略是否符合最小权限和强认证要求，避免因过度授权或弱认证导致资源被滥用。
+  description: Deployment 未统一设置 imagePullPolicy 为 Always 时，节点可能复用本地缓存镜像，导致镜像更新、回滚和安全修复无法按预期生效。本模板枚举 Deployment，检查所有容器是否均配置 imagePullPolicy 为 Always。
   impact: |
-    - 过度授权、弱口令策略或缺少 MFA 会显著提升账户被滥用的风险。
-    - 一旦身份被攻破，攻击者可能借助合法权限直接访问或控制云资源。
+    - 节点可能继续运行旧镜像，延迟漏洞修复或配置变更生效。
+    - 不同节点缓存状态不一致时，同一 Deployment 可能运行不同镜像内容，影响可追溯性。
   remediation: |
-    - 落实最小权限原则，收敛高危权限、通配授权和不必要的管理员能力。
-    - 对关键账户和控制台访问强制启用 MFA，并完善口令复杂度、轮换与重用限制策略。
+    - 对需要持续拉取的工作负载设置 imagePullPolicy 为 Always，并配合固定镜像标签或 digest 使用。
+    - 建立镜像发布和回滚流程，确保节点缓存不会掩盖镜像更新。
   reference:
     - https://kubernetes.io/docs/concepts/containers/images/#updating-images
+  metadata:
+    vendor: kubernetes
+    product: kubernetes
   tags: cloud,devops,kubernetes,devsecops,deployments,images,docker,k8s-cluster-security
-
 flow: |
   code(1);
   for (let deployment of template.items) {

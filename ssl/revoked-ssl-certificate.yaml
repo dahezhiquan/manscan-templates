@@ -4,7 +4,17 @@ info:
   name: 已吊销 SSL 证书检测（证书安全）
   author: pussycat0x
   severity: low
-  description: 该模板检测目标是否仍在使用已被吊销且尚未过期的 SSL/TLS 证书。证书被吊销通常意味着私钥泄露、证书误签发或对应业务身份已不再可信。
+  description: 该模板在 TLS 证书状态中同时要求 `revoked == true` 和 `expired == false`，确认目标仍在使用已被证书颁发机构吊销、但表面有效期尚未结束的证书。吊销通常意味着私钥泄露、证书误签发或证书主体身份已不再可信。
+  impact: |
+    - 支持吊销状态检查的客户端可能拒绝连接，导致业务中断或 API 调用失败。
+    - 若客户端未执行或绕过吊销检查，仍可能与身份已失效或私钥可能泄露的服务建立连接，增加仿冒和中间人攻击风险。
+    - 该模板不判断吊销原因，需结合 CA 公告、OCSP/CRL 响应和证书部署范围确认影响。
+  remediation: |
+    - 立即从所有对外节点移除被吊销证书，使用受信任 CA 重新签发并部署新的证书链。
+    - 若怀疑私钥泄露，先吊销旧证书并生成全新密钥对，随后排查异常访问和历史会话。
+    - 检查客户端、CDN、负载均衡和缓存节点，确保不再返回被吊销证书。
+  classification:
+    cwe-id: CWE-295
   reference:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/revoked-ssl-certificate/
     - https://www.tenable.com/plugins/nnm/5837

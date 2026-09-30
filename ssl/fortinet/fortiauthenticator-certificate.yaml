@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiAuthenticator 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板通过证书主题 DN 中的 Fortinet 支持邮箱、地区字段和 `OU=FortiAuthenticator` 组合，识别可能运行 FortiAuthenticator 的设备。命中是产品指纹结果，不代表设备已暴露、配置不安全或存在具体漏洞。
+  impact: |
+    - 识别认证服务器类型可能帮助攻击者定位单点登录、身份认证和证书服务等高价值管理资产。
+    - 该模板只检查证书主题，不能确认认证接口是否可访问，也不能确认用户数据或凭据已经泄露。
+  remediation: |
+    - 将 FortiAuthenticator 管理面和认证接口限制在必要网络范围，使用访问控制和多因素认证保护管理账户。
+    - 建立设备版本和证书清单，及时应用 Fortinet 安全更新，并替换不必要的默认设备证书。
   metadata:
+    vendor: fortinet
+    product: fortiauthenticator
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortiauthenticator"

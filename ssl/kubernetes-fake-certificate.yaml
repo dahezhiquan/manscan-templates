@@ -4,8 +4,15 @@ info:
   name: Kubernetes 默认伪造 Ingress 证书识别（证书安全）
   author: kchason
   severity: low
-  description: 该模板检测目标是否使用 `Kubernetes Ingress Controller Fake Certificate` 默认测试证书。命中通常说明生产入口仍在使用占位证书或自签临时证书，而非面向实际域名签发的正式证书。
-  remediation: 为对应的 Ingress 服务配置与实际域名匹配、且由受信任 CA 签发的正式 SSL/TLS 证书。
+  description: 该模板检查证书主题或颁发者通用名称是否为 `Kubernetes Ingress Controller Fake Certificate`。命中表示入口仍返回 Kubernetes Ingress Controller 的默认伪造证书，通常意味着 TLS Secret 未正确绑定、证书配置未生效或服务仍在使用临时占位证书。
+  impact: |
+    - 客户端无法将该证书可靠绑定到实际业务域名，浏览器和 API 客户端会出现信任告警或直接拒绝连接。
+    - 用户在告警后继续访问可能绕过身份校验，增加仿冒站点和中间人攻击风险。
+    - 默认测试证书还会暴露 Kubernetes Ingress 技术栈，帮助攻击者定位入口配置和后续攻击面。
+  remediation: |
+    - 为对应的 Ingress 配置与实际域名匹配、由受信任 CA 签发的正式 TLS Secret，并确认 Secret 被正确引用。
+    - 检查 Ingress Controller、默认后端、证书管理控制器和负载均衡层，确保新证书已同步到所有入口节点。
+    - 切换后从实际域名验证主题、SAN、证书链和到期时间，确认不再返回默认伪造证书。
   reference:
     - https://snyk.io/blog/setting-up-ssl-tls-for-kubernetes-ingress/
   metadata:

@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiSwitch 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板通过证书主题 DN 中的 Fortinet 支持邮箱和 `OU=FortiSwitch` 识别可能运行 FortiSwitch 的交换设备。命中仅提供产品指纹，不验证交换管理面是否开放或设备是否存在安全漏洞。
+  impact: |
+    - 交换设备指纹可能帮助攻击者识别网络接入层资产，并进一步寻找管理协议和默认配置。
+    - 该结果不能单独证明网络流量可被监听、篡改或设备已被控制。
+  remediation: |
+    - 将 FortiSwitch 管理接口限制在受控网络，关闭不必要的公网管理协议并使用强认证。
+    - 按厂商公告维护 FortiSwitch 固件和证书，审计管理登录及配置变更记录。
   metadata:
+    vendor: fortinet
+    product: fortiswitch
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortiswitch"

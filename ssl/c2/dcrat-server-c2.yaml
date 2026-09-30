@@ -4,7 +4,15 @@ info:
   name: DcRat C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 DcRat 命令控制基础设施相关。命中通常意味着其证书命名方式与该恶意家族常见样式一致。
+  description: 该模板在证书颁发者通用名称（`issuer_cn`）中匹配 `DcRat Server`，用于发现可能与 DcRat 远程控制木马相关的 C2 服务。命中说明证书命名方式与公开的 DcRat 基础设施特征一致，但不等同于已经确认主机感染。
+  impact: |
+    - 若目标确为 DcRat C2，攻击者可能借此接收回连、执行远程命令、窃取敏感数据并维持对受害主机的控制。
+    - C2 服务暴露还可能导致受害主机关系、通信元数据和攻击基础设施被进一步关联。
+    - 证书名称存在伪造和复用可能，应使用主机进程、外连记录和恶意样本进行交叉验证。
+  remediation: |
+    - 对命中资产执行隔离和取证，核查 DcRat 相关进程、启动项、计划任务及 TLS 外连行为。
+    - 确认恶意后阻断 C2 域名/IP、清除恶意文件和持久化，并轮换可能被窃取的凭据。
+    - 若证书或私钥属于组织资产，立即撤销证书、重新签发并审计私钥访问记录。
   reference:
     - https://github.com/thehappydinoa/awesome-censys-queries#dcrat--
   metadata:

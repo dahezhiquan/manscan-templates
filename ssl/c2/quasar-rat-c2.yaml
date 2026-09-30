@@ -4,7 +4,15 @@ info:
   name: Quasar RAT C2 证书识别（证书安全）
   author: johnk3r,pussycat0x,adilsoybali
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 Quasar RAT 命令控制基础设施相关。命中说明目标证书与 Quasar 常见部署特征一致。
+  description: 该模板在证书颁发者通用名称（`issuer_cn`）中匹配 `Quasar Server CA`，用于发现可能与 Quasar RAT C2 相关的 TLS 服务。命中表示证书与 Quasar 常见部署特征一致，但不能单凭该字段确认目标主机已经感染或正在提供 C2 服务。
+  impact: |
+    - 若命中端点确为 Quasar RAT C2，攻击者可能执行远程命令、窃取文件和凭据、监控终端并维持持久化。
+    - 相关证书、域名和 IP 可能暴露攻击基础设施关联关系，也可能成为继续攻击受害主机的通信节点。
+    - 证书可被伪造或复用，需结合 Quasar 客户端特征、流量和主机遥测进行确认。
+  remediation: |
+    - 对命中资产进行隔离和取证，核查 Quasar 进程、启动项、文件落地和周期性外连。
+    - 确认恶意后阻断 C2 指标、清除样本与持久化，并重置可能泄露的账户和密钥。
+    - 如果组织证书误用了该标识，应吊销旧证书、重新签发并审计私钥保护措施。
   reference:
     - https://malpedia.caad.fkie.fraunhofer.de/details/win.quasar_rat
   metadata:

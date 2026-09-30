@@ -4,10 +4,17 @@ info:
   name: 过期 SSL 证书（证书安全）
   author: pdteam
   severity: low
-  description: 该模板检测目标是否部署了已过期的 SSL/TLS 证书。证书过期后，客户端无法再可靠验证站点身份，浏览器和安全组件通常会给出显著告警。
+  description: 该模板读取 TLS 证书的有效期，并在 `expired == true` 且证书的 `not_after` 时间已过时报告。证书过期后，客户端通常会拒绝连接或显示明显的安全告警，导致站点身份无法按预期验证和业务访问中断。
+  impact: |
+    - 浏览器、API 客户端和自动化任务可能拒绝建立连接，造成登录、支付、接口调用或设备通信中断。
+    - 用户看到证书告警后可能转而绕过校验，增加访问仿冒站点或遭受中间人攻击的风险。
+    - 该模板确认的是证书时间状态，若链路使用 CDN、负载均衡或中间证书，还需确认实际对外呈现的证书范围。
   remediation: |
     - 及时续签或重新签发新的 SSL/TLS 证书，并替换已过期证书。
     - 建立证书到期监控与自动续期机制，避免业务因证书过期而中断。
+    - 在生产切换前检查叶证书和中间证书链，清理 CDN、负载均衡和缓存节点上的旧证书。
+  classification:
+    cwe-id: CWE-298
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-certificate-about-to-expire/
   metadata:

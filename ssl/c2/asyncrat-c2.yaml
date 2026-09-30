@@ -4,7 +4,15 @@ info:
   name: AsyncRAT C2 证书识别（证书安全）
   author: johnk3r
   severity: high
-  description: 该模板通过 SSL/TLS 证书颁发者字段识别目标是否可能与 AsyncRAT 命令控制基础设施相关。命中特征通常反映了该恶意家族常见的证书命名习惯。
+  description: 该模板在 TLS 握手结果的证书颁发者通用名称（`issuer_cn`）中匹配 `AsyncRAT Server`，用于发现可能部署了 AsyncRAT C2 服务的主机。该名称是恶意家族常见的证书标识，命中表示证书特征与 AsyncRAT 基础设施相符，但不能仅凭证书确认主机已感染或当前仍在通信。
+  impact: |
+    - 若证书确实属于 AsyncRAT C2，相关主机可能参与远程控制、信息窃取、命令执行或持久化通信。
+    - 公开暴露的 C2 服务还可能为攻击者提供稳定的受控节点或后续攻击入口。
+    - 证书名称可以被复制、伪造或复用，命中结果需要结合 DNS、网络流量、主机进程和样本证据复核。
+  remediation: |
+    - 结合网络流量、主机日志和进程树确认是否存在 AsyncRAT 客户端或 C2 通信，必要时隔离疑似受害主机。
+    - 将确认的恶意域名、IP 和证书指纹加入检测与阻断策略，并清理持久化项及恶意样本。
+    - 如果该证书属于组织自有资产，立即撤销并重新签发证书，同时检查私钥是否泄露。
   reference:
     - https://malpedia.caad.fkie.fraunhofer.de/details/win.asyncrat
   metadata:

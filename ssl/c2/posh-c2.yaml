@@ -4,7 +4,15 @@ info:
   name: PoshC2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 PoshC2 命令控制平台相关。命中通常意味着远端使用了该框架常见的证书标识。
+  description: 该模板在证书颁发者通用名称（`issuer_cn`）中匹配 `P18055077`，用于识别可能由 PoshC2 生成或配置的 TLS C2 服务。该字段是公开威胁狩猎中的证书线索，命中需要结合 PowerShell 活动、网络流量和资产授权状态进一步确认。
+  impact: |
+    - 未授权的 PoshC2 服务可能用于执行 PowerShell 命令、窃取凭据、横向移动和维持远程控制。
+    - 如果命中的是组织的公网服务器，暴露 C2 监听器可能使攻击者持续接收回连或利用其作为跳板。
+    - 证书标识并非不可伪造，单独命中不应直接作为感染结论。
+  remediation: |
+    - 检查命中资产的 PowerShell、进程树、计划任务和 TLS 外连记录，确认后隔离并启动响应。
+    - 阻断确认的 PoshC2 指标，清理载荷和持久化组件，并轮换受影响凭据。
+    - 授权测试应限制监听器暴露范围，使用隔离证书和专用网络，测试结束后撤销相关密钥。
   reference:
     - https://twitter.com/MichalKoczwara/status/1551639708949692416
     - https://poshc2.readthedocs.io/en/latest/

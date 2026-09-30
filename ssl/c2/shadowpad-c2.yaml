@@ -4,7 +4,15 @@ info:
   name: ShadowPad C2 基础设施识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过 SSL 证书主题字段识别目标是否可能与 ShadowPad 命令控制基础设施相关。命中说明远端证书与该家族常见的伪造主题信息相匹配。
+  description: 该模板在证书主题 DN（`subject_dn`）中匹配 `CN=myServer, OU=mygroup, O=myorganization, L=mycity, ST=myprovince, C=CN`，用于发现可能与 ShadowPad C2 相关的伪造或默认主题证书。命中是基础设施关联线索，不能单独证明目标运行 ShadowPad。
+  impact: |
+    - 若命中端点确为 ShadowPad C2，攻击者可能通过隐蔽通信执行命令、收集情报、窃取数据并长期潜伏。
+    - 该类默认或伪造主题信息还说明证书管理薄弱，可能帮助攻击者隐藏真实身份或复用基础设施。
+    - 主题 DN 可以被任意生成，必须结合流量、域名历史、进程和样本证据复核。
+  remediation: |
+    - 核查命中资产的网络会话、进程、服务和持久化配置，确认恶意后隔离并进行内存和磁盘取证。
+    - 阻断确认的 C2 指标，清除 ShadowPad 及其持久化组件，并轮换受影响凭据。
+    - 生产环境应替换占位或伪造主题证书，限制私钥访问并建立证书审计和轮换机制。
   metadata:
     verified: "true"
     max-request: 1

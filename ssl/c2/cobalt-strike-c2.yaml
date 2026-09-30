@@ -4,7 +4,15 @@ info:
   name: Cobalt Strike C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过 SSL 证书序列号特征识别目标是否可能与 Cobalt Strike 命令控制基础设施相关。命中可作为红队设施或恶意 C2 资产的初步研判线索。
+  description: 该模板检查 TLS 证书序列号是否包含 `08:BB:00:EE`，这是公开研究中用于追踪 Cobalt Strike C2 配置的证书特征。命中可作为红队演练或恶意 C2 资产的初步线索，但不能单独区分授权测试和真实入侵，也不能证明当前服务一定使用 Cobalt Strike。
+  impact: |
+    - 若命中资产未经授权部署 Cobalt Strike，攻击者可能利用其 Beacon 通道执行命令、横向移动、凭据窃取和数据外传。
+    - 若属于授权红队设施，暴露该证书特征会增加基础设施被第三方识别、封禁或关联分析的风险。
+    - 证书序列号可能被复用或伪造，必须结合 JARM、HTTP 特征、流量时序和主机遥测确认。
+  remediation: |
+    - 先确认资产归属和测试授权范围，对非授权命中主机立即隔离并开展入侵响应。
+    - 清除 Cobalt Strike Beacon、计划任务和其他持久化组件，封禁确认的 C2 地址并轮换受影响凭据。
+    - 授权测试环境应使用独立、短生命周期的证书和网络边界，避免与生产资产共用基础设施。
   reference:
     - https://blog.sekoia.io/hunting-and-detecting-cobalt-strike/
   metadata:

@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiGate 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板在证书主题 DN 中匹配 `OU=FortiGate`，并提取证书域名信息，用于识别可能运行 FortiGate 的设备及其证书覆盖范围。命中只是设备指纹和资产发现结果，不代表 FortiGate 存在漏洞。
+  impact: |
+    - 暴露 FortiGate 产品指纹和证书域名可能帮助攻击者定位防火墙、VPN 或管理入口。
+    - 证书中的域名列表还可能扩大组织内部主机名和网络边界的暴露面，但不表示这些域名均可访问。
+  remediation: |
+    - 将 FortiGate 管理、VPN 和对外服务按业务需要分区，并限制管理入口来源地址。
+    - 定期核对证书 SAN 与实际业务域名，清理不再使用的域名并及时升级 FortiOS。
   metadata:
+    vendor: fortinet
+    product: fortigate
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortigate"

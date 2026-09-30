@@ -4,7 +4,15 @@ info:
   name: IcedID 基础设施证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书主题字段识别目标是否可能与 IcedID（BokBot）相关基础设施匹配。命中说明远端证书与该家族常见部署特征一致。
+  description: 该模板在证书主题 DN（`subject_dn`）中匹配 `O=Internet Widgits Pty Ltd, ST=Some-State, C=AU, CN=localhost` 这一默认测试证书组合，用于发现与 IcedID（BokBot）基础设施关联的 TLS 服务。命中是证书指纹线索，默认测试 DN 也可能出现在普通测试环境中，必须结合流量和资产背景复核。
+  impact: |
+    - 若命中服务确与 IcedID C2 相关，攻击者可能借此窃取凭据、投递后续载荷并维持对受害主机的控制。
+    - 使用默认测试证书还会暴露服务配置不完整、身份验证弱化或证书管理缺失等问题。
+    - 该证书组合并非 IcedID 独占标识，误报风险高，不能单独据此判定感染。
+  remediation: |
+    - 对命中资产核查 TLS 连接、DNS、进程和样本信息，确认恶意后隔离主机并阻断相关 C2 指标。
+    - 清除 IcedID 或其他恶意组件及持久化项，轮换受影响的凭据和密钥。
+    - 生产服务应替换默认测试证书，使用与实际域名匹配且生命周期受控的证书。
   metadata:
     verified: "true"
     max-request: 1

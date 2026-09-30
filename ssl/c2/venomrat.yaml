@@ -4,6 +4,15 @@ info:
   name: VenomRAT 证书识别（证书安全）
   author: pussycat0x
   severity: high
+  description: 该模板在 TLS 证书颁发者通用名称（`issuer_cn`）中匹配 `VenomRAT Server`，用于发现可能与 VenomRAT 远程控制木马相关的 C2 服务。命中表示证书使用了公开的家族标识，不能单独确认主机感染或当前存在恶意通信。
+  impact: |
+    - 若目标确为 VenomRAT C2，攻击者可能执行远程命令、窃取凭据和文件、监控终端并维持持久化控制。
+    - 暴露的 C2 端点可能成为受害主机回连、数据外传和后续攻击的基础设施。
+    - 证书名称容易被伪造或复用，需结合进程、流量、域名和样本证据确认。
+  remediation: |
+    - 对命中资产开展主机和网络取证，确认恶意后隔离主机并阻断 C2 域名/IP。
+    - 清除 VenomRAT 样本、启动项和其他持久化机制，轮换可能泄露的凭据与令牌。
+    - 若证书属于组织资产，立即撤销并重新签发，同时审计私钥访问和公网服务暴露情况。
   reference:
     - https://twitter.com/v0lundr_/status/1727277517659353297
   metadata:

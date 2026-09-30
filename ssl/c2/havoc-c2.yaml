@@ -4,7 +4,15 @@ info:
   name: Havoc C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过 SSL 证书主题字段中的特定特征识别目标是否可能与 Havoc 命令控制框架相关。命中可用于辅助发现红队或恶意 C2 设施。
+  description: 该模板在 TLS 证书主题 DN（`subject_dn`）中匹配 `postalCode=3540`，并以 Havoc 相关 JARM/搜索特征作为外部资产检索线索，用于发现可能部署 Havoc C2 的服务。命中只能说明证书主题包含该框架常见特征，不足以单独确认恶意用途。
+  impact: |
+    - 未授权的 Havoc C2 可能被用于执行命令、投递载荷、窃取凭据、横向移动和维持长期控制。
+    - 暴露 C2 监听器会增加受害主机回连被追踪、服务被利用或基础设施被接管的风险。
+    - 证书主题和 JARM 等指纹可能被修改或复用，需要结合端口、协议行为和主机遥测复核。
+  remediation: |
+    - 确认命中主机的资产归属和授权状态，非授权命中应立即隔离并保留内存、进程和网络证据。
+    - 清理 Havoc 相关监听器、载荷和持久化机制，封禁确认的 C2 指标并轮换受影响凭据。
+    - 授权演练应隔离 C2 基础设施，限制管理入口和公网暴露，并在演练结束后销毁临时证书和密钥。
   reference:
     - https://github.com/HavocFramework/Havoc
     - https://github.com/montysecurity/C2-Tracker

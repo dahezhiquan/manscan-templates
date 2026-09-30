@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiWeb 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板通过证书主题 DN 中的 Fortinet 支持邮箱和 `CN=FortiWEB` 识别可能运行 FortiWeb 的 Web 应用防火墙。命中是产品指纹结果，不代表 WAF 管理面开放或存在具体配置漏洞。
+  impact: |
+    - FortiWeb 指纹可能帮助攻击者定位 Web 防护设备和管理入口，并选择对应版本进行探测。
+    - 该模板不检查策略、固件或认证状态，不能单独证明后端应用已被绕过或设备已被入侵。
+  remediation: |
+    - 限制 FortiWeb 管理面来源，避免将管理服务直接暴露互联网，并为管理账户启用强认证。
+    - 及时更新 FortiWeb 固件，使用与实际域名匹配的受信任证书，并审计异常管理访问。
   metadata:
+    vendor: fortinet
+    product: fortiweb
     verified: true
     max-request: 1
     shodan-query: ssl:"cn=fortiweb"

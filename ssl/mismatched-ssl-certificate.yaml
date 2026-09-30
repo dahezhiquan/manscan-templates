@@ -4,7 +4,17 @@ info:
   name: SSL 证书主机名不匹配（证书安全）
   author: pdteam
   severity: medium
-  description: 该模板检测访问主机名与证书中的 CN 或 SAN 是否不一致。命中说明证书并非为当前访问域名签发，客户端无法正确完成主机身份校验。
+  description: 该模板通过 TLS 握手检查证书主机名是否匹配，并要求 `mismatched == true`、目标不是直接以 IP 访问，且排除企业设备注册专用域名。命中说明当前访问主机名未被证书 CN/SAN 正确覆盖，客户端无法完成可靠的主机身份校验。
+  impact: |
+    - 浏览器、SDK 和自动化客户端可能拒绝连接或显示证书告警，造成业务访问失败和接口任务中断。
+    - 若用户或程序忽略告警继续连接，攻击者可能利用主机名与证书身份不一致实施仿冒或中间人攻击。
+    - 该规则排除了部分企业注册场景，仍需结合实际访问域名、证书 SAN 和代理终止位置确认责任组件。
+  remediation: |
+    - 重新签发包含实际服务域名的证书，并在所有 CDN、负载均衡、反向代理和服务节点部署正确证书链。
+    - 统一客户端访问地址与证书覆盖范围，不要通过关闭证书校验来规避主机名不匹配。
+    - 修复后使用域名和 IP 等不同访问方式复测，确认合法业务域名均能通过主机名校验。
+  classification:
+    cwe-id: CWE-295
   reference:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-certificate-name-hostname-mismatch/
   metadata:

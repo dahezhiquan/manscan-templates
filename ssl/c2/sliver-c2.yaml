@@ -4,7 +4,15 @@ info:
   name: Sliver C2 证书识别（证书安全）
   author: johnk3r
   severity: high
-  description: 该模板通过证书主题与颁发者特征识别目标是否可能与 Sliver 命令控制基础设施相关。命中可用于辅助发现红队框架或恶意 C2 部署。
+  description: 该模板同时检查证书颁发者通用名称 `operators` 和主题 DN `CN=multiplayer`，用于识别可能由 Sliver C2 生成的 TLS 服务。两个证书字段均命中才报告，结果可辅助发现红队或恶意 C2 部署，但仍需结合资产归属和通信行为确认。
+  impact: |
+    - 未授权的 Sliver C2 可能被用于执行命令、投递 Beacon、窃取凭据、横向移动和维持持久化。
+    - C2 监听器暴露公网会增加受害主机回连被跟踪、服务被攻击或基础设施被接管的风险。
+    - 证书特征可被修改，命中结果需要结合 Sliver 协议行为、进程和网络遥测复核。
+  remediation: |
+    - 先确认是否属于授权测试，非授权命中资产应隔离并保全内存、进程、文件和网络证据。
+    - 清理 Sliver implant、监听器和持久化机制，阻断确认的 C2 指标并轮换受影响凭据。
+    - 授权环境应隔离管理面与生产网络，限制监听器访问并在测试结束后撤销临时证书和密钥。
   reference:
     - https://malpedia.caad.fkie.fraunhofer.de/details/win.sliver
   metadata:

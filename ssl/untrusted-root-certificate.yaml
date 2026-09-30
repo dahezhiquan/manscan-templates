@@ -4,7 +4,17 @@ info:
   name: 不受信任根证书检测（证书安全）
   author: pussycat0x
   severity: low
-  description: 该模板检测目标证书链是否锚定到客户端默认不信任的根证书。命中说明证书链无法被常见操作系统或浏览器正常验证，访问时通常会出现信任告警。
+  description: 该模板读取 TLS 证书链的信任状态，并在 `untrusted == true` 时报告客户端默认信任库无法验证的根证书链。命中通常表示证书由未知、私有或未正确配置的 CA 签发；企业内网自建 PKI 可能是有意设计，需要结合终端信任策略判断。
+  impact: |
+    - 浏览器和 API 客户端可能拒绝连接或展示信任告警，导致业务访问中断。
+    - 若用户或程序通过关闭证书校验继续访问，攻击者可能利用仿冒证书实施中间人攻击。
+    - 对合法私有 CA 而言，风险可能来自信任根未正确分发或证书链缺少中间证书，而不一定是恶意证书。
+  remediation: |
+    - 公网服务使用受信任 CA 签发的证书，并正确部署完整中间证书链。
+    - 内网私有 PKI 应通过受控配置管理分发根证书，限制信任范围并建立根 CA 私钥保护和轮换机制。
+    - 禁止通过关闭客户端校验绕过告警，修复后从实际客户端验证完整链路。
+  classification:
+    cwe-id: CWE-295
   reference:
     - https://www.sslmarket.com/ssl/trusted-and-untrusted-certificate
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-untrusted-root-certificate/

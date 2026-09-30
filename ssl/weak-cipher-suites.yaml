@@ -4,7 +4,17 @@ info:
   name: 弱密码套件检测（证书安全）
   author: pussycat0x
   severity: low
-  description: 该模板检测目标是否支持密钥长度不足、算法强度偏弱或已不再推荐使用的 TLS 密码套件。命中说明连接可能协商到容易被降级、破解或加密强度不足的套件。
+  description: 该模板针对 TLS 1.0、TLS 1.1、TLS 1.2 和 TLS 1.3 的握手结果，匹配大量 CBC、3DES、RSA 静态密钥交换、过时摘要或其他不再推荐的密码套件名称。命中表示服务端实际接受了列表中的弱套件，说明连接可能被协商到强度不足的加密参数。
+  impact: |
+    - 弱密码套件可能降低机密性和完整性保护，使攻击者更容易进行降级、密码分析、流量解密或篡改。
+    - 静态 RSA 密钥交换缺少现代前向保密能力，私钥泄露后可能影响历史捕获流量。
+    - 该模板命中具体套件但不等同于已完成攻击，实际影响还取决于客户端协商能力、传输数据和攻击者网络位置。
+  remediation: |
+    - 禁用 TLS 1.0/1.1 以及 CBC、3DES、静态 RSA、过时摘要和其他不符合组织基线的套件。
+    - 优先使用 TLS 1.2/1.3 的 AEAD 套件和具备前向保密能力的密钥交换算法，并同步调整所有 TLS 终止节点。
+    - 变更后重新枚举协议和密码套件，确认弱套件不再可协商且业务客户端仍能正常连接。
+  classification:
+    cwe-id: CWE-310
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
     - http://ciphersuite.info

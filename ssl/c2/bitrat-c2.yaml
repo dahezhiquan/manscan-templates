@@ -4,7 +4,15 @@ info:
   name: BitRAT C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 BitRAT 命令控制基础设施相关。命中说明远端证书指纹与该家族常见部署特征相符。
+  description: 该模板读取 TLS 证书的 `issuer_cn`，匹配 `BitRAT` 这一 C2 证书标识，用于发现可能与 BitRAT 远程控制木马相关的基础设施。命中只说明证书字段与公开的 BitRAT 搜索特征一致，不能单独证明目标正在运行 BitRAT。
+  impact: |
+    - 若目标确为 BitRAT C2，攻击者可能通过该服务接收受害主机回连并执行命令、窃取数据或维持持久化控制。
+    - 暴露的 C2 证书特征可帮助攻击者持续运营恶意基础设施，也可作为安全团队追踪同源资产的线索。
+    - 证书字段容易被伪造或重新签发，误报风险较高，应结合连接日志、样本和主机遥测确认。
+  remediation: |
+    - 对命中资产开展主机和网络取证，重点核对 BitRAT 进程、启动项、外连域名及周期性 TLS 流量。
+    - 确认恶意后隔离主机、阻断 C2 通信、清除持久化并轮换可能暴露的账户和密钥。
+    - 对组织自有证书执行吊销和重新签发，并限制不必要的公网 TLS 服务暴露。
   reference:
     https://github.com/thehappydinoa/awesome-censys-queries#bitrat--
   metadata:

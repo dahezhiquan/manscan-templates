@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiWiFi 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板要求证书主题包含 Fortinet 支持邮箱、地区字段和 `subject_cn` 为 `FW` 的特征，用于识别可能运行 FortiWiFi 的无线网络设备。命中仅说明证书与产品特征相符，不代表无线网络或管理接口存在漏洞。
+  impact: |
+    - 无线网关产品指纹可能帮助攻击者定位网络边界、管理入口和后续固件探测方向。
+    - 该规则不检查无线加密、用户认证或管理权限，不能单独证明无线接入已被未授权使用。
+  remediation: |
+    - 将 FortiWiFi 管理面限制在受控网络，使用强认证和最小权限，关闭不必要的公网管理服务。
+    - 及时升级设备固件，核对证书域名与部署范围，并审计无线和管理登录日志。
   metadata:
+    vendor: fortinet
+    product: fortiwifi
     verified: true
     max-request: 1
     shodan-query: product:"Fortinet FortiWiFi"

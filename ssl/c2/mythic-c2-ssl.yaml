@@ -4,7 +4,15 @@ info:
   name: Mythic C2 证书识别（证书安全）
   author: johnk3r
   severity: high
-  description: 该模板通过 SSL/TLS 证书颁发者字段识别目标是否可能与 Mythic 命令控制平台相关。命中可用于辅助发现红队演练或恶意基础设施。
+  description: 该模板在证书颁发者 DN（`issuer_dn`）中匹配 `O=Mythic`，用于识别可能由 Mythic C2 平台生成或配置的 TLS 服务。命中可辅助发现红队演练和恶意基础设施，但由于证书字段可修改或复用，结果需要结合 Mythic 监听器行为和资产归属确认。
+  impact: |
+    - 未授权 Mythic C2 可能被用于建立加密回连、执行命令、投递载荷和横向移动。
+    - 若管理面或监听器暴露公网，攻击者可能持续控制受害主机或将其作为进一步攻击跳板。
+    - 对授权演练而言，暴露该证书特征会泄露演练基础设施并增加被第三方关联的风险。
+  remediation: |
+    - 结合连接日志、进程、容器和 DNS 记录确认命中资产，非授权资产立即隔离并保全证据。
+    - 清理 Mythic payload、监听器和持久化任务，阻断相关 C2 指标并轮换受影响凭据。
+    - 将授权演练环境与生产网络隔离，限制管理面访问，并在演练结束后销毁临时证书与密钥。
   reference:
     - https://docs.mythic-c2.net
     - https://www.team-cymru.com/post/mythic-case-study-assessing-common-offensive-security-tools

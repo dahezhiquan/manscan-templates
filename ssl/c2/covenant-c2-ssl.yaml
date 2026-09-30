@@ -4,7 +4,15 @@ info:
   name: Covenant C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书主题字段识别目标是否可能与 Covenant 命令控制平台相关。命中说明远端证书与该框架默认或常见部署特征相匹配。
+  description: 该模板在 TLS 证书主题 DN（`subject_dn`）中匹配 `CN=Covenant`，用于识别可能暴露 Covenant C2 监听器的服务。该特征对应 Covenant 常见证书配置，命中仅表示证书主题与框架特征相符，仍需结合 Blazor/HTTP 端点和资产归属复核。
+  impact: |
+    - 未授权的 Covenant C2 可能被用于远程执行命令、投递 Grunt、维持持久化和推进内网横向移动。
+    - C2 管理或监听端点若直接暴露公网，可能被扫描、利用或用于关联受害主机回连。
+    - 证书主题可被修改，单一证书字段不足以确认恶意活动。
+  remediation: |
+    - 核对命中主机是否属于授权安全测试，非授权资产应立即隔离并采集网络、进程和文件证据。
+    - 关闭不必要的公网监听端口，限制 C2 管理面和回连面访问，并阻断已确认的恶意通信。
+    - 清理 Covenant 相关组件和持久化任务；授权环境应更换不含明显默认标识的独立证书。
   reference:
     - https://twitter.com/MichalKoczwara/status/1548685058403360770
   metadata:

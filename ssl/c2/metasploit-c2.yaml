@@ -4,7 +4,15 @@ info:
   name: Metasploit C2 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 Metasploit 命令控制基础设施相关。命中说明对端使用了该框架常见的自签名 CA 特征。
+  description: 该模板在证书颁发者通用名称（`issuer_cn`）中匹配 `MetasploitSelfSignedCA`，用于发现可能使用 Metasploit 生成的自签名 CA 的服务。命中可作为红队工具或恶意 C2 基础设施的研判线索，但不能区分授权测试和真实攻击。
+  impact: |
+    - 若该服务未经授权，攻击者可能利用 Metasploit 会话执行命令、投递模块、窃取数据或继续扩展入侵范围。
+    - 自签名 CA 标识还可能导致证书信任校验被人为绕过，增加受控终端连接恶意服务的风险。
+    - 证书名称可被复制或伪造，必须结合模块、流量和主机活动确认。
+  remediation: |
+    - 核对命中资产是否属于授权测试，非授权命中应隔离主机、阻断 C2 通信并开展取证。
+    - 清除 Metasploit 会话、载荷和持久化项，轮换可能暴露的凭据和密钥。
+    - 正式业务服务不得使用该默认 CA 标识；如证书属于组织资产，应撤销并重新签发。
   reference:
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/
   metadata:

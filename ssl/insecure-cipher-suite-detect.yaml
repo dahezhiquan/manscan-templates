@@ -4,7 +4,17 @@ info:
   name: 不安全密码套件检测（证书安全）
   author: pussycat0x
   severity: medium
-  description: 该模板检测目标是否支持明显不安全的 TLS 密码套件，例如空加密、匿名密钥交换或已知强度不足的组合。命中说明客户端可能协商到易被降级或破解的加密参数。
+  description: 该模板在 TLS 1.0 至 TLS 1.3 的握手结果中匹配空加密、匿名密钥交换、出口级算法、RC4、DES、NULL 或其他明显不安全的密码套件名称。命中表示目标实际接受了列表中的危险套件，而不是仅根据配置文件推测支持。
+  impact: |
+    - NULL、匿名密钥交换或弱密钥套件可能无法提供机密性、身份认证或完整性保护，通信内容可能被窃听或篡改。
+    - RC4、DES、出口级算法等已不再适合保护敏感数据，可能受到已知密码分析、降级或暴力破解攻击。
+    - 实际可利用性取决于客户端是否能被诱导协商该套件、链路位置及传输数据敏感程度。
+  remediation: |
+    - 在 TLS 配置中禁用 NULL、匿名、RC4、DES、出口级和其他已弃用密码套件，仅保留符合组织基线的现代套件。
+    - 优先使用 TLS 1.2/1.3 的 AEAD 套件和受支持的密钥交换算法，并同步检查 CDN、代理和负载均衡配置。
+    - 变更后从不同客户端重新握手，确认危险套件不再可协商。
+  classification:
+    cwe-id: CWE-310
   reference:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
   metadata:

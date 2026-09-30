@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiManager 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板探测目标端口以及 FortiManager 常用的 `541` 端口，并通过证书主题 DN 中的 Fortinet 支持邮箱、地区字段和 `OU=FortiManager` 组合识别产品。命中表示可能存在 FortiManager 管理设备，不代表管理接口已被未授权访问。
+  impact: |
+    - FortiManager 可能集中管理多台 Fortinet 设备，产品指纹和管理端口暴露会提高高价值管理资产被定向探测的风险。
+    - 该模板不执行登录或版本检测，不能单独证明设备配置错误、凭据泄露或批量下发风险。
+  remediation: |
+    - 将 FortiManager 管理端口限制在专用管理网络或受信任跳板机，避免直接暴露公网。
+    - 启用强认证和最小权限，及时更新 FortiManager，并定期检查管理证书和审计日志。
   metadata:
+    vendor: fortinet
+    product: fortimanager
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortimanager"

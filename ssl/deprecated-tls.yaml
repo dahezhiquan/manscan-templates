@@ -4,10 +4,15 @@ info:
   name: 弃用 TLS/SSL 协议检测（证书安全）
   author: righettod,forgedhallpass
   severity: medium
-  description: 该模板检测目标是否仍支持已弃用的 SSLv3、TLS 1.0 或 TLS 1.1 协议版本。命中说明服务端仍允许使用过时的加密协商方式建立连接。
+  description: 该模板分别使用 TLS 1.1、TLS 1.0 和 SSLv3 进行握手，提取协商出的 `tls_version`，以确认目标是否仍接受已弃用协议。任一旧版本握手成功即命中，说明服务端或前置设备仍允许使用过时的加密协议；这不是对具体密码套件或漏洞利用成功的判断。
+  impact: |
+    - 旧协议可能允许使用较弱的密码套件和不再推荐的加密机制，扩大降级攻击、协议攻击和合规不满足的风险。
+    - 同一服务若同时支持现代协议和旧协议，攻击者可能诱导兼容性较弱的客户端协商到不安全版本。
+    - 实际风险取决于客户端是否支持旧协议、可协商的密码套件以及链路中是否存在代理或负载均衡设备。
   remediation: |
     - 在服务端 TLS 配置中禁用 SSLv3、TLS 1.0 和 TLS 1.1，仅保留更安全的 TLS 1.2 或 TLS 1.3。
     - 同步检查负载均衡、CDN、反向代理和中间件配置，避免旧协议在链路中被重新启用。
+    - 参考 Mozilla 等维护的 TLS 配置基线完成兼容性评估，并在变更后用各协议版本重新握手验证。
   reference:
     - https://ssl-config.mozilla.org/#config=intermediate
   metadata:

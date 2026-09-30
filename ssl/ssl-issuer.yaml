@@ -4,7 +4,13 @@ info:
   name: SSL 证书颁发者提取（证书安全）
   author: Lingtren
   severity: info
-  description: 该模板从目标证书中提取颁发者组织信息，用于识别证书签发机构及其信任来源。
+  description: 该模板从 TLS 证书中提取颁发者组织字段 `issuer_org`，用于识别签发机构及证书信任来源。它是证书资产和信任链盘点规则，不判断证书是否过期、吊销、主机名匹配或适用于当前业务。
+  impact: |
+    - 颁发者信息可帮助审计组织使用的公共 CA、私有 CA 和证书分发范围，也可能辅助攻击者进行资产聚合。
+    - 该提取结果本身不表示证书不可信或 CA 已被攻破，仍需结合链路验证和证书状态检查。
+  remediation: |
+    - 建立证书颁发机构和信任根清单，确保生产证书来自组织批准的 CA 或受控私有 PKI。
+    - 对不再使用、来源不明或超出业务边界的证书执行替换、撤销和私钥审计。
   metadata:
     max-request: 1
   tags: ssl,tls,discovery

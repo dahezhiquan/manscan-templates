@@ -4,7 +4,15 @@ info:
   name: 通配符 TLS 证书识别（证书安全）
   author: lucky0x0d
   severity: info
-  description: 该模板检测证书的 CN 或 SAN 中是否包含通配符条目。命中说明同一证书可能被多个子域共用，需要结合部署边界评估私钥泄露和横向影响范围。
+  description: 该模板检查 TLS 证书的 CN/SAN 是否包含通配符，并在 `wildcard_certificate == true` 时提取证书 CN 和 SAN。命中表示同一私钥可能覆盖多个子域；它本身不是漏洞，需要结合证书覆盖范围、业务隔离和私钥保护评估风险。
+  impact: |
+    - 通配符私钥一旦泄露，攻击者可能为多个匹配子域伪造证书，扩大仿冒、中间人和横向影响范围。
+    - 证书覆盖范围过大可能把低信任环境与高价值管理或生产域名绑定到同一私钥。
+    - 单个通配符证书并不意味着已经发生泄露，风险取决于实际 SAN 范围、部署节点和密钥访问控制。
+  remediation: |
+    - 按业务隔离边界缩小证书覆盖范围，对高价值或跨环境域名优先使用精确 SAN 证书。
+    - 将通配符私钥存放在受控密钥系统中，限制导出和访问权限，并建立轮换、吊销和泄露响应流程。
+    - 定期核对证书覆盖的子域和部署节点，及时删除已下线或不应共享同一私钥的域名。
   reference:
     - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html#carefully-consider-the-use-of-wildcard-certificates
   metadata:

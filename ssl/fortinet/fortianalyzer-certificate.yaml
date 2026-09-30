@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiAnalyzer 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板通过证书主题 DN 中的 Fortinet 支持邮箱、地区字段和 `OU=FortiAnalyzer` 组合，识别可能运行 FortiAnalyzer 的设备。命中仅表示证书特征与 FortiAnalyzer 默认或常见证书相符，不代表设备版本、管理面暴露或存在漏洞。
+  impact: |
+    - 证书指纹可帮助攻击者识别日志分析与安全管理设备，缩小后续管理面探测范围。
+    - 该规则不验证认证、授权或软件版本，命中结果不能单独证明 FortiAnalyzer 可被未授权访问。
+  remediation: |
+    - 将 FortiAnalyzer 管理接口限制在受控管理网络，并避免将设备证书和管理服务直接暴露到互联网。
+    - 按资产清单核对设备版本和厂商安全公告，同时避免在生产环境继续使用带有明显默认信息的证书。
   metadata:
+    vendor: fortinet
+    product: fortianalyzer
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortianalyzer"

@@ -4,7 +4,15 @@ info:
   name: Orcus RAT 证书识别（证书安全）
   author: pussycat0x
   severity: high
-  description: 该模板通过证书颁发者字段识别目标是否可能与 Orcus RAT 基础设施相关。命中说明对端证书与 Orcus 家族常见的签发标识一致。
+  description: 该模板在证书颁发者通用名称（`issuer_cn`）中匹配 `Orcus Server` 或 `OrcusServerCertificate`，用于发现可能与 Orcus RAT C2 相关的服务。命中说明证书字段与 Orcus 常见签发标识一致，但不等同于已确认恶意软件活动。
+  impact: |
+    - 若服务确为 Orcus RAT C2，攻击者可能通过回连通道执行命令、监控终端、窃取文件和维持持久化。
+    - 相关证书和网络端点可帮助攻击者长期维持受控主机通信，公开暴露也会扩大基础设施被利用的机会。
+    - 证书标识可能被复制，需结合流量、进程、文件和资产归属降低误报。
+  remediation: |
+    - 核查命中主机的 Orcus 客户端、C2 流量、计划任务和启动项，必要时先隔离再取证。
+    - 确认恶意后阻断端点、清除样本和持久化，并重置受影响账户及访问令牌。
+    - 对组织自有证书执行吊销和重新签发，避免继续使用明显的默认或恶意家族标识。
   reference:
     - https://github.com/thehappydinoa/awesome-censys-queries#orcusrat--
   metadata:

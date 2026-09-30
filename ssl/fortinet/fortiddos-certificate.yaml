@@ -4,7 +4,16 @@ info:
   name: Fortinet FortiDDoS 证书识别（证书安全）
   author: johnk3r
   severity: info
+  description: 该模板通过证书主题 DN 中的 Fortinet 支持邮箱、地区字段和 `OU=FortiDDoS` 组合，识别可能运行 FortiDDoS 的设备。命中仅说明 TLS 证书与产品默认或常见特征一致，不等同于发现 DDoS 防护配置漏洞。
+  impact: |
+    - 产品指纹可能暴露网络防护设备类型，帮助攻击者选择对应的管理面和版本探测路径。
+    - 命中结果不表示设备正在遭受攻击，也不证明管理接口可被未授权访问。
+  remediation: |
+    - 限制 FortiDDoS 管理接口的网络可达范围，关闭不必要的公网管理服务并启用强认证。
+    - 维护设备固件和证书生命周期，及时应用厂商安全更新并替换带有明显默认信息的证书。
   metadata:
+    vendor: fortinet
+    product: fortiddos
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortiddos"

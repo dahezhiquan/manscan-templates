@@ -4,7 +4,13 @@ info:
   name: SSL 证书 DNS 名称提取（证书安全）
   author: pdteam
   severity: info
-  description: 该模板提取目标证书中的 Subject Alternative Name（SAN）DNS 名称，用于识别该证书可覆盖的主机名范围。
+  description: 该模板从 TLS 证书的 Subject Alternative Name（SAN）数组中提取 DNS 名称，并输出证书声明覆盖的主机名范围。该结果可用于证书资产盘点、域名发现和主机名匹配复核，不代表提取出的域名都可访问或存在漏洞。
+  impact: |
+    - SAN 可能暴露内部域名、管理入口、环境名称或尚未纳入公开资产清单的主机名，为攻击者提供侦察线索。
+    - 证书中的域名属于公开证书内容，提取结果不能单独证明内部服务已暴露或存在未授权访问。
+  remediation: |
+    - 发布证书前清理不必要的内部域名、测试域名和过大的 SAN 列表，按最小范围规划证书覆盖面。
+    - 将提取到的域名与资产清单和 DNS 记录核对，及时下线无主机名、无业务用途或已泄露边界的入口。
   metadata:
     max-request: 1
   tags: ssl,tls,vuln

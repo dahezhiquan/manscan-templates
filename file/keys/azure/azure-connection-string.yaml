@@ -4,6 +4,15 @@ info:
   name: Azure 连接字符串 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: high
+  description: |
+    Azure 连接字符串把服务地址、账户标识和密码或密钥放在同一连接配置中。完整连接串泄露后，攻击者可能直接连接目标服务，具体读写范围取决于账号权限和网络策略。本模板匹配 `AccountName`、`AccountKey`、`SharedAccessKey` 等字段组成的 Azure 连接字符串。
+  impact: |
+    - 攻击者可在网络可达的前提下直接尝试连接数据库、对象存储或媒体服务，读取、修改或删除其中的数据。
+    - 连接串通常同时暴露主机、用户名和认证材料，便于进一步枚举服务和组织资产。
+  remediation: |
+    - 立即轮换连接串中的密码、密钥或共享访问签名，并检查数据库、存储和媒体服务的访问日志。
+    - 将连接信息放入 Secret 管理系统，限制网络来源、账户权限、可访问数据库或容器，并禁止写入源码和构建产物。
+    - 对公开资源关闭匿名访问，验证新的连接配置不会被日志和错误信息回显。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/rules/azure.yml
     - https://azure.microsoft.com/en-us/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work/

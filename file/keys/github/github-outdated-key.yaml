@@ -5,7 +5,14 @@ info:
   author: naglis
   severity: low
   description: |
-    该模板检测 GitHub 已轮换的旧 RSA SSH 主机密钥。命中表示文件中可能包含过期或不应继续信任的 GitHub SSH 主机密钥材料。
+    GitHub Outdated RSA SSH Host key属于 GitHub SSH 主机信任材料，而不是用户访问凭据。旧版 RSA 主机密钥继续留在 known_hosts 或部署配置中，可能导致主机密钥校验失败、运维连接中断，或让团队继续依赖已经撤换的信任信息。本模板匹配已知的旧版 GitHub RSA SSH 主机密钥指纹及公钥内容，识别可能残留在 known_hosts 或配置文件中的过期信任材料。
+  impact: |
+    - 旧主机密钥可能造成自动化部署、代码拉取或运维连接失败，促使人员关闭主机密钥校验等安全控制。
+    - 若团队错误地继续信任已撤换密钥，可能掩盖真正的主机身份变化和中间人风险。
+  remediation: |
+    - 按 GitHub 官方当前主机密钥指纹更新 known_hosts 和部署系统中的信任记录，删除旧 RSA 主机密钥。
+    - 保留严格的主机密钥校验，不要为了恢复连接而关闭校验或接受未知指纹。
+    - 检查相关自动化凭据和连接日志，确认旧密钥未被用于异常连接。
   reference:
     - https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/
     - https://web.archive.org/web/20230316194229/https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints

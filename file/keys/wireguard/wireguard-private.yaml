@@ -4,6 +4,16 @@ info:
   name: WireGuard 私钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: high
+  description: |
+    WireGuard 私钥用于证明本地 VPN 对等端身份。私钥泄露后，攻击者可能伪装成该对等端尝试加入隧道；实际可达网段和访问权限还取决于对应公钥、Endpoint、`AllowedIPs` 和服务端策略。本模板匹配配置中的 `PrivateKey =` 字段及 Base64 私钥格式。
+  impact: |
+    - 攻击者可能冒充该 WireGuard 对等端访问 VPN 内网，扩大横向移动和内部服务探测范围。
+    - 若配置文件同时暴露 Endpoint、DNS 和 `AllowedIPs`，还会帮助攻击者定位隧道拓扑和可访问网段。
+    - 私钥格式命中不代表当前仍有效，但应按已泄露密钥处理并核查连接日志。
+  remediation: |
+    - 立即在本地和远端生成新的 WireGuard 私钥/公钥对，删除旧公钥并更新对等端配置。
+    - 收紧 `AllowedIPs`、Endpoint、管理文件权限和 VPN 来源网络，避免把完整配置提交到源码、日志或制品。
+    - 审计旧密钥有效期间的握手和内网访问记录，确认轮换后旧对等端已失效。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/wireguard.yml
     - https://www.wireguard.com/quickstart/

@@ -4,6 +4,16 @@ info:
   name: Shopify 访问令牌 (Public App) 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: low
+  description: |
+    Shopify Public App 访问令牌用于应用在店铺 API 中进行身份认证。虽然应用类型可能是公开应用，但 `shpat_` 格式的访问令牌仍属于承载权限的敏感凭据，泄露后可在授予的作用域内读取或修改店铺数据。本模板匹配 `shpat_` 前缀及固定长度的十六进制令牌，命中只表示格式匹配，仍需核实令牌状态和作用域。
+  impact: |
+    - 有效令牌可能允许攻击者读取或修改店铺资源，具体范围取决于应用授予的 Admin API 作用域。
+    - 攻击者可利用令牌访问订单、商品、客户或应用数据，造成隐私泄露、业务篡改和持久化风险。
+    - 正则命中不代表令牌仍有效，也不能单独确定其可访问的店铺和权限范围。
+  remediation: |
+    - 在 Shopify 应用和店铺管理界面撤销、轮换命中的访问令牌，并审计令牌泄露期间的 API 调用。
+    - 按最小权限重新配置应用作用域，不要把 Admin API 访问令牌写入前端资源、源码、日志或公开构建产物。
+    - 从仓库历史和缓存中清理旧令牌，使用 Secret 管理系统保存服务端凭据。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/shopify.yml
     - https://shopify.dev/apps/auth

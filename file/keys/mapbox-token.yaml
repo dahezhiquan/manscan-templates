@@ -4,6 +4,16 @@ info:
   name: Mapbox 令牌 泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: medium
+  description: |
+    Mapbox 令牌包括可嵌入客户端的公开令牌和不应公开的 Secret token。公开令牌泄露通常主要带来配额消耗和应用标识暴露，而 `sk.` 开头的 Secret token 可能在其权限范围内调用管理或数据 API。本模板分别匹配 `pk.` 和 `sk.` 两类令牌，命中后必须根据前缀、来源和账户配置判断实际风险。
+  impact: |
+    - 公开令牌可能被第三方盗用来消耗地图、地理编码或瓦片配额，增加费用并影响正常业务。
+    - Secret token 泄露后，攻击者可能在其作用域内访问账户资源、修改配置或调用受限 API。
+    - 仅凭格式无法证明令牌有效，实际影响取决于令牌类型、账户限制和 API 作用域。
+  remediation: |
+    - 对 `sk.` Secret token 立即撤销并重新生成，审计 Mapbox 调用和账户配置变更。
+    - 为必须放在客户端的公开令牌配置 URL、应用、来源和权限限制，设置合理配额并监控异常用量。
+    - 将 Secret token 仅注入服务端或 Secret 管理系统，清理源码、制品、日志和仓库历史中的旧值。
   reference:
     - https://docs.gitguardian.com/secrets-detection/detectors/specifics/mapbox_token
     - https://github.com/zricethezav/gitleaks/blob/master/cmd/generate/config/rules/mapbox.go

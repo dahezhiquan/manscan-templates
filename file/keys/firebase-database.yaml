@@ -1,9 +1,19 @@
 id: firebase-database
 
 info:
-  name: Firebase Database Detect 敏感信息检测（本地文件安全扫描）
+  name: Firebase 数据库地址敏感信息检测（本地文件安全扫描）
   author: gaurang
   severity: low
+  description: |
+    Firebase 数据库地址是服务资源的入口，不一定是秘密；但公开后会暴露项目和资源命名信息。若数据库安全规则配置不当，攻击者可能进一步读取、写入或枚举数据。本模板匹配 `firebaseio.com` 或 `firebaseapp.com` 数据库地址，识别应用关联的 Firebase 资源入口。
+  impact: |
+    - 资源地址或 ARN 暴露会帮助攻击者定位目标账户、区域、项目和数据入口。
+    - 若资源策略、匿名访问或网络边界配置错误，攻击者可能进一步读取、写入或删除数据。
+    - 资源标识本身通常不等于访问凭据，实际影响需结合权限和访问测试确认。
+  remediation: |
+    - 核对资源是否应公开；对 S3、Firebase 等资源关闭匿名读写，启用鉴权、最小权限和网络访问控制。
+    - 删除日志、源码和构建产物中不必要的资源标识，避免把资源地址与访问密钥同时发布。
+    - 检查访问日志、策略变更和异常数据操作，确认是否存在被滥用的迹象。
   tags: file,keys,token,firebase
 file:
   - extensions:

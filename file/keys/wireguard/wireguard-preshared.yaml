@@ -4,6 +4,15 @@ info:
   name: WireGuard Preshared 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: high
+  description: |
+    WireGuard Preshared 密钥用于为 WireGuard 对等端增加额外的预共享加密材料。泄露后，攻击者可结合对应的私钥和配置尝试冒充对等端或解密相关通信。本模板匹配 WireGuard 配置中的 `PresharedKey =` 字段及 Base64 预共享密钥格式。
+  impact: |
+    - 攻击者可能冒充配置中的 WireGuard 对等端，扩大 VPN 内网访问和横向移动范围。
+    - 预共享密钥与私钥、Endpoint 和 AllowedIPs 等配置结合泄露时，可能暴露完整的隧道信任关系。
+  remediation: |
+    - 在 WireGuard 两端重新生成并分发新的预共享密钥，同时轮换必要的私钥和 peer 配置。
+    - 限制 `AllowedIPs`、Endpoint、管理文件权限和 VPN 来源网络，避免把配置提交到源码仓库或日志。
+    - 检查隧道访问日志，确认旧密钥失效后再删除旧配置。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/wireguard.yml
     - https://www.wireguard.com/quickstart/

@@ -4,6 +4,16 @@ info:
   name: Firebase Cloud Messaging 令牌 泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: medium
+  description: |
+    Firebase Cloud Messaging 注册令牌用于标识特定应用实例或设备，是推送消息路由的一部分。令牌本身通常不是发送端 API 密钥，但公开后会暴露设备标识，并可能在服务端鉴权控制不严时被用于定向骚扰或测试推送。本模板匹配包含 `APA91b` 特征的 FCM 令牌格式，命中后仍需确认其是否有效及是否与发送凭据同时泄露。
+  impact: |
+    - 暴露的注册令牌可能被用于识别或定向影响特定应用实例，造成垃圾通知、骚扰或隐私线索泄露。
+    - 若服务端发送密钥、OAuth 凭据或接口鉴权同时泄露，攻击者可能向大量设备发送伪造推送。
+    - 注册令牌单独通常不能证明攻击者具备发送权限，需结合服务端认证配置复核。
+  remediation: |
+    - 对确认暴露的设备注销并刷新 FCM 注册令牌，避免在日志、客户端代码和公开仓库中记录完整令牌。
+    - 将 FCM 发送凭据仅保存在服务端 Secret 管理系统，使用最小权限和受保护的发送接口。
+    - 审计异常发送记录，并对高风险通知增加服务端业务鉴权、频率限制和内容校验。
   tags: file,keys,token,fcm,firebase,google
 file:
   - extensions:

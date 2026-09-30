@@ -4,6 +4,16 @@ info:
   name: Grafana API 密钥 泄露检测（本地文件安全扫描）
   author: DhiyaneshDK
   severity: high
+  description: |
+    Grafana API 密钥是 Grafana 监控与数据源 API 使用的访问凭据或敏感配置。若其明文出现在源码、配置、日志、构建产物或公开仓库中，获得该值的攻击者可能在其权限范围内调用服务、读取数据或执行管理操作。本模板在全部文件中使用服务名、凭据前缀或字段上下文，并结合令牌长度和字符集约束提取候选值；正则命中只表示格式相似，不能单独证明凭据仍有效或拥有相应权限。
+  impact: |
+    - 攻击者可能在凭据权限范围内读取、修改或删除 Grafana 监控与数据源 API 中的数据和配置。
+    - 若凭据具备管理、写入、发布或支付权限，可能造成账户接管、代码篡改、资金或业务损失。
+    - 令牌还可能被用于持久化、横向移动或伪造服务间调用，实际影响取决于作用域、有效期和网络限制。
+  remediation: |
+    - 在 Grafana 监控与数据源 API 控制台立即吊销、轮换或缩短命中凭据的有效期，并审计泄露期间的调用、登录、发布和权限变更记录。
+    - 按实际业务收紧作用域、角色、仓库或资源范围，优先使用短期凭据、来源限制和最小权限。
+    - 将新凭据放入 Secret 管理系统或 CI/CD 安全变量，清理源码、仓库历史、构建产物、日志和缓存中的旧值，并保留发布前扫描。
   reference:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-api-key.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-api-key.go

@@ -4,6 +4,15 @@ info:
   name: JSP WebShell 检测（本地文件安全扫描）
   author: lu4nx
   severity: high
+  description: |
+    JSP 文件中的 ClassLoader、动态类加载、ProcessBuilder、exec、cmd.exe、/bin/sh 和输入流组合，可能构成 Java WebShell 或内存/文件型后门。该模板扫描 jsp、java 和 jspx 文件，并通过正则匹配动态加载、进程创建及命令解释器特征；命中是可疑后门候选，需要结合文件来源和服务器行为确认。
+  impact: |
+    - WebShell 可使攻击者以应用服务器权限执行操作系统命令、读取密钥和数据库配置、修改应用或保持持久化。
+    - 受控服务器可能成为进入内网、横向移动、窃取数据和继续投放恶意载荷的跳板。
+  remediation: |
+    - 隔离并保留样本和日志，删除未经授权的 JSP/Java 文件，禁止应用目录写入和脚本执行，限制进程权限。
+    - 修补上传、路径穿越或表达式执行入口，限制 ClassLoader、反射和命令执行能力，并对 WAR/JSP 部署实行发布白名单。
+    - 排查应用进程、计划任务、启动项、凭据和网络连接；轮换密钥后从可信构建产物恢复服务。
   reference:
     - https://github.com/tennc/webshell/tree/master/jsp
     - https://github.com/tennc/webshell/tree/master/jspx

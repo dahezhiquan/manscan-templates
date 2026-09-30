@@ -5,7 +5,14 @@ info:
   author: Aayush Dhakal
   severity: low
   description: |
-    该模板检测可疑 ASP.NET 框架异常日志，这些异常可能表明探测、利用尝试或应用错误信息泄露。
+    ASP.NET 的异常日志可能暴露框架处理流程、请求状态和内部错误，也可能记录攻击者对站点进行路径探测、权限绕过或异常请求构造的痕迹。该模板扫描任意扩展名文件的内容，并通过正则匹配 HttpException、InvalidOperationException、UnauthorizedAccessException 和 NotFound 等异常名称；命中表示发现需要结合时间、请求来源和完整堆栈进一步核查的日志线索，不等于漏洞已经被利用。
+  impact: |
+    - 异常堆栈或请求信息若被进一步暴露，可能帮助攻击者识别应用结构、路径和权限边界。
+    - 异常集中出现可反映探测或攻击活动，若日志未受保护，还可能造成敏感请求参数和内部路径泄露。
+  remediation: |
+    - 限制日志目录和日志文件的访问权限，禁止通过 Web 服务直接下载，并对异常堆栈实施脱敏。
+    - 结合时间戳、来源地址、请求路径和应用审计日志复核事件，确认是否存在成功的异常请求或后续入侵。
+    - 统一处理未捕获异常并及时修复对应应用错误；对确认受影响的凭据和会话执行轮换。
   reference:
     - https://docs.microsoft.com/en-us/dotnet/api/system.web.httpexception
   tags: file,logs,aspnet

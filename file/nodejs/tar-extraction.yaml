@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测不安全 TAR 解压导致的路径覆盖风险。恶意归档可写入预期目录外的文件并造成代码注入。
+    Node.js 使用 tar-stream 解压不可信 TAR 归档时，若直接把条目名称交给文件写入函数，可能产生目录穿越和路径覆盖。该模板在任意扩展名文件中匹配 tar-stream 引入以及 createWriteStream、writeFile 或 writeFileSync 写入调用；命中表示危险解压代码候选，需要结合条目路径校验确认。
+  impact: |
+    - 恶意归档可能覆盖应用配置、启动脚本或其他可写文件，造成代码执行、持久化、权限提升或服务中断。
+    - 归档处理缺少边界控制时，还可能被利用写入任意目录或消耗过多磁盘空间。
+  remediation: |
+    - 升级并维护 tar-stream 及相关归档依赖，在写入前规范化条目路径，拒绝绝对路径、目录穿越和危险符号链接。
+    - 将解压操作放入专用低权限目录，确认最终路径位于目标目录内并禁止覆盖已有文件。
+    - 限制归档大小、条目数量和解压资源，记录上传者、归档来源及异常条目。
   tags: file,nodejs
 file:
   - extensions:

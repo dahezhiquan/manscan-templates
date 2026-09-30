@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测模板引擎中禁用 HTML 实体转义的用法。关闭转义后，不可信输入可能直接进入页面并触发 XSS。
+    Mustache 或相关模板渲染器关闭 HTML 转义后，模板变量中的不可信内容可能以原始标记写入页面，形成存储型或反射型跨站脚本风险。该模板扫描任意扩展名文件，并匹配 escapeMarkup = false 这一禁用转义的代码设置；命中表示存在潜在 XSS 条件，还需确认数据是否来自用户输入并到达浏览器。
+  impact: |
+    - 攻击者可能在受害者浏览器中执行脚本，窃取会话信息、读取页面数据、冒用用户操作或修改业务请求。
+    - 在高权限用户访问场景下，XSS 可能进一步导致管理功能被滥用和敏感数据泄露。
+  remediation: |
+    - 默认启用 Mustache 的上下文相关 HTML 转义，避免为不可信数据关闭 escapeMarkup；确需输出 HTML 时使用严格白名单净化。
+    - 对模板变量区分 HTML、属性、URL 和 JavaScript 上下文进行编码，并补充 CSP、HttpOnly 和 SameSite 等纵深防护。
+    - 审计已渲染页面和输入点，清理可能已存储的恶意内容并使受影响会话失效。
   tags: file,nodejs,mustache,xss
 file:
   - extensions:

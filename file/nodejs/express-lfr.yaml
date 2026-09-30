@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测 Express render() 与 hbs 模板组合中由不可信输入导致的任意文件读取风险。
+    Express 应用把不可信输入传入 render() 的模板或文件参数时，可能导致本地文件读取、模板文件泄露或路径穿越。该模板扫描任意扩展名文件，匹配 Express render() 与 hbs 模板参数相关的代码形态；命中表示存在潜在文件读取数据流，需要结合输入来源和路径约束确认。
+  impact: |
+    - 攻击者可能读取应用配置、源代码、环境变量或密钥文件，进而接管数据库、云资源或用户会话。
+    - 若读取结果被继续渲染或拼接到响应中，可能扩大为模板注入、凭据泄露或后续代码执行。
+  remediation: |
+    - 不要将用户输入直接作为模板名或文件路径，使用固定模板白名单和服务端映射，并对路径执行规范化和目录边界校验。
+    - 限制进程和应用目录权限，避免把密钥、配置和源码放在可被应用读取的公共目录。
+    - 对异常文件读取进行审计和告警，轮换可能已暴露的密钥、令牌及数据库凭据。
   tags: file,nodejs,express,lfr
 file:
   - extensions:

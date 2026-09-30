@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测不安全 ZIP 解压导致的路径覆盖风险。恶意归档可覆盖任意路径并造成代码注入。
+    Node.js 使用 ZIP 解压库处理不可信归档时，若直接采用条目名称创建文件，可能受到目录穿越和 Zip Slip 影响，将文件写入预期目录之外。该模板在任意扩展名文件中匹配 unzip/unzipper 的解析、条目处理以及 createWriteStream、writeFile 或 writeFileSync 写入调用；命中表示存在潜在路径覆盖代码模式，需要结合归档路径校验确认。
+  impact: |
+    - 攻击者可借助恶意归档覆盖应用配置、启动脚本或其他可写文件，造成代码执行、持久化、权限提升或服务中断。
+    - 不安全的归档处理还可能被利用写入任意目录、破坏业务文件或消耗过多磁盘空间。
+  remediation: |
+    - 升级并维护 ZIP 解压依赖，在写入前规范化条目路径，拒绝绝对路径、目录穿越和危险符号链接。
+    - 确认解析后的最终路径始终位于专用目标目录内，禁止覆盖现有文件，并以最小权限运行解压进程。
+    - 限制归档大小、条目数量和解压资源，记录上传者、归档来源及异常条目。
   tags: file,nodejs
 file:
   - extensions:

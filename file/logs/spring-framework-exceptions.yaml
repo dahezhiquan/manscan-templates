@@ -5,7 +5,14 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检测可疑 Spring 框架异常日志，这些异常可能反映应用错误、攻击探测或利用尝试。
+    Spring Security 异常日志中的访问拒绝、CSRF 令牌无效、Cookie 被盗用和请求被拒绝等信息，可能反映认证攻击、会话篡改或恶意请求探测。该模板扫描任意扩展名文件，并通过正则匹配 Spring 异常名称；命中是安全事件线索，需要结合认证日志和请求结果确认是否存在越权或会话滥用。
+  impact: |
+    - 异常堆栈、认证流程和 Cookie 处理细节可能泄露安全控制实现，帮助攻击者调整后续请求。
+    - 若攻击者能够绕过对应校验，可能冒用会话、访问受限资源或执行未授权操作。
+  remediation: |
+    - 限制日志文件访问并关闭对外的详细异常输出，正确配置 CSRF、会话 Cookie 属性、认证失败处理和访问控制。
+    - 关联用户、IP、会话标识和响应状态排查暴力认证、Cookie 重放及越权访问。
+    - 更新 Spring 及安全组件，确认密钥和会话令牌未泄露；必要时使现有会话失效并要求重新登录。
   reference:
     - https://docs.spring.io/spring-security/site/docs/current/apidocs/overview-tree.html
   tags: file,logs,spring

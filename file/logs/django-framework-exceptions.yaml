@@ -5,7 +5,14 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检测可疑 Django Web 框架异常日志，这些异常可能表明漏洞探测、利用尝试或错误信息泄露。
+    Django 的 SuspiciousOperation、DisallowedHost、请求体过大和会话异常等日志通常表示框架拒绝了可疑请求，可能来自主机头伪造、参数篡改、文件操作探测或资源耗尽尝试。该模板扫描任意扩展名文件，并对 Django 安全异常名称进行正则匹配；命中是异常活动和潜在信息泄露的线索，需要结合请求日志判断是否形成实际攻击。
+  impact: |
+    - 异常详情或调试信息若被公开，可能泄露路由、配置、文件路径和请求处理细节。
+    - 大量恶意请求可能消耗应用和日志资源，持续的主机头、文件或会话攻击还可能暴露配置缺陷。
+  remediation: |
+    - 生产环境关闭 DEBUG，限制日志文件权限，并在反向代理和 Django 配置中校验允许的 Host。
+    - 对异常来源、请求参数和访问频率进行关联分析，必要时在网关处限速、拦截或封禁。
+    - 检查异常对应的文件操作、会话和上传功能，修复输入校验问题并清理已暴露的敏感日志。
   reference:
     - https://docs.djangoproject.com/en/1.11/ref/exceptions/
     - https://docs.djangoproject.com/en/1.11/topics/logging/#django-security

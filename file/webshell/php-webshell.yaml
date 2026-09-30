@@ -4,6 +4,15 @@ info:
   name: PHP WebShell 检测（本地文件安全扫描）
   author: lu4nx
   severity: high
+  description: |
+    PHP 文件中的 eval、system、exec、passthru、动态函数、命令解释器、压缩编码和用户输入超全局组合，常见于通过 Web 请求执行命令或读写文件的 PHP WebShell。该模板扫描 php 文件，并用正则匹配命令执行、动态调用、编码隐藏和典型 Shell 关键词；命中是可疑后门候选，需要结合文件时间线和访问日志确认。
+  impact: |
+    - 成功运行的 WebShell 可使攻击者以 PHP 进程权限执行任意命令、读取配置和数据库凭据、篡改页面或维持持久化。
+    - 攻击者可能利用服务器访问内网、窃取用户数据、横向移动或继续部署其他恶意软件。
+  remediation: |
+    - 隔离并保留命中文件及其哈希，删除未经授权的脚本，禁止 Web 目录写入和 PHP 执行高风险函数，使用最小权限运行 PHP。
+    - 修补文件上传、写入和远程包含入口，限制可执行扩展名和目录，部署文件完整性监控。
+    - 检查 Web 访问日志、进程、计划任务、启动项和外联，轮换服务器、数据库及应用凭据并从可信版本恢复。
   reference:
     - https://github.com/tennc/webshell/tree/master/php
     - https://www.rapid7.com/blog/post/2016/12/14/webshells-101/

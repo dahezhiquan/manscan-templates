@@ -4,6 +4,15 @@ info:
   name: Perl 文件扫描（本地文件安全扫描）
   author: geeknik
   severity: medium
+  description: |
+    Perl 的 eval、system、exec、open、glob、syscall、权限和文件操作等调用，若参数受外部输入影响，可能引入代码执行、命令注入、路径穿越、任意文件操作或权限边界问题。该模板针对 pl、perl、pod、pm 和 cgi 文件，按危险函数名称进行正则提取；命中是需要结合数据流和参数校验人工复核的风险线索，不代表每个调用都可利用。
+  impact: |
+    - 不安全的动态执行或系统调用可能使攻击者执行任意命令、读取或修改文件，并以应用进程权限访问主机资源。
+    - 不受控的网络、进程和权限操作可能造成凭据泄露、横向移动、拒绝服务或安全配置被篡改。
+  remediation: |
+    - 禁止把用户输入直接传入 eval、system、exec、open、glob 和 syscall；优先使用参数数组、固定命令白名单和安全 API。
+    - 对路径、主机地址、进程号、权限参数和文件句柄执行类型校验、白名单校验及最小权限控制。
+    - 对命中位置补充人工数据流审查、单元测试和代码审计，并轮换已可能暴露的凭据。
   tags: perl,file
 file:
   - extensions:

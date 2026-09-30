@@ -5,7 +5,14 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板检测可疑 Ruby on Rails 异常日志，这些异常可能表明漏洞探测、利用尝试或错误信息泄露。
+    Ruby on Rails 的 InvalidAuthenticityToken、跨域请求、方法不允许和参数缺失等异常通常表示 CSRF、防护策略或请求校验拒绝了异常请求，也可能反映攻击者正在探测控制器接口。该模板扫描任意扩展名文件，并通过正则匹配 Rails 异常名称；命中应结合请求来源、会话和响应结果复核，不能单独证明攻击成功。
+  impact: |
+    - 异常堆栈、控制器路径和参数信息若被暴露，可能帮助攻击者推断应用路由、校验逻辑和会话状态。
+    - 异常请求量过大可能消耗应用资源；若同时发现成功响应，则需进一步排查 CSRF、越权或参数污染问题。
+  remediation: |
+    - 生产环境隐藏详细异常页面和堆栈，限制日志访问，并确保 CSRF 令牌、Origin/Referer 校验和会话保护保持启用。
+    - 关联请求日志、用户会话和响应状态核查异常是否来自真实攻击，必要时在网关进行限速和拦截。
+    - 升级并维护 Rails 及相关依赖，修复对应控制器的输入校验和授权逻辑。
   reference:
     - http://edgeguides.rubyonrails.org/security.html
     - http://guides.rubyonrails.org/action_controller_overview.html

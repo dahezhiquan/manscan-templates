@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测 readFile()/readFileSync() 等文件读取调用中使用不可信输入的模式，可能导致目录穿越读取任意文件。
+    Node.js 文件读取 API 若把未校验的外部输入用于路径参数，可能受到目录穿越影响，从应用预期目录读取任意本地文件。该模板在任意扩展名文件中匹配 createReadStream、readFile、readFileSync 和 readFileAsync 与模板化输入的组合；命中表示潜在路径穿越代码模式，需要结合输入来源和目录限制确认。
+  impact: |
+    - 攻击者可能读取源代码、配置文件、环境变量、私钥和日志，获取凭据并进一步访问数据库或云服务。
+    - 读取高敏感文件可能导致会话伪造、权限提升、数据泄露或后续远程代码执行。
+  remediation: |
+    - 使用固定资源标识或白名单映射替代用户可控路径，规范化路径并确认解析后的绝对路径始终位于允许目录内。
+    - 以最小权限运行 Node.js 进程，隔离配置和密钥文件，禁止通过静态资源目录暴露内部文件。
+    - 审计异常读取请求并轮换可能已泄露的密钥、令牌和凭据。
   tags: file,nodejs
 file:
   - extensions:

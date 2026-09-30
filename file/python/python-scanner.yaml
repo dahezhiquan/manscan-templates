@@ -5,7 +5,14 @@ info:
   author: majidmc2
   severity: medium
   description: |
-    该模板检测 Python 文件中的危险函数或高风险调用，用于发现动态执行、命令执行或不安全反序列化等风险线索。
+    Python 中的 exec、eval、__import__、os.system、subprocess、pickle、marshal、危险 YAML 加载和数据库 execute 调用，若处理不可信输入，可能导致代码执行、命令注入、不安全反序列化、SQL 注入或配置解析问题。该模板仅扫描 py 文件，并按 code-injection、command-injection、untrusted-source、dangerous-yaml 和 sqli 规则提取调用名称；命中需要结合数据流确认。
+  impact: |
+    - 攻击者可能执行任意 Python 或操作系统命令，以应用权限读取密钥、修改文件、访问内网或建立持久化。
+    - 不安全反序列化和 SQL 拼接可能造成远程代码执行、数据泄露、数据篡改或数据库接管。
+  remediation: |
+    - 避免使用 eval、exec、pickle、marshal 和不安全 YAML 加载处理外部数据；确需使用时采用安全加载器、签名数据和严格类型校验。
+    - 禁止 shell=True 与用户输入拼接，使用参数数组和命令白名单；数据库统一使用参数化查询和最小权限账号。
+    - 结合调用链和测试样例复核每个命中点，更新 Python 依赖并轮换可能暴露的系统、数据库和云凭据。
   reference:
     - https://www.kevinlondon.com/2015/07/26/dangerous-python-functions.html
     - https://www.kevinlondon.com/2015/08/15/dangerous-python-functions-pt2.html

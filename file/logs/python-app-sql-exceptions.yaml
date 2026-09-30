@@ -5,7 +5,14 @@ info:
   author: geeknik
   severity: medium
   description: |
-    该模板根据 PEP 249 相关数据库异常特征检测 Python 应用中的通用 SQL 错误信息，可能暴露注入探测或数据库错误。
+    Python 应用中的 DataError、IntegrityError、ProgrammingError 和 OperationalError 可能暴露数据库类型、SQL 结构和参数处理问题，也可能是 SQL 注入探测或异常输入触发的结果。该模板扫描任意扩展名文件，并用正则匹配 PEP 249 定义的数据库异常名称；命中需要结合请求和数据库日志确认原因，不能单独证明存在 SQL 注入。
+  impact: |
+    - 数据库错误回显或日志暴露可能泄露表名、字段名、查询结构和连接实现，降低后续注入和越权攻击门槛。
+    - 大量异常查询可能造成数据库资源消耗、业务中断或掩盖真实的完整性故障。
+  remediation: |
+    - 对外统一处理数据库异常，禁止返回 SQL、堆栈和连接细节，并限制日志文件的读取权限。
+    - 审计异常前后的请求参数和数据库语句，确保查询使用参数化接口、最小权限账号和严格输入校验。
+    - 对确认泄露的数据库凭据、应用密钥和会话令牌进行轮换，并补充异常告警和限速。
   reference:
     - https://www.python.org/dev
     - https://peps.python.org/pep-0249/

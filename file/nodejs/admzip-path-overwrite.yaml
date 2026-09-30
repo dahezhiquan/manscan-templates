@@ -5,7 +5,14 @@ info:
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium
   description: |
-    该模板检测使用 adm-zip 进行不安全 ZIP 解压的代码模式。攻击者可通过恶意压缩包路径覆盖任意文件，进一步造成代码注入。
+    Node.js 使用 adm-zip 解压不可信 ZIP 归档时，若直接采用归档条目路径创建文件，可能受到目录穿越和 Zip Slip 影响，将文件写入目标目录之外。该模板在任意扩展名文件中匹配 adm-zip 引入、遍历归档条目以及 createWriteStream、writeFile 或 writeFileSync 写入组合；命中表示存在需要人工确认的危险解压代码路径，不等于已确认可利用。
+  impact: |
+    - 攻击者可借助恶意归档覆盖应用配置、启动脚本或其他可写文件，造成代码执行、权限提升或持久化。
+    - 覆盖关键文件还可能导致服务启动失败、数据损坏或安全配置被绕过。
+  remediation: |
+    - 升级到已修复的 adm-zip 版本（如项目公告提供修复版本则优先采用），并在解压前规范化路径，拒绝绝对路径和包含 .. 的条目。
+    - 将解压目录限制在专用低权限目录，校验最终路径必须位于目标目录内，并避免覆盖现有文件。
+    - 对归档来源、大小、条目数量和符号链接实施校验，解压服务使用最小权限运行。
   tags: file,nodejs,admzip
 file:
   - extensions:

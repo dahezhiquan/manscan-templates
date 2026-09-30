@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 Apache ServerTokens 是否设置为 Prod，以减少响应头中暴露的版本和组件细节。
+    Apache `ServerTokens` 决定 `Server` 响应头暴露的产品、版本和模块细节。设置为 `Prod` 可减少被动指纹信息，但不能代替补丁管理和其他响应清理。本模板在 Apache 配置段中检查是否缺少 `ServerTokens Prod`，命中表示未发现该基线指令，不直接证明线上响应一定泄露完整版本。
+  impact: |
+    - 详细的 Server 头信息会降低攻击者识别版本和匹配已知漏洞的成本。
+    - 版本隐藏不能修复漏洞；若与未打补丁组件、默认页面或错误信息叠加，可能扩大侦察和利用效率。
   remediation: |
-    在 Apache 配置中设置 ServerTokens Prod，并重启服务。
+    - 在全局服务器配置中设置 `ServerTokens Prod`，并确认生效范围覆盖所有对外虚拟主机。
+    - 保持 Apache、模块和运行时及时更新，同时通过代理或网关移除不必要的响应指纹。
+    - 重载服务后检查 `Server` 响应头和错误页，确认没有重新暴露版本细节。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#servertokens
   metadata:

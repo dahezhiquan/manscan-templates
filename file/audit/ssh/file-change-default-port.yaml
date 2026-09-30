@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检查 SSH 是否仍使用默认端口。变更默认端口可减少针对 22 端口的自动化扫描和低质量暴力尝试。
+    SSH 默认端口 22 会被自动化扫描和口令攻击优先探测，改用非默认端口只能降低噪声，不能替代认证和访问控制。本模板匹配标准 `sshd_config` 中的注释行 `#Port 22`，属于默认配置启用线索，不能单独确认当前监听端口或实际暴露范围。
+  impact: |
+    - 暴露在公网的 SSH 服务可能持续遭受扫描、暴力破解和凭据填充，消耗日志与防护资源。
+    - 仅改变端口不能防止定向扫描；若同时缺少 MFA、来源限制或密钥认证，账户接管风险仍然存在。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置非默认 Port，并重启 SSH 服务。
+    - 如组织策略允许，可将 SSH 迁移到非默认端口，并同步更新防火墙、跳板机、监控和自动化配置。
+    - 同时启用密钥/MFA 认证、来源 ACL、失败限速和及时补丁，不要把改端口当作主要安全控制。
+    - 变更前验证备用管理路径，避免因端口或防火墙配置错误锁死设备。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://gcore.com/learning/how-to-change-ssh-port/

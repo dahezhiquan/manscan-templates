@@ -5,7 +5,13 @@ info:
   author: Th3l0newolf
   severity: medium
   description: |
-    该模板检测应用是否信任用户安装的证书。该配置可能让攻击者通过安装受控 CA 证书实施中间人攻击并拦截 HTTPS 流量。
+    Android Network Security Configuration 中将证书来源设为 `user` 会让应用信任设备用户安装的 CA 证书。对需要保护传输机密性的应用，若设备被安装恶意或组织外部 CA，攻击者可能借助代理解密 HTTPS 流量。本模板匹配 `<certificates src="user">`，只说明应用声明了用户证书信任来源，实际可利用性还取决于设备控制权和其他网络安全配置。
+  impact: |
+    - 在受控 CA 被安装的设备上，攻击者可能拦截、读取或修改应用与服务端之间的认证信息和业务数据。
+    - 若应用传输访问令牌、个人信息或支付数据，网络层篡改可能进一步导致账户接管或交易风险。
+  remediation: |
+    - 对生产环境仅信任必要的系统证书或应用内受控证书，删除不必要的 `src="user"` 配置。
+    - 对确需企业代理的场景使用受控设备、证书固定或等效的服务端身份校验，并评估调试与生产配置差异。
   reference:
     - https://developer.android.com/training/articles/security-config#TrustingUserCerts
   tags: file,android

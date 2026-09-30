@@ -5,7 +5,13 @@ info:
   author: Th3l0newolf
   severity: medium
   description: |
-    该模板检测 Android 应用是否请求 REQUEST_INSTALL_PACKAGES 权限。该权限允许应用请求安装未知来源 APK，可能增加未授权安装或供应链滥用风险。
+    `REQUEST_INSTALL_PACKAGES` 允许应用在符合系统条件时请求安装未知来源 APK，常用于应用商店、更新器或企业分发场景。若业务没有明确的软件分发需求，声明该权限会扩大应用安装外部代码的能力。本模板在 XML 中匹配 `android.permission.REQUEST_INSTALL_PACKAGES` 的权限声明，不能单独证明应用已经安装恶意 APK。
+  impact: |
+    - 应用可能诱导用户安装未受信任或被篡改的 APK，形成恶意代码落地、数据窃取和持久化入口。
+    - 权限与不安全下载、深度链接或社会工程结合时，可能绕过组织应用分发策略，扩大供应链攻击影响。
+  remediation: |
+    - 无明确安装需求时删除该权限；确需使用时限制下载来源、校验签名和完整性，并向用户清晰说明安装行为。
+    - 将安装请求限制在受控更新流程中，避免从不可信 URL 获取 APK，并结合设备管理策略限制未知来源安装。
   reference:
     - https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES
   tags: file,android,permission,manifest

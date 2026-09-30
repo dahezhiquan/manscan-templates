@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 Cisco IP source-route 配置。源路由曾被用于绕过正常路由路径、探测网络或辅助未授权操作。
+    IP Source Route 允许数据包携带路径信息，绕过部分正常路由决策。现代网络通常不需要该能力，保留它可能帮助攻击者探测拓扑、绕过路径控制或诱导流量经过非预期设备。本模板在 Cisco 配置中检查是否缺少 `no ip source-route`，命中表示未发现禁用指令。
+  impact: |
+    - 攻击者可能利用源路由影响流量路径、辅助网络侦察或绕过部分基于路由的访问边界。
+    - 在边界设备上保留该能力会增加欺骗流量、流量分析和横向移动的攻击面。
   remediation: |
-    在适用设备上禁用 IP source-route。
+    - 在不需要该功能的设备和接口上配置 `no ip source-route`，并确认下游设备不会依赖源路由。
+    - 通过 ACL、反欺骗策略和边界过滤拒绝包含源路由选项的异常流量，变更后进行路由连通性验证。
   reference:
     - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/ipaddr/command/ipaddr-cr-book/ipaddr-i4.html#GUID-C7F971DD-358F-4B43-9F3E-244F5D4A3A93
   classification:

@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检查 SSH 是否限制允许访问的来源 IP。缺少来源限制会扩大暴露面。
+    SSH `ListenAddress` 可限制 sshd 绑定的本地接口和地址。未显式设置时，服务通常监听所有可用地址，可能把管理面暴露到不受信任网络。本模板匹配标准配置中的注释行 `#ListenAddress`，作为未配置监听白名单的线索，实际暴露范围还取决于网络接口、防火墙和云安全组。
+  impact: |
+    - SSH 管理面暴露在公网、业务网或访客网时，攻击者可进行扫描、暴力破解和漏洞探测。
+    - 管理服务可达范围扩大后，凭据泄露和横向移动的攻击路径也会增加。
   remediation: |
-    通过防火墙、TCP Wrapper 或 SSH 访问控制限制可信来源。
+    - 在有效配置中将 `ListenAddress` 绑定到管理网接口，并通过防火墙、安全组和跳板机限制可信来源。
+    - 结合 AllowUsers/AllowGroups、MFA、密钥认证和失败限速，定期从外部网络验证 SSH 实际可达范围。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.cyberciti.biz/tips/howto-openssh-sshd-listen-multiple-ip-address.html

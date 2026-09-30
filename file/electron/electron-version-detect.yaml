@@ -4,6 +4,14 @@ info:
   name: Electron 版本识别（本地文件安全扫描）
   author: me9187
   severity: info
+  description: |
+    Electron 应用将 Chromium、Node.js 和 Electron 运行时一起打包，运行时版本决定其可用安全修复和默认隔离能力。版本过旧可能继承已公开的 Chromium 或 Electron 漏洞，但版本识别本身不等于漏洞确认。本模板在 JSON 文件中提取 `"electronVersion"` 字段，供后续与官方安全公告和支持版本进行比对。
+  impact: |
+    - 暴露旧版本信息可帮助攻击者判断应用可能受影响的 Chromium、Node.js 或 Electron 安全缺陷。
+    - 仅凭字段不能确认实际加载的运行时、补丁状态或可利用条件，需要结合打包产物和运行环境复核。
+  remediation: |
+    - 将 Electron 升级到仍受支持且包含所需 Chromium/Node.js 安全修复的版本，并通过回归测试验证兼容性。
+    - 在发布流水线锁定并审计 Electron 版本，清理旧构建产物，避免应用继续分发已停止维护的运行时。
   reference:
     - https://www.electronjs.org/blog/chromium-rce-vulnerability/
   classification:

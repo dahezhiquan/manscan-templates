@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检查 SSH 是否打印最后登录信息。该信息有助于用户发现异常访问，但也可能向攻击者泄露用户活动线索。
+    SSH 登录后的最后登录提示可帮助用户发现异常访问，但也会向共享终端或旁观者暴露上次登录时间、来源和活动线索。该项属于隐私与终端基线权衡，不是独立的入侵证据。本模板在标准 `sshd_config` 中检查是否缺少 `PrintLastLog no`，命中后需结合组织策略判断。
+  impact: |
+    - 登录时间和来源信息可能帮助攻击者判断用户活跃规律、办公网络和账号使用情况。
+    - 对取证而言，关闭提示也可能减少用户在交互式登录时发现异常的机会，因此不应脱离集中日志单独实施。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 PrintLastLog no，并重启 SSH 服务。
+    - 若共享终端或组织隐私策略要求隐藏提示，设置 `PrintLastLog no`；否则保留提示并教育用户报告异常登录。
+    - 无论是否显示提示，都应保留不可由普通用户修改的 SSH 认证日志并接入集中监控。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=209441

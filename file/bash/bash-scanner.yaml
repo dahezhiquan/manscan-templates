@@ -5,7 +5,15 @@ info:
   author: ransomsec
   severity: medium
   description: |
-    该模板扫描 Bash 脚本或命令片段中的高危 Linux 命令特征，用于发现可能导致数据破坏、权限滥用或系统失稳的危险用法。
+    Bash 脚本中的递归删除、Fork Bomb、动态命令执行、清空文件和从网络下载并执行内容等模式，可能造成数据破坏、资源耗尽或代码注入。命令本身也可能是合法运维逻辑，因此需要结合变量来源、执行上下文和权限进行人工复核。本模板仅处理 `.sh` 文件，并通过正则提取这些危险命令特征，不直接执行脚本。
+  impact: |
+    - 脚本以高权限运行时，危险删除或覆盖操作可能造成系统文件、业务数据和备份不可恢复。
+    - 未校验的动态命令、网络下载或 Shell 嵌套调用可能让攻击者控制执行内容，导致远程代码执行和持久化。
+    - Fork Bomb 或资源密集型命令可能耗尽进程、CPU、磁盘或网络资源，造成服务中断。
+  remediation: |
+    - 对每个命中项核对输入来源和业务必要性，避免将用户输入直接拼接到 `eval`、Shell 参数或下载执行链中。
+    - 使用绝对路径、参数化调用、固定下载地址和完整性校验；高风险脚本应在最小权限和隔离环境中运行。
+    - 对删除、覆盖、提权和外部下载操作增加审批、备份、超时和审计，并在 CI 中进行脚本安全检查。
   reference:
     - https://www.tecmint.com/10-most-dangerous-commands-you-should-never-execute-on-linux/
     - https://phoenixnap.com/kb/dangerous-linux-terminal-commands

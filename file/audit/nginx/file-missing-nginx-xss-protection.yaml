@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 Nginx 是否配置 X-XSS-Protection 等 XSS 防护响应头，用于增强旧浏览器客户端侧防护。
+    `X-XSS-Protection` 是旧浏览器使用的反射型 XSS 过滤响应头，现代浏览器大多已废弃或忽略它，不能替代输出编码和 Content Security Policy。本模板检查 Nginx 配置中是否同时缺少 `add_header X-XSS-Protection` 与 `mode=block`，只能说明未发现该历史兼容性配置，不能证明应用存在 XSS。
+  impact: |
+    - 对仍支持该响应头的旧客户端，缺少 `mode=block` 可能减少一层反射型 XSS 缓解；对现代浏览器影响有限。
+    - 真正的 XSS 风险主要取决于应用是否将不可信输入以未编码方式写入页面，不能靠该响应头单独修复。
+  remediation: |
+    - 优先修复应用输入校验、上下文相关输出编码和模板安全问题，并配置合适的 Content Security Policy。
+    - 如仍需兼容旧客户端，可在确认业务影响后配置 `X-XSS-Protection: 1; mode=block`，同时测试代理和缓存行为。
+    - 不要将该历史响应头作为现代浏览器的主要 XSS 防护控制。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection

@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 SSH 是否允许 root 直接登录。直接开放 root 登录会扩大暴力破解和凭据泄露后的影响。
+    允许 root 通过 SSH 直接登录会把最高权限账户暴露给远程认证面，攻击者一旦获得凭据即可跳过普通账户和提权审计。本模板匹配 `PermitRootLogin yes`，可直接提示显式开启该配置，但仍需考虑 Include 文件、Match 块和实际监听面。
+  impact: |
+    - root 凭据被暴力破解、复用或窃取后，攻击者可直接完全控制主机。
+    - 直接 root 登录会减少操作归属和提权链审计信息，扩大凭据泄露后的横向移动影响。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 PermitRootLogin no，并重启 SSH 服务。
+    - 将 `PermitRootLogin no` 应用于有效 SSH 配置，使用受控普通账户登录后通过 sudo 执行必要管理操作。
+    - 对 sudo 权限、密钥、MFA、来源 ACL 和特权命令启用最小权限与审计，并在变更前验证备用登录路径。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.tecmint.com/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/

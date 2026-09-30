@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH 是否限制可登录用户。未限制时，所有本地账户都可能成为远程登录攻击面。
+    SSH `AllowUsers` 可明确限制允许远程登录的账户。未配置该项时，默认行为可能允许更多本地账户参与认证，扩大远程攻击面。本模板检查标准配置中是否缺少 `AllowUsers`，不判断 `AllowGroups`、系统账户 shell、Include 文件和 Match 块。
+  impact: |
+    - 服务账户、临时账户或低权限本地账户可能被用于口令攻击和主机横向移动。
+    - 登录范围不清晰会增加离职账户、共享账户和凭据泄露后的处置难度。
   remediation: |
-    在 /etc/ssh/sshd_config 中配置 AllowUsers 或 AllowGroups，并重启 SSH 服务。
+    - 使用 `AllowUsers` 或 `AllowGroups` 仅放行必要的管理主体，先测试运维和应急登录路径。
+    - 禁用不需要登录的系统账户，配合密钥/MFA、来源 ACL 和集中审计控制认证活动。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://cloud.ibm.com/docs/ssh-keys?topic=ssh-keys-granting-ssh-access-to-a-user

@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 WebView loadUrl 的使用情况。若 URL 来源可控，可能加载不可信页面并触发 WebView 安全风险。
+    WebView `loadUrl` 会把指定 URL 加载到应用内页面。调用本身是正常功能，但若 URL 来自 Intent、网络响应或用户输入且缺少允许列表，应用可能加载钓鱼页面、恶意脚本或带本地桥接能力的外部内容。本模板匹配 `WebView.loadUrl(String)` 的字节码调用，不判断 URL 来源和运行时校验。
+  impact: |
+    - 攻击者可能诱导应用加载不可信站点，窃取登录信息或利用页面脚本影响应用内交互。
+    - 若 WebView 同时启用 JavaScript、文件访问或原生桥接，外部页面可能进一步访问本地数据或调用高权限功能。
+  remediation: |
+    - 对可加载 URL 使用严格的 HTTPS 域名和路径允许列表，拒绝任意重定向、非预期 Scheme 和混合内容。
+    - 对外部内容使用独立、最小权限的 WebView 配置，关闭不必要的文件访问和桥接接口，并在加载前后校验来源。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

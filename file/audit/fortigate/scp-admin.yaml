@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 FortiGate Admin-SCP 配置。启用 SCP 可下载配置文件，若缺少控制可能泄露敏感设备配置。
+    FortiGate Admin-SCP 允许通过 SCP 访问设备配置或相关管理文件。若业务不需要该功能，启用会增加远程读取配置、策略和凭据材料的入口。本模板检查是否缺少 `set admin-scp enable` 的配置线索，命中后需确认实际管理协议、账户权限和访问来源。
+  impact: |
+    - 被盗管理员凭据可能被用于下载包含密码哈希、VPN、路由和安全策略的设备配置。
+    - 配置泄露可帮助攻击者复现网络边界、发现内部资产并规划绕过或持久化路径。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 不需要 Admin-SCP 时保持关闭；确需使用时限制管理来源、账户权限和传输审计，并使用 MFA 保护管理员账户。
+    - 对导出配置进行加密存储和访问控制，定期轮换配置中的凭据与密钥。
   tags: audit,config,file,firewall,fortigate
 
 file:

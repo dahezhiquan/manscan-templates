@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查是否仍允许 SSH Protocol 1。该协议缺少现代加密和完整性保护，容易遭受中间人和会话劫持攻击。
+    SSH Protocol 1 已被淘汰，安全性和协商机制不满足现代加密与完整性要求。配置未明确使用 Protocol 2 时，旧版 OpenSSH 或兼容配置可能保留不安全协议入口。本模板在标准 `sshd_config` 上下文中检查是否缺少 `Protocol 2`，属于基线线索，不直接证明当前服务已经接受 Protocol 1。
+  impact: |
+    - 旧协议可能降低会话保密性和完整性，增加中间人、降级和会话劫持风险。
+    - 老旧协议兼容性还可能迫使组织保留过时实现，扩大远程攻击面和维护负担。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 Protocol 2，并重启 SSH 服务。
+    - 在仍支持该配置的 OpenSSH 版本中明确设置 `Protocol 2`，并升级已停止支持的 SSH 实现。
+    - 通过 `sshd -T` 和实际握手验证只允许现代协议、密钥交换、密码套件和主机密钥算法。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.ktchost.com/blog/enable-ssh-protocol-2/

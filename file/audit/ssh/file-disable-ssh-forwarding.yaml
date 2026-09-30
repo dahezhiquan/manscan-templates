@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH X11、代理或端口转发配置。转发功能若被入侵账户滥用，可能成为横向移动或内网访问通道。
+    SSH X11 和 TCP 转发可以把服务器连接、内网服务或图形会话通过已认证 SSH 用户转发出去。对不需要转发的管理账户开放 `AllowTcpForwarding` 或 `X11Forwarding`，会扩大被盗账户的隧道和横向移动能力。本模板匹配任一显式 `yes` 配置，不判断账户范围和实际网络可达性。
+  impact: |
+    - 被盗 SSH 账户可能建立到内网、数据库或管理面的隐蔽隧道，绕过部分边界 ACL。
+    - X11 转发可能暴露本地显示会话和剪贴板等数据，端口转发还可能被用于长期代理和数据外传。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 X11Forwarding no 和 AllowTcpForwarding no，并重启 SSH 服务。
+    - 对不需要转发的账户或主机设置 `X11Forwarding no`、`AllowTcpForwarding no`，并使用 Match 块为确需用户保留最小范围例外。
+    - 同时限制 GatewayPorts、PermitTunnel 和来源网络，监控异常长连接、转发会话和内网访问。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
   metadata:

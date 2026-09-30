@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH MaxAuthTries 配置。限制失败认证次数可降低暴力破解和密码喷洒风险。
+    `MaxAuthTries` 限制单次 SSH 连接允许的认证失败次数，可减少口令猜测和认证资源消耗。本模板匹配标准配置中的注释行 `#MaxAuthTries`，提示可能仍使用默认值或未显式设置；命中后需检查有效配置、Include 文件和外部防护。
+  impact: |
+    - 认证尝试限制不足会增加暴力破解、密码喷洒和凭据填充的成功机会。
+    - 高并发认证失败还可能消耗 sshd、日志和网络资源，掩盖真实登录告警。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 MaxAuthTries 3，并重启 SSH 服务。
+    - 在有效配置中设置符合组织基线的 `MaxAuthTries`，结合 Fail2ban、来源 ACL、MFA 和集中告警进行纵深防护。
+    - 使用 `sshd -T` 验证生效值，并观察正常自动化任务不会因阈值过低而被误阻断。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.tenable.com/audits/items/CIS_Amazon_Linux_2_v3.0.0_L1.audit:82ddb0bcc7ddfddaae3ec0b408ffb225

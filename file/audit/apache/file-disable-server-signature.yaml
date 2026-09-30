@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 Apache ServerSignature 是否关闭。开启时错误页可能泄露 Apache 版本和主机信息。
+    Apache `ServerSignature` 控制错误页和目录列表是否附带服务器签名。开启时可能暴露 Apache 版本、模块和主机信息，帮助攻击者进行组件指纹识别。本模板在配置中识别 Apache 段，并检查是否缺少 `ServerSignature Off`；静态命中仍需结合配置继承和实际错误页复核。
+  impact: |
+    - 详细服务器签名会帮助攻击者将目标版本与公开漏洞、模块缺陷和默认配置关联。
+    - 错误页中的主机或路径信息可能暴露内部部署细节，辅助后续路径探测和定向攻击。
   remediation: |
-    在 Apache 配置中设置 ServerSignature Off，并重启服务。
+    - 设置 `ServerSignature Off`，并确认虚拟主机、目录和错误文档配置未重新启用签名。
+    - 配置统一的自定义错误页，避免输出版本、模块、主机名和内部路径。
+    - 重载 Apache 后验证 4xx/5xx 页面和目录响应。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#serversignature
   metadata:

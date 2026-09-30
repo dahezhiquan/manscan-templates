@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 Nginx server_tokens 是否启用。开启后可能在响应中暴露版本信息，便于攻击者进行指纹识别。
+    Nginx `server_tokens` 会影响错误页和响应头中暴露的版本信息。详细版本指纹可帮助攻击者将目标与公开漏洞和特定模块关联。本模板在同时包含 `http`、`events` 配置段的文件中检查是否缺少 `server_tokens off`，命中表示未发现该配置，实际输出仍需通过有效配置和响应确认。
+  impact: |
+    - 版本泄露会降低攻击者侦察成本，帮助其选择针对 Nginx、模块和运行时的攻击路径。
+    - 该设置不能修复漏洞；若与过期组件、默认错误页或其他信息泄露叠加，影响会进一步扩大。
   remediation: |
-    在 /etc/nginx/nginx.conf 中设置 server_tokens off; 并重启 Nginx。
+    - 在适用的 `http`、`server` 或 `location` 配置中设置 `server_tokens off;`，确认没有子配置重新启用。
+    - 保持 Nginx 和模块及时更新，统一清理错误页、代理头和调试信息中的版本线索。
+    - 重载 Nginx 后检查错误响应和响应头，确认版本信息已收敛。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://nginx.org/en/docs/http/ngx_http_core_module.html#server_tokens

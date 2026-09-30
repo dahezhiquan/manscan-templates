@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 IIS 目录浏览是否关闭。目录浏览开启会暴露站点文件结构和敏感文件名。
+    IIS 目录浏览会在目录缺少默认文档时展示文件列表和路径结构。若站点包含备份、日志、源码或上传文件，目录浏览可能直接暴露敏感内容。本模板检查配置中是否出现 `<system.webServer>` 且未匹配 `<directoryBrowse enabled="true" />`；由于静态配置可能被继承或覆盖，命中后应结合 IIS 有效配置和实际响应确认状态。
+  impact: |
+    - 攻击者可枚举站点目录、备份和组件名称，降低敏感文件发现和后续漏洞利用的成本。
+    - 上传目录或临时目录被列出时，可能直接泄露用户数据、源代码和可执行文件。
+  remediation: |
+    - 在 IIS 站点或服务器级配置中明确关闭目录浏览，并确认没有子目录配置重新启用。
+    - 对上传、备份和日志目录使用独立存储与访问控制，删除不应部署到 Web 根目录的文件。
+    - 从外部访问无默认文档的目录，确认返回拒绝或统一错误页面而不是文件列表。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/iis/
   tags: iis,windows,file,hardening

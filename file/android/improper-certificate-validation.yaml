@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: medium
   description: |
-    该模板检测 Android 应用中可能不安全的证书校验实现，例如弱化 TLS 验证、信任过宽或绕过证书链校验的逻辑。
+    Android WebView 的 `SslErrorHandler.proceed()` 会让应用在出现 TLS 证书错误时继续加载页面，可能绕过证书链、主机名或有效期校验。若错误可由网络攻击者制造，应用可能在不可信连接上继续传输数据。本模板匹配该调用的字节码特征，属于高置信度风险线索，但仍需确认调用是否受环境、域名和用户操作限制。
+  impact: |
+    - 攻击者可能通过中间人攻击读取或篡改 WebView 中的登录凭据、会话令牌和业务数据。
+    - 被篡改的页面脚本还可能诱导用户执行操作，或利用 WebView 与本地代码的桥接能力扩大影响。
+  remediation: |
+    - 删除对证书错误的无条件 `proceed()`，改为终止连接并记录错误；仅在受控测试环境使用调试例外。
+    - 使用 Android Network Security Configuration、系统证书校验和必要的证书固定保护生产通信，并覆盖异常证书测试。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

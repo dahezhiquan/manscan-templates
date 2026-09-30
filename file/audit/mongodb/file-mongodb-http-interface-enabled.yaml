@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 /etc/mongod.conf 中 MongoDB HTTP 接口是否启用。该旧接口会增加不必要的管理暴露面。
+    MongoDB 旧版 HTTP 接口可能提供状态、监控或管理信息，不应在生产环境对不受信任网络开放。本模板在包含 MongoDB 配置上下文的文件中检查 `http:` 与 `enabled: true` 的组合，并以当前匹配逻辑提取配置线索；命中结果需要结合实际 MongoDB 版本、启动参数和监听端口确认接口是否真的启用。
+  impact: |
+    - 暴露的 HTTP 管理接口可能泄露数据库状态、版本、连接和运行指标，帮助攻击者进行定向攻击。
+    - 在旧版本或访问控制薄弱的环境中，管理接口可能被用于未授权操作、资源消耗或进一步攻击数据库。
   remediation: |
-    在 /etc/mongod.conf 中设置 http.enabled 为 false，并重启 MongoDB。
+    - 对不需要该接口的版本设置 `http.enabled: false` 或移除相关配置，并重启后确认对应端口不再监听。
+    - 通过绑定地址、防火墙和身份认证限制任何保留的管理接口，升级已停止支持的 MongoDB 版本。
+    - 不要仅凭配置文件静态命中认定接口已暴露，应结合运行状态和网络可达性验证。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/reference/configuration-options/

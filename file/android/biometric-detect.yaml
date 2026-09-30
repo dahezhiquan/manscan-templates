@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 Android 应用中是否使用生物识别或指纹相关权限与组件，用于识别本地认证能力和相关安全边界。
+    Android 生物识别 API 和 `USE_FINGERPRINT`、`USE_BIOMETRIC` 权限用于提供本地指纹或生物识别认证能力。出现这些标识只说明应用包含相关功能，不代表认证实现存在缺陷。本模板匹配权限字符串，作为定位本地认证代码和后续审计入口的线索。
+  impact: |
+    - 若应用将生物识别结果错误地当作长期凭据，或未在敏感操作前重新认证，攻击者可能利用已解锁设备访问受保护功能。
+    - 生物识别失败回退、密钥绑定和认证状态管理不当，可能削弱本地账户保护；本模板本身不验证这些逻辑。
+  remediation: |
+    - 使用 Android 官方生物识别 API 和硬件支持检查，将认证结果绑定到具体敏感操作或硬件保护密钥。
+    - 设计安全的 PIN/密码回退、锁定和会话超时策略，不要把生物识别模板或可逆凭据写入应用存储。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

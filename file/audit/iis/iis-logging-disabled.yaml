@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 IIS 日志是否被禁用。缺少访问日志会削弱入侵排查、溯源和合规审计能力。
+    IIS 访问日志记录请求时间、来源、URL、状态码等信息，是排查扫描、攻击和业务故障的重要证据。本模板在包含 `<configuration>` 的文件中检查是否缺少明确的 `<logFile enabled="false">` 标记，实际命中表示日志配置未被该规则识别为禁用，仍需结合 IIS 有效配置、日志目录和采集链路确认是否存在审计缺口。
+  impact: |
+    - 日志缺失、未采集或保留周期不足时，攻击者的登录、文件访问和配置探测可能无法追溯。
+    - 无法关联来源 IP、时间和响应状态会削弱告警、取证和合规审计能力。
+  remediation: |
+    - 在 IIS 有效配置中启用必要的访问日志，设置受控日志目录、保留周期和磁盘容量告警。
+    - 将日志集中发送到不可由 Web 进程修改的审计平台，并监控日志中断、异常清空和采集延迟。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/iis/
   tags: iis,windows,security,hardening,logging

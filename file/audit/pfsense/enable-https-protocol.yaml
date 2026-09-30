@@ -5,7 +5,10 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 pfSense Web 管理入口是否仅允许 HTTPS。HTTP 会明文传输密码和管理数据，且无法验证服务端身份。
+    pfSense WebGUI 应通过 HTTPS 保护管理员凭据、配置数据和会话 Cookie。若管理入口使用 HTTP，网络观察者可能窃听或篡改管理流量。本模板在 XML 中检查 WebGUI 系统配置是否缺少 `<protocol>https</protocol>`，不验证证书信任、HTTP 重定向和外部反向代理的最终行为。
+  impact: |
+    - 管理员登录凭据和会话 Cookie 可能被同网段攻击者窃取，进而接管防火墙管理面。
+    - 管理配置被中间人篡改后，攻击者可能开放端口、修改 NAT/ACL 或关闭安全日志。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/advanced-admin.html
   classification:
@@ -14,6 +17,9 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
+  remediation: |
+    - 将 WebGUI 协议设置为 HTTPS，使用受信任且与管理域名匹配的证书，并禁用或安全重定向 HTTP。
+    - 限制 WebGUI 仅对管理网、VPN 或受控跳板机开放，启用 MFA、会话保护和登录审计。
   tags: firewall,config,audit,pfsense,file
 
 file:

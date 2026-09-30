@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检测 mongod.conf 中 MongoDB 身份认证是否缺失或关闭。若 security.authorization 未启用，数据库访问可能不需要认证。
+    MongoDB `security.authorization: enabled` 强制客户端通过认证并按数据库用户权限访问数据。未启用认证时，若数据库监听地址或网络边界暴露，任意可达客户端可能直接读取或修改数据。本模板在配置文件中识别 MongoDB 配置上下文，并检查是否缺少 `authorization: enabled`；命中后仍需确认启动参数、集群配置和网络 ACL。
+  impact: |
+    - 未认证的 MongoDB 可能被读取、篡改或删除，影响业务数据、账户信息和备份。
+    - 攻击者可能创建管理员账户、植入恶意数据或利用数据库主机作为横向移动跳板。
+  remediation: |
+    - 设置 `security.authorization: enabled`，为应用和运维主体创建最小权限账户，并安全轮换凭据。
+    - 将 MongoDB 绑定到受控地址，限制安全组和防火墙来源，禁止直接暴露到公网。
+    - 启用 TLS、审计和异常登录监控，变更后从应用和副本集角度验证认证兼容性。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/

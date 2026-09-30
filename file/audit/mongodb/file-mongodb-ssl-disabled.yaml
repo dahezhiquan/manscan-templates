@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 MongoDB 是否强制使用 SSL/TLS 连接。未加密连接可能暴露认证和数据传输内容。
+    MongoDB TLS 用于保护客户端、服务端和副本集之间的认证与数据传输。未强制加密时，能够观察数据库网络的攻击者可能读取凭据、查询结果和写入内容。本模板检查 MongoDB 配置上下文中的 `ssl` 和 `mode: requireSSL` 线索，并排除出现 `mode: disabled` 的情况；命中需结合实际启动参数、版本语义和连接协商结果复核。
+  impact: |
+    - 数据库认证信息、查询结果和敏感业务数据可能被网络窃听或篡改。
+    - 副本集、分片和跨主机管理通信缺少 TLS 时，攻击者可能利用内部网络位置扩大数据访问和横向移动。
   remediation: |
-    在 /etc/mongod.conf 中设置 net.ssl.mode 为 requireSSL 并配置 PEMKeyFile。
+    - 按 MongoDB 版本启用 `net.ssl.mode: requireSSL` 或对应 `net.tls` 配置，并配置受信任的证书、私钥和安全权限。
+    - 强制客户端、节点间和管理连接使用 TLS，关闭过时协议与弱密码套件，并验证证书主机名和轮换流程。
+    - 通过网络 ACL 限制数据库来源，避免把 TLS 当作替代身份认证和边界隔离的唯一控制。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/tutorial/configure-ssl/

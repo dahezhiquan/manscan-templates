@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: medium
   description: |
-    该模板检测 WebView Universal Access 配置。开启后 file URL 可能跨源访问其他资源，增加本地文件和敏感数据泄露风险。
+    WebView 的 Universal Access from File URLs 允许 `file://` 页面跨源访问网络或本地资源，会削弱浏览器同源隔离。若应用加载不可信本地内容或外部可控页面，攻击者可能读取敏感数据或访问内部服务。本模板匹配 `setAllowUniversalAccessFromFileURLs` 的字节码调用，不能单独证明页面可被攻击者控制。
+  impact: |
+    - 跨源文件页面可能读取应用私有文件、接口响应或本地缓存中的令牌和业务数据。
+    - 与 JavaScript、文件访问和原生桥接叠加时，可能将 Web 内容漏洞升级为本地权限和代码执行风险。
+  remediation: |
+    - 对生产应用关闭 Universal Access from File URLs，限制页面来源并避免加载不可信 `file://` 内容。
+    - 使用受控的资源协议和最小权限 WebView 配置，结合 CSP、来源校验和敏感接口认证降低叠加风险。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

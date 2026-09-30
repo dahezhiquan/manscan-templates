@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 MongoDB 审计日志配置是否启用。审计日志缺失会影响对敏感操作和异常访问的追踪。
+    MongoDB 审计日志记录认证、授权、集合和管理操作，可用于发现异常访问并重建数据变更时间线。缺少 `auditLog` 配置或未将日志写入受控文件时，数据库安全事件可能没有可靠证据。本模板在包含 `storage` 和 `operationProfiling` 的配置文件中检查是否缺少未注释的审计日志配置，命中后仍需确认版本、许可证和实际运行参数。
+  impact: |
+    - 数据库账户登录、权限修改和敏感集合访问可能无法追溯，攻击者更容易隐藏未授权操作。
+    - 缺少审计证据会延迟入侵响应、数据泄露判定和合规报告。
   remediation: |
-    在 /etc/mongod.conf 中设置 auditLog.destination 为 file 并指定 path。
+    - 按 MongoDB 版本和授权能力启用审计日志，配置 `auditLog.destination: file`、受控路径和适当的审计过滤器。
+    - 将日志文件权限限制为数据库和审计服务账户，集中采集并防止管理员以外的主体删除或篡改。
+    - 定期验证认证、权限变更和敏感数据访问事件仍被记录并可检索。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/tutorial/configure-audit-filters/

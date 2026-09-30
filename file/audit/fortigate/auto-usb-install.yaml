@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 FortiGate Auto USB 安装功能。攻击者若具备物理访问权限，可能通过 USB 加载配置或固件并影响设备安全。
+    FortiGate Auto USB 安装功能可在检测到 USB 介质时自动加载配置或固件。生产设备若未关闭该功能，具备物理接触机会的攻击者可能尝试植入未经批准的配置或软件。本模板在配置中检查是否缺少同时关闭自动配置和自动镜像安装的指令，命中后需结合设备型号、版本和实际启动策略复核。
+  impact: |
+    - 恶意或被篡改的 USB 介质可能改变防火墙策略、管理账户、路由和日志配置。
+    - 设备配置被植入后，攻击者可能绕过边界控制、截获流量或建立持久化管理入口。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 在不需要自动安装的设备上同时关闭自动配置和自动镜像安装，并重启或重新加载配置后验证生效。
+    - 限制机房和设备 USB 接口的物理访问，使用受控介质、签名固件和变更审批流程。
   tags: audit,config,file,firewall,fortigate
 
 file:

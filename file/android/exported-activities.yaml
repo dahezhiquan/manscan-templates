@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板检测 AndroidManifest.xml 中导出的 Activity，排除启动器和常见 Google/Jetpack 依赖组件。导出 Activity 可能被外部应用直接调用。
+    `android:exported="true"` 的 Activity 可以被其他应用通过 Intent 直接启动。若 Activity 未配置权限、未校验调用方或把外部参数直接带入敏感流程，可能形成越权访问、数据泄露或业务操作滥用。本模板在 Manifest 中匹配导出的非启动器 Activity，并排除部分 Google/Jetpack 组件后提取组件名称；命中需要结合代码审计确认风险。
+  impact: |
+    - 其他应用可能绕过正常页面流程打开内部页面、读取敏感数据或触发高权限操作。
+    - 未校验 Intent 参数、任务栈和登录状态时，可能造成账户切换、支付操作或本地文件访问风险。
+  remediation: |
+    - 对不需要跨应用调用的 Activity 设置 `android:exported="false"`；确需导出时配置签名级权限并校验调用方和参数。
+    - 对所有导出入口执行独立的身份、授权和状态检查，不要仅依赖入口页面隐藏或客户端跳转限制。
   tags: android,file,exportedcomponents
 
 file:

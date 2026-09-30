@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 Cisco 日志消息是否配置 service timestamps。缺少日志时间戳会影响审计、告警关联和事件响应。
+    Cisco 日志消息的时间戳用于关联设备操作、认证事件、网络流量和集中日志。缺少毫秒精度、时区和本地时间信息会降低审计与事件响应的可靠性。本模板检查是否缺少 `service timestamps log datetime msec show-timezone localtime`，命中表示未发现该标准化指令。
+  impact: |
+    - 管理员登录、策略变更和异常流量等事件可能无法准确排序，增加入侵溯源和取证难度。
+    - 多设备时间不一致会削弱 SIEM 关联、告警聚合和自动化响应效果。
   reference:
     - https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/service_timestamps.htm
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 配置 `service timestamps log datetime msec show-timezone localtime` 或等效的组织标准。
+    - 使用受控 NTP 源同步设备时钟，并在集中日志平台保留原始时间和采集时间。
   tags: file,audit,cisco,config-audit,cisco-switch,router
 
 file:

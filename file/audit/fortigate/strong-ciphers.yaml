@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 FortiGate HTTPS/SSH 是否使用强加密套件。弱加密可能被本地网络攻击者破解或降级利用。
+    FortiGate 管理面 HTTPS/SSH 的强加密选项用于限制过时协议、弱算法和不安全协商。未启用 `set strong-crypto enable` 时，设备可能接受不符合组织基线的加密组合。本模板检查该指令是否缺失，不直接枚举当前 TLS/SSH 实际协商套件。
+  impact: |
+    - 弱协议或算法可能被网络攻击者降级、破解或利用实现缺陷，暴露管理凭据和配置内容。
+    - 管理面通信被篡改后，攻击者可能修改防火墙策略、路由和 VPN 配置。
+  remediation: |
+    - 启用 `set strong-crypto enable`，并按 FortiOS 版本和兼容性要求停用过时 TLS/SSH 协议与算法。
+    - 使用受信任证书、管理面 ACL 和 MFA 保护 HTTPS/SSH，升级固件后从实际客户端验证协商结果。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   tags: audit,config,file,firewall,fortigate

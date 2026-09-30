@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 Nginx 是否启用 HSTS。缺少 HSTS 可能允许用户被降级到 HTTP 或遭受中间人攻击。
+    HTTP Strict Transport Security（HSTS）通过 `Strict-Transport-Security` 响应头告诉浏览器后续只使用 HTTPS 访问站点。缺少该策略时，首次访问或用户点击 HTTP 链接可能被降级并遭受中间人攻击。本模板检查 Nginx 配置中是否缺少 `add_header Strict-Transport-Security`，不验证头部作用域、`max-age` 和 HTTPS 重定向是否正确。
+  impact: |
+    - 攻击者可能在用户首次访问、公共网络或不安全跳转中劫持 HTTP 请求，窃取凭据和会话信息。
+    - HSTS 未覆盖子域或错误配置时，部分管理入口、登录回调和资源请求仍可能被降级。
   remediation: |
-    在 Nginx server 块中添加 Strict-Transport-Security 响应头，例如 max-age=31536000; includeSubDomains; preload。
+    - 仅在所有相关服务已稳定支持 HTTPS 后，在适用的 Nginx `server` 块中配置 `Strict-Transport-Security`，先从较短 `max-age` 逐步扩大。
+    - 根据域名资产确认是否使用 `includeSubDomains` 和 `preload`，避免因子域仍依赖 HTTP 导致业务中断。
+    - 配置 HTTP 到 HTTPS 的安全重定向，并验证错误响应、代理层和静态资源也返回正确的 HSTS 头。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security

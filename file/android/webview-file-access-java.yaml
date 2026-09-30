@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板在 Java 源码中检测 WebView 是否启用文件访问。若加载不可信内容，可能造成本地文件读取或数据泄露。
+    WebView `setAllowFileAccess(true)` 允许页面通过文件协议访问本地资源。若 WebView 加载不可信页面、重定向内容或可被外部输入影响，文件访问能力可能被用于读取本地敏感数据。本模板在 Java 源码中匹配该调用，并要求文件包含 package 声明后提取包名；命中需结合页面来源和其他 WebView 配置复核。
+  impact: |
+    - 恶意页面可能尝试读取本地文件、应用缓存或配置中的令牌和用户数据。
+    - 与 JavaScript、通用文件访问或不安全 URI 处理组合时，可能扩大跨源读取和本地数据泄露范围。
+  remediation: |
+    - 对不需要文件协议访问的 WebView 调用 `setAllowFileAccess(false)`，并限制可加载的 URL 和重定向。
+    - 使用受控资源加载方式和最小化的 Content Provider 权限，避免把应用私有目录直接暴露给页面。
   tags: android,file,webview
 
 file:

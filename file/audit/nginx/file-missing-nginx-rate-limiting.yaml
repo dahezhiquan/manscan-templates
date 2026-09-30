@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 Nginx 是否配置请求速率限制。缺少限速可能导致单一客户端大量请求造成资源消耗或暴力尝试。
+    Nginx `limit_req_zone` 和 `limit_req` 可按客户端地址、接口或其他键限制请求速率。对登录、验证码、搜索和高成本 API 缺少限速时，攻击者可能发起暴力破解、资源消耗或业务滥用。本模板在 Nginx 配置中检查是否缺少带 `$binary_remote_addr` 和 `rate=` 的限速区域组合，不判断具体 location 是否实际引用。
+  impact: |
+    - 登录和验证码接口可能遭受口令喷洒、暴力破解和验证码资源消耗。
+    - 高成本请求可能占满工作进程、后端连接或数据库资源，造成拒绝服务并影响正常用户。
   remediation: |
-    在 /etc/nginx/nginx.conf 中配置 limit_req_zone 和对应 limit_req 规则。
+    - 在 `http` 段定义合适的 `limit_req_zone`，并在登录、认证、搜索、上传和高成本接口配置对应 `limit_req`。
+    - 按用户、IP、令牌和业务特征设计限速，避免仅依赖单一 IP 导致代理用户误伤。
+    - 配合应用层账户锁定、验证码、缓存和监控告警，持续根据真实流量调整阈值。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://nginx.org/en/docs/http/ngx_http_limit_req_module.html

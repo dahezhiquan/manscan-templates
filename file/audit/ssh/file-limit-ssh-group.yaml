@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH 是否仅允许授权用户组登录。限制组访问可减少远程登录攻击面。
+    SSH `AllowGroups` 可把远程登录范围限制到明确的管理用户组。未配置该项时，默认可能允许更多本地用户尝试登录，扩大远程认证面。本模板在标准 `sshd_config` 上下文中检查是否缺少 `AllowGroups`，不判断 `AllowUsers`、Match 块和系统账户策略。
+  impact: |
+    - 低权限、服务或临时账户可能成为暴力破解、凭据复用和横向移动的入口。
+    - 远程登录对象过宽会增加账户生命周期管理和异常登录告警的噪声。
   remediation: |
-    在 /etc/ssh/sshd_config 中配置 AllowGroups 或 AllowUsers，仅保留必要对象，并重启 SSH 服务。
+    - 使用 `AllowGroups` 或更精细的 `AllowUsers` 仅允许必要的运维组和账户登录，并先验证应急账户不会被锁定。
+    - 清理不需要的 shell 账户，结合来源 ACL、MFA、密钥认证和登录审计控制 SSH 访问。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://cloud.ibm.com/docs/ssh-keys?topic=ssh-keys-granting-ssh-access-to-a-user

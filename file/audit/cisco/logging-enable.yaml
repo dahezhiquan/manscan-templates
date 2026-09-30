@@ -5,13 +5,20 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 Cisco logging enable 配置。日志记录用于监控网络设备风险和保留安全事件证据。
+    Cisco 日志记录用于保存认证、配置、接口和安全事件，是网络设备监控与取证的基础。未启用或未配置有效的日志输出时，管理员可能无法及时发现配置篡改和异常访问。本模板在配置文件中检查是否缺少 `logging enable`，只验证开关线索，不判断远端 syslog、日志级别和存储可靠性。
+  impact: |
+    - 设备被扫描、登录或修改时可能缺少可用证据，导致攻击者长期活动而不易被发现。
+    - 没有集中日志会削弱告警关联、合规审计和故障排查能力。
   reference:
     - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/config-mgmt/configuration/xe-16-6/config-mgmt-xe-16-6-book/cm-config-logger.pdf
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 启用 `logging enable`，配置合适的日志级别、时间戳和远程 syslog 目标。
+    - 对日志传输使用受控网络和访问控制，集中保存并防止设备管理员随意删除或篡改审计记录。
+    - 定期验证日志仍能到达集中平台，并为认证失败、配置变更和特权操作配置告警。
   tags: audit,file,cisco,config-audit,cisco-switch
 
 file:

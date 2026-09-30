@@ -5,7 +5,10 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 pfSense 管理会话超时配置。会话无限期或过长会增加遗留会话被滥用的风险。
+    pfSense Web 管理会话超时用于在管理员长时间不操作后失效登录状态。缺少超时或显式配置为 0 可能让遗留浏览器会话长期有效。本模板在 XML 中检查 WebGUI 系统配置是否缺少有效的 `session_timeout` 值或包含 0，命中后仍需结合默认值、版本和实际会话行为确认。
+  impact: |
+    - 攻击者获得无人值守管理终端或浏览器后，可能复用仍有效的管理员会话修改防火墙配置。
+    - 长会话会扩大终端失陷、共享工作站和凭据泄露造成的管理窗口。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/advanced-admin.html
   classification:
@@ -14,6 +17,9 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
+  remediation: |
+    - 为 Web 管理界面设置符合组织基线的空闲会话超时，避免使用无限期会话，并在变更后验证自动失效。
+    - 启用 MFA、管理员终端锁屏和登录审计，对异常来源、并发会话和配置变更设置告警。
   tags: firewall,config,audit,pfsense,file
 
 file:

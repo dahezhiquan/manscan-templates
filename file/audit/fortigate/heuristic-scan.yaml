@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 FortiGate 启发式扫描配置。启发式扫描可辅助发现未知恶意文件，未启用会降低恶意内容拦截能力。
+    FortiGate 防病毒启发式扫描通过行为和特征线索辅助识别未知或变种恶意文件。关闭或未配置阻断模式会降低对新型恶意内容的检测能力。本模板在配置中检查是否缺少启发式扫描与 `set mode block` 组合，命中后仍需核对实际策略、授权和扫描引擎状态。
+  impact: |
+    - 恶意文件、脚本和变种样本可能绕过基础签名检测进入终端或服务器。
+    - 邮件、Web 下载和文件传输链路缺少启发式阻断时，攻击者更容易建立初始访问和横向传播。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 对承担文件防护职责的策略启用启发式扫描和阻断模式，并根据 FortiOS 版本确认配置语义。
+    - 保持病毒库和引擎更新，结合沙箱、终端防护和告警处置流程验证恶意样本是否被拦截。
   tags: audit,config,file,firewall,fortigate
 
 file:

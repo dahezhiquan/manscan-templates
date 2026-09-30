@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: medium
   description: |
-    该模板检测 Android FileProvider 或相关 provider path 中可能过宽的路径配置。路径暴露过大可能导致文件读取或共享边界失控。
+    FileProvider 的 `root-path` 使用空路径或 `.` 会把共享根扩展到文件系统根目录，超出应用实际需要的文件范围。若该 Provider 被导出或 URI 授权过宽，其他应用可能访问应用私有文件。本模板匹配 `root-path` 的空路径或当前目录配置，提示路径边界过宽的候选风险。
+  impact: |
+    - 攻击者可能通过获得的 Content URI 读取应用配置、数据库、缓存、日志或其他敏感文件。
+    - 若 Provider 同时允许写入或长期授权，可能覆盖配置、植入文件或破坏应用状态。
+  remediation: |
+    - 使用 `files-path`、`cache-path`、`external-files-path` 等最小范围路径，删除空的或 `.` 的 `root-path`。
+    - 限制 Provider 导出状态、URI 权限和授权有效期，并在共享前校验文件类型、路径和调用方。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

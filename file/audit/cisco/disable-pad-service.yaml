@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 Cisco PAD 服务是否仍启用。该遗留服务通常不再需要，保留会增加未授权访问面。
+    Cisco PAD（Packet Assembler/Disassembler）是面向旧式 X.25 场景的遗留服务。现代网络若不需要 PAD，继续保留会增加不必要的管理和远程访问面。本模板在配置中检查是否缺少 `no service pad`，命中表示未发现禁用指令，不直接证明 PAD 已从网络可达。
+  impact: |
+    - 不必要的遗留服务可能暴露额外监听面，增加协议探测、弱认证和设备资源消耗风险。
+    - 旧服务的日志和访问控制通常不如现代管理通道完善，可能削弱异常操作发现能力。
   reference:
     - http://www.cisco.com/en/US/docs/ios-xml/ios/wan/command/wan-s1.html#GUID-C5497B77-3FD4-4D2F-AB08-1317D5F5473B
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 在不依赖 X.25/PAD 的设备上配置 `no service pad`，并确认业务和管理链路不受影响。
+    - 通过 ACL 和管理面隔离限制设备控制平面，仅保留必要的现代管理协议。
   tags: audit,file,cisco,config-audit,cisco-switch,router
 
 file:

@@ -5,7 +5,10 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 pfSense DNS 是否建议配置为 TLS 传输。DNS over TLS 可防止中间方查看 DNS 查询内容，并增强对预期 DNS 服务器的验证。
+    DNS over TLS（DoT）将 pfSense 发往上游解析器的 DNS 查询封装在 TLS 中，减少本地网络观察者读取查询域名或篡改响应的机会。本模板在 pfSense XML 配置中检查是否缺少 `<dnsserver>` 配置块，作为未配置上游 DoT 的审计线索，不验证实际解析器、证书校验和网络出口策略。
+  impact: |
+    - 明文 DNS 查询可能暴露用户访问的域名、内部服务名称和业务活动，便于流量分析与定向攻击。
+    - 本地网络攻击者或恶意递归解析器可能篡改解析结果，将用户导向钓鱼站点或错误服务。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/recipes/dns-over-tls.html
   classification:
@@ -14,6 +17,9 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
+  remediation: |
+    - 按 pfSense 版本配置受信任的 DNS over TLS 上游服务器、主机名和证书校验，并验证失败时不会静默回退到明文 DNS。
+    - 通过防火墙限制终端绕过 pfSense 直接访问外部 DNS，监控 DoT 连接异常和解析失败。
   tags: firewall,config,audit,pfsense,file
 
 file:

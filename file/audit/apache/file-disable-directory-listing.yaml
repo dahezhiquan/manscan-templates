@@ -5,9 +5,14 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 Apache 是否禁用目录列表。若目录列表开启，未授权用户可浏览服务器目录结构和文件名。
+    Apache 目录列表会在缺少默认索引文件时展示目录内容、文件名和层级结构。公开列目录可能暴露备份、日志、配置和源码等不应公开的资源。本模板在 Apache 配置中识别 `<Directory>` 或 `<FilesMatch>` 段，并检查是否缺少 `Options Indexes` 相关控制；命中是配置审计线索，仍需结合继承配置和实际响应确认目录浏览状态。
+  impact: |
+    - 攻击者可枚举站点目录、备份文件和组件名称，进一步定位凭据、源码或可利用文件。
+    - 暴露文件名和路径可能帮助攻击者绕过隐藏路径策略，扩大敏感信息泄露和后续漏洞利用范围。
   remediation: |
-    在 Apache 配置或 .htaccess 中设置 Options -Indexes，并重载或重启服务。
+    - 在适用的 Apache 配置或 `.htaccess` 中设置 `Options -Indexes`，并确认没有更高优先级配置重新启用目录索引。
+    - 对确需公开的目录使用明确的索引文件和最小权限，删除备份、临时文件及敏感配置。
+    - 重载服务后从外部访问不存在索引文件的目录，确认不会返回目录列表。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#options
   metadata:

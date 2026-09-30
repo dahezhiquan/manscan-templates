@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检测 pfSense 是否存在已知默认账户。攻击者可利用默认账户字典尝试登录设备管理界面。
+    pfSense 初始或示例账户若仍保留默认名称、描述和权限，可能成为攻击者优先尝试的管理入口。本模板在 XML 中同时匹配 `admin`、`System Administrator` 和 `user-shell-access` 特征，识别疑似默认管理账户；它不验证密码是否仍为默认值或管理界面是否可达。
+  impact: |
+    - 默认或弱口令账户被成功登录后，攻击者可能修改防火墙策略、读取配置、建立 VPN 或创建持久化管理员。
+    - 防火墙属于网络边界控制点，账户接管可能影响整个内网的流量、访问控制和监控。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/usermanager/defaults.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 首次部署后立即更改默认管理员用户名和强随机密码，删除不需要的账户并移除不必要的 shell 权限。
+    - 启用 MFA、限制管理接口来源和登录尝试，审计管理员账户、配置导出及权限变更。
   tags: audit,config,file,firewall,pfsense
 
 file:

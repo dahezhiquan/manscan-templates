@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 WebView 是否启用 JavaScript。若 WebView 加载不可信内容，JavaScript 能力可能扩大 XSS、桥接接口滥用或本地数据访问风险。
+    WebView 启用 JavaScript 是现代网页功能的常见需求，但会把页面脚本能力引入应用运行环境。若页面来源不受信任，或同时存在 JavaScript Bridge、文件访问和缺少隔离等配置，XSS 可能升级为本地数据访问或敏感操作。本模板匹配 `setJavaScriptEnabled` 的字节码调用，仅识别功能启用，不判断页面来源。
+  impact: |
+    - 不可信页面或注入脚本可能执行页面操作、读取可访问数据并滥用 WebView 暴露的本地接口。
+    - JavaScript 与文件访问、桥接对象或不安全证书校验叠加时，可能导致令牌、文件和业务数据泄露。
+  remediation: |
+    - 仅在确需加载脚本的受信页面启用 JavaScript，并关闭不需要的文件访问和跨源能力。
+    - 启用来源校验、Context Isolation 或等效隔离，限制 JavaScript Bridge 方法并对内容实施 CSP。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

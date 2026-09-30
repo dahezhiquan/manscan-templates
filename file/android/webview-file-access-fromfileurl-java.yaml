@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板在 Java 源码中检测 WebView 是否允许 file URL 发起文件访问。该配置可能让本地文件页面读取其他本地资源。
+    WebView `setAllowFileAccessFromFileURLs(true)` 允许由 `file://` 页面发起对其他本地文件的访问。若应用加载了不可信本地内容、外部输入或可被覆盖的 HTML，攻击者可能跨文件边界读取敏感资源。本模板在 Java 源码中匹配该调用，并要求文件包含 package 声明后提取包名。
+  impact: |
+    - 恶意或被篡改的本地页面可能读取应用数据库、配置、缓存和其他文件内容。
+    - 与 JavaScript、FileProvider 或外部 URI 处理结合时，可能进一步造成令牌泄露和本地代码/业务逻辑滥用。
+  remediation: |
+    - 对不需要该能力的 WebView 设置 `setAllowFileAccessFromFileURLs(false)`，并避免加载不可信 `file://` 内容。
+    - 优先使用受控的 HTTPS 或 `content://` 资源，限制文件路径和页面来源，并在发布前覆盖本地文件访问测试。
   tags: android,file,webview
 
 file:

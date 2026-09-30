@@ -5,13 +5,20 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 Cisco 设备是否配置 AAA 认证、授权与审计服务，用于评估网络设备访问控制和操作审计能力。
+    Cisco AAA（认证、授权和审计）集中管理设备登录、命令权限和操作记录。缺少 `aaa new-model` 时，设备可能依赖分散的本地口令，难以统一撤销账户和审计高权限命令。本模板在包含配置上下文的文件中检查是否缺少 `aaa new-model`，不判断外部 TACACS+/RADIUS 服务和具体授权规则是否完整。
+  impact: |
+    - 管理员账户生命周期和权限边界可能无法集中控制，离职账户或共享口令更难及时撤销。
+    - 缺少命令级审计会增加网络设备被篡改后的溯源难度，延长入侵停留时间。
   reference:
     - https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/security/a1/sec-a1-cr-book/sec-cr-a2.html#GUID-E05C2E00-C01E-4053-9D12-EC37C7E8EEC5
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 启用 `aaa new-model`，按业务配置受保护的 TACACS+ 或 RADIUS 认证、授权和审计策略。
+    - 保留受控的本地 break-glass 账户，使用强凭据和最小权限，并测试外部认证故障时的恢复流程。
+    - 将管理员登录、命令执行和配置变更日志发送到集中审计平台。
   tags: file,audit,cisco,config-audit,cisco-switch,router
 
 file:

@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检查 Apache 是否禁用 HTTP TRACE 方法。TRACE 开启可能被用于 Cross-Site Tracing XST 攻击并辅助窃取客户端信息。
+    HTTP TRACE 会让服务器回显请求内容，通常不参与业务处理。若 Apache 未明确关闭 TRACE，攻击者可能结合跨站脚本、代理或受害者浏览器环境探测和回显敏感请求头。本模板在配置中识别 `<Directory>` 或 `<FilesMatch>` 段，并检查是否缺少禁用 TRACE 的明确配置；它不直接向服务发送 TRACE 请求。
+  impact: |
+    - 在特定客户端和代理条件下，TRACE 回显可能暴露 Cookie、Authorization 或其他请求头，辅助会话窃取。
+    - 开放不必要的 HTTP 方法会扩大管理面和协议攻击面，并增加中间设备处理异常请求的风险。
   remediation: |
-    在 Apache 配置中设置 TraceEnable Off，并重启服务。
+    - 在全局或适用虚拟主机配置中设置 `TraceEnable Off`，重载 Apache 后用实际请求验证返回状态。
+    - 在反向代理、WAF 和应用层同步限制 TRACE、TRACK 等不需要的方法，并持续监控方法异常使用。
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#traceenable
   metadata:

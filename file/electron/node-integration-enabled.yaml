@@ -5,7 +5,14 @@ info:
   author: me9187
   severity: critical
   description: |
-    该模板检测 Electron 应用中 nodeIntegration 开启带来的风险。若存在 XSS，攻击者可调用 require("child_process").exec 等 Node.js 能力执行命令。
+    Electron `nodeIntegration: true` 会让渲染进程获得 Node.js 能力。若渲染器加载不可信内容、存在 XSS 或被导航到外部页面，攻击者可能调用文件系统、进程和网络 API，将页面脚本风险升级为本地代码执行。本模板在文件中匹配 `nodeIntegration: true`，不判断 `contextIsolation`、sandbox、页面来源和实际可达路径，因此命中后仍需结合应用架构确认攻击链。
+  impact: |
+    - 远程内容中的脚本可能读取本地文件、窃取凭据和会话令牌，或调用系统命令控制用户环境。
+    - 一旦攻击者获得渲染进程执行能力，可能进一步修改应用数据、访问企业内网或建立持久化。
+  remediation: |
+    - 对不需要 Node.js 的渲染器设置 `nodeIntegration: false`，启用 `contextIsolation: true` 和 sandbox。
+    - 使用最小化、经过校验的 preload API 替代直接暴露 Node 能力，限制导航和外部内容，并修复可能导致 XSS 的输入输出问题。
+    - 持续升级 Electron/Chromium，避免将不受信任 URL 加载到高权限窗口。
   reference:
     - https://blog.yeswehack.com/yeswerhackers/exploitation/pentesting-electron-applications/
     - https://book.hacktricks.wiki/en/network-services-pentesting/pentesting-web/electron-desktop-apps/index.html#rce-xss--nodeintegration

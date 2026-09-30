@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板检测 AndroidManifest.xml 中导出的 Broadcast Receiver，排除禁用项和常见 Google/Jetpack 依赖组件。
+    导出的 Broadcast Receiver 可接收其他应用发送的广播。若没有权限保护、来源校验或幂等处理，攻击者可能伪造 Intent 触发敏感逻辑，或利用广播数据影响应用状态。本模板在 Manifest 中匹配已启用且 `android:exported="true"` 的 Receiver，并排除部分 Google/Jetpack 组件；命中不等于一定存在可利用路径。
+  impact: |
+    - 伪造广播可能触发任务启动、配置修改、账户操作或敏感数据处理。
+    - 若 Receiver 返回结果或发送带权限不足的广播，可能造成跨应用数据泄露和权限边界绕过。
+  remediation: |
+    - 不需要跨应用接收时设置 `android:exported="false"`；需要导出时使用签名级权限并校验 Intent 来源与内容。
+    - 对敏感操作增加认证、重放防护和参数校验，避免把广播当作唯一的授权依据。
   tags: android,file,exportedcomponents
 
 file:

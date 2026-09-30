@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 FortiGate 远程认证超时配置。未设置超时会扩大管理员离开设备时的会话滥用窗口。
+    FortiGate 远程认证超时用于限制外部认证请求或远程管理会话在无响应、闲置或异常状态下持续占用的时间。未配置 `set remoteauthtimeout` 会扩大会话和认证资源被滥用的窗口。本模板只检查指令是否存在，不判断具体秒数和适用认证方式。
+  impact: |
+    - 长时间未结束的远程认证会话可能被盗用，或占用设备资源影响正常管理员登录。
+    - 认证重试和异常连接缺少时间边界时，可能放大口令攻击、网络抖动和拒绝服务影响。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 设置符合厂商建议和组织基线的 `remoteauthtimeout`，并在高延迟和认证故障场景下验证行为。
+    - 配合 MFA、来源 ACL、认证失败限速和集中日志监控异常远程认证活动。
   tags: audit,config,file,firewall,fortigate
 
 file:

@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板检测应用清单中导出的 Content Provider，排除依赖库自动添加的组件。导出 Provider 可能暴露本地数据访问接口。
+    导出的 Content Provider 会向其他应用公开数据访问接口。若 Provider 未使用权限、路径白名单和调用方校验，可能暴露数据库、文件、缓存或可写配置。本模板匹配 Manifest 中 `android:exported="true"` 的 Provider，并排除部分 Google/Jetpack 组件；需要继续审查 Provider 的 URI、权限和实现逻辑。
+  impact: |
+    - 未授权应用可能读取、插入、修改或删除 Provider 管理的数据，造成敏感信息泄露或本地权限边界绕过。
+    - 过宽的 path 规则和写入接口可能被用于覆盖配置、植入文件或破坏应用状态。
+  remediation: |
+    - 不需要跨应用访问时设置 `android:exported="false"`；确需导出时使用签名级读写权限和最小化的 path 配置。
+    - 在 `query`、`insert`、`update`、`delete` 和文件打开逻辑中重复校验调用方、参数和数据范围。
   tags: android,file,exportedcomponents
 
 file:

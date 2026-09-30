@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 Cisco 设备调试消息是否配置 service timestamps。缺少时间戳会降低故障排查和安全事件时间线分析能力。
+    Cisco 调试消息中的时间戳用于把设备事件与其他日志、流量和告警对齐。缺少统一的时区和毫秒精度会降低故障排查及安全事件重建的准确性。本模板在配置文件中检查是否缺少 `service timestamps debug datetime msec show-timezone localtime`，命中仅表示未发现该标准化指令。
+  impact: |
+    - 调试事件难以与认证、配置变更和网络流量建立时间关系，可能延误故障和入侵调查。
+    - 时间线不一致会增加误报、漏报和跨设备关联失败的概率。
   reference:
     - https://www.cisco.com/E-Learning/bulk/public/tac/cim/cib/using_cisco_ios_software/cmdrefs/service_timestamps.htm
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 配置 `service timestamps debug datetime msec show-timezone localtime` 或组织批准的等效时间戳策略。
+    - 统一设备时区并启用可靠 NTP，确保调试、日志和集中采集系统使用一致时间基准。
   tags: file,audit,cisco,config-audit,cisco-switch,router
 
 file:

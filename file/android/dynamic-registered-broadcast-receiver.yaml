@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 Android 应用是否动态注册 Broadcast Receiver。动态广播接收器若未限制来源，可能接收非预期广播或被滥用触发逻辑。
+    动态注册 Broadcast Receiver 允许应用在运行时接收指定 Intent。若注册时未限制广播来源、未使用签名权限或未设置适当的接收标志，其他应用可能伪造广播触发敏感逻辑。本模板匹配 `registerReceiver` 的字节码调用特征，仅说明存在动态接收器，不能单独证明其可被外部应用访问。
+  impact: |
+    - 未受保护的接收器可能被伪造广播触发，造成状态修改、任务启动、令牌处理或拒绝服务。
+    - 接收器返回的敏感数据也可能被非预期调用方读取，具体影响取决于 Intent、权限和业务逻辑。
+  remediation: |
+    - 在 Android 版本允许时使用明确的导出标志和签名级权限，按广播用途选择仅应用内接收或受保护接收。
+    - 校验 Intent action、来源、参数和调用上下文，对敏感操作执行额外授权，不要仅依赖 action 名称保密。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

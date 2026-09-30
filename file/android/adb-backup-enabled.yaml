@@ -5,9 +5,14 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 Android 应用是否启用了 ADB Backup。启用后可能允许备份和恢复应用私有数据，增加本地数据被提取的风险。
+    Android ADB Backup 允许在受支持的设备和调试条件下备份、恢复应用数据。生产应用保留 `android:allowBackup="true"` 时，设备持有人、调试链路或受控设备环境中的其他主体可能获得超出预期的数据导出能力。本模板在文件内容中匹配 `android:allowBackup="true"`，作为配置审计线索，实际风险还取决于系统版本、设备策略和备份限制。
+  impact: |
+    - 应用数据库、偏好设置、缓存和本地令牌可能被备份或恢复，造成隐私数据、会话信息和业务数据泄露。
+    - 恢复外部构造的备份可能改变应用本地状态，绕过部分首次启动或本地配置约束。
   remediation: |
-    如无明确调试或迁移需求，应在 AndroidManifest.xml 中禁用 allowBackup，并保护调试构建配置。
+    - 对不需要备份的生产应用设置 `android:allowBackup="false"`，并在目标 Android 版本和厂商设备上验证实际行为。
+    - 对必须支持迁移的应用限制可备份数据范围，排除令牌、密钥和敏感数据库，并通过设备管理策略控制备份与调试权限。
+    - 发布前检查构建变体，避免调试配置被带入生产 APK。
   reference:
     - https://adb-backup.com/
   classification:

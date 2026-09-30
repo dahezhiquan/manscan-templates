@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 FortiGate 管理会话非活动超时。超时缺失或过长会增加管理员离开后会话被滥用的风险。
+    FortiGate 管理控制台的非活动超时会在管理员离开后自动结束空闲会话。未配置该参数时，遗留浏览器或终端会话可能长期保持有效。本模板在配置中检查是否缺少 `set admin-console-timeout`，不判断实际超时时间是否符合组织基线。
+  impact: |
+    - 攻击者获得无人值守管理终端、浏览器或跳板机后，可能直接复用仍有效的管理员会话。
+    - 长时间有效的会话会扩大凭据泄露、终端失陷和误操作的影响窗口。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.2.0/hardening-your-fortigate/582009/system-administrator-best-practices
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 设置符合组织风险和运维习惯的 `admin-console-timeout`，并验证 GUI、CLI 和远程认证会话的实际行为。
+    - 配合多因素认证、管理员终端锁屏、会话审计和异常登录告警，避免仅依赖超时控制。
   tags: audit,config,file,firewall,fortigate
 
 file:

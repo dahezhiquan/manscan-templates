@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: low
   description: |
-    该模板检测 Android 应用是否启用了调试配置。调试模式可能暴露调试接口、日志和运行时调试能力，不应出现在生产版本中。
+    Android `android:debuggable="true"` 会允许调试器连接应用进程，并可能扩大日志、运行时检查和本地调试能力。该配置适用于开发和测试，不应随生产版本发布。本模板在文件内容中匹配 `android:debuggable="true"`，用于发现可能误将调试构建发布到生产环境的线索。
+  impact: |
+    - 具备设备访问、调试权限或相应开发通道的主体可能读取运行时状态、调试信息和应用进程数据。
+    - 调试构建常伴随更详细日志、测试接口或弱化校验，可能放大敏感信息泄露和本地篡改影响。
+  remediation: |
+    - 生产构建明确设置 `android:debuggable="false"` 或由构建工具自动生成非调试配置，并在发布流水线中校验最终 APK。
+    - 删除生产包中的调试日志、测试开关和调试端点，限制开发设备和签名密钥的使用权限。
   tags: android,file
 
 file:

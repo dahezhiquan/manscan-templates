@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检查 SSH ClientAliveInterval 等空闲超时配置。缺少超时会让无人值守会话长期保持开放。
+    `ClientAliveInterval` 和 `ClientAliveCountMax` 可让 sshd 检测客户端无响应并结束空闲会话。未配置这些参数时，无人值守会话可能长期保持有效，尤其是在共享终端或跳板机环境。本模板在标准配置上下文中检查是否缺少任一参数，不判断最终超时时间和 Match 块覆盖情况。
+  impact: |
+    - 攻击者获得无人值守终端、跳板机或会话转发环境后，可能复用仍有效的 SSH 会话。
+    - 长会话会扩大终端失陷、凭据泄露和误操作造成的管理窗口。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 ClientAliveInterval 300 和 ClientAliveCountMax 0，并重启 SSH 服务。
+    - 按组织基线设置 `ClientAliveInterval` 和 `ClientAliveCountMax`，并在交互式运维、自动化任务和长连接业务中验证兼容性。
+    - 配合终端锁屏、密钥保护、会话审计和异常并发登录告警，避免仅依赖空闲超时。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://support.forcepoint.com/s/article/000015900

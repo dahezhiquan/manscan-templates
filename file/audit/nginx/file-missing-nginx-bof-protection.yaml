@@ -5,13 +5,20 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 Nginx 是否配置请求缓冲区限制。缺少限制可能增加超大请求、缓冲区滥用或资源消耗风险。
+    Nginx 反向代理缓冲区参数用于控制上游响应在内存和临时文件中的缓存方式。缺少 `proxy_buffer_size`、`proxy_buffers` 和 `proxy_busy_buffers_size` 等明确配置，可能使资源消耗和大响应处理依赖默认值。本模板在 Nginx 配置中检查这些指令是否同时缺失，命中是缓冲区基线审计线索，不等于已存在传统意义上的内存溢出漏洞。
+  impact: |
+    - 超大响应、异常上游或并发请求可能消耗过多内存、磁盘和工作进程资源，导致服务变慢或不可用。
+    - 代理层边界不清时，攻击者可通过资源消耗请求放大后端压力，影响多个站点或接口。
   reference:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://nginx.org/en/docs/http/ngx_http_proxy_module.html
   metadata:
     verified: true
-  tags: nginx,file,audit,hardening
+    tags: nginx,file,audit,hardening
+  remediation: |
+    - 根据响应大小、并发量和磁盘策略设置 `proxy_buffer_size`、`proxy_buffers`、`proxy_busy_buffers_size` 及超时限制。
+    - 同时限制请求体、连接数和上游响应大小，监控 Nginx 内存、临时文件和 5xx 错误。
+    - 通过压测验证配置不会截断合法响应，也不会让单个客户端耗尽代理资源。
 
 file:
   - extensions:

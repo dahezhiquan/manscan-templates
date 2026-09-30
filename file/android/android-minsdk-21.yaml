@@ -5,7 +5,13 @@ info:
   author: Th3l0newolf
   severity: medium
   description: |
-    该模板检测 AndroidManifest.xml 中 minSdkVersion 是否设置为 21。过低的最低 SDK 会允许应用运行在缺少现代安全特性的旧 Android 系统上。
+    Android `minSdkVersion` 决定应用允许安装和运行的最低系统版本。将其设置为 21 会兼容较旧的 Android 系统，而旧系统可能缺少较新的平台安全控制、加密实现和 WebView 防护。本模板仅在 `AndroidManifest.xml` 或 XML 文件中匹配 `android:minSdkVersion="21"`，不覆盖其他低于组织基线的取值，命中后仍需结合实际支持矩阵评估。
+  impact: |
+    - 应用可能运行在缺少现代权限模型、网络安全默认值或系统补丁的设备上，扩大受攻击终端范围。
+    - 为兼容旧系统而保留的代码路径可能绕过较新的安全 API，增加 TLS、组件暴露和本地数据保护风险。
+  remediation: |
+    - 根据业务设备覆盖率和安全支持周期提高 `minSdkVersion`，并明确停止支持的 Android 版本。
+    - 对必须兼容旧系统的应用为敏感功能增加版本差异化保护和运行时检查，持续验证旧版本 WebView、TLS 与权限行为。
   metadata:
     verified: true
     github-query: path:**/AndroidManifest.xml

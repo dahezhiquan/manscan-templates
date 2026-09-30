@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 pfSense 主机名是否正确设置。主机名是网络中识别设备的唯一标识，缺失会影响运维和审计。
+    pfSense 主机名和域名用于识别设备、生成日志、构造证书名称并支持网络运维。空主机名或域名会降低日志归属和设备识别的准确性。本模板在 XML 中匹配空的 `<hostname>` 及系统域名相关字段，作为配置完整性审计线索。
+  impact: |
+    - 日志和告警可能缺少稳定的设备标识，导致多台防火墙事件难以关联和追溯。
+    - 主机名、证书、DNS 和监控命名不一致时，可能造成运维误操作、证书告警和资产台账错误。
   reference:
     - https://docs.netgate.com/pfsense/en/latest/config/general.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 为设备设置唯一、可管理的主机名和组织域名，避免使用包含敏感业务信息的命名。
+    - 将主机名、DNS、证书、NTP 和集中日志配置保持一致，变更后验证日志和监控显示的设备身份。
   tags: firewall,config,audit,pfsense,file
 
 file:

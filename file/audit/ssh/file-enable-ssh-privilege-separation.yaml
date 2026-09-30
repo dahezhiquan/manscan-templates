@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH 权限分离配置。权限分离可限制 sshd 漏洞被利用后的影响范围，降低完全控制系统的风险。
+    OpenSSH 权限分离会让部分预认证处理运行在较低权限上下文中，降低网络服务缺陷被利用后直接获得 root 的影响。`UsePrivilegeSeparation` 在新版本 OpenSSH 中已被移除或默认启用，因此静态缺少该旧指令不一定代表当前系统不安全。本模板检查标准配置中是否缺少 `UsePrivilegeSeparation yes`，命中需结合 OpenSSH 版本和有效配置判断。
+  impact: |
+    - 在仍依赖该显式设置的旧版实现中，缺少权限分离会扩大预认证漏洞导致系统完全接管的后果。
+    - 误将旧指令加入新版本配置也可能造成配置错误或服务启动失败，影响远程管理可用性。
   remediation: |
-    在 /etc/ssh/sshd_config 中设置 UsePrivilegeSeparation yes，并重启 SSH 服务。
+    - 旧版 OpenSSH 按厂商支持设置 `UsePrivilegeSeparation yes`；新版本应升级到受支持实现并确认其默认隔离机制。
+    - 使用 `sshd -T`、发行版文档和补丁状态验证有效安全配置，不要仅依赖该旧参数。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/2023-09-13/finding/V-258010

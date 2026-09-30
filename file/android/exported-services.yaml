@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板检测 AndroidManifest.xml 中导出的 Service，排除禁用项和常见 Google/Jetpack 依赖服务。导出服务可能被外部应用绑定或启动。
+    导出的 Android Service 可以被其他应用启动或绑定。若服务未设置权限、未校验调用方或把外部 Intent 直接转换为高权限任务，可能导致后台操作被越权触发。本模板匹配 Manifest 中 `android:exported="true"` 的 Service，并排除部分 Google/Jetpack 组件；命中后需结合 Service 实现和权限声明复核。
+  impact: |
+    - 外部应用可能启动后台同步、文件处理、账户操作或长期任务，造成数据泄露、越权和资源消耗。
+    - 可绑定服务若返回内部 Binder 或敏感数据，可能形成跨应用调用和权限绕过。
+  remediation: |
+    - 不需要跨应用调用时设置 `android:exported="false"`；确需导出时配置签名级权限并在启动、绑定和每次请求时校验调用方。
+    - 限制 Intent 参数和可执行操作范围，避免通过 Service 暴露管理功能、文件路径或长期凭据。
   tags: android,file,exportedcomponents
 
 file:

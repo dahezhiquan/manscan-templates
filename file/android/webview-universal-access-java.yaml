@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: medium
   description: |
-    该模板在 Java 源码中检测 WebView 是否启用 Universal Access。该配置允许 file URL 跨源访问网络或本地资源，风险较高。
+    WebView `setAllowUniversalAccessFromFileURLs(true)` 允许 `file://` 页面跨源访问网络和其他本地资源。该设置会削弱同源边界，若本地页面可被外部输入影响，可能形成敏感数据读取或请求伪造。本模板在 Java 源码中匹配该调用，并要求文件包含 package 声明后提取包名。
+  impact: |
+    - 恶意或被篡改的本地页面可能读取跨源响应、访问内部接口或获取应用本地敏感数据。
+    - 与 JavaScript、外部 URI、可写缓存或原生桥接组合时，可能进一步导致账户令牌泄露和本地代码能力滥用。
+  remediation: |
+    - 对不需要跨源文件访问的 WebView 设置 `setAllowUniversalAccessFromFileURLs(false)`，禁止加载不受信任的本地页面。
+    - 使用 HTTPS 或受控 `content://` 资源替代任意文件页面，关闭不必要的 JavaScript、文件访问和桥接能力。
   tags: android,file,webview
 
 file:

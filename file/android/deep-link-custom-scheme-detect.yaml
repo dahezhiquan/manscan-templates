@@ -5,7 +5,13 @@ info:
   author: 7h3b4dger
   severity: low
   description: |
-    该模板检测 Deep Link intent-filter 中声明的非 http/https 自定义 URI Scheme，用于识别可能被外部应用唤起的入口。
+    Android 自定义 URI Scheme 可让其他应用或外部链接唤起指定 Activity，但它通常缺少 HTTPS App Links 的域名归属验证。若入口未校验参数、调用方和业务状态，恶意应用可能构造链接触发敏感页面或操作。本模板在包含 `VIEW` 与 `BROWSABLE` 的 Activity intent-filter 中提取非 `http`/`https` 的 `android:scheme`，作为深度链接审计线索。
+  impact: |
+    - 恶意应用或网页可能通过自定义 Scheme 调起应用并传入攻击者控制的参数，造成账户切换、敏感页面访问或业务操作被诱导执行。
+    - 多应用注册同一 Scheme 时，系统可能将链接交给非预期应用处理，导致令牌、回调参数或授权结果泄露。
+  remediation: |
+    - 对敏感回调优先使用经过域名验证的 HTTPS App Links，并在入口处校验来源、参数格式、会话和授权状态。
+    - 对必须保留的自定义 Scheme 限制可处理的 URI 范围，不在链接中传递长期令牌，并避免把深度链接直接映射为高权限操作。
   tags: android,file,deeplink
 
 file:

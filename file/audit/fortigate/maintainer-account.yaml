@@ -5,13 +5,19 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 FortiGate maintainer 账户相关配置。该账户用于特定恢复场景，若策略不当可能带来物理访问下的管理风险。
+    FortiGate maintainer 账户用于特定恢复和维护场景，属于高权限恢复路径。若设备未按组织要求限制该能力、保护物理访问或审计使用，具备设备接触机会的攻击者可能绕过常规管理员账户控制。本模板检查 `set admin-maintainer` 配置线索，命中后需结合 FortiOS 版本和厂商支持的维护策略复核。
+  impact: |
+    - 维护账户被滥用可能修改防火墙策略、读取配置和建立长期管理入口。
+    - 物理访问与恢复账户控制不足时，常规网络访问控制和管理员密码轮换可能失去作用。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/612504/hardening-your-fortigate
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
     cwe-id: CWE-200
+  remediation: |
+    - 按 FortiOS 官方建议禁用不必要的 maintainer 能力，并限制设备机房、控制台和恢复介质的物理访问。
+    - 对必须保留的恢复流程建立双人审批、现场记录和事后审计，及时升级固件并验证厂商安全建议。
   tags: audit,config,file,firewall,fortigate
 
 file:

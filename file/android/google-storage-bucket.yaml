@@ -4,6 +4,14 @@ info:
   name: Google Storage Bucket 识别（本地文件安全扫描）
   author: Thabisocn
   severity: info
+  description: |
+    应用中出现 `appspot.com` 域名通常表示其调用或引用 Google App Engine、Firebase 或相关 Google 托管服务。该字符串是资产和依赖识别线索，不代表存储桶或应用服务已经公开。本模板在任意文件中提取符合域名格式的 `appspot.com` 地址，命中后需继续核对服务归属、访问控制和实际资源状态。
+  impact: |
+    - 暴露 Google 托管域名可帮助攻击者关联后端服务、环境和可能的测试资产。
+    - 若对应资源已停用、访问控制过宽或域名包含敏感接口，可能进一步造成数据暴露或悬空资源风险；本模板不验证这些条件。
+  remediation: |
+    - 清理生产包中的测试域名、旧环境和不再使用的 Google 服务引用，避免泄露内部架构线索。
+    - 对对应 Google 资源启用最小权限、身份认证和日志审计，并确认已停用资源不存在公开访问或可重新声明问题。
   metadata:
     verified: "true"
     github-query: "/[a-z0-9.-]+\\.appspot\\.com/"

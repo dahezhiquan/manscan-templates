@@ -5,9 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检查 SSH 是否要求密钥认证。仅依赖密码会增加暴力破解和凭据复用风险。
+    SSH 公钥认证可减少对可猜测或复用密码的依赖，适合管理和自动化登录。`PasswordAuthentication yes` 表示密码认证仍被允许，若没有 MFA、限速和强密码策略，攻击者可通过暴力破解或凭据填充获取账户。本模板匹配该显式配置，不判断公钥认证是否已启用。
+  impact: |
+    - 暴露密码认证会增加口令猜测、复用和钓鱼凭据被直接利用的机会。
+    - 自动化账户或高权限运维账户密码被盗后，可能造成主机接管、凭据窃取和横向移动。
   remediation: |
-    启用公钥认证并禁用不必要的密码登录，重启 SSH 服务。
+    - 为管理和自动化账户启用公钥认证或 MFA，在确认密钥分发和应急路径可用后关闭不必要的密码认证。
+    - 保护私钥、设置口令和硬件存储，限制登录来源并监控异常认证失败和成功事件。
   reference:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server

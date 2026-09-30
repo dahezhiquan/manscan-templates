@@ -5,7 +5,13 @@ info:
   author: gaurang
   severity: medium
   description: |
-    该模板检测 WebView 是否调用 addJavascriptInterface。该接口会将 Java 对象暴露给 JavaScript，低版本或不可信页面中可能导致代码执行风险。
+    WebView `addJavascriptInterface` 会把 Java/Kotlin 对象的方法暴露给页面 JavaScript。若 WebView 加载不可信内容、桥接对象包含敏感方法或运行在缺少隔离的旧环境中，攻击者可能借助脚本调用本地能力。本模板匹配该 API 的字节码调用，不能单独确认桥接对象方法、Android 版本或页面来源是否安全。
+  impact: |
+    - 恶意页面或被注入的脚本可能读取应用数据、调用未受保护的本地功能，严重时形成应用内代码执行。
+    - 桥接对象若能访问令牌、文件或系统命令，会把 Web 内容漏洞升级为本地敏感操作。
+  remediation: |
+    - 仅向受信任页面暴露最小化桥接对象，并使用 `@JavascriptInterface` 明确标注允许的方法。
+    - 启用 HTTPS、来源校验、Context Isolation 等隔离措施，避免把文件 URL 或不可信重定向内容加载到带桥接的 WebView。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

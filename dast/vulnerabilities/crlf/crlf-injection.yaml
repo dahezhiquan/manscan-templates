@@ -4,6 +4,14 @@ info:
   name: CRLF 注入探测（DAST）
   author: pdteam
   severity: low
+  description: |
+    CRLF 注入会让攻击者通过 `%0d%0a` 等换行序列拆分 HTTP 响应头，从而插入新的 Header 或 Cookie。模板向查询参数和请求体追加多种编码换行载荷及 `Set-Cookie: crlfinjection=crlfinjection`，当响应头出现该 Cookie 时确认头部注入成立。
+  impact: |
+    - 攻击者可注入 Cookie、修改缓存行为、污染重定向或辅助 XSS、响应拆分等攻击链。
+    - 代理、CDN 或浏览器对畸形头处理不一致时，漏洞影响可能跨用户或跨缓存层扩散。
+  remediation: |
+    - 对进入响应头、重定向地址和 Cookie 的所有输入过滤 CR、LF 及其编码变体。
+    - 使用框架提供的安全 Header API，避免手工拼接响应头，并在边界层拦截异常换行字符。
   metadata:
     max-request: 41
   tags: crlf,dast,vuln

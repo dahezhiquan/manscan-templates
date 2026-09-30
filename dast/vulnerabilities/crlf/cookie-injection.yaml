@@ -4,6 +4,14 @@ info:
   name: 基于参数的 Cookie 注入（DAST）
   author: pdteam
   severity: medium
+  description: |
+    Cookie 注入表示用户输入被反射到 `Set-Cookie` 响应头中，攻击者可能影响浏览器保存的 Cookie 名称、值或属性。模板向查询参数和请求体追加 `cookie_injection` 标记，并在响应头中匹配包含该标记的 `Set-Cookie` 字段来确认注入。
+  impact: |
+    - 攻击者可污染会话相关 Cookie、改变安全属性或干扰应用状态，进一步配合会话固定、权限绕过或钓鱼攻击。
+    - 若注入点可控制域、路径或过期时间，影响可能扩展到同站多个功能。
+  remediation: |
+    - 不要把用户输入直接写入 `Set-Cookie`；Cookie 名和值应由服务端固定生成并进行编码。
+    - 为会话 Cookie 设置 `HttpOnly`、`Secure`、`SameSite` 和合理的 `Path/Domain`，并校验所有响应头写入点。
   reference:
     - https://www.invicti.com/blog/web-security/understanding-cookie-poisoning-attacks/
     - https://docs.imperva.com/bundle/on-premises-knowledgebase-reference-guide/page/cookie_injection.htm

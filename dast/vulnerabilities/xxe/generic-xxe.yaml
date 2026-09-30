@@ -4,6 +4,14 @@ info:
   name: 通用 XML 外部实体 XXE 注入（DAST）
   author: pwnhxl,AmirHossein Raeisi
   severity: medium
+  description: |
+    XML 外部实体（XXE）发生在 XML 解析器允许解析外部实体、DTD 或外部资源时，攻击者可读取本地文件或触发外带请求。模板向疑似 XML 参数和值注入读取 Windows/Linux 本地文件及 HTTP 外部实体的 DOCTYPE，匹配文件特征或 interactsh HTTP 交互来确认漏洞。
+  impact: |
+    - 攻击者可读取服务器文件、源码、配置和凭据，或借服务端发起 SSRF 探测内网资源。
+    - 在支持特殊协议和实体扩展的解析器中，XXE 还可能造成拒绝服务或扩大到远程代码执行链。
+  remediation: |
+    - 禁用外部实体、外部 DTD、XInclude 和不必要的协议解析，使用安全 XML 解析器配置。
+    - 对 XML 上传和接口输入使用结构白名单，限制文件/网络访问权限并升级存在已知缺陷的解析库。
   reference:
     - https://github.com/andresriancho/w3af/blob/master/w3af/plugins/audit/xxe.py
   metadata:

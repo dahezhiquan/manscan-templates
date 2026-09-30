@@ -5,7 +5,13 @@ info:
   author: pdteam
   severity: high
   description: |
-    该模板检测 Ruby Kernel#open/URI.open 被不可信输入滥用时的远程代码执行风险。Ruby open 在参数以管道符开头时可触发进程调用，例如 open("| command")。
+    Ruby `Kernel#open`、`URI.open` 等接口在处理以管道符开头的字符串时可能启动子进程，若参数来自不可信输入，会形成命令执行入口。模板注入 `|nslookup ...|curl ...` 形式的输入，并通过 interactsh DNS 交互确认 Ruby 运行时执行了外部命令。
+  impact: |
+    - 攻击者可借 Ruby 进程权限执行系统命令，读取应用配置、访问内部网络或投递后续载荷。
+    - 若 Web 应用进程持有云密钥或数据库凭据，漏洞可能导致更大范围的数据泄露。
+  remediation: |
+    - 对文件或 URL 打开操作使用 `File.open`、安全 HTTP 客户端和固定协议白名单，不使用 `Kernel.open` 处理用户输入。
+    - 对可控路径、URL 和命令参数进行严格校验，并为 Ruby 应用配置最小权限运行环境。
   reference:
     - https://bishopfox.com/blog/ruby-vulnerabilities-exploits
     - https://codeql.github.com/codeql-query-help/ruby/rb-kernel-open/

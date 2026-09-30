@@ -5,11 +5,13 @@ info:
   author: theamanrawat
   severity: high
   description: |
-    该模板检测 Angular 客户端模板注入。若用户输入被直接放入 Angular 表达式或模板上下文，浏览器端可能执行攻击者构造的表达式。
+    Angular 客户端模板注入发生在应用把不可信输入插入 AngularJS 表达式上下文，攻击者可利用表达式和沙箱绕过技巧在浏览器中执行 JavaScript。模板在 headless 浏览器中注入 Angular CSTI 载荷并等待弹窗事件，弹窗触发时确认客户端模板表达式被执行。
   impact: |
-    攻击者可能在受害者浏览器中执行脚本、读取页面数据，或在特定场景下触发更高危的客户端代码执行。
+    - 攻击者可在受害者浏览器中执行脚本，窃取会话、读取页面数据或以用户身份调用同源接口。
+    - 如果页面 CSP 依赖 Angular 沙箱或旧版框架行为，CSTI 可能绕过原有前端防护。
   remediation: |
-    对用户输入进行上下文相关编码和校验，避免将可控数据直接作为 Angular 模板或表达式渲染。
+    - 不要将用户输入拼接进 Angular 表达式、`ng-*` 指令或模板字符串；使用文本绑定和框架自动转义。
+    - 升级 AngularJS/Angular 到安全版本，移除不必要的动态模板编译并启用严格 CSP。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/angularjs-client-side-template-injection/
     - https://portswigger.net/research/xss-without-html-client-side-template-injection-with-angularjs

@@ -5,7 +5,13 @@ info:
   author: geeknik,pdteam
   severity: critical
   description: |
-    该模板检测基于报错的 SQL 注入。应用将用户输入与静态 SQL 片段拼接后执行时，攻击者可构造语句触发数据库错误并从错误信息中提取结构或数据。
+    基于报错的 SQL 注入发生在应用把用户输入拼接进 SQL 后把数据库异常返回给客户端，攻击者可借错误信息确认注入点并推断数据库类型。模板向请求整体追加单引号、双引号和分号等触发字符，并匹配 MySQL、PostgreSQL、SQL Server、Oracle、DB2、SQLite 等多种数据库错误特征。
+  impact: |
+    - 攻击者可读取、篡改或删除数据库中的敏感数据，并利用报错信息枚举表结构、字段和数据库版本。
+    - 详细数据库错误还会暴露技术栈和查询上下文，降低后续利用门槛。
+  remediation: |
+    - 使用参数化查询或 ORM 安全绑定，禁止字符串拼接 SQL。
+    - 对输入进行类型约束和业务白名单，关闭生产环境详细 SQL 错误回显并记录到服务端日志。
   metadata:
     max-request: 3
   tags: sqli,error,dast,vuln

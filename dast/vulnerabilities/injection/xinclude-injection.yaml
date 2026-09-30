@@ -5,7 +5,13 @@ info:
   author: DhiyaneshDK,ritikchaddha
   severity: high
   description: |
-    该模板检测 XInclude 注入。XInclude 允许 XML 文档引用并组合外部子文档；当攻击者控制进入服务端 XML 的单个字段时，也可能插入 XInclude 语句读取本地或远程资源。
+    XInclude 注入发生在服务端 XML 处理器允许攻击者控制文档片段并解析 `<xi:include>` 指令时，攻击者可引用本地文件或远程资源。模板将参数替换为读取 `/etc/passwd` 与 `C:\Windows\win.ini` 的 XInclude 片段，并通过 Linux/Windows 文件特征回显确认解析。
+  impact: |
+    - 攻击者可读取服务器本地文件、配置、源码或凭据，严重时进一步辅助 XXE、SSRF 或代码执行链。
+    - XML 处理逻辑位于导入、报表或集成接口时，漏洞可能暴露内部系统信息。
+  remediation: |
+    - 禁用 XML 解析器的 XInclude、外部实体和外部 DTD 解析能力，避免解析不可信 XML 片段。
+    - 对 XML 输入使用安全解析配置和结构白名单，不允许用户控制包含指令、协议或文件路径。
   reference:
     - https://d0pt3x.gitbook.io/passion/webapp-security/xxe-attacks/xinclude-attacks
   tags: dast,xxe,xinclude,vuln

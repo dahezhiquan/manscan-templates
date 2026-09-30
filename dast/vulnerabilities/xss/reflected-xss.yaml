@@ -4,6 +4,14 @@ info:
   name: 反射型跨站脚本 XSS（DAST）
   author: pdteam,0xKayala,AmirHossein Raeisi
   severity: medium
+  description: |
+    反射型 XSS 发生在应用把请求中的用户输入未经上下文转义直接返回到 HTML 响应中。模板向 body、query 和 path 追加带随机标记的 HTML 片段，只有在 `text/html` 响应中原样回显该片段时才确认反射点。
+  impact: |
+    - 攻击者可诱导用户访问恶意链接，在受害者浏览器中执行脚本，窃取会话、读取页面数据或发起越权操作。
+    - 若配合弱 CSP、开放重定向或敏感后台页面，影响可能扩大到账户接管。
+  remediation: |
+    - 按 HTML、属性、URL、JavaScript 等输出上下文进行编码，避免把用户输入原样写入页面。
+    - 对富文本使用安全 Sanitizer，并配合严格 CSP、HttpOnly Cookie 和模板自动转义。
   metadata:
     max-request: 1
   tags: xss,rxss,dast,vuln

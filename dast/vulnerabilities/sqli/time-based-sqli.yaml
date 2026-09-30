@@ -5,7 +5,13 @@ info:
   author: 0xKayala,Jaenact
   severity: critical
   description: |
-    该模板发送延时 SQL 载荷并测量响应时间，用于确认没有直接报错回显时的盲 SQL 注入，覆盖多种数据库延时函数。
+    基于时间的盲 SQL 注入在页面无报错和无直接回显时，通过数据库延时函数验证攻击者输入是否进入 SQL 执行路径。模板先确认基线响应时间不超过阈值，再用 MySQL、SQL Server、PostgreSQL 等延时载荷替换查询参数和请求体，响应耗时达到 7 秒以上时判定注入成立。
+  impact: |
+    - 攻击者可在无回显场景下逐步推断数据库内容，最终泄露账户、令牌和业务数据。
+    - 大量延时查询还可能拖垮数据库连接池，造成接口性能下降或拒绝服务。
+  remediation: |
+    - 所有 SQL 使用参数化绑定或安全 ORM API，避免把用户输入拼接到条件、排序、函数或表达式中。
+    - 为数据库查询设置超时和速率限制，监控异常延时函数与重复探测行为。
   tags: time-based-sqli,sqli,dast,blind,vuln
 
 flow: http(1) && http(2)

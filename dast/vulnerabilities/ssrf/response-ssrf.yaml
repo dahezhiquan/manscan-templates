@@ -4,6 +4,14 @@ info:
   name: 完整响应 SSRF 探测（DAST）
   author: pdteam,pwnhxl,j4vaovo,AmirHossein Raeisi
   severity: high
+  description: |
+    完整响应 SSRF 表示服务端不仅会访问攻击者指定的 URL，还会把目标响应内容返回给客户端。模板将可疑 URL 参数替换为受控地址或内网探测目标，并通过响应中的标记、状态或内容确认服务端请求结果可回显。
+  impact: |
+    - 攻击者可直接读取内网 HTTP 服务、云元数据、管理面板或文件服务响应，造成敏感信息泄露。
+    - 可回显 SSRF 更容易被用来枚举端口、绕过网络边界和窃取临时云凭据。
+  remediation: |
+    - 服务端请求必须限定目标域名、协议和端口，并阻断内网、环回、链路本地和云元数据网段。
+    - 禁止把服务端抓取结果原样返回给用户，对必要代理功能增加认证、响应裁剪和审计。
   reference:
     - https://github.com/bugcrowd/HUNT/blob/master/ZAP/scripts/passive/SSRF.py
   metadata:

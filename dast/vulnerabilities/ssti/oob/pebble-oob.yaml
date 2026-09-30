@@ -5,7 +5,13 @@ info:
   author: ritikchaddha
   severity: high
   description: |
-    该模板检测 Pebble 模板引擎中的带外服务端模板注入。Pebble 是受 Twig/Jinja 启发的 Java 模板引擎，错误渲染用户输入可能导致表达式执行或外带探测。
+    Pebble 服务端模板注入发生在应用把用户输入作为模板语法渲染时，攻击者可借模板表达式访问运行时对象、调用函数或触发外部请求。模板向查询参数和请求体追加/替换 Pebble 专用载荷，并通过 interactsh DNS SRV 外带交互确认表达式在服务端被执行。
+  impact: |
+    - 攻击者可能在模板引擎上下文中执行命令、读取环境变量、访问应用对象或向外发送敏感信息。
+    - 若模板进程具备数据库、文件系统或云资源权限，SSTI 可进一步导致应用服务器被接管。
+  remediation: |
+    - 不要把用户输入拼接进服务端模板源码；使用安全变量绑定，并将模板文件与用户内容分离。
+    - 启用模板沙箱和 allowlist，限制危险对象、反射、命令执行和网络访问，并升级模板引擎到安全版本。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Server%20Side%20Template%20Injection/Java.md#pebble---code-execution
   metadata:

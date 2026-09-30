@@ -4,6 +4,14 @@ info:
   name: Windows 本地文件包含模糊测试（DAST）
   author: pussycat0x
   severity: high
+  description: |
+    Windows 本地文件包含/路径穿越可通过盘符路径、反斜杠、编码变体或系统文件名读取主机敏感文件。模板用 Windows 路径字典替换参数，并通过 `win.ini`、系统配置或典型 Windows 文件内容确认读取成功。
+  impact: |
+    - 攻击者可读取应用配置、系统文件、日志和凭据材料，辅助后续横向移动或权限提升。
+    - Windows 服务账户权限较高时，文件读取范围可能覆盖共享目录和敏感业务路径。
+  remediation: |
+    - 对文件读取接口使用固定目录和文件 ID 映射，禁止任意盘符、UNC 路径和相对路径输入。
+    - 规范化路径后做 allowlist 校验，并降低 Web 进程对系统目录和共享目录的读取权限。
   metadata:
     max-request: 39
   tags: lfi,windows,dast,vuln

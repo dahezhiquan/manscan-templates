@@ -4,6 +4,14 @@ info:
   name: 开放重定向绕过探测（DAST）
   author: ritikchaddha
   severity: medium
+  description: |
+    开放重定向绕过通常利用协议相对 URL、反斜杠、用户名片段、编码或域名前缀混淆绕过简单域名校验。模板向跳转参数注入多种绕过形式，当响应状态为重定向且 `Location` 最终指向外部目标时确认校验可被绕过。
+  impact: |
+    - 攻击者可绕过应用的跳转限制，把用户从可信域名导向钓鱼页或恶意授权端点。
+    - 若重定向参与 SSO、OAuth 或支付回调，可能导致凭据、授权码或交易流程被劫持。
+  remediation: |
+    - 跳转前先规范化 URL，再使用精确 allowlist 校验 scheme、host、port 和路径，不接受模糊匹配。
+    - 避免支持协议相对 URL、反斜杠和用户名信息等复杂形式，优先使用内部跳转 ID。
   metadata:
     max-request: 1
   tags: redirect,dast,vuln

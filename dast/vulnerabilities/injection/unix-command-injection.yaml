@@ -4,12 +4,14 @@ info:
   name: Unix 命令注入 - 通用检测（DAST）
   author: Jaenact
   severity: high
-  description: |-
-    通过使用 shell 分隔符载荷替换查询参数值，检测到潜在的 Unix/Linux 操作系统命令注入，并通过命令输出模式或响应时间延迟来确认命令执行成功。载荷包括分号、管道符、逻辑与运算符、反引号、命令替换以及换行注入。
-  impact: |-
-    成功利用可在底层操作系统上执行任意命令，导致服务器完全沦陷、数据窃取、横向移动以及拒绝服务。
-  remediation: |-
-    切勿将用户可控输入直接传递给 shell 命令。应使用参数化 API 或语言原生函数，而非 system()/exec()。对输入实施严格的白名单校验，并为应用程序进程强制采用最小权限执行上下文。
+  description: |
+    Unix/Linux 命令注入发生在应用把用户输入拼接进 shell 命令，攻击者可利用分号、管道、逻辑运算符、反引号、命令替换或换行改变命令语义。模板用 `id`、读取 `/etc/passwd` 和 `sleep 5` 等载荷替换查询参数，并通过命令输出正则或响应延时确认执行。
+  impact: |
+    - 攻击者可在底层 Unix/Linux 系统上执行任意命令，读取敏感文件、窃取凭据、横向移动或造成拒绝服务。
+    - Web 进程权限越高，命令注入造成的主机接管和数据泄露范围越大。
+  remediation: |
+    - 不要将用户输入直接传给 shell；优先使用参数化 API、语言原生库或固定命令参数数组。
+    - 对必须保留的命令调用实施白名单校验、参数转义、最小权限账户、容器隔离和审计告警。
   reference:
     - https://owasp.org/www-community/attacks/Command_Injection
     - https://cwe.mitre.org/data/definitions/78.html

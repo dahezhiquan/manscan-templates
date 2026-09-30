@@ -5,7 +5,13 @@ info:
   author: ritikchaddha
   severity: high
   description: |
-    该模板检测 ASP.NET Core Razor 服务端模板注入。Razor 可在模板中运行 C# 代码，若不可信输入进入模板执行上下文，可能被利用执行服务端逻辑。
+    Razor 服务端模板注入发生在用户输入被当作模板语法执行时，攻击者可利用模板语言访问运行时对象或调用危险函数。模板注入 Razor 专用表达式，并通过 `id` 输出、`uid/gid` 正则或外带交互确认表达式在服务端执行。
+  impact: |
+    - 攻击者可能执行系统命令、读取敏感文件、访问应用上下文或窃取环境变量。
+    - 模板引擎通常运行在 Web 应用权限下，成功利用可导致应用服务器失陷。
+  remediation: |
+    - 将用户输入作为普通数据绑定到模板变量，不允许用户控制模板源码或表达式。
+    - 升级模板引擎，启用沙箱和最小权限运行环境，禁止危险类、函数和系统命令访问。
   reference:
     - https://www.yeswehack.com/learn-bug-bounty/server-side-template-injection-exploitation
   metadata:

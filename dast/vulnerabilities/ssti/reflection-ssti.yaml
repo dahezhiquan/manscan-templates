@@ -4,6 +4,14 @@ info:
   name: 基于算术回显的 SSTI 探测（DAST）
   author: pdteam
   severity: medium
+  description: |
+    基于算术回显的 SSTI 探测用于识别通用服务端模板表达式执行点。模板生成两个随机数及其乘积，向参数追加多种模板语法中的算术表达式，若响应中出现预期乘积，说明输入被模板引擎求值而非仅作为文本输出。
+  impact: |
+    - 攻击者可进一步枚举模板引擎类型，并尝试读取变量、访问对象或升级为命令执行。
+    - 即便初始只表现为表达式求值，也可能泄露业务数据或成为更高危 SSTI 利用链入口。
+  remediation: |
+    - 不要将用户输入作为模板源码渲染；用户内容必须作为数据变量进行上下文转义输出。
+    - 对动态模板功能设置严格权限边界和沙箱，禁止访问危险对象、反射和系统调用。
   reference:
     - https://github.com/zaproxy/zap-extensions/blob/2d9898900abe85a47b9fe0ceb85ec39070816b98/addOns/ascanrulesAlpha/src/main/java/org/zaproxy/zap/extension/ascanrulesAlpha/SstiScanRule.java
     - https://github.com/DiogoMRSilva/websitesVulnerableToSSTI#list-of-seversneeds-update

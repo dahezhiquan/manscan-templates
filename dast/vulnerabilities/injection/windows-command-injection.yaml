@@ -4,12 +4,14 @@ info:
   name: Windows 命令注入 - 通用检测（DAST）
   author: Jaenact
   severity: high
-  description: |-
-    通过使用命令分隔符载荷替换查询参数值，检测到 Windows 目标上潜在的操作系统命令注入，并通过 `dir`、`whoami`、`systeminfo` 等命令的输出模式，或通过 `ping` 引发的响应时间延迟来确认命令执行成功。
-  impact: |-
-    成功利用可在底层 Windows 系统上执行任意命令，导致服务器完全沦陷、数据窃取、权限提升以及拒绝服务。
-  remediation: |-
-    切勿将用户可控输入直接传递给 cmd.exe 或 PowerShell。应使用参数化 API 或语言原生函数，而非 system()/exec()。对输入实施严格的白名单校验，并为应用程序进程强制采用最小权限执行上下文。
+  description: |
+    Windows 命令注入发生在应用把用户输入拼接到 `cmd.exe`、PowerShell 或系统命令参数中，攻击者可通过 `&`、`&&`、`|`、`||` 等分隔符执行额外命令。模板用 `dir`、`whoami`、`systeminfo`、`ipconfig` 和 `ping` 延时载荷替换查询参数，并通过 Windows 命令输出或响应延时确认执行。
+  impact: |
+    - 攻击者可在 Windows 主机上执行任意命令，读取文件、创建账户、下载载荷、关闭防护或进一步提权。
+    - 若应用运行在域环境或高权限服务账户下，漏洞可能导致域凭据泄露和横向移动。
+  remediation: |
+    - 不要把用户输入传入 `cmd.exe` 或 PowerShell；使用安全 API、固定参数数组和严格白名单。
+    - 以低权限账户运行应用，限制出站网络和脚本执行策略，并对异常命令调用进行审计。
   reference:
     - https://owasp.org/www-community/attacks/Command_Injection
     - https://cwe.mitre.org/data/definitions/78.html

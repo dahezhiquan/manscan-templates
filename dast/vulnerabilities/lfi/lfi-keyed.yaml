@@ -4,6 +4,14 @@ info:
   name: 基于关键字的本地文件包含探测（DAST）
   author: pwnhxl
   severity: high
+  description: |
+    本地文件包含/路径穿越会让攻击者通过可控路径读取服务器本地文件，编码绕过和关键字变形常用于绕过简单过滤。模板针对常见文件参数注入 Linux 与 Windows 敏感路径及编码变体，并依据 `/etc/passwd`、`win.ini` 等文件特征确认读取成功。
+  impact: |
+    - 攻击者可读取源码、配置文件、密钥、日志和系统账户信息，为进一步入侵提供凭据和路径。
+    - 在支持包装器或日志污染的运行环境中，LFI 还可能升级为远程代码执行。
+  remediation: |
+    - 对文件参数使用服务端 ID 映射或固定目录白名单，禁止客户端直接提交文件系统路径。
+    - 规范化路径后校验目录边界，阻断 `../`、编码变体、绝对路径和协议包装器。
   reference:
     - https://owasp.org/www-community/attacks/Unicode_Encoding
   metadata:

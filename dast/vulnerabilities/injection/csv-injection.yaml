@@ -5,7 +5,13 @@ info:
   author: DhiyaneshDK,ritikchaddha
   severity: medium
   description: |
-    该模板使用可被电子表格软件解释为公式的载荷检测 CSV 注入风险。若应用导出未转义的用户输入，打开 CSV 时可能执行外部引用或公式。
+    CSV 公式注入发生在应用把用户输入原样导出到 CSV/Excel 文件中，单元格以 `=`,`+`,`-`,`@` 等公式前缀开头时，打开文件的电子表格软件可能执行公式或发起外部请求。模板替换查询参数为 DDE、IMPORTXML、IMPORTFEED、IMAGE 等外带公式，并同时要求响应内容类型为 CSV/Excel 且 interactsh 收到 HTTP 请求。
+  impact: |
+    - 受害者打开导出的表格后可能触发外部请求、泄露表格内容，或在旧版/不安全配置中执行本地命令。
+    - 漏洞通常影响后台报表、订单导出和用户列表导出，攻击对象可能是管理员或运营人员。
+  remediation: |
+    - 导出 CSV 前对以公式前缀开头的单元格进行转义，例如前置单引号或制表符，并统一处理分隔符与换行。
+    - 对导出字段做类型约束和服务端白名单，避免把任意用户输入直接写入办公文档。
   tags: dast,csv,oast,vuln
 
 http:

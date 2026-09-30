@@ -4,6 +4,14 @@ info:
   name: 开放重定向探测（DAST）
   author: princechaddha,AmirHossein Raeisi
   severity: medium
+  description: |
+    开放重定向发生在应用把用户控制的 URL 参数直接写入跳转响应，攻击者可把可信域名变成钓鱼或认证流程跳板。模板枚举常见跳转参数并替换为 `https://oast.me`，当响应返回 301/302/307 且 `Location` 指向该外部域名时确认漏洞。
+  impact: |
+    - 攻击者可构造看似可信的链接诱导用户访问恶意站点，提升钓鱼、OAuth 授权码劫持或登录跳转滥用成功率。
+    - 在支付、登录、SSO 回调等流程中，开放重定向可能成为更严重攻击链的一环。
+  remediation: |
+    - 跳转目标使用服务端维护的路径或域名白名单，禁止直接跳转到任意用户提交的 URL。
+    - 对回跳参数只允许相对路径或预注册回调地址，并在跳转前做规范化和域名精确匹配。
   metadata:
     max-request: 1
   tags: redirect,dast,vuln

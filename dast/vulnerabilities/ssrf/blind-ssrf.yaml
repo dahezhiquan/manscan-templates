@@ -4,6 +4,14 @@ info:
   name: 盲 SSRF OAST 探测（DAST）
   author: pdteam,AmirHossein Raeisi
   severity: medium
+  description: |
+    盲 SSRF 发生在服务端根据用户输入发起请求，但响应内容不返回给攻击者，只能通过外带交互确认。模板把 URL、路径或参数值替换为多种 interactsh 地址形式，收到 HTTP 外带请求时确认服务端可被诱导访问外部目标。
+  impact: |
+    - 攻击者可利用服务器访问内网、云元数据、管理接口或受限服务，获取凭据或探测内部网络。
+    - 即使没有响应回显，外带请求也会暴露服务器网络位置、代理链和出站访问能力。
+  remediation: |
+    - 对服务端请求目标使用严格 allowlist，禁止访问内网地址、localhost、链路本地地址和云元数据地址。
+    - 在网络层限制应用出站访问，并对重定向、DNS 解析和协议类型进行统一校验。
   metadata:
     max-request: 3
   tags: ssrf,dast,oast,vuln

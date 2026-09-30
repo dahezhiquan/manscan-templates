@@ -5,7 +5,13 @@ info:
   author: 0x_Akoko
   severity: medium
   description: |
-    该模板检测 CSP 策略信任 jQuery CDN 时的绕过风险。旧版 jQuery 的 parseHTML、$.get 等行为可能被用于加载并执行攻击者控制的脚本。
+    CSP 绕过风险表示站点虽然部署了 Content-Security-Policy，但策略允许的第三方源可被用来承载或触发脚本执行，导致已有 XSS 注入点绕过脚本来源限制。该模板针对 jQuery CDN 相关允许源，先检查响应头存在 `Content-Security-Policy` 且包含 `code.jquery.com`，再在 headless 浏览器中注入利用该允许源的脚本载荷，通过弹窗事件确认绕过是否可用。
+  impact: |
+    - 攻击者可在存在注入点的页面中绕过 CSP 执行 JavaScript，窃取会话信息、读取页面数据或发起同源操作。
+    - 第三方脚本源一旦被策略长期信任，会削弱 CSP 对 XSS 的缓解效果，并扩大供应链与配置错误带来的影响。
+  remediation: |
+    - 从 CSP 允许列表中移除非必要的 `code.jquery.com` 等第三方脚本源，按业务功能收敛到最小来源集合。
+    - 对必须保留的脚本源使用 nonce/hash、`strict-dynamic`、子资源完整性和版本固定，并同时修复页面中的 XSS 注入点。
   reference:
     - https://www.doyler.net/security-not-included/csp-bypass-via-jquery
     - https://github.com/jquery/jquery/issues/2432

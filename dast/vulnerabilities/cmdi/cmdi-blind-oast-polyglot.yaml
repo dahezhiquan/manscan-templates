@@ -5,7 +5,13 @@ info:
   author: pdteam,geeknik
   severity: high
   description: |
-    该模板使用 OAST 多语法载荷检测盲 OS 命令注入。目标应用若将未过滤用户输入拼接到系统命令中，即使 HTTP 响应无直接回显，也可能通过外带交互确认漏洞。
+    盲 OS 命令注入发生在应用把用户输入拼接进系统命令但 HTTP 响应不直接回显结果的场景。模板向查询参数和请求体追加多语法 polyglot 载荷，混合分隔符、命令替换和 `nslookup`/`wget`，通过 interactsh DNS 或 HTTP 外带交互确认命令已被执行。
+  impact: |
+    - 攻击者可在服务器操作系统上执行命令，读取文件、下载载荷、创建持久化或进一步控制主机。
+    - 盲注场景即使页面无报错也可被外带确认，容易绕过仅基于响应内容的监控。
+  remediation: |
+    - 禁止把用户输入拼接到 shell 命令中，改用参数化 API 或语言内建库完成业务功能。
+    - 对必须调用系统命令的场景使用严格白名单、固定参数、低权限账户和网络出站限制。
   reference:
     - https://portswigger.net/research/hunting-asynchronous-vulnerabilities
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Command%20Injection/README.md

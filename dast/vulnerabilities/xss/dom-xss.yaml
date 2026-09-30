@@ -5,11 +5,13 @@ info:
   author: theamanrawat,AmirHossein Raeisi,dwisiswant0
   severity: medium
   description: |
-    该模板检测 DOM 型跨站脚本（XSS）。当前端 JavaScript 将 URL、片段、存储或其他可控数据写入危险 DOM API 时，攻击者可在浏览器中执行脚本。
+    DOM 型 XSS 发生在前端 JavaScript 从 URL、片段、存储或消息中读取不可信数据并写入危险 DOM sink。模板在 headless 浏览器中向参数注入脚本载荷，若页面执行并触发弹窗事件，则确认客户端 DOM 处理链路可被利用。
   impact: |
-    攻击者可在受害者浏览器中执行恶意脚本，窃取会话、读取页面数据或代替用户发起操作。
+    - 攻击者可在用户浏览器中执行任意脚本，读取页面敏感数据、劫持操作或调用同源 API。
+    - DOM XSS 常不经过服务端日志和传统后端过滤，排查与溯源难度更高。
   remediation: |
-    对进入 DOM 的数据进行上下文编码与校验，避免使用 innerHTML、document.write 等危险 API 处理不可信输入。
+    - 避免使用 `innerHTML`、`document.write`、字符串拼接事件处理器等危险 sink 处理不可信输入。
+    - 使用安全 DOM API、可信类型（Trusted Types）、前端 Sanitizer 和严格 CSP 降低脚本执行面。
   tags: xss,dom,dast,headless,vuln
 
 variables:

@@ -4,6 +4,14 @@ info:
   name: 内容安全策略 CSP 绕过 - Amazon S3 Elysium（DAST）
   author: renniepak,DhiyaneshDK
   severity: medium
+  description: |
+    CSP 绕过风险表示站点虽然部署了 Content-Security-Policy，但策略允许的第三方源可被用来承载或触发脚本执行，导致已有 XSS 注入点绕过脚本来源限制。该模板针对 Amazon S3 Elysium 相关允许源，先检查响应头存在 `Content-Security-Policy` 且包含 `amazonaws.com`，再在 headless 浏览器中注入利用该允许源的脚本载荷，通过弹窗事件确认绕过是否可用。
+  impact: |
+    - 攻击者可在存在注入点的页面中绕过 CSP 执行 JavaScript，窃取会话信息、读取页面数据或发起同源操作。
+    - 第三方脚本源一旦被策略长期信任，会削弱 CSP 对 XSS 的缓解效果，并扩大供应链与配置错误带来的影响。
+  remediation: |
+    - 从 CSP 允许列表中移除非必要的 `amazonaws.com` 等第三方脚本源，按业务功能收敛到最小来源集合。
+    - 对必须保留的脚本源使用 nonce/hash、`strict-dynamic`、子资源完整性和版本固定，并同时修复页面中的 XSS 注入点。
   reference:
     - https://github.com/renniepak/CSPBypass/blob/main/data.tsv
   metadata:

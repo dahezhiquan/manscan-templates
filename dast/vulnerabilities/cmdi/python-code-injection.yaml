@@ -4,6 +4,14 @@ info:
   name: Python 代码注入探测（DAST）
   author: ritikchaddha
   severity: high
+  description: |
+    Python 代码注入发生在应用把用户输入当作 Python 表达式、模板片段或动态代码执行时，攻击者可通过 `eval`、`compile`、`__import__` 等能力调用系统命令。模板替换查询参数和请求体为读取 `/etc/passwd` 的 Python 表达式，响应中出现 `root:.*:0:0:` 时确认代码被服务端执行。
+  impact: |
+    - 攻击者可在 Python 服务进程中执行任意代码，读取文件、窃取密钥、访问数据库或植入后门。
+    - 动态执行点通常与模板、规则引擎或插件系统相连，可能影响多个业务接口。
+  remediation: |
+    - 禁止对用户输入使用 `eval`、`exec`、动态 `compile` 或不受限模板表达式。
+    - 使用安全解析器、白名单表达式语言或沙箱，并限制服务进程文件和网络访问权限。
   tags: python,dast,injection,cmdi,vuln
 
 variables:

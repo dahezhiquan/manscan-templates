@@ -4,6 +4,14 @@ info:
   name: 通用远程文件包含探测（DAST）
   author: m4lwhere
   severity: high
+  description: |
+    远程文件包含发生在应用把用户可控 URL 当作服务端包含文件加载，攻击者可让服务器请求并执行或读取远程内容。模板将参数替换为 interactsh URL，当外带 HTTP 请求出现时确认目标尝试加载外部资源。
+  impact: |
+    - 攻击者可诱导服务器加载恶意脚本、读取远程内容或暴露内网出站能力，严重时导致远程代码执行。
+    - RFI 还可能泄露服务器 IP、网络位置和访问控制策略。
+  remediation: |
+    - 禁止从用户输入直接包含远程 URL，关闭不必要的远程 include 能力和危险协议包装器。
+    - 使用本地文件白名单、固定模板路径和出站网络限制，阻断任意外部资源加载。
   reference:
     - https://www.invicti.com/learn/remote-file-inclusion-rfi/
   metadata:

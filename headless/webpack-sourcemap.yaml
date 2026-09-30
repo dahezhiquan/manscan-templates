@@ -5,13 +5,15 @@ info:
   author: lucky0x0d,PulseSecurity.co.nz
   severity: low
   description: |
-    该模板检测 Webpack 生成的 Source Map 是否对外可访问。命中通常意味着前端源码映射文件可被直接下载或推导获取。
+    Source Map 将压缩后的前端脚本映射回源码、文件名和行列位置，若生产环境公开，可能泄露构建时的源代码和内部路径。本模板先通过 headless 浏览器提取脚本资源，再检查脚本中的 `sourceMappingURL`、内联 Source Map 以及 `SourceMap`/`X-SourceMap` 响应头，最后请求绝对、相对和根相对 `.map` 地址；只有 HTTP 200 且响应同时包含 `"version"`、`"mappings"`、`"sources"` 等 Source Map 字段时才确认暴露。
   impact: |
     - Source Map 暴露可能泄露未压缩源码、接口路径、调试信息或注释内容。
     - 这些信息会降低逆向门槛，帮助攻击者更快定位敏感逻辑和可利用点。
+    - 如果源码映射包含内嵌源码，还可能直接暴露前端配置、内部域名或不应发布的业务实现；该结果本身不证明其中包含密钥。
   remediation: |
     - 生产环境中关闭不必要的 Source Map 生成，或仅保留内部可访问版本。
     - 对 .map 文件路径实施严格访问控制，并清理已公开暴露的历史构建产物。
+    - 检查 CDN、对象存储和缓存中的旧构建文件，轮换曾经随 Source Map 暴露的凭据，并在发布流程中加入公开产物扫描。
   reference:
     - https://pulsesecurity.co.nz/articles/javascript-from-sourcemaps
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/01-Information_Gathering/05-Review_Web_Page_Content_for_Information_Leakage

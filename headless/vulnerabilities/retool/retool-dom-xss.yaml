@@ -5,7 +5,15 @@ info:
   author: rootxharsh,iamnoooob,pdresearch
   severity: high
   description: |
-    该模板检测 Retool 3.82.0-Edge 以下版本在 OAuth 授权流程中的 DOM XSS。攻击者可通过构造恶意片段参数污染页面数据，并在受害者浏览器中触发脚本执行。
+    Retool 3.82.0-Edge 以下版本的 OAuth 授权页面在解析片段数据时可能将 `subdomain` 等字段不安全地写入 DOM，形成 DOM XSS。本模板访问 `/oauth/authorize` 并在 fragment 中注入带随机值的 `<svg/onload=prompt(...)>`，等待对话框并精确匹配随机消息；命中表示 OAuth 授权页面已将受控片段数据送入可执行 DOM 上下文。
+  impact: |
+    - 攻击者可构造恶意 OAuth 授权链接，诱导 Retool 用户访问后在其浏览器中执行脚本。
+    - 在用户已登录或授权上下文中，脚本可能读取页面数据、窃取会话信息、篡改授权流程或冒用用户操作。
+    - 实际影响取决于受害者登录状态、授权页面可访问的数据以及浏览器端会话隔离情况。
+  remediation: |
+    - 将 Retool Edge 升级至 3.82.0 或更高的包含修复版本，并按厂商发布说明完成相关组件更新。
+    - 在修复前限制 OAuth 授权入口的外部可达性，拒绝未经校验的 fragment 字段，并避免将其直接拼接到 HTML。
+    - 修复后使用带随机标记的授权 fragment 复测，确认不会再弹出由输入触发的对话框。
   metadata:
     verified: true
     max-request: 1

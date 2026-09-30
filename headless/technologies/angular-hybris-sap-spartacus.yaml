@@ -5,7 +5,13 @@ info:
   author: TechbrunchFR
   severity: info
   description: |
-    Spartacus 是面向 SAP Commerce Cloud 的轻量级 Angular 店面框架，主要通过 Commerce REST API 与后端交互。
+    SAP Spartacus 是面向 SAP Commerce Cloud 的 Angular 店面框架，通常通过 Commerce REST API 与后端交互。本模板加载目标页面，并要求页面同时包含 `<cx-storefront` 和 `ng-version=`，以确认 Spartacus 与 Angular 店面特征；命中仅表示技术栈指纹，不代表 SAP Commerce 或 Angular 存在漏洞。
+  impact: |
+    - 技术指纹可帮助攻击者判断前端框架、后端产品和后续版本探测方向。
+    - 该规则不会确认具体版本、配置弱点或已知漏洞，不能仅凭命中结果判定系统存在安全缺陷。
+  remediation: |
+    - 按组织资产暴露策略评估是否需要隐藏不必要的框架版本和调试信息。
+    - 对识别出的 Spartacus、Angular 和 SAP Commerce 组件建立版本清单，并分别核对厂商安全公告和补丁状态。
   reference:
     - https://github.com/SAP/spartacus
   metadata:

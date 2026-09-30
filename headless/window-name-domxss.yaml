@@ -5,7 +5,15 @@ info:
   author: pdteam
   severity: high
   description: |
-    该模板通过污染 window.name 并监控 innerHTML、eval、document.write 等危险汇点，检测页面是否会将 window.name 作为不可信输入引入 DOM，从而触发 DOM XSS。
+    `window.name` 可跨页面导航保留，若应用将其当作可信数据写入 HTML 或交给脚本执行，可能形成 DOM XSS。本模板先写入带随机标记的 `window.name`，再 hook `innerHTML`、`eval` 和 `document.write` 等汇点，记录包含该标记的 source、sink 和调用栈；命中 `sink:` 表示检测到了从 `window.name` 到危险汇点的运行时数据流。
+  impact: |
+    - 未认证攻击者可通过构造页面或导航链污染 `window.name`，在受害者访问目标页面时触发脚本执行。
+    - DOM XSS 可能导致会话令牌和页面数据泄露、界面篡改、受害者操作被冒用，具体影响取决于执行上下文和权限。
+    - 该模板证明了随机输入到危险汇点的传播，仍应根据实际 sink 的上下文确认是否能稳定执行任意脚本。
+  remediation: |
+    - 不要将 `window.name` 直接写入 `innerHTML`、`document.write`、事件处理器或 `eval` 等危险 API；优先使用文本节点和安全 DOM API。
+    - 对必须展示的值实施上下文相关输出编码，并在跨页面传递数据时改用受控的消息协议或服务端会话。
+    - 修复后重新执行 Source-to-Sink 测试，确认随机标记不会再到达危险汇点。
   reference:
     - https://public-firing-range.appspot.com/dom/index.html
   classification:

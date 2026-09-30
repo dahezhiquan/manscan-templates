@@ -4,6 +4,14 @@ info:
   name: DVWA 默认凭据自动登录（headless）
   author: pdteam
   severity: high
+  description: |
+    Damn Vulnerable Web Application（DVWA）是用于安全测试的故意脆弱 Web 应用。本模板访问 `/login.php`，自动提交默认用户名 `admin` 和密码 `password`，并以页面出现 `You have logged in as` 或 `First time using DVWA` 作为登录成功证据；命中表示目标实例仍接受默认凭据，不代表其他账户也可登录。
+  impact: |
+    - 若 DVWA 被错误部署在非隔离环境，未授权人员可使用默认凭据进入应用并访问其测试功能。
+    - 登录后的测试功能可能被用于读取或修改应用数据、验证进一步攻击链，增加对同主机和关联资产的攻击风险。
+  remediation: |
+    - 仅在隔离的安全测试环境中部署 DVWA，禁止将其直接暴露到互联网或生产网络。
+    - 修改或禁用默认账户凭据，并在部署后复核登录入口、网络访问控制和应用数据隔离策略。
   tags: headless,dvwa,vuln
 
 headless:

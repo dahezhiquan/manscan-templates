@@ -4,6 +4,16 @@ info:
   name: 客户端原型污染检测（headless）
   author: pdteam
   severity: medium
+  description: |
+    客户端原型污染通常由不安全的查询参数解析、对象合并或递归赋值引起，使攻击者能够修改 `Object.prototype` 或其他共享原型上的属性。本模板使用 `constructor[prototype]`、`__proto__` 及多种混淆形式注入 `vulnerableprop=polluted`，随后在浏览器上下文读取 `window.vulnerableprop`；返回 `polluted` 才作为原型属性已被污染的直接证据。
+  impact: |
+    - 被污染的共享属性可能改变前端权限判断、配置选项、模板渲染或请求参数处理。
+    - 若污染结果进一步进入 DOM、脚本执行或服务端请求逻辑，可能升级为 DOM XSS、业务逻辑绕过或其他客户端攻击。
+    - 命中证明测试属性可从原型链传播，不代表任意业务属性都可被利用，仍应结合实际数据流评估。
+  remediation: |
+    - 对外部输入拒绝 `__proto__`、`prototype`、`constructor` 等危险键，并在解析查询参数时使用安全的白名单结构。
+    - 使用不会递归写入原型的对象合并库或安全 API，必要时为字典对象创建无原型对象并冻结关键配置。
+    - 修复后覆盖查询参数、片段参数和 JSON 输入的多种编码及混淆形式，确认测试属性不再出现在全局对象原型链上。
   metadata:
     max-request: 8
     verified: true

@@ -5,7 +5,13 @@ info:
   author: adamparsons,cbadke,ChetGan,ErikOwen,jacalynli,geeknik
   severity: info
   description: |
-    该模板通过浏览器上下文读取前端对象和版本特征，识别目标站点是否引入常见 JavaScript 库。
+    本模板在浏览器上下文读取 Axios、Bootstrap、jQuery、Lodash、Moment、React、Angular、Backbone、Ember、Vue、Dojo、Next.js 等全局对象或版本特征，识别页面实际加载的常见 JavaScript 库。任一指纹值非空即产生发现结果；命中用于技术盘点，不代表对应库版本一定存在漏洞。
+  impact: |
+    - 暴露库名称和版本可能帮助攻击者缩小组件漏洞和利用方式的搜索范围。
+    - 该规则通过全局对象和 DOM 特征识别，可能受打包、兼容层或自定义全局变量影响，结果需要结合资源文件和版本锁定信息复核。
+  remediation: |
+    - 维护前端依赖清单，及时升级存在已知漏洞或已停止维护的库，并删除未使用的旧版本资源。
+    - 在构建和发布配置中减少不必要的版本信息暴露，同时确保这不会影响安全监控和故障排查。
   metadata:
     max-request: 1
   tags: headless,tech,js,discovery

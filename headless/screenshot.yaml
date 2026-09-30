@@ -5,7 +5,13 @@ info:
   author: V0idC0de,righettod,tarunKoyalwar
   severity: info
   description: |
-    该模板使用 headless 浏览器访问目标页面并保存完整截图，便于后续做资产识别、页面取证或人工复核。
+    本模板使用 headless 浏览器访问目标页面，等待页面加载完成后保存完整页面截图到 `screenshots` 目录，便于资产识别、页面取证、视觉回归或人工复核；截图采集本身不代表发现漏洞。
+  impact: |
+    - 截图可能包含用户名、订单、令牌、内部地址或其他页面可见的敏感信息。
+    - 若扫描产物目录被非授权人员读取，截图文件可能造成二次信息泄露；模板命中仅表示已生成采集结果。
+  remediation: |
+    - 对截图目录实施最小权限访问控制、加密存储和合理保留期限，扫描结束后清理不再需要的文件。
+    - 在生产环境采集前确认已获得授权，并避免在包含敏感数据的会话中进行无必要的整页截图。
   tags: headless,screenshot,discovery
 
 variables:

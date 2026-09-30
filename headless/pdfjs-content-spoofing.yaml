@@ -5,7 +5,15 @@ info:
   author: 0x_Akoko,s4e-io
   severity: medium
   description: |
-    该模板检测 PDF.js 查看器是否在缺少来源校验的情况下加载外部 PDF 文件。受影响版本可能被用于内容欺骗，使攻击者控制的文档在合法查看器界面中渲染。
+    PDF.js 查看器若未正确校验 `file` 参数的来源，可能在合法的 PDF.js 界面中加载攻击者控制的远程文档，形成内容欺骗。本模板依次探测常见 viewer 路径，传入远程 `mozila-content-spoof.pdf`，并要求页面同时出现该文件名以及 `viewerContainer`、`pdfViewer` 等查看器特征，同时排除来源不匹配、阻断和 404 文案；命中表示外部文档被查看器接受并渲染的证据。
+  impact: |
+    - 攻击者可让用户在受信任站点的 PDF.js 界面中看到伪造的通知、登录页或业务文档，利用站点来源提升内容可信度。
+    - 若查看器所在源还承载敏感业务或允许进一步交互，内容欺骗可能被用于钓鱼、诱导下载或配合其他客户端攻击。
+    - 命中主要证明查看器接受了外部文档，具体能否读取宿主页面数据仍取决于浏览器同源策略和查看器配置。
+  remediation: |
+    - 升级到包含来源校验修复的受支持 PDF.js 版本，并确认部署的 viewer 文件与后端依赖版本一致。
+    - 对 `file` 参数实施同源或可信域名白名单校验，拒绝任意外部 URL、协议混淆和重定向后的非受信任来源。
+    - 修复后验证跨源 PDF、重定向 URL 和错误来源均不会被嵌入合法查看器界面。
   reference:
     - https://groups.google.com/g/mozilla.dev.pdf-js/c/_WdU9T0TRfo
     - https://github.com/mozilla/pdf.js/issues/6920

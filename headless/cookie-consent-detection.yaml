@@ -5,7 +5,13 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板通过浏览器渲染页面并匹配常见提示文案，识别站点是否展示 Cookie 同意、隐私声明或偏好设置弹窗。
+    Cookie 同意机制用于向用户展示 Cookie 使用说明并收集隐私偏好。本模板在页面返回 HTTP 200 后通过 headless 浏览器匹配 `cookie-consent`、`cookie-popup`、`We use cookies` 等常见控件或文案，以识别站点是否存在 Cookie 同意界面；命中仅代表页面包含相关特征，不等同于发现 Cookie 安全漏洞或合规缺陷。
+  impact: |
+    - 该结果可用于资产盘点和隐私合规复核，但不能单独证明 Cookie 未经同意写入、属性配置错误或用户选择未生效。
+    - 若相关界面暴露了隐私偏好入口，仍需结合实际 Cookie 写入时机、`Secure`、`HttpOnly`、`SameSite` 属性和同意撤回流程进行人工验证。
+  remediation: |
+    - 对命中的页面进一步核验未同意状态下是否写入非必要 Cookie，并确保拒绝、接受和撤回选项均能按预期生效。
+    - 根据适用法规和组织隐私策略配置同意记录、Cookie 分类及第三方脚本加载控制。
   tags: headless,cookie,detect,discovery
 
 headless:

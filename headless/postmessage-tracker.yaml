@@ -4,6 +4,14 @@ info:
   name: postMessage 监听注册识别（headless）
   author: pdteam
   severity: info
+  description: |
+    页面注册 `message` 事件监听器后，可以接收其他窗口通过 `postMessage` 发送的数据。本模板在页面加载前 hook `Window.prototype.addEventListener`，记录类型为 `message` 的监听注册和调用栈，并以 `at Window.addEventListener` 作为发现证据；命中仅表示存在消息处理逻辑，不代表监听器缺少安全校验。
+  impact: |
+    - 该发现可帮助定位跨窗口通信代码，便于进一步审计来源校验、消息解析和危险操作调用链。
+    - 如果监听器信任任意 `event.origin` 或将消息直接送入 HTML、脚本或敏感 API，才可能进一步导致数据泄露、越权或 XSS。
+  remediation: |
+    - 在每个 `message` 监听器中校验 `event.origin`、`event.source` 及消息 schema，不要仅依赖消息字段自报身份。
+    - 对消息中的字符串执行上下文相关的输出编码，禁止将未经验证的数据直接用于 HTML、脚本执行或敏感操作参数。
   reference:
     - https://github.com/vinothsparrow/iframe-broker/blob/main/static/script.js
   tags: headless,postmessage,discovery

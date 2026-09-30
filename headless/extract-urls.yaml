@@ -4,6 +4,14 @@ info:
   name: HTML 属性 URL 提取（headless）
   author: dwisiswant0
   severity: info
+  description: |
+    页面中的 `src`、`href`、`url` 和 `action` 属性可能暴露脚本、接口、表单提交地址或外部资源。本模板在 headless 浏览器加载目标页面后读取这些属性，去重并通过提取器输出 URL，便于后续资产发现和人工复核；它本身不判断这些 URL 是否存在漏洞。
+  impact: |
+    - 提取结果可帮助发现未在页面导航中明显呈现的 API、管理入口、上传地址和第三方资源。
+    - URL 被提取不代表对应资源可未授权访问，仍需单独验证认证、授权、敏感信息暴露和跨域配置。
+  remediation: |
+    - 对输出的敏感路径逐项检查访问控制，确保未授权用户不能访问管理接口、内部资源或包含凭据的 URL。
+    - 避免在页面属性、查询参数或前端脚本中暴露密钥、令牌及其他不应公开的信息。
   tags: headless,extractor,discovery
 
 headless:

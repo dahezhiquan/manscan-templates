@@ -4,6 +4,14 @@ info:
   name: 使用通配符目标的 postMessage 外发识别（headless）
   author: LogicalHunter
   severity: low
+  description: |
+    `window.postMessage` 使用目标源 `*` 时，消息可被任意能够接收该消息的窗口监听。本模板在页面加载前 hook `window.postMessage`，记录目标源等于 `*` 的调用及调用栈，并以 `at window.postMessage` 作为命中证据；这是一项低风险审计发现，命中不等于消息内容一定敏感或已形成可利用漏洞。
+  impact: |
+    - 如果外发消息包含访问令牌、用户数据或可触发敏感操作的指令，非预期窗口可能接收并利用这些内容。
+    - 仅使用通配符目标不能单独证明存在数据泄露，还需结合消息内容、窗口关系和接收方行为判断实际影响。
+  remediation: |
+    - 将 `postMessage` 的目标源限制为明确的 HTTPS 源白名单，避免在业务代码中使用 `*`。
+    - 对确需跨源发送的消息进行最小化设计，并在接收端同时校验 `event.origin`、`event.source` 和消息结构。
   reference:
     - https://appcheck-ng.com/html5-cross-document-messaging-vulnerabilities/
   tags: headless,postmessage,discovery

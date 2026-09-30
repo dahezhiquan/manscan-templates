@@ -5,7 +5,14 @@ info:
   author: philippedelteil,rotemreiss,zy9ard3,joaonevess
   severity: high
   description: |
-    该模板检测指向 AWS Elastic Beanstalk 的悬空子域名。若 CNAME 指向的 Beanstalk 环境已删除或未被占用，攻击者可能创建同名资源接管该子域名。
+    Elastic Beanstalk 悬空记录发生在域名仍指向带区域标识的 Beanstalk CNAME，而对应环境已删除或未被占用时。若该 CNAME 可被其他账户重新声明，攻击者可能接管子域名内容。本模板要求 CNAME 命中区域化 `elasticbeanstalk.com` 格式且响应包含 `NXDOMAIN`，仅输出候选项；必须使用 AWS 控制台或 `aws elasticbeanstalk check-dns-availability` 确认可用性，未完成声明验证时不能报告为已接管。
+  impact: |
+    - 一旦确认 CNAME 可被重新声明，攻击者可在受信任子域名下托管钓鱼页面、恶意下载或伪造业务接口。
+    - 被接管的子域名可能影响品牌信任、跨域策略和发往该域名的业务流量，并扩大凭据窃取和会话攻击机会。
+  remediation: |
+    - 删除已下线环境对应的 CNAME，或立即在正确的 AWS 区域重新绑定由组织控制的 Beanstalk 环境。
+    - 使用 AWS 控制台或 `aws elasticbeanstalk check-dns-availability` 完成平台侧声明验证；在确认前不要仅凭模板结果修复为“已接管”。
+    - 将 Elastic Beanstalk 环境和 DNS 记录纳入同一生命周期流程，监控环境删除、区域迁移和 CNAME 变更。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/147
     - https://twitter.com/payloadartist/status/1362035009863880711
@@ -17,14 +24,14 @@ info:
   metadata:
     max-request: 1
     comments: |
-      Only CNAMEs with region specification are hijackable.
-      You need to claim the CNAME in AWS portal (https://aws.amazon.com/) or via AWS CLI to confirm the takeover.
-      Do not report this without claiming the CNAME.
-      CLI command to verify the availability of the environment:
+      只有包含区域标识的 CNAME 才可能被劫持。
+      必须在 AWS 控制台（https://aws.amazon.com/）或通过 AWS CLI 声明该 CNAME，以确认是否确实可以接管。
+      在完成 CNAME 声明验证前不要报告该问题。
+      可使用以下 CLI 命令检查环境名称是否可用：
       aws elasticbeanstalk check-dns-availability --region {AWS_REGION} --cname-prefix {CNAME_PREFIX}
-      For example:
+      示例：
       CNAME - 2rs3c.eu-west-1.elasticbeanstalk.com
-      Command - aws elasticbeanstalk check-dns-availability --region eu-west-1 --cname-prefix 2rs3c
+      命令 - aws elasticbeanstalk check-dns-availability --region eu-west-1 --cname-prefix 2rs3c
   tags: dns,takeover,aws,elasticbeanstalk,discovery
 
 dns:

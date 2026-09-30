@@ -5,7 +5,14 @@ info:
   author: theamanrawat
   severity: low
   description: |
-    该模板检测 SPF 记录是否超过 10 次 DNS 查询限制。超限会触发 SPF permerror，可能导致邮件认证失败、投递异常或被冒用风险上升。
+    SPF 规范要求一次评估最多执行 10 次 DNS 查询机制；超过限制会产生 `permerror`，使收件方无法可靠完成发件源认证。本模板提取 SPF 记录中的 `include` 和 `all` token，并在数量大于 10 时报告启发式结果；它没有完整计算 `a`、`mx`、`redirect` 等机制的递归查询次数，因此命中后仍需按实际解析链路复核。
+  impact: |
+    - SPF 超限可能导致合法邮件被判定为认证错误、进入垃圾箱或被拒收，影响业务通知、密码重置和客户通信。
+    - 当收件方无法获得明确的 SPF 结果时，域名邮件冒用的检测能力可能下降，且故障排查会变得复杂。
+  remediation: |
+    - 梳理 SPF 的 include、redirect、a、mx 等递归机制，减少不必要的第三方授权并控制实际 DNS 查询次数。
+    - 在变更前后使用供应商和邮件接收方的验证工具复核完整解析链，避免简单字符串裁剪破坏授权范围。
+    - 将大型发信架构拆分到子域名，并持续监控 SPF `permerror`、投递失败和第三方服务变更。
   reference:
     - https://dmarcly.com/blog/spf-permerror-too-many-dns-lookups-when-spf-record-exceeds-10-dns-lookup-limit
   tags: dns,spf,discovery

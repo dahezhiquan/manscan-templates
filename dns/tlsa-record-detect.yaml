@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测 TLSA 记录。TLSA 记录用于 DANE，将 TLS 证书或公钥信息与 DNSSEC 保护的域名绑定。
+    TLSA 记录用于 DANE，将指定服务的 TLS 证书或公钥信息与 DNSSEC 保护的域名绑定，从而辅助客户端验证服务端身份。本模板只查询 `_443._tcp.{{FQDN}}` 的 TLSA 记录，匹配 `IN TLSA` 并提取记录内容；它不验证 DNSSEC 信任链、证书摘要或服务器证书是否实际匹配。
+  impact: |
+    - TLSA 内容会暴露服务的证书关联和 DNSSEC 部署信息，可帮助判断域名的加密认证架构。
+    - TLSA、DNSSEC 和实际证书不一致时，支持 DANE 的客户端可能拒绝连接或失去预期的身份校验；存在记录本身不代表配置正确。
+  remediation: |
+    - 以证书签发、续期和密钥轮换流程为依据维护 TLSA，核对选择器、匹配类型和摘要与实际证书一致。
+    - 定期验证从父区域到 TLSA、DNSKEY、RRSIG 的完整信任链，并在证书变更前完成记录更新。
+    - 删除已停用服务的 TLSA 记录，避免旧摘要导致合法客户端连接失败。
   reference:
     - https://en.wikipedia.org/wiki/DNS-based_Authentication_of_Named_Entities
     - https://www.internetsociety.org/resources/deploy360/dane/

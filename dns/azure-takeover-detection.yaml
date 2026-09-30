@@ -5,7 +5,14 @@ info:
   author: pdteam,zy9ard3
   severity: high
   description: |
-    该模板检测指向 Microsoft Azure 资源的悬空 DNS 记录。若 DNS 仍指向已删除或未绑定的 Azure 服务，攻击者可能重新声明对应资源并接管子域名内容。
+    Azure 悬空 DNS 记录发生在域名仍指向已删除、未绑定或已释放的 Azure 资源时。若该资源可以被其他租户重新声明，攻击者可能接管子域名并托管钓鱼页面、恶意脚本或伪造业务内容。本模板仅将 A 查询同时出现 `NXDOMAIN` 且 CNAME 命中 Azure 服务域名的情况标记为接管候选，必须在 Azure 控制台确认资源是否已释放以及是否确实可被重新声明，不能仅凭 DNS 命中认定已接管。
+  impact: |
+    - 一旦 Azure 资源确实可被重新声明，攻击者可利用受信任子域名投放钓鱼内容、恶意下载或伪造登录页面。
+    - 被接管的子域名可能继承主站品牌信任，影响用户、合作方和邮件链接对组织的判断，并可能接收原本发往该子域名的流量。
+  remediation: |
+    - 在 Azure 资源删除、迁移或改名时同步删除或更新 CNAME，并将 DNS 记录与资源生命周期纳入变更流程。
+    - 对命中项在 Azure 门户或资源管理接口中确认资源状态和重新声明条件；可恢复时立即重新绑定资源或完成安全下线。
+    - 定期扫描悬空记录，并监控 Azure 资源、DNS 委派和子域名内容的异常变化。
   reference:
     - https://godiego.co/posts/STO/
     - https://docs.microsoft.com/en-us/azure/security/fundamentals/subdomain-takeover

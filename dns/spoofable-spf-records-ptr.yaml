@@ -5,7 +5,14 @@ info:
   author: binaryfigments
   severity: medium
   description: |
-    该模板检测 SPF 记录中是否使用 PTR 机制。PTR 机制已不推荐使用，解析结果容易被滥用或伪造，可能削弱 SPF 防伪效果。
+    SPF 的 `ptr` 机制依赖发件 IP 的反向 DNS 和正向解析，因查询成本高、结果易变化且难以由域名所有者完全控制，已不推荐用于授权发信源。错误使用它可能造成认证失败、意外授权或增加伪造判断的不确定性。本模板要求 TXT 内容同时包含 `v=spf1` 和带空格边界的 `ptr` token，识别使用该机制的 SPF 记录。
+  impact: |
+    - 反向 DNS 变更或正反向解析不一致可能使合法邮件无法通过 SPF，导致投递失败和业务通知丢失。
+    - 依赖外部 PTR 管理的授权边界更难审计，配置不当时可能扩大非预期发信源或削弱域名防伪效果。
+  remediation: |
+    - 删除 SPF 中的 `ptr` 机制，改用明确的 `ip4`、`ip6`、受控 `a` 或经过审查的 `include` 授权。
+    - 变更后从主要收件服务验证 SPF、DKIM 和 DMARC 的实际结果，确认合法发信源未被误拒。
+    - 定期清理停用供应商和旧网段授权，限制可以修改 SPF 和反向 DNS 的账户权限。
   reference:
     - https://www.digitalocean.com/community/tutorials/how-to-use-an-spf-record-to-prevent-spoofing-improve-e-mail-reliability
   classification:

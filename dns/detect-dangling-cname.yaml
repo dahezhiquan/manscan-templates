@@ -5,7 +5,14 @@ info:
   author: pdteam,nytr0gen
   severity: medium
   description: |
-    该模板检测可能悬空的 CNAME 记录。常见原因是 DNS 记录仍指向已删除、不再使用或未完成绑定的外部服务，可能导致子域名接管风险。
+    悬空 CNAME 是指 DNS 仍指向已删除、不再使用或未完成绑定的外部服务，而目标名称已经无法正常解析。若第三方平台允许其他租户重新绑定该名称，攻击者可能接管子域名内容。本模板查询 A 记录，仅在响应同时包含 `NXDOMAIN` 和 CNAME 记录时报告候选项；该结果不能单独证明目标服务可被接管。
+  impact: |
+    - 可被重新绑定的悬空服务可能让攻击者控制受信任子域名，投放钓鱼页面、恶意脚本或伪造下载内容。
+    - 子域名接管还可能影响品牌信任、跨域边界、Cookie 作用域和指向该域名的业务链接。
+  remediation: |
+    - 业务下线或迁移时同步删除 CNAME，或将其更新为仍由组织控制的有效目标。
+    - 对命中项登录对应第三方平台确认目标是否可被当前或其他租户声明；未完成平台侧验证前不要直接认定为已接管。
+    - 将外部服务绑定关系纳入资产台账和生命周期管理，并定期复核 DNS 与服务实际状态。
   reference:
     - https://securitytrails.com/blog/subdomain-takeover-tips
     - https://nominetcyber.com/dangling-dns-is-no-laughing-matter/

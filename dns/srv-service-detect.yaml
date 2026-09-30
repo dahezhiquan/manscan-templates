@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测 SRV 记录暴露的服务信息。SRV 记录用于声明特定服务的主机名、端口、优先级和权重。
+    SRV 记录公开特定服务的目标主机、端口、优先级和权重，可用于发现 XMPP、SIP、CalDAV、LDAP、Kerberos、Minecraft 等服务入口。公开记录通常是服务发现所需配置，但也会扩大外部人员对网络服务的了解。本模板枚举预置的 15 个服务名称，查询 SRV 记录并匹配 `IN SRV` 响应后提取目标主机。
+  impact: |
+    - 服务主机和端口信息可帮助攻击者定位认证、通信和管理服务，缩短后续口令攻击、协议探测和漏洞验证路径。
+    - 已停用服务的 SRV 记录可能造成客户端连接失败，或把流量导向未纳入当前安全管理的旧主机。
+  remediation: |
+    - 仅公开确有跨网络发现需求的 SRV 记录，停用服务或迁移后及时删除旧记录。
+    - 对 LDAP、Kerberos、SIP 等服务使用网络访问控制、强认证和加密传输，避免仅依赖 DNS 隐藏服务。
+    - 定期核对 SRV 的目标、端口、优先级与实际服务清单，监控未授权的 DNS 变更。
   reference:
     - https://www.rfc-editor.org/rfc/rfc2srv
     - https://en.wikipedia.org/wiki/SRV_record

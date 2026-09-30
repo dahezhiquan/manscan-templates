@@ -5,7 +5,14 @@ info:
   author: pdteam
   severity: info
   description: |
-    该模板检测域名是否存在 CAA 记录。CAA 记录用于声明哪些证书颁发机构可以为该域名签发证书，有助于降低误签发风险。
+    CAA 记录用于声明允许为域名签发证书的证书颁发机构，并可配置通配符签发限制和违规报告地址。合理的 CAA 策略有助于减少误签发和证书申请面；但本模板只确认记录存在，不判断允许的 CA 是否过宽或策略是否覆盖所有子域。本模板查询 CAA 记录，匹配 `CAA` 响应并提取 `issue`、`issuewild` 和 `iodef` 字段。
+  impact: |
+    - CAA 响应会暴露组织信任的证书颁发机构及证书运营联系人，帮助外部人员了解证书管理边界。
+    - 若允许的 CA 范围过宽、`issuewild` 未限制或记录配置过期，可能扩大未授权证书签发和钓鱼、中间人攻击的机会；仅有记录并不代表策略已正确。
+  remediation: |
+    - 仅在 CAA 中保留业务实际使用的证书颁发机构，并分别审查普通域名和通配符证书的 `issue`、`issuewild` 策略。
+    - 配置可用的 `iodef` 报告地址并持续关注异常证书申请，及时更新证书供应商变更后的记录。
+    - 定期清理过期的 CAA 记录，并验证父域、子域和委派区域的策略覆盖范围。
   reference:
     - https://support.dnsimple.com/articles/caa-record/#whats-a-caa-record
   classification:

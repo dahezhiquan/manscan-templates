@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测域名是否配置 BIMI 记录。BIMI 用于在邮件客户端中展示经过验证的品牌标识，通常依赖 DMARC 等邮件认证配置。
+    BIMI 通过 DNS TXT 记录声明邮件品牌标识的位置，邮件客户端通常还会结合 DMARC 策略和可选的验证标识来决定是否展示 Logo。该记录本身是公开配置，不代表存在漏洞；它可以帮助判断域名的邮件品牌认证部署情况。本模板匹配 TXT 内容中的 `v=BIMI1` 并提取后续 BIMI 参数。
+  impact: |
+    - BIMI 记录会暴露品牌标识资源、验证标识和相关邮件安全部署信息，可用于完善域名与邮件基础设施画像。
+    - 若记录指向过期或未受保护的资源，邮件客户端可能无法正确展示品牌，且会增加品牌资产管理和钓鱼识别的维护风险。
+  remediation: |
+    - 确认 BIMI 记录中的 Logo、验证标识和托管位置仍归组织控制，并使用 HTTPS 提供相关资源。
+    - 将 BIMI 与 SPF、DKIM、DMARC 的域名对齐和策略配置纳入统一变更、监控和证书轮换流程。
+    - 删除已停用品牌、旧服务或迁移后遗留的 BIMI 记录。
   reference:
     - https://postmarkapp.com/blog/what-the-heck-is-bimi
   metadata:

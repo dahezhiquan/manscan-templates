@@ -5,7 +5,14 @@ info:
   author: pdteam
   severity: info
   description: |
-    该模板检测 DNS 查询返回 SERVFAIL 或 REFUSED 的主机。此类响应可能表示权威服务器配置异常、解析链故障、访问受限或临时网络问题。
+    DNS 返回 `SERVFAIL` 表示解析过程失败，返回 `REFUSED` 表示服务器拒绝处理查询；原因可能包括权威服务器故障、委派或 DNSSEC 配置错误、访问策略限制及临时网络异常。这类响应不能直接证明应用已下线或存在接管风险。本模板检测 A 查询响应中的 `SERVFAIL` 或 `REFUSED`。
+  impact: |
+    - 持续的解析失败或拒绝会使网站、API、邮件和安全验证服务不可达，造成业务中断。
+    - DNSSEC、委派或权限配置异常还可能阻碍恢复和变更验证，并使资产监控产生误报。
+  remediation: |
+    - 从递归解析器、权威 DNS、注册商委派和 DNSSEC 链路逐层确认失败原因，区分临时故障与稳定配置问题。
+    - 检查权威服务器负载、ACL、区域加载、SOA/NS 一致性和服务商限流策略，修复后从多个网络位置复测。
+    - 不要仅凭 `SERVFAIL` 或 `REFUSED` 报告子域名接管，需结合 CNAME、资源状态和平台侧所有权验证。
   classification:
     cwe-id: CWE-200
   metadata:

@@ -5,7 +5,14 @@ info:
   author: melbadry9
   severity: info
   description: |
-    该模板检测 DNS 记录是否指向 Amazon EC2 相关资源，用于识别目标暴露在 AWS EC2 上的主机或服务。
+    Amazon EC2 公有 DNS 名称通常包含实例标识、区域或 `compute.amazonaws.com` 等特征。识别这类 CNAME 可帮助确认域名与 AWS 虚拟机或其服务端点的关系，但不代表实例本身存在漏洞。本模板查询 CNAME，并提取符合 `ec2-*.compute*.amazonaws.com` 模式的记录。
+  impact: |
+    - EC2 主机名可能暴露云区域、实例命名和直接源站线索，帮助攻击者关联 AWS 资产并尝试绕过前置代理。
+    - 停用实例或迁移后的旧 DNS 记录可能导致业务中断、资产归属混乱或形成需要进一步确认的悬空资源线索。
+  remediation: |
+    - 建立域名与 EC2 实例、负载均衡器及账户的对应关系，实例下线时同步清理 DNS。
+    - 对不应直接暴露的应用使用负载均衡、反向代理或私有网络，并通过安全组限制源站访问。
+    - 保护 AWS 账户和实例元数据，定期审查公有 DNS、实例生命周期和未使用的弹性资源。
   reference:
     - https://aws.amazon.com/ec2/
     - https://infosecwriteups.com/dangling-dns-aws-ec2-e2d801701e8

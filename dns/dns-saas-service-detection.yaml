@@ -5,7 +5,14 @@ info:
   author: noah @thesubtlety,pdteam
   severity: info
   description: |
-    该模板检测 CNAME 记录中暴露的 SaaS 或第三方服务信息。CNAME 可显示域名依赖的外部平台，也可能暴露资产归属和潜在悬空记录。
+    CNAME 会把自有域名与外部 SaaS、CDN、托管平台或安全服务关联起来，可用于识别业务依赖、域名归属和潜在的第三方绑定关系。本模板查询 CNAME，并根据响应中的大量厂商域名特征识别 Microsoft、Azure、Cloudflare、AWS、GitHub、Google、Salesforce、HubSpot 等服务，同时提取 CNAME 值；命中是服务指纹，不等于漏洞或已确认接管。
+  impact: |
+    - 第三方服务指纹可帮助攻击者定位托管平台、供应链依赖和可能存在的管理入口，完善目标资产画像。
+    - 已停用但仍保留的 CNAME 可能形成悬空记录，具体能否被接管还取决于对应平台的资源声明规则和账户状态。
+  remediation: |
+    - 建立自有域名与第三方服务的绑定清单，在服务下线、迁移或更换供应商时同步删除 CNAME。
+    - 对每条外部 CNAME 定期确认平台侧资源仍由组织控制，并按平台要求完成自定义域名和账户保护。
+    - 不要把服务指纹命中直接当作接管漏洞；对可疑记录继续执行平台侧资源状态和所有权验证。
   reference:
     - https://ns1.com/resources/cname
     - https://www.theregister.com/2021/02/24/dns_cname_tracking/

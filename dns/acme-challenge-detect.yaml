@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测 _acme-challenge 等 ACME DNS-01 验证记录，这类记录通常由 Let's Encrypt 或其他证书颁发机构用于验证域名控制权。
+    ACME DNS-01 通过 `_acme-challenge` TXT 记录证明申请方能够控制域名，常用于签发普通域名和通配符证书。公开的验证记录通常不等于凭据泄露，但可以暴露证书自动化流程和域名控制关系；若 DNS 管理权限或 ACME 账户被滥用，攻击者可能借此完成未授权证书申请。本模板查询 `_acme-challenge.{{FQDN}}` 的 TXT 记录，匹配 `IN TXT` 和 43 字符验证值并提取记录内容。
+  impact: |
+    - 验证记录可帮助外部人员识别证书签发自动化、域名验证入口及相关 DNS 管理范围。
+    - 若验证域名的 DNS 委派、托管账户或 ACME 凭据缺乏保护，未授权人员可能申请该域名证书，进而支持钓鱼或中间人攻击。
+  remediation: |
+    - 删除已完成签发流程后不再需要的 `_acme-challenge` 记录，避免遗留大量无效验证值。
+    - 对 DNS 托管和 ACME 账户启用强认证、最小权限和操作审计，并限制可修改验证记录的主体。
+    - 监控异常证书申请和 DNS 变更；不要将验证 token、API 密钥或私钥写入公开 TXT 记录。
   reference:
     - https://www.rfc-editor.org/rfc/rfc8555
     - https://letsencrypt.org/docs/challenge-types/

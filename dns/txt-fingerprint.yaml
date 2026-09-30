@@ -5,7 +5,14 @@ info:
   author: pdteam
   severity: info
   description: |
-    该模板检测 DNS TXT 记录。TXT 记录常用于域名验证、邮件认证、第三方服务指纹和安全策略声明。
+    DNS TXT 记录可承载域名验证 token、SPF、邮件安全策略、第三方服务声明和其他运营信息，因此是发现服务依赖与配置线索的重要入口。TXT 内容通常设计为公开数据，但误将密钥、内部地址或长期有效的敏感信息写入其中会造成暴露。本模板查询 TXT 记录，匹配 `IN TXT` 响应并提取记录内容。
+  impact: |
+    - TXT 内容可能暴露邮件供应商、第三方 SaaS、域名验证关系和内部运营线索，帮助攻击者完善资产画像。
+    - 过期验证 token 或误发布的敏感字符串可能被用于关联账户、辅助社会工程或扩大后续攻击面；本模板不判断具体内容是否为秘密。
+  remediation: |
+    - 定期清理停用服务、旧环境和已完成验证流程的 TXT 记录，避免公开无效 token 和内部命名。
+    - 禁止在 DNS TXT 中写入 API 密钥、密码、私钥或其他不应公开的凭据，并对变更执行审核。
+    - 对 SPF、DKIM、DMARC 等结构化记录使用专门校验和监控，发现异常 TXT 变更时及时调查。
   reference:
     - https://www.netspi.com/blog/technical/network-penetration-testing/analyzing-dns-txt-records-to-fingerprint-service-providers/
   classification:

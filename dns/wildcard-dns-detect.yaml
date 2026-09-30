@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测通配符 DNS 配置。通配符记录会让大量未显式配置的子域名解析到同一目标，可能影响资产枚举和误报判断。
+    通配符 DNS 记录会让未显式配置的多个子域名解析到同一地址或服务，常用于统一入口，但也会掩盖真实资产边界和拼写错误。本模板查询两个随机生成的不存在子域名，若第二次查询返回 `IN A` 及 IPv4 地址，则将其作为通配符解析线索；命中不代表该配置一定不安全。
+  impact: |
+    - 随机子域名也能解析会降低子域名枚举和漏洞扫描的准确性，造成资产误报并掩盖已下线主机。
+    - 如果后端未正确校验 Host、租户或路由，任意子域名被导向共享服务可能扩大未预期的内容暴露和域名滥用范围。
+  remediation: |
+    - 仅在确有业务需要时使用通配符记录，并将其指向专用默认站点或受控入口，而不是敏感管理服务。
+    - 在应用、反向代理和 CDN 层严格校验 Host 和租户映射，对未知子域名返回明确的拒绝或空响应。
+    - 将通配符配置纳入资产发现策略，定期复核其覆盖范围、目标地址和后端服务是否仍由组织控制。
   reference:
     - https://en.wikipedia.org/wiki/Wildcard_DNS_record
     - https://developers.cloudflare.com/dns/manage-dns-records/reference/wildcard-dns-records/

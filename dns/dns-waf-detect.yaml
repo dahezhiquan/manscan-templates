@@ -5,7 +5,14 @@ info:
   author: lu4nx
   severity: info
   description: |
-    该模板通过 DNS 记录特征识别目标是否接入 Web 应用防火墙或安全代理服务。
+    Web 应用防火墙和 CDN 常通过 CNAME、NS 或专用域名接入，DNS 特征可以帮助识别目标使用的安全代理和流量清洗服务。本模板查询 CNAME 与 NS 记录，并根据阿里云、Cloudflare、百度云、华为云、网宿、奇安信、Akamai 等厂商的域名模式进行指纹匹配；命中仅表示可能使用对应服务，不代表 WAF 配置存在漏洞。
+  impact: |
+    - 暴露 WAF 或 CDN 厂商有助于攻击者选择针对性的绕过思路、识别厂商管理面并关联源站资产。
+    - 若源站地址仍可直接访问，攻击者可能绕过 DNS 层的代理防护；DNS 指纹本身不能证明源站可绕过或 WAF 已失效。
+  remediation: |
+    - 核对所有公网源站，仅允许来自 CDN/WAF 回源网段或受信网络的访问，避免通过真实 IP 绕过代理。
+    - 保护 WAF、DNS 和云厂商管理账户，启用变更审计、访问控制和异常解析告警。
+    - 定期复核 CNAME、NS 与实际防护服务的一致性，删除迁移后遗留的旧厂商记录。
   classification:
     cwe-id: CWE-200
   metadata:

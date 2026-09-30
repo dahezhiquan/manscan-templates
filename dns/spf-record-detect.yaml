@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测域名是否存在 SPF TXT 记录。SPF 用于声明哪些服务器被授权代表该域名发送邮件。
+    SPF 通过 TXT 记录声明哪些 IP、主机或第三方服务可以代表域名发送邮件，是邮件来源校验的一部分。公开 SPF 记录是正常邮件配置，不代表授权范围一定正确。本模板在 TXT 响应中匹配 `v=spf1`，并提取后续 SPF 内容用于识别授权规则。
+  impact: |
+    - SPF 记录会暴露授权发信服务器、邮件供应商和组织的发信架构，便于外部人员进行邮件基础设施枚举。
+    - 若记录包含过期、过宽或不受控的授权项，攻击者可能借助被授权来源冒用域名；该模板只确认存在性，不判断规则是否安全。
+  remediation: |
+    - 仅保留当前业务实际使用的 IP、域名和第三方发信服务，删除迁移或停用后的 include 和地址。
+    - 根据业务需求使用合适的末端策略，并与 DKIM、DMARC 的对齐配置联合验证。
+    - 对 SPF 变更实施审批和监控，避免超过 DNS 查询限制或意外覆盖合法发信源。
   reference:
     - https://www.mimecast.com/content/how-to-create-an-spf-txt-record
   metadata:

@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板通过 SOA 记录识别域名使用的 DNS 提供商或权威区域信息。SOA 记录包含区域主服务器、管理员邮箱和序列号等元数据。
+    SOA 记录包含权威区域的主名称服务器、管理员邮箱、序列号、刷新和失效时间等区域元数据。不同 DNS 托管商会使用稳定的主机名特征，因此可以据此识别 Cloudflare、AWS、Azure、Google、Akamai、阿里云等可能的 DNS 提供商。本模板查询 SOA，并按预置的厂商主机名进行匹配。
+  impact: |
+    - DNS 服务商、区域管理邮箱和序列信息可帮助攻击者完善基础设施画像，定位托管账户和供应链依赖。
+    - 过期的 SOA 管理信息或未受保护的 DNS 托管账户可能造成故障通知遗漏、变更失控和域名解析中断。
+  remediation: |
+    - 使用受控的运维邮箱维护 SOA 管理联系人，避免暴露个人邮箱和已失效的责任人信息。
+    - 保护 DNS 托管与注册商账户，启用多因素认证、变更审计和异常 SOA/NS 变更告警。
+    - 定期核对 SOA、NS、序列号和区域刷新参数与当前 DNS 提供商及业务恢复要求的一致性。
   reference:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-soa-record/
   metadata:

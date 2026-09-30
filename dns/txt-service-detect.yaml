@@ -5,7 +5,14 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板通过 TXT 记录识别公司或域名正在使用的第三方服务。许多 SaaS 平台会要求添加 TXT 记录进行域名验证或功能启用。
+    许多 SaaS 平台会要求在 DNS TXT 中发布域名验证 token，以确认域名控制权或启用邮件、身份、协作和安全功能。该类记录可识别组织与第三方服务的关系，但公开 token 不等同于服务账户凭据。本模板查询 TXT，并根据预置的 Keybase、Google Workspace、Microsoft、Atlassian、Slack、OpenAI 等验证字符串进行服务指纹匹配。
+  impact: |
+    - 命中的验证记录会暴露组织使用的 SaaS、供应商关系和域名管理范围，可辅助攻击者开展定向钓鱼和供应链画像。
+    - 已停用账户或未撤销的域名验证记录可能留下错误的服务归属线索；能否被利用取决于对应平台的验证和回收机制，不能仅凭 token 命中认定接管。
+  remediation: |
+    - 建立 TXT 验证记录与 SaaS 账户的对应清单，服务下线、账户转移或域名解绑时同步删除记录并在平台撤销域名。
+    - 保护 DNS 托管和第三方 SaaS 管理账户，限制可创建自定义域名和验证记录的权限。
+    - 定期清理过期 token，发现异常新增或未授权服务指纹时核对账户、DNS 变更和域名所有权。
   reference:
     - https://www.abenezer.ca/blog/services-companies-use-txt-records
   metadata:

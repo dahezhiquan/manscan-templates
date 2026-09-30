@@ -5,7 +5,14 @@ info:
   author: princechaddha
   severity: info
   description: |
-    该模板检测 DKIM TXT 记录。DKIM 允许收件方验证邮件是否由域名所有者授权发送，并确认邮件内容在传输过程中未被篡改。
+    DKIM 使用 selector 对应的 DNS TXT 公钥，让收件方验证邮件签名是否由域名控制方授权生成，并检查签名覆盖的邮件内容是否被修改。公开 DKIM 公钥是协议设计的一部分，不应仅因记录可查询就认定为密钥泄露。本模板枚举常见 selector，要求 TXT 同时包含 `v=DKIM1` 和 `p=` 公钥字段，再提取匹配的记录。
+  impact: |
+    - selector 和公钥记录会暴露邮件发送基础设施及密钥轮换线索，可辅助外部人员识别邮件系统。
+    - 若私钥泄露、旧 selector 未撤销或公钥记录配置错误，攻击者可能伪造通过 DKIM 验证的邮件，或导致合法邮件认证失败。
+  remediation: |
+    - 妥善保护 DKIM 私钥，使用强密钥并按轮换计划更新 selector 和公钥。
+    - 删除已停用发送系统的旧 selector，核对 DNS 中的公钥与实际邮件签名配置一致。
+    - 将 DKIM 与 SPF、DMARC 的对齐策略联合验证，并监控异常签名和认证失败报告。
   reference:
     - https://www.rfc-editor.org/rfc/rfc6376
     - https://dkim.org/

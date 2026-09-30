@@ -5,7 +5,13 @@ info:
   author: rxerium
   severity: info
   description: |
-    该模板检测域名是否存在 AAAA 记录。AAAA 记录用于将域名解析到 IPv6 地址，可帮助识别目标是否启用了 IPv6 访问面。
+    AAAA 记录将域名映射到 IPv6 地址。公开的 IPv6 解析会暴露目标的 IPv6 访问面；如果 IPv6 与 IPv4 使用了不同的访问控制、WAF 或监控策略，可能形成未纳入管理的服务入口。本模板查询目标的 AAAA 记录，匹配 DNS 响应中的 `IN AAAA` 行并提取 IPv6 地址。
+  impact: |
+    - 通过 IPv6 地址可以补充主机、服务和网络边界的资产画像，帮助发现未纳入统一防护的访问入口。
+    - IPv6 入口若未同步应用 IPv4 侧的 ACL、WAF、日志和限流策略，可能绕过既有防护或增加攻击面。
+  remediation: |
+    - 核对每条 AAAA 记录对应的业务和主机，删除已停用或不再需要的 IPv6 解析。
+    - 确保 IPv6 与 IPv4 使用一致的访问控制、WAF、监控、证书和安全组策略，并定期进行双栈验证。
   reference:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/
     - https://en.wikipedia.org/wiki/IPv6_address

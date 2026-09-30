@@ -5,7 +5,14 @@ info:
   author: binaryfigments,rxerium
   severity: info
   description: |
-    该模板根据 MX 记录识别域名使用的邮件服务或垃圾邮件过滤服务，帮助判断目标邮件托管与安全网关。
+    不同邮件托管和邮件安全网关会使用稳定的 MX 域名。通过这些特征可以识别 Microsoft 365、Google Workspace、ProtonMail、Zoho、Proofpoint、Mimecast 等服务及区域网关。本模板查询 MX 记录，并根据预置的服务商域名特征进行匹配；命中是邮件服务指纹，不等于邮件配置存在漏洞。
+  impact: |
+    - 服务商和区域信息可帮助攻击者选择针对性的邮件钓鱼、登录攻击和供应链攻击路径。
+    - 过期 MX 或未纳入资产管理的第三方网关可能造成邮件中断、告警丢失和邮件路由边界失控。
+  remediation: |
+    - 核对命中的 MX 与当前邮件架构、供应商合同和账户归属，删除迁移后遗留的记录。
+    - 保护邮件服务管理员账户，启用多因素认证、异常登录监控和供应商侧反滥用控制。
+    - 将邮件服务变更纳入 DNS 变更审批，并定期验证 MX 优先级和实际投递路径。
   classification:
     cwe-id: CWE-200
   metadata:

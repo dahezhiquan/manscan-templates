@@ -5,7 +5,14 @@ info:
   author: juliosmelo
   severity: info
   description: |
-    该模板检测 DNS 中的 DMARC 配置。DMARC 基于 SPF 和 DKIM 结果定义邮件认证失败时的处理策略，可帮助降低域名被冒用发送邮件的风险。
+    DMARC 在 `_dmarc` TXT 记录中声明 SPF、DKIM 对齐失败时的处理策略及报告地址，用于降低域名被冒用发送邮件的风险。存在 DMARC 记录不等于策略足够严格，本模板只查询 `_dmarc.{{FQDN}}` 并匹配包含 DMARC 标识的 TXT 内容，不判断 `p`、`sp` 或对齐参数是否合理。
+  impact: |
+    - DMARC 记录会暴露邮件认证策略和报告接收方，帮助评估组织的邮件安全部署情况。
+    - 若策略长期为 `p=none`、对齐范围过宽或报告配置失效，攻击者仍可能利用相似域名或未授权发件源实施邮件冒用；该模板不会单独确认这些配置缺陷。
+  remediation: |
+    - 结合 SPF、DKIM 的实际发信情况逐步从监控策略过渡到 `quarantine` 或 `reject`，并明确评估 `sp` 子域策略。
+    - 限制报告接收地址和数据处理权限，持续分析 DMARC 报告并修正合法发信源的对齐问题。
+    - 删除已停用服务的授权记录，定期复核 `_dmarc` 记录与当前邮件架构的一致性。
   reference:
     - https://dmarc.org/
     - https://dmarc.org/wiki/FAQ#Why_is_DMARC_important.3F

@@ -5,7 +5,14 @@ info:
   author: pdteam
   severity: info
   description: |
-    该模板检测 DNSSEC 相关配置是否启用，重点关注 DS 等记录。DNSSEC 用于为 DNS 数据提供来源认证和完整性校验。
+    DNSSEC 通过 DS、DNSKEY 和 RRSIG 等记录建立 DNS 数据的来源认证和完整性校验链。本模板查询 DS 记录并匹配 `IN DS` 响应，只能说明父区域发布了 DS 信息，不能单独证明整条信任链、签名有效性或密钥轮换配置正确。
+  impact: |
+    - DNSSEC 部署状态和 DS 参数会暴露域名的签名与密钥管理信息，便于评估 DNS 信任链的部署情况。
+    - 若 DS、DNSKEY 或签名配置不一致，可能造成解析失败；若业务依赖 DNSSEC 而未完整部署，则域名仍缺少预期的解析完整性保护。
+  remediation: |
+    - 在权威 DNS、注册商和父区域同步维护 DS、DNSKEY 与 RRSIG，使用受支持的算法和明确的密钥轮换流程。
+    - 定期验证 DNSSEC 信任链、过期签名和密钥 rollover，监控因配置不一致导致的 SERVFAIL。
+    - 对不再使用的签名配置安全下线，避免遗留 DS 记录阻断正常解析。
   reference:
     - https://www.icann.org/resources/pages/dnssec-what-is-it-why-important-2019-03-05-en
     - https://www.cyberciti.biz/faq/unix-linux-test-and-validate-dnssec-using-dig-command-line/

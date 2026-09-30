@@ -5,7 +5,14 @@ info:
   author: melbadry9
   severity: info
   description: |
-    该模板检测 DNS 记录是否指向 worksites.net 服务，用于识别相关第三方托管或潜在悬空 DNS 场景。
+    Worksites.net 相关服务可能通过固定 IP 承载站点或托管内容。指向该地址可以帮助识别目标使用的第三方托管关系，但共享 IP 命中本身不能证明域名属于特定账户，也不能直接证明存在子域名接管。本模板查询 A 记录并匹配 `69.164.223.206`。
+  impact: |
+    - 暴露第三方托管关系可帮助攻击者关联站点、识别服务依赖并进一步检查域名与账户归属。
+    - 若原有 Worksites 服务已释放而 DNS 记录仍保留，可能形成悬空资产线索；固定 IP 也可能带来共享托管环境下的误判。
+  remediation: |
+    - 核对该 IP 当前是否仍由组织授权使用，并确认站点、账户和 DNS 记录的归属关系。
+    - 对已停用服务删除或更新 A 记录；如需继续使用，应在 Worksites 平台确认自有账户和域名绑定状态。
+    - 不要仅凭固定 IP 命中报告子域名接管，需结合平台侧资源状态完成验证。
   reference:
     - https://blog.melbadry9.xyz/dangling-dns/xyz-services/ddns-worksites
   classification:

@@ -4,7 +4,14 @@ info:
   author: ricardomaia
   severity: medium
   description: |
-    该模板通过检查 DNS 响应是否解析到私有 IPv4 或 IPv6 地址来识别 DNS Rebinding 风险。攻击者可借此让浏览器访问内网地址或本地服务。
+    DNS Rebinding 利用同一域名在不同解析阶段指向不同地址，诱导浏览器或其他客户端把原本信任的域名连接到内网、环回或本地服务，从而绕过部分基于域名的访问边界。本模板分别查询 A 和 AAAA 记录，识别 `127.0.0.1`、RFC1918 私有 IPv4 以及 `fd00::/8` IPv6 ULA 地址；它只提供私有地址线索，不验证完整的双阶段地址切换、TTL 或实际攻击链。
+  impact: |
+    - 受影响的浏览器、桌面应用或服务端组件可能被诱导访问内网管理接口、本地服务或云元数据相关地址。
+    - 若目标服务仅依赖 Host、Origin 或域名白名单进行访问控制，解析到私有地址可能造成敏感数据读取或管理操作被间接触发。
+  remediation: |
+    - 在服务端和代理侧对解析结果执行 IP 校验，拒绝环回、私有、链路本地和其他不应访问的地址，并在重定向后重新校验。
+    - 对浏览器可访问的管理接口启用认证、CSRF 防护和来源校验，不要把 DNS 名称本身作为唯一信任依据。
+    - 复核低 TTL、动态 DNS 和多解析结果配置；命中本模板后进一步验证是否存在公网到私网的地址切换。
   reference:
     - https://capec.mitre.org/data/definitions/275.html
     - https://payatu.com/blog/dns-rebinding/

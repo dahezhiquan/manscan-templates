@@ -4,7 +4,15 @@ info:
   name: Bentoml - 服务端请求伪造
   author: ritikchaddha
   severity: critical
-  description: Bentoml - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
+  description: |
+    该模板用于检测 Bentoml - 服务端请求伪造。该类漏洞通常源于服务端可被诱导请求攻击者指定的 URL 或内部地址。模板主要向 `/encode_image` 等路径发送探测请求，并根据OAST/DNS/HTTP 外带交互、响应状态或关键字回显确认漏洞是否存在。
+  impact: |
+    - 攻击者可诱使服务器向内网地址、云元数据地址或外部攻击者控制的地址发起请求。
+    - 成功利用后可能泄露云临时凭据、探测内网服务、访问未暴露管理接口或触发二次漏洞。
+  remediation: |
+    - 对服务端发起请求的目标地址实施严格 allowlist，禁止访问本地地址、内网网段和云元数据地址。
+    - 禁用不必要的远程 URL 加载功能，并对重定向、DNS 解析和协议类型进行约束。
+    - 在网络层限制应用服务器的出站访问，审计异常外联和元数据接口访问记录。
   reference:
     - https://huntr.com/bounties/901ae5bd-5e24-4f1f-be9f-aa03fa6e1316
   classification:

@@ -4,14 +4,15 @@ info:
   name: Nodogsplash - 目录遍历漏洞（CVE-2023-39120）
   author: Numan Türle
   severity: high
-  description: |-
-    Nodogsplash 存在安全漏洞。攻击者可通过 /.%2e/%2e%2e/%2e%2e/%2e%2e/etc/config/nodogsplash 读取服务器上的敏感文件，导致配置、凭据或业务数据暴露。该模板通过请求 /.%2e/%2e%2e/%2e%2e/%2e%2e/etc/config/nodogsplash，并结合响应中的 nodogsplash、password、application/octet-stream 等特征进行验证。
-  impact: |-
-    - 攻击者可通过路径穿越访问非预期目录中的文件，暴露系统配置、日志或凭据。
-    - 若与其他缺陷结合，漏洞还可能成为进一步读取敏感信息或执行代码的前置条件。
-  remediation: |-
-    - 尽快将 Nodogsplash 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 对路径参数进行规范化处理并拒绝 ../ 等穿越特征，确保访问范围始终限制在预期目录内。
+  description: |
+    该模板用于检测 Nodogsplash - 目录遍历漏洞。该类漏洞通常源于文件路径、下载参数或资源加载接口缺少目录穿越和权限校验，导致任意文件被读取或包含。模板会向 `/.%2e/%2e%2e/%2e%2e/%2e%2e/etc/config/nodogsplash` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可读取配置文件、源码、日志、密钥或系统敏感文件。
+    - 若文件包含点可被利用，可能进一步造成代码执行、凭据泄露或对内部系统的持续入侵。
+  remediation: |
+    - 对文件访问参数使用固定映射或白名单，禁止直接使用用户输入拼接文件路径。
+    - 规范化并校验最终路径，阻断 `../`、编码绕过和绝对路径访问。
+    - 限制应用进程的文件系统权限，避免配置、密钥和日志被 Web 服务账号读取。
   reference:
     - https://nvd.nist.gov/vuln/detail/CVE-2023-39120
     - https://github.com/nodogsplash/nodogsplash/commit/a745a5d635925d2a6f0e0530bdc0eac645b672ed

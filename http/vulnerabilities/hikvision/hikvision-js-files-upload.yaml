@@ -4,7 +4,15 @@ info:
   name: Hikvision iSecure Center - 任意文件上传漏洞
   author: Xc1Ym
   severity: critical
-  description: Hikvision iSecure Center - File Upload 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  description: |
+    该模板用于检测 Hikvision iSecure Center - 任意文件上传漏洞。该类漏洞通常源于上传接口缺少文件类型、路径或执行权限控制，导致恶意文件可被写入服务器。模板主要向 `/center/api/files;.js`、`/clusterMgr/{变量}.jsp;.js` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可上传恶意脚本、WebShell 或伪装文件，进而执行代码或长期控制站点。
+    - 若上传目录可被 Web 服务器解析，漏洞可能直接导致服务器失陷和业务数据泄露。
+  remediation: |
+    - 对上传文件执行扩展名、MIME、魔数和内容校验，并使用随机文件名保存到不可执行目录。
+    - 禁止上传目录执行脚本，分离静态文件域名和应用执行环境。
+    - 清理历史上传文件，排查 WebShell、异常访问日志和新增系统账号。
   reference:
     - https://zhuanlan.zhihu.com/p/639514473
     - https://mp.weixin.qq.com/s/DR9xbwnrpg6YYSTw5pIAhw

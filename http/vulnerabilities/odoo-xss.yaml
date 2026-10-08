@@ -4,14 +4,15 @@ info:
   name: Odoo - 跨站脚本漏洞（CVE-2023-1434）
   author: DhiyaneshDK
   severity: medium
-  description: |-
-    Odoo 存在安全漏洞。攻击者可通过 /web/set_profiling?profile=0 的 profile, collectors 参数 注入恶意脚本，并在受害者浏览器上下文中执行任意 JavaScript。该模板通过请求 /web/set_profiling?profile=0，并结合响应中的 <script>alert(document.domain)</script>、"params":、session 等特征进行验证。
-  impact: |-
-    - 攻击者可在受害者浏览器中执行恶意脚本，导致会话劫持、页面篡改或敏感信息窃取。
-    - 若漏洞位于后台或高权限页面，还可能被用于冒充受害者执行管理操作。
-  remediation: |-
-    - 尽快将 Odoo 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 对所有可控输入执行严格过滤与输出编码，避免未经过滤的脚本、HTML 标签或事件处理器进入页面响应。
+  description: |
+    该模板用于检测 Odoo - 跨站脚本漏洞。该类漏洞通常源于页面将用户可控输入未经过滤或编码后写入响应，导致浏览器执行非预期脚本。模板会向 `/web/set_profiling?profile=0&collectors=<script>alert(document.domain)</script>` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可诱导用户访问恶意链接，在受害者浏览器中执行脚本。
+    - 成功利用后可能窃取会话信息、篡改页面内容、发起越权操作，或作为进一步钓鱼与权限提升的攻击链环节。
+  remediation: |
+    - 对输出到 HTML、属性、JavaScript、URL 等不同上下文的数据分别进行安全编码。
+    - 对输入参数进行白名单校验，并避免直接回显未经处理的用户输入。
+    - 启用合适的 Content-Security-Policy，降低脚本注入后的利用效果。
   reference:
     - https://www.sonarsource.com/blog/odoo-get-your-content-type-right-or-else
     - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-1434

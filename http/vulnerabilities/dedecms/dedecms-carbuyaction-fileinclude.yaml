@@ -4,7 +4,15 @@ info:
   name: DedeCmsV5.6 Carbuyaction Fileinclude
   author: pikpikcu
   severity: high
-  description: DedeCmsV5.6 Carbuyaction Fileinclude 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 DedeCmsV5.6 Carbuyaction Fileinclude。模板根据目标接口的可控输入、响应特征和匹配条件判断漏洞是否存在。模板主要向 `/plus/carbuyaction.php?dopost=return&code=../../` 等路径发送探测请求，并根据响应中的 `Cod::respond()` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可利用该漏洞访问或篡改目标系统中的敏感数据和业务功能。
+    - 在真实部署中，该问题可能进一步引发权限提升、服务中断或与其他漏洞组合形成攻击链。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁与安全配置建议。
+    - 限制受影响接口的访问来源，并对关键操作增加认证、授权和审计。
+    - 复核近期异常访问、配置变更和敏感数据访问记录，必要时轮换相关凭据。
   reference:
     - https://www.cnblogs.com/milantgh/p/3615986.html
   classification:

@@ -4,7 +4,15 @@ info:
   name: HIKVISION applyCT Fastjson - 远程命令执行漏洞
   author: SleepingBag945
   severity: critical
-  description: HIKVISION applyCT Fastjson - 远程命令执行 存在远程命令执行漏洞。攻击者在无需授权或仅需较低权限的情况下，可能在目标主机上执行任意命令并完全控制系统。
+  description: |
+    该模板用于检测 HIKVISION applyCT Fastjson - 远程命令执行漏洞。该类漏洞通常允许攻击者通过可控参数、接口调用或危险功能在目标服务端执行命令或代码。模板主要向 `/bic/ssoService/v1/applyCT` 等路径发送探测请求，并根据OAST/DNS/HTTP 外带交互、响应状态或关键字回显确认漏洞是否存在。
+  impact: |
+    - 攻击者可在目标服务权限下执行系统命令或应用代码，读取、修改业务数据并部署持久化后门。
+    - 若服务运行在高权限账户或可访问内网资源，漏洞可能进一步导致主机失陷和横向移动。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁/安全配置基线。
+    - 限制相关管理接口、调试接口或危险功能的访问来源，避免直接暴露到公网。
+    - 排查异常进程、计划任务、WebShell、新增账号和外联记录，并轮换可能泄露的密钥与凭据。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/HIKVISION/HIKVISION%20%E7%BB%BC%E5%90%88%E5%AE%89%E9%98%B2%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20applyCT%20Fastjson%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
     - https://github.com/MrWQ/vulnerability-paper/blob/master/bugs/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86%E7%BB%BC%E5%90%88%E5%AE%89%E9%98%B2%20Fastjson%20%E5%86%85%E5%AD%98%E9%A9%AC%E6%89%93%E6%B3%95.md

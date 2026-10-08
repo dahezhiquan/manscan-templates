@@ -4,7 +4,15 @@ info:
   name: Host Header Injection
   author: princechaddha
   severity: medium
-  description: Host Header Injection 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 Host Header Injection。该类漏洞通常源于应用或代理直接信任 Host/转发头生成链接或缓存内容。模板通过构造特定请求与响应匹配逻辑进行探测，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可通过伪造 Host 或转发头影响应用生成链接、重置密码地址或缓存内容。
+    - 该问题可能导致密码重置投毒、缓存污染、SSRF 辅助利用或安全策略绕过。
+  remediation: |
+    - 在应用和反向代理层配置合法 Host 白名单，拒绝未知域名请求。
+    - 生成绝对链接时使用受信任的站点配置，不直接采信请求头。
+    - 审计代理转发头、缓存键和密码重置/回调链接生成逻辑。
   reference:
     - https://portswigger.net/web-security/host-header
     - https://portswigger.net/web-security/host-header/exploiting

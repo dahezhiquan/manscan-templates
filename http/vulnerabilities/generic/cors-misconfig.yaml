@@ -4,6 +4,15 @@ info:
   name: 跨域资源共享（CORS）配置错误
   author: nadino,g4l1t0,convisoappsec,pdteam,breno_css,nodauf,amirmsafari
   severity: medium
+  description: |
+    该模板用于检测 跨域资源共享（CORS）配置错误。该类问题通常源于跨域响应头配置过宽或动态反射不可信 Origin。模板主要向 `HTTP/1.1` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 错误的 CORS 配置可能允许恶意站点读取受害者在目标站点上的敏感响应。
+    - 若同时允许凭据跨域，攻击者可借助用户浏览器访问受保护接口并窃取数据。
+  remediation: |
+    - 将 Access-Control-Allow-Origin 限制为可信域名白名单，避免反射任意 Origin。
+    - 仅在确有需要时启用 Access-Control-Allow-Credentials，并与严格 Origin 校验配合使用。
+    - 审计敏感接口的跨域响应头，移除通配或动态反射配置。
   reference:
     - https://portswigger.net/web-security/cors
     - https://portswigger.net/web-security/ssrf/url-validation-bypass-cheat-sheet

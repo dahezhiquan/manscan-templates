@@ -4,7 +4,15 @@ info:
   name: Joomla! com_fabrik 3.9.11 - 本地文件包含漏洞
   author: dhiyaneshDk
   severity: high
-  description: Joomla! com_fabrik 3.9.11 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  description: |
+    该模板用于检测 Joomla! com_fabrik 3.9.11 - 本地文件包含漏洞。该类漏洞通常源于文件路径、下载参数或资源加载接口缺少目录穿越和权限校验，导致任意文件被读取或包含。模板会向 `/index.php?option=com_fabrik&task=plugin.pluginAjax&plugin=image&g=element&method=onAjax_file...` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可读取配置文件、源码、日志、密钥或系统敏感文件。
+    - 若文件包含点可被利用，可能进一步造成代码执行、凭据泄露或对内部系统的持续入侵。
+  remediation: |
+    - 对文件访问参数使用固定映射或白名单，禁止直接使用用户输入拼接文件路径。
+    - 规范化并校验最终路径，阻断 `../`、编码绕过和绝对路径访问。
+    - 限制应用进程的文件系统权限，避免配置、密钥和日志被 Web 服务账号读取。
   reference:
     - https://www.exploit-db.com/exploits/48263
   classification:

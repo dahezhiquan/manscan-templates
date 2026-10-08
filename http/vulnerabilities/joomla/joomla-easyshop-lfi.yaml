@@ -4,7 +4,15 @@ info:
   name: Joomla! Component Easy Shop 1.2.3 - 本地文件包含漏洞
   author: ritikchaddha
   severity: high
-  description: Joomla! Component Easy Shop 1.2.3 - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  description: |
+    该模板用于检测 Joomla! Component Easy Shop 1.2.3 - 本地文件包含漏洞。该类漏洞通常源于上传接口缺少认证、文件类型校验、存储隔离或执行权限控制。模板会向 `/index.php?option=com_easyshop&task=ajax.loadImage&file=Li4vLi4vY29uZmlndXJhdGlvbi5waHA=` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能上传脚本、WebShell 或恶意文件，并借此执行代码或长期控制服务器。
+    - 上传目录若可被访问或解析，可能导致数据篡改、恶意内容投递和业务系统被接管。
+  remediation: |
+    - 为上传接口增加认证授权和 CSRF 防护，限制可上传文件类型、大小和扩展名。
+    - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
+    - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   reference:
     - https://blog.csdn.net/weixin_42628854/article/details/136036109
   classification:

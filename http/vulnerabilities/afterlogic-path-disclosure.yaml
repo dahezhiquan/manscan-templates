@@ -4,14 +4,15 @@ info:
   name: AfterLogic Aurora 和 WebMail Pro < 7.7.9 - 漏洞（CVE-2021-26292）
   author: johnk3r
   severity: low
-  description: |-
-    AfterLogic Aurora 和 WebMail Pro < 7.7.9 存在安全漏洞。攻击者可通过 /dav/server.php/files/personal/GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021 触发异常业务逻辑、未授权访问或敏感数据暴露。该模板通过请求 /dav/server.php/files/personal/GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021，并结合响应中的 caldav_public_user、GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021、application/xml 等特征进行验证。
-  impact: |-
-    - 攻击者可利用该缺陷访问未授权功能、敏感数据或影响系统正常业务流程。
-    - 具体风险会结合部署方式、权限边界和业务场景进一步放大。
-  remediation: |-
-    - 尽快将 AfterLogic Aurora 和 WebMail Pro < 7.7.9 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 结合该接口的实际用途补充输入校验、访问控制、日志审计与最小权限配置，降低被进一步利用的可能性。
+  description: |
+    该模板用于检测 AfterLogic Aurora 和 WebMail Pro < 7.7.9 - 漏洞（CVE-2021-26292）。该类漏洞通常源于敏感接口、配置文件、错误信息或调试数据被未授权暴露。模板主要向 `/dav/server.php/files/personal/GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021` 等路径发送探测请求，并根据响应中的 `caldav_public_user`、`GIVE_ME_ERROR_TO_GET_DOC_ROOT_2021` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可获取路径、配置、账号、令牌、日志或其他敏感信息。
+    - 泄露的信息可能被用于定位系统结构、复用凭据、绕过访问控制或辅助后续攻击。
+  remediation: |
+    - 移除或限制敏感接口、调试页面、配置文件和日志文件的外部访问。
+    - 对错误信息和接口响应进行最小化处理，避免返回内部路径、账号、密钥或堆栈信息。
+    - 轮换已暴露的凭据和令牌，并检查相关账号的访问记录。
   reference:
     - https://github.com/E3SEC/AfterLogic/blob/main/CVE-2021-26292-full-path-disclosure-vulnerability.md
     - https://nvd.nist.gov/vuln/detail/CVE-2021-26292

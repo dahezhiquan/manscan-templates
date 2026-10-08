@@ -4,14 +4,15 @@ info:
   name: Monitorr Services Configuration - 任意文件上传漏洞（CVE-2024-0713）
   author: DhiyaneshDK
   severity: high
-  description: |-
-    Monitorr Services Configuration 存在安全漏洞。攻击者可通过 /assets/php/upload.php 的 {{base64_decode('/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4 Tl5ufo6erx8vP09fb3 Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3 Pn6/9oADAMBAAIRAxEAPwD5/ooooA//2Tw/cGhwIGVjaG8gJ3h4eHh4eGF0ZmVyc290Zyc7Pz4 参数 上传恶意文件，进一步造成脚本执行、页面篡改或持久化控制。该模板通过请求 /assets/php/upload.php，并结合响应中的 has been uploaded to: 等特征进行验证。
-  impact: |-
-    - 攻击者可上传恶意文件并借此执行脚本、投放后门或篡改前端资源。
-    - 若上传目录可被直接访问，漏洞往往会迅速演变为持久化控制或服务器失陷。
-  remediation: |-
-    - 尽快将 Monitorr Services Configuration 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 限制上传文件类型、内容与存储位置，避免可执行文件进入 Web 可访问目录并启用后端安全检测。
+  description: |
+    该模板用于检测 Monitorr Services Configuration - 任意文件上传漏洞。该类漏洞通常源于上传接口缺少认证、文件类型校验、存储隔离或执行权限控制。模板会向 `/assets/php/upload.php`、`/assets/data/usrimg/{{file}}.php` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能上传脚本、WebShell 或恶意文件，并借此执行代码或长期控制服务器。
+    - 上传目录若可被访问或解析，可能导致数据篡改、恶意内容投递和业务系统被接管。
+  remediation: |
+    - 为上传接口增加认证授权和 CSRF 防护，限制可上传文件类型、大小和扩展名。
+    - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
+    - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   reference:
     - https://github.com/Tropinene/Yscanner
     - https://github.com/fkie-cad/nvd-json-data-feeds

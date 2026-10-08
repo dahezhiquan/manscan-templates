@@ -3,6 +3,15 @@ info:
   name: 宝兰德 BES Console - 反序列化漏洞
   author: Chaitin
   severity: critical
+  description: |
+    该模板用于检测 宝兰德 BES Console - 反序列化漏洞。该类漏洞通常源于服务端反序列化不可信数据，可能触发危险对象链。模板主要向 `/__bes/__ejb` 等路径发送探测请求，并根据OAST/DNS/HTTP 外带交互、响应状态或关键字回显确认漏洞是否存在。
+  impact: |
+    - 攻击者可通过构造序列化数据触发危险对象链，执行任意代码或未授权操作。
+    - 成功利用后可能造成服务器接管、敏感数据泄露和横向移动。
+  remediation: |
+    - 禁用不可信反序列化入口，或使用安全的序列化格式和类型白名单。
+    - 升级受影响框架、组件和中间件，移除已知危险 gadget 链依赖。
+    - 限制相关接口访问来源，排查异常进程、外联和新增文件。
   metadata:
     verified: true
     max-request: 1

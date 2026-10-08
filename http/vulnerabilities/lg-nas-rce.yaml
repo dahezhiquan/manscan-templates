@@ -4,14 +4,15 @@ info:
   name: LG NAS Devices - 远程代码执行漏洞（CVE-2018-10818）
   author: gy741
   severity: critical
-  description: |-
-    LG NAS Devices 存在安全漏洞。攻击者可通过 /system/sharedir.php、/en/php/usb_sync.php 的 act, task_number 参数 构造恶意输入，在服务器端执行任意命令或代码。该模板通过请求 /system/sharedir.php、/en/php/usb_sync.php，并结合响应中的 http、User-Agent: {{useragent}} 等特征进行验证。
-  impact: |-
-    - 攻击者可在目标服务器上执行任意命令或代码，直接接管受影响主机或应用进程。
-    - 成功利用后可进一步窃取数据、植入后门、横向移动，或破坏关键业务系统。
-  remediation: |-
-    - 尽快将 LG NAS Devices 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 避免将外部输入直接传入执行链路，并通过白名单校验、最小权限与隔离运行降低命令执行风险。
+  description: |
+    该模板用于检测 LG NAS Devices - 远程代码执行漏洞。该类漏洞通常与危险接口暴露、命令参数拼接、模板解析、反序列化或组件缺陷有关，攻击者可能让服务端执行非预期代码。模板会向 `/system/sharedir.php`、`/en/php/usb_sync.php` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可在目标服务权限范围内执行命令或代码，进而接管应用所在主机。
+    - 成功利用后可能泄露配置、密钥和业务数据，并为横向移动、持久化控制或破坏业务提供入口。
+  remediation: |
+    - 升级受影响产品或组件到厂商修复版本，移除存在已知缺陷的依赖。
+    - 限制高危接口的公网访问，增加认证、授权和来源校验，并避免将用户输入传入命令执行、模板解析或反序列化流程。
+    - 排查异常进程、计划任务、WebShell、外联连接和新增账号，必要时轮换凭据并重建受影响环境。
   reference:
     - https://www.vpnmentor.com/blog/critical-vulnerability-found-majority-lg-nas-devices/
     - https://medium.com/@0x616163/lg-n1a1-unauthenticated-remote-command-injection-cve-2018-14839-9d2cf760e247

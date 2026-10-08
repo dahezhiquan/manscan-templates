@@ -4,7 +4,15 @@ info:
   name: EasyCVR video management - Users - 信息泄露漏洞
   author: pussycat0x
   severity: high
-  description: EasyCVR video management - Users 信息泄露 存在信息泄露漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 EasyCVR video management - Users - 信息泄露漏洞。该类问题通常源于服务配置过宽、调试能力暴露或安全控制未按生产环境要求启用。模板会向 `/api/v1/userlist?pageindex=0&pagesize=10` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能借助错误配置访问内部功能、敏感数据或原本不应公开的管理能力。
+    - 配置缺陷常与其他漏洞组合使用，扩大暴露面并增加被定向攻击的概率。
+  remediation: |
+    - 按最小暴露原则收敛相关服务配置，关闭调试、示例、未使用插件和不必要接口。
+    - 为管理入口和敏感接口增加认证、授权、来源限制和审计记录。
+    - 复核生产环境基线，确认安全头、访问控制、默认配置和网络边界符合要求。
   reference:
     - https://github.com/wy876/POC/blob/main/EasyCVR%20%E8%A7%86%E9%A2%91%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%E5%AD%98%E5%9C%A8%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2.md
   metadata:

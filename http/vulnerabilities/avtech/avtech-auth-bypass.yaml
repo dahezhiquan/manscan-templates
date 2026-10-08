@@ -4,7 +4,15 @@ info:
   name: AVTECH Video Surveillance Product - 认证绕过漏洞
   author: ritikchaddha
   severity: high
-  description: AVTECH Video Surveillance Product - 认证绕过 存在认证绕过漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 AVTECH Video Surveillance Product - 认证绕过漏洞。该类漏洞通常源于认证、授权或流程校验不足，使攻击者无需合法权限即可访问敏感功能。模板主要向 `/cgi-bin/user/Config.cgi?.cab&action=get&category=Account.*`、`/cgi-bin/user/Config.cgi?/nobody&action=get&category=Account.*` 等路径发送探测请求，并根据响应中的 `Account.Maxuser=`、`Account.LocalPassword=` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可绕过身份认证或未授权访问敏感接口，获取管理功能、重置密码或操作业务数据。
+    - 若接口涉及账号、配置或文件操作，可能造成权限提升、数据泄露和业务被篡改。
+  remediation: |
+    - 修复认证与授权校验逻辑，确保每个敏感接口都执行服务端权限判断。
+    - 升级受影响版本，并限制管理接口仅允许可信来源访问。
+    - 复核近期账号变更、密码重置、配置修改和异常访问记录。
   metadata:
     verified: true
     max-request: 2

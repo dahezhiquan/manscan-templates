@@ -4,7 +4,15 @@ info:
   name: DedeCMS - 开放重定向漏洞
   author: pikpikcu
   severity: medium
-  description: DedeCMS - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
+  description: |
+    该模板用于检测 DedeCMS - 开放重定向漏洞。该类漏洞通常源于跳转地址未经过严格校验，导致用户可被引导到外部恶意站点。模板主要向 `/plus/download.php?open=1&link=aHR0cHM6Ly9pbnRlcmFjdC5zaA==` 等路径发送探测请求，并根据响应中的 `Location: https://interact.sh` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可构造跳转链接，将用户从可信域名引导到恶意站点。
+    - 该问题常被用于钓鱼、OAuth 授权码劫持、绕过跳转白名单或提升社工攻击可信度。
+  remediation: |
+    - 对跳转目标使用固定白名单或相对路径，禁止直接信任用户传入的完整 URL。
+    - 规范化校验协议、主机名、反斜杠和多重编码后的跳转地址。
+    - 审计登录、授权和下载等跳转场景，避免开放重定向进入认证链路。
   reference:
     - https://blog.csdn.net/ystyaoshengting/article/details/82734888
   classification:

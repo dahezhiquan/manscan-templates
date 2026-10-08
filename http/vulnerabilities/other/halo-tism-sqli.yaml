@@ -4,7 +4,15 @@ info:
   name: Halo ITSM - Pre-Authentication - SQL 注入漏洞
   author: rootxharsh,iamnoooob,pdresearch
   severity: critical
-  description: Halo ITSM - Pre-Authentication SQL 注入 存在SQL 注入漏洞。攻击者可借助可控参数干预后端 SQL 查询，从而读取敏感数据、绕过鉴权或进一步影响数据库完整性。
+  description: |
+    该模板用于检测 Halo ITSM - Pre-Authentication - SQL 注入漏洞。该类漏洞通常源于接口将用户可控参数直接拼接进 SQL 语句，导致查询语义被篡改。模板会根据请求响应中的状态码、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可通过注入参数读取、篡改或删除数据库中的敏感数据。
+    - 在数据库权限过高或支持危险函数的场景下，SQL 注入还可能导致认证绕过、文件读写或进一步执行系统命令。
+  remediation: |
+    - 对所有数据库访问使用参数化查询或安全 ORM，避免拼接用户可控输入。
+    - 对受影响接口的参数进行类型、长度和取值范围校验，并关闭详细数据库错误回显。
+    - 使用最小权限数据库账号，排查异常查询、数据导出和新增账号记录。
   reference:
     - https://slcyber.io/assetnote-security-research-center/loose-types-sink-ships-pre-authentication-sql-injection-in-halo-itsm/
   classification:

@@ -4,7 +4,15 @@ info:
   name: Gnuboard 5 - 跨站脚本漏洞
   author: arafatansari
   severity: medium
-  description: Gnuboard 5 - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
+  description: |
+    该模板用于检测 Gnuboard 5 - 跨站脚本漏洞。该类漏洞通常源于页面未对用户输入进行正确过滤或输出编码，导致脚本内容被浏览器执行。模板主要向 `/bbs/new.php?darkmode=%22%3E%3Cscript%3Ealert(document.domain)%3C/script%3E` 等路径发送探测请求，并根据响应中的 `header\"><script>alert(document.domain)</script>.css?`、`text/html` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可诱导用户访问构造链接或页面，在受害者浏览器中执行脚本。
+    - 成功利用后可能窃取会话信息、执行越权操作、篡改页面内容，或作为钓鱼和横向攻击链的一环。
+  remediation: |
+    - 对所有反射或存储到页面的用户输入进行上下文相关输出编码。
+    - 对富文本、URL、HTML 属性等高风险输入使用白名单过滤，并启用合适的 Content-Security-Policy。
+    - 升级受影响组件，检查是否存在被植入的恶意脚本或异常后台操作。
   reference:
     - https://huntr.dev/bounties/ad2a9b32-fe6c-43e9-9b05-2c77c58dde6a/
   classification:

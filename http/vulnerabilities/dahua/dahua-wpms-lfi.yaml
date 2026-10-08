@@ -4,7 +4,15 @@ info:
   name: Dahua Smart Park Management Platform - Arbitrary - 任意文件读取漏洞
   author: DhiyaneshDk
   severity: high
-  description: Dahua Smart Park Management Platform - Arbitrary File Read 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  description: |
+    该模板用于检测 Dahua Smart Park Management Platform - Arbitrary - 任意文件读取漏洞。该类漏洞通常源于文件路径或资源参数校验不足，导致攻击者可读取非预期文件。模板主要向 `/portal/itc/attachment_downloadByUrlAtt.action?filePath=file:/etc/passwd` 等路径发送探测请求，并根据响应中的 `filename=passwd`、`root:.*:0:0:` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可读取服务器本地文件、配置文件、源码或系统敏感文件。
+    - 若读取到凭据、密钥或应用配置，可能进一步造成账号接管、数据库访问或远程代码执行。
+  remediation: |
+    - 使用固定文件 ID 或白名单映射访问文件，避免直接使用用户输入拼接文件路径。
+    - 对路径进行规范化校验，拒绝目录穿越、协议包装器和绝对路径访问。
+    - 降低 Web 进程文件权限，检查是否已有敏感文件被访问或泄露。
   reference:
     - https://mp.weixin.qq.com/s/uRhVl2XC5fTNKO8eDFFebA
     - https://github.com/Vme18000yuan/FreePOC/blob/master/poc/pocsuite/dahua_zhyq_attachment_fileread.py

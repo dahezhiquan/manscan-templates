@@ -4,7 +4,15 @@ info:
   name: PHP 8.1.0-dev - Backdoor - 远程代码执行漏洞
   author: dhiyaneshDk
   severity: critical
-  description: 该模板用于检测目标是否存在与 PHP 8.1.0-dev - Backdoor 远程代码执行 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
+  description: |
+    该模板用于检测 PHP 8.1.0-dev - Backdoor - 远程代码执行漏洞。该类漏洞通常允许攻击者通过可控参数、接口调用或危险功能在目标服务端执行命令或代码。模板通过构造特定请求与响应匹配逻辑进行探测，并根据响应中的 `int(77777355556)` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可在目标服务权限下执行系统命令或应用代码，读取、修改业务数据并部署持久化后门。
+    - 若服务运行在高权限账户或可访问内网资源，漏洞可能进一步导致主机失陷和横向移动。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁/安全配置基线。
+    - 限制相关管理接口、调试接口或危险功能的访问来源，避免直接暴露到公网。
+    - 排查异常进程、计划任务、WebShell、新增账号和外联记录，并轮换可能泄露的密钥与凭据。
   reference:
     - https://news-web.php.net/php.internals/113838
     - https://flast101.github.io/php-8.1.0-dev-backdoor-rce/

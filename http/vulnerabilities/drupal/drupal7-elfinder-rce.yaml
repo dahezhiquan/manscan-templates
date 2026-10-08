@@ -4,12 +4,17 @@ info:
   name: Drupal 7 Elfinder - 远程代码执行漏洞
   author: 1337kro
   severity: critical
-  description: Drupal 7 Elfinder - 远程代码执行 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  description: |
+    该模板用于检测 Drupal 7 Elfinder - 远程代码执行漏洞。该类漏洞通常允许攻击者通过可控参数、接口调用或危险功能在目标服务端执行命令或代码。模板主要向 `/sites/all/libraries/elfinder/connectors/php/connector.php` 等路径发送探测请求，并根据响应中的 `{"cwd":`、`application/json` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可在目标服务权限下执行系统命令或应用代码，读取、修改业务数据并部署持久化后门。
+    - 若服务运行在高权限账户或可访问内网资源，漏洞可能进一步导致主机失陷和横向移动。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁/安全配置基线。
+    - 限制相关管理接口、调试接口或危险功能的访问来源，避免直接暴露到公网。
+    - 排查异常进程、计划任务、WebShell、新增账号和外联记录，并轮换可能泄露的密钥与凭据。
   reference:
     - https://github.com/Kro0oz/drupal-7-elfinder
-  remediation: |
-    - 尽快升级受影响组件并移除危险功能、调试接口或可被外部调用的执行链路。
-    - 结合主机侧日志、计划任务和 Web 根目录文件进行排查，确认是否已被植入后门或执行恶意命令。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8

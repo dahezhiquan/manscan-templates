@@ -4,7 +4,15 @@ info:
   name: CRLF - Injection 检测
   author: melbadry9,nadino,xElkomy
   severity: low
-  description: CRLF - Injection Detection 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 CRLF - Injection 检测。该类漏洞通常源于响应头中写入了未过滤的换行控制字符。模板主要向 `/%0D%0ASet-Cookie:crlfinjection=crlfinjection`、`/%E5%98%8D%E5%98%8ASet-Cookie:crlfinjection=crlfinjection` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可注入换行符篡改响应头，设置伪造 Cookie、触发缓存污染或构造响应拆分攻击。
+    - 在特定场景下，该问题可与 XSS、会话固定或代理缓存问题组合扩大影响。
+  remediation: |
+    - 对进入响应头的用户输入过滤 CR/LF 等控制字符，并使用框架提供的安全 Header API。
+    - 避免将未验证的 URL、路径或参数直接写入 Location、Set-Cookie 等响应头。
+    - 检查代理、缓存和应用服务器对异常响应头的处理策略。
   reference:
     - https://hackerone.com/reports/858650
   metadata:

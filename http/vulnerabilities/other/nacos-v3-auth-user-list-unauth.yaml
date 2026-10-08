@@ -5,14 +5,14 @@ info:
   author: dahe
   severity: critical
   description: |
-    Alibaba Nacos 3.0.0 至 3.2.3 版本中，`UserControllerV3.createUser()` 相关鉴权注解缺少 `apiType` 参数，导致用户管理接口的权限校验作用域错配。未授权攻击者可直接访问 v3 用户列表接口，枚举现有账号并为后续创建高权限账户、接管控制台提供入口。
+    该模板用于检测 Alibaba Nacos 3.x 权限绕过漏洞。该类漏洞通常源于认证、授权或会话校验逻辑不完整，使未授权用户可访问受保护接口或执行敏感操作。模板会向 `/nacos/v3/auth/user/list?pageNo=1&pageSize=1`、`/v3/auth/user/list?pageNo=1&pageSize=1` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
   impact: |
-    - 攻击者可在未登录状态下读取用户列表、账号数量等管理信息，扩大后续枚举与攻击面。
-    - 同类权限校验缺失通常意味着创建用户、分配权限等管理接口也可能被滥用，最终导致 Nacos 控制台和配置中心被接管。
+    - 攻击者可绕过登录或权限限制，访问管理功能、敏感数据或业务操作接口。
+    - 在管理接口暴露的场景下，可能进一步导致配置被篡改、账号被接管或系统被植入后门。
   remediation: |
-    - 升级到 Nacos 3.2.4 或更高版本，确认受影响接口的 `@Secured` 已补充 `apiType = ApiType.ADMIN_API`。
-    - 对 `/nacos/v3/auth/user/*` 等管理接口强制执行管理员鉴权，并通过网关、反向代理或访问控制策略限制暴露面。
-    - 修复后检查现有管理员账号、访问令牌和配置变更记录，发现异常立即轮换凭据并审计历史操作。
+    - 在服务端统一执行认证和授权校验，避免仅依赖前端控制或可预测参数。
+    - 修复存在绕过问题的版本，并限制管理接口、调试接口和敏感 API 的访问来源。
+    - 审计异常登录、权限变更和配置修改记录，轮换可能受影响的账号凭据。
   reference:
     - https://github.com/alibaba/nacos/issues/10060
     - https://github.com/alibaba/nacos/releases/tag/3.2.4

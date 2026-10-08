@@ -4,7 +4,15 @@ info:
   name: Cacti Weathermap File Write
   author: pikpikcu
   severity: medium
-  description: Cacti Weathermap File Write 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 Cacti Weathermap File Write。该问题通常源于受影响接口或组件缺少必要的输入校验、访问控制或安全边界限制。模板会向 `/plugins/weathermap/editor.php?plug=0&mapname=poc.conf&action=set_map_properties&param=&param...`、`/plugins/weathermap/configs/poc.conf` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能利用该缺陷访问敏感功能、读取或篡改数据，或扩大对目标系统的控制范围。
+    - 在公网暴露、权限配置过宽或与其他缺陷组合时，可能造成更严重的业务中断和数据泄露。
+  remediation: |
+    - 升级受影响产品或组件到厂商修复版本，并移除不再维护的高风险功能。
+    - 对相关接口增加认证、授权、输入校验和访问来源限制。
+    - 复核访问日志和异常操作记录，确认是否存在已被利用的迹象。
   metadata:
     max-request: 2
   tags: injection,cacti,vuln

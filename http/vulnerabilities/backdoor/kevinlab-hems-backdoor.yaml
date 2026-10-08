@@ -4,7 +4,15 @@ info:
   name: KevinLAB HEMS - 后门检测
   author: gy741
   severity: critical
-  description: 该模板用于检测目标是否存在与 KevinLAB HEMS - Backdoor Detection 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
+  description: |
+    该模板用于检测 KevinLAB HEMS - 后门检测。命中通常表示目标存在后门、植入组件、恶意脚本或可疑未授权入口。模板主要向 `/dashboard/proc.php?type=login` 等路径发送探测请求，并根据响应中的 `<meta http-equiv="refresh" content="0; url=/"></meta>`、`<script> alert` 等特征确认漏洞是否存在。
+  impact: |
+    - 命中通常表示目标存在后门、植入组件或可疑恶意脚本，攻击者可能已具备未授权访问能力。
+    - 后门可能被用于执行命令、窃取数据、维持持久化访问或作为进一步入侵的跳板。
+  remediation: |
+    - 立即隔离受影响资产，保留证据并开展入侵排查，不要仅删除单个可疑文件后恢复上线。
+    - 清理后门文件、恶意脚本、异常账号、计划任务和持久化项，并从可信介质重建受影响组件。
+    - 升级相关产品，轮换系统、数据库、应用和第三方集成凭据。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5654.php
   metadata:

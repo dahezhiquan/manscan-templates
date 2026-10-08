@@ -4,10 +4,15 @@ info:
   name: Infinitt PACS System - Arbitrary - 任意文件上传漏洞
   author: adeljck
   severity: critical
-  description: 该模板用于检测目标是否存在与 Infinitt PACS System - Arbitrary File Upload 相关的后门或恶意植入特征。命中通常意味着系统已被入侵，攻击者可能具备持久化控制、命令执行或敏感信息获取能力。
+  description: |
+    该模板用于检测 Infinitt PACS System - Arbitrary - 任意文件上传漏洞。该类漏洞通常源于上传接口缺少认证、文件类型校验、存储隔离或执行权限控制。模板会向 `/webservices/WebJobUpload.asmx` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能上传脚本、WebShell 或恶意文件，并借此执行代码或长期控制服务器。
+    - 上传目录若可被访问或解析，可能导致数据篡改、恶意内容投递和业务系统被接管。
   remediation: |
-    - 对上传文件的类型、扩展名、内容特征和落地路径进行严格限制，避免脚本文件可执行。
-    - 将上传目录与 Web 可执行目录隔离，并增加病毒查杀、访问控制与审计监测。
+    - 为上传接口增加认证授权和 CSRF 防护，限制可上传文件类型、大小和扩展名。
+    - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
+    - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   reference:
     - https://github.com/wy876/POC/blob/a9e4000fc76d0157b53ade916323b7b8256b17c3/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9F/%E8%8B%B1%E9%A3%9E%E8%BE%BE%E5%8C%BB%E5%AD%A6%E5%BD%B1%E5%83%8F%E5%AD%98%E6%A1%A3%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B3%BB%E7%BB%9FWebJobUpload%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   metadata:

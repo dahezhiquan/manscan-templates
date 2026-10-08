@@ -4,6 +4,15 @@ info:
   name: Dahua Bitmap - 任意文件上传漏洞
   author: DhiyaneshDK
   severity: critical
+  description: |
+    该模板用于检测 Dahua Bitmap - 任意文件上传漏洞。该类漏洞通常允许攻击者通过可控参数、接口调用或危险功能在目标服务端执行命令或代码。模板主要向 `/emap/webservice/gis/soap/bitmap`、`/upload/{变量}.jsp` 等路径发送探测请求，并根据响应中的 `<soap:Envelope` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可在目标服务权限下执行系统命令或应用代码，读取、修改业务数据并部署持久化后门。
+    - 若服务运行在高权限账户或可访问内网资源，漏洞可能进一步导致主机失陷和横向移动。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁/安全配置基线。
+    - 限制相关管理接口、调试接口或危险功能的访问来源，避免直接暴露到公网。
+    - 排查异常进程、计划任务、WebShell、新增账号和外联记录，并轮换可能泄露的密钥与凭据。
   reference:
     - https://github.com/wy876/POC/blob/main/%E5%A4%A7%E5%8D%8E%E6%99%BA%E6%85%A7%E5%9B%AD%E5%8C%BA%E7%BB%BC%E5%90%88%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0bitmap%E6%8E%A5%E5%8F%A3%E5%AD%98%E5%9C%A8%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.md
   metadata:

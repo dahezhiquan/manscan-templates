@@ -4,7 +4,15 @@ info:
   name: Chanjet Tplus - 未授权访问漏洞
   author: 0xr2r
   severity: high
-  description: Chanjet Tplus - 未授权 Password Reset 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  description: |
+    该模板用于检测 Chanjet Tplus - 未授权访问漏洞。该类漏洞通常源于认证、授权或流程校验不足，使攻击者无需合法权限即可访问敏感功能。模板主要向 `/tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method={变量}`、`/tplus/ajaxpro/RecoverPassword,App_Web_recoverpassword.aspx.cdcab7d2.ashx?method=SetNewPwd` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可绕过身份认证或未授权访问敏感接口，获取管理功能、重置密码或操作业务数据。
+    - 若接口涉及账号、配置或文件操作，可能造成权限提升、数据泄露和业务被篡改。
+  remediation: |
+    - 修复认证与授权校验逻辑，确保每个敏感接口都执行服务端权限判断。
+    - 升级受影响版本，并限制管理接口仅允许可信来源访问。
+    - 复核近期账号变更、密码重置、配置修改和异常访问记录。
   reference:
     - https://cn-sec.com/archives/1377207.html
     - https://www.chanjet.com

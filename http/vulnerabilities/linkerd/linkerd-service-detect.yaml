@@ -1,9 +1,17 @@
 id: linkerd-service-detect
 
 info:
-  name: Linkerd Service 检测ion（指纹识别）
+  name: Linkerd Service 检测（指纹识别）
   author: dudez
   severity: info
+  description: |
+    该模板用于识别 Linkerd Service。Linkerd 是面向 Kubernetes 的服务网格组件，用于为微服务提供流量管理、可观测性和安全通信能力。模板会根据请求响应中的状态码、关键字、错误信息、时间差或外带交互等证据判断该系统或服务是否可被识别。
+  impact: |
+    - 识别结果可用于资产盘点、暴露面梳理和后续漏洞适配，不代表目标必然存在可利用漏洞。
+    - 如果该服务暴露在非预期网络范围内，可能增加被指纹识别、版本关联和定向攻击的概率。
+  remediation: |
+    - 确认该系统是否属于预期部署资产，并将管理入口和内部服务限制在可信网络范围内。
+    - 对无需公网访问的服务增加访问控制、认证保护和网络隔离，并持续关注对应产品的安全更新。
   reference:
     - https://twitter.com/nirvana_msu/status/1084144955034165248
   metadata:

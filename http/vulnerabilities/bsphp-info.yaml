@@ -4,7 +4,15 @@ info:
   name: BSPHP - 信息泄露漏洞
   author: ritikchaddha
   severity: low
-  description: BSPHP - 信息泄露 存在信息泄露漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
+  description: |
+    该模板用于检测 BSPHP - 信息泄露漏洞。该类漏洞通常源于敏感接口、配置文件、错误信息或调试数据被未授权暴露。模板主要向 `/admin/index.php?m=admin&c=log&a=table_json&json=get&soso_ok=1&t=user_login_log&page=1&limit=10&b...` 等路径发送探测请求，并根据响应中的 `{"data":`、`"id"` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可获取路径、配置、账号、令牌、日志或其他敏感信息。
+    - 泄露的信息可能被用于定位系统结构、复用凭据、绕过访问控制或辅助后续攻击。
+  remediation: |
+    - 移除或限制敏感接口、调试页面、配置文件和日志文件的外部访问。
+    - 对错误信息和接口响应进行最小化处理，避免返回内部路径、账号、密钥或堆栈信息。
+    - 轮换已暴露的凭据和令牌，并检查相关账号的访问记录。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/CMS%E6%BC%8F%E6%B4%9E/BSPHP%20index.php%20%E6%9C%AA%E6%8E%88%E6%9D%83%E8%AE%BF%E9%97%AE%20%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E6%BC%8F%E6%B4%9E.md
     - https://github.com/bigblackhat/oFx/blob/main/poc/BSPHP/Info_Disclosure/poc.py

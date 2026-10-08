@@ -4,7 +4,15 @@ info:
   name: Cisco Unified Communications Manager - 集群枚举漏洞
   author: Morgan Robertson
   severity: low
-  description: Cisco Unified Communications Manager - Cluster Enumeration 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  description: |
+    该模板用于检测 Cisco Unified Communications Manager - 集群枚举漏洞。模板根据目标接口的可控输入、响应特征和匹配条件判断漏洞是否存在。模板主要向 `/cucm-uds/servers` 等路径发送探测请求，并根据响应中的 `text/xml`、`application/xml` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可利用该漏洞访问或篡改目标系统中的敏感数据和业务功能。
+    - 在真实部署中，该问题可能进一步引发权限提升、服务中断或与其他漏洞组合形成攻击链。
+  remediation: |
+    - 升级受影响产品到厂商修复版本，或应用官方补丁与安全配置建议。
+    - 限制受影响接口的访问来源，并对关键操作增加认证、授权和审计。
+    - 复核近期异常访问、配置变更和敏感数据访问记录，必要时轮换相关凭据。
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#servers
   metadata:

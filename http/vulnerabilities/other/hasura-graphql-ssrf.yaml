@@ -4,7 +4,15 @@ info:
   name: Hasura GraphQL Engine - 服务端请求伪造
   author: princechaddha
   severity: high
-  description: Hasura GraphQL Engine - 服务端请求伪造 存在服务端请求伪造漏洞。攻击者可诱使服务器向任意地址发起请求，进而探测内网服务、访问云元数据或绕过边界访问控制。
+  description: |
+    该模板用于检测 Hasura GraphQL Engine - 服务端请求伪造。该类漏洞通常源于服务端按用户提供的地址发起请求，但缺少目标地址校验和内网访问限制。模板会向 `/v1/query` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可借助目标服务器访问内网管理接口、云元数据地址或其他受信任网络资源。
+    - 在可回显或可外带的场景下，SSRF 可能导致敏感信息泄露、凭据获取或进一步攻击内部系统。
+  remediation: |
+    - 对服务端请求目标使用严格白名单，禁止访问内网网段、回环地址、链路本地地址和云元数据地址。
+    - 校验跳转后的最终地址，限制协议类型，并为出站请求配置最小化网络权限。
+    - 监控异常内网访问和外联请求，轮换可能通过元数据接口泄露的凭据。
   reference:
     - https://cxsecurity.com/issue/WLB-2021040115
   classification:

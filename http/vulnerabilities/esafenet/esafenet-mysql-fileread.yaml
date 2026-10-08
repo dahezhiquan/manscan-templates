@@ -4,7 +4,15 @@ info:
   name: Esafenet CDG mysql - 任意文件读取漏洞
   author: DhiyaneshDk
   severity: high
-  description: Esafenet CDG mysql - File Read 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  description: |
+    该模板用于检测 Esafenet CDG mysql - 任意文件读取漏洞。该类漏洞通常源于文件路径或资源参数校验不足，导致攻击者可读取非预期文件。模板主要向 `/CDGServer3/SQL/MYSQL/create_SmartSec_mysql.sql` 等路径发送探测请求，并根据响应中的 `varchar`、`create table` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可读取服务器本地文件、配置文件、源码或系统敏感文件。
+    - 若读取到凭据、密钥或应用配置，可能进一步造成账号接管、数据库访问或远程代码执行。
+  remediation: |
+    - 使用固定文件 ID 或白名单映射访问文件，避免直接使用用户输入拼接文件路径。
+    - 对路径进行规范化校验，拒绝目录穿越、协议包装器和绝对路径访问。
+    - 降低 Web 进程文件权限，检查是否已有敏感文件被访问或泄露。
   metadata:
     verified: true
     max-request: 1

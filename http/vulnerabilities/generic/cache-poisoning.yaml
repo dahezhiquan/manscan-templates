@@ -4,7 +4,15 @@ info:
   name: Cache Poisoning 检测
   author: melbadry9,xelkomy,akincibor,dogasantos
   severity: low
-  description: Cache Poisoning Detection 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 Cache Poisoning 检测。该类问题通常源于缓存键、响应头或用户输入处理不当，使恶意内容进入共享缓存。模板主要向 `/?{变量}=9` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可操控缓存键或响应内容，使恶意内容被共享缓存保存并影响其他用户。
+    - 若缓存了脚本或业务页面，可能造成持久化 XSS、页面篡改、钓鱼或业务逻辑污染。
+  remediation: |
+    - 明确缓存键组成，避免将不可信 Header、参数或 Host 值错误纳入/排除缓存键。
+    - 动态页面、认证页面和包含用户输入的响应应禁用共享缓存或设置正确 Cache-Control。
+    - 清理受污染缓存，并审计 CDN、反向代理和应用缓存配置。
   reference:
     - https://web.archive.org/web/20210422000653/https://blog.melbadry9.xyz/fuzzing/nuclei-cache-poisoning
     - https://portswigger.net/research/practical-web-cache-poisoning

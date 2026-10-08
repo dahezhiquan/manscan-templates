@@ -4,10 +4,15 @@ info:
   name: Cisco Unified Communications Manager - 用户名枚举漏洞
   author: manasmbellani,Morgan Robertson
   severity: medium
-  description: Cisco Unified Communications Manager - User Enumeration 存在用户名枚举漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 Cisco Unified Communications Manager - 用户名枚举漏洞。该类漏洞通常源于认证、授权或流程校验不足，使攻击者无需合法权限即可访问敏感功能。模板主要向 `/cucm-uds/users` 等路径发送探测请求，并根据响应中的 `<users`、`<userName>` 等特征确认漏洞是否存在。
+  impact: |
+    - 攻击者可绕过身份认证或未授权访问敏感接口，获取管理功能、重置密码或操作业务数据。
+    - 若接口涉及账号、配置或文件操作，可能造成权限提升、数据泄露和业务被篡改。
   remediation: |
-    - 为敏感接口补充鉴权与最小化返回策略，避免未授权用户获取配置、账户或节点信息。
-    - 审核日志、错误页和调试接口的输出内容，关闭不必要的调试或管理入口。
+    - 修复认证与授权校验逻辑，确保每个敏感接口都执行服务端权限判断。
+    - 升级受影响版本，并限制管理接口仅允许可信来源访问。
+    - 复核近期账号变更、密码重置、配置修改和异常访问记录。
   reference:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#users
     - https://www.n00py.io/2022/01/unauthenticated-dumping-of-usernames-via-cisco-unified-call-manager-cucm/

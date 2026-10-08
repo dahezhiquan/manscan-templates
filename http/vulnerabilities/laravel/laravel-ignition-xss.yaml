@@ -4,10 +4,15 @@ info:
   name: Laravel Ignition - 跨站脚本漏洞
   author: 0x_Akoko
   severity: high
-  description: Laravel Ignition - 跨站脚本 存在跨站脚本漏洞。该模板通过构造恶意输入并检查响应回显或执行特征，验证目标是否会在浏览器上下文中执行注入脚本。
+  description: |
+    该模板用于检测 Laravel Ignition - 跨站脚本漏洞。该类漏洞通常源于页面将用户可控输入未经过滤或编码后写入响应，导致浏览器执行非预期脚本。模板会向 `/_ignition/scripts/--><svg%20onload=alert(document.domain)>` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可诱导用户访问恶意链接，在受害者浏览器中执行脚本。
+    - 成功利用后可能窃取会话信息、篡改页面内容、发起越权操作，或作为进一步钓鱼与权限提升的攻击链环节。
   remediation: |
-    - 对所有可控输入实施严格校验，并在输出到 HTML、JavaScript 或 URL 上下文前完成正确编码。
-    - 如为后台或插件组件问题，建议同步更新到厂商已修复版本并审计相关功能入口。
+    - 对输出到 HTML、属性、JavaScript、URL 等不同上下文的数据分别进行安全编码。
+    - 对输入参数进行白名单校验，并避免直接回显未经处理的用户输入。
+    - 启用合适的 Content-Security-Policy，降低脚本注入后的利用效果。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/laravel-ignition-reflected-cross-site-scripting/
     - https://github.com/facade/ignition/issues/273

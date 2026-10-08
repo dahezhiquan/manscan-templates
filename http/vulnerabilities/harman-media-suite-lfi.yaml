@@ -4,14 +4,15 @@ info:
   name: Harman Media Suite <= 4.2.0 - 任意文件读取漏洞（CVE-2023-39024）
   author: s4e-io
   severity: high
-  description: |-
-    Harman Media Suite <= 4.2.0 存在安全漏洞。攻击者可通过 /userportal/api/rest/contentChannels/?startIndex=0 的 startIndex, pageSize, sort 参数 读取服务器上的敏感文件，导致配置、凭据或业务数据暴露。该模板通过向 /userportal/api/rest/contentChannels/?startIndex=0 发送构造请求，并结合响应状态与关键回显特征进行验证。
-  impact: |-
-    - 攻击者可读取服务器上的敏感文件，导致配置、密钥、凭据或业务数据泄露。
-    - 泄露的信息可被进一步用于横向移动、权限提升或针对其他组件的精确打击。
-  remediation: |-
-    - 尽快将 Harman Media Suite <= 4.2.0 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 对文件访问接口实施路径白名单和目录约束，阻断对配置、日志、密钥等敏感文件的直接读取。
+  description: |
+    该模板用于检测 Harman Media Suite <= 4.2.0 - 任意文件读取漏洞（CVE-2023-39024）。该类漏洞通常源于文件路径或资源参数校验不足，导致攻击者可读取非预期文件。模板主要向 `/userportal/api/rest/contentChannels/?startIndex=0&pageSize=4&sort=TIME&showType=all`、`/userportal/api/rest/contentChannels/{变量}/archives/?startIndex=0&pageSize=15&sort=time&onlyInclud...` 等路径发送探测请求，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
+  impact: |
+    - 攻击者可读取服务器本地文件、配置文件、源码或系统敏感文件。
+    - 若读取到凭据、密钥或应用配置，可能进一步造成账号接管、数据库访问或远程代码执行。
+  remediation: |
+    - 使用固定文件 ID 或白名单映射访问文件，避免直接使用用户输入拼接文件路径。
+    - 对路径进行规范化校验，拒绝目录穿越、协议包装器和绝对路径访问。
+    - 降低 Web 进程文件权限，检查是否已有敏感文件被访问或泄露。
   reference:
     - https://github.com/BenTheCyberOne/CVE-2023-39024-5-POC
     - https://sploitus.com/exploit?id=C20FE0B5-806A-5687-850C-75D195576B35

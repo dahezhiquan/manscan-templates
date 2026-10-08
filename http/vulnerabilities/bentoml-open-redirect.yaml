@@ -4,14 +4,15 @@ info:
   name: BentoML v1.3.9 - 开放重定向漏洞（CVE-2024-12760）
   author: DhiyaneshDK
   severity: medium
-  description: |-
-    BentoML v1.3.9 存在安全漏洞。攻击者可通过 /ui/gradio_api/file=https://oast.me 控制跳转目标，将用户重定向到恶意站点并发起钓鱼或令牌窃取攻击。该模板通过请求 /ui/gradio_api/file=https://oast.me，并结合响应中的 (?m)^(?:Location\s*?:\s*?)(?:https?://|//)?(?:[a-zA-Z0-9\-_\ 等特征进行验证。
-  impact: |-
-    - 攻击者可借助可信域名发起恶意跳转，提升钓鱼、诱导登录或令牌窃取攻击的成功率。
-    - 若与其他漏洞联动，开放重定向还可能被用于绕过安全校验或辅助恶意投递。
-  remediation: |-
-    - 尽快将 BentoML v1.3.9 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 对重定向目标实施域名或路径白名单校验，禁止将用户可控 URL 直接用于跳转。
+  description: |
+    该模板用于检测 BentoML v1.3.9 - 开放重定向漏洞（CVE-2024-12760）。该类漏洞通常源于跳转地址未经过严格校验，导致用户可被引导到外部恶意站点。模板主要向 `/ui/gradio_api/file=https://oast.me` 等路径发送探测请求，并根据OAST/DNS/HTTP 外带交互、响应状态或关键字回显确认漏洞是否存在。
+  impact: |
+    - 攻击者可构造跳转链接，将用户从可信域名引导到恶意站点。
+    - 该问题常被用于钓鱼、OAuth 授权码劫持、绕过跳转白名单或提升社工攻击可信度。
+  remediation: |
+    - 对跳转目标使用固定白名单或相对路径，禁止直接信任用户传入的完整 URL。
+    - 规范化校验协议、主机名、反斜杠和多重编码后的跳转地址。
+    - 审计登录、授权和下载等跳转场景，避免开放重定向进入认证链路。
   reference:
     - https://huntr.com/bounties/2a284ff6-cc6c-4a10-b72e-1bb31c842bca
   metadata:

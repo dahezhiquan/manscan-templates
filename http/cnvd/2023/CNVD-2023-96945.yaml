@@ -5,7 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: |
-    迈威安全生产数字化管理平台存在任意文件上传风险。该模板依据公开资料中的上传组件位置，检测 `FileChoose.html` 上传页面是否可被直接访问，用于识别疑似受影响资产。
+    迈威安全生产数字化管理平台暴露文件选择与上传组件，存在任意文件上传风险。模板访问 `/Content/Plugins/uploader/FileChoose.html`，通过上传页面中的选择文件和提交按钮特征确认受影响组件暴露。
+  impact: |
+    - 攻击者可能利用上传组件上传恶意文件，进一步获取 Web 服务器权限或篡改平台内容。
+    - 安全生产管理平台被控制后，可能影响生产数据、设备台账和安全管理流程。
+  remediation: |
+    - 升级平台或修复上传组件，确保上传接口必须经过认证和权限校验。
+    - 对上传文件执行扩展名、MIME、内容和存储路径校验，并禁止上传目录执行脚本。
+    - 排查上传目录中的异常文件，限制上传组件对公网暴露。
   reference:
     - https://blog.csdn.net/weixin_42628854/article/details/136036109
   metadata:

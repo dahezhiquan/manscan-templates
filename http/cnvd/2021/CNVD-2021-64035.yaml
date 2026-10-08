@@ -5,7 +5,14 @@ info:
   author: xiaoWangSec
   severity: high
   description: |
-    网御星云 Leadsec SSL VPN 存在任意文件读取风险，攻击者可未授权读取服务器本地敏感文件。模板通过发起读取请求并匹配 `/etc/passwd` 内容及特定响应头确认漏洞。
+    网御星云 Leadsec SSL VPN 的客户端下载接口对 `ostype` 参数路径校验不足，攻击者可通过目录穿越读取本地文件。模板请求读取 `/etc/passwd`，并匹配账号文件内容、`appframe` 响应头和 200 状态确认漏洞。
+  impact: |
+    - 攻击者可读取 VPN 网关本地敏感文件、配置和账号相关信息。
+    - VPN 设备处于远程接入边界，敏感信息泄露可能进一步威胁内网访问控制。
+  remediation: |
+    - 升级 Leadsec SSL VPN 至修复版本，修复客户端下载接口路径穿越问题。
+    - 限制 VPN 管理与下载接口访问来源，避免非必要公网暴露。
+    - 检查设备配置和访问日志，轮换可能泄露的账号及密钥。
   reference:
     - https://avd.aliyun.com/detail?id=AVD-2021-888761
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-64035

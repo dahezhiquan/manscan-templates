@@ -5,7 +5,14 @@ info:
   author: ritikchaddha
   severity: high
   description: |
-    泛微 eMobile 的 `login.do` 与 `login/login.do` 接口存在 OGNL 表达式注入风险。攻击者可在 `message` 参数中构造恶意表达式并由服务端解析执行；模板通过注入算术表达式并校验响应中是否返回计算结果来确认漏洞。
+    泛微 eMobile 的登录接口在处理 `message` 参数时存在 OGNL 表达式注入风险，攻击者可构造表达式影响服务端解析过程。模板分别请求 `/login.do` 与 `/login/login.do`，通过提交乘法表达式并匹配计算结果与 200 响应确认漏洞。
+  impact: |
+    - 攻击者可能利用 OGNL 表达式注入读取运行时信息、调用危险方法或进一步执行系统命令。
+    - 漏洞位于登录入口，若系统暴露在公网，会显著增加移动 OA 平台被接管和内网横向移动的风险。
+  remediation: |
+    - 升级泛微 eMobile 至厂商已修复版本或应用对应安全补丁。
+    - 对 `message` 等可控参数进行严格白名单校验，避免进入表达式解析流程。
+    - 在边界侧限制 eMobile 登录入口访问来源，并排查异常请求日志。
   reference:
     - https://gitee.com/cute-guy/Penetration_Testing_POC/blob/master/%E6%B3%9B%E5%BE%AEe-mobile%20ognl%E6%B3%A8%E5%85%A5.md
     - https://reconshell.com/vulnerability-research-list/
@@ -14,6 +21,7 @@ info:
     max-request: 2
     fofa-query: app="泛微-eMobile"
   tags: cnvd,cnvd2017,e-mobile,ognl,fanwei,vuln
+
 variables:
   num1: "{{rand_int(800000, 999999)}}"
   num2: "{{rand_int(800000, 999999)}}"

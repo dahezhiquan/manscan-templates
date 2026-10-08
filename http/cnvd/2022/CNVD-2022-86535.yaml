@@ -5,7 +5,14 @@ info:
   author: arliya,ritikchaddha
   severity: high
   description: |
-    ThinkPHP 在开启多语言功能且 `lang` 参数过滤不严时，可能被利用加载 `pearcmd` 并进一步触发命令执行。模板结合 `think_lang` 回显与 `config-create` 成功信息，识别文件包含到远程代码执行链路是否可用。
+    ThinkPHP 多语言功能对 `lang` 与 `think-lang` 输入处理不当时，可形成文件包含并结合 `pearcmd` 触发远程代码执行。模板通过 Cookie、请求头和参数多种路径探测，并匹配 `pearcmd` 生成配置文件的成功特征。
+  impact: |
+    - 攻击者可借助文件包含链执行任意 PHP 相关操作，最终控制 Web 应用。
+    - 成功利用后可能写入后门、读取配置文件、窃取数据库凭据并扩展到服务器权限。
+  remediation: |
+    - 升级 ThinkPHP 到修复版本，关闭或修复多语言参数中的任意文件包含路径。
+    - 禁止从用户输入直接解析语言包路径，并限制 `pearcmd` 等敏感工具在生产环境可用性。
+    - 排查 Web 目录新增文件、异常日志和可疑 PHP 进程，轮换应用密钥和数据库凭据。
   reference:
     - https://cn-sec.com/archives/1465289.html
     - https://blog.csdn.net/qq_60614981/article/details/128724640

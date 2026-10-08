@@ -4,7 +4,15 @@ info:
   name: 锐捷 Smartweb 管理系统密码信息泄露漏洞（CNVD-2021-17369）
   author: pikpikcu
   severity: high
-  description: 锐捷 Smartweb 管理系统存在敏感凭据泄露风险，低权限或未授权访问可能获取管理员口令信息。模板通过读取 `web/xml/webuser-auth.xml` 并匹配 `password` 标签判断漏洞是否存在。
+  description: |
+    锐捷 Smartweb 管理系统暴露 `webuser-auth.xml` 配置文件，攻击者可直接读取用户认证信息。模板请求 `/web/xml/webuser-auth.xml`，并匹配 `userauth` 与 `password` 字段确认漏洞。
+  impact: |
+    - 攻击者可获取管理用户密码或密码摘要，尝试登录设备后台。
+    - 网络设备后台被控制后，可能导致访问策略、路由配置和安全边界被篡改。
+  remediation: |
+    - 升级锐捷 Smartweb 固件，修复配置文件直接暴露问题。
+    - 禁止 Web 目录直接提供认证配置文件下载，管理接口仅允许可信网段访问。
+    - 轮换所有设备管理账号密码，并检查配置变更和异常登录记录。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-17369
   classification:

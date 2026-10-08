@@ -4,7 +4,15 @@ info:
   name: EEA 信息泄露漏洞（CNVD-2021-10543）
   author: pikpikcu
   severity: high
-  description: EEA 的 `authenticationserverservlet` 接口存在敏感信息泄露风险，未经授权即可返回认证账号和口令。模板通过匹配响应中的 `<username>` 与 `<password>` 标签验证漏洞。
+  description: |
+    EEA 的 `authenticationserverservlet` 接口存在敏感信息泄露，攻击者可未授权读取认证服务器配置。模板请求该接口并匹配 XML 中的 `username` 与 `password` 字段确认漏洞。
+  impact: |
+    - 攻击者可获取认证服务器账号和密码，进而尝试登录后台或关联业务系统。
+    - 认证配置泄露会削弱身份边界，可能导致用户目录、单点登录或集成服务被进一步攻击。
+  remediation: |
+    - 升级或修复 EEA 相关组件，确保认证配置接口需要登录和权限校验。
+    - 禁止将用户名、密码等敏感配置通过明文接口输出。
+    - 轮换已暴露的认证服务器凭据，并检查认证服务访问日志。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-10543
   classification:

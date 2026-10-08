@@ -5,7 +5,14 @@ info:
   author: s4e-io
   severity: high
   description: |
-    用友 U8 Cloud 的 `ReleaseRepMngAction` 接口存在时间盲注风险。模板在 `TableSelectedID` 参数中注入 `WAITFOR DELAY`，并结合响应耗时、页面内容与状态码判断注入是否成立。
+    用友 U8 Cloud 的 `ReleaseRepMngAction` 接口存在时间盲注型 SQL 注入，攻击者可通过 `TableSelectedID` 参数影响后端 SQL。模板注入 `WAITFOR DELAY`，并结合响应延迟、页面内容和状态码确认漏洞。
+  impact: |
+    - 攻击者可通过盲注逐步获取数据库结构和业务数据，影响财务、供应链和企业管理数据安全。
+    - 在数据库权限较高时，漏洞可能进一步导致数据篡改或服务器权限扩大。
+  remediation: |
+    - 升级用友 U8 Cloud 至修复版本，修复 `ReleaseRepMngAction` 参数拼接问题。
+    - 对 `TableSelectedID` 等参数使用参数化查询和类型白名单，禁用详细数据库错误回显。
+    - 开启数据库审计和慢查询告警，排查异常延时注入访问。
   reference:
     - https://cap.oyg.cn/detail/431168
     - https://github.com/wy876/POC/blob/main/%E7%94%A8%E5%8F%8BOA/%E7%94%A8%E5%8F%8BU8-Cloud%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3ReleaseRepMngAction%E5%AD%98%E5%9C%A8SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0(CNVD-2024-33023).md

@@ -4,7 +4,15 @@ info:
   name: 宏景人力资源管理系统 SQL 注入漏洞（CNVD-2023-08743）
   author: SleepingBag945
   severity: critical
-  description: 宏景人力资源管理系统相关查询接口存在 SQL 注入风险。模板通过发送构造后的 XML 请求，并以响应中出现 `SQL Server` 报错及业务节点信息作为命中依据。
+  description: |
+    宏景人力资源管理系统 `codesettree` 接口对查询参数过滤不足，存在 SQL 注入风险。模板在 `categories` 参数中注入 UNION 查询，并通过 XML 响应中的 `hongjing` 与 SQL Server 版本特征确认漏洞。
+  impact: |
+    - 攻击者可读取人力资源系统数据库中的员工、薪酬、组织架构和账号信息。
+    - SQL 注入还可能导致数据篡改、权限提升或进一步控制应用服务器。
+  remediation: |
+    - 升级宏景人力资源管理系统或应用补丁，修复 `codesettree` 接口注入问题。
+    - 对所有查询参数使用参数化 SQL，并对编码后的特殊字符做统一解码校验。
+    - 审计数据库错误、异常 UNION 查询和敏感数据访问记录。
   reference:
     - https://www.henry4e36.top/index.php/archives/162.html
     - https://blog.csdn.net/qq_41904294/article/details/130944159

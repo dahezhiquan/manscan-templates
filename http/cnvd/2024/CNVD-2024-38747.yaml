@@ -5,7 +5,14 @@ info:
   author: s4e-io
   severity: high
   description: |
-    浙江大华智能云网关注册管理平台登录接口存在 SQL 注入风险。模板向 `username` 参数注入 `updatexml` 报错语句，并通过响应中的 XPATH 错误与 MD5 标记确认漏洞。
+    浙江大华智能云网关注册管理平台登录接口存在 SQL 注入风险，攻击者可通过 `username` 参数触发数据库错误回显。模板向 `/index.php/User/doLogin` 提交 `updatexml` 注入载荷，并匹配 XPATH 错误与 MD5 表达式确认漏洞。
+  impact: |
+    - 攻击者可读取或篡改平台注册数据、设备信息和用户账号。
+    - 云网关注册管理平台被攻击后，可能影响设备注册、接入管理和边界设备安全。
+  remediation: |
+    - 升级大华智能云网关注册管理平台或应用补丁，修复登录接口 SQL 注入。
+    - 登录接口应使用参数化查询，并对认证失败和数据库错误进行统一响应。
+    - 限制管理平台访问来源，审计异常登录与数据库错误日志。
   reference:
     - https://blog.csdn.net/qq_39894062/article/details/142982815
   metadata:

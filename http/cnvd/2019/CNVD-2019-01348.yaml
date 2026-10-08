@@ -4,8 +4,15 @@ info:
   name: Xiuno BBS 系统重装漏洞（CNVD-2019-01348）
   author: princechaddha
   severity: high
-  description: Xiuno BBS 安装完成后若 `install` 目录未被妥善处理，攻击者仍可直接访问安装向导并发起系统重装。模板通过检测 `/install/` 页面中的安装资源与语言选择内容来识别该风险。
-  remediation: 升级到已修复版本，并在部署后及时删除、限制或关闭安装目录及其访问入口。
+  description: |
+    Xiuno BBS 安装目录未被删除或访问控制不足时，攻击者可访问 `/install/` 重新进入安装流程。模板请求安装入口并匹配 Xiuno 安装页面特征，用于确认重装入口暴露。
+  impact: |
+    - 暴露的安装程序可能被用于覆盖配置、重置站点状态或破坏论坛可用性。
+    - 若安装流程可连接数据库，攻击者可能进一步篡改数据库配置或造成业务数据丢失。
+  remediation: |
+    - 完成部署后立即删除或禁用 `/install/` 目录，并确认安装锁文件生效。
+    - 对管理和安装相关路径增加访问控制，仅允许可信运维来源访问。
+    - 检查站点配置与数据库完整性，确认未发生异常重装或配置变更。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2019-01348
   classification:

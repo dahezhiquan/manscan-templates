@@ -5,7 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: |
-    AceNet AceReporter 报表组件存在目录穿越导致的任意文件下载风险。模板通过 `download_file.php` 下载 `/etc/passwd`，并结合响应头中的附件下载标记与文件内容验证漏洞。
+    AceNet AceReporter Report 组件的文件下载接口对 `filename` 参数路径校验不足，攻击者可通过目录穿越下载任意文件。模板请求 `download_file.php` 读取 `/etc/passwd`，并匹配下载响应头和文件内容确认漏洞。
+  impact: |
+    - 攻击者可下载服务器敏感文件、应用配置和报表系统数据。
+    - 若读取到数据库或报表凭据，可能进一步访问业务报表和内部数据源。
+  remediation: |
+    - 升级 AceReporter 或应用厂商补丁，修复下载接口路径穿越问题。
+    - 下载接口应使用受控文件 ID 和白名单目录，禁止直接接收相对路径。
+    - 限制报表系统对外暴露，并检查是否存在异常文件下载记录。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-41972
     - https://github.com/hktalent/scan4all/blob/main/lib/goby/goby_pocs/AceNet_AceReporter_Report_component_Arbitrary_file_download.txt
@@ -15,6 +22,7 @@ info:
     shodan-query: http.favicon.hash:-1595726841
     fofa-query: body="Login @ Reporter"
   tags: cnvd2021,cnvd,acenet,acereporter,lfi,vuln
+
 variables:
   filename: "{{to_lower(rand_text_alpha(5))}}"
 

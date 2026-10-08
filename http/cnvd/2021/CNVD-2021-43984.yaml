@@ -5,7 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: |
-    MPSec ISG1000 安全网关存在任意文件下载风险，攻击者可通过路径穿越读取服务器上的敏感文件。模板请求 `../etc/passwd` 并以明文内容和响应头特征作为命中依据。
+    MPSec ISG1000 安全网关的诊断数据下载接口存在任意文件读取风险。模板请求 `/webui/?g=sys_dia_data_down&file_name=../etc/passwd`，通过明文响应、会话头和账号文件特征确认漏洞。
+  impact: |
+    - 攻击者可读取网关设备系统文件和配置，获取账号、网络配置或敏感路径信息。
+    - 安全网关被进一步利用后，可能影响边界访问控制、流量转发和内网防护能力。
+  remediation: |
+    - 升级 MPSec ISG1000 固件或应用厂商补丁，修复诊断文件下载接口。
+    - 限制网关 Web 管理页面仅可信管理网段访问。
+    - 检查设备账号、配置导出记录和异常访问日志，必要时轮换管理凭据。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2021-43984
     - https://github.com/chaitin/xray/blob/master/pocs/mpsec-isg1000-file-read.yml

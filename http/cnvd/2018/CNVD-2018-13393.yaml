@@ -4,7 +4,15 @@ info:
   name: MetInfo 本地文件包含漏洞（CNVD-2018-13393）
   author: ritikchaddha
   severity: high
-  description: MetInfo 的 `thumb.php` 存在本地文件包含风险，攻击者可通过特殊路径参数读取后台登录脚本等敏感文件。模板通过构造跨目录参数并匹配返回的 PHP 源码特征确认漏洞。
+  description: |
+    MetInfo 的 `include/thumb.php` 对 `dir` 参数路径处理不严，攻击者可通过目录穿越读取站点本地 PHP 文件。模板请求 `thumb.php` 读取后台登录校验脚本，并匹配 PHP 源码片段确认任意文件读取能力。
+  impact: |
+    - 攻击者可读取程序源码、配置文件或后台敏感逻辑，辅助获取数据库连接、密钥和管理入口信息。
+    - 源码泄露会降低后续漏洞利用门槛，并可能暴露二次开发中的硬编码凭据。
+  remediation: |
+    - 升级 MetInfo 至修复版本，或替换存在缺陷的缩略图处理组件。
+    - 对文件路径参数进行规范化和目录白名单校验，禁止 `..`、反斜杠等穿越字符访问站点外文件。
+    - 检查 Web 目录权限，避免敏感配置和后台脚本可被下载。
   reference:
     - https://paper.seebug.org/676/
   classification:

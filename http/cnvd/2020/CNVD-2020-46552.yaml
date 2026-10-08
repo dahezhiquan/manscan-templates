@@ -4,7 +4,15 @@ info:
   name: 深信服 EDR 远程代码执行漏洞（CNVD-2020-46552）
   author: ritikchaddha
   severity: critical
-  description: 公开资料显示深信服 EDR 的日志组件可被进一步利用实现远程代码执行。当前模板通过访问 `tool/log/c.php` 并匹配源码关键片段，识别疑似暴露的危险组件。
+  description: |
+    深信服 EDR 日志辅助接口存在参数调用缺陷，可能被用于触发远程命令执行或暴露危险脚本逻辑。模板访问 `/tool/log/c.php` 并匹配 Log Helper 代码片段，用于确认目标存在受影响的接口文件。
+  impact: |
+    - 攻击者可利用暴露的 EDR 管理组件执行命令或获取安全平台内部信息。
+    - EDR 平台通常具备终端管理能力，一旦被控制，可能影响大量受管终端的安全策略和响应能力。
+  remediation: |
+    - 按深信服官方公告升级 EDR 管理平台，移除或修复存在风险的日志辅助脚本。
+    - 禁止公网直接访问 EDR 管理后台及 `/tool/log/` 等维护接口。
+    - 检查平台日志、账号和策略变更记录，确认未发生异常命令执行或配置篡改。
   reference:
     - https://www.modb.pro/db/144475
     - https://blog.csdn.net/bigblue00/article/details/108434009

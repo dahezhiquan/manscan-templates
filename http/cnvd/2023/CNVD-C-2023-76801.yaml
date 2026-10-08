@@ -5,7 +5,14 @@ info:
   author: SleepingBag945,s4e-io
   severity: critical
   description: |
-    用友 NC/NCC 的 `uapjs`/`jsinvoke` 调用链存在危险方法调用风险，攻击者可借此触发远程代码执行。模板向目标发送调用负载，并以接口返回 200 且响应体为空作为命中特征。
+    用友 NC/NCC 的 `uapjs` 调用接口存在远程代码执行风险，攻击者可通过服务调用写入 JSP 并执行命令。模板先调用 `jsinvoke` 写入测试文件，再访问生成的 JSP 执行系统命令并匹配 Windows 输出特征确认漏洞。
+  impact: |
+    - 攻击者可控制用友 NC/NCC 应用服务器，读取财务、供应链、组织和集成系统数据。
+    - 服务器失陷后可能被植入持久化后门，并作为进入内网核心业务区的跳板。
+  remediation: |
+    - 升级用友 NC/NCC 至修复版本，限制 `uapjs` 服务调用可访问的方法和写文件能力。
+    - 禁止未授权访问 `/uapjs/jsinvoke/`，并在网关侧拦截异常服务调用参数。
+    - 检查 Web 目录新增 JSP、异常进程和外联记录，轮换数据库与应用账号凭据。
   reference:
     - https://mp.weixin.qq.com/s/8ZRrmUCD2bfznd1MyDDU8A
   metadata:

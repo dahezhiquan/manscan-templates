@@ -4,7 +4,15 @@ info:
   name: H5S CONSOLE 未授权访问漏洞（CNVD-2020-67113）
   author: ritikchaddha
   severity: medium
-  description: H5S CONSOLE 存在未授权访问风险，攻击者可直接获取视频源或设备配置中的账号口令信息。模板通过访问 `GetSrc` 和 `GetDevice` 接口，并匹配 `strUser`、`strPasswd` 等字段验证漏洞。
+  description: |
+    H5S CONSOLE 的部分 API 存在未授权访问问题，攻击者可直接读取视频源和设备信息。模板请求 `/api/v1/GetSrc` 与 `/api/v1/GetDevice`，通过 JSON 中的用户、密码和设备字段确认漏洞。
+  impact: |
+    - 攻击者可获取监控设备、视频源、账号密码等敏感信息，进而访问或控制视频监控资源。
+    - 视频平台暴露可能泄露现场画面、网络拓扑和安防资产信息。
+  remediation: |
+    - 升级 H5S CONSOLE 至修复版本，确保所有设备和视频源 API 强制认证。
+    - 禁止公网直接访问控制台 API，仅允许可信管理网段或 VPN 访问。
+    - 轮换已暴露的设备与平台账号密码，并审计异常 API 调用。
   reference:
     - https://vul.wangan.com/a/CNVD-2020-67113
   classification:

@@ -5,7 +5,14 @@ info:
   author: SleepingBag945
   severity: high
   description: |
-    泛微 E-Cology 的 `LoginSSO.jsp` 接口存在 SQL 注入风险。模板通过构造注入请求并在响应中匹配回显的 MD5 标记，确认数据库查询可被恶意控制。
+    泛微 OA E-Cology 的 `LoginSSO.jsp` 存在 SQL 注入，攻击者可通过 `id` 参数拼接 UNION 查询。模板向 `upgrade/detail.jsp/login/LoginSSO.jsp` 注入 MD5 查询语句，并匹配回显哈希确认漏洞。
+  impact: |
+    - 攻击者可读取 OA 数据库中的用户、流程、权限和业务数据。
+    - 在数据库权限较高时，漏洞可能进一步用于写入文件、提升权限或接管 OA 系统。
+  remediation: |
+    - 升级泛微 e-cology 至修复版本，修复 `LoginSSO.jsp` 参数拼接问题。
+    - 对数据库访问使用参数化查询，禁止将 `id` 等参数直接拼接进 SQL。
+    - 排查异常 UNION 查询访问记录，并轮换可能泄露的数据库和后台账号。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/oa/%E6%B3%9B%E5%BE%AEOA/%E6%B3%9B%E5%BE%AEOA%20E-Cology%20LoginSSO.jsp%20SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%20CNVD-2021-33202.md
     - https://www.cnblogs.com/0day-li/p/14637680.html

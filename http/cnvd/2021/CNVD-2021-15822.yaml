@@ -5,7 +5,14 @@ info:
   author: pikpikcu
   severity: high
   description: |
-    ShopXO 存在任意文件读取风险，攻击者可构造请求读取服务器本地敏感文件。模板通过发起读取请求并匹配响应中的系统账户内容来确认漏洞。
+    ShopXO 的二维码下载接口对 `url` 参数处理不当，攻击者可通过编码后的本地路径读取服务器文件。模板请求 `/index/qrcode/download` 读取 `/etc/passwd`，并匹配系统账号文件特征确认漏洞。
+  impact: |
+    - 攻击者可读取本地文件、应用配置和敏感凭据，进一步攻击电商后台或数据库。
+    - 电商系统中的订单、会员、支付配置等敏感业务数据可能因此面临泄露风险。
+  remediation: |
+    - 升级 ShopXO 至修复版本，修复二维码下载接口对本地路径的访问控制。
+    - 对下载目标使用协议白名单和路径白名单，禁止 `file`、绝对路径和目录穿越。
+    - 检查服务器敏感文件权限，并轮换可能泄露的数据库和后台凭据。
   reference:
     - https://mp.weixin.qq.com/s/69cDWCDoVXRhehqaHPgYog
   classification:

@@ -4,7 +4,15 @@ info:
   name: 致远 A8 远程代码执行漏洞（CNVD-2019-19299）
   author: daffainfo
   severity: critical
-  description: 致远 A8 因任意文件写入问题可被进一步利用实现远程代码执行。模板先访问相关组件确认目标特征，再读取已写入脚本的执行结果，以返回的 `Windows IP` 信息作为命中依据。
+  description: |
+    致远 A8 的 `htmlofficeservlet` 处理 Office 组件请求时存在远程代码执行风险，攻击者可构造特定 DBSTEP 数据触发服务端执行命令。模板发送构造请求并通过命令输出特征确认漏洞。
+  impact: |
+    - 攻击者可在 OA 服务器上执行系统命令，读取公文、流程、组织架构和数据库配置等敏感数据。
+    - OA 系统通常位于内网核心业务区，服务器失陷后可能成为进一步攻击域控、数据库和业务系统的跳板。
+  remediation: |
+    - 按致远官方方案升级或修复 A8 相关组件，禁用存在风险的历史 Office 服务接口。
+    - 限制 `/seeyon/htmlofficeservlet` 等高风险接口的访问来源，并在边界设备拦截异常 DBSTEP 请求。
+    - 检查服务器 Web 目录、计划任务和进程，清理可疑文件并轮换 OA 管理员与数据库凭据。
   reference:
     - https://www.cxyzjd.com/article/guangying177/110177339
     - https://github.com/sectestt/CNVD-2019-19299

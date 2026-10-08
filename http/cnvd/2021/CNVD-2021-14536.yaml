@@ -4,7 +4,15 @@ info:
   name: 锐捷 RG-UAC 统一上网行为管理审计系统信息泄露漏洞（CNVD-2021-14536）
   author: daffainfo
   severity: high
-  description: 锐捷 RG-UAC 统一上网行为管理审计系统的 `get_dkey.php` 接口存在信息泄露风险，攻击者可获取管理员相关配置与口令字段。模板通过访问 `user=admin` 的响应并匹配 `password` 等关键字段识别漏洞。
+  description: |
+    锐捷 RG-UAC 统一上网行为管理审计系统的 `get_dkey.php` 接口存在信息泄露，攻击者可获取管理员相关配置。模板请求 `get_dkey.php?user=admin`，并匹配角色、认证方式、名称和密码字段确认漏洞。
+  impact: |
+    - 攻击者可获取管理员凭据或认证配置，进而登录 RG-UAC 后台并修改上网审计策略。
+    - 设备被接管后可能影响用户上网控制、审计记录完整性和网络边界策略。
+  remediation: |
+    - 升级 RG-UAC 固件或应用厂商补丁，修复 `get_dkey.php` 未授权信息泄露。
+    - 限制管理后台仅内网可信网段访问，并禁止公网暴露。
+    - 轮换管理员密码，检查系统配置、策略和日志是否被异常修改。
   reference:
     - https://www.adminxe.com/2163.html
   classification:

@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    AJ-Report 的 `dataSetParam/verification` 接口对 `validationRules` 中的脚本缺乏安全限制，攻击者可在服务端执行任意命令。模板通过注入 `java.lang.ProcessBuilder("id")` 并匹配返回的 `uid/gid` 信息来确认漏洞。
+    AJ-Report 的 `dataSetParam/verification` 接口对 `validationRules` 脚本缺乏安全限制，攻击者可在服务端执行 Java 代码并触发系统命令。模板注入 `java.lang.ProcessBuilder("id")`，并通过返回的 `uid/gid` 信息确认漏洞。
+  impact: |
+    - 攻击者可在 AJ-Report 服务器上执行命令，读取数据源配置、报表数据和应用密钥。
+    - 数据大屏系统通常连接多类业务数据源，服务器失陷可能导致多系统数据集中泄露。
+  remediation: |
+    - 升级 AJ-Report 至修复版本，修复参数校验接口中的脚本执行问题。
+    - 禁止在服务端执行用户可控脚本，或使用沙箱与严格函数白名单限制执行能力。
+    - 排查数据源配置、异常进程和新增文件，轮换可能泄露的数据源凭据。
   reference:
     - https://github.com/wy876/POC/blob/main/AJ-Report%E5%BC%80%E6%BA%90%E6%95%B0%E6%8D%AE%E5%A4%A7%E5%B1%8F%E5%AD%98%E5%9C%A8%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E.md
     - https://github.com/vulhub/vulhub/blob/master/aj-report/CNVD-2024-15077/README.md

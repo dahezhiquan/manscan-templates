@@ -5,7 +5,14 @@ info:
   author: princechaddha
   severity: critical
   description: |
-    Wuzhicms 4.1.0 的 `api/sms_check.php` 接口存在 SQL 注入风险。参考资料显示问题源于 `param` 参数可控并直接进入数据库查询；该模板通过构造 `updatexml` 报错并校验返回的 MD5 值来确认漏洞。
+    Wuzhicms 4.1.0 的 `api/sms_check.php` 对 `param` 参数过滤不足，存在 SQL 注入。模板通过 `updatexml` 注入并匹配 MD5 错误回显确认数据库查询可控。
+  impact: |
+    - 攻击者可读取或篡改 Wuzhicms 数据库中的用户、内容和站点配置。
+    - 在高权限数据库环境下，漏洞可能进一步导致文件写入或服务器权限扩大。
+  remediation: |
+    - 升级 Wuzhicms 至修复版本，修复 `sms_check.php` 参数注入问题。
+    - 所有数据库查询使用参数化语句，并对 API 参数进行类型和长度校验。
+    - 检查数据库错误日志和异常访问记录，轮换可能泄露的后台与数据库凭据。
   reference:
     - https://github.com/wuzhicms/wuzhicms/issues/184
     - https://vulners.com/cnvd/CNVD-2022-36985
@@ -22,6 +29,7 @@ info:
     product: wuzhicms
     vendor: wuzhicms
   tags: cnvd,cnvd2022,wuzhicms,sqli,vuln
+
 variables:
   num: "999999999"
 

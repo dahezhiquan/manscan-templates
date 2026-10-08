@@ -4,7 +4,15 @@ info:
   name: Xxunchi CMS 本地文件包含漏洞（CNVD-2020-23735）
   author: princechaddha
   severity: high
-  description: Xxunchi CMS 的 `backup/auto.php` 参数处理存在本地文件包含风险。模板通过回读脚本自身内容，并匹配默认口令常量与 `display_errors` 文本来验证漏洞。
+  description: |
+    Xxunchi CMS 的备份脚本对 `path` 参数限制不足，攻击者可借助目录穿越读取本地文件内容。模板请求 `/backup/auto.php` 并读取脚本自身内容，通过特定字符串与 200 响应确认漏洞。
+  impact: |
+    - 攻击者可读取源码、备份文件或配置内容，获取数据库连接信息和后台路径。
+    - 若备份目录包含历史数据包，可能导致站点数据、用户信息和业务文件泄露。
+  remediation: |
+    - 升级 Xxunchi CMS 或移除不必要的备份脚本和默认密钥。
+    - 对备份、下载类接口的文件路径参数执行目录白名单校验，禁止跨目录读取。
+    - 将备份文件存放到 Web 根目录之外，并限制仅可信运维人员访问。
   reference:
     - https://www.cnvd.org.cn/flaw/show/2025171
   classification:

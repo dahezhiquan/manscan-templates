@@ -4,7 +4,15 @@ info:
   name: 致远 OA 任意文件读取漏洞（CNVD-2020-62422）
   author: pikpikcu
   severity: medium
-  description: 致远 OA 的 `webmail.do` 下载接口存在目录穿越导致的任意文件读取风险，攻击者可读取 `datasourceCtp.properties` 等配置文件。模板以响应头下载特征和 `ctpDataSource.password` 字段验证漏洞。
+  description: |
+    致远 OA WebMail 附件下载接口对 `filePath` 参数校验不足，攻击者可读取服务器本地敏感文件。模板请求 `webmail.do?method=doDownloadAtt` 读取 `datasourceCtp.properties`，并匹配数据源密码字段确认漏洞。
+  impact: |
+    - 攻击者可读取 OA 数据库连接配置、账号密码和系统配置文件。
+    - 数据库凭据泄露后，可能进一步导致 OA 业务数据、附件和用户信息被批量导出或篡改。
+  remediation: |
+    - 升级致远 OA 至修复版本，修复附件下载接口的路径校验。
+    - 对下载接口增加鉴权和目录白名单，禁止相对路径穿越访问配置目录。
+    - 发现泄露后应立即轮换数据库、OA 管理员和相关集成账号凭据。
   reference:
     - https://blog.csdn.net/m0_46257936/article/details/113150699
   metadata:

@@ -5,7 +5,14 @@ info:
   author: ling
   severity: critical
   description: |
-    禅道 CMS 登录接口存在 SQL 注入风险。模板向 `user-login.html` 的 `account` 参数注入 `updatexml` 语句，并通过响应中的 MD5 回显验证数据库查询已被恶意控制。
+    禅道用户登录接口在处理 `account` 参数时存在 SQL 注入风险。模板向 `/zentao/user-login.html` 提交 `updatexml` 注入语句，并通过错误回显中的 MD5 值确认漏洞。
+  impact: |
+    - 攻击者可读取项目管理系统中的用户、项目、缺陷、需求和测试数据。
+    - 若数据库权限过高，可能进一步写入文件或获取服务器权限。
+  remediation: |
+    - 升级禅道至修复版本，修复登录接口 SQL 注入问题。
+    - 对登录参数使用参数化查询和统一错误处理，避免数据库错误信息回显。
+    - 审计异常登录接口访问和数据库错误日志，轮换可能泄露的账号凭据。
   reference:
     - https://github.com/z92g/ZentaoSqli/blob/master/CNVD-2022-42853.go
     - https://www.cnvd.org.cn/flaw/show/CNVD-2022-42853
@@ -22,6 +29,7 @@ info:
     product: zentao
     vendor: easycorp
   tags: cnvd,cnvd2022,zentao,sqli,vuln
+
 variables:
   num: "999999999"
 

@@ -5,7 +5,14 @@ info:
   author: brucelsone
   severity: high
   description: |
-    jshERP 前台接口存在未授权信息泄露风险，可直接返回用户账号、登录名及口令字段。模板访问 `user/getAllList;.ico` 并匹配 JSON 中的 `username`、`loginName` 和 `password` 字段判断漏洞。
+    jshERP 的用户列表接口可在异常路径下被未授权访问，导致账号信息泄露。模板请求 `/jshERP-boot/user/getAllList;.ico`，通过 JSON 响应中的用户名、登录名和密码字段确认漏洞。
+  impact: |
+    - 攻击者可获取系统用户账号、登录名及密码字段，辅助撞库、离线破解或直接登录后台。
+    - ERP 系统中的库存、财务、采购和销售数据可能因此暴露或被篡改。
+  remediation: |
+    - 升级 jshERP 至修复版本，确保用户列表接口必须经过有效认证和权限校验。
+    - 禁止通过路径分号、伪静态后缀等方式绕过鉴权过滤器。
+    - 轮换已暴露账号密码，并检查后台登录日志和业务数据变更记录。
   reference:
     - https://cn-sec.com/archives/1798444.html
   classification:

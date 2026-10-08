@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    LiveGBS 的 `api/v1/user/save` 接口存在未鉴权逻辑缺陷，攻击者可直接新增高权限用户。模板通过提交管理员角色参数，并校验响应中返回默认密码和用户 ID 来验证风险。
+    LiveGBS 的用户保存接口存在逻辑鉴权缺陷，攻击者可在未充分授权的情况下提交管理员用户信息。模板请求 `/api/v1/user/save` 创建管理员角色用户，并通过默认密码字段和 JSON 响应确认漏洞。
+  impact: |
+    - 攻击者可能创建或修改管理员账号，接管视频平台管理后台。
+    - 平台被接管后，监控通道、设备配置和视频资源可能被查看、篡改或删除。
+  remediation: |
+    - 升级 LiveGBS 至修复版本，确保用户新增和角色变更接口强制认证与权限校验。
+    - 禁止通过 GET 请求执行用户创建或权限变更操作，并增加 CSRF 与审计保护。
+    - 检查用户列表、角色配置和登录日志，删除异常账号并修改默认密码。
   reference:
     - https://github.com/wy876/POC/blob/main/LiveGBS%E5%AD%98%E5%9C%A8%E9%80%BB%E8%BE%91%E7%BC%BA%E9%99%B7%E6%BC%8F%E6%B4%9E(CNVD-2023-72138).md
   metadata:

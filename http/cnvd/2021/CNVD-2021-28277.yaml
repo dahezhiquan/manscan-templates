@@ -4,7 +4,15 @@ info:
   name: 蓝凌 OA 任意文件读取漏洞（CNVD-2021-28277）
   author: pikpikcu,daffainfo
   severity: high
-  description: 蓝凌 OA 存在本地文件包含/任意文件读取风险，攻击者可读取服务器上的敏感文件内容。模板通过读取 Linux 或 Windows 系统典型文件，并依据回显特征验证漏洞。
+  description: |
+    蓝凌 OA 的 `custom.jsp` 接口对传入文件路径缺少限制，攻击者可通过 JSON 参数读取本地文件。模板分别读取 Linux 和 Windows 常见文件，并通过文件内容特征确认任意文件读取。
+  impact: |
+    - 攻击者可读取 OA 服务器配置、源码、数据库连接和附件相关敏感文件。
+    - OA 文件读取漏洞可能进一步导致账号凭据泄露、数据库访问和业务流程数据泄露。
+  remediation: |
+    - 升级蓝凌 OA 至修复版本，修复 `custom.jsp` 对本地文件 URI 的处理逻辑。
+    - 禁止接口接收 `file://` 或任意本地路径，改用受控文件标识和白名单目录。
+    - 检查被读取风险文件的权限，轮换可能泄露的数据库和后台账号。
   reference:
     - https://www.aisoutu.com/a/1432457
     - https://mp.weixin.qq.com/s/TkUZXKgfEOVqoHKBr3kNdw

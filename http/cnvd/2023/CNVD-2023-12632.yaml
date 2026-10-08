@@ -5,7 +5,14 @@ info:
   author: daffainfo
   severity: high
   description: |
-    泛微 E-Cology V9 存在 SQL 注入风险。模板利用接口回显型注入特征，在响应中匹配注入生成的 MD5 值以及 `autoCount`、`autoGet` 字段，以确认数据库查询可被操控。
+    泛微 E-Cology V9 的移动端浏览器插件接口存在 SQL 注入风险，攻击者可通过 `keyword` 参数影响后端查询。模板向 `/mobile/plugin/browser.jsp` 提交编码后的注入载荷，并匹配 MD5 回显及自动查询字段确认漏洞。
+  impact: |
+    - 攻击者可读取或篡改泛微 OA 数据库中的用户、流程、权限和业务数据。
+    - 在高权限数据库配置下，漏洞可能进一步导致文件写入、后台接管或内网横向移动。
+  remediation: |
+    - 升级泛微 E-Cology V9 至修复版本，修复移动端插件接口的 SQL 拼接问题。
+    - 使用参数化查询处理 `keyword` 等搜索参数，统一过滤多重编码输入。
+    - 检查异常访问日志和数据库审计记录，轮换可能泄露的系统凭据。
   reference:
     - https://www.zhihu.com/tardis/zm/art/625931869?source_id=1003
     - https://blog.csdn.net/qq_50854662/article/details/129992329
@@ -16,8 +23,6 @@ info:
     fofa-query: app="泛微-协同商务系统"
   tags: cnvd,cnvd2023,ecology,sqli,vuln
 
-# a' union select 1,''+(SELECT md5(9999999))+'
-# URL encoded 3 times
 http:
   - raw:
       - |

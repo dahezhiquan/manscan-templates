@@ -4,7 +4,15 @@ info:
   name: 泛微 e-cology <= 9.0 远程代码执行漏洞（CNVD-2019-32204）
   author: daffainfo
   severity: critical
-  description: 泛微 e-cology 9.0 及以下版本存在远程代码执行风险，攻击者可借助未授权的 BeanShell 组件接口直接在服务器上执行命令。模板通过触发命令执行并匹配系统文件内容来确认漏洞。
+  description: |
+    泛微 e-cology 旧版本暴露 BeanShell 调试 Servlet，攻击者可通过 `bsh.servlet.BshServlet` 提交脚本执行系统命令。模板向该 Servlet 发送命令执行请求，并通过 `/etc/passwd` 特征确认漏洞。
+  impact: |
+    - 攻击者可直接执行系统命令，获取 OA 数据、上传后门或控制应用服务器。
+    - 泛微 OA 中的用户、流程、附件和集成凭据可能被批量窃取，影响企业办公系统安全边界。
+  remediation: |
+    - 升级泛微 e-cology 至修复版本，删除或禁用 BeanShell 测试 Servlet。
+    - 在 Web 容器中阻断 `/bsh.servlet.BshServlet` 访问，并检查是否存在其他调试接口暴露。
+    - 对服务器进行入侵排查，清理 WebShell，并轮换 OA、数据库及系统账号凭据。
   reference:
     - https://blog.actorsfit.com/a?ID=01500-11a2f7e6-54b0-4a40-9a79-5c56dc6ebd51
   classification:

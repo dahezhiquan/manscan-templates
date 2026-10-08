@@ -4,7 +4,15 @@ info:
   name: 锐捷 Smartweb 默认口令漏洞（CNVD-2020-56167）
   author: pikpikcu
   severity: low
-  description: 锐捷 Smartweb 存在默认口令风险，攻击者可使用已知凭据直接进入高权限管理目录。模板通过提交默认认证信息并验证是否进入 `/WEB_VMS/LEVEL15/` 页面来确认漏洞。
+  description: |
+    锐捷 Smartweb 存在默认口令或默认签名访问问题，攻击者可在未获得有效授权的情况下调用设备命令接口。模板向 `/WEB_VMS/LEVEL15/` 提交 `show basic-info dev` 命令，并匹配特权级别与接口路径特征确认漏洞。
+  impact: |
+    - 攻击者可读取设备基础信息和运行状态，为后续登录、配置篡改或网络拓扑侦察提供依据。
+    - 若默认凭据未修改，可能进一步导致网关或交换设备被未授权管理。
+  remediation: |
+    - 修改 Smartweb 默认口令和默认管理凭据，关闭不必要的 Web 管理入口。
+    - 升级锐捷设备固件，修复默认签名或接口鉴权缺陷。
+    - 仅允许可信管理网段访问设备管理页面，并启用登录审计和异常告警。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2020-56167
     - https://securityforeveryone.com/tools/ruijie-smartweb-default-password-scanner

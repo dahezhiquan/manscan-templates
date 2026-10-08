@@ -4,6 +4,15 @@ info:
   name: 大华 DSS SQL 注入漏洞（CNVD-2017-06001）
   author: napgh0st,ritikchaddha
   severity: high
+  description: |
+    大华 DSS 的附件处理接口对 `bean.RecId` 参数拼接不当，存在 SQL 注入风险。模板访问 `attachment_clearTempFile.action` 与 `attachment_getAttList.action`，通过 `EXTRACTVALUE` 错误回显中的 MD5 值确认注入点可控。
+  impact: |
+    - 攻击者可借助 SQL 注入读取数据库内容，获取账号、设备、平台配置等敏感信息。
+    - 在高权限数据库账号或可写场景下，漏洞可能进一步导致数据篡改、业务中断或服务器权限扩大。
+  remediation: |
+    - 升级大华 DSS 至修复版本，并关注厂商针对该接口的安全补丁。
+    - 后端数据库访问应使用参数化查询，禁止将请求参数直接拼接到 SQL 语句。
+    - 限制 DSS 管理与门户接口的公网访问，并审计历史异常 SQL 错误请求。
   reference:
     - https://www.cnvd.org.cn/flaw/show/CNVD-2017-06001
   metadata:
@@ -11,6 +20,7 @@ info:
     max-request: 2
     fofa-query: "app=\"dahua-DSS\""
   tags: cnvd,cnvd2017,sqli,dahua,vuln
+
 variables:
   num: "999999999"
 

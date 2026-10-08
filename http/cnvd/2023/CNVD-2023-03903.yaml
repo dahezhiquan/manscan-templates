@@ -5,7 +5,14 @@ info:
   author: s4e-io
   severity: high
   description: |
-    EduSoho 22.4.7 之前版本存在未授权文件读取风险，攻击者可读取 `config/parameters.yml` 等敏感文件并为后续利用创造条件。模板通过构造下载请求并匹配返回内容中的系统文件特征来验证漏洞。
+    EduSoho 的课堂课程统计导出接口对 `fileNames[]` 参数路径限制不足，攻击者可通过目录穿越读取本地文件。模板请求导出接口读取 `/etc/passwd`，并通过 CSV 响应类型和账号文件特征确认漏洞。
+  impact: |
+    - 攻击者可读取服务器本地敏感文件、应用配置和数据库连接信息。
+    - 在线教育平台中的用户、课程、订单和教学数据可能因后续攻击而泄露。
+  remediation: |
+    - 升级 EduSoho 至修复版本，修复统计导出接口的文件名校验。
+    - 导出接口应只允许读取系统生成的临时文件，禁止用户控制任意路径。
+    - 检查导出日志和服务器文件权限，轮换可能泄露的配置凭据。
   reference:
     - https://blog.csdn.net/qq_41904294/article/details/135007351
     - https://github.com/gobysec/GobyVuls/blob/master/CNVD-2023-03903.md

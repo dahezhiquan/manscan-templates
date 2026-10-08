@@ -4,8 +4,15 @@ info:
   name: 泛微 E-office 任意文件上传漏洞（CNVD-2021-49104）
   author: pikpikcu
   severity: critical
-  description: 泛微 E-office 上传接口对文件类型校验不严，远程攻击者可上传可执行脚本并进一步控制服务器。模板通过上传 PHP 文件并访问固定落地路径，校验返回的 MD5 值来确认漏洞。
-  remediation: 升级到官方修复版本，并限制上传接口的匿名访问、严格校验文件类型与落地目录的执行权限。
+  description: |
+    泛微 E-office 的 logo 上传接口鉴权和文件类型校验不足，攻击者可上传可执行 PHP 文件并访问执行。模板上传包含随机 MD5 输出的 PHP 文件，再访问上传路径验证代码执行。
+  impact: |
+    - 攻击者可写入 WebShell 并控制 E-office 应用服务器。
+    - OA 系统中的组织架构、流程、附件和集成凭据可能被窃取或篡改。
+  remediation: |
+    - 升级泛微 E-office 至修复版本，修复 `UploadFile.php` 的鉴权和文件类型校验。
+    - 上传文件应存储在不可执行目录，并使用服务端生成文件名和严格 MIME/扩展名校验。
+    - 排查 `/images/logo/` 等上传目录中的可疑脚本，清理后轮换相关凭据。
   reference:
     - https://chowdera.com/2021/12/202112200602130067.html
     - http://v10.e-office.cn

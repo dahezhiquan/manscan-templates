@@ -4,7 +4,15 @@ info:
   name: 亿邮邮件系统远程代码执行漏洞（CNVD-2021-26422）
   author: daffainfo
   severity: critical
-  description: 亿邮邮件系统存在远程代码执行风险，攻击者可在服务器上执行任意命令。模板通过触发利用并以返回结果中的系统账户信息作为命中依据。
+  description: |
+    亿邮邮件系统 `moni_detail.do` 的图表参数处理存在命令注入，攻击者可通过 `type` 参数拼接系统命令。模板提交读取 `/etc/passwd` 的探测载荷，并通过账号文件特征确认命令执行。
+  impact: |
+    - 攻击者可在邮件服务器上执行命令，读取邮件数据、通讯录、配置文件和账号凭据。
+    - 邮件系统失陷后可能被用于钓鱼投递、内部邮件监听或作为进入内网的跳板。
+  remediation: |
+    - 升级亿邮邮件系统或应用厂商补丁，修复 `moni_detail.do` 参数命令拼接问题。
+    - 对系统命令调用使用固定参数白名单，禁止用户输入进入 Shell。
+    - 排查邮件服务器异常进程、WebShell 和可疑转发规则，并轮换邮箱及管理凭据。
   reference:
     - https://github.com/ltfafei/my_POC/blob/master/CNVD-2021-26422_eYouMail/CNVD-2021-26422_eYouMail_RCE_POC.py
     - https://github.com/EdgeSecurityTeam/Vulnerability/blob/main/%E4%BA%BF%E9%82%AE%E9%82%AE%E4%BB%B6%E7%B3%BB%E7%BB%9F%E8%BF%9C%E7%A8%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E%20(CNVD-2021-26422).md

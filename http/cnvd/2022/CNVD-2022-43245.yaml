@@ -5,7 +5,14 @@ info:
   author: SleepingBag945
   severity: high
   description: |
-    泛微 e-office 的 `org.apache.xmlrpc.webserver.XmlRpcServlet` 接口存在任意文件读取风险。模板调用 `WorkflowService.getAttachment` 读取 `/etc/passwd`，并通过 XML-RPC 响应中的 Base64 内容判断漏洞是否存在。
+    泛微 e-office 的 XmlRpcServlet 暴露了可读取附件的方法，攻击者可构造 XML-RPC 请求读取服务器本地文件。模板调用 `WorkflowService.getAttachment` 读取 `/etc/passwd`，并通过 XML base64 响应确认漏洞。
+  impact: |
+    - 攻击者可读取 OA 服务器文件、配置和附件内容，获取数据库连接或系统账号信息。
+    - 敏感文件泄露可能进一步导致 OA 后台接管、数据泄露和内网横向移动。
+  remediation: |
+    - 升级泛微 e-office 至修复版本，限制 XmlRpcServlet 暴露的方法和访问权限。
+    - 对 XML-RPC 参数使用文件 ID 与权限校验，禁止任意本地路径读取。
+    - 限制该接口访问来源，并排查异常 XML-RPC 调用记录。
   classification:
     cpe: cpe:2.3:a:weaver:e-office:*:*:*:*:*:*:*:*
   metadata:

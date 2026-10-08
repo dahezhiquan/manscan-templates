@@ -4,7 +4,15 @@ info:
   name: EmpireCMS 7.5 DOM 型 XSS 漏洞（CNVD-2021-15824）
   author: daffainfo,pikpikcu
   severity: high
-  description: EmpireCMS 7.5 的 `ViewImg` 页面存在 DOM 型跨站脚本风险，前端脚本会直接使用用户提供的 `url` 参数拼接链接。模板通过检测页面中的相关脚本逻辑，识别可被利用的 DOM XSS 条件。
+  description: |
+    EmpireCMS 7.5 的图片查看页面对 `url` 参数处理不当，存在 DOM 型 XSS 风险。模板请求 `e/ViewImg/index.html?url=javascript:alert(1)`，并匹配页面中将参数写入链接的脚本逻辑确认漏洞。
+  impact: |
+    - 攻击者可诱导用户访问恶意链接，在受害者浏览器中执行脚本，窃取 Cookie 或发起钓鱼操作。
+    - 若管理员访问被构造页面，可能导致后台会话被盗用或内容管理权限被滥用。
+  remediation: |
+    - 升级 EmpireCMS 至修复版本，修复图片查看页面对 URL 参数的输出处理。
+    - 对用户可控 URL 进行协议白名单校验，禁止 `javascript:` 等危险协议。
+    - 对写入 HTML、属性和脚本上下文的数据分别进行正确编码，并启用 CSP 降低 XSS 影响。
   reference:
     - https://sourceforge.net/projects/empirecms/
     - https://www.bilibili.com/read/cv10441910

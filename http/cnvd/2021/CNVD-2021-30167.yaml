@@ -4,7 +4,15 @@ info:
   name: 用友 NC BeanShell 远程命令执行漏洞（CNVD-2021-30167）
   author: pikpikcu
   severity: critical
-  description: 用友 NC 的 `bsh.servlet.BshServlet` 暴露后可被直接利用执行系统命令。模板在确认 `BeanShell Test Servlet` 存在的同时，匹配命令执行后的 `uid=` 或 `Windows IP` 等回显内容来验证漏洞。
+  description: |
+    用友 NC 暴露 BeanShell 测试 Servlet，攻击者可通过 `/servlet/~ic/bsh.servlet.BshServlet` 提交脚本执行系统命令。模板分别执行类 Unix 与 Windows 探测命令，并通过命令输出和 BeanShell 页面特征确认漏洞。
+  impact: |
+    - 攻击者可控制 NC 应用服务器，读取财务、供应链和组织管理相关业务数据。
+    - 成功利用后可能写入后门、获取数据库凭据，并向内网核心业务系统横向移动。
+  remediation: |
+    - 升级用友 NC 至修复版本，删除或禁用 BeanShell 测试 Servlet。
+    - 在 Web 容器和反向代理层阻断 `/servlet/~ic/bsh.servlet.BshServlet` 访问。
+    - 对服务器进行入侵排查，清理可疑脚本，轮换数据库、应用和系统账号凭据。
   reference:
     - https://mp.weixin.qq.com/s/FvqC1I_G14AEQNztU0zn8A
     - https://www.cnvd.org.cn/webinfo/show/6491

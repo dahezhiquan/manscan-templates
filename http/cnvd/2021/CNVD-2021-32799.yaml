@@ -5,7 +5,14 @@ info:
   author: SleepingBag945
   severity: high
   description: |
-    公开资料将 360 天擎终端安全管理系统的 `rptsvcsyncpoint` 接口归类为 SQL 注入风险点。当前模板通过访问 `/api/dp/rptsvcsyncpoint?ccid=1` 并匹配特定 JSON 字段识别疑似受影响接口，适合用于资产侧快速发现。
+    360 天擎终端安全管理系统的报表同步接口存在 SQL 注入相关风险，攻击者可通过可访问的 `rptsvcsyncpoint` 接口探测受影响组件。模板请求 `ccid=1` 并匹配 JSON 中的报表同步字段确认目标暴露该风险接口。
+  impact: |
+    - 攻击者可能借助受影响接口进一步读取或篡改终端安全管理平台数据。
+    - 终端安全平台被攻击后，可能影响客户端升级、策略下发和安全事件处置能力。
+  remediation: |
+    - 升级 360 天擎终端安全管理系统至修复版本，修复报表同步接口的 SQL 注入缺陷。
+    - 限制管理平台接口访问来源，禁止公网直接访问。
+    - 审计接口访问日志和平台策略变更，确认未出现异常查询或配置修改。
   reference:
     - https://blog.51cto.com/u_9691128/4295047
     - https://www.cnvd.org.cn/patchInfo/show/270651

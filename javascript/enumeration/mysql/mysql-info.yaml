@@ -5,12 +5,20 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板连接 MySQL 服务并提取协议版本、服务版本等基础信息。
+    该模板枚举 MySQL 服务的协议版本、服务版本和握手基础信息。模板建立 MySQL 协议连接并在信息收集成功时输出服务器元数据，用于识别数据库版本与资产特征。
+  impact: |
+    - MySQL 版本和握手信息可帮助攻击者判断补丁水平、认证插件和潜在已知漏洞。
+    - 暴露的数据库指纹会提高后续弱口令、配置错误或版本漏洞利用的命中率。
+  remediation: |
+    - 限制 MySQL 端口访问来源，避免未授权主机直接读取数据库握手信息。
+    - 保持 MySQL 更新到受支持版本，审计认证插件和账号权限配置。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-info.html
   metadata:
     max-request: 1
     shodan-query: "port:3306"
+    vendor: oracle
+    product: mysql
   tags: js,mysql,network,enum,discovery
 
 javascript:

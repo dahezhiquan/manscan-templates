@@ -5,7 +5,7 @@ info:
   author: pussycat0x,matejsmycka
   severity: info
   description: |
-    该模板识别目标是否开放 TFTP 服务。
+    该模板识别目标是否开放 TFTP 服务。模板发送 TFTP 读请求探测，并根据协议错误或数据响应确认 UDP 69 上的文件传输服务暴露。
   metadata:
     verified: true
     max-request: 1

@@ -5,7 +5,13 @@ info:
   author: matejsmycka
   severity: medium
   description: |
-    该模板通过 SSH Banner 识别是否运行已停止维护的 Debian OpenSSH 版本。
+    目标 SSH Banner 显示其运行在已停止维护的 Debian/OpenSSH 版本组合上，可能缺少后续安全更新。模板读取 SSH 服务端标识并匹配 Debian 版本特征，用于发现生命周期结束的系统组件。
+  impact: |
+    - 生命周期结束的 Debian/OpenSSH 组合通常无法获得常规安全补丁，已知漏洞风险会持续累积。
+    - 暴露在公网的旧远程管理入口更容易被批量扫描和版本定向攻击。
+  remediation: |
+    - 将 Debian 系统升级到受支持版本，或迁移 SSH 服务到仍接收安全更新的平台。
+    - 在升级前限制 SSH 来源、启用密钥/MFA 并加强登录审计作为临时缓解。
   reference:
     - https://endoflife.date/debian
   metadata:

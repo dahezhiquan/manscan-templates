@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过达梦数据库原生协议指纹识别目标是否开放 DM/DM7/DM8 数据库服务。
+    该模板识别目标是否开放达梦数据库原生协议服务。模板发送达梦连接探测报文，并根据响应长度、协议字段及版本提取结果确认 DM/DM7/DM8 数据库指纹。
   metadata:
     verified: true
     max-request: 1

@@ -5,9 +5,17 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 SMB 协议尝试常见默认账号口令，识别文件共享服务是否存在弱凭据风险。
+    目标 SMB 服务接受常见默认账号口令，攻击者可能据此访问文件共享或域内资源。模板按用户名与密码字典组合发起 SMB 登录，并以认证成功作为弱凭据验证依据。
+  impact: |
+    - 攻击者可使用默认或弱凭据访问 SMB 共享，读取、写入或删除共享文件。
+    - 在域环境中，泄露的共享内容可能包含脚本、配置、备份或凭据，扩大横向移动风险。
+  remediation: |
+    - 更改默认 SMB/本地/域账户口令，禁用不必要账户并清理共享测试凭据。
+    - 对 SMB 共享实施最小权限、访问审计和登录失败告警，避免 445 端口暴露到不可信网络。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-brute.html
+  classification:
+    cwe-id: CWE-521
   metadata:
     verified: true
     max-request: 9

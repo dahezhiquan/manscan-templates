@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 SSH 服务器是否启用了弱密钥交换算法。
+    目标 SSH 服务启用了安全性不足的密钥交换算法，可能降低会话密钥协商强度。模板枚举 KEX 算法列表，并在发现弱密钥交换算法时确认配置风险。
+  impact: |
+    - 弱密钥交换算法会降低 SSH 会话密钥协商强度。
+    - 攻击者可能在特定网络位置结合降级或离线分析削弱远程管理会话安全性。
+  remediation: |
+    - 禁用弱 KEX 算法，仅保留符合安全基线的密钥交换算法。
+    - 更新 SSH 服务端配置并重启服务，逐步淘汰不兼容的旧客户端。
   reference:
     - https://www.tenable.com/plugins/nessus/153953
   metadata:

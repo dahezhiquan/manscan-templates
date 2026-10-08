@@ -5,13 +5,21 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板尝试通过 PostgreSQL 功能读取服务器本地文件，以判断数据库是否存在高危读取能力。
+    PostgreSQL 服务接受模板尝试的凭据后，可能允许通过数据库函数读取服务器本地文件。模板使用内置凭据登录并尝试读取指定系统文件，以返回内容作为高危文件读取能力的验证依据。
+  impact: |
+    - 数据库用户可读取服务器本地文件，可能泄露系统配置、密钥、环境变量或应用凭据。
+    - 文件读取能力还可帮助攻击者理解主机环境，为后续权限提升或横向移动提供材料。
+  remediation: |
+    - 撤销非必要数据库用户的文件读取相关权限，避免授予高权限角色给应用账号。
+    - 移除弱凭据，限制 PostgreSQL 访问来源，并审计异常文件读取函数调用。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-file-read
   metadata:
     verified: true
     max-request: 8
     shodan-query: "product:\"PostgreSQL\""
+    vendor: postgresql
+    product: postgresql
   tags: js,network,postgresql,authenticated,enum,discovery
 javascript:
   - pre-condition: |

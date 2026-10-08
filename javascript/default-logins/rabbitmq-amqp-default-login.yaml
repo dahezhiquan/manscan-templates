@@ -5,13 +5,13 @@ info:
   author: DhiyaneshDK
   severity: high
   description: |
-    该模板通过 AMQP 协议尝试常见默认凭据连接 RabbitMQ，识别消息队列服务是否可被未经授权访问。
+    目标 RabbitMQ AMQP 服务接受常见默认凭据，远程攻击者可能直接连接消息代理并访问队列资源。模板按照 AMQP 握手与 SASL PLAIN 流程提交内置用户名和密码组合，并以认证成功响应确认默认凭据风险。
   impact: |
-    - 具备有效 AMQP 凭据的攻击者可连接消息代理，读取或发布消息。
-    - 还可能创建、删除队列与交换机，并接触到敏感应用数据。
+    - 攻击者可使用默认 AMQP 凭据连接消息代理，读取、发布或篡改队列消息。
+    - 若账户权限较高，还可能创建、删除队列与交换机，影响消息流转并暴露敏感业务数据。
   remediation: |
-    - 立即更改默认凭据，并强制执行强密码策略。
-    - 将 guest 账户限制为仅允许本机连接，启用 AMQP TLS，并使用 vhost 做访问隔离。
+    - 立即更改默认凭据，禁用不必要的 guest 账户，并为每个应用使用独立最小权限账号。
+    - 限制 AMQP 端口访问来源，启用 TLS，并通过 vhost 和权限策略隔离业务队列。
   reference:
     - https://www.rabbitmq.com/docs/access-control
     - https://www.rabbitmq.com/docs/passwords
@@ -25,6 +25,7 @@ info:
     max-request: 6
     shodan-query: product:"RabbitMQ" port:5672
     fofa-query: protocol="amqp"
+    product: rabbitmq
   tags: js,network,rabbitmq,amqp,default-login
 
 javascript:

@@ -5,24 +5,20 @@ info:
   author: DhiyaneshDK
   severity: medium
   description: |
-    该模板通过 INFO 等响应特征枚举 Redis 实例的版本、架构与运行信息。
+    该模板枚举 Redis 实例的版本、操作系统、架构、进程、内存、连接数和主从角色等运行信息。模板发送 INFO 探测并从响应中提取 redis_version、os、arch_bits、role 等字段，用于评估 Redis 暴露面。
+  impact: |
+    - Redis INFO 输出可能泄露版本、运行角色、内存使用、连接数量和主从结构。
+    - 攻击者可根据这些信息判断实例价值、补丁水平和后续未授权访问或弱口令攻击路径。
+  remediation: |
+    - 限制 Redis INFO 等管理信息对不可信来源可见，启用 ACL/requirepass 和最小权限。
+    - 将 Redis 绑定到内网或可信接口，保持版本更新并监控异常探测。
   reference:
     - https://nmap.org/nsedoc/scripts/redis-info.html
   metadata:
     max-request: 1
-    shodan-query:
-      - product:"redis"
-      - http.title:"airflow - dags" || http.html:"apache airflow"
-      - http.title:"sign in - airflow"
-    product: airflow
-    vendor: apache
-    fofa-query:
-      - apache airflow
-      - title="airflow - dags" || http.html:"apache airflow"
-      - title="sign in - airflow"
-    google-query:
-      - intitle:"airflow - dags" || http.html:"apache airflow"
-      - intitle:"sign in - airflow"
+    shodan-query: product:"redis"
+    product: redis
+    vendor: redis
   tags: js,redis,network,enum,discovery
 
 javascript:

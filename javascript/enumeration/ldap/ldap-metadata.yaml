@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板用于枚举 LDAP 目录的元数据、Schema 与属性结构，以评估目录服务暴露面。
+    该模板枚举 LDAP 目录服务的基础元数据、命名上下文、域功能级别与 Schema 信息。模板调用 LDAP CollectMetadata 能力并提取 BaseDN、DnsHostName、DefaultNamingContext 等字段，用于评估目录服务暴露面。
+  impact: |
+    - 暴露的 LDAP 元数据可泄露域名、命名上下文、域功能级别和目录结构。
+    - 攻击者可利用这些信息构建账号枚举、权限路径分析或域内横向移动计划。
+  remediation: |
+    - 禁止匿名或低权限账户读取不必要的目录元数据，收紧 RootDSE 与 Schema 查询暴露范围。
+    - 将 LDAP/LDAPS 限制在可信网络内，启用访问审计并使用最小权限目录查询账号。
   reference:
     - https://docs.projectdiscovery.io/templates/protocols/javascript/modules/ldap.Metadata
   metadata:

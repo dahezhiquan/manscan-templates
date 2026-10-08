@@ -5,14 +5,18 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板枚举 SMBv2 服务支持的能力标志与方言特性。
+    该模板枚举 SMB2 服务支持的能力标志、方言与安全特性。模板发起 SMB2 能力查询并输出响应字段，用于评估加密、签名和协议能力配置。
+  impact: |
+    - SMB2 能力信息会暴露服务是否支持签名、加密、持久句柄等安全与可用性特性。
+    - 攻击者可据此判断中继、降级或旧客户端兼容攻击的可行性。
+  remediation: |
+    - 启用并强制 SMB 签名/加密等安全能力，禁用不需要的旧兼容选项。
+    - 限制 SMB 服务访问来源，并定期审计 SMB2/3 安全配置。
   reference:
     - https://nmap.org/nsedoc/scripts/smb2-capabilities.html
   metadata:
     max-request: 1
     shodan-query: port:445
-    product: dionaea
-    vendor: dionaea
   tags: js,network,smb,enum,discovery
 
 javascript:

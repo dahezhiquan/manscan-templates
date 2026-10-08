@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 SSH 服务器是否启用了弱 MAC 算法。
+    目标 SSH 服务启用了 MD5 或 96-bit 等弱 MAC 算法，可能降低会话完整性校验强度。模板枚举服务端 MAC 算法列表，并在发现弱 MAC 时确认配置问题。
+  impact: |
+    - 弱 MAC 算法会降低 SSH 会话完整性校验强度，不符合现代安全基线。
+    - 在中间人或降级场景下，弱 MAC 会增加会话被篡改或分析的风险。
+  remediation: |
+    - 禁用 MD5、96-bit MAC 和其他弱 MAC 算法。
+    - 配置现代 MAC 算法，更新旧客户端并重启 SSH 服务使配置生效。
   reference:
     - https://www.tenable.com/plugins/nessus/71049
   metadata:

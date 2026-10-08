@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过发送 IKE_SA_INIT 探测报文，识别目标是否运行 IKEv2 VPN 服务。
+    该模板识别目标是否运行 IKEv2/IPsec VPN 服务。模板发送 IKE_SA_INIT 探测报文，并根据 IKEv2 响应头、交换类型和通知载荷确认 UDP 500 上的 VPN 协议暴露。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296
     - https://www.iana.org/assignments/ikev2-parameters

@@ -5,13 +5,21 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板通过协议特征识别 PostgreSQL 服务版本。
+    该模板在可认证连接条件下识别 PostgreSQL 服务版本。模板使用内置凭据组合连接数据库并执行版本查询，输出服务端版本字符串作为指纹证据。
+  impact: |
+    - PostgreSQL 版本信息可帮助攻击者判断补丁水平和可利用的历史缺陷。
+    - 在已获得连接凭据的情况下，版本指纹会提高后续枚举、配置审计或漏洞验证的效率。
+  remediation: |
+    - 限制 PostgreSQL 端口访问来源，并避免低权限账号被滥用做版本探测。
+    - 保持 PostgreSQL 更新到受支持版本，定期核查补丁状态。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-version
   metadata:
     verified: true
     max-request: 8
     shodan-query: "product:\"PostgreSQL\""
+    vendor: postgresql
+    product: postgresql
   tags: js,network,postgresql,enum,authenticated,discovery,detect
 
 javascript:

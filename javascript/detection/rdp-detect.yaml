@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过远程桌面协商特征识别目标是否开放 RDP 服务。
+    该模板识别目标是否开放 Remote Desktop Protocol（RDP）服务。模板发起 RDP 协商探测，并根据协议协商响应确认远程桌面入口存在。
   metadata:
     verified: true
     max-request: 1

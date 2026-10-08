@@ -5,11 +5,19 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检测 X11 服务是否允许未认证远程访问图形显示接口。
+    目标 X11 服务允许未认证远程访问图形显示接口，攻击者可能读取窗口内容、监听输入或注入图形事件。模板连接 X11 端口并尝试获取显示信息，以未授权访问成功作为命中依据。
+  impact: |
+    - 未认证 X11 访问可能允许攻击者读取窗口内容、捕获输入或注入图形事件。
+    - 在桌面或跳板机场景中，这可能导致凭据泄露、会话劫持和命令执行链路。
+  remediation: |
+    - 禁止 X11 监听不可信网络接口，移除 xhost + 等宽松访问控制。
+    - 使用 SSH X11 转发或受控远程桌面方案，并限制 TCP 6000 等端口访问来源。
   reference:
     - https://nmap.org/nsedoc/scripts/x11-access.html
     - https://book.hacktricks.xyz/network-services-pentesting/6000-pentesting-x11
     - https://www.hackingarticles.in/penetration-testing-on-x11-server/
+  classification:
+    cwe-id: CWE-306
   metadata:
     shodan-query: "Open X Server:"
     verified: true

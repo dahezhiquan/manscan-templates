@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 SSH 服务器是否支持已知安全性不足的弱算法。
+    目标 SSH 服务支持弱加密算法或空算法，可能削弱会话保密性与完整性保护。模板枚举服务端算法列表，并在返回已知弱算法时确认命中。
+  impact: |
+    - 弱加密算法或空算法会削弱 SSH 会话的保密性和完整性保护。
+    - 攻击者可能结合协议降级、弱客户端或中间人场景提高攻击成功率。
+  remediation: |
+    - 禁用弱加密算法、空算法和过时兼容项，仅保留强加密套件。
+    - 更新 SSH 服务端版本，统一加密基线并监控异常协商。
   reference:
     - https://www.tenable.com/plugins/nessus/90317
   metadata:

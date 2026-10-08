@@ -4,6 +4,14 @@ info:
   name: 过时 SSH 版本识别（服务漏洞）
   author: pussycat0x
   severity: medium
+  description: |
+    目标 SSH 服务支持已淘汰且安全性较弱的 SSH 协议版本 1。模板建立 SSH 信息探测连接，读取服务端协议版本，并在返回的 ProtoVersion 为 1.0 时确认该遗留配置。
+  impact: |
+    - SSHv1 协议缺少现代完整性和加密保护，容易受到中间人、会话劫持或降级类攻击影响。
+    - 继续支持 SSHv1 会暴露遗留客户端兼容面，并降低远程管理入口整体安全性。
+  remediation: |
+    - 禁用 SSH Protocol 1，仅允许 SSH Protocol 2。
+    - 升级 SSH 服务端到受支持版本，并移除依赖 SSHv1 的旧客户端。
   reference:
     - https://nmap.org/nsedoc/scripts/sshv1.html
   metadata:

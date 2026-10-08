@@ -5,7 +5,15 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 LDAP 绑定尝试常见默认账号口令，识别目录服务是否存在出厂凭据或弱口令风险。
+    目标 LDAP 服务可使用模板内置的常见账号口令完成 bind 认证，说明目录服务存在默认凭据或弱口令配置。模板按用户名与密码字典组合发起 LDAP 绑定请求，并以认证成功作为命中依据，可用于定位可被直接登录的目录入口。
+  impact: |
+    - 攻击者可使用默认或弱口令绑定 LDAP，枚举目录对象、组关系和账号属性。
+    - 若凭据对应高权限目录账户，可能进一步影响域内认证、权限委派或业务系统登录。
+  remediation: |
+    - 禁用或更改默认目录账户凭据，并为服务账户设置唯一强口令。
+    - 限制 LDAP/LDAPS 访问来源，启用账号锁定、认证审计和最小权限访问控制。
+  classification:
+    cwe-id: CWE-521
   metadata:
     verified: true
     shodan-query: ldap

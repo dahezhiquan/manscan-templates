@@ -4,11 +4,14 @@ info:
   name: Oracle 数据库服务识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: 该模板通过 1521 端口的 Oracle 协议特征识别目标是否开放 Oracle 数据库服务。
+  description: |
+    该模板识别目标是否开放 Oracle 数据库监听入口。模板向 TCP 1521 发起 Oracle 协议连接探测，并以协议握手成功作为数据库服务存在的证据。
   metadata:
     verified: true
     max-request: 1
     shodan-query: oracle port:1521
+    vendor: oracle
+    product: database_server
   tags: js,network,oracle,info,enum,discovery,detect
 
 javascript:

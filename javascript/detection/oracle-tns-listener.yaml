@@ -5,13 +5,15 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 TNS 协议请求识别 Oracle TNS 监听器是否开放，以确认数据库入口暴露情况。
+    该模板识别 Oracle TNS Listener 是否对外开放并尝试提取 VSNNUM 等版本信息。模板发送 TNS 连接请求，根据监听器返回内容中的版本字段确认数据库入口暴露情况。
   reference:
     - https://www.tenable.com/plugins/nessus/110053
   metadata:
     verified: true
     max-request: 1
     shodan-query: product:"Oracle TNS Listener"
+    vendor: oracle
+    product: database_server
   tags: js,detect,oracle,tns,network,discovery
 
 javascript:

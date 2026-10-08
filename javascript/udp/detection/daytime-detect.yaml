@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 RFC 867 约定的请求识别目标是否开放 UDP Daytime 服务。
+    该模板识别目标是否开放 UDP Daytime 服务。模板按 RFC 867 约定发送 UDP 探测并检查返回的时间字符串格式，用于发现历史时间服务暴露。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc867

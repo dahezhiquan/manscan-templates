@@ -5,10 +5,18 @@ info:
   author: pussycat0x,s0obi
   severity: medium
   description: |
-    该模板检测 LDAP 服务器是否允许匿名 bind。若未受限，攻击者可能在未认证状态下枚举目录信息。
+    目标 LDAP 服务允许匿名 bind，攻击者可能在未认证状态下枚举目录结构、域信息或对象属性。模板使用空凭据发起 LDAP 绑定并调用目录查询能力，以匿名访问成功作为验证依据。
+  impact: |
+    - 匿名 LDAP 绑定可能允许攻击者枚举用户、组、组织单位和目录属性。
+    - 暴露的目录结构可用于口令喷洒、社工攻击、权限路径分析和域内横向移动准备。
+  remediation: |
+    - 禁用匿名 bind 或限制匿名账户只能读取最小必要属性。
+    - 使用 LDAPS、访问控制列表和目录审计，限制 LDAP 端口仅对可信系统开放。
   reference:
     - https://ldap.com/ldapv3-wire-protocol-reference-bind/#anonymous
     - https://docs.projectdiscovery.io/templates/protocols/javascript/modules/ldap.Client#getadgroups
+  classification:
+    cwe-id: CWE-306
   metadata:
     max-request: 1
     shodan-query: ldap

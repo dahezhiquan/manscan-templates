@@ -5,7 +5,13 @@ info:
   author: Morgan Robertson
   severity: high
   description: |
-    该模板检测 Perforce 是否允许未认证访问 Remote Depot，从而泄露远程仓库文件与变更信息。
+    受影响的 Perforce Helix Core 配置可能允许未认证访问 Remote Depot，导致远程仓库文件路径和变更信息泄露。模板完成 P4 协议握手后请求远程仓库数据，并以 depot_files 与 changes 字段确认未授权访问。
+  impact: |
+    - 未认证 Remote Depot 访问可能泄露远程仓库文件路径、变更记录和项目结构。
+    - 攻击者可利用这些信息定位敏感源码、凭据文件或供应链攻击入口。
+  remediation: |
+    - 要求认证后才能访问 Remote Depot，并按最小权限限制远程仓库读取范围。
+    - 升级 Helix Core 到修复相关默认配置问题的版本，限制 1666 端口来源并审计匿名请求。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

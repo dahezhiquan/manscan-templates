@@ -5,16 +5,22 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 SMB 服务器是否未强制启用签名保护，从而暴露中间人攻击风险。
+    目标 SMB 服务未强制要求消息签名，攻击者在合适网络位置可能实施中间人篡改或会话中继。模板查询 SMB2 安全模式，并在返回 signing enabled 但非 required 时确认配置风险。
+  impact: |
+    - 未强制 SMB 签名会使通信更容易受到中间人篡改和中继攻击影响。
+    - 在域环境中，该配置可能增加 NTLM relay、会话劫持和横向移动风险。
+  remediation: |
+    - 在服务器和客户端策略中强制启用 SMB 签名，尤其是域控制器和关键文件服务器。
+    - 禁用旧 SMB 协议并评估启用 SMB 加密，降低中继和篡改风险。
   reference:
     - https://www.tenable.com/plugins/nessus/57608
     - https://nmap.org/nsedoc/scripts/smb2-security-mode.html
+  classification:
+    cwe-id: CWE-300
   metadata:
     verified: true
     max-request: 1
     shodan-query: port:445
-    product: dionaea
-    vendor: dionaea
   tags: js,network,smb,enum,vuln
 javascript:
   - pre-condition: |

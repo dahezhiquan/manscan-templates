@@ -5,11 +5,21 @@ info:
   author: DhiyaneshDk,pussycat0x,ritikchaddha
   severity: high
   description: |
-    该模板尝试使用常见默认凭据连接 MySQL 服务，识别是否存在出厂账号或弱口令配置。
+    目标 MySQL 服务接受常见默认或弱口令凭据连接，可能导致数据库被未授权访问。模板使用内置用户名和密码字典建立 MySQL 连接，并在认证成功时确认风险存在。
+  impact: |
+    - 攻击者可使用弱凭据访问 MySQL 数据库，读取、修改或删除业务数据。
+    - 若账户具备 FILE、SUPER 或管理权限，可能进一步读取服务器文件、写入恶意内容或影响数据库可用性。
+  remediation: |
+    - 删除或禁用默认/匿名账号，为 root 和应用账户设置唯一强口令。
+    - 限制 MySQL 监听地址和来源 IP，定期审计账户权限并启用登录失败监控。
+  classification:
+    cwe-id: CWE-521
   metadata:
     verified: true
     max-request: 21
     shodan-query: "port:3306"
+    vendor: oracle
+    product: mysql
   tags: js,mysql,default-login,network,fuzz,enum,vuln
 
 javascript:

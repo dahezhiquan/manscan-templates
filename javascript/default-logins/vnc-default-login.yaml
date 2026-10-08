@@ -5,7 +5,15 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板尝试通过常见默认凭据访问 VNC 服务，识别远程桌面是否存在出厂口令或弱认证问题。
+    目标 VNC 服务接受常见默认口令，攻击者可能直接建立远程桌面会话。模板对内置 VNC 密码字典逐项发起认证，并以协议认证成功作为命中依据。
+  impact: |
+    - 攻击者可通过 VNC 弱凭据访问远程桌面，查看屏幕内容并操作图形会话。
+    - 若桌面会话已登录业务系统，可能导致数据泄露、配置篡改或进一步主机接管。
+  remediation: |
+    - 更改 VNC 默认口令，启用强认证和传输加密，禁用无需保护的远程桌面入口。
+    - 将 VNC 限制在 VPN、堡垒机或可信网段内，并审计异常连接。
+  classification:
+    cwe-id: CWE-521
   metadata:
     verified: true
     shodan-query: product:"vnc"

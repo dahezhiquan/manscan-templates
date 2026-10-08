@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板用于枚举 PostgreSQL 实例中的数据库列表，帮助识别租户与业务分布情况。
+    PostgreSQL 服务接受模板尝试的凭据后，允许枚举实例中的数据库列表。模板登录后执行数据库列表查询，并输出可见库名，用于识别业务分布与数据资产暴露情况。
+  impact: |
+    - 数据库列表会暴露业务系统、租户划分、环境名称和潜在敏感库。
+    - 攻击者可据此优先选择高价值数据库继续查询或尝试权限提升。
+  remediation: |
+    - 移除弱凭据，并限制普通账号枚举无关数据库的权限。
+    - 使用最小权限角色和网络访问控制，监控异常数据库清单查询。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-list-password-hashes
     - https://launchbylunch.com/posts/2024/Jan/16/postgres-password-encryption/#postgresql-password-encryption-scram-sha-256
@@ -13,6 +19,8 @@ info:
     verified: true
     max-request: 8
     shodan-query: "product:\"PostgreSQL\""
+    vendor: postgresql
+    product: postgresql
   tags: js,network,postgresql,authenticated,enum,discovery
 javascript:
   - pre-condition: |

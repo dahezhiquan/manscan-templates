@@ -5,11 +5,19 @@ info:
   author: rxerium
   severity: medium
   description: |
-    该模板通过 mDNS 广播特征识别 PTZOptics 摄像设备及其相关服务暴露情况。
+    该模板通过 mDNS 广播特征识别 PTZOptics 摄像设备及其开放服务。模板查询 mDNS 记录并匹配 PTZOptics 标识，同时提取设备名、服务项和地址信息。
+  impact: |
+    - 暴露的 PTZOptics mDNS 广播会泄露摄像设备名称、服务和地址信息。
+    - 攻击者可利用这些信息定位音视频设备、识别管理接口并开展后续弱口令或固件漏洞验证。
+  remediation: |
+    - 将 PTZOptics 设备放入受控管理 VLAN，限制 UDP 5353 和管理接口访问来源。
+    - 更新设备固件，关闭不必要的服务广播，并更改默认管理凭据。
   metadata:
     verified: true
     max-request: 1
     shodan-query: port:5353 ptzoptics
+    vendor: ptzoptics
+    product: ptzoptics
   tags: mdns,udp,js,ptzoptics,camera,iot,exposure
 
 javascript:

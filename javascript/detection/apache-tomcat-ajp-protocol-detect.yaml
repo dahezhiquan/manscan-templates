@@ -4,12 +4,16 @@ info:
   name: AJP 协议识别（指纹识别）
   author: pussycat0x
   severity: info
+  description: |
+    该模板识别目标是否在 TCP 8009 等端口提供 Apache JServ Protocol 1.3（AJP13）服务。模板发送 AJP CPing 探测报文，并根据 CPong 响应头确认协议暴露情况；该结果仅用于服务指纹识别，不单独证明存在具体漏洞。
   reference:
     - https://tomcat.apache.org/connectors-doc/ajp/ajpv13a.html
   metadata:
     verified: true
     shodan-query: 'port:8009 product:"Apache Tomcat"'
     max-request: 1
+    vendor: apache
+    product: tomcat
   tags: js,network,detect,tomcat,apache,tcp,discovery
 
 javascript:

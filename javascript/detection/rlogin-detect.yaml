@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板用于识别已过时的 rlogin 远程登录服务，便于排查明文传输与遗留协议风险。
+    该模板识别目标是否开放已过时的 rlogin 远程登录服务。模板按 rlogin 协议发送登录探测并检查响应特征，用于发现明文遗留远程访问入口。
   reference:
     - https://www.ibm.com/docs/en/aix/7.1.0?topic=r-rlogin-command
   metadata:

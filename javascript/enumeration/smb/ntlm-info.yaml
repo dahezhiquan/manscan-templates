@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板通过 NTLM 协议响应枚举主机域、主机名与身份验证相关信息。
+    该模板通过 NTLM 协商响应枚举目标主机名、域名、DNS 名称和身份验证相关信息。模板发起 SMB/NTLM 信息探测，并从返回结构中提取 ntlm 与主机标识字段。
+  impact: |
+    - NTLM 响应可能泄露主机名、域名、DNS 名称和身份验证环境信息。
+    - 攻击者可利用这些信息构建域内资产图谱，并辅助中继、枚举或定向口令攻击。
+  remediation: |
+    - 限制 SMB 端口仅对可信网段开放，减少匿名或预认证阶段可泄露的信息。
+    - 强化 NTLM/SMB 配置，优先使用 Kerberos，禁用不必要的旧协议和匿名枚举。
   reference:
     - https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/
   metadata:

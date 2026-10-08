@@ -5,7 +5,13 @@ info:
   author: matejsmycka
   severity: medium
   description: |
-    该模板检测 NTP 服务器是否允许通过控制查询枚举变量信息。
+    目标 NTP 服务允许通过控制查询枚举变量信息，可能泄露系统名称、版本、同步源和运行状态。模板发送 NTP control query，并在返回变量内容时确认该枚举功能暴露。
+  impact: |
+    - NTP 变量枚举会泄露系统名称、版本、同步源和运行状态等信息。
+    - 攻击者可利用这些细节进行资产画像、时间同步依赖分析或针对过时 NTP 实现的后续攻击。
+  remediation: |
+    - 禁用不必要的 NTP control query/monlist 类枚举能力，限制查询来源。
+    - 更新 NTP 服务到受支持版本，并仅允许可信客户端进行管理查询。
   metadata:
     verified: true
     shodan-query: "system: port:123"

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板查询 _services._dns-sd._udp.local，识别目标是否通过 Zeroconf/mDNS 对外通告服务。
+    该模板识别目标是否通过 Zeroconf/mDNS 通告本地服务。模板查询 _services._dns-sd._udp.local，并根据 mDNS 响应确认服务发现信息对外可见。
   reference:
     - https://en.wikipedia.org/wiki/Zero-configuration_networking
   metadata:

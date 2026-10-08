@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板尝试枚举 SMB 共享列表及其基础属性，用于识别暴露目录与访问边界。
+    目标 SMB 服务允许使用模板提供的凭据枚举共享列表及其访问属性，可能暴露内部目录结构。模板按内置账号组合发起 SMB 连接，并输出可见共享名称和权限信息。
+  impact: |
+    - 可枚举的 SMB 共享会暴露内部目录结构、共享命名和权限边界。
+    - 若共享配置宽松，攻击者可能进一步读取敏感文件、写入恶意内容或发现凭据材料。
+  remediation: |
+    - 检查共享 ACL，移除不必要的读写权限和测试共享。
+    - 对敏感共享启用访问审计，限制 SMB 端口来源，并避免普通账号枚举无关共享。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-enum-shares.html
   metadata:

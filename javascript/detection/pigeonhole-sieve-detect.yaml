@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板用于识别 Dovecot Pigeonhole/ManageSieve 邮件过滤服务，判断目标是否开放相关规则管理接口。
+    该模板识别 Dovecot Pigeonhole/ManageSieve 邮件过滤规则管理服务。模板连接 Sieve 端口并检查服务端欢迎语与能力响应，提取版本信息作为指纹证据。
   metadata:
     verified: true
     shodan-query: product:"Dovecot Pigeonhole sieve"

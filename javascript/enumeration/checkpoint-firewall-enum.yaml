@@ -4,6 +4,14 @@ info:
   name: Check Point 防火墙识别（服务漏洞）
   author: pussycat0x
   severity: low
+  description: |
+    Check Point 防火墙可能在 TCP 264 端口响应 SecuRemote 拓扑查询并泄露防火墙主机名、SmartCenter 主机名等管理线索。模板发送协议探测报文，并从返回数据的证书主题字段中提取相关主机标识。
+  impact: |
+    - 暴露的防火墙主机名和 SmartCenter 信息可帮助攻击者识别安全边界与管理平面。
+    - 这些内部标识可被用于定向社工、漏洞匹配、网络拓扑推断或后续攻击路径规划。
+  remediation: |
+    - 限制 TCP 264 等管理相关端口仅允许可信管理网段访问。
+    - 关闭不必要的拓扑/主机名泄露功能，升级 Check Point 组件并审计远程访问配置。
   reference:
     - https://github.com/rapid7/metasploit-framework/blob/master/modules/auxiliary/gather/checkpoint_hostname.rb
   metadata:

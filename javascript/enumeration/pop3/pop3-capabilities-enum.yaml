@@ -5,7 +5,13 @@ info:
   author: pussycat0x,daffainfo
   severity: low
   description: |
-    该模板通过 CAPA 命令枚举 POP3 服务支持的能力与实现信息。
+    该模板枚举 POP3 服务支持的 CAPA 能力与实现信息。模板连接 POP3 端口发送 CAPA 命令，并根据 +OK 响应、能力关键字与提取结果确认服务特征。
+  impact: |
+    - POP3 能力枚举会暴露认证机制、TLS 支持和邮件服务实现特征。
+    - 攻击者可据此判断是否存在明文认证、弱认证方式或过时服务端版本。
+  remediation: |
+    - 禁用明文认证或过时认证机制，优先要求 TLS 保护的 POP3S/STARTTLS。
+    - 限制 POP3 服务暴露范围，保持邮件服务端更新并审计异常能力探测。
   reference:
     - https://nmap.org/nsedoc/scripts/pop3-capabilities.html
   metadata:

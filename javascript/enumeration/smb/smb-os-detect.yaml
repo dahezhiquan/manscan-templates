@@ -5,14 +5,18 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板通过 SMB 指纹信息识别目标主机操作系统特征。
+    该模板通过 SMB 协议指纹识别目标主机操作系统与版本特征。模板发送 SMB 协商探测并解析响应中的 OS 信息，用于资产画像和后续漏洞适配判断。
+  impact: |
+    - SMB 操作系统指纹会暴露目标平台、版本或补丁线索。
+    - 攻击者可利用这些信息选择更准确的漏洞验证、弱配置检查或横向移动策略。
+  remediation: |
+    - 限制 SMB 端口访问来源，减少未认证阶段暴露的系统版本和主机信息。
+    - 保持系统补丁更新，禁用旧 SMB 协议并启用安全基线配置。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-os-discovery.html
   metadata:
     max-request: 1
     shodan-query: "port:445"
-    product: dionaea
-    vendor: dionaea
   tags: js,network,smb,enum,os,discovery
 
 javascript:

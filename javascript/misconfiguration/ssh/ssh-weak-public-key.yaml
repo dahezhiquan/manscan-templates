@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 SSH 主机密钥长度是否低于 2048 位，从而识别弱密钥风险。
+    目标 SSH 主机密钥长度低于 2048 位，可能削弱服务身份验证强度。模板枚举服务端主机密钥并检查 RSA/ECDSA 位数，在低于阈值时输出对应 key length 作为证据。
+  impact: |
+    - 低于 2048 位的 SSH 主机密钥会削弱服务端身份验证强度。
+    - 弱主机密钥可能增加密钥破解、冒充服务端或中间人攻击风险。
+  remediation: |
+    - 重新生成长度不低于 2048 位的 RSA 主机密钥，或使用符合基线的现代主机密钥类型。
+    - 删除旧弱主机密钥并重启 SSH 服务，必要时同步更新客户端 known_hosts。
   reference:
     - https://www.tenable.com/plugins/nessus/153954
   metadata:

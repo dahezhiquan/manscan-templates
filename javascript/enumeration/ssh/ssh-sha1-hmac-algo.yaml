@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测 SSH 服务器是否允许使用基于 SHA-1 的 HMAC 算法。
+    目标 SSH 服务允许使用基于 SHA-1 的 HMAC 算法，可能降低会话完整性保护强度。模板枚举服务端 MAC 算法列表，并在发现 hmac-sha1 等算法时确认命中。
+  impact: |
+    - SHA-1 HMAC 算法会降低 SSH 会话完整性保护强度，不符合现代加密基线要求。
+    - 在合适网络位置的攻击者可能结合协议降级或弱算法组合增加攻击面。
+  remediation: |
+    - 禁用 hmac-sha1 等基于 SHA-1 的弱 MAC 算法。
+    - 配置现代 MAC 算法并重启 SSH 服务，确保客户端兼容性经过验证。
   reference:
     - https://forums.ivanti.com/s/article/How-to-disable-SSH-SHA-1-HMAC-algorithms?language=en_US
   metadata:

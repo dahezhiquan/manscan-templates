@@ -5,7 +5,13 @@ info:
   author: matejsmycka
   severity: low
   description: |
-    该模板通过 mDNS 枚举局域网服务信息，识别是否存在过度暴露的服务广播内容。
+    该模板通过 mDNS 枚举局域网服务广播内容，识别主机名、服务类型和地址等过度暴露信息。模板发送 mDNS 查询并从响应中提取服务记录。
+  impact: |
+    - mDNS 枚举可能泄露主机名、服务类型、设备角色和局域网地址信息。
+    - 攻击者可据此识别打印机、摄像头、开发服务或管理接口，扩大内网攻击面。
+  remediation: |
+    - 在不需要跨网段发现时关闭 mDNS，或通过防火墙限制 UDP 5353 暴露范围。
+    - 减少广播中的主机名和服务细节，对 IoT 与办公设备分区隔离。
   metadata:
     verified: true
     shodan-query: port:5353

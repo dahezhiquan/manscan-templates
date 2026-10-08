@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测目标是否仍支持 SMBv1，以评估遗留协议暴露风险。
+    该模板检测目标 SMB 服务是否仍支持 SMBv1。模板尝试进行 SMBv1 协商，并以协议支持响应作为命中依据，用于发现易受历史漏洞和中间人风险影响的遗留配置。
+  impact: |
+    - SMBv1 支持表明目标仍启用已淘汰协议，容易受到历史漏洞和中间人攻击链影响。
+    - 在域网环境中，SMBv1 暴露可能增加蠕虫传播、凭据中继和降级攻击风险。
+  remediation: |
+    - 禁用 SMBv1，迁移到 SMBv2/SMBv3，并清理依赖旧协议的客户端。
+    - 在边界和内网防火墙中限制 SMB 访问，仅允许必要的可信主机通信。
   reference:
     - https://kb.iu.edu/d/aumn
   metadata:

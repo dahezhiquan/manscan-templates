@@ -5,7 +5,7 @@ info:
   author: Ice3man543
   severity: info
   description: |
-    该模板枚举 SSH 服务器支持的认证方式，如密码、公钥与 keyboard-interactive 等。
+    该模板枚举 SSH 服务器公布的认证方式，如 password、publickey 与 keyboard-interactive。模板建立 SSH 信息探测连接，并从认证协商结果中提取 AuthMethods，用于判断后续口令攻击面。
   reference:
     - https://nmap.org/nsedoc/scripts/ssh-auth-methods.html
   metadata:

@@ -5,7 +5,13 @@ info:
   author: Morgan Robertson
   severity: medium
   description: |
-    该模板检测 Perforce 是否在未认证情况下泄露服务器版本、根路径与许可证等内部信息。
+    受影响的 Perforce Helix Core 配置可能允许未认证客户端获取服务器版本、根路径、监听地址和许可证等内部信息。模板先完成 P4 协议握手，再调用信息查询逻辑并从 JSON 响应中提取 version、server_root、server_addr 与 license 字段。
+  impact: |
+    - 未认证泄露的 Perforce 版本、根路径、监听地址和许可证信息可暴露源代码管理基础设施。
+    - 攻击者可据此判断部署规模、补丁水平和存储路径，为后续仓库枚举或漏洞利用提供条件。
+  remediation: |
+    - 升级 Perforce Helix Core 到修复相关默认配置问题的版本，并按厂商建议收紧未认证访问。
+    - 要求 P4 服务认证后再返回服务器信息，限制 1666 端口来源并审计匿名请求。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

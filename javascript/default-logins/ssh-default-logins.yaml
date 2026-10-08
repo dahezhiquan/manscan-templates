@@ -4,6 +4,16 @@ info:
   name: SSH 默认凭据检测（服务漏洞）
   author: tarunKoyalwar
   severity: critical
+  description: |
+    目标 SSH 服务允许密码认证且存在可用的默认或常见弱凭据，远程攻击者可能据此直接登录系统。模板先读取服务端支持的认证方式，仅在包含 password 时使用内置用户名与密码字典进行组合验证，并以 SSH 客户端认证成功作为命中依据。
+  impact: |
+    - 攻击者可使用默认或弱凭据直接登录 SSH，获得目标主机交互式访问能力。
+    - 登录后可读取本地文件、部署持久化程序、提升权限或作为内网跳板继续攻击。
+  remediation: |
+    - 立即更改默认或弱口令，禁用不必要的系统账户，并优先使用密钥认证和多因素认证。
+    - 限制 SSH 访问来源，启用登录失败限速/封禁，并持续审计成功登录记录。
+  classification:
+    cwe-id: CWE-521
   metadata:
     max-request: 223
     shodan-query: port:22

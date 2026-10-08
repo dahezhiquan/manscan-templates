@@ -4,12 +4,21 @@ info:
   name: MySQL 变量信息枚举（服务漏洞）
   author: DhiyaneshDk
   severity: high
-  description: 该模板尝试枚举 MySQL 服务器的全部系统变量。
+  description: |
+    MySQL 服务接受模板尝试的常见凭据后，允许已认证用户执行 SHOW VARIABLES 查询并枚举系统变量。模板使用内置用户名和密码组合登录数据库，提取变量名和值以暴露版本、路径、认证和运行配置线索。
+  impact: |
+    - MySQL 系统变量可能泄露安装路径、数据目录、认证配置、日志位置和安全开关状态。
+    - 攻击者可利用这些配置线索制定更精确的数据读取、文件写入或权限提升路径。
+  remediation: |
+    - 移除弱凭据并限制普通账号查询敏感系统变量的权限。
+    - 审计数据库配置，隐藏不必要的路径、日志和认证细节，限制数据库端口访问来源。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-variables.html
   metadata:
     max-request: 16
     shodan-query: "port:3306"
+    vendor: oracle
+    product: mysql
   tags: js,mysql,network,enum,discovery
 
 javascript:

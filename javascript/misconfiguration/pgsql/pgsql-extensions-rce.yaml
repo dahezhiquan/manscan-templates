@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检测 PostgreSQL 扩展机制是否可被用于执行系统命令，识别高危远程代码执行面。
+    目标 PostgreSQL 实例允许通过扩展机制加载库并执行系统命令，可能形成远程代码执行面。模板使用内置凭据登录后尝试创建并调用扩展函数，并以命令回显特征作为验证依据。
+  impact: |
+    - 攻击者可借助 PostgreSQL 扩展机制在数据库服务器上执行系统命令。
+    - 成功利用后可能读取主机文件、部署持久化程序、窃取凭据或进一步横向移动。
+  remediation: |
+    - 撤销非必要用户创建扩展、加载库和执行危险函数的权限。
+    - 使用最小权限数据库角色，限制 PostgreSQL 端口来源，并监控可疑扩展创建和系统命令调用。
   reference:
     - https://www.dionach.com/postgresql-9-x-remote-command-execution/
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#using-libcso6
@@ -14,6 +20,8 @@ info:
     verified: true
     max-request: 1
     shodan-query: "product:\"PostgreSQL\""
+    vendor: postgresql
+    product: postgresql
   tags: postgresql,js,network,rce,vuln
 javascript:
   - pre-condition: |

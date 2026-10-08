@@ -5,7 +5,15 @@ info:
   author: pussycat0x
   severity: critical
   description: |
-    该模板检测 VNC 服务是否允许在无认证情况下直接建立远程桌面会话。
+    目标 VNC 服务允许在无认证情况下建立远程桌面会话，攻击者可能直接查看或控制图形界面。模板发起 VNC 连接并检查认证协商结果，以无需认证即可通过作为验证依据。
+  impact: |
+    - 未认证 VNC 访问可让攻击者直接查看或控制图形桌面。
+    - 若桌面会话包含管理工具、业务系统或已登录凭据，可能导致主机接管和敏感数据泄露。
+  remediation: |
+    - 启用 VNC 强认证和传输加密，禁止无认证访问。
+    - 将 VNC 放在 VPN/堡垒机后，仅允许可信来源访问，并监控异常连接。
+  classification:
+    cwe-id: CWE-306
   metadata:
     verified: true
     shodan-query: product:"vnc"

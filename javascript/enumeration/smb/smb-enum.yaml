@@ -5,15 +5,19 @@ info:
   author: pussycat0x
   severity: medium
   description: |
-    该模板通过 SMB 会话与服务接口枚举主机、共享与系统特征信息。
+    该模板通过 SMB 会话枚举主机、域、操作系统版本、DNS 名称和安全模式等基础信息。模板调用 SMB 枚举能力并从 JSON 响应中提取多个主机与域字段。
+  impact: |
+    - SMB 基础枚举会暴露操作系统、主机名、域名和安全模式等内部信息。
+    - 这些信息可辅助攻击者识别关键主机、匹配系统漏洞并规划域内攻击路径。
+  remediation: |
+    - 禁止匿名 SMB 枚举，限制共享和主机信息仅对授权用户可见。
+    - 将 SMB 服务限制在可信网段，启用日志审计并禁用旧协议。
   reference:
     - https://nmap.org/nsedoc/scripts/smb-security-mode.html
   metadata:
     verified: true
     max-request: 1
     shodan-query: port:445
-    product: dionaea
-    vendor: dionaea
   tags: js,network,smb,enum,discovery
 
 javascript:

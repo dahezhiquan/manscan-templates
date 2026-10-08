@@ -11,6 +11,8 @@ info:
   metadata:
     verified: true
     max-request: 1
+    vendor: apache
+    product: kvrocks
   tags: apache,kvrocks,network,unauth,js,exposed
 
 javascript:

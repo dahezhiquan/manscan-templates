@@ -5,10 +5,20 @@ info:
   author: Ice3man
   severity: high
   description: |
-    该模板通过常见默认账号口令访问 PostgreSQL 服务，检测数据库是否存在弱认证风险。
+    目标 PostgreSQL 服务接受常见默认账号口令登录，说明数据库认证配置不安全。模板按字典组合发起 PostgreSQL 连接认证，并以登录成功作为命中依据。
+  impact: |
+    - 攻击者可使用默认或弱凭据访问 PostgreSQL，枚举数据库并读取敏感表数据。
+    - 若账户权限较高，可能创建扩展、修改配置或进一步影响数据库主机安全。
+  remediation: |
+    - 更改默认账号口令，删除不必要的测试账户，并在 pg_hba.conf 中收紧认证方式。
+    - 限制 PostgreSQL 访问来源，使用最小权限角色，并监控异常登录和枚举行为。
+  classification:
+    cwe-id: CWE-521
   metadata:
     max-request: 9
     shodan-query: port:5432
+    vendor: postgresql
+    product: postgresql
   tags: js,postgresql,default-login,network,vuln
 
 javascript:

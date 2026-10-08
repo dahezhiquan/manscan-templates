@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过发送回显数据并验证响应，识别目标是否开放 Echo 调试协议服务。
+    该模板识别目标是否开放 Echo 回显协议服务。模板发送固定探测数据并要求响应原样回显，从而确认该历史调试协议暴露。
   reference:
     - https://en.wikipedia.org/wiki/Echo_Protocol
   metadata:

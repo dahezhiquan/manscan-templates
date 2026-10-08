@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 RPC 探测报文识别 UDP 111 上的 Portmapper/rpcbind 服务。
+    该模板识别 UDP 111 上的 RPC Portmapper/rpcbind 服务并枚举注册程序。模板发送 RPC dump 探测，根据返回的程序号、版本和端口信息确认 RPC/NFS 相关服务暴露。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc1833

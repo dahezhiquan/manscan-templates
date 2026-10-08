@@ -5,12 +5,12 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 SMB/NetBIOS 响应特征识别目标是否运行 Samba 文件共享服务。
+    该模板识别目标是否运行 Samba 文件共享服务。模板通过 SMB/NetBIOS 协议请求读取服务响应特征，并提取其中的 Samba 标识用于资产指纹确认。
   metadata:
     max-request: 1
     shodan-query: "port:445"
-    product: dionaea
-    vendor: dionaea
+    product: samba
+    vendor: samba
   tags: js,network,samba,detect,linux,discovery
 javascript:
   - pre-condition: |

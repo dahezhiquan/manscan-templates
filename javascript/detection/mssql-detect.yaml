@@ -4,9 +4,13 @@ info:
   name: Microsoft SQL Server 服务识别（指纹识别）
   author: Ice3man543,tarunKoyalwar
   severity: info
+  description: |
+    该模板通过 Microsoft SQL Server 协议握手识别目标是否提供数据库服务。模板使用 MSSQL 客户端连接目标 TCP 1433 端口，并在协议识别与连接状态均成功时确认服务存在；该结果仅用于资产指纹识别。
   metadata:
     max-request: 1
     shodan-query: port:1433
+    vendor: microsoft
+    product: sql_server
   tags: js,mssql,detect,network,discovery
 
 javascript:

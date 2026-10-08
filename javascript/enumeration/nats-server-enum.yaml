@@ -5,7 +5,13 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板直接连接 NATS Server 并读取版本、集群名称、认证要求等配置特征。
+    该模板枚举 NATS Server 暴露的基础运行信息。模板直接连接 NATS 服务并读取 INFO 欢迎消息，从中提取版本、集群名称、认证要求和 TLS 等配置特征。
+  impact: |
+    - 暴露的 NATS 版本、集群名称和认证要求可帮助攻击者判断消息系统拓扑。
+    - 若服务配置宽松，相关信息可辅助后续未授权连接、主题探测或已知版本风险验证。
+  remediation: |
+    - 限制 NATS 端口访问来源，并启用客户端认证、授权和 TLS。
+    - 隐藏不必要的实例信息，保持 NATS Server 更新并审计集群配置。
   metadata:
     verified: true
     max-request: 1

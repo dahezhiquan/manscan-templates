@@ -4,10 +4,18 @@ info:
   author: matejsmycka
   severity: high
   description: |
-    该模板检测 MQTT Broker 是否允许未认证连接，并尝试订阅系统主题以枚举运行信息。
+    目标 MQTT Broker 允许未认证客户端连接并订阅系统主题，可能泄露 Broker 版本、客户端数量和消息主题结构。模板建立 MQTT 连接并订阅 $SYS 主题，根据返回的系统消息提取版本信息。
+  impact: |
+    - 未认证 MQTT Broker 可能允许攻击者订阅系统主题、读取消息或发布伪造消息。
+    - 在 IoT 或消息驱动业务中，这可能导致设备状态泄露、指令篡改或业务流程异常。
+  remediation: |
+    - 为 MQTT Broker 启用客户端认证、授权策略和 TLS，禁止匿名订阅/发布。
+    - 限制 1883/8883 端口访问来源，按主题设置最小权限并审计异常订阅。
   reference:
     - https://en.wikipedia.org/wiki/MQTT
     - https://github.com/kh4sh3i/MQTT-Pentesting
+  classification:
+    cwe-id: CWE-306
   metadata:
     verified: true
     max-request: 1

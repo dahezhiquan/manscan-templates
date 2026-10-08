@@ -5,15 +5,21 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板检测 SMB 共享是否允许匿名访问。
+    目标 SMB 服务允许匿名会话访问共享资源，攻击者可能无需凭据枚举共享、读取文件或收集域内信息。模板以匿名身份发起 SMB 访问并提取共享列表，以访问成功作为验证依据。
+  impact: |
+    - 匿名 SMB 访问可能允许攻击者枚举共享、读取文件或收集域内主机信息。
+    - 共享中的配置、脚本、备份或凭据文件可能导致进一步系统入侵和横向移动。
+  remediation: |
+    - 禁用匿名 SMB 访问，要求认证后才能枚举或访问共享。
+    - 按最小权限配置共享 ACL，移除 Everyone/Guest 过宽权限，并限制 445 端口来源。
   reference:
     - https://wadcoms.github.io/wadcoms/SMBClient-List-Shares-Anonymous/
+  classification:
+    cwe-id: CWE-306
   metadata:
     verified: true
     max-request: 1
     shodan-query: port:445
-    product: dionaea
-    vendor: dionaea
   tags: js,network,smb,enum,misconfig,vuln
 javascript:
   - pre-condition: |

@@ -5,22 +5,20 @@ info:
   author: tarunKoyalwar
   severity: high
   description: |
-    该模板尝试使用常见默认口令连接 Redis 服务，识别是否存在弱口令或错误暴露的认证配置。
+    目标 Redis 服务接受空口令或常见弱口令访问，可能暴露键值数据与管理命令。模板使用 Redis INFO 认证探测逐一尝试内置口令，并在返回 redis_version 且非 Sentinel 响应时确认命中。
+  impact: |
+    - 攻击者可使用空口令或弱口令读取 Redis 键值数据，获取会话、令牌、缓存数据或业务状态。
+    - 若实例暴露管理命令，还可能修改数据、清空缓存、写入持久化内容或影响依赖 Redis 的业务。
+  remediation: |
+    - 为 Redis 配置强口令或 ACL，避免使用空口令、默认口令或共享弱口令。
+    - 将 Redis 绑定到可信网络接口，限制公网访问，并按需启用 TLS 与命令级权限控制。
+  classification:
+    cwe-id: CWE-521
   metadata:
     max-request: 6
-    shodan-query:
-      - product:"redis"
-      - http.title:"airflow - dags" || http.html:"apache airflow"
-      - http.title:"sign in - airflow"
-    product: airflow
-    vendor: apache
-    fofa-query:
-      - apache airflow
-      - title="airflow - dags" || http.html:"apache airflow"
-      - title="sign in - airflow"
-    google-query:
-      - intitle:"airflow - dags" || http.html:"apache airflow"
-      - intitle:"sign in - airflow"
+    shodan-query: product:"redis"
+    product: redis
+    vendor: redis
   tags: js,redis,default-login,network,vuln
 
 javascript:

@@ -5,12 +5,20 @@ info:
   author: matejsmycka
   severity: high
   description: |
-    该模板检测 SNMPv1 是否仍使用默认 public 团体字串，从而暴露未授权信息查询风险。
+    目标 SNMPv1 服务仍使用默认 public 团体字串，远程攻击者可能未授权读取设备配置与运行状态。模板使用内置 community 字典发送 SNMPv1 查询，并以有效响应作为命中依据。
+  impact: |
+    - 默认 public 团体字串可让攻击者未授权读取 SNMP 对象，获取设备配置、接口、路由和系统信息。
+    - 对部分设备而言，弱 SNMP 配置还可能辅助网络拓扑绘制、凭据收集或配置篡改链路。
+  remediation: |
+    - 禁用 SNMPv1/v2c 或更改默认 public 团体字串，优先使用 SNMPv3 认证与加密。
+    - 通过 ACL 限制 SNMP 查询来源，按最小权限暴露 OID，并审计异常轮询。
   reference:
     - https://hackers-arise.com/exploiting-snmpv1-for-reconnaissance/
     - https://hacktricks.boitatech.com.br/pentesting/pentesting-snmp
     - https://www.tenable.com/plugins/nnm/1344
     - https://linux.die.net/man/1/snmpwalk
+  classification:
+    cwe-id: CWE-306
   metadata:
     verified: true
     max-request: 1

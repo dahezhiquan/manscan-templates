@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 NTP 查询报文识别目标是否运行 NTP 服务，并提取相关版本特征。
+    该模板识别目标是否运行 NTP 服务并提取版本特征。模板发送 NTP 查询报文，根据响应中的时间同步协议字段和版本正则确认服务指纹。
   metadata:
     verified: true
     shodan-query: "NTP"

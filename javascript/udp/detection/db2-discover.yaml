@@ -5,13 +5,15 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过广播探测识别网络中暴露的 DB2 服务节点。
+    该模板通过 UDP 广播发现网络中暴露的 IBM DB2 服务节点。模板发送 DB2 discovery 探测并解析响应中的版本与主机名信息，用于识别数据库资产。
   reference:
     - https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html
   metadata:
     shodan-query: port:523
     verified: true
     max-request: 1
+    vendor: ibm
+    product: db2
   tags: ibm,network,js,udp,discovery,detect
 
 javascript:

@@ -5,13 +5,21 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板枚举 PostgreSQL 默认数据库可访问性，用于识别默认实例暴露情况。
+    PostgreSQL 服务接受模板尝试的凭据后，可连接默认数据库并验证实例可访问性。模板使用内置用户名、密码与默认数据库组合建立连接，用于识别弱凭据下可访问的默认库入口。
+  impact: |
+    - 可访问的默认 PostgreSQL 数据库表明模板凭据具备连接能力，可作为进一步枚举入口。
+    - 攻击者可借此确认实例可用性，并继续探测数据库列表、角色权限或敏感对象。
+  remediation: |
+    - 移除弱凭据，收紧 pg_hba.conf 认证策略，并避免默认数据库被不必要账户访问。
+    - 限制 PostgreSQL 端口来源，按最小权限分配数据库连接权限。
   reference:
     - https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/PostgreSQL%20Injection.md#postgresql-database-name
   metadata:
     verified: true
     max-request: 40
     shodan-query: "product:\"PostgreSQL\""
+    vendor: postgresql
+    product: postgresql
   tags: js,network,postgresql,authenticated,enum,discovery
 
 javascript:

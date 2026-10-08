@@ -5,9 +5,17 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板检测 SSH 服务器是否仍启用 CBC 模式加密算法。
+    目标 SSH 服务仍启用 CBC 模式加密算法，可能暴露明文恢复或降强度攻击风险。模板枚举服务端加密算法列表，并在发现 CBC cipher 时确认弱加密配置。
+  impact: |
+    - CBC 模式加密算法不符合现代 SSH 加密基线，可能增加明文恢复或降级攻击风险。
+    - 继续启用 CBC 会扩大旧客户端兼容面，并削弱远程管理会话保密性。
+  remediation: |
+    - 禁用 CBC 模式 SSH cipher，仅保留符合安全基线的现代加密算法。
+    - 更新 SSH 服务端配置并重启服务，验证旧客户端兼容性后清理例外。
   reference:
     - https://www.tenable.com/plugins/nessus/70658
+  classification:
+    cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2

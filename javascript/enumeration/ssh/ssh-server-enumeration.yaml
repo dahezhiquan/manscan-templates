@@ -4,6 +4,14 @@ info:
   name: SSH 服务端软件枚举（服务漏洞）
   author: Ice3man543,tarunKoyalwar
   severity: low
+  description: |
+    SSH 服务在协议握手阶段公开服务端标识，可能暴露软件实现及版本线索，为资产识别和后续漏洞研判提供依据。模板建立 SSH 信息探测连接，并从 ServerID.Raw 字段提取服务端原始标识。
+  impact: |
+    - SSH 服务端标识会暴露软件实现、版本和发行版线索。
+    - 攻击者可利用这些指纹匹配历史漏洞、弱算法默认配置或特定发行版补丁状态。
+  remediation: |
+    - 保持 SSH 服务端更新到受支持版本，避免暴露过时实现。
+    - 限制 SSH 访问来源，减少公网指纹暴露，并审计 Banner 配置。
   metadata:
     verified: true
     max-request: 2

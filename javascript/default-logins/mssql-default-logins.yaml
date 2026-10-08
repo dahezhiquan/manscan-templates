@@ -5,10 +5,20 @@ info:
   author: Ice3man543,tarunKoyalwar
   severity: high
   description: |
-    该模板通过 Microsoft SQL Server 协议尝试常见默认账号口令，检测数据库服务是否可被弱口令直接访问。
+    目标 Microsoft SQL Server 接受常见默认账号口令登录，攻击者可能据此访问数据库实例。模板通过 MSSQL 协议对内置凭据组合进行认证尝试，并以客户端登录成功作为验证依据。
+  impact: |
+    - 攻击者可直接登录 Microsoft SQL Server，读取或修改业务数据。
+    - 若账号权限较高，可能执行管理操作、创建持久化账号，或借助数据库功能继续横向移动。
+  remediation: |
+    - 更改默认账号口令，禁用不必要的 sa 或测试账号，并强制执行强密码策略。
+    - 限制 SQL Server 端口访问来源，启用登录审计，并为应用账号授予最小必要权限。
+  classification:
+    cwe-id: CWE-521
   metadata:
     max-request: 7
     shodan-query: port:1433
+    vendor: microsoft
+    product: sql_server
   tags: js,mssql,default-login,network,vuln
 
 javascript:

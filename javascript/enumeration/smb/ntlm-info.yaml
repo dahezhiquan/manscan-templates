@@ -1,11 +1,11 @@
 id: ntlm-info
 
 info:
-  name: NTLM 信息枚举（服务漏洞）
+  name: SMB NTLM 信息枚举（服务漏洞）
   author: pussycat0x
   severity: medium
   description: |
-    该模板通过 NTLM 协商响应枚举目标主机名、域名、DNS 名称和身份验证相关信息。模板发起 SMB/NTLM 信息探测，并从返回结构中提取 ntlm 与主机标识字段。
+    NTLM 是 Windows 环境中常见的挑战响应式认证机制，在 SMB 协商过程中可能返回主机名、域名、DNS 名称和身份验证相关信息。该模板发起 SMB/NTLM 信息探测，并从返回结构中提取 NTLM 与主机标识字段。
   impact: |
     - NTLM 响应可能泄露主机名、域名、DNS 名称和身份验证环境信息。
     - 攻击者可利用这些信息构建域内资产图谱，并辅助中继、枚举或定向口令攻击。

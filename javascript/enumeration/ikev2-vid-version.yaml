@@ -5,13 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板解析 IKEv2 响应中的 Vendor ID 与通知载荷，用于识别 VPN 设备厂商、产品版本和能力特征。模板发送 IKE_SA_INIT 探测，并从返回载荷中提取 vendor_product 信息。
-  impact: |
-    - IKEv2 Vendor ID 和版本特征会暴露 VPN 设备厂商、实现和能力信息。
-    - 攻击者可据此匹配设备型号、固件缺陷和远程访问配置，提升后续定向攻击效率。
-  remediation: |
-    - 限制 IKE 服务暴露面，仅向需要远程访问的地址开放 UDP 500/4500。
-    - 隐藏或减少可选 Vendor ID 泄露，保持 VPN 设备固件更新并关闭不必要的 legacy 客户端兼容项。
+    IKEv2 是 IPsec VPN 中用于建立安全关联和协商加密参数的核心协议，常部署在远程接入 VPN、防火墙和安全网关上。该模板发送 IKE_SA_INIT 探测，解析响应中的 Vendor ID、Notify 载荷和可打印版本字符串，并根据内置厂商 ID 映射识别 VPN 设备实现、产品特征和能力指纹。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296#section-3.12
     - https://hacktricks.wiki/en/network-services-pentesting/ipsec-ike-vpn-pentesting.html

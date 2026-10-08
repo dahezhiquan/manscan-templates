@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板枚举 Minecraft 服务端的 MOTD、在线人数、最大人数、服务端版本与协议编号。模板发送 Minecraft 状态查询请求，并从响应 JSON 中提取可用于资产识别的服务器信息。
+    Minecraft 服务端会在状态查询阶段返回 MOTD、在线人数、最大人数、服务端版本和协议编号等公开信息。该模板发送 Minecraft 状态查询请求，并从响应 JSON 中提取服务器描述、玩家数量和版本字段，用于确认服务暴露与资产特征。
   impact: |
     - 暴露的 Minecraft 服务信息可泄露服务端版本、在线人数和协议编号。
     - 攻击者可据此识别过时服务端、插件生态或高峰时段，辅助后续弱口令、拒绝服务或已知漏洞攻击。

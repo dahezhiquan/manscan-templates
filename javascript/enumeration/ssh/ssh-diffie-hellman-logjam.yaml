@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    目标 SSH 服务支持 diffie-hellman-group1-sha1 等弱 Diffie-Hellman 密钥交换算法，可能暴露 Logjam 类降强度风险。模板枚举服务端算法列表，并在返回弱 DH 算法时确认命中。
+    目标 SSH 服务支持 diffie-hellman-group1-sha1 等弱 Diffie-Hellman 密钥交换算法，可能暴露 Logjam 类降强度风险且不符合现代 SSH 加密基线。该模板枚举服务端算法列表，并在返回弱 DH 算法时确认命中。
   impact: |
     - 弱 Diffie-Hellman 组会降低 SSH 会话密钥协商强度，增加被降级或离线攻击的风险。
     - 在合适网络位置的攻击者可能利用弱组影响会话保密性。

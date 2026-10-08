@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    PostgreSQL 服务接受模板尝试的凭据后，允许枚举实例中的数据库列表。模板登录后执行数据库列表查询，并输出可见库名，用于识别业务分布与数据资产暴露情况。
+    PostgreSQL 服务接受模板尝试的凭据后，允许已认证用户查询 pg_database 并枚举实例中的数据库列表，说明账号可见范围可能超过业务所需。该模板登录后执行 SELECT datname FROM pg_database，并输出可见库名作为验证证据。
   impact: |
     - 数据库列表会暴露业务系统、租户划分、环境名称和潜在敏感库。
     - 攻击者可据此优先选择高价值数据库继续查询或尝试权限提升。

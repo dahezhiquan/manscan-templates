@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: medium
   description: |
-    该模板枚举 Redis 实例的版本、操作系统、架构、进程、内存、连接数和主从角色等运行信息。模板发送 INFO 探测并从响应中提取 redis_version、os、arch_bits、role 等字段，用于评估 Redis 暴露面。
+    Redis INFO 命令会返回实例版本、操作系统、架构、进程、内存、连接数、主从角色等运行信息。若该信息可被不可信来源读取，攻击者可了解缓存或消息队列基础设施状态；该模板发送 INFO 探测并提取 redis_version、os、arch_bits、role 等字段。
   impact: |
     - Redis INFO 输出可能泄露版本、运行角色、内存使用、连接数量和主从结构。
     - 攻击者可根据这些信息判断实例价值、补丁水平和后续未授权访问或弱口令攻击路径。

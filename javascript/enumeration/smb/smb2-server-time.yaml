@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: low
   description: |
-    该模板获取 SMB2 服务器当前时间与启动时间，辅助判断时钟偏差、系统运行时长和资产状态。模板发起 SMB2 时间查询，并从响应中提取时间字段作为枚举结果。
+    SMB2 协商信息可能包含服务器当前时间和启动时间，可用于判断时钟偏差、系统运行时长和资产状态。该模板发起 SMB2 信息查询，并从 NegotiationLog 中提取 SystemTime 与 ServerStartTime 作为枚举结果。
   impact: |
     - SMB2 服务器时间和启动时间会暴露主机时钟偏差与运行时长。
     - 这些信息可辅助 Kerberos 时间窗口判断、重启周期分析和资产状态识别。

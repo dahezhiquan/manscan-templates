@@ -5,12 +5,12 @@ info:
   author: DhiyaneshDk
   severity: high
   description: |
-    MySQL 服务接受模板尝试的常见凭据后，允许已认证用户执行 SHOW DATABASES 查询并枚举可见数据库名称，可能暴露业务库结构及敏感资产线索。模板使用内置用户名和密码组合建立连接、执行查询，并以执行成功及返回的 Database 字段作为验证依据。
+    MySQL 服务接受模板尝试的常见凭据后，允许已认证用户执行 SHOW DATABASES 查询并枚举可见数据库名称，说明存在弱凭据或权限边界过宽问题。该模板使用内置用户名和密码组合建立连接、执行查询，并以执行成功及返回的 Database 字段作为验证依据。
   impact: |
     - 数据库名称会暴露业务系统、租户、环境类型和敏感资产线索。
     - 攻击者可据此优先定位生产库、备份库或高价值数据源，扩大数据泄露风险。
   remediation: |
-    - 移除弱凭据并为数据库账号设置唯一强口令。
+    - 移除弱凭据并为数据库账号设置唯一强口令，避免默认或测试账号可远程登录。
     - 按最小权限限制 SHOW DATABASES 可见范围，避免普通应用账号枚举无关数据库。
   reference:
     - https://nmap.org/nsedoc/scripts/mysql-databases.html

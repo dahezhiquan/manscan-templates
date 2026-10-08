@@ -5,13 +5,7 @@ info:
   author: DhiyaneshDK
   severity: low
   description: |
-    该模板识别目标 Rsync 协议版本。模板建立 Rsync 连接并读取服务端横幅，从返回的版本字段中提取协议版本，用于判断兼容性与历史风险面。
-  impact: |
-    - Rsync 版本信息可帮助攻击者判断服务补丁水平和协议兼容性。
-    - 暴露的版本指纹可用于匹配历史漏洞或识别需要加固的旧服务。
-  remediation: |
-    - 限制 Rsync 服务访问来源，关闭不再需要的公开同步入口。
-    - 将 Rsync 更新到受支持版本，并审计模块认证和权限配置。
+    Rsync 是常用于文件同步、备份分发和镜像站点维护的协议与服务端程序。该模板建立 Rsync 连接并读取服务端 @RSYNCD 横幅，从返回的 Banner 字段提取协议/服务版本作为 Rsync 指纹。
   metadata:
     verified: true
     max-request: 1

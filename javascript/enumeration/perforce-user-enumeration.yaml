@@ -1,16 +1,16 @@
 id: perforce-user-enumeration
 
 info:
-  name: Perforce 用户枚举（服务漏洞）
+  name: Perforce Helix Core 未认证用户枚举（服务漏洞）
   author: Morgan Robertson
   severity: medium
   description: |
-    受影响的 Perforce Helix Core 配置可能允许未认证枚举用户目录，泄露用户名、邮箱与全名等身份信息。模板完成 P4 协议握手后调用用户枚举逻辑，并以返回 users、emails 和 full_names 字段作为验证证据。
+    Perforce Helix Core 是企业常用的集中式源代码和数字资产版本管理系统。受 CVE-2026-6043 相关不安全默认配置影响的 P4 Server 可能允许未认证枚举用户目录，泄露用户名、邮箱与全名等身份信息；该模板完成 P4 协议握手后调用用户枚举逻辑，并以返回 users、emails 和 full_names 字段作为验证证据。
   impact: |
     - 未认证用户枚举会泄露开发人员用户名、邮箱和姓名等身份信息。
     - 这些信息可被用于钓鱼、凭据填充、社工攻击或针对源代码仓库权限的进一步尝试。
   remediation: |
-    - 升级 Perforce Helix Core 到修复相关默认配置问题的版本，并禁用未认证用户枚举。
+    - 升级 Perforce Helix Core 到修复 CVE-2026-6043 相关默认配置问题的版本，并禁用未认证用户枚举。
     - 要求认证后才允许查看用户目录，最小化可见身份字段并监控异常枚举行为。
   reference:
     - https://morganrobertson.net/p4wned/

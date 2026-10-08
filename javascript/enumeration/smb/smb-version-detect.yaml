@@ -5,13 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板识别目标 SMB 服务支持的协议版本。模板发起 SMB 协商并提取 smb-version 字段，用于判断是否存在 SMBv1、SMBv2/3 等协议暴露面。
-  impact: |
-    - SMB 协议版本信息可帮助攻击者判断是否存在 SMBv1 或特定 SMB2/3 能力。
-    - 暴露的版本指纹会提高后续漏洞匹配、协议降级测试和配置审计效率。
-  remediation: |
-    - 限制 SMB 端口访问来源，减少未认证协议指纹暴露。
-    - 禁用旧 SMB 方言，保持系统补丁更新并启用安全基线。
+    SMB 是 Windows 文件共享、打印共享和域环境访问常用协议，服务端会在协商阶段声明支持的协议方言。该模板发起 SMB 协商并提取 Version.VerString 字段，用于识别目标 SMB 服务支持的协议版本指纹。
   metadata:
     max-request: 1
     shodan-query: "port:445"

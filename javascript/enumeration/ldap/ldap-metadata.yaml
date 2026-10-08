@@ -1,11 +1,11 @@
 id: ldap-metadata
 
 info:
-  name: LDAP 元数据枚举（服务漏洞）
+  name: LDAP 目录元数据枚举（服务漏洞）
   author: pussycat0x
   severity: medium
   description: |
-    该模板枚举 LDAP 目录服务的基础元数据、命名上下文、域功能级别与 Schema 信息。模板调用 LDAP CollectMetadata 能力并提取 BaseDN、DnsHostName、DefaultNamingContext 等字段，用于评估目录服务暴露面。
+    LDAP 常用于企业目录、身份认证和 Active Directory 查询。若目录服务允许匿名或低权限读取 RootDSE/Schema 等基础信息，攻击者可获取命名上下文、域功能级别、主机名和默认目录分区；该模板调用 LDAP 元数据收集能力并提取 BaseDN、DnsHostName、DefaultNamingContext 等字段。
   impact: |
     - 暴露的 LDAP 元数据可泄露域名、命名上下文、域功能级别和目录结构。
     - 攻击者可利用这些信息构建账号枚举、权限路径分析或域内横向移动计划。

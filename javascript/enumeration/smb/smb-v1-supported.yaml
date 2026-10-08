@@ -1,11 +1,11 @@
 id: smb-v1-supported
 
 info:
-  name: SMBv1 支持识别（服务漏洞）
+  name: SMBv1 遗留协议启用（服务漏洞）
   author: pussycat0x
   severity: medium
   description: |
-    该模板检测目标 SMB 服务是否仍支持 SMBv1。模板尝试进行 SMBv1 协商，并以协议支持响应作为命中依据，用于发现易受历史漏洞和中间人风险影响的遗留配置。
+    SMBv1 是已淘汰的旧版文件共享协议，缺少现代 SMBv2/SMBv3 的多项安全能力，并与多类历史攻击链相关。该模板尝试进行 SMB 信息模式协商，并以返回 SupportV1: true 作为目标仍启用 SMBv1 的验证依据。
   impact: |
     - SMBv1 支持表明目标仍启用已淘汰协议，容易受到历史漏洞和中间人攻击链影响。
     - 在域网环境中，SMBv1 暴露可能增加蠕虫传播、凭据中继和降级攻击风险。

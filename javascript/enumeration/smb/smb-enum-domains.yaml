@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: medium
   description: |
-    该模板枚举 SMB 环境中的域与森林信息，辅助识别 Windows 网络身份边界。模板发起 SMB 枚举请求，并从响应中提取 DNSDomainName、NetBIOSDomainName 等字段。
+    SMB 服务在 Windows 域环境中可能返回 DNS 域名、NetBIOS 域名、森林名称等身份边界信息。该模板发起 SMBv2 元数据枚举请求，并从响应中提取 DNSDomainName、NetBIOSDomainName 等字段。
   impact: |
     - SMB 域枚举会暴露域名、森林名称和身份边界信息。
     - 攻击者可据此识别 Active Directory 结构，为账号枚举、信任关系分析和横向移动做准备。

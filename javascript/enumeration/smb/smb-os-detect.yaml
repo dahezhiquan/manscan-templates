@@ -1,11 +1,11 @@
 id: smb-os-detect
 
 info:
-  name: SMB 操作系统识别（服务漏洞）
+  name: SMB 操作系统信息枚举（服务漏洞）
   author: pussycat0x
   severity: low
   description: |
-    该模板通过 SMB 协议指纹识别目标主机操作系统与版本特征。模板发送 SMB 协商探测并解析响应中的 OS 信息，用于资产画像和后续漏洞适配判断。
+    SMB 服务可能在协议协商响应中暴露 Windows 操作系统构建号或版本特征。该模板发送 SMB 协商探测并解析响应中的 OSVersion 字段，将常见版本号映射为 Windows 版本名称，用于枚举目标主机操作系统信息。
   impact: |
     - SMB 操作系统指纹会暴露目标平台、版本或补丁线索。
     - 攻击者可利用这些信息选择更准确的漏洞验证、弱配置检查或横向移动策略。

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板枚举 IKEv2 端点支持的加密、完整性与密钥交换转换套件。模板分别发送多组 SA_INIT 提议，根据对端响应中的 Transform 字段判断可协商算法。
+    IKEv2 是 IPsec VPN 用于协商安全关联、加密算法和密钥交换参数的协议。该模板向 UDP 500 发送多组 IKE_SA_INIT 提议，依据对端 accepted、NO_PROPOSAL_CHOSEN、INVALID_KE_PAYLOAD 等响应判断目标支持的加密、完整性和密钥交换转换套件。
   impact: |
     - 攻击者可获知 VPN 网关支持的加密、完整性和密钥交换套件，用于评估弱算法暴露面。
     - 若仍支持 3DES、弱 DH 组或过时组合，可能增加降级攻击和离线密码攻击的可行性。

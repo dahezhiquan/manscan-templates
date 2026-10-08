@@ -5,7 +5,7 @@ info:
   author: pussycat0x,daffainfo
   severity: low
   description: |
-    该模板枚举 POP3 服务支持的 CAPA 能力与实现信息。模板连接 POP3 端口发送 CAPA 命令，并根据 +OK 响应、能力关键字与提取结果确认服务特征。
+    POP3 是邮件客户端拉取邮箱邮件的协议，CAPA 命令会返回服务端支持的能力、认证机制和 TLS 相关特性。该模板连接 POP3 端口发送 CAPA 命令，并根据 +OK 响应、能力关键字与提取结果确认服务能力暴露。
   impact: |
     - POP3 能力枚举会暴露认证机制、TLS 支持和邮件服务实现特征。
     - 攻击者可据此判断是否存在明文认证、弱认证方式或过时服务端版本。

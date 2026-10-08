@@ -5,7 +5,7 @@ info:
   author: Ice3man543,tarunKoyalwar
   severity: info
   description: |
-    该模板通过 Microsoft SQL Server 协议握手识别目标是否提供数据库服务。模板使用 MSSQL 客户端连接目标 TCP 1433 端口，并在协议识别与连接状态均成功时确认服务存在；该结果仅用于资产指纹识别。
+    Microsoft SQL Server 是微软提供的关系型数据库管理系统，常用于企业业务系统、报表、数据仓库和 Windows 生态应用的数据存储。该模板使用 nuclei 的 MSSQL 客户端向 TCP 1433 端口发起协议握手，并在 `IsMssql` 判断和连接状态均成功时确认目标提供 SQL Server 服务；命中仅用于数据库资产指纹识别。
   metadata:
     max-request: 1
     shodan-query: port:1433

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放 Echo 回显协议服务。模板发送固定探测数据并要求响应原样回显，从而确认该历史调试协议暴露。
+    Echo 是早期 Internet 调试协议，服务端会将客户端发送的数据原样返回，通常用于连通性测试，现代生产环境中较少需要对外开放。该模板向 UDP 7 端口发送随机字符串，并要求响应中包含同一随机值，从而确认目标是否开放 Echo 回显协议。
   reference:
     - https://en.wikipedia.org/wiki/Echo_Protocol
   metadata:

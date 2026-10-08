@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否运行 IKEv2/IPsec VPN 服务。模板发送 IKE_SA_INIT 探测报文，并根据 IKEv2 响应头、交换类型和通知载荷确认 UDP 500 上的 VPN 协议暴露。
+    IKEv2 是 IPsec VPN 用于协商安全关联、密钥交换和加密参数的协议，常运行在 UDP 500 端口，广泛用于站点到站点 VPN 和远程接入 VPN。该模板发送预构造的 IKE_SA_INIT 探测报文，并解析响应中的 IKE 版本、交换类型、Responder SPI、首个载荷和 Notify 信息；当解析结果显示 IKE 主版本为 2 时确认 IKEv2/IPsec 服务指纹。
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296
     - https://www.iana.org/assignments/ikev2-parameters

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否运行 NTP 服务并提取版本特征。模板发送 NTP 查询报文，根据响应中的时间同步协议字段和版本正则确认服务指纹。
+    NTP 是网络时间同步协议，用于让服务器、网络设备和终端保持统一时间，常见于基础设施和安全日志依赖场景。该模板向 UDP 123 端口发送 NTP 控制查询报文，并要求响应中同时包含 `version`、`processor`、`system` 等变量，再提取 `version="..."` 字段作为 NTP 服务版本指纹。
   metadata:
     verified: true
     shodan-query: "NTP"

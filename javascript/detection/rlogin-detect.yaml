@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放已过时的 rlogin 远程登录服务。模板按 rlogin 协议发送登录探测并检查响应特征，用于发现明文遗留远程访问入口。
+    rlogin 是早期 Unix 远程登录协议，用于在主机之间建立交互式终端会话，通信缺少现代加密保护，现多见于遗留系统。该模板向 TCP 513 端口发送 rlogin 协议起始空字节，并在响应中包含 `rlogin` 特征时确认该远程登录服务暴露。
   reference:
     - https://www.ibm.com/docs/en/aix/7.1.0?topic=r-rlogin-command
   metadata:

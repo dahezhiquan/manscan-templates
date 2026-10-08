@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别 Oracle TNS Listener 是否对外开放并尝试提取 VSNNUM 等版本信息。模板发送 TNS 连接请求，根据监听器返回内容中的版本字段确认数据库入口暴露情况。
+    Oracle TNS Listener 是 Oracle Database 的网络监听组件，负责接收客户端连接并将其路由到对应数据库实例或服务。该模板调用 Oracle 协议探测 TCP 1521 端口，并从监听器响应中提取 `Oracle TNS Listener Version` 等版本字段，用于确认 TNS Listener 服务指纹和可见版本信息。
   reference:
     - https://www.tenable.com/plugins/nessus/110053
   metadata:

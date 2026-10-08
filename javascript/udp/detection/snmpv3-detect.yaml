@@ -5,7 +5,7 @@ info:
   author: matejsmycka
   severity: info
   description: |
-    该模板通过 SNMPv3 探测识别目标设备并提取 EngineID 等基础指纹信息。模板发送 SNMPv3 请求并根据响应结构、企业编号和引擎标识确认 SNMP 服务存在。
+    SNMPv3 是网络设备、服务器和安全设备常用的管理协议版本，支持基于 EngineID 的实体标识以及认证、加密等安全模型。该模板发送 SNMPv3 发现式请求，并依据响应结构、EngineID 和企业编号前缀识别 SNMPv3 服务及可能的设备厂商指纹。
   reference:
     - https://support.huawei.com/enterprise/en/doc/EDOC1100174721/46bd64e2/snmpv3
     - https://pure.tudelft.nl/ws/portalfiles/portal/103172599/3487552.3487848.pdf

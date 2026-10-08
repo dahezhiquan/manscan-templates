@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别 Microsoft SQL Server Browser 服务并提取实例信息。模板向 UDP 1434 发送 Browser 探测，根据返回的 ServerName、InstanceName、Version 等字段确认 SQL Server 实例暴露。
+    SQL Server Browser 是 Microsoft SQL Server 的实例发现服务，用于帮助客户端定位命名实例、动态端口和数据库服务端点。该模板向 UDP 1434 发送 Browser 单播查询，并根据返回的 ServerName、InstanceName、Version 等字段确认 SQL Server Browser 服务指纹。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://learn.microsoft.com/en-us/sql/tools/configuration-manager/sql-server-browser-service

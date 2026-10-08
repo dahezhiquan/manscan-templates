@@ -5,7 +5,7 @@ info:
   author: pussycat0x,matejsmycka
   severity: info
   description: |
-    该模板识别目标是否开放 TFTP 服务。模板发送 TFTP 读请求探测，并根据协议错误或数据响应确认 UDP 69 上的文件传输服务暴露。
+    TFTP 是一种基于 UDP 的简单文件传输协议，常用于网络设备配置备份、PXE/引导文件分发和嵌入式设备固件获取场景，协议本身不提供身份认证能力。该模板向 UDP 69 发送简短探测数据，并通过 TFTP 协议错误字符串确认服务指纹。
   metadata:
     verified: true
     max-request: 1

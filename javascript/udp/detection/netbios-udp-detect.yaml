@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别 UDP 137 上的 NetBIOS 名称服务并枚举主机名称表。模板发送 NBTStat 查询，根据 NetBIOS 响应结构提取名称与工作组信息，用于 Windows/SMB 资产指纹识别。
+    NetBIOS Name Service 是 Windows/SMB 网络中的名称注册和解析机制，通常运行在 UDP 137，用于维护主机名、工作组和相关 NetBIOS 名称记录。该模板发送 NBSTAT 通配查询，并根据返回的名称服务响应确认 NetBIOS 服务指纹及主机名称表信息。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc1002

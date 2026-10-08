@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放 UDP Daytime 服务。模板按 RFC 867 约定发送 UDP 探测并检查返回的时间字符串格式，用于发现历史时间服务暴露。
+    Daytime 是 RFC 867 定义的早期时间查询协议，服务端通常在 UDP 13 端口返回当前日期和时间字符串，常见于历史系统、连通性测试或遗留网络调试场景。该模板向 UDP 13 发送简单探测数据，并通过响应长度和时间格式正则确认 Daytime 服务指纹。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc867

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否通过 Zeroconf/mDNS 通告本地服务。模板查询 _services._dns-sd._udp.local，并根据 mDNS 响应确认服务发现信息对外可见。
+    Zeroconf 通常结合 mDNS 和 DNS-SD 实现本地网络零配置发现，用于自动发现打印机、媒体投放、文件共享、IoT 设备和其他局域网服务。该模板向 UDP 5353 查询 _services._dns-sd._udp.local，并根据 mDNS/DNS-SD 响应内容确认 Zeroconf 服务发现指纹。
   reference:
     - https://en.wikipedia.org/wiki/Zero-configuration_networking
   metadata:

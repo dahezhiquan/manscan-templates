@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别 UDP 111 上的 RPC Portmapper/rpcbind 服务并枚举注册程序。模板发送 RPC dump 探测，根据返回的程序号、版本和端口信息确认 RPC/NFS 相关服务暴露。
+    RPC Portmapper/rpcbind 是 ONC RPC 的绑定服务，通常运行在 UDP 111，用于将 RPC 程序号和版本映射到实际传输端点，常见于 NFS、mountd 等 Unix/Linux 网络服务环境。该模板发送两类 RPC 探测数据，并根据有效响应确认 UDP Portmapper/rpcbind 服务指纹。
   reference:
     - https://github.com/CiscoCXSecurity/udp-proto-scanner
     - https://www.rfc-editor.org/rfc/rfc1833

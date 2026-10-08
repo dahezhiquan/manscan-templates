@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放 Remote Desktop Protocol（RDP）服务。模板发起 RDP 协商探测，并根据协议协商响应确认远程桌面入口存在。
+    RDP 是 Microsoft 远程桌面协议，用于图形化远程登录 Windows 主机，也被部分网关、虚拟化和堡垒机场景复用。该模板调用 nuclei 的 RDP 协议客户端向 TCP 3389 端口发起协商探测，并在返回结果中出现 `"IsRDP": true` 时确认远程桌面服务指纹。
   metadata:
     verified: true
     max-request: 1

@@ -1,17 +1,19 @@
 id: ntp-enum-variables-enabled
 
 info:
-  name: NTP 变量枚举已启用（服务漏洞）
+  name: NTP 控制变量枚举暴露（服务漏洞）
   author: matejsmycka
   severity: medium
   description: |
-    目标 NTP 服务允许通过控制查询枚举变量信息，可能泄露系统名称、版本、同步源和运行状态。模板发送 NTP control query，并在返回变量内容时确认该枚举功能暴露。
+    NTP 用于为服务器、网络设备和业务系统提供时间同步。若 NTP 控制查询对非可信来源开放，攻击者可能枚举 version、system、processor 等变量，获取实现版本、平台和运行状态；该模板发送 NTP control query，并在返回变量内容时确认枚举能力暴露。
   impact: |
-    - NTP 变量枚举会泄露系统名称、版本、同步源和运行状态等信息。
-    - 攻击者可利用这些细节进行资产画像、时间同步依赖分析或针对过时 NTP 实现的后续攻击。
+    - 泄露 NTP 实现版本、系统类型、处理器信息、同步状态和时间源等运行细节。
+    - 帮助攻击者识别过时 NTP 实现、时间同步依赖和关键基础设施节点。
+    - 在弱访问控制环境中，枚举结果可能辅助后续拒绝服务、配置错误或历史漏洞验证。
   remediation: |
-    - 禁用不必要的 NTP control query/monlist 类枚举能力，限制查询来源。
-    - 更新 NTP 服务到受支持版本，并仅允许可信客户端进行管理查询。
+    - 禁用不必要的 NTP control query、monlist 或类似管理枚举能力。
+    - 使用防火墙、ACL 或 NTP 配置仅允许可信管理源发起控制查询，普通客户端只保留必要的时间同步访问。
+    - 将 NTP 服务更新到受支持版本，并审计是否存在对公网或不可信网段开放的 UDP 123 管理响应。
   metadata:
     verified: true
     shodan-query: "system: port:123"

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否运行 Samba 文件共享服务。模板通过 SMB/NetBIOS 协议请求读取服务响应特征，并提取其中的 Samba 标识用于资产指纹确认。
+    Samba 是在类 Unix 系统上实现 SMB/CIFS 文件共享与域集成功能的软件，常用于 Linux 文件服务器、NAS 或混合 Windows 域环境。该模板通过 SMB 信息模式连接 TCP 445 端口，检查 SMBv1 协议支持情况与 NTLM/版本响应，并在响应为空或包含 Samba 标识时确认 Samba 服务指纹。
   metadata:
     max-request: 1
     shodan-query: "port:445"

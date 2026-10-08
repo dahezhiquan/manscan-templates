@@ -1,17 +1,19 @@
 id: snmpv1-community-detect-string
 
 info:
-  name: SNMPv1 public 团体字串检测（服务漏洞）
+  name: SNMPv1 默认 public 团体字串（服务漏洞）
   author: matejsmycka
   severity: high
   description: |
-    目标 SNMPv1 服务仍使用默认 public 团体字串，远程攻击者可能未授权读取设备配置与运行状态。模板使用内置 community 字典发送 SNMPv1 查询，并以有效响应作为命中依据。
+    SNMPv1 使用明文 community 作为访问控制凭据，默认 public 团体字串通常代表只读访问。若网络设备或服务器仍接受 public 查询，远程攻击者可能未授权读取系统名称、接口、路由和运行状态等 OID 信息；该模板使用 public community 发送 SNMPv1 sysName.0 查询，并以有效响应作为命中依据。
   impact: |
-    - 默认 public 团体字串可让攻击者未授权读取 SNMP 对象，获取设备配置、接口、路由和系统信息。
-    - 对部分设备而言，弱 SNMP 配置还可能辅助网络拓扑绘制、凭据收集或配置篡改链路。
+    - 攻击者可未授权读取 SNMP 对象，获取设备名称、接口、路由、服务状态和部分配置线索。
+    - 枚举结果可用于绘制网络拓扑、识别关键设备、定位管理地址并辅助横向移动。
+    - 在同时存在可写 community、ACL 缺失或旧固件漏洞时，弱 SNMP 配置可能进一步放大配置篡改或业务中断风险。
   remediation: |
-    - 禁用 SNMPv1/v2c 或更改默认 public 团体字串，优先使用 SNMPv3 认证与加密。
-    - 通过 ACL 限制 SNMP 查询来源，按最小权限暴露 OID，并审计异常轮询。
+    - 禁用 SNMPv1/v2c 或立即移除默认 public 团体字串，优先使用带认证和加密的 SNMPv3。
+    - 为必须保留的 SNMP 服务配置强 community、只读最小权限和来源 ACL，仅允许可信监控系统访问。
+    - 轮换可能泄露的 community，审计异常 SNMP 轮询，并关闭不需要暴露的 OID 视图。
   reference:
     - https://hackers-arise.com/exploiting-snmpv1-for-reconnaissance/
     - https://hacktricks.boitatech.com.br/pentesting/pentesting-snmp

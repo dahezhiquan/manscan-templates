@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放 Oracle 数据库监听入口。模板向 TCP 1521 发起 Oracle 协议连接探测，并以协议握手成功作为数据库服务存在的证据。
+    Oracle Database 是企业级关系型数据库系统，常承载 ERP、核心交易、数据仓库等关键业务数据。该模板调用 nuclei 的 Oracle 协议客户端向 TCP 1521 端口发起连接探测，并在返回结果中出现 `"IsOracle": true` 时确认目标开放 Oracle 数据库服务入口。
   metadata:
     verified: true
     max-request: 1

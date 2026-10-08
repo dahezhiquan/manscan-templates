@@ -38,3 +38,4 @@ files:
   - http/vulnerabilities/wp-functions-php-disclosure.yaml
   - dns/acme-challenge-detect.yaml
   - aaaa-fingerprint.yaml
+  - workflows/

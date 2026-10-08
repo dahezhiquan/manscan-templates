@@ -1,17 +1,19 @@
 id: mdns-ptzoptics-detect
 
 info:
-  name: 通过 mDNS 识别 PTZOptics 设备（服务漏洞）
+  name: PTZOptics 设备 mDNS 信息暴露（服务漏洞）
   author: rxerium
   severity: medium
   description: |
-    该模板通过 mDNS 广播特征识别 PTZOptics 摄像设备及其开放服务。模板查询 mDNS 记录并匹配 PTZOptics 标识，同时提取设备名、服务项和地址信息。
+    PTZOptics 设备通常是用于会议、直播、教育录播和广播制作的网络云台摄像机。若设备通过 mDNS 对非预期来源通告 NDI、SSH 或 SFTP-SSH 等服务信息，攻击者可定位摄像设备和管理入口；该模板查询 mDNS 服务记录，匹配 _ndi 与 _ssh 特征并提取设备名、服务项和地址信息。
   impact: |
-    - 暴露的 PTZOptics mDNS 广播会泄露摄像设备名称、服务和地址信息。
-    - 攻击者可利用这些信息定位音视频设备、识别管理接口并开展后续弱口令或固件漏洞验证。
+    - 泄露 PTZOptics 摄像设备名称、服务类型和地址信息，暴露音视频设备部署位置。
+    - 暴露的 SSH、SFTP-SSH 或 NDI 服务线索可帮助攻击者识别管理面和媒体传输面。
+    - 攻击者可据此开展默认口令、弱口令、固件版本或设备隔离缺陷的后续验证。
   remediation: |
-    - 将 PTZOptics 设备放入受控管理 VLAN，限制 UDP 5353 和管理接口访问来源。
-    - 更新设备固件，关闭不必要的服务广播，并更改默认管理凭据。
+    - 将 PTZOptics 设备放入受控的音视频或管理 VLAN，限制 UDP 5353、SSH、SFTP 和管理接口访问来源。
+    - 关闭不必要的 mDNS/NDI/SSH 广播或服务，避免跨网段转发设备发现记录。
+    - 更新设备固件并更改默认管理凭据，定期审计摄像设备暴露面。
   metadata:
     verified: true
     max-request: 1

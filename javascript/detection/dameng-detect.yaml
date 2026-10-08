@@ -5,10 +5,12 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板识别目标是否开放达梦数据库原生协议服务。模板发送达梦连接探测报文，并根据响应长度、协议字段及版本提取结果确认 DM/DM7/DM8 数据库指纹。
+    达梦数据库是国产关系型数据库管理系统，常用于政企核心业务、事务处理和数据存储场景。该模板向 TCP 5236 端口发送达梦数据库原生协议连接探测报文，并从响应中的空字节分隔内容和 `x.x.x.x` 版本格式提取结果，用于确认 DM/DM7/DM8 数据库服务指纹。
   metadata:
     verified: true
     max-request: 1
+    vendor: dameng
+    product: dameng_database
     fofa-query: protocol="dameng"
   tags: network,dameng,detect,protocol
 

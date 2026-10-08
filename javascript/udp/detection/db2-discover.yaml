@@ -1,11 +1,11 @@
 id: db2-discover
 
 info:
-  name: 广播 DB2 发现（指纹识别）
+  name: IBM Db2 发现服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 UDP 广播发现网络中暴露的 IBM DB2 服务节点。模板发送 DB2 discovery 探测并解析响应中的版本与主机名信息，用于识别数据库资产。
+    IBM Db2 是 IBM 提供的企业级关系型数据库，常用于业务数据存储、事务处理和数据分析场景。Db2 discovery 服务可通过 UDP 523 响应发现请求并返回数据库实例相关信息；该模板发送 DB2GETADDR 探测，依据 DB2RETADDRSQL 响应并解析版本号、主机名来识别 Db2 资产。
   reference:
     - https://nmap.org/nsedoc/scripts/broadcast-db2-discover.html
   metadata:

@@ -1,17 +1,25 @@
 id: fortinet-fgfm-detect
 
 info:
-  name: Fortinet FGFM protocol 识别（服务漏洞）
+  name: Fortinet FGFM 协议识别（服务漏洞）
   author: johnk3r
   severity: low
   description: |
-    该模板通过网络响应特征识别目标是否开放 Fortinet FGFM protocol 相关服务。
+    该模板用于识别目标是否开放 Fortinet FGFM（FortiGate to FortiManager）管理协议。模板向 541/TCP 发送轻量探测数据，并在响应证书或握手内容中同时匹配 `.fortinet.com` 与 `Certificate Authority`，用于确认 Fortinet 设备管理通道暴露。
+  impact: |
+    - FGFM 是 Fortinet 设备与 FortiManager 之间的管理通信通道，对不可信网络开放会暴露设备管理面和证书指纹。
+    - 该结果可帮助攻击者定位 Fortinet 管理链路，并结合具体产品版本继续验证认证绕过、远程代码执行或配置泄露类漏洞。
+  remediation: |
+    - 按 Fortinet 加固文档限制 FGFM 端口仅允许受信任 FortiGate/FortiManager 管理地址访问。
+    - 若不需要集中管理通信，关闭相关管理服务或在边界防火墙阻断 541/TCP。
+    - 保持 FortiOS、FortiManager 等组件更新，并审计异常设备注册或管理通道访问记录。
   reference:
     - https://docs.fortinet.com/document/fortigate/6.4.0/hardening-your-fortigate/529217/fortios-ports-and-protocols
   metadata:
     verified: true
     max-request: 1
     shodan-query: 'port:541 xab'
+    vendor: fortinet
   tags: network,tcp,fortinet,fortigate,fortimanager,discovery
 
 tcp:

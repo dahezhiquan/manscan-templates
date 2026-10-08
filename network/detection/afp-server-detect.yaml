@@ -4,6 +4,14 @@ info:
   name: AFP 服务识别（服务漏洞）
   author: pussycat0x
   severity: low
+  description: |
+    该模板用于识别目标是否开放 Apple Filing Protocol（AFP）文件共享服务。模板向 548/TCP 发送 AFP 服务信息探测报文，并在响应中同时匹配 `AFP` 与 `DHCAST` 特征，以确认目标支持 AFP 协议协商或认证能力。
+  impact: |
+    - AFP 服务对外暴露可能泄露文件共享入口、认证机制和服务指纹，为后续弱口令、匿名访问或版本漏洞验证提供依据。
+    - 若该服务本应仅在内网使用，公网可达会扩大文件服务攻击面，增加未授权访问和数据泄露风险。
+  remediation: |
+    - 确认 AFP 是否仍为业务必需；如无必要，关闭 548/TCP 或迁移到受控的文件共享方案。
+    - 仅允许可信网段访问 AFP 服务，并启用强认证、最小共享权限和访问审计。
   reference:
     - https://nmap.org/nsedoc/scripts/afp-serverinfo.html
   metadata:

@@ -1,11 +1,18 @@
 id: msmq-detect
 
 info:
-  name: MSMQ (Microsoft Message Queuing 服务) Remote 识别（指纹识别）
+  name: MSMQ（Microsoft Message Queuing）远程服务识别（指纹识别）
   author: bhutch
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MSMQ (Microsoft Message Queuing Service) Remote 相关服务。
+    该模板用于识别目标是否开放 Microsoft Message Queuing（MSMQ）远程服务。模板向 1801/TCP 发送 MS-MQQB 连接探测报文，并匹配符合 MSMQ 协议的十六进制响应头，确认目标可处理远程队列通信。
+  impact: |
+    - MSMQ 对外开放会暴露 Windows 消息队列服务入口，攻击者可据此定位启用 MSMQ 的主机并继续评估队列访问控制和补丁状态。
+    - Shadowserver 与 Microsoft 资料均指出，可公网访问的 MSMQ 服务需要重点关注，其中历史漏洞如 CVE-2023-21554 曾影响未授权远程代码执行风险。
+  remediation: |
+    - 若业务不需要 MSMQ，禁用 Microsoft Message Queuing 功能或关闭 1801/TCP 暴露。
+    - 仅允许可信应用服务器访问 MSMQ 端口，并通过 Windows 防火墙、网络 ACL 或分段策略限制来源。
+    - 按 Microsoft 安全更新要求保持 Windows 补丁完整，并审计异常队列连接和消息投递行为。
   reference:
     - https://www.shadowserver.org/what-we-do/network-reporting/accessible-msmq-service-report/
     - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-mqqb/f9bbe350-d70b-4e90-b9c7-d39328653166
@@ -16,6 +23,8 @@ info:
     max-request: 1
     shodan-query: MSMQ
     censys-query: services.service_name:MSMQ
+    vendor: microsoft
+    product: message_queuing
   tags: network,msmq,detect,tcp,discovery
 tcp:
   - inputs:

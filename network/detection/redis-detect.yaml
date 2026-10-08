@@ -5,26 +5,16 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Redis Service 相关服务。
+    该模板用于识别目标是否开放 Redis 服务。模板向 6379/6380 端口发送 `INFO` 请求，并通过 `DENIED Redis`、`CONFIG REWRITE` 或 `NOAUTH Authentication` 等 Redis 原生错误/认证响应确认服务存在，避免依赖 Web 页面特征造成误判。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
-    shodan-query:
-      - product:"redis"
-      - http.title:"airflow - dags" || http.html:"apache airflow"
-      - http.title:"sign in - airflow"
-    product: airflow
-    vendor: apache
-    fofa-query:
-      - apache airflow
-      - title="airflow - dags" || http.html:"apache airflow"
-      - title="sign in - airflow"
-    google-query:
-      - intitle:"airflow - dags" || http.html:"apache airflow"
-      - intitle:"sign in - airflow"
+    shodan-query: product:"redis"
+    product: redis
+    vendor: redis
   tags: network,redis,detect,tcp,discovery
 tcp:
   - inputs:

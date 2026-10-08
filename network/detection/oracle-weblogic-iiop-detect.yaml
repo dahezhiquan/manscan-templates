@@ -1,13 +1,15 @@
 id: oracle-weblogic-iiop-detect
 
 info:
-  name: Weblogic IIOP 协议识别（指纹识别）
+  name: Oracle WebLogic IIOP 协议识别（指纹识别）
   author: F1tz
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Weblogic IIOP Protocol 相关服务。
+    该模板用于识别目标是否开放 Oracle WebLogic IIOP/GIOP 协议。模板发送 GIOP NameService 探测报文，并在响应中同时匹配 `GIOP` 与 `weblogic`，用于确认 WebLogic IIOP 通道可达。
   metadata:
     max-request: 1
+    vendor: oracle
+    product: weblogic_server
   tags: network,weblogic,detect,oracle,iiop,tcp,discovery
 tcp:
   - inputs:

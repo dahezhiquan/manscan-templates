@@ -1,11 +1,18 @@
 id: nfs-v3-exposed
 
 info:
-  name: NFSv3 暴露d 识别（指纹识别）
+  name: NFSv3 暴露识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 NFSv3 Exposed 相关服务。
+    该模板用于识别目标是否对外开放 NFSv3 服务。模板向 2049/TCP 发送 RPC NULL 调用，请求程序号 100003、版本 3，并在响应中匹配相同 XID 与 `MSG_ACCEPTED/SUCCESS` 特征，同时排除 HTTP 响应，以确认目标可处理 NFSv3 RPC 请求。
+  impact: |
+    - NFSv3 服务暴露会泄露文件共享攻击面，若导出策略、源地址限制或权限映射配置不当，可能导致目录枚举、文件读取或写入。
+    - 攻击者可据此继续枚举 mountd/rpcbind 信息、导出路径和访问权限，扩大到数据泄露或横向移动风险。
+  remediation: |
+    - 将 NFS 仅暴露给可信内网主机，并通过防火墙限制 2049/TCP 以及相关 RPC 服务端口。
+    - 检查 `/etc/exports` 或等效配置，避免对不可信网段开放读写、匿名映射不当或过宽的导出目录。
+    - 优先使用更严格的认证、最小权限导出和日志审计，并及时修补 NFS 服务端组件。
   reference:
     - https://medium.com/@zoomeye_team/threat-intell-report-nfs-exposed-the-silent-attack-vector-8aa4ea0cbce1
   metadata:

@@ -5,7 +5,14 @@ info:
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Java Debug Wire Protocol 相关服务。
+    该模板用于识别目标是否开放 Java Debug Wire Protocol（JDWP）调试接口。模板先发送 `JDWP-Handshake`，再请求 `VirtualMachine.Version`，并在响应中匹配 `JVM version` 与 `VM`，用于确认远程 JVM 调试通道可达。
+  impact: |
+    - JDWP 调试端口通常不应暴露在生产或不可信网络中；若未配置额外访问控制，攻击者可能读取运行时信息并进一步操控 JVM。
+    - 公开 JDWP 接口可被用于执行调试命令、加载类或触发应用级代码执行，进而影响主机和业务系统安全。
+  remediation: |
+    - 关闭生产环境中的 JDWP 调试参数，或仅在临时排障期间启用。
+    - 如确需远程调试，应绑定到本地/专用管理网段，并通过防火墙、VPN 或堡垒机限制访问来源。
+    - 排查是否存在异常调试连接，并在关闭暴露端口后重启相关 Java 进程使配置生效。
   reference:
     - https://www.wiz.io/blog/exposed-jdwp-exploited-in-the-wild
   metadata:

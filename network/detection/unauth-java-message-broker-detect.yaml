@@ -1,11 +1,18 @@
 id: unauth-java-message-broker-detect
 
 info:
-  name: Unauthenticated Java Message Broker 识别（服务漏洞）
+  name: 未认证 Java Message Broker 识别（服务漏洞）
   author: matejsmycka
   severity: low
   description: |
-    该模板通过网络响应特征识别目标是否开放 Unauthenticated Java Message Broker 相关服务。
+    该模板用于识别无需认证即可响应的 Java Message Broker/Open Message Queue 服务。模板向 7676/TCP 发送换行探测，并同时匹配 `101 imqbroker` 与 `cluster_discovery`，可进一步提取 `imqbroker` 版本号。
+  impact: |
+    - 未认证暴露的消息代理可能泄露集群发现信息、产品版本和服务拓扑，为后续弱配置或已知漏洞验证提供依据。
+    - 如果队列或管理接口同样缺乏访问控制，攻击者可能进一步影响消息投递、消费链路或依赖该中间件的业务流程。
+  remediation: |
+    - 限制 7676/TCP 仅对可信应用节点开放，避免将消息代理直接暴露到公网或办公网。
+    - 启用认证和授权策略，最小化客户端可访问的队列、主题和集群管理能力。
+    - 升级 Open Message Queue/Java Message Service 相关组件，并审计异常连接和集群发现请求。
   metadata:
     verified: true
     shodan-query: product:"Java Message Service"

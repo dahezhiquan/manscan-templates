@@ -6,6 +6,13 @@ info:
   severity: high
   description: |
     检测到 STEM Audio Table 设备中暴露的私钥内容。此类密钥泄露可能被用于伪造通信、解密敏感数据或进一步攻击音频会议设备。
+  impact: |
+    - 私钥泄露可能导致设备通信被伪造、敏感数据被解密或设备身份被冒用。
+    - 会议音频设备被进一步攻击后，可能影响会议隐私和企业协作环境安全。
+  remediation: |
+    - 升级 STEM Audio Table 固件，移除 Web 可访问路径中的私钥文件。
+    - 立即轮换泄露的密钥和相关证书，避免继续使用已暴露材料。
+    - 限制设备管理页面访问来源，并检查是否存在异常配置或未知连接。
   reference:
     - https://blog.grimm-co.com/2021/06/the-walls-have-ears.html
   metadata:

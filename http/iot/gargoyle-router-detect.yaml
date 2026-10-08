@@ -4,8 +4,8 @@ info:
   name: Gargoyle 路由器管理工具检测（指纹识别）
   author: K3ysTr0K3R
   severity: info
-  description: |-
-    检测到 Gargoyle 路由器管理界面。
+  description: |
+    Gargoyle 是基于 OpenWrt 的路由器 Web 管理固件，用于网络配置、带宽管理和访问控制。该模板请求站点首页，并通过页面标题 `Gargoyle Router Management Utility` 与 `gargoyle` 关键字识别目标是否运行 Gargoyle 管理界面。
   reference:
     - https://www.gargoyle-router.com/
   metadata:

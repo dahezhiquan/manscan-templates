@@ -4,6 +4,15 @@ info:
   name: XML Schema 检测
   author: alph4byt3
   severity: low
+  description: |
+    检测目标是否暴露 XML Schema 相关页面或文件。命中结果可能泄露接口数据结构、对象字段和 XML 服务约束信息。
+  impact: |
+    - 暴露的配置、清单、变更日志或模式文件可能泄露版本、路径、组件和安全控制细节。
+    - 攻击者可利用这些线索匹配已知漏洞、定位隐藏目录或规划后续攻击。
+  remediation: |
+    - 禁止外部直接访问配置、清单、变更日志、Schema 和安装样例文件。
+    - 将敏感文件移出 Web 根目录，并在 Web 服务器层增加拒绝规则。
+    - 审查暴露内容是否包含凭据、内部路径或版本线索，并及时升级相关组件。
   metadata:
     max-request: 1
   tags: miscellaneous,misc,generic,vuln

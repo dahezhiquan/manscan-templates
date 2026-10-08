@@ -6,8 +6,13 @@ info:
   severity: low
   description: |
     Cloudflare 的 Transform via URL 功能在配置不当时可能允许攻击者通过构造 URL 向访问者展示任意图片内容。该行为可被用于钓鱼、页面篡改或品牌冒充等攻击场景。
+  impact: |
+    - 被篡改页面可能传播垃圾内容、恶意链接或黑客署名，影响用户安全和站点声誉。
+    - 篡改迹象通常意味着攻击者已经具备写入页面或修改内容的能力。
   remediation: |
-    在 Cloudflare 控制台中禁用 Images > Transformations > Resize from any origin 设置，并限制允许转换图片的可信来源。
+    - 从可信备份恢复内容，并清理恶意页面、隐藏链接和可疑重定向。
+    - 排查 CMS、插件、账号、文件权限和部署流程中的入侵入口。
+    - 增加文件完整性监控和发布审计，修复后轮换相关凭据。
   reference:
     - https://developers.cloudflare.com/images/transform-images/transform-via-url/
   metadata:

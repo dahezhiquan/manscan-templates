@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: info
   description: |
-    检测到 NETSurveillance Web 面板。该页面通常与网络摄像机或录像设备相关，暴露后可能泄露视频监控系统入口。
+    NETSurveillance Web 面板常见于网络摄像机、DVR/NVR 和视频监控设备，用于查看视频流和管理设备。该模板依据页面特征识别目标是否暴露 NETSurveillance Web 入口。
   reference:
     - https://www.exploit-db.com/ghdb/7288
   classification:

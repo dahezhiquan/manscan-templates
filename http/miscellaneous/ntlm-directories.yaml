@@ -4,6 +4,15 @@ info:
   name: NTLM 认证目录发现
   author: puzzlepeaches,incogbyte,missing0x00,incogbyte
   severity: medium
+  description: |
+    检测常见路径是否触发 NTLM 认证挑战。模板向候选目录发送 NTLM 协商请求，并通过 `WWW-Authenticate: NTLM` 与 401 响应识别受保护的 Windows/内部认证目录。
+  impact: |
+    - NTLM 认证挑战会泄露内部 Windows 认证边界和受保护目录位置。
+    - 在错误配置场景下，可能诱导客户端发起 NTLM 认证并增加凭据中继或哈希捕获风险。
+  remediation: |
+    - 确认这些目录是否需要对当前网络开放，并限制到内网或 VPN。
+    - 优先使用 Kerberos 或现代认证方式，减少 NTLM 暴露面。
+    - 对触发 NTLM 的路径启用访问审计和异常认证告警。
   reference:
     - https://medium.com/swlh/internal-information-disclosure-using-hidden-ntlm-authentication-18de17675666
   metadata:

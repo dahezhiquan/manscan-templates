@@ -4,8 +4,8 @@ info:
   name: OpenRemote 物联网平台检测（指纹识别）
   author: pussycat0x
   severity: info
-  description: |-
-    通过检查登录页面标题、API 端点以及特定的 OpenRemote UI 特征，检测暴露的 OpenRemote 物联网平台实例。OpenRemote 是一个开源物联网平台，其认证系统基于 Keycloak 构建。
+  description: |
+    OpenRemote 是开源物联网平台，用于设备接入、资产管理、规则编排和可视化控制，其认证体系通常基于 Keycloak。该模板检查登录页面标题、API 端点和 OpenRemote UI 特征，用于识别暴露的 OpenRemote 平台实例。
   reference:
     - https://github.com/openremote/openremote
     - https://openremote.io

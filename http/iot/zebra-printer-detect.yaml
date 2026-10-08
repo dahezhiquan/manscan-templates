@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测到 Zebra 打印机面板。该模板通过 Zebra Technologies 页面特征识别条码、标签或工业打印设备的 Web 管理入口。
+  impact: |
+    - 打印机 Web 面板暴露可能泄露设备型号、网络配置、耗材状态和打印服务入口。
+    - 在配置不当时，攻击者可能滥用打印服务、修改设备设置或获取作业信息。
+  remediation: |
+    - 限制打印机 Web 管理页面仅办公内网或管理网段访问。
+    - 启用管理员认证，修改默认口令并升级打印机固件。
+    - 关闭不必要的远程管理、匿名访问和未使用的打印协议。
   reference:
     - https://www.zebra.com/kr/ko/products/printers.html
   classification:

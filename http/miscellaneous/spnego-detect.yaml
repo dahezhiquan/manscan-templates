@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测目标是否启用 SPNEGO (Simple and Protected GSSAPI Negotiation Mechanism)。该机制基于 GSSAPI，常用于 Windows/Kerberos 环境中的 HTTP 单点登录协商认证。
+  impact: |
+    - 暴露的 HTTP 方法、认证协商或代理相关头会帮助攻击者理解服务端能力和认证边界。
+    - 在错误配置或旧客户端场景下，可能辅助信息泄露、凭据中继、跨站追踪或调试接口滥用。
+  remediation: |
+    - 仅启用业务必需的 HTTP 方法和认证机制，关闭 TRACE 等不必要能力。
+    - 限制受保护目录和管理入口访问来源，并统一返回最小化错误信息。
+    - 对异常方法请求、认证挑战和代理链行为增加日志审计。
   reference:
     - https://www.ibm.com/docs/en/was-liberty/core?topic=authentication-single-sign-http-requests-using-spnego-web
     - https://arstechnica.com/information-technology/2022/12/critical-windows-code-execution-vulnerability-went-undetected-until-now/

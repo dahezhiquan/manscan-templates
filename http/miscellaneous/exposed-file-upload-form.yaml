@@ -4,6 +4,15 @@ info:
   name: 文件上传表单暴露检测
   author: geeknik
   severity: medium
+  description: |
+    检测页面中是否暴露文件上传表单。模板通过 HTML 表单、`input type="file"` 和上传相关字段识别可能可访问的文件上传入口。
+  impact: |
+    - 暴露的上传入口可能被用于上传恶意文件、消耗存储资源或探测文件处理缺陷。
+    - 如果缺少鉴权和文件校验，可能进一步导致 WebShell、存储型 XSS 或恶意内容托管。
+  remediation: |
+    - 确认上传表单是否业务必需，并强制认证、授权和 CSRF 防护。
+    - 对上传文件进行扩展名、MIME、内容和大小校验，上传目录禁止脚本执行。
+    - 记录上传审计日志，并定期清理异常文件。
   classification:
     cpe: cpe:2.3:a:creativedream_file_uploader_project:creativedream_file_uploader:*:*:*:*:*:*:*:*
   metadata:

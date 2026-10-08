@@ -6,6 +6,13 @@ info:
   severity: high
   description: |
     检测到 Hikvision IP 摄像机敏感端点未授权暴露。模板会验证快照、加密配置文件及用户凭据 XML 等接口特征，可与 CVE-2021-36260 相关利用链或绕过逻辑结合导致敏感信息泄露。
+  impact: |
+    - 攻击者可获取摄像机用户、配置或视频相关敏感信息，辅助后续认证绕过或设备接管。
+    - 监控设备信息泄露可能暴露现场环境、设备型号和安防网络结构。
+  remediation: |
+    - 升级 Hikvision 摄像机固件，修复已知未授权访问和命令注入相关问题。
+    - 禁止公网直接访问摄像机管理接口，将视频设备放置在隔离网络或 VPN 后。
+    - 轮换摄像机账号密码，并检查用户列表、配置导出和异常访问日志。
   reference:
     - https://www.exploit-db.com/exploits/45231
     - https://www.cve.org/CVERecord?id=CVE-2021-36260

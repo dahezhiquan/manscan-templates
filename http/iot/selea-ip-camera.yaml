@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 Selea Targa IP OCR-ANPR 摄像机相关页面。多个版本存在未授权 RTP、RTSP 或 M-JPEG 视频流泄露风险，可能导致车牌识别摄像画面被外部访问。
+  impact: |
+    - 攻击者无需认证即可访问设备页面或功能，可能读取状态、配置和网络信息。
+    - 若接口允许写操作，可能进一步导致设备配置被篡改或服务被滥用。
+  remediation: |
+    - 启用设备 Web 管理认证并修改默认口令，关闭匿名访问。
+    - 升级固件并检查是否存在已知未授权访问漏洞。
+    - 将管理页面限制在内网、管理 VLAN 或 VPN 内，并开启访问审计。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5619.php
   metadata:

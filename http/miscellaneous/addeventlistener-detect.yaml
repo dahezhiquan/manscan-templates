@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测页面响应中是否存在 JavaScript DOM addEventListener 调用。此类调用本身并不一定构成漏洞，但如果用于处理 postMessage 等跨窗口消息且缺少来源校验，可能成为 DOM 型 XSS 或消息注入风险的线索。
+  impact: |
+    - 该结果提示页面存在可进一步审查的前端或服务端交互线索。
+    - 若缺少来源校验、输入过滤或可信 Host 校验，可能演变为 DOM XSS、消息注入、缓存污染或外部回连问题。
+  remediation: |
+    - 对跨窗口消息、Host 头、回调地址和动态链接执行严格白名单校验。
+    - 对用户可控内容进行上下文相关编码，并避免将不可信输入拼接进脚本或 URL。
+    - 将此类命中作为人工复核线索，结合调用点和数据流确认真实风险。
   reference:
     - https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
   metadata:

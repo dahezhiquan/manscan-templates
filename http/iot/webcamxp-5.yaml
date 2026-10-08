@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 WebcamXP 5 登录面板。该页面与摄像头视频管理服务相关，暴露后可能成为摄像头访问或配置探测入口。
+  impact: |
+    - 摄像头或录像设备暴露可能导致实时画面、截图、设备位置和监控范围被未授权查看。
+    - 监控入口泄露还会增加弱口令、默认凭据和已知固件漏洞被利用的概率。
+  remediation: |
+    - 禁止公网直接访问摄像头、NVR/DVR 或视频流页面，统一放置在隔离网络或 VPN 后。
+    - 启用强认证并修改默认口令，定期升级设备固件。
+    - 对视频访问、配置变更和异常登录启用日志审计。
   reference:
     - https://www.exploit-db.com/ghdb/7448
   classification:

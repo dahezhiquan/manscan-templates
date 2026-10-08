@@ -4,6 +4,15 @@ info:
   name: robots.txt 文件检测
   author: CasperGN,TheZakMan
   severity: low
+  description: |
+    检测站点是否公开 `robots.txt` 文件。该文件用于声明爬虫访问规则，内容中的禁止路径可能暴露管理端、备份目录或其他敏感资源线索。
+  impact: |
+    - 命中内容可用于资产画像、人员/社群关联、公开目录发现或业务线索收集。
+    - 单独结果通常不等同于漏洞，但与其他信息组合后可能降低攻击者侦察成本。
+  remediation: |
+    - 确认公开信息是否符合预期，移除不必要的联系人、目录、社群或资源索引。
+    - 对必须公开的文件和链接进行最小化披露，避免包含内部路径或敏感标识。
+    - 定期巡检公开页面，确保内容仍然准确且未泄露额外信息。
   metadata:
     max-request: 2
   tags: miscellaneous,misc,generic,vuln

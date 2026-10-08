@@ -4,6 +4,15 @@ info:
   name: HTaccess 配置文件暴露检测
   author: Yash Anand @yashanand155
   severity: medium
+  description: |
+    检测 Apache `.htaccess` 配置文件是否可被直接访问。该文件可能包含重写规则、访问控制、认证配置或敏感路径，暴露后会泄露站点运行策略。
+  impact: |
+    - `.htaccess` 泄露可能暴露重写规则、认证配置、敏感路径和安全控制细节。
+    - 攻击者可利用这些信息定位隐藏入口、绕过规则或规划后续攻击。
+  remediation: |
+    - 配置 Web 服务器禁止访问 `.htaccess`、`.htpasswd` 等隐藏配置文件。
+    - 将敏感配置迁移到 Web 根目录之外，并检查历史缓存和备份。
+    - 审查暴露内容中是否包含凭据或内部路径，必要时轮换相关密码。
   metadata:
     max-request: 6
   tags: miscellaneous,misc,config,vuln

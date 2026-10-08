@@ -7,15 +7,19 @@ info:
   description: |
     目录索引是一种 Web 服务器功能，当目录中不存在索引文件时会直接展示目录内容。若对外启用，可能暴露敏感文件、旧备份文件或未被引用的内部资源。
   impact: |
-    敏感文件和目录可能被未授权用户浏览、下载或用于进一步攻击。
+    - 目录索引会暴露文件列表、修改时间和潜在敏感文件，便于攻击者枚举站点结构。
+    - 备份包、配置文件或日志若可下载，可能导致进一步入侵。
   remediation: |
-    在 Web 服务器配置中禁用目录列出，并为敏感目录添加访问控制或默认索引文件。
+    - 禁用自动目录列出，并为静态资源目录配置默认拒绝策略。
+    - 删除 Web 根目录中的备份、日志和临时文件。
+    - 对必须公开的下载目录进行最小化内容和访问控制审查。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/04-Review_Old_Backup_and_Unreferenced_Files_for_Sensitive_Information
     - https://portswigger.net/kb/issues/00600100_directory-listing
   metadata:
     max-request: 2
   tags: misc,generic,misconfig,fuzz,miscellaneous,vuln
+
 flow: |
   function target_is_in_scope(url) {
     if (url.startsWith(template.http_1_host) || url.startsWith("/")) {

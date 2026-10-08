@@ -7,7 +7,12 @@ info:
   description: |
     检测 SMTP MTA-STS 策略文件 (RFC 8461)。该文件用于声明邮件服务器的 TLS 传输安全策略。
   impact: |
-    该 well-known 资源可能暴露邮件安全策略、MX 主机信息和策略有效期等实现细节。
+    - well-known 策略或身份文件通常用于公开声明域名、应用、邮件、证书或身份关联。
+    - 若内容过期、配置错误或非预期暴露，可能泄露组织关系、端点能力、用户标识或验证材料。
+  remediation: |
+    - 确认该 well-known 文件是否为业务或合规所需；非必要内容应删除或限制访问。
+    - 定期检查文件内容是否准确、未过期且不包含敏感信息。
+    - 对应用关联、邮件策略、证书验证和身份声明文件建立变更审计。
   reference:
     - https://www.rfc-editor.org/rfc/rfc8461
   metadata:

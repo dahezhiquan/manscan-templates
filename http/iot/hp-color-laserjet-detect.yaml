@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测到 HP Color LaserJet 打印机面板。该模板通过标题和页面特征识别 HP 彩色激光打印设备的 Web 管理入口。
+  impact: |
+    - 打印机 Web 面板暴露可能泄露设备型号、网络配置、耗材状态和打印服务入口。
+    - 在配置不当时，攻击者可能滥用打印服务、修改设备设置或获取作业信息。
+  remediation: |
+    - 限制打印机 Web 管理页面仅办公内网或管理网段访问。
+    - 启用管理员认证，修改默认口令并升级打印机固件。
+    - 关闭不必要的远程管理、匿名访问和未使用的打印协议。
   reference:
     - http://www.hp.com/
     - https://www.hp.com/us-en/shop/cv/printers

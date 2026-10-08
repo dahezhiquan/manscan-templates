@@ -6,7 +6,13 @@ info:
   severity: high
   description: |
     GeoVision GV-SNVR0811 网络视频录像机存在目录遍历漏洞。未认证远程攻击者可通过在 HTTP 请求路径中构造 ../ 等目录跳转序列读取设备上的任意文件。
-  impact: 攻击者可能未授权读取系统配置、凭据或其他敏感文件，进而扩大对录像设备及关联网络的控制风险。
+  impact: |
+    - 攻击者可获取设备配置、账号凭据、密钥或本地敏感文件，进一步接管设备。
+    - 泄露的信息还可能暴露内部网络结构、设备位置和管理入口。
+  remediation: |
+    - 升级 GeoVision GV-SNVR0811 或 Cross Web Server 固件至修复版本。
+    - 禁止 Web 服务直接解析包含 `../` 的路径，并对下载路径做规范化和目录白名单校验。
+    - 将摄像机管理面放置在隔离网络或 VPN 后，仅允许可信管理终端访问。
   reference:
     - https://www.exploit-db.com/exploits/45065
   metadata:

@@ -6,6 +6,13 @@ info:
   severity: high
   description: |
     Selea ANPR 摄像机多个功能存在未授权 SSRF 漏洞。应用会使用 POST JSON 参数 ipnotify_address 或 url 构造图片请求或 DNS 通知检查，攻击者可指定外部或内部地址，诱导设备向任意目标发起请求并探测内网服务。
+  impact: |
+    - 攻击者可诱导摄像机向外部或内部地址发起请求，探测内网服务或触发带外交互。
+    - 在特定网络位置下，SSRF 可被用于访问仅摄像机可达的管理接口或内部资产。
+  remediation: |
+    - 升级 Selea Targa 摄像机固件，修复 `ipnotify_address`、`url` 等参数的服务端请求限制。
+    - 对服务端请求目标执行协议、主机和网段白名单校验，禁止访问内网、环回和链路本地地址。
+    - 限制摄像机出站访问范围，并监控异常 DNS/HTTP 外联。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5617.php
   metadata:

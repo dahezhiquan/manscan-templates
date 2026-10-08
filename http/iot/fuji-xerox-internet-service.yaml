@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 Fuji Xerox Internet Services 面板。该 Web 管理界面用于打印机或复合机管理，公网暴露可能泄露设备状态、作业信息或管理入口。
+  impact: |
+    - 打印机 Web 面板暴露可能泄露设备型号、网络配置、耗材状态和打印服务入口。
+    - 在配置不当时，攻击者可能滥用打印服务、修改设备设置或获取作业信息。
+  remediation: |
+    - 限制打印机 Web 管理页面仅办公内网或管理网段访问。
+    - 启用管理员认证，修改默认口令并升级打印机固件。
+    - 关闭不必要的远程管理、匿名访问和未使用的打印协议。
   reference:
     - https://www.exploit-db.com/ghdb/5948
     - https://www.support.xerox.com/en-us/article/en/1852141

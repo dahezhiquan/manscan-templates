@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    检测到 Brother 打印机 Web 管理面板。该页面暴露可用于确认打印设备资产，并可能进一步暴露打印配置、状态信息或管理入口。
+    Brother 打印机 Web 管理面板用于查看打印机状态、耗材、网络和设备配置。该模板请求 `/general/status.html`，通过 `Brother Industries` 页面特征识别目标是否为 Brother 打印设备。
   reference:
     - https://www.exploit-db.com/ghdb/6889
   metadata:

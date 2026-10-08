@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 KevinLAB 相关设备或平台页面。KevinLAB 提供基于 IoT、大数据和 AI 的建筑能源管理系统，该页面暴露可用于识别能源管理资产。
+  impact: |
+    - 暴露的设备面板会泄露资产类型、产品型号、部署位置或管理入口，为后续弱口令和漏洞利用提供线索。
+    - 若设备本身存在默认凭据或旧固件问题，攻击者可能进一步访问或控制设备。
+  remediation: |
+    - 确认该面板是否需要对当前网络开放；如无必要，应限制到内网、管理 VLAN 或 VPN。
+    - 启用强认证，修改默认口令，并保持设备固件为受支持版本。
+    - 对管理入口访问、登录失败和配置变更启用审计。
   metadata:
     max-request: 2
   tags: iot,kevinlab,discovery

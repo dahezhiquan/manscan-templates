@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测并提取 Firebase Database 相关信息。命中可能表示应用响应中暴露了 Firebase 数据库端点或可进一步验证的配置。
+  impact: |
+    - 暴露的 Firebase 数据库端点可能泄露应用后端位置和项目标识。
+    - 若数据库规则配置不当，攻击者可能进一步读取或写入业务数据。
+  remediation: |
+    - 审查 Firebase Realtime Database 或 Firestore 安全规则，禁止匿名读写敏感数据。
+    - 不在前端暴露不必要的数据库端点或调试配置。
+    - 开启访问日志和规则测试，排查异常读取或写入行为。
   metadata:
     max-request: 1
   tags: miscellaneous,firebase,misc,vuln

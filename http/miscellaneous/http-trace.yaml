@@ -4,6 +4,15 @@ info:
   name: HTTP TRACE 方法启用检测
   author: nodauf
   severity: low
+  description: |
+    检测目标是否启用 HTTP TRACE 方法。TRACE 会回显请求内容，在旧浏览器或代理链场景下可能辅助跨站追踪和调试信息泄露。
+  impact: |
+    - TRACE 回显请求内容，可能在旧客户端、代理或调试场景下辅助跨站追踪攻击。
+    - 启用不必要的 HTTP 方法会扩大攻击面并暴露服务端行为。
+  remediation: |
+    - 在 Web 服务器或反向代理中禁用 TRACE 方法。
+    - 仅允许业务所需的 HTTP 方法，并对异常方法请求进行告警。
+    - 检查代理链和负载均衡设备是否仍允许 TRACE。
   reference:
     - https://www.blackhillsinfosec.com/three-minutes-with-the-http-trace-method/
   metadata:

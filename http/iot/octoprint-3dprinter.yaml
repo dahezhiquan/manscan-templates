@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 OctoPrint 3D 打印机管理面板。该入口用于控制和监控 3D 打印作业，暴露后可能泄露打印任务或设备控制入口。
+  impact: |
+    - 打印机 Web 面板暴露可能泄露设备型号、网络配置、耗材状态和打印服务入口。
+    - 在配置不当时，攻击者可能滥用打印服务、修改设备设置或获取作业信息。
+  remediation: |
+    - 限制打印机 Web 管理页面仅办公内网或管理网段访问。
+    - 启用管理员认证，修改默认口令并升级打印机固件。
+    - 关闭不必要的远程管理、匿名访问和未使用的打印协议。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

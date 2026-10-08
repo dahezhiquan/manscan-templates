@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDk
   severity: info
   description: |
-    检测到 Grandstream GRP Web 管理登录面板。目标页面加载了 tl.account.ucm.js 及 UCM 模块相关 webpack 资源，符合 Grandstream 管理界面的前端特征。
+    Grandstream GRP 系列设备 Web 管理界面用于配置 IP 电话、语音网关或统一通信终端。该模板访问 `/login`，通过 `tl.account.ucm.js`、`tl.phoneSettings.js` 等前端资源识别 Grandstream GRP 管理面板。
   classification:
     cpe: cpe:2.3:o:grandstream:ucm6200_firmware:*:*:*:*:*:*:*:*
   metadata:

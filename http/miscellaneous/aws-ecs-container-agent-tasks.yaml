@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测 AWS ECS 容器代理任务元数据内容。若该接口被错误暴露，可能泄露容器任务、镜像、环境和运行时相关信息。
+  impact: |
+    - 攻击者可获取 ECS 任务、镜像、容器名称、环境变量和运行状态等信息。
+    - 若元数据中包含敏感环境变量或内部服务地址，可能辅助云上横向移动和凭据窃取。
+  remediation: |
+    - 确认 ECS Container Agent 元数据接口仅在实例本地或可信网络可访问。
+    - 避免在环境变量中存放长期密钥，改用 IAM Role、Secrets Manager 或 Parameter Store。
+    - 通过安全组、主机防火墙和反向代理配置阻断外部访问元数据端点。
   reference:
     - https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/create_deploy_docker_ecstutorial.html#create_deploy_docker_ecstutorial_connect_inspect
   metadata:

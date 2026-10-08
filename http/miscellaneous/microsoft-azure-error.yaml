@@ -4,6 +4,15 @@ info:
   name: Microsoft Azure Web App 404 错误页检测
   author: dhiyaneshDK
   severity: low
+  description: |
+    检测 Microsoft Azure Web App 默认 404 或自定义域未配置错误页。命中通常说明目标域名指向 Azure 应用服务但后端应用未正确绑定，可能存在配置错误或接管风险线索。
+  impact: |
+    - 自定义域指向 Azure 但未正确绑定应用时，可能暴露云资源配置错误。
+    - 在部分场景下，悬空 DNS 或未绑定资源会形成子域名接管风险。
+  remediation: |
+    - 若域名仍在使用，应在 Azure App Service 中正确绑定自定义域并完成验证。
+    - 若服务已下线，应删除指向 Azure 的 DNS 记录，避免悬空解析。
+    - 定期盘点云资源与 DNS 记录，清理未使用的 CNAME 和 A 记录。
   classification:
     cpe: cpe:2.3:a:microsoft:azure_app_service_on_azure_stack:*:*:*:*:*:*:*:*
   metadata:

@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测响应中是否存在 Max-Forwards 头。该头通常用于限制 TRACE 或 OPTIONS 请求在代理链中的转发次数，出现时可反映中间代理或服务端调试行为。
+  impact: |
+    - 暴露的 HTTP 方法、认证协商或代理相关头会帮助攻击者理解服务端能力和认证边界。
+    - 在错误配置或旧客户端场景下，可能辅助信息泄露、凭据中继、跨站追踪或调试接口滥用。
+  remediation: |
+    - 仅启用业务必需的 HTTP 方法和认证机制，关闭 TRACE 等不必要能力。
+    - 限制受保护目录和管理入口访问来源，并统一返回最小化错误信息。
+    - 对异常方法请求、认证挑战和代理链行为增加日志审计。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Max-Forwards
     - https://http.dev/max-forwards

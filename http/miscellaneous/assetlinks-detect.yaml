@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测目标服务器是否存在 .well-known/assetlinks.json 文件。该文件用于 Android 应用通过 Digital Asset Links 协议声明应用与网站域名之间的可信关联。
+  impact: |
+    - well-known 策略或身份文件通常用于公开声明域名、应用、邮件、证书或身份关联。
+    - 若内容过期、配置错误或非预期暴露，可能泄露组织关系、端点能力、用户标识或验证材料。
+  remediation: |
+    - 确认该 well-known 文件是否为业务或合规所需；非必要内容应删除或限制访问。
+    - 定期检查文件内容是否准确、未过期且不包含敏感信息。
+    - 对应用关联、邮件策略、证书验证和身份声明文件建立变更审计。
   reference:
     - https://developer.android.com/training/app-links/verify-android-applinks
   metadata:

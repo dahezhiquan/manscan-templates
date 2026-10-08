@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 Grandstream 设备配置页面。该页面暴露可能泄露语音网关或通信终端的配置入口及设备固件信息。
+  impact: |
+    - 网关、路由器或 VPN 管理入口暴露会增加口令攻击、配置探测和设备接管风险。
+    - 网络边界设备一旦被控制，可能导致流量劫持、访问策略篡改或内网横向移动。
+  remediation: |
+    - 将网络设备管理入口限制在可信管理网段或 VPN 内，禁止公网暴露。
+    - 修改默认凭据，启用强认证和登录失败限制。
+    - 定期升级固件并审计路由、DNS、端口转发和 VPN 配置变更。
   classification:
     cpe: cpe:2.3:o:grandstream:ht801_firmware:*:*:*:*:*:*:*:*
   metadata:

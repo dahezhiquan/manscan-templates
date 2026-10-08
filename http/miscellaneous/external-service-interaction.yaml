@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测通过 Host 头注入触发的外部服务交互。若应用将 Host 头拼接到链接、回调或服务端请求中，攻击者可能诱导目标访问外部地址并验证注入点。
+  impact: |
+    - Host 头注入可被用于生成恶意链接、污染缓存、触发外部回连或辅助 SSRF/密码重置投毒。
+    - 若后端信任请求 Host，攻击者可能影响回调地址、邮件链接或服务端请求目标。
+  remediation: |
+    - 在反向代理和应用层配置允许的 Host 白名单，拒绝未知域名。
+    - 生成绝对 URL 时使用可信配置项，不直接信任请求头。
+    - 对回调、跳转和服务端请求目标增加协议、域名和网段校验。
   reference:
     - https://portswigger.net/kb/issues/00300210_external-service-interaction-http
     - https://success.qualys.com/support/s/article/000006843

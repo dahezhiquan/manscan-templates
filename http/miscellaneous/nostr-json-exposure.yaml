@@ -7,7 +7,12 @@ info:
   description: |
     检测 Nostr 公钥发现 JSON 文件。该资源用于将域名或用户标识与 Nostr 公钥关联。
   impact: |
-    该 well-known 资源的存在可能暴露 Nostr 身份、公钥映射和相关实现策略。
+    - well-known 策略或身份文件通常用于公开声明域名、应用、邮件、证书或身份关联。
+    - 若内容过期、配置错误或非预期暴露，可能泄露组织关系、端点能力、用户标识或验证材料。
+  remediation: |
+    - 确认该 well-known 文件是否为业务或合规所需；非必要内容应删除或限制访问。
+    - 定期检查文件内容是否准确、未过期且不包含敏感信息。
+    - 对应用关联、邮件策略、证书验证和身份声明文件建立变更审计。
   reference:
     - https://github.com/nostr-protocol/nips/blob/master/05.md
   metadata:

@@ -6,6 +6,13 @@ info:
   severity: high
   description: |
     Selea Targa IP OCR-ANPR 摄像机存在未授权本地文件包含漏洞。Storage 页面中的 Download Archive 功能通过 get_file.php 下载文件时未正确校验输入，攻击者可利用目录遍历读取任意敏感文件并获取明文凭据。
+  impact: |
+    - 攻击者可读取摄像机本地配置、账号凭据和系统文件，进一步接管视频监控设备。
+    - ANPR/OCR 摄像系统泄露可能暴露车牌识别数据、设备位置和内部网络信息。
+  remediation: |
+    - 升级 Selea Targa 摄像机固件至修复版本，修复 `get_file.php` 下载路径校验。
+    - 下载接口应使用文件 ID 和白名单目录，禁止相对路径或绝对路径访问。
+    - 限制摄像机 Web 管理和存储页面仅可信网段访问，并轮换已暴露凭据。
   reference:
     - https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5616.php
   classification:

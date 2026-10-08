@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 Emerson Network Power IntelliSlot Web Card 管理界面。该接口用于远程监控和管理 Emerson 电力设备，若缺少严格访问控制，可能暴露关键供电设备的状态信息或控制入口。
+  impact: |
+    - 工业控制、楼宇自动化或能源设备面板暴露可能泄露设施运行状态和控制系统入口。
+    - 若存在弱口令或历史漏洞，可能影响生产、楼控、供电或环境控制的安全边界。
+  remediation: |
+    - 将 OT/IoT 管理页面放置在隔离网络中，仅允许可信运维主机或 VPN 访问。
+    - 启用强认证、最小权限和设备访问审计，及时更新厂商固件。
+    - 避免将控制设备直接暴露到互联网，并监控异常登录和配置变更。
   reference:
     - https://www.vertiv.com
   metadata:

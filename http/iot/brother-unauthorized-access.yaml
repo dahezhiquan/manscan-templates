@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测到 Brother 打印机存在未授权访问迹象。攻击者无需登录即可访问设备页面，可能查看打印机状态、配置或进一步尝试修改管理参数。
+  impact: |
+    - 攻击者无需认证即可访问设备页面或功能，可能读取状态、配置和网络信息。
+    - 若接口允许写操作，可能进一步导致设备配置被篡改或服务被滥用。
+  remediation: |
+    - 启用设备 Web 管理认证并修改默认口令，关闭匿名访问。
+    - 升级固件并检查是否存在已知未授权访问漏洞。
+    - 将管理页面限制在内网、管理 VLAN 或 VPN 内，并开启访问审计。
   reference:
     - https://www.exploit-db.com/ghdb/6889
   metadata:

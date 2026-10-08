@@ -4,6 +4,15 @@ info:
   name: Silverlight 跨域策略文件检测
   author: emadshanab
   severity: low
+  description: |
+    检测 Silverlight `clientaccesspolicy.xml` 跨域策略文件是否可访问。该文件用于声明哪些外部域可访问站点资源，配置过宽时可能扩大旧客户端跨域访问面。
+  impact: |
+    - 命中结果可帮助攻击者了解站点功能、公开文件、接口能力或技术栈线索。
+    - 若该信息并非预期公开，可能辅助目录枚举、版本识别或后续攻击链构造。
+  remediation: |
+    - 确认该页面、文件或响应头是否需要公开；非必要内容应删除或限制访问。
+    - 最小化公开响应中的版本、路径、账号和内部实现信息。
+    - 将相关端点纳入资产巡检，定期检查是否出现意外暴露。
   metadata:
     max-request: 1
   tags: miscellaneous,misc,vuln

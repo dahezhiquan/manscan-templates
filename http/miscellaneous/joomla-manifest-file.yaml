@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测 Joomla! Manifest 文件是否可访问。joomla.xml 会记录已安装 Joomla! 的版本、文件和路径等信息，泄露后可能帮助攻击者定位组件和版本风险。
+  impact: |
+    - Manifest 文件可能泄露 Joomla 版本、文件路径和组件信息。
+    - 攻击者可利用版本线索匹配已知漏洞或识别过期组件。
+  remediation: |
+    - 禁止外部直接访问 `administrator/manifests/` 等清单目录。
+    - 升级 Joomla 核心和扩展，移除不必要的安装或清单文件暴露。
+    - 在 Web 服务器层为后台目录增加访问控制。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

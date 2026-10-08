@@ -6,6 +6,13 @@ info:
   severity: medium
   description: |
     检测 Joomla! 站点是否暴露 htaccess 文件。该文件通常包含 HTTP 配置、目录列出控制和重写规则等信息，泄露后可能帮助攻击者理解站点配置。
+  impact: |
+    - Joomla htaccess 文件泄露会暴露重写规则、目录控制和站点部署细节。
+    - 攻击者可据此推断 Joomla 结构和防护策略，辅助绕过或版本风险判断。
+  remediation: |
+    - 禁止直接访问 `htaccess.txt` 或其他配置样例文件，部署后删除不必要文件。
+    - 检查 Joomla 根目录和管理员目录权限，避免配置、备份和清单文件暴露。
+    - 根据 Joomla 官方建议更新安全配置，并保持核心和扩展为受支持版本。
   metadata:
     max-request: 1
   tags: miscellaneous,misc,joomla,vuln

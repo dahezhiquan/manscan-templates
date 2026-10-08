@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测目标是否支持 DNS over HTTPS (DoH)。DoH 会通过 HTTP 或 HTTP/2 加密传输 DNS 查询与响应，通常使用 HTTPS 443 端口，从而将 DNS 流量隐藏在普通 HTTPS 流量中。
+  impact: |
+    - 命中结果可帮助攻击者了解站点功能、公开文件、接口能力或技术栈线索。
+    - 若该信息并非预期公开，可能辅助目录枚举、版本识别或后续攻击链构造。
+  remediation: |
+    - 确认该页面、文件或响应头是否需要公开；非必要内容应删除或限制访问。
+    - 最小化公开响应中的版本、路径、账号和内部实现信息。
+    - 将相关端点纳入资产巡检，定期检查是否出现意外暴露。
   reference:
     - https://developers.google.com/speed/public-dns/docs/doh/
     - https://developers.cloudflare.com/1.1.1.1/dns-over-https/wireformat

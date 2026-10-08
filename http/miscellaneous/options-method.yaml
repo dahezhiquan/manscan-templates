@@ -4,6 +4,15 @@ info:
   name: OPTIONS 方法允许检测
   author: pdteam
   severity: info
+  description: |
+    检测目标对 HTTP OPTIONS 方法的响应，并提取 `Allow` 头中声明的可用方法。该信息可用于了解服务端支持的 HTTP 动作和接口暴露面。
+  impact: |
+    - 暴露的 HTTP 方法、认证协商或代理相关头会帮助攻击者理解服务端能力和认证边界。
+    - 在错误配置或旧客户端场景下，可能辅助信息泄露、凭据中继、跨站追踪或调试接口滥用。
+  remediation: |
+    - 仅启用业务必需的 HTTP 方法和认证机制，关闭 TRACE 等不必要能力。
+    - 限制受保护目录和管理入口访问来源，并统一返回最小化错误信息。
+    - 对异常方法请求、认证挑战和代理链行为增加日志审计。
   metadata:
     max-request: 1
   tags: miscellaneous,misc,generic,vuln

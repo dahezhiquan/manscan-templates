@@ -6,6 +6,13 @@ info:
   severity: low
   description: |
     检测 Moodle changelog 文件是否可访问。该文件记录核心库和 API 变更，可被用于推断 Moodle 版本及潜在受影响范围。
+  impact: |
+    - Changelog 或升级说明暴露可能帮助攻击者推断 Moodle 版本和补丁状态。
+    - 版本线索可被用于匹配公开漏洞或过期组件。
+  remediation: |
+    - 禁止外部访问不必要的升级说明、变更日志和开发文档。
+    - 保持 Moodle 核心、主题和插件及时更新。
+    - 通过 Web 服务器规则限制 `/lib/upgrade.txt`、`UPGRADING.md` 等文件访问。
   reference:
     - https://moodledev.io/general/development/upgradenotes
     - https://moodle.atlassian.net/browse/MDL-81125

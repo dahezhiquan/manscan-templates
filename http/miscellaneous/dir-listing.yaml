@@ -4,6 +4,15 @@ info:
   name: 目录列出启用检测
   author: _harleo,pentest_swissky,hczdmr
   severity: medium
+  description: |
+    检测目标 Web 目录是否启用目录列出。模板通过目录索引页面中的 `Index of`、文件列表和 Web 服务器自动索引特征确认是否可直接浏览目录内容。
+  impact: |
+    - 攻击者可浏览目录中的文件、备份、日志或源码包，发现敏感资源和站点结构。
+    - 如果目录包含可下载配置或数据文件，可能导致凭据、源码或业务数据泄露。
+  remediation: |
+    - 关闭 Web 服务器自动目录索引，例如 Apache `Options -Indexes` 或 Nginx `autoindex off`。
+    - 将备份、日志和内部文件移出 Web 根目录，并为必要目录添加鉴权。
+    - 检查已暴露目录中的敏感文件，轮换可能泄露的凭据。
   reference:
     - https://portswigger.net/kb/issues/00600100_directory-listing
   classification:

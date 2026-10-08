@@ -3,6 +3,15 @@ info:
   name: SmartBI address 接口 - 认证绕过漏洞
   author: chaitin
   severity: high
+  description: |
+    该模板用于检测 SmartBI address 接口 - 认证绕过漏洞。该类漏洞通常源于认证、授权或会话校验逻辑不完整，使未授权用户可访问受保护接口或执行敏感操作。模板会向 `/smartbi/smartbix/api/monitor/setEngineAddress`、`/smartbix/api/monitor/setEngineAddress` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可绕过登录或权限限制，访问管理功能、敏感数据或业务操作接口。
+    - 在管理接口暴露的场景下，可能进一步导致配置被篡改、账号被接管或系统被植入后门。
+  remediation: |
+    - 在服务端统一执行认证和授权校验，避免仅依赖前端控制或可预测参数。
+    - 修复存在绕过问题的版本，并限制管理接口、调试接口和敏感 API 的访问来源。
+    - 审计异常登录、权限变更和配置修改记录，轮换可能受影响的账号凭据。
   reference:
     - https://stack.chaitin.com/techblog/detail?id=142
   metadata:

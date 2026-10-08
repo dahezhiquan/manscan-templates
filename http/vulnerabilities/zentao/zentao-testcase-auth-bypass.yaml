@@ -3,6 +3,15 @@ info:
   name: 禅道 PMS - 越权访问漏洞
   author: Chaitin
   severity: medium
+  description: |
+    该模板用于检测 禅道 PMS - 越权访问漏洞。该类漏洞通常源于对象标识、记录编号或资源路径缺少服务端权限校验，攻击者可直接访问不属于自己的数据。模板会向 `/api.php?m=testcase&f=savexmindimport&HTTP_X_REQUESTED_WITH=XMLHttpRequest&productID={{random...`、`/zentao/api.php?m=testcase&f=savexmindimport&HTTP_X_REQUESTED_WITH=XMLHttpRequest&productID={...` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能枚举或篡改其他用户、订单、文件、工单等业务对象。
+    - 在敏感业务系统中，IDOR 可能导致批量数据泄露、越权操作或权限边界被绕过。
+  remediation: |
+    - 对每个对象访问在服务端执行所属关系和权限校验，避免仅依赖前端隐藏或不可预测 ID。
+    - 使用间接引用、访问控制列表和细粒度授权策略保护敏感资源。
+    - 审计异常枚举、越权访问和批量导出行为，并修复受影响接口。
   metadata:
     verified: true
     max-request: 2

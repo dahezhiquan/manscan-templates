@@ -4,14 +4,15 @@ info:
   name: WordPress Simple File List <=4.2.2 - 远程代码执行漏洞（CVE-2025-34085）
   author: princechaddha
   severity: critical
-  description: |-
-    WordPress Simple File List <=4.2.2 存在安全漏洞。攻击者可通过 /wp-content/plugins/simple-file-list/ee-upload-engine.php、/wp-content/plugins/simple-file-list/ee-file-engine.php 的 eeSFL_ID, eeFileOld, eeListFolder 参数 构造恶意输入，在服务器端执行任意命令或代码。该模板通过请求 /wp-content/plugins/simple-file-list/ee-upload-engine.php、/wp-content/plugins/simple-file-list/ee-file-engine.php，并结合响应中的 {{md5(string)}}、HTTP 200 等特征进行验证。
-  impact: |-
-    - 攻击者可在目标服务器上执行任意命令或代码，直接接管受影响主机或应用进程。
-    - 成功利用后可进一步窃取数据、植入后门、横向移动，或破坏关键业务系统。
-  remediation: |-
-    - 尽快将 WordPress Simple File List <=4.2.2 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 避免将外部输入直接传入执行链路，并通过白名单校验、最小权限与隔离运行降低命令执行风险。
+  description: |
+    该模板用于检测 WordPress Simple File List <=4.2.2 - 远程代码执行漏洞。该类漏洞通常源于上传接口缺少认证、文件类型校验、存储隔离或执行权限控制。模板会向 `/wp-content/plugins/simple-file-list/ee-upload-engine.php`、`/wp-content/plugins/simple-file-list/ee-file-engine.php` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能上传脚本、WebShell 或恶意文件，并借此执行代码或长期控制服务器。
+    - 上传目录若可被访问或解析，可能导致数据篡改、恶意内容投递和业务系统被接管。
+  remediation: |
+    - 为上传接口增加认证授权和 CSRF 防护，限制可上传文件类型、大小和扩展名。
+    - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
+    - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   reference:
     - https://wpscan.com/vulnerability/10192
     - https://github.com/advisories/GHSA-8xp7-p66p-4h9h

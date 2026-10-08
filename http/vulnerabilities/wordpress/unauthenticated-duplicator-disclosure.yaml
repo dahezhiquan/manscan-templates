@@ -4,7 +4,15 @@ info:
   name: WordPress Duplicator Plugin - 信息泄露漏洞
   author: tess
   severity: medium
-  description: WordPress Duplicator Plugin - Information disclosure 存在未授权访问漏洞。未授权访问者可获取配置、凭证、用户数据或系统元信息，从而为后续攻击提供情报支持。
+  description: |
+    该模板用于检测 WordPress Duplicator Plugin - 信息泄露漏洞。该类问题通常源于服务配置过宽、调试能力暴露或安全控制未按生产环境要求启用。模板会向 `/wp-content/backups-dup-lite/tmp/`、`/wp-content/backups-dup-lite` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能借助错误配置访问内部功能、敏感数据或原本不应公开的管理能力。
+    - 配置缺陷常与其他漏洞组合使用，扩大暴露面并增加被定向攻击的概率。
+  remediation: |
+    - 按最小暴露原则收敛相关服务配置，关闭调试、示例、未使用插件和不必要接口。
+    - 为管理入口和敏感接口增加认证、授权、来源限制和审计记录。
+    - 复核生产环境基线，确认安全头、访问控制、默认配置和网络边界符合要求。
   metadata:
     verified: true
     max-request: 2

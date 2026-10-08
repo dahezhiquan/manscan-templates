@@ -4,7 +4,15 @@ info:
   name: Spring Boot Actuators (Jolokia) - XXE 漏洞
   author: dwisiswant0,ipanda
   severity: high
-  description: Spring Boot Actuators (Jolokia) XXE 存在XXE 漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 Spring Boot Actuators (Jolokia) - XXE 漏洞。该类漏洞通常源于 XML 解析器允许处理外部实体或 DTD，攻击者可借此触发文件读取或外带请求。模板会向 `/jolokia/exec/ch.qos.logback.classic:Name=default,Type=ch.qos.logback.classic.jmx.JMXConfigur...`、`/actuator/jolokia/exec/ch.qos.logback.classic:Name=default,Type=ch.qos.logback.classic.jmx.JM...` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能读取服务器本地文件、探测内网服务或通过外带通道泄露敏感数据。
+    - 在部分解析器和业务场景下，XXE 还可能造成拒绝服务或作为进一步入侵链路的入口。
+  remediation: |
+    - 禁用 XML 解析器的外部实体、外部 DTD 和 XInclude 支持。
+    - 升级存在缺陷的 XML 处理库，并对 XML 输入进行大小、结构和来源限制。
+    - 限制应用服务器外联能力，排查异常 DNS、HTTP 或 LDAP 外带请求。
   reference:
     - https://www.veracode.com/blog/research/exploiting-spring-boot-actuators
     - https://github.com/mpgn/Spring-Boot-Actuator-Exploit

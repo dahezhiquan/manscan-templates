@@ -3,6 +3,15 @@ info:
   name: 用友 U8 Cloud servicedispatcher 接口 - 远程代码执行漏洞
   author: Chaitin
   severity: critical
+  description: |
+    该模板用于检测 用友 U8 Cloud servicedispatcher 接口 - 远程代码执行漏洞。该类漏洞通常与危险接口暴露、命令参数拼接、模板解析、反序列化或组件缺陷有关，攻击者可能让服务端执行非预期代码。模板会向 `/ServiceDispatcherServlet` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可在目标服务权限范围内执行命令或代码，进而接管应用所在主机。
+    - 成功利用后可能泄露配置、密钥和业务数据，并为横向移动、持久化控制或破坏业务提供入口。
+  remediation: |
+    - 升级受影响产品或组件到厂商修复版本，移除存在已知缺陷的依赖。
+    - 限制高危接口的公网访问，增加认证、授权和来源校验，并避免将用户输入传入命令执行、模板解析或反序列化流程。
+    - 排查异常进程、计划任务、WebShell、外联连接和新增账号，必要时轮换凭据并重建受影响环境。
   reference:
     - https://stack.chaitin.com/techblog/detail/155
   metadata:

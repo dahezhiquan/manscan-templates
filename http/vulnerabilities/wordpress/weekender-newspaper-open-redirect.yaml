@@ -4,7 +4,15 @@ info:
   name: WordPress Weekender Newspaper 9.0 - 开放重定向漏洞
   author: 0x_Akoko
   severity: medium
-  description: WordPress Weekender Newspaper 9.0 - 开放重定向 存在开放重定向漏洞。攻击者可构造恶意跳转链接诱导用户访问钓鱼站点，或配合其他业务流程绕过安全校验。
+  description: |
+    该模板用于检测 WordPress Weekender Newspaper 9.0 - 开放重定向漏洞。该类漏洞通常源于跳转参数缺少可信域名校验，导致服务端或前端跳转到攻击者控制的地址。模板会向 `/wp-content/themes/weekender/friend.php?id=aHR0cHM6Ly9pbnRlcmFjdC5zaA==` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可构造可信域名下的跳转链接诱导用户访问恶意站点。
+    - 该问题常被用于钓鱼、OAuth 授权码劫持、会话令牌泄露或绕过安全网关校验。
+  remediation: |
+    - 对跳转目标使用固定白名单或相对路径，禁止直接跳转到任意外部 URL。
+    - 在执行跳转前校验协议、主机名和编码后的最终地址，避免双重编码和协议绕过。
+    - 对登录、授权和支付等敏感流程中的重定向参数进行额外审计。
   reference:
     - https://cxsecurity.com/issue/WLB-2020040103
   classification:

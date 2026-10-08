@@ -4,14 +4,15 @@ info:
   name: VICIdial 信息泄露漏洞（CVE-2021-28854）
   author: pdteam
   severity: high
-  description: |-
-    VICIdial 信息泄露漏洞 存在安全漏洞。未经授权的攻击者可通过 /agc/vicidial_mysqli_errors.txt 获取系统、配置或业务相关敏感信息，为后续攻击提供支撑。该模板通过请求 /agc/vicidial_mysqli_errors.txt，并结合响应中的 text/plain、HTTP 200、vdc_db_query 等特征进行验证。
-  impact: |-
-    - 攻击者可获取版本、配置、账户、路径或业务数据等敏感信息，为后续利用提供支撑。
-    - 这类信息泄露往往会降低其他攻击的利用门槛，并加速攻击路径构建。
-  remediation: |-
-    - 尽快将 VICIdial 信息泄露漏洞 升级到厂商已发布的修复版本，并结合官方公告核对受影响版本范围。
-    - 关闭不必要的调试输出、错误回显和目录暴露接口，并为敏感资源增加认证与最小化信息披露策略。
+  description: |
+    该模板用于检测 VICIdial 信息泄露漏洞。该类漏洞通常源于接口将用户可控参数直接拼接进 SQL 语句，导致查询语义被篡改。模板会向 `/agc/vicidial_mysqli_errors.txt` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可通过注入参数读取、篡改或删除数据库中的敏感数据。
+    - 在数据库权限过高或支持危险函数的场景下，SQL 注入还可能导致认证绕过、文件读写或进一步执行系统命令。
+  remediation: |
+    - 对所有数据库访问使用参数化查询或安全 ORM，避免拼接用户可控输入。
+    - 对受影响接口的参数进行类型、长度和取值范围校验，并关闭详细数据库错误回显。
+    - 使用最小权限数据库账号，排查异常查询、数据导出和新增账号记录。
   reference:
     - https://github.com/JHHAX/VICIdial
   metadata:

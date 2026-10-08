@@ -4,7 +4,15 @@ info:
   name: WordPress Plugin Sfwd-lms Listing
   author: pussycat0x
   severity: low
-  description: WordPress Plugin Sfwd-lms Listing 存在安全漏洞。该模板依据实际请求路径、返回特征与命中证据验证目标是否暴露相应漏洞。
+  description: |
+    该模板用于检测 WordPress Plugin Sfwd-lms Listing。该类问题通常源于 Web 目录索引、插件资源目录或静态文件目录未关闭浏览功能，导致未授权访问者可枚举目录中的文件和子目录。模板会向 `/wp-content/plugins/sfwd-lms/` 等位置发送探测请求，并结合响应状态、目录索引关键字、文件链接或页面特征判断目标是否存在目录列表暴露。
+  impact: |
+    - 攻击者可枚举插件、主题、备份文件、源码片段或静态资源路径，获取版本与目录结构等敏感线索。
+    - 暴露的文件列表可能帮助攻击者定位可下载文件、历史备份或后续可利用的组件漏洞。
+  remediation: |
+    - 关闭 Web 服务器或应用目录的自动索引功能，避免对外展示目录文件列表。
+    - 为插件、上传、备份和静态资源目录增加访问控制，并移除不应公开的文件。
+    - 检查访问日志中针对目录索引和敏感文件的枚举行为，必要时轮换已暴露的凭据或密钥。
   reference:
     - https://www.exploit-db.com/ghdb/6426
   metadata:

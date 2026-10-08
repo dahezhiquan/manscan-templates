@@ -4,7 +4,15 @@ info:
   name: Samsung WLAN AP WEA453e - 本地文件包含漏洞
   author: pikpikcu
   severity: high
-  description: Samsung WLAN AP WEA453e - 本地文件包含 存在本地文件包含漏洞。攻击者可借此读取服务器本地敏感文件、配置凭证或应用源码，为进一步入侵提供条件。
+  description: |
+    该模板用于检测 Samsung WLAN AP WEA453e - 本地文件包含漏洞。该类漏洞通常源于页面将用户可控输入未经过滤或编码后写入响应，导致浏览器执行非预期脚本。模板会向 `/(download)/etc/passwd` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可诱导用户访问恶意链接，在受害者浏览器中执行脚本。
+    - 成功利用后可能窃取会话信息、篡改页面内容、发起越权操作，或作为进一步钓鱼与权限提升的攻击链环节。
+  remediation: |
+    - 对输出到 HTML、属性、JavaScript、URL 等不同上下文的数据分别进行安全编码。
+    - 对输入参数进行白名单校验，并避免直接回显未经处理的用户输入。
+    - 启用合适的 Content-Security-Policy，降低脚本注入后的利用效果。
   reference:
     - https://omriinbar.medium.com/samsung-wlan-ap-wea453e-vulnerabilities-7aa4a57d4dba
   classification:

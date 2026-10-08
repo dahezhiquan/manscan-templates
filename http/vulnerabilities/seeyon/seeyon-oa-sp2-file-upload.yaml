@@ -4,7 +4,15 @@ info:
   name: Seeyon OA wpsAssistServlet - Arbitrary - 任意文件上传漏洞
   author: SleepingBag945
   severity: critical
-  description: Seeyon OA wpsAssistServlet - 任意文件上传 存在文件上传相关安全问题。若上传点校验不足，攻击者可能上传恶意脚本或构造危险文件，进而实现远程控制或数据篡改。
+  description: |
+    该模板用于检测 Seeyon OA wpsAssistServlet - Arbitrary - 任意文件上传漏洞。该类漏洞通常源于上传接口缺少认证、文件类型校验、存储隔离或执行权限控制。模板会向 `/seeyon/wpsAssistServlet?flag=save&realFileType=../../../../ApacheJetspeed/webapps/ROOT/{{fil...`、`/{{filename}}.jsp` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能上传脚本、WebShell 或恶意文件，并借此执行代码或长期控制服务器。
+    - 上传目录若可被访问或解析，可能导致数据篡改、恶意内容投递和业务系统被接管。
+  remediation: |
+    - 为上传接口增加认证授权和 CSRF 防护，限制可上传文件类型、大小和扩展名。
+    - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
+    - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   reference:
     - https://github.com/achuna33/MYExploit/blob/8ffbf7ee60cbd77ad90b0831b93846aba224ab29/src/main/java/com/achuna33/Controllers/SeeyonController.java
     - http://wiki.peiqi.tech/wiki/oa/致远OA/致远OA%20wpsAssistServlet%20任意文件上传漏洞.html

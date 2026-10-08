@@ -4,7 +4,15 @@ info:
   name: Tongda OA Meeting - 未授权访问漏洞
   author: SleepingBag945
   severity: medium
-  description: Tongda OA Meeting - 未授权 Access 存在未授权访问或认证绕过问题。攻击者无需有效凭证即可访问敏感接口、执行高权限操作或进一步扩大影响。
+  description: |
+    该模板用于检测 Tongda OA Meeting - 未授权访问漏洞。该类问题通常源于服务配置过宽、调试能力暴露或安全控制未按生产环境要求启用。模板会向 `/general/calendar/arrange/get_cal_list.php?starttime=1548058874&endtime=33165447106&view=agen...` 等位置发送探测请求，并结合响应状态、关键字、错误信息、时间差或外带交互等证据判断目标是否受影响。
+  impact: |
+    - 攻击者可能借助错误配置访问内部功能、敏感数据或原本不应公开的管理能力。
+    - 配置缺陷常与其他漏洞组合使用，扩大暴露面并增加被定向攻击的概率。
+  remediation: |
+    - 按最小暴露原则收敛相关服务配置，关闭调试、示例、未使用插件和不必要接口。
+    - 为管理入口和敏感接口增加认证、授权、来源限制和审计记录。
+    - 复核生产环境基线，确认安全头、访问控制、默认配置和网络边界符合要求。
   reference:
     - https://github.com/hktalent/scan4all/blob/2a7faf7862265eab33699034fd193bcf11b44e0f/config/poc/%E9%80%9A%E8%BE%BEoa/%E9%80%9A%E8%BE%BEoa-meeting-unauthorized-access.json#L10
   classification:

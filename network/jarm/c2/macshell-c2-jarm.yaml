@@ -1,11 +1,11 @@
 id: macshell-c2-jarm
 
 info:
-  name: Macshell C2 JARM 识别（服务漏洞）
+  name: MacShell C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Macshell C2 相关命令控制基础设施。
+    MacShell 是面向 macOS 的远程 shell/C2 工具，常用于 macOS 目标的命令执行与任务控制。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 MacShell 指纹匹配，用于发现疑似 MacShell 控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/cedowens/MacShellSwift

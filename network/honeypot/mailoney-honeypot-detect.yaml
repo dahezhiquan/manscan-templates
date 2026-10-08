@@ -1,11 +1,11 @@
 id: mailoney-honeypot-detect
 
 info:
-  name: Mailoney 蜜罐识别（服务漏洞）
+  name: Mailoney 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Mailoney Honeypot 蜜罐。
+    Mailoney 是用于捕获 SMTP 扫描、垃圾邮件投递和邮件滥用行为的蜜罐。该模板连接 SMTP 服务并检查默认或异常邮件服务横幅特征，用于识别 Mailoney 蜜罐实例。
   metadata:
     max-request: 1
     vendor: mailoney

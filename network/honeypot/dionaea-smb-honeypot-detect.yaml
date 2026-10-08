@@ -1,11 +1,11 @@
 id: dionaea-smb-honeypot-detect
 
 info:
-  name: Dionaea SMB 蜜罐识别（服务漏洞）
+  name: Dionaea SMB 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea SMB Honeypot 蜜罐。
+    Dionaea 可模拟 SMB 服务以捕获针对文件共享协议的扫描、漏洞利用和恶意样本投递。该模板向 TCP 445 发送 SMB 协商探测，并通过 Dionaea SMB 仿真的固定响应特征识别蜜罐。
   metadata:
     max-request: 1
     vendor: dionaea

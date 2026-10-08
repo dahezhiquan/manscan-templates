@@ -1,11 +1,11 @@
 id: gaspot-honeypot-detect
 
 info:
-  name: GasPot 蜜罐识别（服务漏洞）
+  name: GasPot 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 GasPot Honeypot 蜜罐。
+    GasPot 是面向加油站和工业控制场景的蜜罐，常模拟 Veeder-Root 自动油罐计量系统服务。该模板连接 TCP 10001 并发送协议探测，通过 GasPot/Veeder-Root 仿真响应特征识别蜜罐。
   metadata:
     max-request: 1
     vendor: gaspot

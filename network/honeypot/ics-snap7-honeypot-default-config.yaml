@@ -1,14 +1,14 @@
 id: ics-snap7-honeypot-default-config
 
 info:
-  name: Snap7 蜜罐默认配置识别（指纹识别）
+  name: Snap7 蜜罐默认配置识别（蜜罐识别）
   author: biero-el-corridor
   severity: info
-  description: 该模板通过异常协议响应和默认特征识别目标是否为采用默认配置的 Snap7 蜜罐。
+  description: Snap7/HoneyPLC 可用于模拟 Siemens S7 通信服务并捕获工控探测行为。该模板向 S7Comm 常用端口发送连接探测，并通过异常协议响应和默认仿真特征识别采用默认配置的 Snap7 蜜罐。
   reference:
     - https://github.com/sefcom/honeyplc
     - https://medium.com/@biero-llagas/simple-use-of-the-python-snap7-lib-now-with-real-honeypot-11a2979baaf0
-  tags: ics,s7comm,detect,honeypot,network,tcp
+  tags: ics,s7comm,honeypot,network,tcp
 
 tcp:
   - inputs:

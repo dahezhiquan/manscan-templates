@@ -1,11 +1,11 @@
 id: conpot-siemens-honeypot-detect
 
 info:
-  name: Conpot (Siemens) 蜜罐识别（服务漏洞）
+  name: Conpot Siemens 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Conpot (Siemens) Honeypot 蜜罐。
+    Conpot 是面向工控协议的低交互蜜罐，可模拟 Siemens SIMATIC 等 ICS/SCADA 设备服务。该模板向 TCP 102 发送 S7 连接探测，并通过固定的 Siemens/S7 协议响应字节识别 Conpot Siemens 仿真蜜罐。
   metadata:
     verified: true
     max-request: 1

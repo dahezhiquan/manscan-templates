@@ -5,7 +5,14 @@ info:
   author: lu4nx
   severity: high
   description: |
-    该模板用于检测 ClickHouse 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
+    ClickHouse 是面向联机分析处理的列式数据库。若原生协议端口 9000 允许默认用户无密码连接，外部人员可能直接访问数据库。该模板构造 ClickHouse 客户端握手并使用 `default` 用户发起连接，通过响应中的 `ClickHouse` 与 `UTC` 特征确认未授权访问风险。
+  impact: |
+    - 攻击者可能读取库表结构、业务数据和分析结果，造成敏感数据泄露。
+    - 在权限配置宽松的情况下，攻击者还可能写入、删除数据或执行高开销查询，影响数据库可用性。
+  remediation: |
+    - 为默认用户设置强密码或禁用默认用户的远程登录，按业务角色配置最小权限账号。
+    - 将 9000 等数据库端口限制在受信任网络内，并启用 TLS、认证和访问来源控制。
+    - 审计 ClickHouse 查询日志，排查暴露期间的异常登录和高风险查询。
   metadata:
     max-request: 1
   tags: network,clickhouse,unauth,misconfig,tcp,vuln

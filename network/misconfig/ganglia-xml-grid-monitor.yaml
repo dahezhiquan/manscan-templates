@@ -1,11 +1,18 @@
 id: ganglia-xml-grid-monitor
 
 info:
-  name: Ganglia XML Grid Monitor（服务漏洞）
+  name: Ganglia XML Grid Monitor 信息泄露（服务漏洞）
   author: geeknik
   severity: low
   description: |
-    该模板用于检测 Ganglia XML Grid Monitor 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
+    Ganglia 是分布式系统监控工具，其 gmond 服务可通过 8649 端口输出 XML 格式的集群、主机和指标数据。若该端口未受访问控制保护，外部人员可直接读取监控信息。该模板连接 8649 端口并匹配 `GANGLIA_XML` 文档结构，以确认监控 XML 暴露。
+  impact: |
+    - 攻击者可能获取主机名、集群拓扑、负载、内存、磁盘和服务指标，辅助资产盘点与攻击路径规划。
+    - 暴露的监控数据可能泄露业务规模、系统瓶颈和内部命名规则，增加后续定向攻击成功率。
+  remediation: |
+    - 将 Ganglia gmond/gmetad 端口限制在监控网络或受信任主机范围内。
+    - 对外部访问监控数据的入口增加认证、访问控制和日志审计。
+    - 检查监控配置，避免在 XML 输出中暴露不必要的主机标识和业务敏感指标。
   reference:
     - http://ganglia.info/
   metadata:

@@ -1,11 +1,11 @@
 id: adbhoney-honeypot-cnxn-detect
 
 info:
-  name: ADBHoney 蜜罐识别（服务漏洞）
+  name: ADBHoney 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 ADBHoney Honeypot 蜜罐。
+    ADBHoney 是模拟 Android Debug Bridge 暴露面的蜜罐，用于捕获针对 TCP 5555 ADB 调试端口的扫描、连接和攻击行为。该模板发送 ADB CNXN 与客户端能力报文，并通过固定的 `SM-G960F`、`starltexx` 等仿真设备特征识别 ADBHoney 蜜罐。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: mac-c2-jarm
 
 info:
-  name: MacC2 JARM 识别（服务漏洞）
+  name: MacC2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 MacC2 相关命令控制基础设施。
+    MacC2 是面向 macOS 场景的命令控制工具，可用于管理 macOS 植入和远程任务。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 MacC2 指纹集合匹配，用于识别疑似 MacC2 控制端。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/cedowens/MacC2

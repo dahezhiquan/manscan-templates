@@ -4,7 +4,15 @@ info:
   name: Memcached 统计信息泄露（服务漏洞）
   author: pdteam
   severity: low
-  description: 该模板用于检测 Memcached 服务是否允许未认证读取统计信息。命中说明运行状态、键数量和资源使用情况可能被外部直接探测。
+  description: |
+    Memcached 是高性能内存缓存服务，默认协议通常不提供强认证能力。若服务端口暴露到不受信任网络，外部人员可直接发送命令读取运行状态。该模板向 11211 端口发送 `stats` 与 `quit` 命令，并通过 `STAT` 响应确认统计信息可被未认证读取。
+  impact: |
+    - 攻击者可能获取缓存命中率、连接数、内存使用、对象数量等运行信息，辅助判断业务压力和缓存使用方式。
+    - 暴露的 Memcached 服务还可能被继续尝试读取、写入或删除缓存数据，并存在被滥用于放大攻击的风险。
+  remediation: |
+    - 不要将 Memcached 端口暴露到公网，仅允许应用服务器所在网段访问。
+    - 使用防火墙、安全组或绑定内网地址限制访问来源，并禁用 UDP 监听等非必要能力。
+    - 检查缓存服务日志与网络流量，确认是否存在异常命令访问或放大流量。
   metadata:
     max-request: 1
   tags: network,memcached,misconfig,tcp,vuln

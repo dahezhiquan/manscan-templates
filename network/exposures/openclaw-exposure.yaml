@@ -1,11 +1,17 @@
 id: openclaw-exposure
 
 info:
-  name: Openclaw (formerly Clawdbot / Moltbot) 识别（服务漏洞）
+  name: Openclaw 网关 mDNS 信息暴露（服务漏洞）
   author: rxerium,fullstackpotato
   severity: medium
   description: |
-    该模板用于识别 Openclaw (formerly Clawdbot / Moltbot) - Detect 相关服务是否因暴露或认证缺失而可被未授权访问。
+    Openclaw（曾称 Clawdbot/Moltbot）网关会通过 mDNS/DNS-SD 通告本地服务信息。若 UDP 5353 对非预期来源可达，攻击者可识别 Openclaw 网关并获取 displayName 等设备标识；该模板发送 mDNS 服务发现查询，并匹配 `_openclaw-gw` 或 `clawdbot` 响应。
+  impact: |
+    - 泄露 Openclaw 网关存在性、设备显示名和局域网服务发现信息。
+    - 攻击者可据此定位网关设备，结合管理接口或默认配置进行后续探测。
+  remediation: |
+    - 限制 mDNS 仅在可信本地链路内可用，禁止跨网段或公网转发 UDP 5353。
+    - 清理设备广播中的敏感命名信息，并将网关管理接口放入受控网络。
   classification:
     cwe-id: CWE-200
   metadata:

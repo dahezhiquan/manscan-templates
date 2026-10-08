@@ -1,11 +1,11 @@
 id: generic-c2-jarm
 
 info:
-  name: Generic C2 JARM 识别（服务漏洞）
+  name: 通用 C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Generic C2 相关命令控制基础设施。
+    JARM 可通过主动 TLS 握手组合生成服务端指纹，常用于发现复用同类 TLS 栈或默认配置的 C2 基础设施。该模板将目标 JARM 指纹与多组公开 C2 指纹清单比对，用于识别未细分到单一框架的疑似命令控制服务。
   reference:
     - https://github.com/MichaelKoczwara/C2JARM
   metadata:

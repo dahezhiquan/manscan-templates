@@ -5,7 +5,13 @@ info:
   author: pdteam
   severity: high
   description: |
-    该模板检测 Redis 服务是否在无认证保护的情况下对外开放。命中通常意味着数据库、缓存内容和危险管理命令可被直接访问。
+    Redis 常用于缓存、队列和会话存储，未认证暴露会使任意客户端直接执行 INFO、读写键值甚至危险管理命令。该模板向 6379/6380 发送 `info` 与 `quit`，并在返回 `redis_version` 且非 Sentinel 模式时确认 Redis 未认证访问。
+  impact: |
+    - 攻击者可读取缓存数据、会话令牌、业务配置或敏感临时数据。
+    - 在配置不当环境中，写入、持久化或模块相关命令可能进一步导致数据破坏、权限提升或主机入侵。
+  remediation: |
+    - 启用 Redis ACL/密码认证，禁止公网直连，并将服务绑定到可信内网接口。
+    - 限制危险命令、启用最小权限账号，排查历史暴露期间是否存在异常写入或配置修改。
   reference:
     - https://redis.io/topics/security
   classification:

@@ -1,11 +1,11 @@
 id: dionaea-ftp-honeypot-detect
 
 info:
-  name: Dionaea FTP 蜜罐识别（服务漏洞）
+  name: Dionaea FTP 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea FTP Honeypot 蜜罐。
+    Dionaea 是用于捕获恶意软件传播、漏洞利用和弱口令行为的低交互蜜罐框架，可模拟 FTP 等多种服务。该模板发送 `USER root` 和空 `PASS` 登录探测，并通过 `500 Syntax error: PASS requires an argument` 响应识别 Dionaea FTP 蜜罐。
   metadata:
     max-request: 1
     vendor: dionaea

@@ -1,11 +1,11 @@
 id: posh-c2-jarm
 
 info:
-  name: Posh C2 JARM 识别（服务漏洞）
+  name: Posh C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Posh C2 相关命令控制基础设施。
+    PoshC2 是支持 PowerShell、Python 等多种植入的 C2 框架，常用于红队操作和远程任务控制。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 PoshC2 指纹匹配，用于发现疑似 PoshC2 命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://twitter.com/MichalKoczwara/status/1551639708949692416

@@ -5,7 +5,13 @@ info:
   author: dwisiswant0
   severity: medium
   description: |
-    该模板用于识别对外暴露的 Cisco Smart Install 端点。命中说明设备可能存在被探测、配置下载或进一步高危利用的前置条件。
+    Cisco Smart Install 用于 Cisco 交换机零接触部署和集中配置分发，若部署完成后仍在 TCP 4786 暴露且缺少访问控制，可能被远程滥用读取或改写设备配置。该模板发送 Smart Install 客户端探测报文，并以 Cisco SMI 协议响应确认端点暴露。
+  impact: |
+    - 暴露的 Smart Install 客户端可能被用于下载配置、修改启动配置、加载镜像或触发设备重启。
+    - 攻击者可借此获取网络设备凭据、SNMP 团体字串、拓扑信息，并进一步控制交换基础设施。
+  remediation: |
+    - 按 Cisco 建议在不需要 Smart Install 时禁用该功能，例如使用 `no vstack` 或升级到不受影响的软件版本。
+    - 在边界和管理平面 ACL 中限制 TCP 4786，仅允许受控管理源访问，并排查互联网上暴露的 SMI 客户端。
   reference:
     - https://blog.talosintelligence.com/2017/02/cisco-coverage-for-smart-install-client.html
     - https://blogs.cisco.com/security/cisco-psirt-mitigating-and-detecting-potential-abuse-of-cisco-smart-install-feature

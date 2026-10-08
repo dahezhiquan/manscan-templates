@@ -1,11 +1,11 @@
 id: merlin-c2-jarm
 
 info:
-  name: Merlin C2 JARM 识别（服务漏洞）
+  name: Merlin C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Merlin C2 相关命令控制基础设施。
+    Merlin 是基于 Go 的跨平台 C2 框架，支持多种通信方式和 Agent 管理能力。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 Merlin C2 指纹匹配，用于识别疑似 Merlin 命令控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://merlin-c2.readthedocs.io/en/latest/

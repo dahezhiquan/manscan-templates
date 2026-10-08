@@ -1,11 +1,11 @@
 id: mythic-c2-jarm
 
 info:
-  name: Mythic C2 JARM 识别（服务漏洞）
+  name: Mythic C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Mythic C2 相关命令控制基础设施。
+    Mythic 是支持多 Agent、多操作员协作的 C2 平台，常用于红队作业和后渗透任务编排。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 Mythic C2 指纹匹配，用于识别疑似 Mythic 控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/

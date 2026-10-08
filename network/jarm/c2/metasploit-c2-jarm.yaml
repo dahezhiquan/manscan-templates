@@ -1,11 +1,11 @@
 id: metasploit-c2-jarm
 
 info:
-  name: Metasploit C2 JARM 识别（服务漏洞）
+  name: Metasploit C2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 Metasploit C2 相关命令控制基础设施。
+    Metasploit Framework 可用于漏洞验证、会话管理和 Meterpreter 等后渗透控制。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 Metasploit C2/handler 指纹匹配，用于发现疑似 Metasploit 控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://www.socinvestigation.com/shodan-filters-to-hunt-adversaries-infrastructure-and-c2/

@@ -5,7 +5,10 @@ info:
   author: pdteam
   severity: high
   description: |
-    该模板检测 MongoDB 是否在未启用认证的情况下对外开放。命中说明数据库内容可能在无口令保护下被直接访问。
+    MongoDB 是文档型数据库服务。若实例未启用认证或访问控制配置过宽，外部人员可能无需凭据访问数据库。该模板向 27017 端口发送读取 `admin` 库 `startupWarnings` 日志的请求，并通过 `totalLinesWritten` 响应确认未认证数据库访问风险。
+  impact: |
+    - 攻击者可能枚举数据库、集合和日志信息，并进一步读取、写入、删除业务数据。
+    - 暴露的 MongoDB 实例可能遭到勒索、植入恶意数据或被用作横向移动入口。
   remediation: |
     - 为 MongoDB 启用认证并限制管理网络访问。
     - 检查历史暴露期间是否已有未授权读取、写入或删除行为。

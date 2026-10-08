@@ -5,7 +5,13 @@ info:
   author: pdteam
   severity: high
   description: |
-    该模板检测 Apache ZooKeeper 是否允许未认证访问管理接口。命中说明节点状态、配置信息或协调数据可能被直接读取甚至修改。
+    Apache ZooKeeper 用于分布式协调、服务发现和配置管理。若 2181 端口允许未认证访问四字命令或 ZooKeeper 协议请求，攻击者可读取版本、环境和节点数据；该模板分别发送 `envi` 命令和协议查询，并通过 `zookeeper.version` 或响应中的 zookeeper 标识确认未认证访问。
+  impact: |
+    - 攻击者可枚举 ZooKeeper 版本、运行环境、配置和部分 znode 数据，暴露分布式系统拓扑。
+    - 如果 ACL 配置不当，还可能进一步读取或修改协调数据，影响 Kafka、HBase、Dubbo 等依赖服务。
+  remediation: |
+    - 启用 ZooKeeper 认证与 ACL，限制四字命令白名单，避免管理命令对不可信来源开放。
+    - 使用网络 ACL 限制 2181 端口访问来源，并审计 znode 权限和异常读取/写入行为。
   reference:
     - https://zookeeper.apache.org/security.html
     - https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands

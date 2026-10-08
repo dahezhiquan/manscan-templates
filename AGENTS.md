@@ -99,12 +99,14 @@
 - `http/exposures/` -> `（暴露面识别）`
 - `http/global-matchers/` -> `（全局模版）`
 - `http/honeypot/` -> `（蜜罐识别）`
+- `network/honeypot/` -> `（蜜罐识别）`
 - `http/iot/` -> `（IOT）`
 - `http/osint/phishing/` -> `（钓鱼网站识别）`
 - `http/osint/user-enumeration/` -> `（OSINT）`
 - `http/takeovers/` -> `（子域名接管）`
 - `http/technologies/` -> `（指纹识别）`
 - `http/token-spray/` -> `（token喷洒）`
+- `network/jarm/c2/` -> `（C2 识别）`
 
 #### `description` / `impact` / `remediation`
 

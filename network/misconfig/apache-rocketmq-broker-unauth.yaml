@@ -1,11 +1,18 @@
 id: apache-rocketmq-broker-unauth
 
 info:
-  name: Apache Rocketmq Broker 未认证访问（服务漏洞）
+  name: Apache RocketMQ Broker 未认证访问（服务漏洞）
   author: j4vaovo
   severity: high
   description: |
-    该模板用于检测 Apache Rocketmq Broker 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
+    Apache RocketMQ Broker 负责消息存储、投递和消费进度管理。Broker 远程通信端口暴露且未启用 ACL 或来源限制时，未授权客户端可能直接与 Broker 交互。该模板向 10911 端口发送 RocketMQ remoting 请求，并通过返回的 `serializeTypeCurrentRPC`、`JAVA`、`opaque` 等协议字段确认服务可被访问。
+  impact: |
+    - 攻击者可能探测 Broker、Topic 或集群信息，并根据权限配置进一步读写消息或干扰消息投递。
+    - 未授权访问消息中间件可能导致业务数据泄露、消息篡改、消费链路异常或拒绝服务。
+  remediation: |
+    - 启用 RocketMQ ACL，并为生产者、消费者和管理端配置最小权限账号。
+    - 将 Broker 端口限制在受信任网络内，避免 10911 等远程通信端口直接暴露。
+    - 审计 Broker 访问日志和 Topic 权限，排查暴露期间的异常连接与消息操作。
   reference:
     - https://rocketmq.apache.org/docs/bestPractice/03access
   metadata:

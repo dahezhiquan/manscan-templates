@@ -5,7 +5,13 @@ info:
   author: ivaldivieso,s4e-io
   severity: medium
   description: |
-    该模板检测 Checkmk Agent 是否在 TCP 6556 端口无认证暴露系统信息。命中意味着主机指标、服务状态与环境信息可能被直接收集。
+    Checkmk Agent 用于向 Checkmk 监控平台暴露主机状态、服务检查、性能指标和环境信息。若 TCP 6556 对不可信来源开放，攻击者可无认证读取主机监控数据；该模板发送换行触发 Agent 输出，并通过 <<<check_mk>>>、AgentOS 或 Version 字段确认信息泄露。
+  impact: |
+    - 泄露主机操作系统、Agent 版本、服务状态和部分环境指标，帮助攻击者绘制基础设施资产图谱。
+    - 暴露的监控数据可用于识别高价值主机、服务异常、内部命名规则和后续攻击入口。
+  remediation: |
+    - 仅允许 Checkmk 服务器或可信监控网段访问 TCP 6556，禁止公网或不可信网段直连 Agent。
+    - 使用防火墙、TLS/加密代理或 Agent 访问控制保护监控数据，并定期审计暴露的监控端口。
   reference:
     - https://medium.com/@Th3hound/the-hidden-danger-of-the-exposed-checkmk-agent-mapping-your-infrastructure-for-attackers-151cc2180e73
   metadata:

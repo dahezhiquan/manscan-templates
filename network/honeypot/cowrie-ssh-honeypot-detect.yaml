@@ -1,11 +1,11 @@
 id: cowrie-ssh-honeypot-detect
 
 info:
-  name: Cowrie SSH 蜜罐识别（服务漏洞）
+  name: Cowrie SSH 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Cowrie SSH Honeypot 蜜罐。
+    Cowrie 是常用于捕获 SSH/Telnet 暴力破解和命令行为的中交互蜜罐。该模板发送异常的 SSH 协议版本横幅 `SSH-1337-OpenSSH_9.0`，并通过 `Protocol major versions differ` 或 `bad version 1337` 等响应特征识别 Cowrie SSH 蜜罐。
   metadata:
     max-request: 1
     vendor: cowrie

@@ -1,11 +1,11 @@
 id: dionaea-mqtt-honeypot-detect
 
 info:
-  name: Dionaea MQTT 蜜罐识别（服务漏洞）
+  name: Dionaea MQTT 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea MQTT Honeypot 蜜罐。
+    Dionaea 可模拟 MQTT 服务以捕获针对物联网消息协议的扫描和攻击行为。该模板发送 MQTT CONNECT 探测，并通过固定的 CONNACK `20020000` 响应识别 Dionaea MQTT 蜜罐。
   metadata:
     verified: true
     max-request: 1

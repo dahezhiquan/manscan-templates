@@ -1,11 +1,11 @@
 id: redis-honeypot-detect
 
 info:
-  name: Redis 蜜罐识别（服务漏洞）
+  name: Redis 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Redis Honeypot 蜜罐。
+    Redis 蜜罐用于模拟开放 Redis 服务，捕获未授权访问、恶意写入和持久化利用尝试。该模板发送 Redis 探测命令，并通过蜜罐特有的响应模式识别伪装的 Redis 服务。
   classification:
     cpe: cpe:2.3:a:redis:redis:*:*:*:*:*:*:*:*
   metadata:

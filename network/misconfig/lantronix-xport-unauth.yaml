@@ -5,7 +5,14 @@ info:
   author: John Osborn (Summit Security Group,LLC)
   severity: high
   description: |
-    该模板用于检测 Lantronix XPort 6.10.0.1 相关服务是否存在认证缺失、配置不当或权限边界过宽的问题。
+    Lantronix XPort 是用于串口设备联网的嵌入式设备服务器，常部署在工业控制、门禁、支付终端或传统串口设备接入场景。若 9999 配置端口未受认证或网络访问控制保护，攻击者可能进入设备设置菜单。该模板连接 9999 端口并匹配 `Security`、`Expert`、`Channel`、`ARP cache` 等配置菜单关键字。
+  impact: |
+    - 攻击者可能读取或修改串口通信、网络参数和安全设置，影响后端设备连接与业务通信。
+    - 在工业或嵌入式场景中，错误配置可能导致设备离线、数据转发异常或被用作进入内网的跳板。
+  remediation: |
+    - 为 XPort 管理与配置入口启用认证，修改默认凭据并关闭不必要的远程配置服务。
+    - 将 9999 等管理端口限制在专用运维网络，禁止直接暴露到公网或业务网段。
+    - 备份并核对设备配置，排查暴露期间是否存在异常参数变更。
   reference:
     - https://www.lantronix.com/wp-content/uploads/pdf/XPort_UG.pdf
   metadata:

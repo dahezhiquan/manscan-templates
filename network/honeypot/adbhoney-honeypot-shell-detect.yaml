@@ -1,11 +1,11 @@
 id: adbhoney-honeypot-shell-detect
 
 info:
-  name: ADBHoney 蜜罐 (shell probe) 识别 蜜罐识别（服务漏洞）
+  name: ADBHoney Shell 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 ADBHoney Honeypot 蜜罐。
+    ADBHoney 是模拟 Android ADB 暴露面的蜜罐，用于记录攻击者对调试端口的 shell 探测和命令行为。该模板完成 ADB CNXN、客户端信息与 OPEN shell 探测，并通过固定 WRTE 响应字节识别 ADBHoney 的 shell 仿真特征。
   metadata:
     verified: true
     max-request: 1

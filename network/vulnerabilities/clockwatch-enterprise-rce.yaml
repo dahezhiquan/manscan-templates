@@ -5,7 +5,14 @@ info:
   author: gy741
   severity: critical
   description: |
-    该模板检测 ClockWatch Enterprise 的远程代码执行风险。命中说明攻击者可能通过网络侧交互触发命令执行。
+    ClockWatch Enterprise 是用于时间同步和时间服务管理的软件。公开研究披露其网络服务在处理特定命令前缀时存在命令注入风险，未认证远程攻击者可能通过 TCP 1001 端口触发系统命令执行。该模板发送 `C+nslookup` 外带 DNS 探测命令，并同时要求服务返回 `OK-C` 与 interactsh DNS 回连，以确认远程代码执行漏洞可被触发。
+  impact: |
+    - 攻击者可能在运行 ClockWatch Enterprise 的主机上执行任意系统命令，获取服务器控制权。
+    - 被攻陷主机可能进一步被用于窃取凭据、横向移动、部署持久化后门或破坏时间同步相关业务。
+  remediation: |
+    - 将 ClockWatch Enterprise 升级到修复该问题的版本，或按照厂商/可信公告提供的缓解方案禁用受影响服务。
+    - 在补丁完成前，限制 TCP 1001 端口仅允许可信管理主机访问，并在边界设备阻断来自不可信网络的连接。
+    - 检查主机进程、计划任务、DNS 查询和应用日志，排查是否已有异常命令执行迹象。
   reference:
     - https://blog.grimm-co.com/2021/07/old-dog-same-tricks.html
   classification:

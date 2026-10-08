@@ -1,11 +1,11 @@
 id: dionaea-mysql-honeypot-detect
 
 info:
-  name: Dionaea MySQL 蜜罐识别（服务漏洞）
+  name: Dionaea MySQL 蜜罐识别（蜜罐识别）
   author: UnaPibaGeek
   severity: info
   description: |
-    该模板通过异常协议响应或默认特征识别目标是否为 Dionaea MySQL Honeypot 蜜罐。
+    Dionaea 可模拟 MySQL 服务以捕获数据库扫描、弱口令和恶意客户端行为。该模板读取 MySQL 握手响应，并通过固定版本 `5.7.16` 与 `aaaaaaaa` 等默认仿真特征识别 Dionaea MySQL 蜜罐。
   metadata:
     max-request: 1
     vendor: dionaea

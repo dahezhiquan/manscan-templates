@@ -1,11 +1,11 @@
 id: evilginx2-jarm
 
 info:
-  name: EvilGinx2 JARM 识别（服务漏洞）
+  name: EvilGinx2 JARM 识别（C2 识别）
   author: pussycat0x
   severity: high
   description: |
-    该模板通过 JARM TLS 指纹识别目标是否可能为 EvilGinx2 相关命令控制基础设施。
+    EvilGinx2 是常用于中间人式钓鱼和会话令牌窃取的反向代理框架。该模板计算目标 TLS 服务的 JARM 指纹，并与已知 EvilGinx2 基础设施指纹匹配，用于识别疑似钓鱼代理或相关控制基础设施。
   reference:
     - https://github.com/cedowens/C2-JARM
     - https://github.com/kgretzky/evilginx2

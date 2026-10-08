@@ -4,7 +4,15 @@ info:
   name: SAPRouter 路由信息泄露（服务漏洞）
   author: randomstr1ng
   severity: critical
-  description: 该模板用于检测 SAPRouter 是否向未授权访问者泄露路由与网络拓扑相关信息。
+  description: |
+    SAPRouter 是 SAP 环境中用于在客户网络、SAP 网络和外部连接之间转发通信的代理组件。若 SAPRouter 管理请求未受密码或来源限制保护，攻击者可能读取路由表、工作目录和连接表等敏感信息。该模板向 3299 端口发送 `ROUTER_ADM` 请求，并匹配 `Routtab`、`Working directory`、`SAProuter Connection Table` 等响应内容确认泄露。
+  impact: |
+    - 攻击者可能获得 SAP 网络边界、路由规则、内部主机和连接关系，辅助规划针对 SAP 系统的进一步攻击。
+    - 暴露的管理信息可能泄露运维路径和信任关系，增加未授权访问核心业务系统的风险。
+  remediation: |
+    - 为 SAPRouter 管理功能设置密码，并仅允许可信来源访问 3299 端口。
+    - 审查 `saprouttab` 路由规则，删除过宽的允许项并按最小权限限制目标系统。
+    - 按 SAP 官方建议更新和加固 SAPRouter，审计异常管理请求与连接记录。
   reference:
     - https://securityforeveryone.com/tools/saprouter-routing-information-leakage-vulnerability-scanner
     - https://support.sap.com/en/tools/connectivity-tools/saprouter.html

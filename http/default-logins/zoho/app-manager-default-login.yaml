@@ -5,7 +5,14 @@ info:
   author: 0midC13
   severity: high
   description: |
-    该模板用于检测 ManageEngine Applications Manager 是否仍在使用默认管理凭据。若命中，攻击者可直接获得监控平台后台权限，并可能借助后续数据库查询等功能进一步扩大影响。
+    该模板用于检测 ManageEngine Applications Manager 是否仍可使用默认管理凭据登录。模板先访问 `/index.do`，再向 `/j_security_check` 提交默认账号口令，并通过后续资源页面中的 `Super Administrator`、`Add Application` 等后台特征确认认证成功。
+  impact: |
+    - 攻击者可进入 Applications Manager 监控后台，查看应用、主机、数据库、中间件和告警配置等敏感运维信息。
+    - 监控平台被接管后，可能泄露连接凭据、篡改监控与告警策略，或借助集成功能继续影响被监控资产。
+  remediation: |
+    - 立即修改默认管理员凭据，清理示例账号，并为高权限账号启用强密码和多因素认证。
+    - 将管理后台限制在可信运维网络、VPN 或堡垒机后方，并开启登录与操作审计。
+    - 复核近期用户、监控对象、凭据配置、告警动作和集成设置，轮换可能暴露的系统凭据。
   reference:
     - https://www.manageengine.com/products/applications_manager/
   metadata:

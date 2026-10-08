@@ -5,7 +5,14 @@ info:
   author: Fur1na
   severity: high
   description: |
-    该模板通过尝试 Yacht 的默认管理员账号口令（如 admin@yacht.local:pass），并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
+    该模板用于检测 Yacht 容器管理面板是否仍可使用默认凭据或弱口令登录。模板向 `/api/auth/login` 提交内置默认凭据组合，并根据响应中的 `access_token` 和成功状态字段判断认证是否成功；命中说明目标未及时修改初始化管理员口令。
+  impact: |
+    - 攻击者可进入 Yacht 管理后台，查看、创建、停止或修改容器、镜像、应用模板和运行配置。
+    - 容器管理面板失陷后，可能导致宿主机资源被滥用、敏感环境变量泄露，或通过容器逃逸/挂载配置扩大影响。
+  remediation: |
+    - 立即修改默认管理员凭据，删除示例账号，并为管理用户启用高强度唯一密码。
+    - 将 Yacht 管理入口限制在可信网络或 VPN 后方，避免公网直接访问。
+    - 审计近期容器、镜像、卷挂载、环境变量和用户变更记录，轮换可能暴露的密钥。
   reference:
     - https://github.com/SelfhostedPro/Yacht
     - https://dev.yacht.sh/docs/Installation/Getting_Started

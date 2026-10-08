@@ -4,7 +4,15 @@ info:
   name: XXL-JOB 默认口令登录（弱口令）
   author: pdteam,ritikchaddha
   severity: high
-  description: 该模板通过尝试 XXL-JOB 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
+  description: |
+    该模板用于检测 XXL-JOB 调度中心是否仍可使用默认凭据或弱口令登录。模板分别向 `/xxl-job-admin/login` 和 `/login` 提交内置账号口令组合，并根据 JSON 返回中的 `code`、`msg` 以及 `XXL_JOB_LOGIN_IDENTITY` Cookie 判断认证是否成功。
+  impact: |
+    - 攻击者可进入 XXL-JOB 调度后台，查看或修改执行器、任务、调度策略和运行日志。
+    - 被接管的调度中心可能被用于触发恶意任务、泄露任务参数中的密钥配置，或进一步影响下游业务主机。
+  remediation: |
+    - 立即修改默认管理员密码，删除测试账号，并为高权限账号使用唯一强密码。
+    - 将调度中心控制台限制在内网、VPN 或堡垒机后方，并启用登录失败限制和操作审计。
+    - 复核近期任务定义、执行日志、执行器地址和告警配置，轮换可能出现在任务参数中的敏感凭据。
   reference:
     - https://github.com/xuxueli/xxl-job
   classification:

@@ -5,7 +5,14 @@ info:
   author: parzival,arbenn@pretera.com
   severity: high
   description: |
-    该模板通过尝试 Yealink CTP18 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
+    该模板用于检测 Yealink CTP18 是否仍可使用默认凭据或弱口令登录。模板向 `/api/auth/login?p=Login&t=1` 提交内置账号口令组合，并根据返回中的 `ret` 成功状态判断认证是否通过；命中说明设备管理口令仍保持出厂或弱口令状态。
+  impact: |
+    - 攻击者可接管 Yealink CTP18 的 Web 管理界面，查看设备状态、会议配置、网络参数或运行信息。
+    - 会议终端被未授权管理后，可能导致会议配置泄露、设备设置被篡改，或被作为内网访问入口继续探测。
+  remediation: |
+    - 立即修改默认管理员和普通用户口令，禁用不需要的管理账号。
+    - 将设备管理入口限制在会议设备管理网段、VPN 或堡垒机后方。
+    - 升级设备固件，审计近期登录记录、配置变更和异常会话。
   reference:
     - https://support.yealink.com
   metadata:

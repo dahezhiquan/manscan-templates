@@ -5,7 +5,14 @@ info:
   author: SleepingBag945
   severity: high
   description: |
-    该模板通过尝试 AC Centralized Management System 的已知默认口令，并依据认证成功后的响应特征判断目标是否仍在使用出厂弱口令。若命中，攻击者可直接进入管理界面并进一步修改配置或查看敏感信息。
+    该模板用于检测 AC Centralized Management System 是否仍可使用默认凭据或弱口令登录。模板主要向 `/login.cgi` 等认证入口发送请求，使用内置默认凭据组合进行认证尝试，并根据响应中的 `ac_userid=admin`、`ac_passwd=` 等登录成功特征判断登录是否成功；命中说明目标未及时修改出厂、示例或初始化账号口令。
+  impact: |
+    - 攻击者可接管 AC Centralized Management System 的 Web 管理界面，查看设备状态、网络配置、运行日志或敏感业务参数。
+    - 被接管的网络、工控、打印、视频、存储或远程管理设备可能被用于中断业务、改变访问策略、窃取流量或作为内网横向移动入口。
+  remediation: |
+    - 立即修改所有默认账号口令，禁用不再使用的出厂账号，并为管理账户设置高强度唯一密码。
+    - 将设备管理入口限制在 VPN、堡垒机或可信管理网段内，避免直接暴露到公网。
+    - 升级设备固件或管理组件，审计近期登录记录、配置变更和异常会话。
   reference:
     - https://github.com/Ershu1/2021_Hvv/blob/main/Wayos%20AC%E9%9B%86%E4%B8%AD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E5%BC%B1%E5%8F%A3%E4%BB%A4.md
     - https://github.com/chaitin/xray/blob/master/pocs/secnet-ac-default-password.yml

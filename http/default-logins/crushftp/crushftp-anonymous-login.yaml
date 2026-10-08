@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: high
   description: |
-    该模板用于检测 CrushFTP 是否允许使用匿名账户直接登录。若命中，未授权用户无需口令即可访问系统功能或管理资源。
+    该模板用于检测 CrushFTP 是否允许匿名或默认账号直接登录。模板主要向 `/WebInterface/`、`/WebInterface/function/` 等认证入口发送请求，并根据响应中的 `<username>anonymous</username>`、`text/xml` 等登录成功特征判断是否已进入有效会话；命中说明目标访问控制配置不当，未对敏感管理功能执行可靠身份校验。
+  impact: |
+    - 攻击者可使用默认凭据登录 CrushFTP，获得与该账号对应的管理或业务权限。
+    - 成功登录后可能进一步查看敏感信息、修改配置、创建账号、调用管理接口，或以该系统为入口访问内网其他资源。
+  remediation: |
+    - 关闭匿名登录或来宾账号，为所有访问敏感功能的用户强制执行独立身份认证和最小权限授权。
+    - 将登录入口限制在可信网络范围内，并启用多因素认证、登录失败限制和异常登录告警。
+    - 审计近期登录、配置变更和账号新增记录，必要时轮换相关密钥、令牌和业务凭据。
   classification:
     cpe: cpe:2.3:a:crushftp:crushftp:*:*:*:*:*:*:*:*
   metadata:

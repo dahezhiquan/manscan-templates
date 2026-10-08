@@ -4,8 +4,15 @@ info:
   name: 9Router 默认登录（弱口令）
   author: 0x_Akoko
   severity: high
-  description: |-
-    检测到 9Router AI 编码代理正在使用默认凭据（密码 123456）。9Router 内置硬编码初始密码，可提供完整仪表盘访问权限，包括已连接提供商的 API 密钥、OAuth 令牌和模型路由配置。
+  description: |
+    该模板用于检测 9Router 是否仍可使用默认凭据或弱口令登录。模板主要向 `/login`、`/api/auth/login` 等认证入口发送请求，使用内置默认凭据组合进行认证尝试，并根据响应中的 `9Router`、`status_code == 200` 等登录成功特征判断登录是否成功；命中说明目标未及时修改出厂、示例或初始化账号口令。
+  impact: |
+    - 攻击者可使用默认凭据登录 9Router，获得与该账号对应的管理或业务权限。
+    - 成功登录后可能进一步查看敏感信息、修改配置、创建账号、调用管理接口，或以该系统为入口访问内网其他资源。
+  remediation: |
+    - 立即修改或禁用默认账号，要求所有账户使用高强度唯一密码。
+    - 将登录入口限制在可信网络范围内，并启用多因素认证、登录失败限制和异常登录告警。
+    - 审计近期登录、配置变更和账号新增记录，必要时轮换相关密钥、令牌和业务凭据。
   reference:
     - https://github.com/decolua/9router
     - https://deepwiki.com/decolua/9router/13.1-authentication-and-token-issues

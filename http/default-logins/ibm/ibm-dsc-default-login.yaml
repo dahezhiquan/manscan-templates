@@ -4,6 +4,15 @@ info:
   name: IBM Decision Server Console 默认口令登录（弱口令）
   author: DhiyaneshDK
   severity: high
+  description: |
+    该模板用于检测 IBM Decision Server Console 是否仍可使用默认凭据或弱口令登录。模板主要向 `/res/j_security_check` 等认证入口发送请求，使用内置默认凭据组合进行认证尝试，并根据响应中的 `odmAdmin`、`Sign Out` 等登录成功特征判断登录是否成功；命中说明目标未及时修改出厂、示例或初始化账号口令。
+  impact: |
+    - 攻击者可进入 IBM Decision Server Console 管理界面，查看或修改用户、权限、认证策略、流程或资产配置。
+    - 身份、流程或资产管理系统被弱口令接管后，可能造成越权访问、策略绕过、敏感资产信息泄露和更大范围的权限扩散。
+  remediation: |
+    - 立即修改默认管理员口令，禁用初始化账号，并为高权限账户启用多因素认证。
+    - 限制管理入口来源，按最小权限拆分管理员角色，并开启认证、授权和配置变更审计。
+    - 复核用户、角色、认证策略、访问令牌和近期登录记录，必要时强制重置相关账号凭据。
   reference:
     - https://www.ibm.com/docs/en/odm/8.8.0?topic=center-overview-decision
   metadata:

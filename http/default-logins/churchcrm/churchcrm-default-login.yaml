@@ -5,7 +5,14 @@ info:
   author: Kazgangap
   severity: high
   description: |
-    该模板通过尝试 ChurchCRM 的默认账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者可直接登录系统，进一步访问敏感信息、修改配置或执行未授权操作。
+    该模板用于检测 ChurchCRM 是否仍可使用默认凭据或弱口令登录。模板主要向 `/session/begin` 等认证入口发送请求，使用内置默认凭据组合进行认证尝试，并根据响应中的 `contains_all(body, "ChurchCRM", "Dashboard", "Change Password")`、`status_code == 200` 等登录成功特征判断登录是否成功；命中说明目标未及时修改出厂、示例或初始化账号口令。
+  impact: |
+    - 攻击者可登录 ChurchCRM 后台，管理内容、用户、插件、主题、文件或站点配置。
+    - 后台权限被滥用后，可能导致页面篡改、恶意文件上传、敏感资料泄露，或进一步取得服务器执行能力。
+  remediation: |
+    - 立即修改默认管理员凭据，删除安装向导、演示账号和不必要的后台用户。
+    - 限制后台登录入口访问来源，启用多因素认证、登录失败锁定和验证码等防护。
+    - 检查近期内容、插件、主题、文件上传和管理员操作记录，确认没有持久化后门。
   reference:
     - https://github.com/ChurchCRM/CRM
   metadata:

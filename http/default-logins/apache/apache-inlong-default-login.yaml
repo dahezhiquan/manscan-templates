@@ -5,7 +5,14 @@ info:
   author: icarot
   severity: high
   description: |
-    该模板通过尝试 Apache InLong 的默认管理员账号口令，并依据认证成功后的响应特征判断目标是否仍在使用未修改的弱口令。若命中，攻击者通常可直接获得后台管理权限，进一步访问敏感信息、修改配置或执行未授权操作。
+    该模板用于检测 Apache InLong 是否仍可使用默认凭据或弱口令登录。模板主要向 `/inlong/manager/api/anno/login` 等认证入口发送请求，使用内置默认凭据组合进行认证尝试，并根据响应中的 `"success":true`、`"errMsg":null` 等登录成功特征判断登录是否成功；命中说明目标未及时修改出厂、示例或初始化账号口令。
+  impact: |
+    - 攻击者可进入 Apache InLong 管理后台，修改任务、服务、插件、路由、作业调度或部署配置。
+    - 在 DevOps、网关、监控或调度场景中，后台失陷可能影响生产任务执行、泄露密钥配置，并扩大到下游主机或业务系统。
+  remediation: |
+    - 立即修改默认管理员口令并清理示例账号，按角色最小化后台管理权限。
+    - 将控制台和管理 API 放入受控网络或 VPN 后方，并开启多因素认证、登录失败限制和操作审计。
+    - 复核近期任务、插件、连接配置、访问令牌和部署记录，轮换可能暴露的密钥。
   reference:
     - https://github.com/apache/inlong/
   classification:

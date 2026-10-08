@@ -4,6 +4,15 @@ info:
   name: 通过代理触发的 SSRF 检测
   author: geeknik,petergrifin
   severity: high
+  description: |
+    该模板用于检测通过代理式请求触发的 SSRF 风险。它构造完整 URL 形式的请求行访问 `127.0.0.1:22`，并通过 OpenSSH 协议不匹配特征判断目标是否把请求转发到本地服务。
+  impact: |
+    - 攻击者可能借助代理转发能力访问目标内网、环回地址或仅本机监听的服务。
+    - 在可利用场景下，SSRF 可用于探测内网端口、读取云元数据或绕过边界访问控制。
+  remediation: |
+    - 关闭非预期的正向代理能力，禁止服务器按客户端提供的完整 URL 任意转发请求。
+    - 对代理目标执行协议、主机和网段白名单校验，阻断环回、内网和链路本地地址。
+    - 在代理层和出口防火墙记录异常转发请求，并限制服务端出站访问范围。
   reference:
     - https://github.com/geeknik/the-nuclei-templates/blob/main/ssrf-by-proxy.yaml
     - https://twitter.com/HusseiN98D/status/1649006265450782720

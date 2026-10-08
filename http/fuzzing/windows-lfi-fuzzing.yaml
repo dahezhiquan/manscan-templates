@@ -5,7 +5,14 @@ info:
   author: matejsmycka
   severity: high
   description: |
-    该模板针对常见目录穿越路径尝试读取 `windows/win.ini`，用于检测 Windows 环境下的本地文件包含漏洞。
+    该模板用于模糊测试 Windows 环境下的本地文件包含或任意文件读取。它尝试多种目录穿越和编码路径读取 `windows/win.ini`，并通过 `bit app support`、`fonts`、`extensions` 等特征确认漏洞。
+  impact: |
+    - 攻击者可读取 Windows 主机本地文件、应用配置、源码和敏感凭据。
+    - 如果进一步读取到连接串、密钥或令牌，可能导致应用数据泄露或服务器被接管。
+  remediation: |
+    - 对文件路径参数进行规范化处理和白名单限制，拒绝反斜杠、编码穿越和绝对路径。
+    - 下载、模板和包含功能应使用受控文件 ID，不直接接收用户提交的路径。
+    - 降低 Web 进程对系统目录和敏感配置文件的读取权限。
   tags: fuzz,windows,lfi,fuzzing,vuln
 
 http:

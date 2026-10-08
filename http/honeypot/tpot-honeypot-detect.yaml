@@ -5,13 +5,20 @@ info:
   author: rxerium
   severity: info
   description: |
-    系统检测到 T-Pot 多合一蜜罐平台的控制面板。
-    T-Pot 整合了多种不同类型的安全蜜罐，泄露此后台可能意味着该环境已被部署为蜜罐诱捕节点，或者正在向外展示蜜罐的管理平台。
+    该模板用于识别 T-Pot 多合一蜜罐平台控制面板。T-Pot 集成多种安全蜜罐用于捕获攻击行为，模板通过页面标题、GitHub 链接和 ReadMe 文本等特征确认控制面板暴露。
+  impact: |
+    - T-Pot 面板暴露可能泄露蜜罐部署、诱捕节点和安全监控系统入口。
+    - 若控制面板缺少访问控制，攻击者可能尝试登录或干扰防守方诱捕环境。
+  remediation: |
+    - 将 T-Pot 管理面板限制在可信管理网段或 VPN 内，禁止公网直接暴露。
+    - 启用强认证、更新平台组件，并对管理登录和配置变更进行审计。
+    - 明确区分蜜罐采集入口与管理入口，避免管理服务与诱捕面混合暴露。
   reference:
     - https://github.com/telekom-security/tpotce
   metadata:
     max-request: 1
   tags: tpot,honeypot,discovery
+
 http:
   - method: GET
     path:

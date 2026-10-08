@@ -4,7 +4,15 @@ info:
   name: X-Forwarded-For 403 绕过检测
   author: vavkamil
   severity: medium
-  description: 该模板通过注入 X-Forwarded-For 内网地址，检测部署在 Nginx、Apache 代理或负载均衡后的 403 受限端点是否可被绕过。
+  description: |
+    该模板用于检测基于 `X-Forwarded-For` 的 403 访问控制绕过。它先请求受限页面记录 403 响应，再注入多个内网来源地址头，若第二次请求不再返回 403，则提示代理信任链可能配置不当。
+  impact: |
+    - 攻击者可伪造来源 IP 绕过基于 IP 的访问控制，访问本应限制的页面或接口。
+    - 若受限资源包含管理入口、调试接口或内部 API，可能进一步导致敏感操作暴露。
+  remediation: |
+    - 仅信任来自受控反向代理的 `X-Forwarded-For`，外部客户端提交的同名头应被覆盖或丢弃。
+    - 访问控制应基于可信代理传递的真实来源，并结合认证授权而非单纯依赖客户端 IP。
+    - 审查 Nginx、Apache、负载均衡和应用框架中的真实 IP 配置。
   metadata:
     max-request: 3
   tags: fuzzing,xff-403-bypass,vuln

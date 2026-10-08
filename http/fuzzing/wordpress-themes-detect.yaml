@@ -4,6 +4,15 @@ info:
   name: WordPress 主题探测
   author: 0xcrypto
   severity: low
+  description: |
+    该模板用于枚举 WordPress 已安装主题。它批量请求 `/wp-content/themes/<theme>/readme.txt`，并通过主题说明文件特征判断主题是否存在。
+  impact: |
+    - 攻击者可根据主题名称和版本定位历史漏洞、弱配置或可预测文件路径。
+    - 主题信息也可能暴露站点定制来源和维护状态，辅助后续攻击链构造。
+  remediation: |
+    - 禁止外部访问不必要的主题说明、开发和备份文件。
+    - 保持主题为最新版本，删除未使用或不再维护的主题。
+    - 通过文件权限和 Web 服务器规则减少 WordPress 主题目录中的信息泄露。
   metadata:
     max-request: 24434
   tags: fuzz,wordpress,fuzzing,vuln

@@ -5,8 +5,14 @@ info:
   author: UnaPibaGeek
   severity: info
   description: |
-    系统检测到 Snare 蜜罐。
-    目标在接收到不正确的 HTTP 版本请求时返回了特定信息，暴露出该网络服务可能由 Snare Web 应用蜜罐伪装而成。
+    该模板用于识别 Snare Web 应用蜜罐。它发送异常 HTTP 版本请求，并通过 `Python/3.10 aiohttp/3.8.3` 响应头和 `Bad status line` 错误文本判断目标是否为 Snare 诱捕服务。
+  impact: |
+    - 命中说明目标可能记录异常请求、扫描载荷和客户端来源信息。
+    - 对防守方而言，该识别可帮助确认 Web 蜜罐是否对外可见并正常捕获异常流量。
+  remediation: |
+    - 授权部署的 Snare 蜜罐应与生产服务隔离，并明确资产标签。
+    - 若非预期暴露，应排查未知服务、容器镜像和反向代理转发配置。
+    - 对蜜罐日志进行定期审计，避免测试人员提交敏感请求内容。
   metadata:
     verified: true
     max-request: 1

@@ -4,7 +4,15 @@ info:
   name: WAF 模糊识别
   author: dwisiswant0,lu4nx,Myst7ic
   severity: low
-  description: 该模板向目标发送多类带有攻击特征的测试载荷，并依据拦截页面、响应头或返回内容中的指纹特征识别 Web 应用防火墙类型。
+  description: |
+    该模板用于模糊识别 Web 应用防火墙类型。它通过 GET/POST 发送多类攻击特征载荷，并根据拦截页、响应头、错误文本或厂商特征匹配 WAF、CDN 或安全网关产品。
+  impact: |
+    - WAF 指纹可帮助安全人员确认防护链路是否生效，也可能被攻击者用于选择绕过策略。
+    - 命中结果本身不代表漏洞，但暴露的厂商和拦截特征会增加攻防双方对防护配置的可见性。
+  remediation: |
+    - 确认 WAF 暴露的错误页和响应头是否符合预期，尽量减少厂商、版本和策略细节泄露。
+    - 保持 WAF 规则和引擎版本更新，并结合应用日志验证拦截效果。
+    - 对测试载荷造成的告警进行归档，避免与真实攻击事件混淆。
   reference:
     - https://github.com/Ekultek/WhatWaf
   classification:

@@ -4,6 +4,15 @@ info:
   name: 缓存投毒模糊测试
   author: dwisiswant0,ColbyJack1134
   severity: medium
+  description: |
+    该模板用于模糊测试 Web 缓存投毒风险。它会批量构造非常见请求头，并将随机域名值注入请求头后观察两次请求的响应是否都反射该值，用于判断中间缓存或应用是否可能把攻击者可控内容缓存并复用给其他用户。
+  impact: |
+    - 攻击者可将恶意头部、脚本、重定向地址或伪造内容写入缓存响应，影响后续访问相同缓存键的用户。
+    - 在可利用场景下，缓存投毒可能导致存储型 XSS、钓鱼页面展示、认证流程干扰或业务页面篡改。
+  remediation: |
+    - 只将业务确实需要的请求头纳入缓存键，避免缓存包含未校验请求头的响应。
+    - 对响应中的头部派生内容进行白名单校验和上下文编码，禁止反射任意请求头值。
+    - 在 CDN、反向代理和应用层统一缓存规则，并对动态、含用户输入或认证相关响应禁用共享缓存。
   reference:
     - https://youst.in/posts/cache-poisoning-at-scale/
     - https://portswigger.net/web-security/web-cache-poisoning

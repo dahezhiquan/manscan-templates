@@ -4,6 +4,15 @@ info:
   name: Prestashop 模块枚举
   author: meme-lord
   severity: low
+  description: |
+    该模板用于枚举 PrestaShop 已安装模块。它批量请求 `/modules/<module>/config.xml`，并通过 `<module>`、`<name>`、`<displayName>` 和版本字段识别可访问的模块配置文件。
+  impact: |
+    - 攻击者可获得已安装模块名称和版本，进而匹配公开漏洞或识别过期组件。
+    - 模块枚举结果会降低针对 PrestaShop 站点的漏洞筛选成本。
+  remediation: |
+    - 禁止外部直接访问模块配置、清单和开发文件，仅暴露运行所需静态资源。
+    - 定期升级 PrestaShop 核心和第三方模块，移除不再使用的模块。
+    - 在 Web 服务器层限制 `/modules/*/config.xml` 等敏感文件访问。
   metadata:
     max-request: 639
   tags: fuzz,prestashop,fuzzing,vuln

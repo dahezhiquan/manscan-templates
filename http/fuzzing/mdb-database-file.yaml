@@ -4,7 +4,15 @@ info:
   name: Microsoft Access 数据库文件检测
   author: pdteam
   severity: medium
-  description: 该模板枚举常见的 MDB 数据库路径，并通过文件头与响应类型识别对外暴露的 Microsoft Access 数据库文件。
+  description: |
+    该模板用于枚举并检测暴露的 Microsoft Access MDB 数据库文件。它请求常见 ASP/Access 应用数据库路径，并通过 Jet Database 文件头、`application/x-msaccess` 响应头和 200 状态确认数据库文件可下载。
+  impact: |
+    - 攻击者可下载 MDB 数据库并离线读取业务数据、用户信息、配置和历史记录。
+    - 数据库文件中如包含账号密码或管理配置，可能进一步导致后台登录和数据篡改。
+  remediation: |
+    - 将数据库文件移出 Web 根目录，禁止通过 HTTP 直接下载 `.mdb`、`.accdb` 等数据文件。
+    - 在 Web 服务器层拒绝访问数据库、备份和临时文件扩展名。
+    - 迁移到受控数据库服务并轮换可能已暴露的账号和连接凭据。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/07-Input_Validation_Testing/05.5-Testing_for_MS_Access.html
   classification:

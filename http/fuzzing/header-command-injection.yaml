@@ -4,7 +4,15 @@ info:
   name: 请求头远程命令注入检测
   author: geeknik
   severity: critical
-  description: 该模板通过在请求头中注入命令执行载荷，检测目标是否存在远程命令注入漏洞，并根据命令执行结果进行判定。
+  description: |
+    该模板用于检测请求头处理链中的远程命令注入。它在多个 HTTP 请求头位置注入命令执行载荷，并通过 `uid/gid/groups` 或 `/etc/passwd` 特征判断服务端是否将头部内容拼接进系统命令。
+  impact: |
+    - 攻击者可通过可控请求头在服务器上执行系统命令，读取文件、写入后门或控制应用运行环境。
+    - 若 Web 进程权限较高，漏洞可能进一步导致主机失陷、内网横向移动和敏感数据泄露。
+  remediation: |
+    - 禁止将 HTTP 请求头直接拼接进 Shell 或系统命令；确需调用命令时使用固定参数白名单。
+    - 对头部值进行严格长度、字符集和语义校验，并使用安全 API 传参而非字符串拼接。
+    - 排查命令执行日志、异常进程和 Web 目录可疑文件，修复后轮换可能泄露的凭据。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cvss-score: 10

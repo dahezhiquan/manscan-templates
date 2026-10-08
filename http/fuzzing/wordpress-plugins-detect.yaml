@@ -4,6 +4,15 @@ info:
   name: WordPress 插件探测
   author: 0xcrypto
   severity: low
+  description: |
+    该模板用于枚举 WordPress 已安装插件。它批量请求 `/wp-content/plugins/<plugin>/readme.txt`，并通过 `== Description ==` 与插件标题、稳定版本字段提取插件名称和版本。
+  impact: |
+    - 攻击者可根据插件名称和版本匹配公开漏洞，筛选可利用的 WordPress 攻击面。
+    - 插件枚举还可能暴露站点功能、第三方集成和维护状态。
+  remediation: |
+    - 禁止外部访问不必要的插件 `readme.txt`、变更日志和开发文件。
+    - 及时升级 WordPress 插件，删除停用或不再维护的插件。
+    - 对 WordPress 目录启用最小暴露策略，并结合安全插件或 Web 服务器规则减少版本泄露。
   metadata:
     max-request: 100563
   tags: fuzz,wordpress,fuzzing,vuln

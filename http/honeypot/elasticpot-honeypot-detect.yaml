@@ -5,8 +5,14 @@ info:
   author: UnaPibaGeek
   severity: info
   description: |
-    系统检测到 ElasticPot (Elasticsearch 模拟) 蜜罐。
-    该蜜罐在响应对 "_cluster/settings" 的请求时其返回特征与真实的 Elasticsearch 安装有明显差异，以此表明该服务可能是一个极具欺骗性的陷阱/蜜罐设置。
+    该模板用于识别模拟 Elasticsearch 的 ElasticPot 蜜罐。它请求 `/_cluster/settings`，并通过 `index_not_found_exception` 等与真实 Elasticsearch 集群设置接口不一致的响应特征判断目标可能为蜜罐。
+  impact: |
+    - 命中说明目标可能伪装成 Elasticsearch 以诱捕扫描和攻击行为，交互请求可能被完整记录。
+    - 该结果可帮助安全团队避免把诱捕节点误归类为真实数据库资产。
+  remediation: |
+    - 若为授权蜜罐，应隔离部署并标记资产用途，避免与真实 Elasticsearch 混淆。
+    - 若非预期暴露，应检查主机、容器和代理配置，确认是否存在异常服务。
+    - 对命中节点的访问日志进行分析，用于发现扫描器和攻击来源。
   metadata:
     max-request: 1
     vendor: elasticpot

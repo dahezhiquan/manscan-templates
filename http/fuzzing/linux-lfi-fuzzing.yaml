@@ -4,7 +4,15 @@ info:
   name: Linux 本地文件包含模糊测试
   author: geeknik,unstabl3,pentest_swissky,sushantkamble,0xSmiley
   severity: high
-  description: 该模板针对常见参数批量注入多种目录穿越与编码变体，尝试读取 `/etc/passwd`，用于检测 Linux 环境下的本地文件包含漏洞。
+  description: |
+    该模板用于模糊测试 Linux 环境下的本地文件包含或任意文件读取。它向常见参数批量注入目录穿越、空字节和编码变体，尝试读取 `/etc/passwd`，并通过系统账号文件特征确认漏洞。
+  impact: |
+    - 攻击者可读取服务器本地敏感文件，例如系统账号文件、应用配置、密钥和源码。
+    - 若读取到数据库、云密钥或会话密钥，可能进一步导致应用接管、数据泄露或横向移动。
+  remediation: |
+    - 对文件路径参数使用固定目录白名单和规范化校验，拒绝 `../`、空字节、双重编码等穿越变体。
+    - 避免将用户输入直接传入文件读取、模板包含或下载接口。
+    - 降低 Web 进程文件读取权限，并将敏感配置移出 Web 可访问路径。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

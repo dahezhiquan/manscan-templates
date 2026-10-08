@@ -4,6 +4,16 @@ info:
   name: GoHire 招聘页面缺失接管检测（子域名接管）
   author: philippedelteil
   severity: high
+  description: |
+    该模板用于检测 GoHire 招聘页面缺失接管风险。当 DNS 仍指向 GoHire 招聘页面，但服务侧站点、项目、账号、门户或自定义域名绑定已删除、未创建或未完成配置时，攻击者可能在对应平台重新声明资源并接管该子域名。模板请求目标根地址，并结合“第三方平台默认错误页或未配置页面、HTTP 状态码 404”等错误页、状态码、响应头或 CNAME 特征判断是否存在接管风险。
+  impact: |
+    - 攻击者可在第三方平台创建或绑定资源，控制受影响子域名的页面内容、跳转行为或部分托管资源。
+    - 成功接管后可能用于钓鱼、品牌仿冒、恶意脚本投递、会话或令牌窃取，并影响依赖该子域名的业务流程。
+    - 若该子域名被 OAuth 回调、邮件链接、Cookie Domain、CSP 白名单或供应链资源引用，影响范围可能进一步扩大。
+  remediation: |
+    - 删除不再使用的 DNS 记录，尤其是指向第三方托管平台的悬空 CNAME、ALIAS、A/AAAA 记录。
+    - 如果子域名仍需使用，应先在第三方平台完成资源创建、域名绑定和所有权验证，再开放解析。
+    - 建立 DNS 与第三方 SaaS 资源的定期盘点流程，监控站点不存在、项目缺失、账号停用等可接管状态。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/403
   metadata:

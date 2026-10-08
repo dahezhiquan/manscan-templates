@@ -4,7 +4,15 @@ info:
   name: Bitbucket Pages 仓库缺失接管检测（子域名接管）
   author: pdteam
   severity: high
-  description: 检测 Bitbucket Pages 返回仓库不存在的纯文本响应，表明目标域名可能仍指向 Bitbucket 但对应站点仓库已删除或未创建，存在被重新创建后接管的风险。
+  description: |
+    该模板用于检测 Bitbucket Pages 仓库缺失接管风险。当自定义域名或 CNAME 仍指向对象存储服务，但对应存储桶已删除、未创建或未正确绑定时，攻击者可能创建同名存储桶并接管该域名承载的内容。模板请求目标地址，并结合“站点或项目不存在、响应头特征”等响应特征以及 Host/CNAME 条件判断是否存在子域名接管风险。
+  impact: |
+    - 攻击者可能创建同名存储桶并控制该子域名返回的静态内容、下载文件或脚本资源。
+    - 若该域名仍被业务页面、移动端或第三方集成引用，可能导致钓鱼、恶意脚本投递、品牌仿冒或供应链式内容劫持。
+  remediation: |
+    - 删除不再使用的 DNS CNAME/ALIAS 记录，或重新创建并正确绑定对应存储桶。
+    - 为仍需使用的对象存储配置明确的桶所有权、访问控制和静态网站托管策略，避免桶名被他人注册。
+    - 清点历史 DNS、CDN 和静态资源引用，确认没有业务仍依赖已释放的存储桶域名。
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:

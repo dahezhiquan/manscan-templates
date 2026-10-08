@@ -1,11 +1,18 @@
 id: godaddy-parked-domain
 
 info:
-  name: GoDaddy 停放域名 - 子域名接管（子域名接管）
+  name: GoDaddy 停放域名（子域名接管）
   author: ritikchaddha
   severity: medium
-  description: |-
-    当子域名的 CNAME 指向在 GoDaddy 上停放或挂牌出售的域名时，检测到潜在的子域名接管风险。攻击者可以购买目标域名并完全控制该子域名，从而实现钓鱼、窃取 Cookie 或投放恶意内容。
+  description: |
+    该模板用于检测 GoDaddy 停放域名接管风险。当子域名指向已停放、挂牌出售或可被重新购买的域名时，购买者可能控制该域名解析结果并间接接管原子域名。模板请求目标地址，并结合“第三方平台默认错误页或未配置页面”等响应特征判断是否存在子域名接管风险。
+  impact: |
+    - 攻击者购买或控制停放域名后，可完全控制受影响子域名的解析与页面内容。
+    - 成功接管后可能用于钓鱼、Cookie 或令牌窃取、恶意跳转、品牌仿冒以及绕过基于可信域名的安全策略。
+  remediation: |
+    - 移除指向停放、出售或不再归属组织控制域名的 DNS 记录。
+    - 确认所有 CNAME、NS、A/AAAA 记录的目标仍由组织控制，并纳入域名资产续费和监控流程。
+    - 对曾暴露的子域名检查是否被业务、邮件、OAuth 回调或第三方集成继续信任。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/10-Test_for_Subdomain_Takeover
     - https://cheatsheetseries.owasp.org/cheatsheets/Subdomain_Takeover_Prevention_Cheat_Sheet.html

@@ -4,7 +4,15 @@ info:
   name: DarkTrack RAT 木马识别（服务漏洞）
   author: pussycat0x
   severity: high
-  description: 该模板通过协议特征或已知指纹识别目标是否与 DarkTrack RAT 木马相关的命令控制流量相匹配。
+  description: |
+    该模板用于识别 DarkTrack RAT 相关命令控制服务。DarkTrack RAT 属于远程控制型恶意软件，命中通常表示目标主机可能正在运行恶意监听端，或该地址被用于控制受感染终端。模板向 60129 端口发送十六进制探测数据并读取响应，通过匹配十六进制特征 `0100000000000000034761` 判断是否符合 DarkTrack RAT 协议指纹。
+  impact: |
+    - 命中通常表示目标暴露了 DarkTrack RAT 相关的命令控制服务，资产可能已经被远程控制。
+    - 攻击者可利用 RAT 进行命令执行、文件窃取、凭据收集、屏幕或键盘监控，并继续向内网扩散。
+  remediation: |
+    - 立即隔离命中主机，采集进程、服务、网络连接、启动项和可疑样本用于取证。
+    - 清除 DarkTrack RAT 组件及持久化配置，轮换本机和相关业务账户凭据，并封禁异常监听端口。
+    - 扩展排查同网段主机是否存在相同指纹、异常登录或可疑外联行为。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

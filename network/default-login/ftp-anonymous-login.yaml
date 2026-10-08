@@ -5,9 +5,18 @@ info:
   author: C3l3si4n,pussycat0x
   severity: medium
   description: |
-    该模板检测 FTP 服务是否允许匿名登录。命中说明未认证用户可能直接访问公开目录，甚至具备上传能力。
+    该模板用于检测 FTP 服务是否允许匿名登录。匿名登录通常适用于公开下载目录，但如果目录权限、隔离范围或上传能力配置不当，未认证用户可能读取敏感文件、写入恶意内容或占用存储资源。模板依次发送 `USER anonymous` 与 `PASS anonymous`，并通过 `Anonymous access allowed`、`Logged in anonymously`、`Login successful` 等成功登录提示确认匿名访问可用，同时排除 HTTP、ESMTP 或明确拒绝登录的响应。
+  impact: |
+    - 未认证用户可能读取公开目录中的敏感文件，造成配置、备份、源码或业务数据泄露。
+    - 如果匿名账户具备写入权限，攻击者还可能上传恶意文件、投放钓鱼内容或占用存储资源。
+  remediation: |
+    - 禁用不必要的 FTP 匿名登录，改用具备身份认证和最小权限控制的账户。
+    - 若业务必须保留匿名下载目录，应限制为只读、隔离目录范围，并禁止上传、删除和目录遍历能力。
+    - 定期审计 FTP 根目录内容、访问日志和异常上传文件。
   reference:
     - https://tools.ietf.org/html/rfc2577
+  classification:
+    cwe-id: CWE-306
   metadata:
     max-request: 1
     verified: true

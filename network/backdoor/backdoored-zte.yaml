@@ -4,7 +4,14 @@ info:
   name: ZTE 路由器后门面板识别（服务漏洞）
   author: its0x08
   severity: critical
-  description: 该模板用于识别存在已知 Telnet 硬编码后门账户的 ZTE 路由器管理面板。命中通常意味着设备可能被后门凭据直接获取 root 权限命令行访问。
+  description: |
+    该模板用于识别存在已知 Telnet 硬编码后门账户的 ZTE 路由器。此类后门通常源于固件中预置的隐藏账户或调试入口，一旦 23 端口暴露到不可信网络，攻击者无需合法凭据即可尝试获取设备命令行访问能力。模板向 Telnet 服务提交 `root` 与 `Zte521` 组合，并通过响应中的 `BusyBox` 特征判断是否成功进入嵌入式系统 shell，从而确认后门风险。
+  impact: |
+    - 未授权攻击者可通过硬编码 Telnet 凭据登录设备，获取 BusyBox shell 或等效的高权限命令执行能力。
+    - 被接管的路由器可被用于内网横向移动、流量劫持、配置篡改或加入僵尸网络。
+  remediation: |
+    - 将受影响设备升级到厂商已修复后门账户问题的固件版本。
+    - 关闭公网 Telnet 访问，仅允许受信任管理网段访问设备管理服务，并排查是否存在异常账户、配置变更或恶意进程。
   reference:
     - https://www.exploit-db.com/ghdb/7179
   classification:
@@ -15,6 +22,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"ZTE Corporation"
+    vendor: zte
   tags: edb,network,zte,telnet,backdoor,router,tcp,vuln
 tcp:
   - host:

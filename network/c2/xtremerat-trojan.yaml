@@ -4,7 +4,15 @@ info:
   name: XtremeRAT 木马识别（服务漏洞）
   author: pussycat0x
   severity: high
-  description: 该模板通过协议特征或已知指纹识别目标是否与 XtremeRAT 木马相关的命令控制流量相匹配。
+  description: |
+    该模板用于识别 XtremeRAT 相关命令控制服务。XtremeRAT 是常见远程访问木马家族，命中通常意味着目标可能存在恶意监听端、被控主机回连入口或攻击者的控制基础设施。模板向 10001 端口发送十六进制探测数据并读取服务端返回内容，通过响应精确匹配 `X` 的协议特征确认 XtremeRAT 指纹。
+  impact: |
+    - 命中通常表示目标暴露了 XtremeRAT 相关的命令控制服务，资产可能已经被远程控制。
+    - 攻击者可利用 RAT 窃取敏感文件和凭据、执行系统命令、监控用户行为，并将受感染主机作为攻击跳板。
+  remediation: |
+    - 立即隔离命中主机，采集可疑进程、启动项、服务、网络连接和样本哈希用于取证。
+    - 清除 XtremeRAT 组件及其持久化机制，重置相关账户凭据，并阻断异常监听端口和 C2 通信。
+    - 对同网段资产开展相同指纹和异常登录排查，确认感染范围已经收敛。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

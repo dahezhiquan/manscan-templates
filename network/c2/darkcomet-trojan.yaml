@@ -4,7 +4,15 @@ info:
   name: DarkComet 木马识别（服务漏洞）
   author: pussycat0x
   severity: high
-  description: 该模板通过协议特征或已知指纹识别目标是否与 DarkComet 木马相关的命令控制流量相匹配。
+  description: |
+    该模板用于识别 DarkComet RAT 相关命令控制服务。DarkComet 属于远程访问木马，常被用于维持对受害主机的远程控制、文件窃取、凭据收集和后续横向移动；因此命中通常说明资产可能已经被植入恶意组件或暴露了攻击者控制基础设施。模板向 1604 端口发送 DarkComet 指纹探测数据，并通过响应中的 `BF7CAB464EFB` 特征确认服务类型。
+  impact: |
+    - 命中通常表示目标暴露了 DarkComet RAT 相关的命令控制服务，资产可能已经被远程控制。
+    - 攻击者可借助该类 RAT 执行命令、窃取文件和凭据、监控用户活动，并将主机作为后续攻击跳板。
+  remediation: |
+    - 立即隔离命中主机并开展恶意软件取证，重点检查启动项、服务、计划任务、注册表和异常网络连接。
+    - 清除 RAT 组件及其持久化机制，重置受影响账户凭据，并阻断相关监听端口和外联控制通道。
+    - 对同网段资产执行相同 C2 指纹排查，确认没有横向移动或重复感染。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

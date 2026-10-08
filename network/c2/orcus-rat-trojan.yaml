@@ -4,7 +4,15 @@ info:
   name: Orcus RAT 木马识别（服务漏洞）
   author: pussycat0x
   severity: high
-  description: 该模板通过协议特征或已知指纹识别目标是否与 Orcus RAT 木马相关的命令控制流量相匹配。
+  description: |
+    该模板用于识别 Orcus RAT 相关命令控制服务。Orcus RAT 可提供远程命令执行、文件操作、凭据窃取和终端监控等能力，暴露该类服务通常代表主机已被恶意软件控制或攻击基础设施对外开放。模板向 10134 端口发送 TLS ClientHello 形式的探测数据，并通过证书或握手响应中的 `OrcusServerCertificate0` 字符串确认 Orcus RAT 指纹。
+  impact: |
+    - 命中通常表示目标暴露了 Orcus RAT 相关的命令控制服务，资产可能已经被远程控制。
+    - 攻击者可通过 RAT 执行远程命令、窃取文件和凭据、监控终端活动，并维持对主机的长期控制。
+  remediation: |
+    - 立即隔离命中主机并开展恶意软件取证，重点检查证书指纹、异常服务、持久化项和外联记录。
+    - 清除 Orcus RAT 相关组件，轮换受影响凭据，并在网络侧阻断对应端口及控制通道。
+    - 对同网段和同账号登录过的资产进行扩展排查，确认没有二次感染。
   reference:
     - https://github.com/montysecurity/C2-Tracker/blob/main/tracker.py
   metadata:

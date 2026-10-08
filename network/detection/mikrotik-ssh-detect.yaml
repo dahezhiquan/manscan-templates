@@ -5,7 +5,7 @@ info:
   author: staticnoise
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MikroTik RouterOS SSH 相关服务。
+    MikroTik RouterOS SSH 是 RouterOS 设备的远程命令行管理服务。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   reference:
     - http://www.openwall.com/lists/oss-security/2016/08/01/2
     - http://www.openwall.com/lists/oss-security/2018/08/15/5

@@ -1,11 +1,11 @@
 id: redis-detect
 
 info:
-  name: Redis 服务 识别（指纹识别）
+  name: Redis 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板用于识别目标是否开放 Redis 服务。模板向 6379/6380 端口发送 `INFO` 请求，并通过 `DENIED Redis`、`CONFIG REWRITE` 或 `NOAUTH Authentication` 等 Redis 原生错误/认证响应确认服务存在，避免依赖 Web 页面特征造成误判。
+    Redis 是内存键值数据库和缓存服务，常用于缓存、会话、队列和实时数据处理。该模板连接 6379,6380/TCP 并读取协议响应，通过匹配 `DENIED Redis`、`CONFIG REWRITE`、`NOAUTH Authentication` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

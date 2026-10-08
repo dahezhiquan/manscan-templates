@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Telnet 相关服务。
+    Telnet 是传统远程终端协议，用于网络设备、嵌入式系统或旧式服务器的命令行访问。该模板连接 23/TCP 并读取协议响应，通过匹配 `Telnet`、`Login authentication` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

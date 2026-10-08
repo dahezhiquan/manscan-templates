@@ -5,7 +5,7 @@ info:
   author: pussycat0x,userdehghani
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 SMTP 相关服务。
+    SMTP 是邮件传输协议，用于邮件投递、转发和服务器间通信。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `SMTP` 等响应特征识别目标服务。
   metadata:
     max-request: 1
   tags: network,service,smtp,detect,mail,tcp,discovery

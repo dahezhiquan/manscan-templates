@@ -1,11 +1,11 @@
 id: java-rmi-detect
 
 info:
-  name: Java Remote Method Invocation 协议 识别（指纹识别）
+  name: Java Remote Method Invocation 协议识别（指纹识别）
   author: F1tz
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Java Remote Method Invocation Protocol 相关服务。
+    Java Remote Method Invocation（RMI）是 Java 远程对象调用机制，用于跨 JVM 调用远程服务。该模板发送 RMI 协议探测并读取握手或协商响应中的产品标识，用于识别目标是否开放 Java RMI 服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

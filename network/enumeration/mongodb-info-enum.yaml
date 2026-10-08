@@ -4,7 +4,15 @@ info:
   name: MongoDB 信息枚举（服务漏洞）
   author: pussycat0x,h4sh5
   severity: medium
-  description: 该模板通过协议交互枚举 MongoDB 服务的版本、配置及其他可公开获取的信息。
+  description: |
+    MongoDB 是文档型数据库服务，部分配置会允许未认证或低权限客户端读取构建信息与服务状态。该模板向 27017/TCP 发送 MongoDB 信息查询请求，并通过 `version`、`maxBsonObjectSize` 等字段确认可枚举数据库版本和运行参数。
+  impact: |
+    - 攻击者可能获取 MongoDB 版本、构建参数和服务状态，为后续已知漏洞匹配或未授权访问尝试提供依据。
+    - 暴露的数据库信息还可能泄露部署架构、功能开关和资源限制，增加数据服务被定向攻击的风险。
+  remediation: |
+    - 限制 27017/TCP 仅允许可信应用和运维网段访问，避免数据库端口直接暴露。
+    - 启用 MongoDB 认证和最小权限账号，关闭不必要的信息查询能力。
+    - 审计数据库访问日志，排查异常信息查询和未授权连接。
   reference:
     - https://nmap.org/nsedoc/scripts/mongodb-info.html
   classification:

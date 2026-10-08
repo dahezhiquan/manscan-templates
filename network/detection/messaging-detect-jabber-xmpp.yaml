@@ -1,11 +1,11 @@
 id: messaging-detect-jabber-xmpp
 
 info:
-  name: Jabber XMPP 协议 识别（指纹识别）
+  name: Jabber XMPP 协议识别（指纹识别）
   author: geeknik
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Jabber XMPP Protocol 相关服务。
+    Jabber/XMPP 是即时通信和消息路由协议，常用于聊天、联邦消息和实时通知系统。该模板连接 5222/TCP 并读取协议响应，通过匹配 `stream:stream xmlns:stream`、`stream:error xmlns:stream` 等响应特征识别目标服务。
   reference:
     - https://datatracker.ietf.org/doc/html/rfc6120
   classification:

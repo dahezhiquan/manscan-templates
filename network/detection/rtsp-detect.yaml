@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 RTSP 相关服务。
+    RTSP 是实时流媒体控制协议，常用于摄像头、视频服务器和流媒体播放控制。该模板连接 554/TCP 并读取协议响应，通过匹配 `RTSP/1.0` 等响应特征识别目标服务。
   reference:
     - https://nmap.org/nsedoc/scripts/rtsp-methods.html
   classification:

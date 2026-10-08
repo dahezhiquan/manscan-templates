@@ -1,11 +1,11 @@
 id: vnc-service-detect
 
 info:
-  name: VNC 服务 识别（指纹识别）
+  name: VNC 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 VNC Service 相关服务。
+    VNC 是图形化远程桌面协议，用于远程查看和控制桌面会话。该模板连接 5900/TCP 并读取协议响应，通过匹配 `RFB` 等响应特征识别目标服务。
   classification:
     cwe-id: CWE-200
   metadata:

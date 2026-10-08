@@ -1,11 +1,11 @@
 id: iplanet-imap-detect
 
 info:
-  name: iPlanet Messaging 服务 IMAP 协议 识别（指纹识别）
+  name: iPlanet Messaging 服务 IMAP 协议识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 iPlanet Messaging Server IMAP Protocol 相关服务。
+    iPlanet Messaging Server IMAP 是邮件访问服务组件，用于客户端读取和管理服务器邮箱。该模板连接 110/TCP 并读取协议响应，通过匹配 `iPlanet Messaging Server` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

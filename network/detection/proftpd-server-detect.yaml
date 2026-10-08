@@ -1,11 +1,11 @@
 id: proftpd-server-detect
 
 info:
-  name: ProFTPD 服务 识别（指纹识别）
+  name: ProFTPD 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 ProFTPD Server 相关服务。
+    ProFTPD 是类 Unix 系统常见的 FTP 服务端软件，用于提供文件传输服务。该模板连接 21/TCP 并读取协议响应，通过匹配 `ProFTPD Server` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

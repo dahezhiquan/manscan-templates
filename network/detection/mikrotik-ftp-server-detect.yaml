@@ -1,11 +1,11 @@
 id: mikrotik-ftp-server-detect
 
 info:
-  name: MikroTik FTP server 识别（指纹识别）
+  name: MikroTik FTP Server 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MikroTik FTP server 相关服务。
+    MikroTik FTP Server 是 RouterOS 设备上的文件传输服务，常用于设备文件和配置维护。该模板连接 21/TCP 并读取协议响应，通过匹配 `MikroTik FTP` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

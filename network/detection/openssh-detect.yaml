@@ -1,11 +1,11 @@
 id: openssh-detect
 
 info:
-  name: OpenSSH 服务 识别（指纹识别）
+  name: OpenSSH 服务识别（指纹识别）
   author: r3dg33k,daffainfo,iamthefrogy
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 OpenSSH Service 相关服务。
+    OpenSSH 是广泛使用的 SSH 服务实现，用于远程登录、端口转发和安全文件传输。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   reference:
     - http://www.openwall.com/lists/oss-security/2016/08/01/2
     - http://www.openwall.com/lists/oss-security/2018/08/15/5

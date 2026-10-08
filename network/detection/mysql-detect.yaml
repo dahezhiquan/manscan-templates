@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MySQL 相关服务。
+    MySQL 是关系型数据库服务，广泛用于 Web 应用、业务系统和数据存储场景。该模板连接 3306/TCP 并读取协议响应，通过匹配 `mysql` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

@@ -5,7 +5,7 @@ info:
   author: nybble04,geeknik
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 PostgreSQL Authentication 相关服务。
+    PostgreSQL 是关系型数据库服务，用于业务数据存储、查询和事务处理。该模板连接 5432/TCP 并读取协议响应，通过匹配 `C0A000`、`C08P01`、`28000` 等响应特征识别目标服务。
   reference:
     - https://www.postgresql.org/docs/current/errcodes-appendix.html
     - https://www.postgresql.org/docs/current/client-authentication-problems.html

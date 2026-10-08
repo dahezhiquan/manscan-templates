@@ -1,11 +1,11 @@
 id: maverick-ssh-detect
 
 info:
-  name: Maverick SSH 服务 识别（指纹识别）
+  name: Maverick SSH 服务识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Maverick SSH Service 相关服务。
+    Maverick SSH 是 Java SSH/SFTP 实现，常嵌入到企业应用或文件传输系统中提供安全远程访问能力。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   reference:
     - https://github.com/sshtools/maverick-synergy
   classification:

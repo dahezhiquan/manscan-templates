@@ -1,11 +1,11 @@
 id: clamav-detect
 
 info:
-  name: ClamAV 服务 识别（指纹识别）
+  name: ClamAV 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 ClamAV Server 相关服务。
+    ClamAV clamd 是反恶意软件扫描守护进程，常用于邮件网关、文件上传链路和服务器侧文件扫描。该模板连接 3310/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   metadata:
     verified: true
     max-request: 1

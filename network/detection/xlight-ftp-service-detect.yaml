@@ -1,11 +1,11 @@
 id: xlight-ftp-service-detect
 
 info:
-  name: Xlight FTP 服务 识别（指纹识别）
+  name: Xlight FTP 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Xlight FTP Service 相关服务。
+    Xlight FTP Server 是 Windows 平台 FTP/SFTP 服务端软件，用于文件传输和账户管理。该模板连接 21/TCP 并读取协议响应，通过匹配 `Xlight FTP Server` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

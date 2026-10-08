@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 VMware Authentication Daemon 相关服务。
+    VMware Authentication Daemon 是 VMware 主机相关认证与远程控制支持服务，用于管理组件认证和控制通道协商。该模板连接 902/TCP 并读取协议响应，通过匹配 `ServerDaemonProtocol:SOAP`、`MKSDisplayProtocol:VNC` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

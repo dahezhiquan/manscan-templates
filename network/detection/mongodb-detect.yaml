@@ -1,11 +1,11 @@
 id: mongodb-detect
 
 info:
-  name: MongoDB 服务 识别（指纹识别）
+  name: MongoDB 服务识别（指纹识别）
   author: pdteam
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MongoDB Service 相关服务。
+    MongoDB 是文档型数据库服务，用于存储 JSON/BSON 文档和支撑应用数据访问。该模板连接 27017/TCP 并读取协议响应，通过匹配 `logicalSessionTimeout`、`localTime` 等响应特征识别目标服务。
   reference:
     - https://github.com/orleven/Tentacle
   classification:

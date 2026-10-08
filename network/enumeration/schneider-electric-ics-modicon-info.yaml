@@ -1,11 +1,11 @@
 id: schneider-electric-ics-modicon-info
 
 info:
-  name: Schneider Modicon PLC 信息泄露（指纹识别）
+  name: Schneider Electric Modicon PLC 信息枚举（指纹识别）
   author: biero-el-corridor
   severity: info
   description: |
-    该模板通过协议交互枚举 Schneider Modicon PLC Information Disclosure 相关服务的版本、配置、用户或其他可公开获取的信息。
+    Schneider Electric Modicon PLC 是工业自动化控制器系列，常用于生产线、能源和基础设施控制场景。该模板通过 Modbus/TCP 与 502/TCP 交互，匹配 `Schneider Electric` 等设备标识，用于识别并枚举 Modicon PLC 基本信息。
   metadata:
     verified: true
     shodan-query: "Device Identification: Schneider Electric"

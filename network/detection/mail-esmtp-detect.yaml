@@ -5,7 +5,7 @@ info:
   author: pussycat0x,userdehghani
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 ESMTP 相关服务。
+    ESMTP 是 SMTP 的扩展协议，用于邮件服务器之间投递邮件并协商扩展能力。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `ESMTP Postfix`、`220` 等响应特征识别目标服务。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-open-relay.html
   classification:

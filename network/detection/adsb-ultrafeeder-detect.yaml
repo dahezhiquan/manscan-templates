@@ -1,11 +1,11 @@
 id: adsb-ultrafeeder-detect
 
 info:
-  name: ADSB Ultrafeeder Beast Mode 识别（服务漏洞）
+  name: ADS-B Ultrafeeder Beast Mode 暴露识别（服务漏洞）
   author: Random-Robbie
   severity: low
   description: |
-    该模板用于识别目标是否开放 ADS-B Beast Mode 数据流服务。模板向 30005/TCP 发送探测数据，并匹配 Beast 二进制帧起始字节 `0x1a31`、`0x1a32` 或 `0x1a33`，用于确认目标正在输出 dump1090/readsb 等接收器的航空广播数据。
+    ADS-B Ultrafeeder/Beast Mode 数据流通常由 dump1090、readsb 等 ADS-B 接收与转发组件输出，用于传输航空器广播报文、位置和航迹数据。该模板向 30005/TCP 发送探测数据，并匹配 Beast 二进制帧起始字节 `0x1a31`、`0x1a32` 或 `0x1a33`，用于确认目标正在输出航空广播数据流。
   impact: |
     - ADS-B 数据流对外暴露可能泄露接收站可见的航空器位置、速度和航迹信息，造成敏感区域或业务运行态势被外部持续观察。
     - 未受控的 Beast Mode 端口还可能被第三方滥用为数据源，增加服务负载并影响本地采集链路稳定性。

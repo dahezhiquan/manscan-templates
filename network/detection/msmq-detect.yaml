@@ -5,10 +5,10 @@ info:
   author: bhutch
   severity: info
   description: |
-    该模板用于识别目标是否开放 Microsoft Message Queuing（MSMQ）远程服务。模板向 1801/TCP 发送 MS-MQQB 连接探测报文，并匹配符合 MSMQ 协议的十六进制响应头，确认目标可处理远程队列通信。
+    Microsoft Message Queuing（MSMQ）是 Windows 的异步消息队列组件，用于应用之间可靠传递消息。该模板向 1801/TCP 发送 MS-MQQB 连接探测报文，并匹配符合 MSMQ 协议的十六进制响应头，确认目标可处理远程队列通信。
   impact: |
     - MSMQ 对外开放会暴露 Windows 消息队列服务入口，攻击者可据此定位启用 MSMQ 的主机并继续评估队列访问控制和补丁状态。
-    - Shadowserver 与 Microsoft 资料均指出，可公网访问的 MSMQ 服务需要重点关注，其中历史漏洞如 CVE-2023-21554 曾影响未授权远程代码执行风险。
+    - 可公网访问的 MSMQ 服务需要重点关注，历史漏洞和弱访问控制可能导致远程攻击面扩大。
   remediation: |
     - 若业务不需要 MSMQ，禁用 Microsoft Message Queuing 功能或关闭 1801/TCP 暴露。
     - 仅允许可信应用服务器访问 MSMQ 端口，并通过 Windows 防火墙、网络 ACL 或分段策略限制来源。

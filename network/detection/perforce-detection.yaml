@@ -1,11 +1,11 @@
 id: perforce-detection
 
 info:
-  name: Perforce 服务 识别（指纹识别）
+  name: Perforce 服务识别（指纹识别）
   author: Morgan Robertson
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Perforce Server 相关服务。
+    Perforce Helix Core 是集中式版本控制和资产管理服务，常用于软件开发、游戏和大型二进制资产管理。该模板发送 Perforce 协议探测并读取响应，通过匹配 `xfiles`、`server` 等特征识别 Helix Core 服务。
   reference:
     - https://morganrobertson.net/p4wned/
     - https://www.keysight.com/blogs/en/tech/nwvs/2022/06/08/a-sneak-peek-into-the-protocol-behind-perforce

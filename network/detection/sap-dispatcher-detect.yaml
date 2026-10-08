@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 SAP Dispatcher 相关服务。
+    SAP Dispatcher 是 SAP NetWeaver 应用服务器的请求分发组件，用于协调客户端请求和工作进程。该模板连接 3200/TCP 并读取协议响应，通过匹配 `DPTMMSG` 等响应特征识别目标服务。
   metadata:
     verified: true
     shodan-query: "DPTMMSG"

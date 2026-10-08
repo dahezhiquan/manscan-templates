@@ -1,11 +1,11 @@
 id: cql-cassandra-native-transport
 
 info:
-  name: CQL Native 传输 识别（指纹识别）
+  name: CQL Native 传输识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 CQL Native Transport 相关服务。
+    Cassandra Query Language（CQL）Native Transport 是 Apache Cassandra 的客户端访问协议，用于执行查询和管理分布式列式数据库。该模板连接 9042/TCP 并读取协议响应，通过匹配 `valid or unsupported protocol` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

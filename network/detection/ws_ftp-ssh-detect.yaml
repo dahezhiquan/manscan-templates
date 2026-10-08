@@ -1,11 +1,11 @@
 id: ws_ftp-ssh-detect
 
 info:
-  name: WS_FTP-SSH 服务 识别（指纹识别）
+  name: WS_FTP-SSH 服务识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 WS_FTP-SSH Service 相关服务。
+    WS_FTP SSH/SFTP 是 Progress WS_FTP 产品的安全文件传输服务，用于企业文件交换。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

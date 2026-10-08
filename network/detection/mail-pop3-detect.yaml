@@ -1,11 +1,11 @@
 id: mail-pop3-detect
 
 info:
-  name: POP3 协议 识别（指纹识别）
+  name: POP3 协议识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 POP3 Protocol 相关服务。
+    POP3 是邮件下载协议，用于客户端从邮件服务器拉取邮箱消息。该模板连接 110/TCP 并读取协议响应，通过匹配 `+OK Dovecot ready`、`POP3` 等响应特征识别目标服务。
   reference:
     - https://nmap.org/nsedoc/scripts/pop3-ntlm-info.html
   classification:

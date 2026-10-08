@@ -1,11 +1,11 @@
 id: rdp-detection
 
 info:
-  name: Windows Remote Desktop 协议 识别（指纹识别）
+  name: Windows Remote Desktop 协议识别（指纹识别）
   author: princechaddha
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Windows Remote Desktop Protocol 相关服务。
+    Remote Desktop Protocol（RDP）是 Windows 远程桌面协议，用于图形化远程登录和管理。该模板连接 3389/TCP 并读取协议响应，通过匹配 `030000130ed`、`0300000b06d00000123400`、`030000130ed000001234000300080002000000` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

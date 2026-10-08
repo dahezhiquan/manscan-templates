@@ -5,7 +5,14 @@ info:
   author: pussycat0x
   severity: low
   description: |
-    该模板通过协议交互枚举 PostgreSQL - User Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
+    PostgreSQL 是关系型数据库服务，其认证错误和启动响应在特定配置下可能泄露用户名是否存在。该模板向 5432/TCP 发送 PostgreSQL 启动包并观察 `client_encoding`、`integer_datetimes` 等响应差异，用于辅助枚举数据库用户。
+  impact: |
+    - 攻击者可通过响应差异确认 PostgreSQL 用户是否存在，为口令喷洒、暴力破解或社会工程攻击准备有效账号列表。
+    - 用户枚举会降低数据库认证攻击成本，并可能暴露内部命名规则和运维账号习惯。
+  remediation: |
+    - 检查 PostgreSQL 认证配置，避免不同用户名返回可区分的认证差异。
+    - 限制 5432/TCP 访问来源，启用强口令、登录限速和异常认证告警。
+    - 审计数据库认证失败日志，排查用户枚举、口令喷洒和暴力破解行为。
   reference:
     - https://medium.com/@netscylla/pentesters-guide-to-postgresql-hacking-59895f4f007
   metadata:

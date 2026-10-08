@@ -1,11 +1,11 @@
 id: beanstalk-service
 
 info:
-  name: Beanstalk 服务 识别（指纹识别）
+  name: Beanstalk 队列服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过协议交互枚举 Beanstalk 相关服务的版本、配置、用户或其他可公开获取的信息。
+    Beanstalkd 是轻量级工作队列服务，常用于异步任务投递、延迟任务和后台作业处理。该模板连接 11300/TCP 并发送服务命令探测，通过 `cmd-release`、`cmd-peek` 等帮助信息识别 Beanstalk 队列服务。
   reference:
     - https://jhadiary.wordpress.com/2016/05/18/beanstalk-helping-commands/
   metadata:

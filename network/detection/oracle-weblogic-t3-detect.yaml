@@ -5,13 +5,14 @@ info:
   author: F1tz,milo2012,wdahlenb
   severity: info
   description: |
-    该模板用于识别目标是否开放 Oracle WebLogic T3/T3S 协议。模板分别向 7001/TCP 和 7002/TLS 发送 T3 握手请求，并通过 `HELO` 响应及版本提取特征确认 WebLogic T3 通道可达。
+    Oracle WebLogic T3/T3S 是 WebLogic Server 的专有远程通信协议，常用于集群、JNDI、EJB 和管理通信。该模板分别向 7001/TCP 和 7002/TLS 发送 T3/T3S 握手请求，并通过 `HELO` 响应及版本提取特征识别 WebLogic T3 通道。
   impact: |
-    - 命中通常意味着目标对外暴露了可被继续探测或针对性利用的网络服务。
-    - 该结果可作为后续版本识别、弱配置检查或漏洞验证的前置依据。
+    - WebLogic T3/T3S 通道对外暴露会提供明确的中间件攻击面，可被继续用于版本识别、JNDI/RMI 面探测或历史漏洞验证。
+    - 若目标版本存在未修复漏洞或反序列化入口，开放的 T3 通道可能成为远程攻击链的前置条件。
   remediation: |
-    - 核查该服务是否确需对当前网络开放，并限制仅允许受信任来源访问。
-    - 结合版本、认证与加密配置继续评估是否存在更高风险问题。
+    - 限制 7001/7002 等 WebLogic 通信端口仅允许可信应用节点和管理网段访问。
+    - 关闭不必要的 T3/T3S 暴露面，或通过网络分段、访问控制和补丁管理降低远程攻击风险。
+    - 结合 WebLogic 版本继续检查官方安全更新、反序列化防护和管理通道配置。
   metadata:
     max-request: 2
     vendor: oracle

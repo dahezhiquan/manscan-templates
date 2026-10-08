@@ -5,7 +5,7 @@ info:
   author: matejsmycka
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Famatech Radmin 相关服务。
+    Famatech Radmin 是 Windows 远程控制和远程管理软件，用于桌面控制、文件传输和运维支持。该模板连接 4899/TCP，通过匹配 `0100000009` 等二进制响应特征识别目标服务。
   reference:
     - https://www.famatech.com/
     - https://seclists.org/nmap-dev/2008/q1/89

@@ -1,11 +1,11 @@
 id: teamspeak3-detect
 
 info:
-  name: TeamSpeak 3 服务Query 识别（指纹识别）
+  name: TeamSpeak 3 ServerQuery 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 TeamSpeak 3 ServerQuery 相关服务。
+    TeamSpeak 3 ServerQuery 是 TeamSpeak 语音服务器的远程查询与管理接口。该模板连接 2002/TCP 并读取协议响应，通过匹配 `TS3`、`TeamSpeak 3 ServerQuery interface` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: fortinet-fgfm-detect
 
 info:
-  name: Fortinet FGFM 协议识别（服务漏洞）
+  name: Fortinet FGFM 管理协议暴露识别（服务漏洞）
   author: johnk3r
   severity: low
   description: |
-    该模板用于识别目标是否开放 Fortinet FGFM（FortiGate to FortiManager）管理协议。模板向 541/TCP 发送轻量探测数据，并在响应证书或握手内容中同时匹配 `.fortinet.com` 与 `Certificate Authority`，用于确认 Fortinet 设备管理通道暴露。
+    Fortinet FGFM（FortiGate to FortiManager）是 FortiGate 与 FortiManager 之间的集中管理通信协议，常用于设备注册、配置同步和安全策略管理。该模板向 541/TCP 发送轻量探测数据，并在证书或握手响应中匹配 `.fortinet.com` 与 `Certificate Authority`，用于识别 Fortinet 管理通道是否暴露。
   impact: |
     - FGFM 是 Fortinet 设备与 FortiManager 之间的管理通信通道，对不可信网络开放会暴露设备管理面和证书指纹。
     - 该结果可帮助攻击者定位 Fortinet 管理链路，并结合具体产品版本继续验证认证绕过、远程代码执行或配置泄露类漏洞。

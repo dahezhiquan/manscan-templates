@@ -1,11 +1,11 @@
 id: rpcbind-portmapper-detect
 
 info:
-  name: Rpcbind Portmapper 识别（指纹识别）
+  name: rpcbind Portmapper 识别（指纹识别）
   author: geeknik
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Rpcbind Portmapper 相关服务。
+    rpcbind/portmapper 是 ONC RPC 服务注册与端口映射组件，常被 NFS 等 RPC 服务依赖。该模板连接 111/TCP 并读取协议响应，通过匹配 `/run/rpcbind.sock` 等响应特征识别目标服务。
   reference:
     - https://book.hacktricks.xyz/pentesting/pentesting-rpcbind
   classification:

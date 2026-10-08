@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 RabbitMQ 相关服务。
+    RabbitMQ 是基于 AMQP 的消息队列服务，用于异步消息投递、任务队列和系统解耦。该模板连接 5672/TCP 并读取协议响应，通过匹配 `publisher_confirmst`、`RabbitMQ` 等响应特征识别目标服务。
   reference:
     - https://nmap.org/nsedoc/scripts/amqp-info.html
   metadata:

@@ -1,11 +1,11 @@
 id: aws-sftp-detect
 
 info:
-  name: AWS SFTP 服务 识别（指纹识别）
+  name: AWS SFTP 服务识别（指纹识别）
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 AWS SFTP Service 相关服务。
+    AWS Transfer Family SFTP 是托管式 SFTP 文件传输服务，常用于将文件安全传输到 Amazon S3 或相关存储后端。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   reference:
     - https://aws.amazon.com/pt/about-aws/whats-new/2018/11/aws-transfer-for-sftp-fully-managed-sftp-for-s3/
   classification:

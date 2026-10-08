@@ -5,7 +5,7 @@ info:
   author: johnk3r
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 MOVEit Transfer SFTP 相关服务。
+    MOVEit Transfer SFTP 是企业级安全文件传输产品的 SFTP 接入服务，用于受控文件交换和合规传输。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

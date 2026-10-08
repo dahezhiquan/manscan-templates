@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 IMAP 相关服务。
+    IMAP 是邮件访问协议，用于客户端在服务器端读取、同步和管理邮箱内容。该模板连接 143/TCP 并读取协议响应，通过匹配 `OK `、`IMAP4rev1` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

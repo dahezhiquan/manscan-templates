@@ -1,11 +1,11 @@
 id: activemq-openwire-transport-detect
 
 info:
-  name: ActiveMQ OpenWire 传输 识别（指纹识别）
+  name: ActiveMQ OpenWire 传输识别（指纹识别）
   author: pussycat0x,ret2src
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 ActiveMQ OpenWire Transport 相关服务。
+    Apache ActiveMQ OpenWire 是 ActiveMQ 默认的二进制消息传输协议，用于 JMS 客户端与 Broker 之间的消息通信。该模板连接 61616,6835/TCP 并读取协议响应，通过匹配 `ActiveMQ` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: gopher-detect
 
 info:
-  name: Gopher 服务 识别（指纹识别）
+  name: Gopher 服务识别（指纹识别）
   author: pry0cc
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Gopher Service 相关服务。
+    Gopher 是早期互联网文档检索协议，用于以菜单形式发布和浏览文本资源。该模板连接 70/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

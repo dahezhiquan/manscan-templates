@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板用于识别目标是否暴露 Direct Connect P2P 协议服务。模板向目标端口发送空探测数据，并根据响应中的 `$MyNick` 或 `$Lock EXTENDEDPROTOCOL` 等握手特征判断目标是否运行 Direct Connect 相关服务。
+    Direct Connect 是点对点文件共享协议，Hub 用于协调用户连接、聊天和资源搜索。该模板连接 548/TCP 并读取协议响应，通过匹配 `$MyNick bb3096`、`$Lock EXTENDEDPROTOCOL` 等响应特征识别目标服务。
   reference:
     - https://en.wikipedia.org/wiki/Direct_Connect_(protocol)
   metadata:

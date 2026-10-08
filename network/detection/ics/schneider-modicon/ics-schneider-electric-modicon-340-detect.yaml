@@ -5,7 +5,7 @@ info:
   author: biero-el-corridor
   severity: info
   description: |
-    该模板通过工业协议指纹识别目标是否运行 Schneider Electric Modicon 340 Series PLC 相关设备或控制系统。
+    Schneider Electric Modicon 340 Series PLC 是 Schneider Electric Modicon 工业控制器系列，常用于 PLC 控制、生产线自动化和基础设施控制场景。该模板连接 502/TCP 并读取协议响应，通过匹配 `BMX P34`、`Schneider Electric` 等响应特征识别目标服务。
   metadata:
     verified: true
     shodan-query: port:502 "P34"

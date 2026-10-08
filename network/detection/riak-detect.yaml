@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Riak 相关服务。
+    Riak 是分布式 NoSQL 数据库，面向高可用键值存储和集群化数据访问。该模板连接 8087/TCP 并读取协议响应，通过匹配 `riak` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

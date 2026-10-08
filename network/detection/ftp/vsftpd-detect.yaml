@@ -1,10 +1,10 @@
 id: vsftpd-detect
 info:
-  name: vsFTPd 服务 识别（指纹识别）
+  name: vsFTPd 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 vsFTPd Service - Detect 相关 FTP 服务实现。
+    vsFTPd 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `vsFTPd` 等响应特征识别目标服务。
   metadata:
     verified: true
     shodan-query: product:"vsftpd"

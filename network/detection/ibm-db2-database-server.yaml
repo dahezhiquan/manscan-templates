@@ -1,11 +1,11 @@
 id: ibm-db2-database-server
 
 info:
-  name: IBM DB2 Database 服务 识别（指纹识别）
+  name: IBM DB2 Database 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 IBM DB2 Database Server 相关服务。
+    IBM Db2 是企业级关系型数据库系统，常用于核心业务数据存储和事务处理。该模板连接 50000/TCP 并读取协议响应，通过匹配 `SQLDB2RA`、`DB2`、`SQLJS1D` 等响应特征识别目标服务。
   reference:
     - https://nmap.org/nsedoc/scripts/db2-das-info.html
   classification:

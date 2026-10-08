@@ -4,7 +4,15 @@ info:
   name: Niagara Fox 协议信息枚举（服务漏洞）
   author: pussycat0x
   severity: medium
-  description: 该模板通过协议交互枚举 Niagara Fox 服务返回的版本、主机与运行环境信息。
+  description: |
+    Niagara Fox 是 Tridium Niagara 楼宇自动化平台使用的通信协议，常见于楼控、暖通和能源管理系统。该模板连接 1911/TCP 并请求 Fox 信息，通过 `fox.version` 等字段枚举主机名、应用版本、运行环境和系统标识。
+  impact: |
+    - 攻击者可能获取 Niagara 主机名、应用版本、Java/操作系统信息和品牌标识，辅助定位楼宇自动化系统。
+    - 在工业与楼控场景中，公开的设备信息可被用于后续漏洞筛选、弱口令攻击或针对性入侵。
+  remediation: |
+    - 将 Niagara Fox 端口限制在楼控专用网络或受信任管理主机范围内。
+    - 升级 Niagara 平台并启用认证、访问控制和网络分段，避免控制系统信息被外部枚举。
+    - 审计 Fox 协议访问日志，排查来自非管理来源的探测行为。
   reference:
     - https://nmap.org/nsedoc/scripts/fox-info.html
   metadata:

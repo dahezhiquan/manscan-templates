@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 GNU Inetutils FTPd 相关服务。
+    GNU Inetutils FTPd 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `SmartGateway FTP server` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

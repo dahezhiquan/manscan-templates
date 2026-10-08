@@ -5,7 +5,7 @@ info:
   author: righettod
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 AIX WebSM 相关服务。
+    IBM AIX Web-based System Manager（WebSM）是 AIX 系统的图形化和远程管理组件，用于系统配置和运维管理。该模板连接 9090/TCP 并读取协议响应，通过匹配 `/var/websm/`、`startNewWServer` 等响应特征识别目标服务。
   reference:
     - https://en.wikipedia.org/wiki/IBM_Web-based_System_Manager
     - https://www.filibeto.org/unix/aix/lib/rel/5.2/wsmadmn.pdf

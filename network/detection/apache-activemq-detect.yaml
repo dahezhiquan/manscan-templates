@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Apache ActiveMQ 相关服务。
+    Apache ActiveMQ 是开源消息中间件，常用于 JMS 消息队列、主题订阅和应用异步通信。该模板连接 61613/TCP 并读取协议响应，通过匹配 `Unknown STOMP action`、`norg.apache.activemq.transport.stomp` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

@@ -5,7 +5,14 @@ info:
   author: pussycat0x,userdehghani
   severity: medium
   description: |
-    该模板通过协议交互枚举 SMTP User Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
+    SMTP 服务器在 VRFY、EXPN 或 RCPT TO 等命令处理不一致时，可能泄露邮箱账号是否存在。该模板向常见 SMTP 端口发送用户枚举探测，并通过 `252` 或 `250` 响应判断目标是否暴露用户枚举能力。
+  impact: |
+    - 攻击者可确认邮箱账号是否存在，为垃圾邮件投递、撞库、钓鱼或口令喷洒提供目标列表。
+    - 用户枚举还可能泄露组织邮箱命名规则和有效人员范围。
+  remediation: |
+    - 禁用或限制 VRFY、EXPN 等可枚举用户的 SMTP 命令。
+    - 统一不存在用户与拒绝投递的错误响应，减少通过响应差异判断账号有效性的机会。
+    - 对 SMTP 认证和投递接口启用访问控制、速率限制和异常告警。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-enum-users.html
   metadata:

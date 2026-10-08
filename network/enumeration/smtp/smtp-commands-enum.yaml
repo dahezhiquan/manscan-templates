@@ -4,7 +4,15 @@ info:
   name: SMTP 命令枚举（服务漏洞）
   author: pussycat0x,userdehghani,AV-IO
   severity: low
-  description: 该模板通过协议交互枚举 SMTP 服务支持的命令与可公开获取的响应特征。
+  description: |
+    SMTP 是邮件传输协议，服务器对 EHLO/HELP 的响应会暴露其支持的扩展命令和投递能力。该模板分别发送 EHLO 与 HELP 探测，通过 `250`、`214` 或 `This server supports` 等响应枚举 SMTP 命令能力。
+  impact: |
+    - 攻击者可了解 SMTP 服务器支持的扩展命令、认证能力和投递特性，为开放中继、用户枚举或认证攻击做准备。
+    - 暴露的命令能力可能帮助判断邮件网关类型和安全配置成熟度。
+  remediation: |
+    - 禁用非必要的 SMTP 扩展命令，尤其是无需对外公开的调试、转发或用户查询能力。
+    - 限制邮件服务管理面和中继能力，仅允许可信来源使用敏感功能。
+    - 审计 SMTP 日志，排查异常 EHLO/HELP 探测和后续投递尝试。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-commands.html
   metadata:

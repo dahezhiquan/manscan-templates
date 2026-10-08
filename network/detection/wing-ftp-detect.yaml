@@ -1,11 +1,11 @@
 id: wing-ftp-detect
 
 info:
-  name: Wing FTP 服务 识别（指纹识别）
+  name: Wing FTP 服务识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Wing FTP Service 相关服务。
+    Wing FTP Server 是跨平台文件传输服务器，支持 FTP、FTPS、SFTP 和 Web 管理等能力。该模板连接 21/TCP 并读取协议响应，通过匹配 `Wing FTP Server` 等响应特征识别目标服务。
   metadata:
     max-request: 1
     verified: true

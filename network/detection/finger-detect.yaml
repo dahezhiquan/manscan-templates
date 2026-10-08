@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDK
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Finger Daemon 相关服务。
+    Finger Daemon 是传统的用户信息查询服务，可返回登录用户、会话或系统公告等信息。该模板连接 79/TCP 并读取协议响应，通过匹配 `User`、`Action`、`Node` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

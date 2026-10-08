@@ -1,10 +1,10 @@
 id: sunos58-ftp-detect
 info:
-  name: SunOS 5.8 FTP 服务 识别（指纹识别）
+  name: SunOS 5.8 FTP 服务识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过 FTP Banner、响应特征或协商行为识别目标是否运行 SunOS 5.8 相关 FTP 服务实现。
+    SunOS 5.8 FTP 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `FTP server (SunOS 5.8)` 等响应特征识别目标服务。
   metadata:
     verified: true
     shodan-query: "FTP server (SunOS 5.8)"

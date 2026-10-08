@@ -5,7 +5,7 @@ info:
   author: ricardomaia,userdehghani
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Exim 相关服务。
+    Exim 是常见的邮件传输代理（MTA），用于接收、路由和投递电子邮件。该模板连接 465,587/TCP 并读取协议响应，通过匹配 `ESMTP Exim` 等响应特征识别目标服务。
   reference:
     - https://www.exim.org/docs.html
   classification:

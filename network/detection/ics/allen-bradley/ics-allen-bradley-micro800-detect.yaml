@@ -5,7 +5,7 @@ info:
   author: biero-el-corridor
   severity: info
   description: |
-    该模板通过工业协议指纹识别目标是否运行 Allen-Bradley Micro800 Series PLC 相关设备或控制系统。
+    Allen-Bradley Micro800 Series PLC 是 Rockwell Automation/Allen-Bradley 工业控制器系列，常用于制造、过程控制和自动化现场控制场景。该模板连接 44818/TCP，通过匹配 `323038302d` 等二进制响应特征识别目标服务。
   metadata:
     shodan-query: 'port:44818 "Vendor ID: Rockwell Automation/Allen-Bradley"'
   tags: ics,allen-bradley,micro800,detect,network,tcp

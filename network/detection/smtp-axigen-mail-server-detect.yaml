@@ -1,11 +1,11 @@
 id: smtp-axigen-mail-server-detect
 
 info:
-  name: Axigen Mail 服务 识别（指纹识别）
+  name: Axigen Mail 服务识别（指纹识别）
   author: pikpikcu
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Axigen Mail Server 相关服务。
+    Axigen Mail Server 是邮件服务器产品，用于 SMTP 邮件投递、邮箱服务和企业邮件管理。该模板连接 25/TCP 并读取协议响应，通过匹配 `Axigen ESMTP`、`AXIGEN` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

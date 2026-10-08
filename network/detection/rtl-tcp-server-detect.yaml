@@ -1,11 +1,11 @@
 id: rtl-tcp-server-detect
 
 info:
-  name: RTL-TCP 服务 识别（指纹识别）
+  name: RTL-TCP 服务识别（指纹识别）
   author: RandomRobbie
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 RTL-TCP Server 相关服务。
+    RTL-TCP 是 RTL-SDR 软件无线电设备的网络转发服务，用于将射频采样数据通过 TCP 提供给远程客户端。该模板连接 1234,8888,50000,50001,1235,8889/TCP 并读取协议响应，通过匹配 `RTL0`、`SoapySDR`、`GNU Radio` 等响应特征识别目标服务。
   reference:
     - https://github.com/steve-m/librtlsdr
     - https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr

@@ -1,11 +1,11 @@
 id: sshd-dropbear-detect
 
 info:
-  name: Dropbear sshd 识别（指纹识别）
+  name: Dropbear SSH 识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Dropbear sshd 相关服务。
+    Dropbear sshd 是轻量级 SSH 服务端，常见于嵌入式设备、路由器和资源受限系统。该模板连接 22/TCP 并读取协议响应，通过匹配 `dropbear` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: apache-kafka-topics-list
 
 info:
-  name: Kafka Topics 枚举（指纹识别）
+  name: Apache Kafka Topics 枚举（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    该模板通过协议交互枚举 Kafka Topics Enumeration 相关服务的版本、配置、用户或其他可公开获取的信息。
+    Apache Kafka 是分布式事件流与消息队列平台，Topic 用于承载业务事件和消息流。该模板与 9092/TCP 的 Kafka Broker 进行协议交互，尝试列举可见 Topic，并通过响应中的 Topic/主机特征确认 Broker 暴露的枚举能力。
   metadata:
     verified: true
     max-request: 1

@@ -1,11 +1,11 @@
 id: bitvise-detect
 
 info:
-  name: SSH Bitvise 服务 识别（指纹识别）
+  name: SSH Bitvise 服务识别（指纹识别）
   author: abdullahisik
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 SSH Bitvise Service 相关服务。
+    Bitvise SSH Server 是 Windows 平台常见的 SSH/SFTP 服务端软件，用于远程登录、端口转发和文件传输。该模板连接 22/TCP 并读取握手、Banner 或协商响应中的产品标识，用于识别目标服务。
   reference:
     - https://www.bitvise.com/
     - https://vulners.com/openvas/OPENVAS:1361412562310813387

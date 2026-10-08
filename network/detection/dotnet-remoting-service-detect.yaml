@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Microsoft .NET Remoting httpd 相关服务。
+    Microsoft .NET Remoting 是早期 .NET 分布式对象通信框架，用于跨进程或跨主机调用远程对象。该模板连接 8080/TCP 并读取协议响应，通过匹配 `Server: MS .NET Remoting` 等响应特征识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

@@ -5,7 +5,7 @@ info:
   author: randomstr1ng
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 SAPRouter 相关服务。
+    SAProuter 是 SAP 网络通信代理组件，用于在客户网络、SAP 网络和外部连接之间转发流量。该模板连接 3299/TCP 并读取协议响应，通过匹配 `SAProuter` 等响应特征识别目标服务。
   metadata:
     max-request: 1
   tags: network,sap,detect,saprouter,tcp,discovery

@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 Cisco Finger Daemon 相关服务。
+    Cisco Finger Daemon 是网络设备上的 Finger 信息服务，可返回用户、接口或会话相关信息。该模板连接 79/TCP 并读取协议响应，通过匹配 `Interface`、`Mode`、`User` 等响应特征识别目标服务。
   metadata:
     verified: true
     max-request: 1

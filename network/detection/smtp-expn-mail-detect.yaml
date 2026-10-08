@@ -1,11 +1,11 @@
 id: smtp-expn-mail-detect
 
 info:
-  name: EXPN Mail 服务 识别（指纹识别）
+  name: EXPN Mail 服务识别（指纹识别）
   author: r3dg33k,userdehghani
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 EXPN Mail Server 相关服务。
+    SMTP EXPN 是邮件服务器可选命令，用于展开邮件列表或别名信息。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `250-EXPN` 等响应特征识别目标服务。
   metadata:
     max-request: 1
   tags: mail,expn,network,detect,smtp,tcp,discovery

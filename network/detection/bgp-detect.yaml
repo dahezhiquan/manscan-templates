@@ -5,7 +5,7 @@ info:
   author: danfaizer
   severity: info
   description: |
-    该模板通过网络响应特征识别目标是否开放 BGP 相关服务。
+    Border Gateway Protocol（BGP）是自治系统之间交换路由信息的核心互联网路由协议。该模板连接 179/TCP 并读取协议响应，通过匹配 `ffffffffffffffffffffffffffffffff` 等响应特征识别目标服务。
   reference:
     - https://www.acunetix.com/vulnerabilities/network/vulnerability/bgp-detection/
     - https://www.tenable.com/plugins/nessus/11907

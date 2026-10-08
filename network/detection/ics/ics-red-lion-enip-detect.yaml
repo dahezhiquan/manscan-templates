@@ -5,7 +5,7 @@ info:
   author: biero-el-corridor
   severity: info
   description: |
-    该模板通过工业协议指纹识别目标是否运行 Red Lion ENIP 相关设备或控制系统。
+    Red Lion ENIP 是工业控制或自动化设备服务，常用于现场控制、设备通信和生产系统管理。该模板连接 502/TCP，通过匹配 `526564204c696f6e20436f6e74726f6c73` 等二进制响应特征识别目标服务。
   metadata:
     max-request: 2
   tags: ics,redlion,detect,network,tcp

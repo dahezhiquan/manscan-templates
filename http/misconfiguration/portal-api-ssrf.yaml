@@ -1,11 +1,18 @@
 id: portal-api-ssrf
 
 info:
-  name: Portal API 服务器 Side Request Forgery
+  name: Portal API 服务端请求伪造
   author: ishowtess
   severity: high
   description: |
-    检测到 Portal API 服务器 Side Request Forgery。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Portal API 服务端请求伪造。该类问题通常源于服务端请求功能、代理接口或 URL 拉取功能未限制目标地址，导致服务端访问攻击者指定资源。模板会向目标发送探测请求，并依据匹配 `contains(interactsh_protocol, "http")`、匹配 `contains(interactsh_request, "/api/v3/portal")`、匹配 `[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能借服务端网络位置访问内网服务、云元数据接口或受限管理端点。
+    - 在可回显或可外带数据的场景下，可能造成敏感信息泄露、内网探测或进一步攻击链。
+  remediation: |
+    - 对服务端请求目标实施协议、域名、IP 和端口白名单限制。
+    - 阻断内网地址、环回地址、链路本地地址和云元数据地址访问。
+    - 为代理和 URL 拉取功能增加认证、审计、超时和响应大小限制。
   reference:
     - https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
   classification:

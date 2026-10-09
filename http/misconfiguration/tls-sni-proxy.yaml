@@ -1,7 +1,7 @@
 id: tls-sni-proxy
 
 info:
-  name: TLS SNI Proxy 检测
+  name: TLS SNI Proxy SSRF 配置错误
   author: pdteam
   severity: medium
   reference:
@@ -10,7 +10,15 @@ info:
   metadata:
     max-request: 1
   tags: misconfig,ssrf,oast,tls,sni,proxy,vuln
-
+  description: |-
+    该模板用于核查 TLS SNI Proxy SSRF 配置错误。该类问题通常源于服务端会代表用户请求外部 URL、回调地址或代理目标，但缺少目标地址限制。模板向 目标入口 提交受控的 OAST 地址，并通过外带 DNS/HTTP 交互确认目标服务是否发起了服务端请求。
+  impact: |-
+    - 攻击者可能借助目标服务器访问内网服务、云元数据接口或受访问控制保护的管理端点。
+    - 在可回显或可链式利用的场景下，可能进一步造成敏感信息泄露、凭据获取或横向移动。
+  remediation: |-
+    - 对所有服务端发起的外部请求实施协议、域名、IP 网段和端口 allowlist。
+    - 禁止访问内网地址、链路本地地址、云元数据地址和本机回环地址。
+    - 对跳转、DNS 解析结果和重定向后的最终地址进行一致性校验，并记录异常请求。
 http:
   - raw:
       - |

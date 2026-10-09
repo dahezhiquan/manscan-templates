@@ -1,11 +1,18 @@
 id: hikvision-env
 
 info:
-  name: Hikvision Springboot 环境变量 Actuator 检测
+  name: Hikvision Spring Boot Actuator 环境变量泄露
   author: SleepingBag945
   severity: high
   description: |
-    检测到 Hikvision Springboot 环境变量 Actuator 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Hikvision Spring Boot Actuator 环境变量泄露。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据请求 `/artemis/env`、`/artemis-portal/artemis/env`、匹配 `applicationConfig`、匹配 `activeProfiles`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
+  remediation: |
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   reference:
     - https://github.com/PeiQi0/PeiQi-WIKI-Book/blob/main/docs/wiki/iot/HIKVISION/HiKVISION%20%E7%BB%BC%E5%90%88%E5%AE%89%E9%98%B2%E7%AE%A1%E7%90%86%E5%B9%B3%E5%8F%B0%20env%20%E4%BF%A1%E6%81%AF%E6%B3%84%E6%BC%8F%E6%BC%8F%E6%B4%9E.md
     - https://peiqi.wgpsec.org/wiki/iot/HIKVISION/HiKVISION%20综合安防管理平台%20env%20信息泄漏漏洞.html

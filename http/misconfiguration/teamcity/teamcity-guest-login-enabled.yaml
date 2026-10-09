@@ -1,11 +1,11 @@
 id: teamcity-guest-login-enabled
 
 info:
-  name: JetBrains TeamCity Guest 用户 访问 启用
+  name: JetBrains TeamCity 访客登录启用
   author: Ph33r
   severity: high
-  description: |
-    检测到 JetBrains TeamCity Guest 用户 访问 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  description: |-
+    该模板用于核查 JetBrains TeamCity 访客登录启用。目标公开了配置、日志、源码、数据库文件或示例信息页面，可能泄露本应仅限服务器内部访问的数据。模板访问 /guestLogin.html?guest=1，并根据文件特征、配置字段、日志内容、源码目录或响应状态确认泄露。
   reference:
     - https://ph33r.medium.com/misconfig-in-teamcity-panel-lead-to-auth-bypass-in-apache-org-exploit-146f6a1a4e2b
     - https://www.jetbrains.com/help/teamcity/guest-user.html
@@ -21,7 +21,13 @@ info:
     product: teamcity
     vendor: jetbrains
   tags: misconfig,teamcity,jetbrains,vuln
-
+  impact: |-
+    - 攻击者可获取密钥、令牌、数据库连接信息、源码结构、内部路径、历史日志或业务配置。
+    - 泄露内容可能被用于凭据复用、供应链漏洞匹配、权限提升或进一步攻击。
+  remediation: |-
+    - 将配置、日志、源码仓库和数据库文件移出 Web 可访问目录。
+    - 在 Web 服务器和对象存储层添加拒绝规则，阻断敏感扩展名和内部目录访问。
+    - 轮换可能泄露的密钥、令牌和账号凭据，并排查访问日志。
 http:
   - raw:
       - |

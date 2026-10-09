@@ -1,11 +1,11 @@
 id: thanos-prometheus-exposure
 
 info:
-  name: Thanos Prometheus 安装配置 暴露
+  name: Thanos Prometheus 查询界面暴露
   author: DhiyaneshDk,righettod
   severity: high
-  description: |
-    检测到 Thanos Prometheus 安装配置 暴露。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
+  description: |-
+    该模板用于核查 Thanos Prometheus 查询界面暴露。安装、初始化、注册或 Onboarding 流程对外暴露时，攻击者可能完成系统初始化、创建账户或修改关键配置。模板访问 /graph、/classic/graph，并根据向导页面、注册表单、接口返回或状态码确认入口是否可用。
   reference:
     - https://thanos.io/
     - https://github.com/thanos-io/thanos
@@ -15,7 +15,13 @@ info:
     shodan-query: title:"Thanos | Highly available Prometheus setup"
     fofa-query: icon_hash="29632872"
   tags: thanos,prometheus,exposure,setup,misconfig,vuln
-
+  impact: |-
+    - 攻击者可能创建管理员账户、重置配置、接管尚未初始化的服务或绕过既有部署边界。
+    - 初始化接口暴露还可能泄露系统状态、安装路径、数据库配置需求和版本信息。
+  remediation: |-
+    - 完成安装后删除或禁用初始化入口，禁止公网访问安装、注册和 Onboarding 接口。
+    - 对首次部署流程增加一次性令牌、来源限制和强认证。
+    - 排查是否已被异常初始化或创建未知账户，必要时重新部署并轮换凭据。
 http:
   - method: GET
     path:

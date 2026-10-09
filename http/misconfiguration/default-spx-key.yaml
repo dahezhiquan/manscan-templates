@@ -1,14 +1,18 @@
 id: default-spx-key
 
 info:
-  name: SPX PHP Pro文件r 默认 密钥
+  name: SPX PHP Profiler 默认密钥
   author: vagnerd
   severity: high
   description: |
-    检测到 SPX PHP Pro文件r 默认 密钥。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+    该模板用于核查 SPX PHP Profiler 默认密钥相关配置。该类问题通常源于默认密钥、默认口令、弱默认配置或示例配置在生产环境中保留。模板会向目标发送探测请求，并依据请求 `/?SPX_KEY={{api_key}}&SPX_UI_URI=/`、匹配 `<title>SPX Control Panel</title>`、`SPX_ENABLED`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可利用默认密钥访问 SPX 控制面板，查看性能分析数据、配置项和运行时信息。
+    - 若调试面板暴露在公网，可能泄露请求路径、代码执行轨迹、环境信息和内部系统结构。
   remediation: |
-    - 限制该端点的公网访问，仅允许可信来源访问。
-    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
+    - 替换默认 SPX_KEY，使用随机且唯一的高强度密钥。
+    - 关闭生产环境不需要的 SPX 调试功能，或仅允许可信来源访问。
+    - 审计 SPX 面板访问日志，确认是否存在未授权访问或敏感信息泄露。
   reference:
     - https://github.com/NoiseByNorthwest/php-spx
   classification:

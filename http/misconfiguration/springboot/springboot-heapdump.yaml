@@ -1,17 +1,23 @@
 id: springboot-heapdump
 
 info:
-  name: Spring Boot Actuator Heap Dump 检测
+  name: Spring Boot Actuator 堆转储暴露
   author: that_juan_,dwisiswant0,wdahlenb
   severity: critical
-  description: |
-    检测到 Spring Boot Actuator Heap Dump 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 Spring Boot Actuator 堆转储端点是否对外暴露。Actuator 是 Spring Boot 的运维监控能力，错误配置会让本应受保护的运行状态、日志、指标或内部结构被匿名访问。模板访问 heapdump、actuator/heapdump，并根据响应中的 HPROF/JAVA PROFILE 文件头或 gzip 堆转储特征以及 JSON/Actuator Content-Type 判断端点是否可访问。
   reference:
     - https://github.com/pyn3rd/Spring-Boot-Vulnerability
   metadata:
     max-request: 24
   tags: springboot,exposure,misconfig,vuln
-
+  impact: |-
+    - 堆转储可能包含访问令牌、数据库连接串、用户数据、会话对象和业务敏感内容。
+    - 攻击者可离线分析内存对象，进一步提取凭据、密钥或代码执行所需的上下文信息。
+  remediation: |-
+    - 仅暴露业务必需的 Actuator 端点，避免在生产环境开放敏感端点。
+    - 为 Actuator 增加认证授权、管理端口隔离、来源 IP 限制和访问审计。
+    - 通过 `management.endpoints.web.exposure.include`/`exclude`、Spring Security 或网关策略收敛公开端点。
 variables:
   str: "{{rand_base(6)}}"
 

@@ -1,11 +1,18 @@
 id: envoy-metadata-disclosure
 
 info:
-  name: 环境变量oy Proxy 元数据 泄露
+  name: Envoy Proxy 元数据泄露
   author: theamanrawat
   severity: medium
   description: |
-    检测到 环境变量oy Proxy 元数据 泄露。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
+    该模板用于核查 Envoy Proxy 元数据泄露。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据请求 ``、匹配 `x-envoy-peer-metadata`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
+  remediation: |
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/envoy-metadata-disclosure/
     - https://www.envoyproxy.io/docs/envoy/latest/configuration/configuration

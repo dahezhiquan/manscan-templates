@@ -1,11 +1,11 @@
 id: download-monitor-unauth-log-export
 
 info:
-  name: Download Monitor < 1.9.7 未授权 Download 日志 Export
+  name: WordPress Download Monitor 未授权日志导出
   author: 0x_Akoko
   severity: high
-  description: |
-    检测到 Download Monitor < 1.9.7 未授权 Download 日志 Export。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  description: |-
+    该模板用于核查 WordPress Download Monitor 未授权日志导出。目标管理界面、控制台或敏感接口在未登录状态下可访问，通常源于默认开放、反向代理绕过、初始化流程遗留或访问控制配置错误。模板访问 /wp-admin/admin-ajax.php?action=test&dlm_download_logs=true，并根据页面标题、接口响应、重定向或关键业务字段确认未授权访问。
   reference:
     - https://github.com/download-monitor/download-monitor/commit/72d76b34a372101f0f68e904c1665f688797b662
     - https://wordpress.org/plugins/download-monitor/
@@ -14,7 +14,13 @@ info:
     max-request: 1
     fofa-query: app="WordPress" && body="download-monitor"
   tags: wordpress,wp-plugin,download-monitor,unauth,disclosure,exposure
-
+  impact: |-
+    - 攻击者可查看或操作管理功能、任务队列、监控数据、配置项、项目数据或设备状态。
+    - 若界面提供写入、执行、上传或注册能力，可能进一步造成服务接管、数据泄露或业务中断。
+  remediation: |-
+    - 为管理入口和 API 强制启用认证授权，关闭匿名访问、访客登录和公开注册。
+    - 将控制台限制在内网、VPN 或可信来源，并在网关层增加访问控制。
+    - 复核默认配置、反向代理规则和初始化状态，清理测试账户并开启审计日志。
 http:
   - raw:
       - |

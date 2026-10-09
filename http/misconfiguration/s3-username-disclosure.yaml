@@ -1,14 +1,18 @@
 id: s3-username-disclosure
 
 info:
-  name: x amz meta s3cmd attrs Header 用户name 泄露
+  name: S3 元数据用户名泄露
   author: DhiyaneshDK
   severity: low
   description: |
-    检测到 x amz meta s3cmd attrs Header 用户name 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 S3 元数据用户名泄露。该类问题通常源于云对象存储桶或兼容对象存储服务开启了公开读取、公开列表或错误访问策略。模板会向目标发送探测请求，并依据匹配 `(?mi)^x-amz-meta-s3cmd-attrs:\s*\S.+$`、状态码 200、匹配 `(?mi)^(x-amz-meta-s3cmd-attrs:\s*\S.+)$`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可枚举对象列表并下载公开文件，造成业务资料、备份、日志或静态资源泄露。
+    - 若桶内资源被业务系统引用，攻击者还可能利用公开内容辅助供应链攻击或品牌仿冒。
   remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+    - 关闭对象存储桶公共访问和列表权限，按业务需要配置最小化 Bucket Policy。
+    - 启用云厂商的公共访问阻断、访问日志和异常访问告警。
+    - 检查桶内历史文件，移除敏感对象并轮换已暴露的密钥、令牌或下载链接。
   reference:
     - https://github.com/s3tools/s3cmd/issues/1173
     - https://hackerone.com/reports/819146

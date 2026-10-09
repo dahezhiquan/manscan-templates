@@ -1,11 +1,11 @@
 id: tomcat-scripts
 
 info:
-  name: Apache Tomcat Example Scripts 检测
+  name: Apache Tomcat 示例脚本暴露
   author: Co0nan,Higor Melgaço
   severity: medium
-  description: |
-    检测到 Apache Tomcat Example Scripts 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 Apache Tomcat 示例脚本暴露。目标因访问控制、默认配置或文件发布策略不当，暴露了不应公开的页面、接口或文件。模板访问 /examples/servlets/index.html、/examples/jsp/index.html，并根据响应状态、页面关键字或组件特征确认该配置问题。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/apache-tomcat-examples-directory-vulnerabilities/
     - https://www.rapid7.com/db/vulnerabilities/apache-tomcat-example-leaks/
@@ -16,7 +16,13 @@ info:
   metadata:
     max-request: 8
   tags: apache,tomcat,misconfig,vuln
-
+  impact: |-
+    - 攻击者可获取内部信息、组件版本、配置细节或可操作的管理入口。
+    - 暴露信息可能辅助后续漏洞利用、权限提升、横向移动或业务数据访问。
+  remediation: |-
+    - 收敛公开访问面，只暴露业务必需的页面和接口。
+    - 对敏感入口增加认证授权、来源限制和访问审计。
+    - 定期检查部署目录、反向代理规则和默认配置，清理示例与调试资源。
 http:
   - method: GET
     path:

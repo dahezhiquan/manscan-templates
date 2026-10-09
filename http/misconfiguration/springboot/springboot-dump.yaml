@@ -1,11 +1,18 @@
 id: springboot-dump
 
 info:
-  name: 检测 Springboot Dump Actuator
+  name: Spring Boot Dump Actuator 暴露
   author: pussycat0x
   severity: low
   description: |
-    检测到 检测 Springboot Dump Actuator。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Spring Boot Dump Actuator 暴露。该类问题通常源于 Spring Boot Actuator 端点在生产环境中暴露，导致运行状态、配置、环境变量或管理能力可被未授权访问。模板会向目标发送探测请求，并依据请求 `/dump`、`/actuator/dump`、匹配 `threadName`、匹配 `threadId`、匹配 `waitedTime`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可读取应用配置、Bean、环境变量、路由、缓存、审计事件或依赖状态。
+    - 部分 Actuator 端点可能泄露凭据线索、内部拓扑或提供可被进一步利用的管理能力。
+  remediation: |
+    - 仅暴露必要的 Actuator 端点，并为所有管理端点启用认证授权。
+    - 将 Actuator 绑定到内网管理地址，避免公网直接访问。
+    - 清理环境变量和配置中的敏感信息，并审计异常访问记录。
   metadata:
     max-request: 2
   tags: springboot,exposure,misconfig,vuln

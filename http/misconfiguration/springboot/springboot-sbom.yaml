@@ -4,8 +4,8 @@ info:
   name: Spring Boot Actuator SBOM 暴露
   author: koungq
   severity: low
-  description: |
-    检测到 Spring Boot Actuator SBOM 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+  description: |-
+    该模板用于核查 Spring Boot Actuator SBOM端点是否对外暴露。Actuator 是 Spring Boot 的运维监控能力，错误配置会让本应受保护的运行状态、日志、指标或内部结构被匿名访问。模板访问 /sbom、/actuator/sbom，并根据响应中的 ids、application、bomFormat、specVersion 或 SPDX 标识 以及 JSON/Actuator Content-Type 判断端点是否可访问。
   reference:
     - https://docs.spring.io/spring-boot/api/rest/actuator/sbom.html
     - https://docs.spring.io/spring-boot/reference/actuator/endpoints.html#actuator.endpoints.sbom
@@ -13,9 +13,10 @@ info:
     - https://spdx.github.io/spdx-spec/
   classification:
     cwe-id: CWE-200
-  remediation: |
-    - 在 Web 服务器中关闭目录列出功能。
-    - 为敏感目录添加默认索引文件、认证控制或直接禁止 Web 访问。
+  remediation: |-
+    - 仅暴露业务必需的 Actuator 端点，避免在生产环境开放敏感端点。
+    - 为 Actuator 增加认证授权、管理端口隔离、来源 IP 限制和访问审计。
+    - 通过 `management.endpoints.web.exposure.include`/`exclude`、Spring Security 或网关策略收敛公开端点。
   metadata:
     verified: true
     max-request: 4
@@ -24,7 +25,9 @@ info:
     framework: spring-boot
     shodan-query: http.favicon.hash:116323821
   tags: misconfig,exposure,springboot,actuator,sbom
-
+  impact: |-
+    - SBOM 会暴露应用组件、依赖包和版本信息。
+    - 攻击者可据此快速匹配已知漏洞并构造针对性攻击路径。
 http:
   - method: GET
     path:

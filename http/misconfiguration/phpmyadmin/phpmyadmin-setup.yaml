@@ -1,11 +1,18 @@
 id: phpmyadmin-setup
 
 info:
-  name: PhpMyAdmin 安装配置 文件 检测
+  name: phpMyAdmin 安装配置文件暴露
   author: sheikhrishad,thevillagehacker,Kr1shna4garwal,ArjunChandarana,0xpugal
   severity: medium
   description: |
-    检测到 PhpMyAdmin 安装配置 文件 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 phpMyAdmin 安装配置文件暴露。该类问题通常源于安装、初始化、升级或配置向导在部署完成后仍可从公网访问。模板会向目标发送探测请求，并依据请求 `{{paths}}`、匹配 `<title>phpMyAdmin setup</title>`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能完成初始化流程、创建管理员账户、覆盖配置或触发升级逻辑。
+    - 在部分系统中，暴露安装入口还可能导致数据库连接信息泄露、站点被重新配置或业务被接管。
+  remediation: |
+    - 完成部署后立即删除、禁用或限制安装与升级入口。
+    - 对初始化流程增加来源限制和一次性安装校验，避免公网直接访问。
+    - 检查系统是否已被异常初始化或创建未知管理员账户，并轮换相关凭据。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

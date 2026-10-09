@@ -1,11 +1,18 @@
 id: sap-listlogfiles-disclosure
 
 info:
-  name: SAPControl List日志文件 泄露
+  name: SAPControl ListLogFiles 泄露
   author: LRVT,l4rm4nd
   severity: medium
   description: |
-    检测到 SAPControl List日志文件 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 SAPControl ListLogFiles 泄露。该类问题通常源于 SAP NetWeaver、SAPControl 或 ICM 管理接口暴露，导致未授权用户可读取系统信息、日志、配置或执行管理操作。模板会向目标发送探测请求，并依据匹配 `ListLogFilesResponse`、匹配 `<file>`、匹配 `<filename>`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取 SAP 版本、实例属性、配置文件、日志内容和系统路径等敏感信息。
+    - 若管理方法可被调用，可能进一步导致命令执行、系统操作或业务中断。
+  remediation: |
+    - 限制 SAPControl、ICM Admin 和相关 SOAP/Web 管理接口的来源地址。
+    - 启用强认证、最小权限和访问审计，关闭不需要公开的管理方法。
+    - 检查 SAP 日志和实例配置，确认是否存在未授权访问或敏感信息泄露。
   reference:
     - https://learning.sap.com/courses/technical-implementation-and-operation-i-of-sap-s-4hana-and-sap-business-suite/log-and-trace-information-for-system-start-and-stop
     - https://sapbasisinfo.com/blog/2017/01/20/sapcontrol-command-funtions-for-sap-hana/

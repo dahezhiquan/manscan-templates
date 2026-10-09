@@ -1,11 +1,11 @@
 id: tolgee-api-anonymous
 
 info:
-  name: Tolgee API 配置不当 匿名 访问
+  name: Tolgee API 匿名访问配置错误
   author: matejsmycka
   severity: medium
-  description: |
-    检测到 Tolgee API 配置不当 匿名 访问。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  description: |-
+    该模板用于核查 Tolgee API 匿名访问配置错误。目标控制台、状态页、监控页面或 API 在未充分限制的情况下对外开放，可能暴露运行状态、业务数据或管理能力。模板访问 /v2/pats，并根据页面标题、接口字段、状态码或组件关键字确认暴露。
   reference:
     - https://docs.tolgee.io/api
   metadata:
@@ -13,7 +13,13 @@ info:
     verified: true
     shodan-query: html:"tolgee"
   tags: api,tolgee,misconfig,intrusive,vuln
-
+  impact: |-
+    - 攻击者可查看服务状态、监控指标、项目数据、设备信息、任务队列或内部拓扑。
+    - 若页面包含管理操作或写入接口，可能进一步导致配置篡改、任务执行、数据泄露或服务中断。
+  remediation: |-
+    - 为控制台、状态页和 API 增加认证授权，并限制访问来源。
+    - 将运维页面部署在内网、VPN 或专用管理网段，避免直接暴露到公网。
+    - 关闭不必要的示例、状态和调试入口，开启访问审计。
 variables:
   string: "{{to_lower('{{randstr}}')}}"
 

@@ -1,11 +1,18 @@
 id: perforce-repository
 
 info:
-  name: Perforce 仓库 泄露
+  name: Perforce 仓库泄露
   author: DhiyaneshDk
   severity: low
   description: |
-    检测到 Perforce 仓库 泄露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Perforce 仓库泄露。该类问题通常源于高危管理接口未授权开放、危险方法启用或可写接口暴露，攻击者可借助接口能力写入文件或触发命令执行。模板会向目标发送探测请求，并依据请求 `/.p4ignore`、匹配 `*.log`、匹配 `yarn-error.log`、匹配 `application/octet-stream`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能上传文件、执行命令、提交任务或控制目标服务。
+    - 成功利用后可导致主机沦陷、数据泄露、横向移动和业务中断。
+  remediation: |
+    - 立即为相关接口启用认证授权并限制可信来源访问。
+    - 关闭不必要的危险 HTTP 方法、远程执行能力和可写管理接口。
+    - 检查系统进程、上传目录和访问日志，清理异常文件并轮换凭据。
   reference:
     - https://help.perforce.com/helix-core/server-apps/cmdref/current/Content/CmdRef/P4IGNORE.html
   metadata:

@@ -1,11 +1,11 @@
 id: springboot-jolokia
 
 info:
-  name: 检测s Springboot Jolokia Actuator
+  name: Spring Boot Actuator Jolokia 暴露
   author: DhiyaneshDK
   severity: low
-  description: |
-    检测到 检测s Springboot Jolokia Actuator。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 Spring Boot Actuator Jolokia端点是否对外暴露。Actuator 是 Spring Boot 的运维监控能力，错误配置会让本应受保护的运行状态、日志、指标或内部结构被匿名访问。模板访问 /jolokia、/actuator/jolokia，并根据响应中的 config、agentId字段以及 JSON/Actuator Content-Type 判断端点是否可访问。
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
   metadata:
@@ -13,7 +13,13 @@ info:
     max-request: 2
     shodan-query: title:"Eureka"
   tags: misconfig,springboot,exposure,vuln
-
+  impact: |-
+    - Jolokia 暴露后可能泄露 MBean、JVM 和应用运行信息。
+    - 若同时存在危险 MBean 或弱访问控制，攻击者可能进一步执行管理操作或扩大攻击面。
+  remediation: |-
+    - 仅暴露业务必需的 Actuator 端点，避免在生产环境开放敏感端点。
+    - 为 Actuator 增加认证授权、管理端口隔离、来源 IP 限制和访问审计。
+    - 通过 `management.endpoints.web.exposure.include`/`exclude`、Spring Security 或网关策略收敛公开端点。
 http:
   - method: GET
     path:

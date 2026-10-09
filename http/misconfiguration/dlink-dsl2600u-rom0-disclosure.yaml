@@ -4,8 +4,15 @@ info:
   name: D-Link DSL2600U - 未认证 rom-0 配置泄露
   author: 0x_Akoko
   severity: high
-  description: |-
-    检测到 D-Link DSL2600U 路由器未要求认证即暴露 /rom-0 二进制配置文件。该文件在字节偏移量 8568（0x2178）处以 LZS 压缩数据形式存储管理员密码，且整个二进制文件中不存在任何明文副本。
+  description: |
+    该模板用于核查 D-Link DSL2600U - 未认证 rom-0 配置泄露。该类问题通常源于管理端、API、控制台或服务接口缺少认证授权，导致未登录用户可直接访问敏感功能。模板会向目标发送探测请求，并依据匹配 `status_code == 200`、匹配 `contains(header, "RomPager")`、匹配 `contains(body, "Hdbgarea")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可在未授权状态下查看系统状态、业务数据、任务信息或管理接口。
+    - 若接口支持写操作，可能进一步导致配置篡改、服务接管、数据删除或横向移动。
+  remediation: |
+    - 为相关管理端和 API 启用认证授权，并按最小权限限制可访问功能。
+    - 将管理接口限制在内网、VPN 或可信来源范围内，并开启访问审计。
+    - 检查历史访问日志，确认是否存在未授权访问、批量枚举或异常操作。
   reference:
     - https://cxsecurity.com/issue/WLB-2026060012
   metadata:

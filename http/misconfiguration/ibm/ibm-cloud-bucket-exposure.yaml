@@ -5,7 +5,14 @@ info:
   author: 0x_Akoko
   severity: high
   description: |
-    检测到 IBM Cloud Object Storage Bucket 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 IBM Cloud Object Storage Bucket 暴露。该类问题通常源于云对象存储桶或兼容对象存储服务开启了公开读取、公开列表或错误访问策略。模板会向目标发送探测请求，并依据请求 ``、`/?list-type=2`、匹配 `status_code == 200`、匹配 `contains_all(body, "<ListBucketResult", "<Name>")`、匹配 `contains_any(tolower(header), "ibm-sse-kp-enabled", "ibm-sse-kp-customer-root-key-crn", "ibm-")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可枚举对象列表并下载公开文件，造成业务资料、备份、日志或静态资源泄露。
+    - 若桶内资源被业务系统引用，攻击者还可能利用公开内容辅助供应链攻击或品牌仿冒。
+  remediation: |
+    - 关闭对象存储桶公共访问和列表权限，按业务需要配置最小化 Bucket Policy。
+    - 启用云厂商的公共访问阻断、访问日志和异常访问告警。
+    - 检查桶内历史文件，移除敏感对象并轮换已暴露的密钥、令牌或下载链接。
   reference:
     - https://cloud.ibm.com/docs/cloud-object-storage
     - https://cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-iam-bucket-permissions

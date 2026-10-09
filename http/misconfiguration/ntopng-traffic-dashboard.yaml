@@ -1,11 +1,18 @@
 id: ntopng-traffic-dashboard
 
 info:
-  name: Ntopng Traffic 仪表盘 检测
+  name: ntopng 流量仪表盘暴露
   author: theamanrawat
   severity: medium
   description: |
-    检测到 Ntopng Traffic 仪表盘 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 ntopng 流量仪表盘暴露。该类问题通常源于管理面板、仪表盘或监控控制台暴露在公网或缺少足够访问控制。模板会向目标发送探测请求，并依据匹配 `<title>ntopng - Traffic Dashboard</title>`、匹配 `https://github.com/ntop/ntopng`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取系统状态、业务指标、任务信息、拓扑结构或管理入口线索。
+    - 若面板存在默认凭据、弱认证或操作接口，可能进一步导致未授权管理或服务接管。
+  remediation: |
+    - 将管理面板和仪表盘限制在内网、VPN 或可信访问网关后。
+    - 启用强认证、多因素认证、细粒度授权和操作审计。
+    - 隐藏或关闭不需要公开的默认面板，并监控异常访问与暴力探测。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cvss-score: 5.3

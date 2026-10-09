@@ -1,11 +1,11 @@
 id: wamp-xdebug-detect
 
 info:
-  name: WAMP X调试 检测
+  name: WampServer Xdebug 配置暴露
   author: e_schultze_
   severity: medium
-  description: |
-    检测到 WAMP X调试 检测。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+  description: |-
+    该模板用于核查 WampServer Xdebug 配置暴露。调试模式、错误页面或诊断组件在生产环境暴露时，会返回堆栈、路径、配置项、请求上下文或运行参数。模板访问 /?phpinfo=-1，并根据调试标识、异常类名、phpinfo/Xdebug 配置或错误关键字确认暴露。
   reference:
     - https://github.com/random-robbie/My-Shodan-Scripts/blob/1b01bceecc9be0b74b202f445874920eee48bba5/wamp-xdebug/wamp-xdebug.py
   classification:
@@ -15,7 +15,13 @@ info:
   metadata:
     max-request: 1
   tags: debug,config,wamp,misconfig,vuln
-
+  impact: |-
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、请求参数和依赖信息。
+    - 这些信息可帮助定位组件缺陷、构造后续漏洞利用或绕过安全控制。
+  remediation: |-
+    - 关闭生产环境调试模式、错误详情展示、Profiler 和 phpinfo 页面。
+    - 将错误写入受保护日志，统一返回通用错误页面。
+    - 限制诊断入口访问来源，升级框架并复核生产配置。
 http:
   - method: GET
     path:

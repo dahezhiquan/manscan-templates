@@ -1,11 +1,11 @@
 id: weak-hsts-detect
 
 info:
-  name: Weak HTTP Strict Transport Security 检测
+  name: 弱 HTTP Strict Transport Security 配置
   author: saint_orion
   severity: low
-  description: |
-    检测到 Weak HTTP Strict Transport Security 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查弱 HTTP Strict Transport Security 配置。目标安全响应头或前端消息通信策略配置过宽，可能削弱浏览器侧防护。模板访问 目标入口，并根据响应头策略或页面脚本中的通配来源特征判断配置是否薄弱。
   reference:
     - https://owasp.org/www-project-secure-headers/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
@@ -13,7 +13,13 @@ info:
     verified: true
     max-request: 1
   tags: misconfig,headers,hsts
-
+  impact: |-
+    - 弱 CSP 可能降低跨站脚本防护效果，弱 HSTS 可能增加降级或中间人攻击面。
+    - 通配 `postMessage` 来源可能允许不可信页面接收敏感消息或触发前端逻辑。
+  remediation: |-
+    - 为 CSP 设置明确的脚本、样式、连接和 frame 来源，避免使用不必要的通配符。
+    - 配置包含合理 `max-age`、`includeSubDomains` 和 `preload` 的 HSTS 策略。
+    - 对 `postMessage` 明确校验 `origin` 和消息结构，避免向 `*` 发送敏感数据。
 http:
   - method: GET
     path:

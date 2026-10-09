@@ -1,15 +1,21 @@
 id: zenphoto-sensitive-info
 
 info:
-  name: Zenphoto 安装 敏感信息
+  name: Zenphoto 安装向导敏感信息暴露
   author: qlkwej
   severity: medium
-  description: |
-    检测到 Zenphoto 安装 敏感信息。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
+  description: |-
+    该模板用于核查 Zenphoto 安装向导敏感信息暴露。目标管理页面或业务接口在未认证状态下可访问，通常源于访问控制缺失、默认开放或反向代理规则配置不当。模板访问 /zenphoto/zp-core/setup/index.php、/zp/zp-core/setup/index.php，并根据页面关键字、JSON 字段、状态码或组件标识确认未授权访问。
   metadata:
     max-request: 4
   tags: misconfig,unauth,vuln
-
+  impact: |-
+    - 攻击者可查看系统配置、组织信息、仪表盘数据或内部业务状态。
+    - 若接口提供写入或管理能力，可能进一步导致配置篡改、数据泄露或服务接管。
+  remediation: |-
+    - 为管理入口和敏感 API 强制启用认证授权，并关闭匿名访问。
+    - 将后台系统限制在内网、VPN 或可信管理网段。
+    - 复核反向代理和路由规则，清理默认账户并开启访问审计。
 http:
   - method: GET
     path:

@@ -1,11 +1,11 @@
 id: teamcity-registration-enabled
 
 info:
-  name: JetBrains TeamCity 注册已启用
+  name: JetBrains TeamCity 用户注册启用
   author: Ph33r
   severity: high
-  description: |
-    检测到 JetBrains TeamCity 注册已启用。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 JetBrains TeamCity 用户注册启用。目标管理界面、控制台或敏感接口在未登录状态下可访问，通常源于默认开放、反向代理绕过、初始化流程遗留或访问控制配置错误。模板访问 /registerUser.html?init=1，并根据页面标题、接口响应、重定向或关键业务字段确认未授权访问。
   reference:
     - https://ph33r.medium.com/misconfig-in-teamcity-panel-lead-to-auth-bypass-in-apache-org-0day-146f6a1a4e2b
   classification:
@@ -20,7 +20,13 @@ info:
     product: teamcity
     vendor: jetbrains
   tags: misconfig,auth-bypass,teamcity,jetbrains,intrusive,vuln
-
+  impact: |-
+    - 攻击者可查看或操作管理功能、任务队列、监控数据、配置项、项目数据或设备状态。
+    - 若界面提供写入、执行、上传或注册能力，可能进一步造成服务接管、数据泄露或业务中断。
+  remediation: |-
+    - 为管理入口和 API 强制启用认证授权，关闭匿名访问、访客登录和公开注册。
+    - 将控制台限制在内网、VPN 或可信来源，并在网关层增加访问控制。
+    - 复核默认配置、反向代理规则和初始化状态，清理测试账户并开启审计日志。
 http:
   - raw:
       - |

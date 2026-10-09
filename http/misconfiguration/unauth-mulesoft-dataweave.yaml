@@ -1,11 +1,11 @@
 id: unauth-mulesoft-dataweave
 
 info:
-  name: MuleSoft DataWeave 交互式学习环境 - 未授权访问
+  name: MuleSoft DataWeave Playground 未授权访问
   author: Th3l0newolf
   severity: high
   description: |-
-    MuleSoft DataWeave 交互式学习环境无需身份验证即可公开访问。
+    该模板用于核查 MuleSoft DataWeave Playground 未授权访问。目标组件因默认密钥、调试接口或管理控制台暴露，使攻击者可能在未授权或低权限条件下触发服务端执行。模板访问 /，通过回显、状态码、哈希签名或命令执行结果判断风险是否存在。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
     cwe-id: CWE-94
@@ -14,7 +14,13 @@ info:
     verified: true
     shodan-query: html:"DataWeave Interactive Learning Environment"
   tags: panel,mulesoft,dataweave,rce,critical,discovery
-
+  impact: |-
+    - 攻击者可能在服务器上执行任意代码或系统命令，读取配置、植入后门并接管应用进程。
+    - 若目标处于内网或具备高权限凭据，风险可能扩展到数据库、缓存、消息队列和其他内部资产。
+  remediation: |-
+    - 禁用或移除生产环境中的调试控制台、示例接口和危险管理功能。
+    - 更换默认密钥并使用强随机密钥，限制敏感接口来源并增加认证授权。
+    - 升级受影响组件，检查服务器是否已有异常进程、计划任务或新增账户。
 http:
   - method: GET
     path:

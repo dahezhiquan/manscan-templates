@@ -1,11 +1,18 @@
 id: label-studio-signup
 
 info:
-  name: Label Studio Sign up 检测
+  name: Label Studio 公开注册检测
   author: DhiyaneshDK
   severity: medium
   description: |
-    检测到 Label Studio Sign up 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Label Studio 公开注册检测。该类问题通常源于公开注册、自助开户或默认初始化策略未按业务预期关闭。模板会向目标发送探测请求，并依据匹配 `Label Studio`、匹配 `Sign up`、匹配 `Create Account`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可自行创建账号进入系统，枚举内部功能、数据或协作空间。
+    - 若新账号默认权限过高，可能进一步导致数据泄露、配置变更或平台滥用。
+  remediation: |
+    - 关闭不需要的公开注册和自助开户入口。
+    - 对必须开放的注册流程增加审批、邮箱域限制、验证码和速率限制。
+    - 审计近期新建账号、权限分配和异常登录行为。
   classification:
     cpe: cpe:2.3:a:heartex:label_studio:*:*:*:*:*:*:*:*
   metadata:

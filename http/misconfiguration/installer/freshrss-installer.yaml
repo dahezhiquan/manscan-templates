@@ -1,11 +1,18 @@
 id: freshrss-installer
 
 info:
-  name: FreshRSS 安装
+  name: FreshRSS 安装暴露
   author: ritikchaddha
   severity: high
   description: |
-    检测到 FreshRSS 安装。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
+    该模板用于核查 FreshRSS 安装暴露。该类问题通常源于安装、初始化、升级或配置向导在部署完成后仍可从公网访问。模板会向目标发送探测请求，并依据请求 `/i/?rid`、匹配 `Installation · FreshRSS`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能完成初始化流程、创建管理员账户、覆盖配置或触发升级逻辑。
+    - 在部分系统中，暴露安装入口还可能导致数据库连接信息泄露、站点被重新配置或业务被接管。
+  remediation: |
+    - 完成部署后立即删除、禁用或限制安装与升级入口。
+    - 对初始化流程增加来源限制和一次性安装校验，避免公网直接访问。
+    - 检查系统是否已被异常初始化或创建未知管理员账户，并轮换相关凭据。
   classification:
     cpe: cpe:2.3:a:freshrss:freshrss:*:*:*:*:*:*:*:*
   metadata:

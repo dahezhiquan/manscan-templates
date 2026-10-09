@@ -5,7 +5,14 @@ info:
   author: 0x_Akoko
   severity: medium
   description: |
-    检测到 Adobe ColdFusion CFIDE 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 Adobe ColdFusion CFIDE 目录列出相关配置。该类问题通常源于 Web 目录索引、静态资源目录或对象列表功能未关闭，导致未授权用户可枚举文件和目录。模板会向目标发送探测请求，并依据请求 `/CFIDE/`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可枚举源码、备份、日志、上传文件、对象 Key 或目录结构，获取后续攻击所需线索。
+    - 若列表中包含敏感文件，可能直接导致数据泄露、凭据泄露或业务资料外泄。
+  remediation: |
+    - 关闭 Web 服务器目录索引和对象存储列表权限，避免对外展示文件清单。
+    - 为静态资源、上传目录和对象存储桶配置最小权限访问策略。
+    - 清理不应公开的备份、日志、源码包和临时文件，并复核访问日志。
   reference:
     - https://helpx.adobe.com/coldfusion/kb/securing-coldfusion.html
     - https://www.carnal0wnage.com/papers/LARES-ColdFusion.pdf

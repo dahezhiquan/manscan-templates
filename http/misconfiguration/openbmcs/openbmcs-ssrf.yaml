@@ -1,11 +1,18 @@
 id: openbmcs-ssrf
 
 info:
-  name: OpenBMCS 2.4 服务器 Side Request Forgery Remote 文件 Inclusion
+  name: OpenBMCS 2.4 服务端请求伪造
   author: dhiyaneshDK
   severity: medium
   description: |
-    检测到 OpenBMCS 2.4 服务器 Side Request Forgery Remote 文件 Inclusion。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 OpenBMCS 2.4 服务端请求伪造。该类问题通常源于服务端请求功能、代理接口或 URL 拉取功能未限制目标地址，导致服务端访问攻击者指定资源。模板会向目标发送探测请求，并依据匹配 `http`、状态码 302 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能借服务端网络位置访问内网服务、云元数据接口或受限管理端点。
+    - 在可回显或可外带数据的场景下，可能造成敏感信息泄露、内网探测或进一步攻击链。
+  remediation: |
+    - 对服务端请求目标实施协议、域名、IP 和端口白名单限制。
+    - 阻断内网地址、环回地址、链路本地地址和云元数据地址访问。
+    - 为代理和 URL 拉取功能增加认证、审计、超时和响应大小限制。
   reference:
     - https://www.exploit-db.com/exploits/50670
     - https://securityforeveryone.com/tools/openbmcs-unauth-ssrf-rfi-vulnerability-scanner

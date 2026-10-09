@@ -5,7 +5,14 @@ info:
   author: dhiyaneshDk
   severity: high
   description: |
-    检测到 Adobe Experience Manager Cross Site Scripting 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Adobe Experience Manager Cross Site Scripting相关配置。该类问题通常源于配置页面、错误页或管理接口将用户可控输入未编码写入响应，导致浏览器执行非预期脚本。模板会向目标发送探测请求，并依据请求 `/etc/designs/xh1x.childrenlist.json//<svg onload=alert(document.domain)>.html`、匹配 `<svg onload=alert(document.domain)>`、`{"path":"/etc/designs/xh1x.childrenlist.json`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可诱导用户访问构造链接，在受害者浏览器中执行脚本。
+    - 成功利用后可能窃取会话信息、篡改页面内容、发起越权操作或辅助钓鱼。
+  remediation: |
+    - 对输出到 HTML、属性、JavaScript、URL 等不同上下文的数据分别进行安全编码。
+    - 对输入参数进行白名单校验，避免直接回显未经处理的用户输入。
+    - 启用合适的 Content-Security-Policy，降低脚本注入后的利用效果。
   reference:
     - https://github.com/thomashartm/burp-aem-scanner/blob/master/src/main/java/burp/actions/xss/FlippingTypeWithChildrenlistSelector.java
     - https://cystack.net/en/plugins/cystack.remote.aem_childlist_selector_xss

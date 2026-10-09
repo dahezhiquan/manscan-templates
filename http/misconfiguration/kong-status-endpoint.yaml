@@ -1,11 +1,18 @@
 id: kong-status-endpoint
 
 info:
-  name: Kong API Gateway Internal 状态 Endpoint
+  name: Kong API Gateway 内部状态端点暴露
   author: Amjad Ali
   severity: medium
   description: |
-    检测到 Kong API Gateway Internal 状态 Endpoint。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
+    该模板用于核查 Kong API Gateway 内部状态端点暴露。该类问题通常源于容器、Kubernetes、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据请求 `/status`、匹配 `status_code == 200`、匹配 `contains_all(body, "\"connections_reading\"", "\"workers_lua_vms\"", "\"lua_shared_dicts\"")`、匹配 `contains(content_type, "application/json")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看集群对象、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、配置泄露、集群接管或远程代码执行。
+  remediation: |
+    - 禁止将 Kubernetes、容器运行时、CI/CD 和运维 API 直接暴露到公网。
+    - 启用 TLS、认证授权、RBAC、来源限制和最小权限访问策略。
+    - 审计集群对象、任务、容器和访问日志，清理未知资源并轮换相关令牌。
   reference:
     - https://docs.konghq.com/gateway/latest/production/monitoring/status-api/
   metadata:

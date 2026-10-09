@@ -5,13 +5,14 @@ info:
   author: 0xBassia
   severity: high
   description: |
-    检测到 Argo Workflows 未授权 仪表盘。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Argo Workflows 未授权 仪表盘相关配置。该类问题通常源于管理端、API、控制台或调试接口缺少认证授权，导致未登录用户可直接访问敏感功能。模板会向目标发送探测请求，并依据请求 `/api/v1/workflows/argo`、匹配 `"metadata"`、`"items"`、状态码 200 等证据确认目标是否存在该配置问题。
   impact: |
-    - 未授权用户可能访问管理功能、业务数据或系统状态。
-    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
+    - 攻击者可在未授权状态下查看系统状态、任务信息、配置数据或业务内容。
+    - 若接口允许执行操作，可能进一步导致配置被修改、任务被触发、数据被导出或服务被接管。
   remediation: |
-    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
-    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
+    - 为相关管理入口和 API 增加强认证、细粒度授权与访问审计。
+    - 限制控制台、调试页和内部服务的公网访问，仅允许可信网络或堡垒机访问。
+    - 排查访问日志，确认是否存在未授权访问、异常操作或批量枚举行为。
   reference:
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-auth-mode/
     - https://argo-workflows.readthedocs.io/en/latest/argo-server-sso/

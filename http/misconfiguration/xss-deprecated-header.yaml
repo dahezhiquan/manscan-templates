@@ -1,11 +1,11 @@
 id: xss-deprecated-header
 
 info:
-  name: XSS Protection Header Cross Site Scripting 检测
+  name: X-XSS-Protection 弱响应头配置
   author: joshlarsen
   severity: low
-  description: |
-    检测到 XSS Protection Header Cross Site Scripting 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 X-XSS-Protection 弱响应头配置。`X-XSS-Protection` 是旧版浏览器的 XSS 过滤响应头，错误或过时配置不能替代现代内容安全策略，甚至可能带来兼容性和防护绕过问题。模板访问 目标入口，并根据响应头策略判断是否存在弱配置。
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
     - https://owasp.org/www-project-secure-headers/#x-xss-protection
@@ -16,7 +16,13 @@ info:
   metadata:
     max-request: 1
   tags: xss,misconfig,generic,vuln
-
+  impact: |-
+    - 依赖过时 XSS 过滤头会削弱浏览器侧防护预期。
+    - 若缺少有效 CSP，页面仍可能受到脚本注入、内容注入或点击劫持链路影响。
+  remediation: |-
+    - 使用严格的 Content-Security-Policy 控制脚本、样式、连接和 frame 来源。
+    - 不要把 `X-XSS-Protection` 作为主要 XSS 防护手段，优先做好输出编码和输入校验。
+    - 统一检查安全响应头，结合 HSTS、CSP、X-Content-Type-Options 等策略加固。
 http:
   - method: GET
     path:

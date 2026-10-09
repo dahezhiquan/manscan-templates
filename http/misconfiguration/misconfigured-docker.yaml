@@ -5,7 +5,14 @@ info:
   author: dhiyaneshDK
   severity: critical
   description: |
-    检测到 Docker 容器 配置不当 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Docker 容器 配置不当 暴露。该类问题通常源于容器、Kubernetes、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据请求 `/images/json`、匹配 `"ParentId":`、匹配 `"Containers":`、匹配 `"Labels":`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看集群对象、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、配置泄露、集群接管或远程代码执行。
+  remediation: |
+    - 禁止将 Kubernetes、容器运行时、CI/CD 和运维 API 直接暴露到公网。
+    - 启用 TLS、认证授权、RBAC、来源限制和最小权限访问策略。
+    - 审计集群对象、任务、容器和访问日志，清理未知资源并轮换相关令牌。
   reference:
     - https://madhuakula.com/content/attacking-and-auditing-docker-containers-using-opensource/attacking-docker-containers/misconfiguration.html
   metadata:

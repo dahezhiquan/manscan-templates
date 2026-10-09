@@ -5,10 +5,14 @@ info:
   author: dhiyaneshDK
   severity: critical
   description: |
-    检测到 AEM Package Manager Authentication Bypass 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 AEM Package Manager Authentication Bypass相关配置。该类问题通常源于管理端、API、控制台或调试接口缺少认证授权，导致未登录用户可直接访问敏感功能。模板会向目标发送探测请求，并依据请求 `/crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0aa....`、`/content/..;/crx/packmgr/list.jsp;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%0a;%...`、匹配 `buildCount`、`downloadName`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可在未授权状态下查看系统状态、任务信息、配置数据或业务内容。
+    - 若接口允许执行操作，可能进一步导致配置被修改、任务被触发、数据被导出或服务被接管。
   remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+    - 为相关管理入口和 API 增加强认证、细粒度授权与访问审计。
+    - 限制控制台、调试页和内部服务的公网访问，仅允许可信网络或堡垒机访问。
+    - 排查访问日志，确认是否存在未授权访问、异常操作或批量枚举行为。
   reference:
     - https://labs.detectify.com/2021/06/28/aem-crx-bypass-0day-control-over-some-enterprise-aem-crx-package-manager/
   classification:

@@ -1,11 +1,18 @@
 id: apollo-sandbox-ui-exposed
 
 info:
-  name: Apollo San数据库ox UI 暴露
+  name: Apollo Sandbox UI 暴露
   author: Hamza Sahin
   severity: low
   description: |
-    检测到 Apollo San数据库ox UI 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Apollo Sandbox UI 暴露。该类问题通常源于 GraphQL 调试界面、交互式控制台、批处理能力或查询错误提示在生产环境中暴露。模板会向目标发送探测请求，并依据请求 `/`、匹配 `status_code == 200`、匹配 `contains_any(body, "<title>Apollo Server", "<title>Apollo Router")`、匹配 `contains_any(body, "Apollo Sandbox", "apollo.dev")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可通过调试界面或错误提示了解 GraphQL Schema、字段、类型和业务对象。
+    - 若批处理、GET 请求或复杂查询未限制，可能造成权限绕过、CSRF、资源消耗或批量数据枚举。
+  remediation: |
+    - 关闭生产环境中的 GraphQL Playground、GraphiQL、Voyager 等调试界面。
+    - 对 GraphQL 接口启用认证授权、查询复杂度限制、批处理限制和速率限制。
+    - 禁用不必要的字段建议和详细错误回显，并审计异常查询模式。
   reference:
     - https://www.apollographql.com/docs/studio/sandbox/
   metadata:

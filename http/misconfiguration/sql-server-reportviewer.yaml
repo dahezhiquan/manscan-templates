@@ -1,11 +1,11 @@
 id: sql-server-reportviewer
 
 info:
-  name: SQL 服务器 仓库rtViewer 暴露
+  name: SQL Server Reporting Services 报表页面暴露
   author: kazet
   severity: high
-  description: |
-    检测到 SQL 服务器 仓库rtViewer 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 SQL Server Reporting Services 报表页面暴露。目标因访问控制、默认配置或文件发布策略不当，暴露了不应公开的页面、接口或文件。模板访问 /Reports/Pages/Folder.aspx、/ReportServer/Pages/Folder.aspx，并根据响应状态、页面关键字或组件特征确认该配置问题。
   reference:
     - https://learn.microsoft.com/en-us/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports?view=sql-server-ver16
   classification:
@@ -17,7 +17,13 @@ info:
     product: sql_server
     google-query: inurl:"/Reports/Pages/Folder.aspx"
   tags: misconfig,sql,report,exposure,vuln
-
+  impact: |-
+    - 攻击者可获取内部信息、组件版本、配置细节或可操作的管理入口。
+    - 暴露信息可能辅助后续漏洞利用、权限提升、横向移动或业务数据访问。
+  remediation: |-
+    - 收敛公开访问面，只暴露业务必需的页面和接口。
+    - 对敏感入口增加认证授权、来源限制和访问审计。
+    - 定期检查部署目录、反向代理规则和默认配置，清理示例与调试资源。
 http:
   - raw:
       - |

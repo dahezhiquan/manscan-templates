@@ -1,22 +1,25 @@
 id: wp-image-widget-fpd
 
 info:
-  name: Image Widget 完整路径泄露
+  name: WordPress Image Widget 插件完整路径泄露
   author: theamanrawat
   severity: low
-  description: |
-    检测到 Image Widget 完整路径泄露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
-  impact: |
-    - 未授权用户可能访问管理功能、业务数据或系统状态。
-    - 暴露接口可能被用于进一步枚举、修改配置或执行敏感操作。
+  description: |-
+    该模板用于核查 WordPress Image Widget 插件是否存在完整路径泄露。目标在直接访问插件或主题 PHP 文件时返回 Fatal error、Warning、Uncaught Error 或包含 wp-content 路径的错误页面，说明服务器错误显示或文件访问控制配置不当。模板访问 /plugins/image-widget/image-widget.php，并根据错误关键字、组件目录名和状态码确认泄露。
+  impact: |-
+    - 攻击者可获取站点物理路径、插件/主题目录结构和组件安装信息。
+    - 路径信息可辅助后续文件包含、上传、调试信息利用或针对特定 WordPress 组件的攻击。
   reference:
     - https://wordpress.org/plugins/image-widget/
   metadata:
     verified: true
     max-requests: 1
-    publicwww-query: "/wp-content/plugins/image-widget/"
+    publicwww-query: /wp-content/plugins/image-widget/
   tags: debug,wordpress,wp-plugin,image-widget,fpd
-
+  remediation: |-
+    - 关闭生产环境 PHP 错误显示，将错误记录到受保护的服务器日志。
+    - 阻止外部直接访问不应单独执行的插件、主题内部 PHP 文件。
+    - 及时更新 WordPress、插件和主题，并清理不再使用的组件。
 http:
   - method: GET
     path:

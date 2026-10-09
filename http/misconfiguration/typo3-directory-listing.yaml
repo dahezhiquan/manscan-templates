@@ -1,17 +1,23 @@
 id: typo3-directory-listing
 
 info:
-  name: Typo3 目录列出
+  name: TYPO3 目录列出暴露
   author: theamanrawat
   severity: low
-  description: |
-    检测到 Typo3 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+  description: |-
+    该模板用于核查 TYPO3 目录列出暴露。Web 服务器或应用目录开启目录列出后，未授权用户可浏览目录中的文件名和资源结构。模板访问 /typo3temp/、/，并根据目录索引标题、链接列表或组件目录特征确认目录列出是否启用。
   reference:
     - https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/ExtensionArchitecture/FileStructure/Index.html
   metadata:
     shodan-query: http.component:"typo3"
   tags: typo3,directory-listing,exposure
-
+  impact: |-
+    - 攻击者可枚举备份文件、配置文件、日志、源码包和未公开资源。
+    - 暴露的目录结构可辅助识别组件版本、文件路径和后续下载目标。
+  remediation: |-
+    - 关闭 Web 服务器目录索引功能，例如 Apache `Options -Indexes` 或 Nginx 禁用 `autoindex`。
+    - 将敏感文件移出 Web 根目录，并为必要目录配置认证和访问控制。
+    - 清理历史备份、临时文件和调试文件，避免可下载资源长期暴露。
 flow: http(1) && http(2)
 
 http:

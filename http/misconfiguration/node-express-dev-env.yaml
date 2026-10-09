@@ -1,11 +1,18 @@
 id: node-express-dev-env
 
 info:
-  name: Node.js Express NODE 环境变量 Development Mode
+  name: Node.js Express 开发环境暴露
   author: FLX
   severity: medium
   description: |
-    检测到 Node.js Express NODE 环境变量 Development Mode。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Node.js Express 开发环境暴露。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据匹配 `contains(tolower(all_headers), 'x-powered-by: express')`、匹配 `status_code==400`、匹配 `contains(body, 'SyntaxError: Unexpected token')`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
+  remediation: |
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   reference:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/express-development-mode-is-enabled/
     - https://www.synopsys.com/blogs/software-security/nodejs-mean-stack-vulnerabilities.html

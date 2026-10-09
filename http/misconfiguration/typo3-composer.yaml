@@ -1,11 +1,11 @@
 id: typo3-composer
 
 info:
-  name: Typo3 composer.json 暴露
+  name: TYPO3 composer.json 暴露
   author: 0x_Akoko
   severity: low
-  description: |
-    检测到 Typo3 composer.json 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 TYPO3 composer.json 暴露。目标公开了配置、日志、源码、数据库文件或示例信息页面，可能泄露本应仅限服务器内部访问的数据。模板访问 /typo3/sysext/install/composer.json，并根据文件特征、配置字段、日志内容、源码目录或响应状态确认泄露。
   reference:
     - https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/9.0/Breaking-83302-ComposerRestrictsInstallationOfTypo3cms.html
   classification:
@@ -15,9 +15,15 @@ info:
     max-request: 1
     vendor: typo3
     product: typo3
-    shodan-query: "X-TYPO3-Parsetime: 0ms"
+    shodan-query: 'X-TYPO3-Parsetime: 0ms'
   tags: typo3,cms,exposure,misconfig,vuln
-
+  impact: |-
+    - 攻击者可获取密钥、令牌、数据库连接信息、源码结构、内部路径、历史日志或业务配置。
+    - 泄露内容可能被用于凭据复用、供应链漏洞匹配、权限提升或进一步攻击。
+  remediation: |-
+    - 将配置、日志、源码仓库和数据库文件移出 Web 可访问目录。
+    - 在 Web 服务器和对象存储层添加拒绝规则，阻断敏感扩展名和内部目录访问。
+    - 轮换可能泄露的密钥、令牌和账号凭据，并排查访问日志。
 http:
   - method: GET
     path:

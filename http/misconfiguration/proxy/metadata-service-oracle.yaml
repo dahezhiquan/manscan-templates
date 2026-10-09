@@ -8,14 +8,18 @@ id: metadata-service-oracle
 # The proxy may also be vulnerable to host/port enumeration on localhost or
 # inside the private network.
 info:
-  name: Oracle Cloud 元数据 服务 Check
+  name: Oracle Cloud 元数据服务代理暴露
   author: sullo
   severity: critical
   description: |
-    检测到 Oracle Cloud 元数据 服务 Check。目标可能暴露云实例、容器或运行环境元数据，攻击者可据此获取实例身份、网络配置、凭据线索或部署信息。
+    该模板用于核查 Oracle Cloud 元数据服务代理暴露。该类问题通常源于开放代理或 SSRF 通道可访问云厂商元数据服务，导致实例身份和启动配置被读取。模板会向目标发送探测请求，并依据匹配 `availabilityDomain`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能读取实例元数据、临时凭据、用户数据、网络配置或服务账号令牌。
+    - 泄露的云凭据可能被用于访问云资源、横向移动或提升云环境权限。
   remediation: |
-    - 限制该端点的公网访问，仅允许可信来源访问。
-    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
+    - 阻断代理访问云元数据地址和链路本地地址，关闭不必要的外部代理能力。
+    - 启用云厂商元数据服务的防护机制，例如 IMDSv2、Hop Limit、服务账号最小权限等。
+    - 轮换可能泄露的临时凭据和密钥，并审计云 API 调用日志。
   reference:
     - https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/gettingmetadata.htm
     - https://blog.projectdiscovery.io/abusing-reverse-proxies-metadata/

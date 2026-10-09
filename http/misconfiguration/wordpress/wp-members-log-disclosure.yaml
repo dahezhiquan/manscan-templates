@@ -1,11 +1,11 @@
 id: wp-members-log-disclosure
 
 info:
-  name: WordPress Members Plugin 调试 错误 日志 泄露
+  name: WordPress Members 插件调试日志泄露
   author: ritikchaddha
   severity: low
-  description: |
-    检测到 WordPress Members Plugin 调试 错误 日志 泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+  description: |-
+    该模板用于核查 WordPress Members 插件调试日志泄露。目标公开了 WordPress 插件日志、调试日志或运行记录，可能泄露请求上下文、错误堆栈、文件路径和组件信息。模板访问 /wp-content/debug.log，并根据日志文件路径、插件关键字或响应内容确认泄露。
   reference:
     - https://wordpress.org/plugins/members/
     - https://pentest-tools.com/vulnerabilities-exploits/wordpress-members-membership-and-user-role-editor-plugin-error-log-disclosure_28354
@@ -16,7 +16,13 @@ info:
     framework: wordpress
     fofa-query: body="/wp-content/plugins/members"
   tags: wordpress,wp-plugin,members,exposure,logs
-
+  impact: |-
+    - 攻击者可获取站点路径、插件运行状态、异常信息、请求参数或敏感业务线索。
+    - 日志内容可能辅助定位组件版本、发现隐藏接口，并为后续攻击提供上下文。
+  remediation: |-
+    - 禁止通过 Web 直接访问插件日志、调试日志和临时目录。
+    - 关闭生产环境调试日志公开输出，将日志保存到受保护目录。
+    - 清理历史日志并轮换可能出现在日志中的令牌、密钥和账号凭据。
 flow: http(1) && http(2)
 
 http:

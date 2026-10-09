@@ -1,11 +1,11 @@
 id: symfony-rce
 
 info:
-  name: Symfony fragment 默认 密钥 远程代码执行
+  name: Symfony Fragment 默认密钥远程代码执行
   author: Yablargo
   severity: critical
-  description: |
-    检测到 Symfony fragment 默认 密钥 远程代码执行。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 Symfony Fragment 默认密钥远程代码执行。目标组件因默认密钥、调试接口或管理控制台暴露，使攻击者可能在未授权或低权限条件下触发服务端执行。模板访问 /{{uri_part}}&_hash={{url_encode(base64(hex_decode(hmac("sha256","/{{uri_part}}",badsecretkey))))}}、/{{uri_part}}&_hash={{url_encode(base64(hex_decode(hmac("sha256","/{{uri_part}}",secretkey))))}}，通过回显、状态码、哈希签名或命令执行结果判断风险是否存在。
   reference:
     - https://portswigger.net/daily-swig/symfony-based-websites-open-to-rce-attack-research-finds
     - https://medium.com/@m4cddr/how-i-got-rce-in-10-websites-26dd87441f22
@@ -16,7 +16,13 @@ info:
     shodan-query: http.html:"Symfony Profiler"
     verified: true
   tags: rce,symfony,misconfig,vuln
-
+  impact: |-
+    - 攻击者可能在服务器上执行任意代码或系统命令，读取配置、植入后门并接管应用进程。
+    - 若目标处于内网或具备高权限凭据，风险可能扩展到数据库、缓存、消息队列和其他内部资产。
+  remediation: |-
+    - 禁用或移除生产环境中的调试控制台、示例接口和危险管理功能。
+    - 更换默认密钥并使用强随机密钥，限制敏感接口来源并增加认证授权。
+    - 升级受影响组件，检查服务器是否已有异常进程、计划任务或新增账户。
 variables:
   badsecretkey: 'ThisIsAlmostCertainlyNotIt'
   uri_part: '_fragment?_path=what%3D-1%26_controller%3Dphpinfo'

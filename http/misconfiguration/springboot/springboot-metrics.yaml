@@ -1,16 +1,22 @@
 id: springboot-metrics
 
 info:
-  name: Springboot Actuator 指标 暴露
+  name: Spring Boot Actuator Metrics 暴露
   author: pussycat0x,TheZakMan
   severity: low
-  description: |
-    检测到 Springboot Actuator 指标 暴露。指标或导出器端点对外可访问，可能泄露服务状态、内部主机名、运行参数、性能数据和组件拓扑。
+  description: |-
+    该模板用于核查 Spring Boot Actuator Metrics端点是否对外暴露。Actuator 是 Spring Boot 的运维监控能力，错误配置会让本应受保护的运行状态、日志、指标或内部结构被匿名访问。模板访问 /metrics、/actuator/metrics，并根据响应中的 mem、heap、threads、gc、jvm.memory 或 process.cpu 等指标字段以及 JSON/Actuator Content-Type 判断端点是否可访问。
   metadata:
     verified: true
     max-request: 2
   tags: springboot,exposure,misconfig,vuln
-
+  impact: |-
+    - 攻击者可获取应用健康状态、运行指标、线程、日志、依赖组件、内部路由或环境线索。
+    - 这些信息可帮助攻击者识别技术栈、推断内部服务拓扑，并为后续漏洞利用、凭据搜集或拒绝服务攻击提供依据。
+  remediation: |-
+    - 仅暴露业务必需的 Actuator 端点，避免在生产环境开放敏感端点。
+    - 为 Actuator 增加认证授权、管理端口隔离、来源 IP 限制和访问审计。
+    - 通过 `management.endpoints.web.exposure.include`/`exclude`、Spring Security 或网关策略收敛公开端点。
 http:
   - method: GET
     path:

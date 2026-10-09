@@ -1,11 +1,18 @@
 id: dlink-file-read
 
 info:
-  name: D Link 本地文件包含
+  name: D-Link 本地文件读取
   author: dhiyaneshDK
   severity: high
   description: |
-    检测到 D Link 本地文件包含。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 D-Link 本地文件读取。该类问题通常源于文件上传、文件读取或路径访问控制配置不当，导致攻击者可读取敏感文件或上传非预期内容。模板会向目标发送探测请求，并依据请求 `/cgi-bin/webproc`、状态码 200等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可能读取配置、源码、凭据或系统文件，或上传可被服务器解析的恶意文件。
+    - 成功利用后可能造成敏感信息泄露、站点篡改、远程代码执行或持久化入口。
+  remediation: |
+    - 为文件读取和上传接口增加严格认证授权与路径约束。
+    - 限制上传文件类型、扩展名、大小和存储位置，禁止上传目录执行脚本。
+    - 审计已上传文件和访问日志，移除异常文件并轮换可能泄露的凭据。
   reference:
     - https://suid.ch/research/DAP-2020_Preauth_RCE_Chain.html
   classification:

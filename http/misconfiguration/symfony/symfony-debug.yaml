@@ -1,11 +1,11 @@
 id: symfony-debug
 
 info:
-  name: Symfony 调试模式
+  name: Symfony 调试模式暴露
   author: organiccrap,pdteam
   severity: high
-  description: |
-    检测到 Symfony 调试模式。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
+  description: |-
+    该模板用于核查 Symfony 调试模式暴露。调试模式、错误页面或诊断组件在生产环境暴露时，会返回堆栈、路径、配置项、请求上下文或运行参数。模板访问 /admin_dev.php、/index_dev.php，并根据调试标识、异常类名、phpinfo/Xdebug 配置或错误关键字确认暴露。
   reference:
     - https://github.com/synacktiv/eos
   classification:
@@ -17,7 +17,13 @@ info:
     product: symfony
     shodan-query: http.html:"symfony Profiler"
   tags: symfony,debug,misconfig,vuln
-
+  impact: |-
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、请求参数和依赖信息。
+    - 这些信息可帮助定位组件缺陷、构造后续漏洞利用或绕过安全控制。
+  remediation: |-
+    - 关闭生产环境调试模式、错误详情展示、Profiler 和 phpinfo 页面。
+    - 将错误写入受保护日志，统一返回通用错误页面。
+    - 限制诊断入口访问来源，升级框架并复核生产配置。
 http:
   - method: GET
     path:

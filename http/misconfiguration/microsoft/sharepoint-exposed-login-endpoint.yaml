@@ -1,11 +1,18 @@
 id: sharepoint-exposed-login-endpoint
 
 info:
-  name: Microsoft Sha仓库int 暴露 登录端点（指纹识别）
+  name: Microsoft SharePoint 登录端点暴露（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    检测到 Microsoft Sha仓库int 暴露 登录端点。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于识别 Microsoft SharePoint。SharePoint 是 Microsoft 提供的企业内容管理与协作平台，常用于内部门户、文档管理、团队站点和工作流协作。模板会向目标发送探测请求，并依据请求 `/_layouts/15/Authenticate.aspx`、`/_layouts/Authenticate.aspx`、匹配 `(?i)MicrosoftSharePointTeamServices`、状态码 401 等证据识别目标是否为对应系统。
+  impact: |
+    - 该模板用于资产识别，不直接证明目标存在可利用漏洞。
+    - 识别结果可用于梳理 SharePoint 暴露面、登录入口和后续加固优先级。
+  remediation: |
+    - 如 SharePoint 登录入口无需公网访问，应限制到内网、VPN 或可信访问网关后。
+    - 对公网 SharePoint 启用强认证、多因素认证、补丁管理和访问审计。
+    - 定期检查暴露的站点、服务账号和登录失败日志，降低被枚举和暴力破解的风险。
   reference:
     - https://learn.microsoft.com/en-us/sharepoint/authentication
     - https://learn.microsoft.com/en-us/sharepoint/security-for-sharepoint-server/plan-for-administrative-and-service-accounts

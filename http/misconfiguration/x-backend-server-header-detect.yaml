@@ -1,23 +1,26 @@
 id: x-backend-server-header-detect
 
 info:
-  name: X Backend 服务器 Header 暴露
+  name: X-Backend-Server 响应头暴露
   author: pussycat0x
   severity: low
-  description: |
-    检测到 X Backend 服务器 Header 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
-  remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+  description: |-
+    该模板用于核查 X-Backend-Server 响应头暴露。目标响应中返回 `X-Backend-Server` 等后端标识头，可能暴露内部主机名、后端节点或代理链路信息。模板访问 /en，并根据响应头中的 `X-Backend-Server` 字段确认暴露。
+  remediation: |-
+    - 在反向代理、网关或应用层移除不必要的后端标识响应头。
+    - 避免在响应头中暴露内部主机名、环境名称和节点编号。
+    - 对公网响应头进行基线检查，统一收敛调试和诊断字段。
   reference:
     - https://docs.gitlab.com/user/application_security/dast/browser/checks/16.4/
     - https://www.zaproxy.org/docs/alerts/10039/
   metadata:
     verified: true
     max-request: 1
-    shodan-query: "X-Backend-Server"
+    shodan-query: X-Backend-Server
   tags: headers,misconfig,exposure
-
+  impact: |-
+    - 攻击者可据此推断后端服务命名、负载均衡结构或内部节点信息。
+    - 后端标识可能辅助定向探测、社工攻击或绕过代理层的后续攻击。
 http:
   - method: GET
     path:

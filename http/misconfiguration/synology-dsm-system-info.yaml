@@ -1,11 +1,11 @@
 id: synology-dsm-system-info
 
 info:
-  name: Syno日志y DSM System Info 检测（指纹识别）
+  name: Synology DiskStation Manager 系统信息（指纹识别）
   author: DhiyaneshDk
   severity: info
-  description: |
-    检测到 Syno日志y DSM System Info 检测。该页面属于安装、初始化或配置向导流程，若对外暴露，攻击者可能完成初始化、创建管理员账户或重新配置目标系统。
+  description: |-
+    Synology DiskStation Manager 是 Synology 面向 NAS 和存储设备提供的 DiskStation Manager 管理系统，用于文件共享、存储管理和套件运维。模板访问 /webapi/entry.cgi?api=SYNO.API.Info&version=1&method=query&query=all，通过 DSM Web API 返回的系统信息结构、状态码和产品字段识别目标是否部署了该系统。
   reference:
     - https://www.synology.com/en-us/dsm
   metadata:
@@ -16,7 +16,13 @@ info:
     product: diskstation_manager
     vendor: synology
   tags: synology,dsm,misconfig,diskstation-manager,detect
-
+  impact: |-
+    - 该模板仅用于资产识别，帮助安全团队确认暴露的 Synology DSM 服务和管理入口。
+    - 识别结果可用于资产盘点、暴露面治理和后续授权安全检查。
+  remediation: |-
+    - 将 DSM 管理入口限制在内网、VPN 或可信管理网段。
+    - 启用强认证、多因素认证和访问日志审计。
+    - 对公网暴露资产进行持续盘点，及时升级 DSM 与相关套件。
 http:
   - method: GET
     path:

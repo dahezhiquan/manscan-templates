@@ -1,11 +1,18 @@
 id: kafka-cruise-control
 
 info:
-  name: Kafka Cruise Control UI 检测
+  name: Kafka Cruise Control UI 暴露
   author: dhiyaneshDK
   severity: medium
   description: |
-    检测到 Kafka Cruise Control UI 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Kafka Cruise Control UI 暴露。该类问题通常源于容器、Kubernetes、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据匹配 `<title>Kafka Cruise Control UI</title>`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看集群对象、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、配置泄露、集群接管或远程代码执行。
+  remediation: |
+    - 禁止将 Kubernetes、容器运行时、CI/CD 和运维 API 直接暴露到公网。
+    - 启用 TLS、认证授权、RBAC、来源限制和最小权限访问策略。
+    - 审计集群对象、任务、容器和访问日志，清理未知资源并轮换相关令牌。
   metadata:
     max-request: 1
     shodan-query: http.title:"Kafka Cruise Control UI"

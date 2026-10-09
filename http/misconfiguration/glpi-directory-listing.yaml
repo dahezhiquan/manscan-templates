@@ -5,7 +5,14 @@ info:
   author: RedTeamBrasil,ImNightmaree,0x_Akoko
   severity: medium
   description: |
-    检测到 GLPI 目录列出 Session 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 GLPI 目录列出 Session 暴露。该类问题通常源于 Web 目录索引、仓库列表、对象列表或文件浏览功能未关闭，导致未授权用户可枚举文件和目录。模板会向目标发送探测请求，并依据请求 `/glpi/files/`、`/glpi/files/_sessions/`、匹配 `status_code == 200`、匹配 `contains_all(body, "Index of", "Parent Directory")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可浏览目录结构、源代码、备份、日志、构建产物或对象存储资源。
+    - 暴露的文件名和内容可能泄露业务结构、凭据线索或可进一步利用的敏感数据。
+  remediation: |
+    - 关闭目录索引、公开列表和未授权文件浏览功能。
+    - 为需要下载的资源配置显式访问控制，避免把备份、源码和日志放入 Web 可访问路径。
+    - 检查已暴露目录中的敏感文件并轮换可能泄露的凭据或令牌。
   reference:
     - https://glpi-project.org/
   classification:

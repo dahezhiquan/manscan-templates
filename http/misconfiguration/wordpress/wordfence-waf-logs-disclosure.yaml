@@ -1,11 +1,11 @@
 id: wordfence-waf-logs-disclosure
 
 info:
-  name: WordPress Wordfence WAF 日志s Data 泄露
+  name: WordPress Wordfence WAF 日志泄露
   author: ritikchaddha
   severity: low
-  description: |
-    检测到 WordPress Wordfence WAF 日志s Data 泄露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+  description: |-
+    该模板用于核查 WordPress Wordfence WAF 日志泄露。目标公开了配置、日志、源码、数据库文件或示例信息页面，可能泄露本应仅限服务器内部访问的数据。模板访问 /wp-content/wflogs/、/wp-content/plugins/wordfence/lib/wflogs/，并根据文件特征、配置字段、日志内容、源码目录或响应状态确认泄露。
   reference:
     - https://wordpress.org/support/topic/detect-suspicious-content-in-word-fence-wflogs-in-my-site/
     - https://wordpress.org/support/topic/syn_sent-in-wflogs-filename-php/
@@ -18,7 +18,13 @@ info:
     verified: true
     fofa-query: body="/plugins/wordfence"
   tags: wordpress,wp-plugin,wordfence,logs,exposure
-
+  impact: |-
+    - 攻击者可获取密钥、令牌、数据库连接信息、源码结构、内部路径、历史日志或业务配置。
+    - 泄露内容可能被用于凭据复用、供应链漏洞匹配、权限提升或进一步攻击。
+  remediation: |-
+    - 将配置、日志、源码仓库和数据库文件移出 Web 可访问目录。
+    - 在 Web 服务器和对象存储层添加拒绝规则，阻断敏感扩展名和内部目录访问。
+    - 轮换可能泄露的密钥、令牌和账号凭据，并排查访问日志。
 flow: http(1) && http(2)
 
 http:

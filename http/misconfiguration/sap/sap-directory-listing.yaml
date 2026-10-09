@@ -5,7 +5,14 @@ info:
   author: dhiyaneshDK
   severity: medium
   description: |
-    检测到 SAP 目录列出。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 SAP 目录列出。该类问题通常源于 SAP NetWeaver、SAPControl 或 ICM 管理接口暴露，导致未授权用户可读取系统信息、日志、配置或执行管理操作。模板会向目标发送探测请求，并依据请求 `/irj/go/km/navigation/`、匹配 `title="~system"`、匹配 `NetWeaver`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取 SAP 版本、实例属性、配置文件、日志内容和系统路径等敏感信息。
+    - 若管理方法可被调用，可能进一步导致命令执行、系统操作或业务中断。
+  remediation: |
+    - 限制 SAPControl、ICM Admin 和相关 SOAP/Web 管理接口的来源地址。
+    - 启用强认证、最小权限和访问审计，关闭不需要公开的管理方法。
+    - 检查 SAP 日志和实例配置，确认是否存在未授权访问或敏感信息泄露。
   metadata:
     max-request: 1
   tags: sap,listing,misconfig,vuln

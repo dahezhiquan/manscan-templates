@@ -1,14 +1,15 @@
 id: struts-ognl-console
 
 info:
-  name: Apache Struts OGNL 控制台
+  name: Apache Struts OGNL 控制台暴露
   author: DhiyaneshDK
   severity: critical
-  description: |
-    检测到 Apache Struts OGNL 控制台。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
-  remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+  description: |-
+    该模板用于核查 Apache Struts OGNL 控制台暴露。目标控制台、状态页、监控页面或 API 在未充分限制的情况下对外开放，可能暴露运行状态、业务数据或管理能力。模板访问 /struts/webconsole.html?debug=console，并根据页面标题、接口字段、状态码或组件关键字确认暴露。
+  remediation: |-
+    - 为控制台、状态页和 API 增加认证授权，并限制访问来源。
+    - 将运维页面部署在内网、VPN 或专用管理网段，避免直接暴露到公网。
+    - 关闭不必要的示例、状态和调试入口，开启访问审计。
   reference:
     - https://github.com/PortSwigger/j2ee-scan/blob/master/src/main/java/burp/j2ee/issues/impl/ApacheStrutsWebConsole.java
   classification:
@@ -20,7 +21,9 @@ info:
     product: struts
     shodan-query: html:"Struts Problem Report"
   tags: apache,struts,ognl,panel,misconfig,vuln
-
+  impact: |-
+    - 攻击者可查看服务状态、监控指标、项目数据、设备信息、任务队列或内部拓扑。
+    - 若页面包含管理操作或写入接口，可能进一步导致配置篡改、任务执行、数据泄露或服务中断。
 http:
   - method: GET
     path:

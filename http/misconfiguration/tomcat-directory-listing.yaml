@@ -1,14 +1,15 @@
 id: tomcat-directory-listing
 
 info:
-  name: Apache Tomcat 目录列出 启用
+  name: Apache Tomcat 目录列出启用
   author: oleveloper
   severity: medium
-  description: |
-    检测到 Apache Tomcat 目录列出 启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
-  remediation: |
-    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
-    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
+  description: |-
+    该模板用于核查 Apache Tomcat 目录列出启用。Web 服务器或应用目录开启目录列出后，未授权用户可浏览目录中的文件名和资源结构。模板访问 目标入口，并根据目录索引标题、链接列表或组件目录特征确认目录列出是否启用。
+  remediation: |-
+    - 关闭 Web 服务器目录索引功能，例如 Apache `Options -Indexes` 或 Nginx 禁用 `autoindex`。
+    - 将敏感文件移出 Web 根目录，并为必要目录配置认证和访问控制。
+    - 清理历史备份、临时文件和调试文件，避免可下载资源长期暴露。
   reference:
     - https://isms.kisa.or.kr
   metadata:
@@ -18,7 +19,9 @@ info:
     product: tomcat
     shodan-query: title:"Apache Tomcat"
   tags: tomcat,misconfig,listing,kisa,vuln
-
+  impact: |-
+    - 攻击者可枚举备份文件、配置文件、日志、源码包和未公开资源。
+    - 暴露的目录结构可辅助识别组件版本、文件路径和后续下载目标。
 http:
   - method: GET
     path:

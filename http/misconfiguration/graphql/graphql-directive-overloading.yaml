@@ -1,17 +1,18 @@
 id: graphql-directive-overloading
 
 info:
-  name: GraphQL Directive Overloading 检测
+  name: GraphQL Directive Overloading 配置检测
   author: shamo0
   severity: medium
   description: |
-    检测到 GraphQL Directive Overloading 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 GraphQL Directive Overloading 配置检测。该类问题通常源于 GraphQL 调试界面、交互式控制台、批处理能力或查询错误提示在生产环境中暴露。模板会向目标发送探测请求，并依据匹配 `application/json`等证据确认目标是否存在该配置问题。
   impact: |
-    - 凭据、密钥、配置或环境变量泄露后，攻击者可能访问内部系统或第三方服务。
-    - 泄露信息可被用于横向移动、权限提升或供应链攻击。
+    - 攻击者可通过调试界面或错误提示了解 GraphQL Schema、字段、类型和业务对象。
+    - 若批处理、GET 请求或复杂查询未限制，可能造成权限绕过、CSRF、资源消耗或批量数据枚举。
   remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+    - 关闭生产环境中的 GraphQL Playground、GraphiQL、Voyager 等调试界面。
+    - 对 GraphQL 接口启用认证授权、查询复杂度限制、批处理限制和速率限制。
+    - 禁用不必要的字段建议和详细错误回显，并审计异常查询模式。
   reference:
     - https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/12-API_Testing/01-Testing_GraphQL
     - https://github.com/dolevf/graphql-cop/blob/main/lib/tests/dos_directive_overloading.py

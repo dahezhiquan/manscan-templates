@@ -1,11 +1,11 @@
 id: thinkphp-errors
 
 info:
-  name: ThinkPHP 错误信息 敏感信息 暴露
+  name: ThinkPHP 错误信息泄露
   author: j4vaovo
   severity: medium
-  description: |
-    检测到 ThinkPHP 错误信息 敏感信息 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 ThinkPHP 错误信息泄露。调试模式、错误页面或诊断组件在生产环境暴露时，会返回堆栈、路径、配置项、请求上下文或运行参数。模板访问 目标入口，并根据调试标识、异常类名、phpinfo/Xdebug 配置或错误关键字确认暴露。
   classification:
     cpe: cpe:2.3:a:thinkphp:thinkphp:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +15,13 @@ info:
     product: thinkphp
     fofa-query: app="ThinkPHP" && title="System Error"
   tags: thinkphp,misconfig,exposure,vuln
-
+  impact: |-
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、请求参数和依赖信息。
+    - 这些信息可帮助定位组件缺陷、构造后续漏洞利用或绕过安全控制。
+  remediation: |-
+    - 关闭生产环境调试模式、错误详情展示、Profiler 和 phpinfo 页面。
+    - 将错误写入受保护日志，统一返回通用错误页面。
+    - 限制诊断入口访问来源，升级框架并复核生产配置。
 http:
   - method: GET
     path:

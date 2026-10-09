@@ -1,14 +1,18 @@
 id: laravel-debug-enabled
 
 info:
-  name: Laravel 调试 启用
+  name: Laravel 调试模式启用
   author: notsoevilweasel
   severity: medium
   description: |
-    检测到 Laravel 调试 启用。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+    该模板用于核查 Laravel 调试模式启用。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据请求 `/_ignition/health-check`、匹配 `can_execute_commands`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
   remediation: |
-    - 限制该端点的公网访问，仅允许可信来源访问。
-    - 启用认证、授权和审计，并根据业务需要关闭不必要的调试或管理功能。
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   metadata:
     max-request: 1
   tags: debug,laravel,misconfig,vuln

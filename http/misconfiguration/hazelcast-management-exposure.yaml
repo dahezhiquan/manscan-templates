@@ -1,14 +1,18 @@
 id: hazelcast-management-exposure
 
 info:
-  name: Hazelcast 管理 Center 配置 暴露
+  name: Hazelcast 管理 Center 配置暴露
   author: S3R4PH
   severity: medium
   description: |
-    检测到 Hazelcast 管理 Center 配置 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Hazelcast 管理 Center 配置暴露。该类问题通常源于配置文件、备份文件、管理页面、服务状态或敏感资源被错误暴露到 Web 访问路径。模板会向目标发送探测请求，并依据请求 `/hazelcast/rest/cluster`、匹配 `memberVersion`、匹配 `members`、状态码 200等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取版本、路径、账号、密钥、令牌、配置或业务数据等敏感信息。
+    - 泄露的信息可能被用于凭据攻击、漏洞匹配、权限提升或横向移动。
   remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+    - 移除 Web 根目录下不应公开的配置、备份、日志和临时文件。
+    - 为敏感页面和资源增加访问控制，并按最小暴露原则收敛公开路径。
+    - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   reference:
     - https://docs.hazelcast.com/imdg/latest/management-center/rest-api
   classification:

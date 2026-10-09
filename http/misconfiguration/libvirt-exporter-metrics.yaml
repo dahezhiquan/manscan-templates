@@ -1,11 +1,18 @@
 id: libvirt-exporter-metrics
 
 info:
-  name: Libvirt 导出器 指标
+  name: Libvirt Exporter 指标暴露
   author: DhiyaneshDk
   severity: low
   description: |
-    检测到 Libvirt 导出器 指标。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+    该模板用于核查 Libvirt Exporter 指标暴露。该类问题通常源于 Prometheus、Exporter、监控端点或服务指标接口未加访问控制而暴露。模板会向目标发送探测请求，并依据请求 `/metrics`、匹配 `# HELP`、匹配 `libvirt_`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取主机、容器、服务版本、资源使用、网络接口、文件系统或集群状态等运行信息。
+    - 指标信息可辅助攻击者绘制内部架构、识别高价值节点并制定后续攻击路径。
+  remediation: |
+    - 为指标端点增加认证授权、来源限制或仅绑定内网监听地址。
+    - 通过反向代理、服务网格或监控采集器收敛访问路径，避免公网直接访问。
+    - 审计已暴露的指标内容，确认是否包含主机名、版本、标签或业务敏感标识。
   classification:
     cpe: cpe:2.3:a:redhat:libvirt:*:*:*:*:*:*:*:*
   metadata:

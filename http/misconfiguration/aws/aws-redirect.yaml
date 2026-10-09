@@ -4,6 +4,15 @@ info:
   name: Subdomain 接管 AWS S3
   author: manikanta a.k.a @secureitmania
   severity: high
+  description: |
+    该模板用于核查 Subdomain 接管 AWS S3相关配置。该类问题通常源于云对象存储桶或兼容对象存储服务开启了公开读取、公开列表或错误的访问策略。模板会向目标发送探测请求，并依据匹配 `Location: https://aws.amazon.com/s3/`、状态码 307等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可枚举对象列表并下载公开文件，造成业务资料、备份、日志或静态资源泄露。
+    - 若桶内资源被业务系统引用，攻击者还可能利用公开内容辅助供应链攻击或品牌仿冒。
+  remediation: |
+    - 关闭对象存储桶公共访问和列表权限，按业务需要配置最小化 Bucket Policy。
+    - 启用云厂商的公共访问阻断、访问日志和异常访问告警。
+    - 检查桶内历史文件，移除敏感对象并轮换已暴露的密钥、令牌或下载链接。
   reference:
     - https://link.medium.com/fgXKJHR9P7
   metadata:

@@ -5,7 +5,14 @@ info:
   author: kazet
   severity: medium
   description: |
-    检测到 目录列出 No Host 头。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 目录列出 No Host 头。该类问题通常源于 HTTP 安全响应头、重定向策略或浏览器安全策略配置不完整。模板会向目标发送探测请求，并依据匹配 `!contains_any(body,"<title>Index of","<title>Directory listing of")`、匹配 `contains_any(body,"<title>Index of","<title>Directory listing of")`、匹配 `status_code == 200`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 缺失或错误的安全响应头会削弱浏览器侧防护，增加 XSS、点击劫持、降级访问或策略绕过风险。
+    - 错误的 HTTPS 到 HTTP 重定向可能让敏感请求暴露在明文链路中。
+  remediation: |
+    - 按业务需要配置 HSTS、CSP、X-Frame-Options、X-Content-Type-Options、Referrer-Policy 等安全响应头。
+    - 避免把 HTTPS 请求降级重定向到 HTTP，统一使用安全协议和正确的跳转规则。
+    - 上线后通过自动化检查和网关策略持续验证响应头配置。
   metadata:
     verified: true
     max-request: 1

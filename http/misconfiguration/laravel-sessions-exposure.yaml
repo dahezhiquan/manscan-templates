@@ -5,7 +5,14 @@ info:
   author: DhiyaneshDk
   severity: high
   description: |
-    检测到 Laravel Sessions Folder 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Laravel Sessions Folder 暴露。该类问题通常源于配置文件、备份文件、管理页面、服务状态或敏感资源被错误暴露到 Web 访问路径。模板会向目标发送探测请求，并依据请求 `/storage/framework/sessions/`、`/storage/sessions/`、匹配 `Index of`、匹配 `Parent Directory`、匹配 `<title>Index of`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取版本、路径、账号、密钥、令牌、配置或业务数据等敏感信息。
+    - 泄露的信息可能被用于凭据攻击、漏洞匹配、权限提升或横向移动。
+  remediation: |
+    - 移除 Web 根目录下不应公开的配置、备份、日志和临时文件。
+    - 为敏感页面和资源增加访问控制，并按最小暴露原则收敛公开路径。
+    - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   metadata:
     max-request: 2
     verified: true

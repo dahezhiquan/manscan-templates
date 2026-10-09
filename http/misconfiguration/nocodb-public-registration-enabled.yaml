@@ -1,11 +1,18 @@
 id: nocodb-public-registration-enabled
 
 info:
-  name: Noco数据库 Public 注册已启用
+  name: NocoDB 公开注册已启用
   author: pussycat0x
   severity: medium
   description: |
-    检测到 Noco数据库 Public 注册已启用。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 NocoDB 公开注册已启用。该类问题通常源于公开注册、自助开户或默认初始化策略未按业务预期关闭。模板会向目标发送探测请求，并依据匹配 `contains(body, "token\":\"ey")`、匹配 `contains(header, 'application/json')`、匹配 `status_code == 200`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可自行创建账号进入系统，枚举内部功能、数据或协作空间。
+    - 若新账号默认权限过高，可能进一步导致数据泄露、配置变更或平台滥用。
+  remediation: |
+    - 关闭不需要的公开注册和自助开户入口。
+    - 对必须开放的注册流程增加审批、邮箱域限制、验证码和速率限制。
+    - 审计近期新建账号、权限分配和异常登录行为。
   reference:
     - https://docs.nocodb.com/getting-started/self-hosted/environment-variables/
     - https://nocodb.com/docs/product-docs/account-settings/oss-specific-details

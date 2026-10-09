@@ -4,6 +4,15 @@ info:
   name: Adobe AEM CRX Search 暴露
   author: dhiyaneshDk
   severity: medium
+  description: |
+    该模板用于核查 Adobe AEM CRX Search暴露状态。该类问题通常源于配置文件、备份文件、管理页面、服务状态或敏感资源被错误暴露到 Web 访问路径。模板会向目标发送探测请求，并依据请求 `/crx/explorer/ui/search.jsp`、`/crx/explorer/ui/search.jsp?Path=&amp;Query=`、匹配 `<title>Search</title>`、`"/crx/explorer/ui/";`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取版本、路径、账号、密钥、令牌、配置或业务数据等敏感信息。
+    - 泄露的信息可能被用于凭据攻击、漏洞匹配、权限提升或横向移动。
+  remediation: |
+    - 移除 Web 根目录下不应公开的配置、备份、日志和临时文件。
+    - 为敏感页面和资源增加访问控制，并按最小暴露原则收敛公开路径。
+    - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   reference:
     - https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/aem2.txt
   classification:

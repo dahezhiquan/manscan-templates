@@ -5,7 +5,14 @@ info:
   author: theamanrawat
   severity: low
   description: |
-    检测到 Cacti 完整路径泄露。目标暴露了调试、错误或堆栈信息，可能泄露应用路径、框架版本、环境变量、源码位置或内部调用细节。
+    该模板用于核查 Cacti 完整路径泄露状态。该类问题通常源于配置文件、备份文件、管理页面、服务状态或敏感资源被错误暴露到 Web 访问路径。模板会向目标发送探测请求，并依据请求 `/cacti/`、`/index.php`、匹配 `System log file is not available for writing`、`please enable write access`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取版本、路径、账号、密钥、令牌、配置或业务数据等敏感信息。
+    - 泄露的信息可能被用于凭据攻击、漏洞匹配、权限提升或横向移动。
+  remediation: |
+    - 移除 Web 根目录下不应公开的配置、备份、日志和临时文件。
+    - 为敏感页面和资源增加访问控制，并按最小暴露原则收敛公开路径。
+    - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   tags: cacti,fpd,exposure,path,misconfig
 
 http:

@@ -1,14 +1,18 @@
 id: open-proxy-external
 
 info:
-  name: 开放代理 External Network
+  name: 开放代理外网访问检测
   author: gtrrnr
   severity: medium
   description: |
-    检测到 开放代理 External Network。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 开放代理外网访问检测。该类问题通常源于 HTTP 代理对外开放或缺少目标访问控制，导致攻击者可借用代理访问外部、内网或本机服务。模板会向目标发送探测请求，并依据匹配 `contains_any(body_1, "<HostId>", "</HostId>")`、匹配 `contains(header_2, "X-Interactsh-Version")`、匹配 `!contains(body_3, "<HostId>")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可隐藏来源发起访问、探测内网服务、访问本机管理端口或滥用代理进行攻击。
+    - 开放代理还可能带来合规风险、资源消耗和第三方滥用投诉。
   remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+    - 关闭不需要的代理服务，或仅允许可信来源访问。
+    - 为代理配置认证、目标地址白名单、内网地址阻断和访问审计。
+    - 监控异常代理流量、端口扫描行为和高频请求来源。
   reference:
     - https://en.wikipedia.org/wiki/Open_proxy
     - https://www.acunetix.com/vulnerabilities/web/apache-configured-to-run-as-proxy/

@@ -4,6 +4,15 @@ info:
   name: PHP 错误信息
   author: w4cky_,geeknik,dhiyaneshDK
   severity: medium
+  description: |
+    该模板用于核查 PHP 错误信息。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据匹配 `(?i)Fatal error`、匹配 `(?i)Call to undefined method`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
+  remediation: |
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   classification:
     cpe: cpe:2.3:a:php:php:*:*:*:*:*:*:*:*
     cwe-id: CWE-209

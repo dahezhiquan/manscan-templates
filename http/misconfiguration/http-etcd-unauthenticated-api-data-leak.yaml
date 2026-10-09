@@ -1,11 +1,18 @@
 id: http-etcd-unauthenticated-api-data-leak
 
 info:
-  name: etcd 未授权 HTTP API Leak
+  name: etcd HTTP API 未授权数据泄露
   author: dhiyaneshDk
   severity: high
   description: |
-    检测到 etcd 未授权 HTTP API Leak。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 etcd HTTP API 未授权数据泄露。该类问题通常源于容器、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据请求 `/v2/auth/roles`、匹配 `"roles"`、匹配 `"permissions"`、匹配 `"role"`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看镜像、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、镜像篡改、配置泄露或集群接管。
+  remediation: |
+    - 禁止将运维 API、容器接口和注册表直接暴露到公网。
+    - 启用 TLS、认证授权、来源限制和最小权限访问策略。
+    - 审计镜像、容器、任务和访问日志，清理未知资源并轮换相关令牌。
   reference:
     - https://hackerone.com/reports/1088429
   metadata:

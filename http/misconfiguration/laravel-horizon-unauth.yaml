@@ -1,14 +1,18 @@
 id: laravel-horizon-unauth
 
 info:
-  name: Laravel Horizon 仪表盘 未授权
+  name: Laravel Horizon 仪表盘未授权访问
   author: vagnerd
   severity: medium
   description: |
-    检测到 Laravel Horizon 仪表盘 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Laravel Horizon 仪表盘未授权访问。该类问题通常源于生产环境暴露调试页面、错误回溯、诊断端点、指标接口或详细错误信息。模板会向目标发送探测请求，并依据请求 `/api/stats`、`/horizon/api/stats`、匹配 `queueWithMaxRuntime`、匹配 `recentJobs`、匹配 `status`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、运行参数或依赖信息。
+    - 这些信息可帮助攻击者定位组件版本、构造后续漏洞利用或发现内部系统结构。
   remediation: |
-    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
-    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
+    - 关闭生产环境调试模式、错误回溯、示例页面和诊断接口。
+    - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
+    - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   reference:
     - https://github.com/laravel/horizon
     - https://laravel.com/docs/10.x/horizon#dashboard-authorization

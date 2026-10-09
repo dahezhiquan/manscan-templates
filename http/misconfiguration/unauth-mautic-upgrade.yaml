@@ -1,17 +1,23 @@
 id: unauth-mautic-upgrade
 
 info:
-  name: 未授权 Mautic Upgrade.php 暴露
+  name: Mautic 升级入口未授权访问
   author: huowuzhao
   severity: high
-  description: |
-    检测到 未授权 Mautic Upgrade.php 暴露。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  description: |-
+    该模板用于核查 Mautic 升级入口未授权访问。目标管理界面、控制台或敏感接口在未登录状态下可访问，通常源于默认开放、反向代理绕过、初始化流程遗留或访问控制配置错误。模板访问 /upgrade.php，并根据页面标题、接口响应、重定向或关键业务字段确认未授权访问。
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Mautic"
   tags: misconfig,unauth,mautic,vuln
-
+  impact: |-
+    - 攻击者可查看或操作管理功能、任务队列、监控数据、配置项、项目数据或设备状态。
+    - 若界面提供写入、执行、上传或注册能力，可能进一步造成服务接管、数据泄露或业务中断。
+  remediation: |-
+    - 为管理入口和 API 强制启用认证授权，关闭匿名访问、访客登录和公开注册。
+    - 将控制台限制在内网、VPN 或可信来源，并在网关层增加访问控制。
+    - 复核默认配置、反向代理规则和初始化状态，清理测试账户并开启审计日志。
 http:
   - method: GET
     path:

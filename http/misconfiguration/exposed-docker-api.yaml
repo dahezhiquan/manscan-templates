@@ -4,6 +4,15 @@ info:
   name: 暴露 Docker API
   author: furkansenan,dwisiswant0
   severity: high
+  description: |
+    该模板用于核查 暴露 Docker API。该类问题通常源于容器、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据匹配 `http://{{Hostname}}/version`、匹配 `http://{{Hostname}}/v1.24/version`、匹配 `application/json`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看镜像、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、镜像篡改、配置泄露或集群接管。
+  remediation: |
+    - 禁止将运维 API、容器接口和注册表直接暴露到公网。
+    - 启用 TLS、认证授权、来源限制和最小权限访问策略。
+    - 审计镜像、容器、任务和访问日志，清理未知资源并轮换相关令牌。
   metadata:
     max-request: 2
   tags: docker,unauth,devops,misconfig,vuln

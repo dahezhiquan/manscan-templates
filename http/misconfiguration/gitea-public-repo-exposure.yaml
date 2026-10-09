@@ -1,11 +1,18 @@
 id: gitea-public-repo-exposure
 
 info:
-  name: Gitea Public 仓库 暴露
+  name: Gitea 公开仓库 暴露
   author: theamanrawat
   severity: low
   description: |
-    检测到 Gitea Public 仓库 暴露。Web 服务器或应用目录允许列出文件内容，可能泄露备份文件、配置文件、日志、源码或其他未公开资源。
+    该模板用于核查 Gitea 公开仓库 暴露。该类问题通常源于容器、CI/CD、注册表、服务发现或运维 API 暴露在公网且缺少访问控制。模板会向目标发送探测请求，并依据请求 `/explore/repos`、`/api/v1/repos/search?q=&limit=50`、匹配 `status_code == 200`、匹配 `contains_all(to_lower(body), "explore repositories", "gitea")`、匹配 `contains_all(body, "\"data\":", "\"clone_url\":", "\"full_name\":")`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可查看镜像、容器、任务、节点、配置、构建流水线或运行状态。
+    - 若接口允许操作，可能导致容器创建、任务执行、镜像篡改、配置泄露或集群接管。
+  remediation: |
+    - 禁止将运维 API、容器接口和注册表直接暴露到公网。
+    - 启用 TLS、认证授权、来源限制和最小权限访问策略。
+    - 审计镜像、容器、任务和访问日志，清理未知资源并轮换相关令牌。
   reference:
     - https://gitea.io/
     - https://docs.gitea.io/en-us/

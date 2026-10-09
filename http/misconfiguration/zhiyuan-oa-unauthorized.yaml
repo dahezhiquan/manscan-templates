@@ -1,17 +1,23 @@
 id: zhiyuan-oa-unauthorized
 
 info:
-  name: Zhiyuan Oa 未授权
+  name: 致远 OA 未授权访问
   author: pikpikcu
   severity: low
-  description: |
-    检测到 Zhiyuan Oa 未授权。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+  description: |-
+    该模板用于核查致远 OA 未授权访问。目标管理页面或业务接口在未认证状态下可访问，通常源于访问控制缺失、默认开放或反向代理规则配置不当。模板访问 /seeyon/personalBind.do.jpg/..;/ajax.do?method=ajaxAction&managerName=mMOneProfileManager&managerMethod=getOAProfile，并根据页面关键字、JSON 字段、状态码或组件标识确认未授权访问。
   reference:
     - https://buaq.net/go-53721.html
   metadata:
     max-request: 1
   tags: seeyon,unauth,zhiyuan,misconfig,vuln
-
+  impact: |-
+    - 攻击者可查看系统配置、组织信息、仪表盘数据或内部业务状态。
+    - 若接口提供写入或管理能力，可能进一步导致配置篡改、数据泄露或服务接管。
+  remediation: |-
+    - 为管理入口和敏感 API 强制启用认证授权，并关闭匿名访问。
+    - 将后台系统限制在内网、VPN 或可信管理网段。
+    - 复核反向代理和路由规则，清理默认账户并开启访问审计。
 http:
   - method: GET
     path:

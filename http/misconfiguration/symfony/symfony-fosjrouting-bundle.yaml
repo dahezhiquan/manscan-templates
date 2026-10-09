@@ -1,7 +1,7 @@
 id: symfony-fosjrouting-bundle
 
 info:
-  name: Symfony FOSJsRoutingBundle 检测
+  name: Symfony FOSJsRoutingBundle 路由信息暴露
   author: DhiyaneshDk
   severity: low
   reference:
@@ -12,7 +12,15 @@ info:
     max-request: 1
     shodan-query: http.html:"symfony Profiler"
   tags: misconfig,symfony,vuln
-
+  description: |-
+    该模板用于核查 Symfony FOSJsRoutingBundle 路由信息暴露。目标因访问控制、默认配置或文件发布策略不当，暴露了不应公开的页面、接口或文件。模板访问 /js/routing?callback=fos.Router.setDatafoobarfoo，并根据响应状态、页面关键字或组件特征确认该配置问题。
+  impact: |-
+    - 攻击者可获取内部信息、组件版本、配置细节或可操作的管理入口。
+    - 暴露信息可能辅助后续漏洞利用、权限提升、横向移动或业务数据访问。
+  remediation: |-
+    - 收敛公开访问面，只暴露业务必需的页面和接口。
+    - 对敏感入口增加认证授权、来源限制和访问审计。
+    - 定期检查部署目录、反向代理规则和默认配置，清理示例与调试资源。
 http:
   - method: GET
     path:

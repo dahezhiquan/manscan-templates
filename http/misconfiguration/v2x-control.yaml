@@ -1,11 +1,11 @@
 id: v2x-control
 
 info:
-  name: V2X Control 仪表盘 暴露
+  name: V2X Control 控制台暴露
   author: DhiyaneshDk
   severity: low
-  description: |
-    检测到 V2X Control 仪表盘 暴露。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+  description: |-
+    该模板用于核查 V2X Control 控制台暴露。目标控制台、状态页、监控页面或 API 在未充分限制的情况下对外开放，可能暴露运行状态、业务数据或管理能力。模板访问 目标入口，并根据页面标题、接口字段、状态码或组件关键字确认暴露。
   reference:
     - https://www.facebook.com/photo/?fbid=606940284809828&set=a.467014098802448
   metadata:
@@ -13,7 +13,13 @@ info:
     max-request: 1
     shodan-query: title:"V2X Control"
   tags: misconfig,exposure,v2x,control,vuln
-
+  impact: |-
+    - 攻击者可查看服务状态、监控指标、项目数据、设备信息、任务队列或内部拓扑。
+    - 若页面包含管理操作或写入接口，可能进一步导致配置篡改、任务执行、数据泄露或服务中断。
+  remediation: |-
+    - 为控制台、状态页和 API 增加认证授权，并限制访问来源。
+    - 将运维页面部署在内网、VPN 或专用管理网段，避免直接暴露到公网。
+    - 关闭不必要的示例、状态和调试入口，开启访问审计。
 http:
   - method: GET
     path:

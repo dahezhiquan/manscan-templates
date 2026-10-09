@@ -4,9 +4,15 @@ info:
   name: motionEye 部分 - 认证绕过
   author: pussycat0x
   severity: critical
-  description: |-
-    路径遍历漏洞允许未认证攻击者访问受保护资源并绕过认证控制。
-  impact: 攻击者可在未登录的情况下窃取管理员凭据，可能导致管理员账户被完全接管。
+  description: |
+    该模板用于核查 motionEye 部分 - 认证绕过。该类问题通常源于管理端、API、控制台或服务接口缺少认证授权，导致未登录用户可直接访问敏感功能。模板会向目标发送探测请求，并依据匹配 `status_code == 200`、匹配 `contains_all(body, 'admin_username','admin_password')`等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可在未授权状态下查看系统状态、业务数据、任务信息或管理接口。
+    - 若接口支持写操作，可能进一步导致配置篡改、服务接管、数据删除或横向移动。
+  remediation: |
+    - 为相关管理端和 API 启用认证授权，并按最小权限限制可访问功能。
+    - 将管理接口限制在内网、VPN 或可信来源范围内，并开启访问审计。
+    - 检查历史访问日志，确认是否存在未授权访问、批量枚举或异常操作。
   reference:
     - https://github.com/advisories/GHSA-phv5-334h-mxcw
   metadata:

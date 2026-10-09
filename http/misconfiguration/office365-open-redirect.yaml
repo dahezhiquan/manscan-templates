@@ -5,10 +5,14 @@ info:
   author: dhiyaneshDk
   severity: medium
   description: |
-    检测到 Office365 Autodiscover 开放重定向。目标功能在未认证状态下可访问，可能暴露管理入口、业务数据、系统状态或可执行操作，需确认是否存在访问控制缺失。
+    该模板用于核查 Office365 Autodiscover 开放重定向。该类问题通常源于跳转参数、回调地址或代理转发逻辑未限制目标域名，导致用户可被重定向到非预期站点。模板会向目标发送探测请求，并依据请求 `/autodiscover/autodiscover.json/v1.0/{{randstr}}@interact.sh?Protocol=Autodiscoverv1`、匹配 `autodiscover.interact.sh`、状态码 302 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可构造可信域名下的跳转链接，用于钓鱼、凭据诱导或绕过部分安全校验。
+    - 在单点登录、邮件通知或自动发现流程中，开放重定向可能扩大社工和会话劫持风险。
   remediation: |
-    - 为相关管理界面和 API 启用强认证、授权校验和最小权限控制。
-    - 将后台端点限制在可信网络或 VPN 内，并记录访问审计日志。
+    - 对重定向目标使用严格的同源或白名单校验，禁止直接信任用户输入的 URL。
+    - 避免在认证、回调和自动发现流程中返回任意外部跳转。
+    - 记录异常跳转参数并监控被滥用的重定向链接。
   reference:
     - https://medium.com/@heinjame/office365-open-redirect-from-autodiscover-64284d26c168
   classification:

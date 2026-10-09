@@ -1,14 +1,15 @@
 id: wp-registration-enabled
 
 info:
-  name: WordPress 用户 Registration 面板 检测
+  name: WordPress 用户注册开放
   author: tess,DhiyaneshDK
   severity: low
-  description: |
-    检测到 WordPress 用户 Registration 面板 检测。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
-  remediation: |
-    - 立即移除公开文件中的敏感信息并轮换已暴露的凭据、密钥和令牌。
-    - 使用安全的密钥管理方案，并阻止配置、日志和历史文件被 Web 直接访问。
+  description: |-
+    该模板用于核查 WordPress 用户注册开放。WordPress 站点启用公开用户注册后，外部用户可通过注册入口创建账号；若站点角色、插件能力或审批流程配置不当，可能扩大后台攻击面。模板访问 /wp-login.php，并根据注册链接、HTML 内容类型和状态码确认注册入口可用。
+  remediation: |-
+    - 如无业务需要，关闭 WordPress 公开注册功能。
+    - 将默认新用户角色限制为最低权限，并启用验证码、邮件验证和注册审核。
+    - 监控异常注册行为，清理可疑账户并复核用户角色配置。
   reference:
     - https://www.acunetix.com/vulnerabilities/web/wordpress-user-registration-enabled/
   classification:
@@ -19,7 +20,9 @@ info:
     verified: true
     max-request: 1
   tags: wordpress,misconfig,vuln
-
+  impact: |-
+    - 攻击者可批量注册账户，用于垃圾内容发布、撞库、权限探测或社工投递。
+    - 若默认角色权限过高或插件存在权限缺陷，注册账户可能成为进一步提权的入口。
 http:
   - method: GET
     path:

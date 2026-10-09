@@ -5,7 +5,14 @@ info:
   author: DhiyaneshDk
   severity: critical
   description: |
-    检测到 Bitbucket 服务器 > 4.8 Authentication Bypass。目标响应或文件中可能暴露配置、凭据、密钥、令牌、环境变量或历史记录等敏感信息，可能被用于进一步入侵。
+    该模板用于核查 Bitbucket 服务器 > 4.8 Authentication Bypass相关配置。该类问题通常源于云对象存储桶或兼容对象存储服务开启了公开读取、公开列表或错误的访问策略。模板会向目标发送探测请求，并依据请求 `/admin%20/db`、匹配 `<h2>Database</h2>`、`Migrate database`、状态码 200 等证据确认目标是否存在该配置问题。
+  impact: |
+    - 攻击者可枚举对象列表并下载公开文件，造成业务资料、备份、日志或静态资源泄露。
+    - 若桶内资源被业务系统引用，攻击者还可能利用公开内容辅助供应链攻击或品牌仿冒。
+  remediation: |
+    - 关闭对象存储桶公共访问和列表权限，按业务需要配置最小化 Bucket Policy。
+    - 启用云厂商的公共访问阻断、访问日志和异常访问告警。
+    - 检查桶内历史文件，移除敏感对象并轮换已暴露的密钥、令牌或下载链接。
   reference:
     - https://github.com/Threekiii/Awesome-POC/blob/master/Web%E5%BA%94%E7%94%A8%E6%BC%8F%E6%B4%9E/Atlassian%20Bitbucket%20%E7%99%BB%E5%BD%95%E7%BB%95%E8%BF%87%E6%BC%8F%E6%B4%9E.md
   classification:

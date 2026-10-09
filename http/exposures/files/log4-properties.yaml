@@ -1,11 +1,20 @@
 id: log4-properties
 
 info:
-  name: Log4j Properties 文件泄露（暴露面识别）
+  name: Log4j Properties文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: low
   description: |
-    检测到对外可访问的 Log4j Properties 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+    检测到目标站点可直接访问 Log4j Properties文件。Log4j 配置文件定义日志输出、路径、格式和远程 appender，可能暴露内部路径或日志目的地。该模板请求 `/log4j.properties`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类文件公开后可能泄露源码结构、依赖版本、内部路径、业务配置、访问凭据或调试数据，扩大暴露面并降低攻击者的后续利用成本。
+  impact: |-
+    - 公开文件可能泄露内部路径、组件版本、依赖清单、资源命名、环境变量名称或业务配置线索。
+    - 攻击者可利用这些信息缩小目标范围，选择匹配漏洞、弱口令、凭据攻击或目录枚举策略。
+    - 若文件中包含真实凭据、令牌、连接串或敏感数据，可能进一步导致数据、代码仓库、云资源或后台系统被未授权访问。
+  remediation: |-
+    - 确认该文件是否必须公网可访问；如非业务必需，应立即从 Web 根目录、静态资源目录、对象存储或反向代理公开路径中移除。
+    - 在 Web 服务器、网关、CDN 或应用路由层增加拒绝规则、身份认证、IP allowlist 或内网访问限制。
+    - 检查访问日志、下载记录和缓存记录，评估该资源是否已被外部访问或搜索引擎收录。
+    - 若文件中包含凭据、令牌、连接串或私有地址，应执行密钥轮换、权限收敛和受影响系统访问审计。
   reference:
     - https://docs.oracle.com/cd/E29578_01/webhelp/cas_webcrawler/src/cwcg_config_log4j_file.html
   metadata:

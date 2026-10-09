@@ -1,9 +1,20 @@
 id: aws-api-key
 
 info:
-  name: AWS API 密钥泄露（暴露面识别）
+  name: AWS API 密钥暴露（暴露面识别）
   author: DhiyaneshDK
   severity: high
+  description: |
+    检测到目标站点响应中暴露 AWS API 密钥。Amazon/AWS 相关令牌用于云资源、消息服务、Marketplace 或 MWS/API 调用。该模板检查目标响应正文，并在目标响应正文中通过正则表达式匹配对应格式的密钥、令牌、连接串或客户端凭据。公开后可能导致对应平台资源、数据、流水线、消息发送或第三方集成被未授权访问。
+  impact: |-
+    - 泄露的 API Key、访问令牌、客户端密钥、连接串或服务账号凭据可能被用于直接调用对应平台 API 或访问受保护资源。
+    - 攻击者可能借助有效凭据读取、修改或删除数据，触发构建/部署任务，发送消息，管理云资源，或冒用集成应用身份。
+    - 即使令牌权限有限，也会暴露账号、项目、组织或环境边界，辅助横向移动、供应链攻击和定向社工。
+  remediation: |-
+    - 立即撤销并轮换暴露的 API Key、访问令牌、客户端密钥、连接串、Webhook Secret 或服务账号凭据。
+    - 在对应平台检查令牌权限、作用域、有效期和最近调用记录，移除不必要的高权限或长期凭据。
+    - 将密钥迁移到密钥管理系统、受保护的 CI/CD 变量或运行时注入机制，避免写入前端页面、日志、源码和公开配置。
+    - 启用最小权限、IP/来源限制、MFA、告警和审计日志，并排查是否存在未授权资源访问或数据变更。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/aws.yml
     - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html

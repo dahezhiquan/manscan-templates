@@ -4,7 +4,17 @@ info:
   name: Azure Resource Manager Template 文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: medium
-  description: 检测到对外可访问的 Azure Resource Manager Template 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+  description: |
+    检测到目标站点可直接访问 Azure Resource Manager Template 文件。Azure 配置和流水线文件通常关联云资源、部署参数、订阅、租户和服务连接。该模板请求 `/azuredeploy.json`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类文件公开后可能泄露源码结构、依赖版本、内部路径、业务配置、访问凭据或调试数据，扩大暴露面并降低攻击者的后续利用成本。
+  impact: |-
+    - 云服务配置可能泄露项目 ID、租户、区域、服务端点、资源名称和访问身份。
+    - 攻击者可利用这些线索枚举云资源、尝试凭据攻击、定位公开存储桶或识别管理接口。
+    - 若配置中包含有效令牌或密钥，可能导致云资源被读取、篡改、删除或产生额外费用。
+  remediation: |-
+    - 从公开目录、静态资源、对象存储和发布包中移除云配置、部署模板和访问凭据。
+    - 轮换可能暴露的云访问密钥、服务账号凭据、OAuth 客户端密钥和第三方集成 Token。
+    - 通过 IAM 最小权限、条件访问、MFA、来源限制和审计日志降低被滥用范围。
+    - 检查云资源访问日志、存储桶 ACL、函数部署、流水线和异常账单，确认是否存在未授权操作。
   reference:
     - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameter-files
     - https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/template-tutorial-use-template-reference?tabs=CLI

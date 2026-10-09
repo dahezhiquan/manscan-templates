@@ -1,10 +1,20 @@
 id: drupal-jsonapi-user-listing
 
 info:
-  name: Drupal JSON:API Username Listing 检测（暴露面识别）
+  name: Drupal JSON:API Username列表（暴露面识别）
   author: lixts
   severity: medium
-  description: 检测到对外可访问的 Drupal JSON:API Username Listing。公开的接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、鉴权方式和内部功能边界，从而帮助攻击者快速完成接口枚举与利用准备。
+  description: |
+    检测到目标站点对外暴露 Drupal JSON:API Username列表。Drupal JSON:API 用于以标准 JSON API 形式访问内容、用户和实体资源。该模板请求 `/jsonapi/user/user`，并结合 HTTP 状态码、响应正文关键字、JSON 字段、接口文档特征或响应头进行确认。公开的接口、接口文档、调试端点或管理 API 可能泄露路由结构、参数格式、认证方式和内部功能边界，帮助攻击者完成接口枚举和后续利用准备。
+  impact: |-
+    - 攻击者可枚举接口路径、参数、认证方式和数据模型，降低后续漏洞挖掘与越权测试成本。
+    - 若接口缺少鉴权或权限边界配置不当，可能进一步读取、修改业务数据或调用管理功能。
+    - 公开的调试、文档或管理端点会暴露内部服务结构、组件版本和部署信息，扩大攻击面。
+  remediation: |-
+    - 关闭生产环境不需要公开的 API 文档、调试端点、管理 API 或诊断页面。
+    - 为必须保留的接口启用统一鉴权、最小权限、租户隔离、速率限制和审计日志。
+    - 通过 API 网关、反向代理或防火墙限制来源地址，避免管理类或内部接口直接暴露在公网。
+    - 复查接口文档中暴露的示例密钥、测试账号、内部域名和敏感参数，并及时清理或轮换。
   reference:
     - https://www.drupal.org/project/drupal/issues/3240913
   classification:

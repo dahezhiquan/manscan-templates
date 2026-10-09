@@ -4,8 +4,17 @@ info:
   name: Apache Maven settings.xml 凭据暴露（暴露面识别）
   author: ChrisJr404
   severity: high
-  description: |-
-    检测到 Apache Maven 的 settings.xml 文件已暴露。该文件的 server 部分存储了 Maven 用于向远程仓库和分发服务器认证的凭据，因此公开副本可能泄漏仓库的用户名和密码。
+  description: |
+    检测到目标站点可直接访问 Apache Maven settings.xml 凭据。Maven settings.xml 用于配置 Java 构建仓库、代理和认证凭据。该模板请求 `/settings.xml`、`/.m2/settings.xml`、`/conf/settings.xml`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类资源公开后可能泄露部署细节、内部路径、依赖版本、环境变量、访问凭据或调试信息，增加被侦察和后续利用的风险。
+  impact: |-
+    - 泄露的凭据、令牌或密钥可能被用于访问云资源、数据库、代码仓库、CI/CD、邮件或第三方 API。
+    - 攻击者可能借助有效凭据读取或篡改业务数据、部署恶意版本、创建持久化访问或产生额外云资源费用。
+    - 即使凭据权限有限，也可能暴露账号命名、环境划分和内部系统关系，辅助后续横向移动。
+  remediation: |-
+    - 立即撤销并轮换暴露文件中可能出现的密码、API Key、访问令牌、SSH Key、数据库连接串和云访问密钥。
+    - 将敏感配置迁移到密钥管理系统、环境变量注入或受控配置中心，避免随静态文件对外发布。
+    - 限制相关账号权限并启用最小权限、MFA、访问审计和异常调用告警。
+    - 排查近期登录、API 调用、代码仓库、云资源和制品库操作记录，确认是否存在未授权使用。
   reference:
     - https://maven.apache.org/settings.html
     - https://maven.apache.org/guides/mini/guide-encryption.html

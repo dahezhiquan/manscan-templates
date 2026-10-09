@@ -1,11 +1,11 @@
 id: adcs-certificate
 
 info:
-  name: Microsoft AD CS Web Enrollment 检测（指纹识别）
+  name: Microsoft AD CS Web Enrollment 识别（指纹识别）
   author: pastaga,defte,atomiczsec
   severity: info
   description: |
-    检测到对外可访问的 Microsoft AD CS Web Enrollment。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+    Microsoft AD CS Web Enrollment 是 Active Directory 证书服务的 Web 注册入口，用于证书申请和企业 PKI 管理。该模板用于识别目标是否部署了相关系统或服务，检测时请求 `/certenroll/`、`/CertEnroll/`、`/certsrv/` 等路径，并依据 HTTP 状态码、页面标题、响应正文关键字、证书或接口返回字段等指纹特征进行判断。该模板仅用于资产识别和暴露面梳理，不代表目标一定存在可利用漏洞。
   metadata:
     verified: true
     max-request: 3

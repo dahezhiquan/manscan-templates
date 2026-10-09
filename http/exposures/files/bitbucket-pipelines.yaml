@@ -1,9 +1,20 @@
 id: bitbucket-pipelines
 
 info:
-  name: BitBucket Pipelines 配置暴露（暴露面识别）
+  name: Bitbucket Pipelines 配置暴露（暴露面识别）
   author: DhiyaneshDK
   severity: medium
+  description: |
+    检测到目标站点可直接访问 Bitbucket Pipelines 配置。Bitbucket 配置或 OAuth 凭据用于代码仓库、流水线和第三方集成访问。该模板请求 `/bitbucket-pipelines.yml`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类文件公开后可能泄露源码结构、依赖版本、内部路径、业务配置、访问凭据或调试数据，扩大暴露面并降低攻击者的后续利用成本。
+  impact: |-
+    - 开发、依赖或 CI/CD 文件可能暴露构建步骤、发布目标、私有仓库、环境变量名称、依赖版本和供应链入口。
+    - 攻击者可据此选择匹配漏洞、投毒依赖、伪造构建流程或针对部署链路发起攻击。
+    - 若文件中包含令牌、包源凭据或部署密钥，可能导致代码仓库、制品库或生产环境被未授权访问。
+  remediation: |-
+    - 从公开目录、静态资源、制品包和对象存储中移除构建、依赖、流水线和部署配置文件。
+    - 将 CI/CD 变量、包源凭据、部署密钥和 Webhook Secret 迁移到受保护的密钥管理或流水线变量中。
+    - 为代码仓库、制品库和部署系统启用最小权限、分支保护、审计日志和异常构建告警。
+    - 轮换可能出现在文件中的访问令牌、包发布凭据、云密钥和部署账号密码。
   classification:
     cpe: cpe:2.3:a:atlassian:bitbucket:*:*:*:*:*:*:*:*
   metadata:

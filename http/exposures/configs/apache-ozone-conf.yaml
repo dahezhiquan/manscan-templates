@@ -1,11 +1,11 @@
 id: apache-ozone-conf
 
 info:
-  name: Apache Ozone 暴露（指纹识别）
+  name: Apache Ozone 识别（指纹识别）
   author: icarot
   severity: info
   description: |
-    检测到对外可访问的 Apache Ozone。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+    Apache Ozone 是 Hadoop 生态中的对象存储系统，用于大规模数据湖、对象桶和分布式存储场景。该模板用于识别目标是否部署了相关系统或接口，检测时请求 `/conf`，并依据 HTTP 状态码、页面标题、响应正文关键字、接口返回字段或其他指纹特征进行判断。该模板仅用于资产识别和暴露面梳理，不代表目标一定存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:apache:ozone:-:*:*:*:*:*:*:*
   metadata:

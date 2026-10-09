@@ -1,10 +1,20 @@
 id: phalcon-framework-source
 
 info:
-  name: Phalcon Framework 源码 Leakage 泄露（暴露面识别）
+  name: Phalcon Framework 源码泄露暴露（暴露面识别）
   author: philippedelteil
   severity: high
-  description: 检测到对外可访问的 Phalcon Framework 源码 Leakage。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+  description: |
+    检测到目标站点可直接访问 Phalcon Framework。状态页和指标端点用于观察服务运行情况，往往包含组件名称、内部地址、版本和性能指标。该模板请求 `/anything_here`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类资源公开后可能泄露部署细节、内部路径、依赖版本、环境变量、访问凭据或调试信息，增加被侦察和后续利用的风险。
+  impact: |-
+    - 版本控制或源码相关文件可能暴露仓库结构、内部路径、子模块地址、历史开发信息和敏感文件命名。
+    - 攻击者可结合泄露线索定位源码、配置、备份或隐藏接口，扩大进一步信息收集范围。
+    - 若同时暴露凭据或仓库访问地址，可能导致源码泄露、供应链篡改或内部系统被访问。
+  remediation: |-
+    - 关闭生产环境中的调试、状态、phpinfo、printenv、探针和未受保护的 metrics 页面。
+    - 仅在内网、运维 VPN 或监控系统来源地址中开放必要的观测端点，并启用鉴权。
+    - 清理页面中暴露的环境变量、内部路径、主机名、版本信息和调试参数。
+    - 复核相关组件版本和配置，修复因暴露信息指向的弱配置或已知漏洞。
   metadata:
     max-request: 1
   tags: exposure,debug,phalcon,vuln

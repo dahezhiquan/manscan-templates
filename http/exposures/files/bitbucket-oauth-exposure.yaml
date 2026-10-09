@@ -1,10 +1,20 @@
 id: bitbucket-oauth-exposure
 
 info:
-  name: Bitbucket OAuth 凭据 暴露（暴露面识别）
+  name: Bitbucket OAuth 凭据暴露（暴露面识别）
   author: TheZakMan
   severity: high
-  description: 检测到对外可访问的 Bitbucket OAuth 凭据。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+  description: |
+    检测到目标站点可直接访问 Bitbucket OAuth 凭据。Bitbucket 配置或 OAuth 凭据用于代码仓库、流水线和第三方集成访问。该模板请求 `/auth.json`、`/.auth.json`、`/config/auth.json` 等路径，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类文件公开后可能泄露源码结构、依赖版本、内部路径、业务配置、访问凭据或调试数据，扩大暴露面并降低攻击者的后续利用成本。
+  impact: |-
+    - 泄露的密码、API Key、访问令牌、私钥或服务账号凭据可能被用于直接访问云资源、代码仓库、数据库、邮件服务或内部系统。
+    - 攻击者可能借助有效凭据读取或篡改业务数据、发布恶意制品、创建持久化访问、冒用服务身份或产生额外资源费用。
+    - 即使凭据权限有限，也会暴露账号命名、环境划分和内部系统关系，辅助后续横向移动。
+  remediation: |-
+    - 立即撤销并轮换暴露文件中可能出现的密码、API Key、访问令牌、SSH/SSL 私钥、数据库连接串和云访问密钥。
+    - 将敏感配置迁移到密钥管理系统、环境变量注入或受控配置中心，避免随静态文件对外发布。
+    - 限制相关账号权限并启用最小权限、MFA、访问审计和异常调用告警。
+    - 排查近期登录、API 调用、代码仓库、云资源和制品库操作记录，确认是否存在未授权使用。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 7.5

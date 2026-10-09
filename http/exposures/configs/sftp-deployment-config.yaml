@@ -1,11 +1,20 @@
 id: sftp-deployment-config
 
 info:
-  name: Atom SFTP 配置文件检测（暴露面识别）
+  name: Atom SFTP 配置文件暴露（暴露面识别）
   author: geeknik
   severity: high
   description: |
-    检测到对外可访问的 Atom SFTP 配置文件。这类配置资源可能包含部署细节、访问凭据、内部地址、组件版本或调试开关，公开暴露后会显著增加被侦察和后续利用的风险。
+    检测到目标站点可直接访问 Atom SFTP 配置文件。配置文件通常服务于应用部署、运行参数、依赖管理、调试开关或内部集成。该模板请求 `/deployment-config.json`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。配置文件公开后可能泄露部署细节、内部路径、依赖版本、环境变量、访问凭据或调试信息，增加被侦察和后续利用的风险。
+  impact: |-
+    - 网络、代理、SSH、FTP、VPN 或远程访问配置可能泄露内部地址、远程入口、认证方式和信任关系。
+    - 攻击者可利用这些信息定位管理面、尝试未授权访问或开展定向凭据攻击。
+    - 若文件包含私钥、密码或会话参数，可能直接造成远程系统被登录或流量被代理滥用。
+  remediation: |-
+    - 移除公开的代理、SSH、FTP、SFTP、VPN 或远程访问配置文件，并限制此类文件在 Web 根目录发布。
+    - 轮换可能暴露的私钥、密码、known_hosts 信任信息、代理认证和远程访问凭据。
+    - 通过防火墙、VPN、IP allowlist 和强认证限制管理入口，只允许受信任来源访问。
+    - 审计远程登录、文件传输、代理连接和异常网络访问记录，确认是否存在凭据滥用。
   reference:
     - https://atom.io/packages/sftp-deployment
   classification:

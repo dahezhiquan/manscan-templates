@@ -1,11 +1,20 @@
 id: haproxy-config-file
 
 info:
-  name: Haproxy 配置 文件泄露（暴露面识别）
+  name: HAProxy 配置文件暴露（暴露面识别）
   author: DhiyaneshDk
   severity: low
   description: |
-    检测到对外可访问的 Haproxy 配置 文件。相关文件可能泄露项目结构、依赖关系、部署细节、敏感参数或其他不应公开的内部信息。
+    检测到目标站点可直接访问 HAProxy 配置文件。HAProxy 配置会暴露负载均衡、后端服务、ACL 和内部路由关系。该模板请求 `/haproxy.cfg`，并通过 HTTP 状态码、响应正文关键字、文件格式特征、正则匹配或响应头进行确认。此类文件公开后可能泄露源码结构、依赖版本、内部路径、业务配置、访问凭据或调试数据，扩大暴露面并降低攻击者的后续利用成本。
+  impact: |-
+    - 网络、代理、SSH、FTP、VPN 或远程访问配置可能泄露内部地址、远程入口、认证方式和信任关系。
+    - 攻击者可利用这些信息定位管理面、尝试未授权访问或开展定向凭据攻击。
+    - 若文件包含私钥、密码或会话参数，可能直接造成远程系统被登录或流量被代理滥用。
+  remediation: |-
+    - 移除公开的代理、SSH、FTP、SFTP、VPN 或远程访问配置文件，并限制此类文件在 Web 根目录发布。
+    - 轮换可能暴露的私钥、密码、known_hosts 信任信息、代理认证和远程访问凭据。
+    - 通过防火墙、VPN、IP allowlist 和强认证限制管理入口，只允许受信任来源访问。
+    - 审计远程登录、文件传输、代理连接和异常网络访问记录，确认是否存在凭据滥用。
   reference:
     - https://www.haproxy.com/documentation/haproxy-configuration-manual/latest/
   metadata:

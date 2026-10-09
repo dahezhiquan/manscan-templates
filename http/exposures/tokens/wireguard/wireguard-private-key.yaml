@@ -1,9 +1,20 @@
 id: wireguard-private-key
 
 info:
-  name: WireGuard 私钥 泄露（暴露面识别）
+  name: WireGuard 私钥暴露（暴露面识别）
   author: DhiyaneshDK
   severity: high
+  description: |
+    检测到目标站点响应中暴露 WireGuard 私钥。WireGuard 私钥或预共享密钥用于 VPN 隧道认证和加密会话保护。该模板检查目标响应正文，并在目标响应正文中通过正则表达式匹配对应格式的密钥、令牌、Webhook、连接串或客户端凭据。公开后可能导致 VPN 隧道被冒用、内网访问边界被绕过或受保护通信链路被未授权接入。
+  impact: |-
+    - 泄露的 WireGuard 私钥或预共享密钥可能被用于伪装合法节点、建立未授权 VPN 隧道或解密/加入受保护通信链路。
+    - 攻击者可借助有效密钥访问内网资源、绕过网络边界、进行横向移动或持续保持远程访问。
+    - 即使密钥仅对应单个 peer，也可能暴露 VPN 拓扑、地址规划和信任关系，扩大后续攻击面。
+  remediation: |-
+    - 立即从 WireGuard 配置中移除暴露的 peer，并重新生成对应私钥、预共享密钥和必要的公钥绑定。
+    - 轮换受影响隧道双方的密钥材料，重新下发配置，并撤销旧配置在所有客户端和备份中的使用。
+    - 检查 VPN 网关、peer 连接记录、防火墙日志和内网访问日志，确认是否存在异常连接或横向访问。
+    - 将 WireGuard 配置文件迁移到受控密钥管理或受保护配置目录，避免出现在前端页面、日志、源码和公开制品中。
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/wireguard.yml
     - https://www.wireguard.com/quickstart/

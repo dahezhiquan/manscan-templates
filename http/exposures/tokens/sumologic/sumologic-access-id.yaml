@@ -4,6 +4,17 @@ info:
   name: Sumo Logic Access ID 暴露（暴露面识别）
   author: DhiyaneshDK
   severity: low
+  description: |
+    检测到目标站点响应中暴露 Sumo Logic Access ID。Sumo Logic Access ID/Token 用于日志、监控、查询和采集配置 API。该模板检查目标响应正文，并在目标响应正文中通过正则表达式匹配对应格式的密钥、令牌、Webhook、连接串或客户端凭据。公开后可能暴露应用集成关系、账号或资源边界，并可与其他泄露信息组合用于枚举、钓鱼或授权配置滥用。
+  impact: |-
+    - 公开的客户端 ID、公钥、Access ID、商户 ID 或其他资源标识通常不等同于完整密钥，但会暴露第三方集成关系、账号边界或应用配置。
+    - 攻击者可利用这些标识辅助社工、钓鱼、OAuth 配置枚举、资源归属判断或与其他泄露凭据进行关联。
+    - 若该标识与密钥、回调地址、宽松授权策略或公开配置同时暴露，可能扩大进一步滥用或冒用应用身份的风险。
+  remediation: |-
+    - 确认客户端 ID、公钥、Access ID、商户 ID 或资源标识是否设计为公开；如非必要，应从页面、日志、源码和公开配置中移除。
+    - 检查同一位置是否同时暴露客户端密钥、访问令牌、Webhook、回调地址、连接串或过宽授权范围。
+    - 对关联应用执行最小权限、回调地址 allowlist、来源限制、速率限制和审计日志配置。
+    - 若怀疑已被滥用，轮换相关密钥或 OAuth 客户端凭据，并审计近期授权、登录和 API 调用记录。
   reference:
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sumologic-access-id.go
     - https://github.com/semgrep/semgrep-rules/blob/develop/generic/secrets/gitleaks/sumologic-access-id.yaml

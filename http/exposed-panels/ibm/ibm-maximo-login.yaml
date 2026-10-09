@@ -4,7 +4,8 @@ info:
   name: IBM Maximo 登录面板识别（指纹识别）
   author: ritikchaddha,righettod
   severity: info
-  description: 该模板通过识别 IBM Maximo 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 IBM Maximo 相关响应特征。IBM Maximo 是企业资产管理平台，用于维护资产、工单、库存、采购和设备生命周期。模板请求 `/maximo/webclient/login/login.jsp?appservauth=true`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.ibm.com/support/pages/what-default-username-and-password-websphere-application-server-community-edition-and-how-add-users-admin-group
     - https://www.ibm.com/products/maximo
@@ -20,7 +21,6 @@ info:
     shodan-query: http.favicon.hash:-399298961
     fofa-query: icon_hash=-399298961
   tags: maximo,panel,ibm,login,detect,discovery
-
 http:
   - method: GET
     path:

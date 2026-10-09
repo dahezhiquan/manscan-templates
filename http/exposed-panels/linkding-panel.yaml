@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    linkding（github.com/sissbruecker/linkding）是一款基于 Django 构建的流行开源自托管书签管理器。默认 Docker 端口为 9090。暴露的实例可能泄露用户保存的书签、标签及归档页面。
+    检测到目标站点存在 Linkding 相关响应特征。Linkding 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/sissbruecker/linkding
     - https://linkding.link/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Linkding"
     fofa-query: title="Linkding"
   tags: panel,linkding,bookmarks,selfhosted,detect,discovery
-
 http:
   - method: GET
     path:

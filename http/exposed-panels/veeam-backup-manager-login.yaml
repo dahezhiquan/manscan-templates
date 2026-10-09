@@ -1,11 +1,11 @@
 id: veeam-backup-manager-login
 
 info:
-  name: Veeam Backup Enterprise Manager 登录识别（指纹识别）
+  name: Veeam Backup Enterprise Manager 登录面板识别（指纹识别）
   author: Charles D
   severity: info
-  description: |
-    该模板通过识别 Veeam Backup Enterprise Manager 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    Veeam Backup Enterprise Manager 是 Veeam 备份集中管理平台，用于备份作业、恢复、报表和权限管理。该模板请求 `/login.aspx`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -13,12 +13,12 @@ info:
     max-request: 1
     verified: true
     shodan-query:
-      - title:"veeam backup enterprise manager"
-      - http.favicon.hash:169658321
-      - '"Set-Cookie: .ASPXANONYMOUS" http.html:"Veeam"'
+    - title:"veeam backup enterprise manager"
+    - http.favicon.hash:169658321
+    - '"Set-Cookie: .ASPXANONYMOUS" http.html:"Veeam"'
     fofa-query:
-      - title="veeam backup enterprise manager"
-      - icon_hash="169658321"
+    - title="veeam backup enterprise manager"
+    - icon_hash="169658321"
   tags: veeam,panel,enterprise-manager,login,detect,discovery
 
 http:

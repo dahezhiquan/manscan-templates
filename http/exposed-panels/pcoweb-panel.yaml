@@ -1,11 +1,12 @@
 id: pcoweb-panel
 
 info:
-  name: pCOWeb 面板识别（指纹识别）
+  name: pCOWeb 登录面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: pCOWeb 是对应产品的 Web 管理或登录入口，用于管理员、运维人员或业务用户访问后台功能。该模板请求首页、`/http/index.html` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://docs.librenms.org/Support/Device-Notes/Carel-pCOweb-Devices/#:~:text=Accessing%20the%20pCOWeb%20card,-Log%20on%20to&text=The%20default%20username%20and%20password%20is%20admin%2Ffadmin%20.
+  - https://docs.librenms.org/Support/Device-Notes/Carel-pCOweb-Devices/#:~:text=Accessing%20the%20pCOWeb%20card,-Log%20on%20to&text=The%20default%20username%20and%20password%20is%20admin%2Ffadmin%20.
   metadata:
     verified: true
     max-request: 2

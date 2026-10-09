@@ -1,9 +1,10 @@
 id: oracle-opera-login
 
 info:
-  name: Oracle Opera 登录识别（指纹识别）
+  name: Oracle Opera 登录面板识别（指纹识别）
   author: DhiyaneshDK,righettod
   severity: info
+  description: Oracle Opera 是酒店行业的物业管理与预订业务系统，用于前台入住、客房、账务和运营管理。该模板请求首页、`/OperaLogin/Welcome.do` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cwe-id: CWE-200
   metadata:

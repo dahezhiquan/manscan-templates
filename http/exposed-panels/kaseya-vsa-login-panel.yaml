@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 Kaseya 虚拟系统管理员（VSA）登录面板。
+    检测到目标站点存在 Kaseya VSA 相关响应特征。Kaseya VSA 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.kaseya.com/products/vsa/
   metadata:
@@ -13,7 +13,6 @@ info:
     max-request: 1
     shodan-query: http.html:"/vsapres/web20/core/login.aspx"
   tags: panel,kaseya,vsa,login,detect
-
 http:
   - method: GET
     path:

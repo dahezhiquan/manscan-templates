@@ -4,8 +4,8 @@ info:
   name: NocoDB 面板识别（指纹识别）
   author: userdehghani
   severity: info
-  description: |
-    该模板通过识别 NocoDB 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 NocoDB 相关响应特征。NocoDB 是开源无代码数据库和表格平台，用于基于数据库构建表格视图、权限、自动化和 API。模板请求 `/dashboard/#/signin`、`/dashboard/favicon.ico` 路径，并通过页面标题或正文关键字、状态码、favicon 哈希、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.nocodb.com/
     - https://docs.nocodb.com/
@@ -18,7 +18,6 @@ info:
     product: nocodb
     shodan-query: "http.favicon.hash:206985584"
   tags: panel,nocodb,login,detect,discovery
-
 http:
   - method: GET
     path:

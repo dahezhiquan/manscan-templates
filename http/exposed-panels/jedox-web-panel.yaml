@@ -4,8 +4,8 @@ info:
   name: Jedox Web 登录面板识别（指纹识别）
   author: Team Syslifters / Christoph MAHRL,Aron MOLNAR,Patrick PIRKER,Michael WEDL
   severity: info
-  description: |
-    该模板通过识别 Jedox Web 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Jedox Web 相关响应特征。Jedox Web 是数据库、报表或数据分析服务的 Web 管理入口，用于查看数据、执行查询、管理报表、集群或连接配置。模板请求 `/`、`/ui/login/` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.jedox.com
   classification:
@@ -27,7 +27,6 @@ info:
       - title="jedox web login"
       - title="jedox web - login"
   tags: panel,jedox,detect,discovery
-
 http:
   - method: GET
     path:

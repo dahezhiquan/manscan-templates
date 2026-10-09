@@ -5,7 +5,7 @@ info:
   author: infosec.asish
   severity: info
   description: |-
-    发现了一个暴露在外的 IBM 或 Software AG webMethods 登录面板。
+    检测到目标站点存在 IBM webMethods 集成 相关响应特征。IBM webMethods 集成 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`、`/wmroot/`、`/integration/` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.ibm.com/products/webmethods-hybrid-integration
   metadata:
@@ -13,7 +13,6 @@ info:
     max-request: 1
     shodan-query: http.html:"IBM webMethods Integration"
   tags: tech,panel,ibm,webmethods,recon
-
 http:
   - method: GET
     path:

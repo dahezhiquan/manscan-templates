@@ -4,9 +4,9 @@ info:
   name: Oracle PeopleSoft 登录面板识别（指纹识别）
   author: idealphase,righettod
   severity: info
-  description: 该模板通过识别 Oracle PeopleSoft 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: Oracle PeopleSoft 是企业级业务应用平台，用于人力资源、财务、校园或供应链等核心业务管理。该模板请求首页、`/<变量路径>` 路径，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.oracle.com/applications/peoplesoft/
+  - https://www.oracle.com/applications/peoplesoft/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

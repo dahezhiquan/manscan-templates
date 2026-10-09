@@ -4,8 +4,8 @@ info:
   name: Immich 面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板通过识别 Immich 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Immich 相关响应特征。Immich 是自托管照片和视频备份管理平台，用于管理相册、用户、媒体库和移动端同步。模板请求 `/auth/login`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://immich.app/
     - https://github.com/immich-app/immich
@@ -14,7 +14,6 @@ info:
     max-request: 1
     shodan-query: http.favicon.hash:-43504595
   tags: panel,immich,detect,discovery
-
 http:
   - method: GET
     path:

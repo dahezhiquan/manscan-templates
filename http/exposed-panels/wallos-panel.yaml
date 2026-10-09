@@ -1,14 +1,14 @@
 id: wallos-panel
 
 info:
-  name: Wallos 面板检测（指纹识别）
+  name: Wallos 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    Wallos 是一款开源、可自托管的个人订阅跟踪工具。其登录面板会通过静态资源引用暴露产品标题和版本字符串。
+    Wallos 是订阅管理应用，用于记录周期性费用、提醒和个人财务订阅。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/ellite/Wallos
-    - https://wallosapp.com/
+  - https://github.com/ellite/Wallos
+  - https://wallosapp.com/
   metadata:
     verified: true
     max-request: 1

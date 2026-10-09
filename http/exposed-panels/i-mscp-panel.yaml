@@ -4,7 +4,8 @@ info:
   name: Internet Multi Server Control 面板识别（指纹识别）
   author: JustaAcat
   severity: info
-  description: 该模板通过识别 Internet Multi Server Control 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Internet Multi Server Control 相关响应特征。Internet Multi Server Control 是服务器或系统管理控制台，用于监控硬件状态、远程控制、电源管理、系统配置和维护任务。模板请求 `/index.php`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://i-mscp.net/
   classification:
@@ -15,7 +16,6 @@ info:
     max-request: 1
     shodan-query: title:"i-MSCP - Multi Server Control Panel"
   tags: panel,i-mscp,detect,discovery
-
 http:
   - method: GET
     path:

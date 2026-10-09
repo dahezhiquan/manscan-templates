@@ -1,14 +1,14 @@
 id: supabase-studio-panel
 
 info:
-  name: Supabase Studio 面板识别（指纹识别）
+  name: Supabase Studio 登录面板识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    该模板通过识别 Supabase Studio 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
+  description: |-
+    Supabase Studio 是 Supabase 项目的 Web 管理台，用于数据库、认证、存储、函数和 API 配置。该模板请求首页、`/_login`，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/supabase/supabase
-    - https://supabase.com/docs/guides/self-hosting
+  - https://github.com/supabase/supabase
+  - https://supabase.com/docs/guides/self-hosting
   metadata:
     verified: true
     max-request: 2

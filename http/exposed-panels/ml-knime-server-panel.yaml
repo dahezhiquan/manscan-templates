@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 KNIME Server（及其后继产品 KNIME Business Hub），这是 KNIME AG 推出的商业平台，用于部署、执行和管理在 KNIME Analytics Platform 中构建的数据科学与机器学习工作流。通过其底层静态资源路径识别出暴露的 WebPortal 登录页，包括白标/品牌定制化部署。
+    检测到目标站点存在 KNIME Server / Business Hub WebPortal 相关响应特征。KNIME Server / Business Hub WebPortal 是自动化运维、持续集成或任务编排平台，用于管理作业、流水线、凭据、执行记录和部署流程。模板请求 `/`，并通过页面标题或正文关键字、状态码、favicon 哈希确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.knime.com/knime-software/knime-server
     - https://www.knime.com/knime-business-hub
@@ -17,7 +17,6 @@ info:
     product: knime_server
     shodan-query: 'html:"_login/_nuxt"'
   tags: panel,knime,ml,ai,data-science,detect,discovery
-
 http:
   - method: GET
     path:

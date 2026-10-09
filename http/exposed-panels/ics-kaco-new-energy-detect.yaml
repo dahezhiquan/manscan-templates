@@ -4,8 +4,8 @@ info:
   name: KACO New Energy Solar Inverter 识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板用于识别 KACO New Energy Solar Inverter 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    检测到目标站点存在 KACO New Energy Solar Inverter 相关响应特征。KACO New Energy Solar Inverter 是工业控制、能源、楼宇自动化或 HMI/SCADA 场景中的管理界面，用于监控设备状态、过程数据和现场控制相关配置。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://kaco-newenergy.com/
   metadata:
@@ -15,7 +15,6 @@ info:
     vendor: kaco
     product: solar-inverter
   tags: tech,panel,kaco,ics,solar,energy,inverter,detect
-
 http:
   - method: GET
     path:

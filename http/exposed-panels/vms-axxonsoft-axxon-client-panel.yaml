@@ -1,12 +1,12 @@
 id: vms-axxonsoft-axxon-client-panel
 
 info:
-  name: Axxon Next Client 登录识别（指纹识别）
+  name: Axxon Next Client 登录面板识别（指纹识别）
   author: irshadahamed
   severity: info
-  description: 该模板通过识别 Axxon Next Client 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: Axxon Next Client 是视频监控客户端平台，用于摄像头接入、录像检索、实时预览和安防管理。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.axxonsoft.com/products/video-management-software
+  - https://www.axxonsoft.com/products/video-management-software
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -17,8 +17,8 @@ info:
     vendor: axxonsoft
     product: axxon_next
     shodan-query:
-      - title:"Axxon Next client"
-      - http.title:"axxon next client"
+    - title:"Axxon Next client"
+    - http.title:"axxon next client"
     fofa-query: title="axxon next client"
     google-query: intitle:"axxon next client"
   tags: panel,axxon,vms,login,detect,axxonsoft,discovery

@@ -4,8 +4,9 @@ info:
   name: Portainer 登录面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: Portainer 是容器与 Kubernetes 管理平台，用于 Docker、Swarm 和集群资源的可视化运维。该模板请求首页、`/#!/auth` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/portainer/portainer
+  - https://github.com/portainer/portainer
   classification:
     cpe: cpe:2.3:a:portainer:portainer:*:*:*:*:*:*:*:*
   metadata:
@@ -14,8 +15,8 @@ info:
     vendor: portainer
     product: portainer
     shodan-query:
-      - title:"Portainer"
-      - http.title:"portainer"
+    - title:"Portainer"
+    - http.title:"portainer"
     fofa-query: title="portainer"
     google-query: intitle:"portainer"
   tags: panel,portainer,detect,discovery

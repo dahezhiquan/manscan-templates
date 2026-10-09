@@ -4,7 +4,7 @@ info:
   name: Tactical RMM 登录面板识别（指纹识别）
   author: johnk3r
   severity: info
-  description: 该模板通过识别 Tactical RMM 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: Tactical RMM 是远程监控与管理平台，用于终端代理、脚本、补丁和设备维护。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cwe-id: CWE-200
   metadata:

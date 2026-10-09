@@ -1,13 +1,13 @@
 id: shiori-panel
 
 info:
-  name: Shiori 书签管理器 - 检测（指纹识别）
+  name: Shiori 书签管理器面板识别（指纹识别）
   author: johnk3r
   severity: info
   description: |-
-    检测到 Shiori 书签管理器面板。
+    Shiori 书签管理器 是自托管书签管理器，用于收藏、分类、搜索和归档网页链接。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/nicholasgasior/goshiori
+  - https://github.com/nicholasgasior/goshiori
   metadata:
     verified: true
     max-request: 1

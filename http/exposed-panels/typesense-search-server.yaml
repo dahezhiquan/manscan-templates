@@ -1,14 +1,14 @@
 id: typesense-search-server
 
 info:
-  name: Typesense Search Server 识别（指纹识别）
+  name: Typesense Search Server 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    该模板用于识别 Typesense Search Server 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    Typesense Search Server 是开源搜索引擎服务，用于集合、索引、查询和搜索 API 能力管理。该模板请求 `/health`，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/typesense/typesense
-    - https://typesense.org/docs/latest/api/
+  - https://github.com/typesense/typesense
+  - https://typesense.org/docs/latest/api/
   metadata:
     verified: true
     max-request: 1

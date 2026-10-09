@@ -4,10 +4,10 @@ info:
   name: Sanity Studio 面板识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    该模板通过识别 Sanity Studio 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Sanity Studio 是 Sanity 内容平台的编辑后台，用于结构化内容建模、编辑和发布。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.sanity.io/
+  - https://www.sanity.io/
   metadata:
     verified: true
     max-request: 1

@@ -4,7 +4,8 @@ info:
   name: IBM Security Access Manager 登录面板识别（指纹识别）
   author: geeknik,righettod
   severity: info
-  description: 该模板通过识别 IBM Security Access Manager 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 IBM Security Access Manager 相关响应特征。IBM Security Access Manager 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`，并通过页面标题或正文关键字、响应头关键字确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.ibm.com/docs/en/sva/9.0.7?topic=overview-introduction-security-access-manager
   classification:
@@ -17,7 +18,6 @@ info:
     shodan-query: http.title:"IBM Security Access Manager"
     product: security_access_manager
   tags: panel,ibm,login,detect,discovery
-
 http:
   - method: GET
     path:

@@ -1,13 +1,13 @@
 id: vpn-firewall-sangfor-ngaf-panel
 
 info:
-  name: 深信服下一代应用防火墙（NGAF）- 登录面板（指纹识别）
+  name: 深信服下一代应用防火墙（NGAF）登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    深信服 NGAF 是深信服科技推出的下一代应用防火墙和 SSL VPN 网关，广泛应用于亚太地区及中国企业。其管理门户经常暴露在非标准端口上。
+    深信服下一代应用防火墙（NGAF） 是深信服 NGAF 防火墙管理平台，用于边界防护、VPN、应用控制和安全策略配置。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.sangfor.com/en/product/network-security/next-gen-application-firewall
+  - https://www.sangfor.com/en/product/network-security/next-gen-application-firewall
   metadata:
     max-request: 1
     shodan-query: http.title:"SANGFOR | NGAF"

@@ -4,6 +4,8 @@ info:
   name: Monitorr 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Monitorr 相关响应特征。Monitorr 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:monitorr:monitorr:*:*:*:*:*:*:*:*
   metadata:
@@ -14,7 +16,6 @@ info:
     shodan-query: http.favicon.hash:-211006074
     fofa-query: icon_hash="-211006074"
   tags: panel,monitorr,detect,discovery
-
 http:
   - method: GET
     path:

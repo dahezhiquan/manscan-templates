@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    Komga（komga.org / github.com/gotson/komga）是一款自托管的漫画、日漫、BD 及电子书媒体服务器。默认 Docker 端口为 25600。暴露的实例会呈现登录面板，并可能泄露所托管的馆藏内容。
+    检测到目标站点存在 Komga 相关响应特征。Komga 是漫画、电子书和媒体库管理平台，用于索引、阅读和管理个人数字书库。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/gotson/komga
     - https://komga.org/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Komga"
     fofa-query: title="Komga"
   tags: panel,komga,media,manga,comics,selfhosted,detect,discovery,login
-
 http:
   - method: GET
     path:

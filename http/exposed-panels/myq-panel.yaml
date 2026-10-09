@@ -4,6 +4,8 @@ info:
   name: MyQ Print Server 面板识别（指纹识别）
   author: darses
   severity: info
+  description: |-
+    检测到目标站点存在 MyQ Print Server 相关响应特征。MyQ Print Server 是打印或复合办公设备的 Web 管理界面，用于查看设备状态、配置网络、维护耗材和管理打印扫描服务。模板请求 `/en`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   metadata:
     verified: true
     max-request: 1
@@ -21,7 +23,6 @@ info:
       - icon_hash="-924708843"
       - title="MyQ"
   tags: panel,myq,detect,discovery
-
 http:
   - method: GET
     path:

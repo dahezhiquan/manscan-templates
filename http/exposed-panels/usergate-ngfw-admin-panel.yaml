@@ -1,11 +1,11 @@
 id: usergate-ngfw-admin-panel
 
 info:
-  name: UserGate NGFW/UTM Admin 面板识别（指纹识别）
+  name: UserGate NGFW/UTM 面板识别（指纹识别）
   author: darses
   severity: info
-  description: |
-    该模板通过识别 UserGate NGFW/UTM Admin 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    UserGate NGFW/UTM 是下一代防火墙和 UTM 管理平台，用于网络访问控制、VPN、威胁防护和安全策略管理。该模板请求首页、`/static/console-utm-webui/js/preinit.js`，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   metadata:
     max-request: 2
     shodan-query: "Server: UserGate-UTM/42"

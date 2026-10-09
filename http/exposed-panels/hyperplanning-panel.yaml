@@ -4,15 +4,14 @@ info:
   name: HYPERPLANNING 登录面板识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    该模板通过识别 HYPERPLANNING 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 HYPERPLANNING 相关响应特征。HYPERPLANNING 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.index-education.com/fr/presentation-hyperplanning.php
   metadata:
     max-request: 1
     shodan-query: http.title:"HYPERPLANNING"
   tags: panel,hyperplanning,login,detect,discovery
-
 http:
   - method: GET
     path:

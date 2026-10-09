@@ -1,15 +1,15 @@
 id: romm-panel
 
 info:
-  name: RomM 面板 - 检测（指纹识别）
+  name: RomM 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    RomM（romm.app / github.com/rommapp/romm）是一款流行的开源自托管 ROM 管理器与播放器。其未授权访问的 /api/heartbeat 端点返回包含当前运行版本、已启用元数据源及托管平台的 JSON 配置快照。暴露的实例会泄露此配置信息，并指向可浏览的 ROM 库。
+    RomM 是自托管 ROM 与游戏库管理平台，用于游戏资源、元数据和媒体库管理。该模板请求 `/api/heartbeat` 路径，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/rommapp/romm
-    - https://romm.app/
-    - https://docs.romm.app/
+  - https://github.com/rommapp/romm
+  - https://romm.app/
+  - https://docs.romm.app/
   metadata:
     verified: true
     max-request: 1

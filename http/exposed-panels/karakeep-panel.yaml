@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    检测到 Karakeep（原名为 Hoarder），这是一个自托管的万能收藏应用，可用于收藏链接、笔记和图片，支持基于 AI 的标签和全文搜索，通常运行在 TCP 3000 端口。
+    检测到目标站点存在 Karakeep 相关响应特征。Karakeep 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`、`/api/health`、`/api/version` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/karakeep-app/karakeep
     - https://docs.karakeep.app/api/karakeep-api/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Karakeep"
     fofa-query: title="Karakeep"
   tags: panel,login,karakeep,hoarder,bookmark,selfhosted,detect,discovery
-
 flow: http(1) && http(2) && http(3)
 
 http:

@@ -4,7 +4,16 @@ info:
   name: Metasploit Setup and Configuration Page 识别（暴露面识别）
   author: ritikchaddha
   severity: low
-  description: 该模板用于识别 Metasploit Setup and Configuration Page 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    检测到目标站点暴露 Metasploit Setup and Configuration Page 相关 Web 面板或登录入口。Metasploit 是渗透测试与安全验证框架，Web 界面或初始化页面用于管理工作区、模块、任务和测试结果。模板请求 `/users/new`，并通过页面标题或正文关键字确认入口可访问；该结果可作为威胁情报排查、攻击基础设施清理和暴露面收敛依据。
+  impact: |-
+    - 可帮助攻击者或防守方确认目标存在 Metasploit Setup and Configuration Page 相关 C2、远控、窃密、钓鱼或恶意基础设施，暴露组织资产、演练环境或恶意运营节点。
+    - 若该面板未限制来源或存在弱口令、默认凭据、已知漏洞，攻击者可能接管控制端、获取会话数据、篡改任务配置或扩大攻击链影响。
+    - 对外暴露的恶意基础设施面板还可能导致溯源线索、受害数据或行动配置被第三方发现和滥用。
+  remediation: |-
+    - 核实 Metasploit Setup and Configuration Page 面板是否属于授权资产、演练环境或应急分析环境；若为未知或恶意基础设施，应立即隔离主机并保全日志证据。
+    - 对确需保留的控制台限制访问来源，仅允许 VPN、堡垒机或可信管理网段访问，并启用强认证、最小权限和完整审计。
+    - 轮换相关凭据、令牌和证书，检查是否存在异常任务、回连会话或数据外传痕迹，并持续监控同类指纹再次暴露。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -26,7 +35,6 @@ info:
       - intitle:"metasploit"
       - intitle:"metasploit - setup and configuration"
   tags: panel,metasploit,setup,rapid7,discovery
-
 http:
   - method: GET
     path:

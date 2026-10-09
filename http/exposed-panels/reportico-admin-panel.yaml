@@ -1,14 +1,14 @@
 id: reportico-admin-panel
 
 info:
-  name: Reportico Administration Page 识别（指纹识别）
+  name: Reportico Administration Page 登录面板识别（指纹识别）
   author: geeknik
   severity: info
-  description: |
-    该模板通过识别 Reportico Administration Page 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Reportico Administration Page 是 PHP 报表生成工具，用于创建、管理和发布数据库报表。该模板请求 `/run.php?project=admin&execute_mode=ADMIN&clear_session=1`、`/reportico/run.php?project=admin&execute_mode=ADMIN&clear_session=1` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.reportico.org/site2/index.php
-    - https://github.com/reportico-web/reportico
+  - https://www.reportico.org/site2/index.php
+  - https://github.com/reportico-web/reportico
   classification:
     cpe: cpe:2.3:a:reportico:reportico:*:*:*:*:*:*:*:*
   metadata:
@@ -17,8 +17,8 @@ info:
     vendor: reportico
     product: reportico
     shodan-query:
-      - title:"Reportico Administration Page"
-      - http.title:"reportico administration page"
+    - title:"Reportico Administration Page"
+    - http.title:"reportico administration page"
     fofa-query: title="reportico administration page"
     google-query: intitle:"reportico administration page"
   tags: panel,reportico,login,detect,discovery

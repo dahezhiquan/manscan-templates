@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 Langtrace，这是一款基于 OpenTelemetry 的开源 LLM 应用可观测性平台，可对 LLM、向量数据库及框架调用提供追踪、监控与分析。识别出一个暴露的自托管 Langtrace 仪表盘实例，该实例通常会将未认证请求重定向到登录页。
+    检测到目标站点存在 Langtrace 相关响应特征。Langtrace 是面向 LLM 应用的追踪与可观测性平台，用于采集调用链、性能、成本和模型交互数据。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/Scale3-Labs/langtrace
     - https://langtrace.ai
@@ -16,7 +16,6 @@ info:
     product: langtrace
     shodan-query: 'http.title:"Langtrace"'
   tags: panel,langtrace,llm,ai,observability,detect,discovery
-
 http:
   - method: GET
     path:

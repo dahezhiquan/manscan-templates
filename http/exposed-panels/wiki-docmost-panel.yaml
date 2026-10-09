@@ -1,14 +1,14 @@
 id: wiki-docmost-panel
 
 info:
-  name: Docmost 面板 - 检测（指纹识别）
+  name: Docmost 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    检测到 Docmost（docmost.com / github.com/docmost/docmost），这是一个开源、自托管的 Wiki 和文档协作平台。默认 Docker 端口为 3000。暴露的实例可能会泄露内部空间、页面以及工作区成员信息。
+    Docmost 是自托管协作文档和知识库平台，用于团队页面、空间和文档管理。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/docmost/docmost
-    - https://docmost.com/
+  - https://github.com/docmost/docmost
+  - https://docmost.com/
   metadata:
     verified: false
     max-request: 1

@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 MaxKB，一款基于 RAG 的开源知识库与 LLM 聊天机器人平台。
+    检测到目标站点存在 MaxKB 相关响应特征。MaxKB 是知识库问答和 LLM 应用平台，用于管理文档知识库、智能体、模型配置和问答应用。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/1Panel-dev/MaxKB
   metadata:
@@ -15,7 +15,6 @@ info:
     product: maxkb
     shodan-query: http.title:"MaxKB"
   tags: panel,maxkb,ai,llm,rag,detect,discovery
-
 http:
   - method: GET
     path:

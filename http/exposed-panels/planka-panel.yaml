@@ -1,14 +1,14 @@
 id: planka-panel
 
 info:
-  name: Planka 面板 - 检测（指纹识别）
+  name: Planka 登录面板识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    Planka 是一款开源的看板式项目管理工具。已检测到其登录面板。
+    Planka 是看板式项目管理工具，用于任务卡片、项目列表和团队协作。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://planka.app/
-    - https://github.com/plankanban/planka
+  - https://planka.app/
+  - https://github.com/plankanban/planka
   classification:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:planka:planka:*:*:*:*:*:*:*:*

@@ -4,11 +4,11 @@ info:
   name: Vault 登录面板识别（指纹识别）
   author: DhiyaneshDK,righettod
   severity: info
-  description: 该模板通过识别 Vault 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: Vault 是 Bitwarden 兼容的自托管密码库服务，用于保存、共享和管理账号凭据。该模板请求 `/v1/sys/health`、`/ui/vault/auth`、`/ui/auth` 等路径，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://developer.hashicorp.com/vault
-    - https://developer.hashicorp.com/vault/api-docs
-    - https://developer.hashicorp.com/vault/api-docs#help
+  - https://developer.hashicorp.com/vault
+  - https://developer.hashicorp.com/vault/api-docs
+  - https://developer.hashicorp.com/vault/api-docs#help
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

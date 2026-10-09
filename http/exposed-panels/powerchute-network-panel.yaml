@@ -1,9 +1,10 @@
 id: powerchute-network-panel
 
 info:
-  name: PowerChute Network Shutdown 面板识别（指纹识别）
+  name: PowerChute Network Shutdown 登录面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
+  description: PowerChute Network Shutdown 是 UPS 电源保护管理软件，用于断电事件响应、主机关机和电源状态监控。该模板请求 `/login` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   metadata:
     verified: true
     max-request: 1

@@ -4,8 +4,8 @@ info:
   name: Morningstar ProStar MPPT Solar Charge Controller 识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板用于识别 Morningstar ProStar MPPT Solar Charge Controller 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 Morningstar ProStar MPPT Solar Charge Controller 相关响应特征。Morningstar ProStar MPPT Solar Charge Controller 是工业控制、能源、楼宇自动化或 HMI/SCADA 场景中的管理界面，用于监控设备状态、过程数据和现场控制相关配置。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.morningstarcorp.com/products/prostar-mppt/
   metadata:
@@ -15,7 +15,6 @@ info:
     vendor: morningstar
     product: prostar-mppt
   tags: tech,panel,morningstar,ics,solar,energy,scada,detect
-
 http:
   - method: GET
     path:

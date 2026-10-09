@@ -4,8 +4,8 @@ info:
   name: nMon 面板识别（指纹识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    该模板通过识别 nMon 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 nMon 相关响应特征。nMon 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/?route=signin`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -14,7 +14,6 @@ info:
     verified: true
     shodan-query: title:"nMon"
   tags: panel,login,nmon,detect
-
 http:
   - method: GET
     path:

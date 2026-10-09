@@ -4,8 +4,8 @@ info:
   name: Infoblox NIOS 登录面板识别（指纹识别）
   author: EgemenKochisarli
   severity: info
-  description: |
-    该模板通过识别 Infoblox NIOS 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Infoblox NIOS 相关响应特征。Infoblox NIOS 是 DNS、DHCP 与 IPAM 网络服务平台，Web 面板用于管理地址、域名、租约和网络自动化配置。模板请求 `/ui/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.infoblox.com/glossary/network-identity-operating-system-nios/
   classification:
@@ -18,7 +18,6 @@ info:
     product: nios
     shodan-query: http.title:"Infoblox"
   tags: panel,infoblox,nios,login,detect,discovery
-
 http:
   - method: GET
     path:

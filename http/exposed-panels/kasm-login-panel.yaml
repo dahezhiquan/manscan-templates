@@ -4,8 +4,8 @@ info:
   name: Kasm 登录面板识别（指纹识别）
   author: lum8rjack
   severity: info
-  description: |
-    该模板通过识别 Kasm 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Kasm 相关响应特征。Kasm 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板使用模板内配置的路径集合发起请求，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://kasmweb.com/
   classification:
@@ -16,7 +16,6 @@ info:
     max-request: 2
     shodan-query: http.favicon.hash:-2144699833
   tags: panel,kasm,login,detect,discovery
-
 http:
   - raw:
       - |

@@ -4,7 +4,8 @@ info:
   name: JBoss SOA Platform 登录面板识别（指纹识别）
   author: ritikchaddha,righettod
   severity: info
-  description: 该模板通过识别 JBoss SOA Platform 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 JBoss SOA Platform 相关响应特征。JBoss SOA Platform 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/css/footer.js`、`/` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -20,7 +21,6 @@ info:
     fofa-query: title="welcome to the jboss soa platform"
     google-query: intitle:"welcome to the jboss soa platform"
   tags: panel,jboss,soa,redhat,detect,discovery
-
 http:
   - method: GET
     path:

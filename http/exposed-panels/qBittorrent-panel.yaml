@@ -4,8 +4,9 @@ info:
   name: qBittorrent Web UI 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: qBittorrent Web UI 是 qBittorrent 的 Web 管理界面，用于远程管理下载任务、分类和客户端配置。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.qbittorrent.org/
+  - https://www.qbittorrent.org/
   classification:
     cpe: cpe:2.3:a:qbittorrent:qbittorrent:*:*:*:*:*:*:*:*
   metadata:
@@ -14,8 +15,8 @@ info:
     vendor: qbittorrent
     product: qbittorrent
     shodan-query:
-      - title:"qbittorrent"
-      - http.title:"qbittorrent"
+    - title:"qbittorrent"
+    - http.title:"qbittorrent"
     fofa-query: title="qbittorrent"
     google-query: intitle:"qbittorrent"
   tags: panel,qbittorrent,detect,discovery

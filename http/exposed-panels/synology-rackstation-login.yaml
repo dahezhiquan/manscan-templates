@@ -1,9 +1,10 @@
 id: synology-rackstation-login
 
 info:
-  name: Synology RackStation Login Detect 面板识别（指纹识别）
+  name: Synology RackStation 登录面板识别（指纹识别）
   author: princechaddha
   severity: info
+  description: Synology RackStation 是 Synology NAS 管理界面，用于存储、共享、套件、用户和系统状态管理。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   metadata:
     max-request: 1
   tags: login,tech,synology,rackstation,panel,discovery

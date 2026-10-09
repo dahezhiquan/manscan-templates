@@ -4,10 +4,10 @@ info:
   name: Skeepers 登录面板识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    该模板通过识别 Skeepers 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    Skeepers 是客户体验和评价管理平台，用于用户反馈、营销内容和客户互动管理。该模板请求 `/backend/login`、首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://skeepers.io
+  - https://skeepers.io
   metadata:
     verified: true
     max-request: 2

@@ -4,6 +4,8 @@ info:
   name: NI Web-based Configuration & Monitoring 识别（指纹识别）
   author: DhiyaneshDK,matejsmycka
   severity: info
+  description: |-
+    检测到目标站点存在 NI Web-based Configuration & Monitoring 相关响应特征。NI Web-based Configuration & Monitoring 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该基础设施指纹；命中结果主要用于威胁狩猎、恶意基础设施识别和外部暴露面梳理。
   metadata:
     verified: true
     max-request: 1
@@ -11,7 +13,6 @@ info:
       - title:"NI Web-based Configuration & Monitoring"
       - http.favicon.hash:1192389544
   tags: detect,ni,web-based,panel,discovery
-
 http:
   - method: GET
     path:

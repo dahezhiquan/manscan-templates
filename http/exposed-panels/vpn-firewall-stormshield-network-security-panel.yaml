@@ -1,13 +1,13 @@
 id: vpn-firewall-stormshield-network-security-panel
 
 info:
-  name: Stormshield Network Security - 登录面板（指纹识别）
+  name: Stormshield Network Security 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    Stormshield Network Security (SNS) 是一款法国网络安全设备，提供防火墙、IPS、VPN 和网页过滤功能。其 Web 管理门户经常暴露在非标准端口上。
+    Stormshield Network Security 是 Stormshield 防火墙管理入口，用于网络安全策略、VPN、过滤和设备运维。该模板请求首页、`/admin`、`/admin/admin.html`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.stormshield.com/products/network-security/
+  - https://www.stormshield.com/products/network-security/
   metadata:
     max-request: 3
     shodan-query: http.title:"Stormshield Network Security - Portal"

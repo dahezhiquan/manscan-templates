@@ -4,9 +4,9 @@ info:
   name: Web Transfer Client 登录面板识别（指纹识别）
   author: righettod
   severity: info
-  description: 该模板通过识别 Web Transfer Client 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: Web Transfer Client 是 Web 文件传输客户端，用于用户登录、上传下载和文件交换。该模板请求 `/ThinClient/WTM/public/index.html`，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.progress.com/ftp-server/web-transfer
+  - https://www.progress.com/ftp-server/web-transfer
   classification:
     cpe: cpe:2.3:a:progress:moveit_transfer:*:*:*:*:*:*:*:*
   metadata:

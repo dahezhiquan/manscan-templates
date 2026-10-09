@@ -1,13 +1,13 @@
 id: riello-netman204-panel
 
 info:
-  name: Riello UPS NetMan 204 面板识别（指纹识别）
+  name: Riello UPS NetMan 204 登录面板识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    该模板通过识别 Riello UPS NetMan 204 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    Riello UPS NetMan 204 是 Riello UPS 网络管理卡界面，用于电源状态、告警、SNMP 和远程维护。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.riello-ups.com
+  - https://www.riello-ups.com
   metadata:
     vendor: riello-ups
     product: netman_204_firmware

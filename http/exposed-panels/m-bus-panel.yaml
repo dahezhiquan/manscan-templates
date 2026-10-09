@@ -4,12 +4,13 @@ info:
   name: M-Bus Converter Web Interface 识别（指纹识别）
   author: DhiyaneshDk
   severity: info
+  description: |-
+    检测到目标站点存在 M-Bus Converter Web Interface 相关响应特征。M-Bus Converter Web Interface 是工业控制、能源、楼宇自动化或 HMI/SCADA 场景中的管理界面，用于监控设备状态、过程数据和现场控制相关配置。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"JC-e converter webinterface"
   tags: panel,login,m-bus,detect,discovery
-
 http:
   - method: GET
     path:

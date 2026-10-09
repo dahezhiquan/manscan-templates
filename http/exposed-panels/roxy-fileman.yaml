@@ -4,7 +4,7 @@ info:
   name: roxyfileman 面板识别（指纹识别）
   author: liquidsec,DhiyaneshDk,ritikchaddha
   severity: info
-  description: 该模板通过识别 Roxy File Manager 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: roxyfileman 是 Web 文件管理组件，用于浏览、上传、重命名和维护服务器端文件。该模板请求首页、`/index.html`、`/fileman/index.html` 等路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -15,8 +15,8 @@ info:
     vendor: roxyfileman
     product: roxy_fileman
     google-query:
-      - intitle:"Roxy file manager"
-      - intitle:"roxy file manager"
+    - intitle:"Roxy file manager"
+    - intitle:"roxy file manager"
     shodan-query: http.title:"roxy file manager"
     fofa-query: title="roxy file manager"
   tags: tech,roxy,fileman,panel,roxyfileman,discovery

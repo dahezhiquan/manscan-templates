@@ -4,6 +4,7 @@ info:
   name: SpotWeb 登录面板识别（指纹识别）
   author: theamanrawat
   severity: info
+  description: SpotWeb 是 Usenet 索引与社区应用，用于浏览、搜索和管理 SpotNet 内容。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cpe: cpe:2.3:a:spotweb_project:spotweb:*:*:*:*:*:*:*:*
   metadata:
@@ -12,8 +13,8 @@ info:
     vendor: spotweb_project
     product: spotweb
     shodan-query:
-      - title:"SpotWeb - overview"
-      - http.title:"spotweb - overview"
+    - title:"SpotWeb - overview"
+    - http.title:"spotweb - overview"
     fofa-query: title="spotweb - overview"
     google-query: intitle:"spotweb - overview"
   tags: panel,spotweb,detect,discovery

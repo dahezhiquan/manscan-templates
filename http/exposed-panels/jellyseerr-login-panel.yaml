@@ -4,6 +4,8 @@ info:
   name: Jellyseerr 登录面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Jellyseerr 相关响应特征。Jellyseerr 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`、`/login` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/Fallenbagel/jellyseerr
   metadata:
@@ -11,7 +13,6 @@ info:
     max-request: 2
     shodan-query: http.favicon.hash:-2017604252
   tags: panel,jellyseerr,detect,discovery
-
 http:
   - method: GET
     path:

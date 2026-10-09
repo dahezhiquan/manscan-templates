@@ -1,13 +1,13 @@
 id: wildix-collaboration-panel
 
 info:
-  name: Wildix Collaboration 面板识别（指纹识别）
+  name: Wildix Collaboration 登录面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板通过识别 Wildix Collaboration 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    Wildix Collaboration 是统一通信与协作平台，用于语音、视频、聊天、会议和 PBX 管理。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.wildix.com/product/collaboration-ucc-platform/#
+  - https://www.wildix.com/product/collaboration-ucc-platform/#
   classification:
     cwe-id: CWE-200
   metadata:

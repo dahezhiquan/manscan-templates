@@ -4,6 +4,8 @@ info:
   name: JshERP Boot 面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
+  description: |-
+    检测到目标站点存在 JshERP Boot 相关响应特征。JshERP Boot 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/user/login`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:jishenghua:jsherp:*:*:*:*:*:*:*:*
   metadata:
@@ -13,7 +15,6 @@ info:
     product: jsherp
     shodan-query: http.favicon.hash:-1298131932
   tags: panel,jsherp,login,detect,discovery
-
 http:
   - method: GET
     path:

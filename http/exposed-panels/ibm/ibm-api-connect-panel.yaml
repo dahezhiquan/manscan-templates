@@ -4,13 +4,13 @@ info:
   name: IBM API Connect 面板识别（指纹识别）
   author: righettod
   severity: info
-  description: 该模板通过识别 IBM API Connect 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 IBM API Connect 相关响应特征。IBM API Connect 是 API 管理平台，用于设计、发布、保护、分析和运营 API 服务。模板请求 `/auth/manager/sign-in/`、`/` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.ibm.com/products/api-connect/developer-portal
   metadata:
     max-request: 1
   tags: panel,ibm,api,detect,login,discovery
-
 http:
   - method: GET
     path:

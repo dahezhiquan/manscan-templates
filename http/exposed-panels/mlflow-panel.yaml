@@ -4,8 +4,8 @@ info:
   name: MLflow 面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板用于识别 MLflow 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 MLflow 相关响应特征。MLflow 是机器学习生命周期管理平台，用于跟踪实验、模型注册、模型部署和 MLOps 工作流。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/mlflow/mlflow
     - https://mlflow.org
@@ -16,7 +16,6 @@ info:
     product: mlflow
     shodan-query: 'http.title:"MLflow"'
   tags: panel,mlflow,ml,ai,mlops,detect,discovery
-
 http:
   - method: GET
     path:

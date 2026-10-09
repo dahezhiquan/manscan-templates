@@ -1,13 +1,13 @@
 id: webui-stackstorm-web-ui-panel
 
 info:
-  name: StackStorm Web UI - 面板检测（指纹识别）
+  name: StackStorm Web UI 面板识别（指纹识别）
   author: Th3l0newolf
   severity: info
   description: |-
-    发现 StackStorm Web UI 界面。
+    StackStorm Web UI 是自动化运维平台 StackStorm 的 Web 界面，用于规则、动作、工作流和执行历史管理。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://stackstorm.com/
+  - https://stackstorm.com/
   metadata:
     max-request: 1
     verified: true

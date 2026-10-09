@@ -1,25 +1,25 @@
 id: safeq-panel
 
 info:
-  name: YSoft SafeQ 面板识别（指纹识别）
+  name: YSoft SafeQ 登录面板识别（指纹识别）
   author: matejsmycka
   severity: info
-  description: |
-    该模板用于识别 YSoft SafeQ 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    YSoft SafeQ 是打印管理与文印安全平台，用于打印队列、身份认证、配额和审计管理。该模板请求首页、`/login`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.ysoft.com/safeq
-    - https://1617882505.rsc.cdn77.org/YSoft_SAFEQ_Cloud_documentation.pdf
+  - https://www.ysoft.com/safeq
+  - https://1617882505.rsc.cdn77.org/YSoft_SAFEQ_Cloud_documentation.pdf
   metadata:
     shodan-query:
-      - title:"YSoft SafeQ"
-      - title:"SafeQ&reg;"
-      - http.favicon.hash:-608698287
-      - http.favicon.hash:93381563
+    - title:"YSoft SafeQ"
+    - title:"SafeQ&reg;"
+    - http.favicon.hash:-608698287
+    - http.favicon.hash:93381563
     fofa-query:
-      - title="YSoft SafeQ"
-      - title="SafeQ&reg;"
-      - icon_hash="-608698287"
-      - icon_hash="93381563"
+    - title="YSoft SafeQ"
+    - title="SafeQ&reg;"
+    - icon_hash="-608698287"
+    - icon_hash="93381563"
   tags: panel,ysoft,login,safeq,detect,discovery
 
 http:

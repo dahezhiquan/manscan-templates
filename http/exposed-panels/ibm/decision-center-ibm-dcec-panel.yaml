@@ -4,8 +4,8 @@ info:
   name: IBM Decision Center Enterprise Console 面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
-  description: |
-    该模板通过识别 IBM Decision Center Enterprise Console 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 IBM Decision Center Enterprise Console 相关响应特征。IBM Decision Center Enterprise Console 是自动化运维、持续集成或任务编排平台，用于管理作业、流水线、凭据、执行记录和部署流程。模板请求 `/teamserver/faces/login.jsp`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.ibm.com/docs/en/odm/8.5.1?topic=console-tutorial-getting-started-decision-center-enterprise
   metadata:
@@ -13,7 +13,6 @@ info:
     max-request: 1
     shodan-query: html:"Decision Center Enterprise console"
   tags: panel,ibm,login,detect,decision-center,discovery
-
 http:
   - method: GET
     path:

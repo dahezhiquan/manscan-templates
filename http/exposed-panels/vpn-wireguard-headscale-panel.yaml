@@ -1,14 +1,14 @@
 id: vpn-wireguard-headscale-panel
 
 info:
-  name: Headscale - 登录面板（指纹识别）
+  name: Headscale 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    Headscale 是 Tailscale 控制服务器的开源自托管实现，用于管理基于 WireGuard 的网状 VPN 网络，并提供用于行政管理的 Web 界面。
+    Headscale 是自托管 Tailscale 控制服务器，用于 WireGuard 组网、节点和访问策略管理。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/juanfont/headscale
-    - https://headscale.net
+  - https://github.com/juanfont/headscale
+  - https://headscale.net
   metadata:
     max-request: 1
     shodan-query: http.title:"headscale"

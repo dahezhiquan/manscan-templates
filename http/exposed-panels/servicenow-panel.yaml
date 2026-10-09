@@ -4,10 +4,10 @@ info:
   name: ServiceNow 登录面板识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    该模板通过识别 ServiceNow 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    ServiceNow 是企业 IT 服务管理和工作流平台，用于工单、资产、变更、审批和业务流程自动化。该模板请求 `/login.do`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.servicenow.com/
+  - https://www.servicenow.com/
   classification:
     cpe: cpe:2.3:a:servicenow:servicenow:*:*:*:*:*:*:*:*
   metadata:
@@ -16,11 +16,11 @@ info:
     vendor: servicenow
     product: servicenow
     shodan-query:
-      - http.favicon.hash:1701804003
-      - http.title:"servicenow"
+    - http.favicon.hash:1701804003
+    - http.title:"servicenow"
     fofa-query:
-      - icon_hash=1701804003
-      - title="servicenow"
+    - icon_hash=1701804003
+    - title="servicenow"
     google-query: intitle:"servicenow"
   tags: panel,servicenow,login,detect,discovery
 

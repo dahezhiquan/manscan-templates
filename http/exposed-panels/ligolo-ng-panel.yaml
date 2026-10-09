@@ -5,7 +5,7 @@ info:
   author: Kazgangap
   severity: info
   description: |-
-    检测到 Ligolo-ng 面板。
+    检测到目标站点存在 Ligolo-ng 相关响应特征。Ligolo-ng 是与 C2、远控、钓鱼或恶意基础设施相关的 Web 管理入口，通常用于会话管理、任务下发、投递活动或事件监控。模板请求 `/login`，并通过页面标题或正文关键字、状态码、DSL 条件确认该基础设施指纹；命中结果主要用于威胁狩猎、恶意基础设施识别和外部暴露面梳理。
   reference:
     - https://github.com/nicocha30/ligolo-ng
   metadata:
@@ -16,7 +16,6 @@ info:
     fofa-query: title="Ligolo-ng"
     shodan-query: http.title:"Ligolo-ng"
   tags: panel,ligolo-ng,login,detect,discovery
-
 http:
   - method: GET
     path:

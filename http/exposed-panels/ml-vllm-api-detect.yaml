@@ -4,8 +4,8 @@ info:
   name: vLLM OpenAI-Compatible Server 识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    该模板用于识别 vLLM OpenAI-Compatible Server 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    检测到目标站点存在 vLLM OpenAI-Compatible Server 相关响应特征。vLLM OpenAI-Compatible Server 是 API 管理、计算或服务控制台，用于维护接口、路由、执行环境、上游服务和访问策略。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/vllm-project/vllm
     - https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
@@ -17,7 +17,6 @@ info:
     shodan-query: '"served-model-name"'
     fofa-query: body="vllm" && body="/v1/models"
   tags: tech,vllm,llm,ai,ml,openai,detect
-
 http:
   - method: GET
     path:

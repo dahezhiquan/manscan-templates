@@ -1,14 +1,14 @@
 id: tautulli-panel
 
 info:
-  name: Tautulli 面板识别（指纹识别）
+  name: Tautulli 登录面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板通过识别 Tautulli 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Tautulli 是 Plex 媒体服务器监控平台，用于播放历史、用户活动、统计和通知管理。该模板请求首页、`/auth/login`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://tautulli.com/
-    - https://github.com/Tautulli/Tautulli
+  - https://tautulli.com/
+  - https://github.com/Tautulli/Tautulli
   classification:
     cpe: cpe:2.3:a:tautulli:tautulli:*:*:*:*:*:*:*:*
   metadata:
@@ -17,15 +17,15 @@ info:
     vendor: tautulli
     product: tautulli
     shodan-query:
-      - title:"TAUTULLI"
-      - http.title:"tautulli"
-      - http.title:"tautulli - home"
+    - title:"TAUTULLI"
+    - http.title:"tautulli"
+    - http.title:"tautulli - home"
     fofa-query:
-      - title="tautulli - home"
-      - title="tautulli"
+    - title="tautulli - home"
+    - title="tautulli"
     google-query:
-      - intitle:"tautulli"
-      - intitle:"tautulli - home"
+    - intitle:"tautulli"
+    - intitle:"tautulli - home"
   tags: panel,tautulli,detect,discovery
 
 http:

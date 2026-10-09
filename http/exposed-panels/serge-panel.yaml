@@ -4,11 +4,11 @@ info:
   name: Serge 面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板通过识别 Serge 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Serge 是本地大语言模型聊天应用，用于部署、管理和使用私有 LLM 会话。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/serge-chat/serge
-    - https://serge.chat
+  - https://github.com/serge-chat/serge
+  - https://serge.chat
   metadata:
     verified: true
     max-request: 1

@@ -1,28 +1,28 @@
 id: pterodactyl-oos-panel
 
 info:
-  name: Pterodactyl game server 面板（指纹识别）
+  name: Pterodactyl game server 登录面板识别（指纹识别）
   severity: info
   author: darses
-  description: |
-    该模板通过识别 Pterodactyl game server 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Pterodactyl game server 是游戏服务器管理面板，用于容器化部署、控制和维护游戏服务实例。该模板请求 `/auth/login` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/pterodactyl/panel
+  - https://github.com/pterodactyl/panel
   metadata:
     verified: true
     max-request: 1
     vendor: pterodactyl
     product: panel
     shodan-query:
-      - title:"Pterodactyl"
-      - http.favicon.hash:-456405319
-      - http.favicon.hash:846001371
-      - "Set-Cookie: pterodactyl_session="
+    - title:"Pterodactyl"
+    - http.favicon.hash:-456405319
+    - http.favicon.hash:846001371
+    - "Set-Cookie: pterodactyl_session="
     fofa-query:
-      - title="Pterodactyl"
-      - icon_hash="-456405319"
-      - icon_hash="846001371"
-      - "Set-Cookie: pterodactyl_session="
+    - title="Pterodactyl"
+    - icon_hash="-456405319"
+    - icon_hash="846001371"
+    - "Set-Cookie: pterodactyl_session="
   tags: detect,pterodactyl,panel,oos,discovery
 
 http:

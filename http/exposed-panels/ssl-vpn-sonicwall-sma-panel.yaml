@@ -1,14 +1,14 @@
 id: ssl-vpn-sonicwall-sma-panel
 
 info:
-  name: SonicWall Secure Mobile Access (SMA) 面板 - 检测（指纹识别）
+  name: SonicWall Secure Mobile Access (SMA) 登录面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: |-
-    检测到 SonicWall Secure Mobile Access (SMA) 设备——一款面向安全远程访问的企级 SSL-VPN 网关（SMA 1000/6200/7200 系列）。
+    SonicWall Secure Mobile Access (SMA) 是 SonicWall SMA 远程访问平台，用于 SSL VPN、用户认证和移动办公接入。该模板请求首页、`/workplace/home.action`，并依据页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://www.sonicwall.com/products/remote-access/
-    - https://www.sonicwall.com/support/technical-documentation/?category=Secure%20Remote%20Access
+  - https://www.sonicwall.com/products/remote-access/
+  - https://www.sonicwall.com/support/technical-documentation/?category=Secure%20Remote%20Access
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0

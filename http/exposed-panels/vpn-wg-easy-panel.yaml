@@ -1,13 +1,13 @@
 id: vpn-wg-easy-panel
 
 info:
-  name: WireGuard Easy (wg-easy) 登录面板（指纹识别）
+  name: WireGuard Easy (wg-easy) 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    wg-easy 是运行 WireGuard VPN 的最简单方式，提供基于 Web 的管理界面，用于创建和管理 WireGuard 对端。
+    WireGuard Easy (wg-easy) 是 wg-easy 的 WireGuard VPN Web 管理界面，用于用户、配置、二维码和隧道管理。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/wg-easy/wg-easy
+  - https://github.com/wg-easy/wg-easy
   metadata:
     max-request: 1
     shodan-query: http.html:"wg-easy" http.html:"WireGuard"

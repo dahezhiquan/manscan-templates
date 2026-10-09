@@ -1,11 +1,11 @@
 id: redhat-openshift-oauth-proxy-panel
 
 info:
-  name: OpenShift OAuth Proxy 面板识别（指纹识别）
+  name: OpenShift OAuth Proxy 登录面板识别（指纹识别）
   author: r3dg33k
   severity: info
-  description: |
-    该模板通过识别 OpenShift OAuth Proxy 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    OpenShift OAuth Proxy 是 OpenShift 的 OAuth 认证代理入口，用于保护 Web 应用并接入集群身份认证。该模板请求首页、`{{RootURL}}:9001` 路径，并依据 HTTP 403 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   metadata:
     verified: true
     max-request: 2

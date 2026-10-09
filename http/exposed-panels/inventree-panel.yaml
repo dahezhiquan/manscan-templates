@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    InvenTree（inventree.org / github.com/inventree/InvenTree）是一款开源的库存管理系统。其 API 根路径 /api/ 无需认证即可访问，并返回包含运行版本在内的服务器元数据，导致面向互联网的实例被暴露。
+    检测到目标站点存在 InvenTree 相关响应特征。InvenTree 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/api/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/inventree/InvenTree
     - https://inventree.org/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"InvenTree"
     fofa-query: title="InvenTree"
   tags: panel,inventree,inventory,selfhosted,detect,discovery,login
-
 http:
   - method: GET
     path:

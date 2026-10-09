@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    SilverBullet（silverbullet.md / github.com/silverbulletmd/silverbullet）是一款开源的自托管、基于浏览器的 Markdown 笔记和个人知识库应用。未启用认证的实例会将完整的笔记空间暴露给任意读写。
+    检测到目标站点存在 SilverBullet 面板检测 相关响应特征。SilverBullet 是 Markdown 笔记和个人知识库平台，用于通过 Web 编辑、搜索和组织 Markdown 文档。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/silverbulletmd/silverbullet
     - https://silverbullet.md/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"SilverBullet"
     fofa-query: title="SilverBullet"
   tags: panel,silverbullet,notes,markdown,selfhosted,detect,discovery
-
 http:
   - method: GET
     path:

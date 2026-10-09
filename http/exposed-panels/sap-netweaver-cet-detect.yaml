@@ -1,13 +1,13 @@
 id: sap-netweaver-cet-detect
 
 info:
-  name: SAP NetWeaver Composition Environment Tools 识别（指纹识别）
+  name: SAP NetWeaver Composition Environment Tools 面板识别（指纹识别）
   author: ap3r
   severity: info
-  description: |
-    该模板用于识别 SAP NetWeaver Composition Environment Tools 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    SAP NetWeaver Composition Environment Tools 是 SAP NetWeaver 组合环境工具入口，用于企业 Java 应用与集成组件管理。该模板请求 `/rep/start/index.jsp` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
+  - https://help.sap.com/doc/saphelp_scm700_ehp02/7.0.2/en-US/f6/2a7cb018bc4b239ea5b7af675a18ef/content.htm?no_cache=true
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:-266008933

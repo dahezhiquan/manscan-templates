@@ -4,8 +4,8 @@ info:
   name: Mage AI 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    该模板用于识别 Mage AI 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 Mage AI 相关响应特征。Mage AI 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务、评估或调用追踪。模板请求 `/`、`/api/status` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/mage-ai/mage-ai
     - https://docs.mage.ai/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Mage"
     fofa-query: title="Mage"
   tags: panel,mageai,detect
-
 http:
   - method: GET
     path:

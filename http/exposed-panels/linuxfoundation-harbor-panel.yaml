@@ -4,7 +4,8 @@ info:
   name: Harbor 登录面板识别（指纹识别）
   author: daffainfo,righettod
   severity: info
-  description: 该模板通过识别 Harbor 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Harbor 相关响应特征。Harbor 是研发运维或制品管理平台，用于管理构建、代码、制品、任务、插件、凭据和执行记录。模板请求 `/api/v2.0/systeminfo`、`/api/systeminfo`、`/account/sign-in` 等路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/goharbor/harbor
   classification:
@@ -19,7 +20,6 @@ info:
     shodan-query: http.favicon.hash:657337228
     fofa-query: icon_hash=657337228
   tags: panel,harbor,linuxfoundation,detect,login,discovery
-
 http:
   - method: GET
     path:

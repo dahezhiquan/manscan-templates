@@ -1,15 +1,15 @@
 id: vectoradmin-panel
 
 info:
-  name: VectorAdmin 面板识别（指纹识别）
+  name: VectorAdmin 登录面板识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    该模板通过识别 VectorAdmin 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    VectorAdmin 是向量数据库和 AI 数据管理工具，用于管理集合、嵌入、检索和数据源。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://vectoradmin.com
-    - https://github.com/Mintplex-Labs/vector-admin
-    - https://elest.io/open-source/vectoradmin/resources
+  - https://vectoradmin.com
+  - https://github.com/Mintplex-Labs/vector-admin
+  - https://elest.io/open-source/vectoradmin/resources
   metadata:
     verified: true
     max-request: 1

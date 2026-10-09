@@ -1,9 +1,10 @@
 id: modem-zyxel-vmg1312b10d-login
 
 info:
-  name: Zyxel VMG1312-B10D - Login 识别（指纹识别）
+  name: Zyxel VMG1312-B10D 登录面板识别（指纹识别）
   author: princechaddha
   severity: info
+  description: Zyxel VMG1312-B10D 是 Zyxel 调制解调器/路由器管理界面，用于宽带、无线、路由和设备状态配置。该模板请求首页，并依据 HTTP 401 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cpe: cpe:2.3:o:zyxel:vmg1312-b10d_firmware:*:*:*:*:*:*:*:*
   metadata:
@@ -12,8 +13,8 @@ info:
     vendor: zyxel
     product: vmg1312-b10d_firmware
     shodan-query:
-      - http.html:"VMG1312-B10D"
-      - http.html:"vmg1312-b10d"
+    - http.html:"VMG1312-B10D"
+    - http.html:"vmg1312-b10d"
     fofa-query: body="vmg1312-b10d"
   tags: tech,zyxel,modem,router,panel,discovery
 

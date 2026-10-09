@@ -1,14 +1,14 @@
 id: rustdesk-server-pro-panel
 
 info:
-  name: RustDesk Server Pro - 登录面板（指纹识别）
+  name: RustDesk Server Pro 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    已检测到 RustDesk Server Pro 管理 Web 控制台。
+    RustDesk Server Pro 是远程桌面服务端管理平台，用于设备接入、用户、权限和中继服务管理。该模板请求 `/_admin/` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/
-    - https://github.com/rustdesk/rustdesk-server-pro
+  - https://rustdesk.com/docs/en/self-host/rustdesk-server-pro/console/
+  - https://github.com/rustdesk/rustdesk-server-pro
   metadata:
     verified: true
     max-request: 1

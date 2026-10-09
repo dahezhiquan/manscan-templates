@@ -1,14 +1,14 @@
 id: uptime-kuma-panel
 
 info:
-  name: Uptime Kuma 面板（指纹识别）
+  name: Uptime Kuma 登录面板识别（指纹识别）
   author: irshad ahamed
   severity: info
-  description: |
-    该模板通过识别 Uptime Kuma 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    Uptime Kuma 是自托管服务可用性监控平台，用于站点、端口、证书、告警和状态页管理。该模板请求 `/dashboard`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/louislam/uptime-kuma
-    - https://github.com/louislam/uptime-kuma/wiki
+  - https://github.com/louislam/uptime-kuma
+  - https://github.com/louislam/uptime-kuma/wiki
   classification:
     cpe: cpe:2.3:a:uptime.kuma:uptime_kuma:*:*:*:*:*:*:*:*
   metadata:

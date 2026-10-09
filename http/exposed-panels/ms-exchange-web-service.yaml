@@ -4,8 +4,8 @@ info:
   name: Microsoft Exchange Web Service 识别（指纹识别）
   author: bhutch,userdehghani
   severity: info
-  description: |
-    该模板用于识别 Microsoft Exchange Web Service 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    检测到目标站点存在 Microsoft Exchange Web Service 相关响应特征。Microsoft Exchange 是企业邮件和协作服务器，Web 面板用于访问邮箱、管理 Web 服务或远程邮件功能。模板请求 `/EWS/Exchange.asmx`、`/owa/service.svc` 路径，并通过状态码、正则特征确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/start-using-web-services-in-exchange
     - https://pentestlab.blog/tag/ews/
@@ -25,7 +25,6 @@ info:
       - title="outlook"
     google-query: intitle:"outlook"
   tags: ms,microsoft,exchange,tech,panel,discovery
-
 http:
   - method: GET
     path:

@@ -4,8 +4,8 @@ info:
   name: CAREL Boss Mini - Login Panel 识别（指纹识别）
   author: Kazgangap
   severity: info
-  description: |
-    该模板通过识别 CAREL Boss Mini - Login 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 CAREL Boss Mini - Login Panel 相关响应特征。CAREL Boss Mini - Login Panel 是工业控制、能源、楼宇自动化或 HMI/SCADA 场景中的管理界面，用于监控设备状态、过程数据和现场控制相关配置。模板请求 `/boss/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.carel.com/
   metadata:
@@ -15,7 +15,6 @@ info:
     product: boss-mini
     fofa-query: icon_hash=="1092427843"
   tags: panel,carel,boss-mini,ics,login,detect
-
 http:
   - method: GET
     path:

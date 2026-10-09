@@ -1,14 +1,14 @@
 id: signoz-panel
 
 info:
-  name: SigNoz 面板检测（指纹识别）
+  name: SigNoz 面板识别（指纹识别）
   author: ChrisJr404,rxerium
   severity: info
   description: |-
-    SigNoz 是一款开源的监控平台，用于指标、追踪和日志。它包含一个 React 前端和一个 Go 查询服务，后者在 /api/v1/version 暴露了一个无需认证的版本接口。
+    SigNoz 是开源可观测性平台，用于指标、日志、链路追踪和告警分析。该模板请求首页、`/api/v1/version`，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/SigNoz/signoz
-    - https://signoz.io/
+  - https://github.com/SigNoz/signoz
+  - https://signoz.io/
   metadata:
     verified: false
     max-request: 2

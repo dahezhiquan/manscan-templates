@@ -4,11 +4,11 @@ info:
   name: Zammad Helpdesk 面板识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    该模板用于识别 Zammad Helpdesk 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    Zammad Helpdesk 是客户支持和工单系统，用于邮件、工单、客户和服务流程管理。该模板请求首页，并依据 DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://github.com/zammad/zammad
-    - https://zammad.org/
+  - https://github.com/zammad/zammad
+  - https://zammad.org/
   metadata:
     verified: true
     max-request: 1

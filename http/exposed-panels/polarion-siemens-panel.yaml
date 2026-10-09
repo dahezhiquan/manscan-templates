@@ -1,18 +1,18 @@
 id: polarion-siemens-panel
 
 info:
-  name: Polarion Siemens Login 面板（指纹识别）
+  name: Polarion Siemens 登录面板识别（指纹识别）
   author: Th3l0newolf
   severity: info
-  description: |
-    该模板通过识别 Polarion Siemens Login 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    Polarion Siemens 是 Siemens Polarion 应用生命周期管理平台，用于需求、测试、变更和合规协作。该模板请求 `/polarion/` 路径，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://polarion.plm.automation.siemens.com/
+  - https://polarion.plm.automation.siemens.com/
   metadata:
     verified: true
     shodan-query:
-      - http.favicon.hash:-1135703796
-      - http.favicon.hash:707299418
+    - http.favicon.hash:-1135703796
+    - http.favicon.hash:707299418
   tags: polarion,siemens,login,panel,detect,discovery
 
 http:

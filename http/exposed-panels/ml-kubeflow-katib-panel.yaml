@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 Kubeflow Katib，这是一个 Kubernetes 原生的自动化机器学习（AutoML）项目，用于执行超参数调优、早停和神经架构搜索。其 Web UI 通常通过 Kubeflow Central Dashboard 在 /katib/ 路径下提供，前端由 Istio/OIDC 认证代理保护，因此未认证暴露并不常见，但在该实例上被识别出存在此情况。
+    检测到目标站点存在 Kubeflow Katib 相关响应特征。Kubeflow Katib 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/katib/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/kubeflow/katib
     - https://www.kubeflow.org/docs/components/katib/
@@ -16,7 +16,6 @@ info:
     product: katib
     shodan-query: 'html:"dashboard_lib.bundle.js"'
   tags: panel,kubeflow-katib,ml,ai,mlops,detect,discovery
-
 http:
   - method: GET
     path:

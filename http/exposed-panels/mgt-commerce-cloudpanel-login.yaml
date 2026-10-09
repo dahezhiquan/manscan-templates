@@ -4,6 +4,8 @@ info:
   name: CloudPanel 登录识别（指纹识别）
   author: DhiyaneshDk
   severity: info
+  description: |-
+    检测到目标站点存在 CloudPanel 相关响应特征。CloudPanel 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/login`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:mgt-commerce:cloudpanel:*:*:*:*:*:*:*:*
   metadata:
@@ -20,7 +22,6 @@ info:
       - title="cloudpanel"
     google-query: intitle:"cloudpanel"
   tags: panel,login,cloudpanel,detect,mgt-commerce,discovery
-
 http:
   - method: GET
     path:

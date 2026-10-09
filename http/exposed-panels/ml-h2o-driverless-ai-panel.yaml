@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 H2O Driverless AI，这是一款商业自动化机器学习（AutoML）平台，通常通过 12345 端口提供 Web 界面，用于构建和部署机器学习模型。发现了一个暴露在外的 H2O Driverless AI 登录面板。该产品区别于 H2O Wave 和 H2O-3/Flow，后者属于 H2O.ai 的独立产品，具有不同的品牌、端口和界面。
+    检测到目标站点存在 H2O Driverless AI 相关响应特征。H2O Driverless AI 是 AI、机器学习或 Notebook 相关平台，用于管理模型、数据集、工作区、实验、推理服务或训练任务。模板请求 `/login`，并通过页面标题或正文关键字、响应头关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://h2o.ai/platform/ai-cloud/make/driverless-ai/
     - https://docs.h2o.ai/driverless-ai/latest-stable/docs/userguide/index.html
@@ -16,7 +16,6 @@ info:
     product: driverless-ai
     shodan-query: 'http.title:"H2O.ai - Login"'
   tags: panel,h2o-driverless-ai,ml,ai,automl,detect,discovery
-
 http:
   - method: GET
     path:

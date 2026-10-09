@@ -1,13 +1,13 @@
 id: simplehelp-login-panel
 
 info:
-  name: SimpleHelp - 登录面板（指纹识别）
+  name: SimpleHelp 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    检测到 SimpleHelp 远程支持与管理登录面板。
+    SimpleHelp 是远程支持和远程访问平台，用于技术支持会话、客户端连接和设备维护。该模板请求 `/welcome`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   reference:
-    - https://simple-help.com/
+  - https://simple-help.com/
   metadata:
     verified: true
     max-request: 1

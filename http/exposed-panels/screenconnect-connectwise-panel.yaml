@@ -1,9 +1,10 @@
 id: screenconnect-connectwise-panel
 
 info:
-  name: ConnectWise Control Remote Support Software 面板识别（指纹识别）
+  name: ConnectWise Control Remote Support Software 登录面板识别（指纹识别）
   author: johnk3r
   severity: info
+  description: ConnectWise Control Remote Support Software 是远程支持与远程访问平台，用于客服接入、无人值守访问和会话管理。该模板请求 `/Login` 路径，并依据 HTTP 200 状态码、DSL 条件识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -15,8 +16,8 @@ info:
     product: screenconnect
     shodan-query: http.favicon.hash:-82958153
     fofa-query:
-      - app="screenconnect-remote-support-software"
-      - icon_hash=-82958153
+    - app="screenconnect-remote-support-software"
+    - icon_hash=-82958153
     hunter-query: app.name="connectwise screenconnect software"
     zoomeye-query: app="screenconnect remote management software"
   tags: screenconnect,panel,connectwise,detect,discovery

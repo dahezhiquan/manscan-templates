@@ -4,7 +4,7 @@ info:
   name: Apache 指纹识别（指纹识别）
   author: philippedelteil
   severity: info
-  description: 用于识别目标是否部署 Apache 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: Apache 是 Apache HTTP Server Web 服务器，用于托管网站、处理 HTTP 请求、提供反向代理和模块化 Web 服务能力。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 Apache 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,apache,discovery

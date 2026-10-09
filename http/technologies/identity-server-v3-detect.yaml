@@ -1,13 +1,14 @@
 id: identity-server-v3-detect
 
 info:
-  name: Identity 服务器 V3 指纹识别（指纹识别）
+  name: IdentityServer v3 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否部署 Identity 服务器 V3 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    IdentityServer v3 是基于 .NET 的 OpenID Connect 和 OAuth2 身份提供者框架，用于实现单点登录和令牌签发。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 IdentityServer v3 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://identityserver.github.io/Documentation/
+  - https://identityserver.github.io/Documentation/
   classification:
     cpe: cpe:2.3:a:wso2:identity_server:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     product: identity_server
     shodan-query: http.title:"IdentityServer v3"
   tags: tech,identityserver,detect,discovery
-
 http:
   - method: GET
     path:

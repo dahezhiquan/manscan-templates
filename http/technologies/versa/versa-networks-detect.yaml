@@ -4,8 +4,11 @@ info:
   name: Versa Networks 指纹识别（指纹识别）
   author: c-sh0
   severity: info
+  description: >-
+    Versa Networks 是 SD-WAN 和安全访问服务平台，用于企业分支联网、策略管理和安全网关能力。该模板通过请求目标服务并检查预设路径或首页响应、favicon
+    哈希、DSL 条件等指纹特征，判断目标是否使用或暴露了 Versa Networks 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://versa-networks.com/products/components/
+  - https://versa-networks.com/products/components/
   classification:
     cpe: cpe:2.3:a:versa-networks:versa_analytics:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +18,6 @@ info:
     product: versa_analytics
     shodan-query: html:"Versa Networks"
   tags: tech,versa,discovery
-
 http:
   - method: GET
     path:

@@ -1,14 +1,14 @@
 id: besu-server-detect
 
 info:
-  name: Besu JSON-RPC HTTP 服务器指纹识别（指纹识别）
+  name: Besu JSON-RPC HTTP 服务器 指纹识别（指纹识别）
   author: Nullfuzz
   severity: info
-  description: |
-    用于识别目标是否部署 Besu JSON-RPC HTTP 服务器 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Besu JSON-RPC HTTP 服务器 是 Hyperledger Besu 以太坊客户端的 JSON-RPC 服务，用于区块链节点查询和交易交互。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Besu JSON-RPC HTTP 服务器 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://besu.hyperledger.org/
-    - https://besu.hyperledger.org/public-networks/how-to/use-besu-api#service-ports
+  - https://besu.hyperledger.org/
+  - https://besu.hyperledger.org/public-networks/how-to/use-besu-api#service-ports
   metadata:
     verified: true
     max-request: 1

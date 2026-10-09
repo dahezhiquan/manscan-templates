@@ -1,14 +1,14 @@
 id: akamai-bot-manager-detect
 
 info:
-  name: Akamai Bot Manager 防护指纹识别（指纹识别）
+  name: Akamai Bot Manager 防护 指纹识别（指纹识别）
   author: Fazle Arefin
   severity: info
-  description: |
-    用于判断目标是否启用了 Akamai Bot Manager 防护，模板会结合 HTTP 响应头和特定路径或已知端点进行指纹匹配。
+  description: |-
+    Akamai Bot Manager 防护 是 Akamai 的自动化流量与机器人防护服务，用于识别和缓解恶意自动化访问。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 Akamai Bot Manager 防护 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.akamai.com/legal/manage-cookie-preferences
-    - https://techdocs.akamai.com/identity-cloud/docs/hosted-login-cookies-and-local-storage-1
+  - https://www.akamai.com/legal/manage-cookie-preferences
+  - https://techdocs.akamai.com/identity-cloud/docs/hosted-login-cookies-and-local-storage-1
   metadata:
     max-request: 1
   tags: akamai,bot,security,detect,discovery

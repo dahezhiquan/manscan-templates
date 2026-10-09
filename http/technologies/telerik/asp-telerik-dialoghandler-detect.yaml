@@ -1,17 +1,18 @@
 id: asp-telerik-dialoghandler-detect
 
 info:
-  name: Telerik Web UI Dialog Handler 指纹识别（指纹识别）
+  name: Telerik UI DialogHandler 指纹识别（指纹识别）
   author: organiccrap,zhenwarx,nielsing
   severity: info
-  description: 用于识别目标是否使用 Telerik Web UI Dialog Handler，模板会结合状态码和特定路径或已知端点匹配内容管理系统相关指纹。
+  description: >-
+    Telerik UI DialogHandler 是 Telerik ASP.NET Web UI 组件中的对话框处理入口，用于文件管理和编辑器相关功能。该模板通过请求目标服务并检查预设路径或首页响应、状态码、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    Telerik UI DialogHandler 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
-    - https://github.com/bao7uo/dp_crypto
+  - https://captmeelo.com/pentest/2018/08/03/pwning-with-telerik.html
+  - https://github.com/bao7uo/dp_crypto
   metadata:
     max-request: 17
   tags: tech,telerik,asp,discovery
-
 http:
   - method: GET
     path:

@@ -1,19 +1,19 @@
 id: wp-plugin-wp-wordpress-plugin-detect
 
 info:
-  name: WordPress Plugin 指纹识别（指纹识别）
+  name: WordPress 插件通用指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否部署 WordPress Plugin 并提取相关版本或构建信息，模板会结合 favicon 哈希、HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    WordPress 插件用于扩展站点功能、前端展示、后台管理和第三方服务集成，插件资源路径常可反映目标站点启用的组件。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件、favicon 哈希等指纹特征，判断目标是否暴露 WordPress 插件相关资源；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/
+  - https://wordpress.org/plugins/
   metadata:
     max-request: 1
     shodan-query:
-      - http.component:"wordpress"
+    - http.component:"wordpress"
   tags: tech,wordpress,plugin,detect,wp-plugin,discovery
-
 http:
   - method: GET
     path:

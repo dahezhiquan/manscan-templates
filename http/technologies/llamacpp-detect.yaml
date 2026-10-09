@@ -4,10 +4,11 @@ info:
   name: llama.cpp 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标暴露的 llama.cpp，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: >-
+    llama.cpp 是本地运行大语言模型的高性能推理项目，常用于 CPU/GPU 环境中的私有模型服务。该模板通过请求目标服务并检查页面正文关键字、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 llama.cpp 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/ggerganov/llama.cpp
+  - https://github.com/ggerganov/llama.cpp
   metadata:
     verified: true
     max-request: 1
@@ -16,7 +17,6 @@ info:
     shodan-query: 'http.headers.server:"llama.cpp"'
     fofa-query: 'server="llama.cpp"'
   tags: tech,llamacpp,llm,ai,detect,discovery
-
 http:
   - raw:
       - |

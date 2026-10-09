@@ -1,13 +1,15 @@
 id: lexmark-printer-detect
 
 info:
-  name: Lexmark Device 指纹识别（指纹识别）
+  name: Lexmark 打印设备 指纹识别（指纹识别）
   author: princechaddha
   severity: info
+  description: >-
+    Lexmark 打印设备提供网络打印、管理和状态页面，Web 管理界面可反映设备型号和运行状态。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、状态码等指纹特征，判断目标是否使用或暴露了
+    Lexmark 打印设备 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,airtame,printer,discovery
-
 http:
   - method: GET
     path:

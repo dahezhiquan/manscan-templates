@@ -1,13 +1,14 @@
 id: mongoose-server
 
 info:
-  name: Mongoose 服务器指纹识别（指纹识别）
+  name: Mongoose Server 指纹识别（指纹识别）
   author: lu4nx
   severity: info
-  description: |
-    用于识别目标是否运行 Mongoose 服务器，模板会结合 HTTP 响应头、状态码和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    Mongoose 是嵌入式 Web 服务器/网络库，常用于设备管理界面、嵌入式服务和轻量级 HTTP 接口。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了 Mongoose Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/cesanta/mongoose
+  - https://github.com/cesanta/mongoose
   classification:
     cpe: cpe:2.3:a:cesanta:mongoose:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     product: mongoose
     shodan-query: 'Server: Mongoose'
   tags: tech,mongoose,discovery
-
 http:
   - method: GET
     path:

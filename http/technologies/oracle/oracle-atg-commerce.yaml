@@ -1,12 +1,14 @@
 id: oracle-atg-commerce
 
 info:
-  name: Oracle ATG Commerce 面板指纹识别（指纹识别）
+  name: Oracle ATG Commerce 指纹识别（指纹识别）
   author: Dale Clarke
   severity: info
-  description: 用于识别目标是否部署 Oracle ATG Commerce 面板 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Oracle ATG Commerce 是企业电商平台，用于商品目录、购物车、订单和个性化商务体验。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了 Oracle ATG Commerce 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://docs.oracle.com/cd/E35319_01/Platform.10-2/ATGPlatformProgGuide/html/s0101introduction01.html
+  - https://docs.oracle.com/cd/E35319_01/Platform.10-2/ATGPlatformProgGuide/html/s0101introduction01.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -15,7 +17,6 @@ info:
     verified: true
     max-request: 1
   tags: tech,oracle,atg,commerce,discovery
-
 http:
   - method: GET
     path:

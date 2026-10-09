@@ -4,17 +4,17 @@ info:
   name: Hubble 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否使用 Hubble，模板会结合页面标题和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Hubble 是 Kubernetes/Cilium 生态中的网络可观测性工具，用于查看服务依赖、流量和策略事件。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Hubble 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/cilium/hubble
-    - https://docs.cilium.io/en/stable/observability/hubble/
+  - https://github.com/cilium/hubble
+  - https://docs.cilium.io/en/stable/observability/hubble/
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"Hubble UI"
   tags: tech,hubble,detect,discovery
-
 http:
   - method: GET
     path:

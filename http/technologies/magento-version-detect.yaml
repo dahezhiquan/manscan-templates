@@ -1,14 +1,15 @@
 id: magento-version-detect
 
 info:
-  name: Magento 版本指纹识别（指纹识别）
+  name: Magento 指纹识别（指纹识别）
   author: sullo,dogancanbakir
   severity: info
-  description: |
-    用于识别目标是否部署 Magento 版本 并提取相关版本或构建信息，模板会结合页面正文和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Magento 是电商平台，用于构建在线商城、商品目录、订单和支付流程。该模板通过请求目标服务并检查页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Magento 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.magento.com/
-    - https://magento.stackexchange.com/a/62966
+  - https://www.magento.com/
+  - https://magento.stackexchange.com/a/62966
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -20,7 +21,6 @@ info:
     product: magento
     vendor: magento
   tags: tech,magento,cms,discovery
-
 http:
   - raw:
       - |

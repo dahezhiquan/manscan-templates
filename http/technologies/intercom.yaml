@@ -1,15 +1,17 @@
 id: intercom
 
 info:
-  name: Intercom widget 指纹识别（指纹识别）
+  name: Intercom Widget 指纹识别（指纹识别）
   author: tess
   severity: info
+  description: >-
+    Intercom 是客户沟通和在线客服平台，网站中的 Widget 用于提供聊天、帮助中心和用户消息能力。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标页面是否集成
+    Intercom Widget；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.intercom.com
+  - https://www.intercom.com
   metadata:
     max-request: 1
   tags: intercom,tech,discovery
-
 http:
   - method: GET
     path:

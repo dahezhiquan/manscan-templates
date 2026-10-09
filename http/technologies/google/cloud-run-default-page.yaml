@@ -4,14 +4,16 @@ info:
   name: Google Cloud Run 默认页面指纹识别（指纹识别）
   author: dhiyaneshDK
   severity: info
+  description: >-
+    Google Cloud Run 是 Google Cloud 的无服务器容器运行平台，用于运行按需扩缩容的容器化 Web 服务和 API。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否暴露
+    Google Cloud Run 默认页面；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://cloud.google.com/run/docs/overview/what-is-cloud-run
+  - https://cloud.google.com/run/docs/overview/what-is-cloud-run
   metadata:
     verified: true
     max-request: 1
     shodan-query: title:"Congratulations | Cloud Run"
   tags: tech,cloudrun,google,discovery
-
 http:
   - method: GET
     path:

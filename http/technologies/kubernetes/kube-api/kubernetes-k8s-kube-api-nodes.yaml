@@ -1,14 +1,15 @@
 id: kubernetes-k8s-kube-api-nodes
 
 info:
-  name: Kube API Nodes 指纹识别（指纹识别）
+  name: Kubernetes API Nodes 指纹识别（指纹识别）
   author: sharath,ritikchaddha
   severity: info
-  description: 用于识别目标是否部署 Kube API Nodes 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Kubernetes API Server 是集群控制面的核心接口，Nodes 资源用于描述集群工作节点及其容量、状态和标签。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    Kubernetes API Nodes 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,kubernetes,devops,kube,discovery
-
 http:
   - method: GET
     path:

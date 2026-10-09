@@ -4,9 +4,9 @@ info:
   name: craftcms 指纹识别（指纹识别）
   author: skeltavik
   severity: info
-  description: 用于识别目标是否使用 Craft CMS，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
+  description: craftcms 是内容管理系统，用于内容建模、模板、插件和网站发布。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 craftcms 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://craftcms.com
+  - https://craftcms.com
   metadata:
     max-request: 1
   tags: tech,craftcms,discovery

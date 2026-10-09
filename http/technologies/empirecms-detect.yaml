@@ -4,6 +4,7 @@ info:
   name: EmpireCMS 指纹识别（指纹识别）
   author: princechaddha
   severity: info
+  description: EmpireCMS 是中文内容管理系统，用于新闻、栏目、模板和后台内容维护。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 EmpireCMS 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:phome:empirecms:*:*:*:*:*:*:*:*
   metadata:

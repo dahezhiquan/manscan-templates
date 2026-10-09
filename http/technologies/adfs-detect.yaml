@@ -4,7 +4,7 @@ info:
   name: ADFS 指纹识别（指纹识别）
   author: Adam Crosser,Mys7ic
   severity: info
-  description: 用于识别目标是否部署 ADFS 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: ADFS 是 Microsoft Active Directory Federation Services，用于企业单点登录、身份联合和认证流程。该模板请求 `/adfs/ls/idpinitiatedsignon.aspx`，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 ADFS 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,adfs,discovery

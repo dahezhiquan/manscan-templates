@@ -4,10 +4,10 @@ info:
   name: dizqueTV 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否使用 dizqueTV，模板会结合 favicon 哈希、页面标题和特定路径或已知端点进行技术指纹匹配。
+  description: |-
+    dizqueTV 是自托管直播频道工具，用于将本地媒体编排成仿直播电视流。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 dizqueTV 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/vexorian/dizquetv
+  - https://github.com/vexorian/dizquetv
   metadata:
     verified: true
     max-request: 1

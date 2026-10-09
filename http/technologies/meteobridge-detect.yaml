@@ -4,16 +4,16 @@ info:
   name: MeteoBridge 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标暴露的 MeteoBridge，模板会结合 HTTP 响应头、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: >-
+    MeteoBridge 是气象站数据采集和桥接设备/软件，用于接入天气传感器并向外部平台发布观测数据。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了 MeteoBridge 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.meteobridge.com
+  - https://www.meteobridge.com
   metadata:
     verified: true
     max-request: 1
     shodan-query: "meteobridge"
   tags: meteobridge,tech,detect,discovery
-
 http:
   - method: GET
     path:

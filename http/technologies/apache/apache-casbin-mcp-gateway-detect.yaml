@@ -1,13 +1,13 @@
 id: apache-casbin-mcp-gateway-detect
 
 info:
-  name: Apache Casbin MCP 网关指纹识别（指纹识别）
+  name: Apache Casbin MCP 网关 指纹识别（指纹识别）
   author: icarot
   severity: info
-  description: |
-    用于识别目标是否部署 Apache Casbin MCP 网关 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Apache Casbin MCP 网关 是 MCP 网关组件，用于统一代理模型上下文协议相关服务和访问控制能力。该模板请求 `/health`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Apache Casbin MCP 网关 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/apache/casbin-mcp-gateway
+  - https://github.com/apache/casbin-mcp-gateway
   metadata:
     vendor: apache
     product: casbin-mcp-gateway

@@ -4,17 +4,17 @@ info:
   name: FullStory RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否使用 FullStory RUM，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    FullStory 是数字体验分析与会话回放平台，RUM 代码用于在页面中采集真实用户访问和交互数据。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    FullStory RUM 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.fullstory.com/
+  - https://www.fullstory.com/
   metadata:
     max-request: 1
     verified: true
     shodan-query: html:"_fs_org"
     fofa-query: body="_fs_org" || body="fullstory.com/s/fs.js"
   tags: tech,discovery,rum,fullstory
-
 http:
   - method: GET
     path:

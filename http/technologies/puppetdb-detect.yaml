@@ -4,12 +4,14 @@ info:
   name: PuppetDB 指纹识别（指纹识别）
   author: c-sh0
   severity: info
+  description: >-
+    PuppetDB 是 Puppet 的数据存储与查询服务，用于保存节点事实、资源和配置状态。该模板通过请求目标服务并检查预设路径或首页响应、状态码、HTTP
+    响应头、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了 PuppetDB 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://puppet.com/docs/puppetdb/7/api/meta/v1/version.html#pdbmetav1version
+  - https://puppet.com/docs/puppetdb/7/api/meta/v1/version.html#pdbmetav1version
   metadata:
     max-request: 1
   tags: puppet,tech,exposure,discovery
-
 http:
   - method: GET
     path:

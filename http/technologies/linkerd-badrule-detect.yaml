@@ -1,15 +1,17 @@
 id: linkerd-badrule-detect
 
 info:
-  name: Linkerd detection via bad rule 指纹识别（指纹识别）
+  name: Linkerd Bad Rule 指纹识别（指纹识别）
   author: dudez
   severity: info
+  description: >-
+    Linkerd 是 Kubernetes 服务网格，用于为微服务提供 mTLS、流量策略、可观测性和可靠性能力。该模板通过发送特定不匹配规则请求并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征等指纹特征，判断目标是否经过 Linkerd 代理或服务网格组件处理；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://linkerd.io
+  - https://linkerd.io
   metadata:
     max-request: 1
   tags: tech,linkerd,discovery
-
 http:
   - method: GET
     path:

@@ -1,14 +1,15 @@
 id: jan-detect
 
 info:
-  name: Jan AI 检测（指纹识别）
+  name: Jan AI 指纹识别（指纹识别）
   author: insidetrust,hdm
   severity: info
-  description: |-
-    检测 Jan AI 本地服务器。Jan AI 是一款开源 ChatGPT 替代方案，在本地运行模型，并暴露一个由 Cortex 驱动、兼容 OpenAI 的 API（默认端口 1337）。
+  description: >-
+    Jan AI 是本地优先的 AI 助手和模型运行平台，用于在桌面或私有环境中运行大语言模型交互界面。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Jan AI 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/janhq/jan
-    - https://jan.ai/docs/server
+  - https://github.com/janhq/jan
+  - https://jan.ai/docs/server
   metadata:
     verified: false
     max-request: 2
@@ -17,7 +18,6 @@ info:
     shodan-query: 'port:1337 http.title:"Jan"'
     fofa-query: 'body="cortex"'
   tags: tech,detect,jan,llm
-
 http:
   - method: GET
     path:

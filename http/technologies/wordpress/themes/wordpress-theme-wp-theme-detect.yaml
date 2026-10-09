@@ -1,19 +1,19 @@
 id: wordpress-theme-wp-theme-detect
 
 info:
-  name: WordPress Theme 指纹识别（指纹识别）
+  name: WordPress Wordpress Theme WP Theme Detect 主题 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否部署 WordPress Theme 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Wordpress Theme WP Theme Detect 是 WordPress 主题或主题构建组件，用于控制站点外观、模板布局和前端展示效果。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress Wordpress Theme WP Theme Detect 主题 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/themes/
+  - https://wordpress.org/themes/
   metadata:
     max-request: 1
     shodan-query:
-      - http.component:"wordpress"
+    - http.component:"wordpress"
   tags: tech,wordpress,theme,detect,wp-theme,discovery
-
 http:
   - method: GET
     path:

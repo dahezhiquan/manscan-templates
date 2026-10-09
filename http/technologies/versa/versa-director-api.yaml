@@ -1,12 +1,14 @@
 id: versa-director-api
 
 info:
-  name: Versa Director API Endpoint 指纹识别（指纹识别）
+  name: Versa Director API 指纹识别（指纹识别）
   author: c-sh0
   severity: info
-  description: 用于识别目标是否使用 Versa Director API Endpoint，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Versa Director API 是 Versa Networks 管理平台的接口入口，用于配置、编排和管理 SD-WAN 资源。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、状态码等指纹特征，判断目标是否使用或暴露了
+    Versa Director API 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://versa-networks.com/products/components/
+  - https://versa-networks.com/products/components/
   classification:
     cpe: cpe:2.3:a:versa-networks:versa_director:*:*:*:*:*:*:*:*
   metadata:
@@ -16,7 +18,6 @@ info:
     product: versa_director
     shodan-query: html:"Versa Networks"
   tags: api,versa,tech,discovery
-
 http:
   - method: GET
     path:

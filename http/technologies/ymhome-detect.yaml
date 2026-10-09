@@ -1,14 +1,16 @@
 id: ymhome-detect
 
 info:
-  name: ymhome 指纹识别（指纹识别）
+  name: YMHome 指纹识别（指纹识别）
   author: ffffffff0x
   severity: info
+  description: >-
+    YMHome 是 Web 站点或业务管理系统，可通过页面标识和响应特征判断其部署情况。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    YMHome 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
     fofa-query: app="一米OA"
   tags: ymhome,tech,discovery
-
 http:
   - method: GET
     path:

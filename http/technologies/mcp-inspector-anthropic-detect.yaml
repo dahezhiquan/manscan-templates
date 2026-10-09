@@ -4,15 +4,15 @@ info:
   name: MCP Inspector 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: |
-    用于识别目标是否部署 MCP Inspector 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    MCP Inspector 是 Model Context Protocol 的调试和检查工具，用于测试 MCP Server、查看工具能力和交互结果。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 MCP Inspector 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/modelcontextprotocol/inspector
+  - https://github.com/modelcontextprotocol/inspector
   metadata:
     verified: true
     fofa-query: title="MCP Inspector"
   tags: tech,mcp,anthropic,discovery,ai
-
 flow: http(1) && http(2)
 
 http:

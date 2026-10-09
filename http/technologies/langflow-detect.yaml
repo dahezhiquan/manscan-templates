@@ -4,11 +4,12 @@ info:
   name: Langflow 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标是否部署 Langflow 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Langflow 是用于构建和编排 LLM 应用工作流的可视化平台，常用于连接模型、工具、向量库和提示链。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Langflow 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/langflow-ai/langflow
-    - https://docs.langflow.org/
+  - https://github.com/langflow-ai/langflow
+  - https://docs.langflow.org/
   metadata:
     verified: true
     max-request: 2
@@ -16,7 +17,6 @@ info:
     product: langflow
     shodan-query: 'http.title:"Langflow"'
   tags: tech,langflow,llm,ai,detect,discovery
-
 http:
   - method: GET
     path:

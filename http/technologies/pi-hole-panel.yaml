@@ -1,9 +1,12 @@
 id: pi-hole-panel
 
 info:
-  name: Pi-hole 登录面板指纹识别（指纹识别）
+  name: Pi-hole 管理面板 指纹识别（指纹识别）
   author: geeknik
   severity: info
+  description: >-
+    Pi-hole 是网络级广告拦截和 DNS 过滤系统，管理面板用于查看查询日志、规则和运行状态。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    Pi-hole 管理面板 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:pi-hole:pi-hole:*:*:*:*:*:*:*:*
   metadata:
@@ -13,7 +16,6 @@ info:
     product: pi-hole
     shodan-query: title:"Pi-hole"
   tags: tech,pihole,detect,discovery
-
 http:
   - method: GET
     path:

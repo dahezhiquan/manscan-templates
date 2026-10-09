@@ -1,9 +1,12 @@
 id: openssl-detect
 
 info:
-  name: Openssl 指纹识别（指纹识别）
+  name: OpenSSL 指纹识别（指纹识别）
   author: h4kux,princechaddha
   severity: info
+  description: >-
+    OpenSSL 是 TLS/SSL 和密码学工具库，用于加密通信、证书处理和安全协议支持。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 OpenSSL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:openssl:openssl:*:*:*:*:*:*:*:*
   metadata:
@@ -13,7 +16,6 @@ info:
     product: openssl
     shodan-query: OpenSSL
   tags: tech,openssl,discovery
-
 http:
   - method: GET
     path:

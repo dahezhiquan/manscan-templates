@@ -1,14 +1,15 @@
 id: microstrategy-detect
 
 info:
-  name: MicroStrategy 实例指纹识别（指纹识别）
+  name: MicroStrategy 指纹识别（指纹识别）
   author: philippedelteil,Retr02332
   severity: info
-  description: 用于识别目标是否部署 MicroStrategy 实例并提取相关版本信息，模板会结合页面正文、特定路径和版本提取结果进行指纹匹配。
+  description: >-
+    MicroStrategy 是企业商业智能和数据分析平台，用于仪表盘、报表、数据建模和分析门户。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件、正则特征等指纹特征，判断目标是否使用或暴露了
+    MicroStrategy 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 16
   tags: microstrategy,panel,tech,discovery
-
 http:
   - method: GET
     path:

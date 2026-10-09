@@ -1,12 +1,14 @@
 id: tileserver-gl
 
 info:
-  name: TileServer GL Page 指纹识别（指纹识别）
+  name: TileServer GL 指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
-  description: 用于识别目标是否部署 TileServer GL Page 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    TileServer GL 是地图瓦片服务组件，用于发布矢量瓦片、栅格瓦片和基于 Mapbox GL 样式的地图服务。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码、正则特征等指纹特征，判断目标是否使用或暴露了
+    TileServer GL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.exploit-db.com/ghdb/7296
+  - https://www.exploit-db.com/ghdb/7296
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -14,12 +16,13 @@ info:
     cpe: cpe:2.3:a:tileserver:tileservergl:*:*:*:*:*:*:*:*
   metadata:
     max-request: 1
-    shodan-query: http.title:"TileServer GL - Server for vector and raster maps with GL styles"
-    google-query: intitle:"TileServer GL - Server for vector and raster maps with GL styles"
+    shodan-query: http.title:"TileServer GL - Server for vector and raster maps
+      with GL styles"
+    google-query: intitle:"TileServer GL - Server for vector and raster maps
+      with GL styles"
     product: tileservergl
     vendor: tileserver
   tags: tech,tileserver,edb,discovery
-
 http:
   - method: GET
     path:

@@ -1,11 +1,11 @@
 id: beyondtrust-remotesupport-version
 
 info:
-  name: BeyondTrust Remote Support 版本指纹识别（指纹识别）
+  name: BeyondTrust Remote Support 版本 指纹识别（指纹识别）
   author: missing0x00
   severity: info
-  description: |
-    用于识别目标是否部署 BeyondTrust Remote Support 版本 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    BeyondTrust Remote Support 版本 是远程支持平台，用于技术支持会话、远程访问和特权运维协作。该模板请求 `/get_rdf?comp=sdcust&locale_code=en-us`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 BeyondTrust Remote Support 版本 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:beyondtrust:remote_support:*:*:*:*:*:*:*:*
   metadata:
@@ -14,9 +14,9 @@ info:
     vendor: beyondtrust
     product: remote_support
     shodan-query:
-      - title:"Remote Support Portal"
-      - http.favicon.hash:-694003434
-      - http.html:"BeyondTrust Remote Support"
+    - title:"Remote Support Portal"
+    - http.favicon.hash:-694003434
+    - http.html:"BeyondTrust Remote Support"
   tags: tech,beyondtrust,version,detect,discovery
 
 http:

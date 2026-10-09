@@ -4,15 +4,16 @@ info:
   name: Teradici PCoIP 指纹识别（指纹识别）
   author: pdteam
   severity: info
-  description: 用于识别目标是否部署 Teradici PCoIP 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Teradici PCoIP 是远程桌面显示协议和访问平台，用于虚拟桌面、工作站远程访问和图形传输。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Teradici PCoIP 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.teradici.com/
+  - https://www.teradici.com/
   classification:
     cwe-id: CWE-200
   metadata:
     max-request: 1
   tags: tech,pcoip,discovery
-
 http:
   - method: GET
     path:

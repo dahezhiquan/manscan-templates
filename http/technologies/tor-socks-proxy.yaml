@@ -1,13 +1,15 @@
 id: tor-socks-proxy
 
 info:
-  name: tor SOCKS proxy 指纹识别（指纹识别）
+  name: Tor SOCKS Proxy 指纹识别（指纹识别）
   author: geeknik
   severity: info
+  description: >-
+    Tor SOCKS Proxy 是 Tor 匿名网络的本地代理入口，用于将客户端流量转发到 Tor 网络。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Tor SOCKS Proxy 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,tor,proxy,discovery
-
 http:
   - method: GET
     path:

@@ -1,10 +1,12 @@
 id: geo-webserver-detect
 
 info:
-  name: GeoWebServer 面板指纹识别（指纹识别）
+  name: GeoWebServer 指纹识别（指纹识别）
   author: dhiyaneshDK,daffainfo
   severity: info
-  description: 用于识别目标暴露的 GeoWebServer 面板并提取相关版本信息，模板会结合 HTTP 响应头、页面标题、状态码和特定路径进行指纹匹配。
+  description: >-
+    GeoWebServer 是地理信息服务相关 Web 平台，用于发布、管理或访问 GIS 数据服务。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征、状态码等指纹特征，判断目标是否使用或暴露了 GeoWebServer 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -14,7 +16,6 @@ info:
     max-request: 1
     shodan-query: http.title:"GeoWebServer"
   tags: panel,geowebserver,tech,discovery
-
 http:
   - method: GET
     path:

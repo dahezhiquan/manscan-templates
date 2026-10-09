@@ -1,11 +1,12 @@
 id: wing-ftp-service-detect
 
 info:
-  name: Wing FTP 服务指纹识别（指纹识别）
+  name: Wing FTP Server 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
-  description: |
-    用于识别目标是否运行 Wing FTP 服务，模板会结合 HTTP 响应头和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    Wing FTP Server 是文件传输服务器，支持 FTP、SFTP、HTTP/S 和 Web 管理能力。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Wing FTP Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:wftpserver:wing_ftp_server:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +16,6 @@ info:
     product: wing_ftp_server
     shodan-query: "Wing FTP Server"
   tags: tech,ftp,wing,detect,discovery
-
 http:
   - method: GET
     path:

@@ -1,14 +1,16 @@
 id: wp-wordpress-passive-detection
 
 info:
-  name: WordPress 插件与主题被动枚举指纹识别（指纹识别）
+  name: WordPress 插件与主题被动枚举 指纹识别（指纹识别）
   author: princechaddha
   severity: info
-  description: 用于被动枚举目标 WordPress 站点安装的插件和主题，模板会结合 REST API 发现结果、HTML 源码和常见资源路径进行指纹匹配。
+  description: >-
+    WordPress 是开源内容管理系统，插件和主题用于扩展站点功能、外观和第三方集成；被动枚举用于从页面资源中识别已启用组件。该模板通过请求目标服务并检查预设路径或首页响应、正则特征等指纹特征，判断目标是否使用或暴露了
+    WordPress 插件与主题被动枚举 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/
-    - https://github.com/Chocapikk/wpprobe
-    - https://chocapikk.com/posts/2025/wpprobe/
+  - https://developer.wordpress.org/rest-api/using-the-rest-api/discovery/
+  - https://github.com/Chocapikk/wpprobe
+  - https://chocapikk.com/posts/2025/wpprobe/
   classification:
     cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
@@ -17,9 +19,8 @@ info:
     vendor: wordpress
     product: wordpress
     shodan-query:
-      - http.component:"wordpress"
+    - http.component:"wordpress"
   tags: tech,wordpress,cms,plugin,theme,discovery,passive,enum
-
 http:
   - method: GET
     path:

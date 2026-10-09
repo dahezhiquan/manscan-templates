@@ -1,19 +1,20 @@
 id: newrelic-rum-detect
 
 info:
-  name: New Relic Browser Monitoring (RUM) 指纹识别（指纹识别）
+  name: New Relic Browser Monitoring 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否使用 New Relic Browser Monitoring (RUM)，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    New Relic Browser Monitoring 是真实用户监控服务，用于采集前端性能、错误和页面交互数据。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 New Relic Browser Monitoring 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://docs.newrelic.com/docs/browser/
+  - https://docs.newrelic.com/docs/browser/
   metadata:
     verified: true
     max-request: 1
-    fofa-query: 'body="NREUM" || body="nr-data" || body="js-agent.newrelic.com" || body="newrelic-browser-agent"'
+    fofa-query: 'body="NREUM" || body="nr-data" || body="js-agent.newrelic.com" ||
+      body="newrelic-browser-agent"'
   tags: tech,discovery,rum,newrelic
-
 http:
   - method: GET
     path:

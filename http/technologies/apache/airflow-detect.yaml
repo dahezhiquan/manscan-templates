@@ -4,10 +4,10 @@ info:
   name: Apache Airflow 指纹识别（指纹识别）
   author: pdteam
   severity: info
-  description: |
-     Apache Airflow was detected - A platform to programmatically author, schedule and monitor workflows.
+  description: |-
+    Apache Airflow 是工作流调度平台，用于编排数据管道、任务 DAG 和定时作业。该模板请求 `/{{randstr}}`、`/openapi.json`，并依据 DSL 条件识别目标是否使用或暴露了 Apache Airflow 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://airflow.apache.org/
+  - https://airflow.apache.org/
   classification:
     cpe: cpe:2.3:a:apache:airflow:*:*:*:*:*:*:*:*
   metadata:

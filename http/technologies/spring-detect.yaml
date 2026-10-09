@@ -4,12 +4,14 @@ info:
   name: Java Spring 指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
+  description: >-
+    Spring 是 Java 企业应用框架，用于构建 Web 应用、微服务、数据访问和业务组件。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Java Spring 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://mkyong.com/spring-boot/spring-rest-error-handling-example/
+  - https://mkyong.com/spring-boot/spring-rest-error-handling-example/
   metadata:
     max-request: 1
   tags: tech,java,spring,discovery
-
 http:
   - method: GET
     path:

@@ -1,18 +1,19 @@
 id: waf-detect
 
 info:
-  name: WAF 指纹识别（指纹识别）
+  name: Web Application Firewall 指纹识别（指纹识别）
   author: dwisiswant0,lu4nx
   severity: info
-  description: 用于识别目标是否运行 WAF，模板会结合 HTTP 响应头、页面标题和页面正文进行服务指纹匹配。
+  description: >-
+    Web Application Firewall 是 Web 应用防火墙，用于识别、过滤和阻断常见 Web 攻击流量。该模板通过请求目标服务并检查正则特征、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Web Application Firewall 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/Ekultek/WhatWaf
+  - https://github.com/Ekultek/WhatWaf
   classification:
     cwe-id: CWE-200
   metadata:
     max-request: 1
   tags: waf,tech,misc,discovery
-
 http:
   - raw:
       - |

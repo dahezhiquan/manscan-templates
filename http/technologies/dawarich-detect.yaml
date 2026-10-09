@@ -1,15 +1,15 @@
 id: dawarich-detect
 
 info:
-  name: Dawarich - 检测（指纹识别）
+  name: Dawarich 指纹识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    Dawarich 是一个自托管的定位历史与时间线应用（Google Timeline 的替代方案）。未认证的 /api/v1/health 端点会返回状态负载，并附带 X-Dawarich-Response 和 X-Dawarich-Version 响应头，可用于识别该实例并泄露其版本号。
+    Dawarich 是自托管位置历史和地图应用，用于保存、查看和分析个人定位轨迹。该模板请求 `/api/v1/health`，并依据 DSL 条件识别目标是否使用或暴露了 Dawarich 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/Freika/dawarich
-    - https://dawarich.app/
-    - https://github.com/Freika/dawarich/blob/master/app/controllers/api/v1/health_controller.rb
+  - https://github.com/Freika/dawarich
+  - https://dawarich.app/
+  - https://github.com/Freika/dawarich/blob/master/app/controllers/api/v1/health_controller.rb
   metadata:
     verified: true
     max-request: 1

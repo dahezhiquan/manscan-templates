@@ -4,13 +4,14 @@ info:
   name: Rhymix CMS 指纹识别（指纹识别）
   author: gy741
   severity: info
-  description: 用于识别目标是否使用 Rhymix CMS，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点匹配内容管理系统相关指纹。
+  description: >-
+    Rhymix CMS 是基于 PHP 的内容管理系统，用于构建社区、门户和内容站点。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    Rhymix CMS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/rhymix/rhymix
+  - https://github.com/rhymix/rhymix
   metadata:
     max-request: 1
   tags: tech,rhymix,discovery
-
 http:
   - method: GET
     path:

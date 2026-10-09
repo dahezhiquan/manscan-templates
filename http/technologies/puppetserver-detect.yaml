@@ -1,15 +1,17 @@
 id: puppetserver-detect
 
 info:
-  name: Puppetserver 指纹识别（指纹识别）
+  name: Puppet Server 指纹识别（指纹识别）
   author: c-sh0
   severity: info
+  description: >-
+    Puppet Server 是 Puppet 配置管理服务端，用于向受控节点分发配置目录并处理报告。该模板通过请求目标服务并检查预设路径或首页响应、状态码、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Puppet Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://insinuator.net/2020/09/puppet-assessment-techniques/
+  - https://insinuator.net/2020/09/puppet-assessment-techniques/
   metadata:
     max-request: 1
   tags: tech,puppet,exposure,intrusive,discovery
-
 http:
   - method: GET
     path:

@@ -1,18 +1,18 @@
 id: openshift-detect
 
 info:
-  name: OpenShift 监控插件检测（指纹识别）
+  name: OpenShift 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |-
-    检测到 OpenShift 监控插件——该插件基于传递给后端的特性开关启用前端 UI。
+  description: >-
+    OpenShift 是 Red Hat 的企业 Kubernetes 平台，用于运行、管理和交付容器化应用。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件、正则特征等指纹特征，判断目标是否使用或暴露了 OpenShift 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/openshift/monitoring-plugin
+  - https://github.com/openshift/monitoring-plugin
   metadata:
     verified: true
     max-request: 1
   tags: tech,openshift,discovery
-
 http:
   - method: GET
     path:

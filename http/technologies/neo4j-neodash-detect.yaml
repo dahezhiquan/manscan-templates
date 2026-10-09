@@ -1,11 +1,12 @@
 id: neo4j-neodash-detect
 
 info:
-  name: Neo4j Neodash 指纹识别（指纹识别）
+  name: NeoDash 指纹识别（指纹识别）
   author: icarot
   severity: info
-  description: |
-    用于识别目标是否使用 Neo4j Neodash，模板会结合页面标题和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    NeoDash 是 Neo4j 图数据库的仪表盘工具，用于构建和展示图数据查询结果。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件等指纹特征，判断目标是否使用或暴露了
+    NeoDash 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:neo4j:*:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +16,6 @@ info:
     product: neodash
     shodan-query: title:"NeoDash"
   tags: tech,neodash,neo4j,detect,discovery
-
 http:
   - method: GET
     path:

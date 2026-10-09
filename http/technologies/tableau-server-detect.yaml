@@ -1,27 +1,27 @@
 id: tableau-server-detect
 
 info:
-  name: Salesforce Tableau 服务器指纹识别（指纹识别）
+  name: Tableau Server 指纹识别（指纹识别）
   author: TechbrunchFR,aringo
   severity: info
-  description: |
-    用于识别目标是否部署 Salesforce Tableau 服务器 并提取相关版本或构建信息，模板会结合 favicon 哈希、HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Tableau Server 是商业智能和数据可视化平台，用于发布、共享和管理仪表盘与数据源。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Tableau Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
     vendor: salesforce
     product: tableau_server
     shodan-query:
-      - product:"Tableau Server"
-      - "X-Tableau: Tableau Server"
-      - "Server: Tableau"
-      - http.favicon.hash:-1441956789
+    - product:"Tableau Server"
+    - "X-Tableau: Tableau Server"
+    - "Server: Tableau"
+    - http.favicon.hash:-1441956789
     fofa-query:
-      - "X-Tableau: Tableau Server"
-      - server=="Tableau"
-      - icon_hash="-1441956789"
+    - "X-Tableau: Tableau Server"
+    - server=="Tableau"
+    - icon_hash="-1441956789"
     zoomeye-query: app:"Tableau Server"
   tags: tech,detect,tableau,salesforce,discovery
-
 http:
   - method: GET
     path:

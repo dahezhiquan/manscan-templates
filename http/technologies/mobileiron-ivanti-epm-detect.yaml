@@ -1,19 +1,19 @@
 id: mobileiron-ivanti-epm-detect
 
 info:
-  name: Ivanti Endpoint Manager (EPM) 指纹识别（指纹识别）
+  name: Ivanti Endpoint Manager MobileIron 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标是否使用 Ivanti Endpoint Manager (EPM)，模板会结合 favicon 哈希和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Ivanti Endpoint Manager/MobileIron 是终端和移动设备管理平台，用于资产、补丁、配置和设备策略管理。该模板通过请求目标服务并检查预设路径或首页响应、favicon
+    哈希、DSL 条件等指纹特征，判断目标是否使用或暴露了 Ivanti Endpoint Manager MobileIron 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.ivanti.com/en-gb/products/endpoint-manager
+  - https://www.ivanti.com/en-gb/products/endpoint-manager
   metadata:
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:362091310
   tags: detect,ivanti,emm,tech,mobileiron,epm,discovery
-
 http:
   - method: GET
     path:

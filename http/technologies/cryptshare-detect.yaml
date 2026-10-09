@@ -4,23 +4,23 @@ info:
   name: Pointsharp Cryptshare 指纹识别（指纹识别）
   author: darses
   severity: info
-  description: |
-    用于识别目标是否部署 Pointsharp Cryptshare 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Pointsharp Cryptshare 是安全文件和消息传输平台，用于加密传递大文件、邮件和敏感信息。该模板请求 `/Start?0`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Pointsharp Cryptshare 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 3
     shodan-query:
-      - http.favicon.hash:-672476364
-      - http.favicon.hash:-1059646869
-      - "Set-Cookie: cs-ui-session="
+    - http.favicon.hash:-672476364
+    - http.favicon.hash:-1059646869
+    - "Set-Cookie: cs-ui-session="
     fofa-query:
-      - icon_hash="-672476364"
-      - icon_hash="-1059646869"
-      - "Set-Cookie: cs-ui-session="
+    - icon_hash="-672476364"
+    - icon_hash="-1059646869"
+    - "Set-Cookie: cs-ui-session="
     vendor: pointsharp
     product: cryptshare
   reference:
-    - https://www.pointsharp.com/en/products/cryptshare
+  - https://www.pointsharp.com/en/products/cryptshare
   tags: detect,tech,cryptshare,discovery
 
 http:

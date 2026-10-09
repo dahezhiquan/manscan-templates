@@ -1,20 +1,20 @@
 id: tibco-businessworks-detect
 
 info:
-  name: TIBCO BusinessWorks - 检测（指纹识别）
+  name: TIBCO BusinessWorks 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |-
-    检测到 TIBCO BusinessWorks——一个用于连接整个组织系统与数据的企业集成和应用程序开发平台。
+  description: >-
+    TIBCO BusinessWorks 是企业应用集成和流程编排平台，用于连接 API、消息系统、数据库和业务服务。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 TIBCO BusinessWorks 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://docs.tibco.com/products/tibco-activematrix-businessworks
-    - https://www.tibco.com/content/dam/tibco/documents/data-sheet/tibco-businessworks.pdf
+  - https://docs.tibco.com/products/tibco-activematrix-businessworks
+  - https://www.tibco.com/content/dam/tibco/documents/data-sheet/tibco-businessworks.pdf
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.title:"TIBCO BusinessWorks"
   tags: tech,tibco,discovery
-
 http:
   - method: GET
     path:

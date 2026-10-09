@@ -1,14 +1,15 @@
 id: sglang-detect
 
 info:
-  name: SGLang - 检测（指纹识别）
+  name: SGLang 指纹识别（指纹识别）
   author: insidetrust,hdm
   severity: info
-  description: |-
-    检测 SGLang，一个提供 OpenAI 兼容 API 的高性能 LLM 服务框架（默认端口 30000）。该模板通过检查独特的 /get_model_info 端点（返回 "model_path" 和 "is_generation"）以及以 "sglang:" 为前缀的 Prometheus 指标来识别 SGLang。未认证的服务器会暴露推理访问权限，并泄露底层模型路径，若发现则予以提取。
+  description: >-
+    SGLang 是大语言模型服务和推理框架，用于构建高吞吐的 LLM 应用、代理和推理接口。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件等指纹特征，判断目标是否使用或暴露了
+    SGLang 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/sgl-project/sglang
-    - https://docs.sglang.ai/backend/openai_api_completions.html
+  - https://github.com/sgl-project/sglang
+  - https://docs.sglang.ai/backend/openai_api_completions.html
   metadata:
     verified: true
     max-request: 2
@@ -16,7 +17,6 @@ info:
     product: sglang
     shodan-query: http.html:"is_generation"
   tags: tech,detect,sglang,llm
-
 http:
   - method: GET
     path:

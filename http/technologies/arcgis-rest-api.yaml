@@ -1,12 +1,12 @@
 id: arcgis-rest-api
 
 info:
-  name: ArcGIS Exposed REST API 文档指纹识别（指纹识别）
+  name: ArcGIS Exposed REST API 文档 指纹识别（指纹识别）
   author: Podalirius
   severity: info
-  description: 用于识别目标暴露的 ArcGIS Exposed REST API 文档，模板会结合状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: ArcGIS Exposed REST API 文档 是 Esri 地理信息系统平台，用于地图服务、空间数据、分析和 GIS 应用发布。该模板请求 `/server/sdk/rest/index.html`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 ArcGIS Exposed REST API 文档 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://enterprise.arcgis.com/en/
+  - https://enterprise.arcgis.com/en/
   classification:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:esri:arcgis_engine:*:*:*:*:*:*:*:*

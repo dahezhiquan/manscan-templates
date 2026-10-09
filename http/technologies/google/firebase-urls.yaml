@@ -1,14 +1,15 @@
 id: firebase-urls
 
 info:
-  name: Google Firebase DB URL 指纹识别（指纹识别）
+  name: Google Firebase Realtime Database URL 指纹识别（指纹识别）
   author: panch0r3d
   severity: info
-  description: 用于识别目标是否使用 Google Firebase DB URL，模板会结合页面正文和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Firebase Realtime Database 是 Google Firebase 的实时数据库服务，公开 URL 可反映应用后端数据服务的使用情况。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Google Firebase Realtime Database URL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,firebase,google,discovery
-
 http:
   - method: GET
     path:

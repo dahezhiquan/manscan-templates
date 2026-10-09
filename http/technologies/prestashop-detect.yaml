@@ -1,9 +1,12 @@
 id: prestashop-detect
 
 info:
-  name: PrestaShop Tech 指纹识别（指纹识别）
+  name: PrestaShop 指纹识别（指纹识别）
   author: pdteam
   severity: info
+  description: >-
+    PrestaShop 是开源电商平台，用于商品管理、购物车、订单和店铺运营。该模板通过请求目标服务并检查预设路径或首页响应、正则特征等指纹特征，判断目标是否使用或暴露了
+    PrestaShop 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:prestashop:prestashop:*:*:*:*:*:*:*:*
   metadata:
@@ -12,7 +15,6 @@ info:
     product: prestashop
     shodan-query: http.component:"PrestaShop"
   tags: tech,cms,prestashop,discovery
-
 http:
   - method: GET
     path:

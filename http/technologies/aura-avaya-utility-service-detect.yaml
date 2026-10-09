@@ -4,6 +4,7 @@ info:
   name: Utility 服务 Administration 指纹识别（指纹识别）
   author: DhiyaneshDK
   severity: info
+  description: Utility 服务 Administration 是 Avaya Aura 相关管理服务入口，用于统一通信系统状态、配置和维护。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Utility 服务 Administration 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:avaya:aura_utility_services:*:*:*:*:*:*:*:*
   metadata:

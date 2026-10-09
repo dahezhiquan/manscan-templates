@@ -1,14 +1,15 @@
 id: prtg-detect
 
 info:
-  name: PRTG 指纹识别（指纹识别）
+  name: PRTG Network Monitor 指纹识别（指纹识别）
   author: geeknik
   severity: info
-  description: 用于识别目标是否部署 PRTG 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    PRTG Network Monitor 是网络与基础设施监控平台，用于监控设备、带宽、服务和告警。该模板通过请求目标服务并检查预设路径或首页响应、状态码、页面正文关键字、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 PRTG Network Monitor 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 3
   tags: tech,prtg,discovery
-
 http:
   - method: GET
     path:

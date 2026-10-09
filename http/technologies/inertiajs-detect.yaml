@@ -4,20 +4,20 @@ info:
   name: Inertia.js 指纹识别（指纹识别）
   author: antonkulyk
   severity: info
-  description: |
-    用于识别目标是否运行 Inertia.js，模板会结合页面正文和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    Inertia.js 是连接服务端框架与现代前端框架的应用架构，用于构建不需要传统 API 层的单页应用体验。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 Inertia.js 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://inertiajs.com/
-    - https://inertiajs.com/the-protocol
-    - https://github.com/inertiajs/inertia
-    - https://github.com/inertiajs/inertia-laravel
+  - https://inertiajs.com/
+  - https://inertiajs.com/the-protocol
+  - https://github.com/inertiajs/inertia
+  - https://github.com/inertiajs/inertia-laravel
   metadata:
     max-request: 1
     product: inertia
     vendor: inertiajs
     shodan-query: html:"&quot;component&quot;" html:"data-page"
   tags: tech,inertiajs,inertia
-
 http:
   - method: GET
     path:

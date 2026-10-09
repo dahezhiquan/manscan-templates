@@ -1,17 +1,17 @@
 id: ipswitch-imail-detect
 
 info:
-  name: Ipswitch IMail 服务器指纹识别（指纹识别）
+  name: Ipswitch IMail 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否部署 Ipswitch IMail 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Ipswitch IMail Server 是邮件服务器产品，用于提供 SMTP、POP3、IMAP 和 Webmail 能力。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、正则特征、DSL 条件等指纹特征，判断目标是否使用或暴露了 Ipswitch IMail 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 1
     shodan-query: "Ipswitch-IMail"
   tags: tech,ipswitch,imail,detect,discovery
-
 http:
   - method: GET
     path:

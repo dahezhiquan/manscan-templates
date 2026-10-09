@@ -1,17 +1,19 @@
 id: wp-plugin-wordpress-easy-fancybox
 
 info:
-  name: Easy FancyBox 指纹识别（指纹识别）
+  name: WordPress Easy FancyBox 插件指纹识别（指纹识别）
   author: ricardomaia
   severity: info
+  description: >-
+    Easy FancyBox 是 WordPress 插件，主要用于图片画廊、媒体展示、PDF 嵌入或媒体文件替换管理。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress Easy FancyBox 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/easy-fancybox/
+  - https://wordpress.org/plugins/easy-fancybox/
   metadata:
     max-request: 1
     plugin_namespace: easy-fancybox
     wpscan: https://wpscan.com/plugin/easy-fancybox
   tags: tech,wordpress,wp-plugin,top-200,discovery
-
 http:
   - method: GET
     path:

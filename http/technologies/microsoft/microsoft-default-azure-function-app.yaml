@@ -1,9 +1,12 @@
 id: microsoft-default-azure-function-app
 
 info:
-  name: Azure Function App - 默认页面指纹识别（指纹识别）
+  name: Azure Function App 默认页面 指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
+  description: >-
+    Azure Function App 是 Microsoft Azure 的无服务器函数计算服务，默认页面通常表示函数应用已创建但未替换默认响应。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Azure Function App 默认页面 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:microsoft:azure:*:*:*:*:*:*:*:*
   metadata:
@@ -12,7 +15,6 @@ info:
     product: azure
     shodan-query: html:"Your Azure Function App is up and running"
   tags: tech,azure,microsoft,discovery
-
 http:
   - method: GET
     path:

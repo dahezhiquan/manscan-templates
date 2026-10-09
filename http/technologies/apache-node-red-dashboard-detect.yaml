@@ -1,10 +1,10 @@
 id: apache-node-red-dashboard-detect
 
 info:
-  name: Node-RED 控制台指纹识别（指纹识别）
+  name: Node-RED 控制台 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
-  description: 用于识别目标暴露的 Node-RED 控制台，模板会结合页面标题、页面正文、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: Node-RED 控制台 是低代码流程编排工具，用于连接设备、API 和事件驱动自动化流程。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Node-RED 控制台 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

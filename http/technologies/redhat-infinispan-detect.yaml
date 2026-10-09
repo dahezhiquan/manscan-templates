@@ -1,15 +1,16 @@
 id: redhat-infinispan-detect
 
 info:
-  name: Infinispan 控制台指纹识别（指纹识别）
+  name: Red Hat Infinispan Console 指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
-  description: |
-    用于识别目标是否部署 Infinispan 控制台 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Red Hat Infinispan Console 是分布式缓存和数据网格的管理界面，用于查看缓存、集群和运行状态。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件、正则特征等指纹特征，判断目标是否使用或暴露了 Red Hat Infinispan Console 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://infinispan.org/
-    - https://infinispan.org/docs/stable/titles/rest/rest.html
-    - https://github.com/infinispan/infinispan
+  - https://infinispan.org/
+  - https://infinispan.org/docs/stable/titles/rest/rest.html
+  - https://github.com/infinispan/infinispan
   classification:
     cpe: cpe:/a:redhat:infinispan
   metadata:
@@ -19,7 +20,6 @@ info:
     shodan-query: title:"Infinispan"
     fofa-query: title="Infinispan" || body="/console/main.bundle.js"
   tags: tech,detect,infinispan,redhat
-
 http:
   - method: GET
     path:

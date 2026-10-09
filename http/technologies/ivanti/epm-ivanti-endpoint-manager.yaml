@@ -4,8 +4,9 @@ info:
   name: Ivanti Endpoint Manager 指纹识别（指纹识别）
   author: ritikchaddha
   severity: info
-  description: |
-    用于识别目标是否运行 Ivanti Endpoint Manager，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    Ivanti Endpoint Manager 是终端资产、补丁和软件分发管理平台，前身与 LANDESK 相关产品线有关。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 Ivanti Endpoint Manager 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0.0
@@ -16,7 +17,6 @@ info:
     shodan-query: html:"LANDesk"
     fofa-query: body="LANDesk"
   tags: tech,ivanti,epm,detect,landesk,discovery
-
 http:
   - method: GET
     path:

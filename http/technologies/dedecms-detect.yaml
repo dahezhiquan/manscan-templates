@@ -4,6 +4,7 @@ info:
   name: DedeCMS 指纹识别（指纹识别）
   author: ritikchaddha,pphuahua
   severity: info
+  description: DedeCMS 是中文内容管理系统，用于网站栏目、文章、模板和后台管理。该模板请求首页、`/robots.txt`，并依据 DSL 条件识别目标是否使用或暴露了 DedeCMS 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:dedecms:dedecms:*:*:*:*:*:*:*:*
   metadata:

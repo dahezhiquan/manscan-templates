@@ -1,19 +1,16 @@
 id: drupal-eol
 
 info:
-  name: Drupal 生命周期结束（EOL）- 识别（指纹识别）
+  name: Drupal EOL 指纹识别（指纹识别）
   author: CyberTechSea
   severity: info
-  description: |-
-    检测到已到达生命周期结束（EOL）且不再接收安全更新的 Drupal 版本。Drupal 7、8 和 9 已完全不再支持。对于 Drupal 10 和 11，只有最近的次要分支获得安全覆盖，因此较旧的次要版本会被报告为 EOL。
-  impact: |-
-    不受支持的 Drupal 版本不再接收安全通告或补丁，因此新披露的漏洞将长期处于可被利用的状态。
-  remediation: |-
-    升级到仍受安全支持的 Drupal 版本，具体以 Drupal 核心发布周期策略公布的信息为准。
+  description: >-
+    Drupal 是开源内容管理系统，EOL 版本表示目标站点使用的 Drupal 分支已停止官方维护。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Drupal EOL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://endoflife.date/drupal
-    - https://www.drupal.org/about/core/policies/core-release-cycles/schedule
-    - https://www.drupal.org/about/drupal-7/d7eol
+  - https://endoflife.date/drupal
+  - https://www.drupal.org/about/core/policies/core-release-cycles/schedule
+  - https://www.drupal.org/about/drupal-7/d7eol
   metadata:
     verified: true
     max-request: 3
@@ -21,7 +18,6 @@ info:
     vendor: drupal
     shodan-query: http.component:"Drupal"
   tags: tech,drupal,eol
-
 http:
   - method: GET
     path:

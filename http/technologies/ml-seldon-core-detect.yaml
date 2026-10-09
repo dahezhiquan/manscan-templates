@@ -1,14 +1,15 @@
 id: ml-seldon-core-detect
 
 info:
-  name: Seldon Core - 检测（指纹识别）
+  name: Seldon Core 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |-
-    检测到 Seldon Core，一个用于在 Kubernetes 上部署、监控和扩展机器学习模型的开源 MLOps/LLMOps 框架。其 Pipeline Gateway 组件（负责在链式模型流水线之间路由推理请求）暴露了一个未认证的状态端点，返回固定的 JSON 横幅和匹配的 Server 响应头。暴露的实例可能泄露内部 ML 流水线配置，并为进一步探测推理 API 提供立足点。
+  description: >-
+    Seldon Core 是 Kubernetes 上的机器学习模型部署平台，用于发布、扩缩容和监控模型推理服务。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Seldon Core 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/SeldonIO/seldon-core
-    - https://docs.seldon.ai/seldon-core-2
+  - https://github.com/SeldonIO/seldon-core
+  - https://docs.seldon.ai/seldon-core-2
   metadata:
     verified: true
     max-request: 1
@@ -16,7 +17,6 @@ info:
     product: seldon-core
     shodan-query: '"seldon-pipelinegateway"'
   tags: tech,seldon-core,ml,ai,mlops,detect,discovery
-
 http:
   - method: GET
     path:

@@ -4,17 +4,17 @@ info:
   name: SPIP 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否部署 SPIP 并提取相关版本或构建信息，模板会结合 HTTP 响应头、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    SPIP 是开源内容管理系统，常用于新闻、协会和公共机构网站。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、正则特征、状态码等指纹特征，判断目标是否使用或暴露了
+    SPIP 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.spip.net/
+  - https://www.spip.net/
   metadata:
     max-request: 1
     vendor: spip
     product: spip
     fofa-query: app="SPIP"
   tags: spip,tech,detect,discovery
-
 http:
   - method: GET
     path:

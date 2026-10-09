@@ -4,10 +4,13 @@ info:
   name: Jenkins 指纹识别（指纹识别）
   author: philippdelteil,daffainfo,c-sh0,AdamCrosser
   severity: info
+  description: >-
+    Jenkins 是持续集成和持续交付平台，用于自动化构建、测试、发布和运维流水线。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头等指纹特征，判断目标是否使用或暴露了 Jenkins 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.jenkins.io/doc/book/using/remote-access-api/#RemoteaccessAPI-DetectingJenkinsversion
-    - https://github.com/jenkinsci/jenkins/pull/470
-    - https://www.jenkins.io/doc/book/security/access-control/permissions/#access-granted-without-overallread
+  - https://www.jenkins.io/doc/book/using/remote-access-api/#RemoteaccessAPI-DetectingJenkinsversion
+  - https://github.com/jenkinsci/jenkins/pull/470
+  - https://www.jenkins.io/doc/book/security/access-control/permissions/#access-granted-without-overallread
   classification:
     cpe: cpe:2.3:a:jenkins:jenkins:*:*:*:*:*:*:*:*
   metadata:
@@ -15,13 +18,12 @@ info:
     vendor: jenkins
     product: jenkins
     shodan-query:
-      - http.favicon.hash:81586312
-      - cpe:"cpe:2.3:a:jenkins:jenkins"
-      - product:"jenkins"
+    - http.favicon.hash:81586312
+    - cpe:"cpe:2.3:a:jenkins:jenkins"
+    - product:"jenkins"
     category: devops
     fofa-query: icon_hash=81586312
   tags: tech,jenkins,detect,discovery
-
 http:
   - method: GET
     path:

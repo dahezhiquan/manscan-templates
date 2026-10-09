@@ -4,11 +4,12 @@ info:
   name: SAP Web Dispatcher 指纹识别（指纹识别）
   author: randomstr1ng
   severity: info
-  description: 用于识别目标是否运行 SAP Web Dispatcher，模板会结合页面正文和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    SAP Web Dispatcher 是 SAP 环境中的反向代理和负载均衡组件，用于分发 Web 请求到后端 SAP 系统。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    SAP Web Dispatcher 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: sap,webserver,proxy,tech,discovery
-
 http:
   - method: GET
     host-redirects: true

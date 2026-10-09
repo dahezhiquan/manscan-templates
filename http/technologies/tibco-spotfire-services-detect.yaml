@@ -1,13 +1,14 @@
 id: tibco-spotfire-services-detect
 
 info:
-  name: TIBCO Spotfire Statistics 服务指纹识别（指纹识别）
+  name: TIBCO Spotfire Statistics Services 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否部署 TIBCO Spotfire Statistics 服务 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    TIBCO Spotfire Statistics Services 是 Spotfire 分析平台的统计计算服务，用于执行数据分析、预测和脚本计算任务。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件、正则特征等指纹特征，判断目标是否使用或暴露了 TIBCO Spotfire Statistics Services 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://docs.tibco.com/products/tibco-spotfire-statistics-services
+  - https://docs.tibco.com/products/tibco-spotfire-statistics-services
   classification:
     cpe: cpe:2.3:a:tibco:spotfire_statistics_services:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     product: spotfire_statistics_services
     shodan-query: "TIBCO Spotfire Server"
   tags: tech,tibco,detect,discovery
-
 http:
   - method: GET
     path:

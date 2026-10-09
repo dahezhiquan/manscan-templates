@@ -1,18 +1,18 @@
 id: ics-abb-ability-genix-detect
 
 info:
-  name: ABB Ability Genix 工业分析与人工智能套件 - 检测（指纹识别）
+  name: ABB Ability Genix 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |-
-    检测到 ABB Ability Genix 工业数据分析与人工智能管理门户。
+  description: >-
+    ABB Ability Genix 是工业数据分析和 AI 平台，用于汇聚工业数据并支持资产性能、运营优化和预测分析。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    ABB Ability Genix 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://new.abb.com/process-automation/genix
+  - https://new.abb.com/process-automation/genix
   metadata:
     max-request: 1
     shodan-query: 'title:"ABB Ability" title:"Genix Industrial Analytics"'
   tags: tech,abb,genix,iiot,ics
-
 http:
   - method: GET
     path:

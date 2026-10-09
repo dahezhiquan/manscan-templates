@@ -1,15 +1,17 @@
 id: flexmls-idx-detect
 
 info:
-  name: Flexmls IDX 指纹识别（指纹识别）
+  name: Flexmls IDX WordPress 插件指纹识别（指纹识别）
   author: rxerium,sorrowx3
   severity: info
+  description: >-
+    Flexmls IDX 是 WordPress 房产检索插件，用于在站点中嵌入 MLS 房源搜索、列表和房产展示功能。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Flexmls IDX WordPress 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"/wp-content/plugins/flexmls-idx"
   tags: tech,detect,flexmls,idx,discovery
-
 http:
   - method: GET
     path:

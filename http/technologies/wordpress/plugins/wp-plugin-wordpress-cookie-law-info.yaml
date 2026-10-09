@@ -1,16 +1,18 @@
 id: wp-plugin-wordpress-cookie-law-info
 
 info:
-  name: CookieYes - Cookie Banner for Cookie Consent (Easy to setup GDPR/CCPA Compliant Cookie Notice) 指纹识别（指纹识别）
+  name: WordPress CookieYes Cookie Banner 插件指纹识别（指纹识别）
   author: ricardomaia
   severity: info
+  description: >-
+    CookieYes Cookie Banner 是 WordPress 插件，主要用于Cookie 同意横幅、隐私合规和 GDPR/CCPA 告知管理。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress CookieYes Cookie Banner 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/cookie-law-info/
+  - https://wordpress.org/plugins/cookie-law-info/
   metadata:
     plugin_namespace: cookie-law-info
     wpscan: https://wpscan.com/plugin/cookie-law-info
   tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
-
 http:
   - method: GET
     path:

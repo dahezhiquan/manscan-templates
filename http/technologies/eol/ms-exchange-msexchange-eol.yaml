@@ -1,20 +1,20 @@
 id: ms-exchange-msexchange-eol
 
 info:
-  name: Microsoft Exchange 服务器 End-of-Life 指纹识别（指纹识别）
+  name: Microsoft Exchange Server EOL 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否部署 Microsoft Exchange 服务器 End-of-Life 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Microsoft Exchange Server 是企业邮件和协作服务器，EOL 版本表示目标实例所属产品分支已结束官方支持。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征、DSL 条件等指纹特征，判断目标是否使用或暴露了 Microsoft Exchange Server EOL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://endoflife.date/msexchange
-    - https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates
+  - https://endoflife.date/msexchange
+  - https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates
   metadata:
     verified: true
     max-request: 2
     shodan-query: "X-OWA-Version"
   tags: tech,ms-exchange,eol
-
 http:
   - method: GET
     path:

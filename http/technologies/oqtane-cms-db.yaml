@@ -4,10 +4,12 @@ info:
   name: Oqtane CMS Database 指纹识别（指纹识别）
   author: Masoud Abdaal
   severity: info
-  description: 用于识别目标是否部署 Oqtane CMS Database 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Oqtane 是基于 .NET 的模块化 CMS 和应用框架，数据库接口或响应可反映其站点部署。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Oqtane CMS Database 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/oqtane/oqtane.framework?tab=readme-ov-file#oqtane-framework
-    - https://github.com/oqtane/oqtane.framework/blob/62879c3e522772830fb19c7c9af569bd6a7c2f78/Oqtane.Server/Controllers/DatabaseController.cs#L23
+  - https://github.com/oqtane/oqtane.framework?tab=readme-ov-file#oqtane-framework
+  - https://github.com/oqtane/oqtane.framework/blob/62879c3e522772830fb19c7c9af569bd6a7c2f78/Oqtane.Server/Controllers/DatabaseController.cs#L23
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
     cwe-id: CWE-200
@@ -19,7 +21,6 @@ info:
     shodan-query: http.title:'Home - Default Site'
     fofa-query: title="Home - Default Site"
   tags: detect,tech,api,cms,discovery
-
 http:
   - method: GET
     path:

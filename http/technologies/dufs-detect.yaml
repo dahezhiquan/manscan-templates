@@ -4,10 +4,10 @@ info:
   name: DUFS 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否部署 DUFS 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    DUFS 是轻量级文件服务器，用于通过 Web 提供目录浏览、上传和下载能力。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 DUFS 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/sigoden/dufs
+  - https://github.com/sigoden/dufs
   metadata:
     verified: true
     max-request: 1

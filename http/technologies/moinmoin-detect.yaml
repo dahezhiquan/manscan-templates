@@ -1,16 +1,17 @@
 id: moinmoin-detect
 
 info:
-  name: MoinMoin wiki 指纹识别（指纹识别）
+  name: MoinMoin Wiki 指纹识别（指纹识别）
   author: cyllective
   severity: info
-  description: 用于识别目标是否部署 MoinMoin wiki 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    MoinMoin 是 Python 编写的 Wiki 系统，用于团队知识库、文档协作和内容编辑。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码、正则特征等指纹特征，判断目标是否使用或暴露了
+    MoinMoin Wiki 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/moinwiki/moin-1.9
+  - https://github.com/moinwiki/moin-1.9
   metadata:
     max-request: 1
   tags: tech,moin,moinmoin,wiki,discovery
-
 http:
   - method: GET
     path:

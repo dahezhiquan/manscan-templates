@@ -4,13 +4,13 @@ info:
   name: AEM 指纹识别（指纹识别）
   author: shifacyclewala,hackergautam
   severity: info
-  description: 用于识别目标是否部署 Adobe Experience Manager。模板通过 AEM 登录 favicon 的 mmh3 哈希进行指纹匹配，并结合首页中的 Adobe Experience Manager 欢迎文案作为补充识别方式。
+  description: AEM 是 Adobe Experience Manager 内容管理和数字体验平台，用于网站、资产、模板和发布流程管理。该模板请求 `/libs/granite/core/content/login/favicon.ico`、首页，并依据 favicon 哈希、页面标题、正文关键字或品牌资源特征、DSL 条件识别目标是否使用或暴露了 AEM 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://twitter.com/brsn76945860/status/1171233054951501824
-    - https://gist.github.com/yehgdotnet/b9dfc618108d2f05845c4d8e28c5fc6a
-    - https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
-    - https://github.com/devanshbatham/FavFreak
-    - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
+  - https://twitter.com/brsn76945860/status/1171233054951501824
+  - https://gist.github.com/yehgdotnet/b9dfc618108d2f05845c4d8e28c5fc6a
+  - https://medium.com/@Asm0d3us/weaponizing-favicon-ico-for-bugbounties-osint-and-what-not-ace3c214e139
+  - https://github.com/devanshbatham/FavFreak
+  - https://github.com/sansatart/scrapts/blob/master/shodan-favicon-hashes.csv
   classification:
     cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:

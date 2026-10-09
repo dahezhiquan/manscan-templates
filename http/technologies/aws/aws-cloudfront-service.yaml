@@ -1,10 +1,10 @@
 id: aws-cloudfront-service
 
 info:
-  name: AWS CloudFront 服务指纹识别（指纹识别）
+  name: AWS CloudFront 服务 指纹识别（指纹识别）
   author: jiheon-dev
   severity: info
-  description: 用于识别目标是否使用 AWS CloudFront 服务，模板会结合特定路径或已知端点进行技术指纹匹配。
+  description: AWS CloudFront 服务 是 AWS CDN 服务，用于边缘缓存、内容加速和全球流量分发。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 AWS CloudFront 服务 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: aws,tech,service,discovery

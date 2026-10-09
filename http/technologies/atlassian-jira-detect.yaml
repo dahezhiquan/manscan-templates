@@ -4,7 +4,7 @@ info:
   name: Jira 指纹识别（指纹识别）
   author: pdteam,philippedelteil,AdamCrosser
   severity: info
-  description: 用于识别目标是否部署 Jira 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: Jira 是 Atlassian 项目管理和问题跟踪平台，用于需求、缺陷、任务和敏捷开发流程。该模板请求 `/secure/Dashboard.jspa`、`/jira/secure/Dashboard.jspa`、`/login.jsp`，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Jira 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -16,9 +16,9 @@ info:
     product: jira
     category: productivity
     shodan-query:
-      - http.component:"atlassian jira"
-      - http.component:"atlassian confluence"
-      - cpe:"cpe:2.3:a:atlassian:jira"
+    - http.component:"atlassian jira"
+    - http.component:"atlassian confluence"
+    - cpe:"cpe:2.3:a:atlassian:jira"
   tags: tech,panel,jira,atlassian,discovery
 
 http:

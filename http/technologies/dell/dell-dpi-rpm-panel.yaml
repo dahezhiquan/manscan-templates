@@ -4,8 +4,8 @@ info:
   name: Dell DPI Remote Power Management 指纹识别（指纹识别）
   author: megamansec
   severity: info
-  description: |
-    用于识别目标是否运行 Dell DPI Remote Power Management，模板会结合页面标题、页面正文、状态码和特定路径或已知端点进行服务指纹匹配。
+  description: |-
+    Dell DPI Remote Power Management 是 Dell 远程电源管理入口，用于设备电源状态、插座或功率管理。该模板请求 `/index2.html`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Dell DPI Remote Power Management 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,dell,dpi,rpm,discovery

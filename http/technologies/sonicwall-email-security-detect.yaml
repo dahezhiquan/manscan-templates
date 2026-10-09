@@ -1,13 +1,15 @@
 id: sonicwall-email-security-detect
 
 info:
-  name: SonicWall Email Security 面板指纹识别（指纹识别）
+  name: SonicWall Email Security 指纹识别（指纹识别）
   author: gy741
   severity: info
-  description: 用于识别目标暴露的 SonicWall Email Security 面板，模板会结合 favicon 哈希和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: >-
+    SonicWall Email Security 是邮件安全网关，用于反垃圾邮件、反钓鱼、恶意附件检测和邮件策略管理。该模板通过请求目标服务并检查预设路径或首页响应、favicon
+    哈希、DSL 条件等指纹特征，判断目标是否使用或暴露了 SonicWall Email Security 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.fireeye.com/blog/threat-research/2021/04/zero-day-exploits-in-sonicwall-email-security-lead-to-compromise.html
-    - https://www.sonicwall.com/support/product-notification/security-notice-sonicwall-email-security-zero-day-vulnerabilities/210416112932360/
+  - https://www.fireeye.com/blog/threat-research/2021/04/zero-day-exploits-in-sonicwall-email-security-lead-to-compromise.html
+  - https://www.sonicwall.com/support/product-notification/security-notice-sonicwall-email-security-zero-day-vulnerabilities/210416112932360/
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -15,7 +17,6 @@ info:
   metadata:
     max-request: 1
   tags: tech,panel,sonicwall,discovery
-
 http:
   - method: GET
     path:

@@ -4,7 +4,9 @@ info:
   name: Element Web 指纹识别（指纹识别）
   author: davidegirardi
   severity: info
-  description: 用于识别目标是否部署 Element Web 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Element Web 是 Matrix 协议的 Web 客户端，用于浏览器中进行团队聊天、语音视频和协作通信。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Element Web 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:matrix:element:*:*:*:*:*:*:*:*
   metadata:
@@ -14,7 +16,6 @@ info:
     product: element
     shodan-query: html:"manifest.json"
   tags: tech,matrix,element,detect,discovery
-
 http:
   - method: GET
     path:

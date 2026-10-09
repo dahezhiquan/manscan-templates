@@ -1,19 +1,19 @@
 id: wp-plugin-wp-user-registration
 
 info:
-  name: WordPress User Registration & Membership Plugin 指纹识别（指纹识别）
+  name: WordPress User Registration 插件指纹识别（指纹识别）
   author: omarkurt
   severity: info
-  description: |
-    用于识别目标是否部署 WordPress User Registration & Membership Plugin 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    User Registration 是 WordPress 插件，主要用于表单构建、验证码、用户注册、调查反馈或提交记录管理。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、状态码、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress User Registration 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/user-registration/
+  - https://wordpress.org/plugins/user-registration/
   metadata:
     max-request: 1
     verified: true
     shodan-query: "/wp-content/plugins/user-registration/"
   tags: wordpress,wp-plugin,user-registration,tech
-
 http:
   - method: GET
     path:

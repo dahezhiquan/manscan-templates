@@ -1,14 +1,14 @@
 id: docuseal-detect
 
 info:
-  name: DocuSeal 识别（指纹识别）
+  name: DocuSeal 指纹识别（指纹识别）
   author: ChrisJr404
   severity: info
   description: |-
-    通过在根页面暴露的应用主题属性和站点元数据，识别出 DocuSeal——一款开源的文档填写与签署平台。
+    DocuSeal 是电子签名平台，用于创建、发送和管理文档签署流程。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 DocuSeal 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/docusealco/docuseal
-    - https://www.docuseal.com
+  - https://github.com/docusealco/docuseal
+  - https://www.docuseal.com
   metadata:
     verified: true
     max-request: 1

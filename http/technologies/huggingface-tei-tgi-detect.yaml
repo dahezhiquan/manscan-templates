@@ -1,22 +1,22 @@
 id: huggingface-tei-tgi-detect
 
 info:
-  name: HuggingFace TEI 与 TGI 检测（指纹识别）
+  name: Hugging Face TEI/TGI 指纹识别（指纹识别）
   author: insidetrust,hdm
   severity: info
-  description: |-
-    检测 HuggingFace 文本嵌入推理服务（TEI，一个用于提供文本嵌入与重排序模型服务的工具包）以及 HuggingFace 文本生成推理服务（TGI，一个基于 Rust/Python、用于部署和服务大语言模型的工具包）是否存在。
+  description: >-
+    Hugging Face Text Embeddings Inference 和 Text Generation Inference 是用于部署嵌入模型与大语言模型推理服务的组件。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Hugging Face TEI/TGI 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/huggingface/text-embeddings-inference
-    - https://github.com/huggingface/text-generation-inference
-    - https://huggingface.co/docs/text-embeddings-inference/index
+  - https://github.com/huggingface/text-embeddings-inference
+  - https://github.com/huggingface/text-generation-inference
+  - https://huggingface.co/docs/text-embeddings-inference/index
   metadata:
     verified: true
     max-request: 1
     vendor: huggingface
     product: text-embeddings-inference
   tags: tech,detect,tei,tgi,llm
-
 http:
   - method: GET
     path:

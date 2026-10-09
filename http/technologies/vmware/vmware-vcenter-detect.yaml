@@ -1,17 +1,18 @@
 id: vmware-vcenter-detect
 
 info:
-  name: VMware 指纹识别（指纹识别）
+  name: VMware vCenter Server 指纹识别（指纹识别）
   author: elouhi
   severity: info
-  description: 用于识别目标是否部署 VMware 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    VMware vCenter Server 是 VMware 虚拟化平台的集中管理系统，用于管理主机、虚拟机、集群和资源池。该模板通过请求目标服务并检查状态码、页面正文关键字、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 VMware vCenter Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.pwndefend.com/2021/09/23/exposed-vmware-vcenter-servers-around-the-world-cve-2021-22005/
-    - https://svn.nmap.org/nmap/scripts/vmware-version.nse
+  - https://www.pwndefend.com/2021/09/23/exposed-vmware-vcenter-servers-around-the-world-cve-2021-22005/
+  - https://svn.nmap.org/nmap/scripts/vmware-version.nse
   metadata:
     max-request: 1
   tags: tech,vcenter,vmware,discovery
-
 http:
   - raw:
       - |

@@ -4,8 +4,8 @@ info:
   name: Apache StreamPipes 指纹识别（指纹识别）
   author: Alessandro Albani - DEVisions
   severity: info
-  description: |
-    用于识别目标是否部署 Apache StreamPipes 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Apache StreamPipes 是工业物联网流数据分析平台，用于数据接入、管道编排和实时分析。该模板请求 `/streampipes-backend/api/openapi.json`、`/assets/img/favicon/favicon.ico`、首页，并依据 favicon 哈希、DSL 条件识别目标是否使用或暴露了 Apache StreamPipes 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:apache:streampipes:*:*:*:*:*:*:*:*
   metadata:

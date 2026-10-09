@@ -1,14 +1,16 @@
 id: webserver-iplanet-web-server
 
 info:
-  name: iPlanet Web 服务器指纹识别（指纹识别）
+  name: iPlanet Web Server 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
+  description: >-
+    iPlanet Web Server 是企业级 Web 服务器，用于承载静态内容、应用入口和反向代理场景。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    iPlanet Web Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
     fofa-query: app="iPlanet-Web-Server,-Enterprise-Edition-4.1"
   tags: tech,webserver,discovery
-
 http:
   - method: GET
     path:

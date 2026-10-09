@@ -1,16 +1,18 @@
 id: rosariosis-detect
 
 info:
-  name: Rosariosis 指纹识别（指纹识别）
+  name: RosarioSIS 指纹识别（指纹识别）
   author: princechaddha
   severity: info
+  description: >-
+    RosarioSIS 是开源学生信息系统，用于学校学生档案、成绩、课程和考勤管理。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    RosarioSIS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/francoisjacquet/rosariosis
-    - https://www.rosariosis.org/
+  - https://github.com/francoisjacquet/rosariosis
+  - https://www.rosariosis.org/
   metadata:
     max-request: 1
   tags: tech,rosariosis,discovery
-
 http:
   - method: GET
     path:

@@ -4,10 +4,11 @@ info:
   name: Raygun RUM 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否使用 Raygun RUM，模板会结合 HTTP 响应头、页面正文和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Raygun RUM 是真实用户监控服务，用于采集前端性能、页面加载和用户体验数据。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、页面正文关键字、DSL
+    条件、正则特征等指纹特征，判断目标是否使用或暴露了 Raygun RUM 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://raygun.com/
+  - https://raygun.com/
   metadata:
     max-request: 1
     verified: true
@@ -16,7 +17,6 @@ info:
     shodan-query: http.html:"cdn.raygun.io"
     fofa-query: body="cdn.raygun.io/raygun4js" || body="RaygunObject"
   tags: tech,discovery,rum,raygun
-
 http:
   - method: GET
     path:

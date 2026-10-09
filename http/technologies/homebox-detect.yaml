@@ -1,14 +1,15 @@
 id: homebox-detect
 
 info:
-  name: Homebox 检测（指纹识别）
+  name: Homebox 指纹识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |-
-    通过其无需认证的 /api/v1/status 端点检测到 Homebox——一个自托管的家庭物品管理与整理系统。
+  description: >-
+    Homebox 是家庭资产和物品清单管理系统，用于记录物品、位置、保修和库存信息。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征、状态码等指纹特征，判断目标是否使用或暴露了 Homebox 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/sysadminsmedia/homebox
-    - https://homebox.software
+  - https://github.com/sysadminsmedia/homebox
+  - https://homebox.software
   metadata:
     verified: true
     max-request: 1
@@ -17,7 +18,6 @@ info:
     shodan-query: html:"homebox-frontend"
     fofa-query: body="homebox-frontend"
   tags: tech,homebox,inventory,detect,discovery
-
 http:
   - method: GET
     path:

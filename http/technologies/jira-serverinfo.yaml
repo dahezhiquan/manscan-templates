@@ -1,21 +1,21 @@
 id: jira-serverinfo
 
 info:
-  name: Jira Rest API 服务器 Information 指纹识别（指纹识别）
+  name: Jira ServerInfo REST API 指纹识别（指纹识别）
   author: pdteam,0x_Akoko
   severity: info
-  description: |
-    用于识别目标是否部署 Jira Rest API 服务器 Information 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Jira ServerInfo REST API 是 Atlassian Jira 提供的服务信息接口，可返回版本、部署类型和基础配置等信息。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Jira ServerInfo REST API 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-server-info/
-    - https://support.atlassian.com/jira/kb/restrict-unauthenticated-access-for-some-jira-endpoints/
+  - https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-server-info/
+  - https://support.atlassian.com/jira/kb/restrict-unauthenticated-access-for-some-jira-endpoints/
   classification:
     cwe-id: CWE-200
   metadata:
     verified: true
     max-request: 2
   tags: jira,tech,discovery
-
 http:
   - method: GET
     path:

@@ -1,12 +1,14 @@
 id: synology-web-station
 
 info:
-  name: Synology Web Station Page 指纹识别（指纹识别）
+  name: Synology Web Station 指纹识别（指纹识别）
   author: dhiyaneshDK
   severity: info
-  description: 用于识别目标是否使用 Synology Web Station Page，模板会结合页面标题、状态码和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Synology Web Station 是群晖 NAS 的网站托管功能，用于在 NAS 上运行静态站点和 Web 应用。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Synology Web Station 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.exploit-db.com/ghdb/7125
+  - https://www.exploit-db.com/ghdb/7125
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -14,7 +16,6 @@ info:
   metadata:
     max-request: 1
   tags: tech,synology,edb,discovery
-
 http:
   - method: GET
     path:

@@ -1,10 +1,12 @@
 id: nexus-detect
 
 info:
-  name: Nexus Repository Manager (NRM) 实例指纹识别（指纹识别）
+  name: Nexus Repository Manager 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: 用于识别目标是否部署 Nexus Repository Manager (NRM) 实例，模板会结合页面正文、状态码和特定路径进行指纹匹配。
+  description: >-
+    Nexus Repository Manager 是制品仓库管理平台，用于托管 Maven、npm、Docker 等软件包和构建制品。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Nexus Repository Manager 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:sonatype:nexus_repository_manager:*:*:*:*:*:*:*:*
   metadata:
@@ -14,7 +16,6 @@ info:
     product: nexus_repository_manager
     shodan-query: http.html:"Nexus Repository Manager"
   tags: tech,nexus,discovery
-
 http:
   - method: GET
     path:

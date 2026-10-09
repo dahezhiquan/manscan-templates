@@ -4,6 +4,7 @@ info:
   name: Coming Soon Page 指纹识别（指纹识别）
   author: tess
   severity: info
+  description: Coming Soon Page 是站点占位或即将上线页面，用于发布前展示临时入口和基础品牌信息。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 Coming Soon Page 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 1

@@ -1,14 +1,14 @@
 id: chatbot-rasa-detect
 
 info:
-  name: Rasa Open Source - 检测（指纹识别）
+  name: Rasa Open Source 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
-    检测到 Rasa Open Source，一个用于构建聊天机器人和语音助手的开源对话式 AI 框架，它暴露了一个用于意图解析和 Webhook 驱动对话的 REST 服务器（默认端口 5005）。暴露的未认证实例可能允许与助手的对话端点交互，并泄露内部版本和配置信息。
+    Rasa Open Source 是开源对话式 AI 平台，用于构建聊天机器人、意图识别和对话流程。该模板请求 `/version`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Rasa Open Source 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/RasaHQ/rasa
-    - https://rasa.com/docs/rasa/
+  - https://github.com/RasaHQ/rasa
+  - https://rasa.com/docs/rasa/
   metadata:
     verified: true
     max-request: 1

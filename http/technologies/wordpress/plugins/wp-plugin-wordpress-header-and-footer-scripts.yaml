@@ -1,17 +1,19 @@
 id: wp-plugin-wordpress-header-and-footer-scripts
 
 info:
-  name: Header and Footer Scripts 指纹识别（指纹识别）
+  name: WordPress Header and Footer Scripts 插件指纹识别（指纹识别）
   author: ricardomaia
   severity: info
+  description: >-
+    Header and Footer Scripts 是 WordPress 插件，主要用于后台菜单、字段、代码片段、主题定制或内容类型扩展。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress Header and Footer Scripts 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/header-and-footer-scripts/
+  - https://wordpress.org/plugins/header-and-footer-scripts/
   metadata:
     max-request: 1
     plugin_namespace: header-and-footer-scripts
     wpscan: https://wpscan.com/plugin/header-and-footer-scripts
   tags: tech,wordpress,wp-plugin,top-200,discovery
-
 http:
   - method: GET
     path:

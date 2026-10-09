@@ -1,19 +1,19 @@
 id: sysreptor-detect
 
 info:
-  name: Sysreptor 指纹识别（指纹识别）
+  name: SysReptor 指纹识别（指纹识别）
   author: icarot
   severity: info
-  description: |
-    用于识别目标是否部署 Sysreptor 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    SysReptor 是安全测试报告和项目管理平台，用于编写、协作和交付渗透测试报告。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    SysReptor 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/Syslifters/sysreptor
+  - https://github.com/Syslifters/sysreptor
   metadata:
     max-request: 2
     vendor: syslifters
     product: sysreptor
   tags: tech,syslifters,sysreptor,detect
-
 flow: http(1) && http(2)
 
 http:

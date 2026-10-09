@@ -4,15 +4,15 @@ info:
   name: FlowWeb Web 服务器指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否部署 FlowWeb Web 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    FlowWeb 是 Web 服务器或应用服务组件，常通过特定响应头、错误页或服务端标识暴露部署痕迹。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用 FlowWeb 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
     vendor: flowweb
     product: flowweb
     fofa-query: "Server: FlowWeb"
   tags: tech,flowweb
-
 http:
   - method: GET
     path:

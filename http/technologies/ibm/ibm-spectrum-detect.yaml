@@ -4,16 +4,16 @@ info:
   name: IBM Spectrum 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否部署 IBM Spectrum 并提取相关版本或构建信息，模板会结合页面标题、页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    IBM Spectrum 是 IBM 存储与数据管理产品线，用于企业级存储、备份和资源管理。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 IBM Spectrum 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.ibm.com/docs/en/products?filter=spectrum
+  - https://www.ibm.com/docs/en/products?filter=spectrum
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.title:"IBM Spectrum"
   tags: tech,ibm,spectrum,discovery
-
 http:
   - method: GET
     path:

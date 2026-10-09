@@ -1,11 +1,14 @@
 id: versa-analytics-server
 
 info:
-  name: Versa Analytics 服务器指纹识别（指纹识别）
+  name: Versa Analytics Server 指纹识别（指纹识别）
   author: c-sh0
   severity: info
+  description: >-
+    Versa Analytics Server 是 Versa SD-WAN 平台的分析组件，用于采集、存储和展示网络与安全遥测数据。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Versa Analytics Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://versa-networks.com/products/components/
+  - https://versa-networks.com/products/components/
   classification:
     cpe: cpe:2.3:a:versa-networks:versa_analytics:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +18,6 @@ info:
     product: versa_analytics
     shodan-query: "Versa-Analytics-Server"
   tags: tech,versa,analytics,discovery
-
 http:
   - method: GET
     path:

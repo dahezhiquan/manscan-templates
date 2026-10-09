@@ -4,10 +4,10 @@ info:
   name: Cisco Unified Communications Manager 指纹识别（指纹识别）
   author: Morgan Robertson
   severity: info
-  description: |
-    用于识别目标是否部署 Cisco Unified Communications Manager 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Cisco Unified Communications Manager 是 Cisco 统一通信管理平台，用于 IP 电话、语音、视频和协作服务配置。该模板请求 `/cucm-uds/version`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Cisco Unified Communications Manager 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#version
+  - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#version
   metadata:
     verified: true
     product: unified_communications_manager

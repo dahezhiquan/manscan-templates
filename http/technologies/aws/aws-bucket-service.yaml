@@ -1,9 +1,10 @@
 id: aws-bucket-service
 
 info:
-  name: AWS Bucket 存储服务指纹识别（指纹识别）
+  name: AWS Bucket 存储服务 指纹识别（指纹识别）
   author: pdteam
   severity: info
+  description: AWS Bucket 存储服务 是云对象存储桶服务，用于托管文件、静态资源和应用数据。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 AWS Bucket 存储服务 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: aws,tech,bucket,discovery

@@ -4,9 +4,11 @@ info:
   name: Open Journal Systems 指纹识别（指纹识别）
   author: ricardomaia
   severity: info
-  description: 用于识别目标是否部署 Open Journal Systems 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Open Journal Systems 是学术期刊出版管理系统，用于稿件提交、同行评审、编辑和期刊发布。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、状态码等指纹特征，判断目标是否使用或暴露了
+    Open Journal Systems 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://pkp.sfu.ca/ojs/
+  - https://pkp.sfu.ca/ojs/
   classification:
     cpe: cpe:2.3:a:openjournalsystems:open_journal_systems:*:*:*:*:*:*:*:*
   metadata:
@@ -16,7 +18,6 @@ info:
     product: open_journal_systems
     shodan-query: html:"Open Journal Systems"
   tags: tech,ojs,discovery
-
 http:
   - method: GET
     path:

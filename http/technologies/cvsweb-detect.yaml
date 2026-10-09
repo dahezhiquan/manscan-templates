@@ -4,10 +4,10 @@ info:
   name: CVSweb 指纹识别（指纹识别）
   author: lu4nx
   severity: info
-  description: |
-    用于识别目标是否部署 CVSweb 并提取相关版本或构建信息，模板会结合页面标题、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    CVSweb 是 CVS 仓库 Web 浏览工具，用于查看源码、版本和提交历史。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 CVSweb 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://cvsweb.openbsd.org/
+  - https://cvsweb.openbsd.org/
   classification:
     cpe: cpe:2.3:a:freebsd:cvsweb:*:*:*:*:*:*:*:*
   metadata:

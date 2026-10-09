@@ -4,8 +4,8 @@ info:
   name: Confluence 指纹识别（指纹识别）
   author: philippedelteil,AdamCrosser,6mile
   severity: info
-  description: |
-    用于识别目标是否部署 Confluence 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Confluence 是 Atlassian 企业知识库平台，用于文档协作、空间、页面和团队知识管理。该模板请求 `/dologin.action`、首页、`/pages` 等路径，并依据 DSL 条件识别目标是否使用或暴露了 Confluence 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:atlassian:confluence_server:*:*:*:*:*:*:*:*
   metadata:
@@ -13,8 +13,8 @@ info:
     vendor: atlassian
     product: confluence_server
     shodan-query:
-      - http.component:"Atlassian Confluence"
-      - http.component:"atlassian confluence"
+    - http.component:"Atlassian Confluence"
+    - http.component:"atlassian confluence"
     category: productivity
   tags: tech,confluence,atlassian,detect,discovery
 

@@ -4,20 +4,22 @@ info:
   name: Microweber 指纹识别（指纹识别）
   author: princechaddha
   severity: info
+  description: >-
+    Microweber 是开源内容管理和在线商店系统，用于可视化构建网站、博客和电商页面。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Microweber 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/microweber/microweber
+  - https://github.com/microweber/microweber
   metadata:
     max-request: 1
     shodan-query:
-      - http.favicon.hash:780351152
-      - http.html:"microweber"
+    - http.favicon.hash:780351152
+    - http.html:"microweber"
     product: microweber
     vendor: microweber
     fofa-query:
-      - icon_hash=780351152
-      - body="microweber"
+    - icon_hash=780351152
+    - body="microweber"
   tags: tech,microweber,oss,discovery
-
 http:
   - method: GET
     path:

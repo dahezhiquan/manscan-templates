@@ -1,11 +1,11 @@
 id: amazon-ecs-defualt-page
 
 info:
-  name: Amazon ECS 示例应用 默认页面指纹识别（指纹识别）
+  name: Amazon ECS 示例应用 默认页面 指纹识别（指纹识别）
   author: Splint3r7
   severity: info
-  description: |
-    用于识别目标暴露的 Amazon ECS 示例应用 默认页面，模板会结合页面标题和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: |-
+    Amazon ECS 示例应用 默认页面 是 AWS 容器编排服务，用于运行和管理容器化应用。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Amazon ECS 示例应用 默认页面 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cwe-id: CWE-200
   metadata:

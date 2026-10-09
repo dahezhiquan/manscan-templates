@@ -4,17 +4,17 @@ info:
   name: Prefect 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标是否使用 Prefect，模板会结合特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Prefect 是数据工作流编排平台，用于调度、运行和监控数据管道与自动化任务。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件等指纹特征，判断目标是否使用或暴露了
+    Prefect 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/PrefectHQ/prefect
-    - https://www.prefect.io/
+  - https://github.com/PrefectHQ/prefect
+  - https://www.prefect.io/
   metadata:
     verified: true
     max-request: 1
     shodan-query: '"Prefect" port:4200'
   tags: tech,prefect,workflow,orchestration,detect,discovery
-
 http:
   - method: GET
     path:

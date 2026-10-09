@@ -1,12 +1,14 @@
 id: secui-waf-detect
 
 info:
-  name: SECUI WAF 面板指纹识别（指纹识别）
+  name: SECUI WAF 指纹识别（指纹识别）
   author: gy741
   severity: info
-  description: 用于识别目标暴露的 SECUI WAF 面板，模板会结合 favicon 哈希和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: >-
+    SECUI WAF 是 Web 应用防火墙产品，用于检测、过滤和防护 Web 攻击流量。该模板通过请求目标服务并检查预设路径或首页响应、favicon 哈希、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 SECUI WAF 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.secui.com/en/network/bluemaxng
+  - https://www.secui.com/en/network/bluemaxng
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -16,7 +18,6 @@ info:
     max-request: 1
     shodan-query: http.favicon.hash:-1101206929
   tags: tech,panel,secui,discovery
-
 http:
   - method: GET
     path:

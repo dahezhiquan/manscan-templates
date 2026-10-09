@@ -1,16 +1,17 @@
 id: fastjson-version
 
 info:
-  name: Fastjson 版本指纹识别（指纹识别）
+  name: Fastjson 指纹识别（指纹识别）
   author: yuansec
   severity: info
-  description: 用于识别目标是否部署 Fastjson 版本 并提取相关版本或构建信息，模板会结合页面正文和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Fastjson 是 Java JSON 序列化和反序列化库，常被 Java Web 应用用于对象与 JSON 数据转换。该模板通过请求目标服务并检查页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Fastjson 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://blog.csdn.net/caiqiiqi/article/details/107907489
+  - https://blog.csdn.net/caiqiiqi/article/details/107907489
   metadata:
     max-request: 1
   tags: fastjson,tech,discovery
-
 http:
   - raw:
       - |

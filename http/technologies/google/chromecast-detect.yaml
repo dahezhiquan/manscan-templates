@@ -4,11 +4,12 @@ info:
   name: Google Chromecast 指纹识别（指纹识别）
   author: LucianNitescu
   severity: info
-  description: |
-    用于识别目标是否使用 Google Chromecast，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Google Chromecast 是媒体投放设备和接收端平台，可通过本地或 Web 暴露的服务特征被识别。该模板通过请求目标服务并检查页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Google Chromecast 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/thewhiteh4t/killcast/blob/ee81cfa03c963d47d3335770fcea2ca48bddeabf/killcast.py#L100C25-L100C43
-    - https://rithvikvibhu.github.io/GHLocalApi/#section/Google-Home-Local-API/Authentication
+  - https://github.com/thewhiteh4t/killcast/blob/ee81cfa03c963d47d3335770fcea2ca48bddeabf/killcast.py#L100C25-L100C43
+  - https://rithvikvibhu.github.io/GHLocalApi/#section/Google-Home-Local-API/Authentication
   classification:
     cpe: cpe:2.3:h:google:chromecast:*:*:*:*:*:*:*:*
   metadata:
@@ -18,7 +19,6 @@ info:
     product: chromecast
     shodan-query: Chromecast
   tags: google,chromecast,detect,discovery
-
 http:
   - raw:
       - |

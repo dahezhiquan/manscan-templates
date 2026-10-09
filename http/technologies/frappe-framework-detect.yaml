@@ -4,18 +4,18 @@ info:
   name: Frappe 框架指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标前端或应用中是否使用 Frappe 框架，模板会结合页面正文和特定路径或已知端点进行技术栈指纹匹配。
+  description: >-
+    Frappe 是 Python/JavaScript 全栈 Web 框架，也是 ERPNext 等业务系统的基础平台。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用 Frappe 框架；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://frappe.io/framework
-    - https://docs.frappe.io/framework/user/en/introduction
-    - https://github.com/frappe/frappe
+  - https://frappe.io/framework
+  - https://docs.frappe.io/framework/user/en/introduction
+  - https://github.com/frappe/frappe
   metadata:
     max-request: 1
     verified: true
     shodan-query: http.html:"window.frappe"
   tags: panel,frappe,detect,discovery
-
 http:
   - method: GET
     path:

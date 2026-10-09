@@ -1,13 +1,13 @@
 id: agent-zero-detect
 
 info:
-  name: Agent-Zero 应用指纹识别（指纹识别）
+  name: Agent-Zero 应用 指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
-  description: |
-    用于识别目标是否部署 Agent-Zero 应用 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Agent-Zero 应用 是 AI Agent 应用框架或 Web 控制台，用于组织代理任务、提示词和自动化工作流。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Agent-Zero 应用 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/agent0ai/agent-zero
+  - https://github.com/agent0ai/agent-zero
   metadata:
     verified: true
     max-request: 1

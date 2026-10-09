@@ -4,10 +4,11 @@ info:
   name: LimeSurvey Survey Software 指纹识别（指纹识别）
   author: Matt Galligan
   severity: info
-  description: |
-    用于识别目标是否使用 LimeSurvey Survey Software，模板会结合 favicon 哈希、状态码和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    LimeSurvey 是开源问卷调查系统，用于创建、发布和统计在线调查问卷。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    LimeSurvey Survey Software 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/LimeSurvey/LimeSurvey
+  - https://github.com/LimeSurvey/LimeSurvey
   classification:
     cpe: cpe:2.3:a:limesurvey:limesurvey:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     product: limesurvey
     shodan-query: http.favicon.hash:1781653957
   tags: tech,limesurvey,discovery
-
 http:
   - method: GET
     path:

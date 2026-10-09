@@ -1,13 +1,15 @@
 id: tech-detect
 
 info:
-  name: Wappalyzer 技术指纹识别（指纹识别）
+  name: Wappalyzer 技术栈指纹识别（指纹识别）
   author: hakluke,righettod,matejsmycka
   severity: info
+  description: >-
+    Wappalyzer 是站点技术栈识别工具，用于根据页面、脚本、响应头和资源特征判断目标使用的 Web 框架、组件和服务。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、页面正文关键字、HTTP
+    响应头等指纹特征，判断目标是否匹配 Wappalyzer 技术栈规则；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,discovery
-
 http:
   - method: GET
     path:

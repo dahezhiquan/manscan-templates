@@ -4,17 +4,17 @@ info:
   name: Vtiger CRM 指纹识别（指纹识别）
   author: icarot
   severity: info
-  description: |
-    用于识别目标是否部署 Vtiger CRM 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    Vtiger CRM 是客户关系管理系统，用于销售线索、客户、工单、营销和业务流程管理。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件、正则特征等指纹特征，判断目标是否使用或暴露了
+    Vtiger CRM 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/vtiger-crm/vtigercrm
-    - https://code.vtiger.com/vtiger/vtigercrm
+  - https://github.com/vtiger-crm/vtigercrm
+  - https://code.vtiger.com/vtiger/vtigercrm
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Powered by vtiger CRM"
   tags: tech,vtiger,vtiger-crm,detect,discovery
-
 http:
   - method: GET
     path:

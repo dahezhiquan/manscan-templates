@@ -4,8 +4,8 @@ info:
   name: Cisco Finesse 指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
-  description: |
-    用于识别目标是否部署 Cisco Finesse 并提取相关版本或构建信息，模板会结合特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Cisco Finesse 是 Cisco 联络中心坐席桌面，用于客服坐席通话、状态和客户交互管理。该模板请求 `/desktop/assets/js/finesse.js`，并依据 DSL 条件识别目标是否使用或暴露了 Cisco Finesse 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 1

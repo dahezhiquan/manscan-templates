@@ -1,11 +1,14 @@
 id: opnhap-detect
 
 info:
-  name: OpenHAP 指纹识别（指纹识别）
+  name: openHAB 指纹识别（指纹识别）
   author: fabaff
   severity: info
+  description: >-
+    openHAB 是开源智能家居自动化平台，用于集成传感器、设备和场景规则。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    openHAB 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.openhab.org/
+  - https://www.openhab.org/
   classification:
     cpe: cpe:2.3:a:openhab:openhab_web_interface:*:*:*:*:*:*:*:*
   metadata:
@@ -15,7 +18,6 @@ info:
     product: openhab_web_interface
     shodan-query: http.title:"openHAB"
   tags: tech,iot,openhab,discovery
-
 http:
   - method: GET
     path:

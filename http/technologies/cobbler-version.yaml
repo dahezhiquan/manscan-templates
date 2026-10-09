@@ -1,10 +1,10 @@
 id: cobbler-version
 
 info:
-  name: Cobbler 版本指纹识别（指纹识别）
+  name: Cobbler 版本 指纹识别（指纹识别）
   author: c-sh0
   severity: info
-  description: 用于识别目标是否部署 Cobbler 版本 并提取相关版本或构建信息，模板会结合 HTTP 响应头、页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: Cobbler 版本 是 Linux 安装和配置管理平台，用于系统装机、PXE、仓库和配置自动化。该模板请求 `/cobbler_api`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Cobbler 版本 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,cobbler,api,discovery

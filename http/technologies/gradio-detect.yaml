@@ -4,16 +4,16 @@ info:
   name: Gradio 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否使用 Gradio，模板会结合特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Gradio 是 Python 机器学习和 AI 应用的 Web 界面框架，常用于快速发布模型演示、推理接口和交互式工具。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Gradio 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/gradio-app/gradio
+  - https://github.com/gradio-app/gradio
   metadata:
     verified: true
     max-request: 1
     fofa-query: "Gradio"
   tags: gradio,tech,detect,discovery
-
 http:
   - method: GET
     path:

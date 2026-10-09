@@ -1,13 +1,13 @@
 id: cherrypy-detect
 
 info:
-  name: CherryPy Web 服务器指纹识别（指纹识别）
+  name: CherryPy Web 服务器 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否部署 CherryPy Web 服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    CherryPy Web 服务器 是 Python Web 框架和服务器，用于构建轻量级 Web 应用与接口。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 CherryPy Web 服务器 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   reference:
-    - https://cherrypy.dev/
+  - https://cherrypy.dev/
   metadata:
     verified: true
     max-request: 1

@@ -1,16 +1,18 @@
 id: wp-plugin-wordpress-imagify
 
 info:
-  name: Imagify Image Optimization - Optimize Images | Compress Images | Convert WebP | Convert AVIF 指纹识别（指纹识别）
+  name: WordPress Imagify 插件指纹识别（指纹识别）
   author: ricardomaia
   severity: info
+  description: >-
+    Imagify 是 WordPress 插件，主要用于缓存、图片优化、字体管理或前端性能优化。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress Imagify 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/imagify/
+  - https://wordpress.org/plugins/imagify/
   metadata:
     plugin_namespace: imagify
     wpscan: https://wpscan.com/plugin/imagify
   tags: tech,wordpress,wp-plugin,top-100,top-200,discovery
-
 http:
   - method: GET
     path:

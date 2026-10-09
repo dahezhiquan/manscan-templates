@@ -4,12 +4,14 @@ info:
   name: Web FTP 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
+  description: >-
+    Web FTP 是通过浏览器访问 FTP 或文件服务的 Web 文件管理界面，用于上传、下载和管理远程文件。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    Web FTP 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.exploit-db.com/ghdb/7013
+  - https://www.exploit-db.com/ghdb/7013
   metadata:
     max-request: 1
   tags: webftp,tech,ftp,discovery
-
 http:
   - method: GET
     path:

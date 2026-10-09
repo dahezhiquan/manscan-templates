@@ -1,9 +1,12 @@
 id: default-windows-server-page
 
 info:
-  name: IIS Windows 服务器 默认页面指纹识别（指纹识别）
+  name: Microsoft IIS Windows Server 默认页面 指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
+  description: >-
+    Microsoft IIS Windows Server 默认页面用于标识 Windows Server 上已启用 IIS Web 服务但尚未替换默认内容。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    Microsoft IIS Windows Server 默认页面 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:o:microsoft:windows_server_2003:*:*:*:*:*:*:*:*
   metadata:
@@ -12,7 +15,6 @@ info:
     product: windows_server_2003
     shodan-query: http.title:"IIS Windows Server"
   tags: tech,windows,iis,discovery
-
 http:
   - method: GET
     path:

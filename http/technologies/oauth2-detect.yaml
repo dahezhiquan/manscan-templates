@@ -1,14 +1,15 @@
 id: oauth2-detect
 
 info:
-  name: OAuth 2.0 Authorization 服务器指纹识别（指纹识别）
+  name: OAuth 2.0 Authorization Server 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: 用于识别目标是否运行 OAuth 2.0 Authorization 服务器，模板会结合页面正文、状态码和特定路径进行服务指纹匹配。
+  description: >-
+    OAuth 2.0 Authorization Server 是授权服务器组件，用于向客户端签发访问令牌并管理授权流程。该模板通过请求目标服务并检查预设路径或首页响应、状态码、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    OAuth 2.0 Authorization Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,oauth,discovery
-
 http:
   - method: POST
     path:

@@ -4,6 +4,7 @@ info:
   name: Default Parallels Plesk 面板 Page 指纹识别（指纹识别）
   author: DhiyaneshDK,righettod
   severity: info
+  description: Default Parallels Plesk 面板 Page 是服务器托管控制面板，用于网站、域名、邮箱、数据库和证书管理。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Default Parallels Plesk 面板 Page 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:parallels:parallels_plesk_panel:*:*:*:*:*:*:*:*
   metadata:

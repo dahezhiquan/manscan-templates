@@ -4,6 +4,7 @@ info:
   name: Avideo 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
+  description: Avideo 是视频分享和流媒体平台，用于上传、管理、播放和发布视频内容。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 Avideo 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:wwbn:avideo:*:*:*:*:*:*:*:*
   metadata:

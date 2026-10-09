@@ -4,16 +4,16 @@ info:
   name: Streamlit 指纹识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    用于识别目标是否使用 Streamlit，模板会结合 favicon 哈希、页面标题和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    Streamlit 是 Python 数据应用框架，用于快速构建机器学习、数据分析和可视化 Web 应用。该模板通过请求目标服务并检查预设路径或首页响应、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 Streamlit 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://streamlit.io/
+  - https://streamlit.io/
   metadata:
     verified: true
     max-request: 1
     fofa-query: icon_hash="1080665471"
   tags: tech,streamlit,detect,discovery
-
 http:
   - method: GET
     path:

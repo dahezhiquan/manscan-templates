@@ -1,15 +1,16 @@
 id: vespa-detect
 
 info:
-  name: Vespa - 检测（指纹识别）
+  name: Vespa 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |-
-    检测到 Vespa，一个用于低延迟搜索、推荐和向量/嵌入检索的开源大数据服务引擎，越来越多地作为 AI 和 RAG（检索增强生成）流水线中的检索后端进行部署。暴露的 config-server 或容器端点可能泄露应用部署元数据、集群状态和版本信息，并且如果查询 API 保持开放，可能允许未认证访问索引化/向量化数据。
+  description: >-
+    Vespa 是面向大规模搜索、推荐和向量检索的开源平台，用于低延迟查询和机器学习排序。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Vespa 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://vespa.ai/
-    - https://github.com/vespa-engine/vespa
-    - https://docs.vespa.ai/en/reference/state-v1.html
+  - https://vespa.ai/
+  - https://github.com/vespa-engine/vespa
+  - https://docs.vespa.ai/en/reference/state-v1.html
   metadata:
     verified: true
     max-request: 1
@@ -17,7 +18,6 @@ info:
     product: vespa
     shodan-query: 'product:"Vespa"'
   tags: tech,vespa,ai,vector-db,search,detect,discovery
-
 http:
   - method: GET
     path:

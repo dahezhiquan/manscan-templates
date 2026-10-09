@@ -4,16 +4,16 @@ info:
   name: VertiGIS 指纹识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    用于识别目标是否运行 VertiGIS，模板会结合页面标题和特定路径或已知端点进行服务指纹匹配。
+  description: >-
+    VertiGIS 是地理信息系统应用平台，用于构建 Web GIS、地图门户和空间业务工作流。该模板通过请求目标服务并检查预设路径或首页响应、DSL 条件等指纹特征，判断目标是否使用或暴露了
+    VertiGIS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.vertigis.com/
+  - https://www.vertigis.com/
   metadata:
     verified: true
     max-request: 9
     shodan-query: http.title:"vertigis"
   tags: tech,vertigis,detect,discovery
-
 http:
   - method: GET
     path:

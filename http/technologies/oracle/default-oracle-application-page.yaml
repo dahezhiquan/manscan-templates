@@ -1,14 +1,16 @@
 id: default-oracle-application-page
 
 info:
-  name: Oracle 应用服务器 Containers 指纹识别（指纹识别）
+  name: Oracle Application Server 默认页面 指纹识别（指纹识别）
   author: dhiyaneshDk,righettod
   severity: info
+  description: >-
+    Oracle Application Server 默认页面用于标识 Oracle 应用服务器或容器环境已部署并保留默认站点。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Oracle Application Server 默认页面 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
     shodan-query: http.title:"Oracle Application Server Containers"
   tags: tech,oracle,discovery
-
 http:
   - method: GET
     path:

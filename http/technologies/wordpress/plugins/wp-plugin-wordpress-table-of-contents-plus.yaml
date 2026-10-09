@@ -1,16 +1,18 @@
 id: wp-plugin-wordpress-table-of-contents-plus
 
 info:
-  name: Table of Contents Plus 指纹识别（指纹识别）
+  name: WordPress Table of Contents Plus 插件指纹识别（指纹识别）
   author: ricardomaia
   severity: info
+  description: >-
+    Table of Contents Plus 是 WordPress 插件，主要用于内容排序、目录、表格、日历活动、地图、分页或媒体展示。该模板通过请求目标服务并检查预设路径或首页响应、正则特征、DSL
+    条件等指纹特征，判断目标是否使用或暴露了 WordPress Table of Contents Plus 插件 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://wordpress.org/plugins/table-of-contents-plus/
+  - https://wordpress.org/plugins/table-of-contents-plus/
   metadata:
     plugin_namespace: table-of-contents-plus
     wpscan: https://wpscan.com/plugin/table-of-contents-plus
   tags: tech,wordpress,wp-plugin,top-200,discovery
-
 http:
   - method: GET
     path:

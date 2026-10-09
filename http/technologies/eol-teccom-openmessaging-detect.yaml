@@ -1,16 +1,17 @@
 id: eol-teccom-openmessaging-detect
 
 info:
-  name: TecConnect OpenMessaging Webservice 指纹识别（指纹识别）
+  name: TecConnect OpenMessaging 指纹识别（指纹识别）
   author: lunarcowboy
   severity: info
-  description: |
-    用于识别目标是否使用 TecConnect OpenMessaging Webservice，模板会结合页面正文、状态码和特定路径或已知端点进行技术指纹匹配。
+  description: >-
+    TecConnect OpenMessaging 是 TecCom 用于汽车后市场业务系统间消息交换的 Web Service 接口，常用于订单、可用性和物流等
+    B2B 集成场景。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了 TecConnect OpenMessaging
+    相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     shodan-query: html:"www.teccom-eu.net/wsdl"
   tags: tech,teccom,tecconnect,eol,wsdl,discovery
-
 http:
   - method: GET
     path:

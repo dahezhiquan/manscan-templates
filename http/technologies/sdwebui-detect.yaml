@@ -4,10 +4,11 @@ info:
   name: Stable Diffusion WebUI 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    用于识别目标暴露的 Stable Diffusion WebUI，模板会结合页面正文判断是否存在对应技术或默认页面特征。
+  description: >-
+    Stable Diffusion WebUI 是图像生成模型的 Web 操作界面，用于提示词生成、模型管理和图像处理。该模板通过请求目标服务并检查DSL 条件等指纹特征，判断目标是否使用或暴露了
+    Stable Diffusion WebUI 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://github.com/AUTOMATIC1111/stable-diffusion-webui
+  - https://github.com/AUTOMATIC1111/stable-diffusion-webui
   metadata:
     verified: true
     max-request: 1
@@ -15,7 +16,6 @@ info:
     product: stable-diffusion-webui
     shodan-query: 'http.html:"hires_fix.js"'
   tags: tech,stable-diffusion,sdwebui,ai,image-generation,detect,discovery
-
 http:
   - raw:
       - |

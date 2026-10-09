@@ -1,15 +1,17 @@
 id: sitecore-version
 
 info:
-  name: Sitecore version 指纹识别（指纹识别）
+  name: Sitecore 指纹识别（指纹识别）
   author: bernardofsr
   severity: info
+  description: >-
+    Sitecore 是企业数字体验和内容管理平台，用于内容发布、个性化营销和客户体验管理。该模板通过请求目标服务并检查预设路径或首页响应、状态码、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Sitecore 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.cvedetails.com/vulnerability-list/vendor_id-9609/Sitecore.html
+  - https://www.cvedetails.com/vulnerability-list/vendor_id-9609/Sitecore.html
   metadata:
     max-request: 1
   tags: sitecore,tech,discovery
-
 http:
   - method: GET
     path:

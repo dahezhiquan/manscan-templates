@@ -1,14 +1,15 @@
 id: identity-google-iap-detect
 
 info:
-  name: Google 身份感知代理（IAP）检测（指纹识别）
+  name: Google Identity-Aware Proxy 指纹识别（指纹识别）
   author: davidfegyver
   severity: info
-  description: |-
-    检测目标是否受到 Google 身份感知代理（IAP）保护。IAP 为运行在 Google Cloud 上的服务提供应用层访问控制。当 IAP 拦截到未认证请求时，会设置 X-Goog-Iap-Generated-Response 请求头并将请求重定向至 Google OAuth。随后发出的第二次请求跟随重定向进入同意页面，并从中提取 OAuth client_id、应用所有者、联系邮箱及显示名称。
+  description: >-
+    Google Identity-Aware Proxy 是 Google Cloud 的身份感知访问代理，用于按用户身份保护 Web 应用和云资源入口。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、HTTP
+    响应头、正则特征、DSL 条件等指纹特征，判断目标是否使用或暴露了 Google Identity-Aware Proxy 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://cloud.google.com/iap/docs/concepts-overview
-    - https://cloud.google.com/iap/docs/query-parameters-and-headers-howto#detecting_responses
+  - https://cloud.google.com/iap/docs/concepts-overview
+  - https://cloud.google.com/iap/docs/query-parameters-and-headers-howto#detecting_responses
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -20,7 +21,6 @@ info:
     shodan-query: "X-Goog-Iap-Generated-Response"
     fofa-query: header="X-Goog-Iap-Generated-Response"
   tags: tech,google,iap,cloud,identity,proxy,discovery
-
 flow: http(1) && http(2)
 
 http:

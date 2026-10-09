@@ -4,8 +4,8 @@ info:
   name: Bamboo 指纹识别（指纹识别）
   author: bhutch
   severity: info
-  description: |
-    用于识别目标是否部署 Bamboo 并提取相关版本或构建信息，模板会结合 favicon 哈希、页面标题、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: |-
+    Bamboo 是 Atlassian 持续集成与部署平台，用于构建计划、测试、制品和发布流水线。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Bamboo 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:atlassian:bamboo:*:*:*:*:*:*:*:*
   metadata:

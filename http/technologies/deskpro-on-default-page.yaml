@@ -1,11 +1,11 @@
 id: deskpro-on-default-page
 
 info:
-  name: Deskpro 本地部署控制器 - 默认页面识别（指纹识别）
+  name: Deskpro 本地部署控制器 指纹识别（指纹识别）
   author: Th3l0newolf
   severity: info
   description: |-
-    检测到 Deskpro 本地部署控制器的默认页面。
+    Deskpro 本地部署控制器 是帮助台和客户支持平台，用于工单、知识库、客户沟通和客服流程。该模板请求首页，并依据 DSL 条件识别目标是否使用或暴露了 Deskpro 本地部署控制器 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200

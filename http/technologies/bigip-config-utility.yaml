@@ -1,9 +1,10 @@
 id: bigip-config-utility
 
 info:
-  name: BIG-IP 配置工具指纹识别（指纹识别）
+  name: BIG-IP 配置工具 指纹识别（指纹识别）
   author: dwisiswant0
   severity: info
+  description: BIG-IP 配置工具 是 F5 BIG-IP 应用交付和负载均衡设备，用于流量管理、SSL、WAF 和安全策略。该模板请求 `/tmui/login.jsp`、`/tmui/tmui/login/welcome.jsp`、`/mgmt/tm/sys/management-ip`，并依据页面标题、正文关键字或品牌资源特征、响应头特征识别目标是否使用或暴露了 BIG-IP 配置工具 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 3
   tags: tech,bigip,discovery

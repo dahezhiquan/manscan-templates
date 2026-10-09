@@ -1,13 +1,14 @@
 id: zk-zkoss-framework-detect
 
 info:
-  name: ZK 框架指纹识别（指纹识别）
+  name: ZK Framework 指纹识别（指纹识别）
   author: ErikOwen,Cursor
   severity: info
-  description: |
-    用于识别目标是否部署 ZK 框架 并提取相关版本或构建信息，模板会结合页面正文、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    ZK 是 Java Web UI 框架，用于以组件化方式构建企业级浏览器应用界面。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    ZK Framework 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.zkoss.org/
+  - https://www.zkoss.org/
   classification:
     cpe: cpe:2.3:a:zkoss:zk_framework:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     shodan-query: http.html:"zk.wpd" OR http.html:"<!-- ZK "
     fofa-query: body="zk.wpd" || body="<!-- ZK "
   tags: zk,zkoss,framework,detect,tech,discovery
-
 http:
   - method: GET
     path:

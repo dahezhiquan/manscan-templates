@@ -1,15 +1,17 @@
 id: landesk-csa
 
 info:
-  name: LANDESK(R) Cloud 服务 Appliance 指纹识别（指纹识别）
+  name: LANDESK Cloud Services Appliance 指纹识别（指纹识别）
   author: 0xNirvana
   severity: info
+  description: >-
+    LANDESK Cloud Services Appliance 是 LANDESK/Ivanti 端点管理体系中的云服务网关设备，用于远程管理通信和代理连接。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
+    LANDESK Cloud Services Appliance 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     verified: true
     max-request: 1
     shodan-query: http.html:"LANDESK(R)"
   tags: tech,landesk,discovery
-
 http:
   - method: GET
     path:

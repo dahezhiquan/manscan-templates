@@ -1,13 +1,14 @@
 id: identity-pingaccess-detect
 
 info:
-  name: PingAccess 检测（指纹识别）
+  name: PingAccess 指纹识别（指纹识别）
   author: rxerium
   severity: info
-  description: |-
-    PingAccess 是一种身份感知的访问管理代理。检测到了 PingAccess 响应页面。
+  description: >-
+    PingAccess 是 Ping Identity 的访问控制和反向代理产品，用于为 Web 应用、API 和内部资源实施身份感知访问策略。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    PingAccess 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.pingidentity.com/en/resources/downloads/pingaccess.html
+  - https://www.pingidentity.com/en/resources/downloads/pingaccess.html
   metadata:
     verified: true
     max-request: 1
@@ -15,7 +16,6 @@ info:
     product: pingaccess
     shodan-query: http.html:"/pingaccess/assets/css/main.css"
   tags: tech,pingaccess,identity
-
 http:
   - method: GET
     path:

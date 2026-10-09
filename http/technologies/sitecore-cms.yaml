@@ -4,10 +4,11 @@ info:
   name: Sitecore CMS 指纹识别（指纹识别）
   author: RandomDhiraj
   severity: info
-  description: |
-    用于识别目标是否使用 Sitecore CMS，模板会结合 HTTP 响应头、页面标题、状态码和特定路径或已知端点匹配内容管理系统相关指纹。
+  description: >-
+    Sitecore CMS 是企业数字体验和内容管理平台，用于个性化内容、营销站点和多渠道发布。该模板通过请求目标服务并检查预设路径或首页响应、HTTP 响应头、正则特征、状态码等指纹特征，判断目标是否使用或暴露了
+    Sitecore CMS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.sitecore.com
+  - https://www.sitecore.com
   classification:
     cpe: cpe:2.3:a:sitecore:cms:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +18,6 @@ info:
     product: cms
     shodan-query: title:"sitecore"
   tags: cms,sitecore,tech,discovery
-
 http:
   - method: GET
     path:

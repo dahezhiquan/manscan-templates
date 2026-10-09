@@ -1,10 +1,10 @@
 id: default-detect-generic
 
 info:
-  name: 默认 Web 应用指纹识别（指纹识别）
+  name: 默认 Web 应用 指纹识别（指纹识别）
   author: andydoering
   severity: info
-  description: 用于识别目标暴露的 默认 Web 应用，模板会结合页面标题、页面正文和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: 默认 Web 应用 是通用默认页面或占位页面，用于表示 Web 服务已安装但尚未定制内容。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 默认 Web 应用 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: tech,discovery

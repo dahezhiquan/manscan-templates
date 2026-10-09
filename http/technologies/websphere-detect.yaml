@@ -1,19 +1,20 @@
 id: websphere-detect
 
 info:
-  name: IBM WebSphere 应用服务器指纹识别（指纹识别）
+  name: IBM WebSphere Application Server 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: 用于识别目标是否部署 IBM WebSphere 应用服务器 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    IBM WebSphere Application Server 是企业级 Java 应用服务器，用于部署、运行和管理 Java EE 应用。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、正则特征等指纹特征，判断目标是否使用或暴露了 IBM WebSphere Application Server 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.ibm.com/products/websphere-application-server
+  - https://www.ibm.com/products/websphere-application-server
   metadata:
     max-request: 1
     vendor: ibm
     product: websphere
     fofa-query: "WebSphere-Application-Server"
   tags: tech,websphere,ibm
-
 http:
   - method: GET
     path:

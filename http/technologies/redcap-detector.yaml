@@ -1,13 +1,15 @@
 id: redcap-detector
 
 info:
-  name: REDCap detector 指纹识别（指纹识别）
+  name: REDCap 指纹识别（指纹识别）
   author: philippedelteil,retr0
   severity: info
+  description: >-
+    REDCap 是研究数据采集和管理平台，常用于临床研究、问卷和科研数据流程。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码、正则特征等指纹特征，判断目标是否使用或暴露了
+    REDCap 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: redcap,tech,discovery
-
 http:
   - method: GET
     path:

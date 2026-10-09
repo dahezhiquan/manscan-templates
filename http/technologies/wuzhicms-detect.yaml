@@ -1,19 +1,19 @@
 id: wuzhicms-detect
 
 info:
-  name: Wuzhicms Detected 指纹识别（指纹识别）
+  name: WuzhiCMS 指纹识别（指纹识别）
   author: pikpikcu
   severity: info
-  description: 用于识别目标是否部署 Wuzhicms Detected 并提取相关版本或构建信息，模板会结合页面正文、状态码、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
-  remediation: 建议升级到 Wuzhicms 最新版本，并确认已应用官方发布的所有安全补丁。
+  description: >-
+    WuzhiCMS 是 PHP 内容管理系统，用于构建门户、文章发布、栏目和后台内容管理功能。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    WuzhiCMS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.cvedetails.com/vendor/17848/Wuzhicms.html
+  - https://www.cvedetails.com/vendor/17848/Wuzhicms.html
   classification:
     cwe-id: CWE-200
   metadata:
     max-request: 1
   tags: tech,wuzhicms,discovery
-
 http:
   - method: GET
     path:

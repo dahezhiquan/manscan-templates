@@ -1,17 +1,17 @@
 id: firebase-auth-fingerprint
 
 info:
-  name: Firebase 身份认证 - 指纹识别（指纹识别）
+  name: Firebase Authentication 指纹识别（指纹识别）
   author: zomasec,zomaxsec
   severity: info
-  description: |-
-    通过请求认证辅助脚本并检查 Firebase 许可证、SDK 版本和服务条款引用，识别使用 Firebase 进行身份认证的应用。
+  description: >-
+    Firebase Authentication 是 Google Firebase 提供的身份认证服务，用于在 Web 和移动应用中接入登录、注册和身份提供商认证。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
+    Firebase Authentication 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://firebase.google.com/docs/auth/web/redirect-best-practices
+  - https://firebase.google.com/docs/auth/web/redirect-best-practices
   metadata:
     max-request: 1
   tags: firebase,fingerprint,tech
-
 http:
   - method: GET
     path:

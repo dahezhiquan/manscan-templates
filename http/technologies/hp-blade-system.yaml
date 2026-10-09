@@ -1,10 +1,12 @@
 id: hp-blade-system
 
 info:
-  name: HP BladeSystem Onboard Administrator 面板指纹识别（指纹识别）
+  name: HP BladeSystem Onboard Administrator 指纹识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: 用于识别目标暴露的 HP BladeSystem Onboard Administrator 面板，模板会结合页面标题、状态码和特定路径或已知端点判断是否存在对应技术或默认页面特征。
+  description: >-
+    HP BladeSystem Onboard Administrator 是 HPE 刀片服务器机箱管理界面，用于管理电源、网络、硬件状态和机箱组件。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、状态码等指纹特征，判断目标是否使用或暴露了
+    HP BladeSystem Onboard Administrator 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0
@@ -13,7 +15,6 @@ info:
     max-request: 1
     shodan-query: http.title:"HP BladeSystem"
   tags: panel,hp,tech,discovery
-
 http:
   - method: GET
     path:

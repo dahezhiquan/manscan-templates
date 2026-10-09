@@ -1,9 +1,10 @@
 id: default-movable-page
 
 info:
-  name: Movable 默认页面指纹识别（指纹识别）
+  name: Movable 默认页面 指纹识别（指纹识别）
   author: dhiyaneshDk
   severity: info
+  description: Movable 默认页面 是 Web 应用或默认页面，用于展示已部署但尚未配置的站点状态。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Movable 默认页面 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   classification:
     cpe: cpe:2.3:a:sixapart:movable_type:*:*:*:*:*:*:*:*
   metadata:

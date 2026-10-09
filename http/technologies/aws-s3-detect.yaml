@@ -4,6 +4,7 @@ info:
   name: Amazon-S3 Bucket 指纹识别（指纹识别）
   author: melbadry9
   severity: info
+  description: Amazon-S3 Bucket 是 AWS S3 对象存储服务，用于存储桶、对象和静态文件托管。该模板请求 `/%c0`，并依据页面标题、正文关键字或品牌资源特征、DSL 条件识别目标是否使用或暴露了 Amazon-S3 Bucket 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
   tags: aws,s3,bucket,tech,discovery

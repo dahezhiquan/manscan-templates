@@ -1,17 +1,19 @@
 id: springboot-whitelabel
 
 info:
-  name: SpringBoot WhiteLabel 错误页指纹识别（指纹识别）
+  name: Spring Boot Whitelabel 错误页 指纹识别（指纹识别）
   author: Matt Miller
   severity: info
+  description: >-
+    Spring Boot Whitelabel 错误页是 Spring Boot 默认错误响应页面，用于标识应用框架和错误处理入口。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、页面正文关键字等指纹特征，判断目标是否使用或暴露了 Spring Boot Whitelabel 错误页 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://codingnconcepts.com/spring-boot/disable-whitelabel-error-page-spring-boot/
+  - https://codingnconcepts.com/spring-boot/disable-whitelabel-error-page-spring-boot/
   metadata:
     verified: true
     max-request: 1
     shodan-query: html:"Whitelabel Error Page"
   tags: tech,spring,springboot,errorpage,discovery
-
 http:
   - method: GET
     path:

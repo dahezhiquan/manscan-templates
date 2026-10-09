@@ -1,14 +1,15 @@
 id: php-eol
 
 info:
-  name: PHP End-of-Life 指纹识别（指纹识别）
+  name: PHP EOL 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
-  description: |
-    用于识别目标是否部署 PHP End-of-Life 并提取相关版本或构建信息，模板会结合 HTTP 响应头、特定路径或已知端点和版本或标识提取结果进行指纹匹配。
+  description: >-
+    PHP 是常见服务端脚本语言，EOL 版本表示目标环境使用的 PHP 分支已不再获得官方安全维护。该模板通过请求目标服务并检查预设路径或首页响应、HTTP
+    响应头、正则特征、DSL 条件等指纹特征，判断目标是否使用或暴露了 PHP EOL 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   reference:
-    - https://www.php.net/supported-versions.php
-    - https://endoflife.date/php
+  - https://www.php.net/supported-versions.php
+  - https://endoflife.date/php
   classification:
     cwe-id: CWE-1104
   metadata:
@@ -16,7 +17,6 @@ info:
     max-request: 1
     shodan-query: "X-Powered-By: PHP/"
   tags: tech,php,eol
-
 http:
   - method: GET
     path:

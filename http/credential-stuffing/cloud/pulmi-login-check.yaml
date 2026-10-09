@@ -4,7 +4,16 @@ info:
   name: Pulumi 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过向 Pulumi 控制台登录接口提交用户名和密码，依据响应中的 pulumiAccessToken 与 userInfo 字段判断给定凭证是否可成功登录，适用于撞库场景下的 Pulumi 账号有效性核验。
+  description: Pulumi 是基础设施即代码和云资源编排平台，账号可能访问组织、项目栈、云资源状态和部署凭据。该模板向 Pulumi 控制台登录接口提交用户名和密码，依据响应中的 pulumiAccessToken 与 userInfo 字段判断给定凭据是否可成功登录，适用于撞库场景下的 Pulumi 账号有效性核验。
+  impact: |-
+    - 攻击者可使用有效凭据访问 Pulumi 组织、项目栈、状态文件和基础设施配置。
+    - 若账号具备部署或管理权限，可能读取云资源信息、修改基础设施定义或影响生产环境发布流程。
+    - Pulumi 状态和配置中可能包含敏感输出或集成信息，账号接管会增加云环境横向移动风险。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话和访问令牌，检查组织成员、项目栈和近期部署记录。
+    - 为 Pulumi 账号启用多因素认证或 SSO，并按最小权限原则限制组织角色。
+    - 轮换可能暴露在 Pulumi 配置、Secret 或状态中的云凭据和访问密钥。
+    - 对登录接口和组织审计日志配置异常告警，结合泄露凭据检测阻断批量撞库。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

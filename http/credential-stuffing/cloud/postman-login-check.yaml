@@ -4,7 +4,16 @@ info:
   name: Postman 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过获取 Postman 登录流程中的 CSRF 令牌后提交用户名和密码，并结合 getpostmanlogin 会话 Cookie、继续跳转标识及响应状态，判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性验证。
+  description: Postman 是 API 设计、调试、测试和协作平台，账号中可能保存集合、环境变量、团队空间和接口凭据。该模板获取 Postman 登录流程中的 CSRF 令牌后提交用户名和密码，并结合 getpostmanlogin 会话 Cookie、继续跳转标识及响应状态，判断给定凭据是否可成功登录，适用于撞库场景下的账号有效性验证。
+  impact: |-
+    - 攻击者可使用有效凭据访问 Postman 工作空间、接口集合、环境变量和团队协作内容。
+    - 环境变量或请求示例中可能包含 API Key、Bearer Token、内部地址等敏感信息，可能进一步导致业务接口被滥用。
+    - 高权限账号被接管后，可能篡改共享集合、导出接口资料或影响团队 API 测试流程。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话，并检查团队工作空间、环境变量、集合和 API 密钥暴露情况。
+    - 启用多因素认证和团队级 SSO，限制高权限账号使用复用密码登录。
+    - 轮换可能保存在 Postman 中的 API Token、密钥和敏感环境变量。
+    - 对登录行为配置异常检测、速率限制和泄露凭据校验，降低撞库验证成功率。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

@@ -1,10 +1,19 @@
 id: atlassian-login-check
 
 info:
-  name: Atlassian 登录反馈检查（撞库）
+  name: Atlassian 登录凭据反馈检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过向 Atlassian 认证接口提交用户名和密码，并识别 403 状态与固定的 Wrong email or password. 错误提示，判断该登录流程是否会对撞库尝试返回可区分的凭证反馈，便于进一步开展账号口令验证。
+  description: Atlassian 账号可用于访问 Jira、Confluence、Bitbucket 等协作与研发管理服务。该模板向 Atlassian 认证接口提交用户名和密码，并识别 403 状态与 Wrong email or password. 错误提示，用于确认登录流程会对撞库尝试返回可区分的凭据校验反馈，便于发现可被批量验证的账号口令风险。
+  impact: |-
+    - 登录接口返回稳定的凭据错误反馈后，攻击者可批量区分无效凭据与其他认证状态，提高撞库验证效率。
+    - 若撞库获得有效 Atlassian 账号，可能访问项目工单、文档、代码仓库或组织协作数据。
+    - 高权限账号被接管时，可能导致项目配置、成员权限、集成密钥或研发流程被篡改。
+  remediation: |-
+    - 为 Atlassian 账号启用多因素认证，并强制轮换命中或疑似泄露的账号密码。
+    - 配置登录速率限制、异常登录告警、账号锁定和风险登录验证，减少批量凭据验证能力。
+    - 审计近期登录历史、组织成员权限、API Token 和第三方应用授权，撤销可疑会话和令牌。
+    - 对外部泄露凭据进行持续监测，阻断已知泄露密码在 Atlassian 账号中的复用。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

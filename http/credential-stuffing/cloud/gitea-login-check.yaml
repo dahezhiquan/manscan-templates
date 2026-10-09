@@ -5,7 +5,16 @@ info:
   author: parthmalhotra,pdresearch
   severity: critical
   description: |-
-    通过向 Gitea.com 登录接口提交用户名和密码，并依据返回的 Location: / 跳转与 303 状态码判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性验证。
+    Gitea.com 是基于 Gitea 的代码托管和协作平台，账号可能访问代码仓库、议题、合并请求和组织资源。该模板向 Gitea.com 登录接口提交用户名和密码，并依据返回的 Location: / 跳转与 303 状态码判断给定凭据是否可成功登录，适用于撞库场景下的账号有效性验证。
+  impact: |-
+    - 攻击者可使用有效凭据登录 Gitea.com，读取或修改代码仓库、议题、发布包和组织配置。
+    - 高权限账号被接管后，可能创建恶意提交、篡改 CI/CD 配置或泄露仓库中的密钥与源码。
+    - 凭据复用会使同一用户在其他代码托管或 DevOps 平台上的账号继续面临接管风险。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话和访问令牌，检查近期提交、仓库权限和组织成员变更。
+    - 为账号启用多因素认证，并推动用户使用唯一强密码。
+    - 对登录接口启用速率限制、失败登录告警和泄露密码检测，阻断批量撞库。
+    - 复核仓库和组织权限，轮换可能在仓库中暴露或被访问的部署密钥、Webhook 密钥和访问令牌。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

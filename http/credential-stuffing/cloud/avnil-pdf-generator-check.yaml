@@ -4,7 +4,16 @@ info:
   name: Anvil PDF Generator 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过向 Anvil 的 GraphQL 登录接口提交邮箱和密码，依据响应中的 email、eid 等账户字段判断给定凭证是否可成功登录 Anvil PDF Generator 服务，适用于撞库场景下的凭证有效性核验。
+  description: Anvil PDF Generator 是 Anvil 平台提供的文档生成和表单自动化服务，账号可能关联模板、工作流、API 集成和业务文档。该模板向 Anvil 的 GraphQL 登录接口提交邮箱和密码，依据响应中的 email、eid 等账户字段判断给定凭据是否可成功登录，用于撞库场景下的凭据有效性核验。
+  impact: |-
+    - 攻击者可使用有效凭据进入 Anvil 账户，查看或操作文档模板、生成记录、表单数据和相关集成配置。
+    - 若账号绑定 API 或自动化工作流，可能进一步泄露业务数据、客户文档或触发未授权操作。
+    - 成功撞库说明相关用户存在密码复用或凭据泄露问题，可能影响同一凭据使用的其他平台。
+  remediation: |-
+    - 重置命中账号密码，检查并撤销异常会话、API Key、Webhook 和第三方集成授权。
+    - 为 Anvil 账户启用多因素认证，并限制高权限账号的登录来源和操作权限。
+    - 在认证侧启用速率限制、异常登录告警和泄露密码检测，阻断批量凭据验证。
+    - 要求用户使用唯一强密码，并对业务文档和自动化工作流进行访问权限复核。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

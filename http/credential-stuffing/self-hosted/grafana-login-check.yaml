@@ -4,7 +4,16 @@ info:
   name: Grafana 自托管实例登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过向 Grafana 自托管实例的 /login 接口提交用户名和密码，结合响应中的 Logged in 文本、grafana_session 会话 Cookie 与 200 状态码判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性核验。
+  description: Grafana 是常见的监控可视化和告警平台，自托管实例通常连接 Prometheus、Loki、Elasticsearch、云监控等数据源。该模板向 Grafana 自托管实例的 /login 接口提交用户名和密码，结合响应中的 Logged in 文本、grafana_session 会话 Cookie 与 200 状态码判断给定凭据是否可成功登录，适用于撞库场景下的账号有效性核验。
+  impact: |-
+    - 攻击者可使用有效凭据访问 Grafana 仪表盘、数据源配置、告警规则和组织成员信息。
+    - 高权限账号可能修改数据源、告警和面板配置，干扰监控结果或隐藏异常行为。
+    - 数据源查询能力可能暴露内部服务、日志、指标、业务数据或凭据线索，增加后续攻击面。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话，并检查近期登录、组织角色、数据源和告警配置变更。
+    - 启用多因素认证、SSO 或外部身份提供商，并限制管理员账号的日常使用。
+    - 对 Grafana 登录接口启用速率限制、失败登录告警和反自动化防护。
+    - 复核数据源权限和查询范围，轮换可能在数据源配置中暴露的密钥或令牌。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   classification:

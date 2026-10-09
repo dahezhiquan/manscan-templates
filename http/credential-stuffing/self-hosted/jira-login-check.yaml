@@ -4,7 +4,16 @@ info:
   name: Jira 自托管实例登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过向 Jira 自托管实例的 REST 登录接口提交用户名和密码，并依据响应中 loginSucceeded 为 true 的结果判断给定凭证是否有效，适用于撞库场景下验证 Jira 账号是否可被成功登录。
+  description: Jira 自托管实例用于项目管理、缺陷跟踪和研发流程协作，账号通常可访问项目计划、工单、附件和团队权限信息。该模板向 Jira 自托管实例的 REST 登录接口提交用户名和密码，并依据响应中 loginSucceeded 为 true 的结果判断给定凭据是否有效，适用于撞库场景下验证 Jira 账号是否可被成功登录。
+  impact: |-
+    - 攻击者可使用有效凭据访问 Jira 项目、工单、附件、评论和团队协作信息。
+    - 高权限账号被接管后，可能修改项目配置、工作流、用户权限或集成设置，影响研发与运维流程。
+    - 工单内容中可能包含内部系统地址、漏洞细节、账号线索或变更计划，泄露后会增加后续攻击风险。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话，并审计近期登录、项目权限、工作流和插件配置变更。
+    - 为 Jira 启用多因素认证或企业 SSO，并对管理员和项目负责人账号执行最小权限复核。
+    - 配置登录失败阈值、速率限制、异常登录告警和泄露凭据检测，阻断批量撞库。
+    - 清理工单中的敏感凭据和内部细节，对可能暴露的令牌、密码或集成密钥进行轮换。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

@@ -4,7 +4,16 @@ info:
   name: GitHub 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 该模板会先提取 GitHub 登录页中的防伪参数，再提交用户名和密码，并依据登录成功后的会话 Cookie，或跳转至双因素认证页面的行为，判断给定凭证是否有效，适用于撞库场景下的账号可登录性核验。
+  description: GitHub 是代码托管、协作开发和软件供应链管理平台，账号可能关联源码、组织权限、CI/CD 和访问令牌。该模板先提取 GitHub 登录页中的防伪参数，再提交用户名和密码，并依据登录成功后的会话 Cookie，或跳转至双因素认证页面的行为，判断给定凭据是否有效，适用于撞库场景下的账号可登录性核验。
+  impact: |-
+    - 攻击者可使用有效凭据访问 GitHub 账户，读取私有仓库、组织项目、Issue、Pull Request 和包管理资源。
+    - 若账号具备写入或管理员权限，可能篡改代码、修改 GitHub Actions、窃取 Secrets 或发起供应链攻击。
+    - 即使触发双因素认证页面，也表明用户名和密码组合可能有效，需要按高风险凭据处理。
+  remediation: |-
+    - 立即重置命中账号密码，撤销异常会话、Personal Access Token、OAuth 授权和 SSH/GPG 可疑密钥。
+    - 强制启用多因素认证，并为组织启用 SSO、细粒度令牌和最小权限访问控制。
+    - 审计近期登录、代码提交、Actions 工作流、Secrets 访问和组织成员权限变更。
+    - 使用泄露凭据检测、登录风控和速率限制，阻断批量凭据验证与自动化撞库。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

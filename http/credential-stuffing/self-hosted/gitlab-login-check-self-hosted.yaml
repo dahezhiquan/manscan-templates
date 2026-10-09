@@ -4,7 +4,16 @@ info:
   name: GitLab 自托管实例登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 该模板会先获取 GitLab 自托管实例登录页中的 authenticity_token，再提交用户名和密码，并依据 302 跳转且响应中未出现 invalid login 提示来判断给定凭证是否有效，适用于撞库场景下的自托管 GitLab 账号验证。
+  description: GitLab 自托管实例用于代码托管、CI/CD、制品管理和研发协作，账号权限通常直接影响组织源码与交付流水线。该模板先获取登录页中的 authenticity_token，再提交用户名和密码，并依据 302 跳转且响应中未出现 invalid login 提示来判断给定凭据是否有效，适用于撞库场景下的自托管 GitLab 账号验证。
+  impact: |-
+    - 攻击者可使用有效凭据访问自托管 GitLab，读取私有仓库、Issue、Merge Request、制品和项目配置。
+    - 高权限账号被接管后，可能篡改代码、修改 CI/CD 流水线、窃取 CI/CD 变量或控制 Runner 执行流程。
+    - 自托管环境中的内部源码、部署密钥和集成信息可能被进一步用于横向移动或供应链攻击。
+  remediation: |-
+    - 重置命中账号密码，撤销异常会话、Personal Access Token、Deploy Token 和 SSH Key。
+    - 强制启用多因素认证或企业 SSO，并对管理员、维护者账号执行最小权限复核。
+    - 审计近期登录、代码提交、CI/CD 变量访问、流水线配置和项目成员权限变更。
+    - 对登录接口部署速率限制、失败登录告警、IP 风控和泄露凭据检测，降低撞库自动化成功率。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

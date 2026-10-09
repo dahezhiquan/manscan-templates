@@ -4,7 +4,16 @@ info:
   name: Datadog 登录有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过先提取 Datadog 登录页中的认证令牌，再提交用户名和密码，并依据返回的 dogweb 会话 Cookie 与 302 跳转判断给定凭证是否可成功登录，适用于撞库场景下的账号有效性核验。
+  description: Datadog 是云监控、日志分析和应用性能观测平台，账号通常可访问主机、服务、告警和日志数据。该模板先提取 Datadog 登录页中的认证令牌，再提交用户名和密码，并依据返回的 dogweb 会话 Cookie 与 302 跳转判断给定凭据是否可成功登录，适用于撞库场景下的账号有效性核验。
+  impact: |-
+    - 攻击者可使用有效凭据访问 Datadog 控制台，查看基础设施、应用指标、日志、告警和监控仪表盘。
+    - 若账号权限较高，可能修改告警规则、集成配置或监控数据展示，影响安全运营和故障响应判断。
+    - 日志与监控数据中可能包含服务拓扑、内部地址、错误堆栈或敏感运行信息，增加后续攻击面。
+  remediation: |-
+    - 立即重置命中账号密码，撤销异常会话，并检查近期登录、告警规则、集成和 API Key 变更。
+    - 为 Datadog 组织启用多因素认证和单点登录策略，减少密码复用带来的账号接管风险。
+    - 配置登录速率限制、异常登录告警和泄露凭据检测，对高风险登录触发额外验证。
+    - 按最小权限原则复核用户角色，限制普通账号查看敏感日志和修改关键监控配置。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

@@ -1,10 +1,19 @@
 id: atechmedia-codebase-login-check
 
 info:
-  name: Atechmedia/Codebase 登录有效性检查（撞库）
+  name: Atechmedia Codebase 登录凭据有效性检查（撞库）
   author: parthmalhotra,pdresearch
   severity: critical
-  description: 通过抓取登录页令牌并提交用户名和密码，依据返回的 user_session Cookie 与 302 跳转判断给定凭证是否可成功登录 Atechmedia/Codebase，适用于撞库场景下的账号有效性验证。
+  description: Atechmedia Codebase 是面向软件团队的代码托管和项目协作平台，账号通常可访问源代码、工单和部署相关信息。该模板会先获取登录页中的 authenticity_token，再提交用户名和密码，并依据返回的 user_session Cookie 与 302 跳转判断给定凭据是否可成功登录，用于验证撞库场景中复用凭据的有效性。
+  impact: |-
+    - 攻击者可使用有效凭据登录 Codebase 账户，查看或修改代码仓库、项目资料和团队协作内容。
+    - 若账号具备较高权限，可能进一步影响源代码完整性、泄露敏感配置或触发供应链风险。
+    - 成功撞库还可能暴露组织内部成员的密码复用问题，扩大横向登录其他系统的风险。
+  remediation: |-
+    - 立即重置命中的账号密码，禁止继续使用已泄露或在其他站点复用的密码。
+    - 为 Codebase 账号启用多因素认证，并审计近期登录记录、会话和项目权限变更。
+    - 对登录接口配置速率限制、异常登录检测和账号锁定策略，降低批量撞库成功率。
+    - 对团队成员开展凭据复用治理，使用唯一强密码和密码管理器，并撤销可疑会话或访问令牌。
   reference:
     - https://owasp.org/www-community/attacks/Credential_stuffing
   metadata:

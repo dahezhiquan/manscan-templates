@@ -4,14 +4,21 @@ info:
   name: ScrapingDog API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 ScrapingDog API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问网页抓取与内容提取能力。
+  description: |-
+    平台介绍：ScrapingDog API 是面向网页抓取、截图、文件转换、图像处理或内容生成的开发者 API 平台，常用于自动化采集、转换和生成外部内容。该模板用于校验提交的 ScrapingDog API Token 是否仍然有效。检测逻辑会向 `api.scrapingdog.com/scrape` 发起低影响 API 请求，通过查询参数中的 API Key/Token 传递 `{{token}}`，并依据响应中的 `<title>Example Domain</title>` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://www.scrapingdog.com/documentation
     - https://github.com/daffainfo/all-about-apikey/tree/main/scrapingdog
   metadata:
     max-request: 1
   tags: token-spray,scrapingdog
-
+  impact: |-
+    - 攻击者可确认 Token 有效并调用平台 API，读取账户、资源、配额或业务数据。
+    - 有效 Token 可能被持续滥用，造成数据泄露、配额消耗、费用增加、服务滥用或进一步横向访问。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

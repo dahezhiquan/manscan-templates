@@ -4,14 +4,22 @@ info:
   name: Hunter API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 Hunter API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问邮件发送、投递或邮箱服务能力。
+  description: |-
+    平台介绍：Hunter API 是面向支付、金融连接或商业交易的服务平台，常用于管理账户、交易、客户、地址、订单或支付相关资源。该模板用于校验提交的 Hunter API Token 是否仍然有效。检测逻辑会向 `api.hunter.io/v2/domain-search` 发起低影响 API 请求，通过查询参数中的 API Key/Token 传递 `{{token}}`，并依据响应中的 `"domain"`、`"disposable"`、`"webmail"` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://hunter.io/api-documentation/v2
     - https://github.com/daffainfo/all-about-apikey/tree/main/hunter
   metadata:
     max-request: 1
   tags: token-spray,hunter
-
+  impact: |-
+    - 攻击者可利用有效 Token 读取账户、客户、交易、地址或支付相关数据。
+    - 若 Token 具备写权限，可能创建交易、修改配置、滥用付费额度并触发财务损失。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

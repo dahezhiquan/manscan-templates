@@ -11,7 +11,15 @@ info:
   metadata:
     max-request: 1
   tags: recon,securitytrails,token-spray
-
+  description: |-
+    平台介绍：SecurityTrails API 是面向安全运营、威胁情报或互联网资产测绘的服务平台，常用于查询恶意指标、资产暴露面、证书、域名或扫描配额。该模板用于校验提交的 SecurityTrails API Token 是否仍然有效。检测逻辑会向 `api.securitytrails.com/v1/ping` 发起低影响 API 请求，通过查询参数中的 API Key/Token 传递 `{{token}}`，并依据响应中的 `success` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可消耗安全情报查询额度、读取组织查询结果、资产信息或扫描配额。
+    - 泄露 Token 还可能暴露安全团队关注的资产范围、调查目标和监控能力。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

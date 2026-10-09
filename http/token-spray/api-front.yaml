@@ -9,7 +9,15 @@ info:
   metadata:
     max-request: 1
   tags: token-spray,front
-
+  description: |-
+    平台介绍：Frontapp API 是面向团队协作、项目管理或业务流程自动化的平台，常用于管理任务、表格、项目、工作流、成员或组织数据。该模板用于校验提交的 Frontapp API Token 是否仍然有效。检测逻辑会向 `api2.frontapp.com/accounts` 发起低影响 API 请求，通过模板配置的认证字段传递 `{{token}}`，并依据响应中的 `logo_url`、`name` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可读取项目、任务、表格、工作流、成员或业务协作数据。
+    - 高权限 Token 可能允许修改项目内容、创建任务、导出数据或影响团队协作流程。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

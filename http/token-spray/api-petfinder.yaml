@@ -4,14 +4,22 @@ info:
   name: Petfinder API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 Petfinder API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
+  description: |-
+    平台介绍：Petfinder API 是面向身份认证、访问管理或多因素认证的服务平台，常用于管理用户、应用、令牌、认证流程或安全策略。该模板用于校验提交的 Petfinder API Token 是否仍然有效。检测逻辑会向 `api.petfinder.com/v2/oauth2/token` 发起低影响 API 请求，通过模板配置的认证字段传递 `{{token}}`，并依据响应中的 `"token_type"`、`"expires_in"`、`"access_token"` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://www.petfinder.com/developers/v2/docs/
     - https://github.com/daffainfo/all-about-apikey/tree/main/petfinder
   metadata:
     max-request: 1
   tags: token-spray,petfinder
-
+  impact: |-
+    - 攻击者可枚举用户、应用、认证配置或多因素认证相关信息。
+    - 高权限 Token 可能被用于修改身份策略、创建访问凭据或扩大账号接管范围。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

@@ -11,7 +11,16 @@ info:
   metadata:
     max-request: 1
   tags: sentry,tracing,tracking,monitoring,token-spray
-
+  description: |-
+    平台介绍：Sentry API 是面向研发团队的代码托管、CI/CD、质量分析或开发者工具平台，常用于访问项目、流水线、构建、包管理或观测数据。该模板用于校验提交的 Sentry API Token 是否仍然有效。检测逻辑会向 `sentry.io/api/0/projects/` 发起低影响 API 请求，通过 Bearer Token 认证头传递 `{{token}}`，并依据响应中的 状态码 200 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可读取代码项目、流水线、构建日志、包信息或组织成员数据。
+    - 若 Token 具备写权限，可能篡改构建流程、发布恶意制品、读取密钥或影响研发供应链。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

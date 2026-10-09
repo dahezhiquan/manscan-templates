@@ -10,7 +10,15 @@ info:
   metadata:
     max-request: 1
   tags: defi,dapp,token-spray,blockchain
-
+  description: |-
+    平台介绍：Tatum API 是面向加密资产、区块链节点、行情或汇率数据的服务平台，常用于查询链上数据、交易市场、账户余额、货币价格或金融数据。该模板用于校验提交的 Tatum API Token 是否仍然有效。检测逻辑会向 `api.tatum.io/v3/tatum/version` 发起低影响 API 请求，通过模板配置的认证字段传递 `{{token}}`，并依据响应中的 `"baseCommit":`、`"planName":`、`"creditLimit":`、状态码 200 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可访问行情、链上查询、钱包、节点或账户相关数据，并消耗 API 配额。
+    - 若 Token 绑定交易或托管能力，可能进一步造成资产操作风险或业务数据泄露。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

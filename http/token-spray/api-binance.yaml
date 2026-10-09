@@ -4,14 +4,21 @@ info:
   name: Binance REST API Token 可用性校验（token喷洒）
   author: geeknik
   severity: high
-  description: 该模板通过调用 Binance REST API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
+  description: |-
+    平台介绍：Binance REST API 是面向加密资产、区块链节点、行情或汇率数据的服务平台，常用于查询链上数据、交易市场、账户余额、货币价格或金融数据。该模板用于校验提交的 Binance REST API Token 是否仍然有效。检测逻辑会向 `api.binance.com/api/v3/historicalTrades` 发起低影响 API 请求，通过查询参数中的 API Key/Token 传递 `{{token}}`，并依据响应中的 `"id":`、`"price":`、`"quoteQty":` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://github.com/binance/binance-spot-api-docs/blob/master/rest-api.md
     - https://github.com/daffainfo/all-about-apikey/tree/main/binance
   metadata:
     max-request: 1
   tags: token-spray,binance
-
+  impact: |-
+    - 攻击者可访问行情、链上查询、钱包、节点或账户相关数据，并消耗 API 配额。
+    - 若 Token 绑定交易或托管能力，可能进一步造成资产操作风险或业务数据泄露。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

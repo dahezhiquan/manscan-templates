@@ -4,14 +4,21 @@ info:
   name: Telegram API Token 可用性校验（token喷洒）
   author: 0xpugal
   severity: high
-  description: 该模板通过调用 Telegram API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
+  description: |-
+    平台介绍：Telegram API 是面向消息通知、邮件投递、协同沟通或本地化集成的平台，常用于发送消息、访问团队空间、管理收件域或调用通信接口。该模板用于校验提交的 Telegram API Token 是否仍然有效。检测逻辑会向 `api.telegram.org/bot{{token}}/getMe` 发起低影响 API 请求，通过请求中的 Token 参数传递 `{{token}}`，并依据响应中的 `"id"`、`"is_bot"`、`"first_name:"` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://core.telegram.org/bots/api#making-requests
     - https://github.com/streaak/keyhacks?tab=readme-ov-file#telegram-bot-api-token
   metadata:
     max-request: 1
   tags: token-spray,telegram
-
+  impact: |-
+    - 攻击者可读取或发送消息、邮件、团队空间、联系人或通知配置。
+    - 泄露 Token 可能被用于钓鱼投递、垃圾消息、数据外传或冒充可信业务系统。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

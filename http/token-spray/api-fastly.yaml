@@ -9,7 +9,16 @@ info:
   metadata:
     max-request: 1
   tags: token-spray,fastly
-
+  description: |-
+    平台介绍：Fastly API 是面向开发者和运维团队的云服务、边缘网络或文件存储平台，常用于管理站点、对象、部署、账户资源或云端能力。该模板用于校验提交的 Fastly API Token 是否仍然有效。检测逻辑会向 `api.fastly.com/current_user` 发起低影响 API 请求，通过请求中的 Token 参数传递 `{{token}}`，并依据响应中的 `"created_at":`、`"customer_id":` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可访问云端资源、部署信息、文件对象、站点配置或账户资料。
+    - 高权限 Token 可能导致资源篡改、数据泄露、服务中断、账单消耗或供应链风险。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

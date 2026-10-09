@@ -4,14 +4,22 @@ info:
   name: Bitrise API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 Bitrise API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问构建、测试或交付流水线能力。
+  description: |-
+    平台介绍：Bitrise API 是面向研发团队的代码托管、CI/CD、质量分析或开发者工具平台，常用于访问项目、流水线、构建、包管理或观测数据。该模板用于校验提交的 Bitrise API Token 是否仍然有效。检测逻辑会向 `api.bitrise.io/v0.1/me` 发起低影响 API 请求，通过模板配置的认证字段传递 `{{token}}`，并依据响应中的 `"username":`、`"slug":`、`"email":` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://api-docs.bitrise.io/
     - https://github.com/daffainfo/all-about-apikey/tree/main/bitrise
   metadata:
     max-request: 1
   tags: token-spray,bitrise
-
+  impact: |-
+    - 攻击者可读取代码项目、流水线、构建日志、包信息或组织成员数据。
+    - 若 Token 具备写权限，可能篡改构建流程、发布恶意制品、读取密钥或影响研发供应链。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

@@ -4,14 +4,21 @@ info:
   name: Wordnik API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 Wordnik API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问相关 API 能力。
+  description: |-
+    平台介绍：Wordnik API 是面向内容、媒体、社交、文化数据或公共信息查询的 API 平台，常用于访问图片、视频、文章、活动、资料库或开放数据。该模板用于校验提交的 Wordnik API Token 是否仍然有效。检测逻辑会向 `api.wordnik.com/v4/word.json/hedgehog/topExample` 发起低影响 API 请求，通过查询参数中的 API Key/Token 传递 `{{token}}`，并依据响应中的 `"provider"`、`"year"`、`"rating"` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://developer.wordnik.com/docs
     - https://github.com/daffainfo/all-about-apikey/tree/main/wordnik
   metadata:
     max-request: 1
   tags: token-spray,wordnik
-
+  impact: |-
+    - 攻击者可确认 Token 有效并调用平台 API，读取账户、资源、配额或业务数据。
+    - 有效 Token 可能被持续滥用，造成数据泄露、配额消耗、费用增加、服务滥用或进一步横向访问。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

@@ -9,7 +9,16 @@ info:
   metadata:
     max-request: 1
   tags: token-spray,fortinet,fortitoken
-
+  description: |-
+    平台介绍：FortiToken Cloud API 是面向身份认证、访问管理或多因素认证的服务平台，常用于管理用户、应用、令牌、认证流程或安全策略。该模板用于校验提交的 FortiToken Cloud API Token 是否仍然有效。检测逻辑会向 `ftc.fortinet.com:9696/api/v1/user` 发起低影响 API 请求，通过 Bearer Token 认证头传递 `{{token}}`，并依据响应中的 状态码 200 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
+  impact: |-
+    - 攻击者可枚举用户、应用、认证配置或多因素认证相关信息。
+    - 高权限 Token 可能被用于修改身份策略、创建访问凭据或扩大账号接管范围。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
+    - 检查近期 API 调用、资源变更、账单和权限配置，确认是否存在异常操作。
 self-contained: true
 
 http:

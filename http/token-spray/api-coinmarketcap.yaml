@@ -4,14 +4,21 @@ info:
   name: CoinMarketCap API Token 可用性校验（token喷洒）
   author: daffainfo
   severity: high
-  description: 该模板通过调用 CoinMarketCap API 的已知接口验证提供的 token 是否有效，命中后通常表示可访问区块链与加密资产数据能力。
+  description: |-
+    平台介绍：CoinMarketCap API 是面向加密资产、区块链节点、行情或汇率数据的服务平台，常用于查询链上数据、交易市场、账户余额、货币价格或金融数据。该模板用于校验提交的 CoinMarketCap API Token 是否仍然有效。检测逻辑会向 `pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest` 发起低影响 API 请求，通过模板配置的认证字段传递 `{{token}}`，并依据响应中的 `"name"`、`"symbol"`、`"cmc_rank"` 判断凭据是否可用；命中通常表示该 Token 可被继续调用对应平台能力。
   reference:
     - https://coinmarketcap.com/api/documentation/v1
     - https://github.com/daffainfo/all-about-apikey/tree/main/coinmarketcap
   metadata:
     max-request: 1
   tags: token-spray,coinmarketcap
-
+  impact: |-
+    - 攻击者可访问行情、链上查询、钱包、节点或账户相关数据，并消耗 API 配额。
+    - 若 Token 绑定交易或托管能力，可能进一步造成资产操作风险或业务数据泄露。
+  remediation: |-
+    - 立即撤销或轮换已暴露的 API Token，并确认旧 Token 不再可用。
+    - 按最小权限原则重新签发凭据，限制作用域、来源地址、项目范围和有效期。
+    - 在代码仓库、CI/CD、日志和配置文件中排查泄露来源，避免 Token 再次提交或外传。
 self-contained: true
 
 http:

@@ -4,8 +4,8 @@ info:
   name: Flowise 面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板用于识别 Flowise 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 Flowise 相关响应特征。Flowise 是低代码 LLM 工作流编排平台，用于构建聊天流程、代理、工具链和模型调用链。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/FlowiseAI/Flowise
     - https://flowiseai.com/
@@ -16,7 +16,6 @@ info:
     product: flowise
     shodan-query: 'http.title:"Flowise - Build AI Agents, Visually"'
   tags: panel,flowise,llm,ai,detect,discovery
-
 http:
   - method: GET
     path:

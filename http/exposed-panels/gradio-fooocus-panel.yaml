@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 Fooocus——一个基于 Gradio 构建的开源、离线 Stable Diffusion 图像生成界面，专注于简化的基于提示词的图像生成。本次通过匹配其 Fooocus 品牌页面元数据及内嵌的 Gradio 配置来识别，从而避免与其他常共享同一端口的 Gradio 应用（如 ComfyUI、text-generation-webui 等）发生混淆。
+    检测到目标站点存在 检测 Fooocus 相关响应特征。检测 Fooocus 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或生成任务。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该基础设施指纹；命中结果主要用于威胁狩猎、恶意基础设施识别和外部暴露面梳理。
   reference:
     - https://github.com/lllyasviel/Fooocus
   metadata:
@@ -15,7 +15,6 @@ info:
     product: fooocus
     shodan-query: 'html:"fooocus"'
   tags: panel,fooocus,ai,image-generation,gradio,detect,discovery
-
 http:
   - method: GET
     path:

@@ -4,6 +4,8 @@ info:
   name: ArcServe 面板识别（指纹识别）
   author: DhiyaneshDk
   severity: info
+  description: |-
+    检测到目标站点存在 ArcServe 相关响应特征。ArcServe 是监控、日志、分析或仪表盘系统，用于展示运行指标、访问统计、日志事件和服务状态。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://twitter.com/HunterMapping/status/1674267368359444480
     - https://github.com/mdsecactivebreach/CVE-2023-26258-ArcServe
@@ -19,7 +21,6 @@ info:
       - http.favicon.hash:"-1889244460"
     fofa-query: icon_hash="-1889244460"
   tags: panel,login,arcserve,detect,discovery
-
 http:
   - method: GET
     path:

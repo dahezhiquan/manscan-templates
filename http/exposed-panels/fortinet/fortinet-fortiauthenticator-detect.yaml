@@ -4,7 +4,8 @@ info:
   name: FortiAuthenticator 识别（指纹识别）
   author: johnk3r
   severity: info
-  description: 该模板通过识别 FortiAuthenticator 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 FortiAuthenticator 相关响应特征。Fortinet FortiAuthenticator 是身份认证平台，用于管理用户、令牌、RADIUS/LDAP、MFA 和单点登录。模板请求 `/api/v1`，并通过页面标题或正文关键字、响应头关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -17,7 +18,6 @@ info:
     shodan-query: http.favicon.hash:-1653412201
     fofa-query: icon_hash=-1653412201
   tags: panel,fortinet,fortiauthenticator,detect,discovery
-
 http:
   - method: GET
     path:

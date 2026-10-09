@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 DeepStack。DeepStack 是一个开源、自托管的计算机视觉（AI）服务器，提供物体、人脸和场景检测 API，常与 Home Assistant、Frigate 等家庭自动化组件一同部署在 5000 端口。发现一个处于暴露状态且无需认证即可访问的 DeepStack 登录/激活页面。
+    检测到目标站点存在 DeepStack AI 服务器 相关响应特征。DeepStack AI 服务器 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或可观测性信息。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/johnolafenwa/DeepStack
     - https://deepstack.cc
@@ -17,7 +17,6 @@ info:
     product: deepstack
     shodan-query: 'html:"DeepStack Activated"'
   tags: panel,deepstack,ai,computer-vision,detect,discovery
-
 http:
   - method: GET
     path:

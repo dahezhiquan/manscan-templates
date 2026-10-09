@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 Helicone，这是一款开源 LLM 可观测性平台，为 LLM 应用提供日志记录、监控与分析功能，通常通过 Docker 自托管部署。发现了一个暴露在外、未经认证的 Helicone Web 仪表盘实例。
+    检测到目标站点存在 Helicone 相关响应特征。Helicone 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或生成任务。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/Helicone/helicone
     - https://helicone.ai
@@ -16,7 +16,6 @@ info:
     product: helicone
     shodan-query: 'http.title:"Helicone"'
   tags: panel,helicone,llm,ai,observability,detect,discovery
-
 http:
   - method: GET
     path:

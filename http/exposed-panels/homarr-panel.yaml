@@ -1,11 +1,19 @@
 id: homarr-panel
 
 info:
-  name: Homarr 仪表盘 - 检测（暴露面识别）
+  name: Homarr 仪表盘（暴露面识别）
   author: potato-20
   severity: low
   description: |-
-    检测到 Homarr 仪表盘面板。Homarr 是一个自托管仪表盘，用于管理家庭实验室及 *arr 系列服务。
+    检测到目标站点暴露 Homarr 仪表盘相关面板或登录入口。Homarr 是自托管服务仪表盘平台，用于集中展示应用快捷入口、服务状态、容器信息和家庭实验室资源。模板请求 `/`，并通过页面标题或正文关键字、状态码确认入口可访问；此类面板若直接暴露在公网，会增加账号枚举、口令攻击、服务信息泄露和未授权访问尝试的机会。
+  impact: |-
+    - 攻击者可确认目标部署了 Homarr 或相关自托管服务，并据此枚举内部应用入口、服务名称和后台访问路径。
+    - 若面板存在弱口令、默认配置、访问控制缺陷或未修复漏洞，可能导致后台权限被获取、配置被篡改或关联服务信息泄露。
+    - 管理入口长期暴露在公网会扩大攻击面，增加自动化扫描、撞库、社会工程和后续横向移动的风险。
+  remediation: |-
+    - 将 Homarr 仪表盘限制在内网、VPN、堡垒机或可信源 IP 访问范围内，避免服务入口直接暴露在公网。
+    - 启用强密码、多因素认证、登录失败限制和默认账户清理，定期审计登录日志与管理员账号权限。
+    - 保持 Homarr 和关联反向代理组件更新到受支持版本，关闭不必要的公开访问，并在必须公网访问时增加反向代理访问控制、WAF 或零信任访问策略。
   reference:
     - https://github.com/homarr-labs/homarr
     - https://homarr.dev
@@ -21,7 +29,6 @@ info:
     fofa-query: title="Homarr"
     shodan-query: http.title:"Homarr"
   tags: panel,homarr,dashboard,oss,discovery
-
 http:
   - method: GET
     path:

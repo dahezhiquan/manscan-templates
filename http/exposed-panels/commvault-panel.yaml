@@ -4,14 +4,14 @@ info:
   name: Commvault Web Console 面板识别（指纹识别）
   author: rxerium
   severity: info
-  description: 该模板通过识别 Commvault Web Console 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Commvault Web Console 相关响应特征。Commvault Web Console 是存储、备份或数据保护系统的 Web 管理界面，用于维护任务、策略、存储资源、恢复和运行状态。模板请求 `/commandcenter/login/preSso.jsp`，并通过页面标题或正文关键字、响应头关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.commvault.com/
   metadata:
     verified: true
     shodan-query: http.favicon.hash:-542502280
   tags: panel,commvault,backup,login,detect,discovery
-
 http:
   - method: GET
     path:

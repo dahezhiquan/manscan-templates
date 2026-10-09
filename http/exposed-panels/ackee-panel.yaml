@@ -4,8 +4,8 @@ info:
   name: Ackee 面板识别（指纹识别）
   author: userdehghani
   severity: info
-  description: |
-    该模板通过识别 Ackee 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Ackee 相关响应特征。Ackee 是自托管网站访问统计平台，用于收集、展示和分析站点访问数据。模板请求 `/`、`/favicon.ico` 路径，并通过页面标题或正文关键字、状态码、favicon 哈希、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://ackee.electerious.com/
     - https://docs.ackee.electerious.com/
@@ -14,7 +14,6 @@ info:
     max-request: 2
     shodan-query: http.favicon.hash:-1495233116
   tags: panel,ackee,login,detect,discovery
-
 http:
   - method: GET
     path:

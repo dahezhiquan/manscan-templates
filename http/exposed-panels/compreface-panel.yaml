@@ -5,7 +5,7 @@ info:
   author: rxerium
   severity: info
   description: |-
-    检测到 CompreFace，这是 Exadel 开发的开源人脸识别平台，通过 Web UI 和 REST API 提供人脸检测、识别与验证服务。其暴露的登录/管理面板实例存在，该面板默认无需认证即可访问初始界面。
+    检测到目标站点存在 CompreFace 面板检测 相关响应特征。CompreFace 面板检测 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或可观测性信息。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/exadel-inc/CompreFace
     - https://exadel.com/compreface/
@@ -16,7 +16,6 @@ info:
     product: compreface
     shodan-query: 'http.title:"CompreFace"'
   tags: panel,compreface,ai,computer-vision,face-recognition,detect,discovery
-
 http:
   - method: GET
     path:

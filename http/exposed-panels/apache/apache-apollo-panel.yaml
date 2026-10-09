@@ -4,6 +4,8 @@ info:
   name: Apache Apollo 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Apache Apollo 相关响应特征。Apache Apollo 是消息代理服务，控制台用于管理消息队列、连接和代理运行状态。模板请求 `/console/index.html`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:apache:activemq_apollo:*:*:*:*:*:*:*:*
   metadata:
@@ -13,7 +15,6 @@ info:
     product: activemq_apollo
     shodan-query: title:"Apache Apollo"
   tags: panel,apache,apollo,login,detect,discovery
-
 http:
   - method: GET
     path:

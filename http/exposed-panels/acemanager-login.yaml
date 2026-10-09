@@ -4,7 +4,8 @@ info:
   name: ACEmanager 识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: 该模板通过识别 ACEmanager 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 ACEmanager 相关响应特征。ACEmanager 是 Sierra Wireless 网关和路由设备的管理界面，用于配置蜂窝连接、网络参数、VPN 与设备维护功能。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:sierrawireless:airlink_mobility_manager:*:*:*:*:*:*:*:*
@@ -16,7 +17,6 @@ info:
       - app="ACEmanager"
       - app="acemanager"
   tags: panel,login,tech,acemanager,sierrawireless,discovery
-
 http:
   - method: GET
     path:

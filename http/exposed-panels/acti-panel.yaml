@@ -4,6 +4,8 @@ info:
   name: ACTi Video Monitoring Panel - 识别（指纹识别）
   author: DhiyaneshDk
   severity: info
+  description: |-
+    检测到目标站点存在 ACTi Video Monitoring Panel 相关响应特征。ACTi Video Monitoring Panel 是视频监控或安防设备的 Web 控制界面，用于查看视频流、配置录像、网络参数和设备账号。模板请求 `/cgi-bin/videoconfiguration.cgi`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:o:acti:camera_firmware:*:*:*:*:*:*:*:*
   metadata:
@@ -14,7 +16,6 @@ info:
     shodan-query: title:"Web Configurator" html:"ACTi"
     fofa-query: app="ACTi-视频监控"
   tags: acti,panel,login,detect,discovery
-
 http:
   - method: GET
     path:

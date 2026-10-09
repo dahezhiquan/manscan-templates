@@ -4,7 +4,8 @@ info:
   name: Dahua Web Service 面板识别（指纹识别）
   author: dhiyaneshDK,rxerium
   severity: info
-  description: 该模板通过识别 Dahua Web Service 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Dahua Web Service 相关响应特征。Dahua Web Service 是视频监控或安防设备的 Web 控制界面，用于查看视频流、配置录像、网络参数和设备账号。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.exploit-db.com/ghdb/7116
   classification:
@@ -18,7 +19,6 @@ info:
     product: sd22204db-gny-w
     vendor: dahuasecurity
   tags: edb,panel,dahua,detect,discovery
-
 http:
   - method: GET
     path:

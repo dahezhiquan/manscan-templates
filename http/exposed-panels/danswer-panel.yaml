@@ -4,8 +4,8 @@ info:
   name: Danswer 面板识别（指纹识别）
   author: s4e-io
   severity: info
-  description: |
-    该模板通过识别 Danswer 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Danswer 相关响应特征。Danswer 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或可观测性信息。模板请求 `/auth/login`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/danswer-ai/danswer
   metadata:
@@ -15,7 +15,6 @@ info:
     product: danswer
     fofa-query: icon_hash="484766002"
   tags: panel,login,danswer,detect,discovery
-
 http:
   - method: GET
     path:

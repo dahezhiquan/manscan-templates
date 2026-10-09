@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    Donetick（donetick.com / github.com/donetick/donetick）是一个开源的自托管任务与家务管理工具，后端使用 Go，前端使用 React，默认 Docker 端口为 2021。暴露的实例可能泄露家庭任务清单、成员信息及日程安排。
+    检测到目标站点存在 Donetick 相关响应特征。Donetick 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/donetick/donetick
     - https://donetick.com/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Donetick"
     fofa-query: title="Donetick"
   tags: panel,donetick,tasks,selfhosted,detect,discovery
-
 http:
   - method: GET
     path:

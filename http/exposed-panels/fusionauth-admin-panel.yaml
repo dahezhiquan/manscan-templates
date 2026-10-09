@@ -4,6 +4,8 @@ info:
   name: FusionAuth Admin 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 FusionAuth Admin 相关响应特征。FusionAuth 是身份认证和用户管理平台，用于管理应用、租户、OAuth/OIDC、用户、角色和登录策略。模板请求 `/`、`/oauth2/authorize` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:fusionauth:fusionauth:*:*:*:*:*:*:*:*
   metadata:
@@ -17,7 +19,6 @@ info:
     fofa-query: title="fusionauth"
     google-query: intitle:"fusionauth"
   tags: panel,fusionauth,detect,login,discovery
-
 http:
   - method: GET
     path:

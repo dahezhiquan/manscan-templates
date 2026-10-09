@@ -4,8 +4,8 @@ info:
   name: cheat.sh Instance - 识别（指纹识别）
   author: ritikchaddha
   severity: info
-  description: |
-    该模板用于识别 cheat.sh Instance 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 cheat.sh Instance 相关响应特征。cheat.sh Instance 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/chubin/cheat.sh
     - https://cheat.sh/
@@ -17,7 +17,6 @@ info:
     fofa-query: title="cheat.sh"
     shodan-query: title:"cheat.sh"
   tags: tech,cheatsh,detect,devtools
-
 http:
   - method: GET
     path:

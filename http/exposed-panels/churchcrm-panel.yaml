@@ -4,8 +4,8 @@ info:
   name: ChurchCRM 面板识别（指纹识别）
   author: Kazgangap
   severity: info
-  description: |
-    该模板通过识别 ChurchCRM 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 ChurchCRM 相关响应特征。ChurchCRM 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/session/begin`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/ChurchCRM/CRM
   metadata:
@@ -14,7 +14,6 @@ info:
     shodan-query: http.title:"churchcrm"
     fofa-query: app="churchcrm"
   tags: panel,login,churchcrm,detect,discovery
-
 http:
   - method: GET
     path:

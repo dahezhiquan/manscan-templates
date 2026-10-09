@@ -4,7 +4,8 @@ info:
   name: eArcu 面板识别（指纹识别）
   author: righettod
   severity: info
-  description: 该模板通过识别 eArcu 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 eArcu 相关响应特征。eArcu 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.earcu.com/products
   metadata:
@@ -12,7 +13,6 @@ info:
     max-request: 1
     shodan-query: html:'content="eArcu'
   tags: panel,earcu,detect,discovery
-
 http:
   - method: GET
     path:

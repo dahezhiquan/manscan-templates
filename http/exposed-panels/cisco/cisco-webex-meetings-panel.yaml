@@ -4,7 +4,8 @@ info:
   name: Cisco Webex Meetings 面板（指纹识别）
   author: Eyonn
   severity: info
-  description: 该模板通过识别 Cisco Webex Meetings 仪表盘或后台界面的页面特征，判断目标是否对外暴露了相关控制台。若命中，说明该服务面向外部可访问，可用于资产识别与访问控制核查。
+  description: |-
+    检测到目标站点存在 Cisco Webex Meetings 相关响应特征。Cisco Webex Meetings 是自动化运维、持续集成或任务编排平台，用于管理作业、流水线、凭据、执行记录和部署流程。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.webex.com/
   metadata:
@@ -15,7 +16,6 @@ info:
     shodan-query: http.title:"Cisco Webex Meetings"
     fofa-query: title="Cisco Webex Meetings"
   tags: panel,cisco,webex,detect,discovery,login
-
 http:
   - method: GET
     path:

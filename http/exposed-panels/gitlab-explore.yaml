@@ -4,15 +4,14 @@ info:
   name: GitLab Instance Explore 识别（指纹识别）
   author: Sujal Tuladhar
   severity: info
-  description: |
-    该模板用于识别 GitLab Instance Explore 相关页面或服务入口是否对外暴露。若命中，说明目标可被识别为对应产品或组件，可用于资产发现与攻击面管理。
+  description: |-
+    检测到目标站点存在 GitLab Instance Explore 相关响应特征。GitLab 是 DevOps 与 Git 代码托管平台，用于管理仓库、CI/CD、Issue、Merge Request、制品和用户权限。模板请求 `/explore`、`/api/v4/projects` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   metadata:
     verified: true
     max-request: 2
     shodan-query: title:"GitLab"
     fofa-query: title="GitLab"
   tags: gitlab,explore,panel,detect,discovery
-
 http:
   - method: GET
     path:

@@ -4,6 +4,8 @@ info:
   name: Discuz Panel - 识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Discuz Panel 相关响应特征。Discuz Panel 是内容管理或知识协作系统，用于维护站点内容、文档、素材、权限和发布流程。模板请求 `/`，并通过页面标题或正文关键字确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:comsenz:discuz\\!:*:*:*:*:*:*:*:*
   metadata:
@@ -14,7 +16,6 @@ info:
     shodan-query: title:"Discuz!"
     fofa-query: title="Discuz!"
   tags: panel,discuz,detect,login,discovery
-
 http:
   - method: GET
     path:

@@ -4,8 +4,8 @@ info:
   name: Cascade CMS 面板识别（指纹识别）
   author: righettod
   severity: info
-  description: |
-    该模板通过识别 Cascade CMS 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Cascade CMS 相关响应特征。CAS 是 Central Authentication Service 单点登录系统，登录入口用于为多个应用提供统一认证能力。模板请求 `/login.act`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://www.hannonhill.com/products/cascade-cms-web-content-management/index.html
   metadata:
@@ -13,7 +13,6 @@ info:
     max-request: 1
     shodan-query: http.title:"Cascade CMS"
   tags: panel,cascade,detect
-
 http:
   - method: GET
     path:

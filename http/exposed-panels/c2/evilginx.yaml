@@ -4,8 +4,8 @@ info:
   name: EvilGinx 识别（指纹识别）
   author: pussycat0x
   severity: info
-  description: |
-    该模板通过识别 EvilGinx 相关页面或响应特征，判断目标是否暴露了疑似 C2、窃密或钓鱼基础设施面板。若命中，可作为外部暴露面排查、威胁狩猎与恶意基础设施识别的线索。
+  description: |-
+    检测到目标站点存在 EvilGinx 相关响应特征。Evilginx 是常被用于钓鱼演练或恶意钓鱼活动的反向代理框架，可代理登录流程并捕获会话相关信息。模板请求 `/login`，并通过页面标题或正文关键字、状态码、DSL 条件确认该基础设施指纹；命中结果主要用于威胁狩猎、恶意基础设施识别和外部暴露面梳理。
   reference:
     - https://dmcxblue.gitbook.io/red-team-notes-2-0/red-team-infrastructure/delivery/evilginx
   metadata:
@@ -13,7 +13,6 @@ info:
     max-request: 1
     censys-query: b18d778b4e4b6bf1fd5b2d790c941270145a6a6d
   tags: tech,evilginx,c2,phishing,panel,vuln
-
 http:
   - method: GET
     path:

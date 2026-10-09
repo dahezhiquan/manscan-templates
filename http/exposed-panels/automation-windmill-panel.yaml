@@ -4,8 +4,8 @@ info:
   name: Windmill 面板识别（指纹识别）
   author: ChrisJr404
   severity: info
-  description: |
-    该模板用于识别 Windmill 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点存在 Windmill 相关响应特征。Windmill 是自动化或工作流编排平台，用于连接应用、执行流程、管理任务和调度业务自动化。模板请求 `/`、`/api/version` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/windmill-labs/windmill
     - https://windmill.dev/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Windmill"
     fofa-query: title="Windmill"
   tags: panel,windmill,workflow,automation,detect,discovery,login
-
 http:
   - method: GET
     path:

@@ -2,10 +2,10 @@ id: cyberstrikeai-panel
 
 info:
   name: Ed1s0nZ CyberStrikeAI - 控制面板（指纹识别）
-  severity: info
   author: darses
+  severity: info
   description: |-
-    检测到 Ed1s0nZ CyberStrikeAI 控制面板。
+    检测到目标站点存在 Ed1s0nZ CyberStrikeAI - 控制 相关响应特征。Ed1s0nZ CyberStrikeAI - 控制 是 AI、LLM 或机器学习相关平台，用于管理模型、数据集、工作区、推理服务或可观测性信息。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/Ed1s0nZ/CyberStrikeAI
   metadata:
@@ -15,7 +15,6 @@ info:
     product: cyberstrikeai
     shodan-query: title:"CyberStrikeAI"
   tags: ed1s0nz,cyberstrikeai,detect,panel
-
 http:
   - method: GET
     path:

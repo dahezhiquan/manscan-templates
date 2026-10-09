@@ -5,7 +5,7 @@ info:
   author: ChrisJr404
   severity: info
   description: |-
-    检测到 Documenso——一个开源文档签署平台，作为 DocuSign 的自托管替代方案，基于 React Router 构建，后端使用 Prisma。
+    检测到目标站点存在 Documenso 相关响应特征。Documenso 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/documenso/documenso
     - https://documenso.com/
@@ -17,7 +17,6 @@ info:
     shodan-query: http.title:"Documenso"
     fofa-query: title="Documenso"
   tags: panel,documenso,docusign,signing,selfhosted,detect
-
 http:
   - method: GET
     path:

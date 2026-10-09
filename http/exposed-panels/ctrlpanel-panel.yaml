@@ -4,7 +4,8 @@ info:
   name: CtrlPanel 登录面板检测（指纹识别）
   author: theamanrawat
   severity: info
-  description: 检测到 CtrlPanel 登录面板。
+  description: |-
+    检测到目标站点存在 CtrlPanel 登录面板检测 相关响应特征。CtrlPanel 登录面板检测 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/login`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -14,7 +15,6 @@ info:
     vendor: ctrlpanel
     product: ctrlpanel
   tags: panel,ctrlpanel,login,detect
-
 http:
   - method: GET
     path:

@@ -5,7 +5,7 @@ info:
   author: wujiecong
   severity: info
   description: |-
-    检测到阿里巴巴 Arthas Web 控制台界面。Arthas 是一款 Java 诊断工具，启用后可能会暴露基于 Web 的控制台。
+    检测到目标站点存在 阿里巴巴 Arthas Web 控制台 相关响应特征。Arthas 是阿里巴巴开源的 Java 诊断工具，Web 控制台用于在线排查 JVM、线程、类加载和运行时问题。模板请求 `/`，并通过页面标题或正文关键字、状态码、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://arthas.aliyun.com/doc/web-console.html
   metadata:
@@ -16,7 +16,6 @@ info:
     shodan-query: title:"Arthas Console"
     fofa-query: title="Arthas Console"
   tags: panel,arthas,alibaba,web-console,detect
-
 http:
   - method: GET
     path:

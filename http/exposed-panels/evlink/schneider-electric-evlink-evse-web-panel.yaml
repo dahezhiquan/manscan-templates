@@ -4,6 +4,8 @@ info:
   name: EVSE Web Interface Panel - 识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 EVSE Web Interface Panel 相关响应特征。EVSE Web Interface Panel 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/`、`/cgi-bin/cgiServer?worker=LoginForm` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:o:schneider-electric:evlink_charging_station_firmware:*:*:*:*:*:*:*:*
   metadata:
@@ -19,7 +21,6 @@ info:
       - title="evse web interface"
     google-query: intitle:"evse web interface"
   tags: panel,evlink,evse,login,detect,schneider-electric,discovery
-
 http:
   - method: GET
     path:

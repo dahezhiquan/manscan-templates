@@ -4,14 +4,14 @@ info:
   name: Hewlett Packard Enterprise System Management 登录面板识别（指纹识别）
   author: divya_mudgal
   severity: info
-  description: 该模板通过识别 Hewlett Packard Enterprise System Management 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点存在 Hewlett Packard Enterprise System Management 相关响应特征。Hewlett Packard Enterprise System Management 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/cpqlogin.htm`，并通过页面标题或正文关键字确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     max-request: 1
   tags: hpe,tech,panel,discovery
-
 http:
   - method: GET
     path:

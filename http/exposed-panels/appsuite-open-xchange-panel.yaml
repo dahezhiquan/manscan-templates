@@ -4,6 +4,8 @@ info:
   name: Appsuite 登录面板识别（指纹识别）
   author: DhiyaneshDK
   severity: info
+  description: |-
+    检测到目标站点存在 Appsuite 相关响应特征。Appsuite 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/appsuite/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:open-xchange:open-xchange_appsuite:*:*:*:*:*:*:*:*
   metadata:
@@ -16,7 +18,6 @@ info:
       - http.html:"appsuite"
     fofa-query: body="appsuite"
   tags: panel,appsuite,detect,open-xchange,discovery
-
 http:
   - method: GET
     path:

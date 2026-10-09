@@ -4,6 +4,8 @@ info:
   name: Dialogic XMS Admin Console 识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Dialogic XMS Admin Console 相关响应特征。Dialogic XMS Admin Console 是监控、日志、分析或可观测性系统，用于展示运行指标、告警事件、日志数据和服务状态。模板请求 `/index.php`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   classification:
     cpe: cpe:2.3:a:dialogic:powermedia_xms:*:*:*:*:*:*:*:*
   metadata:
@@ -13,7 +15,6 @@ info:
     product: powermedia_xms
     shodan-query: title:"Dialogic XMS Admin Console"
   tags: panel,dialogic,admin,login,detect,discovery
-
 http:
   - method: GET
     path:

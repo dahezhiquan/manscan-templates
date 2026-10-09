@@ -4,8 +4,16 @@ info:
   name: Headlamp Kubernetes UI 面板识别（暴露面识别）
   author: shamo0
   severity: medium
-  description: |
-    该模板用于识别 Headlamp Kubernetes UI 是否存在对外暴露的管理、服务或状态界面。若命中，说明目标公开了相关功能入口，可作为资产盘点与攻击面收敛的依据。
+  description: |-
+    检测到目标站点暴露 Headlamp Kubernetes UI 相关面板或登录入口。Headlamp 是 Kubernetes Web UI，用于浏览集群资源、命名空间、工作负载、日志和访问权限。模板请求 `/settings/plugins`、`/settings/cluster` 路径，并通过页面标题或正文关键字、状态码、DSL 条件确认入口可访问；此类面板若直接暴露在公网，会增加账号枚举、口令攻击、漏洞匹配和未授权访问尝试的机会。
+  impact: |-
+    - 攻击者可确认目标部署了 Headlamp Kubernetes UI 或相关组件，并据此开展账号枚举、口令喷洒、默认凭据尝试或针对性漏洞匹配。
+    - 若面板存在弱口令、默认配置、访问控制缺陷或未修复漏洞，可能导致后台权限被获取、配置被篡改、敏感数据泄露或业务系统被接管。
+    - 管理入口长期暴露在公网会扩大攻击面，增加自动化扫描、撞库、社会工程和后续横向移动的风险。
+  remediation: |-
+    - 将 Headlamp Kubernetes UI 面板限制在内网、VPN、堡垒机或可信源 IP 访问范围内，避免管理入口直接暴露在公网。
+    - 启用强密码、多因素认证、登录失败限制和默认账户清理，定期审计登录日志与管理员账号权限。
+    - 保持系统和相关组件更新到受支持版本，关闭不必要的管理路径，并在必须公网访问时增加反向代理访问控制、WAF 或零信任访问策略。
   reference:
     - https://headlamp.dev/
     - https://github.com/kubernetes-sigs/headlamp
@@ -20,7 +28,6 @@ info:
     vendor: kubernetes-sigs
     fofa-query: body="headlampBaseUrl" && body="Headlamp"
   tags: panel,headlamp,kubernetes,exposure
-
 http:
   - method: GET
     path:

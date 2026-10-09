@@ -4,6 +4,8 @@ info:
   name: Dashy 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 Dashy 相关响应特征。Dashy 是一套通过 Web 提供访问的管理面板或业务系统，通常用于配置服务、查看状态、管理数据或执行日常运维操作。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://dashy.to/
   classification:
@@ -16,7 +18,6 @@ info:
     shodan-query: http.favicon.hash:-1013024216
     fofa-query: icon_hash=-1013024216
   tags: panel,dashy,detect,discovery
-
 http:
   - method: GET
     path:

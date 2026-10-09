@@ -4,8 +4,8 @@ info:
   name: Arize Phoenix 识别（指纹识别）
   author: rxerium
   severity: info
-  description: |
-    该模板通过识别 Arize Phoenix 面板、控制台或管理界面的页面特征，判断目标是否暴露了对应服务入口。若命中，说明该后台或运维界面对外可访问，可用于资产识别与暴露面排查。
+  description: |-
+    检测到目标站点存在 Arize Phoenix 相关响应特征。Arize Phoenix 是面向 LLM 和机器学习应用的可观测性平台，用于分析追踪、评估、检索增强和模型行为。模板请求 `/`，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://github.com/Arize-ai/phoenix
     - https://phoenix.arize.com
@@ -16,7 +16,6 @@ info:
     product: phoenix
     shodan-query: 'http.title:"Phoenix" port:6006 http.html:"arize"'
   tags: panel,arize,phoenix,llm,ai,observability,detect,discovery
-
 http:
   - method: GET
     path:

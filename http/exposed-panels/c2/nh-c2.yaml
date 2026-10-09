@@ -4,6 +4,8 @@ info:
   name: NH C2 Server 识别（指纹识别）
   author: pussycat0
   severity: info
+  description: |-
+    检测到目标站点存在 NH C2 Server 相关响应特征。NH C2 Server 是与 C2、远控、窃密或钓鱼基础设施相关的 Web 管理入口，通常用于会话管理、任务下发、受害主机或钓鱼流程的集中控制。模板请求 `/`，并通过状态码、DSL 条件确认该基础设施指纹；命中结果主要用于威胁狩猎、恶意基础设施识别和外部暴露面梳理。
   reference:
     - https://twitter.com/MichalKoczwara/status/1616179246216396806
   metadata:
@@ -11,7 +13,6 @@ info:
     max-request: 1
     censys-query: 10baf5fcdde4563d3e145a1f553ae433fb1c3572
   tags: tech,nh,c2,panel,vuln
-
 http:
   - method: GET
     path:

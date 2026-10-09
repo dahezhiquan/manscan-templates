@@ -4,7 +4,16 @@ info:
   name: Flahscookie Superadmin 登录面板识别（暴露面识别）
   author: Hardik-Solanki
   severity: medium
-  description: 该模板通过识别 Flahscookie Superadmin 登录入口的页面标题、特征文本或重定向行为，判断目标是否暴露了对应的认证界面。若命中，说明该登录面板对外可访问，可用于暴露面梳理与后续安全评估。
+  description: |-
+    检测到目标站点暴露 Flahscookie Superadmin 相关面板或登录入口。Flahscookie Superadmin 是面向管理员或业务用户的 Web 登录入口，通常用于进入后台完成账号管理、系统配置、业务操作或运维维护。模板请求 `/pages/login`，并通过页面标题或正文关键字、状态码确认入口可访问；此类面板若直接暴露在公网，会增加账号枚举、口令攻击、漏洞匹配和未授权访问尝试的机会。
+  impact: |-
+    - 攻击者可确认目标部署了 Flahscookie Superadmin 或相关组件，并据此开展账号枚举、口令喷洒、默认凭据尝试或针对性漏洞匹配。
+    - 若面板存在弱口令、默认配置、访问控制缺陷或未修复漏洞，可能导致后台权限被获取、配置被篡改、敏感数据泄露或业务系统被接管。
+    - 管理入口长期暴露在公网会扩大攻击面，增加自动化扫描、撞库、社会工程和后续横向移动的风险。
+  remediation: |-
+    - 将 Flahscookie Superadmin 面板限制在内网、VPN、堡垒机或可信源 IP 访问范围内，避免管理入口直接暴露在公网。
+    - 启用强密码、多因素认证、登录失败限制和默认账户清理，定期审计登录日志与管理员账号权限。
+    - 保持系统和相关组件更新到受支持版本，关闭不必要的管理路径，并在必须公网访问时增加反向代理访问控制、WAF 或零信任访问策略。
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -13,7 +22,6 @@ info:
     max-request: 1
     shodan-query: title:"Flahscookie Superadmin"
   tags: panel,flahscookie,superadmin,discovery
-
 http:
   - method: GET
     path:

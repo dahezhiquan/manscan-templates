@@ -4,6 +4,8 @@ info:
   name: File Browser 登录面板识别（指纹识别）
   author: ritikchaddha
   severity: info
+  description: |-
+    检测到目标站点存在 File Browser 相关响应特征。File Browser 是 Web 文件管理器，用于通过浏览器管理目录、上传下载文件、配置用户和权限。模板请求 `/`、`/login`、`/static/img/icons/favicon-32x32.png` 路径，并通过页面标题或正文关键字、状态码、favicon 哈希、DSL 条件确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   reference:
     - https://filebrowser.org/
   classification:
@@ -16,7 +18,6 @@ info:
     shodan-query: http.favicon.hash:1052926265
     fofa-query: icon_hash=1052926265
   tags: panel,filebrowser,detect,discovery
-
 http:
   - method: GET
     path:

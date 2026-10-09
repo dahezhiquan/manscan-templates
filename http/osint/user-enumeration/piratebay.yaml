@@ -4,6 +4,8 @@ info:
   name: The Pirate Bay 用户名信息枚举（OSINT）
   author: philippedelteil
   severity: info
+  description: |
+    The Pirate Bay 是面向 P2P 资源索引、分享或社区检索的在线平台，相关页面通常会公开展示用户发布、搜索结果或账号关联记录。该模板用于在公开互联网侧枚举 The Pirate Bay 用户名，不需要认证；模板请求公开路径 https://thepiratebay.org/search.php?q=user:用户名，并结合页面数据命中 “User: 用户名</label>” 等特征、同时未出现 “No results returned” 等不存在提示判断目标用户名是否存在。该检查属于 OSINT 用户枚举，结果仅表示公开资料页或公开搜索结果可被访问，不代表目标平台存在可直接修复的漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

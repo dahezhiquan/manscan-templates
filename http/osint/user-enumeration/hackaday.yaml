@@ -5,7 +5,7 @@ info:
   author: dwisiswant0
   severity: info
   description: |
-    对 Hackaday 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://hackaday.io/用户名，当响应状态为 200 且页面或响应内容命中 “'s Profile | Hackaday.io” 等用户资料页特征时，判定目标用户名可能存在。
+    Hackaday 是面向兴趣社区、垂直爱好或内容讨论的在线平台，用户资料页通常会公开展示用户发布的内容、收藏、评论或社区身份信息。该模板用于在公开互联网侧枚举 Hackaday 用户名，不需要认证；模板请求公开路径 https://hackaday.io/用户名，并结合响应状态为 200、页面或响应内容命中 “'s Profile | Hackaday.io” 等资料页特征判断目标用户名是否存在。该检查属于 OSINT 用户枚举，结果仅表示公开资料页或公开搜索结果可被访问，不代表目标平台存在可直接修复的漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

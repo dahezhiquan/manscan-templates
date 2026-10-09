@@ -5,7 +5,7 @@ info:
   author: dwisiswant0
   severity: info
   description: |
-    对 Wattpad 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://www.wattpad.com/api/v3/users/用户名?fields=username%2Cname%2Cdescription%2Cavatar%2CbackgroundUrl%2CcreateDate%2Clocation%2Cfollowing%2CfollowingRequest%2CnumFollowing%2Cfollower%2CfollowerRequest%2CnumFollowers%2CnumLists%2CnumStoriesPublished%2CvotesReceived%2Cfacebook%2Ctwitter%2Cwebsite%2Csmashwords%2Chighlight_colour%2Chtml_enabled%2Cverified%2Cambassador%2Cwattpad_squad%2Cis_staff%2Cprograms(wattpad_stars)%2CisPrivate%2CisMuted%2CexternalId%2Cnotes，当响应状态为 200 且页面或响应内容命中 “createDate” 等用户资料页特征时，判定目标用户名可能存在。
+    Wattpad 是面向社交互动、社区交流或个人主页展示的在线平台，用户资料页通常会公开展示昵称、动态、关注关系或其他公开身份信息。该模板用于在公开互联网侧枚举 Wattpad 用户名，不需要认证；模板请求公开路径 https://www.wattpad.com/api/v3/users/用户名?fields=username%2Cname%2Cdescription%2Cavatar%2CbackgroundUrl%2CcreateDate%2Clocation%2Cfollowing%2CfollowingRequest%2CnumFollowing%2Cfollower%2CfollowerRequest%2CnumFollowers%2CnumLists%2CnumStoriesPublished%2CvotesReceived%2Cfacebook%2Ctwitter%2Cwebsite%2Csmashwords%2Chighlight_colour%2Chtml_enabled%2Cverified%2Cambassador%2Cwattpad_squad%2Cis_staff%2Cprograms(wattpad_stars)%2CisPrivate%2CisMuted%2CexternalId%2Cnotes，并结合响应状态为 200、页面或响应内容命中 “createDate” 等资料页特征判断目标用户名是否存在。该检查属于 OSINT 用户枚举，结果仅表示公开资料页或公开搜索结果可被访问，不代表目标平台存在可直接修复的漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

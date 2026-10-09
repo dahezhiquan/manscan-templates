@@ -5,7 +5,7 @@ info:
   author: dwisiswant0
   severity: info
   description: |
-    对 Sexworker 的用户名进行 OSINT 枚举检查。模板请求公开路径 https://sexworker.com/api/profile/用户名，当响应状态为 200 且页面或响应内容命中 “profilePictureUrl” 等用户资料页特征时，判定目标用户名可能存在。
+    Sexworker 是面向成人内容或成人社区的在线平台，用户资料页通常会公开展示账号主页、创作者资料或互动记录。该模板用于在公开互联网侧枚举 Sexworker 用户名，不需要认证；模板请求公开路径 https://sexworker.com/api/profile/用户名，并结合响应状态为 200、页面或响应内容命中 “profilePictureUrl” 等资料页特征判断目标用户名是否存在。该检查属于 OSINT 用户枚举，结果仅表示公开资料页或公开搜索结果可被访问，不代表目标平台存在可直接修复的漏洞。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cvss-score: 0

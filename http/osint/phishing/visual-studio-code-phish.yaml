@@ -5,7 +5,17 @@ info:
   author: rxerium
   severity: high
   description: |
-    检测到疑似仿冒 Visual Studio Code 的钓鱼网站。模板在目标页面返回 200、页面内容命中 Visual Studio Code 的官方服务页面特征，且当前主机不属于 visualstudio.com 官方域名时触发，用于识别借用 Visual Studio Code 品牌页面诱导用户信任的仿冒站点。
+    Visual Studio Code 是面向代码编辑、扩展生态和开发者工具下载的 Microsoft 开源编辑器品牌，仿冒页面可能诱导下载伪造安装包或扩展。该模板用于识别疑似仿冒 Visual Studio Code 的钓鱼网站；模板访问目标站点首页，在目标页面返回 200 状态码，且页面内容命中 Visual Studio Code 官方页面常见文案或标题特征（“Visual Studio Code is a code editor redefined and optimize...”、“Visual Studio Code - Code Editing. Redefined”），且当前主机不属于 visualstudio.com 等官方域名时触发。该类仿冒页面通常用于窃取控制台账号、开发者凭据、访问令牌或项目权限，可能进一步影响云资源、源码仓库、文件传输和供应链安全。
+  impact: |-
+    - 用户可能在仿冒页面提交开发者账号、云控制台凭据、访问令牌、文件传输或组织登录信息，导致源码、云资源、文件和业务配置被未授权访问。
+    - 钓鱼站点可能被用于投递恶意链接、伪造登录流程或绕过用户对官方品牌的信任判断。
+    - 品牌方或被仿冒组织可能面临客户投诉、欺诈交易、信誉受损以及后续应急处置成本。
+  remediation: |-
+    - 确认该站点是否为授权域名；若确认为仿冒站点，立即在网关、DNS、邮件安全和浏览器安全策略中阻断访问。
+    - 向被仿冒品牌、托管商、注册商、CDN 和浏览器安全浏览服务提交滥用举报或下架请求。
+    - 保留 URL、域名、解析记录、页面截图、证书和命中特征等证据，用于威胁情报关联和后续追踪。
+    - 排查是否已有用户访问或提交信息；对疑似受影响账号执行密码重置、会话撤销、令牌轮换和多因素认证加固。
+    - 轮换可能暴露的 API Key、访问令牌、SSH Key、云访问密钥、文件传输凭据和集成密钥，并审计近期资源与代码变更。
   reference:
     - https://visualstudio.com
   metadata:

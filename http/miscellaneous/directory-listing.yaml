@@ -1,7 +1,7 @@
 id: directory-listing
 
 info:
-  name: 目录列出启用检测
+  name: 深度目录列出启用检测
   author: theMiddle
   severity: low
   description: |

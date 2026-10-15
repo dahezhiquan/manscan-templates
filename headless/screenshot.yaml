@@ -15,7 +15,7 @@ info:
   tags: headless,screenshot,discovery
 
 variables:
-  filename: '{{replace(BaseURL,"/","_")}}'
+  filename: '{{replace(BaseURL,"/","_")}}_{{date_time("%Y%M%D")}}'
   dir: "screenshots"
 
 headless:
@@ -30,7 +30,10 @@ headless:
         args:
           url: "{{BaseURL}}"
 
-      - action: waitload
+      - action: waitstable
+        args:
+          duration: "2s"
+          timeout: "20s"
 
       - action: screenshot
         args:

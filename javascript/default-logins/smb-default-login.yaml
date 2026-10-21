@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 9
     shodan-query: "port:445"
-  tags: js,network,smb,enum,default,bruteforce,discovery
+  tags: js,network,smb,enum,default,fuzz,discovery
 
 javascript:
   - pre-condition: |

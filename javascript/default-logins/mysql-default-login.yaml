@@ -5,7 +5,7 @@ info:
   author: DhiyaneshDk,pussycat0x,ritikchaddha
   severity: high
   description: |
-    目标 MySQL 服务接受常见默认或弱口令凭据连接，可能导致数据库被未授权访问。模板使用内置用户名和密码字典建立 MySQL 连接，并在认证成功时确认风险存在。
+    目标 MySQL 服务接受常见默认或弱口令凭据连接，可能导致数据库被未授权访问。模板先读取服务握手响应并匹配 MySQL 指纹，确认目标为 MySQL 后再使用内置用户名和密码字典建立连接，并在首组凭据认证成功时确认风险并停止后续尝试。
   impact: |
     - 攻击者可使用弱凭据访问 MySQL 数据库，读取、修改或删除业务数据。
     - 若账户具备 FILE、SUPER 或管理权限，可能进一步读取服务器文件、写入恶意内容或影响数据库可用性。
@@ -16,11 +16,29 @@ info:
     cwe-id: CWE-521
   metadata:
     verified: true
-    max-request: 21
+    max-request: 254
     shodan-query: "port:3306"
     vendor: oracle
     product: mysql
   tags: js,mysql,default-login,network,fuzz,enum,vuln
+
+flow: tcp(1) && javascript(1)
+
+tcp:
+  - inputs:
+      - data: "\n"
+
+    host:
+      - "{{Hostname}}"
+    port: 3306
+
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "mysql"
+        case-insensitive: true
+        internal: true
 
 javascript:
   - pre-condition: |
@@ -40,6 +58,7 @@ javascript:
       usernames: helpers/wordlists/mysql-users.txt
       passwords: helpers/wordlists/mysql-passwords.txt
     attack: clusterbomb
+    stop-at-first-match: true
 
     matchers:
       - type: dsl

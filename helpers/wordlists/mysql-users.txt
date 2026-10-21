@@ -8,3 +8,4 @@ asteriskuser
 mysql
 test
 dxm
+duxiaoman

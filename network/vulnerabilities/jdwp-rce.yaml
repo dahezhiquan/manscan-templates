@@ -1,0 +1,46 @@
+id: jdwp-rce
+
+info:
+  name: JDWP 远程代码执行漏洞（服务漏洞）
+  author: dahe
+  severity: critical
+  description: |
+    Java Debug Wire Protocol（JDWP）用于调试正在运行的 JVM。该协议缺少内建身份认证与传输加密，若调试端口暴露在不可信网络，远程攻击者可连接调试会话并利用断点、方法调用等调试能力在 JVM 进程权限下执行代码。该模板先完成 `JDWP-Handshake`，再发送无副作用的 `VirtualMachine.Version` 命令，并结合握手回显与 JVM 版本字段确认未认证 JDWP 接口可用；检测仅证明具备进一步利用条件，不会在目标上执行系统命令。
+  impact: |
+    - 未认证攻击者可控制目标 JVM 的调试会话，并可能在 Java 进程权限范围内执行任意代码、读取运行时数据或篡改应用状态。
+    - JVM 进程被控制后，攻击者可能窃取应用凭据和业务数据，并以该主机为入口实施横向移动或持久化。
+  remediation: |
+    - 关闭生产环境及其他非必要环境中的 JDWP 调试参数，并重启相关 Java 进程使配置生效。
+    - 如确需远程调试，应将监听地址绑定到本地或专用管理网络，并通过防火墙、VPN 或堡垒机仅允许可信运维来源访问；不要将 JDWP 直接暴露到公网或业务网络。
+    - 排查 Java 启动参数、网络连接和主机审计日志，确认暴露期间是否出现未知调试连接或异常进程行为；若怀疑已被利用，应轮换应用凭据并开展主机取证。
+  reference:
+    - https://hacktricks.xsx.tw/network-services-pentesting/pentesting-jdwp-java-debug-wire-protocol
+  metadata:
+    verified: true
+    shodan-query: product:"Java Debug Wire Protocol"
+  tags: jdwp,rce,network,tcp,unauth,vuln
+
+tcp:
+  - host:
+      - "{{Hostname}}"
+
+    port: 5005
+
+    inputs:
+      - data: "4a4457502d48616e647368616b65"  # JDWP-Handshake
+        type: hex
+        read: 14
+
+      - data: "0000000b00000001000101"        # JDWP command: VirtualMachine.Version
+        type: hex
+        read: 1024
+
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "JDWP-Handshake"
+          - "Java Debug Wire Protocol"
+          - "JVM Debug Interface version"
+          - "JVM version"
+        condition: and

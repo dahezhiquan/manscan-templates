@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    Redis 是内存键值数据库和缓存服务，常用于缓存、会话、队列和实时数据处理。该模板连接 6379,6380/TCP 并读取协议响应，通过匹配 `DENIED Redis`、`CONFIG REWRITE`、`NOAUTH Authentication` 等响应特征识别目标服务。
+    Redis 是内存键值数据库和缓存服务，常用于缓存、会话、队列和实时数据处理。该模板连接目标 Redis 端口并发送 INFO 命令，通过正常版本信息、认证或 ACL 拒绝、保护模式、加载或忙状态，以及 INFO 命令被禁用时的 Redis 协议错误识别目标服务。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -26,11 +26,22 @@ tcp:
     port: 6379,6380
     read-size: 1024
 
+    matchers-condition: or
     matchers:
       - type: word
+        part: data
         words:
+          - "redis_version:"
           - "DENIED Redis"
           - "CONFIG REWRITE"
           - "NOAUTH Authentication"
+          - "NOPERM this user has no permissions"
+          - "LOADING Redis is loading"
+          - "BUSY Redis is busy"
         condition: or
+
+      - type: regex
+        part: data
+        regex:
+          - "(?im)^-ERR unknown command [`']?info[`']?"
 # digest: 4b0a00483046022100882fb59c77f20c28cb8bd3b2865315634c6447805109c6b16e8217ab81902ec9022100f5020bb2db52f042bf5fcf9d82694e4fb25cbb6bf73c15b19f1b32e6fb164f56:922c64590222798bb761d5b6d8e72950

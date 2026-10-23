@@ -1,0 +1,165 @@
+id: redis-acl-default-login
+
+info:
+  name: Redis 6 ACL 弱凭据检测（服务漏洞）
+  author: dahe
+  severity: high
+  description: |
+    Redis 6.0 起支持通过 ACL 用户名与密码进行双参数认证。若 Redis ACL 用户仍使用常见用户名和弱口令，远程攻击者可直接建立已认证连接并在该用户权限范围内访问数据或执行命令。模板先发送 INFO 命令确认目标具有 Redis 协议特征，再使用内置用户名和密码字典发送 `AUTH username password`，仅在收到精确的 RESP `+OK` 响应时确认弱凭据有效。
+  impact: |
+    - 攻击者可使用命中的 ACL 凭据访问该用户被授权的键空间和命令，读取或篡改缓存、会话、令牌及业务数据。
+    - 若弱凭据对应高权限 ACL 用户，攻击者还可能修改配置、清空数据、影响服务可用性，或利用 Redis 能力扩大对主机和业务系统的影响。
+  remediation: |
+    - 为每个 ACL 用户设置唯一的高强度随机密码，删除不再使用的用户，并立即轮换模板命中的弱凭据。
+    - 按最小权限原则限制 ACL 用户可访问的命令、键模式和频道，避免向普通应用账号授予管理命令权限。
+    - 将 Redis 绑定到可信网络接口并限制端口访问来源；跨不可信网络访问时启用 TLS，避免凭据和业务数据明文传输。
+  reference:
+    - https://redis.io/docs/latest/commands/auth/
+    - https://redis.io/docs/latest/operate/oss_and_stack/management/security/acl/
+  classification:
+    cwe-id: CWE-521
+  metadata:
+    max-request: 32
+    shodan-query: product:"Redis"
+    vendor: redis
+    product: redis
+  tags: js,redis,acl,auth,default-login,network,fuzz,vuln
+
+flow: tcp(1) && javascript(1)
+
+tcp:
+  - inputs:
+      - data: "*1\r\n$4\r\ninfo\r\n"
+
+    host:
+      - "{{Hostname}}"
+      - "tls://{{Hostname}}"
+    port: 6379,6380
+    read-size: 1024
+
+    matchers-condition: or
+    matchers:
+      - type: word
+        part: data
+        words:
+          - "redis_version:"
+          - "DENIED Redis"
+          - "CONFIG REWRITE"
+          - "NOAUTH Authentication"
+          - "NOPERM this user has no permissions"
+          - "LOADING Redis is loading"
+          - "BUSY Redis is busy"
+        condition: or
+        internal: true
+
+      - type: regex
+        part: data
+        regex:
+          - "(?im)^-ERR unknown command [`']?info[`']?"
+        internal: true
+
+javascript:
+  - pre-condition: |
+      isPortOpen(Host,Port);
+    code: |
+      const net = require("nuclei/net");
+
+      function utf8Length(value) {
+        let length = 0;
+        for (let i = 0; i < value.length; i++) {
+          const code = value.charCodeAt(i);
+          if (code < 0x80) {
+            length += 1;
+          } else if (code < 0x800) {
+            length += 2;
+          } else if (code >= 0xD800 && code <= 0xDBFF && i + 1 < value.length) {
+            const next = value.charCodeAt(i + 1);
+            if (next >= 0xDC00 && next <= 0xDFFF) {
+              length += 4;
+              i++;
+            } else {
+              length += 3;
+            }
+          } else {
+            length += 3;
+          }
+        }
+        return length;
+      }
+
+      function bulkString(value) {
+        value = String(value);
+        return `$${utf8Length(value)}\r\n${value}\r\n`;
+      }
+
+      function authenticate(useTLS) {
+        let conn;
+        try {
+          const address = `${Host}:${Port}`;
+          conn = useTLS ? net.OpenTLS("tcp", address) : net.Open("tcp", address);
+          conn.SetTimeout(3);
+          conn.Send(`*3\r\n${bulkString("AUTH")}${bulkString(Username)}${bulkString(Password)}`);
+          return conn.RecvString(1024);
+        } finally {
+          if (conn) {
+            conn.Close();
+          }
+        }
+      }
+
+      let authResponse;
+      try {
+        authResponse = authenticate(false);
+      } catch (plainError) {
+        authResponse = authenticate(true);
+      }
+
+      if (authResponse !== "+OK\r\n") {
+        throw "Redis ACL authentication failed";
+      }
+
+      Export("username", Username);
+      Export("password", Password);
+      Export("auth_status", "redis-acl-authenticated");
+
+    args:
+      Host: "{{Host}}"
+      Port: 6379
+      Username: "{{usernames}}"
+      Password: "{{passwords}}"
+
+    payloads:
+      usernames:
+        - default
+        - admin
+        - redis
+        - dxm
+      passwords:
+        - redis
+        - root
+        - password
+        - admin
+        - iamadmin
+        - dxm
+        - duxiaoman
+        - dxm123456
+    attack: clusterbomb
+    threads: 1
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+
+      - type: word
+        part: response
+        words:
+          - "redis-acl-authenticated"
+
+    extractors:
+      - type: kval
+        kval:
+          - username
+          - password

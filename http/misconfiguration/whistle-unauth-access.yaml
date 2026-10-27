@@ -1,0 +1,47 @@
+id: whistle-unauth-access
+
+info:
+  name: Whistle 管理界面未授权访问
+  author: dahezhiquan
+  severity: high
+  description: |
+    Whistle 是用于 HTTP、HTTPS、HTTP/2 和 WebSocket 流量调试的代理工具，其 Web 管理界面支持通过 `--username` 与 `--password` 配置访问认证。未配置管理凭据且服务可被非可信网络访问时，未授权用户可直接调用管理 API。模板请求 `/cgi-bin/get-data`，通过 Whistle 版本、服务器信息、启用规则数量、HTTPS 拦截状态及抓包数据字段确认管理接口未受认证保护。
+  impact: |
+    - 攻击者可读取 Whistle 捕获的请求、响应、服务器日志、插件状态和规则启用信息，其中可能包含内部接口、Cookie、令牌或业务数据。
+    - 未授权用户可能进一步调用规则、Values、Composer 或插件管理接口，篡改代理行为、发起任意网络请求或影响经该代理传输的流量。
+  remediation: |
+    - 使用 `--username` 和 `--password` 为 Whistle Web 管理界面配置高强度凭据，并避免使用空口令、默认口令或可猜测口令。
+    - 将管理界面绑定到管理网或回环地址，并通过防火墙、VPN 或可信来源白名单限制访问；必要时使用 `--uiport` 将管理端口与代理端口分离。
+    - 审计 Whistle 访问日志、规则、Values、插件和历史抓包数据，轮换可能已经暴露的 Cookie、令牌及其他凭据。
+  reference:
+    - https://github.com/avwo/whistle
+    - https://wproxy.org/whistle/cli.html
+  metadata:
+    verified: true
+    shodan-query: 'http.title:"Whistle Web Debugging Proxy"'
+    fofa-query: 'title="Whistle Web Debugging Proxy"'
+    vendor: avwo
+    product: whistle
+  tags: avwo,whistle,proxy,unauth,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/get-data?startSvrLogTime=-3&count=0"
+
+    redirects: false
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains(content_type, "application/json")'
+          - 'contains_all(body, "\"ec\":0", "\"version\":", "\"server\":", "\"enabledCount\":", "\"interceptHttpsConnects\":", "\"data\":")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '"version":"([^"]+)"'

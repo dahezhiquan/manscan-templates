@@ -5,7 +5,7 @@ info:
   author: that_juan_,dwisiswant0,wdahlenb,philippedelteil,stupidfish
   severity: low
   description: |
-    该模板用于核查 Spring Boot Env Actuator 暴露。该类问题通常源于 Spring Boot Actuator 端点在生产环境中暴露，导致运行状态、配置、环境变量或管理能力可被未授权访问。模板会向目标发送探测请求，并依据请求 `/env`、`/actuator/env`、匹配 `applicationConfig`、匹配 `activeProfiles`等证据确认目标是否存在该配置问题。
+    该模板用于核查 Spring Boot Env Actuator 暴露。该类问题通常源于 Spring Boot Actuator 端点在生产环境中暴露，导致运行状态、配置、环境变量或管理能力可被未授权访问。模板会向目标发送探测请求，并依据请求 `/env`、`/actuator/env`、匹配 `applicationConfig`、`activeProfiles`、`profiles`、`propertySources` 或 `ApolloPropertySources` 等环境配置特征确认目标是否存在该配置问题。
   impact: |
     - 攻击者可读取应用配置、Bean、环境变量、路由、缓存、审计事件或依赖状态。
     - 部分 Actuator 端点可能泄露凭据线索、内部拓扑或提供可被进一步利用的管理能力。
@@ -34,6 +34,11 @@ http:
         words:
           - "applicationConfig"
           - "activeProfiles"
+          - '"profiles"'
+          - "propertySources"
+          - "ApolloPropertySources"
+          - "systemProperties"
+          - "systemEnvironment"
         condition: or
 
       - type: word

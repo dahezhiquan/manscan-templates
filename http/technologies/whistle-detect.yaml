@@ -1,0 +1,42 @@
+id: whistle-detect
+
+info:
+  name: Whistle 指纹识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    Whistle 是由 avwo 维护的 HTTP、HTTPS、HTTP/2 和 WebSocket 调试代理工具，通常提供 Web 管理界面用于查看抓包数据、配置代理规则和管理插件。该模板使用与 Whistle 未授权访问检测一致的管理 API 请求，通过响应中的版本、服务器信息、规则启用数量、HTTPS 拦截状态及数据字段识别 Whistle 服务，并提取版本信息；命中结果仅表示识别到产品指纹，可用于资产盘点和后续安全配置检查。
+  reference:
+    - https://github.com/avwo/whistle
+    - https://wproxy.org/whistle/
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: 'http.title:"Whistle Web Debugging Proxy"'
+    fofa-query: 'title="Whistle Web Debugging Proxy"'
+    vendor: avwo
+    product: whistle
+  tags: avwo,whistle,proxy,tech,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cgi-bin/get-data?startSvrLogTime=-3&count=0"
+
+    redirects: false
+
+    matchers:
+      - type: dsl
+        name: whistle
+        dsl:
+          - 'status_code == 200'
+          - 'contains(content_type, "application/json")'
+          - 'contains_all(body, "\"ec\":0", "\"version\":", "\"server\":", "\"enabledCount\":", "\"interceptHttpsConnects\":", "\"data\":")'
+        condition: and
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '"version":"([^"]+)"'

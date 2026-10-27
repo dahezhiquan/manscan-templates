@@ -1,0 +1,37 @@
+id: system-path-disclosure
+
+info:
+  name: 系统路径信息泄露
+  author: dahezhiquan
+  severity: low
+  description: |
+    该模板用于检测 HTTP 响应正文中暴露服务器文件系统绝对路径的情况。应用错误页、调试输出、默认欢迎页或诊断页面可能把 `/var/www/html/`、`/opt/app/`、`C:\\inetpub\\wwwroot\\` 等安装位置返回给未授权访问者，泄露部署目录和服务器环境信息。模板通过绝对路径正则与路径披露上下文联合确认，避免仅凭普通 URL 路径命中。
+  impact: |
+    - 攻击者可据此推断应用部署目录、服务器类型和目录结构，降低后续文件枚举与漏洞利用成本。
+    - 绝对路径可辅助构造本地文件包含、路径穿越、调试接口和源码定位等攻击请求。
+  remediation: |
+    - 关闭生产环境调试模式、默认欢迎页和详细错误回显，统一返回不包含内部路径的错误页面。
+    - 在 Web 服务器、反向代理和应用框架中移除或脱敏绝对路径、堆栈信息及诊断输出。
+    - 检查访问日志和缓存，确认已暴露的路径未伴随配置、源码或凭据泄露，并修复相关公开资源。
+  reference:
+    - https://owasp.org/www-community/Improper_Error_Handling
+  metadata:
+    max-request: 1
+  tags: misconfig,disclosure,fpd,generic,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)(?:[A-Z]:\\(?:Users|Windows|inetpub|wwwroot|ProgramData|temp)(?:\\[A-Za-z0-9._ -]+){1,}|/(?:var|www|home|srv|opt|usr|etc|root|tmp|mnt|app|data|workspace)(?:/[A-Za-z0-9._-]+){1,})'
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)(?:[A-Z]:\\(?:Users|Windows|inetpub|wwwroot|ProgramData|temp)(?:\\[A-Za-z0-9._ -]+){1,}|/(?:var|www|home|srv|opt|usr|etc|root|tmp|mnt|app|data|workspace)(?:/[A-Za-z0-9._-]+){1,})'

@@ -1,0 +1,51 @@
+id: statistics-page-exposure
+
+info:
+  name: 通用统计页面敏感信息泄露
+  author: dahezhiquan
+  severity: low
+  description: |
+    Web 站点将 `statistics.html` 统计页面直接暴露给未授权访问者时，可能泄露访问量、独立访客、请求数量或其他运行统计信息。模板请求 `/statistics.html`，仅在原始地址直接返回 HTML 200 响应，且正文同时包含统计页面标题、多个统计指标以及表格或图表结构时确认暴露；模板不跟随重定向，避免将跳转后的普通首页误判为统计页面。
+  impact: |
+    - 攻击者可获取站点访问规模、流量变化、请求活动或访客统计等运营信息，并据此分析业务活跃时段和服务使用情况。
+    - 若页面同时展示访问来源、请求路径、客户端地址或其他明细，可能进一步暴露内部接口和用户活动线索。
+  remediation: |
+    - 删除不再使用的 `statistics.html`，或将统计页面迁移到不可通过公网直接访问的管理区域。
+    - 对确需保留的统计页面强制实施身份认证和授权，并通过内网、VPN 或可信来源白名单限制访问。
+    - 仅展示运维所需的最少统计字段，移除客户端地址、访问路径等敏感明细，并审计历史访问记录。
+  reference:
+    - https://cwe.mitre.org/data/definitions/200.html
+  tags: generic,statistics,exposure,info-leak,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/statistics.html"
+
+    redirects: false
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "text/html"
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)<title[^>]*>[^<]*(?:statistics|usage statistics|traffic statistics|网站统计|访问统计|流量统计)[^<]*</title>'
+
+      - type: regex
+        part: body
+        regex:
+          - '(?is)(?:page\s*views?|unique\s*visitors?|total\s*(?:visits?|requests?|hits?)|requests?\s*(?:per|by)|访问量|浏览量|独立访客|请求(?:总数|量)).{0,1000}(?:page\s*views?|unique\s*visitors?|total\s*(?:visits?|requests?|hits?)|requests?\s*(?:per|by)|访问量|浏览量|独立访客|请求(?:总数|量))'
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)<(?:table|canvas)\b|class\s*=\s*["''][^"'']*(?:chart|statistics|stats)[^"'']*["'']'

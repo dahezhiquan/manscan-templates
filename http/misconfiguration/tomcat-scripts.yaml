@@ -35,6 +35,8 @@ http:
       - "{{BaseURL}}/..;/examples/websocket/index.xhtml"
       - "{{BaseURL}}/..;/examples/servlets/servlet/SessionExample"
 
+    stop-at-first-match: true
+
     matchers:
       - type: word
         words:

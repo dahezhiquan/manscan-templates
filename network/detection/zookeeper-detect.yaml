@@ -1,0 +1,39 @@
+id: zookeeper-detect
+
+info:
+  name: Apache ZooKeeper 服务识别（指纹识别）
+  author: codex
+  severity: info
+  description: |
+    Apache ZooKeeper 是用于分布式协调、服务发现和配置管理的开源服务。该模板连接目标 2181/TCP 并发送只读四字命令 `envi`，通过响应中的 `zookeeper.version` 字段确认目标是否运行 ZooKeeper，并在可用时提取版本信息。
+  reference:
+    - https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands
+    - https://zookeeper.apache.org/
+  metadata:
+    vendor: apache
+    product: zookeeper
+    shodan-query: product:"Apache ZooKeeper"
+  tags: network,zookeeper,detect,tcp,discovery
+
+tcp:
+  - inputs:
+      - data: "envi"
+
+    host:
+      - "{{Hostname}}"
+    port: 2181
+    read-size: 2048
+
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?m)^zookeeper\.version=[^\r\n]+'
+
+    extractors:
+      - type: regex
+        name: version
+        part: data
+        group: 1
+        regex:
+          - "zookeeper\\.version=([^\\r\\n]+)"

@@ -3,7 +3,7 @@ id: host-header-injection
 info:
   name: Host Header Injection
   author: princechaddha
-  severity: medium
+  severity: low
   description: |
     该模板用于检测 Host Header Injection。该类漏洞通常源于应用或代理直接信任 Host/转发头生成链接或缓存内容。模板通过构造特定请求与响应匹配逻辑进行探测，并根据状态码、响应头、页面关键字或时间差等证据确认漏洞是否存在。
   impact: |

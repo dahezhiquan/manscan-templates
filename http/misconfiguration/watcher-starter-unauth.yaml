@@ -1,0 +1,46 @@
+id: watcher-starter-unauth
+
+info:
+  name: Watcher Starter 未授权访问漏洞
+  author: dahezhiquan
+  severity: medium
+  description: |
+    该模板用于检测 Watcher Starter 监控信息入口是否允许未认证访问。模板请求 `/watcher/starter`，并根据响应中的 Watcher 信息索引及多个运行信息链接判断目标是否公开暴露了系统信息、线程信息、内存信息或连接信息。
+  impact: |
+    - 未授权用户可查看应用运行状态、线程、内存、系统属性和环境变量等信息。
+    - 暴露的连接信息、路径和配置线索可能辅助攻击者进行凭据攻击、漏洞利用或横向移动。
+  remediation: |
+    - 为 `/watcher/starter` 及其下游 `/watcher/*.wh` 接口启用认证和细粒度授权。
+    - 非必要时关闭 Watcher Starter，或仅允许内网、VPN、堡垒机和可信来源访问。
+    - 审计历史访问日志，评估已暴露的环境变量、连接信息和系统配置，并轮换其中的敏感凭据。
+  metadata:
+    verified: true
+    max-request: 1
+  tags: watcher,unauth,info-leak,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/watcher/starter"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "<h5>Index</h5>"
+          - "/watcher/INFO.wh?tag=sysinfo"
+          - "/watcher/INFO.wh?tag=threadinfo"
+          - "/watcher/INFO.wh?tag=meminfo"
+          - "/watcher/INFO.wh?tag=connectionInfo"
+        condition: and
+
+      - type: regex
+        part: header
+        regex:
+          - |-
+            (?i)content-type\s*:\s*text/html
+
+      - type: status
+        status:
+          - 200

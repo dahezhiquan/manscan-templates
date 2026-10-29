@@ -47,8 +47,10 @@ http:
     payloads:
       username:
         - admin
+        - ADMIN
       password:
         - 123456
+        - admin
     stop-at-first-match: true
 
     matchers-condition: and

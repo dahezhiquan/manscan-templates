@@ -1,0 +1,53 @@
+id: react-manifest-json-exposure
+
+info:
+  name: React manifest.json 信息泄露（暴露面识别）
+  author: dahezhiquan
+  severity: low
+  description: |
+    该模板用于检测基于 React 或其他前端框架的 Web 应用是否公开暴露 `/manifest.json`。该文件通常包含应用名称、启动路径、图标和显示模式等部署元数据，可用于识别应用和辅助攻击面梳理。模板仅在响应为 JSON、状态码为 200 且同时具备 PWA manifest 的多个结构字段时报告。
+  impact: |
+    - 攻击者可获取应用名称、短名称、启动路径、图标资源和显示模式等公开元数据。
+    - 这些信息可辅助确认前端应用、资源路径和部署结构，但通常不等同于凭据或业务数据泄露。
+  remediation: |
+    - 评估 `/manifest.json` 是否必须公开；如无 PWA 或应用安装需求，可移除该文件。
+    - 确认 manifest 中不包含内部域名、管理路径、访问令牌或其他不应公开的部署信息。
+    - 对确需公开的内容进行最小化，避免将敏感配置写入前端静态资源。
+  metadata:
+    verified: true
+    max-request: 1
+    product: react
+  tags: react,manifest,exposure,info-leak,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/manifest.json"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"name"'
+          - '"start_url"'
+          - '"icons"'
+        condition: and
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: status
+        status:
+          - 200
+
+    extractors:
+      - type: json
+        name: manifest
+        part: body
+        json:
+          - ".name"
+          - ".short_name"
+          - ".start_url"

@@ -3,7 +3,7 @@ id: flink-exposure
 info:
   name: Apache Flink 登录面板识别（暴露面识别）
   author: pdteam
-  severity: medium
+  severity: high
   description: |-
     检测到目标站点暴露 Apache Flink 相关面板或登录入口。Apache Flink Web Dashboard 是流处理作业管理界面，用于查看 Job、TaskManager、作业状态、指标和日志。模板请求 `/`，并通过页面标题或正文关键字确认入口可访问；此类面板若直接暴露在公网，会增加账号枚举、口令攻击、漏洞匹配和未授权访问尝试的机会。
   impact: |-

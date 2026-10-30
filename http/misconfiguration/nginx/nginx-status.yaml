@@ -1,7 +1,7 @@
 id: nginx-status
 
 info:
-  name: Nginx 状态页
+  name: Nginx 状态页 泄漏
   author: dhiyaneshDK
   severity: medium
   description: |
@@ -22,6 +22,7 @@ http:
     path:
       - "{{BaseURL}}/nginx_status"
       - "{{BaseURL}}/nginx-status"
+      - "{{BaseURL}}/basic_status"
 
     matchers-condition: and
     matchers:

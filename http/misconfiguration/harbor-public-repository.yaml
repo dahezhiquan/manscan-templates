@@ -1,0 +1,66 @@
+id: harbor-public-repository
+
+info:
+  name: Harbor 公共镜像仓库信息泄露
+  author: dahe
+  severity: medium
+  description: |
+    Harbor 项目启用 Public 后，项目下的镜像仓库和制品可被未登录用户访问。该模板匿名请求 Harbor `/api/v2.0/search` 搜索接口，要求响应为 JSON 且包含 Harbor 项目、仓库字段，并确认返回的 `project_public` 为 `true`，以验证目标公开列出了项目或镜像仓库。
+  impact: |
+    - 未授权人员可枚举公开项目、仓库名称、制品数量和拉取统计，降低内部项目与部署结构的侦察成本。
+    - 公开镜像可能包含源代码、配置文件、令牌、私钥或其他敏感数据；攻击者还可据此分析组件版本并策划后续供应链攻击。
+  remediation: |
+    - 在 Harbor 项目配置中取消 `Public` 选项，将不需要匿名访问的项目和仓库设为私有。
+    - 对确需共享的镜像建立专用项目和最小权限账户，限制访问来源，并避免在镜像层和构建产物中写入密钥及敏感配置。
+    - 检查已公开镜像的历史层和访问日志，删除敏感制品并轮换曾经暴露的凭据。
+  reference:
+    - https://goharbor.io/docs/2.15.0/working-with-projects/project-configuration/
+    - https://raw.githubusercontent.com/goharbor/harbor/main/api/v2.0/swagger.yaml
+  metadata:
+    vendor: linuxfoundation
+    product: harbor
+    shodan-query: 'http.title:"Harbor"'
+    fofa-query: 'title="Harbor"'
+  tags: misconfig,harbor,registry,exposure,disclosure,vuln
+
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/api/v2.0/search?q=j'
+      - '{{BaseURL}}/api/v2.0/search?q=a'
+
+    stop-at-first-match: true
+    headers:
+      Accept: application/json
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+
+      - type: word
+        part: body
+        words:
+          - '"project":'
+          - '"repository":'
+          - '"project_id":'
+          - '"repository_name":'
+        condition: and
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)"project_public"\s*:\s*true'
+
+    extractors:
+      - type: regex
+        part: body
+        group: 1
+        regex:
+          - '(?i)"repository_name"\s*:\s*"([^"]+)"'

@@ -1,0 +1,71 @@
+id: n9e-users-weak-basic-auth
+
+info:
+  name: 夜莺监控系统用户信息泄露（弱口令）
+  author: codex
+  severity: medium
+  description: |
+    夜莺（Nightingale/N9E）监控系统的用户管理接口 `/v1/n9e/users` 使用弱口令或默认 Basic 凭据保护时，攻击者可读取用户账号、角色及联系人配置。模板使用常见弱/默认凭据发起只读请求，并要求响应同时具备 N9E 用户列表的 JSON 结构，以确认弱凭据登录成功及敏感信息已暴露。
+  impact: |
+    - 攻击者可枚举监控平台用户、管理员角色和账号活动信息，为后续定向攻击提供依据。
+    - 联系人配置可能包含机器人令牌、群组标识等通知凭据，泄露后可被用于伪造告警或访问第三方服务。
+    - 若同一凭据还可执行写操作，攻击者可能进一步创建账号、修改监控配置或破坏告警流程。
+  remediation: |
+    - 立即停用默认账号和弱口令，使用唯一、足够长度的高强度密码，并轮换已暴露的 Basic 凭据。
+    - 为 N9E 管理接口启用强认证、细粒度授权和来源地址限制，避免 `/v1/n9e/users` 直接暴露在公网。
+    - 轮换用户联系人中的机器人令牌，审计用户查询、账号变更和异常告警发送记录。
+  reference:
+    - https://github.com/didi/nightingale
+  classification:
+    cwe-id: CWE-522
+  metadata:
+    verified: true
+    max-request: 5
+    vendor: didi
+    product: nightingale
+  tags: n9e,nightingale,default-login,auth,info-leak,misconfig,vuln
+
+variables:
+  endpoint: /v1/n9e/users
+
+http:
+  - raw:
+      - |
+        GET {{endpoint}} HTTP/1.1
+        Host: {{Hostname}}
+        Accept: application/json
+        Authorization: Basic {{base64(username + ':' + password)}}
+
+    payloads:
+      username:
+        - admin
+        - root
+        - user001
+        - guest
+        - n9e
+      password:
+        - admin
+        - root
+        - user001
+        - guest
+        - n9e
+    attack: pitchfork
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: regex
+        part: body
+        regex:
+          - '"username"\s*:\s*"[^"\\]+"'
+          - '"roles"\s*:\s*\['
+        condition: and

@@ -1,0 +1,51 @@
+id: hdfs-startup-progress-unauth
+
+info:
+  name: Apache Hadoop HDFS 启动进度未授权访问
+  author: codex
+  severity: high
+  description: |
+    Apache Hadoop HDFS NameNode 的 `/startupProgress` 接口用于返回文件系统启动和检查点加载进度。若未认证请求即可获取该接口的完整 JSON 响应，说明 NameNode 管理信息对外暴露，存在未授权访问配置风险。模板通过状态码、JSON 响应头以及 HDFS 启动阶段字段共同确认命中。
+  impact: |
+    - 攻击者可读取 NameNode 启动阶段、文件系统镜像、编辑日志、inode 数量和数据文件路径等集群运行信息。
+    - 暴露的内部路径、集群状态和组件行为可辅助攻击者进行 Hadoop 集群侦察，并为后续未授权访问、漏洞利用或横向移动提供线索。
+    - 若同一 NameNode 还暴露其他管理接口，攻击者可能进一步读取 HDFS 元数据、提交任务或影响集群运行。
+  remediation: |
+    - 为 NameNode Web UI 和 REST 接口启用 Kerberos、Apache Knox 或其他可靠的身份认证与授权控制。
+    - 将 9870/50070 等 NameNode HTTP 端口限制在集群管理网、VPN 或受控来源，禁止直接暴露到公网。
+    - 检查访问日志和其他 Hadoop 管理接口，确认是否已有未授权访问，并轮换可能暴露的凭据或令牌。
+  reference:
+    - https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HDFSCommands.html
+    - https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/NameNode.html
+  classification:
+    cwe-id: CWE-306
+  metadata:
+    max-request: 1
+    vendor: apache
+    product: hadoop
+  tags: apache,hadoop,unauth,exposure,misconfig,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/startupProgress"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: word
+        part: body
+        words:
+          - '"elapsedTime"'
+          - '"percentComplete"'
+          - '"phases"'
+          - '"LoadingFsImage"'
+        condition: and

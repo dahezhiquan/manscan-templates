@@ -1,0 +1,78 @@
+id: sip-options-detect
+
+info:
+  name: SIP 服务指纹识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    SIP（Session Initiation Protocol）是用于建立、修改和终止音频、视频及其他多媒体会话的信令协议，常见于 IP 电话、软电话、SIP 网关和 PBX 服务。该模板分别通过 TCP 和 UDP 传输发送无副作用的 `OPTIONS` 请求，并通过 SIP 状态行、事务头和能力头确认目标运行 SIP 服务；命中仅表示服务指纹匹配，不代表存在未授权访问或认证缺陷。
+  remediation: |
+    - 将 SIP 信令端口限制在可信的电话终端、SBC、VPN 或管理网络范围内，避免直接暴露到公网。
+    - 为注册、呼叫和管理接口启用认证、来源访问控制、TLS/SRTP 及异常请求限速。
+    - 审计 SIP 注册、呼叫和失败认证日志，及时升级 IP 电话、PBX、SIP 网关及其依赖组件。
+  reference:
+    - https://www.rfc-editor.org/rfc/rfc3261
+  metadata:
+    max-request: 2
+    shodan-query: 'port:5060 product:"SIP"'
+  tags: network,sip,voip,detect,tcp,udp,discovery,js
+
+tcp:
+  - inputs:
+      - data: "OPTIONS sip:{{Hostname}} SIP/2.0\r\nVia: SIP/2.0/TCP {{Hostname}};branch=z9hG4bK{{randstr}}\r\nMax-Forwards: 70\r\nFrom: <sip:scanner@{{Hostname}}>;tag={{randstr}}\r\nTo: <sip:{{Hostname}}>\r\nCall-ID: {{randstr}}@{{Hostname}}\r\nCSeq: 1 OPTIONS\r\nContact: <sip:scanner@{{Hostname}}>\r\nContent-Length: 0\r\n\r\n"
+
+    host:
+      - "{{Hostname}}"
+    port: 5060
+    read-size: 4096
+
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?i)SIP/2\.0\s+[1-6][0-9]{2}'
+
+      - type: word
+        part: data
+        words:
+          - "Via:"
+          - "CSeq:"
+        condition: and
+
+javascript:
+  - pre-condition: |
+      isUDPPortOpen(Host, Port);
+
+    code: |
+      const c = require("nuclei/net");
+      const conn = c.Open('udp', `${Host}:${Port}`);
+      const request = `OPTIONS sip:${Host} SIP/2.0\r\nVia: SIP/2.0/UDP ${Host}:${Port};branch=z9hG4bK{{randstr}}\r\nMax-Forwards: 70\r\nFrom: <sip:scanner@${Host}>;tag={{randstr}}\r\nTo: <sip:${Host}>\r\nCall-ID: {{randstr}}@${Host}\r\nCSeq: 1 OPTIONS\r\nContact: <sip:scanner@${Host}:${Port}>\r\nContent-Length: 0\r\n\r\n`;
+      conn.Send(request);
+      const response = conn.RecvString(4096);
+      conn.Close();
+      response;
+
+    args:
+      Host: "{{Host}}"
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+          - "len(response) > 0"
+        condition: and
+
+      - type: regex
+        part: response
+        regex:
+          - '(?i)SIP/2\.0\s+[1-6][0-9]{2}'
+
+      - type: word
+        part: response
+        words:
+          - "Via:"
+          - "CSeq:"
+        condition: and
+

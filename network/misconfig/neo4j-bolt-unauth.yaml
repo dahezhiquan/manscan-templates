@@ -1,0 +1,55 @@
+id: neo4j-bolt-unauth
+
+info:
+  name: Neo4j Bolt 协议未授权访问
+  author: dahezhiquan
+  severity: high
+  description: |
+    Neo4j Bolt 服务在未提供用户名和密码时接受客户端 `HELLO` 握手，说明数据库认证或访问控制未正确启用。模板向目标 7687/TCP 端口发送标准 Bolt 协议握手和空认证信息，并要求响应返回 Neo4j 服务标识，以确认建立了未授权会话，而不是仅确认端口开放。
+  impact: |
+    - 攻击者可在无需凭据的情况下连接 Neo4j 数据库，读取节点、关系、标签和属性等敏感图数据。
+    - 若未授权会话具备写权限，攻击者可能新增、修改或删除图数据，破坏业务完整性。
+    - 数据库连接被接管后，攻击者还可能利用扩展过程、凭据和网络连通性进一步攻击关联应用或内部系统。
+  remediation: |
+    - 启用 Neo4j 身份认证和细粒度授权，删除匿名访问配置并设置唯一的高强度密码。
+    - 使用 TLS 保护 Bolt 连接，并通过防火墙、网络 ACL 或 VPN 将 7687/TCP 限制在可信来源。
+    - 审计数据库连接、查询和权限变更记录，排查未授权访问并轮换可能已暴露的凭据。
+  reference:
+    - https://neo4j.com/docs/operations-manual/current/authentication-authorization/
+    - https://neo4j.com/docs/bolt/current/bolt-protocol-details/
+  classification:
+    cwe-id: CWE-306
+  metadata:
+    max-request: 2
+    vendor: neo4j
+    product: neo4j
+  tags: network,neo4j,bolt,unauth,auth,misconfig,vuln,tcp
+
+variables:
+  bolt_handshake: "6060b01700000004000000030000000200000001"
+  bolt_hello_empty: "0003d101a00000"
+
+tcp:
+  - inputs:
+      - data: "{{bolt_handshake}}"
+        type: hex
+        read: 4
+      - data: "{{bolt_hello_empty}}"
+        type: hex
+        read: 1024
+
+    host:
+      - "{{Hostname}}"
+    port: 7687
+
+    matchers-condition: and
+    matchers:
+      - type: binary
+        part: raw
+        binary:
+          - "00000004"
+
+      - type: word
+        part: raw
+        words:
+          - "Neo4j"

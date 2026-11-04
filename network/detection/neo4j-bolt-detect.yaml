@@ -1,0 +1,50 @@
+id: neo4j-bolt-detect
+
+info:
+  name: Neo4j Bolt 协议识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    Neo4j 使用 Bolt 协议提供图数据库连接。该模板连接 7687/TCP，优先协商 Bolt 5.1 并发送不含凭据的 HELLO 消息；仅在服务端选中协议版本，且响应包含 Neo4j 服务标识或认证错误码时确认指纹。若 HELLO 返回服务标识，还会提取 Neo4j 版本。
+  reference:
+    - https://neo4j.com/docs/bolt/current/bolt/handshake/
+    - https://neo4j.com/docs/bolt/current/bolt/message/
+  metadata:
+    shodan-query: 'port:7687 product:"Neo4j"'
+    vendor: neo4j
+    product: neo4j
+  tags: network,neo4j,bolt-protocol,detect,tcp,discovery
+
+tcp:
+  - inputs:
+      # Bolt magic followed by version proposals: 5.1-5.0, 4.4, 4.0, 3.0.
+      - data: "{{hex_decode('6060b01700010105000004040000000400000003')}}"
+        read: 4
+      # HELLO {user_agent: "manscan/1.0", scheme: "none"}, chunked PackStream.
+      - data: "{{hex_decode('0026b101a28a757365725f6167656e748b6d616e7363616e2f312e3086736368656d65846e6f6e650000')}}"
+
+    host:
+      - "{{Hostname}}"
+    port: 7687
+    read-size: 1024
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - "regex('^(00000105|00000005|00000404|00000004|00000003)', hex_encode(raw))"
+
+      - type: word
+        part: data
+        words:
+          - "Neo4j/"
+          - "Neo.ClientError.Security.Unauthorized"
+        condition: or
+
+    extractors:
+      - type: regex
+        name: neo4j-version
+        part: data
+        regex:
+          - 'Neo4j/([0-9][0-9A-Za-z.+-]*)'
+        group: 1

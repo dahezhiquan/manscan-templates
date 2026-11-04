@@ -1,11 +1,11 @@
 id: rdp-detection
 
 info:
-  name: Windows Remote Desktop 协议识别（指纹识别）
+  name: RDP 协议识别（指纹识别）
   author: princechaddha
   severity: info
   description: |
-    Remote Desktop Protocol（RDP）是 Windows 远程桌面协议，用于图形化远程登录和管理。该模板连接 3389/TCP 并读取协议响应，通过匹配 `030000130ed`、`0300000b06d00000123400`、`030000130ed000001234000300080002000000` 等响应特征识别目标服务。
+    Remote Desktop Protocol（RDP）用于图形化远程登录和管理。该模板连接 3389/TCP，发送 X.224 连接请求，并根据 X.224 确认帧或 RDP 协商响应的结构识别服务。协商标志和安全协议选项不能用于确定远程系统版本。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -15,8 +15,7 @@ info:
   tags: network,windows,rdp,detect,tcp,discovery
 tcp:
   - inputs:
-      - data: "0300002a25e00000000000436f6f6b69653a206d737473686173683d746573740d0a010008000b000000"
-        type: hex
+      - data: "{{hex_decode('0300002a25e00000000000436f6f6b69653a206d737473686173683d746573740d0a010008000b000000')}}"
     read-size: 2048
 
     host:
@@ -24,63 +23,10 @@ tcp:
     port: 3389
 
     matchers:
-      - type: word
+      - type: dsl
         name: rdp
-        encoding: hex
-        words:
-          - "030000130ed"
-
-      - type: word
-        encoding: hex
-        name: win2000/winxp
-        words:
-          - "0300000b06d00000123400"
-
-      - type: word
-        encoding: hex
-        name: win2003
-        words:
-          - "030000130ed000001234000300080002000000"
-
-      - type: word
-        encoding: hex
-        name: win2008
-        words:
-          - "030000130ed000001234000200080002000000"
-
-      - type: word
-        encoding: hex
-        name: win7or2008R2
-        words:
-          - "030000130ed000001234000209080002000000"
-
-      - type: word
-        encoding: hex
-        name: win2008R2DC
-        words:
-          - "030000130ed000001234000201080002000000"
-
-      - type: word
-        encoding: hex
-        name: win10
-        words:
-          - "030000130ed00000123400021f080002000000"
-
-      - type: word
-        encoding: hex
-        name: win2012R2OR8
-        words:
-          - "030000130ed00000123400020f080002000000"
-
-      - type: word
-        encoding: hex
-        name: win2012R2
-        words:
-          - "030000130ed00000123400020f080008000000"
-
-      - type: word
-        encoding: hex
-        name: win2016
-        words:
-          - "030000130ed00000123400021f080008000000"
-# digest: 490a00463044022051981f3cb2baeb884b203408df6f08ed232b918800b37a071b59a3444c7da7f6022075a16ff38caf38547f7af4ece1884c8d4353ad47cdf2625bb22aee708253ddce:922c64590222798bb761d5b6d8e72950
+        dsl:
+          - "regex('^0300000b06d00000123400$', hex_encode(raw))"
+          - "regex('^030000130ed0000012340002[0-9a-f]{2}0800(00000000|01000000|02000000|04000000|08000000)$', hex_encode(raw))"
+          - "regex('^030000130ed00000123400030008000[1-6]000000$', hex_encode(raw))"
+        condition: or

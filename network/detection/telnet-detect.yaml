@@ -2,10 +2,10 @@ id: telnet-detect
 
 info:
   name: Telnet 识别（指纹识别）
-  author: pussycat0x
+  author: dahezhiquan
   severity: info
   description: |
-    Telnet 是传统远程终端协议，用于网络设备、嵌入式系统或旧式服务器的命令行访问。该模板连接 23/TCP 并读取协议响应，通过匹配 `Telnet`、`Login authentication` 等响应特征识别目标服务。
+    Telnet 是传统远程终端协议，用于网络设备、嵌入式系统或旧式服务器的命令行访问。该模板连接 23/TCP 并发送 Telnet 选项协商请求，通过连续的协议协商指令或明确的 Telnet 登录提示识别目标服务。
   metadata:
     verified: true
     max-request: 1
@@ -13,16 +13,23 @@ info:
   tags: network,telnet,detect,tcp,discovery
 tcp:
   - inputs:
-      - data: "\n"
+      - data: "{{hex_decode('fffb03fffd18fffd20')}}"
 
     host:
       - "{{Hostname}}"
     port: 23
+    read-size: 1024
 
+    matchers-condition: or
     matchers:
       - type: word
         words:
           - "Telnet"
           - "Login authentication"
         condition: and
-# digest: 4a0a00473045022100c41b2f955a3981de948ba9c70022a83691dfa3ffc0ff24b2d2b008d8ecc870d802201207a0afad83447ca69282cbdf64be6f2580261047d38b1ae7d3b82ae7965a67:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        dsl:
+          - "regex('(ff(fb|fc|fd|fe)[0-9a-f]{2}){3}', hex_encode(data))"
+      - type: word
+        words:
+          - "Telnet service is disabled"

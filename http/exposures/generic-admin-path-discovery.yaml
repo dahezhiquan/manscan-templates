@@ -1,0 +1,44 @@
+id: generic-admin-path-discovery
+
+info:
+  name: 通用后台地址发现
+  author: dahezhiquan
+  severity: low
+  description: |
+    检测首页及 `/admin/`、`/administrator/`、`/manage/`、`/manager/`、`/root/` 是否返回具有登录或后台特征的页面。模板按 dray 的判断逻辑检查响应正文，包括密码输入框、表单与账号字段、登录按钮与登录文案，以及特定 UC 登录页面标记。命中表示对应路径可能是登录或管理入口，不证明目标存在未授权访问或可利用漏洞。
+  impact: |
+    - 暴露的管理入口会帮助外部人员确认系统登录页面及常见访问路径，为后续针对性探测提供线索。
+    - 本模板不执行登录尝试，也不验证认证强度、访问控制或后台功能是否可被未授权访问。
+  remediation: |
+    - 确认识别出的入口是否需要对公网开放；非必要时通过内网、VPN、可信来源 IP 或网关策略限制访问。
+    - 为确需开放的管理入口启用强认证、多因素认证、登录失败限制和访问审计。
+    - 结合应用实际路由人工复核扫描结果，避免将普通用户登录页或通用前端页面误认为管理后台。
+  tags: generic,panel,login,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+      - "{{BaseURL}}/admin/"
+      - "{{BaseURL}}/administrator/"
+      - "{{BaseURL}}/manage/"
+      - "{{BaseURL}}/manager/"
+      - "{{BaseURL}}/root/"
+
+    matchers-condition: or
+    matchers:
+      - type: dsl
+        dsl:
+          - 'contains(body, "type=\"password\"")'
+
+      - type: dsl
+        dsl:
+          - '(contains(body, "<form") || contains(body, "<input") || contains(body, "<textarea") || contains(body, "<select") || contains(body, "<button")) && (contains(body, "username") || contains(body, "password") || contains(body, "用户名") || contains(body, "密码") || contains(body, "账户") || contains(body, "帐号"))'
+
+      - type: dsl
+        dsl:
+          - '(contains(body, "<button") || contains(body, "type=\"submit\"")) && (contains(body, "登录") || contains(body, "登陆") || contains(body, "login"))'
+
+      - type: dsl
+        dsl:
+          - 'contains(body, "<form id=\"uc-login") || contains(body, "uc.duxiaoman.com") || contains(body, "ucPhone")'

@@ -1,42 +1,46 @@
-id: apache-kafka-topics-list
+id: kafka-topics-list
 
 info:
-  name: Apache Kafka Topics 枚举（指纹识别）
+  name: Kafka 协议识别与 Topics 枚举（指纹识别）
   author: pussycat0x
   severity: info
   description: |
-    Apache Kafka 是分布式事件流与消息队列平台，Topic 用于承载业务事件和消息流。该模板与 9092/TCP 的 Kafka Broker 进行协议交互，尝试列举可见 Topic，并通过响应中的 Topic/主机特征确认 Broker 暴露的枚举能力。
+    Kafka 是分布式事件流与消息队列协议。该模板先发送 ApiVersions 请求，根据响应中的关联 ID、成功状态和 API 列表识别 Kafka 兼容服务；另用 Metadata 请求提取允许匿名读取的 Topic 等可见文本。默认端口为 9092/TCP，不依据 API 兼容范围推断软件版本。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: product:"Kafka"
   tags: network,detect,enum,kafka,apache,tcp,discovery
 tcp:
   - inputs:
-      - data: 00000020000300000000000200126b61666b612d707974686f6e2d322e302e3200000000
-        type: hex
-        read: 1024
-
-      - data: 00000020000300000000000200126b61666b612d707974686f6e2d322e302e3200000000
-        type: hex
-        read: 1024
+      # ApiVersions v0 with correlation ID 0x4b41464b ("KAFK").
+      - data: "{{hex_decode('0000000a001200004b41464b0000')}}"
 
     host:
       - "{{Hostname}}"
     port: 9092
+    read-size: 4096
 
-    matchers-condition: or
     matchers:
-      - type: word
-        part: raw
-        words:
-          - "localhost"
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{8}4b41464b0000000000(?:0[1-9a-f]|[1-9a-f][0-9a-f])(?:0000|0001)[0-9a-f]{8}', hex_encode(raw))"
+          - "regex('0012[0-9a-f]{8}', hex_encode(raw))"
+        condition: and
 
-      - type: regex
-        name: ip
-        part: raw
-        regex:
-          - '(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
+  - inputs:
+      - data: 00000020000300000000000200126b61666b612d707974686f6e2d322e302e3200000000
+        type: hex
+
+    host:
+      - "{{Hostname}}"
+    port: 9092
+    read-size: 4096
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{8}00000002000000(0[1-9a-f]|[1-9a-f][0-9a-f])[0-9a-f]{8}00(0[1-9a-f]|[1-9a-f][0-9a-f])[3-7][0-9a-f]', hex_encode(raw))"
 
     extractors:
       - type: regex
@@ -44,4 +48,3 @@ tcp:
         name: value
         regex:
           - '([a-z.A-Z_0-9-]+)'
-# digest: 4b0a00483046022100894fe180317ba7e14f182714338b7e35694c54d6634828e3faad5dd92d0b7ad7022100f8726ddc4ea692e92d4ca7a5c682e04efea82f4bcee1ab79fbfba5cb04836d46:922c64590222798bb761d5b6d8e72950

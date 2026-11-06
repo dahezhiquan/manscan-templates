@@ -5,7 +5,7 @@ info:
   author: dahe
   severity: critical
   description: |
-    Java Debug Wire Protocol（JDWP）用于调试正在运行的 JVM。该协议缺少内建身份认证与传输加密，若调试端口暴露在不可信网络，远程攻击者可连接调试会话并利用断点、方法调用等调试能力在 JVM 进程权限下执行代码。该模板先完成 `JDWP-Handshake`，再发送无副作用的 `VirtualMachine.Version` 命令，并结合握手回显与 JVM 版本字段确认未认证 JDWP 接口可用；检测仅证明具备进一步利用条件，不会在目标上执行系统命令。
+    Java Debug Wire Protocol（JDWP）用于调试正在运行的 JVM，协议本身不提供身份认证或传输加密。若远程调试接口允许未认证客户端完成握手并成功执行 `VirtualMachine.Version` 命令，攻击者通常可进一步调用 JDWP 调试能力，在 JVM 进程权限下执行代码。该模板以精确握手和结构有效的成功回复确认未认证调试命令可用；验证不会执行代码或系统命令，因此结果表示远程代码执行条件成立，而非已执行命令。
   impact: |
     - 未认证攻击者可控制目标 JVM 的调试会话，并可能在 Java 进程权限范围内执行任意代码、读取运行时数据或篡改应用状态。
     - JVM 进程被控制后，攻击者可能窃取应用凭据和业务数据，并以该主机为入口实施横向移动或持久化。
@@ -20,27 +20,77 @@ info:
     shodan-query: product:"Java Debug Wire Protocol"
   tags: jdwp,rce,network,tcp,unauth,vuln
 
-tcp:
-  - host:
-      - "{{Hostname}}"
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const conn = net.Open("tcp", `${Host}:${Port}`);
+      conn.SetTimeout(3);
 
-    port: 5005
+      function readHex(size) {
+        if (size === 0) return "";
+        const buffer = bytes.NewBuffer();
+        buffer.Write(conn.RecvFull(size));
+        const value = buffer.Hex();
+        if (value.length !== size * 2) throw new Error("incomplete JDWP packet");
+        return value;
+      }
 
-    inputs:
-      - data: "4a4457502d48616e647368616b65"  # JDWP-Handshake
-        type: hex
-        read: 14
+      function uint32(hex, offset) {
+        return parseInt(hex.substring(offset * 2, offset * 2 + 8), 16);
+      }
 
-      - data: "0000000b00000001000101"        # JDWP command: VirtualMachine.Version
-        type: hex
-        read: 1024
+      function isValidVersionBody(body) {
+        let offset = 0;
+        function skipString() {
+          if (offset + 4 > body.length / 2) return false;
+          const length = uint32(body, offset);
+          offset += 4;
+          if (length > 4096 || offset + length > body.length / 2) return false;
+          offset += length;
+          return true;
+        }
+
+        if (!skipString() || offset + 8 > body.length / 2) return false;
+        offset += 8;
+        return skipString() && skipString() && offset === body.length / 2;
+      }
+
+      let evidence = "";
+      try {
+        conn.Send("JDWP-Handshake");
+        if (conn.RecvFullString(14) === "JDWP-Handshake") {
+          conn.SendHex("0000000b00000001000101");
+          for (let i = 0; i < 4; i++) {
+            const header = readHex(11);
+            const length = uint32(header, 0);
+            if (length < 11 || length > 65536) break;
+            const body = readHex(length - 11);
+            const id = uint32(header, 4);
+            const flags = parseInt(header.substring(16, 18), 16);
+            if (flags === 0x80 && id === 1) {
+              if (header.substring(18, 22) === "0000" && isValidVersionBody(body)) {
+                evidence = "JDWP-Handshake\nVirtualMachine.Version reply: success";
+              }
+              break;
+            }
+            if (flags !== 0x00) break;
+          }
+        }
+      } catch (error) {
+        // Incomplete or invalid replies do not prove unauthenticated command access.
+      } finally {
+        conn.Close();
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 5005
 
     matchers:
       - type: word
-        part: raw
+        part: response
         words:
           - "JDWP-Handshake"
-          - "Java Debug Wire Protocol"
-          - "JVM Debug Interface version"
-          - "JVM version"
+          - "VirtualMachine.Version reply: success"
         condition: and

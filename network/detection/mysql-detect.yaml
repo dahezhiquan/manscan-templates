@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    MySQL 是关系型数据库服务，广泛用于 Web 应用、业务系统和数据存储场景。该模板连接 3306/TCP 并读取协议响应，通过匹配 `mysql` 等响应特征识别目标服务。
+    MySQL 是关系型数据库服务，广泛用于 Web 应用、业务系统和数据存储场景。该模板连接 3306/TCP，通过正常握手包、明确标识 MySQL/MariaDB 的 1130 拒绝连接错误包，或包含 mysqladmin 解封提示的 1129 主机阻止错误包识别服务。正常握手时提取服务端声明的版本；1130 错误包仅提取产品名称，1129 错误包仅标记主机被阻止，均无法获取版本。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -22,10 +22,33 @@ tcp:
       - "{{Hostname}}"
     port: 3306
 
+    matchers-condition: or
     matchers:
-      - type: word
-        part: body
-        words:
-          - "mysql"
-        case-insensitive: true
+      - type: regex
+        part: data
+        regex:
+          - '(?s)^.{3}\x00\x0a[0-9]+(?:\.[0-9]+){1,3}[\x20-\x7e]{0,96}\x00'
+
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{6}00ff6a04', hex_encode(data)) && (contains(data, ' is not allowed to connect to this MySQL server') || contains(data, ' is not allowed to connect to this MariaDB server'))"
+
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{6}00ff6904', hex_encode(data)) && contains(data, ' is blocked because of many connection errors; unblock with ') && contains(data, 'mysqladmin flush-hosts')"
+
+    extractors:
+      - type: regex
+        name: mysql-version
+        part: data
+        group: 1
+        regex:
+          - '(?s)^.{3}\x00\x0a([0-9]+(?:\.[0-9]+){1,3}[^\x00(]{0,96})[^\x00]*\x00'
+
+      - type: regex
+        name: database-product
+        part: data
+        group: 1
+        regex:
+          - '(?s)^.{3}\x00.\x6a\x04(?:#[A-Z0-9]{5})?Host [\x20-\x7e]{1,128} is not allowed to connect to this (MySQL|MariaDB) server'
 # digest: 490a0046304402205f9c57c7e2592ccbeb1786b39acdb8e46ea753b3c1d2e3de4d2901c2d9d2f44902202e3a9c2df7261c9a2ee8cc14dde952a108457f128b50d1c196dfe80b8a23a66a:922c64590222798bb761d5b6d8e72950

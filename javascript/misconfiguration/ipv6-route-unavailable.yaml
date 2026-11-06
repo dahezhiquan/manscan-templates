@@ -1,0 +1,99 @@
+id: ipv6-route-unavailable
+
+info:
+  name: 仅 IPv6 解析目标连接无路由
+  author: dahe
+  severity: low
+  description: |
+    模板要求目标域名的 A 查询成功且没有 IPv4 地址，并能从 AAAA 查询取得 IPv6 地址，然后从扫描机向该地址发起 TCP 连接。仅当连接明确返回 `network is unreachable` 或 `no route to host` 时报告扫描机到该 IPv6 地址的网络路径不可达；前者通常指向扫描机缺少路由，后者也可能来自中间网络。这不是域名解析失败，也不证明目标服务存在漏洞。
+  impact: |
+    - 扫描机无法可靠探测该域名的 IPv6 服务，可能导致 IPv6 资产漏扫。
+    - 连接错误若被误判为目标故障，可能影响扫描结果和后续处置。
+  remediation: |
+    - 检查扫描机 IPv6 地址、默认网关、路由表和上游网络；对 `no route to host` 进一步排查中间网络的 ICMP 不可达或过滤策略。
+    - 若扫描环境不支持 IPv6，应在扫描策略中排除 IPv6 探测，并将相关连接失败归类为环境错误。
+  reference:
+    - https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/
+    - https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/
+    - https://pkg.go.dev/net#Dial
+  tags: ipv6,diagnostic
+
+flow: |
+  if (dns(1) && dns(2)) {
+    for (let address of iterate(template.ipv6_address)) {
+      set("ipv6_target", address);
+      if (javascript(1)) break;
+    }
+  }
+
+dns:
+  - name: "{{FQDN}}"
+    type: A
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        part: rcode
+        status:
+          - 0
+        internal: true
+
+      - type: regex
+        part: answer
+        regex:
+          - '\sIN\s+A\s+[0-9.]+'
+        negative: true
+        internal: true
+
+  - name: "{{FQDN}}"
+    type: AAAA
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        part: rcode
+        status:
+          - 0
+        internal: true
+
+      - type: regex
+        part: answer
+        regex:
+          - 'IN\tAAAA\t[0-9a-fA-F:]+'
+        internal: true
+
+    extractors:
+      - type: regex
+        name: ipv6_address
+        part: answer
+        group: 1
+        regex:
+          - 'IN\tAAAA\t([0-9a-fA-F:]+)'
+        internal: true
+
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      let result = "";
+      if (/^[0-9a-fA-F:]+$/.test(Address)) {
+        try {
+          const conn = net.Open("tcp", `[${Address}]:443`);
+          conn.Close();
+        } catch (error) {
+          const message = String(error);
+          if (/network is unreachable|no route to host/i.test(message)) {
+            result = `IPV6_ROUTE_UNAVAILABLE ${Address}: ${message}`;
+          }
+        }
+      }
+      result
+
+    args:
+      Address: "{{ipv6_target}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+          - 'contains(response, "IPV6_ROUTE_UNAVAILABLE")'
+        condition: and

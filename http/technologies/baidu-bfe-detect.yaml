@@ -1,0 +1,26 @@
+id: baidu-bfe-detect
+
+info:
+  name: 百度 BFE 指纹识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    BFE 是百度开源的七层负载均衡与流量管理系统。目标 HTTP 响应的 Server 头字段值为 bfe 时，识别其使用 BFE；命中仅表示组件指纹，不代表存在漏洞。
+  reference:
+    - https://github.com/bfenetworks/bfe
+  metadata:
+    vendor: baidu
+    product: bfe
+    shodan-query: 'http.server:"bfe"'
+  tags: baidu,bfe,proxy,tech,detect,discovery
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: regex
+        part: header
+        regex:
+          - '(?im)^server:[ \t]*bfe[ \t]*\r?$'

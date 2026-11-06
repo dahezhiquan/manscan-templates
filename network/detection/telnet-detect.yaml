@@ -5,7 +5,7 @@ info:
   author: dahezhiquan
   severity: info
   description: |
-    Telnet 是传统远程终端协议，用于网络设备、嵌入式系统或旧式服务器的命令行访问。该模板连接 23/TCP 并发送 Telnet 选项协商请求，通过连续的协议协商指令或明确的 Telnet 登录提示识别目标服务。
+    Telnet 是传统远程终端协议，用于网络设备、嵌入式系统或旧式服务器的命令行访问。该模板连接 23/TCP 并发送 Telnet 选项协商请求，通过连续的协议协商指令、至少两项对应的协商应答，或一项协商应答结合登录提示识别目标服务。明确提及 Telnet 的连接受限或禁用提示仅表明存在相应服务入口或配置痕迹，不代表可以登录。
   metadata:
     verified: true
     max-request: 1
@@ -29,7 +29,22 @@ tcp:
         condition: and
       - type: dsl
         dsl:
-          - "regex('(ff(fb|fc|fd|fe)[0-9a-f]{2}){3}', hex_encode(data))"
-      - type: word
-        words:
-          - "Telnet service is disabled"
+          - "regex('(ff(fb|fc|fd|fe)[0-9a-f]{2}){3}', hex_encode(data)) && !contains(hex_encode(data), 'fffb03fffd18fffd20')"
+      - type: dsl
+        dsl:
+          - >-
+            (regex('ff(fd|fe)03', hex_encode(data)) && regex('ff(fb|fc)18', hex_encode(data))) ||
+            (regex('ff(fd|fe)03', hex_encode(data)) && regex('ff(fb|fc)20', hex_encode(data))) ||
+            (regex('ff(fb|fc)18', hex_encode(data)) && regex('ff(fb|fc)20', hex_encode(data)))
+      - type: dsl
+        dsl:
+          - >-
+            (regex('ff(fd|fe)03', hex_encode(data)) || regex('ff(fb|fc)(18|20)', hex_encode(data))) &&
+            regex('(?i)(login|username|user name|account|password)\s*:', data)
+      - type: regex
+        regex:
+          - '(?i)^telnet service is disabled\r?\n?$'
+          - '(?i)^telnet server disabled\r?\n?$'
+          - '(?i)^\r?\n?no more connections are allowed to telnet server\. please try again later\.(?:\r?\n|\x00)?$'
+          - '(?i)^\r?\n?sorry, telnet is not enabled from your address\.\r?\n?$'
+        condition: or

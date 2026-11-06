@@ -5,7 +5,7 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    Redis 是内存键值数据库和缓存服务，常用于缓存、会话、队列和实时数据处理。该模板连接目标 Redis 端口并发送 INFO 命令，通过正常版本信息、认证或 ACL 拒绝、保护模式、加载或忙状态，以及 INFO 命令被禁用时的 Redis 协议错误识别目标服务。若响应包含 redis_version，则只提取服务端声明的数字点分版本号。
+    Redis 是内存键值数据库和缓存服务，常用于缓存、会话、队列和实时数据处理。该模板发送 RESP 编码的 INFO 命令，根据 bulk string 前缀及 INFO 版本字段或 Server 章节、认证或 ACL 拒绝、保护模式拒绝、加载或忙状态、INFO 未知命令，以及 Redis 代理的白名单拒绝错误识别服务。版本提取支持数字点分版本及其后空格分隔的发行版说明，只输出数字版本。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
@@ -24,31 +24,23 @@ tcp:
       - "{{Hostname}}"
       - "tls://{{Hostname}}"
     port: 6379,6380
-    read-size: 1024
+    read-size: 4096
 
     matchers-condition: or
     matchers:
-      - type: word
-        part: data
-        words:
-          - "redis_version:"
-          - "DENIED Redis"
-          - "CONFIG REWRITE"
-          - "NOAUTH Authentication"
-          - "NOPERM this user has no permissions"
-          - "LOADING Redis is loading"
-          - "BUSY Redis is busy"
-        condition: or
-
       - type: regex
         part: data
         regex:
-          - "(?im)^-ERR unknown command [`']?info[`']?"
+          - '(?s)^\$[0-9]+\r\n(?:#[^\r\n]*\r\n)*redis_version:[0-9]+(?:\.[0-9]+)+(?:[ \t]+[^\r\n]*)?\r\n'
+          - '^\$[0-9]+\r\n# Server\r\n'
+          - '(?i)^-(?:ERR operation not permitted|NOAUTH Authentication required\.|NOPERM this user has no permissions|DENIED Redis is running in protected mode|LOADING Redis is loading|BUSY Redis is busy)[^\r\n]*(?:\r\n|$)'
+          - "(?i)^-ERR unknown command (?:[`']info[`']|info)(?:, with args beginning with: ?[^\\r\\n]*)?(?:\\r\\n|$)"
+          - "(?i)^-ERR Read ops rejected!client's ip is not in the whitelist or limited authority(?:\\r\\n|$)"
 
     extractors:
       - type: regex
         name: redis-version
         part: data
         regex:
-          - '(?m)^redis_version:([0-9]+(?:\.[0-9]+)+)(?:[^0-9.]|$)'
+          - '(?s)^\$[0-9]+\r\n(?:#[^\r\n]*\r\n)*redis_version:([0-9]+(?:\.[0-9]+)+)(?:[ \t]+[^\r\n]*)?\r\n'
         group: 1

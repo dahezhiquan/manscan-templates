@@ -5,46 +5,184 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    Kafka 是分布式事件流与消息队列协议。该模板先发送 ApiVersions 请求，根据响应中的关联 ID、成功状态和 API 列表识别 Kafka 兼容服务；另用 Metadata 请求提取允许匿名读取的 Topic 等可见文本。默认端口为 9092/TCP，不依据 API 兼容范围推断软件版本。
+    Kafka 是分布式事件流与消息队列协议。该模板在明文或 TLS 连接上发送 ApiVersions 请求，按响应帧结构确认 Kafka 兼容服务；必要时通过 Metadata、UNSUPPORTED_VERSION 或 SaslHandshake 响应补充识别。仅从有效的 Metadata 响应提取可见 Topic，不根据 API 兼容范围推断软件版本。
   metadata:
     verified: true
-    max-request: 2
+    max-request: 8
     shodan-query: product:"Kafka"
   tags: network,detect,enum,kafka,apache,tcp,discovery
-tcp:
-  - inputs:
-      # ApiVersions v0 with correlation ID 0x4b41464b ("KAFK").
-      - data: "{{hex_decode('0000000a001200004b41464b0000')}}"
 
-    host:
-      - "{{Hostname}}"
-    port: 9092
-    read-size: 4096
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const address = Host + ":" + Port;
+      const apiRequest = "0000000a001200004b41464b0000";
+      const apiRequestHigh = "0000000a00127fff4b41464b0000";
+      const metadataRequest = "00000020000300000000000200126b61666b612d707974686f6e2d322e302e3200000000";
+      const saslRequest = "00000011001100004b41465300000005504c41494e";
+
+      function readFrame(conn) {
+        const header = bytes.NewBuffer();
+        header.Write(conn.RecvFull(4));
+        const lengthHex = header.Hex();
+        if (lengthHex.length !== 8) throw new Error("incomplete Kafka frame length");
+        const length = parseInt(lengthHex, 16);
+        if (length < 8 || length > 1048576) throw new Error("invalid Kafka frame length");
+        const body = bytes.NewBuffer();
+        body.Write(conn.RecvFull(length));
+        const hex = body.Hex();
+        if (hex.length !== length * 2) throw new Error("incomplete Kafka frame");
+        return hex;
+      }
+
+      function reader(hex) {
+        let offset = 0;
+        function take(size) {
+          if (offset + size * 2 > hex.length) throw new Error("truncated Kafka field");
+          const value = hex.substring(offset, offset + size * 2);
+          offset += size * 2;
+          return value;
+        }
+        function u16() { return parseInt(take(2), 16); }
+        function u32() { return parseInt(take(4), 16); }
+        function i32() {
+          const value = u32();
+          return value > 0x7fffffff ? value - 0x100000000 : value;
+        }
+        function count() {
+          const value = i32();
+          if (value < 0 || value > 10000) throw new Error("invalid Kafka array length");
+          return value;
+        }
+        function string() {
+          const length = u16();
+          if (length === 0 || length > 1024) throw new Error("invalid Kafka string length");
+          const value = take(length);
+          let result = "";
+          for (let i = 0; i < value.length; i += 2) {
+            result += String.fromCharCode(parseInt(value.substring(i, i + 2), 16));
+          }
+          return result;
+        }
+        return { u16, u32, i32, count, string, done: () => offset === hex.length };
+      }
+
+      function apiVersions(hex, expectedError) {
+        const r = reader(hex);
+        if (r.u32() !== 0x4b41464b) return null;
+        const error = r.u16();
+        if (error !== expectedError) return null;
+        const count = r.count();
+        if (count === 0) return null;
+        let knownKeys = 0;
+        let hasApiVersions = false;
+        const seen = {};
+        for (let i = 0; i < count; i++) {
+          const key = r.u16();
+          const min = r.u16();
+          const max = r.u16();
+          if (seen[key] || min > max) return null;
+          seen[key] = true;
+          if (key === 0 || key === 1 || key === 2 || key === 3 || key === 17 || key === 18) knownKeys++;
+          if (key === 18) hasApiVersions = true;
+        }
+        return r.done() && (error === 0 ? knownKeys > 0 : hasApiVersions)
+          ? { source: error === 0 ? "ApiVersions" : "ApiVersionsError" } : null;
+      }
+
+      function metadata(hex) {
+        const r = reader(hex);
+        if (r.u32() !== 2) return null;
+        const brokers = r.count();
+        for (let i = 0; i < brokers; i++) {
+          if (r.i32() < 0) return null;
+          const host = r.string();
+          const port = r.i32();
+          if (!/^[\x21-\x7e]+$/.test(host) || port < 1 || port > 65535) return null;
+        }
+        const topics = [];
+        const topicCount = r.count();
+        for (let i = 0; i < topicCount; i++) {
+          const error = r.u16();
+          const name = r.string();
+          if (!/^[a-zA-Z0-9._-]{1,249}$/.test(name)) return null;
+          if (error === 0 && topics.length < 100) topics.push(name);
+          const partitions = r.count();
+          for (let j = 0; j < partitions; j++) {
+            r.u16();
+            if (r.i32() < 0) return null;
+            r.i32();
+            const replicas = r.count();
+            for (let k = 0; k < replicas; k++) r.i32();
+            const isr = r.count();
+            for (let k = 0; k < isr; k++) r.i32();
+          }
+        }
+        return brokers + topicCount > 0 && r.done()
+          ? { source: "Metadata", topics: topics } : null;
+      }
+
+      function saslHandshake(hex) {
+        const r = reader(hex);
+        if (r.u32() !== 0x4b414653) return null;
+        const error = r.u16();
+        if (error !== 0 && error !== 33) return null;
+        const count = r.count();
+        if (count === 0 || count > 32) return null;
+        for (let i = 0; i < count; i++) {
+          if (!/^[a-zA-Z0-9_-]{1,64}$/.test(r.string())) return null;
+        }
+        return r.done() ? { source: "SaslHandshake" } : null;
+      }
+
+      function exchange(tls, request, parse) {
+        let conn;
+        try {
+          conn = tls ? net.OpenTLS("tcp", address) : net.Open("tcp", address);
+          conn.SetTimeout(3);
+          conn.SendHex(request);
+          return parse(readFrame(conn));
+        } catch (error) {
+          return null;
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      function scan(tls) {
+        const api = exchange(tls, apiRequest, hex => apiVersions(hex, 0));
+        if (api) {
+          const meta = exchange(tls, metadataRequest, metadata);
+          api.topics = meta ? meta.topics : [];
+          return api;
+        }
+        return exchange(tls, metadataRequest, metadata)
+          || exchange(tls, apiRequestHigh, hex => apiVersions(hex, 35))
+          || exchange(tls, saslRequest, saslHandshake);
+      }
+
+      const result = scan(false) || scan(true);
+      let evidence = "";
+      if (result) {
+        evidence = "Kafka protocol: " + result.source;
+        for (const topic of (result.topics || [])) evidence += "\nTopic: " + topic;
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 9092
 
     matchers:
-      - type: dsl
-        dsl:
-          - "regex('^[0-9a-f]{8}4b41464b0000000000(?:0[1-9a-f]|[1-9a-f][0-9a-f])(?:0000|0001)[0-9a-f]{8}', hex_encode(raw))"
-          - "regex('0012[0-9a-f]{8}', hex_encode(raw))"
-        condition: and
-
-  - inputs:
-      - data: 00000020000300000000000200126b61666b612d707974686f6e2d322e302e3200000000
-        type: hex
-
-    host:
-      - "{{Hostname}}"
-    port: 9092
-    read-size: 4096
-
-    matchers:
-      - type: dsl
-        dsl:
-          - "regex('^[0-9a-f]{8}00000002000000(0[1-9a-f]|[1-9a-f][0-9a-f])[0-9a-f]{8}00(0[1-9a-f]|[1-9a-f][0-9a-f])[3-7][0-9a-f]', hex_encode(raw))"
+      - type: regex
+        part: response
+        regex:
+          - '^Kafka protocol: (?:ApiVersions|ApiVersionsError|Metadata|SaslHandshake)(?:\nTopic: [a-zA-Z0-9._-]{1,249})*$'
 
     extractors:
       - type: regex
-        part: raw
-        name: value
+        name: topic
+        part: response
+        group: 1
         regex:
-          - '([a-z.A-Z_0-9-]+)'
+          - '(?m)^Topic: ([a-zA-Z0-9._-]{1,249})$'

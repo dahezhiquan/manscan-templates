@@ -5,7 +5,7 @@ info:
   author: dahezhiquan
   severity: info
   description: |
-    Neo4j 使用 Bolt 协议提供图数据库连接。该模板连接 7687/TCP，优先协商 Bolt 5.1 并发送不含凭据的 HELLO 消息；仅在服务端选中协议版本，且响应包含 Neo4j 服务标识或认证错误码时确认指纹。若 HELLO 返回服务标识，还会提取 Neo4j 版本。
+    Neo4j 使用 Bolt 协议提供图数据库连接。该模板连接 7687/TCP，优先协商 Bolt 5.1 并发送不含凭据的 HELLO 消息；仅在服务端选中协议版本，且有效 SUCCESS 响应包含 Neo4j 服务标识，或有效 FAILURE 响应的 code/neo4j_code 字段包含 Neo4j 错误码时确认指纹。若 HELLO 返回服务标识，还会提取 Neo4j 版本。
   reference:
     - https://neo4j.com/docs/bolt/current/bolt/handshake/
     - https://neo4j.com/docs/bolt/current/bolt/message/
@@ -15,36 +15,126 @@ info:
     product: neo4j
   tags: network,neo4j,bolt-protocol,detect,tcp,discovery
 
-tcp:
-  - inputs:
-      # Bolt magic followed by version proposals: 5.1-5.0, 4.4, 4.0, 3.0.
-      - data: "{{hex_decode('6060b01700010105000004040000000400000003')}}"
-        read: 4
-      # HELLO {user_agent: "manscan/1.0", scheme: "none"}, chunked PackStream.
-      - data: "{{hex_decode('0026b101a28a757365725f6167656e748b6d616e7363616e2f312e3086736368656d65846e6f6e650000')}}"
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const conn = net.Open("tcp", `${Host}:${Port}`);
+      conn.SetTimeout(3);
 
-    host:
-      - "{{Hostname}}"
-    port: 7687
-    read-size: 1024
+      function readHex(size) {
+        const buffer = bytes.NewBuffer();
+        buffer.Write(conn.RecvFull(size));
+        const hex = buffer.Hex();
+        if (hex.length !== size * 2) throw new Error("incomplete Bolt response");
+        return hex;
+      }
 
-    matchers-condition: and
+      function readMessage() {
+        let hex = "";
+        for (let i = 0; i < 256; i++) {
+          const length = parseInt(readHex(2), 16);
+          if (length === 0) return hex;
+          if (hex.length + length * 2 > 131072) throw new Error("Bolt message too large");
+          hex += readHex(length);
+        }
+        throw new Error("too many Bolt chunks");
+      }
+
+      function parseMessage(hex) {
+        let offset = 0;
+        function take(size) {
+          if (size < 0 || offset + size * 2 > hex.length) throw new Error("truncated PackStream value");
+          const value = hex.substring(offset, offset + size * 2);
+          offset += size * 2;
+          return value;
+        }
+        function byte() { return parseInt(take(1), 16); }
+        function size(width) { return parseInt(take(width), 16); }
+        function string(length) {
+          const value = take(length);
+          let result = "";
+          for (let i = 0; i < value.length; i += 2) {
+            result += String.fromCharCode(parseInt(value.substring(i, i + 2), 16));
+          }
+          return result;
+        }
+        function value(depth) {
+          if (depth > 16) throw new Error("nested PackStream value");
+          const marker = byte();
+          if (marker <= 0x7f || marker >= 0xf0 || marker === 0xc0 || marker === 0xc2 || marker === 0xc3) return null;
+          if (marker >= 0x80 && marker <= 0x8f) return string(marker - 0x80);
+          if (marker >= 0xd0 && marker <= 0xd2) return string(size(1 << (marker - 0xd0)));
+          if (marker >= 0xa0 && marker <= 0xaf || marker >= 0xd8 && marker <= 0xda) {
+            const count = marker <= 0xaf ? marker - 0xa0 : size(1 << (marker - 0xd8));
+            if (count > (hex.length - offset) / 4) throw new Error("invalid PackStream map");
+            const map = Object.create(null);
+            for (let i = 0; i < count; i++) {
+              const key = value(depth + 1);
+              if (typeof key !== "string" || Object.hasOwnProperty.call(map, key)) throw new Error("invalid PackStream key");
+              map[key] = value(depth + 1);
+            }
+            return map;
+          }
+          if (marker >= 0x90 && marker <= 0x9f || marker >= 0xd4 && marker <= 0xd6) {
+            const count = marker <= 0x9f ? marker - 0x90 : size(1 << (marker - 0xd4));
+            if (count > (hex.length - offset) / 2) throw new Error("invalid PackStream list");
+            for (let i = 0; i < count; i++) value(depth + 1);
+            return null;
+          }
+          if (marker >= 0xb0 && marker <= 0xbf) {
+            byte();
+            for (let i = 0; i < marker - 0xb0; i++) value(depth + 1);
+            return null;
+          }
+          if (marker === 0xc1) { take(8); return null; }
+          if (marker >= 0xc8 && marker <= 0xcb) { take(1 << (marker - 0xc8)); return null; }
+          if (marker >= 0xcc && marker <= 0xce) { take(size(1 << (marker - 0xcc))); return null; }
+          throw new Error("invalid PackStream marker");
+        }
+
+        if (byte() !== 0xb1) return "";
+        const signature = byte();
+        if (signature !== 0x70 && signature !== 0x7f) return "";
+        const metadata = value(0);
+        if (offset !== hex.length || !metadata || Array.isArray(metadata)) return "";
+        if (signature === 0x70 && typeof metadata.server === "string" && /^Neo4j\/[0-9][0-9A-Za-z.+-]*$/.test(metadata.server)) {
+          return metadata.server;
+        }
+        if (signature === 0x7f) {
+          const code = metadata.neo4j_code || metadata.code;
+          if (typeof code === "string" && /^Neo\.(?:ClientError|TransientError|DatabaseError)\.[A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*$/.test(code)) return code;
+        }
+        return "";
+      }
+
+      let evidence = "";
+      try {
+        conn.SendHex("6060b01700010105000004040000000400000003");
+        const version = readHex(4);
+        if (/^(00000105|00000005|00000404|00000004|00000003)$/.test(version)) {
+          conn.SendHex("0026b101a28a757365725f6167656e748b6d616e7363616e2f312e3086736368656d65846e6f6e650000");
+          const message = readMessage();
+          try { evidence = parseMessage(message); } catch (error) { /* Invalid response is not a fingerprint. */ }
+        }
+      } finally {
+        conn.Close();
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 7687
+
     matchers:
-      - type: dsl
-        dsl:
-          - "regex('^(00000105|00000005|00000404|00000004|00000003)', hex_encode(raw))"
-
-      - type: word
-        part: data
-        words:
-          - "Neo4j/"
-          - "Neo.ClientError.Security.Unauthorized"
-        condition: or
+      - type: regex
+        part: response
+        regex:
+          - '^(?:Neo4j/[0-9][0-9A-Za-z.+-]*|Neo\.(?:ClientError|TransientError|DatabaseError)\.[A-Za-z][A-Za-z0-9]*\.[A-Za-z][A-Za-z0-9]*)$'
 
     extractors:
       - type: regex
         name: neo4j-version
-        part: data
+        part: response
         regex:
           - 'Neo4j/([0-9][0-9A-Za-z.+-]*)'
         group: 1

@@ -1,0 +1,86 @@
+id: dcerpc-detect
+
+info:
+  name: DCE/RPC（DCERPC）协议识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    DCE/RPC 是远程过程调用协议，Microsoft RPC 等服务使用其连接型报文。该模板向 135/TCP 发送 Endpoint Mapper 的 BIND 请求，仅在收到结构有效且调用 ID 一致的 BIND_ACK 或 BIND_NAK 时确认协议。命中不代表目标运行 Windows，也不表示存在漏洞。
+  reference:
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-rpce/
+    - https://nmap.org/book/vscan.html
+  metadata:
+    shodan-query: 'port:135'
+  tags: network,dcerpc,detect,tcp,discovery
+
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const conn = net.Open("tcp", `${Host}:${Port}`);
+      conn.SetTimeout(3);
+
+      function readHex(size) {
+        const buffer = bytes.NewBuffer();
+        buffer.Write(conn.RecvFull(size));
+        const hex = buffer.Hex();
+        if (hex.length !== size * 2) throw new Error("incomplete DCE/RPC packet");
+        return hex;
+      }
+
+      function validResponse(packet) {
+        const length = packet.length / 2;
+        const u8 = offset => parseInt(packet.substring(offset * 2, offset * 2 + 2), 16);
+        const u16 = offset => u8(offset) | u8(offset + 1) << 8;
+        const type = u8(2);
+
+        if (packet.substring(0, 4) !== "0500" || (u8(3) & 3) !== 3 ||
+            packet.substring(8, 16) !== "10000000" || u16(8) !== length ||
+            u16(10) !== 0 || packet.substring(24, 32) !== "11223344") return "";
+
+        if (type === 0x0d) {
+          if (length < 21 || u16(16) > 7) return "";
+          const versions = u8(18);
+          return versions > 0 && versions <= 8 && 19 + versions * 2 <= length ? "DCE/RPC BIND_NAK" : "";
+        }
+
+        if (type !== 0x0c || length < 56) return "";
+        const addressLength = u16(24);
+        let offset = 26 + addressLength;
+        offset += (4 - offset % 4) % 4;
+        if (offset + 28 > length || u8(offset) !== 1) return "";
+        offset += 4;
+        const result = u16(offset);
+        const reason = u16(offset + 2);
+        if (result === 0 && reason === 0 &&
+            packet.substring((offset + 4) * 2, (offset + 20) * 2) === "045d888aeb1cc9119fe808002b104860" &&
+            packet.substring((offset + 20) * 2, (offset + 24) * 2) === "02000000") return "DCE/RPC BIND_ACK";
+        if (result === 1 || result === 2) return "DCE/RPC BIND_ACK";
+        return "";
+      }
+
+      let evidence = "";
+      try {
+        // BIND to the Endpoint Mapper interface using NDR transfer syntax.
+        conn.SendHex("05000b03100000004800000011223344" +
+          "b810b810000000000100000000000100" +
+          "0883afe11f5dc91191a408002b14a0fa03000000" +
+          "045d888aeb1cc9119fe808002b10486002000000");
+        const header = readHex(16);
+        const fragmentLength = parseInt(header.substring(18, 20) + header.substring(16, 18), 16);
+        if (fragmentLength >= 21 && fragmentLength <= 4096) {
+          evidence = validResponse(header + readHex(fragmentLength - 16));
+        }
+      } finally {
+        conn.Close();
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 135
+
+    matchers:
+      - type: regex
+        part: response
+        regex:
+          - '^DCE/RPC BIND_(?:ACK|NAK)$'

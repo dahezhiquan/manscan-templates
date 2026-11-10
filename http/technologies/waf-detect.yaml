@@ -25,13 +25,13 @@ http:
 
     matchers:
       - type: regex
-        name: instart
+        name: instart-waf
         regex:
           - '(?i)instartrequestid'
         part: body
 
       - type: regex
-        name: perimx
+        name: perimx-waf
         regex:
           - '(?i)access.to.this.page.has.been.denied.because.we.believe.you.are.using.automation.tool'
           - '(?i)http(s)?://(www.)?perimeterx.\w+.whywasiblocked'
@@ -41,7 +41,7 @@ http:
         part: response
 
       - type: regex
-        name: webknight
+        name: webknight-waf
         regex:
           - '(?i)\bwebknight'
           - '(?i)webknight'
@@ -49,7 +49,7 @@ http:
         part: response
 
       - type: regex
-        name: zscaler
+        name: zscaler-waf
         regex:
           - '(?i)zscaler(.\d+(.\d+)?)?'
           - '(?i)zscaler'
@@ -57,7 +57,7 @@ http:
         part: response
 
       - type: regex
-        name: fortigate
+        name: fortigate-waf
         regex:
           - '(?i).>powered.by.fortinet<.'
           - '(?i).>fortigate.ips.sensor<.'
@@ -73,27 +73,27 @@ http:
         part: response
 
       - type: regex
-        name: fortiweb
+        name: fortiweb-waf
         regex:
           - 'Set-Cookie: cookiesession1='
         part: header
 
       - type: regex
-        name: teros
+        name: teros-waf
         regex:
           - '(?i)st8(id|.wa|.wf)?.?(\d+|\w+)?='
         condition: or
         part: header
 
       - type: regex
-        name: stricthttp
+        name: stricthttp-waf
         regex:
           - '(?i)the.request.was.rejected.because.the.url.contained.a.potentially.malicious.string'
         condition: or
         part: response
 
       - type: regex
-        name: stricthttp
+        name: stricthttp-waf
         regex:
           - '(?i)rejected.by.url.scan'
           - '(?i)/rejected.by.url.scan'
@@ -101,7 +101,7 @@ http:
         part: response
 
       - type: regex
-        name: shadowd
+        name: shadowd-waf
         regex:
           - '(?i)<h\d>\d{3}.forbidden<.h\d>'
           - '(?i)request.forbidden.by.administrative.rules.'
@@ -109,7 +109,7 @@ http:
         part: response
 
       - type: regex
-        name: bigip
+        name: bigip-waf
         regex:
           - '(?i)\ATS\w{4,}='
           - '(?i)bigipserver(.i)?|bigipserverinternal'
@@ -120,14 +120,14 @@ http:
         part: response
 
       - type: regex
-        name: edgecast
+        name: edgecast-waf
         regex:
           - '(?i)\Aecdf'
         condition: or
         part: response
 
       - type: regex
-        name: radware
+        name: radware-waf
         regex:
           - '(?i).\bcloudwebsec.radware.com\b.'
           - '(?i).>unauthorized.activity.has.been.detected<.'
@@ -136,7 +136,7 @@ http:
         part: response
 
       - type: regex
-        name: varnish
+        name: varnish-waf
         regex:
           - '(?i)varnish'
           - '(?i).>.?security.by.cachewall.?<.'
@@ -146,7 +146,7 @@ http:
         part: response
 
       - type: regex
-        name: infosafe
+        name: infosafe-waf
         regex:
           - '(?i)infosafe'
           - '(?i)by.(http(s)?(.//)?)?7i24.(com|net)'
@@ -156,7 +156,7 @@ http:
         part: response
 
       - type: regex
-        name: aliyundun
+        name: aliyun-waf
         regex:
           - '(?i)error(s)?.aliyun(dun)?.(com|net)'
           - '(?i)http(s)?://(www.)?aliyun.(com|net)'
@@ -164,7 +164,7 @@ http:
         part: response
 
       - type: regex
-        name: malcare
+        name: malcare-waf
         regex:
           - '(?i)malcare'
           - '(?i).>login.protection<.+.><.+>powered.by<.+.>(<.+.>)?(.?malcare.-.pro|blogvault)?'
@@ -173,19 +173,19 @@ http:
         part: response
 
       - type: regex
-        name: wts
+        name: wts-waf
         regex:
           - '(?i)(<title>)?wts.wa(f)?(\w+(\w+(\w+)?)?)?'
         part: response
 
       - type: regex
-        name: dw
+        name: dw-waf
         regex:
           - '(?i)dw.inj.check'
         part: response
 
       - type: regex
-        name: denyall
+        name: denyall-waf
         regex:
           - '(?i)\Acondition.intercepted'
           - '(?i)\Asessioncookie='
@@ -193,7 +193,7 @@ http:
         part: response
 
       - type: regex
-        name: yunsuo
+        name: yunsuo-waf
         regex:
           - '(?i)<img.class=.yunsuologo.'
           - '(?i)yunsuo.session'
@@ -201,13 +201,13 @@ http:
         part: response
 
       - type: regex
-        name: litespeed
+        name: litespeed-waf
         regex:
           - '(?i)litespeed.web.server'
         part: response
 
       - type: regex
-        name: cloudfront
+        name: cloudfront-waf
         regex:
           - '(?i)[a-zA-Z0-9]{,60}.cloudfront.net'
           - '(?i)cloudfront'
@@ -216,7 +216,7 @@ http:
         part: response
 
       - type: regex
-        name: anyu
+        name: anyu-waf
         regex:
           - '(?i)sorry.{1,2}your.access.has.been.intercept(ed)?.by.anyu'
           - '(?i)anyu'
@@ -225,7 +225,7 @@ http:
         part: response
 
       - type: regex
-        name: googlewebservices
+        name: googlewebservices-waf
         regex:
           - '(?i)your.client.has.issued.a.malformed.or.illegal.request'
           - '(?i)our.systems.have.detected.unusual.traffic'
@@ -234,7 +234,7 @@ http:
         part: response
 
       - type: regex
-        name: didiyun
+        name: didiyun-waf
         regex:
           - '(?i)(http(s)?://)(sec-waf.|www.)?didi(static|yun)?.com(/static/cloudwafstatic)?'
           - '(?i)didiyun'
@@ -242,31 +242,31 @@ http:
         part: response
 
       - type: regex
-        name: blockdos
+        name: blockdos-waf
         regex:
           - '(?i)blockdos\.net'
         part: response
 
       - type: regex
-        name: codeigniter
+        name: codeigniter-waf
         regex:
           - '(?i)the.uri.you.submitted.has.disallowed.characters'
         part: response
 
       - type: regex
-        name: stingray
+        name: stingray-waf
         regex:
           - '(?i)\AX-Mapping-'
         part: response
 
       - type: regex
-        name: west263
+        name: west263-waf
         regex:
           - '(?i)wt\d*cdn'
         part: response
 
       - type: regex
-        name: aws
+        name: aws-waf
         regex:
           - '(?i)<RequestId>[0-9a-zA-Z]{16,25}<.RequestId>'
           - '(?i)<Error><Code>AccessDenied<.Code>'
@@ -276,7 +276,7 @@ http:
         part: response
 
       - type: regex
-        name: yundun
+        name: yundun-waf
         regex:
           - '(?i)YUNDUN'
           - '(?i)^yd.cookie='
@@ -286,7 +286,7 @@ http:
         part: response
 
       - type: regex
-        name: barracuda
+        name: barracuda-waf
         regex:
           - '(?i)\Abarra.counter.session=?'
           - '(?i)(\A|\b)?barracuda.'
@@ -295,13 +295,13 @@ http:
         part: response
 
       - type: regex
-        name: dodenterpriseprotection
+        name: dodenterpriseprotection-waf
         regex:
           - '(?i)dod.enterprise.level.protection.system'
         part: response
 
       - type: regex
-        name: secupress
+        name: secupress-waf
         regex:
           - '(?i)<h\d*>secupress<.'
           - '(?i)block.id.{1,2}bad.url.contents.<.'
@@ -309,13 +309,13 @@ http:
         part: response
 
       - type: regex
-        name: aesecure
+        name: aesecure-waf
         regex:
           - '(?i)aesecure.denied.png'
         part: response
 
       - type: regex
-        name: incapsula
+        name: incapsula-waf
         regex:
           - '(?i)incap_ses|visid_incap'
           - '(?i)incapsula'
@@ -324,7 +324,7 @@ http:
         part: response
 
       - type: regex
-        name: nexusguard
+        name: nexusguard-waf
         regex:
           - '(?i)nexus.?guard'
           - '(?i)((http(s)?://)?speresources.)?nexusguard.com.wafpage'
@@ -332,7 +332,7 @@ http:
         part: response
 
       - type: regex
-        name: cloudflare
+        name: cloudflare-waf
         regex:
           - '(?i)cloudflare.ray.id.|var.cloudflare.'
           - '(?i)cloudflare.nginx'
@@ -346,7 +346,7 @@ http:
         part: response
 
       - type: regex
-        name: akamai
+        name: akamai-waf
         regex:
           - '(?i).>access.denied<.'
           - '(?i)akamaighost'
@@ -355,7 +355,7 @@ http:
         part: response
 
       - type: regex
-        name: webseal
+        name: webseal-waf
         regex:
           - '(?i)webseal.error.message.template'
           - '(?i)webseal.server.received.an.invalid.http.request'
@@ -363,13 +363,13 @@ http:
         part: response
 
       - type: regex
-        name: dotdefender
+        name: dotdefender-waf
         regex:
           - '(?i)dotdefender.blocked.your.request'
         part: response
 
       - type: regex
-        name: pk
+        name: pk-waf
         regex:
           - '(?i).>pkSecurityModule\W..\WSecurity.Alert<.'
           - '(?i).http(s)?.//([w]{3})?.kitnetwork.\w'
@@ -378,7 +378,7 @@ http:
         part: response
 
       - type: regex
-        name: expressionengine
+        name: expressionengine-waf
         regex:
           - '(?i).>error.-.expressionengine<.'
           - '(?i).>:.the.uri.you.submitted.has.disallowed.characters.<.'
@@ -387,19 +387,19 @@ http:
         part: response
 
       - type: regex
-        name: comodo
+        name: comodo-waf
         regex:
           - '(?i)protected.by.comodo.waf'
         part: response
 
       - type: regex
-        name: ciscoacexml
+        name: ciscoacexml-waf
         regex:
           - '(?i)ace.xml.gateway'
         part: response
 
       - type: regex
-        name: barikode
+        name: barikode-waf
         regex:
           - '(?i).>barikode<.'
           - '(?i)<h\d{1}>forbidden.access<.h\d{1}>'
@@ -407,7 +407,7 @@ http:
         part: response
 
       - type: regex
-        name: watchguard
+        name: watchguard-waf
         regex:
           - '(?i)(request.denied.by.)?watchguard.firewall'
           - '(?i)watchguard(.technologies(.inc)?)?'
@@ -415,7 +415,7 @@ http:
         part: response
 
       - type: regex
-        name: binarysec
+        name: binarysec-waf
         regex:
           - '(?i)x.binarysec.via'
           - '(?i)x.binarysec.nocache'
@@ -424,7 +424,7 @@ http:
         part: response
 
       - type: regex
-        name: bekchy
+        name: bekchy-waf
         regex:
           - '(?i)bekchy.(-.)?access.denied'
           - '(?i)(http(s)?://)(www.)?bekchy.com(/report)?'
@@ -432,7 +432,7 @@ http:
         part: response
 
       - type: regex
-        name: bitninja
+        name: bitninja-waf
         regex:
           - '(?i)bitninja'
           - '(?i)security.check.by.bitninja'
@@ -441,7 +441,7 @@ http:
         part: response
 
       - type: regex
-        name: apachegeneric
+        name: apachegeneric-waf
         regex:
           - '(?i)apache'
           - '(?i).>you.don.t.have.permission.to.access+'
@@ -452,7 +452,7 @@ http:
         part: response
 
       - type: regex
-        name: greywizard
+        name: greywizard-waf
         regex:
           - '(?i)greywizard(.\d.\d(.\d)?)?'
           - '(?i)grey.wizard.block'
@@ -462,13 +462,13 @@ http:
         part: response
 
       - type: regex
-        name: configserver
+        name: configserver-waf
         regex:
           - '(?i).>the.firewall.on.this.server.is.blocking.your.connection.<+'
         part: response
 
       - type: regex
-        name: viettel
+        name: viettel-waf
         regex:
           - '(?i)<title>access.denied(...)?viettel.waf</title>'
           - '(?i)viettel.waf.system'
@@ -477,7 +477,7 @@ http:
         part: response
 
       - type: regex
-        name: safedog
+        name: safedog-waf
         regex:
           - '(?i)(http(s)?)?(://)?(www|404|bbs|\w+)?.safedog.\w'
           - '(?i)waf(.?\d+.?\d+)'
@@ -485,13 +485,13 @@ http:
         part: response
 
       - type: regex
-        name: baidu
+        name: baiduyunjiasu-waf
         regex:
           - '(?i)yunjiasu.nginx'
         part: response
 
       - type: regex
-        name: alertlogic
+        name: alertlogic-waf
         regex:
           - '(?i).>requested.url.cannot.be.found<.'
           - '(?i)proceed.to.homepage'
@@ -503,13 +503,13 @@ http:
         part: response
 
       - type: regex
-        name: armor
+        name: armor-waf
         regex:
           - '(?i)blocked.by.website.protection.from.armour'
         part: response
 
       - type: regex
-        name: dosarrest
+        name: dosarrest-waf
         regex:
           - '(?i)dosarrest'
           - '(?i)x.dis.request.id'
@@ -517,7 +517,7 @@ http:
         part: response
 
       - type: regex
-        name: palo-alto
+        name: palo-alto-waf
         regex:
           - 'has.been.blocked.in.accordance.with.company.policy'
           - '.>Virus.Spyware.Download.Blocked<.'
@@ -525,7 +525,7 @@ http:
         part: response
 
       - type: regex
-        name: aspgeneric
+        name: aspgeneric-waf
         regex:
           - '(?i)this.generic.403.error.means.that.the.authenticated'
           - '(?i)request.could.not.be.understood'
@@ -543,7 +543,7 @@ http:
         part: response
 
       - type: regex
-        name: powerful
+        name: powerful-waf
         regex:
           - '(?i)Powerful Firewall'
           - '(?i)http(s)?...tiny.cc.powerful.firewall'
@@ -551,7 +551,7 @@ http:
         part: response
 
       - type: regex
-        name: uewaf
+        name: uewaf-waf
         regex:
           - '(?i)http(s)?.//ucloud'
           - '(?i)uewaf(.deny.pages)'
@@ -559,7 +559,7 @@ http:
         part: response
 
       - type: regex
-        name: janusec
+        name: janusec-waf
         regex:
           - '(?i)janusec'
           - '(?i)(http(s)?\W+(www.)?)?janusec.(com|net|org)'
@@ -567,7 +567,7 @@ http:
         part: response
 
       - type: regex
-        name: siteguard
+        name: siteguard-waf
         regex:
           - '(?i)>Powered.by.SiteGuard.Lite<'
           - '(?i)refuse.to.browse'
@@ -575,7 +575,7 @@ http:
         part: response
 
       - type: regex
-        name: sonicwall
+        name: sonicwall-waf
         regex:
           - '(?i)This.request.is.blocked.by.the.SonicWALL'
           - '(?i)Dell.SonicWALL'
@@ -586,7 +586,7 @@ http:
         part: response
 
       - type: regex
-        name: jiasule
+        name: knownsec-waf
         regex:
           - '(?i)^jsl(_)?tracking'
           - '(?i)(__)?jsluid(=)?'
@@ -596,7 +596,7 @@ http:
         part: response
 
       - type: regex
-        name: nginxgeneric
+        name: nginxgeneric-waf
         regex:
           - '(?i)nginx'
           - '(?i)you.do(not|n.t)?.have.permission.to.access.this.document'
@@ -604,7 +604,7 @@ http:
         part: response
 
       - type: regex
-        name: stackpath
+        name: stackpath-waf
         regex:
           - '(?i)action.that.triggered.the.service.and.blocked'
           - '(?i)<h2>sorry,.you.have.been.blocked.?<.h2>'
@@ -612,13 +612,13 @@ http:
         part: response
 
       - type: regex
-        name: sabre
+        name: sabre-waf
         regex:
           - '(?i)dxsupport@sabre.com'
         part: response
 
       - type: regex
-        name: wordfence
+        name: wordfence-waf
         regex:
           - '(?i)generated.by.wordfence'
           - '(?i)your.access.to.this.site.has.been.limited'
@@ -627,7 +627,7 @@ http:
         part: response
 
       - type: regex
-        name: '360'
+        name: qianxin-waf
         regex:
           - '(?i).wzws.waf.cgi.'
           - '(?i)wangzhan\.360\.cn'
@@ -638,14 +638,14 @@ http:
         part: response
 
       - type: regex
-        name: asm
+        name: asm-waf
         regex:
           - '(?i)the.requested.url.was.rejected..please.consult.with.your.administrator.'
         condition: or
         part: response
 
       - type: regex
-        name: rsfirewall
+        name: rsfirewall-waf
         regex:
           - '(?i)com.rsfirewall.403.forbidden'
           - '(?i)com.rsfirewall.event'
@@ -655,7 +655,7 @@ http:
         part: response
 
       - type: regex
-        name: sucuri
+        name: sucuri-waf
         regex:
           - '(?i)access.denied.-.sucuri.website.firewall'
           - '(?i)sucuri.webSite.firewall.-.cloudProxy.-.access.denied'
@@ -665,25 +665,25 @@ http:
         part: response
 
       - type: regex
-        name: airlock
+        name: airlock-waf
         regex:
           - '(?i)\Aal[.-]?(sess|lb)=?'
         part: response
 
       - type: regex
-        name: xuanwudun
+        name: xuanwudun-waf
         regex:
           - '(?i)class=.(db)?waf.?(-row.)?>'
         part: response
 
       - type: regex
-        name: chuangyudun
+        name: chuangyudun-waf
         regex:
           - '(?i)(http(s)?.//(www.)?)?365cyd.(com|net)'
         part: response
 
       - type: regex
-        name: securesphere
+        name: securesphere-waf
         regex:
           - '(?i)<h2>error<.h2>'
           - '(?i)<b>error<.b>'
@@ -695,13 +695,13 @@ http:
         part: response
 
       - type: regex
-        name: anquanbao
+        name: anquanbao-waf
         regex:
           - '(?i).aqb_cc.error.'
         part: response
 
       - type: regex
-        name: modsecurity
+        name: modsecurity-waf
         regex:
           - '(?i)ModSecurity|NYOB'
           - '(?i)mod_security'
@@ -713,7 +713,7 @@ http:
         part: response
 
       - type: regex
-        name: modsecurityowasp
+        name: modsecurityowasp-waf
         regex:
           - '(?i)not.acceptable'
           - '(?i)additionally\S.a.406.not.acceptable'
@@ -721,7 +721,7 @@ http:
         part: response
 
       - type: regex
-        name: squid
+        name: squid-waf
         regex:
           - '(?i)squid'
           - '(?i)Access control configuration prevents'
@@ -730,7 +730,7 @@ http:
         part: response
 
       - type: regex
-        name: shieldsecurity
+        name: shieldsecurity-waf
         regex:
           - '(?i)blocked.by.the.shield'
           - '(?i)transgression(\(s\))?.against.this'
@@ -739,14 +739,14 @@ http:
         part: response
 
       - type: regex
-        name: wallarm
+        name: wallarm-waf
         regex:
           - '(?i)nginix.wallarm'
         part: response
 
       - type: regex
         part: response
-        name: huaweicloud
+        name: huaweicloud-waf
         condition: and
         regex:
           - '(?i)content="CloudWAF"'
@@ -754,13 +754,13 @@ http:
           - 'Set-Cookie: HWWAFSESTIME='
 
       - type: word
-        name: safe3webfirewall
+        name: safe3webfirewall-waf
         part: header
         words:
           - "safe3 Web Firewall"
 
       - type: word
-        name: safedog
+        name: safedog-waf
         part: header
         words:
           - "X-Safe-Firewall"
@@ -768,7 +768,7 @@ http:
         condition: or
 
       - type: word
-        name: squarespace
+        name: squarespace-waf
         part: header
         words:
           - "Squarespace"
@@ -776,13 +776,13 @@ http:
         condition: and
 
       - type: word
-        name: yunsuo
+        name: yunsuo-waf
         part: body
         words:
           - "yunsuologo"
 
       - type: word
-        name: godaddywebprotection
+        name: godaddywebprotection-waf
         part: body
         words:
           - "GoDaddy Security"
@@ -791,19 +791,19 @@ http:
         condition: or
 
       - type: word
-        name: transipwebfirewall
+        name: transipwebfirewall-waf
         part: header
         words:
           - "X-TransIP-Balancer"
 
       - type: word
-        name: xlabssecuritywaf
+        name: xlabssecuritywaf-waf
         part: header
         words:
           - "Secured: By XLabs Security"
 
       - type: word
-        name: shieldonfirewall
+        name: shieldonfirewall-waf
         part: header
         words:
           - "X-Protected-By: shieldon.io"

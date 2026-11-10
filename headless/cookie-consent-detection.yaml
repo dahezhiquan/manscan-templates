@@ -24,7 +24,6 @@ headless:
     matchers-condition: and
     matchers:
       - type: word
-        name: keyword
         words:
           - 'cookie-consent'
           - 'cookie-popup'

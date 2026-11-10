@@ -5,19 +5,20 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    MySQL 是关系型数据库服务，广泛用于 Web 应用、业务系统和数据存储场景。该模板连接 3306/TCP，通过正常握手包、明确标识 MySQL/MariaDB 的 1130 拒绝连接错误包，或包含 mysqladmin 解封提示的 1129 主机阻止错误包识别服务。正常握手时提取服务端声明的版本；1130 错误包仅提取产品名称，1129 错误包仅标记主机被阻止，均无法获取版本。
+    MySQL 是关系型数据库服务，广泛用于 Web 应用、业务系统和数据存储场景。该模板连接目标 TCP 端口，先不发送数据并读取服务端主动返回的经典协议握手包、错误包或 MySQL X Protocol 的 Notice: ServerHello；未命中时再发送通用空行探针，识别精确的 Bad handshake 响应。模板结合协议包头、错误码和文案识别服务，并识别完整的 1130 Unknown error 错误包；正常握手时提取服务端版本，并跳过 MariaDB 兼容握手中常见的 5.5.5- 前缀。MySQL X 的 ServerHello、拒绝连接、连接数过多或握手错误响应不包含可提取的服务版本；MySQL、MariaDB 与 MySQL X 统一输出为 mysql。
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: product:"MySQL"
   tags: network,mysql,db,detect,tcp,discovery
-tcp:
-  - inputs:
-      - data: "\n"
 
+flow: tcp(1) || tcp(2)
+
+tcp:
+  - read-size: 2048
     host:
       - "{{Hostname}}"
     port: 3306
@@ -29,13 +30,26 @@ tcp:
         regex:
           - '(?s)^.{3}\x00\x0a[0-9]+(?:\.[0-9]+){1,3}[\x20-\x7e]{0,96}\x00'
 
-      - type: dsl
-        dsl:
-          - "regex('^[0-9a-f]{6}00ff6a04', hex_encode(data)) && (contains(data, ' is not allowed to connect to this MySQL server') || contains(data, ' is not allowed to connect to this MariaDB server'))"
+      - type: regex
+        part: data
+        regex:
+          - '^\x05\x00\x00\x00\x0b\x08\x05\x1a\x00'
 
       - type: dsl
         dsl:
-          - "regex('^[0-9a-f]{6}00ff6904', hex_encode(data)) && contains(data, ' is blocked because of many connection errors; unblock with ') && contains(data, 'mysqladmin flush-hosts')"
+          - "regex('^[0-9a-f]{6}0[01]ff6a04', hex_encode(data)) && (contains(data, ' is not allowed to connect to this MySQL server') || contains(data, ' is not allowed to connect to this MariaDB server'))"
+
+      - type: dsl
+        dsl:
+          - "hex_encode(data) == '15000000ff6a04556e6b6e6f776e206572726f722031313330'"
+
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{6}0[01]ff6904', hex_encode(data)) && contains(data, ' is blocked because of many connection errors')"
+
+      - type: dsl
+        dsl:
+          - "regex('^[0-9a-f]{6}00ff1004', hex_encode(data)) && contains(data, 'Too many connections')"
 
     extractors:
       - type: regex
@@ -43,12 +57,16 @@ tcp:
         part: data
         group: 1
         regex:
-          - '(?s)^.{3}\x00\x0a([0-9]+(?:\.[0-9]+){1,3}[^\x00(]{0,96})[^\x00]*\x00'
+          - '(?s)^.{3}\x00\x0a(?:5\.5\.5-)?([0-9]+(?:\.[0-9]+){1,3}(?:[-+~][A-Za-z0-9._-]+)?)'
 
-      - type: regex
-        name: database-product
-        part: data
-        group: 1
-        regex:
-          - '(?s)^.{3}\x00.\x6a\x04(?:#[A-Z0-9]{5})?Host [\x20-\x7e]{1,128} is not allowed to connect to this (MySQL|MariaDB) server'
+  - inputs:
+      - data: "\r\n\r\n"
+    host:
+      - "{{Hostname}}"
+    port: 3306
+    read-size: 2048
+    matchers:
+      - type: dsl
+        dsl:
+          - "hex_encode(data) == '10000001ff13044261642068616e647368616b65'"
 # digest: 490a0046304402205f9c57c7e2592ccbeb1786b39acdb8e46ea753b3c1d2e3de4d2901c2d9d2f44902202e3a9c2df7261c9a2ee8cc14dde952a108457f128b50d1c196dfe80b8a23a66a:922c64590222798bb761d5b6d8e72950

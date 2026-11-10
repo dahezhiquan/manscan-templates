@@ -1,0 +1,64 @@
+id: java-jrmp-rmi-detect
+
+info:
+  name: JRMP（Java RMI）协议识别（指纹识别）
+  author: F1tz
+  severity: info
+  description: |
+    JRMP 是 Java RMI 使用的远程调用传输协议。该模板发送 JRMI 版本 2 的 StreamProtocol 握手，并按长度读取 ProtocolAck 中的客户端主机标识和端口；仅在完整响应结构有效时输出 jrmp 指纹。握手中的版本号不是 JVM 或服务端软件版本。
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+    product: jrmp
+  tags: network,jrmp,java,detect,tcp,discovery
+
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const conn = net.Open("tcp", `${Host}:${Port}`);
+      conn.SetTimeout(3);
+
+      function readHex(size) {
+        const buffer = bytes.NewBuffer();
+        buffer.Write(conn.RecvFull(size));
+        const hex = buffer.Hex();
+        if (hex.length !== size * 2) throw new Error("incomplete JRMP response");
+        return hex;
+      }
+
+      let evidence = "";
+      try {
+        conn.SendHex("4a524d4900024b");
+        if (readHex(1) === "4e") {
+          const length = parseInt(readHex(2), 16);
+          if (length > 0 && length <= 512) {
+            const hostHex = readHex(length);
+            const port = parseInt(readHex(4), 16);
+            let host = "";
+            for (let i = 0; i < hostHex.length; i += 2) {
+              host += String.fromCharCode(parseInt(hostHex.substring(i, i + 2), 16));
+            }
+            if (/^(?:[A-Za-z0-9_][A-Za-z0-9._%-]*|[0-9A-Fa-f:.%]*:[0-9A-Fa-f:.%]+)$/.test(host) && port <= 65535) {
+              evidence = "jrmp";
+            }
+          }
+        }
+      } catch (error) {
+        // Incomplete handshakes and unsupported protocols are not fingerprints.
+      } finally {
+        conn.Close();
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 1099
+
+    matchers:
+      - type: word
+        part: response
+        words:
+          - "jrmp"

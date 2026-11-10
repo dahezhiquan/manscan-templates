@@ -5,29 +5,33 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    VMware Authentication Daemon 是 VMware 主机相关认证与远程控制支持服务，用于管理组件认证和控制通道协商。该模板连接 902/TCP 并读取协议响应，通过匹配 `ServerDaemonProtocol:SOAP`、`MKSDisplayProtocol:VNC` 等响应特征识别目标服务。
+    VMware Authentication Daemon 是 VMware 主机相关的认证与远程控制支持服务。该模板连接 902/TCP，不发送数据，读取服务端主动返回的 220 横幅；根据登录提示、SOAP/IPC 与 VNC 协议声明，或 SSL Required 提示确认服务，并提取横幅中的守护进程版本。SSL Required 表示服务要求加密连接，不代表模板已完成 TLS 握手。
   metadata:
     verified: true
     max-request: 1
     shodan-query: product:"VMware Authentication Daemon"
-  tags: network,vmware,authenticated,detect,tcp,discovery
+  tags: network,vmware-auth,authenticated,detect,tcp,discovery
 tcp:
-
-  - inputs:
-      - data: "\n"
-    host:
+  - host:
       - "{{Hostname}}"
     port: 902
+    read-size: 2048
 
+    matchers-condition: or
     matchers:
-      - type: word
-        words:
-          - "ServerDaemonProtocol:SOAP"
-          - "MKSDisplayProtocol:VNC"
-        condition: and
+      - type: regex
+        part: data
+        regex:
+          - '^220 VMware Authentication Daemon Version [0-9][A-Za-z0-9._-]*[^\r\n]*\r\n530 Please login with USER and PASS\.\r\n'
+          - '^220 VMware Authentication Daemon Version [0-9][A-Za-z0-9._-]*, ServerDaemonProtocol:(?:SOAP|IPC), MKSDisplayProtocol:VNC'
+          - '^220 VMware Authentication Daemon Version [0-9][A-Za-z0-9._-]*: SSL [rR]equired\r\n'
+          - '^220 VMware Authentication Daemon Version [0-9][A-Za-z0-9._-]*: SSL [rR]equired, MKSDisplayProtocol:VNC[ \t]*\r\n'
+          - '^220 VMware Authentication Daemon Version [0-9][A-Za-z0-9._-]*: SSL [rR]equired, ServerDaemonProtocol:(?:SOAP|IPC), MKSDisplayProtocol:VNC'
 
     extractors:
       - type: regex
+        name: vmware-auth-version
+        part: data
         regex:
-          - "VMware Authentication Daemon Version ([0-9.]+)"
-# digest: 4a0a00473045022100a27696da204430fbc4892cfde7458cb958b5d8de1f47596f5a4b756fcf22d21b02200a244de98ab0b0a00d4acf8610322c1d0f4298fe502f505487ce4250dc0c7726:922c64590222798bb761d5b6d8e72950
+          - '^220 VMware Authentication Daemon Version ([0-9][A-Za-z0-9._-]*)'
+        group: 1

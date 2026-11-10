@@ -5,7 +5,7 @@ info:
   author: Ice3man543,tarunKoyalwar
   severity: info
   description: |
-    SSH 服务端会在连接建立后发送以 `SSH-` 开头的协议标识行，通常包含协议版本及 OpenSSH、Dropbear 等实现名称。模板读取目标 22/TCP 的服务端标识行，只有符合 SSH 协议格式才确认 SSH 服务；标识包含软件版本时提取软件名称和版本，完整标识保留在响应证据中。显式指定目标端口时使用该端口。
+    SSH 服务端会在连接建立后发送以 `SSH-` 开头的协议标识行，通常包含协议版本及 OpenSSH、Dropbear 等实现名称。模板被动读取目标 22/TCP 的服务端响应，在有限的前置文案和 TCP 分片中寻找完整、符合 SSH 协议格式的标识行；标识包含可辨识的软件版本时提取软件名称和版本，完整标识保留在响应证据中。协议版本不作为软件版本输出；显式指定目标端口时使用该端口。
   reference:
     - https://www.rfc-editor.org/rfc/rfc4253#section-4.2
   metadata:
@@ -17,20 +17,24 @@ javascript:
       const net = require("nuclei/net");
       const conn = net.Open("tcp", `${Host}:${Port}`);
       conn.SetTimeout(3);
-      let data = "";
+      let pending = "";
       let banner = "";
       try {
-        for (let i = 0; i < 4; i++) {
-          data += conn.RecvString(256);
-          const lines = data.split("\n");
-          for (let j = 0; j < lines.length - 1; j++) {
-            const line = lines[j].replace(/\r$/, "");
+        for (let i = 0; i < 8 && !banner; i++) {
+          try {
+            pending += conn.RecvString(512);
+          } catch (e) {
+            break;
+          }
+          let newline;
+          while ((newline = pending.indexOf("\n")) !== -1) {
+            const line = pending.slice(0, newline).replace(/\r$/, "");
+            pending = pending.slice(newline + 1);
             if (line.length <= 253 && /^SSH-(?:1\.[0-9]+|2\.0)-[!-~]+(?: [ -~]*)?$/.test(line)) {
               banner = line;
               break;
             }
           }
-          if (banner) break;
         }
       } finally {
         conn.Close();

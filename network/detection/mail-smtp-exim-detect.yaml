@@ -1,11 +1,11 @@
-id: mail-smtp-exim-detect
+id: smtp-exim-detect
 
 info:
   name: Exim 识别（指纹识别）
-  author: ricardomaia,userdehghani
+  author: dahezhiquan
   severity: info
   description: |
-    Exim 是常见的邮件传输代理（MTA），用于接收、路由和投递电子邮件。该模板连接 465,587/TCP 并读取协议响应，通过匹配 `ESMTP Exim` 等响应特征识别目标服务。
+    Exim 是用于接收、路由和投递电子邮件的邮件传输代理。该模板检查 25、2525、587/TCP 的明文响应及 465/TCP 的隐式 TLS 响应，通过 `ESMTP Exim` 横幅、精确的连接拒绝或同步错误、以及无参数 EHLO 的特征报错识别服务；仅从带产品名称的横幅中提取软件版本。
   reference:
     - https://www.exim.org/docs.html
   classification:
@@ -13,26 +13,93 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 4
     shodan-query: "product:\"Exim smtpd\""
   tags: network,detect,smtp,mail,exim,tcp,discovery
-tcp:
-  - inputs:
-      - data: "\n"
 
-    host:
+flow: tcp(1) || tcp(2) || tcp(3) || tcp(4)
+
+tcp:
+  - host:
       - "{{Hostname}}"
-    port: 465,587
+    port: 25,2525,587
+    read-size: 2048
 
     matchers:
-      - type: word
-        words:
-          - "ESMTP Exim"
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\bESMTP Exim\b'
+          - '(?m)^554 SMTP service not available\r?$'
+          - '(?m)^554 SMTP synchronization error\r?$'
 
     extractors:
       - type: regex
         group: 1
         name: version
+        part: data
         regex:
-          - '(?i)SMTP.Exim\s?([\w.]+)'
+          - '(?im)^220[ -][^\r\n]*\bESMTP Exim[ \t]+(v?[0-9][A-Za-z0-9._+~-]*)'
+
+  - host:
+      - "tls://{{Hostname}}"
+    port: 465
+    read-size: 2048
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\bESMTP Exim\b'
+          - '(?m)^554 SMTP service not available\r?$'
+          - '(?m)^554 SMTP synchronization error\r?$'
+
+    extractors:
+      - type: regex
+        group: 1
+        name: version
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\bESMTP Exim[ \t]+(v?[0-9][A-Za-z0-9._+~-]*)'
+
+  - inputs:
+      - data: ""
+        name: greeting
+        read: 2048
+      - data: "EHLO\r\n"
+        name: ehlo
+        read: 2048
+    host:
+      - "{{Hostname}}"
+    port: 25,2525,587
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: greeting
+        regex:
+          - '(?m)^220[ -][A-Za-z0-9_.-]+ ESMTP\r?$'
+      - type: regex
+        part: ehlo
+        regex:
+          - '(?m)^501 Syntactically invalid EHLO argument\(s\)\r?$'
+
+  - inputs:
+      - data: ""
+        name: greeting
+        read: 2048
+      - data: "EHLO\r\n"
+        name: ehlo
+        read: 2048
+    host:
+      - "tls://{{Hostname}}"
+    port: 465
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: greeting
+        regex:
+          - '(?m)^220[ -][A-Za-z0-9_.-]+ ESMTP\r?$'
+      - type: regex
+        part: ehlo
+        regex:
+          - '(?m)^501 Syntactically invalid EHLO argument\(s\)\r?$'
 # digest: 490a004630440220514152df3973d2f7ba5cd752bc2d28f00a71c3a8ae14731eacaba1beb385c2a702205922cd1b435d8b5cea06a7d295ffe8dfe6926089c46c406b703de9b3bd712152:922c64590222798bb761d5b6d8e72950

@@ -5,28 +5,47 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    VNC 是图形化远程桌面协议，用于远程查看和控制桌面会话。该模板连接 5900/TCP 并读取协议响应，通过匹配 `RFB` 等响应特征识别目标服务。
+    VNC 使用 RFB 协议提供图形化远程桌面访问。该模板连接目标后不发送数据，仅在收到完整的 `RFB xxx.xxx` 协议横幅时确认服务并提取 RFB 协议版本；该版本不代表 VNC 软件版本。
   classification:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: network,vnc,service,detect,tcp,discovery
+  tags: network,vnc,detect,tcp,discovery
 
-tcp:
-  - inputs:
-      - data: "\r\n"
-    host:
-      - "{{Hostname}}"
-    port: 5900
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const conn = net.Open("tcp", `${Host}:${Port}`);
+      conn.SetTimeout(3);
+
+      let evidence = "";
+      try {
+        let banner = conn.RecvFullString(12);
+        if (banner.endsWith("\r")) banner += conn.RecvFullString(1);
+        if (/^RFB [0-9]{3}\.[0-9]{3}\r?\n$/.test(banner)) {
+          evidence = banner.substring(0, 11);
+        }
+      } catch (error) {
+        // Incomplete banners are not RFB fingerprints.
+      } finally {
+        conn.Close();
+      }
+      Export(evidence);
+
+    args:
+      Host: "{{Host}}"
+      Port: 5900
 
     matchers:
-      - type: word
-        words:
-          - "RFB"
+      - type: regex
+        part: response
+        regex:
+          - '^RFB [0-9]{3}\.[0-9]{3}$'
 
     extractors:
       - type: regex
-        part: body
+        name: rfb-protocol-version
+        part: response
+        group: 1
         regex:
-          - "RFB ([0-9.]+)"
-# digest: 490a0046304402205490fd4a33dc18274e879e875ceb9dfcd7aab19e2c5382192905fd5c34f50fd202203df265c00c77ac4beac3a52deacd71c2911e5365e9a86af04ac8f64db415eb77:922c64590222798bb761d5b6d8e72950
+          - '^RFB ([0-9]{3}\.[0-9]{3})$'

@@ -1,27 +1,37 @@
-id: smtp-starttls-mail-detect
+id: smtp-starttls-detect
 
 info:
   name: STARTTLS Mail 服务识别（指纹识别）
-  author: r3dg33k,userdehghani
+  author: dahezhiquan
   severity: info
   description: |
-    SMTP STARTTLS 是邮件服务器的传输加密协商能力，用于在明文 SMTP 连接上升级到 TLS。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `250-STARTTLS` 等响应特征识别目标服务。
+    SMTP STARTTLS 是明文 SMTP 连接上的加密升级能力。该模板先读取 25、2525、587/TCP 的 `220` 欢迎横幅，再发送带域名参数的 `EHLO`，仅在服务端的 `250` 扩展能力行中确认 STARTTLS；465/TCP 的隐式 TLS 不属于 STARTTLS。
   metadata:
     max-request: 1
   tags: mail,starttls,network,detect,smtp,tcp,discovery
 
 tcp:
   - inputs:
-      - data: "65686c6f20636865636b746c730a"
-        type: hex
-    read-size: 2048
+      - data: ""
+        name: greeting
+        read: 2048
+      - data: "EHLO manscan.invalid\r\n"
+        name: ehlo
+        read: 2048
 
     host:
       - "{{Hostname}}"
-    port: 25,2525,465,587
+    port: 25,2525,587
 
+    matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "250-STARTTLS"
+      - type: regex
+        part: greeting
+        regex:
+          - '(?m)^220[ -][^\r\n]{1,512}\r?$'
+
+      - type: regex
+        part: ehlo
+        regex:
+          - '(?mi)^250[- ]STARTTLS[ \t]*\r?$'
 # digest: 490a0046304402201205c03f298caf72605e0cc023a0902c3ac227cd053e886e2ccadd66afcc241b02206101d4f14945d80db0aa989f7267403599e41683e13fe586c96aceb20a962300:922c64590222798bb761d5b6d8e72950

@@ -1,24 +1,79 @@
-id: mail-smtp-detect
+id: smtp-detect
 
 info:
   name: SMTP 识别（指纹识别）
-  author: pussycat0x,userdehghani
+  author: dahezhiquan
   severity: info
   description: |
-    SMTP 是邮件传输协议，用于邮件投递、转发和服务器间通信。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `SMTP` 等响应特征识别目标服务。
+    SMTP 是邮件传输协议，用于邮件投递、转发和服务器间通信。该模板通过 `EHLO` 交换验证 `220` 欢迎响应与 `250` 应答；若服务不接受 EHLO，再通过带 SMTP 标识的欢迎横幅补充识别。25、2525、587/TCP 使用明文连接，465/TCP 使用隐式 TLS。模板只确认 SMTP 服务，不将协议能力误作软件版本。
   metadata:
-    max-request: 1
+    max-request: 4
   tags: network,service,smtp,detect,mail,tcp,discovery
+
+flow: tcp(1) || tcp(2) || tcp(3) || tcp(4)
 
 tcp:
   - inputs:
-      - data: "\r\n"
+      - data: ""
+        name: greeting
+        read: 2048
+      - data: "EHLO manscan.invalid\r\n"
+        name: ehlo
+        read: 2048
     host:
       - "{{Hostname}}"
-    port: 25,2525,465,587
-
+    port: 25,2525,587
+    matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "SMTP"
+      - type: regex
+        part: greeting
+        regex:
+          - '(?m)^220[ -][^\r\n]{1,512}\r?$'
+
+      - type: regex
+        part: ehlo
+        regex:
+          - '(?m)^250[ -][^\r\n]+\r?$'
+
+  - host:
+      - "{{Hostname}}"
+    port: 25,2525,587
+    read-size: 2048
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\b(?:ESMTP|SMTP)\b'
+
+  - inputs:
+      - data: ""
+        name: greeting
+        read: 2048
+      - data: "EHLO manscan.invalid\r\n"
+        name: ehlo
+        read: 2048
+    host:
+      - "tls://{{Hostname}}"
+    port: 465
+    matchers-condition: and
+    matchers:
+      - type: regex
+        part: greeting
+        regex:
+          - '(?m)^220[ -][^\r\n]{1,512}\r?$'
+
+      - type: regex
+        part: ehlo
+        regex:
+          - '(?m)^250[ -][^\r\n]+\r?$'
+
+  - host:
+      - "tls://{{Hostname}}"
+    port: 465
+    read-size: 2048
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\b(?:ESMTP|SMTP)\b'
 # digest: 4b0a00483046022100fe1197a695dd18ff082f2d427d13a51695c6ec4b30ab318f92f1a1d1edd58e4702210095af3c1f23ec7cfed80cace48d6b631c0016b7ba5fd0692d53f928f777d71c11:922c64590222798bb761d5b6d8e72950

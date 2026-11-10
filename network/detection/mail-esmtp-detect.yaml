@@ -1,11 +1,11 @@
-id: mail-esmtp-detect
+id: esmtp-detect
 
 info:
   name: ESMTP 识别（指纹识别）
-  author: pussycat0x,userdehghani
+  author: dahezhiquan
   severity: info
   description: |
-    ESMTP 是 SMTP 的扩展协议，用于邮件服务器之间投递邮件并协商扩展能力。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `ESMTP Postfix`、`220` 等响应特征识别目标服务。
+    ESMTP 是支持扩展能力协商的 SMTP 服务。该模板识别服务端 `220` 欢迎横幅中的 ESMTP 标识；25、2525、587/TCP 使用明文连接，465/TCP 使用隐式 TLS，不再仅限于 Postfix。
   reference:
     - https://nmap.org/nsedoc/scripts/smtp-open-relay.html
   classification:
@@ -13,22 +13,31 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: ESMTP
-  tags: network,detect,smtp,mail,tcp,discovery
+  tags: network,detect,smtp,esmtp,mail,tcp,discovery
+
+flow: tcp(1) || tcp(2)
+
 tcp:
-  - inputs:
-      - data: "\n"
-
-    host:
+  - host:
       - "{{Hostname}}"
-    port: 25,2525,465,587
+    port: 25,2525,587
+    read-size: 2048
 
-    matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - "ESMTP Postfix"
-          - "220"
-        condition: and
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\bESMTP\b'
+
+  - host:
+      - "tls://{{Hostname}}"
+    port: 465
+    read-size: 2048
+    matchers:
+      - type: regex
+        part: data
+        regex:
+          - '(?im)^220[ -][^\r\n]*\bESMTP\b'
 # digest: 4a0a00473045022100b1c06564fe88979219832348c48a20ced4f2e676dc998f8b0bed9017e667b56e022026760761133cbbd65e3de8b94b0a4e0c913454690bc36e43054da5b7de2263be:922c64590222798bb761d5b6d8e72950

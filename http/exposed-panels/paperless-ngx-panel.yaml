@@ -16,7 +16,7 @@ info:
     product: paperless-ngx
     shodan-query: http.title:"Paperless-ngx"
     fofa-query: title="Paperless-ngx"
-  tags: panel,paperless-ngx,paperless,discovery,detect
+  tags: panel,paperless-ngx,discovery,detect
 
 http:
   - method: GET

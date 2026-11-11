@@ -10,7 +10,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: title:"AddOnFinancePortal"
-  tags: addon,finance,detect,discovery
+  tags: addonfinance,detect,discovery
 http:
   - method: GET
     path:

@@ -16,7 +16,7 @@ info:
     product: laravel
     vendor: laravel
     fofa-query: "x-laravel-version"
-  tags: tech,laravel,eol,framework
+  tags: tech,laravel,framework
 http:
   - method: GET
     path:
@@ -30,7 +30,6 @@ http:
     matchers-condition: and
     matchers:
       - type: dsl
-        name: eol-version-detected
         dsl:
           - "compare_versions(version, '<= 11.51.0')"
 

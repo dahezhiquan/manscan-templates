@@ -13,7 +13,7 @@ info:
     vendor: ibm
     product: websphere_liberty
     shodan-query: http.title:"WebSphere Liberty"
-  tags: tech,websphere,liberty,discovery
+  tags: tech,websphere,discovery
 
 http:
   - method: GET

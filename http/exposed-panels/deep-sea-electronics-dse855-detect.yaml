@@ -14,7 +14,7 @@ info:
     shodan-query: http.title:"DSE 855"
     vendor: deep-sea-electronics
     product: dse855
-  tags: tech,panel,dse,ics,generator,energy,scada,detect
+  tags: tech,panel,detect,deep-sea-electronics,dse855
 http:
   - method: GET
     path:

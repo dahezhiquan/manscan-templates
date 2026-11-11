@@ -11,7 +11,7 @@ info:
   - https://firebase.google.com/docs/auth/web/redirect-best-practices
   metadata:
     max-request: 1
-  tags: firebase,fingerprint,tech
+  tags: firebase,tech
 http:
   - method: GET
     path:

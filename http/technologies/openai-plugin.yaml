@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: tech,openai,plugin,discovery,ai
+  tags: tech,openai,discovery,ai
 http:
   - method: GET
     path:

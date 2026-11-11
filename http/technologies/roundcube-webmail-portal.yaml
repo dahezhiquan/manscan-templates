@@ -14,7 +14,7 @@ info:
     vendor: roundcube
     product: webmail
     shodan-query: http.component:"RoundCube"
-  tags: roundcube,portal,tech,discovery,panel
+  tags: roundcube,tech,discovery,panel,webmail
 http:
   - method: GET
     path:

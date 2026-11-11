@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:635899646
-  tags: favicon,tech,silverback,mdm,discovery
+  tags: favicon,tech,silverback,discovery
 http:
   - method: GET
     path:

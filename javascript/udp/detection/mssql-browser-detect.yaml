@@ -16,7 +16,7 @@ info:
     shodan-query: port:1434
     vendor: microsoft
     product: sql_server
-  tags: mssql,microsoft,sql,database,network,js,udp,detect
+  tags: mssql,microsoft,database,network,js,udp,detect
 
 javascript:
   - pre-condition: |

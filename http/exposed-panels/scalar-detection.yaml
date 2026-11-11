@@ -16,7 +16,7 @@ info:
     shodan-query: title:"Scalar API Reference"
     fofa-query: title="Scalar API Reference"
     google-query: intitle:"Scalar API Reference"
-  tags: scalar,api,documentation,detect,discovery
+  tags: scalar,detect,discovery
 
 http:
   - method: GET

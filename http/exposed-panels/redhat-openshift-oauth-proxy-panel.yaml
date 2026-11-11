@@ -31,7 +31,6 @@ http:
 
       - type: regex
         part: header
-        name: csrf-cookie-header
         regex:
           - "(?i)_oauth_proxy_csrf=[^;]+"
           - "(?i)_oauth_proxy=[^;]*"

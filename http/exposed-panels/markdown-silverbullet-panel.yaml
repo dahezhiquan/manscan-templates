@@ -16,7 +16,7 @@ info:
     product: silverbullet
     shodan-query: http.title:"SilverBullet"
     fofa-query: title="SilverBullet"
-  tags: panel,silverbullet,notes,markdown,selfhosted,detect,discovery
+  tags: panel,silverbullet,notes,selfhosted,detect,discovery
 http:
   - method: GET
     path:

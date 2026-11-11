@@ -14,7 +14,7 @@ info:
     vendor: fortinet
     product: forticlient_endpoint_management_server
     shodan-query: http.favicon.hash:-800551065
-  tags: panel,fortinet,forticlient,ems,login,detect,discovery
+  tags: panel,fortinet,forticlient,login,detect,discovery
 http:
   - method: GET
     path:

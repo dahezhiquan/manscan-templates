@@ -15,7 +15,7 @@ info:
     vendor: evidently-ai
     product: evidently
     shodan-query: 'http.title:"Evidently"'
-  tags: panel,evidently,ai,ml,monitoring,observability,detect,discovery
+  tags: panel,evidently,ai,observability,detect,discovery
 http:
   - method: GET
     path:

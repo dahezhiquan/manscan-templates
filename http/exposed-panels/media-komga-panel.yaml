@@ -16,7 +16,7 @@ info:
     product: komga
     shodan-query: http.title:"Komga"
     fofa-query: title="Komga"
-  tags: panel,komga,media,manga,comics,selfhosted,detect,discovery,login
+  tags: panel,komga,manga,comics,selfhosted,detect,discovery,login
 http:
   - method: GET
     path:

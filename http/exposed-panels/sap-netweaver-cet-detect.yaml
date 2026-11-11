@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:-266008933
-  tags: sap,netweaver,cet,detect,discovery,panel
+  tags: sap,netweaver,detect,discovery,panel
 
 http:
   - method: GET

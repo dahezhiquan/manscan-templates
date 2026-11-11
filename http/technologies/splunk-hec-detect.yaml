@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: tech,splunk,hec,detect,discovery
+  tags: tech,splunk,detect,discovery
 http:
   - method: GET
     path:

@@ -16,7 +16,7 @@ info:
     vendor: marqo-ai
     product: marqo
     shodan-query: 'http.html:"Welcome to Marqo"'
-  tags: tech,marqo,vector-db,search,ai,detect,discovery
+  tags: tech,marqo,vector-db,ai,detect,discovery
 http:
   - method: GET
     path:

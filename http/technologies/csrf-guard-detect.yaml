@@ -42,14 +42,12 @@ http:
           - "masterTokenValue"
 
       - type: dsl
-        name: "Disabled-token-per-page"
         condition: and
         dsl:
           - 'status_code_3==400'
           - 'contains(body, "Token-Per-Page functionality is disabled")'
 
       - type: dsl
-        name: "Enabled-token-per-page"
         condition: and
         dsl:
           - 'status_code_3==200'

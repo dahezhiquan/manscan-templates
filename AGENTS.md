@@ -41,6 +41,8 @@
 - 指纹类模板与 WordPress 插件（`wp-plugin`）相关时，`info.tags` 必须包含 `wp-plugin`，模板 `id` 或 `info.name` 也必须包含 `wp-plugin`。
 - 指纹类模板与 FTP 相关时，`info.tags` 必须包含 `ftp`，模板 `id` 或 `info.name` 也必须包含 `ftp`。
 - 指纹类模板与 AI 相关时，`info.tags` 必须包含 `ai`，模板 `id` 或 `info.name` 至少一项必须包含 `ai`。
+- 指纹类模板与 CDN 相关时，`info.tags` 必须包含 `cdn`，模板 `id` 或 `info.name` 至少一项必须包含 `cdn`。
+- 指纹类模板与 Tomcat 相关时，`info.tags` 必须包含 `tomcat`，模板 `id` 或 `info.name` 至少一项必须包含 `tomcat`。
 - CVE 模板必须检查 `cve` 与 `cveYYYY` 年份标签是否与模板编号一致；如果发现缺失年份、年份写错或多个冲突年份标签，必须作为不规范项提示。
 
 ### 标签资料同步

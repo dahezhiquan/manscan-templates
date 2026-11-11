@@ -15,7 +15,7 @@ info:
     fofa-query: body="Synology&nbsp;DiskStation"
     product: diskstation_manager
     vendor: synology
-  tags: synology,dsm,misconfig,diskstation-manager,detect
+  tags: synology,misconfig,diskstation-manager,detect
   impact: |-
     - 该模板仅用于资产识别，帮助安全团队确认暴露的 Synology DSM 服务和管理入口。
     - 识别结果可用于资产盘点、暴露面治理和后续授权安全检查。

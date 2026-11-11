@@ -9,7 +9,7 @@ info:
     verified: true
     shodan-query: "Dumb FTP Server (dftpd)"
     max-request: 1
-  tags: network,ftp,dumb,detect,tcp,discovery
+  tags: network,ftp,dumb-ftp,detect,tcp,discovery
 
 tcp:
   - inputs:

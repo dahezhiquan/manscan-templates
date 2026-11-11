@@ -15,7 +15,7 @@ info:
     vendor: owncloud
     product: owncloud
     shodan-query: http.html:"owncloud"
-  tags: tech,owncloud,status,discovery
+  tags: tech,owncloud,discovery
 http:
   - method: GET
     path:

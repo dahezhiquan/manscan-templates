@@ -1,7 +1,7 @@
 id: akamai-cache-detect
 
 info:
-  name: Akamai Cache 指纹识别（指纹识别）
+  name: Akamai CDN Cache 指纹识别（指纹识别）
   author: nybble04
   severity: info
   description: |-
@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: cache,akamai,tech,discovery
+  tags: akamai,cdn,tech,discovery
 
 http:
   - method: HEAD

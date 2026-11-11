@@ -22,7 +22,7 @@ info:
     - http.favicon.hash:"321909464"
     - http.html:"Self-Service Portal"
     fofa-query: body="ssp loginscreen"
-  tags: panel,workspaceone,vmware,airwatch,login,detect,discovery
+  tags: panel,workspaceone,vmware,login,detect,discovery
 
 http:
   - method: GET

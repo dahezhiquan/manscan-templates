@@ -38,7 +38,6 @@ tcp:
     matchers-condition: and
     matchers:
       - type: binary
-        name: nfs-v3-success
         binary:
           # XID 'VER3' + REPLY(1) + MSG_ACCEPTED(0) + AUTH_NONE(0,0) + accept_stat=SUCCESS(0)
           - "564552330000000100000000000000000000000000000000"

@@ -17,7 +17,7 @@ info:
     vendor: glpi-project
     product: glpi
     shodan-query: http.html:"glpi"
-  tags: tech,status,glpi,discovery
+  tags: tech,glpi,discovery
 http:
   - method: GET
     path:

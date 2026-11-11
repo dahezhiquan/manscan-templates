@@ -16,7 +16,7 @@ info:
     product: typesense
     shodan-query: '"x-typesense"'
     fofa-query: header="x-typesense"
-  tags: tech,typesense,search,detect
+  tags: tech,typesense,detect
 
 http:
   - method: GET

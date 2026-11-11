@@ -14,7 +14,7 @@ info:
     shodan-query: html:"StackStorm Web UI"
     vendor: stackstorm
     product: stackstorm
-  tags: panel,stackstorm,webui,detect
+  tags: panel,stackstorm,detect
 
 http:
   - method: GET

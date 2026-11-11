@@ -1,4 +1,4 @@
-id: rustfs-detect
+id: rustfs-detect-panel
 
 info:
   name: RustFS 指纹识别（指纹识别）
@@ -15,7 +15,7 @@ info:
     vendor: rustfs
     product: rustfs
     shodan-query: title:"RustFS"
-  tags: tech,rustfs,detect
+  tags: tech,rustfs,detect,panel
 http:
   - method: GET
     path:

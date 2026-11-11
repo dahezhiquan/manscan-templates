@@ -1,4 +1,4 @@
-id: shopware-detect
+id: shopware-detect-panel
 
 info:
   name: Shopware 指纹识别（指纹识别）
@@ -18,7 +18,7 @@ info:
     vendor: shopware
     product: shopware
     shodan-query: title:"shopware AG"
-  tags: tech,shopware,cms,discovery
+  tags: tech,shopware,cms,panel,discovery
 http:
   - method: GET
     path:

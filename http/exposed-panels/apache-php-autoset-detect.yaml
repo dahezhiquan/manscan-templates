@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"AutoSet"
-  tags: tech,php,autoset,apache,panel,discovery
+  tags: tech,php,autoset,apache,discovery
 http:
   - method: GET
     path:

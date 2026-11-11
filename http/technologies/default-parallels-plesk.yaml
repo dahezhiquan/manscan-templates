@@ -1,4 +1,4 @@
-id: default-parallels-plesk
+id: default-parallels-plesk-panel
 
 info:
   name: Default Parallels Plesk 面板 Page 指纹识别（指纹识别）
@@ -13,7 +13,7 @@ info:
     vendor: parallels
     product: parallels_plesk_panel
     shodan-query: title:"Default Parallels Plesk Panel Page"
-  tags: tech,default-page,parallels,plesk,discovery
+  tags: tech,default-page,parallels,plesk,discovery,panel
 
 http:
   - method: GET

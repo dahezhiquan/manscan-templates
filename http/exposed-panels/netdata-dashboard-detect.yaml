@@ -1,4 +1,4 @@
-id: netdata-dashboard-detect
+id: netdata-dashboard-detect-panel
 
 info:
   name: Netdata Dashboard 面板识别（指纹识别）

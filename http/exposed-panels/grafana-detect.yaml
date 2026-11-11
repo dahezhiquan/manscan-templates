@@ -1,4 +1,4 @@
-id: grafana-detect
+id: grafana-detect-panel
 
 info:
   name: Grafana 登录面板识别（指纹识别）

@@ -9,7 +9,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Coming Soon"
-  tags: tech,default-page,discovery
+  tags: tech,default-page,discovery,coming-soon
 
 http:
   - method: GET

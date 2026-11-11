@@ -1,4 +1,4 @@
-id: flexmls-idx-detect
+id: wp-plugin-wordpress-flexmls-idx-detect
 
 info:
   name: Flexmls IDX WordPress 插件指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"/wp-content/plugins/flexmls-idx"
-  tags: tech,detect,flexmls,idx,discovery
+  tags: tech,detect,flexmls,idx,wordpress,wp-plugin,discovery
 http:
   - method: GET
     path:
@@ -39,7 +39,6 @@ http:
     matchers-condition: or
     matchers:
       - type: dsl
-        name: "outdated_version"
         dsl:
           - compare_versions(internal_detected_version, concat("< ", last_version))
 

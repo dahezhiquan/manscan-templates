@@ -1,4 +1,4 @@
-id: sap-netweaver-cet-detect
+id: sap-netweaver-cet-detect-panel
 
 info:
   name: SAP NetWeaver Composition Environment Tools 面板识别（指纹识别）
@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:-266008933
-  tags: sap,netweaver,cet,detect,discovery
+  tags: sap,netweaver,cet,detect,discovery,panel
 
 http:
   - method: GET

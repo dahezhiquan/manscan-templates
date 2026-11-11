@@ -18,7 +18,7 @@ info:
     shodan-query: http.html:"yeswiki"
     product: yeswiki
     vendor: yeswiki
-  tags: yeswiki,panel,tech,discovery
+  tags: yeswiki,tech,discovery
 http:
   - method: GET
     path:

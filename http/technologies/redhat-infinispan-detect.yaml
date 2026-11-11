@@ -1,4 +1,4 @@
-id: redhat-infinispan-detect
+id: redhat-infinispan-detect-panel
 
 info:
   name: Red Hat Infinispan Console 指纹识别（指纹识别）
@@ -19,7 +19,7 @@ info:
     product: infinispan
     shodan-query: title:"Infinispan"
     fofa-query: title="Infinispan" || body="/console/main.bundle.js"
-  tags: tech,detect,infinispan,redhat
+  tags: tech,detect,infinispan,redhat,panel
 http:
   - method: GET
     path:

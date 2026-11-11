@@ -35,6 +35,10 @@
 - 必须检查仓库中是否已经存在相同含义的标签；如果已有同义或更规范的标签，检查结果中必须提示复用已有标签，避免新增命名冗余的近义标签。
 - 必须严格遵守 [CODE_STYLE.md](CODE_STYLE.md) 中 `tags` 的要求，包括使用英文小写短词、英文逗号分隔、不包含空格，并尽量覆盖“厂商 + 产品 + 漏洞类型 + 类别”。
 - 如果是指纹类模板，即模板 `tags` 中包含 `tech`、`detect`、`favicon` 任意一个，则该指纹模板对应产品的产品标签必须能在模板 `id` 和 `info.name` 中找到对应产品语义；如果产品标签与 `id` 或 `info.name` 不一致，必须作为不规范项提示。
+- 指纹类模板用于识别登录面板或管理后台时，`info.tags` 必须包含 `panel`，模板 `id` 和 `info.name` 也必须包含 `panel`。
+- 指纹类模板用于识别 WAF 时，`info.tags` 必须包含 `waf`，模板 `id` 和 `info.name` 也必须包含 `waf`。
+- 指纹类模板与 WordPress 相关时，`info.tags` 必须包含 `wordpress`，模板 `id` 和 `info.name` 也必须包含 `wordpress`。
+- 指纹类模板与 WordPress 插件（`wp-plugin`）相关时，`info.tags` 必须包含 `wp-plugin`，模板 `id` 和 `info.name` 也必须包含 `wp-plugin`。
 - CVE 模板必须检查 `cve` 与 `cveYYYY` 年份标签是否与模板编号一致；如果发现缺失年份、年份写错或多个冲突年份标签，必须作为不规范项提示。
 
 ### 标签资料同步

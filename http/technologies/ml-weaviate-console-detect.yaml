@@ -1,4 +1,4 @@
-id: ml-weaviate-console-detect
+id: ml-weaviate-console-detect-panel
 
 info:
   name: Weaviate Console 指纹识别（指纹识别）
@@ -15,7 +15,7 @@ info:
     max-request: 1
     fofa-query: title="Weaviate Console"
     shodan-query: title:"Weaviate Console"
-  tags: tech,weaviate,vector-database,ai,ml,database
+  tags: tech,weaviate,vector-database,ai,ml,database,panel
 http:
   - method: GET
     path:

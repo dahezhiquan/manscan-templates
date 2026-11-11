@@ -1,4 +1,4 @@
-id: catalog-creator-detect
+id: catalogcreator-detect-panel
 
 info:
   name: CATALOGcreator Page 登录面板 指纹识别（指纹识别）
@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"powered by CATALOGcreator"
-  tags: tech,catalogcreater,panel,discovery
+  tags: tech,catalogcreator,panel,discovery
 
 http:
   - method: GET

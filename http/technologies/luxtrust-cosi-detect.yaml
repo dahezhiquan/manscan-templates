@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: panel,luxtrust,detect,discovery
+  tags: luxtrust,detect,discovery
 http:
   - method: GET
     path:

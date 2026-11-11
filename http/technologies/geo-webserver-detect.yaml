@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"GeoWebServer"
-  tags: panel,geowebserver,tech,discovery
+  tags: geowebserver,tech,discovery
 http:
   - method: GET
     path:

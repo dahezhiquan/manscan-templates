@@ -1,4 +1,4 @@
-id: netsurveillance-web
+id: netsurveillance-web-panel
 
 info:
   name: NETSurveillance Web 面板（指纹识别）
@@ -16,7 +16,7 @@ info:
     max-request: 1
     shodan-query: http.title:"NETSurveillance WEB"
     google-query: intitle:"NETSurveillance WEB"
-  tags: tech,iot,edb,discovery
+  tags: tech,iot,edb,panel,discovery,netsurveillance
 
 http:
   - method: GET

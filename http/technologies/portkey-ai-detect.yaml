@@ -1,4 +1,4 @@
-id: portkey-ai-detect
+id: portkey-ai-detect-panel
 
 info:
   name: Portkey AI 指纹识别（指纹识别）
@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Portkey AI"
-  tags: tech,portkey,ai,llm,gateway
+  tags: tech,portkey,ai,llm,gateway,panel
 http:
   - method: GET
     path:

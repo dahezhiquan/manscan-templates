@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,thinkcmf,login,tech,discovery
+  tags: thinkcmf,login,tech,discovery
 http:
   - method: GET
     path:

@@ -1,4 +1,4 @@
-id: vivotex-web-console-detect
+id: vivotex-web-console-detect-panel
 
 info:
   name: VIVOTEK Web Console 指纹识别（指纹识别）
@@ -15,7 +15,7 @@ info:
     product: ip7361
     shodan-query: title:"VIVOTEK Web Console"
     fofa-query: app="VIVOTEK-Web-Console"
-  tags: tech,vivotex,console,discovery
+  tags: tech,vivotex,console,panel,discovery
 http:
   - method: GET
     path:

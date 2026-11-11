@@ -13,7 +13,7 @@ info:
     vendor: apache
     product: karaf
     shodan-query: realm="karaf"
-  tags: tech,apache,karaf,discovery
+  tags: tech,apache,karaf,discovery,panel
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     max-request: 1
     vendor: alfresco
     product: alfresco
-  tags: alfresco,tech,panel,discovery
+  tags: alfresco,tech,discovery
 http:
   - method: GET
     path:

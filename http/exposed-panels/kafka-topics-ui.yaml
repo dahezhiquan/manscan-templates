@@ -1,4 +1,4 @@
-id: kafka-topics-ui
+id: kafka-topics-ui-panel
 
 info:
   name: Apache Kafka Topics 面板识别（指纹识别）

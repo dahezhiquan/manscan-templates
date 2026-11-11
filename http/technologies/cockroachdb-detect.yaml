@@ -1,4 +1,4 @@
-id: cockroachdb-detect
+id: cockroachdb-detect-panel
 
 info:
   name: CockroachDB DB Console 指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'product:"CockroachDB"'
-  tags: tech,cockroachdb,database,console
+  tags: tech,cockroachdb,database,console,panel
 
 http:
   - method: GET

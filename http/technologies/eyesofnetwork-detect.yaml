@@ -1,4 +1,4 @@
-id: eyesofnetwork-detect
+id: eyesofnetwork-detect-panel
 
 info:
   name: EyesOfNetwork 指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
   - https://www.eyesofnetwork.com/en
   metadata:
     max-request: 1
-  tags: tech,cisa,eyesofnetwork,discovery
+  tags: tech,cisa,eyesofnetwork,panel,discovery
 http:
   - method: GET
     path:

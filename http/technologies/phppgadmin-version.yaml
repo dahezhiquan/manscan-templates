@@ -1,4 +1,4 @@
-id: phppgadmin-version
+id: phppgadmin-version-panel
 
 info:
   name: phpPgAdmin 指纹识别（指纹识别）
@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: tech,phppgadmin,discovery
+  tags: tech,phppgadmin,discovery,panel
 http:
   - method: GET
     path:

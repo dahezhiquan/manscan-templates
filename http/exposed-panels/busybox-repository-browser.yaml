@@ -16,7 +16,7 @@ info:
     vendor: busybox
     product: busybox
     fofa-query: title="Busybox Repository Browser"
-  tags: detect,busybox,oss,panel,discovery
+  tags: detect,busybox,oss,discovery
 http:
   - method: GET
     path:

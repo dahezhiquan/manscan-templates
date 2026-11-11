@@ -1,4 +1,4 @@
-id: netsweeper-webadmin-detect
+id: netsweeper-webadmin-detect-panel
 
 info:
   name: Netsweeper WebAdmin 指纹识别（指纹识别）
@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 2
-  tags: tech,netsweeper,webadmin,discovery
+  tags: tech,netsweeper,webadmin,discovery,panel
 http:
   - method: GET
     path:

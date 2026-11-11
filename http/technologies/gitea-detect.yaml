@@ -1,4 +1,4 @@
-id: gitea-detect
+id: gitea-detect-panel
 
 info:
   name: Gitea 指纹识别（指纹识别）
@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Gitea"
-  tags: tech,gitea,discovery
+  tags: tech,gitea,panel,discovery
 http:
   - method: GET
     path:

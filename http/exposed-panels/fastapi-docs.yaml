@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 3
-  tags: fastapi,tech,panel,discovery
+  tags: fastapi,tech,discovery
 http:
   - method: GET
     path:

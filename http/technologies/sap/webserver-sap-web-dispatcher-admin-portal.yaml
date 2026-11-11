@@ -1,4 +1,4 @@
-id: webserver-sap-web-dispatcher-admin-portal
+id: webserver-sap-web-dispatcher-admin-portal-panel
 
 info:
   name: SAP Web Dispatcher Admin Portal 指纹识别（指纹识别）
@@ -13,7 +13,7 @@ info:
     product: content_server
     vendor: sap
     fofa-query: icon_hash=-266008933
-  tags: sap,webserver,proxy,tech,discovery
+  tags: sap,webserver,proxy,tech,discovery,panel
 http:
   - method: GET
     host-redirects: true

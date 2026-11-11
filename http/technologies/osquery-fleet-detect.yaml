@@ -1,4 +1,4 @@
-id: osquery-fleet-detect
+id: osquery-fleet-detect-panel
 
 info:
   name: osquery Fleet 指纹识别（指纹识别）

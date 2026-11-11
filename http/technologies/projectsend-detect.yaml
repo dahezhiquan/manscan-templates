@@ -1,4 +1,4 @@
-id: projectsend-detect
+id: projectsend-detect-panel
 
 info:
   name: ProjectSend 登录面板 指纹识别（指纹识别）
@@ -20,7 +20,7 @@ info:
     google-query: intext:Provided by ProjectSend
     product: projectsend
     vendor: projectsend
-  tags: tech,projectsend,edb,discovery
+  tags: tech,projectsend,edb,discovery,panel
 http:
   - method: GET
     path:

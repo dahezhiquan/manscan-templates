@@ -1,4 +1,4 @@
-id: monsta-ftp-detect
+id: monsta-ftp-detect-panel
 
 info:
   name: Monsta FTP 识别（指纹识别）
@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Monsta FTP"
-  tags: tech,monsta,ftp,detect
+  tags: tech,monsta,ftp,detect,panel
 http:
   - method: GET
     path:

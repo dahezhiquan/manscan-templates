@@ -1,4 +1,4 @@
-id: ms-exchange-server
+id: ms-exchange-server-panel
 
 info:
   name: Microsoft Exchange Server 指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
   - https://github.com/GossiTheDog/scanning/blob/main/http-vuln-exchange.nse
   metadata:
     max-request: 1
-  tags: microsoft,exchange,tech,discovery
+  tags: microsoft,exchange,tech,panel,discovery
 http:
   - method: GET
     path:

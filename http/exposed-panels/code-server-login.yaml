@@ -1,4 +1,4 @@
-id: code-server-login
+id: code-server-login-panel
 
 info:
   name: Code-Server 登录面板识别（指纹识别）
@@ -18,7 +18,7 @@ info:
     shodan-query: http.title:"code-server login"
     fofa-query: title="code-server login"
     google-query: intitle:"code-server login"
-  tags: panel,detect,misc,coder,discovery
+  tags: panel,detect,misc,coder,discovery,code-server
 http:
   - method: GET
     path:

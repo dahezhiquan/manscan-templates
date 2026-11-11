@@ -16,7 +16,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: tech,panel,sonicwall,discovery
+  tags: tech,sonicwall,discovery
 http:
   - method: GET
     path:

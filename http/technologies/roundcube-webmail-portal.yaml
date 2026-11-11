@@ -1,4 +1,4 @@
-id: roundcube-webmail-portal
+id: roundcube-webmail-portal-panel
 
 info:
   name: Roundcube Webmail 指纹识别（指纹识别）
@@ -14,7 +14,7 @@ info:
     vendor: roundcube
     product: webmail
     shodan-query: http.component:"RoundCube"
-  tags: roundcube,portal,tech,discovery
+  tags: roundcube,portal,tech,discovery,panel
 http:
   - method: GET
     path:

@@ -14,7 +14,7 @@ info:
     shodan-query: http.title:"KACO new energy"
     vendor: kaco
     product: solar-inverter
-  tags: tech,panel,kaco,ics,solar,energy,inverter,detect
+  tags: tech,kaco,ics,solar,energy,inverter,detect
 http:
   - method: GET
     path:

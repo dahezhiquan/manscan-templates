@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.html:"window.frappe"
-  tags: panel,frappe,detect,discovery
+  tags: frappe,detect,discovery
 http:
   - method: GET
     path:

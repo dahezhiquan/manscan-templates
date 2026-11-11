@@ -1,4 +1,4 @@
-id: werkzeug-debugger-detect
+id: werkzeug-debugger-detect-panel
 
 info:
   name: Werkzeug Debugger Console 指纹识别（指纹识别）
@@ -9,7 +9,7 @@ info:
     Werkzeug Debugger Console 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
-  tags: tech,werkzeug,discovery
+  tags: tech,werkzeug,panel,discovery
 http:
   - method: GET
     path:

@@ -1,4 +1,4 @@
-id: leantime-detect
+id: leantime-detect-panel
 
 info:
   name: Leantime 指纹识别（指纹识别）
@@ -15,7 +15,7 @@ info:
     vendor: leantime
     product: leantime
     shodan-query: title:"Leantime"
-  tags: tech,leantime,detect
+  tags: tech,leantime,detect,panel
 http:
   - method: GET
     path:

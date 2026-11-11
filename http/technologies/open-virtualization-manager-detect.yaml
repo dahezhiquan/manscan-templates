@@ -1,4 +1,4 @@
-id: open-virtualization-manager-detect
+id: open-virtualization-manager-ovirt-engine-detect
 
 info:
   name: Open Virtualization Manager 指纹识别（指纹识别）
@@ -18,7 +18,7 @@ info:
     max-request: 1
     shodan-query: title:"Ovirt-Engine"
     google-query: intitle:"Ovirt-Engine"
-  tags: tech,ovirt,discovery
+  tags: tech,ovirt,discovery,ovirt-engine
 http:
   - method: GET
     path:

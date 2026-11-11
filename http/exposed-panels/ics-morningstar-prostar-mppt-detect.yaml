@@ -14,7 +14,7 @@ info:
     shodan-query: http.title:"Prostar MPPT - Live Data"
     vendor: morningstar
     product: prostar-mppt
-  tags: tech,panel,morningstar,ics,solar,energy,scada,detect
+  tags: tech,morningstar,ics,solar,energy,scada,detect
 http:
   - method: GET
     path:

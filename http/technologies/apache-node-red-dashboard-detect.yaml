@@ -1,4 +1,4 @@
-id: apache-node-red-dashboard-detect
+id: apache-node-red-dashboard-detect-panel
 
 info:
   name: Node-RED 控制台 指纹识别（指纹识别）
@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: tech,apache,node-red-dashboard,discovery
+  tags: tech,apache,node-red-dashboard,discovery,panel
 
 http:
   - method: GET

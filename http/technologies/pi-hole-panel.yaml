@@ -15,7 +15,7 @@ info:
     vendor: pi-hole
     product: pi-hole
     shodan-query: title:"Pi-hole"
-  tags: tech,pihole,detect,discovery
+  tags: tech,pi-hole,detect,discovery,panel
 http:
   - method: GET
     path:

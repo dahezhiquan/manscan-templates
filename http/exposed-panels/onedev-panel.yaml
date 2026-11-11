@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"OneDev"
-  tags: tech,detect,onedev,discovery
+  tags: tech,detect,onedev,discovery,panel
 http:
   - method: GET
     path:

@@ -1,7 +1,7 @@
 id: vespa-detect
 
 info:
-  name: Vespa 指纹识别（指纹识别）
+  name: Vespa AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-

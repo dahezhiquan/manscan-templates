@@ -1,7 +1,7 @@
 id: agent-zero-detect
 
 info:
-  name: Agent-Zero 应用 指纹识别（指纹识别）
+  name: Agent-Zero AI 应用指纹识别（指纹识别）
   author: 0x_Akoko
   severity: info
   description: |-
@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: agent-zero,detect,tech,discovery
+  tags: agent-zero,detect,tech,ai,discovery
 
 http:
   - method: GET

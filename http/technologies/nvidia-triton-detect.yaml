@@ -1,7 +1,7 @@
 id: nvidia-triton-detect
 
 info:
-  name: NVIDIA Triton Inference Server 指纹识别（指纹识别）
+  name: NVIDIA Triton Inference Server AI 模型推理指纹识别（指纹识别）
   author: mailler0xa
   severity: info
   description: >-
@@ -14,7 +14,7 @@ info:
     max-request: 1
     vendor: nvidia
     product: triton
-  tags: oss,nvidia,triton,tech,discovery
+  tags: oss,nvidia,triton,tech,ai,discovery
 http:
   - method: GET
     path:

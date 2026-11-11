@@ -15,7 +15,7 @@ info:
     vendor: Activepieces
     product: activepieces
     shodan-query: 'http.title:"Activepieces"'
-  tags: panel,activepieces,automation,ai,detect,discovery
+  tags: panel,activepieces,automation,detect,discovery
 http:
   - method: GET
     path:

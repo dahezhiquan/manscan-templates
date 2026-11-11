@@ -16,7 +16,7 @@ info:
     product: mage-ai
     shodan-query: http.title:"Mage"
     fofa-query: title="Mage"
-  tags: panel,mageai,detect
+  tags: panel,mageai,ai,detect
 http:
   - method: GET
     path:

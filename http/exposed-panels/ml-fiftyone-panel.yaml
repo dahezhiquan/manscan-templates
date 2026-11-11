@@ -1,7 +1,7 @@
 id: ml-fiftyone-panel
 
 info:
-  name: 检测 FiftyOne 面板（指纹识别）
+  name: 检测 FiftyOne AI 面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

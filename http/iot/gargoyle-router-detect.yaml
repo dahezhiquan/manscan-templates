@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: http.title:"Gargoyle Router Management Utility"
     fofa-query: title="Gargoyle Router Management Utility"
-  tags: tech,router,gargoyle,detect
+  tags: tech,gargoyle,detect
 
 http:
   - method: GET

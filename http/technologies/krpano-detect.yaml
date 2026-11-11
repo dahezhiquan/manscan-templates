@@ -13,7 +13,7 @@ info:
     vendor: krpano
     product: panorama_viewer
     shodan-query: http.html:"embedpano"
-  tags: tech,krpano,viewer,discovery
+  tags: tech,krpano,discovery
 http:
   - method: GET
     path:

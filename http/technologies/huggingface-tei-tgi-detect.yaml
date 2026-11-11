@@ -1,7 +1,7 @@
 id: huggingface-tei-tgi-detect
 
 info:
-  name: Hugging Face TEI/TGI 指纹识别（指纹识别）
+  name: Hugging Face TEI/TGI AI 指纹识别（指纹识别）
   author: insidetrust,hdm
   severity: info
   description: >-
@@ -16,7 +16,7 @@ info:
     max-request: 1
     vendor: huggingface
     product: text-embeddings-inference
-  tags: tech,detect,tei,tgi,llm
+  tags: tech,detect,tei,tgi,llm,ai
 http:
   - method: GET
     path:

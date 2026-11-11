@@ -1,7 +1,7 @@
 id: litellm-swagger-detect
 
 info:
-  name: LiteLLM Swagger UI 指纹识别（指纹识别）
+  name: LiteLLM Swagger UI AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-

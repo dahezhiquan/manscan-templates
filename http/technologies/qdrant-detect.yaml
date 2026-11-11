@@ -1,7 +1,7 @@
 id: qdrant-detect
 
 info:
-  name: Qdrant 指纹识别（指纹识别）
+  name: Qdrant AI 向量数据库指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-
@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'html:"qdrant - vector search engine"'
-  tags: tech,qdrant,database,vector
+  tags: tech,qdrant,database,vector,ai
 http:
   - method: GET
     path:

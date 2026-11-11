@@ -15,7 +15,7 @@ info:
     product: arthas
     shodan-query: title:"Arthas Console"
     fofa-query: title="Arthas Console"
-  tags: panel,arthas,alibaba,web-console,detect
+  tags: panel,arthas,alibaba,detect
 http:
   - method: GET
     path:

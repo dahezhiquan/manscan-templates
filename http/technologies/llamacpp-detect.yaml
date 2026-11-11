@@ -1,7 +1,7 @@
 id: llamacpp-detect
 
 info:
-  name: llama.cpp 指纹识别（指纹识别）
+  name: llama.cpp AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-

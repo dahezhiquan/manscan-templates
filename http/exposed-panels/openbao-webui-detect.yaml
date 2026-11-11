@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: http.title:"OpenBao"
     fofa-query: title="OpenBao"
-  tags: panel,openbao,detect,ui
+  tags: panel,openbao,detect
 http:
   - method: GET
     path:

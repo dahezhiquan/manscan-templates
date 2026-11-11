@@ -1,7 +1,7 @@
 id: vectoradmin-panel
 
 info:
-  name: VectorAdmin 登录面板识别（指纹识别）
+  name: VectorAdmin AI 向量管理面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |-
@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title=="VectorAdmin - Vector database management made easy."
-  tags: panel,login,vectoradmin,detect,discovery
+  tags: panel,login,vectoradmin,ai,detect,discovery
 
 http:
   - method: GET

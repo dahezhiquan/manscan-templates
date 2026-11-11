@@ -1,7 +1,7 @@
 id: open-webui-panel
 
 info:
-  name: Openweb UI 面板识别（指纹识别）
+  name: Openweb UI AI 面板识别（指纹识别）
   author: rxerium,righettod
   severity: info
   description: |-
@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
-  tags: panel,open-webui,login,detect,discovery
+  tags: panel,open-webui,login,ai,detect,discovery
 http:
   - method: GET
     path:

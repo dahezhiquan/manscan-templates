@@ -1,7 +1,7 @@
 id: chatbot-botpress-panel
 
 info:
-  name: Botpress Admin 面板识别（指纹识别）
+  name: Botpress Admin AI 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

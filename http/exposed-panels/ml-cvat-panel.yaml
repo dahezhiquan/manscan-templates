@@ -1,7 +1,7 @@
 id: ml-cvat-panel
 
 info:
-  name: CVAT Computer Vision Annotation Tool 识别（指纹识别）
+  name: CVAT AI 数据标注工具识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

@@ -1,4 +1,4 @@
-id: shell-box-panel
+id: shell-box-shellinabox-panel
 
 info:
   name: Shell In A Box 登录面板识别（指纹识别）
@@ -18,7 +18,7 @@ info:
     product: shellinabox
     shodan-query: http.favicon.hash:-629968763
     fofa-query: icon_hash=-629968763
-  tags: shell,emulator,detect,panel,login,shellinabox_project,discovery
+  tags: emulator,detect,panel,login,shellinabox,discovery
 
 http:
   - method: GET

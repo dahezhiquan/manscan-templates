@@ -1,7 +1,7 @@
 id: ml-feast-detect
 
 info:
-  name: Feast Feature Store 指纹识别（指纹识别）
+  name: Feast AI Feature Store 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-
@@ -16,7 +16,7 @@ info:
     vendor: feast
     product: feast
     shodan-query: http.title:"Feast Feature Store"
-  tags: tech,feast,feature-store,ml,detect,discovery
+  tags: tech,feast,feature-store,ml,ai,detect,discovery
 http:
   - method: GET
     path:

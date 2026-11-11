@@ -1,7 +1,7 @@
 id: chromadb-detect
 
 info:
-  name: ChromaDB Vector Database 指纹识别（指纹识别）
+  name: ChromaDB Vector Database AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

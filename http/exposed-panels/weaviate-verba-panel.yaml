@@ -1,7 +1,7 @@
 id: weaviate-verba-panel
 
 info:
-  name: Verba（The Golden RAGtriever）面板识别（指纹识别）
+  name: Verba（The Golden RAGtriever）AI 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

@@ -1,7 +1,7 @@
 id: sglang-detect
 
 info:
-  name: SGLang 指纹识别（指纹识别）
+  name: SGLang AI 指纹识别（指纹识别）
   author: insidetrust,hdm
   severity: info
   description: >-
@@ -16,7 +16,7 @@ info:
     vendor: sgl-project
     product: sglang
     shodan-query: http.html:"is_generation"
-  tags: tech,detect,sglang,llm
+  tags: tech,detect,sglang,llm,ai
 http:
   - method: GET
     path:

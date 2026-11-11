@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-1101206929
-  tags: tech,secui,discovery
+  tags: tech,secui-waf,discovery
 http:
   - method: GET
     path:

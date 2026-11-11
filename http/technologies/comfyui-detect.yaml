@@ -1,7 +1,7 @@
 id: comfyui-detect
 
 info:
-  name: ComfyUI 指纹识别（指纹识别）
+  name: ComfyUI AI 工作流指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
@@ -14,7 +14,7 @@ info:
     vendor: comfyanonymous
     product: comfyui
     shodan-query: http.title:"ComfyUI"
-  tags: tech,comfyui,discovery
+  tags: tech,comfyui,ai,discovery
 
 http:
   - method: GET

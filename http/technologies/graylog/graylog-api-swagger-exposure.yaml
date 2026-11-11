@@ -87,7 +87,6 @@ http:
         condition: and
 
       - type: dsl
-        name: unauthorized-graylog-header
         dsl:
           - "status_code == 401"
           - "contains(header, 'X-Graylog-Node-Id') || contains(header, 'Graylog Server')"

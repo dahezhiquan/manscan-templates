@@ -1,7 +1,7 @@
 id: bentoml-openllm-panel
 
 info:
-  name: OpenLLM 面板识别（指纹识别）
+  name: OpenLLM AI 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

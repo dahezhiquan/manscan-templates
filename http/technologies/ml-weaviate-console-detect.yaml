@@ -1,7 +1,7 @@
 id: ml-weaviate-console-detect-panel
 
 info:
-  name: Weaviate Console 指纹识别（指纹识别）
+  name: Weaviate Console AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-

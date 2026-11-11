@@ -1,4 +1,4 @@
-id: rtl-tcp-server-detect
+id: rtl-tcp-rtl-sdr-server-detect
 
 info:
   name: RTL-TCP 服务识别（指纹识别）
@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: rtl-sdr,sdr,radio,iot,network,detect
+  tags: rtl-tcp,rtl-sdr,radio,iot,network,detect
 
 tcp:
   - inputs:

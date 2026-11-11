@@ -38,7 +38,6 @@ http:
 
       - type: regex
         part: body
-        name: rum_indicators
         regex:
           - "window\\._paq"
           - "_paq\\.push\\s*\\("

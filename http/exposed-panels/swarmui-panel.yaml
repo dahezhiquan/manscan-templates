@@ -1,7 +1,7 @@
 id: swarmui-panel
 
 info:
-  name: SwarmUI 登录面板识别（指纹识别）
+  name: SwarmUI AI 登录面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-

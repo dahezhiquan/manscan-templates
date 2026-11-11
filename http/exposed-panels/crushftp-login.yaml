@@ -19,7 +19,7 @@ info:
     product: crushftp
     shodan-query: http.html:"crushftp"
     fofa-query: body="crushftp"
-  tags: panel,edb,crushftp,detect,discovery
+  tags: panel,edb,crushftp,ftp,detect,discovery
 http:
   - method: GET
     path:

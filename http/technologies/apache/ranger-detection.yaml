@@ -1,4 +1,4 @@
-id: ranger-detection-panel
+id: apache-ranger-detection-panel
 
 info:
   name: Apache Ranger 指纹识别（指纹识别）
@@ -14,7 +14,7 @@ info:
     vendor: apache
     product: ranger
     shodan-query: http.title:"Ranger - Sign In"
-  tags: tech,apache,ranger,panel,discovery
+  tags: tech,apache,apache-ranger,panel,discovery
 
 http:
   - method: GET

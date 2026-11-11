@@ -17,7 +17,7 @@ info:
     product: localai
     fofa-query: "LocalAI API"
     shodan-query: http.favicon.hash:-976853304
-  tags: localai,tech,detect,discovery
+  tags: localai,tech,ai,detect,discovery
 http:
   - method: GET
     path:

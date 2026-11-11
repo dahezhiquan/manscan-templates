@@ -1,7 +1,7 @@
 id: apache-casbin-mcp-gateway-detect
 
 info:
-  name: Apache Casbin MCP 网关 指纹识别（指纹识别）
+  name: Apache Casbin MCP 网关 AI 指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |-
@@ -11,7 +11,7 @@ info:
   metadata:
     vendor: apache
     product: casbin-mcp-gateway
-  tags: tech,casbin-mcp-gateway,apache,detect
+  tags: tech,casbin-mcp-gateway,apache,ai,detect
 http:
   - method: GET
     path:

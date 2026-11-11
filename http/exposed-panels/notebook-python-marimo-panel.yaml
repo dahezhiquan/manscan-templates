@@ -15,7 +15,7 @@ info:
     vendor: marimo-team
     product: marimo
     shodan-query: 'http.title:"marimo"'
-  tags: panel,marimo,notebook,python,ai,detect,discovery
+  tags: panel,marimo,notebook,python,detect,discovery
 http:
   - method: GET
     path:

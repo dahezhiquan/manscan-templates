@@ -1,7 +1,7 @@
 id: milvus-detect
 
 info:
-  name: Milvus 指纹识别（指纹识别）
+  name: Milvus AI 指纹识别（指纹识别）
   author: s4e-io
   severity: info
   description: >-
@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="Milvus"
-  tags: tech,vector-database,milvus,detect,discovery
+  tags: tech,vector-database,milvus,ai,detect,discovery
 http:
   - method: GET
     path:

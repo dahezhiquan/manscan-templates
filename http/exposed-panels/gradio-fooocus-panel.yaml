@@ -1,7 +1,7 @@
 id: gradio-fooocus-panel
 
 info:
-  name: 检测 Fooocus 面板（指纹识别）
+  name: 检测 Fooocus AI 面板（指纹识别）
   author: rxerium
   severity: info
   description: |-

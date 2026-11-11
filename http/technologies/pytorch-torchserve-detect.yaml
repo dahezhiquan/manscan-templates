@@ -1,7 +1,7 @@
 id: pytorch-torchserve-detect
 
 info:
-  name: TorchServe 指纹识别（指纹识别）
+  name: TorchServe AI 指纹识别（指纹识别）
   author: DhiyaneshDk
   severity: info
   description: >-

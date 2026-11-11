@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Welcome to your SWAG instance"
-  tags: tech,discovery
+  tags: tech,discovery,swag
 http:
   - method: GET
     path:

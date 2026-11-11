@@ -1,7 +1,7 @@
 id: dify-panel
 
 info:
-  name: Dify 面板识别（指纹识别）
+  name: Dify AI 平台面板识别（指纹识别）
   author: s4e-io
   severity: info
   description: |-
@@ -14,7 +14,7 @@ info:
     vendor: langgenius
     product: dify
     fofa-query: icon_hash="97378986"
-  tags: panel,login,dify,detect,discovery
+  tags: panel,login,dify,ai,detect,discovery
 http:
   - method: GET
     path:

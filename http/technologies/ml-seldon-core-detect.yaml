@@ -1,7 +1,7 @@
 id: ml-seldon-core-detect
 
 info:
-  name: Seldon Core 指纹识别（指纹识别）
+  name: Seldon Core AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-

@@ -12,7 +12,7 @@ info:
     shodan-query:
       - title:"NI Web-based Configuration & Monitoring"
       - http.favicon.hash:1192389544
-  tags: detect,ni,web-based,panel,discovery
+  tags: detect,ni,panel,discovery
 http:
   - method: GET
     path:

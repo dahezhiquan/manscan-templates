@@ -17,7 +17,7 @@ info:
     product: jan
     shodan-query: 'port:1337 http.title:"Jan"'
     fofa-query: 'body="cortex"'
-  tags: tech,detect,jan,llm
+  tags: tech,detect,jan,llm,ai
 http:
   - method: GET
     path:

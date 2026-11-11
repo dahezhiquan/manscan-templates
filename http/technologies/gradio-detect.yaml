@@ -1,7 +1,7 @@
 id: gradio-detect
 
 info:
-  name: Gradio 指纹识别（指纹识别）
+  name: Gradio AI 应用框架指纹识别（指纹识别）
   author: s4e-io
   severity: info
   description: >-
@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: "Gradio"
-  tags: gradio,tech,detect,discovery
+  tags: gradio,tech,detect,ai,discovery
 http:
   - method: GET
     path:

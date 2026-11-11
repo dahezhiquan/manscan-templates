@@ -1,7 +1,7 @@
 id: ml-knime-server-panel
 
 info:
-  name: KNIME Server / Business Hub WebPortal - 检测（指纹识别）
+  name: KNIME Server / Business Hub WebPortal 面板识别（指纹识别）
   author: rxerium
   severity: info
   description: |-
@@ -16,7 +16,7 @@ info:
     vendor: knime
     product: knime_server
     shodan-query: 'html:"_login/_nuxt"'
-  tags: panel,knime,ml,ai,data-science,detect,discovery
+  tags: panel,knime,ml,data-science,detect,discovery
 http:
   - method: GET
     path:

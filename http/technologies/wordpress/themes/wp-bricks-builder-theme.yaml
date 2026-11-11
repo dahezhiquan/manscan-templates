@@ -17,7 +17,7 @@ info:
     vendor: bricksbuilder
     product: bricks
     publicwww-query: "/wp-content/themes/bricks/"
-  tags: wordpress,theme,wp-theme,bricks,discovery,detect
+  tags: wordpress,wp-theme,bricks,discovery,detect
 http:
   - method: GET
     path:

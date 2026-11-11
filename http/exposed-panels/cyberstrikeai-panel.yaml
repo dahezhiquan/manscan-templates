@@ -14,7 +14,7 @@ info:
     vendor: ed1s0nz
     product: cyberstrikeai
     shodan-query: title:"CyberStrikeAI"
-  tags: ed1s0nz,cyberstrikeai,detect,panel
+  tags: ed1s0nz,cyberstrikeai,ai,detect,panel
 http:
   - method: GET
     path:

@@ -15,7 +15,7 @@ info:
     vendor: Voilà
     product: Voilà
     shodan-query: 'html:"/voila/"'
-  tags: panel,voila,jupyter,notebook,ai,detect,discovery
+  tags: panel,voila,jupyter,notebook,detect,discovery
 http:
   - method: GET
     path:

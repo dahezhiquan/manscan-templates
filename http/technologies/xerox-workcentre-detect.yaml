@@ -15,7 +15,7 @@ info:
     vendor: xerox
     product: workcentre_7970i
     shodan-query: title:"XEROX WORKCENTRE"
-  tags: tech,xerox,workcentre,discovery
+  tags: tech,xerox,discovery
 http:
   - method: GET
     path:

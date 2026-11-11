@@ -17,7 +17,7 @@ info:
     vendor: nextcloud
     product: nextcloud_server
     shodan-query: http.title:"Nextcloud"
-  tags: tech,nextcloud,storage,discovery
+  tags: tech,nextcloud,discovery
 http:
   - method: GET
     path:

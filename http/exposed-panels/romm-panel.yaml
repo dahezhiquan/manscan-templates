@@ -17,7 +17,7 @@ info:
     product: romm
     shodan-query: http.title:"RomM"
     fofa-query: title="RomM"
-  tags: panel,romm,rom,selfhosted,detect,discovery
+  tags: panel,romm,selfhosted,detect,discovery
 
 http:
   - method: GET

@@ -12,7 +12,7 @@ info:
     vendor: apache
     product: http_server
     shodan-query: http.title:"Test Page for the SSL/TLS-aware Apache Installation on Web Site"
-  tags: tech,ssl,discovery
+  tags: tech,ssltls-test,discovery
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     vendor: typebot
     product: typebot
     shodan-query: 'http.title:"Typebot"'
-  tags: panel,typebot,chatbot,ai,detect,discovery
+  tags: panel,typebot,chatbot,detect,discovery
 http:
   - method: GET
     path:

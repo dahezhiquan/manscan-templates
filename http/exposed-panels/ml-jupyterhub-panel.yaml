@@ -15,7 +15,7 @@ info:
     vendor: jupyter
     product: jupyterhub
     shodan-query: 'http.title:"JupyterHub"'
-  tags: panel,jupyterhub,jupyter,ml,ai,detect,discovery
+  tags: panel,jupyterhub,jupyter,ml,detect,discovery
 http:
   - method: GET
     path:

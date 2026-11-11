@@ -1,7 +1,7 @@
-id: sdwebui-detect
+id: sdwebui-stable-diffusion-detect
 
 info:
-  name: Stable Diffusion WebUI 指纹识别（指纹识别）
+  name: Stable Diffusion WebUI AI 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-
@@ -15,7 +15,7 @@ info:
     vendor: AUTOMATIC1111
     product: stable-diffusion-webui
     shodan-query: 'http.html:"hires_fix.js"'
-  tags: tech,stable-diffusion,sdwebui,ai,image-generation,detect,discovery
+  tags: tech,stable-diffusion,ai,image-generation,detect,discovery
 http:
   - raw:
       - |

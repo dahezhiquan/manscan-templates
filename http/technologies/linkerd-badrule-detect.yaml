@@ -23,25 +23,21 @@ http:
     matchers-condition: or
     matchers:
       - type: regex
-        name: via-linkerd-present
         regex:
           - '(?mi)^Via\s*?:.*?linkerd.*$'
         part: header
 
       - type: regex
-        name: l5d-err-present
         regex:
           - '(?mi)^l5d-err:.*$'
         part: header
 
       - type: regex
-        name: l5d-success-class-present
         regex:
           - '(?mi)^l5d-success-class: 0.*$'
         part: header
 
       - type: word
-        name: body-error-present
         words:
           - 'expected but end of input found at'
         part: body

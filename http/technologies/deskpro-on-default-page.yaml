@@ -13,7 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"Deskpro On-Premise Controller"
-  tags: tech,deskpro,default-page,discovery
+  tags: tech,deskpro,discovery
 
 http:
   - method: GET

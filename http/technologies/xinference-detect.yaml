@@ -16,7 +16,7 @@ info:
     vendor: xorbitsai
     product: xinference
     shodan-query: 'port:9997 http.html:"xinference"'
-  tags: tech,xinference,llm,inference,ai,detect,discovery
+  tags: tech,xinference,llm,ai,detect,discovery
 http:
   - raw:
       - |

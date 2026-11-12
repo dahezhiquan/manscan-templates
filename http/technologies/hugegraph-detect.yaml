@@ -1,7 +1,7 @@
 id: hugegraph-detect
 
 info:
-  name: HugeGraph 指纹识别（指纹识别）
+  name: Apache HugeGraph 指纹识别（指纹识别）
   author: rxerium
   severity: info
   description: >-
@@ -13,7 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"https://hugegraph.github.io"
-  tags: hugegraph,tech,detect,discovery
+  tags: hugegraph,apache,tech,detect,discovery
 http:
   - method: GET
     path:

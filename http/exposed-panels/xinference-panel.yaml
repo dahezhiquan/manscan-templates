@@ -15,7 +15,7 @@ info:
     vendor: xorbitsai
     product: xinference
     shodan-query: 'http.title:"Xinference"'
-  tags: panel,xinference,llm,ai,inference,detect,discovery
+  tags: panel,xinference,llm,ai,detect,discovery
 
 http:
   - method: GET

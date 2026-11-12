@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"BIG-IP Configuration Utility"
-  tags: f5,admin,detect,panel,login,discovery
+  tags: f5,detect,panel,login,discovery
 http:
   - method: GET
     path:

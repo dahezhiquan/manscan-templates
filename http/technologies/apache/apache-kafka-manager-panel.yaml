@@ -12,7 +12,7 @@ info:
     max-request: 1
     shodan-query: title:"Kafka-Manager"
     fofa-query: app="Kafka-Manager"
-  tags: tech,kafka,apache,panel,discovery
+  tags: tech,kafka,panel,discovery
 
 http:
   - method: GET

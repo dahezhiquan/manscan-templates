@@ -1,7 +1,7 @@
 id: kafka-topics-list
 
 info:
-  name: Kafka 协议识别与 Topics 枚举（指纹识别）
+  name: Apache Kafka 协议识别与 Topics 枚举（指纹识别）
   author: pussycat0x
   severity: info
   description: |

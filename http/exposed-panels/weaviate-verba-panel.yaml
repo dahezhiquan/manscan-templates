@@ -15,7 +15,7 @@ info:
     vendor: weaviate
     product: verba
     shodan-query: 'html:"bg-bg-verba"'
-  tags: panel,verba,weaviate,llm,ai,rag,detect,discovery
+  tags: panel,verba,weaviate,llm,ai,detect,discovery
 
 http:
   - method: GET

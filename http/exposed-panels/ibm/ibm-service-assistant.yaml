@@ -14,7 +14,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Welcome to Service Assistant"
-  tags: panel,ibm,service,login,detect,discovery
+  tags: panel,ibm,login,detect,discovery
 http:
   - method: GET
     path:

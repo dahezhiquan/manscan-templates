@@ -1,7 +1,7 @@
 id: activemq-openwire-transport-detect
 
 info:
-  name: ActiveMQ OpenWire 传输识别（指纹识别）
+  name: Apache ActiveMQ OpenWire 传输识别（指纹识别）
   author: pussycat0x,ret2src
   severity: info
   description: |
@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"ActiveMQ OpenWire transport"
-  tags: network,activemq,detect,openwire,tcp,discovery
+  tags: network,activemq,apache,detect,openwire,tcp,discovery
 tcp:
   - inputs:
       - data: "VERSION"

@@ -13,7 +13,7 @@ info:
     vendor: apache
     product: zookeeper
     shodan-query: product:"Apache ZooKeeper"
-  tags: network,zookeeper,detect,tcp,discovery
+  tags: network,zookeeper,apache,detect,tcp,discovery
 
 tcp:
   - inputs:

@@ -20,7 +20,7 @@ info:
       - http.title:"arcgis"
     fofa-query: title="arcgis"
     google-query: intitle:"arcgis"
-  tags: arcgis,rest,api,detect,esri,discovery
+  tags: arcgis,detect,esri,discovery
 http:
   - method: GET
     path:

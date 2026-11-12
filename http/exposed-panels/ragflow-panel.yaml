@@ -15,7 +15,7 @@ info:
     vendor: infiniflow
     product: ragflow
     shodan-query: 'http.title:"RAGFlow"'
-  tags: panel,ragflow,llm,ai,rag,detect,discovery
+  tags: panel,ragflow,llm,ai,detect,discovery
 
 http:
   - method: GET

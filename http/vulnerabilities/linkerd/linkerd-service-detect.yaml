@@ -16,7 +16,7 @@ info:
     - https://twitter.com/nirvana_msu/status/1084144955034165248
   metadata:
     max-request: 1
-  tags: tech,linkerd,service,vuln
+  tags: tech,linkerd,vuln
 
 http:
   - method: GET

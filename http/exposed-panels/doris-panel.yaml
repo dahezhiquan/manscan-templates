@@ -1,7 +1,7 @@
 id: doris-panel
 
 info:
-  name: Doris 面板识别（指纹识别）
+  name: Apache Doris 面板识别（指纹识别）
   author: ritikchaddha
   severity: info
   description: |-
@@ -14,7 +14,7 @@ info:
     vendor: apache
     product: doris
     shodan-query: http.favicon.hash:24048806
-  tags: doris,panel,login,detect,discovery
+  tags: doris,apache,panel,login,detect,discovery
 http:
   - method: GET
     path:

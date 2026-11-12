@@ -14,7 +14,7 @@ info:
     vendor: citrix
     product: xenmobile_server
     shodan-query: "title:\"XenMobile - Console\""
-  tags: tech,edb,citrix,version,detect,discovery
+  tags: tech,edb,citrix,detect,discovery
 flow: http(1) && http(2)
 
 http:

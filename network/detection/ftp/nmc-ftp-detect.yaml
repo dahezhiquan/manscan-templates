@@ -9,7 +9,7 @@ info:
     verified: true
     shodan-query: "Network Management Card AOS"
     max-request: 1
-  tags: network,ftp,nmc,detect,tcp,discovery
+  tags: ftp,nmc,detect,tcp,discovery
 
 tcp:
   - inputs:

@@ -14,7 +14,7 @@ info:
     vendor: dialogic
     product: powermedia_xms
     shodan-query: title:"Dialogic XMS Admin Console"
-  tags: panel,dialogic,admin,login,detect,discovery
+  tags: panel,dialogic,login,detect,discovery
 http:
   - method: GET
     path:

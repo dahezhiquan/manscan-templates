@@ -9,7 +9,7 @@ info:
     verified: true
     shodan-query: "Welcome to Network Camera FTP Server"
     max-request: 1
-  tags: network,ftp,networkcamera,detect,tcp,discovery
+  tags: ftp,networkcamera,detect,tcp,discovery
 
 tcp:
   - inputs:

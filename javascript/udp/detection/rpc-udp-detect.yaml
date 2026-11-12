@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:111
-  tags: rpc,portmapper,rpcbind,nfs,network,js,udp,detect
+  tags: rpc,portmapper,rpcbind,nfs,network,js,detect
 
 javascript:
   - pre-condition: |

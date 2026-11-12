@@ -11,7 +11,7 @@ info:
   - https://github.com/getgrav/grav
   metadata:
     max-request: 1
-  tags: tech,grav,cms,discovery
+  tags: tech,grav,discovery
 http:
   - method: GET
     path:

@@ -11,7 +11,7 @@ info:
   - https://github.com/plone/Products.CMFPlone
   metadata:
     max-request: 1
-  tags: tech,plone,cms,discovery
+  tags: tech,plone,discovery
 http:
   - method: GET
     path:

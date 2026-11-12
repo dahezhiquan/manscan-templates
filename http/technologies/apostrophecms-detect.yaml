@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"window.apos"
-  tags: tech,cms,apostrophe,discovery
+  tags: tech,apostrophe,discovery
 
 http:
   - method: GET

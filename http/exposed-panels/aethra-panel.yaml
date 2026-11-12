@@ -12,7 +12,7 @@ info:
     max-request: 1
     shodan-query: http.title:"Aethra Telecommunications Operating System"
     verified: true
-  tags: panel,aethra,login,detect,discovery
+  tags: panel,aethra,detect,discovery
 http:
   - method: GET
     path:

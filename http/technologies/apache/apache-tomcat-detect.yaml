@@ -1,7 +1,7 @@
 id: apache-tomcat-detect
 
 info:
-  name: Tomcat 指纹识别（指纹识别）
+  name: Apache Tomcat Java Servlet 容器指纹识别（指纹识别）
   author: philippedelteil,dhiyaneshDk,AdamCrosser
   severity: info
   description: Tomcat 是 Apache Tomcat Java Servlet 容器，用于运行 Java Web 应用和 JSP 服务。该模板请求首页、`/{{randstr}}`、`/docs/introduction.html` 等路径，并依据 DSL 条件识别目标是否使用或暴露了 Tomcat 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
@@ -20,7 +20,7 @@ info:
     - body="apache tomcat"
     - title="apache tomcat"
     google-query: intitle:"apache tomcat"
-  tags: tech,tomcat,apache,intrusive,discovery
+  tags: tech,tomcat,apache,java,intrusive,discovery
 
 http:
   - method: GET

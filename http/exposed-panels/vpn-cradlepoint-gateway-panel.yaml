@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"CradlePoint" http.html:"Administration Login"
-  tags: panel,cradlepoint,gateway,vpn,router,detect
+  tags: panel,cradlepoint,gateway,router,detect
 
 http:
   - method: GET

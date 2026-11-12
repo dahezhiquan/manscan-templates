@@ -1,7 +1,7 @@
 id: oracle-weblogic-t3-detect
 
 info:
-  name: Oracle WebLogic T3 协议识别（指纹识别）
+  name: Oracle WebLogic Java T3 协议识别（指纹识别）
   author: F1tz,milo2012,wdahlenb
   severity: info
   description: |
@@ -17,7 +17,7 @@ info:
     max-request: 2
     vendor: oracle
     product: weblogic_server
-  tags: network,weblogic,detect,t3,oracle,tcp,discovery
+  tags: network,weblogic,java,detect,t3,oracle,tcp,discovery
 
 tcp:
   - inputs:

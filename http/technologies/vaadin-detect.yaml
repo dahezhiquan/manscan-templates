@@ -1,7 +1,7 @@
 id: vaadin-detect
 
 info:
-  name: Vaadin Framework 指纹识别（指纹识别）
+  name: Vaadin Java Framework 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: >-
@@ -15,7 +15,7 @@ info:
     vendor: vaadin
     product: vaadin
     shodan-query: http.html:"/VAADIN/"
-  tags: tech,discovery,vaadin
+  tags: tech,discovery,vaadin,java
 http:
   - method: GET
     path:

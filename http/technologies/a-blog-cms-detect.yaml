@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"a-blog cms"
-  tags: tech,discovery,cms,a-blog-cms
+  tags: tech,discovery,a-blog-cms
 
 http:
   - method: GET

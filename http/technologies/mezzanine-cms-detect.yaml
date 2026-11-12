@@ -12,7 +12,7 @@ info:
     - http.component:"Mezzanine"
     - http.component:"mezzanine"
     - cpe:"cpe:2.3:a:mezzanine:mezzanine"
-  tags: detect,mezzanine,cms,tech
+  tags: detect,mezzanine,tech
 http:
   - method: GET
     path:

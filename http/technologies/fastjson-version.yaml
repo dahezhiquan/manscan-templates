@@ -1,7 +1,7 @@
 id: fastjson-version
 
 info:
-  name: Fastjson 指纹识别（指纹识别）
+  name: Fastjson Java 组件指纹识别（指纹识别）
   author: yuansec
   severity: info
   description: >-
@@ -11,7 +11,7 @@ info:
   - https://blog.csdn.net/caiqiiqi/article/details/107907489
   metadata:
     max-request: 1
-  tags: fastjson,tech,discovery
+  tags: fastjson,java,tech,discovery
 http:
   - raw:
       - |

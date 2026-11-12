@@ -47,6 +47,10 @@
 - 指纹类模板与 Spring Boot 相关时，`info.tags` 必须包含 `springboot`，模板 `id` 或 `info.name` 至少一项必须包含 `springboot`。
 - 指纹类模板与 Cisco 相关时，`info.tags` 必须包含 `cisco`，模板 `id` 或 `info.name` 至少一项必须包含 `cisco`。
 - 指纹类模板与 Apache 相关时，`info.tags` 必须包含 `apache`，模板 `id` 或 `info.name` 至少一项必须包含 `apache`。
+- 指纹类模板与 Oracle 相关时，`info.tags` 必须包含 `oracle`，模板 `id` 或 `info.name` 至少一项必须包含 `oracle`。
+- 指纹类模板与 Nginx 相关时，`info.tags` 必须包含 `nginx`，模板 `id` 或 `info.name` 至少一项必须包含 `nginx`。
+- 指纹类模板与 VPN 相关时，`info.tags` 必须包含 `vpn`，模板 `id` 或 `info.name` 至少一项必须包含 `vpn`。
+- 指纹类模板与 Java 相关时，`info.tags` 必须包含 `java`，模板 `id` 或 `info.name` 至少一项必须包含 `java`。
 - CVE 模板必须检查 `cve` 与 `cveYYYY` 年份标签是否与模板编号一致；如果发现缺失年份、年份写错或多个冲突年份标签，必须作为不规范项提示。
 
 ### 标签资料同步

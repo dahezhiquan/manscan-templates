@@ -1,7 +1,7 @@
 id: apache-tomcat-ajp-protocol-detect
 
 info:
-  name: Apache Tomcat AJP 协议识别（指纹识别）
+  name: Apache Tomcat Java AJP 协议识别（指纹识别）
   author: pussycat0x
   severity: info
   description: |
@@ -14,7 +14,7 @@ info:
     max-request: 1
     vendor: apache
     product: tomcat
-  tags: js,network,detect,tomcat,apache,tcp,discovery
+  tags: js,network,detect,tomcat,apache,java,tcp,discovery
 
 javascript:
   - pre-condition: |

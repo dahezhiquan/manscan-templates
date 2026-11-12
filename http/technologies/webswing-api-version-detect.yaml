@@ -1,7 +1,7 @@
 id: webswing-api-version-detect
 
 info:
-  name: WebSwing REST API 指纹识别（指纹识别）
+  name: WebSwing Java REST API 指纹识别（指纹识别）
   author: aushack
   severity: info
   description: >-
@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: 'Server: webswing.org'
-  tags: webswing,detect,discovery
+  tags: webswing,java,detect,discovery
 http:
   - method: GET
     path:

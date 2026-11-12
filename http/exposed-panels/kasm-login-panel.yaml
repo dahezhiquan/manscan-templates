@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:-2144699833
-  tags: panel,kasm,login,detect,discovery
+  tags: panel,kasm,detect,discovery
 http:
   - raw:
       - |

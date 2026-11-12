@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: html:"sekolahku.web"
-  tags: tech,sekolahku,cms,discovery
+  tags: tech,sekolahku,discovery
 http:
   - method: GET
     path:

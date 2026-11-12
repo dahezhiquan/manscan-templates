@@ -1,7 +1,7 @@
 id: springboot-actuator
 
 info:
-  name: Spring Boot Actuator 指纹识别（指纹识别）
+  name: Java Spring Boot Actuator 指纹识别（指纹识别）
   author: that_juan_,dwisiswant0,wdahlenb,dr0pd34d,TheZakMan
   severity: info
   description: >-
@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 4
     shodan-query: http.favicon.hash:116323821
-  tags: tech,spring,springboot,actuator,discovery
+  tags: tech,spring,springboot,java,actuator,discovery
 http:
   - method: GET
     path:

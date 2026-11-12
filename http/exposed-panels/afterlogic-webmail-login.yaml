@@ -15,7 +15,7 @@ info:
     max-request: 1
     product: aurora
     vendor: afterlogic
-  tags: panel,afterlogic,login,detect,discovery
+  tags: panel,afterlogic,detect,discovery
 http:
   - method: GET
     path:

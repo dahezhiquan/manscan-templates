@@ -1,7 +1,7 @@
 id: dwr-index-detect
 
 info:
-  name: DWR detect test page 指纹识别（指纹识别）
+  name: Java DWR 测试页面指纹识别（指纹识别）
   author: pussycat0x
   severity: info
   description: DWR detect test page 是 Direct Web Remoting Java 框架，用于浏览器与 Java 后端的 AJAX 远程调用。该模板请求 `/dwr/index.html`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 DWR detect test page 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 1
     google-query: intitle:"DWR Test Index"
-  tags: tech,misconfig,dwr,discovery
+  tags: tech,misconfig,dwr,java,discovery
 
 http:
   - method: GET

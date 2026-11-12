@@ -29,7 +29,6 @@ http:
     matchers-condition: and
     matchers:
       - type: word
-        name: login
         words:
           - "Lansweeper - Login"
 

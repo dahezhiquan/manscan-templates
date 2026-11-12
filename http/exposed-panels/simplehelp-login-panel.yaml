@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Welcome to SimpleHelp"
-  tags: panel,simplehelp,login,detect
+  tags: panel,simplehelp,detect
 
 http:
   - method: GET

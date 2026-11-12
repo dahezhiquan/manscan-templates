@@ -1,7 +1,7 @@
 id: openresty-detect
 
 info:
-  name: OpenResty 指纹识别（指纹识别）
+  name: Nginx OpenResty 指纹识别（指纹识别）
   author: jcockhren
   severity: info
   description: >-
@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: product:"OpenResty"
-  tags: tech,openresty,discovery
+  tags: tech,openresty,nginx,discovery
 http:
   - method: GET
     path:

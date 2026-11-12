@@ -18,7 +18,7 @@ info:
     product: checkmk
     verified: true
     shodan-query: http.title:"Check_MK"
-  tags: panel,checkmk,detect,login,discovery
+  tags: panel,checkmk,detect,discovery
 http:
   - method: GET
     path:

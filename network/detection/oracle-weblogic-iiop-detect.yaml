@@ -1,7 +1,7 @@
 id: oracle-weblogic-iiop-detect
 
 info:
-  name: Oracle WebLogic IIOP 协议识别（指纹识别）
+  name: Oracle WebLogic Java IIOP 协议识别（指纹识别）
   author: F1tz
   severity: info
   description: |
@@ -10,7 +10,7 @@ info:
     max-request: 1
     vendor: oracle
     product: weblogic_server
-  tags: network,weblogic,detect,oracle,iiop,tcp,discovery
+  tags: network,weblogic,java,detect,oracle,iiop,tcp,discovery
 tcp:
   - inputs:
       - data: "{{hex_decode('47494f50010200030000001700000002000000000000000b4e616d6553657276696365')}}"

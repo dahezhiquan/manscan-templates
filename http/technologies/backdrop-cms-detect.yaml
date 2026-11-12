@@ -9,7 +9,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"Backdrop CMS"
-  tags: tech,backdrop,cms,detect,discovery
+  tags: tech,backdrop,detect,discovery
 
 http:
   - method: GET

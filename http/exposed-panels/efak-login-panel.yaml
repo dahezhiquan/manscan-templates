@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.favicon.hash:1693580324
-  tags: panel,efak,apache,login,detect,discovery
+  tags: panel,efak,apache,detect,discovery
 http:
   - method: GET
     path:

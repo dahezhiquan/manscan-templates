@@ -1,7 +1,7 @@
 id: springboot-whitelabel
 
 info:
-  name: Spring Boot Whitelabel 错误页 指纹识别（指纹识别）
+  name: Java Spring Boot Whitelabel 错误页指纹识别（指纹识别）
   author: Matt Miller
   severity: info
   description: >-
@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Whitelabel Error Page"
-  tags: tech,spring,springboot,errorpage,discovery
+  tags: tech,spring,springboot,java,errorpage,discovery
 http:
   - method: GET
     path:

@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: title:"Blinko"
     fofa-query: title="Blinko"
-  tags: panel,blinko,login,detect
+  tags: panel,blinko,detect
 http:
   - method: GET
     path:

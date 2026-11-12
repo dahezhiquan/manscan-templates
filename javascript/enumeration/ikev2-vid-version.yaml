@@ -1,7 +1,7 @@
 id: ikev2-vid-version
 
 info:
-  name: IKEv2 Vendor ID 与版本识别（指纹识别）
+  name: IKEv2/IPsec VPN Vendor ID 与版本识别（指纹识别）
   author: pussycat0x
   severity: low
   description: |

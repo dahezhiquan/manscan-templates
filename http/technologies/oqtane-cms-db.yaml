@@ -20,7 +20,7 @@ info:
     vendor: oqtane
     shodan-query: http.title:'Home - Default Site'
     fofa-query: title="Home - Default Site"
-  tags: detect,tech,api,cms,discovery
+  tags: detect,tech,discovery,oqtane
 http:
   - method: GET
     path:

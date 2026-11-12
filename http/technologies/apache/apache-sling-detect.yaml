@@ -1,7 +1,7 @@
 id: apache-sling-detect
 
 info:
-  name: Apache Sling 指纹识别（指纹识别）
+  name: Apache Sling Java Web 框架指纹识别（指纹识别）
   author: icarot
   severity: info
   description: |-
@@ -13,7 +13,7 @@ info:
     vendor: apache
     product: sling
     shodan-query: title:"Apache Sling"
-  tags: apache,sling,detect
+  tags: apache,sling,java,detect
 
 http:
   - method: GET

@@ -16,7 +16,7 @@ info:
     max-request: 1
     vendor: citrix
     product: netscaler
-  tags: panel,netscaler,login,edb,citrix,detect,discovery
+  tags: panel,netscaler,edb,citrix,detect,discovery
 http:
   - method: GET
     path:

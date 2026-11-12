@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"/vsapres/web20/core/login.aspx"
-  tags: panel,kaseya,vsa,login,detect
+  tags: panel,kaseya,vsa,detect
 http:
   - method: GET
     path:

@@ -17,7 +17,7 @@ info:
     fofa-query: body="Amazing insights. Better results."
     google-query: intitle:"Celonis" "welcome"
     verified: true
-  tags: panel,celonis,login,detect,discovery
+  tags: panel,celonis,detect,discovery
 http:
   - method: GET
     path:

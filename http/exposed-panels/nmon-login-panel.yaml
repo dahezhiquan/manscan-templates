@@ -13,7 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: title:"nMon"
-  tags: panel,login,nmon,detect
+  tags: panel,nmon,detect
 http:
   - method: GET
     path:

@@ -1,7 +1,7 @@
 id: winstone-detect
 
 info:
-  name: Winstone Servlet Engine 指纹识别（指纹识别）
+  name: Winstone Java Servlet Engine 指纹识别（指纹识别）
   author: Shivam Kamboj
   severity: info
   description: >-
@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.component:"winstone servlet container"
-  tags: tech,winstone,discovery
+  tags: tech,winstone,java,discovery
 http:
   - method: GET
     path:

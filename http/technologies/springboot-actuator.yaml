@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 4
     shodan-query: http.favicon.hash:116323821
-  tags: tech,springboot,actuator,discovery
+  tags: tech,spring,springboot,actuator,discovery
 http:
   - method: GET
     path:

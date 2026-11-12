@@ -12,7 +12,7 @@ info:
     verified: true
     vendor: nostromo
     product: nostromo
-  tags: tech,nostromo,server,discovery
+  tags: tech,nostromo,discovery
 http:
   - method: GET
     path:

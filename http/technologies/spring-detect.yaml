@@ -1,7 +1,7 @@
 id: spring-detect
 
 info:
-  name: Java Spring 指纹识别（指纹识别）
+  name: Java SpringBoot 错误响应指纹识别（指纹识别）
   author: Adam Crosser
   severity: info
   description: >-
@@ -11,7 +11,7 @@ info:
   - https://mkyong.com/spring-boot/spring-rest-error-handling-example/
   metadata:
     max-request: 1
-  tags: tech,java,spring,discovery
+  tags: tech,java,spring,springboot,discovery
 http:
   - method: GET
     path:

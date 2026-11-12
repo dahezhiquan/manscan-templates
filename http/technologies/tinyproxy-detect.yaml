@@ -17,7 +17,7 @@ info:
     vendor: tinyproxy_project
     product: tinyproxy
     shodan-query: "Server: tinyproxy"
-  tags: tech,proxy,detect,discovery
+  tags: tech,proxy,detect,discovery,tinyproxy
 http:
   - method: GET
     path:

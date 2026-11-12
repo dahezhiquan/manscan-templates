@@ -14,7 +14,7 @@ info:
     max-request: 1
     shodan-query: html:"Orbit Telephone System"
     fofa-query: body="Orbit Telephone System"
-  tags: tech,detect,discovery
+  tags: tech,detect,discovery,orbit-telephone
 http:
   - method: GET
     path:

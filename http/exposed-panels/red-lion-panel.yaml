@@ -8,7 +8,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: panel,redlion,detect,iot,discovery
+  tags: panel,red-lion,detect,iot,discovery
 
 http:
   - method: GET

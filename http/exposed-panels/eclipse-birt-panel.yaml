@@ -19,7 +19,7 @@ info:
     google-query: intitle:"Eclipse BIRT Home"
     product: business_intelligence_and_reporting_tools
     vendor: eclipse
-  tags: panel,eclipsebirt,detect,discovery
+  tags: panel,eclipse-birt,detect,discovery,eclipse
 http:
   - method: GET
     path:

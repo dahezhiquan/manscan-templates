@@ -26,7 +26,7 @@ info:
     shodan-query: http.html:"SolarView Compact"
     product: solarview_compact
     vendor: contec
-  tags: xss,solarview,edb,vuln
+  tags: xss,solarview,edb,vuln,solarview-compact
 
 http:
   - method: GET

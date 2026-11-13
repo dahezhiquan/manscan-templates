@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: drone ci,exposure,token,vuln
+  tags: droneci,exposure,token,vuln
 
 http:
   - method: GET

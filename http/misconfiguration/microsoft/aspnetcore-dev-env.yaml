@@ -21,7 +21,7 @@ info:
     product: asp.net-core
     shodan-query: html:"ASPNETCORE_ENVIRONMENT"
     verified: true
-  tags: misconfig,aspnetcore,exposure,vuln
+  tags: misconfig,aspnetcore,exposure,vuln,aspnet
 
 http:
   - method: GET

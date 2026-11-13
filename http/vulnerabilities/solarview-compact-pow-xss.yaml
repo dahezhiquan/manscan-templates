@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-244067125
-  tags: xss,solarview,edb,vuln
+  tags: xss,solarview,edb,vuln,solarview-compact
 
 http:
   - method: GET

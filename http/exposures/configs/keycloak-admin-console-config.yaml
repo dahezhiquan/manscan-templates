@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 4
     shodan-query: app:"Keycloak"
-  tags: keycloak,config,exposure,disclosure
+  tags: keycloak,config,exposure,disclosure,keycloak-admin
 
 http:
   - method: GET

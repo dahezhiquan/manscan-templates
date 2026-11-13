@@ -21,7 +21,7 @@ info:
     vendor: analogic
     product: poste.io
     fofa-query: body="Initial server configuration"
-  tags: misconfig,exposure,poste-io,install,vuln
+  tags: misconfig,exposure,poste-io,install,vuln,poste
 
 http:
   - method: GET

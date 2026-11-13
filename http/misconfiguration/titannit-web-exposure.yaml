@@ -8,7 +8,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"TitanNit Web Control"
-  tags: misconfig,titannit,web-control,exposure,vuln
+  tags: misconfig,titannit,web-control,exposure,vuln,web-control-panel
   description: |-
     该模板用于核查 TitanNit Web Control 暴露。目标因访问控制、默认配置或文件发布策略不当，暴露了不应公开的页面、接口或文件。模板访问 目标入口，并根据响应状态、页面关键字或组件特征确认该配置问题。
   impact: |-

@@ -22,7 +22,7 @@ info:
     product: uptime-kuma
     fofa-query: app="Uptime-Kuma"
     shodan-query: http.title:"Uptime Kuma"
-  tags: exposure,setup,installer,uptime-kuma
+  tags: exposure,setup,installer,uptime-kuma,uptime
 
 http:
   - method: GET

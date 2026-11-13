@@ -17,7 +17,7 @@ info:
     max-request: 2
     vendor: weaver
     product: ecology10
-  tags: rce,vuln,weaver,ecology10
+  tags: rce,vuln,weaver,ecology10,ecology
 flow: http(1) && http(2)
 http:
 - method: GET

@@ -8870,7 +8870,7 @@ http:
             (contains(body, "<p class=\"note error\">javascript is turned off in your web browser. turn it on to take full advantage of this site, then refresh the page.</p>")) || (contains(body, "var wantproceed = 'do you really want to proceed?';") && contains(body, "var wantproceed = 'wollen sie wirklich fortfahren?';"))
 
       - type: word
-        name: sequoiadb-
+        name: sequoiadb
         words:
           - class="btn btn-default" onclick="updateconnect();">
 

@@ -23,7 +23,7 @@ info:
     verified: false
     max-request: 2
     shodan-query: http.html:"EktronClientManager"
-  tags: xxe,ektron,cms,vuln
+  tags: xxe,ektron,cms,vuln,ektron-cms
 
 flow: http(1) && http(2)
 

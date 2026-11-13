@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="畅捷通-TPlus"
-  tags: chanjet,tplus,sqli,vuln
+  tags: chanjet,tplus,sqli,vuln,chanjet-tplus
 
 http:
   - raw:

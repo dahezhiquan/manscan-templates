@@ -17,7 +17,7 @@ info:
     max-request: 1
     vendor: weaver
     product: ecology10
-  tags: rce,vuln,weaver,ecology10
+  tags: rce,vuln,weaver,ecology10,ecology
 http:
 - method: POST
   path:

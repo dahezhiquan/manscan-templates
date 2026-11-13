@@ -23,7 +23,7 @@ info:
     shodan-query: "http.favicon.hash:-234335289"
     product: webmethods
     vendor: softwareag
-  tags: default-login,webmethod,vuln
+  tags: default-login,webmethod,vuln,webmethods
 flow: http(1) && http(2)
 
 http:

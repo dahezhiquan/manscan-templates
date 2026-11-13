@@ -28,7 +28,7 @@ info:
     shodan-query: http.favicon.hash:-244067125
     product: solarview_compact_firmware
     vendor: contec
-  tags: xss,solarview,edb,vuln
+  tags: xss,solarview,edb,vuln,solarview-compact
 
 http:
   - method: GET

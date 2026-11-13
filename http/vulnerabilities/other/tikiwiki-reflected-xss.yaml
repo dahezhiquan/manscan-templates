@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-79
   metadata:
     max-request: 2
-  tags: packetstorm,edb,xss,tikiwiki,vuln
+  tags: packetstorm,edb,xss,tikiwiki,vuln,tiki-wiki-cms
 
 http:
   - method: GET

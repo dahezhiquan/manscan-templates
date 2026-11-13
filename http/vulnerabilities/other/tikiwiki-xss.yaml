@@ -22,7 +22,7 @@ info:
     product: tikiwiki_cms\/groupware
     vendor: tiki
     fofa-query: body="tiki wiki"
-  tags: edb,xss,tikiwiki,packetstorm,acketstorm,vuln
+  tags: edb,xss,tikiwiki,packetstorm,acketstorm,vuln,tiki-wiki-cms
 
 http:
   - method: GET

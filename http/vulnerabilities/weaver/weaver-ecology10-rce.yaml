@@ -18,7 +18,7 @@ info:
     vuln-id: CT-1425994
     vendor: weaver
     product: ecology10
-  tags: rce,vuln,weaver,ecology10,oa
+  tags: rce,vuln,weaver,ecology10,oa,ecology
 flow: http(1) && http(2)
 http:
 - method: POST

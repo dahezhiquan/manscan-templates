@@ -17,7 +17,7 @@ info:
     max-request: 1
     vendor: weaver
     product: ecology9
-  tags: sqli,vuln,weaver,ecology9
+  tags: sqli,vuln,weaver,ecology9,ecology
 http:
 - method: GET
   path:

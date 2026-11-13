@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="HJSOFT-HCM"
-  tags: sqli,hjsoft,management-system,vuln
+  tags: sqli,hjsoft,management-system,vuln,hjsoft-hcm
 
 http:
   - raw:

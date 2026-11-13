@@ -1,7 +1,7 @@
 id: nuxt-js-semi-lfi
 
 info:
-  name: Semi - 任意文件读取漏洞
+  name: Nuxt js Semi - 任意文件读取漏洞
   author: DhiyaneshDK
   severity: medium
   description: |
@@ -27,7 +27,7 @@ info:
     product: framework
     shodan-query: html:"buildAssetsDir" "nuxt"
     fofa-query: body="buildAssetsDir" && body="__nuxt"
-  tags: huntr,lfi,nuxtjs,vuln
+  tags: huntr,lfi,nuxt.js,vuln
 
 http:
   - method: GET

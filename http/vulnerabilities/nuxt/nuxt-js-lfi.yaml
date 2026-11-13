@@ -1,7 +1,7 @@
 id: nuxt-js-lfi
 
 info:
-  name: 任意文件读取漏洞
+  name: Nuxt.js 任意文件读取漏洞
   author: DhiyaneshDK
   severity: high
   description: |
@@ -24,7 +24,7 @@ info:
     max-request: 2
     shodan-query: html:"buildAssetsDir" "nuxt"
     fofa-query: body="buildAssetsDir" && body="__nuxt"
-  tags: huntr,lfi,nuxtjs,vuln
+  tags: huntr,lfi,nuxt.js,vuln
 
 http:
   - method: GET

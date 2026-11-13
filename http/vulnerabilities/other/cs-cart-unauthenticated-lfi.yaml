@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-22
   metadata:
     max-request: 1
-  tags: cscart,lfi,vuln
+  tags: cs-cart,lfi,vuln
 
 http:
   - method: GET

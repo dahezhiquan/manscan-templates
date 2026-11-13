@@ -3,7 +3,7 @@ id: gcp-firebase-app-enum
 info:
   name: GCP Firebase Apps - Cloud Enumeration（云安全）
   author: initstring
-  severity: info
+  severity: low
   description: Firebase Hosting 默认站点通常使用 firebaseapp.com 子域名对外提供内容。本模板请求 {{wordlist}}.firebaseapp.com，并在返回 200 时报告对应 Firebase 应用或托管站点存在且可公开访问。
   impact: |
     - 命中结果可暴露 Firebase 项目或应用命名，帮助攻击者定位前端站点、静态资源和后端 API 线索。

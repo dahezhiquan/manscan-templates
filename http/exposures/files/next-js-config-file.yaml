@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"next.config.js"
-  tags: exposure,files,nextjs,vuln
+  tags: exposure,files,next.js,vuln
 
 http:
   - method: GET

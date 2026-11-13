@@ -26,7 +26,7 @@ info:
     shodan-query: html:"/_next/static"
     product: next.js
     vendor: zeit
-  tags: redirect,nextjs,xss,vuln
+  tags: redirect,next.js,xss,vuln
 
 http:
   - method: GET

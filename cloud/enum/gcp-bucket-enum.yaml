@@ -3,7 +3,7 @@ id: gcp-bucket-enum
 info:
   name: GCP Buckets - Cloud Enumeration（云安全）
   author: initstring
-  severity: info
+  severity: low
   description: Google Cloud Storage bucket 名称在全局命名空间中唯一，直接访问对应主机名可用于判断 bucket 是否存在。本模板请求 {{wordlist}}.storage.googleapis.com，返回 200 表示 bucket 可能公开可读，返回 403 表示 bucket 受保护但名称存在。
   impact: |
     - bucket 名称泄露会帮助攻击者推断项目、环境和数据类型，继续枚举备份、日志、构建产物等云存储资源。

@@ -1,7 +1,7 @@
 id: nextjs-middleware-cache
 
 info:
-  name: Next.js - Cache Poisoning
+  name: Next.js 中间件预取响应缓存投毒
   author: DhiyaneshDk
   severity: high
   description: |
@@ -24,7 +24,7 @@ info:
       - http.html:"/_next/static"
       - cpe:"cpe:2.3:a:zeit:next.js"
     fofa-query: body="/_next/static"
-  tags: nextjs,cache,vuln
+  tags: next.js,cache,vuln
 
 variables:
   rand: "{{rand_text_numeric(5)}}"

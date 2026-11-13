@@ -21,7 +21,7 @@ info:
     vendor: mongodb
     product: mongodb
     shodan-query: html:"mongod"
-  tags: mongod,exposure,info-leak,vuln
+  tags: mongodb,exposure,info-leak,vuln
 
 http:
   - method: GET

@@ -3,7 +3,7 @@ id: gcp-firebase-rtdb-enum
 info:
   name: GCP Firebase Realtime Database - Cloud Enumeration（云安全）
   author: initstring
-  severity: info
+  severity: low
   description: Firebase Realtime Database 旧版默认域名位于 firebaseio.com，访问 /.json 端点会根据数据库状态返回不同响应。本模板请求 {{wordlist}}.firebaseio.com/.json，返回 200 表示数据库可能可读，401 表示受保护，402 表示计费或付款状态异常，423 表示数据库已停用。
   impact: |
     - 返回 200 的数据库可能允许匿名读取数据，存在用户数据、配置或业务记录泄露风险。

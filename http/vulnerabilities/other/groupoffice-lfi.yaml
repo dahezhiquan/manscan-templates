@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-22
   metadata:
     max-request: 1
-  tags: groupoffice,lfi,traversal,vuln
+  tags: group-office,lfi,traversal,vuln
 
 http:
   - method: GET

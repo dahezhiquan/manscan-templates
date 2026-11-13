@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: app="畅捷通-TPlus"
-  tags: cnvd,cnvd2023,chanjettplus,rce,oast,vuln
+  tags: cnvd,cnvd2023,chanjet-tplus,rce,oast,vuln
 
 http:
   - raw:

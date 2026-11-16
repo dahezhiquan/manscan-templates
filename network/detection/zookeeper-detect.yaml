@@ -2,38 +2,66 @@ id: zookeeper-detect
 
 info:
   name: Apache ZooKeeper 服务识别（指纹识别）
-  author: codex
+  author: dahezhiquan
   severity: info
   description: |
-    Apache ZooKeeper 是用于分布式协调、服务发现和配置管理的开源服务。该模板连接目标 2181/TCP 并发送只读四字命令 `envi`，通过响应中的 `zookeeper.version` 字段确认目标是否运行 ZooKeeper，并在可用时提取版本信息。
+    Apache ZooKeeper 是用于分布式协调、服务发现和配置管理的开源服务。该模板先发送只读四字命令 `envi`，匹配 `zookeeper.version`；未命中时使用 Nmap 的 `stats\r\n` 探针，匹配 `Zookeeper version: ..., built on ...` 格式的版本横幅，并提取版本信息。
+    命中仅表示目标响应符合 ZooKeeper 服务指纹；命令被禁用、通用错误响应或单独的 `imok` 均不作为命中依据。
   reference:
     - https://zookeeper.apache.org/doc/r3.5.5/zookeeperAdmin.html#sc_zkCommands
     - https://zookeeper.apache.org/
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   metadata:
     vendor: apache
     product: zookeeper
     shodan-query: product:"Apache ZooKeeper"
-  tags: network,zookeeper,apache,detect,tcp,discovery
+  tags: network,zookeeper,detect,tcp,discovery,apache
+
+flow: tcp(1) || tcp(2)
 
 tcp:
   - inputs:
       - data: "envi"
+        read: 1
 
     host:
       - "{{Hostname}}"
     port: 2181
-    read-size: 2048
+    read-all: true
 
     matchers:
       - type: regex
-        part: data
+        part: raw
         regex:
           - '(?m)^zookeeper\.version=[^\r\n]+'
 
     extractors:
       - type: regex
         name: version
-        part: data
+        part: raw
         group: 1
         regex:
-          - "zookeeper\\.version=([^\\r\\n]+)"
+          - '(?m)^zookeeper\.version=([0-9]+\.[0-9]+\.[0-9]+)(?:[^0-9.]|$)'
+
+  - inputs:
+      - data: "stats\r\n"
+        read: 1
+
+    host:
+      - "{{Hostname}}"
+    port: 2181
+    read-all: true
+
+    matchers:
+      - type: regex
+        part: raw
+        regex:
+          - '^Zookeeper version: ([\w.-]+), built on ([\w./]+)'
+
+    extractors:
+      - type: regex
+        name: version
+        part: raw
+        group: 1
+        regex:
+          - '^Zookeeper version: ([0-9]+\.[0-9]+\.[0-9]+)(?:[^0-9.]|$)'

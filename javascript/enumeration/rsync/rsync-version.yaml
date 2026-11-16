@@ -3,7 +3,7 @@ id: rsync-version
 info:
   name: Rsync 版本识别（指纹识别）
   author: DhiyaneshDK
-  severity: low
+  severity: info
   description: |
     Rsync 是常用于文件同步、备份分发和镜像站点维护的协议与服务端程序。该模板建立 Rsync 连接并读取服务端 @RSYNCD 横幅，从返回的 Banner 字段提取协议/服务版本作为 Rsync 指纹。
   metadata:

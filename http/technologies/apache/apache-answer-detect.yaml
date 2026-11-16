@@ -14,10 +14,10 @@ info:
     verified: true
     max-request: 1
     vendor: apache
-    product: answer
+    product: apache-answer
     shodan-query: http.favicon.hash:523757057
     fofa-query: icon_hash="523757057"
-  tags: detect,tech,apache,discovery
+  tags: detect,tech,apache,discovery,apache-answer
 
 http:
   - method: GET

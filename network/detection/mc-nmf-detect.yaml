@@ -1,0 +1,34 @@
+id: mc-nmf-detect
+
+info:
+  name: Microsoft .NET 消息帧协议 mc-nmf 识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    该模板沿用 Nmap DNSVersionBindReqTCP 探针发送固定字节流，识别以 0x08 故障记录和 0x49 字符串长度开头、随后包含完整 UnsupportedVersion 故障 URI 的 .NET 消息帧协议响应。
+    匹配范围与本地 Nmap 的 mc-nmf 规则一致；命中仅表示目标响应符合协议指纹，不代表存在漏洞，也不据此判断具体应用、操作系统或版本。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/mc-nmf/
+  metadata:
+    vendor: microsoft
+    product: mc-nmf
+  tags: microsoft,mc-nmf,network,detect,tcp,discovery
+
+tcp:
+  - inputs:
+      - data: "001e0006010000010000000000000776657273696f6e0462696e640000100003"
+        type: hex
+        read: 1
+
+    host:
+      - "{{Hostname}}"
+    port: 808
+    read-all: true
+
+    matchers:
+      - type: regex
+        name: mc-nmf
+        part: raw
+        regex:
+          - '^\x08Ihttp://schemas\.microsoft\.com/ws/2006/05/framing/faults/UnsupportedVersion'

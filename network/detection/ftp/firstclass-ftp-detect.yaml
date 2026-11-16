@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTP server (FirstClass"
     max-request: 1
+    product: firstclass
   tags: network,ftp,firstclass,detect,tcp,discovery
 
 tcp:

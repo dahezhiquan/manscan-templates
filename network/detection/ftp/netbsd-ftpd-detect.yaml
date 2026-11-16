@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTP server (NetBSD-ftpd"
     max-request: 1
+    product: netbsd
   tags: network,ftp,netbsd,detect,tcp,discovery
 
 tcp:

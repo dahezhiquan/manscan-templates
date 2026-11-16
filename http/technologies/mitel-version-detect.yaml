@@ -11,6 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"MiCollab End User Portal"
+    product: micollab
   tags: mitel,micollab,detect,discovery
 http:
   - method: GET

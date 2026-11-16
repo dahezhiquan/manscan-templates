@@ -12,6 +12,7 @@ info:
   metadata:
     verified: true
     fofa-query: title="MCP Inspector"
+    product: mcp
   tags: tech,mcp,anthropic,discovery,ai
 flow: http(1) && http(2)
 

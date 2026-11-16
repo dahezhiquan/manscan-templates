@@ -12,6 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: decision-server
   tags: ibm,detect,tech,decision-server,discovery
 http:
   - method: GET

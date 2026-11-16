@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Golden FTP Server Pro"
     max-request: 1
+    product: golden
   tags: network,ftp,golden,detect,tcp,discovery
 
 tcp:

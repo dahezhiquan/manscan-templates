@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "Server: Apache/"
-    product: http_server
+    product: apache
     vendor: apache
   tags: tech,apache,eol
 http:

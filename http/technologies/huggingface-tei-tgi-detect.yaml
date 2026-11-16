@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     vendor: huggingface
-    product: text-embeddings-inference
+    product: tei
   tags: tech,detect,tei,tgi,llm,ai
 http:
   - method: GET

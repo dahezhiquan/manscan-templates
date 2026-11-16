@@ -15,6 +15,7 @@ info:
     verified: true
     max-request: 4
     shodan-query: "product:\"Exim smtpd\""
+    product: exim
   tags: network,detect,smtp,mail,exim,tcp,discovery
 
 flow: tcp(1) || tcp(2) || tcp(3) || tcp(4)

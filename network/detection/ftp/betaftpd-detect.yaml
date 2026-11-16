@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: BetaFTPD
     max-request: 1
+    product: betaftpd
   tags: network,ftp,betaftpd,detect,tcp,discovery
 
 tcp:

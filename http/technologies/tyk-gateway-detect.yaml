@@ -12,6 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: tyk
   tags: tyk,gateway,tech,detect,discovery
 http:
   - method: GET

@@ -10,6 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"ProFTPD"
+    product: proftpd
   tags: network,ftp,proftpd,detect,tcp,discovery
 tcp:
   - inputs:

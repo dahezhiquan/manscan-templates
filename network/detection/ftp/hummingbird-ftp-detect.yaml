@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Hummingbird Ltd. (HCLFTPD)"
     max-request: 1
+    product: hummingbird
   tags: network,ftp,hummingbird,detect,tcp,discovery
 
 tcp:

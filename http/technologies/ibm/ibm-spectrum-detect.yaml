@@ -13,6 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.title:"IBM Spectrum"
+    product: spectrum
   tags: tech,ibm,spectrum,discovery
 http:
   - method: GET

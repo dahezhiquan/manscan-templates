@@ -10,7 +10,7 @@ info:
   metadata:
     max-request: 1
     vendor: oracle
-    product: glassfish_server
+    product: glassfish
     shodan-query: http.title:"GlassFish Server - Server Running"
   tags: tech,glassfish,java,discovery
 

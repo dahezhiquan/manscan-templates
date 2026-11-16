@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Wind River FTP server"
     max-request: 1
+    product: windriver
   tags: network,ftp,windriver,detect,tcp,discovery
 
 tcp:

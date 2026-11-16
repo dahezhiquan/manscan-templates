@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "X2 WS_FTP Server"
     max-request: 1
+    product: ws_ftp
   tags: network,ftp,ws_ftp,detect,tcp,discovery
 
 tcp:

@@ -9,6 +9,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: finesse
   tags: tech,cisco,finesse,detect,discovery
 
 http:

@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTP ( BlackJumboDog"
     max-request: 1
+    product: blackjumbodog
   tags: network,ftp,blackjumbodog,detect,tcp,discovery
 
 tcp:

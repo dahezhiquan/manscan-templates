@@ -11,6 +11,7 @@ info:
   - https://blog.csdn.net/caiqiiqi/article/details/107907489
   metadata:
     max-request: 1
+    product: fastjson
   tags: fastjson,java,tech,discovery
 http:
   - raw:

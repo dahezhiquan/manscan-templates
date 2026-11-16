@@ -14,6 +14,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.component:"Atlassian Confluence"
+    product: confluence
   tags: tech,confluence,eol
 http:
   - method: GET

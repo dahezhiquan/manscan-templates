@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: product:"Oracle TNS Listener"
     vendor: oracle
-    product: database_server
+    product: tns
   tags: js,detect,oracle,tns,network,discovery
 
 javascript:

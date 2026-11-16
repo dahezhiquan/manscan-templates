@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "CommuniGate Pro FTP Server"
     max-request: 1
+    product: communigate
   tags: network,ftp,communigate,detect,tcp,discovery
 
 tcp:

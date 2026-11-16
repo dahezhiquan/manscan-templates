@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:419828698
-    product: monstra_cms
+    product: monstracms
     vendor: monstra
     fofa-query: icon_hash=419828698
   tags: tech,monstra,monstracms,discovery

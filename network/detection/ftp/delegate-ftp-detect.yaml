@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "PROXY-FTP server"
     max-request: 1
+    product: delegate
   tags: network,ftp,delegate,detect,tcp,discovery
 
 tcp:

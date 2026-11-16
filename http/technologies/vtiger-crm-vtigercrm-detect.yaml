@@ -14,6 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Powered by vtiger CRM"
+    product: vtiger-crm
   tags: tech,vtiger,vtiger-crm,detect,discovery
 http:
   - method: GET

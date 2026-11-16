@@ -18,6 +18,7 @@ info:
     max-request: 1
     shodan-query: title:"Ovirt-Engine"
     google-query: intitle:"Ovirt-Engine"
+    product: ovirt-engine
   tags: tech,ovirt,discovery,ovirt-engine
 http:
   - method: GET

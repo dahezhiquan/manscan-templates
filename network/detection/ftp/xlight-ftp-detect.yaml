@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Xlight FTP Server"
     max-request: 1
+    product: xlight
   tags: network,ftp,xlight,detect,tcp,discovery
 
 tcp:

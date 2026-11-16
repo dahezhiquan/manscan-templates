@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "BlackMoon FTP Server"
     max-request: 1
+    product: blackmoon
   tags: network,ftp,blackmoon,detect,tcp,discovery
 
 tcp:

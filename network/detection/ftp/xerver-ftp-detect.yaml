@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Xerver Free FTP Server"
     max-request: 1
+    product: xerver
   tags: network,ftp,xerver,detect,tcp,discovery
 
 tcp:

@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "EasyCoder FTP Server"
     max-request: 1
+    product: easycoder
   tags: network,ftp,easycoder,detect,tcp,discovery
 
 tcp:

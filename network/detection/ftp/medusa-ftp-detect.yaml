@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTP server (Medusa Async"
     max-request: 1
+    product: medusa
   tags: network,ftp,medusa,detect,tcp,discovery
 
 tcp:

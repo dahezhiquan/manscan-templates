@@ -16,6 +16,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: product:"bitvise"
+    product: bitvise
   tags: network,ssh,bitvise,detect,tcp,discovery
 tcp:
   - host:

@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     vendor: versa-networks
-    product: versa_analytics
+    product: versa-analytics
     shodan-query: "Versa-Analytics-Server"
   tags: tech,versa,versa-analytics,discovery
 http:

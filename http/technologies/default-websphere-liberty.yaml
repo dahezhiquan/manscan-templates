@@ -11,7 +11,7 @@ info:
     verified: true
     max-request: 1
     vendor: ibm
-    product: websphere_liberty
+    product: websphere
     shodan-query: http.title:"WebSphere Liberty"
   tags: tech,websphere,java,discovery
 

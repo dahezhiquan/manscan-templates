@@ -11,6 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"/wp-content/plugins/flexmls-idx"
+    product: flexmls
   tags: tech,detect,flexmls,idx,wordpress,wp-plugin,discovery
 http:
   - method: GET

@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Hewlett-Packard"
     max-request: 1
+    product: hp
   tags: network,ftp,hp,detect,tcp,discovery
 
 tcp:

@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: agent-zero
   tags: agent-zero,detect,tech,ai,discovery
 
 http:

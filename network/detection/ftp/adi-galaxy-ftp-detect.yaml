@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "ADI Convergence Galaxy"
     max-request: 1
+    product: adi
   tags: network,ftp,adi,detect,tcp,discovery
 
 tcp:

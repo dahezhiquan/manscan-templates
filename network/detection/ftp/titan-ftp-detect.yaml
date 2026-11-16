@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Titan FTP Server"
     max-request: 1
+    product: titan
   tags: network,ftp,titan,detect,tcp,discovery
 
 tcp:

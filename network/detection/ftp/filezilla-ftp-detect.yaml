@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: product:"FileZilla Server"
     max-request: 1
+    product: filezilla
   tags: network,ftp,filezilla,detect,tcp,discovery
 
 tcp:

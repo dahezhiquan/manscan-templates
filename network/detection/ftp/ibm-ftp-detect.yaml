@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTPD1 IBM FTP CS"
     max-request: 1
+    product: ibm
   tags: network,ftp,ibm,detect,tcp,discovery
 
 tcp:

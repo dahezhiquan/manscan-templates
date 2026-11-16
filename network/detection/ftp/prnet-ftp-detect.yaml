@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "PrNET FTP server"
     max-request: 1
+    product: prnet
   tags: network,ftp,prnet,detect,tcp,discovery
 
 tcp:

@@ -12,6 +12,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: "SSH-2.0-MOVEit"
+    product: moveit
   tags: network,ssh,detect,moveit,sftp,tcp,discovery
 
 tcp:

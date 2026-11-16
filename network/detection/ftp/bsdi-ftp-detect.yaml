@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "FTP server (BSDI"
     max-request: 1
+    product: bsdi
   tags: network,ftp,bsdi,detect,tcp,discovery
 
 tcp:

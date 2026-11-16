@@ -11,6 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "Ipswitch-IMail"
+    product: imail
   tags: tech,ipswitch,imail,detect,discovery
 http:
   - method: GET

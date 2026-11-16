@@ -14,7 +14,7 @@ info:
   metadata:
     verified: true
     vendor: zkoss
-    product: zk_framework
+    product: zk
     shodan-query: http.html:"zk.wpd" OR http.html:"<!-- ZK "
     fofa-query: body="zk.wpd" || body="<!-- ZK "
   tags: zk,zkoss,java,detect,tech,discovery

@@ -10,6 +10,7 @@ info:
     shodan-query: 'SSH-2.0-Erlang'
     max-request: 1
     verified: true
+    product: erlang
   tags: network,ssh,erlang,detect,tcp,discovery
 
 tcp:

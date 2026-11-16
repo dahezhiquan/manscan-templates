@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "ArGoSoft FTP Server"
     max-request: 1
+    product: argosoft
   tags: network,ftp,argosoft,detect,tcp,discovery
 
 tcp:

@@ -10,7 +10,7 @@ info:
   - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#version
   metadata:
     verified: true
-    product: unified_communications_manager
+    product: ucm
     vendor: cisco
     shodan-query: http.title:"Unified Communications Self Care Portal"
     fofa-query: title="Unified Communications Self Care Portal"

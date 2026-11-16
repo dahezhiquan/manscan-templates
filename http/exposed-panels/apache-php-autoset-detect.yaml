@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"AutoSet"
+    product: autoset
   tags: tech,php,autoset,discovery
 http:
   - method: GET

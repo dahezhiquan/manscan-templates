@@ -11,6 +11,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: 'Server: webswing.org'
+    product: webswing
   tags: webswing,java,detect,discovery
 http:
   - method: GET

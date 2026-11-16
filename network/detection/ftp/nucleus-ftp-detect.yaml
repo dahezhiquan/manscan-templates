@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: "Nucleus FTP Server"
     max-request: 1
+    product: nucleus
   tags: network,ftp,nucleus,detect,tcp,discovery
 
 tcp:

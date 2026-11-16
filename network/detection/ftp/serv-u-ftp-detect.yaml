@@ -8,6 +8,7 @@ info:
   metadata:
     shodan-query: "Serv-U FTP Server"
     max-request: 1
+    product: serv-u
   tags: network,ftp,serv-u,detect,tcp,discovery
 
 tcp:

@@ -8,6 +8,7 @@ info:
   metadata:
     shodan-query: "FTP Server (Oracle XML DB"
     max-request: 1
+    product: oracle
   tags: network,ftp,oracle,detect,tcp,discovery
 
 tcp:

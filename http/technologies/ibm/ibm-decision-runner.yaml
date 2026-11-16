@@ -12,6 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: ibm-decision-runner
   tags: ibm,detect,tech,ibm-decision-runner,discovery
 http:
   - method: GET

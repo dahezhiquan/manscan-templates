@@ -16,6 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "X-Powered-By: PHP/"
+    product: php
   tags: tech,php,eol
 http:
   - method: GET

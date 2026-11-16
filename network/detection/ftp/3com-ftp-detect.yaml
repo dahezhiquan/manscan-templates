@@ -9,6 +9,7 @@ info:
     verified: true
     shodan-query: 3Com 3CDaemon FTP
     max-request: 1
+    product: 3com
   tags: network,ftp,3com,detect,tcp,discovery
 
 tcp:

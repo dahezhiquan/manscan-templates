@@ -13,6 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: "/wp-content/plugins/user-registration/"
+    product: user-registration
   tags: wordpress,wp-plugin,user-registration,tech
 http:
   - method: GET

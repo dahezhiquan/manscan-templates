@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Skeepers"
+    product: skeepers
   tags: panel,skeepers,login,detect,discovery
 
 http:

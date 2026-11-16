@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: resa
   tags: panel,resa,login,detect
 
 http:

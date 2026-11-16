@@ -11,6 +11,7 @@ info:
     max-request: 1
     fofa-query: body="ForgeRock Identity Platform"
     shodan-query: html:"ForgeRock Identity Platform"
+    product: identity-gateway
   tags: forgerock,identity-gateway,detect,discovery,panel
 http:
   - method: GET

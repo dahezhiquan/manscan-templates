@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="Syfadis Xperience"
+    product: syfadis
   tags: panel,syfadis,login,detect,discovery
 
 http:

@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     vendor: fortinet
-    product: forticlient_endpoint_management_server
+    product: forticlient
     shodan-query: http.favicon.hash:-800551065
   tags: panel,fortinet,forticlient,login,detect,discovery
 http:

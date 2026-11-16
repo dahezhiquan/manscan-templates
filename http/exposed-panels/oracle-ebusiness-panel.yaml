@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: oracle
-    product: e-business_suite
+    product: oracle
     shodan-query: http.html:"Oracle UIX"
   tags: panel,oracle,login,detect,discovery
 http:

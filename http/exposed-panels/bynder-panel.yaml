@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1017650009
+    product: bynder
   tags: panel,bynder,login,detect,discovery
 http:
   - method: GET

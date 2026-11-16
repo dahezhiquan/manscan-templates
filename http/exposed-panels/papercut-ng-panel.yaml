@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: papercut
-    product: papercut_ng
+    product: papercut-ng
     google-query:
     - html:'content="PaperCut'
     - html:'content="papercut'

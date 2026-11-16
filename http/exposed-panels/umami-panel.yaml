@@ -13,6 +13,7 @@ info:
     verified: true
     max-request: 3
     shodan-query: http.favicon.hash:-130447705
+    product: umami
   tags: panel,umami,login,detect,discovery
 
 flow: http(1) && http(2)

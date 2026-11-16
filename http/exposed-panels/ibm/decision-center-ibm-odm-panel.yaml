@@ -15,7 +15,7 @@ info:
     verified: true
     max-request: 1
     vendor: ibm
-    product: operational_decision_manager
+    product: decision-center
     shodan-query: http.title:"Decision Center | Business Console"
     fofa-query: title="Decision Center | Business Console"
   tags: panel,ibm,login,detect,decision-center,discovery

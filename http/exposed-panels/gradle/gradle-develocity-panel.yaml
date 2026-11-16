@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: gradle
-    product: build_cache_node
+    product: gradle
     shodan-query: http.html:"Develocity Build Cache Node"
   tags: panel,gradle,detect,login,discovery
 http:

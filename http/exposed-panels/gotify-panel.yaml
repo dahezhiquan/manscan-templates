@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: gotify
-    product: server
+    product: gotify
     shodan-query:
       - http.title:"Gotify"
       - http.title:"gotify"

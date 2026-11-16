@@ -11,6 +11,7 @@ info:
   - https://github.com/GossiTheDog/scanning/blob/main/http-vuln-exchange.nse
   metadata:
     max-request: 1
+    product: exchange
   tags: microsoft,exchange,tech,panel,discovery
 http:
   - method: GET

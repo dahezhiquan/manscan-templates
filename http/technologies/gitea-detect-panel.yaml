@@ -14,6 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Gitea"
+    product: gitea
   tags: tech,gitea,panel,discovery
 http:
   - method: GET

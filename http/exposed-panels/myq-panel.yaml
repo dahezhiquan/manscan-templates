@@ -22,6 +22,7 @@ info:
       - icon_hash="-2012429205"
       - icon_hash="-924708843"
       - title="MyQ"
+    product: myq
   tags: panel,myq,detect,discovery
 http:
   - method: GET

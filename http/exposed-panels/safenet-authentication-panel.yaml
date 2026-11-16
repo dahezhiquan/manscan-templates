@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Self Enrollment"
+    product: safenet
   tags: panel,safenet,thales,login,detect,discovery
 
 http:

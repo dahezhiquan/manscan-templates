@@ -12,6 +12,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: html:'content="eArcu'
+    product: earcu
   tags: panel,earcu,detect,discovery
 http:
   - method: GET

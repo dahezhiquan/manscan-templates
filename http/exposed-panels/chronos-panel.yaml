@@ -13,6 +13,7 @@ info:
     max-request: 1
     shodan-query: http.html:"chronoslogin.js"
     fofa-query: body="chronoslogin.js"
+    product: chronos
   tags: panel,chronos,login,detect,discovery
 http:
   - method: GET

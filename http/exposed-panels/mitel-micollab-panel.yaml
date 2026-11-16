@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 2
     vendor: mitel
-    product: micollab
+    product: mitel
     shodan-query:
       - http.html:"MiCollab End User Portal"
       - http.favicon.hash:-1922044295

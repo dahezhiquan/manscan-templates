@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Welcome to BlueMind"
+    product: bluemind
   tags: bluemind,login,panel,detect,discovery
 http:
   - method: GET

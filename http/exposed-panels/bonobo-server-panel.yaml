@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 2
     vendor: bonobogitserver
-    product: bonobo_git_server
+    product: bonobo
     shodan-query: http.favicon.hash:-219625874
   tags: panel,bonobo,git,login,detect,discovery
 http:

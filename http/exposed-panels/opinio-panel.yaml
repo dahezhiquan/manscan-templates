@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Opinio"
+    product: opinio
   tags: panel,opinio,login,detect,discovery
 http:
   - method: GET

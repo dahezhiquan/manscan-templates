@@ -13,6 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.html:"report server web portal"
+    product: powerbi
   tags: panel,powerbi,detect,discovery
 http:
   - method: GET

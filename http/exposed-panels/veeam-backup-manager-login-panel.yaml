@@ -19,6 +19,7 @@ info:
     fofa-query:
     - title="veeam backup enterprise manager"
     - icon_hash="169658321"
+    product: enterprise-manager
   tags: veeam,panel,enterprise-manager,detect,discovery
 
 http:

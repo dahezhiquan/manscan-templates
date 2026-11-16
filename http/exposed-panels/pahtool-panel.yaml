@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"PAHTool"
+    product: pahtool
   tags: panel,pahtool,login,detect,discovery
 
 http:

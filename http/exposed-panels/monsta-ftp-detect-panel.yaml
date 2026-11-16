@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Monsta FTP"
+    product: monsta
   tags: tech,monsta,ftp,detect,panel
 http:
   - method: GET

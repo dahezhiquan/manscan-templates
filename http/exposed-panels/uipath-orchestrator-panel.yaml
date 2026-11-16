@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: uipath
-    product: orchestrator
+    product: uipath
     shodan-query: http.title:"UiPath Orchestrator"
   tags: panel,uipath,login,detect,discovery
 

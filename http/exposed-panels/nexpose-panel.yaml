@@ -10,6 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-516760689
+    product: nexpose
   tags: nexpose,panel,login,detect,discovery
 http:
   - method: GET

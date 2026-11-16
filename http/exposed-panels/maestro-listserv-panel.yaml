@@ -13,6 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"LISTSERV Maestro"
+    product: maestro
   tags: panel,maestro,detect,login,discovery
 http:
   - method: GET

@@ -12,6 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: neocase
   tags: panel,neocase,login,detect,discovery
 http:
   - method: GET

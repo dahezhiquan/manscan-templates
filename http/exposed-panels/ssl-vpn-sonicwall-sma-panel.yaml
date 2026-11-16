@@ -17,6 +17,7 @@ info:
     max-request: 2
     shodan-query: html:“SonicWall SMA”
     fofa-query: body=“SonicWall SMA”
+    product: sma
   tags: sonicwall,sma,vpn,tech,detect,login,panel
 
 http:

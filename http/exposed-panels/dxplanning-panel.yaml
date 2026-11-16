@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: dxplanning
   tags: panel,dxplanning,login,detect,discovery
 http:
   - method: GET

@@ -15,6 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.html:"Gradle Enterprise Build Cache Node"
+    product: gradle
   tags: panel,gradle,detect,discovery
 http:
   - method: GET

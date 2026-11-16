@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 3
     shodan-query: "http.title:\"tixeo\""
+    product: tixeo
   tags: panel,tixeo,login,detect,discovery
 http:
   - method: GET

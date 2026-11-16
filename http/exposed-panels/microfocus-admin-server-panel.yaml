@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 4
     vendor: microfocus
-    product: "enterprise_server"
+    product: microfocus
     shodan-query:
       - "Micro Focus DSD"
       - micro focus dsd

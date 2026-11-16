@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 2
+    product: opentouch
   tags: panel,opentouch,login,detect,discovery
 http:
   - method: GET

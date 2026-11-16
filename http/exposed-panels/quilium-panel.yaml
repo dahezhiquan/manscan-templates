@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.html:"CMS Quilium"
+    product: quilium
   tags: panel,quilium,login,detect,discovery
 
 http:

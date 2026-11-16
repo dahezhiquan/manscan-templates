@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     shodan-query: product:"Allegro RomPager"
+    product: rompager
   tags: tech,allegro,rompager,panel,login,discovery
 http:
   - method: GET

@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: interact
   tags: panel,interactsoftware,interact,detect,discovery
 http:
   - method: GET

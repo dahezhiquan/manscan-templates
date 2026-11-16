@@ -12,6 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Connection - SphinxOnline"
+    product: sphinxonline
   tags: panel,sphinxonline,login,detect,discovery
 
 http:

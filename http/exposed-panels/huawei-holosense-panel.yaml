@@ -11,7 +11,7 @@ info:
   metadata:
     max-requests: 1
     vendor: huawei
-    product: holosense_sdc
+    product: holosens
     shodan-query:
       - "Server: SDC Server"
       - http.html_hash:-968212412

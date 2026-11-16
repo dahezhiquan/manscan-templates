@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     vendor: kopano
-    product: webapp
+    product: kopano
     shodan-query: http.title:"Kopano WebApp"
   tags: panel,kopano,login,detect,discovery
 http:

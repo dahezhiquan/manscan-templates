@@ -13,6 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"FlexNet Login"
+    product: flexnet
   tags: panel,flexnet,login,detect
 http:
   - method: GET

@@ -11,6 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
+    product: snapcomms
   tags: panel,snapcomms,login,detect,discovery
 
 http:

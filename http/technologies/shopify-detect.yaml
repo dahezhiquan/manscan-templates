@@ -49,7 +49,7 @@ http:
           - 'Shopify ([0-9.]+)'
           - 'Shopify version ([0-9.]+)'
           - 'Coded by Shopify ([0-9.]+)'
-          - 'Theme: ([A-Za-z0-9_-]+) Shopify'
+        group: 1
 
       - type: regex
         part: body
@@ -57,4 +57,5 @@ http:
         regex:
           - 'shop_id=([0-9]+)'
           - 'shopify://([0-9a-zA-Z]+)'
+        internal: true
 # digest: 4b0a00483046022100ef12b8da265e9d53ba0e75b7e382a2091233eee74698bf33d862df8833759620022100eb618e0bb21c0814fe7d36e7e9f557851ac2b1ed5af7c37c1baa5510a4fcb32c:922c64590222798bb761d5b6d8e72950

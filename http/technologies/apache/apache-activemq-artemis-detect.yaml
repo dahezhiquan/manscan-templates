@@ -11,7 +11,7 @@ info:
   metadata:
     max-request: 1
     vendor: apache
-    product: activemq
+    product: artemis
     shodan-query: title:"ActiveMQ Artemis Console"
   tags: tech,activemq,artemis,apache,detect,discovery
 
@@ -30,10 +30,9 @@ http:
         condition: or
 
     extractors:
-      - type: regex
-        part: body
+      - type: json
         name: version
-        group: 1
-        regex:
-          - '"productInfo":.*"value":\s*"(.*)"'
+        part: body
+        json:
+          - '(.about.productInfo // .productInfo) | .. | objects | select((.name? // .label? // "version") | test("(?i)version|artemis")) | .value? | strings | capture("^(?:(?:Apache |ActiveMQ )?Artemis[ /])?v?(?<version>[0-9]+(?:\\.[0-9]+)+(?:[-+][A-Za-z0-9.-]+)?)(?:$|\\s)").version'
 # digest: 4a0a00473045022100cb76f333c7e12ef965e31b503bb8b074c38e9773e31ed01a7f71db6818ace0f102201e936acd73df2e1fb8377b4ba9b22dd647c141f1d1f9459e98b5aafe042fd974:922c64590222798bb761d5b6d8e72950

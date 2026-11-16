@@ -29,8 +29,10 @@ http:
           - 200
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*gabia(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a00463044022056c2c5d916b9ea03edc5774b5359de2fabefe849c52395e4e661035c87aa5cb1022049ff92281a5cbb80c5aba268f08842be8c2b2b627fb21d7fe11d8c73f0a30607:922c64590222798bb761d5b6d8e72950

@@ -12,6 +12,7 @@ info:
   metadata:
     max-request: 1
     verified: true
+    product: jway
   tags: jway,detect,discovery
 http:
   - method: GET
@@ -27,14 +28,9 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: body
         group: 1
         regex:
-          - '(?i)Produced\s+by\s+Form([a-z]+)'
-
-      - type: regex
-        part: body
-        group: 1
-        regex:
-          - 'Form(?:[a-zA-Z]+)\s+v([0-9.]+)'
+          - 'Form(?:[a-zA-Z]+)\s+v([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a00473045022100efb3dc5a477778fa4910b5e10fe7d087065fbeffc9cf141bc810dea46353cad7022067c83f2d389d7bac02b1039c267e2ad01e1682beef123e11da648a99f9410ccd:922c64590222798bb761d5b6d8e72950

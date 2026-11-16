@@ -27,6 +27,7 @@ tcp:
 
     matchers:
       - type: word
+        name: apos
         words:
           - "Welcome"
           - "APOS(tm)"
@@ -35,6 +36,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - 'Kernel Version \d\.\d\d\.\d\d\d'
+          - 'Kernel Version\s+([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a0046304402205614c426fcf125c7ce05348ff701bea77a778f6a4bf89689ec625abf760e5a9b02206e2167f510145c5b16444ae303df53884726dfb1a6374d05ebe30bae009cf523:922c64590222798bb761d5b6d8e72950

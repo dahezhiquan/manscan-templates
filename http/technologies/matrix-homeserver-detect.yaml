@@ -41,7 +41,8 @@ http:
 
     extractors:
       - type: json
+        name: version
         part: body
         json:
-          - '.server | select((.name != null) and (.version != null)) | .name, .version'
+          - '.server | select((.name | type) == "string" and (.version | type) == "string") | select(.version | test("^v?[0-9]+(?:\\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+._~][A-Za-z0-9]+)*$")) | (.name | ascii_downcase) + ": " + .version'
 # digest: 4b0a00483046022100f990227f84edeef2fd8264e4d1e2f8fd90f52c4c9fd73839e0be4caa56f549cf02210083b4651aa652e0af30ee6430de422dda3bea31e8dd9ffede4b6d6ac05538b6bd:922c64590222798bb761d5b6d8e72950

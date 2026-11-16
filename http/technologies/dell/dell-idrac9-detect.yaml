@@ -7,6 +7,7 @@ info:
   description: Dell iDRAC9 是 Dell 服务器带外管理控制器，用于硬件状态、远程控制台和电源管理。该模板请求 `/sysmgmt/2015/bmc/info`，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Dell iDRAC9 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
     max-request: 1
+    product: dell
   tags: tech,dell,discovery
 
 http:
@@ -27,13 +28,9 @@ http:
 
     extractors:
       - type: regex
-        part: body
-        regex:
-          - '[0-9]{2}G'
-
-      - type: regex
+        name: version
         part: body
         group: 1
         regex:
-          - '"FwVer" *: *"([^"]+)"'
+          - '"FwVer"\s*:\s*"([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)"'
 # digest: 4a0a004730450221009c8ed9b60f60882ec0816822c379591eabff4322b996e10cf22511481fe9459402203969e08295b276cf6dab142c3769f43f7d8ca902d5f0ab2ecc52c8b190f38bae:922c64590222798bb761d5b6d8e72950

@@ -32,8 +32,9 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: body
         group: 1
         regex:
-          - '(?i)roadiz\s*([a-z0-9.\s]+)-'
+          - '(?i)roadiz\s+v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a004630440220346976abf3b63646f5274c9479109343ea2003304cd2c93c85a94fff21dc3b8a0220522da99845ed10568e0503b5554130fa266ee8932b2bcf649bfc42478470dd97:922c64590222798bb761d5b6d8e72950

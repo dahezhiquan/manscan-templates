@@ -46,6 +46,7 @@ http:
         regex:
           - 'osCommerce ([0-9.]+)'
           - 'Powered by osCommerce ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -53,4 +54,5 @@ http:
         regex:
           - 'oscommerce-site-id=([a-z0-9]+)'
           - 'oscommerce\.com/([^/]+)'
+        internal: true
 # digest: 4a0a00473045022100df19f158204e47af2fb914638951da0e40ffa3a8106ae2b35ca411d0e57ad53802205fae23c55a10cc1db00b1d6db9b1c695684548024bac599cbc8b31af7d8c7dc5:922c64590222798bb761d5b6d8e72950

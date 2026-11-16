@@ -51,11 +51,15 @@ javascript:
 
     matchers:
       - type: dsl
+        name: db2
         dsl:
           - "success == true"
 
     extractors:
-      - type: dsl
-        dsl:
-          - response
+      - type: regex
+        name: version
+        part: response
+        group: 1
+        regex:
+          - 'Db2 Version:\s*([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*),\s*Hostname:'
 # digest: 4a0a004730450221008046539f192b04c8f03d177d7ede13dba01150b93182ca77c45ff3926b98b7a3022031ed341b1b37485a6ad51381e65a24bdc0bc0ec4463d18ee72f03a91ac3ae516:922c64590222798bb761d5b6d8e72950

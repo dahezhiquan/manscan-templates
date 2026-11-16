@@ -26,8 +26,10 @@ http:
           - "IIS"
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*Microsoft-IIS(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a0047304502201e14c3fb026b5b1cebe7ec4a373f867e137e439170982ef87e4a89e7d73d5134022100fda62ce42a61c0d07abb45b6774ed558605cc660fd20a305ef2ad25ac2711d61:922c64590222798bb761d5b6d8e72950

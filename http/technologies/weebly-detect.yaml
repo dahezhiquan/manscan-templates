@@ -46,6 +46,7 @@ http:
         regex:
           - 'Weebly ([0-9.]+)'
           - 'Powered by Weebly ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -53,4 +54,5 @@ http:
         regex:
           - 'weebly-site-id=([a-z0-9]+)'
           - 'weebly\.com/([^/]+)'
+        internal: true
 # digest: 4a0a00473045022100857169b36f6164ad75248e40a67ebd376cb898c78d0ff650743bdc4b5184842e02200eb86a26af96c4dc0b69c063702e618f52db27424539c9d23311979a30dc23ef:922c64590222798bb761d5b6d8e72950

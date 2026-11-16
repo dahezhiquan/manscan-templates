@@ -32,7 +32,8 @@ http:
     extractors:
       - type: regex
         name: version
+        part: body
         group: 1
         regex:
-          - '(?i)atlassian bamboo</a> version (.*) -'
+          - '(?i)atlassian bamboo</a>\s+version\s+([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4b0a00483046022100b60c556626bcdcc9ece11b4cce33b5ee8b9e26787fc19d8006526c261a35ac0402210088c01231bef5a32ed790b60585fb1fea34a8e4ae6e7d4bf0c8a7d0950b8abb32:922c64590222798bb761d5b6d8e72950

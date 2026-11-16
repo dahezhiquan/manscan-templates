@@ -43,8 +43,10 @@ http:
         condition: or
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - "server"
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*SAP[ \t]+(?:NetWeaver[ \t]+Application[ \t]+Server|NetWeaver|Content[ \t]+Server|Web[ \t]+Application[ \t]+Server)(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a0047304502205e9567aa2ad828f49629f5f0f24a4fdf602ee98c93657083b50890f523c63378022100de40a9c8165c0ae4fafaf745e8e9be1177ec08ac84193b6a98c7e37354012e6f:922c64590222798bb761d5b6d8e72950

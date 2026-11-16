@@ -10,6 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Riak"
+    product: riak
   tags: network,oss,detect,riak,nosql,tcp,discovery
 tcp:
   - inputs:
@@ -28,6 +29,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - "riak@([0-9.]+)..([0-9.]+([a-z]+[0-9]))"
+          - 'riak@[^ \t\r\n\x00-\x1f]+\x12[\x01-\x7f]([0-9]+(?:\.[0-9]+)+(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)(?:$|[\x00-\x1f])'
 # digest: 4a0a00473045022100ec1c33d607d5709aa3ede95c6ae6d129d40ca1b2af9fe394cb5d5cd6ae7c6bca0220207e27c464944d7ea5091fe14ea93f3ff04424975880ebc85a2dba7136205cf8:922c64590222798bb761d5b6d8e72950

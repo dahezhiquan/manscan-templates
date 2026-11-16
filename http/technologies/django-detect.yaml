@@ -51,6 +51,7 @@ http:
         regex:
           - 'Django ([0-9.]+)'
           - 'Powered by Django ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -58,4 +59,5 @@ http:
         regex:
           - 'django-site-id=([a-z0-9]+)'
           - 'django\.org/([^/]+)'
+        internal: true
 # digest: 490a00463044022030f74608f7974aafb59e4340b9db055abd439bb5f08e2ebb1ab440c47595a7f602207d0e1367dcae14b3091a35e464bb32828e05aaf64d548cfaeb3d53305e005fcc:922c64590222798bb761d5b6d8e72950

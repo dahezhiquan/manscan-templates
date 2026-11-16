@@ -27,6 +27,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - '(?i)SSH-(.*)-MOVEit[^\r]+'
+          - '(?im)^SSH-(?:1\.[0-9]+|2\.0)-MOVEit(?:_SFTP)?[_-]([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a0047304502205a40a14720298dbf2d4e2dc450b50dfc3b7720632b6a7c41dd2e0479638d3eca022100ec4f05d23d816e63c74bf52582e77445f943ea64cb778e0c8ff34604e20a564c:922c64590222798bb761d5b6d8e72950

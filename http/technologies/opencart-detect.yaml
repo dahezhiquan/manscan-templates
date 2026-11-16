@@ -46,6 +46,7 @@ http:
         regex:
           - 'OpenCart ([0-9.]+)'
           - 'Powered by OpenCart ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -53,4 +54,5 @@ http:
         regex:
           - 'opencart-store-id=([a-z0-9]+)'
           - 'oc-admin/([^/]+)'
+        internal: true
 # digest: 4a0a00473045022039be6ab9faade0e26ebe1b102a8224a90c2b782bf7f5fcc702f8165a6ab56b89022100c2ff3c79fa905ec59053d5fa7be2354c0c8dfb40ca19e53b6762b4cfe61bdb64:922c64590222798bb761d5b6d8e72950

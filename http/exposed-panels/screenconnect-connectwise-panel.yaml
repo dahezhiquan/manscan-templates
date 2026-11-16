@@ -43,8 +43,10 @@ http:
           - 200
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*(?:ScreenConnect|ConnectWise[ \t]+Control)(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a00463044022043b8c0501d987c7b1248a8f99b811d3fd731f3e2f92ef394976f942d07698b1002203e46106b743f04de22968c109f62ceb63d82586636fb06b23679c17cf0c9fe46:922c64590222798bb761d5b6d8e72950

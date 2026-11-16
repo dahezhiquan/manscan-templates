@@ -41,5 +41,7 @@ http:
       - type: regex
         part: body
         regex:
-          - "Splash v([0-9.]+)"
+          - 'Splash v([0-9.]+)'
+        group: 1
+        name: version
 # digest: 4a0a00473045022100eeec582627df19980ca3921101acf660d28b4cba108a53f3d2c45b6504770f8502207fc25f6ecfcd366686f190dcf87d00c52ea8e9415ef45f763cb666413f8ffe17:922c64590222798bb761d5b6d8e72950

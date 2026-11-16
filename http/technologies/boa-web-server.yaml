@@ -34,8 +34,10 @@ http:
           - "Server: Boa/"
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*Boa(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4b0a00483046022100cde1ba7a0572a730ccea316420f015f32fffdfb8389b2f4063840f38b754abb7022100920a94795d3f64cf64353a2e92c631f02c069be953b72b377241d1fe87f22c03:922c64590222798bb761d5b6d8e72950

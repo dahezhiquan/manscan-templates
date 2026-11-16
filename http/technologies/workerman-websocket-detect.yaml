@@ -28,8 +28,10 @@ http:
           - 'workerman/'
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*workerman(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4b0a00483046022100a3425afe86bdcf409160901c886b8ea2b54e1f3ec0ac383845ae10394a15f20e022100b9b59c4287f3818dfeb6f575572fed0c8fe3ae9dc92a5ae82323c8240418b5c0:922c64590222798bb761d5b6d8e72950

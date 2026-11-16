@@ -32,7 +32,9 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         regex:
-          - 'AutobahnPython([ 0-9.]+)'
+          - 'AutobahnPython\s+([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4b0a004830460221008c10cd089be323b7d27f103276a58ab889fa9be06a0b2e239c134ccdf4fb9437022100c21a41906703400a0198c7f23f17608b8a7ac8f490bae838a1472dbcb6b8d868:922c64590222798bb761d5b6d8e72950

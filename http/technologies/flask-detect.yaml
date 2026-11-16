@@ -46,6 +46,7 @@ http:
         regex:
           - 'Flask ([0-9.]+)'
           - 'Powered by Flask ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -53,4 +54,5 @@ http:
         regex:
           - 'flask-site-id=([a-z0-9]+)'
           - 'flask\.palletsprojects\.com/([^/]+)'
+        internal: true
 # digest: 4a0a0047304502206b50fc42962e4fd459c198aa8afeb73dd6a1162bd846a6c74cf2dbc1aff9851a022100df83041d6a9abbef48015c6dc0c09feff4212d5dc7ffe4d77de12c3e1cfc03bd:922c64590222798bb761d5b6d8e72950

@@ -47,6 +47,7 @@ http:
         regex:
           - 'Bitrix ([0-9.]+)'
           - 'Powered by Bitrix ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -54,4 +55,5 @@ http:
         regex:
           - 'bitrix-site-id=([a-z0-9]+)'
           - 'bitrix\.com/([^/]+)'
+        internal: true
 # digest: 4a0a0047304502210081201b19ca1603329039c44fabb19308aabb324c5e0e2eb87b64e7e16b6df3b40220191531a7e138362b781f6a361d43d2381b21f4a5e8ebd29f826bb2c4cad0c7bf:922c64590222798bb761d5b6d8e72950

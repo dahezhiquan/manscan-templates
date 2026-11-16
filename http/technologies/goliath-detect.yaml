@@ -31,8 +31,10 @@ http:
           - Goliath+
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*Goliath(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a00473045022052720186de21727d3968c4453a57a06e8b77625789e190ee3705a57acb469811022100d52ccabb347a063a21b43db222911ea47f72097a38411e2fbc0a626baa913e86:922c64590222798bb761d5b6d8e72950

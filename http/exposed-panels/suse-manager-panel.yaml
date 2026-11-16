@@ -44,7 +44,15 @@ http:
 
     extractors:
       - type: regex
+        name: version_raw
+        part: body
         group: 1
         regex:
-          - "webVersion:\\s+'([\\d\\.\\s\\w]+)',"
+          - 'webVersion:\s+''([0-9]+(?:\.[0-9]+)*(?:[-+][A-Za-z0-9.-]+|\s+(?:Beta|Alpha|RC)[0-9]*)?)'''
+        internal: true
+
+      - type: dsl
+        name: version
+        dsl:
+          - 'replace_regex(replace_regex(version_raw, "[()]", ""), "\\s+", "-")'
 # digest: 490a0046304402205bdeabd5e82ca3c60680bde807e78fa181b08c78799572679b1262490ed171160220775dde2e6a7939c041207f33f11171873754e4b6ba181d87cc9151ccb05a0b45:922c64590222798bb761d5b6d8e72950

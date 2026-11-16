@@ -28,7 +28,9 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: header
+        group: 1
         regex:
-          - 'nginx/[0-9.]+'
+          - '(?i)\bnginx/([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a00473045022100cacd710dbd79d74f620c62374815b08bb335285c2b6f12d3d8b43d38693ad77602203b052809790fe98dda6f625883ca2758cc270abe8d5a7bc31b3ceca77f9da818:922c64590222798bb761d5b6d8e72950

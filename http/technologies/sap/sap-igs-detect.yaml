@@ -38,8 +38,10 @@ http:
           - "SAP Internet Graphics Server"
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - "Server"
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*SAP[ \t]+(?:Internet[ \t]+Graphics[ \t]+Server|IGS)(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a004730450221008b47366d3acfbaffacd6a76a71730ad14b457eac572641f8b218bbf524bcaf840220590ceb9554428f0f0adcfdc342d449aa6ed4c872c4a3de6240bc03becd652b35:922c64590222798bb761d5b6d8e72950

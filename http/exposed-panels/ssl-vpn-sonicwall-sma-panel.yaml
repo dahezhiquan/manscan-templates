@@ -52,9 +52,9 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: header
         group: 1
-        name: sma-version
         regex:
-          - '(?i)Server:\s*(SMA/[\d.]+)'
+          - '(?im)^Server:[ \t]*SMA/([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a0046304402202e1676204980b16959c4892c2e22e9247b494933cd63d0ff63f1f2cb83cb408a022033af8316417046ebf14a9517471a995737861fad2ed79c19f3c3f3454602c910:922c64590222798bb761d5b6d8e72950

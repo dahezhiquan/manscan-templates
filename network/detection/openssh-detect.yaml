@@ -32,6 +32,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - '(?i)SSH-(.*)-OpenSSH_[^\r]+'
+          - '(?im)^SSH-(?:1\.[0-9]+|2\.0)-OpenSSH_([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a00463044022048886a2048dbd3bce77c945084516bc78f58d3d5d0b45644a6f49bab3a4e2567022036db8611bc081fc50fd44ad0240ac9c5c96efc571548c2f07af3eb4677f40772:922c64590222798bb761d5b6d8e72950

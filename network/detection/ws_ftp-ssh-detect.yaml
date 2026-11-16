@@ -40,6 +40,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - '(?i)SSH-(.*)-WS_FTP-SSH[^\r]+'
+          - '(?im)^SSH-(?:1\.[0-9]+|2\.0)-WS_FTP-SSH[_-]([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a004730450220665d4795e67ebf30fd4ec6670e9e06b3c3352ca5b0ca80170325042cec0feaa1022100aa52a82c939b99988bb869a3dc4373f5d18c7d709c651090f35dfd531b4b357d:922c64590222798bb761d5b6d8e72950

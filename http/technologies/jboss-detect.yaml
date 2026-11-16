@@ -29,8 +29,9 @@ http:
 
     extractors:
       - type: regex
-        group: 1
+        name: version
         part: body
+        group: 1
         regex:
-          - '<h1>Welcome to (.+)<\/h1>'
+          - '<h1>Welcome to JBoss(?:\s+(?:EAP|AS|Enterprise Application Platform))?\s+v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a0046304402205e3a8a7016404a45e655c0400f0aee6f151f925fbc6cc9a4f42c43c1dd300bda02204864a09c3245b4a697c615e3151f2e8363547f105846bb4e6c0252b0e8dee0e9:922c64590222798bb761d5b6d8e72950

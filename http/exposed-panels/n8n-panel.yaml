@@ -45,10 +45,5 @@ http:
       - type: dsl
         name: version
         dsl:
-          - 'replace_regex(base64_decode(base64_content), ".*n8n@([0-9]+\\.[0-9]+\\.[0-9]+).*", "$1")'
-        internal: true
-
-      - type: dsl
-        dsl:
-          - '"n8n Version: " + version'
+          - 'regex("n8n@[0-9]+\\.[0-9]+\\.[0-9]+", base64_decode(base64_content)) ? replace_regex(base64_decode(base64_content), "(?s).*n8n@([0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][A-Za-z0-9.-]+)?).*", "$1") : ""'
 # digest: 4a0a004730450220663c9c73fc566b0fc482592237b4dd9cfee47c465cf35ded5a5778bbcf86dcc5022100e7d10ad664649b71f4af0d8153a68e3c0997e560d8f1a0eeedfdf8c5f32f663c:922c64590222798bb761d5b6d8e72950

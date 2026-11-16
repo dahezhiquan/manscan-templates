@@ -46,6 +46,7 @@ http:
         regex:
           - 'BigCommerce ([0-9.]+)'
           - 'Powered by BigCommerce ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -54,4 +55,5 @@ http:
           - 'bigcommerce-site-id=([a-z0-9]+)'
           - 'bc-site-id="([a-zA-Z0-9]+)"'
           - 'bigcommerce\.com/([^/]+)'
+        internal: true
 # digest: 4a0a0047304502204283a552ac854528071765be25bcdd0e72653737675815bdd8046b5b6ef3be0a022100d13b2ce5066f196acb24cc3fbf34c935155328974a84db38a59568f788647682:922c64590222798bb761d5b6d8e72950

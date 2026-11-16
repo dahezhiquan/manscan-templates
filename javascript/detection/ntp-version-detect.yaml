@@ -9,6 +9,7 @@ info:
   metadata:
     verified: true
     shodan-query: "NTP"
+    product: ntp
   tags: js,network,ntp,ntpsec,udp,detect
 
 javascript:
@@ -34,7 +35,9 @@ javascript:
 
     extractors:
       - type: regex
+        name: version
+        part: response
         group: 1
         regex:
-          - 'version="([^"]+)"'
+          - 'version="(?:ntpd|ntpsec)\s+([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4b0a0048304602210082d256e97de90a837a001646571ae3d6f52267a74345e5263249aeb37a9693fe022100ab683554375e0a730e714aab5b34dcd35804cd6d42bcefda140822fd3d04b473:922c64590222798bb761d5b6d8e72950

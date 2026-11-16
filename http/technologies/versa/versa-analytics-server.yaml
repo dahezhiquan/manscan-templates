@@ -31,8 +31,10 @@ http:
           - "Versa-Analytics-Server"
 
     extractors:
-      - type: kval
+      - type: regex
+        name: version
         part: header
-        kval:
-          - Server
+        group: 1
+        regex:
+          - '(?im)^Server:[ \t]*Versa[- ]Analytics[- ]Server(?:/|[ \t]+)v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 4a0a004730450221009c4f1de8695b896bfed712bdc0519963049be99424bcf35983d1c42f23ebe75602205c02ea09698638886f733a9c7a4c56e2c5ef1c8b07e40c161c4f4d263db5ff33:922c64590222798bb761d5b6d8e72950

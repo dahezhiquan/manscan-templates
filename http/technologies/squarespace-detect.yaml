@@ -47,6 +47,7 @@ http:
         regex:
           - 'Squarespace ([0-9.]+)'
           - 'Powered by Squarespace ([0-9.]+)'
+        group: 1
 
       - type: regex
         part: body
@@ -55,4 +56,5 @@ http:
           - 'squarespace-site-id=([a-z0-9]+)'
           - 'siteid="([a-zA-Z0-9]+)"'
           - 'squarespace\.com/([^/]+)'
+        internal: true
 # digest: 4a0a00473045022004e873c395c8521f790c4190061bb3fe85b42dcc6b6d559bd253427c02b08885022100affef4811f778229b24afe2e73c39b12bec6e4a659348215a076cf9821afef7c:922c64590222798bb761d5b6d8e72950

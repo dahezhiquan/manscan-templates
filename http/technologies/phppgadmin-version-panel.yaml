@@ -33,7 +33,10 @@ http:
 
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         regex:
-          - 'phpPgAdmin.*\(.*\)'
+          - '<span\s+class="appname">phpPgAdmin</span>\s*<span\s+class="version">\s*v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
+          - 'phpPgAdmin\s+v?([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a004630440220544877da1ea966643bd75edd8fcb755ca52cd2b770c77f54b14cd03f05e39396022038a5f5137b3805ac56e4be08fb38b9c8d1c7b38205eb43695da3a7baa9e8b96d:922c64590222798bb761d5b6d8e72950

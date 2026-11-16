@@ -30,6 +30,9 @@ tcp:
 
     extractors:
       - type: regex
+        name: version
+        part: data
+        group: 1
         regex:
-          - "SSH([-0-9.]+) FlowSsh: Bitvise ([A-Z a-z()]+) ([0-9.]+)"
+          - '(?i)Bitvise\s+(?:SSH Server|WinSSHD)(?:\s+\(WinSSHD\))?\s+([0-9]+(?:\.[0-9]+)*(?:[A-Za-z][0-9A-Za-z]*)?(?:[-+~._][0-9A-Za-z]+)*)'
 # digest: 490a0046304402205ea8c5fdcdae6c9d0ac99c42d9d5d6fbf2d45764528c2970b7bf8cbeb96ed19802205b42af19d5477550353efe22d77ba5ba8525a2b043cf27f430b69484e9063486:922c64590222798bb761d5b6d8e72950

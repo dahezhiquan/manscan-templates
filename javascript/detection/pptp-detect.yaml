@@ -1,0 +1,91 @@
+id: pptp-detect
+
+info:
+  name: PPTP VPN 服务识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    该模板通过 TCP 发送启动控制连接请求，校验完整应答的长度、控制消息类型、固定标识及结果字段以识别 PPTP VPN 服务，也兼容 Nmap 服务指纹中的服务端 Echo-Request 报文。
+    默认使用 1723 端口，支持显式指定端口和 IPv6，建议输入主机:端口以确保扫描结果的端口归属准确；合法的连接拒绝、版本不支持等应答同样可用于服务识别，命中不代表已建立 VPN 数据隧道或存在未授权访问漏洞。
+    不执行 PPP 认证或 GRE 数据传输，不将 PPTP 协议版本和厂商自定义的固件修订整数作为软件版本提取。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/scripts/pptp-version.nse
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://www.rfc-editor.org/rfc/rfc2637
+  metadata:
+    product: pptp
+    shodan-query: 'port:1723'
+  tags: pptp,network,js,tcp,detect,discovery
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+
+      const request = '009c00011a2b3c4d00010000010000000000000100000001ffff0001'
+        + '6e6f6e65' + '00'.repeat(60) + '6e6d6170' + '00'.repeat(60);
+
+      function uint16(hex, offset) {
+        return parseInt(hex.substr(offset * 2, 4), 16);
+      }
+
+      function octet(hex, offset) {
+        return parseInt(hex.substr(offset * 2, 2), 16);
+      }
+
+      function receiveHex(conn, count) {
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(count));
+        const hex = buffer.Hex();
+        if (hex.length !== count * 2) throw 'incomplete PPTP message';
+        return hex;
+      }
+
+      function detect(address) {
+        let conn;
+        try {
+          conn = net.Open('tcp', address);
+          conn.SendHex(request);
+          const header = receiveHex(conn, 12);
+          const length = uint16(header, 0);
+          const controlType = uint16(header, 8);
+          if (uint16(header, 2) !== 1 || header.substr(8, 8) !== '1a2b3c4d' || uint16(header, 10) !== 0) return false;
+          if (!((controlType === 2 && length === 156) || (controlType === 5 && length === 16))) return false;
+          const response = header + receiveHex(conn, length - 12);
+          if (controlType === 5) return true;
+
+          const version = uint16(response, 12);
+          const result = octet(response, 14);
+          const error = octet(response, 15);
+          if (result < 1 || result > 5) return false;
+          if (result !== 5 && version !== 0x0100) return false;
+          if (result === 2) {
+            if (error < 1 || error > 6) return false;
+          } else if (error !== 0) {
+            return false;
+          }
+          return true;
+        } catch (e) {
+          return false;
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 1723;
+      Export(detect(host + ':' + port) ? 'pptp' : '');
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
+    matchers:
+      - type: dsl
+        name: pptp
+        condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "pptp"'

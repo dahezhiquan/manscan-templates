@@ -5,35 +5,70 @@ info:
   author: Mys7ic
   severity: info
   description: |
-    FTP 是传统文件传输协议，常用于文件发布、备份、设备维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `Ftp` 等响应特征识别目标服务。
+    FTP 是传统文件传输协议，常用于文件发布、备份、设备维护或旧系统集成。该模板参考 Nmap 的 GenericLines 和 Help 探针，先发送空行并检查 FTP 欢迎横幅；未命中时再发送 HELP，结合 FTP 命令列表或特定服务响应识别隐藏产品名的服务。默认检测 21/TCP，也支持目标显式指定的端口；不尝试登录或文件操作，不提取软件版本。
   reference:
     - https://www.rfc-editor.org/rfc/rfc959
+    - https://nmap.org/book/vscan-technique.html
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
   tags: network,ftp,detect,tcp,discovery
+
+flow: tcp(1) || tcp(2)
 
 tcp:
   - inputs:
-      - data: "\r\n"
+      - data: "\r\n\r\n"
+        read: 1
 
     host:
       - "{{Hostname}}"
 
     port: 21
-    read-size: 2048
+    read-all: true
 
-    matchers-condition: or
-    matchers:
+    matchers-condition: and
+    matchers: &ftp-matchers
       - type: regex
+        part: raw
+        negative: true
         regex:
-          - "(?i)^220.*Ftp.*"
+          - '(?i)^220(?:-[^\r\n]*\r?\n220)*[ -][^\r\n]*\b(?:e?smtp|lmtp|nntp|svdrp|vmware authentication daemon)\b'
 
-      - type: word
-        case-insensitive: true
-        words:
-          - "Ftp"
-# digest: 4a0a004730450220777863f3f882867505942bbd5dd0523bc76d19e9925979467c61ad0ceb350ca7022100dfbf08a75d5266e1b5c272fcdadfeffad5d03062ceadbbc1af5fafe3867321f0:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        condition: or
+        dsl:
+          - >-
+            regex('(?i)^220(?:-[^\\r\\n]*\\r?\\n220)*[ -][^\\r\\n]*\\b(?:ftp|[a-z0-9_-]*ftpd(?:lib)?|filezilla server|crushftp)(?:[ \\t/(),;:]|[.!](?:[ \\t]|\\r?\\n|$)|\\r?\\n|$)', raw)
+          - >-
+            regex('(?i)^500 OOPS: vsftpd: [^\\r\\n]+\\r?\\n', raw)
+          - >-
+            regex('^220 Service ready for new user\\.\\r?\\n', raw)
+          - >-
+            regex('^220[ -]', raw) &&
+            regex('(?m)^214-[^\\r\\n]*\\r?\\n[\\s\\S]*\\r?\\n214 [^\\r\\n]*(?:\\r?\\n|$)', raw) &&
+            regex('(?is)\\r?\\n214-[\\s\\S]*\\bUSER\\b[\\s\\S]*\\r?\\n214 ', raw) &&
+            regex('(?is)\\r?\\n214-[\\s\\S]*\\bPASS\\b[\\s\\S]*\\r?\\n214 ', raw) &&
+            regex('(?is)\\r?\\n214-[\\s\\S]*\\bRETR\\b[\\s\\S]*\\r?\\n214 ', raw) &&
+            regex('(?is)\\r?\\n214-[\\s\\S]*\\bSTOR\\b[\\s\\S]*\\r?\\n214 ', raw)
+          - >-
+            regex('^220 Operation successful\\r?\\n214-Features:\\r?\\n EPSV\\r?\\n PASV\\r?\\n REST STREAM\\r?\\n MDTM\\r?\\n SIZE\\r?\\n214 Ok\\r?\\n', raw)
+          - >-
+            regex('^220(?:-[^\\r\\n]*\\r?\\n220)* [^\\r\\n]*\\r?\\n(?:530 Please login with USER and PASS\\.|550 SSL/TLS required on the control channel)\\r?\\n', raw)
+
+  - inputs:
+      - data: "HELP\r\n"
+        read: 1
+
+    host:
+      - "{{Hostname}}"
+
+    port: 21
+    read-all: true
+
+    matchers-condition: and
+    matchers: *ftp-matchers

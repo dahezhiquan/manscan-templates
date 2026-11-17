@@ -2,32 +2,293 @@ id: mongodb-detect
 
 info:
   name: MongoDB 服务识别（指纹识别）
-  author: pdteam
+  author: dahezhiquan
   severity: info
   description: |
-    MongoDB 是文档型数据库服务，用于存储 JSON/BSON 文档和支撑应用数据访问。该模板连接 27017/TCP 并读取协议响应，通过匹配 `logicalSessionTimeout`、`localTime` 等响应特征识别目标服务。
+    通过 MongoDB 只读命令识别服务，默认连接 27017/TCP，也支持指定端口和 TLS。优先使用 OP_QUERY ismaster，按协商结果切换 OP_MSG；兼容 Nmap serverStatus 探针的认证拒绝和旧操作码拒绝响应，并以现代 hello 和原生驱动端口 HTTP 提示作为后备。二进制响应须通过消息长度、请求关联、操作码及 BSON 结构校验。仅从成功的 buildInfo/serverStatus 响应中提取真实版本，不将协议版本、认证错误或推测区间作为软件版本。命中只代表服务识别，不代表存在未授权访问漏洞。
   reference:
-    - https://github.com/orleven/Tentacle
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cwe-id: CWE-200
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://nmap.org/nsedoc/scripts/mongodb-info.html
+    - https://www.mongodb.com/docs/manual/reference/mongodb-wire-protocol/
+    - https://bsonspec.org/spec.html
   metadata:
-    max-request: 1
+    vendor: mongodb
+    product: mongodb
   tags: network,mongodb,detect,tcp,discovery
 
-tcp:
-  - inputs:
-      - data: 3a000000a741000000000000d40700000000000061646d696e2e24636d640000000000ffffffff130000001069736d6173746572000100000000
-        type: hex
+javascript:
+  - code: |
+      const net = require("nuclei/net");
+      const bytes = require("nuclei/bytes");
+      const port = String(TargetPort || "27017");
+      const host = Host.indexOf(":") >= 0 && Host.charAt(0) !== "[" ? "[" + Host + "]" : Host;
+      const address = host + ":" + port;
+      const limit = 1048576;
+      let requestID = Math.floor(Math.random() * 0x3fffffff) + 1;
 
-    host:
-      - "{{Hostname}}"
-    port: 27017
-    read-size: 2048
+      function le32(value) {
+        let result = "";
+        for (let i = 0; i < 4; i++) result += ("0" + ((value >>> (i * 8)) & 255).toString(16)).slice(-2);
+        return result;
+      }
+      function ascii(value) {
+        let result = "";
+        for (let i = 0; i < value.length; i++) result += ("0" + value.charCodeAt(i).toString(16)).slice(-2);
+        return result;
+      }
+      function u32(hex, offset) {
+        let result = 0;
+        for (let i = 0; i < 4; i++) result += parseInt(hex.substr((offset + i) * 2, 2), 16) * Math.pow(256, i);
+        return result;
+      }
+      function readHex(conn, size) {
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(size));
+        const hex = buffer.Hex();
+        if (hex.length !== size * 2) throw new Error("incomplete MongoDB message");
+        return hex;
+      }
+
+      // Validate the entire BSON document, including unused nested fields.
+      function bson(hex) {
+        let offset = 0;
+        function take(size, end) {
+          if (size < 0 || offset + size > end) throw new Error("invalid BSON length");
+          const value = hex.substr(offset * 2, size * 2);
+          offset += size;
+          return value;
+        }
+        function integer(end) { return u32(take(4, end), 0); }
+        function text(value) {
+          let result = "";
+          for (let i = 0; i < value.length; i += 2) result += String.fromCharCode(parseInt(value.substr(i, 2), 16));
+          return result;
+        }
+        function cstring(end) {
+          const start = offset;
+          while (offset < end) {
+            if (take(1, end) === "00") return text(hex.substring(start * 2, (offset - 1) * 2));
+          }
+          throw new Error("unterminated BSON key");
+        }
+        function string(end) {
+          const size = integer(end);
+          if (size < 1) throw new Error("invalid BSON string");
+          const value = take(size, end);
+          if (value.slice(-2) !== "00") throw new Error("unterminated BSON string");
+          return text(value.slice(0, -2));
+        }
+        function document(end, depth, array) {
+          if (depth > 16) throw new Error("BSON nesting limit");
+          const start = offset;
+          const size = integer(end);
+          const stop = start + size;
+          if (size < 5 || stop > end) throw new Error("invalid BSON document");
+          const fields = Object.create(null);
+          let index = 0;
+          while (offset < stop - 1) {
+            const type = parseInt(take(1, stop - 1), 16);
+            const key = cstring(stop - 1);
+            if (Object.prototype.hasOwnProperty.call(fields, key) || array && key !== String(index++)) throw new Error("invalid BSON key");
+            let value = null;
+            if (type === 1) {
+              const number = take(8, stop - 1);
+              const low = u32(number, 0), high = u32(number, 4);
+              const exponent = (high >>> 20) & 2047;
+              const fraction = (high & 0xfffff) * 4294967296 + low;
+              value = exponent === 2047 ? NaN : (high >>> 31 ? -1 : 1) * (exponent ? (1 + fraction / 4503599627370496) * Math.pow(2, exponent - 1023) : fraction * Math.pow(2, -1074));
+            } else if (type === 2 || type === 13 || type === 14) {
+              value = string(stop - 1);
+            } else if (type === 3 || type === 4) {
+              value = document(stop - 1, depth + 1, type === 4);
+            } else if (type === 5) {
+              const length = integer(stop - 1);
+              const subtype = take(1, stop - 1);
+              if (subtype === "02") {
+                if (length < 4 || integer(stop - 1) !== length - 4) throw new Error("invalid BSON binary");
+                take(length - 4, stop - 1);
+              } else take(length, stop - 1);
+            } else if (type === 8) {
+              const flag = take(1, stop - 1);
+              if (flag !== "00" && flag !== "01") throw new Error("invalid BSON boolean");
+              value = flag === "01";
+            } else if (type === 16) {
+              value = integer(stop - 1) | 0;
+            } else if (type === 18) {
+              const low = integer(stop - 1), high = integer(stop - 1) | 0;
+              const number = high * 4294967296 + low;
+              if (Math.abs(number) <= 9007199254740991) value = number;
+            } else if (type === 11) {
+              cstring(stop - 1); cstring(stop - 1);
+            } else if (type === 12) {
+              string(stop - 1); take(12, stop - 1);
+            } else if (type === 15) {
+              const begin = offset, length = integer(stop - 1), endScope = begin + length;
+              if (length < 14 || endScope > stop - 1) throw new Error("invalid BSON scope");
+              string(endScope); document(endScope, depth + 1, false);
+              if (offset !== endScope) throw new Error("invalid BSON scope length");
+            } else if (type === 7) take(12, stop - 1);
+            else if (type === 9 || type === 17) take(8, stop - 1);
+            else if (type === 19) take(16, stop - 1);
+            else if (type !== 6 && type !== 10 && type !== 127 && type !== 255) throw new Error("unknown BSON type");
+            fields[key] = {type: type, value: value};
+          }
+          if (offset !== stop - 1 || take(1, stop) !== "00") throw new Error("invalid BSON terminator");
+          return fields;
+        }
+        const result = document(hex.length / 2, 0, false);
+        if (offset * 2 !== hex.length) throw new Error("trailing BSON data");
+        return result;
+      }
+
+      function field(doc, key, type) {
+        return doc[key] && doc[key].type === type ? doc[key].value : undefined;
+      }
+      function numeric(doc, key) {
+        const item = doc[key];
+        return item && (item.type === 1 || item.type === 16 || item.type === 18) && typeof item.value === "number" ? item.value : undefined;
+      }
+      function version(doc) {
+        const value = field(doc, "version", 2);
+        return numeric(doc, "ok") === 1 && typeof value === "string" && /^[0-9]+\.[0-9]+\.[0-9]+(?:[.-][0-9A-Za-z][0-9A-Za-z.-]*)?$/.test(value) ? value : "";
+      }
+      function identified(doc, command) {
+        if (numeric(doc, "ok") === 1) {
+          if (command === "ismaster" || command === "hello") {
+            const primary = typeof field(doc, "ismaster", 8) === "boolean" || typeof field(doc, "isWritablePrimary", 8) === "boolean" || field(doc, "msg", 2) === "isdbgrid";
+            return primary && (numeric(doc, "maxBsonObjectSize") >= 512 || doc.localTime && doc.localTime.type === 9);
+          }
+          if (command === "serverStatus") return numeric(doc, "uptime") >= 0 && (version(doc) !== "" || field(doc, "mem", 3) && field(doc, "globalLock", 3));
+          return version(doc) !== "" && (typeof field(doc, "gitVersion", 2) === "string" || field(doc, "versionArray", 4) || typeof numeric(doc, "bits") === "number");
+        }
+        if (numeric(doc, "ok") !== 0) return false;
+        const error = field(doc, "errmsg", 2) || "";
+        if (error === "need to login") return command === "serverStatus";
+        if (numeric(doc, "code") === 13 && (error === "command " + command + " requires authentication" || error.indexOf("not authorized on ") === 0 && error.indexOf(" to execute command { " + command + ":") > 0)) return true;
+        return numeric(doc, "code") === 352 && field(doc, "codeName", 2) === "UnsupportedOpQueryCommand" && (error === "Unsupported OP_QUERY command: " + command || error.indexOf("Unsupported OP_QUERY command: " + command + ".") === 0);
+      }
+
+      function query(conn, command, modern, database) {
+        // Nmap's serverStatus probe uses a double, while ismaster uses int32.
+        let elements = (command === "serverStatus" ? "01" + ascii(command) + "00000000000000f03f" : "10" + ascii(command) + "0001000000");
+        if (modern) elements += "02" + ascii("$db") + "00" + le32(database.length + 1) + ascii(database) + "00";
+        const doc = le32(elements.length / 2 + 5) + elements + "00";
+        const body = modern ? "0000000000" + doc : "00000000" + ascii(database + ".$cmd") + "0000000000ffffffff" + doc;
+        const id = ++requestID;
+        conn.SendHex(le32(body.length / 2 + 16) + le32(id) + "00000000" + le32(modern ? 2013 : 2004) + body);
+        const header = readHex(conn, 16);
+        const length = u32(header, 0), opcode = u32(header, 12);
+        if (length < (modern ? 26 : 41) || length > limit || u32(header, 8) !== id || opcode !== (modern ? 2013 : 1)) throw new Error("invalid MongoDB header");
+        const payload = readHex(conn, length - 16);
+        if (!modern) {
+          if ((u32(payload, 0) & ~10) !== 0 || payload.substr(8, 16) !== "0000000000000000" || u32(payload, 12) !== 0 || u32(payload, 16) !== 1) throw new Error("invalid OP_REPLY");
+          return bson(payload.substring(40));
+        }
+        const flags = u32(payload, 0);
+        if ((flags & 0xffff) !== (flags & 1) || payload.substr(8, 2) !== "00") throw new Error("invalid OP_MSG flags or section");
+        let end = payload.length;
+        if (flags & 1) {
+          // CRC-32C covers the complete message except the checksum itself.
+          end -= 8;
+          const data = header + payload.substring(0, end);
+          let crc = -1;
+          for (let i = 0; i < data.length; i += 2) {
+            crc ^= parseInt(data.substr(i, 2), 16);
+            for (let bit = 0; bit < 8; bit++) crc = (crc >>> 1) ^ (crc & 1 ? 0x82f63b78 : 0);
+          }
+          if (((~crc) >>> 0) !== u32(payload, end / 2)) throw new Error("invalid OP_MSG checksum");
+        }
+        // These commands return one body document, without document sequences.
+        return bson(payload.substring(10, end));
+      }
+
+      function open(tls) {
+        const conn = tls ? net.OpenTLS("tcp", address) : net.Open("tcp", address);
+        conn.SetTimeout(3);
+        return conn;
+      }
+      function probe(tls, modern, command) {
+        const result = {found: false, version: "", upgrade: false};
+        let conn;
+        try {
+          conn = open(tls);
+          let doc = query(conn, command, modern, command === "serverStatus" ? "test" : "admin");
+          if (modern && command === "hello" && numeric(doc, "code") === 59) {
+            command = "ismaster";
+            doc = query(conn, command, true, "admin");
+          }
+          if (!identified(doc, command)) return result;
+          result.found = true;
+          if (command === "serverStatus") result.version = version(doc);
+          result.upgrade = !modern && numeric(doc, "code") === 352;
+          if (result.version || result.upgrade) return result;
+          if (numeric(doc, "maxWireVersion") >= 6) modern = true;
+          const build = query(conn, "buildInfo", modern, "admin");
+          result.version = version(build);
+          result.upgrade = !modern && numeric(build, "code") === 352 && identified(build, "buildInfo");
+          if (!result.version && !result.upgrade && command !== "serverStatus" && numeric(build, "code") !== 13) {
+            const status = query(conn, "serverStatus", modern, "admin");
+            if (identified(status, "serverStatus")) result.version = version(status);
+            result.upgrade = !modern && numeric(status, "code") === 352 && identified(status, "serverStatus");
+          }
+        } catch (error) { /* Preserve valid service evidence if version probing fails. */ }
+        finally { if (conn) conn.Close(); }
+        return result;
+      }
+      function httpHint(tls) {
+        let conn;
+        try {
+          conn = open(tls);
+          conn.Send("GET / HTTP/1.0\r\n\r\n");
+          let response = "";
+          // Bounded reads handle fragmented replies without waiting for EOF.
+          for (let i = 0; i < 32 && response.length < 8192; i++) {
+            const chunk = conn.RecvString(1024);
+            if (!chunk) break;
+            response += chunk;
+            const split = response.indexOf("\r\n\r\n");
+            if (split < 0) continue;
+            const headers = response.substring(0, split);
+            if (!/^HTTP\/1\.[01] 200(?: |\r\n)/.test(headers) || !/\r\nContent-Type:\s*text\/plain(?:;[^\r\n]*)?\r?$/im.test(headers)) return false;
+            const match = /\r\nContent-Length:\s*([0-9]+)\s*\r?$/im.exec(headers);
+            if (!match || +match[1] > 256) return false;
+            const body = response.substring(split + 4);
+            if (body.length < +match[1]) continue;
+            if (body.length !== +match[1]) return false;
+            return /^(?:You are trying to access MongoDB on the native driver port\. For http diagnostic access, add 1000 to the port number|It looks like you are trying to access MongoDB over HTTP on the native driver port\.)\r?\n$/.test(body);
+          }
+        } catch (error) { /* No MongoDB diagnostic evidence. */ }
+        finally { if (conn) conn.Close(); }
+        return false;
+      }
+
+      let result = {found: false, version: ""};
+      for (let transport = 0; transport < 2 && !result.found; transport++) {
+        const tls = transport === 1;
+        result = probe(tls, false, "ismaster");
+        if (!result.found) result = probe(tls, false, "serverStatus");
+        if (!result.found || result.upgrade) {
+          const modern = probe(tls, true, "hello");
+          if (modern.found) result = modern;
+        }
+        if (!result.found && httpHint(tls)) result = {found: true, version: ""};
+      }
+      Export(result.found ? "mongodb" + (result.version ? " " + result.version : "") : "");
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
 
     matchers:
-      - type: word
-        words:
-          - "logicalSessionTimeout"
-          - "localTime"
-# digest: 490a00463044022047c4a3845188eea6694e662b1afbe42d4b7b8daa1f4350a01cb17263219fde23022021a0b4540bae1629c14b5a8f38e5c3bf8ae332e7ce7f86fbd7b418847ef668db:922c64590222798bb761d5b6d8e72950
+      - type: regex
+        part: response
+        regex:
+          - '^mongodb(?: [0-9]+\.[0-9]+\.[0-9]+(?:[.-][0-9A-Za-z][0-9A-Za-z.-]*)?)?$'
+
+    extractors:
+      - type: regex
+        name: version
+        part: response
+        group: 1
+        regex:
+          - '^mongodb ([0-9]+\.[0-9]+\.[0-9]+(?:[.-][0-9A-Za-z][0-9A-Za-z.-]*)?)$'

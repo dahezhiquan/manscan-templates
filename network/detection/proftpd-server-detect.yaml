@@ -5,7 +5,9 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    ProFTPD 是类 Unix 系统常见的 FTP 服务端软件，用于提供文件传输服务。该模板连接 21/TCP 并读取协议响应，通过匹配 `ProFTPD Server` 等响应特征识别目标服务。
+    ProFTPD 是类 Unix 系统常见的 FTP 服务端软件，用于提供文件传输服务。该模板连接 21/TCP 并读取欢迎横幅，识别带版本号或隐藏版本号的 ProFTPD Server 响应；仅在横幅明确包含版本号时提取版本，保留 1.3.5e 等版本后缀。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   metadata:
     verified: true
     max-request: 1
@@ -15,20 +17,22 @@ info:
 tcp:
   - inputs:
       - data: "\n"
+        read: 1
     host:
       - "{{Hostname}}"
     port: 21
+    read-all: true
 
     matchers:
-      - type: word
-        words:
-          - "ProFTPD Server"
+      - type: regex
+        part: raw
+        regex:
+          - '(?i)^220(?:-[^\r\n]*\r?\n220)*[ -]ProFTPD(?: [0-9][0-9a-z._+-]*)? Server(?:[ \t]|\r?\n|$)'
 
     extractors:
       - type: regex
         regex:
-          - 'ProFTPD ([0-9.a-z]+) Server'
+          - '(?i)^220(?:-[^\r\n]*\r?\n220)*[ -]ProFTPD ([0-9][0-9a-z._+-]*) Server(?:[ \t]|\r?\n|$)'
         group: 1
         name: version
-        part: data
-# digest: 4a0a00473045022100e18bd77801120508798f2b2868c2a00a45125118ca4f25190a9e2d3a5aa5db3702203e5e9f75201d09d2c295f163447841d1ae6113727a6d843b826a456565cab187:922c64590222798bb761d5b6d8e72950
+        part: raw

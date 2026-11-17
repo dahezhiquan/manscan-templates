@@ -5,26 +5,36 @@ info:
   author: Ice3man543,tarunKoyalwar
   severity: info
   description: |
-    Microsoft SQL Server 是微软提供的关系型数据库管理系统，常用于企业业务系统、报表、数据仓库和 Windows 生态应用的数据存储。该模板使用 nuclei 的 MSSQL 客户端向 TCP 1433 端口发起协议握手，并在 `IsMssql` 判断和连接状态均成功时确认目标提供 SQL Server 服务；命中仅用于数据库资产指纹识别。
+    通过 MSSQL 客户端向 TCP 1433 端口发送 TDS PRELOGIN 请求，在响应通过协议校验后识别 Microsoft SQL Server，并从服务端返回的 VERSION 字段提取主版本、次版本和构建号，例如 15.0.2000。仅输出实际返回的有效版本；版本为空或主版本为零时保留服务识别结果，不推测产品年份或补丁修订号。探测不提交登录凭据，也不执行 SQL 查询。
   metadata:
     max-request: 1
     shodan-query: port:1433
     vendor: microsoft
-    product: sql_server
+    product: mssql
   tags: js,mssql,detect,network,discovery
 
 javascript:
   - code: |
       var m = require("nuclei/mssql");
       var c = m.MSSQLClient();
-      c.IsMssql(Host, Port);
+      var info = c.FingerprintMssql(Host, Port);
+      var version = info.Version || "";
+      var hasVersion = typeof version === "string" && /^[1-9][0-9]*\.[0-9]+\.[0-9]+$/.test(version);
+      Export("mssql" + (hasVersion ? " " + version : ""));
     args:
       Host: "{{Host}}"
       Port: "1433"
     matchers:
       - type: dsl
         dsl:
-          - "response == true"
+          - 'regex("^mssql( [1-9][0-9]*[.][0-9]+[.][0-9]+)?$", response)'
           - "success == true"
         condition: and
-# digest: 4a0a00473045022029aff7a0d5cc3b9baa98af69a1b0cfe4cf19d089a74988842c741f585093128d022100eaaf7fb352512fa7a28199444e00e73be05cda052ecdb60db9ce2c4a865b5532:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: version
+        part: response
+        group: 1
+        regex:
+          - '^mssql ([1-9][0-9]*\.[0-9]+\.[0-9]+)$'

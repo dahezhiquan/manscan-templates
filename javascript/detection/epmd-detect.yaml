@@ -1,0 +1,57 @@
+id: epmd-detect
+
+info:
+  name: Erlang EPMD 服务识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    向目标发送 EPMD NAMES_REQ 请求，并按 Nmap epmd 探针规则校验响应开头的四字节大端端口标识 4369（00001111）。完整读取四字节响应头，兼容分段返回和没有注册节点的情况，不依赖节点名称或节点列表；默认连接 4369，支持显式端口及 IPv6。
+    命中仅确认符合该响应特征的 EPMD 服务，不代表存在漏洞；响应中的端口和节点信息不是 Erlang/OTP 软件版本，本模板不提取版本。该规则要求服务报告的 EPMD 端口为 4369，不覆盖修改了该端口标识的实例。
+    建议输入主机:端口；当前扫描器对裸主机输入可能在结果中记录默认端口 80，显式输入主机:4369 可确保结果端口归属正确。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://www.erlang.org/docs/28/apps/erts/erl_dist_protocol.html
+  metadata:
+    product: epmd
+    shodan-query: 'product:"Erlang Port Mapper Daemon"'
+  tags: epmd,erlang,network,js,detect,tcp,discovery
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+
+      function detect(address) {
+        let conn;
+        try {
+          conn = net.Open('tcp', address);
+          conn.SetTimeout(3);
+          // NAMES_REQ: two-byte length followed by tag 110 (n).
+          conn.SendHex('00016e');
+          const header = new bytes.Buffer();
+          header.Write(conn.RecvFull(4));
+          return header.Hex() === '00001111';
+        } catch (e) {
+          return false;
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 4369;
+      Export(detect(host + ':' + port) ? 'epmd' : '');
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
+    matchers:
+      - type: dsl
+        name: epmd
+        condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "epmd"'

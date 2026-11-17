@@ -1,0 +1,204 @@
+id: ldap-detect
+
+info:
+  name: LDAP 服务识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    该模板先查询 RootDSE，未识别时再发送 LDAPv2 空凭据绑定请求，通过完整 BER 报文、请求消息编号及 LDAP 响应结构确认服务；拒绝匿名访问、要求 LDAPv3 或要求 TLS 的合法响应同样可用于识别。
+    支持明文 LDAP 和隐式 TLS 的 LDAPS：未指定端口时依次检查 389 和 636，显式指定端口时在该端口尝试两种传输方式；不执行 StartTLS 升级或 UDP 探测。命中仅表示 LDAP 服务存在，不代表匿名目录访问漏洞，不输出厂商或软件版本。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://www.rfc-editor.org/rfc/rfc4511
+  metadata:
+    product: ldap
+    shodan-query: 'port:389,636,3268,3269'
+  tags: ldap,network,js,tcp,detect,discovery
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+      const limit = 65536;
+
+      const probes = [
+        {id: 7, tag: 0x65, hex: '30840000002d02010763840000002404000a01000a0100020100020164010100870b6f626a656374436c617373308400000000'},
+        {id: 1, tag: 0x61, hex: '300c020101600702010204008000'}
+      ];
+
+      function octet(hex, offset) {
+        return parseInt(hex.substr(offset * 2, 2), 16);
+      }
+
+      function tlv(hex, offset, end) {
+        if (offset + 2 > end) throw 'truncated BER header';
+        const tag = octet(hex, offset++);
+        let length = octet(hex, offset++);
+        if (length >= 128) {
+          const count = length - 128;
+          if (count < 1 || count > 4 || offset + count > end) throw 'invalid BER length';
+          length = 0;
+          for (let i = 0; i < count; i++) length = length * 256 + octet(hex, offset++);
+        }
+        if (length > limit || offset + length > end) throw 'truncated BER value';
+        return {tag: tag, start: offset, end: offset + length};
+      }
+
+      function children(hex, node) {
+        const result = [];
+        let offset = node.start;
+        while (offset < node.end) {
+          if (result.length >= 1024) throw 'too many BER fields';
+          const child = tlv(hex, offset, node.end);
+          result.push(child);
+          offset = child.end;
+        }
+        return result;
+      }
+
+      function integer(hex, node, tag) {
+        const size = node.end - node.start;
+        if (node.tag !== tag || size < 1 || size > 4 || octet(hex, node.start) >= 128) throw 'invalid LDAP integer';
+        let value = 0;
+        for (let i = node.start; i < node.end; i++) value = value * 256 + octet(hex, i);
+        return value;
+      }
+
+      function text(hex, node) {
+        let value = '';
+        for (let i = node.start; i < node.end; i++) value += String.fromCharCode(octet(hex, i));
+        return value;
+      }
+
+      function controlsOK(hex, node) {
+        if (node.tag !== 0xa0) return false;
+        const controls = children(hex, node);
+        if (!controls.length) return false;
+        for (const control of controls) {
+          if (control.tag !== 0x30) return false;
+          const fields = children(hex, control);
+          if (!fields.length || fields[0].tag !== 4 || !/^[0-9]+(?:\.[0-9]+)+$/.test(text(hex, fields[0]))) return false;
+          let i = 1;
+          if (i < fields.length && fields[i].tag === 1) {
+            if (fields[i].end - fields[i].start !== 1) return false;
+            i++;
+          }
+          if (i < fields.length && fields[i].tag === 4) i++;
+          if (i !== fields.length) return false;
+        }
+        return true;
+      }
+
+      function resultOK(hex, op, notice) {
+        const fields = children(hex, op);
+        if (fields.length < 3 || integer(hex, fields[0], 10) > 127 || fields[1].tag !== 4 || fields[2].tag !== 4) return false;
+        let i = 3;
+        if (i < fields.length && fields[i].tag === 0xa3) {
+          const refs = children(hex, fields[i++]);
+          if (!refs.length || refs.some(r => r.tag !== 4 || r.start === r.end)) return false;
+        }
+        if (notice) {
+          if (i >= fields.length || fields[i].tag !== 0x8a || text(hex, fields[i++]) !== '1.3.6.1.4.1.1466.20036') return false;
+          if (i < fields.length && fields[i].tag === 0x8b) i++;
+        } else if (op.tag === 0x61 && i < fields.length && fields[i].tag === 0x87) {
+          i++;
+        }
+        return i === fields.length;
+      }
+
+      function responseOK(hex, probe) {
+        const outer = tlv(hex, 0, hex.length / 2);
+        if (outer.tag !== 0x30 || outer.end !== hex.length / 2) return false;
+        const message = children(hex, outer);
+        if (message.length < 2 || message.length > 3) return false;
+        if (message.length === 3 && !controlsOK(hex, message[2])) return false;
+        const id = integer(hex, message[0], 2);
+        const op = message[1];
+        if (id === 0 && op.tag === 0x78) return resultOK(hex, op, true);
+        if (id !== probe.id) return false;
+        if (op.tag === probe.tag) return resultOK(hex, op, false);
+        if (probe.id !== 7) return false;
+        if (op.tag === 0x73) {
+          const refs = children(hex, op);
+          return refs.length > 0 && refs.every(r => r.tag === 4 && /^ldaps?:\/\//i.test(text(hex, r)));
+        }
+        if (op.tag !== 0x64) return false;
+        const entry = children(hex, op);
+        // baseObject 查询只接受空 DN 的 RootDSE 条目和格式正确的属性集合。
+        if (entry.length !== 2 || entry[0].tag !== 4 || entry[0].start !== entry[0].end || entry[1].tag !== 0x30) return false;
+        const attrs = children(hex, entry[1]);
+        if (!attrs.length) return false;
+        for (const attr of attrs) {
+          if (attr.tag !== 0x30) return false;
+          const pair = children(hex, attr);
+          if (pair.length !== 2 || pair[0].tag !== 4 || pair[1].tag !== 0x31) return false;
+          if (!/^(?:[a-z][a-z0-9-]*|[0-9]+(?:\.[0-9]+)+)(?:;[a-z0-9-]+)*$/i.test(text(hex, pair[0]))) return false;
+          if (!children(hex, pair[1]).every(v => v.tag === 4)) return false;
+        }
+        return true;
+      }
+
+      function receiveHex(conn, count) {
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(count));
+        const hex = buffer.Hex();
+        if (hex.length !== count * 2) throw 'incomplete LDAP response';
+        return hex;
+      }
+
+      function probeEndpoint(address, tls, probe) {
+        let conn;
+        try {
+          conn = tls ? net.OpenTLS('tcp', address) : net.Open('tcp', address);
+          conn.SendHex(probe.hex);
+          let header = receiveHex(conn, 2);
+          if (octet(header, 0) !== 0x30) return false;
+          let size = octet(header, 1);
+          if (size >= 128) {
+            const count = size - 128;
+            if (count < 1 || count > 4) return false;
+            const length = receiveHex(conn, count);
+            header += length;
+            size = 0;
+            for (let i = 0; i < count; i++) size = size * 256 + octet(length, i);
+          }
+          if (size < 7 || size > limit) return false;
+          return responseOK(header + receiveHex(conn, size), probe);
+        } catch (e) {
+          return false;
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const port = Number(TargetPort);
+      const explicit = port >= 1 && port <= 65535 && Math.floor(port) === port;
+      const tlsFirst = explicit && [636, 637, 3269, 11712].indexOf(port) !== -1;
+      const endpoints = explicit
+        ? [{port: port, tls: tlsFirst}, {port: port, tls: !tlsFirst}]
+        : [{port: 389, tls: false}, {port: 636, tls: true}];
+      let detected = false;
+      for (const endpoint of endpoints) {
+        for (const probe of probes) {
+          if (probeEndpoint(host + ':' + endpoint.port, endpoint.tls, probe)) {
+            detected = true;
+            break;
+          }
+        }
+        if (detected) break;
+      }
+      Export(detected ? 'ldap' : '');
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
+    matchers:
+      - type: dsl
+        name: ldap
+        condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "ldap"'

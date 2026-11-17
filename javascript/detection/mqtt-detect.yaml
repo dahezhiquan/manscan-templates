@@ -1,0 +1,89 @@
+id: mqtt-detect
+
+info:
+  name: MQTT 服务识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    探针发送 MQTT 3.1.1 CONNECT 请求，完整读取四字节 CONNACK，校验报文类型、剩余长度、会话标志以及 0 至 5 的合法返回码；连接成功、版本不支持、客户端标识被拒绝、服务不可用及认证拒绝均可用于识别 MQTT 服务。
+    使用随机客户端标识和 Clean Session，不携带凭据或遗嘱，不订阅或发布消息，连接成功后尝试发送 DISCONNECT；仅输出 mqtt 标签，不推断 Broker 产品或软件版本，命中也不代表存在未授权访问漏洞。
+    支持 TCP、TLS、分段响应及 IPv6，裸主机依次探测 1883/TCP 和 8883/TLS，显式端口在同一端口尝试明文与 TLS；建议输入主机:端口以确保结果端口归属正确，不覆盖 MQTT over WebSocket、MQTT-SN 或需要客户端证书的连接。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://github.com/nmap/nmap/blob/master/nselib/mqtt.lua
+    - https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html
+  metadata:
+    product: mqtt
+    shodan-query: 'product:"MQTT"'
+  tags: mqtt,network,js,detect,tcp,discovery
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+
+      const suffix = String(ClientSuffix);
+      if (!/^[A-Za-z0-9]{16}$/.test(suffix)) throw 'invalid MQTT client identifier';
+      const clientId = 'manscan' + suffix;
+      let clientHex = '';
+      for (let i = 0; i < clientId.length; i++) {
+        clientHex += ('0' + clientId.charCodeAt(i).toString(16)).slice(-2);
+      }
+      // Protocol level 4, Clean Session, keepalive 30s, 23-byte client ID.
+      const request = '102300044d5154540402001e0017' + clientHex;
+
+      function probe(address, tls) {
+        let conn;
+        try {
+          conn = tls ? net.OpenTLS('tcp', address) : net.Open('tcp', address);
+          conn.SetTimeout(3);
+          conn.SendHex(request);
+          const buffer = new bytes.Buffer();
+          buffer.Write(conn.RecvFull(4));
+          const response = buffer.Hex();
+          // Clean Session requires Session Present=0; return codes 6-255 are reserved.
+          if (!/^2002000[0-5]$/.test(response)) return false;
+          if (response === '20020000') {
+            try {
+              conn.SendHex('e000');
+            } catch (e) {
+              // A complete CONNACK remains evidence if the peer already closed.
+            }
+          }
+          return true;
+        } catch (e) {
+          return false;
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const port = Number(TargetPort);
+      const explicit = port >= 1 && port <= 65535 && Math.floor(port) === port;
+      const tlsFirst = port === 8883;
+      const endpoints = explicit
+        ? [{port: port, tls: tlsFirst}, {port: port, tls: !tlsFirst}]
+        : [{port: 1883, tls: false}, {port: 8883, tls: true}];
+      let detected = false;
+      for (const endpoint of endpoints) {
+        if (probe(host + ':' + endpoint.port, endpoint.tls)) {
+          detected = true;
+          break;
+        }
+      }
+      Export(detected ? 'mqtt' : '');
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+      ClientSuffix: "{{rand_base(16)}}"
+
+    matchers:
+      - type: dsl
+        name: mqtt
+        condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "mqtt"'

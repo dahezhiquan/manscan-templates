@@ -1,0 +1,74 @@
+id: hadoop-ipc-detect
+
+info:
+  name: Apache Hadoop IPC 服务识别（指纹识别）
+  author: dahezhiquan
+  severity: info
+  description: |
+    通过 TCP 发送 GET / HTTP/1.0 探针，识别 Hadoop IPC 专用 HTTP 错端口提示或旧版 Writable、新版 Protobuf 格式的 RPC 版本不匹配响应；不提交用户名或密码、不尝试登录、不调用业务 RPC。
+    默认连接 8020/TCP，显式指定目标端口时使用该端口；分段接收响应，收齐完整指纹后立即停止读取，避免后续连接重置或保持连接造成漏报，普通 HTTP 404 或单独出现 Hadoop 字样不作为命中依据。
+    错误消息中的 Server IPC version 表示 IPC 协议版本，不是 Hadoop 软件版本；这些响应无法可靠提供软件版本，因此不输出版本提取结果。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
+    - https://github.com/apache/hadoop/blob/trunk/hadoop-common-project/hadoop-common/src/main/java/org/apache/hadoop/ipc/Server.java
+  metadata:
+    vendor: apache
+    product: hadoop-ipc
+  tags: network,hadoop,hadoop-ipc,detect,tcp,discovery,apache
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+
+      function matches(raw, hex) {
+        // Keep binary prefixes and complete exception messages together.
+        if (hex.indexOf('00000000030000007cffffffff00000029') === 0) {
+          return /^org\.apache\.hadoop\.ipc\.RPC\$VersionMismatch\x00\x00\x00>Server IPC version [0-9]+ cannot communicate with client version 47$/.test(raw.slice(17));
+        }
+        if (hex.indexOf('0000007c7b08ffffffff0f100218092229') === 0) {
+          return /^org\.apache\.hadoop\.ipc\.RPC\$VersionMismatch\*>Server IPC version [0-9]+ cannot communicate with client version [0-9]+\x0e:\x00@\x01$/.test(raw.slice(17));
+        }
+        const boundary = raw.indexOf('\r\n\r\n');
+        if (boundary < 0) return false;
+        const headers = raw.slice(0, boundary + 2);
+        const body = raw.slice(boundary + 4);
+        return /^HTTP\/1\.[01] 404(?: [^\r\n]*)?\r\n(?:[A-Za-z0-9-]+:[^\r\n]*\r\n)*$/.test(headers) &&
+          /\r\nContent-Type:[ \t]*text\/plain(?:[ \t]*;[^\r\n]*)?[ \t]*\r\n/i.test(headers) &&
+          body === 'It looks like you are making an HTTP request to a Hadoop IPC port. This is not the correct port for the web interface on this daemon.\r\n';
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 8020;
+      const conn = net.Open('tcp', host + ':' + port);
+      try {
+        conn.Send('GET / HTTP/1.0\r\n\r\n');
+        const response = new bytes.Buffer();
+        // Bound reads to 4 KiB; check after each fragment, never wait for EOF after a match.
+        let size = 0;
+        while (size < 4096) {
+          const fragment = conn.Recv(4096 - size);
+          if (fragment.length === 0) break;
+          response.Write(fragment);
+          const hex = response.Hex();
+          size = hex.length / 2;
+          const raw = response.String();
+          if (matches(raw, hex)) {
+            Export(JSON.stringify({service: 'hadoop-ipc', evidence: raw}));
+            break;
+          }
+        }
+      } finally {
+        conn.Close();
+      }
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'success && contains(response, "\"service\":\"hadoop-ipc\"")'

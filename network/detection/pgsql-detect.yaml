@@ -1,51 +1,59 @@
 id: pgsql-detect
 
 info:
-  name: PostgreSQL Authentication 识别（指纹识别）
-  author: nybble04,geeknik
+  name: PostgreSQL 服务指纹识别（指纹识别）
+  author: dahezhiquan
   severity: info
   description: |
-    PostgreSQL 是关系型数据库服务，用于业务数据存储、查询和事务处理。该模板连接 5432/TCP 并读取协议响应，通过匹配 `C0A000`、`C08P01`、`28000` 等响应特征识别目标服务。
+    默认连接 5432/TCP，通过完整错误消息中的异常协议号、源文件和处理函数识别 PostgreSQL；未命中时发送不包含用户名、数据库名或密码的启动包，校验错误响应的消息类型、长度和字段结构。不回应认证挑战、不尝试登录、不执行 SQL。当前探针不能可靠取得精确软件版本，版本保持为空，不将协议版本或错误行号推断出的范围作为软件版本。
   reference:
     - https://www.postgresql.org/docs/current/errcodes-appendix.html
     - https://www.postgresql.org/docs/current/client-authentication-problems.html
+    - https://www.postgresql.org/docs/current/protocol-message-formats.html
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: port:5432 product:"PostgreSQL"
+    vendor: postgresql
+    product: postgresql
   tags: network,postgresql,db,detect,tcp,discovery
+
+flow: |
+  tcp(1) || tcp(2);
+
 tcp:
   - inputs:
-      - data: "000000500003000075736572006e75636c6569006461746162617365006e75636c6569006170706c69636174696f6e5f6e616d65007073716c00636c69656e745f656e636f64696e6700555446380000"
-        type: hex
-      - data: "7000000036534352414d2d5348412d32353600000000206e2c2c6e3d2c723d000000000000000000000000000000000000000000000000"
+      - data: "000000a4ff534d4272000000000801400000000000000000000000000000400600000100008100025043204e4554574f524b2050524f4752414d20312e3000024d4943524f534f4654204e4554574f524b5320312e303300024d4943524f534f4654204e4554574f524b5320332e3000024c414e4d414e312e3000024c4d312e3258303032000253616d626100024e54204c414e4d414e20312e3000024e54204c4d20302e313200"
         type: hex
 
     host:
       - "{{Hostname}}"
     port: 5432
-    read-size: 2048
+    read-all: true
 
-    matchers-condition: and
     matchers:
-      - type: word
-        part: body
-        words:
-          - "C0A000"                  # Error code for unsupported frontend protocol
-          - "C08P01"                  # Error code for invalide startup packet layout
-          - "28000"                   # Error code for invalid_authorization_specification
-          - "28P01"                   # Error code for invalid_password
-          - "SCRAM-SHA-256"           # Authentication prompt
-          - "pg_hba.conf"             # Client authentication config file
-          - "user \"nuclei\""         # The user nuclei (sent in request) doesn't exist
-          - "database \"nuclei\""     # The db nuclei (sent in request) doesn't exist"
-        condition: or
+      - type: dsl
+        dsl:
+          - "len(data) >= 9 && starts_with(hex_encode(data), '450000') && to_number(unpack('>I', substr(data, 1, 5))) == len(data) - 1"
+          - 'regex("^S[^\\x00]+\\x00(?:VFATAL\\x00)?C0A000\\x00M[^\\x00]*65363\\.19778[^\\x00]*\\x00F(?:postmaster\\.c|backend_startup\\.c|\\.\\\\src\\\\backend\\\\(?:postmaster\\\\postmaster|tcop\\\\backend_startup)\\.c)\\x00L[0-9]+\\x00RProcessStartupPacket\\x00\\x00$", substr(data, 5))'
+        condition: and
 
-      - type: word
-        words:
-          - "HTTP/1.1"
-        negative: true
-# digest: 4a0a0047304502203ff61eecdf3095b48e0f86dd06c3104d0502b8bac4654f5259483e17e72d1da50221008111572aebc6781d25786d8a17d836ec0d5d0987ea8a974fe3f81833b74eb89c:922c64590222798bb761d5b6d8e72950
+  - inputs:
+      - data: "000000090003000000"
+        type: hex
+
+    host:
+      - "{{Hostname}}"
+    port: 5432
+    read-all: true
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "len(data) >= 9 && starts_with(hex_encode(data), '450000') && to_number(unpack('>I', substr(data, 1, 5))) == len(data) - 1"
+          - 'regex("^S[^\\x00]+\\x00(?:V(?:FATAL|ERROR)\\x00)?C(?:28000|28P01|3D000|08P01|0A000|53300|57P03)\\x00M[^\\x00]+\\x00(?:[A-Z][^\\x00]*\\x00)*\\x00$", substr(data, 5))'
+        condition: and

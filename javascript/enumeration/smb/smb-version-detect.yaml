@@ -1,33 +1,199 @@
 id: smb-version-detect
 
 info:
-  name: SMB 版本识别（指纹识别）
+  name: SMB 服务与协议版本识别（指纹识别）
   author: pussycat0x
-  severity: low
+  severity: info
   description: |
-    SMB 是 Windows 文件共享、打印共享和域环境访问常用协议，服务端会在协商阶段声明支持的协议方言。该模板发起 SMB 协商并提取 Version.VerString 字段，用于识别目标 SMB 服务支持的协议版本指纹。
+    默认连接 TCP 445，优先发送包含 SMB 2.0.2、2.1、3.0、3.0.2、3.1.1 的 NEGOTIATE 请求；未取得有效响应时回退到 SMBv1 NT LM 0.12 协商。支持显式指定端口和 IPv6，TCP 139 使用 NetBIOS 传输会话请求。
+    校验完整消息长度、协议标识、响应方向、命令、请求标识、成功状态及协商结构后输出 smb 指纹。version 表示服务端本次协商选中的最高 SMB 协议版本，不是全部支持版本列表，也不代表 Windows 操作系统或 Samba 软件版本。
+    不发送 SMB Session Setup、用户名、密码或 NTLM 认证消息，不建立已认证会话、不枚举或访问共享。
+  reference:
+    - https://github.com/nmap/nmap/blob/master/scripts/smb-protocols.nse
+    - https://github.com/nmap/nmap/blob/master/nselib/smb2.lua
+    - https://github.com/nmap/nmap/blob/master/nselib/smb.lua
   metadata:
-    max-request: 1
+    max-request: 4
+    product: smb
     shodan-query: "port:445"
   tags: js,network,smb,enum,discovery,detect
 
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-    code: |
-      let m = require("nuclei/smb");
-      let c = new m.SMBClient();
-      let response = c.ConnectSMBInfoMode(Host, Port);
-      Export(response);
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+      const dialects = {514: '2.0.2', 528: '2.1', 768: '3.0', 770: '3.0.2', 785: '3.1.1'};
+
+      function octet(hex, offset) {
+        return parseInt(hex.substr(offset * 2, 2), 16);
+      }
+
+      function uintLE(hex, offset, count) {
+        let result = 0;
+        for (let i = count - 1; i >= 0; i--) result = result * 256 + octet(hex, offset + i);
+        return result;
+      }
+
+      function littleEndian(value, count) {
+        let hex = '';
+        for (let i = 0; i < count; i++) {
+          hex += ('0' + (value % 256).toString(16)).slice(-2);
+          value = Math.floor(value / 256);
+        }
+        return hex;
+      }
+
+      function receiveHex(conn, count) {
+        if (count === 0) return '';
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(count));
+        const hex = buffer.Hex();
+        if (hex.length !== count * 2) throw 'incomplete SMB frame';
+        return hex;
+      }
+
+      function receiveFrame(conn) {
+        // Bound allocation size and the number of NetBIOS keepalives.
+        for (let i = 0; i < 3; i++) {
+          const header = receiveHex(conn, 4);
+          if (header === '85000000') continue;
+          if (octet(header, 0) !== 0) return '';
+          const length = parseInt(header.substr(2), 16);
+          if (length < 35 || length > 65536) return '';
+          return receiveHex(conn, length);
+        }
+        return '';
+      }
+
+      function frame(payload) {
+        return ('00000000' + (payload.length / 2).toString(16)).slice(-8) + payload;
+      }
+
+      function netbiosName(name, suffix) {
+        let encoded = '20';
+        name = (name + ' '.repeat(15)).slice(0, 15);
+        for (let i = 0; i < 16; i++) {
+          const value = i === 15 ? suffix : name.charCodeAt(i);
+          encoded += (65 + (value >> 4)).toString(16) + (65 + (value & 15)).toString(16);
+        }
+        return encoded + '00';
+      }
+
+      function negotiateRequestV2() {
+        const header = 'fe534d42400000000000000000000100' + '00'.repeat(48);
+        const guid = new bytes.Buffer();
+        guid.WriteString(String(ClientGuid));
+        const salt = new bytes.Buffer();
+        salt.WriteString(String(PreauthSalt));
+        // Contexts start at offset 112 and are eight-byte aligned.
+        const fixed = '240005000100000040000000' + guid.Hex() + '7000000002000000';
+        const offered = '02021002000302031103' + '0000';
+        const preauth = '0100260000000000' + '010020000100' + salt.Hex() + '0000';
+        const encryption = '0200060000000000' + '020002000100';
+        return frame(header + fixed + offered + preauth + encryption);
+      }
+
+      function parseV2(hex) {
+        const length = hex.length / 2;
+        if (length < 128 || hex.substr(0, 8) !== 'fe534d42') return '';
+        if (uintLE(hex, 4, 2) !== 64 || uintLE(hex, 8, 4) !== 0 || uintLE(hex, 12, 2) !== 0) return '';
+        if ((uintLE(hex, 16, 4) & 3) !== 1 || uintLE(hex, 20, 4) !== 0) return '';
+        if (hex.substr(48, 16) !== '00'.repeat(8) || hex.substr(72, 24) !== '00'.repeat(12)) return '';
+        if (uintLE(hex, 64, 2) !== 65) return '';
+        const securityMode = uintLE(hex, 66, 2);
+        const dialect = uintLE(hex, 68, 2);
+        if (securityMode < 1 || securityMode > 3 || !dialects[dialect]) return '';
+        const bufferOffset = uintLE(hex, 120, 2);
+        const bufferLength = uintLE(hex, 122, 2);
+        if (bufferLength > 0 && (bufferOffset < 128 || bufferOffset + bufferLength > length)) return '';
+        if (dialect === 785) {
+          const count = uintLE(hex, 70, 2);
+          let offset = uintLE(hex, 124, 4);
+          if (count < 1 || count > 16 || offset < 128 || offset % 8 !== 0) return '';
+          if (bufferLength > 0 && offset < bufferOffset + bufferLength) return '';
+          let preauthSeen = false;
+          for (let i = 0; i < count; i++) {
+            if (offset + 8 > length) return '';
+            const type = uintLE(hex, offset, 2);
+            const size = uintLE(hex, offset + 2, 2);
+            if (uintLE(hex, offset + 4, 4) !== 0 || offset + 8 + size > length) return '';
+            if (type === 1) {
+              if (preauthSeen || size < 6 || uintLE(hex, offset + 8, 2) !== 1 || uintLE(hex, offset + 12, 2) !== 1) return '';
+              if (size !== 6 + uintLE(hex, offset + 10, 2)) return '';
+              preauthSeen = true;
+            }
+            offset = Math.ceil((offset + 8 + size) / 8) * 8;
+          }
+          if (!preauthSeen) return '';
+        }
+        return dialects[dialect];
+      }
+
+      function parseV1(hex) {
+        const length = hex.length / 2;
+        if (length < 69 || hex.substr(0, 10) !== 'ff534d4272') return '';
+        if (uintLE(hex, 5, 4) !== 0 || (octet(hex, 9) & 128) === 0) return '';
+        if (uintLE(hex, 24, 2) !== 0 || uintLE(hex, 26, 2) !== 0x0640 || uintLE(hex, 28, 2) !== 0 || uintLE(hex, 30, 2) !== 1) return '';
+        if (octet(hex, 32) !== 17 || uintLE(hex, 33, 2) !== 0) return '';
+        const byteCount = uintLE(hex, 67, 2);
+        if (length !== 69 + byteCount) return '';
+        const extended = (uintLE(hex, 10, 2) & 0x0800) !== 0;
+        if (extended ? byteCount < 16 : octet(hex, 66) > byteCount) return '';
+        return '1.0';
+      }
+
+      function probe(address, port, request, parser) {
+        let conn;
+        try {
+          conn = net.Open('tcp', address);
+          if (port === 139) {
+            // NetBIOS transport establishment is not SMB Session Setup.
+            conn.SendHex('81000044' + netbiosName('*SMBSERVER', 0x20) + netbiosName('MANSCAN', 0));
+            if (receiveHex(conn, 4) !== '82000000') return '';
+          }
+          conn.SendHex(request);
+          return parser(receiveFrame(conn));
+        } catch (e) {
+          return '';
+        } finally {
+          if (conn) conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 445;
+      const address = host + ':' + port;
+      let version = probe(address, port, negotiateRequestV2(), parseV2);
+      if (!version) {
+        // Offer only NT LM 0.12, so successful dialect index 0 means SMB 1.0.
+        const header = 'ff534d4272000000001801c8' + '00'.repeat(14) + '400600000100';
+        const dialect = '024e54204c4d20302e313200';
+        const request = frame(header + '00' + littleEndian(dialect.length / 2, 2) + dialect);
+        version = probe(address, port, request, parseV1);
+      }
+      Export(JSON.stringify(version ? {service: 'smb', version: version} : {}));
 
     args:
       Host: "{{Host}}"
-      Port: "445"
+      TargetPort: "{{Port}}"
+      ClientGuid: "{{rand_text_alphanumeric(16)}}"
+      PreauthSalt: "{{rand_text_alphanumeric(32)}}"
+
+    matchers-condition: and
+    matchers:
+      - type: dsl
+        dsl:
+          - 'success == true'
+      - type: regex
+        part: response
+        regex:
+          - '"service"\s*:\s*"smb"'
 
     extractors:
       - type: json
         name: version
         part: response
         json:
-          - '.Version.VerString | strings | capture("^(?:SMB\\s+)?(?<version>[0-9]+(?:\\.[0-9]+)*)$").version'
-# digest: 4a0a004730450220485f52627f4a1da9858eab64bb9b3bf2a056f5138eb533995a5da725e3cd29eb022100a75afb078033b9cdef842343da3e718bde694e6f49c89ef324ea53b36fecc9cb:922c64590222798bb761d5b6d8e72950
+          - '.version'

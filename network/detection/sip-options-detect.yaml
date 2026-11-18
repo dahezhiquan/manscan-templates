@@ -5,137 +5,199 @@ info:
   author: dahezhiquan
   severity: info
   description: |
-    SIP（Session Initiation Protocol）是用于建立、修改和终止音频、视频及其他多媒体会话的信令协议，常见于 IP 电话、软电话、SIP 网关和 PBX 服务。该模板分别通过 TCP 和 UDP 传输发送无副作用的 `OPTIONS` 请求，并通过 SIP 状态行、事务头和能力头确认目标运行 SIP 服务；命中仅表示服务指纹匹配，不代表存在未授权访问或认证缺陷。
+    默认连接 5060 端口，支持显式端口及 IPv6，分别通过 TCP、UDP 发送一次 OPTIONS 请求，显式端口为 5061 时额外通过 TLS 发送一次 OPTIONS；Via 使用 rport 请求向实际来源端口回包，不额外发送 UDP 存活探针。
+    分段读取 TCP 响应，处理临时响应，校验 SIP 状态行、Call-ID、CSeq 和顶层 Via branch；兼容头名称大小写、紧凑头和折行。仅从完整响应头提取明确的 Asterisk、OpenSIPS、Kamailio、SJphone、Twinkle、Snom、Polycom、GoWVP 和 AudioCodes Mediant 版本横幅，按产品标签输出，冲突版本不取任意值。
+    不发送认证信息，不执行 REGISTER、INVITE 或会话操作；合法的 401、403、404 等最终响应仍可识别服务。SIP/2.0、TLS 协议版本和设备型号不作为软件版本；横幅版本不保证等于实际安装发行版，命中不表示存在漏洞。
   remediation: |
     - 将 SIP 信令端口限制在可信的电话终端、SBC、VPN 或管理网络范围内，避免直接暴露到公网。
     - 为注册、呼叫和管理接口启用认证、来源访问控制、TLS/SRTP 及异常请求限速。
     - 审计 SIP 注册、呼叫和失败认证日志，及时升级 IP 电话、PBX、SIP 网关及其依赖组件。
   reference:
     - https://www.rfc-editor.org/rfc/rfc3261
+    - https://www.rfc-editor.org/rfc/rfc3581
+    - https://nmap.org/nsedoc/scripts/sip-methods.html
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   metadata:
-    max-request: 2
+    max-request: 3
     shodan-query: 'port:5060 product:"SIP"'
   tags: network,sip,voip,detect,tcp,udp,discovery,js
 
-tcp:
-  - inputs:
-      - data: "OPTIONS sip:{{Hostname}} SIP/2.0\r\nVia: SIP/2.0/TCP {{Hostname}};branch=z9hG4bK{{randstr}}\r\nMax-Forwards: 70\r\nFrom: <sip:scanner@{{Hostname}}>;tag={{randstr}}\r\nTo: <sip:{{Hostname}}>\r\nCall-ID: {{randstr}}@{{Hostname}}\r\nCSeq: 1 OPTIONS\r\nContact: <sip:scanner@{{Hostname}}>\r\nContent-Length: 0\r\n\r\n"
-
-    host:
-      - "{{Hostname}}"
-    port: 5060
-    read-size: 4096
-
-    matchers-condition: and
-    matchers:
-      - type: regex
-        part: data
-        regex:
-          - '(?i)SIP/2\.0\s+[1-6][0-9]{2}'
-
-      - type: word
-        part: data
-        words:
-          - "Via:"
-          - "CSeq:"
-        condition: and
-
-    extractors:
-      - type: regex
-        name: product_version_0
-        part: raw
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*Asterisk PBX\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "asterisk:" + product_version_0 : ""'
-      - type: regex
-        name: product_version_1
-        part: raw
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*OpenSIPS(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "opensips:" + product_version_1 : ""'
-      - type: regex
-        name: product_version_2
-        part: raw
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*[Kk]amailio(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "kamailio:" + product_version_2 : ""'
 javascript:
-  - pre-condition: |
-      isUDPPortOpen(Host, Port);
+  - code: |
+      const net = require("nuclei/net");
+      const binary = require("nuclei/bytes");
+      function detect() {
+        const transport = String(Transport);
+        if (transport !== "tcp" && transport !== "udp" && transport !== "tls") throw new Error("unsupported SIP transport");
+        let host = String(Host);
+        if (!host || /[\s\/?#@]/.test(host)) throw new Error("invalid SIP host");
+        if (host.indexOf(":") !== -1 && host.charAt(0) !== "[") host = "[" + host + "]";
+        const suppliedPort = Number(Port);
+        const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 5060;
+        const address = host + ":" + port;
+        // Only the conventional TLS port adds a third probe; other targets keep TCP/UDP.
+        if (transport === "tls" && port !== 5061) return null;
+        const token = new binary.Buffer(Rand(16)).Hex();
+        const branch = "z9hG4bK" + token;
+        const callID = token + "@scanner.invalid";
+        const version = '([0-9]+(?:[.][0-9]+)+(?:[-+_~][0-9A-Za-z]+(?:[-+._~][0-9A-Za-z]+)*)?)';
+        const boundary = '(?=[ \\t();]|$)';
+        const numericVersion = '([0-9]+(?:[.][0-9]+)+)(?:_[0-9a-f]+)?';
+        const rules = [
+          ["gowvp", '^GoWVP/' + version + boundary],
+          ["audiocodes-mediant", '^(?:AudioCodes-Sip-Gateway-)?Mediant [0-9A-Za-z_-]+/v[.]?([0-9]+(?:[.][0-9]+[A-Za-z]?)+)' + boundary],
+          ["asterisk", '^Asterisk PBX[ \\t]+' + version + boundary],
+          ["opensips", '^OpenSIPS(?:[ /]+|[ \\t]*\\()' + version + boundary],
+          ["kamailio", '^Kamailio(?:[ /]+|[ \\t]*\\()' + version + boundary],
+          ["sjphone", '^SJphone/' + version + boundary],
+          ["twinkle", '^Twinkle/' + version + boundary],
+          ["snom", '^snom[0-9A-Za-z_.-]+/' + version + boundary],
+          ["polycom", '^PolycomSound(?:StationIP-SSIP|PointIP-SPIP)_[0-9]+-UA/' + numericVersion + boundary],
+          ["polycom", '^(?:Polycom/[0-9.]+ )?PolycomVVX-[0-9A-Za-z_.]+-UA/' + numericVersion + boundary],
+          ["polycom", '^PolycomRealPresenceGroup[0-9]+/' + version + boundary],
+          ["polycom", '^Polycom HDX [0-9A-Za-z_. -]+ \\(Release - ' + version + '\\)$']
+        ];
 
-    code: |
-      const c = require("nuclei/net");
-      const conn = c.Open('udp', `${Host}:${Port}`);
-      const request = `OPTIONS sip:${Host} SIP/2.0\r\nVia: SIP/2.0/UDP ${Host}:${Port};branch=z9hG4bK{{randstr}}\r\nMax-Forwards: 70\r\nFrom: <sip:scanner@${Host}>;tag={{randstr}}\r\nTo: <sip:${Host}>\r\nCall-ID: {{randstr}}@${Host}\r\nCSeq: 1 OPTIONS\r\nContact: <sip:scanner@${Host}:${Port}>\r\nContent-Length: 0\r\n\r\n`;
-      conn.Send(request);
-      const response = conn.RecvString(4096);
-      conn.Close();
-      response;
+        function softwareVersions(headers) {
+          const servers = headers.server || [];
+          const agents = headers["user-agent"] || [];
+          if (servers.length > 1 || agents.length > 1) return [];
+          const values = servers.concat(agents);
+          const found = [];
+          for (let i = 0; i < values.length; i++) {
+            const products = values[i].match(/(?:GoWVP\/|Mediant [0-9A-Za-z_-]+\/|Asterisk PBX|OpenSIPS|Kamailio|SJphone\/|Twinkle\/|snom[0-9A-Za-z_.-]+\/|PolycomSound(?:Station|Point)|PolycomVVX|PolycomRealPresenceGroup|Polycom HDX)/gi) || [];
+            if (products.length > 1) return [];
+            for (let j = 0; j < rules.length; j++) {
+              const match = new RegExp(rules[j][1], "i").exec(values[i]);
+              if (match) {
+                const value = rules[j][0] + ":" + match[1];
+                if (found.indexOf(value) === -1) found.push(value);
+                break;
+              }
+            }
+          }
+          // Disagreement between Server and User-Agent must not pick an arbitrary version.
+          return found.length === 1 ? found : [];
+        }
+
+        function parseHeader(block) {
+          if (/[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(block)) return null;
+          const lines = block.split("\r\n");
+          const status = /^SIP\/2\.0 ([1-6][0-9]{2}) [^\r\n]*$/.exec(lines.shift());
+          if (!status) return null;
+          const headers = Object.create(null);
+          const aliases = {v: "via", i: "call-id", f: "from", t: "to", l: "content-length"};
+          let previous = "";
+          for (let i = 0; i < lines.length; i++) {
+            if (/^[ \t]/.test(lines[i])) {
+              if (!previous) return null;
+              const values = headers[previous];
+              values[values.length - 1] += " " + lines[i].trim();
+              continue;
+            }
+            const field = /^([!#$%&'*+.^_\x60|~0-9A-Za-z-]+)[ \t]*:[ \t]*([^\r\n]*)$/.exec(lines[i]);
+            if (!field) return null;
+            const name = field[1].toLowerCase();
+            previous = Object.prototype.hasOwnProperty.call(aliases, name) ? aliases[name] : name;
+            if (!headers[previous]) headers[previous] = [];
+            headers[previous].push(field[2].trim());
+          }
+          const ids = headers["call-id"] || [];
+          const seq = headers.cseq || [];
+          if (ids.length !== 1 || ids[0] !== callID || seq.length !== 1 || !/^0*1[ \t]+OPTIONS$/.test(seq[0])) return null;
+          const via = (headers.via || [""])[0].split(",")[0];
+          if (!(new RegExp('^SIP/2[.]0/' + transport + '[ \\t]+', 'i')).test(via)) return null;
+          const branches = via.match(/;[ \t]*branch[ \t]*=[ \t]*[^; \t,]+/gi) || [];
+          if (branches.length !== 1 || branches[0].replace(/^;[ \t]*branch[ \t]*=[ \t]*/i, "") !== branch) return null;
+          const sizes = headers["content-length"] || [];
+          if (sizes.length > 1 || (sizes.length === 1 && !/^[0-9]+$/.test(sizes[0]))) return null;
+          const bodyLength = sizes.length === 1 ? Number(sizes[0]) : 0;
+          if (Number(status[1]) < 200 && bodyLength > 16384) return null;
+          return {service: "sip", transport: transport, status: Number(status[1]), body_length: bodyLength, versions: softwareVersions(headers), evidence: block};
+        }
+
+        function receive(conn) {
+          const buffer = new binary.Buffer();
+          let offset = 0;
+          let interim = 0;
+          const started = Date.now();
+          for (let reads = 0; reads < (transport === "udp" ? 4 : 256) && Date.now() - started < 6000; reads++) {
+            const fragment = conn.Recv(transport === "udp" ? 16385 : Math.min(4096, 16384 - buffer.Len()));
+            if (fragment.length === 0) return null;
+            let hex;
+            if (transport === "udp") {
+              // Each datagram is a separate SIP message; never concatenate incomplete datagrams.
+              if (fragment.length > 16384) continue;
+              hex = new binary.Buffer(fragment).Hex();
+              offset = 0;
+            } else {
+              buffer.Write(fragment);
+              hex = buffer.Hex();
+            }
+            while (true) {
+              let end = hex.indexOf("0d0a0d0a", offset);
+              // Hex offsets must be byte-aligned, including across a binary body.
+              while (end !== -1 && end % 2 !== 0) end = hex.indexOf("0d0a0d0a", end + 1);
+              if (end < 0) break;
+              const octets = [];
+              for (let i = offset; i < end; i += 2) octets.push(parseInt(hex.slice(i, i + 2), 16));
+              const header = new binary.Buffer();
+              header.Write(octets);
+              const result = parseHeader(header.String());
+              if (!result) {
+                if (transport !== "udp") return null;
+                break;
+              }
+              if (result.status >= 200) return result;
+              if (++interim > 3) return null;
+              // A UDP datagram carries one response. TCP bodies are skipped by byte count.
+              if (transport === "udp") break;
+              offset = end + 8 + result.body_length * 2;
+            }
+            if (transport !== "udp" && buffer.Len() >= 16384) return null;
+          }
+          return null;
+        }
+
+        const conn = transport === "tls" ? net.OpenTLS("tcp", address) : net.Open(transport, address);
+        try {
+          conn.SetTimeout(3);
+          // The runtime does not expose the local socket address. Like Nmap's raw UDP
+          // probe, use rport/received routing instead of advertising the target as sender.
+          const request = "OPTIONS sip:" + address + " SIP/2.0\r\n" +
+            "Via: SIP/2.0/" + transport.toUpperCase() + " scanner.invalid;rport;branch=" + branch + "\r\n" +
+            "Max-Forwards: 70\r\nFrom: <sip:scanner@scanner.invalid>;tag=" + token + "\r\n" +
+            "To: <sip:" + address + ">\r\nCall-ID: " + callID + "\r\n" +
+            "CSeq: 1 OPTIONS\r\nAccept: application/sdp\r\nContent-Length: 0\r\n\r\n";
+          conn.Send(request);
+          const result = receive(conn);
+          return result;
+        } finally {
+          conn.Close();
+        }
+      }
+      Export(JSON.stringify(detect() || {}));
 
     args:
       Host: "{{Host}}"
       Port: 5060
+      Transport: "{{transport}}"
 
-    matchers-condition: and
+    payloads:
+      transport:
+        - tcp
+        - udp
+        - tls
+    attack: pitchfork
+    threads: 3
+
     matchers:
       - type: dsl
         dsl:
-          - "success == true"
-          - "len(response) > 0"
-        condition: and
-
-      - type: regex
-        part: response
-        regex:
-          - '(?i)SIP/2\.0\s+[1-6][0-9]{2}'
-
-      - type: word
-        part: response
-        words:
-          - "Via:"
-          - "CSeq:"
-        condition: and
+          - 'success && contains(response, "\"service\":\"sip\"")'
 
     extractors:
-      - type: regex
-        name: product_version_0
+      - type: json
         part: response
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*Asterisk PBX\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "asterisk:" + product_version_0 : ""'
-      - type: regex
-        name: product_version_1
-        part: response
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*OpenSIPS(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "opensips:" + product_version_1 : ""'
-      - type: regex
-        name: product_version_2
-        part: response
-        group: 1
-        regex:
-          - (?mi)^(?:Server|User-Agent):[ \t]*[Kk]amailio(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "kamailio:" + product_version_2 : ""'
+        json:
+          - '.versions[]?'

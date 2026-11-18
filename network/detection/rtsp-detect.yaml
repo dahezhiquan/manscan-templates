@@ -5,46 +5,141 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    RTSP 是实时流媒体控制协议，常用于摄像头、视频服务器和流媒体播放控制。该模板连接 554/TCP 并读取协议响应，通过匹配 `RTSP/1.0` 等响应特征识别目标服务。
+    默认连接 554/TCP，支持显式端口和 IPv6；发送 OPTIONS *，必要时以 OPTIONS / 回退一次，分段接收并在完整响应头到达后停止读取，校验 RTSP 1.0/2.0 状态行、CSeq 及协议专属响应头。
+    保留 DSS、LIVE555 的软件版本提取，并识别 QTSS、VLC、RealServer、Helix DNA Server、Wowza 和 AirTunes 的明确产品版本横幅；版本按产品标签输出，重复 Server 头或冲突版本不取任意值，RTSP 协议号不作为软件版本，AirTunes 横幅版本不推断为设备固件或操作系统版本。
+    不发送认证信息、不尝试登录、不枚举视频路径、不执行 SETUP、PLAY 或其他会话操作；401 等合法错误响应仍可用于指纹识别。
   reference:
     - https://nmap.org/nsedoc/scripts/rtsp-methods.html
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: RTSP/1.0
   tags: network,rtsp,detect,tcp,discovery
-tcp:
-  - inputs:
-      - data: "OPTIONS * RTSP/1.0\r\nCSeq: 1\r\n\r\n"
-    host:
-      - '{{Hostname}}'
-    port: 554
-    read-size: 4096
+
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+      const version = '([0-9]+(?:[.][0-9]+)+(?:[-+_][0-9A-Za-z]+(?:[-+._][0-9A-Za-z]+)*)?)';
+      const rules = [
+        ['darwin-streaming-server', '^DSS/' + version],
+        ['live555', '^LIVE555 Streaming Media v' + version],
+        ['quicktime-streaming-server', '^QTSS/v?' + version],
+        ['vlc-media', '^VLC(?:/|[ \\t]+)' + version],
+        ['realserver', '^RealServer Version ' + version],
+        ['helix-dna-server', '^Helix (?:DNA )?Server Version ' + version],
+        ['wowza-media-server', '^Wowza Media Server ' + version],
+        ['wowza-wowzastreamingengine', '^Wowza Streaming Engine ' + version],
+        ['airtunes', '^AirTunes/' + version]
+      ];
+
+      function softwareVersions(headers) {
+        const servers = headers['server'] || [];
+        // Duplicate Server fields are ambiguous, even when one looks familiar.
+        if (servers.length !== 1) return [];
+        const products = servers[0].match(/(?:^|[ \t,;])(?:DSS\/|LIVE555 Streaming Media v|QTSS\/|VLC(?:\/|[ \t]+)|RealServer Version |Helix (?:DNA )?Server Version |Wowza (?:Media Server|Streaming Engine) |AirTunes\/)/gi) || [];
+        if (products.length !== 1) return [];
+        for (let i = 0; i < rules.length; i++) {
+          const match = new RegExp(rules[i][1] + '(?=[ \\t;(]|$)', 'i').exec(servers[0]);
+          if (match) return [rules[i][0] + ':' + match[1]];
+        }
+        return [];
+      }
+
+      function parseHeader(block, sequence) {
+        const lines = block.split('\r\n');
+        const status = /^RTSP\/(1\.0|2\.0) ([1-5][0-9]{2}) [^\r\n]*$/.exec(lines.shift());
+        if (!status || /[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/.test(block)) return null;
+        const headers = Object.create(null);
+        for (let i = 0; i < lines.length; i++) {
+          const field = /^([!#$%&'*+.^_\x60|~0-9A-Za-z-]+):[ \t]*([^\r\n]*)$/.exec(lines[i]);
+          if (!field) return null;
+          const key = field[1].toLowerCase();
+          if (!headers[key]) headers[key] = [];
+          headers[key].push(field[2].trim());
+        }
+        const cseq = headers['cseq'] || [];
+        if (cseq.length > 1) return null;
+        const exact = cseq.length === 1 && cseq[0] === String(sequence);
+        const legacy = cseq.length === 0 || cseq[0] === '' || cseq[0] === '0' || cseq[0] === '-1' || cseq[0] === sequence + ' OPTIONS';
+        if (!exact && !legacy) return null;
+        // Legacy devices may omit/zero CSeq: require independent RTSP evidence.
+        const servers = headers['server'] || [];
+        const knownServer = servers.length === 1 && /^(?:DSS\/|QTSS\/|LIVE555 Streaming Media(?: |$)|VLC(?:\/| )|RealServer Version |Helix (?:DNA |Mobile )?Server(?: Plus)? Version |Wowza (?:Media Server|Streaming Engine) |AirTunes\/|Dahua Rtsp Server(?:$| )|Hikvision(?:$| ))/i.test(servers[0]);
+        const methods = (headers['public'] || []).concat(headers['allow'] || []).join(',').split(',').map(function(x) { return x.trim(); });
+        const rtspMethods = ['DESCRIBE', 'SETUP', 'PLAY', 'PAUSE', 'TEARDOWN', 'GET_PARAMETER', 'SET_PARAMETER'];
+        const methodCount = rtspMethods.filter(function(x) { return methods.indexOf(x) !== -1; }).length;
+        const auth = (headers['www-authenticate'] || []).some(function(x) { return /^(?:Basic|Digest)\s+.*\brealm=/i.test(x); });
+        if (!exact && !knownServer && methodCount < 2 && !(Number(status[2]) === 401 && auth)) return null;
+        return {service: 'rtsp', protocol: status[1], status: Number(status[2]), versions: softwareVersions(headers), evidence: block};
+      }
+
+      function probe(address, path, sequence) {
+        const conn = net.Open('tcp', address);
+        try {
+          conn.Send('OPTIONS ' + path + ' RTSP/1.0\r\nCSeq: ' + sequence + '\r\n\r\n');
+          const buffer = new bytes.Buffer();
+          let size = 0;
+          let offset = 0;
+          let interim = 0;
+          const started = Date.now();
+          while (size < 16384 && Date.now() - started < 10000) {
+            const fragment = conn.Recv(Math.min(4096, 16384 - size));
+            if (fragment.length === 0) return null;
+            buffer.Write(fragment);
+            size = buffer.Hex().length / 2;
+            const raw = buffer.String();
+            // Only parse complete headers; the body is never a version source.
+            while (true) {
+              const end = raw.indexOf('\r\n\r\n', offset);
+              if (end < 0) break;
+              const result = parseHeader(raw.slice(offset, end), sequence);
+              if (!result) return null;
+              if (result.status >= 200) return result;
+              if (++interim > 3) return null;
+              offset = end + 4;
+            }
+          }
+          return null;
+        } finally {
+          conn.Close();
+        }
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 554;
+      const address = host + ':' + port;
+      let result = null;
+      let failure = null;
+      try { result = probe(address, '*', 1); } catch (e) { failure = e; }
+      if (!result || (result.versions.length === 0 && [400, 404, 405, 501].indexOf(result.status) !== -1)) {
+        try {
+          const fallback = probe(address, '/', 2);
+          if (fallback) result = fallback;
+          failure = null;
+        } catch (e) { failure = e; }
+      }
+      if (result) Export(JSON.stringify(result));
+      else if (failure) throw failure;
+      else Export(JSON.stringify({}));
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
     matchers:
-      - type: word
-        words:
-          - RTSP/1.0
+      - type: dsl
+        dsl:
+          - 'success && contains(response, "\"service\":\"rtsp\"")'
+
     extractors:
-      - type: regex
-        name: product_version_0
-        part: raw
-        group: 1
-        regex:
-          - (?mi)^Server:[ \t]*DSS/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "darwin-streaming-server:" + product_version_0 : ""'
-      - type: regex
-        name: product_version_1
-        part: raw
-        group: 1
-        regex:
-          - (?mi)^Server:[ \t]*LIVE555 Streaming Media v([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
-        internal: true
-      - type: dsl
-        dsl:
-          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "live555:" + product_version_1 : ""'
+      - type: json
+        part: response
+        json:
+          - '.versions[]?'

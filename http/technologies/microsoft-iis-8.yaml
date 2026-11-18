@@ -29,4 +29,15 @@ http:
       - type: word
         words:
           - "<title>Microsoft Internet Information Services 8</title>"
-# digest: 4a0a004730450220763d85f0481f918ffe2a23cf05d3407b2b95c00f8839a4fff5daf1ab78c04a830221009254bf85b108de3cf09f0684ce4e34c78dadcc68b826f48af8f2998751a94493:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: header
+        group: 1
+        regex:
+          - (?mi)^Server:[ \t]*Microsoft-IIS/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

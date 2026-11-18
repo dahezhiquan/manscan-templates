@@ -24,4 +24,16 @@ http:
         words:
           - "<title>The install worked successfully! Congratulations!</title>"
         part: body
-# digest: 4a0a00473045022100c5ccac98ab69e88e159027ccbb3b130f9781fcb94d4490dafbbec421c8b2b827022008d2c294f984adb510ced63dc2d5c454b8fdecfe85a78d7fe447bd5658b42bf6:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)powered by\s*<a[^>]*>Django\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s*</a>
+          - (?i)Django\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s+(?:release notes|documentation)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

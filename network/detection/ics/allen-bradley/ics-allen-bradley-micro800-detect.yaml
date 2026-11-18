@@ -5,26 +5,83 @@ info:
   author: biero-el-corridor
   severity: info
   description: |
-    Allen-Bradley Micro800 Series PLC 是 Rockwell Automation/Allen-Bradley 工业控制器系列，常用于制造、过程控制和自动化现场控制场景。该模板连接 44818/TCP，通过匹配 `323038302d` 等二进制响应特征识别目标服务。
+    Allen-Bradley Micro800 Series PLC 是 Rockwell Automation/Allen-Bradley 工业控制器系列，常用于制造、过程控制和自动化现场控制场景。该模板通过 44818/TCP 的 EtherNet/IP ListIdentity 查询识别设备，校验封装头、厂商编号、条目边界和产品型号，并提取 Identity 中的主、次修订号作为该控制器固件版本；报文截断或字段无效时不命中，同型号多条目版本不一致时仅保留设备识别。
   metadata:
+    product: micro800
     shodan-query: 'port:44818 "Vendor ID: Rockwell Automation/Allen-Bradley"'
   tags: ics,allen-bradley,micro800,detect,network,tcp
 
-tcp:
-  - inputs:
-      - data: "630000000000000000000000000000000000000000000000"
-        type: hex
-        read: 200
-        name: info
-
-    host:
-      - "{{Hostname}}"
-    port: 44818
-    read-size: 1024
-
+# ListIdentity 的设备修订号属于当前控制器，不是 EtherNet/IP 协议版本。
+javascript:
+  - code: |-
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+      function receive(conn, size) {
+        if (size < 1 || size > 4096) throw 'invalid response size';
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(size));
+        const hex = buffer.Hex();
+        if (hex.length !== size * 2) throw 'truncated response';
+        return hex;
+      }
+      function u8(hex, offset) { return parseInt(hex.substr(offset * 2, 2), 16); }
+      function le16(hex, offset) { return u8(hex, offset) + u8(hex, offset + 1) * 256; }
+      function be16(hex, offset) { return u8(hex, offset) * 256 + u8(hex, offset + 1); }
+      function text(hex) {
+        let result = '';
+        for (let i = 0; i < hex.length / 2; i++) result += String.fromCharCode(u8(hex, i));
+        return result;
+      }
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      let conn;
+      let result = {detected: false};
+      try {
+        conn = net.Open('tcp', host + ':' + Port);
+        conn.SetTimeout(3);
+        conn.SendHex('630000000000000000000000000000000000000000000000');
+        const header = receive(conn, 24);
+        if (header.substr(0, 4) !== '6300' || header.substr(8, 16) !== '0000000000000000') throw 'invalid ListIdentity header';
+        const payload = receive(conn, le16(header, 2));
+        const count = le16(payload, 0);
+        if (count < 1 || count > 64) throw 'invalid item count';
+        let offset = 2, revision = '', conflict = false;
+        for (let i = 0; i < count; i++) {
+          if (offset + 4 > payload.length / 2) throw 'truncated item header';
+          const type = le16(payload, offset), size = le16(payload, offset + 2);
+          offset += 4;
+          if (offset + size > payload.length / 2) throw 'truncated item';
+          const item = payload.substr(offset * 2, size * 2);
+          offset += size;
+          if (type !== 12) continue;
+          if (size < 34 || le16(item, 0) !== 1 || le16(item, 18) !== 1) continue;
+          const length = u8(item, 32);
+          if (size !== 34 + length) throw 'invalid identity name length';
+          const name = text(item.substr(66, length * 2));
+          if (!/\b2080-/.test(name)) continue;
+          result.detected = true;
+          const current = u8(item, 24) + '.' + u8(item, 25);
+          if (revision && revision !== current) conflict = true;
+          revision = current;
+        }
+        if (offset !== payload.length / 2) throw 'unexpected item trailer';
+        if (result.detected && revision && !conflict) result.version = revision;
+      } catch (e) {
+        result = {detected: false};
+      } finally {
+        if (conn) conn.Close();
+      }
+      Export(JSON.stringify(result));
+    args:
+      Host: '{{Host}}'
+      Port: 44818
     matchers:
-      - type: binary
-        part: info
-        binary:
-          - "323038302d"
-# digest: 4a0a0047304502200f1f02413b97eb582206cd536b67048f48b8908a4b48177e684b47880a5788ba022100d0e9a7e64010832accd228a593768921d5251c2605a0d84953cad9bb0ae81533:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        dsl:
+          - success == true && contains(response, '"detected":true')
+    extractors:
+      - type: json
+        name: firmware_version
+        part: response
+        json:
+          - .version | select(type == "string") | select(test("^[0-9]+([.][0-9]+)+$"))

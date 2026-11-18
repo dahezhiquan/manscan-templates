@@ -40,6 +40,37 @@ tcp:
           - "CSeq:"
         condition: and
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*Asterisk PBX\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "asterisk:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*OpenSIPS(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "opensips:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*[Kk]amailio(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "kamailio:" + product_version_2 : ""'
 javascript:
   - pre-condition: |
       isUDPPortOpen(Host, Port);
@@ -55,6 +86,7 @@ javascript:
 
     args:
       Host: "{{Host}}"
+      Port: 5060
 
     matchers-condition: and
     matchers:
@@ -76,3 +108,34 @@ javascript:
           - "CSeq:"
         condition: and
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: response
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*Asterisk PBX\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "asterisk:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: response
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*OpenSIPS(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "opensips:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: response
+        group: 1
+        regex:
+          - (?mi)^(?:Server|User-Agent):[ \t]*[Kk]amailio(?:[ /]+|\s*\()([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "kamailio:" + product_version_2 : ""'

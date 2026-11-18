@@ -10,6 +10,7 @@ info:
   reference:
   - https://semantic-ui.com/
   metadata:
+    product: semantic-ui
     verified: true
     max-request: 1
     shodan-query: html:"semantic.min.css"
@@ -25,7 +26,19 @@ http:
       - type: regex
         part: body
         regex:
-          - '(?i)href=["''][^"'']*semantic(?:[\.-]min)?\.css'
-          - '(?i)src=["''][^"'']*semantic(?:[\.-]min)?\.js'
+          - '(?i)href=["''][^"'']*semantic(?:-[0-9]+(?:[.][0-9]+)+)?(?:[\.-]min)?\.css'
+          - '(?i)src=["''][^"'']*semantic(?:-[0-9]+(?:[.][0-9]+)+)?(?:[\.-]min)?\.js'
         condition: or
-# digest: 4b0a00483046022100b160aafe33cde5bde6aaca1f85a4f0ade84c9441b5bfe70b226f41be37442e52022100c495839ef174828ece79e343100dbfef8560cb66ce1f2c00d6cf0afb542861be:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)(?:semantic-ui/|semantic-ui@)([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)/(?:[^"\x27<> ]*/)?semantic(?:[.-]min)?\.(?:css|js)
+          - (?i)/semantic-([0-9]+(?:[.][0-9]+)+)(?:[.]min)?\.(?:css|js)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

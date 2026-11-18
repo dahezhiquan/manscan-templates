@@ -10,6 +10,7 @@ info:
   reference:
   - https://firebase.google.com/docs/auth/web/redirect-best-practices
   metadata:
+    product: firebase
     max-request: 1
   tags: firebase,tech
 http:
@@ -33,4 +34,15 @@ http:
         part: body
         words:
           - "https://firebase.google.com/terms/"
-# digest: 4b0a00483046022100db5d350cc263233062d1dec6153439c24953f955536c7f56a3ddf59d50536e94022100d951fb7db4b68b57de6321de6c595fd8ab55473cabd900e973a31215fd31eeeb:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - \bBuild:[ \t]*([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[\s*]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

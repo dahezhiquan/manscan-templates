@@ -16,7 +16,7 @@ tags:
   - "local"
   - "txt-service"
 
-# 以下模板已被排除，因为它们的匹配器较弱，可能会产生误报（FP）结果。
+# 以下列表包含匹配器较弱、可能误报（FP），或可能影响目标可用性、数据完整性的模板。
 
 # files 表示需要忽略执行的模板文件列表
 # 除非用户明确要求执行这些文件。
@@ -66,3 +66,16 @@ files:
   - javascript/cves/2012/CVE-2012-2122.yaml
   - javascript/cves/2023/CVE-2023-34039.yaml
   - javascript/default-logins/ssh-default-logins.yaml
+
+  # 可能触发目标崩溃、删除关键文件或重启服务的模板
+  - code/cves/2025/CVE-2025-22457.yaml
+  - code/cves/2022/CVE-2022-42475.yaml
+  - javascript/cves/2016/CVE-2016-8706.yaml
+  - http/cves/2023/CVE-2023-6831.yaml
+  - http/cves/2024/CVE-2024-46506.yaml
+  - http/cves/2024/CVE-2024-46986.yaml
+
+  # 通过大量内存分配或高强度数据库计算验证漏洞的模板
+  - http/cves/2018/CVE-2018-7282.yaml
+  - http/cves/2024/CVE-2024-51211.yaml
+  - http/cves/2021/CVE-2021-3018.yaml

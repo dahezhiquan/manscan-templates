@@ -6,23 +6,31 @@ info:
   description: |
     GlobalSCAPE Secure FTP 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `GlobalSCAPE Secure FTP Server` 等响应特征识别目标服务。
   metadata:
+    product: globalscape
     verified: true
     shodan-query: "GlobalSCAPE Secure FTP Server"
     max-request: 1
   tags: network,ftp,globalscape,detect,tcp,discovery
 
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
+  - host:
       - "{{Hostname}}"
     port: 21
-    read-size: 1024
+    read-size: 4096
 
     matchers:
       - type: word
         words:
           - "GlobalSCAPE Secure FTP Server"
-# digest: 4a0a00473045022028929aec06d7ccf2def2a544c65b3f0a7b2318e8d36e25eea1d103458c3e3b5b0221008c211037f2f4bc53c89ca99ee0c537a71edd024f7ae1a3b1c4aaef70cbdf5240:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*GlobalSCAPE Secure FTP Server\s+\(v\.\s*([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

@@ -11,6 +11,7 @@ info:
   - https://mixpanel.com/
   - https://developer.mixpanel.com/docs/javascript-quickstart
   metadata:
+    product: mixpanel
     verified: true
     max-request: 1
     shodan-query: html:"cdn.mxpnl.com"
@@ -29,10 +30,25 @@ http:
         words:
           - "cdn.mxpnl.com"
           - "window.mixpanel"
-          - "mixpanel-2-latest.min.js"
         condition: and
+
+      - type: regex
+        part: body
+        regex:
+          - 'cdn\.mxpnl\.com/libs/mixpanel-(?:2-latest|[0-9]+(?:[.][0-9]+)+)\.min\.js'
 
       - type: status
         status:
           - 200
-# digest: 4a0a0047304502200121aa6ac7e0dd02a63b8a89c06e8dd578f50c2ae4a96c9b71e276da01f6779b022100894415ec4180ccdc55aab39403ed714dc0818d396dffd3cff818b8d05ef0644d:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)cdn\.mxpnl\.com/libs/mixpanel-([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\.min\.js
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

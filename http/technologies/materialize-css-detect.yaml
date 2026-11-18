@@ -10,6 +10,7 @@ info:
   reference:
   - https://materializecss.com/
   metadata:
+    product: materialize
     verified: true
     max-request: 1
     shodan-query: html:"materialize.min.css"
@@ -31,4 +32,15 @@ http:
           - '(?i)class=["''][^"'']*waves-effect'
           - '(?i)class=["''][^"'']*materialize-textarea'
         condition: or
-# digest: 4a0a004730450220283119fd54f1e1d6522815c22dd092a1034653fd87b35a188a318594c66cde3e022100ba6c6bd292d1c2bd8718a91266ff7cf75e58bcbe3f61a3534e69601e778cbce4:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)(?:materialize(?:-css)?/|materialize(?:-css)?@)([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)/(?:[^"\x27<> ]*/)?materialize(?:[.-]min)?\.(?:css|js)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

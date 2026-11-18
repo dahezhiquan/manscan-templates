@@ -7,20 +7,31 @@ info:
   description: |
     Microsoft FTP Service 是 Windows/IIS 生态中的 FTP 服务组件，用于文件发布和传输。该模板连接 21/TCP 并读取协议响应，通过匹配 `Microsoft FTP Service` 等响应特征识别目标服务。
   metadata:
+    product: microsoft-ftp
     verified: true
     max-request: 1
     shodan-query: Microsoft FTP Service
   tags: network,ftp,microsoft,detect,tcp,discovery
 tcp:
 
-  - inputs:
-      - data: "\n"
-    host:
+  - host:
       - "{{Hostname}}"
     port: 21
 
     matchers:
       - type: word
+        name: microsoft-ftp
         words:
           - "Microsoft FTP Service"
-# digest: 4a0a004730450221008940a8772695af953ad0f98e652ac6da571bd22a24eb7cc0e4e1f8efc5a80b5d02205b9a87b32333c422afae41bd31098cafef35a8d449543d7879afc8af14e35aa2:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Microsoft FTP Service\s+\(Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

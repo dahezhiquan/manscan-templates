@@ -8,6 +8,7 @@ info:
     Nginx Amazon Linux 页面通常表示 Amazon Linux 环境中的 Nginx 默认站点或测试页面。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字等指纹特征，判断目标是否使用或暴露了
     Nginx Amazon Linux 页面 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
+    product: nginx
     max-request: 1
     shodan-query: http.title:"Test Page for the Nginx HTTP Server on Amazon
       Linux"
@@ -22,4 +23,15 @@ http:
         words:
           - '<title>Test Page for the Nginx HTTP Server on Amazon Linux</title>'
         condition: and
-# digest: 4a0a00473045022100e63bb6204bd2de7064b48efbca8486e113d8675b57daa71431c481001fe59a3f0220211bac0e0a6e896b9865d96f8f91c632ddddc1749049cef174335ba19e21c255:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: header
+        group: 1
+        regex:
+          - (?mi)^Server:[ \t]*nginx/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

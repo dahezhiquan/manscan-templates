@@ -25,7 +25,7 @@ http:
       - "{{BaseURL}}/admin"
       - "{{BaseURL}}/backend"
 
-    stop-at-first-match: true
+    stop-at-first-match: false
 
     matchers-condition: and
     matchers:
@@ -42,4 +42,15 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100e1fbe346d9b1ea11993f3fd707c1b7a080a95484ef03651a90e0211a9ef18617022100a67f94136131986bec39dcbccc59169fae59e886d4c5d3ef0933fed847dce743:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)<title>Shopware\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

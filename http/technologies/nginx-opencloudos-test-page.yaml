@@ -8,6 +8,7 @@ info:
     Nginx OpenCloudOS 测试页面通常表示 OpenCloudOS 环境中已安装并启用 Nginx 默认站点。该模板通过请求目标服务并检查预设路径或首页响应、DSL
     条件等指纹特征，判断目标是否使用或暴露了 Nginx OpenCloudOS 测试页面 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
+    product: nginx
     verified: true
     shodan-query: http.title:"OpenCloudOS"
   tags: tech,nginx,opencloudos
@@ -22,4 +23,15 @@ http:
           - 'status_code == 200'
           - 'contains(body, "<title>Nginx test page for OpenCloudOS</title>")'
         condition: and
-# digest: 4a0a004730450220391e31d597d6c13e780c617f3da5302dbcd09e189ed9871d00537b6b2bdda022022100b26c2efe54e6fb570b73cde692de93689c18d59a3fbf99b08f65167b6937d21e:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: header
+        group: 1
+        regex:
+          - (?mi)^Server:[ \t]*nginx/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

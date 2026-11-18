@@ -34,4 +34,35 @@ tcp:
         part: ehlo
         regex:
           - '(?mi)^250[- ]STARTTLS[ \t]*\r?$'
-# digest: 490a0046304402201205c03f298caf72605e0cc023a0902c3ac227cd053e886e2ccadd66afcc241b02206101d4f14945d80db0aa989f7267403599e41683e13fe586c96aceb20a962300:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bExim\s+V?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "exim:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bSendmail\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "sendmail:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*CommuniGate Pro SMTP\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'

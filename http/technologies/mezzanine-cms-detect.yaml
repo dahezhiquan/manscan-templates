@@ -8,6 +8,7 @@ info:
     Mezzanine 是基于 Django 的内容管理系统，用于构建博客、企业站点和内容门户。该模板通过请求目标服务并检查预设路径或首页响应、页面正文关键字、正则特征等指纹特征，判断目标是否使用或暴露了
     Mezzanine CMS 相关组件；命中结果仅表示指纹特征匹配，可用于资产盘点、技术栈识别和后续安全评估，不代表已确认存在可利用漏洞。
   metadata:
+    product: mezzanine
     shodan-query:
     - http.component:"Mezzanine"
     - http.component:"mezzanine"
@@ -27,7 +28,7 @@ http:
         - "/settings.py"
         - "/mezzanine/"
 
-    stop-at-first-match: true
+    stop-at-first-match: false
     matchers-condition: or
     matchers:
       - type: word
@@ -42,4 +43,15 @@ http:
         regex:
           - "(?i)mezzanine\\s+(v[0-9.]+)"
           - "(?i)<title>Mezzanine CMS"
-# digest: 4b0a0048304602210096b846a7876e948acadac74d7a97bce7760eedc37b1face32ddb4ed858a38dbf0221009860f55db5906ae2e670b8990282cc1c7d20fc108a44ecc377487736705ee45f:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)\bmezzanine\s+(?:version\s+|v)([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

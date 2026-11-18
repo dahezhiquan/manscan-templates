@@ -18,16 +18,33 @@ info:
   tags: network,rtsp,detect,tcp,discovery
 tcp:
   - inputs:
-      - data: 4f5054494f4e53207369703a6e6d205349502f322e300d0a5669613a205349502f322e302f544350206e6d3b6272616e63683d666f6f0d0a46726f6d3a203c7369703a6e6d406e6d3e3b7461673d726f6f740d0a546f3a203c7369703a6e6d32406e6d323e0d0a43616c6c2d49443a2035303030300d0a435365713a203432204f5054494f4e530d0a4d61782d466f7277617264733a2037300d0a436f6e74656e742d4c656e6774683a20300d0a436f6e746163743a203c7369703a6e6d406e6d3e0d0a4163636570743a206170706c69636174696f6e2f7364700d0a0d0a
-        type: hex
-
+      - data: "OPTIONS * RTSP/1.0\r\nCSeq: 1\r\n\r\n"
     host:
-      - "{{Hostname}}"
+      - '{{Hostname}}'
     port: 554
-    read-size: 1024
-
+    read-size: 4096
     matchers:
       - type: word
         words:
-          - "RTSP/1.0"
-# digest: 490a00463044022062a9a9e3ef45e77800fb34563855a74cc490d861920aa6852bbf3f9c0b01f6930220707d785e2468a4ba40dd7534f9d1c8416e2925c2267947ad32e410fa5b919250:922c64590222798bb761d5b6d8e72950
+          - RTSP/1.0
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^Server:[ \t]*DSS/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "darwin-streaming-server:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^Server:[ \t]*LIVE555 Streaming Media v([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[ \t\r]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "live555:" + product_version_1 : ""'

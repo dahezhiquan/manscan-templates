@@ -2,44 +2,69 @@ id: apache-tomcat-ajp-protocol-detect
 
 info:
   name: Apache Tomcat Java AJP 协议识别（指纹识别）
-  author: pussycat0x
+  author: dahezhiquan
   severity: info
   description: |
-    Apache Tomcat AJP 是 Web 服务器与 Tomcat 后端容器之间转发请求的二进制协议，常见于 Apache HTTP Server、IIS 等前置服务器与 Tomcat 集成场景。该模板向 TCP 8009 端口发送 AJP CPing 探测报文，并根据返回的 CPong 响应头 `AB\x00\x01` 判断目标是否暴露 AJP13 协议；命中仅表示服务指纹存在，不单独证明存在具体漏洞。
+    向目标发送 AJP CPing 报文 123400010a，完整读取五字节响应并校验服务端魔数 4142、报文体长度 0001 和 CPong 类型 09，参考 Nmap 的 ajp13 规则识别 AJP 1.3 协议。支持分段响应、持久连接、显式目标端口和 IPv6，未提供端口时使用 8009；建议输入主机:端口以确保结果端口归属正确。
+    版本提取仅输出 1.3 并归属 ajp，表示由 CPing/CPong 特征确认的协议版本，不是响应中的软件版本字段；该响应不能单独确认 Tomcat 产品及其版本，也不证明存在漏洞，不覆盖旧版 AJP12。
   reference:
     - https://tomcat.apache.org/connectors-doc/ajp/ajpv13a.html
+    - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   metadata:
     verified: true
     shodan-query: 'port:8009 product:"Apache Tomcat"'
     max-request: 1
     vendor: apache
-    product: tomcat
-  tags: js,network,detect,tomcat,apache,java,tcp,discovery
+    product: ajp
+  tags: js,network,detect,tomcat,apache,java,tcp,discovery,ajp
 
 javascript:
-  - pre-condition: |
-      isPortOpen(Host,Port);
-    code: |
-      let packet = bytes.NewBuffer();
-      let ajp_ping = "\x12\x34\x00\x01\x0a"
-      data = packet.Write(ajp_ping )
-      const c = require("nuclei/net");
-      let conn = c.Open('tcp', `${Host}:${Port}`);
-      conn.Send(data);
-      let resp = conn.RecvFullString();
-      // AJP messages start with "AB"
-      if (resp.includes("AB\x00\x01")) {
-        Export("AJP Detected");
-      } else {
-        conn.Close();
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+
+      function detect(address) {
+        let conn;
+        try {
+          conn = net.Open('tcp', address);
+          conn.SetTimeout(3);
+          // AJP 1.3 CPing: client magic, one-byte body, type 10.
+          conn.SendHex('123400010a');
+          const response = new bytes.Buffer();
+          response.Write(conn.RecvFull(5));
+          // CPong: server magic, one-byte body, type 9.
+          return response.Hex() === '4142000109';
+        } catch (e) {
+          return false;
+        } finally {
+          if (conn) conn.Close();
+        }
       }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const suppliedPort = Number(TargetPort);
+      const port = suppliedPort >= 1 && suppliedPort <= 65535 && Math.floor(suppliedPort) === suppliedPort ? suppliedPort : 8009;
+      // Protocol revision inferred from CPong, not a Tomcat software version.
+      Export(detect(host + ':' + port) ? '1.3' : '');
 
     args:
       Host: "{{Host}}"
-      Port: 8009
+      TargetPort: "{{Port}}"
+
+    matchers:
+      - type: dsl
+        name: ajp
+        condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "1.3"'
 
     extractors:
-      - type: dsl
-        dsl:
-          - response
+      - type: regex
+        name: protocol-version
+        part: response
+        group: 1
+        regex:
+          - '^(1\.3)$'
 # digest: 4b0a00483046022100853806f79ec18b20bb8764484f88623cc93bf7ee2ac65b9f90feba271b1183d5022100d30030cd88330b0bfefb0a89a4761610a838c4d223497a52e79a314d2dc46579:922c64590222798bb761d5b6d8e72950

@@ -11,6 +11,7 @@ info:
   - https://github.com/openreplay/openreplay
   - https://docs.openreplay.com/en/sdk/
   metadata:
+    product: openreplay
     max-request: 1
     verified: true
     shodan-query: http.html:"static.openreplay.com"
@@ -43,4 +44,15 @@ http:
           - "window\\.asayer\\s*=\\s*\\["
           - "asayer\\.io/ingest"
         condition: or
-# digest: 490a0046304402207465b0429c957e3da2795fa60294953646f37f99ff18dfccbeee2c46d1aa63f3022020ef91c5ad67a63dfa973b5072bbb9312c869e955cfd9fead34af1952dfdc3db:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - static\.openreplay\.com/([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)/openreplay\.js
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

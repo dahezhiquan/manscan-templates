@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     vendor: zend
-    product: zend_server
+    product: zend
     shodan-query: title:"Zend Server Test Page"
   tags: tech,zend,discovery
 http:
@@ -36,4 +36,15 @@ http:
       - type: status
         status:
           - 200
-# digest: 4b0a0048304602210087a3adf8b7a0a80ed5af7ad0cd3c54caca2e6c46e1484c2bca910df1f569b382022100e27199db56644d4dfbff38fdc3fd416db2f283342cfe10123e11d18bf6e8aa4a:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: header
+        group: 1
+        regex:
+          - (?mi)^X-Powered-By:[ \t]*Zend(?:Server| Server)[ /]+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

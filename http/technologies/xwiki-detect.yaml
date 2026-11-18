@@ -24,7 +24,7 @@ http:
     host-redirects: true
     max-redirects: 2
 
-    stop-at-first-match: true
+    stop-at-first-match: false
 
     matchers-condition: and
     matchers:
@@ -36,7 +36,13 @@ http:
 
     extractors:
       - type: regex
+        name: detected_version
+        part: body
         group: 1
         regex:
-          - '<html.*?data-xwiki-page="(.*?)"'
-# digest: 4a0a004730450221009c84fdfaf1740a1583d8bf5e02777b08284bc5d9f9bf45ff56621ee5874703850220207989fb0894782687d6767cc8780b9f2ee9131d1a44ff9eaafb3d4a8a8c16de:922c64590222798bb761d5b6d8e72950
+          - (?i)<meta\b[^>]*name\s*=\s*["\x27]xwikiplatformversion["\x27][^>]*content\s*=\s*["\x27]([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)["\x27]
+          - (?i)<meta\b[^>]*content\s*=\s*["\x27]([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)["\x27][^>]*name\s*=\s*["\x27]xwikiplatformversion["\x27]
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

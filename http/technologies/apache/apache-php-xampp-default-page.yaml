@@ -21,11 +21,23 @@ http:
 
     matchers-condition: and
     matchers:
-      - type: word
-        words:
-          - '<title>Welcome to XAMPP</title>'
+      - type: regex
+        regex:
+          - '(?i)<title>\s*(?:Welcome to XAMPP|XAMPP(?: Version)?\s+[0-9]+(?:[.][0-9]+)+)\s*</title>'
 
       - type: status
         status:
           - 200
-# digest: 4b0a00483046022100dd5e5ff8eac0966b0cea68bf20ba0580a111dbad454a67ffa165fe8082008bbd022100f3c0817ed43f689abc80e97ad3a0e025809b330ac2e3318fd149a3337f04d124:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - '(?i)<title>\s*XAMPP(?: Version)?\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s*</title>'
+          - (?i)XAMPP for (?:Windows|Linux|OS X)\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s*<
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

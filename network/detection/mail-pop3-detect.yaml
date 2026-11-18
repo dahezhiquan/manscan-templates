@@ -30,4 +30,25 @@ tcp:
           - "+OK Dovecot ready"
           - "POP3"
         condition: or
-# digest: 4a0a0047304502210091596ffd71743c51002eb984eccd6bc432d2f167019089e89be4fa056088a0d50220067d991dfcf0dd9d18db70a31a30f94a9ff787d7de0d091528d6301f15aa0e03:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^\+OK[^\r\n]*\bCyrus POP3\s+v?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "cyrus:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^\+OK[^\r\n]*CommuniGate Pro POP3 Server\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "communigate:" + product_version_1 : ""'

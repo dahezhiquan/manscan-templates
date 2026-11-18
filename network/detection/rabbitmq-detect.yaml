@@ -5,27 +5,181 @@ info:
   author: pussycat0x
   severity: info
   description: |
-    RabbitMQ 是基于 AMQP 的消息队列服务，用于异步消息投递、任务队列和系统解耦。该模板连接 5672/TCP 并读取协议响应，通过匹配 `publisher_confirmst`、`RabbitMQ` 等响应特征识别目标服务。
+    参考 Nmap amqp-info 的握手解析方式，发送 AMQP 0-9-1 协议头，校验 connection.start 帧的类型、通道、长度、方法和结束标记，再从顶层 server-properties 中确认 product 为 RabbitMQ，并提取 version 软件版本，不依赖 publisher_confirms 能力字段。服务端建议 AMQP 0-9 或 0-8 时最多重新协商一次；不提交凭据，不创建队列，不发布或消费消息。
+    仅将服务端明确返回且格式有效的软件版本归属 rabbitmq；版本缺失或隐藏时仍识别产品，不使用 AMQP 协议版本或 Erlang 版本代替。支持 TCP、TLS、分段响应、持久连接及 IPv6，裸主机依次探测 5672/TCP 和 5671/TLS，显式端口仅在该端口尝试两种传输；建议输入主机:端口以确保结果端口归属正确，不覆盖仅支持 AMQP 1.0 或要求客户端证书的服务。
   reference:
     - https://nmap.org/nsedoc/scripts/amqp-info.html
+    - https://github.com/nmap/nmap/blob/master/nselib/amqp.lua
   metadata:
     verified: true
-    max-request: 1
     shodan-query: product:"RabbitMQ"
+    product: rabbitmq
   tags: network,rabbitmq,oss,detect,tcp,discovery
-tcp:
-  - inputs:
-      - data: "AMQP\u0000\u0000\t\u0001"
 
-    host:
-      - "{{Hostname}}"
-    port: 5672
+javascript:
+  - code: |
+      const net = require('nuclei/net');
+      const bytes = require('nuclei/bytes');
+      const headers = ['414d515000000901', '414d515000000900', '414d515001010800'];
+      const versionPattern = /^[0-9]+\.[0-9]+\.[0-9]+(?:[.-][0-9A-Za-z][0-9A-Za-z.-]*)?(?:\+[0-9A-Za-z][0-9A-Za-z.-]*)?$/;
 
-    matchers-condition: and
+      function readHex(conn, count) {
+        const buffer = new bytes.Buffer();
+        buffer.Write(conn.RecvFull(count));
+        const hex = buffer.Hex();
+        if (hex.length !== count * 2) throw 'truncated AMQP frame';
+        return hex;
+      }
+
+      function parseStart(hex, requested) {
+        const data = [];
+        for (let i = 0; i < hex.length; i += 2) data.push(parseInt(hex.slice(i, i + 2), 16));
+        let pos = 0;
+        let fields = 0;
+        function take(count, end) {
+          if (count < 0 || count > end - pos) throw 'invalid AMQP length';
+          const start = pos;
+          pos += count;
+          return start;
+        }
+        function byte(end) { return data[take(1, end)]; }
+        function uint32(end) {
+          const i = take(4, end);
+          return data[i] * 16777216 + data[i + 1] * 65536 + data[i + 2] * 256 + data[i + 3];
+        }
+        function string(count, end) {
+          const i = take(count, end);
+          // Only property keys and product/version values need text decoding.
+          if (count > 256) return '';
+          let value = '';
+          for (let j = i; j < pos; j++) value += String.fromCharCode(data[j]);
+          return value;
+        }
+        function value(type, end, depth) {
+          if (depth > 8 || ++fields > 4096) throw 'AMQP field table limit';
+          if (type === 'S') return string(uint32(end), end);
+          if (type === 'F') { table(end, depth + 1, false); return ''; }
+          if (type === 'A') {
+            const length = uint32(end);
+            if (length > end - pos) throw 'invalid AMQP array';
+            const stop = pos + length;
+            while (pos < stop) value(String.fromCharCode(byte(stop)), stop, depth + 1);
+            return '';
+          }
+          if (type === 'x') { take(uint32(end), end); return ''; }
+          const sizes = {t: 1, b: 1, B: 1, U: 2, u: 2, s: 2, I: 4, i: 4, f: 4, L: 8, l: 8, d: 8, T: 8, D: 5, V: 0};
+          if (!Object.prototype.hasOwnProperty.call(sizes, type)) throw 'unknown AMQP field type';
+          take(sizes[type], end);
+          return '';
+        }
+        function table(end, depth, collect) {
+          const length = uint32(end);
+          if (length > end - pos) throw 'invalid AMQP table';
+          const stop = pos + length;
+          const result = {product: '', version: ''};
+          let seenProduct = false;
+          let seenVersion = false;
+          while (pos < stop) {
+            const key = string(byte(stop), stop);
+            const type = String.fromCharCode(byte(stop));
+            const item = value(type, stop, depth);
+            if (collect && key === 'product') {
+              if (seenProduct) throw 'duplicate AMQP product';
+              seenProduct = true;
+              if (type === 'S') result.product = item;
+            }
+            if (collect && key === 'version') {
+              if (seenVersion) throw 'duplicate AMQP version';
+              seenVersion = true;
+              if (type === 'S') result.version = item;
+            }
+          }
+          return result;
+        }
+
+        const end = data.length;
+        if (uint32(end) !== 0x000a000a) throw 'not connection.start';
+        const major = byte(end);
+        const minor = byte(end);
+        const legacy = requested === headers[2];
+        if (legacy ? major !== 8 || minor !== 0 : major !== 0 || minor !== 9) throw 'unexpected AMQP revision';
+        const properties = table(end, 0, true);
+        // The two trailing long strings are SASL mechanisms and locales.
+        const mechanisms = uint32(end);
+        if (mechanisms === 0) throw 'empty AMQP mechanisms';
+        take(mechanisms, end);
+        const locales = uint32(end);
+        if (locales === 0) throw 'empty AMQP locales';
+        take(locales, end);
+        if (pos !== end) throw 'unexpected AMQP payload suffix';
+        if (properties.product !== 'RabbitMQ') return '';
+        const version = versionPattern.test(properties.version) ? properties.version : '';
+        return 'rabbitmq' + (version ? '|' + version : '');
+      }
+
+      function probe(address, tls) {
+        let requested = headers[0];
+        for (let attempt = 0; attempt < 2; attempt++) {
+          let conn;
+          try {
+            conn = tls ? net.OpenTLS('tcp', address) : net.Open('tcp', address);
+            conn.SetTimeout(3);
+            conn.SendHex(requested);
+            const header = readHex(conn, 7);
+            if (header.slice(0, 8) === '414d5150') {
+              const suggested = header + readHex(conn, 1);
+              // A protocol header alone is not evidence of RabbitMQ.
+              if (attempt !== 0 || suggested === requested || headers.indexOf(suggested) === -1) return '';
+              requested = suggested;
+              continue;
+            }
+            if (header.slice(0, 6) !== '010000') return '';
+            const length = parseInt(header.slice(6), 16);
+            // Bound allocation before reading the server-controlled frame size.
+            if (length < 18 || length > 131072) return '';
+            const payload = readHex(conn, length + 1);
+            if (payload.slice(-2) !== 'ce') return '';
+            return parseStart(payload.slice(0, -2), requested);
+          } catch (e) {
+            return '';
+          } finally {
+            if (conn) conn.Close();
+          }
+        }
+        return '';
+      }
+
+      let host = String(Host);
+      if (host.indexOf(':') !== -1 && host.charAt(0) !== '[') host = '[' + host + ']';
+      const port = Number(TargetPort);
+      const explicit = port >= 1 && port <= 65535 && Math.floor(port) === port;
+      const endpoints = explicit
+        ? [{port: port, tls: port === 5671}, {port: port, tls: port !== 5671}]
+        : [{port: 5672, tls: false}, {port: 5671, tls: true}];
+      let detected = '';
+      for (const endpoint of endpoints) {
+        detected = probe(host + ':' + endpoint.port, endpoint.tls);
+        if (detected) break;
+      }
+      Export(detected);
+
+    args:
+      Host: "{{Host}}"
+      TargetPort: "{{Port}}"
+
     matchers:
-      - type: word
-        words:
-          - "publisher_confirmst"
-          - "RabbitMQ"
+      - type: dsl
+        name: rabbitmq
         condition: and
+        dsl:
+          - 'success == true'
+          - 'response == "rabbitmq" || starts_with(response, "rabbitmq|")'
+
+    extractors:
+      - type: regex
+        name: version
+        part: response
+        group: 1
+        regex:
+          - '^rabbitmq\|([0-9]+\.[0-9]+\.[0-9]+(?:[.-][0-9A-Za-z][0-9A-Za-z.-]*)?(?:\+[0-9A-Za-z][0-9A-Za-z.-]*)?)$'
 # digest: 4b0a004830460221009c90bbd866825e19806b9d34abd85cb2866115c93e3e3691b747547253c99aa2022100a072061377e3f89538d4ac2983c3fcc2370990061c6cf05ad78b6cb0ea528647:922c64590222798bb761d5b6d8e72950

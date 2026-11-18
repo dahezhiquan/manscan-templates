@@ -7,23 +7,31 @@ info:
   description: |
     Sambar FTP 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `Sambar FTP Server` 等响应特征识别目标服务。
   metadata:
+    product: sambar
     max-request: 1
     shodan-query: "Sambar FTP Server"
   tags: network,ftp,sambar,detect,tcp,discovery
 
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
+  - host:
       - "{{Hostname}}"
     port: 21
-    read-size: 1024
+    read-size: 4096
 
     matchers:
       - type: word
-        part: body
+        part: raw
         words:
           - "Sambar FTP Server"
-# digest: 4a0a00473045022100cb2e2ef38c3cbf6f16443d213a1c63e73fd86709ce99aa013a34ffd076b9998502205219121939e0185c9c3c1985a34d7604cdba656035d8031ff232fc82795ebd83:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Sambar FTP Server Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:\s|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

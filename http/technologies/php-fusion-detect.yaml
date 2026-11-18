@@ -33,4 +33,16 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022061a783d2e7460e9029c2e0bd6f4b619c462f85e57cc672bac86a5c612d1b1834022100e9d6d4a3585f5ca9953c91ed4703222a014d650a432f094d6a3d7108f59e5bea:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: header
+        group: 1
+        regex:
+          - (?mi)^X-PHPFusion:[ \t]*([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
+          - (?mi)^X-Powered-By:[ \t]*PHP-?Fusion[ /]+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)[ \t]*\r?$
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

@@ -29,4 +29,35 @@ tcp:
           - "OK "
           - "IMAP4rev1"
         condition: and
-# digest: 490a0046304402206976fbc507512c2e899ab8f6c91e88314470df0282a74a116dac42d55617b50002201602e88e6b878fbf87154a0d537a2000bcdc9523eb8c39afc4aa036f39571194:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^\* OK[^\r\n]*\bAXIGEN[ -]([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "axigen:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^\* OK[^\r\n]*\bCyrus IMAP4?\s+v?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "cyrus:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^\* OK[^\r\n]*CommuniGate Pro IMAP Server\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'

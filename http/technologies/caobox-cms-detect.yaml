@@ -7,6 +7,7 @@ info:
   description: |-
     Caobox CMS 是内容管理系统，用于网站内容、栏目和后台管理。该模板请求首页，并依据页面标题、正文关键字或品牌资源特征识别目标是否使用或暴露了 Caobox CMS 相关组件，适用于资产盘点、技术栈识别和后续安全评估；命中结果仅表示指纹特征匹配，不代表已确认存在可利用漏洞。
   metadata:
+    product: caobox
     verified: true
     shodan-query:
     - http.component:"Caobox"
@@ -41,4 +42,15 @@ http:
           - "(?i)caobox"
           - "(?i)caobox\\s+(v[0-9.]+)"
           - "(?i)<title>Caobox CMS"
-# digest: 490a0046304402206f968747e18ca33b8286bf4fe24443cb2d4bccab6fb7b25624602a7ae9c09ee80220572bee00644c8d7f3b605d9381f5f8734ec28d276373c12338dda1c10b1b1c97:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: body
+        group: 1
+        regex:
+          - (?i)\bcaobox\s+(?:version\s+|v)([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

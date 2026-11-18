@@ -5,7 +5,7 @@ info:
   author: Mys7ic
   severity: info
   description: |
-    FTP 是传统文件传输协议，常用于文件发布、备份、设备维护或旧系统集成。该模板参考 Nmap 的 GenericLines 和 Help 探针，先发送空行并检查 FTP 欢迎横幅；未命中时再发送 HELP，结合 FTP 命令列表或特定服务响应识别隐藏产品名的服务。默认检测 21/TCP，也支持目标显式指定的端口；不尝试登录或文件操作，不提取软件版本。
+    FTP 是传统文件传输协议，常用于文件发布、备份、设备维护或旧系统集成。该模板参考 Nmap 的 GenericLines 和 Help 探针，先发送空行并检查 FTP 欢迎横幅；未命中时再发送 HELP，结合 FTP 命令列表或特定服务响应识别隐藏产品名的服务。默认检测 21/TCP，也支持目标显式指定的端口；不尝试登录或文件操作，仅在欢迎信息明确包含产品版本时输出产品对应版本，不把 FTP 协议号当作软件版本。
   reference:
     - https://www.rfc-editor.org/rfc/rfc959
     - https://nmap.org/book/vscan-technique.html
@@ -60,6 +60,87 @@ tcp:
           - >-
             regex('^220(?:-[^\\r\\n]*\\r?\\n220)* [^\\r\\n]*\\r?\\n(?:530 Please login with USER and PASS\\.|550 SSL/TLS required on the control channel)\\r?\\n', raw)
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bvsFTPd[ /]+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "vsftpd:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bProFTPD[ /]+([0-9]+(?:[.][0-9]+)+(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*)(?:[\s)]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "proftpd:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bFileZilla Server\s+(?:version\s+)?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "filezilla:" + product_version_2 : ""'
+      - type: regex
+        name: product_version_3
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*GlobalSCAPE Secure FTP Server\s+\(v\.\s*([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_3) ? "globalscape:" + product_version_3 : ""'
+      - type: regex
+        name: product_version_4
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Microsoft FTP Service\s+\(Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_4) ? "microsoft-ftp:" + product_version_4 : ""'
+      - type: regex
+        name: product_version_5
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Sambar FTP Server Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:\s|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_5) ? "sambar:" + product_version_5 : ""'
+      - type: regex
+        name: product_version_6
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Wing FTP Server\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s+ready
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_6) ? "wing:" + product_version_6 : ""'
+      - type: regex
+        name: product_version_7
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Pure-?FTPd\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[\s)]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_7) ? "pure-ftpd:" + product_version_7 : ""'
   - inputs:
       - data: "HELP\r\n"
         read: 1
@@ -72,3 +153,85 @@ tcp:
 
     matchers-condition: and
     matchers: *ftp-matchers
+
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bvsFTPd[ /]+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "vsftpd:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bProFTPD[ /]+([0-9]+(?:[.][0-9]+)+(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*)(?:[\s)]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "proftpd:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bFileZilla Server\s+(?:version\s+)?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "filezilla:" + product_version_2 : ""'
+      - type: regex
+        name: product_version_3
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*GlobalSCAPE Secure FTP Server\s+\(v\.\s*([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_3) ? "globalscape:" + product_version_3 : ""'
+      - type: regex
+        name: product_version_4
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Microsoft FTP Service\s+\(Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_4) ? "microsoft-ftp:" + product_version_4 : ""'
+      - type: regex
+        name: product_version_5
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Sambar FTP Server Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:\s|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_5) ? "sambar:" + product_version_5 : ""'
+      - type: regex
+        name: product_version_6
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Wing FTP Server\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\s+ready
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_6) ? "wing:" + product_version_6 : ""'
+      - type: regex
+        name: product_version_7
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Pure-?FTPd\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)(?:[\s)]|$)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[a-z][0-9a-z]*)?(?:[-+._][0-9A-Za-z]+)*$", product_version_7) ? "pure-ftpd:" + product_version_7 : ""'

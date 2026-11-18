@@ -35,6 +35,37 @@ tcp:
         regex:
           - '(?m)^250[ -][^\r\n]+\r?$'
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bExim\s+V?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "exim:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bSendmail\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "sendmail:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*CommuniGate Pro SMTP\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'
   - host:
       - "{{Hostname}}"
     port: 25,2525,587
@@ -45,6 +76,37 @@ tcp:
         regex:
           - '(?im)^220[ -][^\r\n]*\b(?:ESMTP|SMTP)\b'
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bExim\s+V?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "exim:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bSendmail\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "sendmail:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*CommuniGate Pro SMTP\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'
   - inputs:
       - data: ""
         name: greeting
@@ -67,6 +129,37 @@ tcp:
         regex:
           - '(?m)^250[ -][^\r\n]+\r?$'
 
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bExim\s+V?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "exim:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bSendmail\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "sendmail:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*CommuniGate Pro SMTP\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'
   - host:
       - "tls://{{Hostname}}"
     port: 465
@@ -76,4 +169,35 @@ tcp:
         part: data
         regex:
           - '(?im)^220[ -][^\r\n]*\b(?:ESMTP|SMTP)\b'
-# digest: 4b0a00483046022100fe1197a695dd18ff082f2d427d13a51695c6ec4b30ab318f92f1a1d1edd58e4702210095af3c1f23ec7cfed80cace48d6b631c0016b7ba5fd0692d53f928f777d71c11:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: product_version_0
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bExim\s+V?([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_0) ? "exim:" + product_version_0 : ""'
+      - type: regex
+        name: product_version_1
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*\bSendmail\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_1) ? "sendmail:" + product_version_1 : ""'
+      - type: regex
+        name: product_version_2
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*CommuniGate Pro SMTP\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\b
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", product_version_2) ? "communigate:" + product_version_2 : ""'

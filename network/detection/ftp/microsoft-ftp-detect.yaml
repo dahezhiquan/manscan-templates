@@ -7,24 +7,33 @@ info:
   description: |
     Microsoft FTP 是 FTP 服务实现、设备内置文件传输组件或 FTP 代理，常用于文件传输、设备配置、固件维护或旧系统集成。该模板连接 21/TCP 并读取协议响应，通过匹配 `Microsoft FTP Service` 等响应特征识别目标服务。
   metadata:
+    product: microsoft-ftp
     max-request: 1
     verified: true
     shodan-query: 'product:"Microsoft ftpd"'
-  tags: network,ftp,sambar,detect,tcp,discovery
+  tags: network,ftp,microsoft,detect,tcp,discovery
 
 tcp:
-  - inputs:
-      - data: 00000000
-        type: hex
-
-    host:
+  - host:
       - "{{Hostname}}"
     port: 21
-    read-size: 1024
+    read-size: 4096
 
     matchers:
       - type: word
-        part: body
+        name: microsoft-ftp
+        part: raw
         words:
           - "Microsoft FTP Service"
-# digest: 4a0a0047304502201d254b24305b5236152607f8aa77622bab9f0bf0117d88566f50dff1719624e6022100e4a27d670837a2387073b9a946a9fc6bce4487888cd6a74e0237b8120605ee02:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: regex
+        name: detected_version
+        part: raw
+        group: 1
+        regex:
+          - (?mi)^220[^\r\n]*Microsoft FTP Service\s+\(Version\s+([0-9]+(?:[.][0-9]+)+(?:[-+._][0-9A-Za-z]+)*)\)
+        internal: true
+      - type: dsl
+        dsl:
+          - 'regex("^[0-9]+(?:[.][0-9]+)*(?:[-+._][0-9A-Za-z]+)*$", detected_version) ? detected_version : ""'

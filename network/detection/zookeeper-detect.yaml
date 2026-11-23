@@ -12,6 +12,7 @@ info:
     - https://zookeeper.apache.org/
     - https://github.com/nmap/nmap/blob/master/nmap-service-probes
   metadata:
+    max-request: 2
     vendor: apache
     product: zookeeper
     shodan-query: product:"Apache ZooKeeper"

@@ -16,6 +16,7 @@ info:
   reference:
     - https://1diot9.github.io/2026/05/13/泛微e9分析思路/#测绘指纹
   metadata:
+    max-request: 2
     vendor: weaver
     product: ecology9
     fofa-query: app="泛微-协同商务系统"

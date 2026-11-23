@@ -1,6 +1,8 @@
 id: webview-universal-access-java
 
 info:
+  metadata:
+    max-request: 0
   name: Android WebView Universal Access 检测 Java（本地文件安全扫描）
   author: 7h3b4dger
   severity: medium

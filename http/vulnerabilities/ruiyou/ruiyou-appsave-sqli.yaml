@@ -14,7 +14,7 @@ info:
     - 使用最小权限数据库账号，排查异常查询、数据导出和新增账号记录。
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     vuln-id: CT-1251010
     vendor: ruiyou
     product: appsave

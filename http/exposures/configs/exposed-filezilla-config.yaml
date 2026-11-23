@@ -19,7 +19,7 @@ info:
     - https://wiki.filezilla-project.org/Xml_files
   metadata:
     verified: true
-    max-request: 4
+    max-request: 3
   tags: exposure,config,filezilla,ftp
 
 http:

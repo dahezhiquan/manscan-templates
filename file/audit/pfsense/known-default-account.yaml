@@ -1,6 +1,8 @@
 id: known-default-account
 
 info:
+  metadata:
+    max-request: 0
   name: pfSense 默认账户未清理（本地文件安全扫描）
   author: pussycat0x
   severity: high

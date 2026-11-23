@@ -11,7 +11,7 @@ info:
     - https://osmocom.org/projects/rtl-sdr/wiki/Rtl-sdr
   metadata:
     verified: true
-    max-request: 2
+    max-request: 6
   tags: rtl-tcp,rtl-sdr,radio,iot,network,detect
 
 tcp:

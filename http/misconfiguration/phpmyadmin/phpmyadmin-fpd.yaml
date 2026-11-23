@@ -15,7 +15,7 @@ info:
     - 隐藏或关闭不需要公开的默认面板，并监控异常访问与暴力探测。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 18
     shodan-query: html:"phpmyadmin"
   tags: exposure,fpd,phpmyadmin,php
 

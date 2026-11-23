@@ -1,6 +1,8 @@
 id: remote-auth-timeout
 
 info:
+  metadata:
+    max-request: 0
   name: FortiGate 远程认证超时未设置（本地文件安全扫描）
   author: pussycat0x
   severity: low

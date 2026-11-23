@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-798
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     vendor: homebridge
     product: homebridge-config-ui-x
     shodan-query: 'http.title:"Homebridge"'

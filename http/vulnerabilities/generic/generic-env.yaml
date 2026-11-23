@@ -18,7 +18,7 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-552
   metadata:
-    max-request: 22
+    max-request: 21
   tags: config,exposure,env,vuln
 
 http:

@@ -1,6 +1,8 @@
 id: anonymous-distribution-point-sccm
 
 info:
+  metadata:
+    max-request: 2
   name: Microsoft SCCM 分发点匿名访问
   author: matejsmycka
   severity: medium

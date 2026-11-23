@@ -17,7 +17,7 @@ info:
     - https://swarm.ptsecurity.com/business-logic-and-chains-unauthenticated-rce-in-dell-wyse-management-suite/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: html:"/ccm-web/"
   tags: dell,wyse,auth-bypass,misconfig
 

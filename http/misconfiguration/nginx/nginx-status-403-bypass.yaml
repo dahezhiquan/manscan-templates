@@ -18,6 +18,7 @@ info:
   classification:
     cwe-id: CWE-22
   metadata:
+    max-request: 14
     verified: true
     shodan-query: "server:nginx"
   tags: nginx,status,disclosure,bypass,misconfig

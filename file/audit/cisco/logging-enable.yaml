@@ -1,6 +1,8 @@
 id: logging-enable
 
 info:
+  metadata:
+    max-request: 0
   name: Cisco 日志记录未启用（本地文件安全扫描）
   author: pussycat0x
   severity: low

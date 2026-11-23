@@ -20,6 +20,7 @@ info:
     - https://gitlab.com/gitlab-org/gitlab/-/issues/371396
     - https://gitlab.com/gitlab-org/gitlab/-/issues/388379
   metadata:
+    max-request: 0
     verified: true
   tags: keys,file,gitlab,token
 file:

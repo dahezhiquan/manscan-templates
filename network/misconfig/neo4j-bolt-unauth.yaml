@@ -20,7 +20,7 @@ info:
   classification:
     cwe-id: CWE-306
   metadata:
-    max-request: 2
+    max-request: 1
     vendor: neo4j
     product: neo4j
   tags: network,neo4j,bolt,unauth,auth,misconfig,vuln,tcp

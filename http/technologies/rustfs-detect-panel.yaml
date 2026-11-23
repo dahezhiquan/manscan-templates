@@ -12,6 +12,7 @@ info:
   classification:
     cpe: cpe:2.3:a:rustfs:rustfs:*:*:*:*:*:rust:*:*
   metadata:
+    max-request: 1
     vendor: rustfs
     product: rustfs
     shodan-query: title:"RustFS"

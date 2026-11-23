@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/heroku.yml
     - https://devcenter.heroku.com/articles/authentication
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,heroku,token
 file:

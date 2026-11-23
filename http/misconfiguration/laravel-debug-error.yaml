@@ -14,7 +14,7 @@ info:
     - 对确需保留的运维端点增加认证授权、来源限制和访问审计。
     - 统一错误处理策略，避免向外部用户返回堆栈、环境变量和内部路径。
   metadata:
-    max-request: 1
+    max-request: 3
   tags: debug,laravel,misconfig,vuln
 
 http:

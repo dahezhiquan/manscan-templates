@@ -15,7 +15,7 @@ info:
     - 升级设备固件或管理组件，审计近期登录记录、配置变更和异常会话。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: title:"Sato"
   tags: sato,default-login,printer,intrusive,vuln
 

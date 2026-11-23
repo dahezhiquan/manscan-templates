@@ -19,6 +19,7 @@ info:
     - https://platform.openai.com/docs/api-reference
     - https://platform.openai.com/docs/api-reference/authentication
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,openai,token,ai
 file:

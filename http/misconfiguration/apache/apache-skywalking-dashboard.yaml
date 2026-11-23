@@ -17,7 +17,7 @@ info:
     - https://github.com/apache/skywalking
     - https://github.com/apache/skywalking-ui
   metadata:
-    max-request: 9
+    max-request: 1
     vendor: apache
     product: skywalking
     shodan-query: title:"Apache SkyWalking"

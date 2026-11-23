@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-538
   metadata:
     verified: true
-    max-request: 1
+    max-request: 5
     shodan-query: http.html:"postman.json"
   tags: api,postman,exposure,discovery
 

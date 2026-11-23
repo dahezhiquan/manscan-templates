@@ -20,7 +20,7 @@ info:
     cpe: cpe:2.3:a:sap:hybris:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 3
+    max-request: 9
     shodan-query: title:"Hybris"
     product: hybris
     vendor: sap

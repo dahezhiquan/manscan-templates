@@ -16,6 +16,7 @@ info:
   reference:
     - https://zhero-web-sec.github.io/research-and-things/nextjs-and-cache-poisoning-a-quest-for-the-black-hole
   metadata:
+    max-request: 3
     verified: true
     vendor: vercel
     product: next.js

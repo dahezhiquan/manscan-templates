@@ -17,7 +17,7 @@ info:
     - https://docs.google.com/presentation/d/1PypHgd0r3ZVII7e5fLX5JjZIJQfAsMEydLnug0yFb9k/edit?usp=sharing (Slide 18,22,24)
   metadata:
     verified: true
-    max-request: 1
+    max-request: 3
     vendor: adobe
     product: experience_manager
     shodan-query:

@@ -17,6 +17,7 @@ info:
     - https://www.varonis.com/blog/abusing-salesforce-communities
     - https://www.enumerated.ie/index/salesforce
   metadata:
+    max-request: 2
     verified: true
     publicwww-query: sfsites
   tags: aura,unauth,salesforce,exposure,misconfig,vuln

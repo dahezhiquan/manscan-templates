@@ -10,7 +10,7 @@ info:
     - https://www.ibm.com/products/webmethods-hybrid-integration
   metadata:
     verified: true
-    max-request: 1
+    max-request: 3
     shodan-query: http.html:"IBM webMethods Integration"
   tags: tech,panel,ibm,webmethods,recon
 http:

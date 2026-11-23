@@ -17,7 +17,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
+    max-request: 5
     verified: true
     vendor: apache
     product: tomcat

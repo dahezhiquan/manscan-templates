@@ -16,7 +16,7 @@ info:
     - https://stack.chaitin.com/techblog/detail?id=142
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     vuln-id: CT-817703
     vendor: smartbi
     product: smartbi

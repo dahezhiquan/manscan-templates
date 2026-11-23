@@ -18,7 +18,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/59
     - https://hackerone.com/reports/335330
   metadata:
-    max-request: 1
+    max-request: 2
   tags: takeover,hubspot,hackerone,vuln
 
 http:

@@ -16,7 +16,7 @@ info:
     - 轮换可能出现在备份中的数据库、后台、云服务和第三方 API 凭据。
     - 清理搜索引擎、对象存储公开 ACL、CDN 缓存和历史发布包中的泄露副本。
   metadata:
-    max-request: 1512
+    max-request: 1624
   tags: exposure,backup,php,disclosure,fuzz,vuln
 
 http:

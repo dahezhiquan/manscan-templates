@@ -23,6 +23,7 @@ info:
     - https://www.truenas.com/docs/scale/api/
     - https://www.truenas.com/community/threads/api-examples-in-perl-python.108053/
   metadata:
+    max-request: 0
     verified: true
   tags: truenas,keys,file
 

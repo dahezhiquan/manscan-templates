@@ -1,5 +1,7 @@
 id: graphql-go-detect
 info:
+  metadata:
+    max-request: 4
   name: GraphQL Go 指纹识别（指纹识别）
   author: princechaddha
   severity: info

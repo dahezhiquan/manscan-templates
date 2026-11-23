@@ -18,7 +18,7 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-601
   metadata:
-    max-request: 93
+    max-request: 94
   tags: redirect,generic,vuln
 
 http:

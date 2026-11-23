@@ -16,6 +16,7 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
+    max-request: 0
     verified: true
   remediation: |
     - 为 Web 管理界面设置符合组织基线的空闲会话超时，避免使用无限期会话，并在变更后验证自动失效。

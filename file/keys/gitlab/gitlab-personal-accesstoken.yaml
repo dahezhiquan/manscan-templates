@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/gitlab.yml
     - https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,gitlab,token
 file:

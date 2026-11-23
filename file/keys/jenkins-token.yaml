@@ -19,6 +19,7 @@ info:
     - https://www.jenkins.io/blog/2018/07/02/new-api-token-system/
     - https://www.jenkins.io/doc/book/security/csrf-protection/
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,jenkins,crumb,token
 file:

@@ -1,6 +1,8 @@
 id: razorpay-client-id
 
 info:
+  metadata:
+    max-request: 0
   name: Razorpay 客户端 ID 泄露检测（本地文件安全扫描）
   author: Devang-Solanki
   severity: high

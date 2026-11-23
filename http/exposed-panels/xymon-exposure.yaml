@@ -11,6 +11,7 @@ info:
   reference:
   - https://xymon.com/
   metadata:
+    max-request: 2
     shodan-query: http.title:"Xymon"
   tags: xymon,exposure,monitoring,panel
 

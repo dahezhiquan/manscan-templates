@@ -14,7 +14,7 @@ info:
     - 为敏感页面和资源增加访问控制，并按最小暴露原则收敛公开路径。
     - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   metadata:
-    max-request: 2
+    max-request: 3
   tags: misconfig,nginx,status,vuln
 
 http:

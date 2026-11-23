@@ -10,6 +10,7 @@ info:
   reference:
   - https://wordpress.org/plugins/userfeedback-lite/
   metadata:
+    max-request: 1
     plugin_namespace: userfeedback-lite
     wpscan: https://wpscan.com/plugin/userfeedback-lite
   tags: tech,wordpress,wp-plugin,top-200,discovery

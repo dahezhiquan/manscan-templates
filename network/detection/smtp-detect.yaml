@@ -7,7 +7,7 @@ info:
   description: |
     SMTP 是邮件传输协议，用于邮件投递、转发和服务器间通信。该模板通过 `EHLO` 交换验证 `220` 欢迎响应与 `250` 应答；若服务不接受 EHLO，再通过带 SMTP 标识的欢迎横幅补充识别。25、2525、587/TCP 使用明文连接，465/TCP 使用隐式 TLS。模板只确认 SMTP 服务，不将协议能力误作软件版本。
   metadata:
-    max-request: 4
+    max-request: 8
   tags: network,service,smtp,detect,mail,tcp,discovery
 
 flow: tcp(1) || tcp(2) || tcp(3) || tcp(4)

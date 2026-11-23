@@ -14,7 +14,7 @@ info:
     - 升级固件并检查是否存在已知未授权访问漏洞。
     - 将管理页面限制在内网、管理 VLAN 或 VPN 内，并开启访问审计。
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: title="Laser Printer"
     verified: true
   tags: dell,iot,unauth,misconfig,printer,intrusive,vuln,discovery

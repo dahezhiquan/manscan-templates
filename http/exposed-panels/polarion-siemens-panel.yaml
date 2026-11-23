@@ -9,6 +9,7 @@ info:
   reference:
   - https://polarion.plm.automation.siemens.com/
   metadata:
+    max-request: 1
     verified: true
     shodan-query:
     - http.favicon.hash:-1135703796

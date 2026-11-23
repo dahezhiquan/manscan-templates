@@ -23,7 +23,7 @@ info:
     cpe: cpe:2.3:a:broadcom:siteminder:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     google-query: inurl:"smpwservices.fcc"
     product: siteminder
     vendor: broadcom

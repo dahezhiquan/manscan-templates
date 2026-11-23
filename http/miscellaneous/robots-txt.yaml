@@ -14,7 +14,7 @@ info:
     - 对必须公开的文件和链接进行最小化披露，避免包含内部路径或敏感标识。
     - 定期巡检公开页面，确保内容仍然准确且未泄露额外信息。
   metadata:
-    max-request: 2
+    max-request: 1
   tags: miscellaneous,misc,generic,vuln
 
 http:

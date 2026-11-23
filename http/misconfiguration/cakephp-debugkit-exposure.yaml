@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     shodan-query: http.html:"debug_kit"
     fofa-query: body="debug_kit" && body="CakePHP"
   tags: cakephp,debug,toolkit,exposure,php

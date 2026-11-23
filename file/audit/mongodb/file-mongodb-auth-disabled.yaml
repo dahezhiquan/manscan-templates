@@ -17,6 +17,7 @@ info:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
   metadata:
+    max-request: 0
     verified: true
   tags: file,mongodb,audit,hardening
 

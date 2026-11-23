@@ -14,6 +14,7 @@ info:
     - 在服务端校验文件内容与 MIME 类型，将上传文件存储到不可执行目录并使用随机文件名。
     - 清理异常上传文件，复核上传目录解析配置、访问日志和可疑账号活动。
   metadata:
+    max-request: 2
     verified: true
     fofa-query: title="U9-登录"
   tags: unauth,fileupload,yonyou,u9,rce

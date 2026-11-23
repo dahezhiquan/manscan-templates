@@ -9,7 +9,7 @@ info:
   reference:
     - https://wordpress.org/plugins/super-cache/
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     publicwww-query: /plugins/wp-super-cache/
   tags: debug,wordpress,fpd,vuln,wp-super-cache,wp-plugin

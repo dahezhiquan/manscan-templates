@@ -17,7 +17,7 @@ info:
     - https://ritecms.com/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     fofa-query: title="ritecms"
   tags: ritecms,default-login,vuln
 

@@ -19,6 +19,7 @@ info:
     - https://core.telegram.org/bots/api
     - https://core.telegram.org/bots/features#botfather
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,telegram,token
 file:

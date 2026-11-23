@@ -17,6 +17,7 @@ info:
     - https://gitea.io/
     - https://docs.gitea.io/en-us/
   metadata:
+    max-request: 2
     shodan-query: http.title:"Gitea"
     fofa-query: title="Gitea"
   tags: gitea,exposure,misconfig,git

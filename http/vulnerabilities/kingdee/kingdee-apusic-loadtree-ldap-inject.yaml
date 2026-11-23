@@ -14,7 +14,7 @@ info:
     - 复核访问日志和异常操作记录，确认是否存在已被利用的迹象。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     vuln-id: CT-1014499
     vendor: kingdee
     product: aas

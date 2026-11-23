@@ -9,7 +9,7 @@ info:
   reference:
   - https://www.dell.com/support/manuals/en-us/idrac7-8-with-lc-v2.40.40.40
   metadata:
-    max-request: 2
+    max-request: 1
     verified: true
   tags: tech,dell,idrac,discovery
 

@@ -17,6 +17,7 @@ info:
   reference:
     - https://github.com/danny-avila/LibreChat
   metadata:
+    max-request: 1
     fofa-query: app="LibreChat"
   tags: panel,librechat,discovery
 http:

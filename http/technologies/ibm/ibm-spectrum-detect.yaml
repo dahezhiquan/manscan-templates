@@ -10,7 +10,7 @@ info:
   reference:
   - https://www.ibm.com/docs/en/products?filter=spectrum
   metadata:
-    max-request: 1
+    max-request: 3
     verified: true
     shodan-query: http.title:"IBM Spectrum"
     product: spectrum

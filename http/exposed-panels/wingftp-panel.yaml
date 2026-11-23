@@ -11,6 +11,7 @@ info:
   reference:
   - https://www.wftpserver.com/
   metadata:
+    max-request: 1
     product: wingftp
     vendor: wingftp
     shodan-query:

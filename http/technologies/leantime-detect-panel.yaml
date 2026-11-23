@@ -12,6 +12,7 @@ info:
   classification:
     cpe: cpe:2.3:a:leantime:leantime:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 1
     vendor: leantime
     product: leantime
     shodan-query: title:"Leantime"

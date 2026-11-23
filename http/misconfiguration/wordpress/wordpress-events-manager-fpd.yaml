@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/events-manager/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 7
     publicwww-query: /plugins/events-manager/
   tags: debug,wordpress,fpd,vuln,events-manager,wp-plugin
   impact: |-

@@ -14,7 +14,7 @@ info:
     - 审计异常登录、权限变更和配置修改记录，轮换可能受影响的账号凭据。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 5
     vendor: smartbi
     product: smartbi
   tags: unauth,vuln,smartbi

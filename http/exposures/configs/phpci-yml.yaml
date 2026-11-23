@@ -19,7 +19,7 @@ info:
     - https://github.com/dancryer/PHPCI/blob/master/.phpci.yml
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     fofa-query: body="phpci.yml"
   tags: phpci,misconfig,vuln
 

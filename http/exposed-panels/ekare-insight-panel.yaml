@@ -17,6 +17,7 @@ info:
   reference:
     - https://www.ekare.ai/insight
   metadata:
+    max-request: 1
     verified: true
     fofa-query: icon_hash="125375398"
   tags: panel,login,ekare,insight,discovery

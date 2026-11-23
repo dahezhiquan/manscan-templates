@@ -10,6 +10,7 @@ info:
   reference:
   - https://wordpress.org/plugins/simple-history/
   metadata:
+    max-request: 1
     plugin_namespace: simple-history
     wpscan: https://wpscan.com/plugin/simple-history
   tags: tech,wordpress,wp-plugin,top-200,discovery

@@ -19,7 +19,7 @@ info:
     cvss-score: 7.2
     cwe-id: CWE-306
   metadata:
-    max-request: 2
+    max-request: 4
   tags: network,redis,unauth,exposure,tcp,discovery
 
 tcp:

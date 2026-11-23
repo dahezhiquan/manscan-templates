@@ -1,5 +1,7 @@
 id: wp-plugin-wordpress-graphql-apiforwp-detect
 info:
+  metadata:
+    max-request: 4
   name: API for WP GraphQL 指纹识别（指纹识别）
   author: princechaddha
   severity: info

@@ -19,7 +19,7 @@ info:
     - https://code.vtiger.com/vtiger/vtigercrm
   metadata:
     verified: true
-    max-request: 3
+    max-request: 4
     shodan-query: html:"Powered by vtiger CRM"
   tags: vtiger,exposure,vtiger-crm,vuln
 

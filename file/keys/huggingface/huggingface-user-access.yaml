@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/huggingface.yml
     - https://huggingface.co/docs/hub/security-tokens
   metadata:
+    max-request: 0
     verified: true
   tags: huggingface,keys,file,ai
 

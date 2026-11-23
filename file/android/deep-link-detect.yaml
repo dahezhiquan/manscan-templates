@@ -21,6 +21,7 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
+    max-request: 0
     verified: true
   tags: android,file,deeplink
 

@@ -16,6 +16,7 @@ info:
   reference:
     - https://github.com/nostr-protocol/nips/blob/master/05.md
   metadata:
+    max-request: 1
     google-query: inurl:"/.well-known/nostr.json"
   tags: well-known,nostr,miscellaneous,misc,vuln
 

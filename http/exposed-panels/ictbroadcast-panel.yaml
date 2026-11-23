@@ -18,7 +18,7 @@ info:
     - https://www.ictbroadcast.com/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: http.favicon.hash:-60395993
   tags: panel,ictbroadcast,login,discovery
 http:

@@ -14,7 +14,7 @@ info:
     - 将敏感配置迁移到 Web 根目录之外，并检查历史缓存和备份。
     - 审查暴露内容中是否包含凭据或内部路径，必要时轮换相关密码。
   metadata:
-    max-request: 6
+    max-request: 4
   tags: miscellaneous,misc,config,vuln
 
 http:

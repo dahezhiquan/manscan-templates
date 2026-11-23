@@ -9,6 +9,7 @@ info:
   reference:
   - https://github.com/distribworks/dkron/
   metadata:
+    max-request: 1
     verified: true
     fofa-query: title="DKRON"
     shodan-query: title:"DKRON"

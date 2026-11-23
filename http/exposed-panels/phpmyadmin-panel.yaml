@@ -10,7 +10,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 14
+    max-request: 15
     vendor: phpmyadmin
     product: phpmyadmin
     shodan-query:

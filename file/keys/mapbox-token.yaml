@@ -18,6 +18,7 @@ info:
     - https://docs.gitguardian.com/secrets-detection/detectors/specifics/mapbox_token
     - https://github.com/zricethezav/gitleaks/blob/master/cmd/generate/config/rules/mapbox.go
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,token,mapbox
 file:

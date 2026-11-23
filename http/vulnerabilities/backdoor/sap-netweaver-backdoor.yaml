@@ -16,7 +16,7 @@ info:
   reference:
     - https://www.bleepingcomputer.com/news/security/sap-fixes-suspected-netweaver-zero-day-exploited-in-attacks/
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: html:"SAP NetWeaver Application Server Java"
     verified: true
   tags: sap,netweaver,backdoor,vuln

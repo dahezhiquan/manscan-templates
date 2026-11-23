@@ -20,7 +20,7 @@ info:
     cwe-id: CWE-434
   metadata:
     verified: true
-    max-request: 2
+    max-request: 6
     framework: prestashop
     shodan-query: "http.component:\"prestashop\""
     product: ap_pagebuilder

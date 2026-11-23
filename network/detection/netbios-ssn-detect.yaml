@@ -11,6 +11,7 @@ info:
     - https://github.com/nmap/nmap/blob/master/nmap-service-probes
     - https://www.rfc-editor.org/rfc/rfc1002
   metadata:
+    max-request: 1
     product: netbios-ssn
     shodan-query: 'port:139'
   tags: netbios-ssn,network,detect,tcp,discovery

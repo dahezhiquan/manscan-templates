@@ -16,6 +16,7 @@ info:
   reference:
     - https://httpd.apache.org/docs/2.4/mod/core.html#servertokens
   metadata:
+    max-request: 0
     verified: true
   tags: audit,config,file,apache,hardening
 

@@ -7,7 +7,7 @@ info:
   description: |
     Totemo Mail 是安全邮件网关或邮件加密产品，其 SMTP 服务用于邮件接收和传输处理。该模板连接 25,465,587/TCP 并读取协议响应，通过匹配 `totemomail` 等响应特征识别目标服务。
   metadata:
-    max-request: 1
+    max-request: 3
   tags: mail,smtp,network,totemomail,detect,tcp,discovery
 
 tcp:

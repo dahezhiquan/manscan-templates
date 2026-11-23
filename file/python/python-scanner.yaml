@@ -1,6 +1,8 @@
 id: python-scanner
 
 info:
+  metadata:
+    max-request: 0
   name: Python 危险函数扫描（本地文件安全扫描）
   author: majidmc2
   severity: medium

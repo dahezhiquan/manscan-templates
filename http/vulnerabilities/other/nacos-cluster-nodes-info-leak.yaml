@@ -22,6 +22,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:alibaba:nacos:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 2
     verified: true
     shodan-query: title:"Nacos"
     fofa-query: app="NACOS"

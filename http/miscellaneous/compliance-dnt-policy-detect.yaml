@@ -1,6 +1,8 @@
 id: compliance-dnt-policy-detect
 
 info:
+  metadata:
+    max-request: 1
   name: Do Not Track 策略声明检测（指纹识别）
   author: rxerium
   severity: info

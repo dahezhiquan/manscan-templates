@@ -1,6 +1,8 @@
 id: wp-contact-form-7-fpd
 
 info:
+  metadata:
+    max-request: 1
   name: WordPress Contact Form 7 插件完整路径泄露
   author: pussycat0x
   severity: low

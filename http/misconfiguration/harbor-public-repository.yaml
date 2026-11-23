@@ -17,6 +17,7 @@ info:
     - https://goharbor.io/docs/2.15.0/working-with-projects/project-configuration/
     - https://raw.githubusercontent.com/goharbor/harbor/main/api/v2.0/swagger.yaml
   metadata:
+    max-request: 2
     vendor: linuxfoundation
     product: harbor
     shodan-query: 'http.title:"Harbor"'

@@ -9,6 +9,7 @@ info:
   reference:
     - https://wordpress.org/plugins/nextgen-gallery/
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     publicwww-query: /wp-content/plugins/nextgen-gallery/

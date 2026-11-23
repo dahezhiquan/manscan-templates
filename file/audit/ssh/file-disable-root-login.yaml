@@ -16,6 +16,7 @@ info:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.tecmint.com/disable-or-enable-ssh-root-login-and-limit-ssh-access-in-linux/
   metadata:
+    max-request: 0
     verified: true
   tags: audit,config,file,ssh
 

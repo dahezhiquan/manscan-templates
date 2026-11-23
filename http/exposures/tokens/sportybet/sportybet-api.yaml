@@ -1,6 +1,8 @@
 id: sportybet-api
 
 info:
+  metadata:
+    max-request: 1
   name: SportyBet / BetKing Admin or API 令牌暴露（暴露面识别）
   author: Lloydcoder
   severity: high

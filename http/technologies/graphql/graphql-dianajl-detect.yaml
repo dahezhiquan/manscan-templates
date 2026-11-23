@@ -1,5 +1,7 @@
 id: graphql-dianajl-detect
 info:
+  metadata:
+    max-request: 4
   name: Diana.jl GraphQL 指纹识别（指纹识别）
   author: princechaddha
   severity: info

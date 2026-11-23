@@ -1,6 +1,8 @@
 id: google-api-key-file
 
 info:
+  metadata:
+    max-request: 0
   name: Google API 密钥敏感信息检测（本地文件安全扫描）
   author: gaurang
   severity: low

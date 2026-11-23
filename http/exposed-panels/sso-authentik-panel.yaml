@@ -9,7 +9,7 @@ info:
   reference:
   - https://github.com/goauthentik/authentik
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     shodan-query: http.favicon.hash:-178113786
   tags: authentik,sso,mfa,panel,detect,discovery

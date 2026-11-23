@@ -19,6 +19,7 @@ info:
     - https://thingsboard.io/docs/paas/reference/http-api/
     - https://thingsboard.io/docs/paas/reference/coap-api/
   metadata:
+    max-request: 0
     verified: true
   tags: thingsboard,keys,file
 

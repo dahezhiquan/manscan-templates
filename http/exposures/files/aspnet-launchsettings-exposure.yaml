@@ -1,6 +1,8 @@
 id: aspnet-launchsettings-exposure
 
 info:
+  metadata:
+    max-request: 2
   name: ASP.NET Launch Settings 暴露（暴露面识别）
   author: theamanrawat
   severity: medium

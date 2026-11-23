@@ -14,6 +14,7 @@ info:
     - 启用认证和授权策略，最小化客户端可访问的队列、主题和集群管理能力。
     - 升级 Open Message Queue/Java Message Service 相关组件，并审计异常连接和集群发现请求。
   metadata:
+    max-request: 1
     verified: true
     shodan-query: product:"Java Message Service"
   tags: network,tcp,jms,openmq,unauth

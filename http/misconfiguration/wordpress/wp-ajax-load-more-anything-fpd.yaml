@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/ajax-load-more-anything/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     publicwww-query: /plugins/ajax-load-more-anything
   tags: wordpress,wp-plugin,fpd,ajax-load-more-anything,misconfig
   impact: |-

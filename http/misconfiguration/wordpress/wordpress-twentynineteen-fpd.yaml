@@ -9,6 +9,7 @@ info:
   reference:
     - https://wordpress.org/themes/twentynineteen/
   metadata:
+    max-request: 1
     verified: false
   tags: wordpress,wp-theme,twentytwenty,fpd
   impact: |-

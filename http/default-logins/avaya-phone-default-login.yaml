@@ -18,6 +18,7 @@ info:
   classification:
     cwe-id: CWE-1392
   metadata:
+    max-request: 2
     verified: true
     max-requests: 1
     shodan-query: html:"Avaya J179 Phone"

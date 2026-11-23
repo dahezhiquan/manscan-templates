@@ -17,7 +17,7 @@ info:
     - https://github.com/slims/slims8_akasia/issues/184
   metadata:
     verified: true
-    max-request: 1
+    max-request: 9
     vendor: slims
     product: senayan_library_management_system
     shodan-query: html:"SLIMS"

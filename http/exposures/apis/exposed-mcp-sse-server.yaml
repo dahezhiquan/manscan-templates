@@ -18,6 +18,7 @@ info:
   reference:
     - https://modelcontextprotocol.io/specification/2024-11-05/basic/transports#http-with-sse
   metadata:
+    max-request: 2
     verified: true
     max-requests: 2
     shodan-query: "text/event-stream"

@@ -1,5 +1,7 @@
 id: graphql-hypergraphql-detect
 info:
+  metadata:
+    max-request: 4
   name: HyperGraphQL 指纹识别（指纹识别）
   author: princechaddha
   severity: info

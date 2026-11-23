@@ -9,6 +9,7 @@ info:
   reference:
     - http://rompager.com
   metadata:
+    max-request: 1
     verified: true
     shodan-query: product:"Allegro RomPager"
     product: rompager

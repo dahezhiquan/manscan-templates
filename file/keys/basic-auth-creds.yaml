@@ -1,6 +1,8 @@
 id: basic-auth-creds
 
 info:
+  metadata:
+    max-request: 0
   name: Basic 认证凭据泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high

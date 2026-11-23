@@ -17,7 +17,7 @@ info:
     - https://github.com/koishi0x01/CVE/blob/main/CVE_1.md
   metadata:
     verified: true
-    max-request: 2
+    max-request: 3
     fofa-query: '"<TITLE>Web user login</TITLE>" && "<META content\==MSHTML 6.00.2900.5583\" name\=GENERATOR></HEAD>"'
   tags: raisecom,rce,intrusive,vuln
 

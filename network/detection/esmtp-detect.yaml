@@ -13,7 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     shodan-query: ESMTP
   tags: network,detect,smtp,esmtp,mail,tcp,discovery
 

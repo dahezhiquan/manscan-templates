@@ -1,6 +1,8 @@
 id: atlona-default-login
 
 info:
+  metadata:
+    max-request: 1
   name: Atlona AT-OME-MS42 默认口令登录（弱口令）
   author: matejsmycka
   severity: high

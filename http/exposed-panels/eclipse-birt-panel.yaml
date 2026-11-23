@@ -14,7 +14,7 @@ info:
     cpe: cpe:2.3:a:eclipse:business_intelligence_and_reporting_tools:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     shodan-query: title:"Eclipse BIRT Home"
     google-query: intitle:"Eclipse BIRT Home"
     product: eclipse-birt

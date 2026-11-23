@@ -17,7 +17,7 @@ info:
     - https://medium.com/@netscylla/pentesters-guide-to-postgresql-hacking-59895f4f007
   metadata:
     verified: "true"
-    max-request: 1
+    max-request: 6
     shodan-query: port:5432 product:"PostgreSQL"
   tags: network,postgresql,db,unauth,enum,tcp,discovery
 tcp:

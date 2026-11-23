@@ -13,6 +13,7 @@ info:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://nginx.org/en/docs/http/ngx_http_proxy_module.html
   metadata:
+    max-request: 0
     verified: true
     tags: nginx,file,audit,hardening
   remediation: |

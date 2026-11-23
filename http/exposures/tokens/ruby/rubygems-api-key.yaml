@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-522,CWE-540
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
   tags: rubygems,token,exposure,ruby,vuln
 
 flow: http(1) && http(2)

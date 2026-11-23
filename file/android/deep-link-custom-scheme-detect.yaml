@@ -1,6 +1,8 @@
 id: deep-link-custom-scheme-detect
 
 info:
+  metadata:
+    max-request: 0
   name: Android 自定义 Scheme 深度链接识别（本地文件安全扫描）
   author: 7h3b4dger
   severity: low

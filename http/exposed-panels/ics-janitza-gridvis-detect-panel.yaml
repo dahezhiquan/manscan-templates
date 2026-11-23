@@ -9,7 +9,7 @@ info:
   reference:
     - https://www.janitza.com/gridvis.html
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     shodan-query: http.title:"GridVis"
     vendor: janitza

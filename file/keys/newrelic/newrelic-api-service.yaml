@@ -19,6 +19,7 @@ info:
     - https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys
     - https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#user-key
   metadata:
+    max-request: 0
     verified: true
   tags: newrelic,keys,file
 

@@ -17,7 +17,7 @@ info:
     - https://nmap.org/nsedoc/scripts/smtp-commands.html
   metadata:
     verified: true
-    max-request: 1
+    max-request: 8
     shodan-query: smtp
   tags: network,enum,smtp,mail,tcp,discovery
 

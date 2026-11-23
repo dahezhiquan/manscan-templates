@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/a3-lazy-load/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     publicwww-query: /plugins/a3-lazy-load
   tags: wordpress,wp-plugin,fpd,a3-lazy-load,misconfig
   impact: |-

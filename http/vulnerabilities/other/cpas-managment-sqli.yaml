@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-89
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     fofa-query: icon_hash="-58141038"
   tags: cpas,cms,sqli,time-based-sqli,vuln
 

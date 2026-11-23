@@ -13,6 +13,7 @@ info:
     - 清理生产包中的测试域名、旧环境和不再使用的 Google 服务引用，避免泄露内部架构线索。
     - 对对应 Google 资源启用最小权限、身份认证和日志审计，并确认已停用资源不存在公开访问或可重新声明问题。
   metadata:
+    max-request: 0
     verified: "true"
     github-query: "/[a-z0-9.-]+\\.appspot\\.com/"
   tags: file,android,google

@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:netdata:netdata:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 1
+    max-request: 3
     vendor: netdata
     product: netdata
     shodan-query:

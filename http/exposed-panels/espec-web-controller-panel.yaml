@@ -17,7 +17,7 @@ info:
   reference:
     - https://espec.com/na/products/option_detail/web_controller/
   metadata:
-    max-request: 2
+    max-request: 1
     vendor: espec
     product: web_controller
     shodan-query:

@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/particle.io.yml
     - https://docs.particle.io/reference/cloud-apis/api/
   metadata:
+    max-request: 0
     verified: true
   tags: particle,keys,file
 

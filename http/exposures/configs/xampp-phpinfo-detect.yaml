@@ -16,6 +16,7 @@ info:
     - 检查文件中是否包含凭据、请求数据、SQL 语句或用户信息，必要时执行密钥轮换和受影响账号处置。
     - 复核相关组件版本和配置，修复因暴露信息指向的弱配置或已知漏洞。
   metadata:
+    max-request: 2
     verified: true
     shodan-query: http.title:"XAMPP"
   tags: config,exposure,phpinfo,vuln,xampp

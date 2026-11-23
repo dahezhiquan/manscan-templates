@@ -1,6 +1,8 @@
 id: suspicious-sql-error-messages
 
 info:
+  metadata:
+    max-request: 0
   name: 可疑 SQL 错误信息检测（本地文件安全扫描）
   author: geeknik
   severity: critical

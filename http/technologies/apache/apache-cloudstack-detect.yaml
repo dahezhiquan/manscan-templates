@@ -8,6 +8,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:cloudstack:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 1
     vendor: apache
     product: cloudstack
     shodan-query: http.title:"Apache CloudStack"

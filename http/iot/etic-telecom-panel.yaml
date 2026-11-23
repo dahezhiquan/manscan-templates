@@ -15,7 +15,7 @@ info:
     - 定期升级固件并审计路由、DNS、端口转发和 VPN 配置变更。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: html:"ETIC Telecom"
   tags: etic,panel,login,discovery
 

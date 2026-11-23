@@ -16,6 +16,7 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
+    max-request: 0
     verified: true
   remediation: |
     - 将 WebGUI 协议设置为 HTTPS，使用受信任且与管理域名匹配的证书，并禁用或安全重定向 HTTP。

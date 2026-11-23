@@ -1,6 +1,8 @@
 id: iis-directory-browsing
 
 info:
+  metadata:
+    max-request: 0
   name: IIS 目录浏览未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: high

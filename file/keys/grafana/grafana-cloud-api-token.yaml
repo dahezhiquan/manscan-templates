@@ -18,6 +18,7 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/grafana-cloud-api-token.go
   metadata:
+    max-request: 0
     verified: true
   tags: grafana,file,keys
 file:

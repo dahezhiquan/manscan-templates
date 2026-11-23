@@ -19,6 +19,7 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     vendor: sonatype
     product: nexus_repository_manager
   tags: nexus,sonatype,swagger,unauth,misconfig,exposure,vuln

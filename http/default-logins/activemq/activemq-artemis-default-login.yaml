@@ -16,7 +16,7 @@ info:
   reference:
     - https://activemq.apache.org/components/artemis/documentation/latest/management-console.html
   metadata:
-    max-request: 2
+    max-request: 1
     vendor: apache
     product: activemq
     shodan-query: title:"ActiveMQ Artemis Console"

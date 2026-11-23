@@ -1,6 +1,8 @@
 id: biometric-detect
 
 info:
+  metadata:
+    max-request: 0
   name: Android 生物识别权限识别（本地文件安全扫描）
   author: gaurang
   severity: low

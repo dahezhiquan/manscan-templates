@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.commvault.com/
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.favicon.hash:-542502280
   tags: panel,commvault,backup,login,detect,discovery

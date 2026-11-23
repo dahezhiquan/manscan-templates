@@ -24,7 +24,7 @@ info:
     cpe: cpe:2.3:a:gitea:gitea:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     vendor: gitea
     product: gitea
     shodan-query:

@@ -1,6 +1,8 @@
 id: jolokia-tomcat-creds-leak
 
 info:
+  metadata:
+    max-request: 2
   name: Jolokia <= 1.7.1 - 信息泄露漏洞
   author: pathtaga
   severity: critical

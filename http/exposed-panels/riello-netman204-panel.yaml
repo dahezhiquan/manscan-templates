@@ -9,6 +9,7 @@ info:
   reference:
   - https://www.riello-ups.com
   metadata:
+    max-request: 1
     vendor: riello-ups
     product: netman_204_firmware
     shodan-query: title:"netman 204"

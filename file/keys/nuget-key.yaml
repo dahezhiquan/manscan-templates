@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/nuget.yml
     - https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package#create-api-keys
   metadata:
+    max-request: 0
     verified: true
   tags: keys,file,nuget,token
 file:

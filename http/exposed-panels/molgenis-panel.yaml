@@ -19,7 +19,7 @@ info:
     - https://github.com/molgenis/molgenis-emx2
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: html:"MOLGENIS"
   tags: panel,molgenis,login,emx2,discovery
 http:

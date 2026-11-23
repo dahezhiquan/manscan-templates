@@ -21,7 +21,7 @@ info:
     cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 8
+    max-request: 9
     vendor: adminer
     product: adminer
     shodan-query:

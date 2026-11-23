@@ -15,6 +15,7 @@ info:
   reference:
     - https://medium.com/@Th3hound/the-hidden-danger-of-the-exposed-checkmk-agent-mapping-your-infrastructure-for-attackers-151cc2180e73
   metadata:
+    max-request: 1
     verified: true
     shodan-query: product:"check_mk"
   tags: tcp,network,checkmk,unauth,discovery

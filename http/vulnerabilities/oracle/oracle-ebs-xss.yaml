@@ -19,7 +19,7 @@ info:
   classification:
     cwe-id: CWE-79,CWE-83
   metadata:
-    max-request: 3
+    max-request: 4
     shodan-query: html:"OA_HTML"
     fofa-query: body="OA_HTML"
   tags: oracle,xss,ebs,vuln

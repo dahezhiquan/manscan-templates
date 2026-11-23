@@ -1,6 +1,8 @@
 id: spf-limit-lookup
 
 info:
+  metadata:
+    max-request: 1
   name: SPF DNS 查询次数超限检测（dns）
   author: theamanrawat
   severity: low

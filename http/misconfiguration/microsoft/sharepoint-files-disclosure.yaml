@@ -17,6 +17,7 @@ info:
     - https://sharepointstuff.com/2021/03/30/useful-sharepoint-urls/
     - https://docs.microsoft.com/en-us/sharepoint/dev/sp-add-ins/working-with-folders-and-files-with-rest
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.title:"SharePoint"
     fofa-query: title="SharePoint"

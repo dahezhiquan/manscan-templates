@@ -1,6 +1,8 @@
 id: generic-admin-path-discovery
 
 info:
+  metadata:
+    max-request: 6
   name: 通用后台地址发现
   author: dahezhiquan
   severity: low

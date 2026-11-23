@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/twitter.yml
     - https://developer.twitter.com/en/docs/authentication/overview
   metadata:
+    max-request: 0
     verified: true
   tags: twitter,keys,file
 

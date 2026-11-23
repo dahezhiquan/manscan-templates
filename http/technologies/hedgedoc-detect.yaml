@@ -12,7 +12,7 @@ info:
   - https://github.com/hedgedoc/hedgedoc
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     vendor: hedgedoc
     product: hedgedoc
     shodan-query: 'http.title:"HedgeDoc - Ideas grow better together"'

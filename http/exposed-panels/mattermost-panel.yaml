@@ -15,6 +15,7 @@ info:
     - 启用强密码、多因素认证、登录失败限制和默认账户清理，定期审计登录日志与管理员账号权限。
     - 保持系统和相关组件更新到受支持版本，关闭不必要的管理路径，并在必须公网访问时增加反向代理访问控制、WAF 或零信任访问策略。
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     shodan-query: html:'content="Mattermost"'

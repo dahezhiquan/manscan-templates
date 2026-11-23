@@ -19,6 +19,7 @@ info:
     - https://github.com/pypa/warehouse/issues/6051
     - https://pypi.org/project/pypitoken/
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,pypi,token
 file:

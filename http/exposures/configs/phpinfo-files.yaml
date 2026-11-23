@@ -18,7 +18,7 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    max-request: 25
+    max-request: 28
   tags: config,exposure,phpinfo,vuln
 
 http:

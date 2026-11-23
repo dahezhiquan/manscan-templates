@@ -18,7 +18,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:streampark:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 4
+    max-request: 1
     vendor: apache
     product: streampark
     shodan-query: title:"Apache StreamPark"

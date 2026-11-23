@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.huawei.com/en/products/intelligent-devices/holosens-sdc
   metadata:
+    max-request: 3
     max-requests: 1
     vendor: huawei
     product: holosens

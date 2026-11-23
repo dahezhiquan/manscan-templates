@@ -1,6 +1,8 @@
 id: android-request-install-packages-permission
 
 info:
+  metadata:
+    max-request: 0
   name: Android REQUEST_INSTALL_PACKAGES 高危权限（本地文件安全扫描）
   author: Th3l0newolf
   severity: medium

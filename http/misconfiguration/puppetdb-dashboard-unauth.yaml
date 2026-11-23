@@ -24,7 +24,7 @@ info:
     cpe: cpe:2.3:a:puppet:puppetdb:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 5
+    max-request: 3
     shodan-query: 'title:"PuppetDB: Dashboard"'
     fofa-query: 'title="PuppetDB: Dashboard"'
     product: puppetdb

@@ -1,6 +1,8 @@
 id: xss-disable-mustache-escape
 
 info:
+  metadata:
+    max-request: 0
   name: Mustache 转义禁用导致 XSS（本地文件安全扫描）
   author: me_dheeraj (https://twitter.com/Dheerajmadhukar)
   severity: medium

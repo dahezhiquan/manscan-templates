@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-611,CWE-918
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     vendor: atlassian
     product: confluence
     fofa-query: icon_hash="-305179312"

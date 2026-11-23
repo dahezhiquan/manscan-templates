@@ -1,6 +1,8 @@
 id: configure-service-timestamps-logmessages
 
 info:
+  metadata:
+    max-request: 0
   name: Cisco 日志消息时间戳未配置（本地文件安全扫描）
   author: pussycat0x
   severity: low

@@ -18,6 +18,7 @@ info:
     - https://support.microsoft.com/en-us/office/site-pages-library
     - https://learn.microsoft.com/en-us/sharepoint/dev/features/site-pages-overview
   metadata:
+    max-request: 1
     verified: true
     vendor: microsoft
     product: sharepoint

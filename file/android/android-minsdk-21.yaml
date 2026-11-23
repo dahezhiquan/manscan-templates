@@ -13,6 +13,7 @@ info:
     - 根据业务设备覆盖率和安全支持周期提高 `minSdkVersion`，并明确停止支持的 Android 版本。
     - 对必须兼容旧系统的应用为敏感功能增加版本差异化保护和运行时检查，持续验证旧版本 WebView、TLS 与权限行为。
   metadata:
+    max-request: 0
     verified: true
     github-query: path:**/AndroidManifest.xml
   tags: android,file

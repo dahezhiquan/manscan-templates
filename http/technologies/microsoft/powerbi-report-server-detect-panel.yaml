@@ -10,7 +10,7 @@ info:
   reference:
   - https://www.microsoft.com/en-us/power-platform/products/power-bi/report-server
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     shodan-query: http.html:"report server web portal"
     product: powerbi

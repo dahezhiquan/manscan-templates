@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/facebook.yml
     - https://developers.facebook.com/docs/facebook-login/access-tokens/
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,facebook,token
 

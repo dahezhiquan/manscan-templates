@@ -17,6 +17,7 @@ info:
   reference:
     - https://support.pendo.io/hc/en-us/articles/9491198203547-Pendo-Integration-Key
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,token,pendo
 

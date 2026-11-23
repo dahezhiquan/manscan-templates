@@ -1,6 +1,8 @@
 id: aws-cognito-pool
 
 info:
+  metadata:
+    max-request: 0
   name: Amazon Web Services Cognito 池 ID 敏感信息检测（本地文件安全扫描）
   author: gaurang,zeroc00i
   severity: low

@@ -1,6 +1,8 @@
 id: webview-load-url
 
 info:
+  metadata:
+    max-request: 0
   name: WebView loadUrl 使用检测（本地文件安全扫描）
   author: gaurang
   severity: low

@@ -1,6 +1,8 @@
 id: dynatrace-token
 
 info:
+  metadata:
+    max-request: 0
   name: Dynatrace 令牌 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high

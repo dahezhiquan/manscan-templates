@@ -16,7 +16,7 @@ info:
   reference:
     - https://docs.gitness.com/
   metadata:
-    max-request: 2
+    max-request: 1
     verified: true
     shodan-query: title:"Gitness"
     fofa-query: title="Gitness"

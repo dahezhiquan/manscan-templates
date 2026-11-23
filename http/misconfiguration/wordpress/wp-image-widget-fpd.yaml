@@ -12,6 +12,7 @@ info:
   reference:
     - https://wordpress.org/plugins/image-widget/
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     publicwww-query: /wp-content/plugins/image-widget/

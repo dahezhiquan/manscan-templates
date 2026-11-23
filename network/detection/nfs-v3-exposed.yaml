@@ -16,6 +16,7 @@ info:
   reference:
     - https://medium.com/@zoomeye_team/threat-intell-report-nfs-exposed-the-silent-attack-vector-8aa4ea0cbce1
   metadata:
+    max-request: 1
     verified: true
     zoomeye-query: service=nfs && port=2049
     shodan-query: nfs

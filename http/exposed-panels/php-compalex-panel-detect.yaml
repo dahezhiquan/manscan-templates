@@ -11,7 +11,7 @@ info:
   - http://compalex.net/
   metadata:
     verified: true
-    max-request: 15
+    max-request: 10
     shodan-query: title:"COMPALEX"
   tags: php,compalex,sql,panel,discovery
 

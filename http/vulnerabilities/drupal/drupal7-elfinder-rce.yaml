@@ -20,6 +20,7 @@ info:
     cvss-score: 9.8
     cwe-id: CWE-434
   metadata:
+    max-request: 1
     verified: true
     fofa-query: app="drupal"
     product: Drupal

@@ -10,7 +10,7 @@ info:
     - https://git.zx2c4.com/cgit/about/
     - https://wiki.archlinux.org/title/Cgit
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     product: cgit
     vendor: zx2c4

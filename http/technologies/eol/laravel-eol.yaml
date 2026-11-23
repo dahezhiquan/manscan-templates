@@ -11,6 +11,7 @@ info:
   - https://endoflife.date/laravel
   - https://laravel.com/docs/releases
   metadata:
+    max-request: 3
     verified: true
     max-requests: 4
     product: laravel

@@ -12,6 +12,7 @@ info:
   reference:
     - https://wordpress.org/plugins/all-in-one-seo-pack/
   metadata:
+    max-request: 5
     verified: true
     max-requests: 1
     public-www: /wp-content/plugins/all-in-one-seo-pack/

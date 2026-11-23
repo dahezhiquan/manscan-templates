@@ -16,6 +16,7 @@ info:
   reference:
     - https://www.dahuasecurity.com/
   metadata:
+    max-request: 9
     verified: true
     vendor: dahua
     product: icc

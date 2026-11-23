@@ -17,6 +17,7 @@ info:
     - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#users
     - https://www.n00py.io/2022/01/unauthenticated-dumping-of-usernames-via-cisco-unified-call-manager-cucm/
   metadata:
+    max-request: 1
     verified: true
     product: unified_communications_manager
     vendor: cisco

@@ -18,7 +18,7 @@ info:
     - https://docs.renovatebot.com/configuration-options/
   metadata:
     verified: true
-    max-request: 5
+    max-request: 9
   tags: exposure,config,renovate
 
 http:

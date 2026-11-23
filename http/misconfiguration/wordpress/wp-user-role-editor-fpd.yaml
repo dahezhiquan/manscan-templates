@@ -12,6 +12,7 @@ info:
   reference:
     - https://wordpress.org/plugins/user-role-editor/
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     public-www: /wp-content/plugins/user-role-editor/

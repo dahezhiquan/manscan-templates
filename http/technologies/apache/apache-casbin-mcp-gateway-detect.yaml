@@ -9,6 +9,7 @@ info:
   reference:
   - https://github.com/apache/casbin-mcp-gateway
   metadata:
+    max-request: 1
     vendor: apache
     product: casbin-mcp-gateway
   tags: tech,casbin-mcp-gateway,apache,ai,detect

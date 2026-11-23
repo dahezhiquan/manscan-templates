@@ -12,6 +12,7 @@ info:
   classification:
     cpe: cpe:2.3:a:zkoss:zk_framework:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 1
     verified: true
     vendor: zkoss
     product: zk

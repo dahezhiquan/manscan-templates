@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/advanced-iframe/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     publicwww-query: /wp-content/plugins/advanced-iframe/
   tags: wordpress,wp-plugin,fpd,advanced-iframe,misconfig
   impact: |-

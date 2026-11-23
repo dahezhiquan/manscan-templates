@@ -20,6 +20,7 @@ info:
     - https://manpages.debian.org/testing/wireguard-tools/wg.8.en.html
     - https://gist.github.com/lanceliao/5d2977f417f34dda0e3d63ac7e217fd
   metadata:
+    max-request: 0
     verified: true
   tags: wireguard,keys,file
 

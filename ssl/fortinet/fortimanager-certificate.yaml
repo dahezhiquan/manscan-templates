@@ -15,7 +15,7 @@ info:
     vendor: fortinet
     product: fortimanager
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: ssl:"ou=fortimanager"
   tags: ssl,tls,fortinet,fortimanager,discovery
 

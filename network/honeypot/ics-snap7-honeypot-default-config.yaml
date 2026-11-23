@@ -1,6 +1,8 @@
 id: ics-snap7-honeypot-default-config
 
 info:
+  metadata:
+    max-request: 1
   name: Snap7 蜜罐默认配置识别（蜜罐识别）
   author: biero-el-corridor
   severity: info

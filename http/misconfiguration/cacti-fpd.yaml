@@ -1,6 +1,8 @@
 id: cacti-fpd
 
 info:
+  metadata:
+    max-request: 4
   name: Cacti 完整路径泄露
   author: theamanrawat
   severity: low

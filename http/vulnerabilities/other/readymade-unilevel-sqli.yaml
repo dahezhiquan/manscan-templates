@@ -18,6 +18,7 @@ info:
   classification:
     cwe-id: CWE-89
   metadata:
+    max-request: 1
     vendor: i-netsolution
     product: readymade-unilevel-ecommerce
   tags: time-based-sqli,ecommerce,readymade,sqli,vuln

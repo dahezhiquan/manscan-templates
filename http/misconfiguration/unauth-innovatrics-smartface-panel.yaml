@@ -9,7 +9,7 @@ info:
   reference:
     - https://www.innovatrics.com/face-recognition-solutions/
   metadata:
-    max-request: 1
+    max-request: 2
     shodan-query: http.favicon.hash:-1410437493
   tags: panel,smartface,login,vuln
   impact: |-

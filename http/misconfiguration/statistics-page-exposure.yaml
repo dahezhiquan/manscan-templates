@@ -1,6 +1,8 @@
 id: statistics-page-exposure
 
 info:
+  metadata:
+    max-request: 1
   name: 通用统计页面敏感信息泄露
   author: dahezhiquan
   severity: low

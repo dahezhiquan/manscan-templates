@@ -1,6 +1,8 @@
 id: disable-pad-service
 
 info:
+  metadata:
+    max-request: 0
   name: Cisco PAD 服务未禁用（本地文件安全扫描）
   author: pussycat0x
   severity: low

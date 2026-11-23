@@ -18,6 +18,7 @@ info:
     - https://github.com/tennc/webshell/tree/master/asp
     - https://www.rapid7.com/blog/post/2016/12/14/webshells-101/
   metadata:
+    max-request: 0
     verified: true
   tags: asp,aspx,file,webshell
 file:

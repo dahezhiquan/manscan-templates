@@ -10,7 +10,7 @@ info:
     - https://www.akuiteo.com/en/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 3
     shodan-query: title:"Akuiteo"
   tags: panel,akuiteo,login,detect,discovery
 http:

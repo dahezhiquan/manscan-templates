@@ -16,6 +16,7 @@ info:
   reference:
     - https://github.com/cockroachdb/cockroach/issues/44348
   metadata:
+    max-request: 2
     verified: true
     shodan-query: product:cockroachdb
   tags: cockroachdb,exposure,misconfig

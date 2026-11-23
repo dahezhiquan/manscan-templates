@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/seo-by-rank-math/
   metadata:
     verified: true
-    max-request: 3
+    max-request: 2
     vendor: developer
     product: seo-by-rank-math
     framework: wordpress

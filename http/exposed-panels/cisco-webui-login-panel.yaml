@@ -8,7 +8,7 @@ info:
     检测到目标站点存在 Cisco Web UI 相关响应特征。Cisco Web UI 是自动化运维、持续集成或任务编排平台，用于管理作业、流水线、凭据、执行记录和部署流程。模板请求 `/`、`/webui/` 路径，并通过页面标题或正文关键字、状态码确认该系统指纹，用于资产识别、系统盘点和暴露面梳理。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: html:"webui-centerpanel"
     fofa-query: body="webui-centerpanel"
   tags: cisco,panel,detect,discovery

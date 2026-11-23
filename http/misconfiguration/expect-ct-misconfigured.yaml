@@ -1,6 +1,8 @@
 id: expect-ct-misconfigured
 
 info:
+  metadata:
+    max-request: 1
   name: Expect CT Header 配置不当
   author: theamanrawat
   severity: low

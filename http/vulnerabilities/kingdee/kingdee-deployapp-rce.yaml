@@ -14,7 +14,7 @@ info:
     - 排查异常进程、计划任务、WebShell、外联连接和新增账号，必要时轮换凭据并重建受影响环境。
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     vuln-id: CT-855601
     vendor: kingdee
     product: aas

@@ -20,7 +20,7 @@ info:
     cpe: cpe:2.3:a:redhat:keycloak:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 3
+    max-request: 5
     vendor: redhat
     product: keycloak
     shodan-query:

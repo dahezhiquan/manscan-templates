@@ -19,6 +19,7 @@ info:
     - https://segment.com/docs/api/public-api/
     - https://segment.com/blog/how-segment-proactively-protects-customer-api-tokens/
   metadata:
+    max-request: 0
     verified: true
   tags: keys,file,segment,token
 file:

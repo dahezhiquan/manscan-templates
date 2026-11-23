@@ -14,7 +14,7 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-538
   metadata:
-    max-request: 3
+    max-request: 4
     verified: true
     fofa-query: body="/plugins/wordfence"
   tags: wordpress,wp-plugin,wordfence,logs,exposure

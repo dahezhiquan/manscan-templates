@@ -1,6 +1,8 @@
 id: sweetrice-backup-disclosure
 
 info:
+  metadata:
+    max-request: 2
   name: SweetRice CMS 1.5.1 备份泄露（暴露面识别）
   author: mananispiwpiw
   severity: medium

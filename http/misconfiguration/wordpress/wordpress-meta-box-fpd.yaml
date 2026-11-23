@@ -9,6 +9,7 @@ info:
   reference:
     - https://wordpress.org/plugins/meta-box/
   metadata:
+    max-request: 3
     publicwww-query: /wp-content/plugins/meta-box/
   tags: wordpress,wp-plugin,fpd,disclosure,meta-box
   impact: |-

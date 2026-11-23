@@ -18,6 +18,7 @@ info:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/dockerhub.yml
     - https://docs.docker.com/security/for-developers/access-tokens/
   metadata:
+    max-request: 0
     verified: true
   tags: docker,keys,file
 

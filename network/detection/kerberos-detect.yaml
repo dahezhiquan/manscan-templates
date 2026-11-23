@@ -11,6 +11,7 @@ info:
     - https://github.com/nmap/nmap/blob/master/nmap-service-probes
     - https://www.rfc-editor.org/rfc/rfc4120
   metadata:
+    max-request: 1
     product: kerberos
     shodan-query: 'port:88'
   tags: kerberos,network,detect,tcp,discovery

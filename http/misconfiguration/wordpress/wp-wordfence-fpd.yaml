@@ -12,6 +12,7 @@ info:
   reference:
     - https://wordpress.org/plugins/wordfence/
   metadata:
+    max-request: 3
     verified: true
     max-requests: 1
     publicwww-query: /wp-content/plugins/wordfence/

@@ -13,7 +13,7 @@ info:
     cpe: cpe:2.3:a:fortinet:fortisandbox:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 1
+    max-request: 3
     vendor: fortinet
     product: fortisandbox
     shodan-query: title:"FortiSandbox"

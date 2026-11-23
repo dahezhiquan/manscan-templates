@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/add-search-to-menu/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 7
     publicwww-query: /plugins/add-search-to-menu
   tags: wordpress,wp-plugin,fpd,add-search-to-menu,misconfig
   impact: |-

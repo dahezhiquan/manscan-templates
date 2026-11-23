@@ -20,7 +20,7 @@ info:
     - https://docs.dependencytrack.org/getting-started/configuration/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 0
   tags: dependency,keys,file
 
 file:

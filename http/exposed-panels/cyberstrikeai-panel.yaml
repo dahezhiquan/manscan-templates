@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/Ed1s0nZ/CyberStrikeAI
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     vendor: ed1s0nz

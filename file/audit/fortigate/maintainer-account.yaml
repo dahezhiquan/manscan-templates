@@ -1,6 +1,8 @@
 id: maintainer-account
 
 info:
+  metadata:
+    max-request: 0
   name: FortiGate Maintainer 账户配置检测（本地文件安全扫描）
   author: pussycat0x
   severity: medium

@@ -10,6 +10,7 @@ info:
   reference:
   - https://wordpress.org/plugins/templately/
   metadata:
+    max-request: 1
     plugin_namespace: templately
     wpscan: https://wpscan.com/plugin/templately
   tags: tech,wordpress,wp-plugin,top-200,discovery

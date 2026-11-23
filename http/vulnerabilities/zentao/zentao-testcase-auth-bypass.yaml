@@ -14,7 +14,7 @@ info:
     - 审计异常枚举、越权访问和批量导出行为，并修复受影响接口。
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     vuln-id: CT-1222946
     vendor: easycorp
     product: zentao-pms

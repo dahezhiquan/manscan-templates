@@ -18,6 +18,7 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/alibaba-access-key-id.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/alibaba-access-key-id.go
   metadata:
+    max-request: 0
     verified: true
   tags: alibaba,access,file,keys
 

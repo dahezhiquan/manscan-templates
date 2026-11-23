@@ -1,6 +1,8 @@
 id: interswitch-webpay
 
 info:
+  metadata:
+    max-request: 1
   name: Interswitch Webpay 凭据暴露（暴露面识别）
   author: Lloydcoder
   severity: high

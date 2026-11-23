@@ -20,6 +20,7 @@ info:
     cwe-id: CWE-79
     cpe: cpe:2.3:a:calderaf:caldera_forms:*:*:*:*:*:wordpress:*:*
   metadata:
+    max-request: 2
     verified: true
     max-requests: 1
     public-www: "/wp-content/plugins/caldera-forms/"

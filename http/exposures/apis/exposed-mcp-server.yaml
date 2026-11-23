@@ -17,7 +17,7 @@ info:
     - 复查接口文档中暴露的示例密钥、测试账号、内部域名和敏感参数，并及时清理或轮换。
   metadata:
     verified: true
-    max-request: 10
+    max-request: 20
   reference:
     - https://jsonrpc.org/specification
     - https://github.com/anthropics/anthropic-tools/tree/main/mcp

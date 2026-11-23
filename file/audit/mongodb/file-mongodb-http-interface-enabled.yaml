@@ -17,6 +17,7 @@ info:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/reference/configuration-options/
   metadata:
+    max-request: 0
     verified: true
   tags: mongodb,config,file,hardening
 

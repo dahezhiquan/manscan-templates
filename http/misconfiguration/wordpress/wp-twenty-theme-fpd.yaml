@@ -9,7 +9,7 @@ info:
   reference:
     - https://wordpress.org/themes/twentyseventeen/
   metadata:
-    max-request: 1
+    max-request: 2
     verified: true
     publicwww-query: /wp-content/themes/twentyseventeen/
   tags: debug,wordpress,fpd,vuln

@@ -18,6 +18,7 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-public-key.go
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/flutterwave-public-key.yaml
   metadata:
+    max-request: 0
     verified: true
   tags: flutter,file,keys,flutterwave
 file:

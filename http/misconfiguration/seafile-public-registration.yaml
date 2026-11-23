@@ -16,6 +16,7 @@ info:
   reference:
     - https://forum.seafile.com/t/seafile-disable-email-registration-for-users/4957
   metadata:
+    max-request: 1
     verified: true
     max-requests: 1
     shodan-query: http.title:"Seafile"

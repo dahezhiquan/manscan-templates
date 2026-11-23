@@ -16,6 +16,7 @@ info:
     - https://vishalraj82.medium.com/hardening-openssh-security-37f5d634015f
     - https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/2023-09-13/finding/V-258010
   metadata:
+    max-request: 0
     verified: true
   tags: audit,config,file,ssh
 

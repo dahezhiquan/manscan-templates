@@ -17,6 +17,7 @@ info:
     - https://github.com/avwo/whistle
     - https://wproxy.org/whistle/cli.html
   metadata:
+    max-request: 1
     verified: true
     shodan-query: 'http.title:"Whistle Web Debugging Proxy"'
     fofa-query: 'title="Whistle Web Debugging Proxy"'

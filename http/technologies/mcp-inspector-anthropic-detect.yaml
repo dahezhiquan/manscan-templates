@@ -10,6 +10,7 @@ info:
   reference:
   - https://github.com/modelcontextprotocol/inspector
   metadata:
+    max-request: 2
     verified: true
     fofa-query: title="MCP Inspector"
     product: mcp

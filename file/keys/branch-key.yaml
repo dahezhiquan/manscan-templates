@@ -1,6 +1,8 @@
 id: branch-key
 
 info:
+  metadata:
+    max-request: 0
   name: Branch.io Live 密钥 泄露检测（本地文件安全扫描）
   author: 0xh7ml
   severity: high

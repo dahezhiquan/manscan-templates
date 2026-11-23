@@ -10,7 +10,7 @@ info:
     - https://wordpress.org/plugins/updraftplus/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 5
     fofa-query: body="/wp-content/plugins/updraftplus"
   tags: wordpress,wp-plugin,fpd,updraftplus,misconfig
   impact: |-

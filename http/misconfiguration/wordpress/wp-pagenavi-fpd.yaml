@@ -9,7 +9,7 @@ info:
   reference:
     - https://wordpress.org/plugins/wp-pagenavi/
   metadata:
-    max-request: 1
+    max-request: 2
     verified: false
     shodan-query: html:"/plugins/wp-pagenavi/"
   tags: debug,wordpress,wp-plugin,fpd,vuln,wp-pagenavi

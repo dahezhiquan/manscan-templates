@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-540
   metadata:
     verified: true
-    max-request: 1
+    max-request: 6
     vendor: jwt_project
     product: jwt
     shodan-query: html:"jwks.json"

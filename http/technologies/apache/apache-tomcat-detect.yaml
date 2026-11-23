@@ -8,7 +8,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:tomcat:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 3
+    max-request: 4
     vendor: apache
     product: tomcat
     shodan-query:

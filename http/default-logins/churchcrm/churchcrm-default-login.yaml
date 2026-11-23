@@ -16,6 +16,7 @@ info:
   reference:
     - https://github.com/ChurchCRM/CRM
   metadata:
+    max-request: 1
     vendor: churchcrm
     product: churchcrm
     shodan-query: http.title:"churchcrm"

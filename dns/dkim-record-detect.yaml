@@ -17,7 +17,7 @@ info:
     - https://www.rfc-editor.org/rfc/rfc6376
     - https://dkim.org/
   metadata:
-    max-request: 10
+    max-request: 120
   tags: dns,dkim,email,discovery
 
 dns:

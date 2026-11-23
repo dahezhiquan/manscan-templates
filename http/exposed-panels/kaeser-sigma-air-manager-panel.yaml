@@ -9,6 +9,7 @@ info:
   reference:
     - https://www.kaeser.com/
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.title:"SIGMA AIR MANAGER"
   tags: kaeser,login,panel,detect,discovery

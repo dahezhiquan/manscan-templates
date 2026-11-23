@@ -18,6 +18,7 @@ info:
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/duffel-api-token.yaml
     - https://github.com/returntocorp/semgrep-rules/blob/develop/generic/secrets/gitleaks/duffel-api-token.go
   metadata:
+    max-request: 0
     verified: true
   tags: keys,file,duffel,token
 file:

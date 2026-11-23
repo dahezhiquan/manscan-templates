@@ -22,7 +22,7 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 1
+    max-request: 4
     vendor: motive_software_solutions
     product: motive_esim
     google-query:

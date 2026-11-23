@@ -11,7 +11,7 @@ info:
     - https://linkding.link/
   metadata:
     verified: false
-    max-request: 2
+    max-request: 1
     vendor: sissbruecker
     product: linkding
     shodan-query: http.title:"Linkding"

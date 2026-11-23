@@ -1,6 +1,8 @@
 id: slack-api
 
 info:
+  metadata:
+    max-request: 0
   name: Slack API 密钥 泄露检测（本地文件安全扫描）
   author: gaurang
   severity: high

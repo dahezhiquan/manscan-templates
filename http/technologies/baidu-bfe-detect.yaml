@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/bfenetworks/bfe
   metadata:
+    max-request: 1
     vendor: baidu
     product: bfe
     shodan-query: 'http.server:"bfe"'

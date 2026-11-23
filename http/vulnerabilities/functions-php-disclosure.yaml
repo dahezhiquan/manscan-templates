@@ -14,6 +14,7 @@ info:
     - 对错误信息和接口响应进行最小化处理，避免返回内部路径、账号、密钥或堆栈信息。
     - 轮换已暴露的凭据和令牌，并检查相关账号的访问记录。
   metadata:
+    max-request: 30
     verified: true
     fofa-query: 'body="/wp-includes/functions.php"'
     vendor: wordpress

@@ -11,6 +11,7 @@ info:
     - https://github.com/nmap/nmap/blob/master/nmap-service-probes
     - https://learn.microsoft.com/en-us/openspecs/windows_protocols/mc-nmf/
   metadata:
+    max-request: 1
     vendor: microsoft
     product: mc-nmf
   tags: microsoft,mc-nmf,network,detect,tcp,discovery

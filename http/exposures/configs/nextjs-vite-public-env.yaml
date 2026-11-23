@@ -20,6 +20,7 @@ info:
     - https://vite.dev/guide/env-and-mode.html
     - https://supabase.com/docs/guides/api#api-keys
   metadata:
+    max-request: 1
     verified: true
   tags: exposure,env,nextjs,vite,supabase,vuln
 

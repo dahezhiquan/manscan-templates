@@ -13,7 +13,7 @@ info:
     cpe: cpe:2.3:a:versa-networks:versa_analytics:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 7
+    max-request: 8
     vendor: versa-networks
     product: versa_analytics
     shodan-query: html:"Versa Networks"

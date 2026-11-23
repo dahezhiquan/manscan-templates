@@ -1,6 +1,8 @@
 id: android-user-certificates-trust
 
 info:
+  metadata:
+    max-request: 0
   name: Android 信任用户证书配置（本地文件安全扫描）
   author: Th3l0newolf
   severity: medium

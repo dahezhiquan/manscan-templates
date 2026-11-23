@@ -19,6 +19,7 @@ info:
   classification:
     cwe-id: CWE-80
   metadata:
+    max-request: 1
     shodan-query: html:"acme-challenge"
   tags: xss,acme,misconfig,vuln
 

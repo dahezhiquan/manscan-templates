@@ -17,6 +17,7 @@ info:
     - https://wiki.devsecopsguides.com/docs/checklists/mongodb/
     - https://www.mongodb.com/docs/manual/tutorial/configure-ssl/
   metadata:
+    max-request: 0
     verified: true
   tags: mongodb,audit,file,hardening
 

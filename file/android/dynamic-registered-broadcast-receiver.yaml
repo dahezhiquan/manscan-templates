@@ -1,6 +1,8 @@
 id: dynamic-registered-broadcast-receiver
 
 info:
+  metadata:
+    max-request: 0
   name: Android 动态广播接收器注册识别（本地文件安全扫描）
   author: gaurang
   severity: low

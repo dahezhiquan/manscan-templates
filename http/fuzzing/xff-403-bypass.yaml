@@ -14,7 +14,7 @@ info:
     - 访问控制应基于可信代理传递的真实来源，并结合认证授权而非单纯依赖客户端 IP。
     - 审查 Nginx、Apache、负载均衡和应用框架中的真实 IP 配置。
   metadata:
-    max-request: 3
+    max-request: 2
   tags: fuzzing,xff-403-bypass,vuln
 
 http:

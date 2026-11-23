@@ -24,7 +24,7 @@ info:
     cpe: cpe:2.3:a:gradio_project:gradio:*:*:*:*:python:*:*:*
   metadata:
     verified: true
-    max-request: 2
+    max-request: 202
     shodan-query: html:"__gradio_mode__"
     product: gradio
     vendor: gradio_project

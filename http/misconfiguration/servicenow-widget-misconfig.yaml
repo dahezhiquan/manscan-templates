@@ -21,7 +21,7 @@ info:
     cpe: cpe:2.3:a:servicenow:servicenow:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 54
+    max-request: 20
     vendor: servicenow
     product: servicenow
     shodan-query: title:"servicenow"

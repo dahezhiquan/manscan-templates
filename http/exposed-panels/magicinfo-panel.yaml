@@ -10,7 +10,7 @@ info:
     - https://www.samsung.com/de/business/display-solutions/magicinfo/
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     vendor: samsung
     product: magicinfo
     shodan-query: title:"MagicINFO"

@@ -12,6 +12,7 @@ info:
   reference:
     - https://wordpress.org/plugins/wp-smushit/
   metadata:
+    max-request: 2
     verified: true
     max-requests: 1
     publicwww-query: /wp-content/plugins/wp-smushit/

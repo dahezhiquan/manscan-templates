@@ -1,6 +1,8 @@
 id: rails-history-exposure
 
 info:
+  metadata:
+    max-request: 2
   name: Rails/Ruby Console History 暴露（暴露面识别）
   author: theamanrawat
   severity: medium

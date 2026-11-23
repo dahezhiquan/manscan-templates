@@ -1,6 +1,8 @@
 id: leantime-stored-xss
 
 info:
+  metadata:
+    max-request: 3
   name: Leantime < 3.3 = - 跨站脚本漏洞
   author: iamnoooob,rootxharsh,pdresearch
   severity: high

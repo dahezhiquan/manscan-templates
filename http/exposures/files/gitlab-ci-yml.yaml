@@ -21,7 +21,7 @@ info:
     cpe: cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 2
+    max-request: 3
     vendor: gitlab
     product: gitlab
     shodan-query: html:"gitlab-ci.yml"

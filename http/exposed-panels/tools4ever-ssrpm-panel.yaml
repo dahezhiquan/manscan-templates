@@ -7,6 +7,7 @@ info:
   description: |-
     Tools4Ever Self-Service Reset Password Manager 是自助密码重置平台，用于用户身份验证、密码重置和账号解锁流程。该模板请求首页，并依据 HTTP 200 状态码、页面标题、正文关键字或品牌资源特征识别目标是否部署了该系统或暴露了对应入口，适用于资产指纹确认；命中结果仅表示系统特征匹配，不代表已确认存在未授权访问或可利用漏洞。
   metadata:
+    max-request: 1
     vendor: tools4ever
     product: tools4ever
     shodan-query:

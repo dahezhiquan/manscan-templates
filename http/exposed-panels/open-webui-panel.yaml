@@ -10,7 +10,7 @@ info:
     - https://openwebui.com/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 4
     shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
     product: open-webui
   tags: panel,open-webui,login,ai,detect,discovery

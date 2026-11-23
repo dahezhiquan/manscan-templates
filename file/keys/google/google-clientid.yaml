@@ -17,6 +17,7 @@ info:
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/google.yml
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,google,token
 file:

@@ -20,6 +20,7 @@ info:
   classification:
     cpe: cpe:2.3:a:apache:polaris:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 1
     vendor: apache
     product: polaris
     shodan-query: http.html:"org.apache.polaris"

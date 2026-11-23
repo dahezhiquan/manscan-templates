@@ -18,6 +18,7 @@ info:
   reference:
     - https://www.postgresql.org/docs/current/app-psql.html#APP-PSQL-FILES
   metadata:
+    max-request: 3
     verified: true
     max-requests: 3
   tags: postgresql,exposure,config,history,database

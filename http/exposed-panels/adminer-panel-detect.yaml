@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:adminer:adminer:*:*:*:*:*:*:*:*
   metadata:
-    max-request: 741
+    max-request: 1505
     vendor: adminer
     product: adminer
     shodan-query:

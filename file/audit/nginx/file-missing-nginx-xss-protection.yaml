@@ -17,6 +17,7 @@ info:
     - https://wiki.devsecopsguides.com/docs/checklists/nginx/
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection
   metadata:
+    max-request: 0
     verified: true
   tags: audit,file,nginx,hardening
 

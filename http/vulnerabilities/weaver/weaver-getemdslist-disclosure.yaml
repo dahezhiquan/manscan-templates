@@ -16,6 +16,7 @@ info:
   reference:
     - https://mp.weixin.qq.com/s/tZvq6vlbDO1_eQHvX-bQbQ
   metadata:
+    max-request: 1
     verified: true
     vendor: weaver
     product: ecology

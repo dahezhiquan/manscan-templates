@@ -14,6 +14,7 @@ info:
     - 限制控制台、调试页和内部服务的公网访问，仅允许可信网络或堡垒机访问。
     - 排查访问日志，确认是否存在未授权访问、异常操作或批量枚举行为。
   metadata:
+    max-request: 2
     verified: true
     shodan-query: product:cockroachdb
   tags: cockroachdb,exposure,misconfig,unauth

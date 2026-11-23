@@ -9,6 +9,7 @@ info:
   reference:
   - https://developer.cisco.com/site/user-data-services/develop-and-test/api-reference/#version
   metadata:
+    max-request: 1
     verified: true
     product: ucm
     vendor: cisco

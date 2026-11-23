@@ -7,7 +7,7 @@ info:
   description: |
     SMTP EXPN 是邮件服务器可选命令，用于展开邮件列表或别名信息。该模板连接 25,2525,465,587/TCP 并读取协议响应，通过匹配 `250-EXPN` 等响应特征识别目标服务。
   metadata:
-    max-request: 1
+    max-request: 4
   tags: mail,expn,network,detect,smtp,tcp,discovery
 
 tcp:

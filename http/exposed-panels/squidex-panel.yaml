@@ -12,7 +12,7 @@ info:
   - https://github.com/Squidex/squidex
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: http.favicon.hash:1099097618
   tags: panel,squidex,login,discovery
 

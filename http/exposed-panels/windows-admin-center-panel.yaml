@@ -9,6 +9,7 @@ info:
   reference:
   - https://github.com/microsoft/Windows-admin-center
   metadata:
+    max-request: 1
     shodan-query:
     - http.favicon.hash:-765377534
     - title:"Windows Admin Center"

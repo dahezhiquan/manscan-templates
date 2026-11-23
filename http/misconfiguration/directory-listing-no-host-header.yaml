@@ -15,7 +15,7 @@ info:
     - 上线后通过自动化检查和网关策略持续验证响应头配置。
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
   tags: misconfig,listing,vuln
 
 flow: http(1) && http(2)

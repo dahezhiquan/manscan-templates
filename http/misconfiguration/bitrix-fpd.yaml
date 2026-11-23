@@ -16,7 +16,7 @@ info:
   reference:
     - https://www.bitrix24.in/tools/crm/
   metadata:
-    max-request: 9
+    max-request: 10
     verified: true
     shodan-query: html:"/bitrix/"
   tags: debug,bitrix,fpd,vuln

@@ -19,7 +19,7 @@ info:
     - https://doc.traefik.io/traefik/operations/api/
   metadata:
     verified: true
-    max-request: 1
+    max-request: 2
     shodan-query: http.title:"Traefik"
   tags: traefik,exposure,apis,discovery
 

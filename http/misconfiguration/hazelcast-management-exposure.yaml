@@ -20,6 +20,7 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-306
   metadata:
+    max-request: 1
     verified: true
     shodan-query: html:"hazelcast"
   tags: config,exposure,hazelcast

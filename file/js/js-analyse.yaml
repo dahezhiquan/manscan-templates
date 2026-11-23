@@ -15,6 +15,7 @@ info:
     - 对确认泄露的凭据立即吊销、轮换并审计使用记录，同时检查相关 S3、GitHub、API 和 CI/CD 权限。
     - 通过构建扫描、Source Map 管理、代码审查和发布前 secret scanning 阻止敏感信息进入静态资源；对公开接口实施服务端鉴权和限流。
   metadata:
+    max-request: 0
     verified: true
   tags: file,js-analyse,js
 

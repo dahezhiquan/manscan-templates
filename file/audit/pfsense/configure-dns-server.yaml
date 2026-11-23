@@ -16,6 +16,7 @@ info:
     cvss-score: 0
     cwe-id: CWE-200
   metadata:
+    max-request: 0
     verified: true
   remediation: |
     - 按 pfSense 版本配置受信任的 DNS over TLS 上游服务器、主机名和证书校验，并验证失败时不会静默回退到明文 DNS。

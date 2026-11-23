@@ -17,6 +17,7 @@ info:
     - https://github.com/tennc/webshell/tree/master/php
     - https://www.rapid7.com/blog/post/2016/12/14/webshells-101/
   metadata:
+    max-request: 0
     verified: true
   tags: php,file,webshell
 file:

@@ -19,6 +19,7 @@ info:
   classification:
     cwe-id: CWE-23,CWE-73
   metadata:
+    max-request: 65
     verified: true
   tags: nginx,fuzz,misconfig,lfi,vuln
 

@@ -1,6 +1,8 @@
 id: iis-logging-disabled
 
 info:
+  metadata:
+    max-request: 0
   name: IIS 日志记录已禁用（本地文件安全扫描）
   author: pussycat0x
   severity: medium

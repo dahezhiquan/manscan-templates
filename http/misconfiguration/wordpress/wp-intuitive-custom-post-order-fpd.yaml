@@ -9,7 +9,7 @@ info:
   reference:
     - https://wordpress.org/plugins/intuitive-custom-post-order/
   metadata:
-    max-request: 1
+    max-request: 2
     verified: false
     publicwww-query: /plugins/intuitive-custom-post-order/
   tags: debug,wordpress,fpd,vuln,intuitive-custom-post-order,wp-plugin

@@ -14,7 +14,7 @@ info:
     - 及时升级 WordPress 插件，删除停用或不再维护的插件。
     - 对 WordPress 目录启用最小暴露策略，并结合安全插件或 Web 服务器规则减少版本泄露。
   metadata:
-    max-request: 100563
+    max-request: 100561
   tags: fuzz,wordpress,fuzzing,vuln
 
 http:

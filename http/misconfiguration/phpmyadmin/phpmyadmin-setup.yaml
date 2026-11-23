@@ -20,7 +20,7 @@ info:
     cpe: cpe:2.3:a:phpmyadmin:phpmyadmin:*:*:*:*:*:*:*:*
   metadata:
     verified: true
-    max-request: 16
+    max-request: 17
     shodan-query: http.html:"phpMyAdmin"
     product: phpmyadmin
     vendor: phpmyadmin

@@ -17,7 +17,7 @@ info:
     - https://docs.photoprism.app/getting-started/
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     shodan-query: title:"PhotoPrism"
     fofa-query: title="PhotoPrism"
   tags: photoprism,default-login,misconfig,vuln

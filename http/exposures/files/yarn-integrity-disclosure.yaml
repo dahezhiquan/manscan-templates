@@ -19,6 +19,7 @@ info:
     - https://classic.yarnpkg.com/lang/en/docs/yarn-lock/
     - https://github.com/yarnpkg/yarn/blob/master/src/integrity-checker.js
   metadata:
+    max-request: 2
     verified: true
   tags: exposure,yarn,node,npm,misconfig
 

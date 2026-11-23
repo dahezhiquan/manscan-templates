@@ -16,6 +16,7 @@ info:
     - 检查访问日志、下载记录和缓存记录，评估该资源是否已被外部访问或搜索引擎收录。
     - 若文件中包含凭据、令牌、连接串或私有地址，应执行密钥轮换、权限收敛和受影响系统访问审计。
   metadata:
+    max-request: 5
     max-requests: 5
     verified: true
   tags: exposure,prisma,database,config,custom

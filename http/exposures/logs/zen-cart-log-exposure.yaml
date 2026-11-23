@@ -23,7 +23,7 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
-    max-request: 5
+    max-request: 4
     shodan-query: http.html:"zen-cart" || http.html:"Zen Cart"
     fofa-query: body="zen-cart" || body="Zen Cart"
   tags: zencart,exposure,logs,ecommerce

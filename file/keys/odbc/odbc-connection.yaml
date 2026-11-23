@@ -16,6 +16,7 @@ info:
   reference:
     - https://github.com/praetorian-inc/noseyparker/blob/main/crates/noseyparker/data/default/builtin/rules/odbc.yml
   metadata:
+    max-request: 0
     verified: true
   tags: odbc,keys,file
 

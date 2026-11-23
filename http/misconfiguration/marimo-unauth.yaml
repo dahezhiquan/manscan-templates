@@ -16,7 +16,7 @@ info:
   reference:
     - https://github.com/advisories/GHSA-phv5-334h-mxcw
   metadata:
-    max-request: 2
+    max-request: 1
     shodan-query: http.title:"motionEye"
   tags: marimo,unauth,misconfig
 

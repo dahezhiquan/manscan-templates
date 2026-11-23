@@ -16,6 +16,7 @@ info:
   reference:
     - https://github.com/apache/syncope
   metadata:
+    max-request: 3
     verified: true
     vendor: apache
     product: syncope

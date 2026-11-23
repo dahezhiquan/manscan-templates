@@ -11,7 +11,7 @@ info:
     cwe-id: CWE-200
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
     shodan-query: product:"redis"
     product: redis
     vendor: redis

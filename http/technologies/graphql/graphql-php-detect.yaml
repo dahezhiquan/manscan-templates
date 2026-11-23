@@ -1,5 +1,7 @@
 id: graphql-php-detect
 info:
+  metadata:
+    max-request: 4
   name: GraphQL PHP 指纹识别（指纹识别）
   author: princechaddha
   severity: info

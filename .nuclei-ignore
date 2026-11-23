@@ -1,81 +1,33 @@
-# ==| ManScan Templates 忽略列表 |==
-# ====================================
-#
-# 这是默认的标签和文件排除列表，用于在默认 ManScan 扫描中跳过这些内容。
-#
-# ============ 请勿编辑 ============
-# 该文件会在通过 manscan-templates 执行 ManScan 时自动更新
-# 用户自定义修改应写入 ManScan 配置文件中
-# ============ 请勿编辑 ============
+# 这是默认的标签和文件排除列表，用于在默认 ManScan 扫描中跳过这些内容
+# tags 表示需要忽略执行的标签列表。除非用户明确要求执行这些标签
+# dos 标签：可能造成目标崩溃的模版
 
-# tags 表示需要忽略执行的标签列表
-# 除非用户明确要求执行这些标签。
+# tags:
+#   - "dos"
 
-tags:
-  - "dos"
-  - "local"
-  - "txt-service"
 
-# 以下列表包含匹配器较弱、可能误报（FP），或可能影响目标可用性、数据完整性的模板。
-
-# files 表示需要忽略执行的模板文件列表
-# 除非用户明确要求执行这些文件。
+# files 表示需要忽略执行的模板文件列表。除非用户明确要求执行这些文件
 
 files:
-  - http/cves/2019/CVE-2019-14696.yaml
-  - http/cves/2021/CVE-2021-28164.yaml
+  # 可能发送大规模请求的模版
+  - http/fuzzing/wordpress-plugins-detect.yaml
   - http/fuzzing/wordpress-themes-detect.yaml
-  - http/fuzzing/mdb-database-file.yaml
-  - http/fuzzing/iis-shortname.yaml
-  - dns/soa-detect.yaml
-  - javascript/enumeration/pop3/pop3-capabilities-enum.yaml
-  - javascript/enumeration/redis/redis-require-auth.yaml
-  - dast/vulnerabilities/sqli/time-based-sqli.yaml
-  - javascript/enumeration/minecraft-enum.yaml
-  - http/miscellaneous/crypto-address-detect.yaml
-  - http/vulnerabilities/wp-functions-php-disclosure.yaml
-  - dns/acme-challenge-detect.yaml
-  - aaaa-fingerprint.yaml
-  - workflows/
-  - cloud/enum/azure-vm-cloud-enum.yaml
-  - dast/vulnerabilities/injection/unix-command-injection.yaml
-  - dast/vulnerabilities/injection/windows-command-injection.yaml
-  - http/cves/2017/CVE-2017-17562.yaml
-  - http/cves/2022/CVE-2022-2034.yaml
-  - http/cves/2023/CVE-2023-24489.yaml
-  - http/cves/2025/CVE-2025-11833.yaml
-  - http/default-logins/oracle/peoplesoft-default-login.yaml
-  - http/exposed-panels/adminer-panel-detect.yaml
+  - http/fuzzing/header-command-injection.yaml
+  - http/fuzzing/cache-poisoning-fuzz.yaml
   - http/exposures/backups/php-backup-files.yaml
-  - http/exposures/files/generic-db.yaml
-  - http/fuzzing/linux-lfi-fuzzing.yaml
-  - http/fuzzing/ssrf-via-proxy.yaml
-  - http/fuzzing/waf-fuzz.yaml
-  - http/fuzzing/wordpress-weak-credentials.yaml
-  - http/miscellaneous/defacement-detect.yaml
-  - http/miscellaneous/directory-listing.yaml
-  - http/miscellaneous/ntlm-directories.yaml
-  - http/misconfiguration/gitlab/gitlab-user-enum.yaml
-  - http/misconfiguration/nginx/nginx-api-traversal.yaml
-  - http/misconfiguration/proxy/open-proxy-internal.yaml
-  - http/misconfiguration/proxy/open-proxy-localhost.yaml
-  - http/misconfiguration/proxy/open-proxy-portscan.yaml
-  - http/technologies/graylog/graylog-api-swagger-exposure.yaml
-  - http/vulnerabilities/tongda/tongda-auth-bypass.yaml
-  - http/vulnerabilities/wordpress/wordpress-xmlrpc-brute-force.yaml
+  - http/exposed-panels/adminer-panel-detect.yaml
+  - http/exposures/backups/zip-backup-files.yaml
   - javascript/cves/2012/CVE-2012-2122.yaml
-  - javascript/cves/2023/CVE-2023-34039.yaml
+  - http/fuzzing/prestashop-module-fuzz.yaml
+  - http/vulnerabilities/gradio/gradio-component-server-lfi.yaml
+  - http/fuzzing/mdb-database-file.yaml
+  - http/fuzzing/wordpress-weak-credentials.yaml
+  - http/vulnerabilities/wordpress/wordpress-xmlrpc-brute-force.yaml
+  - http/cves/2023/CVE-2023-24489.yaml
   - javascript/default-logins/ssh-default-logins.yaml
-
-  # 可能触发目标崩溃、删除关键文件或重启服务的模板
-  - code/cves/2025/CVE-2025-22457.yaml
-  - code/cves/2022/CVE-2022-42475.yaml
-  - javascript/cves/2016/CVE-2016-8706.yaml
-  - http/cves/2023/CVE-2023-6831.yaml
-  - http/cves/2024/CVE-2024-46506.yaml
-  - http/cves/2024/CVE-2024-46986.yaml
-
-  # 通过大量内存分配或高强度数据库计算验证漏洞的模板
-  - http/cves/2018/CVE-2018-7282.yaml
-  - http/cves/2024/CVE-2024-51211.yaml
-  - http/cves/2021/CVE-2021-3018.yaml
+  - http/misconfiguration/akamai/akamai-s3-cache-poisoning.yaml
+  - http/cves/2019/CVE-2019-17382.yaml
+  - http/vulnerabilities/gradio/gradio-ssrf.yaml
+  - http/default-logins/oracle/peoplesoft-default-login.yaml
+  - http/vulnerabilities/tongda/tongda-auth-bypass.yaml
+  - http/default-logins/apache/tomcat-default-login.yaml

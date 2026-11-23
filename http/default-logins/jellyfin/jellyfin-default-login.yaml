@@ -19,6 +19,7 @@ info:
     cwe-id: CWE-522
     cpe: cpe:2.3:a:jellyfin:jellyfin:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 12
     verified: true
     fofa-query: title="Jellyfin"
     product: jellyfin

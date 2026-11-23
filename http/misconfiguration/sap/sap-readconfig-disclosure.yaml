@@ -20,7 +20,7 @@ info:
     - https://help.sap.com/docs/SUPPORT_CONTENT/si/3362958690.html
     - https://community.sap.com/t5/technology-blog-posts-by-members/securing-the-sap-instance-agent-sap-start-service/ba-p/13486679
   metadata:
-    max-request: 1
+    max-request: 2
   tags: sap,sapcontrol,soap,config,disclosure
 
 flow: http(1) && http(2)

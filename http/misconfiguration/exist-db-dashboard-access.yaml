@@ -17,7 +17,7 @@ info:
     - https://exist-db.org/
   metadata:
     verified: true
-    max-request: 2
+    max-request: 1
     shodan-query: title:"eXist db"
     fofa-query: title="eXist db"
   tags: misconfig,exist-db,dashboard,login,exposure

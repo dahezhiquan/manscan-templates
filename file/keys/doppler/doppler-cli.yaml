@@ -19,6 +19,7 @@ info:
     - https://docs.doppler.com/reference/api
     - https://docs.doppler.com/reference/auth-token-formats
   metadata:
+    max-request: 0
     verified: true
   tags: doppler,keys,file
 

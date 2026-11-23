@@ -19,6 +19,7 @@ info:
     - https://devforum.okta.com/t/api-token-length/5519
     - https://developer.okta.com/docs/guides/create-an-api-token/main/
   metadata:
+    max-request: 0
     verified: true
   tags: okta,keys,file
 

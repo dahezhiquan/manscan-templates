@@ -23,7 +23,7 @@ info:
     - https://openrouter.ai/docs/api-reference/authentication
   metadata:
     verified: true
-    max-request: 1
+    max-request: 0
   tags: file,keys,openrouter,token,api
 file:
   - extensions:

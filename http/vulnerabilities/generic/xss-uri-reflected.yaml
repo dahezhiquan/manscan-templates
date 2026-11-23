@@ -16,7 +16,7 @@ info:
   classification:
     cwe-id: CWE-79
   metadata:
-    max-request: 1
+    max-request: 2
   tags: xss,generic,vuln
 
 http:

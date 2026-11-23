@@ -19,6 +19,7 @@ info:
     - https://shopify.dev/apps/auth
     - https://shopify.dev/changelog/app-secret-key-length-has-increased
   metadata:
+    max-request: 0
     verified: true
   tags: file,keys,shopify,token
 file:

@@ -1,6 +1,8 @@
 id: webview-file-access-fromfileurl-java
 
 info:
+  metadata:
+    max-request: 0
   name: Android WebView file URL 文件访问检测 Java（本地文件安全扫描）
   author: 7h3b4dger
   severity: medium

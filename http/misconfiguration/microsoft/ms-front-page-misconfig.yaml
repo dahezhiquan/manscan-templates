@@ -19,7 +19,7 @@ info:
     - https://stackoverflow.com/questions/1163820/what-are-vti-cnf-vti-pvt-vti-script-and-vti-txt-folders
   metadata:
     verified: true
-    max-request: 2
+    max-request: 4
   tags: misconfig,exposure,frontpage,microsoft,vuln
 
 http:

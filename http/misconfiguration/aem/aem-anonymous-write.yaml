@@ -19,6 +19,7 @@ info:
   classification:
     cpe: cpe:2.3:a:adobe:experience_manager:*:*:*:*:*:*:*:*
   metadata:
+    max-request: 31
     verified: true
     vendor: adobe
     product: experience_manager

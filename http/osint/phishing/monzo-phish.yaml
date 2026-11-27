@@ -20,7 +20,7 @@ info:
     - https://monzo.com
   metadata:
     max-request: 1
-  tags: phishing,monzo,fintech,osint,discovery
+  tags: phishing,monzo,fintech,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

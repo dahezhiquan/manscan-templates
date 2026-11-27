@@ -20,7 +20,7 @@ info:
     - https://teamviewer.com
   metadata:
     max-request: 1
-  tags: phishing,teamviewer,osint,discovery
+  tags: phishing,teamviewer,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

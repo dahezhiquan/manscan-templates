@@ -18,7 +18,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,cloudflare,htmli,miscellaneous,vuln
+  tags: misconfig,cloudflare,htmli,miscellaneous,vuln,daily
 
 http:
   - method: GET

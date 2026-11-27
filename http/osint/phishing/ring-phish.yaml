@@ -20,7 +20,7 @@ info:
     - https://ring.com
   metadata:
     max-request: 1
-  tags: phishing,ring,security,iot,osint,discovery
+  tags: phishing,ring,security,iot,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

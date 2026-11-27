@@ -20,7 +20,7 @@ info:
     - https://53.com
   metadata:
     max-request: 1
-  tags: phishing,fifth-third-bank,bank,osint,discovery
+  tags: phishing,fifth-third-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

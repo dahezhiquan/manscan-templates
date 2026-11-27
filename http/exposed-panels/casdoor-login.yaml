@@ -29,7 +29,7 @@ info:
       - http.title:"casdoor"
     fofa-query: title="casdoor"
     google-query: intitle:"casdoor"
-  tags: panel,casdoor,casbin,discovery
+  tags: panel,casdoor,casbin,discovery,daily_clustering
 http:
   - method: GET
     path:

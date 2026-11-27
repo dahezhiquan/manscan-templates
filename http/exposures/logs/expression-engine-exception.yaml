@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: body="Exception - ExpressionEngine"
-  tags: error,expressionengine,log,vuln
+  tags: error,expressionengine,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

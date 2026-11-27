@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"OVPN Config Download"
     product: connect
     vendor: openvpn
-  tags: config,ovpn,exposure,vuln
+  tags: config,ovpn,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

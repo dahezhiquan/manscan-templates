@@ -20,7 +20,7 @@ info:
     - https://webex.com
   metadata:
     max-request: 1
-  tags: phishing,webex,cisco,video,osint,discovery
+  tags: phishing,webex,cisco,video,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

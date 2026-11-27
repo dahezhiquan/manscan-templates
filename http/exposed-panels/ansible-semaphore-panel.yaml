@@ -25,7 +25,7 @@ info:
     shodan-query: http.html:"Semaphore</title>"
     product: ansible_semaphore
     vendor: ansible-semaphore
-  tags: panel,ansible,semaphore,cicd,oss,discovery
+  tags: panel,ansible,semaphore,cicd,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://acehardware.com
   metadata:
     max-request: 1
-  tags: phishing,ace-hardware,ecommerce,osint,discovery
+  tags: phishing,ace-hardware,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -17,7 +17,7 @@ info:
     shodan-query: title:"WAMPSERVER Homepage"
     product: wampserver
     vendor: wampserver
-  tags: panel,wampserver,discovery
+  tags: panel,wampserver,discovery,daily_clustering
 
 http:
   - method: GET

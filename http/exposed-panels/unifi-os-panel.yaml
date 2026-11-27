@@ -16,7 +16,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: title:"UniFi OS"
-  tags: panel,router,discovery
+  tags: panel,router,discovery,daily_clustering
 
 http:
   - method: GET

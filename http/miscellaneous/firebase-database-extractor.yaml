@@ -15,7 +15,7 @@ info:
     - 开启访问日志和规则测试，排查异常读取或写入行为。
   metadata:
     max-request: 1
-  tags: miscellaneous,firebase,misc,vuln
+  tags: miscellaneous,firebase,misc,vuln,daily,daily_clustering
 
 http:
   - method: GET

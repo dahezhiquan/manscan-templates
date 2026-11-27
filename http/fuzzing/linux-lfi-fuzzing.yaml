@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 22
-  tags: linux,lfi,fuzz,fuzzing,vuln
+  tags: linux,lfi,fuzz,fuzzing,vuln,daily
 
 http:
   - method: GET

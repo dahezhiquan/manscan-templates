@@ -16,7 +16,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/36
   metadata:
     max-request: 1
-  tags: takeover,aws,bucket,vuln
+  tags: takeover,aws,bucket,vuln,daily_clustering
 
 http:
   - method: GET

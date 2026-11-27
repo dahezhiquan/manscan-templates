@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"UISP Fiber - Login"
-  tags: panel,login,uisp,fiber,discovery
+  tags: panel,login,uisp,fiber,discovery,daily_clustering
 
 http:
   - method: GET

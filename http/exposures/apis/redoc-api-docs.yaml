@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 4
     shodan-query: html:"redoc.standalone.js"
-  tags: api,openapi,redoc,exposure,discovery
+  tags: api,openapi,redoc,exposure,discovery,daily
 
 http:
   - method: GET

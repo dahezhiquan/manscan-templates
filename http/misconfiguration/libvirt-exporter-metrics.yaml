@@ -21,7 +21,7 @@ info:
     vendor: redhat
     product: libvirt
     shodan-query: title:"Libvirt"
-  tags: libvirt,exposure,debug,misconfig,vuln
+  tags: libvirt,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

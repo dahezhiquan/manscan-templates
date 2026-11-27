@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"AirWave Management"'
-  tags: panel,aruba,airwave,network-management
+  tags: panel,aruba,airwave,network-management,daily_clustering
 http:
   - method: GET
     path:

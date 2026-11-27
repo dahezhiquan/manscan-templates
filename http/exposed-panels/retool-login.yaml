@@ -17,7 +17,7 @@ info:
     shodan-query: title:"Retool"
     product: retool
     vendor: retool
-  tags: login,panel,retool,discovery
+  tags: login,panel,retool,discovery,daily_clustering
 
 http:
   - method: GET

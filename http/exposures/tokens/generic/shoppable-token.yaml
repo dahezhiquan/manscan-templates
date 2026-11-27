@@ -19,7 +19,7 @@ info:
     - https://ask.shoppable.com/knowledge/quick-start-api-guide
   metadata:
     max-request: 1
-  tags: exposure,shoppable,token,auth,service,generic,vuln
+  tags: exposure,shoppable,token,auth,service,generic,vuln,daily,daily_clustering
 
 http:
   - method: GET

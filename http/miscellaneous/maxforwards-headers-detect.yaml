@@ -22,7 +22,7 @@ info:
     max-request: 1
     shodan-query: "Max-Forwards:"
     fofa-query: header="max-forwards"
-  tags: miscellaneous,misc,max-forwards,vuln
+  tags: miscellaneous,misc,max-forwards,vuln,daily,daily_clustering
 
 http:
   - method: GET

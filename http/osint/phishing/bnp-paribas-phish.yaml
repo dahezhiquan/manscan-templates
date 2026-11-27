@@ -20,7 +20,7 @@ info:
     - https://bnpparibas.com
   metadata:
     max-request: 1
-  tags: phishing,bnp-paribas,bank,osint,discovery
+  tags: phishing,bnp-paribas,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

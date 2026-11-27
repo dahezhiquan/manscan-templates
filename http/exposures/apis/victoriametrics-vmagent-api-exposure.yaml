@@ -24,7 +24,7 @@ info:
     max-request: 1
     vendor: victoriametrics
     product: vmagent
-  tags: exposure,victoriametrics,vmagent,unauth,misconfig
+  tags: exposure,victoriametrics,vmagent,unauth,misconfig,daily
 
 http:
   - method: GET

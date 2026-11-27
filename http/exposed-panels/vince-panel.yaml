@@ -14,7 +14,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: panel,vince,login,discovery
+  tags: panel,vince,login,discovery,daily_clustering
 
 http:
   - method: GET

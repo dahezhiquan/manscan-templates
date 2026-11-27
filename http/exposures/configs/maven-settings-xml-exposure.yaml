@@ -26,7 +26,7 @@ info:
     verified: false
     max-request: 3
     google-query: intitle:"index of" "settings.xml" "maven.apache.org/SETTINGS"
-  tags: exposure,config,maven,java,credentials,files
+  tags: exposure,config,maven,java,credentials,files,daily
 
 http:
   - method: GET

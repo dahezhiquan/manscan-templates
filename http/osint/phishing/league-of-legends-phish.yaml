@@ -19,7 +19,7 @@ info:
     - https://leagueoflegends.com
   metadata:
     max-request: 1
-  tags: phishing,league-of-legends,riot-games,osint,discovery
+  tags: phishing,league-of-legends,riot-games,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

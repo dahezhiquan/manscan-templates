@@ -20,7 +20,7 @@ info:
     - http.title:"seagate nas - seagate"
     fofa-query: title="seagate nas - seagate"
     google-query: intitle:"seagate nas - seagate"
-  tags: panel,seagate,login,discovery
+  tags: panel,seagate,login,discovery,daily_clustering
 
 http:
   - method: GET

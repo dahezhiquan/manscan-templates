@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 7
-  tags: sphinx,sphinxsearch,exposure,config,vuln
+  tags: sphinx,sphinxsearch,exposure,config,vuln,daily
 
 http:
   - method: GET

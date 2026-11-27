@@ -19,7 +19,7 @@ info:
     - https://www.bitkeeper.org/man/config-etc.html
   metadata:
     max-request: 1
-  tags: config,exposure,vuln
+  tags: config,exposure,vuln,daily
 
 http:
   - method: GET

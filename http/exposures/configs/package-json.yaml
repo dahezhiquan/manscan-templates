@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: config,exposure,node,npm,vuln
+  tags: config,exposure,node,npm,vuln,daily
 
 http:
   - method: GET

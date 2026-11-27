@@ -19,7 +19,7 @@ info:
     - https://1aauto.com
   metadata:
     max-request: 1
-  tags: phishing,1a-auto,ecommerce,osint,discovery
+  tags: phishing,1a-auto,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

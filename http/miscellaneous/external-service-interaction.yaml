@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-918
   metadata:
     max-request: 1
-  tags: miscellaneous,http,misc,oast,vuln
+  tags: miscellaneous,http,misc,oast,vuln,daily
 
 http:
   - method: GET

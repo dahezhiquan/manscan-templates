@@ -20,7 +20,7 @@ info:
     - https://gemini.com
   metadata:
     max-request: 1
-  tags: phishing,gemini,crypto,osint,discovery
+  tags: phishing,gemini,crypto,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

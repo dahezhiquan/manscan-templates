@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: redis,exporter,metrics,exposure,misconfig
+  tags: redis,exporter,metrics,exposure,misconfig,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     max-request: 1
     shodan-query: html:"Install - StackPosts"
     fofa-query: icon_hash="700046539"
-  tags: misconfig,install,exposure,stackposts,vuln
+  tags: misconfig,install,exposure,stackposts,vuln,daily_clustering
 
 http:
   - method: GET

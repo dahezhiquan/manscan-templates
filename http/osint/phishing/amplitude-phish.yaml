@@ -19,7 +19,7 @@ info:
     - https://amplitude.com
   metadata:
     max-request: 1
-  tags: phishing,amplitude,analytics,osint,discovery
+  tags: phishing,amplitude,analytics,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

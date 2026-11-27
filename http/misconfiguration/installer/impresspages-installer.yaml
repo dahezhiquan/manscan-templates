@@ -21,7 +21,7 @@ info:
     vendor: impresspages
     product: impresspages_cms
     shodan-query: http.title:"ImpressPages installation wizard"
-  tags: misconfig,exposure,install,impresspages,vuln
+  tags: misconfig,exposure,install,impresspages,vuln,daily_clustering
 
 http:
   - method: GET

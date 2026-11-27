@@ -19,7 +19,7 @@ info:
     - https://expedia.com
   metadata:
     max-request: 1
-  tags: phishing,expedia,travel,osint,discovery
+  tags: phishing,expedia,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

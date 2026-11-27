@@ -20,7 +20,7 @@ info:
     - https://pnc.com
   metadata:
     max-request: 1
-  tags: phishing,pnc-bank,bank,osint,discovery
+  tags: phishing,pnc-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

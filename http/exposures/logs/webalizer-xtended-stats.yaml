@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     google-query: inurl:"/usage/error_202109.html"
-  tags: exposure,stats,webalizer,vuln
+  tags: exposure,stats,webalizer,vuln,daily
 
 http:
   - method: GET

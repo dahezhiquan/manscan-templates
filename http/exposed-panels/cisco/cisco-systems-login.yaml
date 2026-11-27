@@ -21,7 +21,7 @@ info:
     max-request: 1
     shodan-query: http.title:"Cisco Systems Login"
     google-query: intitle:"Cisco Systems Login"
-  tags: panel,cisco,discovery
+  tags: panel,cisco,discovery,daily_clustering
 http:
   - method: GET
     path:

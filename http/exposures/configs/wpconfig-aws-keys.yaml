@@ -17,7 +17,7 @@ info:
     - 排查近期登录、API 调用、代码仓库、云资源和制品库操作记录，确认是否存在未授权使用。
   metadata:
     max-request: 2
-  tags: aws,s3,wordpress,disclosure,exposure,vuln
+  tags: aws,s3,wordpress,disclosure,exposure,vuln,daily
 
 http:
   - method: GET

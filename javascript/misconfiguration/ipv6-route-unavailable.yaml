@@ -16,7 +16,7 @@ info:
     - https://www.cloudflare.com/learning/dns/dns-records/dns-a-record/
     - https://www.cloudflare.com/learning/dns/dns-records/dns-aaaa-record/
     - https://pkg.go.dev/net#Dial
-  tags: ipv6,diagnostic
+  tags: ipv6,diagnostic,daily
 
 flow: |
   if (dns(1) && dns(2)) {

@@ -20,7 +20,7 @@ info:
     - https://brave.com
   metadata:
     max-request: 1
-  tags: phishing,brave,osint,discovery
+  tags: phishing,brave,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"tolgee"
-  tags: exposure,api,tolgee,discovery
+  tags: exposure,api,tolgee,discovery,daily
 
 http:
   - method: GET

@@ -23,7 +23,7 @@ info:
     max-request: 1
     shodan-query: "X-backend-server"
     verified: true
-  tags: exposure,fastly,cdn,misconfig
+  tags: exposure,fastly,cdn,misconfig,daily_clustering
 
 http:
   - method: GET

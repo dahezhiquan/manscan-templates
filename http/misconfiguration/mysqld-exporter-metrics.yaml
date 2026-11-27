@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"MySQLd exporter"
-  tags: mysqld,exposure,debug,misconfig,vuln,mysql
+  tags: mysqld,exposure,debug,misconfig,vuln,mysql,daily_clustering
 
 http:
   - method: GET

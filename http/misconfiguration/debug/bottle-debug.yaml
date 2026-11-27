@@ -23,7 +23,7 @@ info:
     vendor: bottlepy
     product: bottle
     shodan-query: html:"Sorry, the requested URL"
-  tags: bottle,exposure,debug,misconfig,vuln
+  tags: bottle,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

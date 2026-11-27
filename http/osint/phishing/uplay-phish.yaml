@@ -19,7 +19,7 @@ info:
     - https://ubisoft.com
   metadata:
     max-request: 1
-  tags: phishing,uplay,ubisoft,osint,discovery
+  tags: phishing,uplay,ubisoft,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

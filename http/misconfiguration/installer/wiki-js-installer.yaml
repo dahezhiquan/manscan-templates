@@ -21,7 +21,7 @@ info:
     vendor: requarks
     product: wiki.js
     shodan-query: title:"Wiki.js Setup"
-  tags: install,wiki-js,exposure,misconfig,vuln
+  tags: install,wiki-js,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

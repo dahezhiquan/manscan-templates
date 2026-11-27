@@ -27,7 +27,7 @@ info:
       - html:"Darktrace Threat Visualizer"
       - http.html:"darktrace threat visualizer"
     fofa-query: body="darktrace threat visualizer"
-  tags: panel,darktrace,discovery
+  tags: panel,darktrace,discovery,daily_clustering
 http:
   - method: GET
     path:

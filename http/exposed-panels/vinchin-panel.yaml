@@ -16,7 +16,7 @@ info:
     shodan-query: html:"VinChin"
     product: vinchin_backup_and_recovery
     vendor: vinchin
-  tags: panel,vinchin,login,discovery
+  tags: panel,vinchin,login,discovery,daily_clustering
 
 http:
   - method: GET

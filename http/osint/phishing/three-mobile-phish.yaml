@@ -20,7 +20,7 @@ info:
     - https://three.co.uk
   metadata:
     max-request: 1
-  tags: phishing,three,osint,discovery
+  tags: phishing,three,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

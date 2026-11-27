@@ -17,7 +17,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"InterMapper"
-  tags: exposure,intermapper,unauth
+  tags: exposure,intermapper,unauth,daily_clustering
 
 http:
   - method: GET

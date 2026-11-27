@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"ntopng - Traffic Dashboard"
     product: ntopng
     vendor: ntop
-  tags: misconfig,ntopng,dashboard,discovery
+  tags: misconfig,ntopng,dashboard,discovery,daily_clustering
 
 http:
   - method: GET

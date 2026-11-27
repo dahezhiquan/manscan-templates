@@ -19,7 +19,7 @@ info:
     - https://newegg.com
   metadata:
     max-request: 1
-  tags: phishing,newegg,ecommerce,osint,discovery
+  tags: phishing,newegg,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -15,7 +15,7 @@ info:
     - 确认识别出的入口是否需要对公网开放；非必要时通过内网、VPN、可信来源 IP 或网关策略限制访问。
     - 为确需开放的管理入口启用强认证、多因素认证、登录失败限制和访问审计。
     - 结合应用实际路由人工复核扫描结果，避免将普通用户登录页或通用前端页面误认为管理后台。
-  tags: generic,panel,login,discovery
+  tags: generic,panel,login,discovery,daily
 
 http:
   - method: GET

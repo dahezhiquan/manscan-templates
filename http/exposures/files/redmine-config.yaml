@@ -28,7 +28,7 @@ info:
     google-query: intitle:"index of" configuration.yml
     product: redmine
     vendor: redmine
-  tags: exposure,redmine,devops,edb,files,vuln
+  tags: exposure,redmine,devops,edb,files,vuln,daily
 
 http:
   - method: GET

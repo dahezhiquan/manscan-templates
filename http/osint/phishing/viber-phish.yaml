@@ -20,7 +20,7 @@ info:
     - https://viber.com
   metadata:
     max-request: 1
-  tags: phishing,viber,osint,discovery
+  tags: phishing,viber,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

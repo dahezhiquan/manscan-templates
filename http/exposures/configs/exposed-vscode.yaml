@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: vscode,exposure,vuln
+  tags: vscode,exposure,vuln,daily
 
 http:
   - method: GET

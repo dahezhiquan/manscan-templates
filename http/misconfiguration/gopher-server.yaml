@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Gopher Server"
-  tags: misconfig,gopher,server,vuln
+  tags: misconfig,gopher,server,vuln,daily_clustering
 
 http:
   - method: GET

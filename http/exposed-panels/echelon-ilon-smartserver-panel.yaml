@@ -22,7 +22,7 @@ info:
     vendor: Echelon
     product: ilon-smartserver
     shodan-query: 'http.title:"i.LON SmartServer"'
-  tags: panel,echelon,ilon,lonworks,scada,ics,ot,building-automation,discovery
+  tags: panel,echelon,ilon,lonworks,scada,ics,ot,building-automation,discovery,daily_clustering
 http:
   - method: GET
     path:

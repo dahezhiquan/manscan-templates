@@ -19,7 +19,7 @@ info:
     - https://homeaway.com
   metadata:
     max-request: 1
-  tags: phishing,homeaway,travel,osint,discovery
+  tags: phishing,homeaway,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

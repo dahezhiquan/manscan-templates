@@ -23,7 +23,7 @@ info:
     vendor: wowonder
     product: wowonder
     fofa-query: body="WoWonder | Installation"
-  tags: misconfig,install,exposure,wowonder,vuln
+  tags: misconfig,install,exposure,wowonder,vuln,daily_clustering
 
 http:
   - method: GET

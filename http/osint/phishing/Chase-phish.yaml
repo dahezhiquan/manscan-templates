@@ -20,7 +20,7 @@ info:
     - https://chase.com
   metadata:
     max-request: 1
-  tags: phishing,chase,osint,discovery
+  tags: phishing,chase,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - https://cyberghostvpn.com
   metadata:
     max-request: 1
-  tags: phishing,cyberghost,vpn,osint,discovery
+  tags: phishing,cyberghost,vpn,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

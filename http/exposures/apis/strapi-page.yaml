@@ -27,7 +27,7 @@ info:
     shodan-query: http.title:"Welcome to your Strapi app"
     product: strapi
     vendor: strapi
-  tags: api,strapi,exposure,discovery
+  tags: api,strapi,exposure,discovery,daily,daily_clustering
 
 http:
   - method: GET

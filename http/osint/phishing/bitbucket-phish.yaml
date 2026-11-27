@@ -20,7 +20,7 @@ info:
     - https://bitbucket.org
   metadata:
     max-request: 1
-  tags: phishing,bitbucket,atlassian,osint,discovery
+  tags: phishing,bitbucket,atlassian,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

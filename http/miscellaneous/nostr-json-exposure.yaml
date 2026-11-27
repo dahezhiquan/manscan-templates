@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     google-query: inurl:"/.well-known/nostr.json"
-  tags: well-known,nostr,miscellaneous,misc,vuln
+  tags: well-known,nostr,miscellaneous,misc,vuln,daily
 
 http:
   - method: GET

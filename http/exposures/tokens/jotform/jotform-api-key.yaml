@@ -20,7 +20,7 @@ info:
   metadata:
     verified: "true"
     max-request: 1
-  tags: token,exposure,jotform,vuln
+  tags: token,exposure,jotform,vuln,daily,daily_clustering
 
 http:
   - method: GET

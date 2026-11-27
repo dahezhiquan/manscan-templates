@@ -21,7 +21,7 @@ info:
     vendor: tt-rss
     product: tiny_tiny_rss
     shodan-query: title:"Tiny Tiny RSS - Installer"
-  tags: misconfig,tiny,install,vuln
+  tags: misconfig,tiny,install,vuln,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"haproxy.cfg"
-  tags: exposure,files,haproxy,vuln
+  tags: exposure,files,haproxy,vuln,daily
 
 http:
   - method: GET

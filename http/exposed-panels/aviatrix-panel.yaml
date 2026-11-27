@@ -28,7 +28,7 @@ info:
       - http.title:"aviatrix cloud controller"
     fofa-query: title="aviatrix cloud controller"
     google-query: intitle:"aviatrix cloud controller"
-  tags: panel,aviatrix,discovery
+  tags: panel,aviatrix,discovery,daily_clustering
 http:
   - method: GET
     path:

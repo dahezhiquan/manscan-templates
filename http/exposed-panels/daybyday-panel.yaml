@@ -27,7 +27,7 @@ info:
       - http.title:"daybyday"
     fofa-query: title="daybyday"
     google-query: intitle:"daybyday"
-  tags: panel,daybyday,daybydaycrm,discovery
+  tags: panel,daybyday,daybydaycrm,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: square,token,exposure,vuln
+  tags: square,token,exposure,vuln,daily
 
 flow: http(1) && http(2)
 

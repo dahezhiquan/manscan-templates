@@ -19,7 +19,7 @@ info:
     - https://jfrog.com/help/r/jfrog-rest-apis/introduction-to-the-artifactory-rest-apis
   metadata:
     max-request: 1
-  tags: exposure,token,artifactory,vuln
+  tags: exposure,token,artifactory,vuln,daily,daily_clustering
 
 http:
   - method: GET

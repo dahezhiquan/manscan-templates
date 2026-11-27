@@ -21,7 +21,7 @@ info:
     vendor: esphome
     product: esphome
     shodan-query: title:"Dashboard - ESPHome"
-  tags: misconfig,esphome,exposure,iot,discovery
+  tags: misconfig,esphome,exposure,iot,discovery,daily_clustering
 
 http:
   - method: GET

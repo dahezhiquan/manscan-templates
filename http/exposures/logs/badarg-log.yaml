@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 1
     github-query: filename:badarg.log
-  tags: exposure,badarg,log,debug,vuln
+  tags: exposure,badarg,log,debug,vuln,daily
 
 http:
   - method: GET

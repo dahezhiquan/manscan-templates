@@ -22,7 +22,7 @@ info:
     vendor: Andover
     product: andover-continuum
     shodan-query: 'http.html:"Andover Continuum"'
-  tags: panel,andover,continuum,ics,bms,discovery
+  tags: panel,andover,continuum,ics,bms,discovery,daily_clustering
 http:
   - method: GET
     path:

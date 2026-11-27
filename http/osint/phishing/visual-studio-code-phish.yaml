@@ -20,7 +20,7 @@ info:
     - https://visualstudio.com
   metadata:
     max-request: 1
-  tags: phishing,visual-studio-code,osint,discovery
+  tags: phishing,visual-studio-code,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

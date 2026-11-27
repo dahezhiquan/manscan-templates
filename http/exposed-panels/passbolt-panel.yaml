@@ -18,7 +18,7 @@ info:
     vendor: passbolt
     product: passbolt_api
     shodan-query: http.title:"Passbolt | Open source password manager for teams"
-  tags: panel,passbolt,login,discovery
+  tags: panel,passbolt,login,discovery,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://brevo.com
   metadata:
     max-request: 1
-  tags: phishing,brevo,sendinblue,email,osint,discovery
+  tags: phishing,brevo,sendinblue,email,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"phpspec.yml"
-  tags: exposure,phpsec,php,devops,cicd,vuln
+  tags: exposure,phpsec,php,devops,cicd,vuln,daily
 
 http:
   - method: GET

@@ -29,7 +29,7 @@ info:
       - http.title:"cisco ucs kvm direct"
     fofa-query: title="cisco ucs kvm direct"
     google-query: intitle:"cisco ucs kvm direct"
-  tags: panel,cisco,ucs,kvm,discovery
+  tags: panel,cisco,ucs,kvm,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - https://intercom.com
   metadata:
     max-request: 1
-  tags: phishing,intercom,customer-support,osint,discovery
+  tags: phishing,intercom,customer-support,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

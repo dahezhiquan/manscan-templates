@@ -19,7 +19,7 @@ info:
     - https://grammarly.com
   metadata:
     max-request: 1
-  tags: phishing,grammarly,writing,osint,discovery
+  tags: phishing,grammarly,writing,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

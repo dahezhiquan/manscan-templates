@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"phpstan.neon"
-  tags: devops,exposure,vuln
+  tags: devops,exposure,vuln,daily
 
 http:
   - method: GET

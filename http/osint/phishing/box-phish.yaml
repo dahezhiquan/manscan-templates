@@ -19,7 +19,7 @@ info:
     - https://box.com
   metadata:
     max-request: 1
-  tags: phishing,box-storage,osint,discovery
+  tags: phishing,box-storage,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

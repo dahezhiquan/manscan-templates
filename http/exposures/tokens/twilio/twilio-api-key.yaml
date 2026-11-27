@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: twilio,token,exposure,vuln
+  tags: twilio,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     - 检查集群任务、系统进程和访问日志，清理异常任务并轮换凭据。
   metadata:
     max-request: 1
-  tags: kubernetes,exposure,misconfig,vuln
+  tags: kubernetes,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

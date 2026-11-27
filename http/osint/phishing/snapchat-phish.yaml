@@ -20,7 +20,7 @@ info:
     - https://snapchat.com
   metadata:
     max-request: 1
-  tags: phishing,snapchat,osint,discovery
+  tags: phishing,snapchat,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

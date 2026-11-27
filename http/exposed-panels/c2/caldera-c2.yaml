@@ -25,7 +25,7 @@ info:
     vendor: mitre
     product: caldera
     fofa-query: http.favicon.hash:-636718605
-  tags: c2,ir,osint,caldera,panel,vuln
+  tags: c2,ir,osint,caldera,panel,vuln,daily_clustering
 http:
   - method: GET
     path:

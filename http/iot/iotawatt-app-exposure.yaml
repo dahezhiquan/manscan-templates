@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: app="IoTaWatt-Configuration-app"
-  tags: iot,exposure,vuln,discovery
+  tags: iot,exposure,vuln,discovery,daily_clustering
 
 http:
   - method: GET

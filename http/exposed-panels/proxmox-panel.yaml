@@ -21,7 +21,7 @@ info:
     product: proxmox
     shodan-query: http.favicon.hash:213144638
     fofa-query: icon_hash=213144638
-  tags: panel,proxmox,login,discovery
+  tags: panel,proxmox,login,discovery,daily_clustering
 
 http:
   - method: GET

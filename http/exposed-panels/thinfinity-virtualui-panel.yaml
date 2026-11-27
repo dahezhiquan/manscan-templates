@@ -20,7 +20,7 @@ info:
     - http.title:"thinfinity virtualui"
     fofa-query: title="thinfinity virtualui"
     google-query: intitle:"thinfinity virtualui"
-  tags: panel,thinfinity,virtualui,cybelesoft,discovery
+  tags: panel,thinfinity,virtualui,cybelesoft,discovery,daily_clustering
 
 http:
   - method: GET

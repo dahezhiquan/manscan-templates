@@ -19,7 +19,7 @@ info:
     - https://humblebundle.com
   metadata:
     max-request: 1
-  tags: phishing,humble-bundle,osint,discovery
+  tags: phishing,humble-bundle,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

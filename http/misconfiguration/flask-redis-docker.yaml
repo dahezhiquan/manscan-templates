@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Flask + Redis Queue + Docker"
-  tags: misconfig,exposure,flask,redis,docker,vuln
+  tags: misconfig,exposure,flask,redis,docker,vuln,daily_clustering
 
 http:
   - method: GET

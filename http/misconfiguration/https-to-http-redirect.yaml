@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,http,https,vuln
+  tags: misconfig,http,https,vuln,daily_clustering
 
 http:
   - method: GET

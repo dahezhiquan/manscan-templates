@@ -23,7 +23,7 @@ info:
     vendor: magnolia-cms
     product: magnolia_cms
     shodan-query: title:"Magnolia Installation"
-  tags: magnolia,exposure,installer,misconfig,vuln
+  tags: magnolia,exposure,installer,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

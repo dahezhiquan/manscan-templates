@@ -21,7 +21,7 @@ info:
     vendor: webkul
     product: uvdesk
     shodan-query: title:"UVDesk Helpdesk Community Edition - Installation Wizard"
-  tags: misconfig,uvdesk,install,exposure,vuln
+  tags: misconfig,uvdesk,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

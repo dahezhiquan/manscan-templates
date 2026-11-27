@@ -21,7 +21,7 @@ info:
     max-request: 1
     shodan-query: title:"Snoop Servlet"
     fofa-query: title="Snoop Servlet"
-  tags: config,exposure,snoop,snoop-servlet,vuln
+  tags: config,exposure,snoop,snoop-servlet,vuln,daily
 
 http:
   - method: GET

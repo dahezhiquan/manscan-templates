@@ -35,7 +35,7 @@ info:
     fofa-query:
       - title="securetransport" || http.favicon.hash:1330269434
       - title="st web client"
-  tags: panel,axway,securetransport,discovery
+  tags: panel,axway,securetransport,discovery,daily_clustering
 http:
   - method: GET
     path:

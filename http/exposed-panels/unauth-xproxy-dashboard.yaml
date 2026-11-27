@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: X-Proxy Dashboard
-  tags: xproxy,panel,discovery
+  tags: xproxy,panel,discovery,daily_clustering
 
 http:
   - method: GET

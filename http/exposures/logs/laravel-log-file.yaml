@@ -19,7 +19,7 @@ info:
     - https://laravel.com/docs/master/logging
   metadata:
     max-request: 1
-  tags: laravel,logs,exposure,vuln
+  tags: laravel,logs,exposure,vuln,daily
 
 http:
   - method: GET

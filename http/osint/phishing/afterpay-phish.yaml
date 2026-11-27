@@ -20,7 +20,7 @@ info:
     - https://afterpay.com
   metadata:
     max-request: 1
-  tags: phishing,afterpay,payment,osint,discovery
+  tags: phishing,afterpay,payment,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

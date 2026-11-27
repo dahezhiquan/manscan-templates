@@ -17,7 +17,7 @@ info:
     - 在 Web 服务器、CDN 和对象存储层阻断数据库配置、历史文件和转储文件的公开访问。
   metadata:
     max-request: 3
-  tags: exposure,backup,files,vuln
+  tags: exposure,backup,files,vuln,daily
 
 http:
   - method: GET

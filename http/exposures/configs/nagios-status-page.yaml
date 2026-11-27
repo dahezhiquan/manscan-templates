@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 3
-  tags: exposure,nagios,status,edb,vuln
+  tags: exposure,nagios,status,edb,vuln,daily
 
 http:
   - method: GET

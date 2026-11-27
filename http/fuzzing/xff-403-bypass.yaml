@@ -15,7 +15,7 @@ info:
     - 审查 Nginx、Apache、负载均衡和应用框架中的真实 IP 配置。
   metadata:
     max-request: 2
-  tags: fuzzing,xff-403-bypass,vuln
+  tags: fuzzing,xff-403-bypass,vuln,daily
 
 http:
   - raw:

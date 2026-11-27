@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"pyproject.toml"
-  tags: exposure,pyproject,pip,devops,cicd,vuln
+  tags: exposure,pyproject,pip,devops,cicd,vuln,daily
 
 http:
   - method: GET

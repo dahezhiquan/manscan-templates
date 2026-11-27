@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Cargo.lock"
-  tags: exposure,files,cargo,vuln
+  tags: exposure,files,cargo,vuln,daily
 
 http:
   - method: GET

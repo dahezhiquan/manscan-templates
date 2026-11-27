@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: wireguard,exposure,token,vuln
+  tags: wireguard,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

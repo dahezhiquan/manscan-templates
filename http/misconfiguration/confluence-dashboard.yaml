@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Dashboard - Confluence"
-  tags: misconfig,exposure,confluence,atlassian,discovery
+  tags: misconfig,exposure,confluence,atlassian,discovery,daily_clustering
 
 http:
   - method: GET

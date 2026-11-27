@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ssl:"cn=fortiweb"
-  tags: ssl,tls,fortinet,fortiweb,discovery
+  tags: ssl,tls,fortinet,fortiweb,discovery,daily_clustering
 
 ssl:
   - address: "{{Host}}:{{Port}}"

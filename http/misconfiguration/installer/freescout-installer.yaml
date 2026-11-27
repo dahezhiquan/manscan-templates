@@ -21,7 +21,7 @@ info:
     vendor: freescout
     product: freescout
     shodan-query: http.title:"FreeScout Installer"
-  tags: misconfig,exposure,install,freescout,vuln
+  tags: misconfig,exposure,install,freescout,vuln,daily_clustering
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: grafana,exposure,token,vuln
+  tags: grafana,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

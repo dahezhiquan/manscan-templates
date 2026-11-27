@@ -20,7 +20,7 @@ info:
     - https://mullvad.net
   metadata:
     max-request: 1
-  tags: phishing,mullvad,vpn,osint,discovery
+  tags: phishing,mullvad,vpn,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: discord,exposure,token,vuln
+  tags: discord,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: http.html_hash:-1957161625
-  tags: c2,bruteratel,c4,panel,vuln
+  tags: c2,bruteratel,c4,panel,vuln,daily_clustering
 http:
   - method: GET
     path:

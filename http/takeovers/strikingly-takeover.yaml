@@ -19,7 +19,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/58
   metadata:
     max-request: 1
-  tags: takeover,strikingly,vuln
+  tags: takeover,strikingly,vuln,daily_clustering
 
 http:
   - method: GET

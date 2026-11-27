@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Nuage Networks" ssl.cert.subject.cn:"VSPCA"'
-  tags: panel,nuage,nokia,vsp,sdn,vpn,network
+  tags: panel,nuage,nokia,vsp,sdn,vpn,network,daily_clustering
 http:
   - method: GET
     path:

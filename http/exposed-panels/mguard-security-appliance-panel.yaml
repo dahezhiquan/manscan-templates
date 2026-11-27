@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"mGuard"
-  tags: panel,phoenix-contact,login,discovery
+  tags: panel,phoenix-contact,login,discovery,daily_clustering
 http:
   - method: GET
     path:

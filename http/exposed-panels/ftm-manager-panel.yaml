@@ -33,7 +33,7 @@ info:
     fofa-query:
       - title="ftm manager"
       - body="ftm manager"
-  tags: panel,ftm,ibm,discovery
+  tags: panel,ftm,ibm,discovery,daily_clustering
 http:
   - method: GET
     path:

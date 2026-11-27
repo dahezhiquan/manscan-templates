@@ -20,7 +20,7 @@ info:
     - https://auth0.com
   metadata:
     max-request: 1
-  tags: phishing,auth0,authentication,osint,discovery
+  tags: phishing,auth0,authentication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

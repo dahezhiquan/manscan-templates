@@ -20,7 +20,7 @@ info:
     - https://n26.com
   metadata:
     max-request: 1
-  tags: phishing,n26,fintech,osint,discovery
+  tags: phishing,n26,fintech,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

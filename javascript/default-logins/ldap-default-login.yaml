@@ -17,7 +17,7 @@ info:
   metadata:
     verified: true
     shodan-query: ldap
-  tags: js,ldap,default-login,network,vuln
+  tags: js,ldap,default-login,network,vuln,daily
 
 javascript:
   - code: |

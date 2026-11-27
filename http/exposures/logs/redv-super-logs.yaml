@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: redv,log,disclosure,exposure,vuln
+  tags: redv,log,disclosure,exposure,vuln,daily
 
 http:
   - method: GET

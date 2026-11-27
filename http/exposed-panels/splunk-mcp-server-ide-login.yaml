@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"Splunk MCP Server"
-  tags: panel,login,splunk,mcp,ide,discovery
+  tags: panel,login,splunk,mcp,ide,discovery,daily_clustering
 
 http:
   - method: GET

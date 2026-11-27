@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"Cribl LogStream"'
-  tags: panel,cribl,stream,logstream
+  tags: panel,cribl,stream,logstream,daily_clustering
 http:
   - method: GET
     path:

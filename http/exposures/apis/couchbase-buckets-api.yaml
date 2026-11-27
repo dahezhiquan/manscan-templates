@@ -24,7 +24,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: exposure,couchbase,discovery
+  tags: exposure,couchbase,discovery,daily
 
 http:
   - method: GET

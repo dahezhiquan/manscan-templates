@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: gitlab,runner,token,exposure,vuln
+  tags: gitlab,runner,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

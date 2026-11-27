@@ -19,7 +19,7 @@ info:
     - https://tractorsupply.com
   metadata:
     max-request: 1
-  tags: phishing,tractor-supply,ecommerce,osint,discovery
+  tags: phishing,tractor-supply,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

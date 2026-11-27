@@ -20,7 +20,7 @@ info:
     - https://typeform.com
   metadata:
     max-request: 1
-  tags: phishing,typeform,forms,osint,discovery
+  tags: phishing,typeform,forms,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

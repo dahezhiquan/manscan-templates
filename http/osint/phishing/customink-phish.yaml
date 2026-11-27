@@ -19,7 +19,7 @@ info:
     - https://customink.com
   metadata:
     max-request: 1
-  tags: phishing,customink,osint,discovery
+  tags: phishing,customink,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

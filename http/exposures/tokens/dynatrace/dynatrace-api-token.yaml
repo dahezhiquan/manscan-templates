@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: dynatrace,token,exposure,vuln
+  tags: dynatrace,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

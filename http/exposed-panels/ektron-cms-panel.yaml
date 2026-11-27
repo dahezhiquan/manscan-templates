@@ -31,7 +31,7 @@ info:
       - app="Ektron-CMS"
       - app="ektron-cms"
       - body="ektron"
-  tags: panel,ektron,cms,discovery
+  tags: panel,ektron,cms,discovery,daily_clustering
 http:
   - method: GET
     path:

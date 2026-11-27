@@ -26,7 +26,7 @@ info:
     shodan-query: http.html:"HG532e"
     product: hg532e
     vendor: huawei
-  tags: huawei,panel,discovery
+  tags: huawei,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

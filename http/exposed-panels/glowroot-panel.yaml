@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Glowroot"
-  tags: panel,login,glowroot,discovery
+  tags: panel,login,glowroot,discovery,daily_clustering
 http:
   - method: GET
     path:

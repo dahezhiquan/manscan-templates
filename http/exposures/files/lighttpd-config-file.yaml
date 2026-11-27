@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"lighttpd.conf"
-  tags: exposure,files,lighttpd,vuln
+  tags: exposure,files,lighttpd,vuln,daily
 
 http:
   - method: GET

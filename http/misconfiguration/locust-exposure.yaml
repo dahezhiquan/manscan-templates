@@ -21,7 +21,7 @@ info:
     vendor: locust
     product: locust
     shodan-query: title:"Locust"
-  tags: exposure,locust,misconfig,vuln
+  tags: exposure,locust,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

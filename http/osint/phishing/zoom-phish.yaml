@@ -20,7 +20,7 @@ info:
     - https://zoom.us
   metadata:
     max-request: 1
-  tags: phishing,zoom,osint,discovery
+  tags: phishing,zoom,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

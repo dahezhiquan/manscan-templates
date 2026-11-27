@@ -20,7 +20,7 @@ info:
     - https://okta.com
   metadata:
     max-request: 1
-  tags: phishing,okta,sso,osint,discovery
+  tags: phishing,okta,sso,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

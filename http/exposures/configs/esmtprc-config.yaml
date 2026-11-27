@@ -19,7 +19,7 @@ info:
     - https://linux.die.net/man/5/esmtprc
   metadata:
     max-request: 1
-  tags: esmtp,config,exposure,vuln
+  tags: esmtp,config,exposure,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"FleetCart - Installation"
-  tags: misconfig,install,exposure,fleetcart,vuln
+  tags: misconfig,install,exposure,fleetcart,vuln,daily_clustering
 
 http:
   - method: GET

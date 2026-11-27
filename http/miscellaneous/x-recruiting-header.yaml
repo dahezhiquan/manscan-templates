@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "X-Recruiting:"
-  tags: miscellaneous,misc,hiring,jobs,employment,generic,vuln
+  tags: miscellaneous,misc,hiring,jobs,employment,generic,vuln,daily,daily_clustering
 
 http:
   - method: GET

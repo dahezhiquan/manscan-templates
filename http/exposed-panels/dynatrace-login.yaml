@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:1828614783
-  tags: dynatrace,login,panel,discovery
+  tags: dynatrace,login,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

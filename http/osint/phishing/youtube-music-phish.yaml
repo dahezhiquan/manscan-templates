@@ -19,7 +19,7 @@ info:
     - https://music.youtube.com
   metadata:
     max-request: 1
-  tags: phishing,youtube-music,streaming,osint,discovery
+  tags: phishing,youtube-music,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

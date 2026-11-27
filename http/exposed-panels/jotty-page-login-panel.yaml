@@ -21,7 +21,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.title:"jotty·page"
-  tags: panel,login,jotty,page,discovery
+  tags: panel,login,jotty,page,discovery,daily_clustering
 http:
   - method: GET
     path:

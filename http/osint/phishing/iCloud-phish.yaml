@@ -20,7 +20,7 @@ info:
     - https://icloud.com
   metadata:
     max-request: 1
-  tags: phishing,icloud,osint,discovery
+  tags: phishing,icloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

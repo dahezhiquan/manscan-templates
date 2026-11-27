@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: exposure,oracle,config,vuln
+  tags: exposure,oracle,config,vuln,daily
 
 http:
   - method: GET

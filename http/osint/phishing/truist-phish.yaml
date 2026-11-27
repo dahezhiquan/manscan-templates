@@ -20,7 +20,7 @@ info:
     - https://www.truist.com/
   metadata:
     max-request: 1
-  tags: phishing,bbt,bank,osint,discovery
+  tags: phishing,bbt,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

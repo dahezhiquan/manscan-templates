@@ -20,7 +20,7 @@ info:
     - https://nab.com.au
   metadata:
     max-request: 1
-  tags: phishing,nab,bank,osint,discovery
+  tags: phishing,nab,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

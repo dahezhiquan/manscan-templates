@@ -21,7 +21,7 @@ info:
     google-query: intitle:"Supermicro BMC Login"
     product: x11ssv-m4f
     vendor: supermicro
-  tags: panel,supermicro,bmc,discovery
+  tags: panel,supermicro,bmc,discovery,daily_clustering
 
 http:
   - method: GET

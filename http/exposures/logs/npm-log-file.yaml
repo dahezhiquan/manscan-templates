@@ -25,7 +25,7 @@ info:
     vendor: npmjs
     product: npm
     shodan-query: html:"npm-debug.log"
-  tags: npm,logs,exposure,vuln
+  tags: npm,logs,exposure,vuln,daily
 
 http:
   - method: GET

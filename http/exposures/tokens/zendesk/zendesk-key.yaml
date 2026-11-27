@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: zendesk,exposure,token,vuln
+  tags: zendesk,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

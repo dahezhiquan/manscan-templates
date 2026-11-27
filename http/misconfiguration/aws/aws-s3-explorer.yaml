@@ -26,7 +26,7 @@ info:
     google-query: inurl:s3.amazonaws.com intitle:"AWS S3 Explorer"
     product: aws_javascript_s3_explorer
     vendor: amazon
-  tags: s3,edb,misconfig,aws,amazon,vuln
+  tags: s3,edb,misconfig,aws,amazon,vuln,daily_clustering
 
 http:
   - method: GET

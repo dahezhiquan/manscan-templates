@@ -20,7 +20,7 @@ info:
     - https://gitpod.io
   metadata:
     max-request: 1
-  tags: phishing,gitpod,developer,osint,discovery
+  tags: phishing,gitpod,developer,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: 'www-authenticate: negotiate'
-  tags: miscellaneous,misc,windows,spnego,vuln
+  tags: miscellaneous,misc,windows,spnego,vuln,daily
 
 http:
   - method: GET

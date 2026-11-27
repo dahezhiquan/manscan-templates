@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: dbeaver,files,exposure,vuln
+  tags: dbeaver,files,exposure,vuln,daily
 
 http:
   - method: GET

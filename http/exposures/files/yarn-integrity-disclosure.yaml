@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 2
     verified: true
-  tags: exposure,yarn,node,npm,misconfig
+  tags: exposure,yarn,node,npm,misconfig,daily
 
 http:
   - method: GET

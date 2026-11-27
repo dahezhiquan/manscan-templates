@@ -18,7 +18,7 @@ info:
     - https://portswigger.net/kb/issues/00600100_directory-listing
   metadata:
     max-request: 2
-  tags: misc,generic,misconfig,fuzz,miscellaneous,vuln
+  tags: misc,generic,misconfig,fuzz,miscellaneous,vuln,daily
 
 flow: |
   function target_is_in_scope(url) {

@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: rubygems,token,exposure,ruby,vuln
+  tags: rubygems,token,exposure,ruby,vuln,daily
 
 flow: http(1) && http(2)
 

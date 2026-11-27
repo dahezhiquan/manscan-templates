@@ -20,7 +20,7 @@ info:
     - https://mattermost.com
   metadata:
     max-request: 1
-  tags: phishing,mattermost,communication,osint,discovery
+  tags: phishing,mattermost,communication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

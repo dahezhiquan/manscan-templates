@@ -21,7 +21,7 @@ info:
     max-request: 1
     shodan-query: ldap
     verified: true
-  tags: js,network,ldap,enum,vuln
+  tags: js,network,ldap,enum,vuln,daily
 
 javascript:
   - code: |

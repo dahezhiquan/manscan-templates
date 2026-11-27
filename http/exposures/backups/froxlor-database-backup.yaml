@@ -26,7 +26,7 @@ info:
     shodan-query: title:"Froxlor Server Management Panel"
     product: froxlor
     vendor: froxlor
-  tags: froxlor,backup,exposure,disclosure,vuln
+  tags: froxlor,backup,exposure,disclosure,vuln,daily
 
 http:
   - method: GET

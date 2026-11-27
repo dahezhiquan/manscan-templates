@@ -19,7 +19,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: ssl:"MetasploitSelfSignedCA"
-  tags: c2,ssl,tls,ir,osint,malware,metasploit,discovery
+  tags: c2,ssl,tls,ir,osint,malware,metasploit,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

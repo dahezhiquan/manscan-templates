@@ -26,7 +26,7 @@ info:
     google-query: intitle:"C-more -- the best HMI presented by AutomationDirect"
     product: ea9-t6cl
     vendor: automationdirect
-  tags: panel,iot,edb,discovery
+  tags: panel,iot,edb,discovery,daily_clustering
 
 http:
   - method: GET

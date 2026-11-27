@@ -20,7 +20,7 @@ info:
     max-request: 1
     shodan-query: html:"Site Not Found | Framer"
     fofa-query: body="Site Not Found | Framer"
-  tags: takeover,framer,vuln
+  tags: takeover,framer,vuln,daily_clustering
 
 http:
   - method: GET

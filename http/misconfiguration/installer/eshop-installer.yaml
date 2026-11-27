@@ -21,7 +21,7 @@ info:
     vendor: oxid-esales
     product: eshop
     shodan-query: html:"eShop Installer"
-  tags: misconfig,eshop,install,exposure,vuln
+  tags: misconfig,eshop,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
     max-request: 1
     vendor: monospace
     product: directus
-  tags: exposure,directus,fingerprint,unauth
+  tags: exposure,directus,fingerprint,unauth,daily
 
 http:
   - method: GET

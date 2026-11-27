@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: heroku,token,exposure,vuln
+  tags: heroku,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

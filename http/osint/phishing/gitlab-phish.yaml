@@ -20,7 +20,7 @@ info:
     - https://gitlab.com
   metadata:
     max-request: 1
-  tags: phishing,gitlab,developer,osint,discovery
+  tags: phishing,gitlab,developer,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

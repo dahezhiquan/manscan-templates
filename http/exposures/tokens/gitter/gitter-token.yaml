@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,gitter,file,keys,vuln
+  tags: exposure,gitter,file,keys,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Blackbox Exporter"
-  tags: blackbox,exposure,debug,misconfig,vuln
+  tags: blackbox,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

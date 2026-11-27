@@ -20,7 +20,7 @@ info:
     verified: true
     max-requests: 1
     shodan-query: html:"/llms.txt"
-  tags: enum,llms,config,ai
+  tags: enum,llms,config,ai,daily
 
 http:
   - method: GET

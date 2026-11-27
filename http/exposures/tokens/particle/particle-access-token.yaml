@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: particle,exposure,token,vuln
+  tags: particle,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

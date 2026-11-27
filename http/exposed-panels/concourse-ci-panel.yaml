@@ -26,7 +26,7 @@ info:
     shodan-query: title:"Concourse"
     product: concourse
     vendor: pivotal_software
-  tags: panel,concourse,oss,discovery
+  tags: panel,concourse,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

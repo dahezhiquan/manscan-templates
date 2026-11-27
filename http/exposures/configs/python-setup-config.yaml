@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"setup.py"
-  tags: python,py,misconfig,vuln
+  tags: python,py,misconfig,vuln,daily
 
 http:
   - method: GET

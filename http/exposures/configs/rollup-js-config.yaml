@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"rollup.config.js"
-  tags: exposure,devops,cicd,rollupjs,vuln
+  tags: exposure,devops,cicd,rollupjs,vuln,daily
 
 http:
   - method: GET

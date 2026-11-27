@@ -30,7 +30,7 @@ info:
       - http.title:"fortiap"
     fofa-query: title="fortiap"
     google-query: intitle:"fortiap"
-  tags: panel,fortinet,fortiap,discovery
+  tags: panel,fortinet,fortiap,discovery,daily_clustering
 http:
   - method: GET
     path:

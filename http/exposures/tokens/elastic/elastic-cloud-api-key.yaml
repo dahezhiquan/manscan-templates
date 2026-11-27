@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: elastic,exposure,token,vuln
+  tags: elastic,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

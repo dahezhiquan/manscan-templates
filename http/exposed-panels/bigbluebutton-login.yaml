@@ -23,7 +23,7 @@ info:
     max-request: 1
     vendor: bigbluebutton
     product: greenlight
-  tags: panel,bigbluebutton,discovery
+  tags: panel,bigbluebutton,discovery,daily_clustering
 http:
   - method: GET
     path:

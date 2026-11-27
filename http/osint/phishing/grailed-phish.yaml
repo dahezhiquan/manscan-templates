@@ -19,7 +19,7 @@ info:
     - https://grailed.com
   metadata:
     max-request: 1
-  tags: phishing,grailed,ecommerce,osint,discovery
+  tags: phishing,grailed,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     max-request: 5
     max-requests: 5
     verified: true
-  tags: exposure,prisma,database,config,custom
+  tags: exposure,prisma,database,config,custom,daily
 
 http:
   - method: GET

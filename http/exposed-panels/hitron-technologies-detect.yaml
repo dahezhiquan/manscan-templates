@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,edb,router,discovery
+  tags: panel,edb,router,discovery,daily_clustering
 http:
   - method: GET
     path:

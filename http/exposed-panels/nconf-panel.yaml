@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"nconf"
     product: nconf
     vendor: nconf_project
-  tags: panel,nconf,discovery
+  tags: panel,nconf,discovery,daily_clustering
 http:
   - method: GET
     path:

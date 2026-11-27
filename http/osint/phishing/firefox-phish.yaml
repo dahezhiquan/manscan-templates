@@ -19,7 +19,7 @@ info:
     - https://www.mozilla.org/en-GB/firefox/new/
   metadata:
     max-request: 1
-  tags: phishing,firefox,osint,discovery
+  tags: phishing,firefox,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

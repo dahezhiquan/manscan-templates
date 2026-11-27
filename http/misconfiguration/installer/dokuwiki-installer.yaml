@@ -21,7 +21,7 @@ info:
     vendor: dokuwiki
     product: dokuwiki
     shodan-query: title:"DokuWiki"
-  tags: misconfig,dokuwiki,install,exposure,vuln
+  tags: misconfig,dokuwiki,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

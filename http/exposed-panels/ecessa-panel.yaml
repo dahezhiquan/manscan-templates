@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Ecessa"'
-  tags: panel,ecessa,sdwan,wanworx
+  tags: panel,ecessa,sdwan,wanworx,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - https://github.com/PushpenderIndia/subdover/issues/2
   metadata:
     max-request: 1
-  tags: takeover,leadpages,vuln
+  tags: takeover,leadpages,vuln,daily_clustering
 
 http:
   - method: GET

@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"QuestDB · Console"
-  tags: misconfig,questdb,exposure,vuln
+  tags: misconfig,questdb,exposure,vuln,daily_clustering
 
 http:
   - method: GET

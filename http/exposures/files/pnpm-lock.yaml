@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"pnpm-lock.yaml"
-  tags: exposure,files,node,npm,pnpm,vuln
+  tags: exposure,files,node,npm,pnpm,vuln,daily
 
 http:
   - method: GET

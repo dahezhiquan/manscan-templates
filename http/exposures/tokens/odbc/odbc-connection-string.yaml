@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: odbc,exposure,token,vuln
+  tags: odbc,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

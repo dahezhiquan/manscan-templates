@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-552
   metadata:
     max-request: 12
-  tags: config,exposure,codeigniter,vuln
+  tags: config,exposure,codeigniter,vuln,daily
 
 http:
   - method: GET

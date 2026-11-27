@@ -22,7 +22,7 @@ info:
     vendor: miniflux
     product: miniflux
     shodan-query: http.title:"Sign In - Miniflux"
-  tags: panel,miniflux,rss,login,signin
+  tags: panel,miniflux,rss,login,signin,daily_clustering
 http:
   - method: GET
     path:

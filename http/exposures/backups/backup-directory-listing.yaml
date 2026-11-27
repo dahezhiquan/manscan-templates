@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: hackerone,backups,exposure,vuln
+  tags: hackerone,backups,exposure,vuln,daily
 
 http:
   - method: GET

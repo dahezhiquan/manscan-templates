@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: aws,codebuild,exposure,config,devops
+  tags: aws,codebuild,exposure,config,devops,daily
 
 http:
   - method: GET

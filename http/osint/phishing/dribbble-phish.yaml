@@ -19,7 +19,7 @@ info:
     - https://dribbble.com
   metadata:
     max-request: 1
-  tags: phishing,dribbble,design,osint,discovery
+  tags: phishing,dribbble,design,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

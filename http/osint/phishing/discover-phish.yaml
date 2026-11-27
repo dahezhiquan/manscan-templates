@@ -20,7 +20,7 @@ info:
     - https://discover.com
   metadata:
     max-request: 1
-  tags: phishing,discover,credit-card,osint,discovery
+  tags: phishing,discover,credit-card,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

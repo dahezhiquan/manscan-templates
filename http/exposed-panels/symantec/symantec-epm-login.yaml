@@ -20,7 +20,7 @@ info:
     - http.title:"symantec endpoint protection manager"
     fofa-query: title="symantec endpoint protection manager"
     google-query: intitle:"symantec endpoint protection manager"
-  tags: symantec,panel,login,discovery
+  tags: symantec,panel,login,discovery,daily_clustering
 
 http:
   - method: GET

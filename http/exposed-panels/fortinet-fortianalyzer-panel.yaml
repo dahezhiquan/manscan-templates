@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"FortiAnalyzer"'
-  tags: panel,fortinet,fortianalyzer,network,vpn,ics
+  tags: panel,fortinet,fortianalyzer,network,vpn,ics,daily_clustering
 http:
   - method: GET
     path:

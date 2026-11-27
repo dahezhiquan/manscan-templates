@@ -25,7 +25,7 @@ info:
     max-request: 1
     product: atvise
     vendor: bachmann
-  tags: panel,atvise,edb,discovery
+  tags: panel,atvise,edb,discovery,daily_clustering
 http:
   - method: GET
     path:

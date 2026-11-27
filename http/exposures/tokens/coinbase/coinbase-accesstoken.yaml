@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: coinbase,exposure,token,vuln
+  tags: coinbase,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

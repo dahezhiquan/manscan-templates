@@ -26,7 +26,7 @@ info:
     max-request: 1
     shodan-query: http.html:"SparkView"
     fofa-query: body="sparkview"
-  tags: config,exposure,remote-spark
+  tags: config,exposure,remote-spark,daily
 
 http:
   - method: GET

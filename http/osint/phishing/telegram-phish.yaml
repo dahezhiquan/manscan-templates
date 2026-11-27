@@ -20,7 +20,7 @@ info:
     - https://telegram.org
   metadata:
     max-request: 1
-  tags: phishing,telegram,osint,discovery
+  tags: phishing,telegram,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

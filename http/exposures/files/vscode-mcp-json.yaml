@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"mcp.json"
-  tags: exposure,vscode,config,mcp,ai
+  tags: exposure,vscode,config,mcp,ai,daily
 
 http:
   - method: GET

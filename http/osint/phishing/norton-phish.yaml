@@ -20,7 +20,7 @@ info:
     - https://norton.com
   metadata:
     max-request: 1
-  tags: phishing,norton,osint,discovery
+  tags: phishing,norton,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

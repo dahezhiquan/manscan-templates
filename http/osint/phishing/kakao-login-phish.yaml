@@ -21,7 +21,7 @@ info:
     - https://www.kakaocorp.com
   metadata:
     max-request: 1
-  tags: phishing,kakao,osint,discovery
+  tags: phishing,kakao,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

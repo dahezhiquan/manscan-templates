@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-522,CWE-540
   metadata:
     max-request: 1
-  tags: exposure,token,sendgrid,vuln
+  tags: exposure,token,sendgrid,vuln,daily,daily_clustering
 
 http:
   - method: GET

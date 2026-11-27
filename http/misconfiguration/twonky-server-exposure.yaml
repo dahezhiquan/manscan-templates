@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-915768386
-  tags: twonky,exposure,misconfig,vuln
+  tags: twonky,exposure,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可获取内部信息、组件版本、配置细节或可操作的管理入口。
     - 暴露信息可能辅助后续漏洞利用、权限提升、横向移动或业务数据访问。

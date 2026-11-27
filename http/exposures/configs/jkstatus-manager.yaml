@@ -25,7 +25,7 @@ info:
     vendor: apache
     product: tomcat
     shodan-query: html:"JK Status Manager"
-  tags: config,jk,status,exposure,vuln
+  tags: config,jk,status,exposure,vuln,daily
 
 http:
   - method: GET

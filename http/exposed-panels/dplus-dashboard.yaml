@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"DPLUS Dashboard"
-  tags: panel,dplus,exposure,discovery
+  tags: panel,dplus,exposure,discovery,daily_clustering
 http:
   - method: GET
     path:

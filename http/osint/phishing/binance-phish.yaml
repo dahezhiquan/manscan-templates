@@ -20,7 +20,7 @@ info:
     - https://binance.com
   metadata:
     max-request: 1
-  tags: phishing,binance,crypto,osint,discovery
+  tags: phishing,binance,crypto,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

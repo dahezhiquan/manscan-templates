@@ -20,7 +20,7 @@ info:
     - http.title:"oracle peoplesoft enterprise"
     fofa-query: title="oracle peoplesoft enterprise"
     google-query: intitle:"oracle peoplesoft enterprise"
-  tags: oracle,login,panel,discovery
+  tags: oracle,login,panel,discovery,daily_clustering
 
 http:
   - method: GET

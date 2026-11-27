@@ -28,7 +28,7 @@ info:
     shodan-query: html:"babel.config.js"
     product: babel
     vendor: pocoo
-  tags: exposure,config,file,vuln
+  tags: exposure,config,file,vuln,daily
 
 http:
   - method: GET

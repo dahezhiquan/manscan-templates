@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: react,exposure,token,vuln
+  tags: react,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://vrbo.com
   metadata:
     max-request: 1
-  tags: phishing,vrbo,travel,osint,discovery
+  tags: phishing,vrbo,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

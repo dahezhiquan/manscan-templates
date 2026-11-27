@@ -24,7 +24,7 @@ info:
       - http.title:"AstrBot"
     fofa-query: title="AstrBot"
     google-query: intitle:"AstrBot"
-  tags: panel,astrbot,login
+  tags: panel,astrbot,login,daily_clustering
 http:
   - method: GET
     path:

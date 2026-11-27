@@ -19,7 +19,7 @@ info:
     - https://redbubble.com
   metadata:
     max-request: 1
-  tags: phishing,redbubble,osint,discovery
+  tags: phishing,redbubble,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

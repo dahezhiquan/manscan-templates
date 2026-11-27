@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:739801466
-  tags: panel,cofense,vision,discovery
+  tags: panel,cofense,vision,discovery,daily_clustering
 http:
   - method: GET
     path:

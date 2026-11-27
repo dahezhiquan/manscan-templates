@@ -32,7 +32,7 @@ info:
       - body="router management - server openvpn"
       - title="openvpn-admin"
     google-query: intitle:"openvpn-admin"
-  tags: panel,openvpn,router,discovery
+  tags: panel,openvpn,router,discovery,daily_clustering
 http:
   - method: GET
     path:

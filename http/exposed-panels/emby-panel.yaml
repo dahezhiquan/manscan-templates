@@ -29,7 +29,7 @@ info:
     shodan-query: http.title:"emby"
     fofa-query: title="emby"
     google-query: intitle:"emby"
-  tags: panel,emby,oss,discovery
+  tags: panel,emby,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

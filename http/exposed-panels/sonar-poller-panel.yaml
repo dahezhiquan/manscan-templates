@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"Sonar Poller"
-  tags: panel,login,discovery
+  tags: panel,login,discovery,daily_clustering
 
 http:
   - method: GET

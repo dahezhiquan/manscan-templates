@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,samesite,cookie,vuln
+  tags: misconfig,samesite,cookie,vuln,daily_clustering
 
 http:
   - method: GET

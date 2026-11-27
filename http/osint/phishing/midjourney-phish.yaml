@@ -20,7 +20,7 @@ info:
     - https://midjourney.com
   metadata:
     max-request: 1
-  tags: phishing,midjourney,ai,osint,discovery
+  tags: phishing,midjourney,ai,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

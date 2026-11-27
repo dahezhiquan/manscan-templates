@@ -19,7 +19,7 @@ info:
     - https://nicolargo.github.io/glances/
   metadata:
     max-request: 1
-  tags: glances,exposure,vuln
+  tags: glances,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

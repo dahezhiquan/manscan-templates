@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-668
   metadata:
     max-request: 1
-  tags: checkmate,panel,discovery,login
+  tags: checkmate,panel,discovery,login,daily_clustering
 http:
   - method: GET
     path:

@@ -25,7 +25,7 @@ info:
     shodan-query:
       - html:"angular.json"
       - html:"angular-cli.json"
-  tags: exposure,angularjs,files,vuln
+  tags: exposure,angularjs,files,vuln,daily
 
 http:
   - method: GET

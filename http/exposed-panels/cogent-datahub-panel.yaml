@@ -23,7 +23,7 @@ info:
     vendor: Cogent Real-Time Systems
     product: cogent-datahub
     shodan-query: 'http.title:"DataHub Web Server"'
-  tags: panel,cogent,datahub,opc,scada,ics,ot,discovery
+  tags: panel,cogent,datahub,opc,scada,ics,ot,discovery,daily_clustering
 http:
   - method: GET
     path:

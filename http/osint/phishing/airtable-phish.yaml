@@ -19,7 +19,7 @@ info:
     - https://airtable.com
   metadata:
     max-request: 1
-  tags: phishing,airtable,productivity,osint,discovery
+  tags: phishing,airtable,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

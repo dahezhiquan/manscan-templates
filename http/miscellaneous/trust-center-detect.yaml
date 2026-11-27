@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 6
     shodan-query: http.title:"Trust Center"
-  tags: misc,trust,center,generic,vuln
+  tags: misc,trust,center,generic,vuln,daily
 
 http:
   - method: GET

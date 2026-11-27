@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: misconfig,tcp,default-login,network,vuln
+  tags: misconfig,tcp,default-login,network,vuln,daily
 
 tcp:
   - inputs:

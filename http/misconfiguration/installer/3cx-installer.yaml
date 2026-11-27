@@ -25,7 +25,7 @@ info:
     product: 3cx
     shodan-query: http.title:"3CX Phone System Management Console"
     fofa-query: title="3CX Phone System Management Console"
-  tags: 3cx,voip,exposure,misconfig,installer,panel
+  tags: 3cx,voip,exposure,misconfig,installer,panel,daily_clustering
 
 http:
   - method: GET

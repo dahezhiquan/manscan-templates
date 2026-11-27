@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Apdisk"
-  tags: exposure,files,apdisk,vuln
+  tags: exposure,files,apdisk,vuln,daily
 
 http:
   - method: GET

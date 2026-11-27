@@ -20,7 +20,7 @@ info:
     - http.title:"pure storage login"
     fofa-query: title="pure storage login"
     google-query: intitle:"pure storage login"
-  tags: panel,purestorage,discovery
+  tags: panel,purestorage,discovery,daily_clustering
 
 http:
   - method: GET

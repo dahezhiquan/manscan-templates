@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"Netgate"'
-  tags: panel,netgate,pfsense,firewall
+  tags: panel,netgate,pfsense,firewall,daily_clustering
 http:
   - method: GET
     path:

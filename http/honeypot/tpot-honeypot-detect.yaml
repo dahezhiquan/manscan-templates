@@ -17,7 +17,7 @@ info:
     - https://github.com/telekom-security/tpotce
   metadata:
     max-request: 1
-  tags: tpot,honeypot,discovery
+  tags: tpot,honeypot,discovery,daily_clustering
 
 http:
   - method: GET

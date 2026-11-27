@@ -28,7 +28,7 @@ info:
       - http.title:"exagrid manager"
     fofa-query: title="exagrid manager"
     google-query: intitle:"exagrid manager"
-  tags: exagrid,manager,login,panel,discovery
+  tags: exagrid,manager,login,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/#rest-api-key
   metadata:
     max-request: 1
-  tags: exposure,token,vuln
+  tags: exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -25,7 +25,7 @@ info:
     shodan-query: http.title:"Graphite Browser"
     product: graphite
     vendor: graphite_project
-  tags: graphite,panel,discovery
+  tags: graphite,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

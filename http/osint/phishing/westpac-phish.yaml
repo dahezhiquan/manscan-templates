@@ -20,7 +20,7 @@ info:
     - https://westpac.com.au
   metadata:
     max-request: 1
-  tags: phishing,westpac,bank,osint,discovery
+  tags: phishing,westpac,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

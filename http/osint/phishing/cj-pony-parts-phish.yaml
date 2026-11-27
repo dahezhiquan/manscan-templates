@@ -19,7 +19,7 @@ info:
     - https://cjponyparts.com
   metadata:
     max-request: 1
-  tags: phishing,cj-pony-parts,ecommerce,osint,discovery
+  tags: phishing,cj-pony-parts,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

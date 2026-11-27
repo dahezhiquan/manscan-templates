@@ -20,7 +20,7 @@ info:
     - https://surfshark.com
   metadata:
     max-request: 1
-  tags: phishing,surfshark,vpn,osint,discovery
+  tags: phishing,surfshark,vpn,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

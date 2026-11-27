@@ -23,7 +23,7 @@ info:
     max-request: 1
     vendor: neo4j
     product: neo4j
-  tags: network,neo4j,bolt,unauth,auth,misconfig,vuln,tcp
+  tags: network,neo4j,bolt,unauth,auth,misconfig,vuln,tcp,daily
 
 variables:
   bolt_handshake: "6060b01700000004000000030000000200000001"

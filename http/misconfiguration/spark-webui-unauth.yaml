@@ -17,7 +17,7 @@ info:
     - https://github.com/vulhub/vulhub/tree/master/spark/unacc
   metadata:
     max-request: 1
-  tags: unauth,vulhub,spark,misconfig,vuln
+  tags: unauth,vulhub,spark,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

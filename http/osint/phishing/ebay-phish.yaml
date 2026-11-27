@@ -19,7 +19,7 @@ info:
     - https://ebay.com
   metadata:
     max-request: 1
-  tags: phishing,ebay,osint,discovery
+  tags: phishing,ebay,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

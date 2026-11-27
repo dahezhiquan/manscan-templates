@@ -28,7 +28,7 @@ info:
     shodan-query: html:".wgetrc"
     product: wget
     vendor: gnu
-  tags: devops,exposure,vuln
+  tags: devops,exposure,vuln,daily
 
 http:
   - method: GET

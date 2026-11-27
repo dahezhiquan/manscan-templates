@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 4
     verified: true
-  tags: exposure,config,misconfig,bash
+  tags: exposure,config,misconfig,bash,daily
 
 http:
   - method: GET

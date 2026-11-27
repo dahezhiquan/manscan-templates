@@ -23,7 +23,7 @@ info:
     vendor: primekey
     product: ejbca
     shodan-query: html:"EJBCA Enterprise Cloud Configuration Wizard"
-  tags: misconfig,install,exposure,ejbca,vuln
+  tags: misconfig,install,exposure,ejbca,vuln,daily_clustering
 
 http:
   - method: GET

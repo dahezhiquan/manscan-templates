@@ -24,7 +24,7 @@ info:
     - app="zabbix-监控系统" && body="saml"
     - title="zabbix-server"
     google-query: intitle:"zabbix-server"
-  tags: panel,zabbix,discovery
+  tags: panel,zabbix,discovery,daily_clustering
 
 http:
   - method: GET

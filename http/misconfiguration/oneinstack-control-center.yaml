@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"OneinStack"
-  tags: misconfig,exposure,panel,oneinstack,vuln
+  tags: misconfig,exposure,panel,oneinstack,vuln,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     max-request: 1
     vendor: twig
     shodan-query: html:"Twig Runtime Error"
-  tags: error,twig,log,vuln
+  tags: error,twig,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

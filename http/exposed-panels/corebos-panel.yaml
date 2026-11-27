@@ -25,7 +25,7 @@ info:
     product: corebos
     shodan-query: http.html:"corebos"
     fofa-query: body="corebos"
-  tags: panel,corebos,discovery
+  tags: panel,corebos,discovery,daily_clustering
 http:
   - method: GET
     path:

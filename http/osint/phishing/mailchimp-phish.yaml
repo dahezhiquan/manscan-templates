@@ -20,7 +20,7 @@ info:
     - https://mailchimp.com
   metadata:
     max-request: 1
-  tags: phishing,mailchimp,marketing,osint,discovery
+  tags: phishing,mailchimp,marketing,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

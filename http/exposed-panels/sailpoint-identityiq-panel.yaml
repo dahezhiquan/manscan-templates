@@ -16,7 +16,7 @@ info:
     vendor: sailpoint
     product: identityiq
     shodan-query: http.title:"SailPoint IdentityIQ"
-  tags: panel,sailpoint,identityiq,iga
+  tags: panel,sailpoint,identityiq,iga,daily_clustering
 
 http:
   - method: GET

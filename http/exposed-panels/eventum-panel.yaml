@@ -25,7 +25,7 @@ info:
     product: eventum
     shodan-query: http.favicon.hash:305412257
     fofa-query: icon_hash=305412257
-  tags: panel,eventum,mysql,discovery
+  tags: panel,eventum,mysql,discovery,daily_clustering
 http:
   - method: GET
     path:

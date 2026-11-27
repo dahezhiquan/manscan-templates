@@ -18,7 +18,7 @@ info:
     - https://supras.io/new-subdomain-takeover-case-clever-cloud/
   metadata:
     max-request: 1
-  tags: takeover,vuln
+  tags: takeover,vuln,daily_clustering
 
 http:
   - method: GET

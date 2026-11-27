@@ -17,7 +17,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"dbt Docs"
-  tags: panel,dbt,discovery
+  tags: panel,dbt,discovery,daily_clustering
 http:
   - method: GET
     path:

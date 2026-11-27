@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     verified: false
-  tags: azure,config,exposure,misconfig
+  tags: azure,config,exposure,misconfig,daily
 
 http:
   - method: GET

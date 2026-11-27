@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Endian Firewall" port:10443'
-  tags: panel,endian,firewall,utm,vpn,network
+  tags: panel,endian,firewall,utm,vpn,network,daily_clustering
 http:
   - method: GET
     path:

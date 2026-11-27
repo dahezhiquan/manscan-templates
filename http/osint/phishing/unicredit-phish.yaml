@@ -20,7 +20,7 @@ info:
     - https://unicredit.com
   metadata:
     max-request: 1
-  tags: phishing,unicredit,bank,osint,discovery
+  tags: phishing,unicredit,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

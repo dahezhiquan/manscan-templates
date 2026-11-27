@@ -20,7 +20,7 @@ info:
     - https://ocbc.com
   metadata:
     max-request: 1
-  tags: phishing,ocbc,bank,osint,discovery
+  tags: phishing,ocbc,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

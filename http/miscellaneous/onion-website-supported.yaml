@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misc,osint,tor,onion,discovery
+  tags: misc,osint,tor,onion,discovery,daily,daily_clustering
 
 http:
   - method: GET

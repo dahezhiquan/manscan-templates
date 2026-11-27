@@ -22,7 +22,7 @@ info:
     verified: true
     vendor: apache
     product: jspwiki
-  tags: jspwiki,apache,enumeration,discovery
+  tags: jspwiki,apache,enumeration,discovery,daily
 
 http:
   - method: GET

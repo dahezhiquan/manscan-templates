@@ -24,7 +24,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 2
-  tags: config,exposure,symfony,vuln
+  tags: config,exposure,symfony,vuln,daily
 
 http:
   - method: GET

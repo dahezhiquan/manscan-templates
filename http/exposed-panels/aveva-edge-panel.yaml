@@ -22,7 +22,7 @@ info:
     vendor: AVEVA
     product: aveva-edge
     shodan-query: 'http.html:"Aveva Edge"'
-  tags: panel,aveva,edge,scada,ics,discovery
+  tags: panel,aveva,edge,scada,ics,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"PairDrop"
-  tags: panel,pairdrop,login,discovery
+  tags: panel,pairdrop,login,discovery,daily_clustering
 
 http:
   - method: GET

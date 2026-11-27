@@ -17,7 +17,7 @@ info:
     max-request: 1
     shodan-query: http.title:"My Datacenter - Login"
     google-query: intitle:"My Datacenter - Login"
-  tags: panel,racksnet,discovery
+  tags: panel,racksnet,discovery,daily_clustering
 
 http:
   - method: GET

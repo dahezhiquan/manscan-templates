@@ -20,7 +20,7 @@ info:
     - title="Woodpecker"
     - body="/web-config.js"
     google-query: intitle:"Woodpecker CI"
-  tags: panel,woodpecker,login,discovery
+  tags: panel,woodpecker,login,discovery,daily_clustering
 
 http:
   - method: GET

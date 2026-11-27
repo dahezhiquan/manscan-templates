@@ -19,7 +19,7 @@ info:
     - https://hotels.com
   metadata:
     max-request: 1
-  tags: phishing,hotels,travel,osint,discovery
+  tags: phishing,hotels,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

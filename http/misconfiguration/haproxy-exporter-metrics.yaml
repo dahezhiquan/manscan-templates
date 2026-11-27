@@ -21,7 +21,7 @@ info:
     vendor: haproxy
     product: haproxy
     shodan-query: title:"haproxy exporter"
-  tags: haproxy,exposure,debug,misconfig,vuln
+  tags: haproxy,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

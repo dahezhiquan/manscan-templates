@@ -19,7 +19,7 @@ info:
     - https://doordash.com
   metadata:
     max-request: 1
-  tags: phishing,doordash,food-delivery,osint,discovery
+  tags: phishing,doordash,food-delivery,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

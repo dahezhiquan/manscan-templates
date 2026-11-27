@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"appveyor.yml"
-  tags: config,exposure,devops,vuln
+  tags: config,exposure,devops,vuln,daily
 
 http:
   - method: GET

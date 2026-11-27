@@ -23,7 +23,7 @@ info:
     max-request: 2
     shodan-query: 'X-Powered-By: ZooKeeper'
     fofa-query: protocol="zookeeper"
-  tags: network,zookeeper,unauth,exposure,tcp,discovery
+  tags: network,zookeeper,unauth,exposure,tcp,discovery,daily
 
 flow: tcp(1) || tcp(2)
 

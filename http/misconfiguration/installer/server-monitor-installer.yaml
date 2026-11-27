@@ -21,7 +21,7 @@ info:
     vendor: poweradmin
     product: pa_server_monitor
     shodan-query: title:"SERVER MONITOR - Install"
-  tags: misconfig,monitor,exposure,install,vuln
+  tags: misconfig,monitor,exposure,install,vuln,daily_clustering
 
 http:
   - method: GET

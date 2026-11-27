@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: clojars,exposure,token,vuln
+  tags: clojars,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

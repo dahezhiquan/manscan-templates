@@ -20,7 +20,7 @@ info:
     - https://mastercard.com
   metadata:
     max-request: 1
-  tags: phishing,mastercard,credit-card,osint,discovery
+  tags: phishing,mastercard,credit-card,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

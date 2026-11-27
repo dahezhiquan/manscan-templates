@@ -25,7 +25,7 @@ info:
     vendor: putty
     product: putty
     github-query: filename:putty.ppk
-  tags: exposure,files,vuln
+  tags: exposure,files,vuln,daily
 
 http:
   - method: GET

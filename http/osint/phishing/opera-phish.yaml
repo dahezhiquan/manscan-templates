@@ -19,7 +19,7 @@ info:
     - https://opera.com
   metadata:
     max-request: 1
-  tags: phishing,opera,osint,discovery
+  tags: phishing,opera,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

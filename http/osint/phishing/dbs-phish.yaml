@@ -20,7 +20,7 @@ info:
     - https://dbs.com
   metadata:
     max-request: 1
-  tags: phishing,dbs,bank,osint,discovery
+  tags: phishing,dbs,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

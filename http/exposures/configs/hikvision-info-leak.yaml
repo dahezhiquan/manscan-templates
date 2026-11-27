@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: exposure,config,hikvision,vuln
+  tags: exposure,config,hikvision,vuln,daily
 
 http:
   - method: GET

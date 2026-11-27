@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,bazarr,login,discovery
+  tags: panel,bazarr,login,discovery,daily_clustering
 http:
   - method: GET
     path:

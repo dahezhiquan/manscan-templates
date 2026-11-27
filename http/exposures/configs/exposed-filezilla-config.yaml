@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 3
-  tags: exposure,config,filezilla,ftp
+  tags: exposure,config,filezilla,ftp,daily
 
 http:
   - method: GET

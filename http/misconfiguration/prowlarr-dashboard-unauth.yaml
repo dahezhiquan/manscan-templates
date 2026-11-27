@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"<title>prowlarr</title>"
-  tags: prowlarr,dashboard,unauth,misconfig,vuln
+  tags: prowlarr,dashboard,unauth,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

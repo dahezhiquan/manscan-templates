@@ -15,7 +15,7 @@ info:
     - 审计 ClickHouse 查询日志，排查暴露期间的异常登录和高风险查询。
   metadata:
     max-request: 1
-  tags: network,clickhouse,unauth,misconfig,tcp,vuln
+  tags: network,clickhouse,unauth,misconfig,tcp,vuln,daily
 
 tcp:
   - inputs:

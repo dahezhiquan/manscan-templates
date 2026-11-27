@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Scale System"
-  tags: panel,scale-computing,hc3,hci,virtualization,login
+  tags: panel,scale-computing,hc3,hci,virtualization,login,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: ssl,tls,untrusted,vuln
+  tags: ssl,tls,untrusted,vuln,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

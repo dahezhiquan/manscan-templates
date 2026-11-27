@@ -20,7 +20,7 @@ info:
     - https://bitwarden.com
   metadata:
     max-request: 1
-  tags: phishing,bitwarden,osint,discovery
+  tags: phishing,bitwarden,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

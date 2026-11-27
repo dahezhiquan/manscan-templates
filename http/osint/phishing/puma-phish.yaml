@@ -19,7 +19,7 @@ info:
     - https://puma.com
   metadata:
     max-request: 1
-  tags: phishing,puma,ecommerce,osint,discovery
+  tags: phishing,puma,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

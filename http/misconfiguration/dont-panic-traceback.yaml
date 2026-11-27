@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Debugger"
-  tags: traceback,dont-panic,misconfig,vuln
+  tags: traceback,dont-panic,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

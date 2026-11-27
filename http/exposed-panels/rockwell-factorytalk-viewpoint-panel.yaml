@@ -16,7 +16,7 @@ info:
     vendor: Rockwell Automation
     product: factorytalk-viewpoint
     shodan-query: 'http.title:"FactoryTalk ViewPoint"'
-  tags: panel,ics,scada,rockwell,factorytalk,discovery
+  tags: panel,ics,scada,rockwell,factorytalk,discovery,daily_clustering
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
     vendor: n8n
     product: n8n
     shodan-query: http.html:"N8n"
-  tags: n8n,config,exposed,vuln
+  tags: n8n,config,exposed,vuln,daily
 
 http:
   - raw:

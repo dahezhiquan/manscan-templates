@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Locklizard Web Viewer"
-  tags: panel,locklizard,web-viewer,discovery
+  tags: panel,locklizard,web-viewer,discovery,daily_clustering
 http:
   - method: GET
     path:

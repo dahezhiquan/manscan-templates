@@ -20,7 +20,7 @@ info:
     - https://monday.com
   metadata:
     max-request: 1
-  tags: phishing,monday,productivity,osint,discovery
+  tags: phishing,monday,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

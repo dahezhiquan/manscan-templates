@@ -20,7 +20,7 @@ info:
     - https://protonvpn.com
   metadata:
     max-request: 1
-  tags: phishing,protonvpn,vpn,osint,discovery
+  tags: phishing,protonvpn,vpn,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

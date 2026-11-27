@@ -20,7 +20,7 @@ info:
     - https://revolut.com
   metadata:
     max-request: 1
-  tags: phishing,revolut,fintech,osint,discovery
+  tags: phishing,revolut,fintech,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

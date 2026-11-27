@@ -19,7 +19,7 @@ info:
     - https://fastmail.com
   metadata:
     max-request: 1
-  tags: phishing,fastmail,email,osint,discovery
+  tags: phishing,fastmail,email,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

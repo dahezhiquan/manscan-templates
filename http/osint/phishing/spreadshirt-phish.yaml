@@ -19,7 +19,7 @@ info:
     - https://spreadshirt.com
   metadata:
     max-request: 1
-  tags: phishing,spreadshirt,osint,discovery
+  tags: phishing,spreadshirt,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

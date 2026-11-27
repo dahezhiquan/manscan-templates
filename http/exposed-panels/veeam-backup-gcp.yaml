@@ -17,7 +17,7 @@ info:
     shodan-query: title:"Veeam Backup for GCP"
     product: veeam_backup_for_google_cloud
     vendor: veeam
-  tags: panel,google,cloud,discovery
+  tags: panel,google,cloud,discovery,daily_clustering
 
 http:
   - method: GET

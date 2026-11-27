@@ -32,7 +32,7 @@ info:
       示例：
       CNAME - 2rs3c.eu-west-1.elasticbeanstalk.com
       命令 - aws elasticbeanstalk check-dns-availability --region eu-west-1 --cname-prefix 2rs3c
-  tags: dns,takeover,aws,elasticbeanstalk,discovery
+  tags: dns,takeover,aws,elasticbeanstalk,discovery,daily
 
 dns:
   - name: "{{FQDN}}"

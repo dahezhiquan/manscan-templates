@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"httpbin.org"
-  tags: panel,httpbin,oss,discovery
+  tags: panel,httpbin,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

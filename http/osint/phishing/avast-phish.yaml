@@ -20,7 +20,7 @@ info:
     - https://avast.com
   metadata:
     max-request: 1
-  tags: phishing,avast,osint,discovery
+  tags: phishing,avast,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

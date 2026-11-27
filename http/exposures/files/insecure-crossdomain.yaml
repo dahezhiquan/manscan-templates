@@ -19,7 +19,7 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/insecure-crossdomain-xml-file
   metadata:
     max-request: 1
-  tags: exposure,generic,files,vuln
+  tags: exposure,generic,files,vuln,daily
 
 http:
   - method: GET

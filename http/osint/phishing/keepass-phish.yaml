@@ -20,7 +20,7 @@ info:
     - https://keepass.info
   metadata:
     max-request: 1
-  tags: phishing,keepass,osint,discovery
+  tags: phishing,keepass,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

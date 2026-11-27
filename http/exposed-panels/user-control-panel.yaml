@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: title:"User Control Panel"
-  tags: panel,ucp,discovery
+  tags: panel,ucp,discovery,daily_clustering
 
 http:
   - method: GET

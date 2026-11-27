@@ -26,7 +26,7 @@ info:
     - title="spark master at"
     - body="/apps/imt/html/"
     google-query: intitle:"spark master at"
-  tags: panel,spark,apache,discovery
+  tags: panel,spark,apache,discovery,daily_clustering
 
 http:
   - method: GET

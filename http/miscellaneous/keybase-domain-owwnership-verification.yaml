@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"keybase.txt"
-  tags: keybase,identity,well-known,pgp,discovery,osint,misc,vuln
+  tags: keybase,identity,well-known,pgp,discovery,osint,misc,vuln,daily
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Caton Network Manager System"
-  tags: caton,manager,login,panel,discovery
+  tags: caton,manager,login,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

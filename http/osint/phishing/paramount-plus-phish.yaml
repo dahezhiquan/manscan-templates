@@ -19,7 +19,7 @@ info:
     - https://paramountplus.com
   metadata:
     max-request: 1
-  tags: phishing,paramount-plus,streaming,osint,discovery
+  tags: phishing,paramount-plus,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

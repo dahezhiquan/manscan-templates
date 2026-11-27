@@ -23,7 +23,7 @@ info:
     vendor: webpack.js
     product: webpack
     shodan-query: html:"webpack.mix.js"
-  tags: config,exposure,devops,files,vuln
+  tags: config,exposure,devops,files,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://harborfreight.com
   metadata:
     max-request: 1
-  tags: phishing,harbor-freight,ecommerce,osint,discovery
+  tags: phishing,harbor-freight,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

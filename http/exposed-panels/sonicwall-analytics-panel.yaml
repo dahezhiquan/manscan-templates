@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"SonicWall Analytics"'
-  tags: panel,sonicwall,analytics,firewall,vpn
+  tags: panel,sonicwall,analytics,firewall,vpn,daily_clustering
 
 http:
   - method: GET

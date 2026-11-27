@@ -16,7 +16,7 @@ info:
     vendor: PTC
     product: thingworx
     shodan-query: 'http.title:"Thingworx"'
-  tags: panel,ics,iot,ptc,thingworx,discovery
+  tags: panel,ics,iot,ptc,thingworx,discovery,daily_clustering
 
 http:
   - method: GET

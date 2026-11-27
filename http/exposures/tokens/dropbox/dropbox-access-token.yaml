@@ -25,7 +25,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: dropbox,exposure,token,vuln
+  tags: dropbox,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

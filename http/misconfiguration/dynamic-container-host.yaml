@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Dynamics Container Host"
-  tags: exposure,dynamic,container,misconfig,vuln
+  tags: exposure,dynamic,container,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

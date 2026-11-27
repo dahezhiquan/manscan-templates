@@ -21,7 +21,7 @@ info:
     - https://api.slack.com/authentication
   metadata:
     max-request: 1
-  tags: exposure,token,slack,vuln
+  tags: exposure,token,slack,vuln,daily,daily_clustering
 
 http:
   - method: GET

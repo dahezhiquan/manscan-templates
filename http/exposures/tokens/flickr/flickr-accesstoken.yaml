@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: flickr,exposure,token,vuln
+  tags: flickr,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

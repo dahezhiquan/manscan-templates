@@ -19,7 +19,7 @@ info:
     max-request: 1
     shodan-query: product:openclaw
     fofa-query: body="ClawdBot"
-  tags: network,openclaw,gateway,exposure,udp,mdns,js,discovery
+  tags: network,openclaw,gateway,exposure,udp,mdns,js,discovery,daily
 
 javascript:
   - pre-condition: |

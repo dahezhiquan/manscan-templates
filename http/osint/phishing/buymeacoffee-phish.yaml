@@ -19,7 +19,7 @@ info:
     - https://buymeacoffee.com
   metadata:
     max-request: 1
-  tags: phishing,buymeacoffee,osint,discovery
+  tags: phishing,buymeacoffee,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

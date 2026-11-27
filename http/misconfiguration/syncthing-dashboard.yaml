@@ -16,7 +16,7 @@ info:
     vendor: syncthing
     product: syncthing
     shodan-query: http.html:'ng-app="syncthing"'
-  tags: misconfig,syncthing,exposure,discovery
+  tags: misconfig,syncthing,exposure,discovery,daily_clustering
   impact: |-
     - 攻击者可查看服务状态、监控指标、项目数据、设备信息、任务队列或内部拓扑。
     - 若页面包含管理操作或写入接口，可能进一步导致配置篡改、任务执行、数据泄露或服务中断。

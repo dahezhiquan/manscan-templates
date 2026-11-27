@@ -20,7 +20,7 @@ info:
     - https://uob.com.sg
   metadata:
     max-request: 1
-  tags: phishing,uob,bank,osint,discovery
+  tags: phishing,uob,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

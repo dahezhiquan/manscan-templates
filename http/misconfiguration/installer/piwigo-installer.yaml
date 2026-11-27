@@ -21,7 +21,7 @@ info:
     vendor: piwigo
     product: piwigo
     shodan-query: html:"Piwigo" html:"- Installation"
-  tags: misconfig,exposure,install,piwigo,vuln
+  tags: misconfig,exposure,install,piwigo,vuln,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     vendor: palletsprojects
     product: werkzeug
     shodan-query: html:"Werkzeug powered traceback interpreter"
-  tags: werkzeug,exposure,debug,misconfig,vuln
+  tags: werkzeug,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Dolibarr"
-  tags: panel,dolibarr,discovery
+  tags: panel,dolibarr,discovery,daily_clustering
 http:
   - method: GET
     path:

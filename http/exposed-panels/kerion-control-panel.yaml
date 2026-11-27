@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:-631002664
-  tags: panel,kerio,login,discovery
+  tags: panel,kerio,login,discovery,daily_clustering
 http:
   - method: GET
     path:

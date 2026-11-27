@@ -19,7 +19,7 @@ info:
     - https://costa.co.uk
   metadata:
     max-request: 1
-  tags: phishing,costa,osint,discovery
+  tags: phishing,costa,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

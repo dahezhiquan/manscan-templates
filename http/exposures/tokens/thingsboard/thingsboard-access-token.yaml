@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: thingsboard,exposure,token,vuln
+  tags: thingsboard,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

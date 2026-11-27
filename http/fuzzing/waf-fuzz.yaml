@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 58
-  tags: waf,fuzz,fuzzing,vuln
+  tags: waf,fuzz,fuzzing,vuln,daily
 
 http:
   - raw:

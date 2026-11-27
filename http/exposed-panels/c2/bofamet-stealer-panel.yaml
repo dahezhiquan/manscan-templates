@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"bofamet"
-  tags: c2,bofamet,stealer,panel,cti,login,vuln
+  tags: c2,bofamet,stealer,panel,cti,login,vuln,daily_clustering
 http:
   - method: GET
     path:

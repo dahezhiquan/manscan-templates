@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"AirCube Dashboard"
     product: aircube
     vendor: ui
-  tags: panel,aircube,discovery
+  tags: panel,aircube,discovery,daily_clustering
 http:
   - method: GET
     path:

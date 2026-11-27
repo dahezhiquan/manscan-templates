@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:".coveralls.yml"
-  tags: exposure,config,coveralls,token,misconfig
+  tags: exposure,config,coveralls,token,misconfig,daily
 
 http:
   - method: GET

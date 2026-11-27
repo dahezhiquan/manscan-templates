@@ -20,7 +20,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: title:"Kong Manager"
-  tags: kong,manager,misconfig,exposure,discovery
+  tags: kong,manager,misconfig,exposure,discovery,daily_clustering
 http:
   - method: GET
     path:

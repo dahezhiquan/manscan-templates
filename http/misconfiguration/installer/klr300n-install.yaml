@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"def_wirelesspassword"
-  tags: keo,klr300n,misconfig,exposure,iot,install,vuln
+  tags: keo,klr300n,misconfig,exposure,iot,install,vuln,daily_clustering
 
 http:
   - method: GET

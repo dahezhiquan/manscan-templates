@@ -18,7 +18,7 @@ info:
     max-request: 1
     shodan-query: ssl.cert.subject.cn:"Onimai Academies CA"
     censys-query: 'services.tls.certificates.leaf_data.subject.common_name: {"Onimai Academies CA"}'
-  tags: c2,ir,osint,malware,onimai,rat,discovery
+  tags: c2,ir,osint,malware,onimai,rat,discovery,daily,daily_clustering
 
 ssl:
   - address: "{{Host}}:{{Port}}"

@@ -20,7 +20,7 @@ info:
     - https://zapier.com
   metadata:
     max-request: 1
-  tags: phishing,zapier,automation,osint,discovery
+  tags: phishing,zapier,automation,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

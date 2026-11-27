@@ -28,7 +28,7 @@ info:
       - http.title:"amp - application management panel"
     fofa-query: title="amp - application management panel"
     google-query: intitle:"amp - application management panel"
-  tags: panel,amp,cubecoders,discovery
+  tags: panel,amp,cubecoders,discovery,daily_clustering
 http:
   - method: GET
     path:

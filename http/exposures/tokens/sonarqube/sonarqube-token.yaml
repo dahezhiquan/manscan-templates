@@ -19,7 +19,7 @@ info:
     - https://docs.sonarqube.org/latest/user-guide/user-token/
   metadata:
     max-request: 1
-  tags: exposure,token,sonarqube,vuln
+  tags: exposure,token,sonarqube,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Cyberoam"'
-  tags: panel,cyberoam,firewall,utm
+  tags: panel,cyberoam,firewall,utm,daily_clustering
 http:
   - method: GET
     path:

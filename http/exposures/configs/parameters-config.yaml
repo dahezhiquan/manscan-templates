@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 4
     shodan-query: html:"parameters.yml"
-  tags: exposure,cloud,devops,vuln
+  tags: exposure,cloud,devops,vuln,daily
 
 http:
   - method: GET

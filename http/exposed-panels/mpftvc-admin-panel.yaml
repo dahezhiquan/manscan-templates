@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"AdminLogin - MPFTVC"
-  tags: panel,mpftvc,admin,discovery
+  tags: panel,mpftvc,admin,discovery,daily_clustering
 http:
   - method: GET
     path:

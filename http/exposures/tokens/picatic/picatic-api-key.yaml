@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-540
   metadata:
     max-request: 1
-  tags: exposure,token,vuln
+  tags: exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

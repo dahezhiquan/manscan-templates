@@ -23,7 +23,7 @@ info:
     vendor: OpenSCADA
     product: openscada
     shodan-query: 'http.title:"OpenSCADA" port:10002'
-  tags: panel,ics,scada,openscada,discovery
+  tags: panel,ics,scada,openscada,discovery,daily_clustering
 http:
   - method: GET
     path:

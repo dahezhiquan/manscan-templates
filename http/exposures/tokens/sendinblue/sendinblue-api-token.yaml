@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: sendinblue,exposure,token,vuln
+  tags: sendinblue,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

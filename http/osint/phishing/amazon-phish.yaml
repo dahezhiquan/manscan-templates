@@ -19,7 +19,7 @@ info:
     - https://amazon.com
   metadata:
     max-request: 1
-  tags: phishing,amazon,osint,discovery
+  tags: phishing,amazon,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

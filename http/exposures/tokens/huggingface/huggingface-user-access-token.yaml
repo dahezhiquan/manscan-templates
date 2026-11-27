@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: huggingface,exposure,token,vuln,ai
+  tags: huggingface,exposure,token,vuln,ai,daily,daily_clustering
 
 http:
   - method: GET

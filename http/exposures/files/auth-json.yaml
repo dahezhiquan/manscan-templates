@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"auth.json"
-  tags: devops,exposure,files,auth,config,vuln
+  tags: devops,exposure,files,auth,config,vuln,daily
 
 http:
   - method: GET

@@ -17,7 +17,7 @@ info:
     - https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
   metadata:
     max-request: 1
-  tags: aws,misconfig,bucket,vuln
+  tags: aws,misconfig,bucket,vuln,daily_clustering
 
 http:
   - method: GET

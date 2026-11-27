@@ -21,7 +21,7 @@ info:
     vendor: orchardproject
     product: orchard
     shodan-query: html:"Orchard Setup - Get Started"
-  tags: misconfig,exposure,install,orchard,vuln
+  tags: misconfig,exposure,install,orchard,vuln,daily_clustering
 
 http:
   - method: GET

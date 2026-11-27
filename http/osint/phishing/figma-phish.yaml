@@ -19,7 +19,7 @@ info:
     - https://figma.com
   metadata:
     max-request: 1
-  tags: phishing,figma,osint,discovery
+  tags: phishing,figma,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -18,7 +18,7 @@ info:
     product: vikunja
     shodan-query: http.title:"vikunja"
     fofa-query: title="Vikunja"
-  tags: panel,vikunja,login,discovery
+  tags: panel,vikunja,login,discovery,daily_clustering
 
 http:
   - method: GET

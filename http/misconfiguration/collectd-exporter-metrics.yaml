@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Collectd Exporter"
-  tags: collectd,exposure,debug,misconfig,vuln
+  tags: collectd,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

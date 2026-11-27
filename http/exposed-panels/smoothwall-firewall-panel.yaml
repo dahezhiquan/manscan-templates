@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Smoothwall"'
-  tags: panel,smoothwall,firewall,vpn
+  tags: panel,smoothwall,firewall,vpn,daily_clustering
 
 http:
   - method: GET

@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: app="iXCache"
-  tags: ixcache,panel,discovery
+  tags: ixcache,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

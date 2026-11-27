@@ -19,7 +19,7 @@ info:
     max-request: 1
     vendor: microsoft
     shodan-query: title:"Runtime Error"
-  tags: iis,error,microsoft,log,vuln
+  tags: iis,error,microsoft,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

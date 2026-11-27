@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-425
   metadata:
     max-request: 1
-  tags: axiom,digitalocean,key,exposure,vuln
+  tags: axiom,digitalocean,key,exposure,vuln,daily
 
 http:
   - method: GET

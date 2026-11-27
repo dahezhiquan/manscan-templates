@@ -20,7 +20,7 @@ info:
     - https://twilio.com
   metadata:
     max-request: 1
-  tags: phishing,twilio,communication,osint,discovery
+  tags: phishing,twilio,communication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

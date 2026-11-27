@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 64
     shodan-query: "http.title:\"swagger\""
-  tags: exposure,api,swagger,discovery
+  tags: exposure,api,swagger,discovery,daily
 
 http:
   - method: GET

@@ -34,7 +34,7 @@ info:
     google-query:
       - intitle:"cpanel - api codes"
       - intitle:"cpanel"
-  tags: panel,cpanel,discovery
+  tags: panel,cpanel,discovery,daily_clustering
 http:
   - method: GET
     path:

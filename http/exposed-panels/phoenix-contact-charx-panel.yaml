@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Phoenix Contact - CHARX"
-  tags: panel,phoenix-contact,charx,ics,discovery
+  tags: panel,phoenix-contact,charx,ics,discovery,daily_clustering
 
 http:
   - method: GET

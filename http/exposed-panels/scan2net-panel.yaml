@@ -14,7 +14,7 @@ info:
     shodan-query:
     - http.favicon.hash:1780061475
     - http.title:"Scan2Net"
-  tags: panel,scan2net,login,discovery
+  tags: panel,scan2net,login,discovery,daily_clustering
 
 http:
   - method: GET

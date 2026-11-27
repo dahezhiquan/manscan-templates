@@ -23,7 +23,7 @@ info:
     fofa-query: title="Issabel"
     product: pbx
     vendor: issabel
-  tags: issabel,panel,discovery
+  tags: issabel,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

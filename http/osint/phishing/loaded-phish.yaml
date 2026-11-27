@@ -19,7 +19,7 @@ info:
     - https://loaded.com
   metadata:
     max-request: 1
-  tags: phishing,loaded,osint,discovery
+  tags: phishing,loaded,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

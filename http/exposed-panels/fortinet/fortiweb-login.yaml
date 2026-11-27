@@ -27,7 +27,7 @@ info:
       - http.title:"fortiweb - "
     fofa-query: title="fortiweb - "
     google-query: intitle:"fortiweb - "
-  tags: panel,fortinet,fortiweb,login,discovery
+  tags: panel,fortinet,fortiweb,login,discovery,daily_clustering
 http:
   - method: GET
     path:

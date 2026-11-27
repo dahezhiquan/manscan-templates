@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"Network Utility"
-  tags: panel,utility,discovery
+  tags: panel,utility,discovery,daily_clustering
 
 http:
   - method: GET

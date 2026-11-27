@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: sauce,token,exposure,vuln
+  tags: sauce,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

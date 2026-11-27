@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 50
     github-query: filename:config.json
-  tags: config,exposure,files,vuln
+  tags: config,exposure,files,vuln,daily
 
 http:
   - method: GET

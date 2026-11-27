@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: app="LibreChat"
-  tags: panel,librechat,discovery
+  tags: panel,librechat,discovery,daily_clustering
 http:
   - method: GET
     path:

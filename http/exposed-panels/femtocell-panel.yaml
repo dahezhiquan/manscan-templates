@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Femtocell Access Point"
-  tags: femtocell,network,panel,login,discovery
+  tags: femtocell,network,panel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

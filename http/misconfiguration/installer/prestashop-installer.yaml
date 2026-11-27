@@ -21,7 +21,7 @@ info:
     vendor: prestashop
     product: prestashop
     shodan-query: title:"PrestaShop Installation Assistant"
-  tags: misconfig,prestashop,exposure,install,vuln
+  tags: misconfig,prestashop,exposure,install,vuln,daily_clustering
 
 http:
   - method: GET

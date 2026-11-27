@@ -20,7 +20,7 @@ info:
     - https://scribd.com
   metadata:
     max-request: 1
-  tags: phishing,scribd,osint,discovery
+  tags: phishing,scribd,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

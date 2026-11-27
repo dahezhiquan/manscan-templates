@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: telegram,token,exposure,vuln
+  tags: telegram,token,exposure,vuln,daily
 
 flow: http(1) && http(2)
 

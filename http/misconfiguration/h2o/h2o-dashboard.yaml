@@ -21,7 +21,7 @@ info:
     vendor: h2o
     product: h2o
     shodan-query: title:"H2O Flow"
-  tags: misconfig,exposure,h2o,ml,unauth,discovery
+  tags: misconfig,exposure,h2o,ml,unauth,discovery,daily_clustering
 
 http:
   - method: GET

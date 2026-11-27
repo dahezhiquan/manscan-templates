@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 2
     google-query: inurl:"/.well-known/pki-validation/"
-  tags: well-known,pki,certificate,validation,miscellaneous,misc,vuln
+  tags: well-known,pki,certificate,validation,miscellaneous,misc,vuln,daily
 
 http:
   - method: GET

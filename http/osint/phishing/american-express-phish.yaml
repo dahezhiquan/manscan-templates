@@ -20,7 +20,7 @@ info:
     - https://www.americanexpress.com
   metadata:
     max-request: 1
-  tags: phishing,american-express,osint,discovery
+  tags: phishing,american-express,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

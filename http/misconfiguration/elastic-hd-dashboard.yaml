@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Elastic HD Dashboard"
-  tags: misconfig,exposure,elastic,discovery
+  tags: misconfig,exposure,elastic,discovery,daily_clustering
 
 http:
   - method: GET

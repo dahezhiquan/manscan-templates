@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Dericam"
-  tags: panel,dericam,edb,discovery
+  tags: panel,dericam,edb,discovery,daily_clustering
 http:
   - method: GET
     path:

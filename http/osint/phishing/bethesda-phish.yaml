@@ -19,7 +19,7 @@ info:
     - https://bethesda.net
   metadata:
     max-request: 1
-  tags: phishing,bethesda,osint,discovery
+  tags: phishing,bethesda,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://ea.com
   metadata:
     max-request: 1
-  tags: phishing,ea,osint,discovery
+  tags: phishing,ea,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
     - https://x.com
   metadata:
     max-request: 1
-  tags: phishing,twitter,x,osint,discovery
+  tags: phishing,twitter,x,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

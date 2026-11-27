@@ -23,7 +23,7 @@ info:
     vendor: elgg
     product: elgg
     fofa-query: title="Welcome to Elgg"
-  tags: install,elgg,exposure,misconfig,vuln
+  tags: install,elgg,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

@@ -28,7 +28,7 @@ info:
       - http.title:"bitdefender gravityzone"
     fofa-query: title="bitdefender gravityzone"
     google-query: intitle:"bitdefender gravityzone"
-  tags: panel,bitdefender,discovery
+  tags: panel,bitdefender,discovery,daily_clustering
 http:
   - method: GET
     path:

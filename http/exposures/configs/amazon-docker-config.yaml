@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: config,exposure,aws,devops,vuln
+  tags: config,exposure,aws,devops,vuln,daily
 
 http:
   - method: GET

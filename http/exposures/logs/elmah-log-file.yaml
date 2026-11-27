@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: logs,elmah,exposure,vuln
+  tags: logs,elmah,exposure,vuln,daily
 
 http:
   - method: GET

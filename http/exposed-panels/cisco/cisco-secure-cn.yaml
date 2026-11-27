@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Cisco Secure CN"
-  tags: panel,cisco,discovery
+  tags: panel,cisco,discovery,daily_clustering
 http:
   - method: GET
     path:

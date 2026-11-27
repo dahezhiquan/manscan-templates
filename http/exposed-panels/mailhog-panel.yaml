@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"mailhog"
-  tags: panel,mailhog,mail,smtp,discovery
+  tags: panel,mailhog,mail,smtp,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - https://affirm.com
   metadata:
     max-request: 1
-  tags: phishing,affirm,payment,osint,discovery
+  tags: phishing,affirm,payment,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

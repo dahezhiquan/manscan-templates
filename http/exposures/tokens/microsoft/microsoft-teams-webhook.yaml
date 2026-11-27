@@ -19,7 +19,7 @@ info:
     - https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/what-are-webhooks-and-connectors
   metadata:
     max-request: 1
-  tags: exposure,token,microsoft,vuln
+  tags: exposure,token,microsoft,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Davantis"
-  tags: panel,davantis,discovery
+  tags: panel,davantis,discovery,daily_clustering
 http:
   - method: GET
     path:

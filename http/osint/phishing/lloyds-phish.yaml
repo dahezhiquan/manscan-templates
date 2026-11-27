@@ -20,7 +20,7 @@ info:
     - https://lloydsbank.com
   metadata:
     max-request: 1
-  tags: phishing,lloyds,bank,osint,discovery
+  tags: phishing,lloyds,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

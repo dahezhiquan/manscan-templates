@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"RouterOS router configuration page"
-  tags: panel,router,routeros,iot,discovery
+  tags: panel,router,routeros,iot,discovery,daily_clustering
 
 http:
   - method: GET

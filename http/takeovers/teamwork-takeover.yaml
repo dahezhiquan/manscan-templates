@@ -16,7 +16,7 @@ info:
     - 建立 DNS 与第三方 SaaS 资源的定期盘点流程，监控站点不存在、项目缺失、账号停用等可接管状态。
   metadata:
     max-request: 1
-  tags: takeover,teamwork,vuln
+  tags: takeover,teamwork,vuln,daily_clustering
 
 http:
   - method: GET

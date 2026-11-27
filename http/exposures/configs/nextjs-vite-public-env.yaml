@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: exposure,env,nextjs,vite,supabase,vuln
+  tags: exposure,env,nextjs,vite,supabase,vuln,daily,daily_clustering
 
 http:
   - method: GET

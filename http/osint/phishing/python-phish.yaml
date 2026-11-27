@@ -20,7 +20,7 @@ info:
     - https://python.org
   metadata:
     max-request: 1
-  tags: phishing,python,osint,discovery
+  tags: phishing,python,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

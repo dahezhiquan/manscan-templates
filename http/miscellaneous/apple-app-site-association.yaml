@@ -15,7 +15,7 @@ info:
     - 对应用关联、邮件策略、证书验证和身份声明文件建立变更审计。
   metadata:
     max-request: 3
-  tags: miscellaneous,misc,apple,vuln
+  tags: miscellaneous,misc,apple,vuln,daily
 
 http:
   - method: GET

@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"SentinelOne - Management Console"
-  tags: panel,sentinelone,discovery
+  tags: panel,sentinelone,discovery,daily_clustering
 
 http:
   - method: GET

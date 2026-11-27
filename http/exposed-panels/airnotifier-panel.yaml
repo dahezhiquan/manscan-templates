@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"AirNotifier"
-  tags: panel,airnotifier,discovery
+  tags: panel,airnotifier,discovery,daily_clustering
 http:
   - method: GET
     path:

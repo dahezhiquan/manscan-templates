@@ -21,7 +21,7 @@ info:
     vendor: php
     product: php
     shodan-query: http.title:"PHP warning" || "Fatal error"
-  tags: debug,php,misconfig,vuln
+  tags: debug,php,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"QuickCMS Installation"
-  tags: misconfig,exposure,install,quick.cms,vuln
+  tags: misconfig,exposure,install,quick.cms,vuln,daily_clustering
 
 http:
   - method: GET

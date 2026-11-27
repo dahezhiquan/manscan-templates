@@ -27,7 +27,7 @@ info:
     shodan-query: html:"webpack.config.js"
     product: webpack
     vendor: webpack.js
-  tags: config,exposure,vuln
+  tags: config,exposure,vuln,daily
 
 http:
   - method: GET

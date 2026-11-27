@@ -28,7 +28,7 @@ info:
       - http.title:"deluge webui"
     fofa-query: title="deluge webui"
     google-query: intitle:"deluge webui"
-  tags: panel,deluge,deluge-torrent,discovery
+  tags: panel,deluge,deluge-torrent,discovery,daily_clustering
 http:
   - method: GET
     path:

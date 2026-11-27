@@ -13,7 +13,7 @@ info:
     - 将提取到的域名与资产清单和 DNS 记录核对，及时下线无主机名、无业务用途或已泄露边界的入口。
   metadata:
     max-request: 1
-  tags: ssl,tls,vuln
+  tags: ssl,tls,vuln,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
 

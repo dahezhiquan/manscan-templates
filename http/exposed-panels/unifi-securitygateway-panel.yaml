@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"UniFi Security Gateway"'
-  tags: panel,ubiquiti,unifi,securitygateway
+  tags: panel,ubiquiti,unifi,securitygateway,daily_clustering
 
 http:
   - method: GET

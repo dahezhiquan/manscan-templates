@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"access MongoDB"
-  tags: mongodb,exposure,misconfig
+  tags: mongodb,exposure,misconfig,daily_clustering
 
 http:
   - method: GET

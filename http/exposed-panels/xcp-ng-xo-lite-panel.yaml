@@ -17,7 +17,7 @@ info:
     vendor: xcp-ng
     product: xo_lite
     shodan-query: http.title:"XO Lite"
-  tags: panel,xcp-ng,xo-lite,vates,virtualization,login,discovery
+  tags: panel,xcp-ng,xo-lite,vates,virtualization,login,discovery,daily_clustering
 
 http:
   - method: GET

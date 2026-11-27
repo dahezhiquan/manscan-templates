@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: openai,token,exposure,vuln,ai
+  tags: openai,token,exposure,vuln,ai,daily,daily_clustering
 
 http:
   - method: GET

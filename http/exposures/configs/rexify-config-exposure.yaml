@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,config,rexify,rex,devops
+  tags: exposure,config,rexify,rex,devops,daily
 
 http:
   - method: GET

@@ -27,7 +27,7 @@ info:
     google-query:
     - intitle:"rocketmq"
     - intitle:"rocketmq-console-ng"
-  tags: panel,apache,discovery
+  tags: panel,apache,discovery,daily_clustering
 
 http:
   - method: GET

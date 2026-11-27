@@ -22,7 +22,7 @@ info:
     max-request: 1
     google-query: inurl:"/platformio.ini"
     github-query: '[platformio] language:INI'
-  tags: config,exposure,platformio,vuln
+  tags: config,exposure,platformio,vuln,daily
 
 http:
   - method: GET

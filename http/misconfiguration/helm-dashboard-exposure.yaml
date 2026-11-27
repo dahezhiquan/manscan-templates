@@ -21,7 +21,7 @@ info:
     vendor: helm
     product: helm
     shodan-query: http.favicon.hash:-594722214
-  tags: helm,exposure,dashboard,misconfig,vuln
+  tags: helm,exposure,dashboard,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

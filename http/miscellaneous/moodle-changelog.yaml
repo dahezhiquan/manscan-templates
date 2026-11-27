@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: moodle,exposure,misc,vuln
+  tags: moodle,exposure,misc,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://www.acunetix.com/vulnerabilities/web/tls-ssl-certificate-about-to-expire/
   metadata:
     max-request: 1
-  tags: ssl,tls,vuln
+  tags: ssl,tls,vuln,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

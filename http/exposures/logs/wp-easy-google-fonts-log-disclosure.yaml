@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: wordpress,wp-plugin,exposure,easy-google-fonts,logs
+  tags: wordpress,wp-plugin,exposure,easy-google-fonts,logs,daily
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
       - title:"HFS /"
       - "Set-Cookie: HFS_SID_="
       - http.favicon.hash:2124459909
-  tags: misconfig,hfs,exposure,panel,vuln
+  tags: misconfig,hfs,exposure,panel,vuln,daily_clustering
 
 http:
   - method: GET

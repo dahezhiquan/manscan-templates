@@ -19,7 +19,7 @@ info:
     - https://soundcloud.com
   metadata:
     max-request: 1
-  tags: phishing,soundcloud,streaming,osint,discovery
+  tags: phishing,soundcloud,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

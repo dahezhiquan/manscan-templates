@@ -18,7 +18,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: fastcgi,config,exposure,vuln
+  tags: fastcgi,config,exposure,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://starz.com
   metadata:
     max-request: 1
-  tags: phishing,starz,streaming,osint,discovery
+  tags: phishing,starz,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

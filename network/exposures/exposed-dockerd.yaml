@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:2375 product:"docker"
-  tags: network,docker,exposure,tcp,discovery
+  tags: network,docker,exposure,tcp,discovery,daily
 tcp:
   - inputs:
       - data: "GET /_ping HTTP/1.0\r\n\r\n"

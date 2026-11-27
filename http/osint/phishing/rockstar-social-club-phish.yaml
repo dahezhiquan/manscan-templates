@@ -19,7 +19,7 @@ info:
     - https://socialclub.rockstargames.com
   metadata:
     max-request: 1
-  tags: phishing,rockstar-social-club,osint,discovery
+  tags: phishing,rockstar-social-club,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

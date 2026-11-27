@@ -22,7 +22,7 @@ info:
     vendor: frangoteam
     product: fuxa
     shodan-query: http.title:"FUXA"
-  tags: panel,scada,hmi,ics,fuxa,open-source,nodejs,modbus,opc-ua,discovery
+  tags: panel,scada,hmi,ics,fuxa,open-source,nodejs,modbus,opc-ua,discovery,daily_clustering
 http:
   - method: GET
     path:

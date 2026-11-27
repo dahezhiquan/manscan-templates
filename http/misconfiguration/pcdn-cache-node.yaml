@@ -21,7 +21,7 @@ info:
     vendor: cache-base_project
     product: cache-base
     shodan-query: title:"PCDN Cache Node Dataset"
-  tags: node,pcdn,misconfig,vuln
+  tags: node,pcdn,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

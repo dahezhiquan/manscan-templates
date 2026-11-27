@@ -20,7 +20,7 @@ info:
     - https://paypal.com
   metadata:
     max-request: 1
-  tags: phishing,paypal,osint,discovery
+  tags: phishing,paypal,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

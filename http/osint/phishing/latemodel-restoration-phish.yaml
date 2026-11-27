@@ -19,7 +19,7 @@ info:
     - https://lmr.com
   metadata:
     max-request: 1
-  tags: phishing,latemodel-restoration,ecommerce,osint,discovery
+  tags: phishing,latemodel-restoration,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

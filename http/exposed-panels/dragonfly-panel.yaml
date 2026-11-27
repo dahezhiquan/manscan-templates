@@ -18,7 +18,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body="logo-dragonfly.png"
-  tags: dragonfly,panel,login,discovery
+  tags: dragonfly,panel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

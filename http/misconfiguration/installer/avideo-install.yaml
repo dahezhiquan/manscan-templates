@@ -25,7 +25,7 @@ info:
     fofa-query: "AVideo"
     product: avideo
     vendor: wwbn
-  tags: panel,install,avideo,misconfig,vuln
+  tags: panel,install,avideo,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

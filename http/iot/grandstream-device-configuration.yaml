@@ -20,7 +20,7 @@ info:
     vendor: grandstream
     product: ht801_firmware
     shodan-query: http.title:"Grandstream Device Configuration"
-  tags: iot,discovery
+  tags: iot,discovery,daily_clustering
 
 http:
   - method: GET

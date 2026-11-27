@@ -17,7 +17,7 @@ info:
     - 定期巡检公开页面，确保内容仍然准确且未泄露额外信息。
   reference:
     - https://discord.com
-  tags: discord,info,osint,misc,vuln
+  tags: discord,info,osint,misc,vuln,daily,daily_clustering
 
 http:
   - method: GET

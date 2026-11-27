@@ -17,7 +17,7 @@ info:
     - https://cheatsheetseries.owasp.org/cheatsheets/Transport_Layer_Security_Cheat_Sheet.html#carefully-consider-the-use-of-wildcard-certificates
   metadata:
     max-request: 1
-  tags: ssl,tls,wildcard,vuln
+  tags: ssl,tls,wildcard,vuln,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

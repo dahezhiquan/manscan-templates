@@ -19,7 +19,7 @@ info:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/php-user-ini-disclosure.json
   metadata:
     max-request: 2
-  tags: exposure,config,files,vuln
+  tags: exposure,config,files,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     product: ibarn
     shodan-query: title:"iBarn"
     fofa-query: title="iBarn"
-  tags: ibarn,installer,exposure,misconfig,vuln
+  tags: ibarn,installer,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

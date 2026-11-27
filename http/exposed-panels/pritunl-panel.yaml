@@ -19,7 +19,7 @@ info:
     shodan-query: title:"Pritunl"
     vendor: pritunl
     verified: true
-  tags: pritunl,panel,login,discovery
+  tags: pritunl,panel,login,discovery,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     cwe-id: CWE-306
   metadata:
     max-request: 4
-  tags: network,redis,unauth,exposure,tcp,discovery
+  tags: network,redis,unauth,exposure,tcp,discovery,daily
 
 tcp:
   - inputs:

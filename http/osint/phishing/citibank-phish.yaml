@@ -20,7 +20,7 @@ info:
     - https://citi.com
   metadata:
     max-request: 1
-  tags: phishing,citibank,citi,bank,osint,discovery
+  tags: phishing,citibank,citi,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -25,7 +25,7 @@ info:
     max-request: 1
     vendor: adiscon
     product: loganalyzer
-  tags: adiscon,loganalyzer,syslog,exposure,panel,discovery
+  tags: adiscon,loganalyzer,syslog,exposure,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

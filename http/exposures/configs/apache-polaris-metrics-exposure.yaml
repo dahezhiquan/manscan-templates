@@ -24,7 +24,7 @@ info:
     vendor: apache
     product: polaris
     shodan-query: http.html:"org.apache.polaris"
-  tags: apache,polaris,exposure,metrics,misconfig
+  tags: apache,polaris,exposure,metrics,misconfig,daily
 
 http:
   - method: GET

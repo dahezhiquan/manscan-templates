@@ -20,7 +20,7 @@ info:
     - https://ally.com
   metadata:
     max-request: 1
-  tags: phishing,ally-bank,bank,osint,discovery
+  tags: phishing,ally-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

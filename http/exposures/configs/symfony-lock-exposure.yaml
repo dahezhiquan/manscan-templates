@@ -25,7 +25,7 @@ info:
     product: symfony
     shodan-query: http.component:"symfony"
     fofa-query: body="symfony.lock"
-  tags: symfony,exposure,composer,php,config
+  tags: symfony,exposure,composer,php,config,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://whatsapp.com
   metadata:
     max-request: 1
-  tags: phishing,whatsapp,osint,discovery
+  tags: phishing,whatsapp,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

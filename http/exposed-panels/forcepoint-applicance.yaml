@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Forcepoint Appliance"
-  tags: panel,forcepoint,discovery
+  tags: panel,forcepoint,discovery,daily_clustering
 http:
   - method: GET
     path:

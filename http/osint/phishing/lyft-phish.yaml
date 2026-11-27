@@ -19,7 +19,7 @@ info:
     - https://lyft.com
   metadata:
     max-request: 1
-  tags: phishing,lyft,osint,discovery
+  tags: phishing,lyft,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

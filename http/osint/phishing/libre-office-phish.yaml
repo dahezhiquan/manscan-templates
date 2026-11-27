@@ -19,7 +19,7 @@ info:
     - https://libreoffice.org
   metadata:
     max-request: 1
-  tags: phishing,libre-office,osint,discovery
+  tags: phishing,libre-office,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

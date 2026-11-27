@@ -19,7 +19,7 @@ info:
     - https://menards.com
   metadata:
     max-request: 1
-  tags: phishing,menards,ecommerce,osint,discovery
+  tags: phishing,menards,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

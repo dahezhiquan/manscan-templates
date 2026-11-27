@@ -19,7 +19,7 @@ info:
     - https://g2a.com
   metadata:
     max-request: 1
-  tags: phishing,g2a,osint,discovery
+  tags: phishing,g2a,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,finnhub,file,token,vuln
+  tags: exposure,finnhub,file,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

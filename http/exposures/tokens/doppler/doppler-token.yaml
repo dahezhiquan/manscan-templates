@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: doppler,exposure,token,vuln
+  tags: doppler,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

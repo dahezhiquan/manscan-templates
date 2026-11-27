@@ -19,7 +19,7 @@ info:
     - http.html:"TEW-827DRU"
     - http.html:"tew-827dru"
     fofa-query: body="tew-827dru"
-  tags: panel,router,trendnet,discovery
+  tags: panel,router,trendnet,discovery,daily_clustering
 
 http:
   - method: GET

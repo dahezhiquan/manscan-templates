@@ -21,7 +21,7 @@ info:
     max-request: 3
     verified: true
     max-requests: 3
-  tags: postgresql,exposure,config,history,database
+  tags: postgresql,exposure,config,history,database,daily
 
 http:
   - method: GET

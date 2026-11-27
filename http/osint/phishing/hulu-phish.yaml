@@ -19,7 +19,7 @@ info:
     - https://hulu.com
   metadata:
     max-request: 1
-  tags: phishing,hulu,streaming,osint,discovery
+  tags: phishing,hulu,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

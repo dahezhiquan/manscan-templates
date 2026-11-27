@@ -22,7 +22,7 @@ info:
     vendor: oneidentity
     product: safeguard_for_privileged_passwords
     shodan-query: http.html:"Safeguard for Privileged Passwords"
-  tags: panel,oneidentity,safeguard,spp,pam
+  tags: panel,oneidentity,safeguard,spp,pam,daily_clustering
 http:
   - method: GET
     path:

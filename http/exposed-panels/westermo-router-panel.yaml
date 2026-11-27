@@ -16,7 +16,7 @@ info:
     vendor: Westermo
     product: lynx-router
     shodan-query: 'http.html:"Westermo"'
-  tags: panel,westermo,router,ics,discovery
+  tags: panel,westermo,router,ics,discovery,daily_clustering
 
 http:
   - method: GET

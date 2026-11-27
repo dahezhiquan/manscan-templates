@@ -24,7 +24,7 @@ info:
     shodan-query: title:"dataiku"
     product: data_science_studio
     vendor: dataiku
-  tags: panel,dataiku,discovery
+  tags: panel,dataiku,discovery,daily_clustering
 http:
   - method: GET
     path:

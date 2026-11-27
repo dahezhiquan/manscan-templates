@@ -23,7 +23,7 @@ info:
     max-request: 1
     shodan-query: 'http.title:"Artifactory"'
     fofa-query: 'title="Artifactory"'
-  tags: jfrog,artifactory,exposure,misconfig,cicd
+  tags: jfrog,artifactory,exposure,misconfig,cicd,daily
 
 http:
   - method: GET

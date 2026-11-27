@@ -29,7 +29,7 @@ info:
       - http.title:"avantfax - login"
     fofa-query: title="avantfax - login"
     google-query: intitle:"avantfax - login"
-  tags: panel,avantfax,login,discovery
+  tags: panel,avantfax,login,discovery,daily_clustering
 http:
   - method: GET
     path:

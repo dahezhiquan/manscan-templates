@@ -17,7 +17,7 @@ info:
     verified: "true"
     max-request: 1
     censys-query: CN=localhost, C=AU, ST=Some-State, O=Internet Widgits Pty Ltd
-  tags: c2,ssl,tls,ir,osint,malware,bokbot,icedid,discovery
+  tags: c2,ssl,tls,ir,osint,malware,bokbot,icedid,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

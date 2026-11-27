@@ -20,7 +20,7 @@ info:
     - https://pcloud.com
   metadata:
     max-request: 1
-  tags: phishing,pcloud,osint,discovery
+  tags: phishing,pcloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

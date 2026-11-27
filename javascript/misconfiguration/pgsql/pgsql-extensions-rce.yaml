@@ -22,7 +22,7 @@ info:
     shodan-query: "product:\"PostgreSQL\""
     vendor: postgresql
     product: postgresql
-  tags: postgresql,js,network,rce,vuln
+  tags: postgresql,js,network,rce,vuln,daily
 javascript:
   - pre-condition: |
       isPortOpen(Host,Port);

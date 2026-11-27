@@ -20,7 +20,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: http.favicon.hash:-1264095219
-  tags: openbullet,panel,login,discovery
+  tags: openbullet,panel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

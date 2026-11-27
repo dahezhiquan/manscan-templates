@@ -17,7 +17,7 @@ info:
     - https://kubernetes.io/docs/concepts/cluster-administration/system-metrics/#metrics-in-kubernetes
   metadata:
     max-request: 1
-  tags: kubernetes,exposure,devops,misconfig,vuln
+  tags: kubernetes,exposure,devops,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

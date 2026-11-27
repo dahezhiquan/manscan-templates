@@ -20,7 +20,7 @@ info:
     - https://putty.org
   metadata:
     max-request: 1
-  tags: phishing,putty,osint,discovery
+  tags: phishing,putty,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

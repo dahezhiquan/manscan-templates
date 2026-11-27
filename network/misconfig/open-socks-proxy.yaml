@@ -25,7 +25,7 @@ info:
     max-request: 2
     verified: true
     shodan-query: port:1080
-  tags: network,socks,socks4,socks5,proxy,exposure,misconfig
+  tags: network,socks,socks4,socks5,proxy,exposure,misconfig,daily
 
 tcp:
   - inputs:

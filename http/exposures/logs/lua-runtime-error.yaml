@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: 'title="Error 500: LUA Runtime Error"'
-  tags: error,lua,log,vuln
+  tags: error,lua,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

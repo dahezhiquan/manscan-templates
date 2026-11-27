@@ -15,7 +15,7 @@ info:
     - 排查访问日志，确认是否存在未授权访问、异常操作或批量枚举行为。
   metadata:
     max-request: 1
-  tags: mongoshake,unauth,alibaba,misconfig,vuln
+  tags: mongoshake,unauth,alibaba,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

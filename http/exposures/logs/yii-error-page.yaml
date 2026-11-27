@@ -23,7 +23,7 @@ info:
     vendor: yii_software
     product: yii
     shodan-query: html:"yii\base\ErrorException"
-  tags: exposure,yii,logs,vuln
+  tags: exposure,yii,logs,vuln,daily,daily_clustering
 
 http:
   - method: GET

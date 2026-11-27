@@ -19,7 +19,7 @@ info:
     - https://playstation.com
   metadata:
     max-request: 1
-  tags: phishing,playstation,sony,osint,discovery
+  tags: phishing,playstation,sony,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     shodan-query: http.title:"Gophish - Login"
     product: gophish
     vendor: getgophish
-  tags: panel,gophish,discovery
+  tags: panel,gophish,discovery,daily_clustering
 http:
   - method: GET
     path:

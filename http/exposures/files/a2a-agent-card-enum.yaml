@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: enum,a2a,google,ai,agent,discovery
+  tags: enum,a2a,google,ai,agent,discovery,daily
 
 http:
   - method: GET

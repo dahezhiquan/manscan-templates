@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 2
     verified: true
-  tags: exposure,azure,instrumentation,appinsights,token
+  tags: exposure,azure,instrumentation,appinsights,token,daily
 
 http:
   - method: GET

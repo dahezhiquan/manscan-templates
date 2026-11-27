@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'html:"desktop.ini"'
-  tags: exposure,config,files,vuln
+  tags: exposure,config,files,vuln,daily
 
 http:
   - method: GET

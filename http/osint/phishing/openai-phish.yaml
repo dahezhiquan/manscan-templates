@@ -20,7 +20,7 @@ info:
     - https://openai.com
   metadata:
     max-request: 1
-  tags: phishing,openai,osint,discovery,ai
+  tags: phishing,openai,osint,discovery,ai,daily_clustering
 http:
   - method: GET
     path:

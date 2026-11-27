@@ -20,7 +20,7 @@ info:
     vendor: fortinet
     product: fortiswitch
     fofa-query: app="FortiSwitch"
-  tags: login,panel,fortiswitch,discovery
+  tags: login,panel,fortiswitch,discovery,daily_clustering
 http:
   - method: GET
     path:

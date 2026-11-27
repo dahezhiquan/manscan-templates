@@ -15,7 +15,7 @@ info:
     - 在 Web 服务器层限制 `/modules/*/config.xml` 等敏感文件访问。
   metadata:
     max-request: 639
-  tags: fuzz,prestashop,fuzzing,vuln
+  tags: fuzz,prestashop,fuzzing,vuln,daily
 
 http:
   - raw:

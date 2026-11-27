@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.title:"reposilite"
-  tags: panel,reposilite,login,discovery
+  tags: panel,reposilite,login,discovery,daily_clustering
 
 http:
   - method: GET

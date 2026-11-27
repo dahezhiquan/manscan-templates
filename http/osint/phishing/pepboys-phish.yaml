@@ -19,7 +19,7 @@ info:
     - https://pepboys.com
   metadata:
     max-request: 1
-  tags: phishing,pepboys,ecommerce,osint,discovery
+  tags: phishing,pepboys,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

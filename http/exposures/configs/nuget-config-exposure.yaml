@@ -26,7 +26,7 @@ info:
     verified: false
     max-request: 3
     google-query: intitle:"index of" "nuget.config"
-  tags: exposure,config,nuget,dotnet,credentials,files
+  tags: exposure,config,nuget,dotnet,credentials,files,daily
 
 http:
   - method: GET

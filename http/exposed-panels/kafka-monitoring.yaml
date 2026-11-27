@@ -31,7 +31,7 @@ info:
     google-query:
       - intitle:"kafka center"
       - intitle:"kafka consumer offset monitor"
-  tags: panel,kafka,apache,discovery
+  tags: panel,kafka,apache,discovery,daily_clustering
 http:
   - method: GET
     path:

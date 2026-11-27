@@ -20,7 +20,7 @@ info:
     - https://chime.com
   metadata:
     max-request: 1
-  tags: phishing,chime,fintech,osint,discovery
+  tags: phishing,chime,fintech,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

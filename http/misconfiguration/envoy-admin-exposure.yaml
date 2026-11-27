@@ -23,7 +23,7 @@ info:
     vendor: envoyproxy
     product: envoy
     shodan-query: title:"Envoy Admin"
-  tags: misconfig,envoy,exposure,vuln
+  tags: misconfig,envoy,exposure,vuln,daily_clustering
 
 http:
   - method: GET

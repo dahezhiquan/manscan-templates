@@ -20,7 +20,7 @@ info:
     - https://todoist.com
   metadata:
     max-request: 1
-  tags: phishing,todoist,productivity,osint,discovery
+  tags: phishing,todoist,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

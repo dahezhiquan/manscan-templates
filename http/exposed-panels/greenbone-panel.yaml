@@ -27,7 +27,7 @@ info:
     zoomeye-query: title="Greenbone Security Assistant"
     fofa-query: title="greenbone security assistant"
     google-query: intitle:"greenbone security assistant"
-  tags: panel,greenbone,login,discovery
+  tags: panel,greenbone,login,discovery,daily_clustering
 http:
   - method: GET
     path:

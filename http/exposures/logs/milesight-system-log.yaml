@@ -25,7 +25,7 @@ info:
     product: ur5x_firmware
     vendor: milesight
     fofa-query: body=rt_title
-  tags: milesight,log,exposure,vuln
+  tags: milesight,log,exposure,vuln,daily
 
 http:
   - method: GET

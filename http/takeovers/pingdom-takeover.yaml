@@ -18,7 +18,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/144
   metadata:
     max-request: 1
-  tags: takeover,pingdom,vuln
+  tags: takeover,pingdom,vuln,daily_clustering
 
 http:
   - method: GET

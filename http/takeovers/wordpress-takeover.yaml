@@ -19,7 +19,7 @@ info:
     - https://hackerone.com/reports/274336
   metadata:
     max-request: 1
-  tags: takeover,wordpress,hackerone,vuln
+  tags: takeover,wordpress,hackerone,vuln,daily_clustering
 
 http:
   - method: GET

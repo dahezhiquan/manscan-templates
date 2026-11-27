@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"flightpath"
-  tags: panel,flightpath,discovery
+  tags: panel,flightpath,discovery,daily_clustering
 http:
   - method: GET
     path:

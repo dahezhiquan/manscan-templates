@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: apache
     product: flink
-  tags: panel,apache,flink,discovery
+  tags: panel,apache,flink,discovery,daily_clustering
 http:
   - method: GET
     path:

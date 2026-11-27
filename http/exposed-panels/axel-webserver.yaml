@@ -22,7 +22,7 @@ info:
     max-request: 1
     shodan-query: http.title:"Axel"
     fofa-query: app="AxelWebServer"
-  tags: panel,axel,webserver,discovery
+  tags: panel,axel,webserver,discovery,daily_clustering
 http:
   - method: GET
     path:

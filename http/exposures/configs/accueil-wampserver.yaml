@@ -28,7 +28,7 @@ info:
     shodan-query: http.title:"Accueil WAMPSERVER"
     product: wampserver
     vendor: wampserver
-  tags: exposure,accueil,wampserver,config,vuln
+  tags: exposure,accueil,wampserver,config,vuln,daily,daily_clustering
 
 http:
   - method: GET

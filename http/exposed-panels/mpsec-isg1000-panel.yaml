@@ -18,7 +18,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: 迈普通信技术股份有限公司
-  tags: panel,login,mpsec,isg1000,discovery
+  tags: panel,login,mpsec,isg1000,discovery,daily_clustering
 http:
   - method: GET
     path:

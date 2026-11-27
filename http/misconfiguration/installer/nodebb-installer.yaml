@@ -21,7 +21,7 @@ info:
     vendor: nodebb
     product: nodebb
     shodan-query: title:"NodeBB Web Installer"
-  tags: misconfig,nodebb,install,exposure,vuln
+  tags: misconfig,nodebb,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

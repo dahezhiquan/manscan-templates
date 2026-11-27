@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Rubrik" -hostname:"my.rubrik.com"
-  tags: panel,rubrik,backup,storage,login
+  tags: panel,rubrik,backup,storage,login,daily_clustering
 
 http:
   - method: GET

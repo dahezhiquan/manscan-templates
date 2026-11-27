@@ -17,7 +17,7 @@ info:
     shodan-query: http.title:"OSNEXUS QuantaStor Manager"
     product: quantastor
     vendor: osnexus
-  tags: panel,osnexus,login,discovery
+  tags: panel,osnexus,login,discovery,daily_clustering
 
 http:
   - method: GET

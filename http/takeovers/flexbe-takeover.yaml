@@ -19,7 +19,7 @@ info:
     - https://help.flexbe.com/domains/
   metadata:
     max-request: 1
-  tags: takeover,flexbe,vuln
+  tags: takeover,flexbe,vuln,daily_clustering
 
 http:
   - method: GET

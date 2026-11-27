@@ -19,7 +19,7 @@ info:
     - https://audible.com
   metadata:
     max-request: 1
-  tags: phishing,audible,amazon,osint,discovery
+  tags: phishing,audible,amazon,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/github-workflows-disclosure.json
   metadata:
     max-request: 27
-  tags: exposure,config,vuln
+  tags: exposure,config,vuln,daily
 
 http:
   - method: GET

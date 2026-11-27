@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Netsweeper"'
-  tags: panel,netsweeper,webfilter,vpn
+  tags: panel,netsweeper,webfilter,vpn,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body=="bun.lockb"
-  tags: exposure,files,node,npm,bun,vuln
+  tags: exposure,files,node,npm,bun,vuln,daily
 
 http:
   - method: GET

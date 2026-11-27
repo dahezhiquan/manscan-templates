@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Login // Baserow"
-  tags: panel,login,baserow,discovery
+  tags: panel,login,baserow,discovery,daily_clustering
 http:
   - method: GET
     path:

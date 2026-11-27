@@ -20,7 +20,7 @@ info:
     - https://credit-agricole.com
   metadata:
     max-request: 1
-  tags: phishing,credit-agricole,bank,osint,discovery
+  tags: phishing,credit-agricole,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

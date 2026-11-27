@@ -22,7 +22,7 @@ info:
     shodan-query: http.html:"HexStrike"
     vendor: hexstrike-ai
     product: hexstrike-ai
-  tags: config,exposure,hexstrike-ai
+  tags: config,exposure,hexstrike-ai,daily
 
 http:
   - method: GET

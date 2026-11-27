@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"MAG Dashboard Login"
-  tags: panel,mag,discovery
+  tags: panel,mag,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -28,7 +28,7 @@ info:
       - http.title:"mybb"
     fofa-query: title="mybb"
     google-query: intitle:"mybb"
-  tags: misconfig,install,exposure,mybb,vuln
+  tags: misconfig,install,exposure,mybb,vuln,daily_clustering
 
 http:
   - method: GET

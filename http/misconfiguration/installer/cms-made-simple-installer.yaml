@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"CMS Made Simple Install/Upgrade"
-  tags: misconfig,install,exposure,cms-made-simple,vuln
+  tags: misconfig,install,exposure,cms-made-simple,vuln,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     shodan-query: "port:3306"
     vendor: oracle
     product: mysql
-  tags: js,mysql,default-login,network,fuzz,enum,vuln
+  tags: js,mysql,default-login,network,fuzz,enum,vuln,daily
 
 flow: tcp(1) && javascript(1)
 

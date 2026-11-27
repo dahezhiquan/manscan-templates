@@ -20,7 +20,7 @@ info:
     - https://azure.microsoft.com
   metadata:
     max-request: 1
-  tags: phishing,azure,microsoft,cloud,osint,discovery
+  tags: phishing,azure,microsoft,cloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Dozzle"
-  tags: exposure,logs,dozzle,docker,vuln
+  tags: exposure,logs,dozzle,docker,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -10,7 +10,7 @@ info:
     - https://www.exploit-db.com/ghdb/6891.
   metadata:
     max-request: 1
-  tags: wamp,exposure,misconfig,vuln
+  tags: wamp,exposure,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可获取密钥、令牌、数据库连接信息、源码结构、内部路径、历史日志或业务配置。
     - 泄露内容可能被用于凭据复用、供应链漏洞匹配、权限提升或进一步攻击。

@@ -19,7 +19,7 @@ info:
     - 清理搜索引擎、对象存储公开 ACL、CDN 缓存和历史发布包中的泄露副本。
   reference:
     - https://www.exploit-db.com/exploits/40718
-  tags: sweetrice,cms,exposure,backup,misconfig
+  tags: sweetrice,cms,exposure,backup,misconfig,daily
 
 http:
   - raw:

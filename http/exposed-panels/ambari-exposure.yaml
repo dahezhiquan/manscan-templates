@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: apache
     product: ambari
-  tags: panel,apache,ambari,exposure,discovery
+  tags: panel,apache,ambari,exposure,discovery,daily_clustering
 http:
   - method: GET
     path:

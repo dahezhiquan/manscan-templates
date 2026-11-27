@@ -23,7 +23,7 @@ info:
     vendor: COPA-DATA
     product: zenon
     shodan-query: 'http.title:"COPA-DATA :: zenon"'
-  tags: panel,scada,hmi,ics,copa-data,zenon,discovery
+  tags: panel,scada,hmi,ics,copa-data,zenon,discovery,daily_clustering
 http:
   - method: GET
     path:

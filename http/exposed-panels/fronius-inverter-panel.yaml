@@ -22,7 +22,7 @@ info:
     vendor: Fronius
     product: fronius-inverter
     shodan-query: 'http.title:"Fronius Inverter"'
-  tags: panel,fronius,ics,scada,solar,discovery
+  tags: panel,fronius,ics,scada,solar,discovery,daily_clustering
 http:
   - method: GET
     path:

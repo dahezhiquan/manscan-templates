@@ -24,7 +24,7 @@ info:
     - intitle:"SecureTrack - Tufin Technologies"
     - intitle:"securetrack - tufin technologies"
     fofa-query: title="securetrack - tufin technologies"
-  tags: panel,tufin,discovery
+  tags: panel,tufin,discovery,daily_clustering
 
 http:
   - method: GET

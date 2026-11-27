@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"Elfiq"'
-  tags: panel,elfiq,load-balancer
+  tags: panel,elfiq,load-balancer,daily_clustering
 http:
   - method: GET
     path:

@@ -24,7 +24,7 @@ info:
     max-request: 1
     shodan-query: http.component:"Craft CMS"
     fofa-query: app="Craft-CMS"
-  tags: craftcms,cms,exposure,logs,misconfig
+  tags: craftcms,cms,exposure,logs,misconfig,daily
 
 http:
   - method: GET

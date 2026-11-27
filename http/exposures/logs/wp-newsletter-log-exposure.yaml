@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 2
     shodan-query: http.html:"/wp-content/plugins/newsletter/"
-  tags: wordpress,wp-plugin,newsletter,logs
+  tags: wordpress,wp-plugin,newsletter,logs,daily
 
 http:
   - method: GET

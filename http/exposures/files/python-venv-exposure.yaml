@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     google-query: "intitle: Index of /venv"
-  tags: venv,exposure,python-env,info,vuln
+  tags: venv,exposure,python-env,info,vuln,daily
 
 http:
   - method: GET

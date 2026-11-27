@@ -28,7 +28,7 @@ info:
     shodan-query: html:"phinx.yml"
     product: cakephp
     vendor: cakephp
-  tags: files,exposure,config,vuln
+  tags: files,exposure,config,vuln,daily
 
 http:
   - method: GET

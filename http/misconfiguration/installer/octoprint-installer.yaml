@@ -21,7 +21,7 @@ info:
     vendor: octoprint
     product: octoprint
     fofa-query: body="Thank you for installing OctoPrint"
-  tags: install,octoprint,misconfig,intrusive,vuln
+  tags: install,octoprint,misconfig,intrusive,vuln,daily_clustering
 
 http:
   - method: GET

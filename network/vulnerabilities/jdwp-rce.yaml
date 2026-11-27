@@ -18,7 +18,7 @@ info:
   metadata:
     verified: true
     shodan-query: product:"Java Debug Wire Protocol"
-  tags: jdwp,rce,network,tcp,unauth,vuln
+  tags: jdwp,rce,network,tcp,unauth,vuln,daily
 
 javascript:
   - code: |

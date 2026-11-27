@@ -21,7 +21,7 @@ info:
     vendor: ntop
     product: ntopng
     shodan-query: title:"Configure ntop"
-  tags: misconfig,ntop,exposure,vuln
+  tags: misconfig,ntop,exposure,vuln,daily_clustering
 
 http:
   - method: GET

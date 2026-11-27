@@ -19,7 +19,7 @@ info:
     - https://evernote.com
   metadata:
     max-request: 1
-  tags: phishing,evernote,osint,discovery
+  tags: phishing,evernote,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

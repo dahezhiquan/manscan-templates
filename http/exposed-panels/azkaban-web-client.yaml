@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"Azkaban Web Client"
     product: azkaban
     vendor: azkaban_project
-  tags: panel,azkaban,discovery
+  tags: panel,azkaban,discovery,daily_clustering
 http:
   - method: GET
     path:

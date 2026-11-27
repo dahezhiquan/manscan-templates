@@ -22,7 +22,7 @@ info:
     shodan-query: "Open X Server:"
     verified: true
     max-request: 1
-  tags: x11,network,js,remote,unauth,vuln
+  tags: x11,network,js,remote,unauth,vuln,daily
 
 javascript:
   - pre-condition: |

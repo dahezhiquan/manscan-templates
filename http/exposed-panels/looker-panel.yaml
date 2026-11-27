@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"lookerVersion"
-  tags: panel,login,looker,discovery
+  tags: panel,login,looker,discovery,daily_clustering
 http:
   - method: GET
     path:

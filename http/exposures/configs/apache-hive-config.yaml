@@ -25,7 +25,7 @@ info:
     vendor: apache
     product: hive
     shodan-query: title:"HiveServer2"
-  tags: apache,hive,config,exposure,vuln
+  tags: apache,hive,config,exposure,vuln,daily
 
 http:
   - method: GET

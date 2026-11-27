@@ -23,7 +23,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: exposure,token,scalingo,vuln
+  tags: exposure,token,scalingo,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Welcome to your Strapi app" html:"create an administrator"
-  tags: misconfig,exposure,strapi,install,vuln
+  tags: misconfig,exposure,strapi,install,vuln,daily_clustering
 
 http:
   - method: GET

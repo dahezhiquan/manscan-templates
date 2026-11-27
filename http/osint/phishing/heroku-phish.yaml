@@ -20,7 +20,7 @@ info:
     - https://heroku.com
   metadata:
     max-request: 1
-  tags: phishing,heroku,cloud,osint,discovery
+  tags: phishing,heroku,cloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

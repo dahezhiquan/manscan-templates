@@ -15,7 +15,7 @@ info:
     - 对异常方法请求、认证挑战和代理链行为增加日志审计。
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,generic,vuln
+  tags: miscellaneous,misc,generic,vuln,daily
 
 http:
   - method: OPTIONS

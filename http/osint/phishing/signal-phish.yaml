@@ -20,7 +20,7 @@ info:
     - https://signal.org
   metadata:
     max-request: 1
-  tags: phishing,signal,osint,discovery
+  tags: phishing,signal,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

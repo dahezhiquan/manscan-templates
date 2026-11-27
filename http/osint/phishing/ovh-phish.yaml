@@ -20,7 +20,7 @@ info:
     - https://ovhcloud.com
   metadata:
     max-request: 1
-  tags: phishing,ovh,cloud,hosting,osint,discovery
+  tags: phishing,ovh,cloud,hosting,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - http.title:"voipmonitor"
     fofa-query: title="voipmonitor"
     google-query: intitle:"voipmonitor"
-  tags: panel,voipmonitor,login,discovery
+  tags: panel,voipmonitor,login,discovery,daily_clustering
 
 http:
   - method: GET

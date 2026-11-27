@@ -28,7 +28,7 @@ info:
     shodan-query: html:"redis.conf"
     product: redis
     vendor: redis
-  tags: redis,exposure,config,vuln
+  tags: redis,exposure,config,vuln,daily
 
 http:
   - method: GET

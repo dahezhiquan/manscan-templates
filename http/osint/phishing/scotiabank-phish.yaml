@@ -20,7 +20,7 @@ info:
     - https://scotiabank.com
   metadata:
     max-request: 1
-  tags: phishing,scotiabank,bank,osint,discovery
+  tags: phishing,scotiabank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: nocobase
     product: nocobase
-  tags: nocobase,config,exposed,vuln
+  tags: nocobase,config,exposed,vuln,daily
 
 http:
   - raw:

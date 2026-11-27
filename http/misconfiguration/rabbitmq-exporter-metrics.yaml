@@ -21,7 +21,7 @@ info:
     vendor: vmware
     product: rabbitmq
     shodan-query: title:"RabbitMQ Exporter"
-  tags: rabbitmq,exposure,debug,misconfig,vuln
+  tags: rabbitmq,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

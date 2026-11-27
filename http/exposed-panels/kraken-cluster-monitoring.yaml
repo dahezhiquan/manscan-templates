@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Kraken dashboard"
-  tags: panel,kraken,cluster,discovery
+  tags: panel,kraken,cluster,discovery,daily_clustering
 http:
   - method: GET
     path:

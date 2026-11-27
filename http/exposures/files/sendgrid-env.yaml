@@ -23,7 +23,7 @@ info:
     vendor: sendgrid
     product: sendgrid
     shodan-query: html:"sendgrid.env"
-  tags: exposure,sendgrid,key,api,files,vuln
+  tags: exposure,sendgrid,key,api,files,vuln,daily
 
 http:
   - method: GET

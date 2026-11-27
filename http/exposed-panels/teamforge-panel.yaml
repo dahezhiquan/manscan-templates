@@ -15,7 +15,7 @@ info:
     max-request: 1
     shodan-query: title:"TeamForge :"
     fofa-query: title="TeamForge :"
-  tags: panel,teamforge,login,discovery
+  tags: panel,teamforge,login,discovery,daily_clustering
 
 http:
   - method: GET

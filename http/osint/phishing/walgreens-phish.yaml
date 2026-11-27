@@ -19,7 +19,7 @@ info:
     - https://walgreens.com
   metadata:
     max-request: 1
-  tags: phishing,walgreens,ecommerce,osint,discovery
+  tags: phishing,walgreens,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

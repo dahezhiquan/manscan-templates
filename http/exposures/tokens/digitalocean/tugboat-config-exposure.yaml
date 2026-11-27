@@ -20,7 +20,7 @@ info:
     - https://www.digitalocean.com/community/tools/tugboat
   metadata:
     max-request: 1
-  tags: tugboat,config,exposure,vuln
+  tags: tugboat,config,exposure,vuln,daily
 
 http:
   - method: GET

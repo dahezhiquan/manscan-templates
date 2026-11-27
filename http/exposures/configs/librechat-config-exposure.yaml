@@ -23,7 +23,7 @@ info:
     vendor: librechat
     product: librechat
     shodan-query: title:"librechat"
-  tags: librechat,config,exposure
+  tags: librechat,config,exposure,daily
 
 http:
   - method: GET

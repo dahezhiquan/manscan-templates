@@ -20,7 +20,7 @@ info:
     - https://mixpanel.com
   metadata:
     max-request: 1
-  tags: phishing,mixpanel,analytics,osint,discovery
+  tags: phishing,mixpanel,analytics,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

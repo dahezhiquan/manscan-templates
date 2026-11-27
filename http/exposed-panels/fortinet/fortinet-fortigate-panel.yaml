@@ -19,7 +19,7 @@ info:
     shodan-query:
       - cpe:"cpe:2.3:o:fortinet:fortios"
       - http.html_hash:-1454941180
-  tags: panel,fortigate,vpn,discovery
+  tags: panel,fortigate,vpn,discovery,daily_clustering
 http:
   - method: GET
     path:

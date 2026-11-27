@@ -19,7 +19,7 @@ info:
     - https://patreon.com
   metadata:
     max-request: 1
-  tags: phishing,patreon,osint,discovery
+  tags: phishing,patreon,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

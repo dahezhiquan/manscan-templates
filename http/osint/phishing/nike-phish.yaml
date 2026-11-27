@@ -19,7 +19,7 @@ info:
     - https://nike.com
   metadata:
     max-request: 1
-  tags: phishing,nike,ecommerce,osint,discovery
+  tags: phishing,nike,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

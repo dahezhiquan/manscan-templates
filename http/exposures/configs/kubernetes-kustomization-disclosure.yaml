@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: exposure,config,kubernetes,vuln
+  tags: exposure,config,kubernetes,vuln,daily
 
 http:
   - method: GET

@@ -22,7 +22,7 @@ info:
     vendor: Moxa
     product: mxview
     shodan-query: http.title:"MXview One Central Manager"
-  tags: panel,ics,ot,networking,moxa,mxview,industrial-ethernet,discovery
+  tags: panel,ics,ot,networking,moxa,mxview,industrial-ethernet,discovery,daily_clustering
 http:
   - method: GET
     path:

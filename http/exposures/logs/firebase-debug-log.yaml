@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     github-query: filename:firebase-debug.log
-  tags: exposure,firebase,logs,debug,vuln
+  tags: exposure,firebase,logs,debug,vuln,daily
 
 http:
   - method: GET

@@ -23,7 +23,7 @@ info:
     vendor: apache
     product: pinot
     shodan-query: title:"Apache Pinot"
-  tags: config,exposure,pinot,apache,vuln
+  tags: config,exposure,pinot,apache,vuln,daily
 
 http:
   - method: GET

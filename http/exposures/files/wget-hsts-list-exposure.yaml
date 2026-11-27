@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:".wget-hsts"
-  tags: devops,exposure,wget,files,vuln
+  tags: devops,exposure,wget,files,vuln,daily
 
 http:
   - method: GET

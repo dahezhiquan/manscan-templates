@@ -20,7 +20,7 @@ info:
     - https://bitfinex.com
   metadata:
     max-request: 1
-  tags: phishing,bitfinex,crypto,osint,discovery
+  tags: phishing,bitfinex,crypto,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -18,7 +18,7 @@ info:
     - https://support.sap.com/en/tools/connectivity-tools/saprouter.html
   metadata:
     max-request: 1
-  tags: network,sap,misconfig,saprouter,tcp,vuln
+  tags: network,sap,misconfig,saprouter,tcp,vuln,daily
 
 tcp:
   - inputs:

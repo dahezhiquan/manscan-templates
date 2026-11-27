@@ -17,7 +17,7 @@ info:
     - https://link.medium.com/fgXKJHR9P7
   metadata:
     max-request: 1
-  tags: aws,takeover,misconfig,vuln
+  tags: aws,takeover,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

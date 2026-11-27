@@ -21,7 +21,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1305
-  tags: exposure,backup,vuln
+  tags: exposure,backup,vuln,daily
 
 http:
   - method: GET

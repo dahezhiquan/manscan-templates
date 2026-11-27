@@ -25,7 +25,7 @@ info:
     vendor: opentsdb
     product: opentsdb
     shodan-query: http.favicon.hash:407286339
-  tags: opentsdb,exposure,logs,vuln
+  tags: opentsdb,exposure,logs,vuln,daily
 
 http:
   - method: GET

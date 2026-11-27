@@ -20,7 +20,7 @@ info:
     - https://github.com
   metadata:
     max-request: 1
-  tags: phishing,github,osint,discovery
+  tags: phishing,github,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

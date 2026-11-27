@@ -21,7 +21,7 @@ info:
     vendor: kubernetes
     product: kube-state-metrics
     shodan-query: title:Kube-state-metrics
-  tags: misconfig,exposure,kube-state-metrics,kubernetes,vuln
+  tags: misconfig,exposure,kube-state-metrics,kubernetes,vuln,daily_clustering
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: jenkins,crumb,token,exposure,vuln
+  tags: jenkins,crumb,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

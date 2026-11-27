@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"GXD5 Pacs Connexion utilisateur"
-  tags: panel,login,discovery
+  tags: panel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

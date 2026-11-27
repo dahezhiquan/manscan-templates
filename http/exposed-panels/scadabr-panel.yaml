@@ -17,7 +17,7 @@ info:
     vendor: ScadaBR
     product: scadabr
     shodan-query: http.title:"ScadaBR"
-  tags: panel,scada,ics,scadabr,mango,open-source,latin-america,discovery
+  tags: panel,scada,ics,scadabr,mango,open-source,latin-america,discovery,daily_clustering
 
 http:
   - method: GET

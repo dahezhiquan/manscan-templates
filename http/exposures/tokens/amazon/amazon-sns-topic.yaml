@@ -17,7 +17,7 @@ info:
     - 若怀疑已被滥用，轮换相关密钥或 OAuth 客户端凭据，并审计近期授权、登录和 API 调用记录。
   metadata:
     max-request: 1
-  tags: exposure,token,amazon,vuln
+  tags: exposure,token,amazon,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://asana.com
   metadata:
     max-request: 1
-  tags: phishing,asana,productivity,osint,discovery
+  tags: phishing,asana,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -24,7 +24,7 @@ info:
     fofa-query: app="MinIO-Console"
     product: console
     vendor: minio
-  tags: panel,minio,discovery
+  tags: panel,minio,discovery,daily_clustering
 http:
   - method: GET
     path:

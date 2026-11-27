@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: crypto,bitcoin,monero,ethereum,xrp,ripple,osint,discovery
+  tags: crypto,bitcoin,monero,ethereum,xrp,ripple,osint,discovery,daily,daily_clustering
 
 http:
   - method: GET

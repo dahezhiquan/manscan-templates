@@ -19,7 +19,7 @@ info:
     - https://sourceforge.net/projects/sarg/
   metadata:
     max-request: 1
-  tags: sarg,exposure,logs,vuln
+  tags: sarg,exposure,logs,vuln,daily,daily_clustering
 
 http:
   - method: GET

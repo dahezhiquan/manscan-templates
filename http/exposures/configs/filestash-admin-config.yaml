@@ -23,7 +23,7 @@ info:
     vendor: filestash
     product: filestash
     shodan-query: html:"<title>Admin Console</title>"
-  tags: exposure,filestash,config,vuln
+  tags: exposure,filestash,config,vuln,daily
 
 http:
   - method: GET

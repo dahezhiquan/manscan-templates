@@ -29,7 +29,7 @@ info:
       - http.title:"bedita"
     fofa-query: title="bedita"
     google-query: intitle:"bedita"
-  tags: panel,bedita,discovery
+  tags: panel,bedita,discovery,daily_clustering
 http:
   - method: GET
     path:

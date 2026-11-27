@@ -25,7 +25,7 @@ info:
     vendor: dockge.kuma
     product: dockge
     shodan-query: title:"Dockge"
-  tags: panel,dockge,login,discovery
+  tags: panel,dockge,login,discovery,daily_clustering
 http:
   - method: GET
     path:

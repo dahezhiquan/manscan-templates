@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"AmpGuard wifi setup"
-  tags: ampguard,iot,setup,wifi,discovery
+  tags: ampguard,iot,setup,wifi,discovery,daily_clustering
 
 http:
   - method: GET

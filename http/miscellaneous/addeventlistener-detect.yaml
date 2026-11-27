@@ -17,7 +17,7 @@ info:
     - https://portswigger.net/web-security/dom-based/controlling-the-web-message-source
   metadata:
     max-request: 1
-  tags: miscellaneous,xss,misc,vuln
+  tags: miscellaneous,xss,misc,vuln,daily,daily_clustering
 
 http:
   - method: GET

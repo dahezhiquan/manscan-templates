@@ -19,7 +19,7 @@ info:
     - 若文件中包含凭据、令牌、连接串或私有地址，应执行密钥轮换、权限收敛和受影响系统访问审计。
   reference:
     - https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments
-  tags: aspnet,config,exposure,json,dotnet
+  tags: aspnet,config,exposure,json,dotnet,daily
 
 http:
   - method: GET

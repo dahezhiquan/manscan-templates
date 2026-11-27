@@ -26,7 +26,7 @@ info:
     vendor: fastcgi
     product: fcgi
     google-query: inurl:fcgi-bin/echo
-  tags: exposure,logs,oracle,fastcgi,edb,vuln
+  tags: exposure,logs,oracle,fastcgi,edb,vuln,daily
 
 http:
   - method: GET

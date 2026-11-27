@@ -18,7 +18,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: logs,git,exposure,vuln
+  tags: logs,git,exposure,vuln,daily
 
 http:
   - method: GET

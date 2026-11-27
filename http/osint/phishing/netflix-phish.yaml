@@ -19,7 +19,7 @@ info:
     - https://netflix.com
   metadata:
     max-request: 1
-  tags: phishing,netflix,osint,discovery
+  tags: phishing,netflix,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Tenda Web Master"
-  tags: panel,tenda,router,discovery
+  tags: panel,tenda,router,discovery,daily_clustering
 
 http:
   - method: GET

@@ -18,7 +18,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: product:"OpenSSH"
-  tags: enum,js,ssh,misconfig,network,vuln
+  tags: enum,js,ssh,misconfig,network,vuln,daily
 
 variables:
   ecdsa_bit: '256' # 256 bytes = 2048 bits

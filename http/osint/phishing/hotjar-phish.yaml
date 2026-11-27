@@ -20,7 +20,7 @@ info:
     - https://hotjar.com
   metadata:
     max-request: 1
-  tags: phishing,hotjar,analytics,osint,discovery
+  tags: phishing,hotjar,analytics,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

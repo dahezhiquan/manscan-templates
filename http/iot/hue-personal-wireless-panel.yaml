@@ -20,7 +20,7 @@ info:
     vendor: philips
     product: hue
     shodan-query: title:"hue personal wireless lighting"
-  tags: hue,iot,wireless,discovery
+  tags: hue,iot,wireless,discovery,daily_clustering
 
 http:
   - method: GET

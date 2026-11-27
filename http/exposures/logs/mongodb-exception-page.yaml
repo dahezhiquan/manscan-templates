@@ -18,7 +18,7 @@ info:
   metadata:
     max-request: 1
     fofa-query: html:"MongoDB Exception"
-  tags: error,mongodb,log,vuln
+  tags: error,mongodb,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

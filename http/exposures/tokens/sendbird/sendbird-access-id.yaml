@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: exposure,token,sendbird,vuln
+  tags: exposure,token,sendbird,vuln,daily,daily_clustering
 
 http:
   - method: GET

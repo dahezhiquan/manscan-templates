@@ -16,7 +16,7 @@ info:
     vendor: Trihedral
     product: vtscada
     shodan-query: http.title:"VTScada Internet Client from Trihedral"
-  tags: panel,scada,ics,vtscada,trihedral,utilities,water,oil-gas,discovery
+  tags: panel,scada,ics,vtscada,trihedral,utilities,water,oil-gas,discovery,daily_clustering
 
 http:
   - method: GET

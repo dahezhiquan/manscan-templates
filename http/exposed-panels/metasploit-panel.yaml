@@ -33,7 +33,7 @@ info:
     google-query:
       - intitle:"metasploit"
       - intitle:"metasploit - setup and configuration"
-  tags: panel,metasploit,login,rapid7,discovery
+  tags: panel,metasploit,login,rapid7,discovery,daily_clustering
 http:
   - method: GET
     path:

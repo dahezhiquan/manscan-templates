@@ -23,7 +23,7 @@ info:
     vendor: activecollab
     product: activecollab
     shodan-query: html:"ActiveCollab Installer"
-  tags: misconfig,install,exposure,activecollab,vuln
+  tags: misconfig,install,exposure,activecollab,vuln,daily_clustering
 
 http:
   - method: GET

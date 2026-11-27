@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Named Process Exporter"
-  tags: namedprocess,exposure,debug,misconfig,vuln
+  tags: namedprocess,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

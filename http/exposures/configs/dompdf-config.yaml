@@ -24,7 +24,7 @@ info:
     fofa-query: title="dompdf - The PHP 5 HTML to PDF Converter"
     product: dompdf
     vendor: dompdf_project
-  tags: config,exposure,dompdf,vuln
+  tags: config,exposure,dompdf,vuln,daily
 
 http:
   - method: GET

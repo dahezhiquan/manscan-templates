@@ -20,7 +20,7 @@ info:
     - https://linkedin.com
   metadata:
     max-request: 1
-  tags: phishing,linkedin,osint,discovery
+  tags: phishing,linkedin,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

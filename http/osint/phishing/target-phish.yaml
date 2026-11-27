@@ -19,7 +19,7 @@ info:
     - https://target.com
   metadata:
     max-request: 1
-  tags: phishing,target,osint,discovery
+  tags: phishing,target,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

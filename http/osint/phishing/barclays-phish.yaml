@@ -20,7 +20,7 @@ info:
     - https://barclays.com
   metadata:
     max-request: 1
-  tags: phishing,barclays,bank,osint,discovery
+  tags: phishing,barclays,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

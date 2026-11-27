@@ -22,7 +22,7 @@ info:
     vendor: Growatt
     product: shinelink
     shodan-query: 'http.title:"Growatt Shinelink"'
-  tags: panel,growatt,ics,scada,solar,discovery
+  tags: panel,growatt,ics,scada,solar,discovery,daily_clustering
 http:
   - method: GET
     path:

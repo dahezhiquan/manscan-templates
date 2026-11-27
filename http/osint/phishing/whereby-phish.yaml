@@ -20,7 +20,7 @@ info:
     - https://whereby.com
   metadata:
     max-request: 1
-  tags: phishing,whereby,video,communication,osint,discovery
+  tags: phishing,whereby,video,communication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

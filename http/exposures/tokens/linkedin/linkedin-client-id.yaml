@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: linkedin,exposure,token,vuln
+  tags: linkedin,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

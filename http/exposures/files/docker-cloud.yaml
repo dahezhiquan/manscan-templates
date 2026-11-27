@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     google-query: intitle:"index of" "docker-cloud.yml"
-  tags: exposure,cloud,devops,docker,files,vuln
+  tags: exposure,cloud,devops,docker,files,vuln,daily
 
 http:
   - method: GET

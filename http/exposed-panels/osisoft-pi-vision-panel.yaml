@@ -17,7 +17,7 @@ info:
     vendor: OSIsoft
     product: pi-vision
     shodan-query: 'http.title:"PI Vision"'
-  tags: panel,scada,historian,ics,osisoft,aveva,pi-vision,pi-system,energy,discovery
+  tags: panel,scada,historian,ics,osisoft,aveva,pi-vision,pi-system,energy,discovery,daily_clustering
 
 http:
   - method: GET

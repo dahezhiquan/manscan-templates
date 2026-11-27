@@ -20,7 +20,7 @@ info:
     - https://nordpass.com
   metadata:
     max-request: 1
-  tags: phishing,nordpass,osint,discovery
+  tags: phishing,nordpass,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

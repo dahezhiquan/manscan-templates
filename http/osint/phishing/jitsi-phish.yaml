@@ -20,7 +20,7 @@ info:
     - https://jitsi.org
   metadata:
     max-request: 1
-  tags: phishing,jitsi,video,communication,osint,discovery
+  tags: phishing,jitsi,video,communication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -28,7 +28,7 @@ info:
     google-query: intext:"configuration of the svnserve daemon"
     product: subversion
     vendor: apache
-  tags: config,exposure,svnserve,vuln
+  tags: config,exposure,svnserve,vuln,daily
 
 http:
   - method: GET

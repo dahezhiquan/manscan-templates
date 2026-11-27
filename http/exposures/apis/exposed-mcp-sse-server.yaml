@@ -22,7 +22,7 @@ info:
     verified: true
     max-requests: 2
     shodan-query: "text/event-stream"
-  tags: mcp,devtools,exposure,api,ai,llm,discovery
+  tags: mcp,devtools,exposure,api,ai,llm,discovery,daily
 
 http:
   - method: GET

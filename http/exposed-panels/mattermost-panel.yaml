@@ -21,7 +21,7 @@ info:
     shodan-query: html:'content="Mattermost"'
     fofa-query: 'content="Mattermost"'
     vendor: mattermost
-  tags: login,mattermost,panel,discovery
+  tags: login,mattermost,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://blender.org
   metadata:
     max-request: 1
-  tags: phishing,blender,osint,discovery
+  tags: phishing,blender,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

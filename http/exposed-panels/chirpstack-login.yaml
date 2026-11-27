@@ -21,7 +21,7 @@ info:
     max-request: 1
     shodan-query: http.title:"ChirpStack LoRaWAN"
     fofa-query: title="ChirpStack LoRaWAN"
-  tags: panel,chirpstack,discovery
+  tags: panel,chirpstack,discovery,daily_clustering
 http:
   - method: GET
     path:

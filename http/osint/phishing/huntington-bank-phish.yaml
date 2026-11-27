@@ -20,7 +20,7 @@ info:
     - https://huntington.com
   metadata:
     max-request: 1
-  tags: phishing,huntington-bank,bank,osint,discovery
+  tags: phishing,huntington-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

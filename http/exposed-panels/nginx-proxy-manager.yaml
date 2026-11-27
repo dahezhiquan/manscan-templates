@@ -23,7 +23,7 @@ info:
     shodan-query: http.title:"Nginx Proxy Manager"
     product: nginx_proxy_manager
     vendor: nginxproxymanager
-  tags: panel,nginx,proxy,discovery
+  tags: panel,nginx,proxy,discovery,daily_clustering
 http:
   - method: GET
     path:

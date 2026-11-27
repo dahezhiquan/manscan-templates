@@ -18,7 +18,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: atom,exposure,config,files,vuln
+  tags: atom,exposure,config,files,vuln,daily
 
 http:
   - method: GET

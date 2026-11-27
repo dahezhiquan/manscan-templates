@@ -16,7 +16,7 @@ info:
     shodan-query: http.title:"Warning [refreshed every 30 sec.]"
     product: zabbix_server
     vendor: zabbix
-  tags: zabbix,misconfig,vuln
+  tags: zabbix,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可确认监控系统存在并收集产品部署线索。
     - 错误页信息可辅助后续登录入口探测、版本识别或弱口令攻击。

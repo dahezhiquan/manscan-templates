@@ -20,7 +20,7 @@ info:
     - https://venmo.com
   metadata:
     max-request: 1
-  tags: phishing,venmo,osint,discovery
+  tags: phishing,venmo,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

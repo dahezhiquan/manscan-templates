@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"ICTBroadcast"
-  tags: misconfig,exposure,install,ictbroadcast,vuln
+  tags: misconfig,exposure,install,ictbroadcast,vuln,daily_clustering
 
 http:
   - method: GET

@@ -30,7 +30,7 @@ info:
       - http.title:"flowchart maker"
     fofa-query: title="flowchart maker"
     google-query: intitle:"flowchart maker"
-  tags: panel,drawio,oss,diagrams,discovery
+  tags: panel,drawio,oss,diagrams,discovery,daily_clustering
 http:
   - method: GET
     path:

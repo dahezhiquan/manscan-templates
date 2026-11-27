@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"MetaView Explorer"
-  tags: misconfig,metaview,installer,vuln
+  tags: misconfig,metaview,installer,vuln,daily_clustering
 
 http:
   - method: GET

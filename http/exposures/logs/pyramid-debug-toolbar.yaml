@@ -19,7 +19,7 @@ info:
     - https://github.com/Pylons/pyramid_debugtoolbar
   metadata:
     max-request: 1
-  tags: pyramid,logs,exposure,vuln
+  tags: pyramid,logs,exposure,vuln,daily
 
 http:
   - method: GET

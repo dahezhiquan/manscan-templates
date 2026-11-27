@@ -21,7 +21,7 @@ info:
     vendor: moosocial
     product: moosocial
     shodan-query: html:"mooSocial Installation"
-  tags: exposure,moosocial,misconfig,install,vuln
+  tags: exposure,moosocial,misconfig,install,vuln,daily_clustering
 
 http:
   - method: GET

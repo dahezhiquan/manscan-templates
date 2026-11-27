@@ -21,7 +21,7 @@ info:
     vendor: wibu
     product: codemeter
     shodan-query: html:"CodeMeter"
-  tags: misconfig,exposure,codemeter,vuln
+  tags: misconfig,exposure,codemeter,vuln,daily_clustering
 
 http:
   - method: GET

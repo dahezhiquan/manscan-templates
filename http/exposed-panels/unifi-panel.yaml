@@ -16,7 +16,7 @@ info:
     shodan-query: http.title:"UniFi Network"
     product: unifi_network_application
     vendor: ui
-  tags: unifi,ubnt,panel,discovery
+  tags: unifi,ubnt,panel,discovery,daily_clustering
 
 http:
   - method: GET

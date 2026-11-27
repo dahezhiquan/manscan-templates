@@ -16,7 +16,7 @@ info:
     vendor: pingidentity
     product: pingfederate
     shodan-query: http.html:"/pingfederate/dist/styles.css"
-  tags: panel,pingfederate,identity
+  tags: panel,pingfederate,identity,daily_clustering
 
 http:
   - method: GET

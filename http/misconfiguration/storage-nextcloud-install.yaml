@@ -10,7 +10,7 @@ info:
     - https://docs.nextcloud.com/server/latest/admin_manual/installation/installation_wizard.html
   metadata:
     max-request: 1
-  tags: nextcloud,storage,misconfig,vuln
+  tags: nextcloud,storage,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可能创建管理员账户、重置配置、接管尚未初始化的服务或绕过既有部署边界。
     - 初始化接口暴露还可能泄露系统状态、安装路径、数据库配置需求和版本信息。

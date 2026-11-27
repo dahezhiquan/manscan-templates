@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"MobiProxy"
-  tags: dashboard,exposure,mobiproxy,misconfig,discovery
+  tags: dashboard,exposure,mobiproxy,misconfig,discovery,daily_clustering
 
 http:
   - method: GET

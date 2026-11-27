@@ -17,7 +17,7 @@ info:
     - https://medium.com/swlh/internal-information-disclosure-using-hidden-ntlm-authentication-18de17675666
   metadata:
     max-request: 49
-  tags: miscellaneous,misc,fuzz,windows,vuln
+  tags: miscellaneous,misc,fuzz,windows,vuln,daily
 
 http:
   - raw:

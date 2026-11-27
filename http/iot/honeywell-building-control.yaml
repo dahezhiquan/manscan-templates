@@ -20,7 +20,7 @@ info:
     vendor: honeywell
     product: alerton_ascent_control_module
     shodan-query: html:"Honeywell Building Control"
-  tags: panel,iot,discovery
+  tags: panel,iot,discovery,daily_clustering
 
 http:
   - method: GET

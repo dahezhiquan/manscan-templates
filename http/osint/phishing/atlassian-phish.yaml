@@ -20,7 +20,7 @@ info:
     - https://atlassian.com
   metadata:
     max-request: 1
-  tags: phishing,atlassian,productivity,osint,discovery
+  tags: phishing,atlassian,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

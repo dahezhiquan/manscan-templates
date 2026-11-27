@@ -20,7 +20,7 @@ info:
     - https://support.google.com/googleapi/answer/6310037
   metadata:
     max-request: 2
-  tags: exposure,token,google,vuln
+  tags: exposure,token,google,vuln,daily
 
 http:
   - method: GET

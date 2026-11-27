@@ -27,7 +27,7 @@ info:
     fofa-query:
       - title="dzzoffice"
       - icon_hash=-1961736892
-  tags: misconfig,install,exposure,dzzoffice,vuln
+  tags: misconfig,install,exposure,dzzoffice,vuln,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     vendor: gitlist
     product: gitlist
     shodan-query: title:"GitList"
-  tags: gitlist,misconfig,vuln
+  tags: gitlist,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

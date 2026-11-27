@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: gitpod,docker,exposure,config
+  tags: gitpod,docker,exposure,config,daily
 
 http:
   - method: GET

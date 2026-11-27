@@ -21,7 +21,7 @@ info:
     vendor: dolibarr
     product: dolibarr_erp\\/crm
     shodan-query: title:"Dolibarr install or upgrade"
-  tags: misconfig,exposure,install,vuln
+  tags: misconfig,exposure,install,vuln,daily_clustering
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     - 定期巡检公开页面，确保内容仍然准确且未泄露额外信息。
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,generic,vuln
+  tags: miscellaneous,misc,generic,vuln,daily
 
 http:
   - method: GET

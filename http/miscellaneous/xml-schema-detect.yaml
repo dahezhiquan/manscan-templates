@@ -15,7 +15,7 @@ info:
     - 审查暴露内容是否包含凭据、内部路径或版本线索，并及时升级相关组件。
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,generic,vuln
+  tags: miscellaneous,misc,generic,vuln,daily
 
 http:
   - method: GET

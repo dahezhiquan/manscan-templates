@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Pa11y Dashboard"
-  tags: misconfig,exposure,pa11y,discovery
+  tags: misconfig,exposure,pa11y,discovery,daily_clustering
 
 http:
   - method: GET

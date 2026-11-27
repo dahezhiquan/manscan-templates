@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"DD-WRT"'
-  tags: panel,dd-wrt,router
+  tags: panel,dd-wrt,router,daily_clustering
 http:
   - method: GET
     path:

@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: cpanel,exposure,config,misconfig
+  tags: cpanel,exposure,config,misconfig,daily
 
 http:
   - method: GET

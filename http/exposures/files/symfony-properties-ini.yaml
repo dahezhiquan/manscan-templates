@@ -23,7 +23,7 @@ info:
     vendor: sensiolabs
     product: symfony
     google-query: intitle:"index of" "properties.ini"
-  tags: symfony,exposure,files,vuln
+  tags: symfony,exposure,files,vuln,daily
 
 http:
   - method: GET

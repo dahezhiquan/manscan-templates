@@ -20,7 +20,7 @@ info:
     - https://db.com
   metadata:
     max-request: 1
-  tags: phishing,deutsche-bank,bank,osint,discovery
+  tags: phishing,deutsche-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

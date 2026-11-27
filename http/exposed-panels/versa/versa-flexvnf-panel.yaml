@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Flex VNF Web-UI"
-  tags: panel,versa,flexvnf,discovery
+  tags: panel,versa,flexvnf,discovery,daily_clustering
 
 http:
   - method: GET

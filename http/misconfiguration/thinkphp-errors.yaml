@@ -14,7 +14,7 @@ info:
     vendor: thinkphp
     product: thinkphp
     fofa-query: app="ThinkPHP" && title="System Error"
-  tags: thinkphp,misconfig,exposure,vuln
+  tags: thinkphp,misconfig,exposure,vuln,daily_clustering
   impact: |-
     - 攻击者可获取应用路径、框架版本、环境变量、内部调用栈、请求参数和依赖信息。
     - 这些信息可帮助定位组件缺陷、构造后续漏洞利用或绕过安全控制。

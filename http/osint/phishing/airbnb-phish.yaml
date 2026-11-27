@@ -19,7 +19,7 @@ info:
     - https://airbnb.com
   metadata:
     max-request: 1
-  tags: phishing,airbnb,travel,osint,discovery
+  tags: phishing,airbnb,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

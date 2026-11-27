@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: html:"behat.yml"
-  tags: exposure,behat,devops,cicd,vuln
+  tags: exposure,behat,devops,cicd,vuln,daily
 
 http:
   - method: GET

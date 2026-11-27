@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Pipfile"
-  tags: exposure,pip,devops,cicd,files,vuln
+  tags: exposure,pip,devops,cicd,files,vuln,daily
 
 http:
   - method: GET

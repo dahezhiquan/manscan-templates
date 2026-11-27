@@ -22,7 +22,7 @@ info:
     vendor: Fronius
     product: fronius-datalogger-web
     shodan-query: 'http.title:"Fronius Datalogger Web"'
-  tags: panel,fronius,ics,scada,solar,discovery
+  tags: panel,fronius,ics,scada,solar,discovery,daily_clustering
 http:
   - method: GET
     path:

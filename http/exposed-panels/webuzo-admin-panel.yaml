@@ -21,7 +21,7 @@ info:
     - http.title:"webuzo - admin panel"
     fofa-query: title="webuzo - admin panel"
     google-query: intitle:"webuzo - admin panel"
-  tags: panel,webuzo,admin,softaculous,discovery
+  tags: panel,webuzo,admin,softaculous,discovery,daily_clustering
 
 http:
   - method: GET

@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 85
-  tags: misc,defacement,spam,hacktivism,fuzz,miscellaneous,vuln
+  tags: misc,defacement,spam,hacktivism,fuzz,miscellaneous,vuln,daily
 
 http:
   - method: GET

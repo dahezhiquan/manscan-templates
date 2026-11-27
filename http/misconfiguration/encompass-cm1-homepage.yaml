@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Encompass CM1 Home Page"
-  tags: misconfig,encompass,exposure,vuln
+  tags: misconfig,encompass,exposure,vuln,daily_clustering
 
 http:
   - method: GET

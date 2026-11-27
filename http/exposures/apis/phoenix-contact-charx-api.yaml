@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Phoenix Contact - CHARX"
-  tags: phoenix-contact,charx,ics,api,discovery
+  tags: phoenix-contact,charx,ics,api,discovery,daily
 
 http:
   - method: GET

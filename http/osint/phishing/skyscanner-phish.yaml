@@ -19,7 +19,7 @@ info:
     - https://skyscanner.net
   metadata:
     max-request: 1
-  tags: phishing,skyscanner,osint,discovery
+  tags: phishing,skyscanner,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Vugex Framework"
-  tags: vugex,framework,disclosure,info-leak,discovery
+  tags: vugex,framework,disclosure,info-leak,discovery,daily,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     vendor: moodle
     product: moodle
     shodan-query: title:"Installation Moodle"
-  tags: misconfig,moodle,install,exposure,vuln
+  tags: misconfig,moodle,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

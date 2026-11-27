@@ -20,7 +20,7 @@ info:
     - https://linode.com
   metadata:
     max-request: 1
-  tags: phishing,linode,cloud,osint,discovery
+  tags: phishing,linode,cloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

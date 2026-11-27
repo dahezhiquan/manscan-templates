@@ -12,7 +12,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: X-Application-Context
-  tags: springboot,misconfig,exposure
+  tags: springboot,misconfig,exposure,daily_clustering
   impact: |-
     - 攻击者可获取应用健康状态、运行指标、线程、日志、依赖组件、内部路由或环境线索。
     - 这些信息可帮助攻击者识别技术栈、推断内部服务拓扑，并为后续漏洞利用、凭据搜集或拒绝服务攻击提供依据。

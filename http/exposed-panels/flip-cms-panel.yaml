@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: panel,flip,cms,discovery
+  tags: panel,flip,cms,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -25,7 +25,7 @@ info:
     vendor: cisco
     product: sd-wan
     shodan-query: cpe:"cpe:2.3:a:cisco:sd-wan"
-  tags: panel,cisco,discovery
+  tags: panel,cisco,discovery,daily_clustering
 http:
   - method: GET
     path:

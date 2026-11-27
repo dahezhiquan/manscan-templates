@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="OXF Panel"
-  tags: c2,oxf,phishing,panel,login,vuln
+  tags: c2,oxf,phishing,panel,login,vuln,daily_clustering
 http:
   - method: GET
     path:

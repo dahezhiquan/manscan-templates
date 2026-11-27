@@ -19,7 +19,7 @@ info:
     - https://mailchimp.com/help/about-api-keys/
   metadata:
     max-request: 1
-  tags: exposure,token,mailchimp,vuln
+  tags: exposure,token,mailchimp,vuln,daily,daily_clustering
 
 http:
   - method: GET

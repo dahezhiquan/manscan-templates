@@ -25,7 +25,7 @@ info:
     shodan-query: http.title:"Leostream"
     product: connection_broker
     vendor: leostream
-  tags: panel,leostream,discovery
+  tags: panel,leostream,discovery,daily_clustering
 http:
   - method: GET
     path:

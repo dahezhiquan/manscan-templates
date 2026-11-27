@@ -15,7 +15,7 @@ info:
     - 将相关端点纳入资产巡检，定期检查是否出现意外暴露。
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,vuln
+  tags: miscellaneous,misc,vuln,daily
 
 http:
   - method: GET

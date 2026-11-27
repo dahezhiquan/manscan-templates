@@ -17,7 +17,7 @@ info:
     cwe-id: CWE-693
   metadata:
     max-request: 1
-  tags: misconfig,headers,generic,vuln
+  tags: misconfig,headers,generic,vuln,daily_clustering
 
 http:
   - method: GET

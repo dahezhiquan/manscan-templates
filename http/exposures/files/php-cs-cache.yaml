@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"php_cs.cache"
-  tags: exposure,files,php,vuln
+  tags: exposure,files,php,vuln,daily
 
 http:
   - method: GET

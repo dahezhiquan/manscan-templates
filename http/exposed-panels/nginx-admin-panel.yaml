@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"nginx admin manager"
-  tags: panel,nginx,admin,discovery
+  tags: panel,nginx,admin,discovery,daily_clustering
 http:
   - method: GET
     path:

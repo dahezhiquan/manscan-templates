@@ -17,7 +17,7 @@ info:
     - https://github.com/dirtycoder0124/formcrawler
   metadata:
     max-request: 1
-  tags: form,misc,miscellaneous,vuln
+  tags: form,misc,miscellaneous,vuln,daily,daily_clustering
 
 http:
   - method: GET

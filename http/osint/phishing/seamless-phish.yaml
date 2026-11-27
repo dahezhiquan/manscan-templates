@@ -19,7 +19,7 @@ info:
     - https://seamless.com
   metadata:
     max-request: 1
-  tags: phishing,seamless,food-delivery,osint,discovery
+  tags: phishing,seamless,food-delivery,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

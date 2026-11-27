@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: exposure,files,vuln
+  tags: exposure,files,vuln,daily
 
 http:
   - method: GET

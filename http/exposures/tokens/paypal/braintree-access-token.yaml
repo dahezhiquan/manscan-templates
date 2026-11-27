@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-522,CWE-540
   metadata:
     max-request: 1
-  tags: exposure,token,paypal,vuln
+  tags: exposure,token,paypal,vuln,daily,daily_clustering
 
 http:
   - method: GET

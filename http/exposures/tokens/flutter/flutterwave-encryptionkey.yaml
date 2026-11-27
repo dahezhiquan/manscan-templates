@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: flutterwave,exposure,token,encryption,vuln
+  tags: flutterwave,exposure,token,encryption,vuln,daily,daily_clustering
 
 http:
   - method: GET

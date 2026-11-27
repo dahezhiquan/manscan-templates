@@ -18,7 +18,7 @@ info:
     shodan-query: http.title:"phoronix-test-suite"
     fofa-query: title="phoronix-test-suite"
     google-query: intitle:"phoronix-test-suite"
-  tags: panel,phoronix,phoronix-media,discovery
+  tags: panel,phoronix,phoronix-media,discovery,daily_clustering
 
 http:
   - method: GET

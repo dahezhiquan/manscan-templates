@@ -22,7 +22,7 @@ info:
     vendor: CODESYS
     product: webvisu
     shodan-query: 'html:"WEBVISU LOGIN"'
-  tags: panel,ics,scada,codesys,webvisu,discovery
+  tags: panel,ics,scada,codesys,webvisu,discovery,daily_clustering
 http:
   - method: GET
     path:

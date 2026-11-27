@@ -20,7 +20,7 @@ info:
     - https://itch.io
   metadata:
     max-request: 1
-  tags: phishing,itch-io,osint,discovery
+  tags: phishing,itch-io,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

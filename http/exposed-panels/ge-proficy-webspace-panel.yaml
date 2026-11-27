@@ -22,7 +22,7 @@ info:
     vendor: GE
     product: proficy-webspace
     shodan-query: 'http.title:"Proficy WebSpace"'
-  tags: panel,scada,hmi,ics,ge,proficy,webspace,ifix,cimplicity,discovery
+  tags: panel,scada,hmi,ics,ge,proficy,webspace,ifix,cimplicity,discovery,daily_clustering
 http:
   - method: GET
     path:

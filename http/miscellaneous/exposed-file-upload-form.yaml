@@ -21,7 +21,7 @@ info:
     vendor: creativedream_file_uploader_project
     product: creativedream_file_uploader
     shodan-query: http.html:"multipart/form-data" html:"file"
-  tags: miscellaneous,exposure,fileupload,form,misc,generic,vuln
+  tags: miscellaneous,exposure,fileupload,form,misc,generic,vuln,daily,daily_clustering
 
 http:
   - method: GET

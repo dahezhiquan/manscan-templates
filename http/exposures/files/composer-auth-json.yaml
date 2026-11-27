@@ -25,7 +25,7 @@ info:
     vendor: getcomposer
     product: composer
     google-query: intext:"index of /" ".composer-auth.json"
-  tags: exposure,devops,files,vuln
+  tags: exposure,devops,files,vuln,daily
 
 http:
   - method: GET

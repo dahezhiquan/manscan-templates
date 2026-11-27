@@ -27,7 +27,7 @@ info:
       - http.title:"meshcentral - login"
     fofa-query: title="meshcentral - login"
     google-query: intitle:"meshcentral - login"
-  tags: panel,meshcentral,discovery
+  tags: panel,meshcentral,discovery,daily_clustering
 http:
   - method: GET
     path:

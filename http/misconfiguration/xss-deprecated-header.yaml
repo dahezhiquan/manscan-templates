@@ -15,7 +15,7 @@ info:
     cwe-id: CWE-79
   metadata:
     max-request: 1
-  tags: xss,misconfig,generic,vuln
+  tags: xss,misconfig,generic,vuln,daily_clustering
   impact: |-
     - 依赖过时 XSS 过滤头会削弱浏览器侧防护预期。
     - 若缺少有效 CSP，页面仍可能受到脚本注入、内容注入或点击劫持链路影响。

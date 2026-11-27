@@ -19,7 +19,7 @@ info:
     - https://microcenter.com
   metadata:
     max-request: 1
-  tags: phishing,microcenter,osint,discovery
+  tags: phishing,microcenter,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

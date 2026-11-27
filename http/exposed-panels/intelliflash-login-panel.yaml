@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,intelliflash,discovery
+  tags: panel,intelliflash,discovery,daily_clustering
 http:
   - method: GET
     path:

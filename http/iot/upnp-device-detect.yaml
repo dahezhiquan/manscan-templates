@@ -17,7 +17,7 @@ info:
     - https://www.upnp.org/specs/basic/UPnP-basic-Basic-v1-Device.pdf
   metadata:
     max-request: 1
-  tags: upnp,iot,discovery
+  tags: upnp,iot,discovery,daily_clustering
 
 http:
   - method: GET

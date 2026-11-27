@@ -21,7 +21,7 @@ info:
     vendor: espocrm
     product: espocrm
     shodan-query: html:"Welcome to Espocrm"
-  tags: misconfig,espocrm,install,exposure,vuln
+  tags: misconfig,espocrm,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     - https://keepersecurity.com
   metadata:
     max-request: 1
-  tags: phishing,keepersecurity,osint,discovery
+  tags: phishing,keepersecurity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

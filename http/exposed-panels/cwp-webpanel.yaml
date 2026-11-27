@@ -23,7 +23,7 @@ info:
     fofa-query: title=="CWP |用户" || title=="Login | CentOS WebPanel" || body="CentOS WebPanel"
     product: webpanel
     vendor: control-webpanel
-  tags: panel,centos,discovery
+  tags: panel,centos,discovery,daily_clustering
 http:
   - method: GET
     path:

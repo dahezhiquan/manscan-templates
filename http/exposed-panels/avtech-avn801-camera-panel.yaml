@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: title:"login" product:"Avtech AVN801 network camera"
-  tags: panel,avtech,iot,camera,discovery
+  tags: panel,avtech,iot,camera,discovery,daily_clustering
 http:
   - method: GET
     path:

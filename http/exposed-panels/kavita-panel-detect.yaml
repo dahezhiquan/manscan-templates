@@ -27,7 +27,7 @@ info:
     vendor: kavitareader
     fofa-query: title="kavita"
     google-query: intitle:"kavita"
-  tags: panel,kavita,discovery
+  tags: panel,kavita,discovery,daily_clustering
 http:
   - method: GET
     path:

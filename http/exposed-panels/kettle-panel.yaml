@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: basic realm="Kettle"
-  tags: panel,kettle,discovery
+  tags: panel,kettle,discovery,daily_clustering
 http:
   - method: GET
     path:

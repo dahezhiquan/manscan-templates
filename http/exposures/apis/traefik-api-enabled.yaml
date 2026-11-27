@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 2
     shodan-query: http.title:"Traefik"
-  tags: traefik,exposure,apis,discovery
+  tags: traefik,exposure,apis,discovery,daily
 
 http:
   - method: GET

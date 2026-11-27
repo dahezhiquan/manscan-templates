@@ -28,7 +28,7 @@ info:
       - http.title:"emerge"
     fofa-query: title="emerge"
     google-query: intitle:"emerge"
-  tags: panel,emerge,nortek,nortekcontrol,discovery
+  tags: panel,emerge,nortek,nortekcontrol,discovery,daily_clustering
 http:
   - method: GET
     path:

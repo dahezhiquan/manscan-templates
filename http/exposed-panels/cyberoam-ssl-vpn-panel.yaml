@@ -31,7 +31,7 @@ info:
       - intitle:"Cyberoam SSL VPN Portal"
       - intitle:"cyberoam ssl vpn portal"
     fofa-query: title="cyberoam ssl vpn portal"
-  tags: panel,cyberoam,vpn,sophos,discovery
+  tags: panel,cyberoam,vpn,sophos,discovery,daily_clustering
 http:
   - method: GET
     path:

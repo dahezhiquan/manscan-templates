@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'title:"User Portal" ssl:"Sophos"'
-  tags: panel,vpn,sophos,ssl-vpn
+  tags: panel,vpn,sophos,ssl-vpn,daily_clustering
 
 http:
   - method: GET

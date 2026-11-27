@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 5
-  tags: opencart,exposure,logs,disclosure
+  tags: opencart,exposure,logs,disclosure,daily
 
 http:
   - method: GET

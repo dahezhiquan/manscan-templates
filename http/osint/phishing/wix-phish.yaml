@@ -19,7 +19,7 @@ info:
     - https://wix.com
   metadata:
     max-request: 1
-  tags: phishing,wix,website-builder,osint,discovery
+  tags: phishing,wix,website-builder,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

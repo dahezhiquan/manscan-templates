@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"Flock Admin"
-  tags: panel,iot,camera,flock-safety,discovery
+  tags: panel,iot,camera,flock-safety,discovery,daily_clustering
 
 http:
   - method: GET

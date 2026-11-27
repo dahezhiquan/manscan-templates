@@ -20,7 +20,7 @@ info:
     - https://coinbase.com
   metadata:
     max-request: 1
-  tags: phishing,coinbase,crypto,osint,discovery
+  tags: phishing,coinbase,crypto,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

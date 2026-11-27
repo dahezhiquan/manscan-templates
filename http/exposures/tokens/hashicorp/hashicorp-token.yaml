@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: hashicorp,exposure,token,vuln
+  tags: hashicorp,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -13,7 +13,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: panel,qualtrics,discovery
+  tags: panel,qualtrics,discovery,daily_clustering
 
 http:
   - method: GET

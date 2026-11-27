@@ -29,7 +29,7 @@ info:
       - title="metabase"
       - app="metabase"
     google-query: intitle:"metabase"
-  tags: panel,metabase,login,discovery
+  tags: panel,metabase,login,discovery,daily_clustering
 http:
   - method: GET
     path:

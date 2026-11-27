@@ -20,7 +20,7 @@ info:
     - https://commbank.com.au
   metadata:
     max-request: 1
-  tags: phishing,commonwealth-bank,bank,osint,discovery
+  tags: phishing,commonwealth-bank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

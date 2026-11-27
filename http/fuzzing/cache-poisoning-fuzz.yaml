@@ -18,7 +18,7 @@ info:
     - https://portswigger.net/web-security/web-cache-poisoning
   metadata:
     max-request: 5838
-  tags: fuzz,cache,fuzzing,vuln
+  tags: fuzz,cache,fuzzing,vuln,daily
 
 http:
   - raw:

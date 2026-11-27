@@ -17,7 +17,7 @@ info:
     verified: 'true'
     max-request: 1
     shodan-query: http.title:"Hacked By"
-  tags: miscellaneous,defacement,misc,vuln
+  tags: miscellaneous,defacement,misc,vuln,daily,daily_clustering
 
 http:
   - method: GET

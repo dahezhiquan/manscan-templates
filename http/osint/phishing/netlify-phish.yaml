@@ -20,7 +20,7 @@ info:
     - https://netlify.com
   metadata:
     max-request: 1
-  tags: phishing,netlify,hosting,osint,discovery
+  tags: phishing,netlify,hosting,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

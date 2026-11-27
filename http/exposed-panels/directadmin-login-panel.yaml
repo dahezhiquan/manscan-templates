@@ -29,7 +29,7 @@ info:
       - http.title:"directadmin login"
     fofa-query: title="directadmin login"
     google-query: intitle:"directadmin login"
-  tags: panel,directadmin,discovery
+  tags: panel,directadmin,discovery,daily_clustering
 http:
   - method: GET
     path:

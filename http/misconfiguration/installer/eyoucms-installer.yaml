@@ -19,7 +19,7 @@ info:
     fofa-query: title="eyoucms"
     product: eyoucms
     vendor: eyoucms
-  tags: misconfig,eyoucms,install,vuln
+  tags: misconfig,eyoucms,install,vuln,daily_clustering
 
 http:
   - method: GET

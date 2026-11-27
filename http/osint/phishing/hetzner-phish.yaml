@@ -20,7 +20,7 @@ info:
     - https://hetzner.com
   metadata:
     max-request: 1
-  tags: phishing,hetzner,cloud,hosting,osint,discovery
+  tags: phishing,hetzner,cloud,hosting,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

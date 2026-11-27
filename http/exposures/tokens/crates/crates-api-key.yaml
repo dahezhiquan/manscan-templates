@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: crates,token,exposure,vuln
+  tags: crates,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -26,7 +26,7 @@ info:
       - http.html:"Homematic"
       - http.html:"homematic"
     fofa-query: body="homematic"
-  tags: panel,homematic,iot,eq-3,discovery
+  tags: panel,homematic,iot,eq-3,discovery,daily_clustering
 http:
   - method: GET
     path:

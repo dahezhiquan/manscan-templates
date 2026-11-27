@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: websheets,config,exposure,files,vuln
+  tags: websheets,config,exposure,files,vuln,daily
 
 http:
   - method: GET

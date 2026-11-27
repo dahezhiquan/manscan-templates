@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ".styleci.yml"
-  tags: config,exposure,devops,files,vuln
+  tags: config,exposure,devops,files,vuln,daily
 
 http:
   - method: GET

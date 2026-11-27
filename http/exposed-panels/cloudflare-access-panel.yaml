@@ -20,7 +20,7 @@ info:
     - https://developers.cloudflare.com/cloudflare-one/applications/configure-apps/
     - https://developers.cloudflare.com/cloudflare-one/
     - https://developers.cloudflare.com/cloudflare-one/identity/idp-integration/
-  tags: cloudflare,panel,discovery
+  tags: cloudflare,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

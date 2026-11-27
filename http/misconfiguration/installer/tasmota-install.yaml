@@ -21,7 +21,7 @@ info:
     vendor: tasmota_project
     product: tasmota
     shodan-query: title:"Tasmota"
-  tags: misconfig,tasmota,install,exposure,vuln
+  tags: misconfig,tasmota,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

@@ -23,7 +23,7 @@ info:
     product: leantime
     shodan-query: html:"Leantime" http.title:"Leantime"
     fofa-query: title="Leantime" && body="leantime-version"
-  tags: misconfig,install,exposure,leantime
+  tags: misconfig,install,exposure,leantime,daily_clustering
 
 http:
   - method: GET

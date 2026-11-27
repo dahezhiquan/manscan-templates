@@ -20,7 +20,7 @@ info:
     - https://linear.app
   metadata:
     max-request: 1
-  tags: phishing,linear,productivity,osint,discovery
+  tags: phishing,linear,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

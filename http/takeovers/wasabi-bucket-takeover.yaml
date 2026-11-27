@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "wasabis3"
-  tags: takeover,wasabi,bucket,vuln
+  tags: takeover,wasabi,bucket,vuln,daily_clustering
 
 http:
   - method: GET

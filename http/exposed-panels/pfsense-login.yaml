@@ -25,7 +25,7 @@ info:
     - intitle:"pfSense - Login"
     - intitle:"pfsense - login"
     fofa-query: title="pfsense - login"
-  tags: panel,pfsense,discovery
+  tags: panel,pfsense,discovery,daily_clustering
 
 http:
   - method: GET

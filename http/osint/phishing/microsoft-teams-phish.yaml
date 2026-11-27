@@ -20,7 +20,7 @@ info:
     - https://www.microsoft.com/en-gb/microsoft-teams/download-app
   metadata:
     max-request: 1
-  tags: phishing,microsoft-teams,osint,discovery
+  tags: phishing,microsoft-teams,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Erlang Port Mapper Daemon"
-  tags: daemon,enum,erlang,epmd,network,misconfig,tcp,discovery
+  tags: daemon,enum,erlang,epmd,network,misconfig,tcp,discovery,daily
 tcp:
   - inputs:
       - data: "\x00\x01\x6e"

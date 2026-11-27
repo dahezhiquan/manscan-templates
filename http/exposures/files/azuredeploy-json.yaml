@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body="azuredeploy.json"
-  tags: azure,exposure,files,vuln
+  tags: azure,exposure,files,vuln,daily
 
 http:
   - method: GET

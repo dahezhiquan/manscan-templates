@@ -19,7 +19,7 @@ info:
     - https://gimp.org
   metadata:
     max-request: 1
-  tags: phishing,gimp,osint,discovery
+  tags: phishing,gimp,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"<a href=\"https://github.com/composer/satis\">Satis</a>"
-  tags: panel,exposure,composer,satis,discovery
+  tags: panel,exposure,composer,satis,discovery,daily_clustering
 
 http:
   - method: GET

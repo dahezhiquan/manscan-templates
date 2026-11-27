@@ -21,7 +21,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.title:"beszel"
-  tags: panel,beszel,login,discovery
+  tags: panel,beszel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

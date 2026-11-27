@@ -17,7 +17,7 @@ info:
     - https://owasp.org/www-community/Improper_Error_Handling
   metadata:
     max-request: 1
-  tags: misconfig,disclosure,fpd,generic,vuln
+  tags: misconfig,disclosure,fpd,generic,vuln,daily_clustering
 
 http:
   - method: GET

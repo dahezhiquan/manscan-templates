@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body="Installation - Forgejo:"
-  tags: install,forgejo,misconfig,vuln
+  tags: install,forgejo,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

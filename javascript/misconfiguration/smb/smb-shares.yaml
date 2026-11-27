@@ -18,7 +18,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:445
-  tags: js,network,smb,enum,auth
+  tags: js,network,smb,enum,auth,daily
 
 javascript:
   - pre-condition: |

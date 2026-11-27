@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: openclaw
     product: openclaw
-  tags: exposed-panel,openclaw,discovery
+  tags: exposed-panel,openclaw,discovery,daily_clustering
 http:
   - method: GET
     path:

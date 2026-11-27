@@ -15,7 +15,7 @@ info:
   metadata:
     max-request: 1
     google-query: intext:pypicloud
-  tags: panel,pypicloud,discovery
+  tags: panel,pypicloud,discovery,daily_clustering
 
 http:
   - method: GET

@@ -15,7 +15,7 @@ info:
     - 检查缓存服务日志与网络流量，确认是否存在异常命令访问或放大流量。
   metadata:
     max-request: 1
-  tags: network,memcached,misconfig,tcp,vuln
+  tags: network,memcached,misconfig,tcp,vuln,daily
 
 tcp:
   - inputs:

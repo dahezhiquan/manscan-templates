@@ -25,7 +25,7 @@ info:
     vendor: koel
     product: koel
     shodan-query: title:"Koel"
-  tags: panel,koel,login,discovery
+  tags: panel,koel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

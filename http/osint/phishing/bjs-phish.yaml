@@ -19,7 +19,7 @@ info:
     - https://bjs.com
   metadata:
     max-request: 1
-  tags: phishing,bjs,ecommerce,osint,discovery
+  tags: phishing,bjs,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

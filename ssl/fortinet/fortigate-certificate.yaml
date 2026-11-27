@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ssl:"ou=fortigate"
-  tags: ssl,tls,fortinet,fortigate,discovery
+  tags: ssl,tls,fortinet,fortigate,discovery,daily_clustering
 
 ssl:
   - address: "{{Host}}:{{Port}}"

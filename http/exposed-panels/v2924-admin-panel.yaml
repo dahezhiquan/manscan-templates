@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"V2924"
-  tags: panel,v2924,discovery
+  tags: panel,v2924,discovery,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     vendor: facturascripts
     product: facturascripts
     shodan-query: html:"FacturaScripts installer"
-  tags: misconfig,facturascripts,install,exposure,vuln
+  tags: misconfig,facturascripts,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

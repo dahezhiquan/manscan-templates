@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: bitbucket,exposure,token,clientid,vuln
+  tags: bitbucket,exposure,token,clientid,vuln,daily,daily_clustering
 
 http:
   - method: GET

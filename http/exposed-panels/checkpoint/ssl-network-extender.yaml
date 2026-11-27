@@ -36,7 +36,7 @@ info:
     fofa-query:
       - title="check point ssl network extender"
       - title="ssl network extender login"
-  tags: panel,checkpoint,router,discovery
+  tags: panel,checkpoint,router,discovery,daily_clustering
 http:
   - method: GET
     path:

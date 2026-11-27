@@ -20,7 +20,7 @@ info:
     - https://oracle.com/cloud
   metadata:
     max-request: 1
-  tags: phishing,oracle-cloud,cloud,osint,discovery
+  tags: phishing,oracle-cloud,cloud,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

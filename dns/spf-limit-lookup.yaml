@@ -17,7 +17,7 @@ info:
     - 将大型发信架构拆分到子域名，并持续监控 SPF `permerror`、投递失败和第三方服务变更。
   reference:
     - https://dmarcly.com/blog/spf-permerror-too-many-dns-lookups-when-spf-record-exceeds-10-dns-lookup-limit
-  tags: dns,spf,discovery
+  tags: dns,spf,discovery,daily
 
 dns:
   - name: "{{FQDN}}"

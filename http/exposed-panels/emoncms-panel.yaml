@@ -23,7 +23,7 @@ info:
     vendor: OpenEnergyMonitor
     product: emoncms
     shodan-query: 'http.title:"Emoncms - user login"'
-  tags: panel,emoncms,energy,iot,ics,monitoring,discovery
+  tags: panel,emoncms,energy,iot,ics,monitoring,discovery,daily_clustering
 http:
   - method: GET
     path:

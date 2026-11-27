@@ -19,7 +19,7 @@ info:
     - https://hackerone.com/reports/863551
   metadata:
     max-request: 1
-  tags: takeover,uberflip,hackerone,vuln
+  tags: takeover,uberflip,hackerone,vuln,daily_clustering
 
 http:
   - method: GET

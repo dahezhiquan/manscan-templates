@@ -20,7 +20,7 @@ info:
     - https://substack.com
   metadata:
     max-request: 1
-  tags: phishing,substack,osint,discovery
+  tags: phishing,substack,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

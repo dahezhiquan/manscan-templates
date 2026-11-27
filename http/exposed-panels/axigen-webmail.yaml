@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"Axigen WebMail"
     product: axigen_mail_server
     vendor: axigen
-  tags: axigen,panel,discovery
+  tags: axigen,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

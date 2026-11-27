@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,config,mysql,database
+  tags: exposure,config,mysql,database,daily
 
 http:
   - method: GET

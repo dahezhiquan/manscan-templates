@@ -24,7 +24,7 @@ info:
     cwe-id: CWE-522
   metadata:
     max-request: 22
-  tags: config,exposure,laravel,vuln
+  tags: config,exposure,laravel,vuln,daily
 
 http:
   - method: GET

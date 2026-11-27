@@ -17,7 +17,7 @@ info:
     max-request: 1
     verified: true
     fofa-query: title="emlog"
-  tags: emlog,install,misconfig,vuln
+  tags: emlog,install,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

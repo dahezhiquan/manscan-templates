@@ -24,7 +24,7 @@ info:
     fofa-query: title="Docebo E-learning"
     product: docebo
     vendor: docebo
-  tags: panel,docebo,discovery
+  tags: panel,docebo,discovery,daily_clustering
 http:
   - method: GET
     path:

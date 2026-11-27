@@ -19,7 +19,7 @@ info:
     - https://vudu.com
   metadata:
     max-request: 1
-  tags: phishing,vudu,streaming,osint,discovery
+  tags: phishing,vudu,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

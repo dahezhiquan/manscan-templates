@@ -20,7 +20,7 @@ info:
     - https://natwest.com
   metadata:
     max-request: 1
-  tags: phishing,natwest,bank,osint,discovery
+  tags: phishing,natwest,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

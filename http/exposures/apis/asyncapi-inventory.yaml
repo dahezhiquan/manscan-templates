@@ -20,7 +20,7 @@ info:
   reference:
     - https://www.asyncapi.com/docs/reference/specification
     - https://raw.githubusercontent.com/asyncapi/spec/v2.6.0/examples/streetlights-kafka.yml
-  tags: exposure,asyncapi,api,discovery
+  tags: exposure,asyncapi,api,discovery,daily
 
 http:
   - method: GET

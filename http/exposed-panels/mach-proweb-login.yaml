@@ -26,7 +26,7 @@ info:
     google-query: intitle:"Log on to MACH-ProWeb"
     product: mach-prowebcom
     vendor: reliablecontrols
-  tags: panel,machproweb,edb,discovery
+  tags: panel,machproweb,edb,discovery,daily_clustering
 http:
   - method: GET
     path:

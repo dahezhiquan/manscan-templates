@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"Array Networks Pilot Login"'
-  tags: panel,array-networks,ssl-vpn,vpn,network
+  tags: panel,array-networks,ssl-vpn,vpn,network,daily_clustering
 http:
   - method: GET
     path:

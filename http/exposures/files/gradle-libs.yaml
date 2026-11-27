@@ -23,7 +23,7 @@ info:
     vendor: gradle
     product: gradle
     github-query: filename:libs.versions.toml
-  tags: file,gradle,exposure,vuln
+  tags: file,gradle,exposure,vuln,daily
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     - http://ciphersuite.info
   metadata:
     max-request: 4
-  tags: ssl,tls,misconfig,vuln
+  tags: ssl,tls,misconfig,vuln,daily
 ssl:
   - address: "{{Host}}:{{Port}}"
     min_version: tls10

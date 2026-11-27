@@ -25,7 +25,7 @@ info:
     vendor: authelia
     product: authelia
     shodan-query: title:"Login - Authelia"
-  tags: login,panel,authelia,discovery
+  tags: login,panel,authelia,discovery,daily_clustering
 http:
   - method: GET
     path:

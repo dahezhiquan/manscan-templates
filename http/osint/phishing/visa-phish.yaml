@@ -20,7 +20,7 @@ info:
     - https://visa.com
   metadata:
     max-request: 1
-  tags: phishing,visa,credit-card,osint,discovery
+  tags: phishing,visa,credit-card,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

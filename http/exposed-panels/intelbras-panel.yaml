@@ -31,7 +31,7 @@ info:
       - title="intelbras"
       - app="intelbras"
     google-query: intitle:"intelbras"
-  tags: panel,intelbras,discovery
+  tags: panel,intelbras,discovery,daily_clustering
 http:
   - method: GET
     path:

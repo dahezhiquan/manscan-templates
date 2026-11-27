@@ -22,7 +22,7 @@ info:
     vendor: Janitza
     product: umg
     shodan-query: 'http.title:"Janitza"'
-  tags: panel,ics,janitza,power-meter,energy,discovery
+  tags: panel,ics,janitza,power-meter,energy,discovery,daily_clustering
 http:
   - method: GET
     path:

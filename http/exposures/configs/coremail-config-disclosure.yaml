@@ -19,7 +19,7 @@ info:
     - https://www.secpulse.com/archives/107611.html
   metadata:
     max-request: 1
-  tags: config,exposure,coremail,vuln
+  tags: config,exposure,coremail,vuln,daily
 
 http:
   - method: GET

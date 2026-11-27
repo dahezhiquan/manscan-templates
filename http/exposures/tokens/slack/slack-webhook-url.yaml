@@ -21,7 +21,7 @@ info:
     - https://api.slack.com/messaging/webhooks
   metadata:
     max-request: 1
-  tags: exposure,token,slack,vuln
+  tags: exposure,token,slack,vuln,daily
 
 flow: http(1) && http(2)
 

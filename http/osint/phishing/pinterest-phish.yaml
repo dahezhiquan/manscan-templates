@@ -20,7 +20,7 @@ info:
     - https://pinterest.com
   metadata:
     max-request: 1
-  tags: phishing,pinterest,osint,discovery
+  tags: phishing,pinterest,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

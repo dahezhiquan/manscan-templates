@@ -24,7 +24,7 @@ info:
     cwe-id: CWE-522,CWE-540
   metadata:
     max-request: 1
-  tags: exposure,token,slack,vuln
+  tags: exposure,token,slack,vuln,daily,daily_clustering
 
 http:
   - method: GET

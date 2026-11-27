@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"XBackBone Installer"
-  tags: install,xbackbone,exposure,misconfig,vuln
+  tags: install,xbackbone,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

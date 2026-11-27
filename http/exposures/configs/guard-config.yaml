@@ -26,7 +26,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Guardfile"
-  tags: exposure,file,guard,config,vuln
+  tags: exposure,file,guard,config,vuln,daily
 
 http:
   - method: GET

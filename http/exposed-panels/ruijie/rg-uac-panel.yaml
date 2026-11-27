@@ -19,7 +19,7 @@ info:
     - http.html:"Get_Verify_Info"
     - http.html:"get_verify_info"
     fofa-query: body="get_verify_info"
-  tags: panel,ruijie,router,firewall,discovery
+  tags: panel,ruijie,router,firewall,discovery,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     - https://yahoo.com
   metadata:
     max-request: 1
-  tags: phishing,yahoo,osint,discovery
+  tags: phishing,yahoo,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

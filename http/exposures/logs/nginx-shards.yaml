@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 2
     shodan-query: html:"Welcome to Nginx"
-  tags: exposure,shards,nginx,vuln
+  tags: exposure,shards,nginx,vuln,daily
 
 http:
   - method: GET

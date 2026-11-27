@@ -19,7 +19,7 @@ info:
     - https://epicgames.com
   metadata:
     max-request: 1
-  tags: phishing,epic-games,osint,discovery
+  tags: phishing,epic-games,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

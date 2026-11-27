@@ -20,7 +20,7 @@ info:
     - https://klarna.com
   metadata:
     max-request: 1
-  tags: phishing,klarna,payment,osint,discovery
+  tags: phishing,klarna,payment,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

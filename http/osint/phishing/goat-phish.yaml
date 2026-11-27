@@ -19,7 +19,7 @@ info:
     - https://goat.com
   metadata:
     max-request: 1
-  tags: phishing,goat,ecommerce,osint,discovery
+  tags: phishing,goat,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

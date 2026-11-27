@@ -24,7 +24,7 @@ info:
     vendor: eclipse
     product: jetty
     shodan-query: html:"contexts known to this"
-  tags: jetty,misconfig,vuln
+  tags: jetty,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

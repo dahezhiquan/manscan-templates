@@ -20,7 +20,7 @@ info:
     - https://bankofamerica.com
   metadata:
     max-request: 1
-  tags: phishing,bank-of-america,osint,discovery
+  tags: phishing,bank-of-america,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

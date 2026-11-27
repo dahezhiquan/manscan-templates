@@ -23,7 +23,7 @@ info:
     vendor: dokploy
     product: dokploy
     shodan-query: title:dokploy
-  tags: panel,dokploy,discovery
+  tags: panel,dokploy,discovery,daily_clustering
 http:
   - method: GET
     path:

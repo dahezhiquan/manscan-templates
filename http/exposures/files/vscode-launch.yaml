@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"index" html:".vscode"
-  tags: vscode,files,debug,exposure,vuln
+  tags: vscode,files,debug,exposure,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://github.com/detectify/ugly-duckling/blob/master/modules/crowdsourced/pyproject-disclosure.json
   metadata:
     max-request: 1
-  tags: exposure,files,vuln
+  tags: exposure,files,vuln,daily
 
 http:
   - method: GET

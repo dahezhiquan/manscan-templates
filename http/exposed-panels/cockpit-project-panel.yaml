@@ -21,7 +21,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: http.html:"cockpit/static/login.css"
-  tags: panel,cockpit,login,discovery
+  tags: panel,cockpit,login,discovery,daily_clustering
 http:
   - method: GET
     path:

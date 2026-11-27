@@ -19,7 +19,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:
     max-request: 1
-  tags: takeover,hatenablog,vuln
+  tags: takeover,hatenablog,vuln,daily_clustering
 
 http:
   - method: GET

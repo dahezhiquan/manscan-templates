@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Login | GYRA Master Admin"
-  tags: panel,master,admin,gyra,discovery
+  tags: panel,master,admin,gyra,discovery,daily_clustering
 http:
   - method: GET
     path:

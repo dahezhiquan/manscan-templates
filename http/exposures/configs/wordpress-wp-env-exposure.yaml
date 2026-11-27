@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: wordpress,config,exposure,misconfig
+  tags: wordpress,config,exposure,misconfig,daily
 
 http:
   - method: GET

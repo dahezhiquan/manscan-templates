@@ -13,7 +13,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"DataWeave Interactive Learning Environment"
-  tags: panel,mulesoft,dataweave,rce,critical,discovery
+  tags: panel,mulesoft,dataweave,rce,critical,discovery,daily_clustering
   impact: |-
     - 攻击者可能在服务器上执行任意代码或系统命令，读取配置、植入后门并接管应用进程。
     - 若目标处于内网或具备高权限凭据，风险可能扩展到数据库、缓存、消息队列和其他内部资产。

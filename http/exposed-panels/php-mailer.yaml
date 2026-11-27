@@ -17,7 +17,7 @@ info:
     shodan-query: http.title:"PHP Mailer"
     product: phpmailer
     vendor: phpmailer_project
-  tags: panel,php,mailer,discovery
+  tags: panel,php,mailer,discovery,daily_clustering
 
 http:
   - method: GET

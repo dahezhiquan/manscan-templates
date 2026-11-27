@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: github,app,token,exposure,vuln
+  tags: github,app,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

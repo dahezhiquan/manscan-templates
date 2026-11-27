@@ -19,7 +19,7 @@ info:
     - https://bestbuy.com
   metadata:
     max-request: 1
-  tags: phishing,bestbuy,osint,discovery
+  tags: phishing,bestbuy,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     vendor: Beckhoff
     product: twincat-hmi
     shodan-query: http.html:"TwinCAT" http.html:"Beckhoff"
-  tags: panel,scada,ics,beckhoff,twincat,hmi,plc,automation,discovery
+  tags: panel,scada,ics,beckhoff,twincat,hmi,plc,automation,discovery,daily_clustering
 http:
   - method: GET
     path:

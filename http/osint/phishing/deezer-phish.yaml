@@ -19,7 +19,7 @@ info:
     - https://deezer.com
   metadata:
     max-request: 1
-  tags: phishing,deezer,osint,discovery
+  tags: phishing,deezer,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

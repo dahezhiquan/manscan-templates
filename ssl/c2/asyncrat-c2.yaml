@@ -20,7 +20,7 @@ info:
     max-request: 1
     shodan-query: ssl:"AsyncRAT Server"
     censys-query: services.tls.certificates.leaf_data.issuer.common_name:AsyncRat
-  tags: c2,ssl,tls,ir,osint,malware,asyncrat,discovery
+  tags: c2,ssl,tls,ir,osint,malware,asyncrat,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

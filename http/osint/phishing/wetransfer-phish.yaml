@@ -20,7 +20,7 @@ info:
     - https://wetransfer.com
   metadata:
     max-request: 1
-  tags: phishing,wetransfer,osint,discovery
+  tags: phishing,wetransfer,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

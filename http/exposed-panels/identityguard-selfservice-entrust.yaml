@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,identityguard,discovery
+  tags: panel,identityguard,discovery,daily_clustering
 http:
   - method: GET
     path:

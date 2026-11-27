@@ -20,7 +20,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: ssl:"P18055077"
-  tags: c2,ssl,tls,ir,osint,malware,posh,discovery
+  tags: c2,ssl,tls,ir,osint,malware,posh,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

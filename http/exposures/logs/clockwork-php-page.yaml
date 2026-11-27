@@ -19,7 +19,7 @@ info:
     - https://twitter.com/damian_89_/status/1250721398747791360
   metadata:
     max-request: 1
-  tags: clockwork,exposure,vuln
+  tags: clockwork,exposure,vuln,daily
 
 http:
   - method: GET

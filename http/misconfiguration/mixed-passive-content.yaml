@@ -20,7 +20,7 @@ info:
     - https://docs.gitlab.com/ee/user/application_security/dast/checks/319.1.html
   metadata:
     max-request: 1
-  tags: misconfig,vuln
+  tags: misconfig,vuln,daily_clustering
 
 http:
   - method: GET

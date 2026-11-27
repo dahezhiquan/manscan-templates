@@ -19,7 +19,7 @@ info:
     - https://roblox.com
   metadata:
     max-request: 1
-  tags: phishing,roblox,osint,discovery
+  tags: phishing,roblox,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

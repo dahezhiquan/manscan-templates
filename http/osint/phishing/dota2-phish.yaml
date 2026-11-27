@@ -19,7 +19,7 @@ info:
     - https://dota2.com
   metadata:
     max-request: 1
-  tags: phishing,dota2,steam,osint,discovery
+  tags: phishing,dota2,steam,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

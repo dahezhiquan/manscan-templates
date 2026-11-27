@@ -21,7 +21,7 @@ info:
     vendor: apache
     product: drill
     shodan-query: title:"Apache Drill"
-  tags: misconfig,exposure,apache,drill,vuln
+  tags: misconfig,exposure,apache,drill,vuln,daily_clustering
 
 http:
   - method: GET

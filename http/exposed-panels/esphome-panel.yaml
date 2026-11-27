@@ -28,7 +28,7 @@ info:
       - http.title:"login - esphome"
     fofa-query: title="login - esphome"
     google-query: intitle:"login - esphome"
-  tags: panel,esphome,iot,discovery
+  tags: panel,esphome,iot,discovery,daily_clustering
 http:
   - method: GET
     path:

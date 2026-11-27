@@ -23,7 +23,7 @@ info:
     vendor: atlassian
     product: bitbucket
     shodan-query: html:"bitbucket-pipelines.yml"
-  tags: exposure,bitbucket,devops,cicd,files,vuln
+  tags: exposure,bitbucket,devops,cicd,files,vuln,daily
 
 http:
   - method: GET

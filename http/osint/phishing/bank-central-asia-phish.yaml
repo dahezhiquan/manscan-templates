@@ -20,7 +20,7 @@ info:
     - https://bca.co.id
   metadata:
     max-request: 1
-  tags: phishing,bca,osint,discovery
+  tags: phishing,bca,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -21,7 +21,7 @@ info:
     vendor: monstra
     product: monstra_cms
     shodan-query: 'title:"Monstra :: Install"'
-  tags: misconfig,monstra,install,vuln
+  tags: misconfig,monstra,install,vuln,daily_clustering
 
 http:
   - method: GET

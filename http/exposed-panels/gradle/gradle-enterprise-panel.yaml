@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: gradle
     product: gradle_enterprise
-  tags: panel,gradle,discovery
+  tags: panel,gradle,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     cwe-id: CWE-219,CWE-552
   metadata:
     max-request: 4
-  tags: logs,exposure,vuln
+  tags: logs,exposure,vuln,daily
 
 http:
   - method: GET

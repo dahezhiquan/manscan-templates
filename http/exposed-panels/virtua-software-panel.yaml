@@ -18,7 +18,7 @@ info:
     product: cobranca
     shodan-query: http.favicon.hash:876876147
     fofa-query: icon_hash=876876147
-  tags: panel,virtua,virtuasoftware,discovery
+  tags: panel,virtua,virtuasoftware,discovery,daily_clustering
 
 http:
   - method: GET

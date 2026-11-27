@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"iXBus"
-  tags: panel,ixbusweb,cms,discovery
+  tags: panel,ixbusweb,cms,discovery,daily_clustering
 http:
   - method: GET
     path:

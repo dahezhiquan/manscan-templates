@@ -19,7 +19,7 @@ info:
     - https://teespring.com
   metadata:
     max-request: 1
-  tags: phishing,teespring,osint,discovery
+  tags: phishing,teespring,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

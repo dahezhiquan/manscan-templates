@@ -24,7 +24,7 @@ info:
     vendor: adobe
     product: coldfusion
     shodan-query: http.component:"Adobe ColdFusion"
-  tags: exposure,coldfusion,adobe,files,vuln
+  tags: exposure,coldfusion,adobe,files,vuln,daily
 
 http:
   - method: GET

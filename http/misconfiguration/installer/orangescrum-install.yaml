@@ -21,7 +21,7 @@ info:
     vendor: orangescrum
     product: orangescrum
     shodan-query: title:"Orangescrum Setup Wizard"
-  tags: misconfig,orangescrum,install,vuln
+  tags: misconfig,orangescrum,install,vuln,daily_clustering
 
 http:
   - method: GET

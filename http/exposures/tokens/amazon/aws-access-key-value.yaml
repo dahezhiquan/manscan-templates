@@ -17,7 +17,7 @@ info:
     - 启用最小权限、IP/来源限制、MFA、告警和审计日志，并排查是否存在未授权资源访问或数据变更。
   metadata:
     max-request: 1
-  tags: exposure,token,aws,amazon,vuln
+  tags: exposure,token,aws,amazon,vuln,daily,daily_clustering
 
 http:
   - method: GET

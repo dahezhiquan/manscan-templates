@@ -20,7 +20,7 @@ info:
     - https://current.com
   metadata:
     max-request: 1
-  tags: phishing,current,fintech,osint,discovery
+  tags: phishing,current,fintech,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

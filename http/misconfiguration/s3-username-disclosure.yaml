@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'x-amz-meta-s3cmd-attrs'
-  tags: s3,aws,exposure,misconfig,header
+  tags: s3,aws,exposure,misconfig,header,daily_clustering
 
 http:
   - method: GET

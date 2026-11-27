@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.favicon.hash:"-839356603"
-  tags: panel,apigee,login,discovery
+  tags: panel,apigee,login,discovery,daily_clustering
 http:
   - method: GET
     path:

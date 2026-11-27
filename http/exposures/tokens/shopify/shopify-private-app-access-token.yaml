@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: shopify,token,exposure,vuln
+  tags: shopify,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     - https://line.me
   metadata:
     max-request: 1
-  tags: phishing,line,osint,discovery
+  tags: phishing,line,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

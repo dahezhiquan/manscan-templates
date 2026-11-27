@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: adafruit,exposure,token,vuln
+  tags: adafruit,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

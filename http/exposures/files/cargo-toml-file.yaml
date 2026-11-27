@@ -25,7 +25,7 @@ info:
     vendor: rust-lang
     product: cargo
     shodan-query: html:"Cargo.toml"
-  tags: exposure,files,cargo,vuln
+  tags: exposure,files,cargo,vuln,daily
 
 http:
   - method: GET

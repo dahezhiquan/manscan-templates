@@ -23,7 +23,7 @@ info:
     vendor: jenkins
     product: pipeline\\
     shodan-query: html:"pipeline.yaml"
-  tags: devops,exposure,cicd,files,vuln
+  tags: devops,exposure,cicd,files,vuln,daily
 
 http:
   - method: GET

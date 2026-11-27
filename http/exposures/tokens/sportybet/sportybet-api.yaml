@@ -17,7 +17,7 @@ info:
     - 在对应平台检查令牌权限、作用域、有效期和最近调用记录，移除不必要的高权限或长期凭据。
     - 将密钥迁移到密钥管理系统、受保护的 CI/CD 变量或运行时注入机制，避免写入前端页面、日志、源码和公开配置。
     - 启用最小权限、IP/来源限制、MFA、告警和审计日志，并排查是否存在未授权资源访问或数据变更。
-  tags: exposure,betting,sportybet,betking,token
+  tags: exposure,betting,sportybet,betking,token,daily,daily_clustering
 
 http:
   - method: GET

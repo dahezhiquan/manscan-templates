@@ -20,7 +20,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"SeaweedFS Filer"
-  tags: panel,seaweedfs,filer,storage,unauth
+  tags: panel,seaweedfs,filer,storage,unauth,daily_clustering
 
 http:
   - method: GET

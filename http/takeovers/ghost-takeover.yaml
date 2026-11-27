@@ -18,7 +18,7 @@ info:
     - https://github.com/EdOverflow/can-i-take-over-xyz/issues/89
   metadata:
     max-request: 1
-  tags: takeover,ghost,vuln
+  tags: takeover,ghost,vuln,daily_clustering
 
 http:
   - method: GET

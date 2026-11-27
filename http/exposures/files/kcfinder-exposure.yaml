@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 6
-  tags: exposure,kcfinder,fileupload
+  tags: exposure,kcfinder,fileupload,daily
 
 http:
   - method: GET

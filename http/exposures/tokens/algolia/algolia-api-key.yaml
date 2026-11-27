@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: algolia,exposure,token,vuln
+  tags: algolia,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

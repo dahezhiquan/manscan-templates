@@ -19,7 +19,7 @@ info:
     - https://xbox.com
   metadata:
     max-request: 1
-  tags: phishing,xbox,microsoft,osint,discovery
+  tags: phishing,xbox,microsoft,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

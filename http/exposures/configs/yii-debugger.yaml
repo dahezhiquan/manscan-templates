@@ -25,7 +25,7 @@ info:
     vendor: yii_software
     product: yii
     shodan-query: title:"Yii Debugger"
-  tags: yii,debug,exposure,vuln
+  tags: yii,debug,exposure,vuln,daily
 
 http:
   - method: GET

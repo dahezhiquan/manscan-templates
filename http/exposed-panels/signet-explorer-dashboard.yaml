@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"mempool-space" || title:"Signet Explorer"
-  tags: panel,signet,bitcoin,dashboard,discovery
+  tags: panel,signet,bitcoin,dashboard,discovery,daily_clustering
 
 http:
   - method: GET

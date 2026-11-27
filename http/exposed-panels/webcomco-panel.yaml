@@ -13,7 +13,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"WebcomCo"
-  tags: panel,webcomco,login,discovery
+  tags: panel,webcomco,login,discovery,daily_clustering
 
 http:
   - method: GET

@@ -25,7 +25,7 @@ info:
     vendor: vim
     product: vim
     shodan-query: html:"Viminfo"
-  tags: devops,exposure,viminfo,config,vuln
+  tags: devops,exposure,viminfo,config,vuln,daily
 
 http:
   - method: GET

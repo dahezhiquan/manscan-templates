@@ -20,7 +20,7 @@ info:
     - https://oreillyauto.com
   metadata:
     max-request: 1
-  tags: phishing,oreilly,ecommerce,osint,discovery
+  tags: phishing,oreilly,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

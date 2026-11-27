@@ -16,7 +16,7 @@ info:
     vendor: Unitronics
     product: plc
     shodan-query: 'http.html:"Unitronics"'
-  tags: panel,unitronics,plc,ics,discovery
+  tags: panel,unitronics,plc,ics,discovery,daily_clustering
 
 http:
   - method: GET

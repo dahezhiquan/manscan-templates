@@ -19,7 +19,7 @@ info:
     - https://nintendo.com
   metadata:
     max-request: 1
-  tags: phishing,nintendo,osint,discovery
+  tags: phishing,nintendo,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

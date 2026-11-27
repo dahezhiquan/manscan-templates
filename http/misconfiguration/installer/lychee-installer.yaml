@@ -21,7 +21,7 @@ info:
     vendor: lycheeorg
     product: lychee
     shodan-query: html:"Lychee-installer"
-  tags: misconfig,lychee,install,exposure,vuln
+  tags: misconfig,lychee,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

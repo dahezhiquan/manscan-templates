@@ -16,7 +16,7 @@ info:
     vendor: Raritan
     product: pdu
     shodan-query: 'http.html:"Raritan" http.html:"PDU"'
-  tags: panel,raritan,pdu,ics,power,discovery
+  tags: panel,raritan,pdu,ics,power,discovery,daily_clustering
 
 http:
   - method: GET

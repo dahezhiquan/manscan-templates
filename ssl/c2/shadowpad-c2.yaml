@@ -17,7 +17,7 @@ info:
     verified: "true"
     max-request: 1
     censys-query: services.tls.certificates.leaf_data.subject_dn="C=CN, ST=myprovince, L=mycity, O=myorganization, OU=mygroup, CN=myServer"
-  tags: ssl,tls,c2,ir,osint,malware,shadowpad,discovery
+  tags: ssl,tls,c2,ir,osint,malware,shadowpad,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

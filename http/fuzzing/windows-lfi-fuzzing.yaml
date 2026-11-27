@@ -15,7 +15,7 @@ info:
     - 对文件路径参数进行规范化处理和白名单限制，拒绝反斜杠、编码穿越和绝对路径。
     - 下载、模板和包含功能应使用受控文件 ID，不直接接收用户提交的路径。
     - 降低 Web 进程对系统目录和敏感配置文件的读取权限。
-  tags: fuzz,windows,lfi,fuzzing,vuln
+  tags: fuzz,windows,lfi,fuzzing,vuln,daily
 
 http:
   - method: GET

@@ -12,7 +12,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,headers,hsts
+  tags: misconfig,headers,hsts,daily_clustering
   impact: |-
     - 弱 CSP 可能降低跨站脚本防护效果，弱 HSTS 可能增加降级或中间人攻击面。
     - 通配 `postMessage` 来源可能允许不可信页面接收敏感消息或触发前端逻辑。

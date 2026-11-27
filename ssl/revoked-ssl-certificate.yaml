@@ -20,7 +20,7 @@ info:
     - https://www.tenable.com/plugins/nnm/5837
   metadata:
     max-request: 1
-  tags: ssl,tls,revoked,vuln
+  tags: ssl,tls,revoked,vuln,daily,daily_clustering
 
 ssl:
   - address: "{{Host}}:{{Port}}"

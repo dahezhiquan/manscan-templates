@@ -17,7 +17,7 @@ info:
     - https://github.com/prometheus/prometheus/wiki/Default-port-allocations
   metadata:
     max-request: 1
-  tags: prometheus,misconfig,vuln
+  tags: prometheus,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

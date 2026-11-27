@@ -22,7 +22,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Laravel"
-  tags: laravel,ignition,logs,exposure
+  tags: laravel,ignition,logs,exposure,daily
 
 http:
   - method: GET

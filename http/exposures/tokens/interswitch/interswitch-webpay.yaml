@@ -19,7 +19,7 @@ info:
     - 启用最小权限、IP/来源限制、MFA、告警和审计日志，并排查是否存在未授权资源访问或数据变更。
   reference:
     - https://docs.interswitchgroup.com/reference/how-to-use-the-reference
-  tags: exposure,interswitch,webpay,token
+  tags: exposure,interswitch,webpay,token,daily,daily_clustering
 
 http:
   - method: GET

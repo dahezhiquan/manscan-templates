@@ -19,7 +19,7 @@ info:
     - https://discord.com
   metadata:
     max-request: 1
-  tags: phishing,discord,osint,discovery
+  tags: phishing,discord,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

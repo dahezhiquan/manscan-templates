@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Dell Remote Management Controller"
-  tags: panel,bmc,dell,login,discovery
+  tags: panel,bmc,dell,login,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -24,7 +24,7 @@ info:
     vendor: mozilla
     product: bugzilla
     shodan-query: title:"Bugzilla"
-  tags: bugzilla,mozilla,config,exposure,vuln
+  tags: bugzilla,mozilla,config,exposure,vuln,daily
 
 http:
   - method: GET

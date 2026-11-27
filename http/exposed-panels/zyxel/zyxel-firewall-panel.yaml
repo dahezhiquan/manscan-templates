@@ -17,7 +17,7 @@ info:
     shodan-query: http.favicon.hash:-440644339
     product: zywall_vpn50_firmware
     vendor: zyxel
-  tags: panel,xyxel,firewall,discovery
+  tags: panel,xyxel,firewall,discovery,daily_clustering
 
 http:
   - method: GET

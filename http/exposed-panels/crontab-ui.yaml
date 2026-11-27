@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Crontab UI"
-  tags: exposure,crontab,ui,panel,discovery
+  tags: exposure,crontab,ui,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

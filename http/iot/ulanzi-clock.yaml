@@ -15,7 +15,7 @@ info:
     - 对管理入口访问、登录失败和配置变更启用审计。
   metadata:
     max-request: 1
-  tags: panel,ulanzi,iot,discovery
+  tags: panel,ulanzi,iot,discovery,daily_clustering
 
 http:
   - method: GET

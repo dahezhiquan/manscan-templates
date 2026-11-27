@@ -19,7 +19,7 @@ info:
     - https://github.com/trufflesecurity/trufflehog/blob/main/pkg/detectors/zenserp/zenserp.go
   metadata:
     max-request: 2
-  tags: exposure,token,zenserp,apikey,vuln
+  tags: exposure,token,zenserp,apikey,vuln,daily
 
 flow: http(1) && http(2)
 

@@ -30,7 +30,7 @@ info:
       - http.title:"git repository browser"
     fofa-query: title="git repository browser"
     google-query: intitle:"git repository browser"
-  tags: panel,git,cgit_project,discovery
+  tags: panel,git,cgit_project,discovery,daily_clustering
 http:
   - method: GET
     path:

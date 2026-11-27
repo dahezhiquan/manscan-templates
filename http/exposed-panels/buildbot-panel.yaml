@@ -30,7 +30,7 @@ info:
       - http.title:"buildbot"
     fofa-query: title="buildbot"
     google-query: intitle:"buildbot"
-  tags: panel,buildbot,cicd,discovery
+  tags: panel,buildbot,cicd,discovery,daily_clustering
 http:
   - method: GET
     path:

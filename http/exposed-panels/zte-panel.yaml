@@ -20,7 +20,7 @@ info:
     shodan-query: http.html:"ZTE Corporation"
     product: nr8120a
     vendor: zte
-  tags: panel,zte,discovery
+  tags: panel,zte,discovery,daily_clustering
 
 http:
   - method: GET

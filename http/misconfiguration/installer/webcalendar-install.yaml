@@ -22,7 +22,7 @@ info:
     product: webcalendar
     shodan-query: title:"WebCalendar Setup Wizard"
     fofa-query: title="WebCalendar Setup Wizard"
-  tags: misconfig,webcalendar,install,vuln
+  tags: misconfig,webcalendar,install,vuln,daily_clustering
 
 http:
   - method: GET

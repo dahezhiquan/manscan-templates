@@ -26,7 +26,7 @@ info:
     vendor: microsoft
     product: nuget
     shodan-query: html:"packages.config"
-  tags: exposure,sass,devops,cicd,nuget,files,vuln
+  tags: exposure,sass,devops,cicd,nuget,files,vuln,daily
 
 http:
   - method: GET

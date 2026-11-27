@@ -22,7 +22,7 @@ info:
     max-request: 1
     shodan-query: http.html:"NeoboxUI"
     fofa-query: app="neobox-Web-Server"
-  tags: panel,neobox,webserver,discovery
+  tags: panel,neobox,webserver,discovery,daily_clustering
 http:
   - method: GET
     path:

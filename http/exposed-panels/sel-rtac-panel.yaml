@@ -17,7 +17,7 @@ info:
     vendor: Schweitzer Engineering Laboratories
     product: sel-rtac
     shodan-query: http.title:"SEL-RTAC"
-  tags: panel,scada,ics,sel,rtac,schweitzer,energy,utilities,discovery
+  tags: panel,scada,ics,sel,rtac,schweitzer,energy,utilities,discovery,daily_clustering
 
 http:
   - method: GET

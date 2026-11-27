@@ -19,7 +19,7 @@ info:
     - https://github.com/drone/drone
   metadata:
     max-request: 1
-  tags: config,exposure,drone,discovery
+  tags: config,exposure,drone,discovery,daily
 
 http:
   - method: GET

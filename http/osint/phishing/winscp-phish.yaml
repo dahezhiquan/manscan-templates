@@ -20,7 +20,7 @@ info:
     - https://winscp.net
   metadata:
     max-request: 1
-  tags: phishing,winscp,osint,discovery
+  tags: phishing,winscp,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.title:"FireMon Asset Manager"'
-  tags: panel,firemon,firewall,vpn
+  tags: panel,firemon,firewall,vpn,daily_clustering
 http:
   - method: GET
     path:

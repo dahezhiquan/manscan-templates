@@ -17,7 +17,7 @@ info:
     product: redash
     shodan-query: http.favicon.hash:698624197
     fofa-query: icon_hash=698624197
-  tags: panel,redash,discovery
+  tags: panel,redash,discovery,daily_clustering
 
 http:
   - method: GET

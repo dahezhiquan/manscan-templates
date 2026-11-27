@@ -28,7 +28,7 @@ info:
     shodan-query: html:"hgignore"
     product: mercurial
     vendor: mercurial
-  tags: exposure,hgignore,config,mercurial,vuln
+  tags: exposure,hgignore,config,mercurial,vuln,daily
 
 http:
   - method: GET

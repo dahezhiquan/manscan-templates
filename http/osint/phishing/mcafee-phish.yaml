@@ -20,7 +20,7 @@ info:
     - https://mcafee.com
   metadata:
     max-request: 1
-  tags: phishing,mcafee,osint,discovery
+  tags: phishing,mcafee,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

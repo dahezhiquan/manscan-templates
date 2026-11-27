@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: port:1883 broker
-  tags: js,tcp,network,mqtt,unauth
+  tags: js,tcp,network,mqtt,unauth,daily
 
 javascript:
   - pre-condition: |

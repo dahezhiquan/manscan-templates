@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: network,ftp,default-login,tcp,vuln
+  tags: network,ftp,default-login,tcp,vuln,daily
 
 tcp:
   - inputs:

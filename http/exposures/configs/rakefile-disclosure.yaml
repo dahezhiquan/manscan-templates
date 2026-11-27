@@ -25,7 +25,7 @@ info:
     vendor: ruby-lang
     product: ruby
     shodan-query: html:"Rakefile"
-  tags: devops,exposure,rakefile,config,ruby,rails,vuln
+  tags: devops,exposure,rakefile,config,ruby,rails,vuln,daily
 
 http:
   - method: GET

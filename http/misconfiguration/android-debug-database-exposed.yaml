@@ -16,7 +16,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Android Debug Database"
-  tags: unauth,android,misconfig,vuln
+  tags: unauth,android,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

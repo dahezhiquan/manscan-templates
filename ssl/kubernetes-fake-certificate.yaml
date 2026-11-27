@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: ssl:"Kubernetes Ingress Controller Fake Certificate"
-  tags: ssl,tls,kubernetes,self-signed,vuln
+  tags: ssl,tls,kubernetes,self-signed,vuln,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

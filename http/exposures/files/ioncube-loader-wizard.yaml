@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 2
-  tags: ioncube,disclosure,exposure,vuln
+  tags: ioncube,disclosure,exposure,vuln,daily
 
 http:
   - method: GET

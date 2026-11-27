@@ -21,7 +21,7 @@ info:
     vendor: softaculous
     product: webuzo
     shodan-query: title:"Webuzo Installer"
-  tags: misconfig,webuzo,install,exposure,vuln
+  tags: misconfig,webuzo,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

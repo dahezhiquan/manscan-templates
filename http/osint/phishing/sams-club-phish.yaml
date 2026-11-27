@@ -19,7 +19,7 @@ info:
     - https://samsclub.com
   metadata:
     max-request: 1
-  tags: phishing,sams-club,ecommerce,osint,discovery
+  tags: phishing,sams-club,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -25,7 +25,7 @@ info:
     vendor: php
     product: php
     shodan-query: php.ini
-  tags: config,exposure,files,vuln
+  tags: config,exposure,files,vuln,daily
 
 http:
   - method: GET

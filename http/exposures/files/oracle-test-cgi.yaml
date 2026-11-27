@@ -23,7 +23,7 @@ info:
     vendor: oracle
     product: http_server
     shodan-query: title:"Oracle Application Server"
-  tags: oracle,exposure,vuln
+  tags: oracle,exposure,vuln,daily
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"protractor.conf.js"
-  tags: devops,exposure,protractor,config,vuln
+  tags: devops,exposure,protractor,config,vuln,daily
 
 http:
   - method: GET

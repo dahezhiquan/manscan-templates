@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"readarr"
-  tags: readarr,dashboard,unauth,misconfig,vuln
+  tags: readarr,dashboard,unauth,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

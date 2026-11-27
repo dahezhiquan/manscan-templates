@@ -16,7 +16,7 @@ info:
     vendor: Solar-Log
     product: solar-log
     shodan-query: 'http.title:"Solar-Log"'
-  tags: panel,solar-log,solar,energy,ics,monitoring,ot,discovery
+  tags: panel,solar-log,solar,energy,ics,monitoring,ot,discovery,daily_clustering
 
 http:
   - method: GET

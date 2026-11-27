@@ -13,7 +13,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'http.html:"TheGreenBow"'
-  tags: panel,thegreenbowvpn,vpn
+  tags: panel,thegreenbowvpn,vpn,daily_clustering
 
 http:
   - method: GET

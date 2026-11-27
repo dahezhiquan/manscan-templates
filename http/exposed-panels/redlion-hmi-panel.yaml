@@ -16,7 +16,7 @@ info:
     vendor: Red Lion Controls
     product: hmi
     shodan-query: 'http.html:"Red Lion"'
-  tags: panel,redlion,hmi,ics,discovery
+  tags: panel,redlion,hmi,ics,discovery,daily_clustering
 
 http:
   - method: GET

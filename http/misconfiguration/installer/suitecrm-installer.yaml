@@ -21,7 +21,7 @@ info:
     vendor: salesagility
     product: suitecrm
     shodan-query: title:"SuiteCRM"
-  tags: misconfig,suitecrm,install,vuln
+  tags: misconfig,suitecrm,install,vuln,daily_clustering
 
 http:
   - method: GET

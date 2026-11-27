@@ -19,7 +19,7 @@ info:
     max-request: 1
     vendor: twig
     fofa-query: title="Mako Runtime Error"
-  tags: error,mako,log,vuln
+  tags: error,mako,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

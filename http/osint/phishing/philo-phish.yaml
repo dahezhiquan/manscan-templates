@@ -19,7 +19,7 @@ info:
     - https://philo.com
   metadata:
     max-request: 1
-  tags: phishing,philo,streaming,osint,discovery
+  tags: phishing,philo,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

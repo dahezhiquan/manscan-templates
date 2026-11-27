@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 3
-  tags: firebase,exposure,config,vuln
+  tags: firebase,exposure,config,vuln,daily
 
 http:
   - method: GET

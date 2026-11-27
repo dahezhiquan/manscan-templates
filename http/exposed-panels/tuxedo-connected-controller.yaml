@@ -14,7 +14,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: panel,tuxedo,edb,discovery
+  tags: panel,tuxedo,edb,discovery,daily_clustering
 
 http:
   - method: GET

@@ -16,7 +16,7 @@ info:
     vendor: SolarEdge
     product: solaredge-telematics
     shodan-query: 'http.title:"SolarEdge"'
-  tags: panel,solaredge,ics,solar,discovery
+  tags: panel,solaredge,ics,solar,discovery,daily_clustering
 
 http:
   - method: GET

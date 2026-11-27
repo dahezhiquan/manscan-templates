@@ -19,7 +19,7 @@ info:
     - https://www.gnu.org/software/inetutils/manual/html_node/The-_002enetrc-file.html
   metadata:
     max-request: 2
-  tags: netrc,config,exposure,vuln
+  tags: netrc,config,exposure,vuln,daily
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     github-query: filename:apiserver-etcd-client.key
-  tags: files,exposure,kubernetes,vuln
+  tags: files,exposure,kubernetes,vuln,daily
 
 http:
   - method: GET

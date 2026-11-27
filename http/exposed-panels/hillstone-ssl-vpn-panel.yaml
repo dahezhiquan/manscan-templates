@@ -19,7 +19,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: 'ssl.cert.subject.cn:"SG-6000" ssl.cert.subject.org:"Hillstone Networks"'
-  tags: panel,hillstone,ssl-vpn,vpn,ics,network
+  tags: panel,hillstone,ssl-vpn,vpn,ics,network,daily_clustering
 http:
   - method: GET
     path:

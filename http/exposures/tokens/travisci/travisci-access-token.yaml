@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: travisci,exposure,token,vuln
+  tags: travisci,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

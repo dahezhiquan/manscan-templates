@@ -17,7 +17,7 @@ info:
   metadata:
     max-request: 223
     shodan-query: port:22
-  tags: js,ssh,default-login,network,fuzz,vuln
+  tags: js,ssh,default-login,network,fuzz,vuln,daily
 
 javascript:
   - pre-condition: |

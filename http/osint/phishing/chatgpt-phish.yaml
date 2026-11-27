@@ -19,7 +19,7 @@ info:
     - https://chatgpt.com
   metadata:
     max-request: 1
-  tags: phishing,chatgpt,openai,ai,osint,discovery
+  tags: phishing,chatgpt,openai,ai,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

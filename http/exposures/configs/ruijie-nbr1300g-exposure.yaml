@@ -24,7 +24,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: ruijie,exposure,vuln
+  tags: ruijie,exposure,vuln,daily
 
 http:
   - raw:

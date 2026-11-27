@@ -23,7 +23,7 @@ info:
     vendor: zebra
     product: zt220_firmware
     shodan-query: html:"Zebra Technologies"
-  tags: iot,zebra,printer,discovery
+  tags: iot,zebra,printer,discovery,daily_clustering
 
 http:
   - method: GET

@@ -27,7 +27,7 @@ info:
     max-request: 1
     shodan-query: title:"vLLM"
     fofa-query: title="vLLM"
-  tags: exposure,vllm,llm,ai,api,unauth,misconfig
+  tags: exposure,vllm,llm,ai,api,unauth,misconfig,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://sling.com
   metadata:
     max-request: 1
-  tags: phishing,sling,streaming,osint,discovery
+  tags: phishing,sling,streaming,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

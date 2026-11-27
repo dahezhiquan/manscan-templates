@@ -23,7 +23,7 @@ info:
     vendor: phpunit_project
     product: phpunit
     shodan-query: ".phpunit.result.cache"
-  tags: config,exposure,devops,files,vuln
+  tags: config,exposure,devops,files,vuln,daily
 
 http:
   - method: GET

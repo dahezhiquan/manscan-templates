@@ -24,7 +24,7 @@ info:
     shodan-query: html:"LANCOM Systems GmbH"
     product: wlc-4006
     vendor: lancom-systems
-  tags: panel,lancom,router,discovery
+  tags: panel,lancom,router,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Juniper Web Device Manager"
-  tags: panel,juniper,vpn,login,discovery
+  tags: panel,juniper,vpn,login,discovery,daily_clustering
 http:
   - method: GET
     path:

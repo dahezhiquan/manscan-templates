@@ -16,7 +16,7 @@ info:
     shodan-query: http.html:"Z-BlogPHP"
     product: zblogphp
     vendor: zblogcn
-  tags: panel,zblogphp,discovery
+  tags: panel,zblogphp,discovery,daily_clustering
 
 http:
   - method: GET

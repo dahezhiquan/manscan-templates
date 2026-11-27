@@ -20,7 +20,7 @@ info:
     - https://duckduckgo.com
   metadata:
     max-request: 1
-  tags: phishing,duckduckgo,osint,discovery
+  tags: phishing,duckduckgo,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

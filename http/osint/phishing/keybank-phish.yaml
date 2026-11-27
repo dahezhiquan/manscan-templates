@@ -20,7 +20,7 @@ info:
     - https://key.com
   metadata:
     max-request: 1
-  tags: phishing,keybank,bank,osint,discovery
+  tags: phishing,keybank,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

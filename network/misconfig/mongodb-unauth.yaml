@@ -18,7 +18,7 @@ info:
     - https://www.mongodb.com/features/mongodb-authentication
   metadata:
     max-request: 1
-  tags: network,mongodb,unauth,misconfig,tcp,vuln
+  tags: network,mongodb,unauth,misconfig,tcp,vuln,daily
 
 tcp:
   - inputs:

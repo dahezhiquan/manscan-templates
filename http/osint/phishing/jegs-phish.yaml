@@ -19,7 +19,7 @@ info:
     - https://jegs.com
   metadata:
     max-request: 1
-  tags: phishing,jegs,ecommerce,osint,discovery
+  tags: phishing,jegs,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -22,7 +22,7 @@ info:
     vendor: kubernetes
     product: dashboard
     shodan-query: product:"kubernetes"
-  tags: panel,kubernetes,devops,discovery
+  tags: panel,kubernetes,devops,discovery,daily_clustering
 http:
   - method: GET
     path:

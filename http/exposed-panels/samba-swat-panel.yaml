@@ -15,7 +15,7 @@ info:
     max-request: 1
     vendor: samba
     product: samba
-  tags: panel,samba,discovery
+  tags: panel,samba,discovery,daily_clustering
 
 http:
   - method: GET

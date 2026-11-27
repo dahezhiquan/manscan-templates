@@ -16,7 +16,7 @@ info:
     vendor: Reliable Controls
     product: mach-system
     shodan-query: http.title:"Reliable Controls"
-  tags: panel,ics,bms,bacnet,building-automation,reliable-controls,mach-pro,discovery
+  tags: panel,ics,bms,bacnet,building-automation,reliable-controls,mach-pro,discovery,daily_clustering
 
 http:
   - method: GET

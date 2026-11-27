@@ -23,7 +23,7 @@ info:
     fofa-query: title="MistServer"
     product: mistserver
     vendor: ddvtech
-  tags: misconfig,mistserver,install,exposure
+  tags: misconfig,mistserver,install,exposure,daily_clustering
 
 http:
   - method: GET

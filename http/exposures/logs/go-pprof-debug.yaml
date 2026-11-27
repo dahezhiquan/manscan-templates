@@ -17,7 +17,7 @@ info:
     - 清理公开缓存、历史发布包和搜索引擎收录，并为日志访问启用鉴权、内网限制和审计。
   metadata:
     max-request: 2
-  tags: logs,exposure,go,pprof,vuln
+  tags: logs,exposure,go,pprof,vuln,daily
 
 http:
   - method: GET

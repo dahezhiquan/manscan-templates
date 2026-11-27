@@ -30,7 +30,7 @@ info:
       - influxdb
     fofa-query: title="influxdb - admin interface"
     google-query: intitle:"influxdb - admin interface"
-  tags: panel,influxdb,influxdata,discovery
+  tags: panel,influxdb,influxdata,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     vendor: npmjs
     product: npm
     shodan-query: html:"anonymous-cli-metrics.json"
-  tags: npm,devops,exposure,files,vuln
+  tags: npm,devops,exposure,files,vuln,daily
 
 http:
   - method: GET

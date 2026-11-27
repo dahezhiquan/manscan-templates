@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: google,token,exposure,vuln
+  tags: google,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

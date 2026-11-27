@@ -19,7 +19,7 @@ info:
     - https://aliexpress.com
   metadata:
     max-request: 1
-  tags: phishing,aliexpress,osint,discovery
+  tags: phishing,aliexpress,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

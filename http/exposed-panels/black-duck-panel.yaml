@@ -27,7 +27,7 @@ info:
     shodan-query: http.title:"Black Duck"
     product: black_duck_hub
     vendor: synopsys
-  tags: panel,blackduck,synopsys,discovery
+  tags: panel,blackduck,synopsys,discovery,daily_clustering
 http:
   - method: GET
     path:

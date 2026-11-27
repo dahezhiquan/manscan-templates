@@ -25,7 +25,7 @@ info:
     vendor: npmjs
     product: npm
     shodan-query: html:"npm-shrinkwrap.json"
-  tags: config,exposure,npm,files,node,vuln
+  tags: config,exposure,npm,files,node,vuln,daily
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     shodan-query: port:1433
     vendor: microsoft
     product: sql_server
-  tags: js,mssql,default-login,network,vuln
+  tags: js,mssql,default-login,network,vuln,daily
 
 javascript:
   - pre-condition: |

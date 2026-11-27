@@ -20,7 +20,7 @@ info:
     - https://smbc.co.jp
   metadata:
     max-request: 1
-  tags: phishing,sumitomo-mitsui,bank,osint,discovery
+  tags: phishing,sumitomo-mitsui,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -24,7 +24,7 @@ info:
     shodan-query: title:"Gira HomeServer 4"
     product: gira_home_server_firmware
     vendor: gira
-  tags: panel,gira,discovery
+  tags: panel,gira,discovery,daily_clustering
 http:
   - method: GET
     path:

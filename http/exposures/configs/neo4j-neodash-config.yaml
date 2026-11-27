@@ -23,7 +23,7 @@ info:
     vendor: neo4j
     product: neodash
     shodan-query: title:"NeoDash"
-  tags: config,exposure,neodash,neo4j,vuln
+  tags: config,exposure,neodash,neo4j,vuln,daily
 
 http:
   - method: GET

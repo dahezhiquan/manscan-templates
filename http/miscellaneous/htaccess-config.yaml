@@ -15,7 +15,7 @@ info:
     - 审查暴露内容中是否包含凭据或内部路径，必要时轮换相关密码。
   metadata:
     max-request: 4
-  tags: miscellaneous,misc,config,vuln
+  tags: miscellaneous,misc,config,vuln,daily
 
 http:
   - method: GET

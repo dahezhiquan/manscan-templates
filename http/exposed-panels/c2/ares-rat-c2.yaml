@@ -20,7 +20,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:'Ares RAT C2'
-  tags: c2,ir,osint,ares,panel,rat,vuln
+  tags: c2,ir,osint,ares,panel,rat,vuln,daily_clustering
 http:
   - method: GET
     path:

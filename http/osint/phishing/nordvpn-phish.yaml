@@ -20,7 +20,7 @@ info:
     - https://nordvpn.com
   metadata:
     max-request: 1
-  tags: phishing,nordvpn,vpn,osint,discovery
+  tags: phishing,nordvpn,vpn,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

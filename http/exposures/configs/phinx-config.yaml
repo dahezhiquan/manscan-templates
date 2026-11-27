@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"phinx.yml"
-  tags: devops,exposure,files,vuln
+  tags: devops,exposure,files,vuln,daily
 
 http:
   - method: GET

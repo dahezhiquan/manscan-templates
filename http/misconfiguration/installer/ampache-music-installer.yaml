@@ -21,7 +21,7 @@ info:
     vendor: ampache
     product: ampache
     shodan-query: title:"For the Love of Music - Installation"
-  tags: misconfig,ampache,install,exposure,vuln
+  tags: misconfig,ampache,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

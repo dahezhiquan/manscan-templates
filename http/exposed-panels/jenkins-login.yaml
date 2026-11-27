@@ -28,7 +28,7 @@ info:
       - http.favicon.hash:81586312
       - product:"jenkins"
     fofa-query: icon_hash=81586312
-  tags: panel,jenkins,discovery
+  tags: panel,jenkins,discovery,daily_clustering
 http:
   - method: GET
     path:

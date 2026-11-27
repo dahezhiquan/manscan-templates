@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misconfig,db,files,exposure,vuln
+  tags: misconfig,db,files,exposure,vuln,daily
 
 http:
   - method: GET

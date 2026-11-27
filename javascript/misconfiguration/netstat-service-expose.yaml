@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     zoomeye-query: port="15" && "netstat"
-  tags: netstat,network,js,tcp,vuln
+  tags: netstat,network,js,tcp,vuln,daily
 
 javascript:
   - pre-condition: |

@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: token,exposure,mapbox,vuln
+  tags: token,exposure,mapbox,vuln,daily
 
 flow: http(1) && http(2)
 

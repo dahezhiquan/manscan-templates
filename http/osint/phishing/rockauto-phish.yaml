@@ -19,7 +19,7 @@ info:
     - https://rockauto.com
   metadata:
     max-request: 1
-  tags: phishing,rockauto,ecommerce,osint,discovery
+  tags: phishing,rockauto,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://laravel.com/docs/8.x/telescope
   metadata:
     max-request: 1
-  tags: laravel,disclosure,logs,exposure,vuln
+  tags: laravel,disclosure,logs,exposure,vuln,daily
 
 http:
   - method: GET

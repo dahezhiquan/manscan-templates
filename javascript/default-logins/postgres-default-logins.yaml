@@ -19,7 +19,7 @@ info:
     shodan-query: port:5432
     vendor: postgresql
     product: postgresql
-  tags: js,postgresql,default-login,network,vuln
+  tags: js,postgresql,default-login,network,vuln,daily
 
 javascript:
   - pre-condition: |

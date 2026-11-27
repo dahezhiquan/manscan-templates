@@ -25,7 +25,7 @@ info:
     vendor: redis
     product: redis
     shodan-query: html:"redis.exceptions.ConnectionError"
-  tags: exposure,redis,logs,vuln
+  tags: exposure,redis,logs,vuln,daily,daily_clustering
 
 http:
   - method: GET

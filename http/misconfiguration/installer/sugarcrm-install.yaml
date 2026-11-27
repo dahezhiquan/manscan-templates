@@ -21,7 +21,7 @@ info:
     vendor: sugarcrm
     product: sugarcrm
     shodan-query: title:"Sugar Setup Wizard"
-  tags: misconfig,sugar,sugarcrm,install,vuln
+  tags: misconfig,sugar,sugarcrm,install,vuln,daily_clustering
 
 http:
   - method: GET

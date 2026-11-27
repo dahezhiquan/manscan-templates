@@ -24,7 +24,7 @@ info:
     vendor: akuity
     product: kargo
     shodan-query: http.title:"Kargo"
-  tags: kargo,panel,login,discovery
+  tags: kargo,panel,login,discovery,daily_clustering
 http:
   - method: GET
     path:

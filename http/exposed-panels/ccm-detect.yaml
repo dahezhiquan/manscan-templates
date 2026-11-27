@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:"CCM - Authentication Failure"
-  tags: panel,clearcom,ccm,discovery
+  tags: panel,clearcom,ccm,discovery,daily_clustering
 http:
   - method: GET
     path:

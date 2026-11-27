@@ -22,7 +22,7 @@ info:
     vendor: asustor
     product: asustor_data_master
     shodan-query: http.favicon.hash:1678170702
-  tags: panel,asustor,adm,nas,storage,login,discovery
+  tags: panel,asustor,adm,nas,storage,login,discovery,daily_clustering
 http:
   - method: GET
     path:

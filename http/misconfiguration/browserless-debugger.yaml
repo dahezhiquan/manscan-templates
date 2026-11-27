@@ -22,7 +22,7 @@ info:
     vendor: browserless
     product: chrome
     shodan-query: http.title:"browserless debugger"
-  tags: browserless,unauth,debug,misconfig,vuln
+  tags: browserless,unauth,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

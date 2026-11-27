@@ -20,7 +20,7 @@ info:
     - https://ubs.com
   metadata:
     max-request: 1
-  tags: phishing,ubs,bank,osint,discovery
+  tags: phishing,ubs,bank,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

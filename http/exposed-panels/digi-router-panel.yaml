@@ -22,7 +22,7 @@ info:
     vendor: Digi International
     product: digi-router
     shodan-query: 'http.title:"Digi Router"'
-  tags: panel,ics,digi,router,industrial,discovery
+  tags: panel,ics,digi,router,industrial,discovery,daily_clustering
 http:
   - method: GET
     path:

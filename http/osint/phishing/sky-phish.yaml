@@ -19,7 +19,7 @@ info:
     - https://sky.com
   metadata:
     max-request: 1
-  tags: phishing,sky,osint,discovery
+  tags: phishing,sky,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

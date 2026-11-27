@@ -20,7 +20,7 @@ info:
     - https://godaddy.com
   metadata:
     max-request: 1
-  tags: phishing,godaddy,domain,hosting,osint,discovery
+  tags: phishing,godaddy,domain,hosting,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

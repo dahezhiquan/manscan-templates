@@ -28,7 +28,7 @@ info:
     vendor: homarr
     fofa-query: title="Homarr"
     shodan-query: http.title:"Homarr"
-  tags: panel,homarr,dashboard,oss,discovery
+  tags: panel,homarr,dashboard,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

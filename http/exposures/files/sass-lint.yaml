@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"sass-lint.yml"
-  tags: exposure,sass,devops,cicd,files,vuln
+  tags: exposure,sass,devops,cicd,files,vuln,daily
 
 http:
   - method: GET

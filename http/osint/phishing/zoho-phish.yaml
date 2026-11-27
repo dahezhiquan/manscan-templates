@@ -20,7 +20,7 @@ info:
     - https://zoho.com
   metadata:
     max-request: 1
-  tags: phishing,zoho,business,osint,discovery
+  tags: phishing,zoho,business,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

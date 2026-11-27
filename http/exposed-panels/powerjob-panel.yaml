@@ -17,7 +17,7 @@ info:
     fofa-query: title="PowerJob"
     product: powerjob
     vendor: powerjob
-  tags: panel,powerjob,discovery
+  tags: panel,powerjob,discovery,daily_clustering
 
 http:
   - method: GET

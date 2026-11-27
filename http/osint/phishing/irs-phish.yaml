@@ -20,7 +20,7 @@ info:
     - https://irs.gov
   metadata:
     max-request: 1
-  tags: phishing,irs,government,osint,discovery
+  tags: phishing,irs,government,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 2
     google-query: inurl:"/.well-known/atproto-did"
-  tags: well-known,atproto,bluesky,misc,identity,miscellaneous,vuln
+  tags: well-known,atproto,bluesky,misc,identity,miscellaneous,vuln,daily
 
 http:
   - method: GET

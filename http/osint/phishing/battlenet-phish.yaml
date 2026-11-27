@@ -19,7 +19,7 @@ info:
     - https://eu.account.battle.net/login
   metadata:
     max-request: 1
-  tags: phishing,battlenet,osint,discovery
+  tags: phishing,battlenet,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

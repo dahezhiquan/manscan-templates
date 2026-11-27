@@ -20,7 +20,7 @@ info:
     - https://authy.com
   metadata:
     max-request: 1
-  tags: phishing,authy,security,2fa,osint,discovery
+  tags: phishing,authy,security,2fa,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

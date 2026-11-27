@@ -19,7 +19,7 @@ info:
     - https://tripadvisor.com
   metadata:
     max-request: 1
-  tags: phishing,tripadvisor,travel,osint,discovery
+  tags: phishing,tripadvisor,travel,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

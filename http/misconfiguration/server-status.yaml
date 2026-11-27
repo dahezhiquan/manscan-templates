@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"ServerStatus"
-  tags: misconfig,serverstatus,vuln
+  tags: misconfig,serverstatus,vuln,daily_clustering
 
 http:
   - method: GET

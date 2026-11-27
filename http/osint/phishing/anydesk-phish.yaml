@@ -20,7 +20,7 @@ info:
     - https://anydesk.com
   metadata:
     max-request: 1
-  tags: phishing,anydesk,osint,discovery
+  tags: phishing,anydesk,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

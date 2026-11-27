@@ -24,7 +24,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"nsqadmin"
-  tags: nsq,admin,panel,exposure,discovery
+  tags: nsq,admin,panel,exposure,discovery,daily_clustering
 http:
   - method: GET
     path:

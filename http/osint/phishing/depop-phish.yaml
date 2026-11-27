@@ -19,7 +19,7 @@ info:
     - https://depop.com
   metadata:
     max-request: 1
-  tags: phishing,depop,ecommerce,osint,discovery
+  tags: phishing,depop,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

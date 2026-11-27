@@ -33,7 +33,7 @@ info:
       - "Set-Cookie: ncentral_version="
     product: n-central
     vendor: n-able
-  tags: panel,n-central,discovery
+  tags: panel,n-central,discovery,daily_clustering
 http:
   - method: GET
     path:

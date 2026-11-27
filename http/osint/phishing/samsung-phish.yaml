@@ -19,7 +19,7 @@ info:
     - https://samsung.com
   metadata:
     max-request: 1
-  tags: phishing,samsung,osint,discovery
+  tags: phishing,samsung,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

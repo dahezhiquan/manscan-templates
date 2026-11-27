@@ -19,7 +19,7 @@ info:
     - https://holley.com
   metadata:
     max-request: 1
-  tags: phishing,holley,ecommerce,osint,discovery
+  tags: phishing,holley,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

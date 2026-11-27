@@ -27,7 +27,7 @@ info:
       - html:"NZBGet"
       - http.html:"nzbget"
     fofa-query: body="nzbget"
-  tags: panel,nzbget,discovery
+  tags: panel,nzbget,discovery,daily_clustering
 http:
   - method: GET
     path:

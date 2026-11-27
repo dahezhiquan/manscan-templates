@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: duffel,exposure,token,vuln
+  tags: duffel,exposure,token,vuln,daily,daily_clustering
 
 http:
   - method: GET

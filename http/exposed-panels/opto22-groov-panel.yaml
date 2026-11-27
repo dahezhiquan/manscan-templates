@@ -23,7 +23,7 @@ info:
     vendor: Opto 22
     product: groov
     shodan-query: 'http.title:"groov"'
-  tags: panel,ics,iot,opto22,groov,discovery
+  tags: panel,ics,iot,opto22,groov,discovery,daily_clustering
 http:
   - method: GET
     path:

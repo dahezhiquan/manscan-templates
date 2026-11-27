@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"NP Data Cache"
-  tags: np,panel,cache,discovery
+  tags: np,panel,cache,discovery,daily_clustering
 http:
   - method: GET
     path:

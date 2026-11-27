@@ -20,7 +20,7 @@ info:
     - https://quora.com
   metadata:
     max-request: 1
-  tags: phishing,quora,osint,discovery
+  tags: phishing,quora,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

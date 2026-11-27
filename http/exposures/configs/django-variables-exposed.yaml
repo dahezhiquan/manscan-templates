@@ -26,7 +26,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,config,django,vuln
+  tags: exposure,config,django,vuln,daily,daily_clustering
 
 http:
   - method: GET

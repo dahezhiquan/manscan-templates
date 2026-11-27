@@ -19,7 +19,7 @@ info:
     - https://twitch.tv
   metadata:
     max-request: 1
-  tags: phishing,twitch,osint,discovery
+  tags: phishing,twitch,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

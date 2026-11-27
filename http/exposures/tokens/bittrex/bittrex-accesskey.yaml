@@ -23,7 +23,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: bittrex,exposure,token,accesskey,vuln
+  tags: bittrex,exposure,token,accesskey,vuln,daily,daily_clustering
 
 http:
   - method: GET

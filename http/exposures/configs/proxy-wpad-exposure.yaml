@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"wpad.dat"
-  tags: config,exposure,proxy,vuln
+  tags: config,exposure,proxy,vuln,daily
 
 http:
   - method: GET

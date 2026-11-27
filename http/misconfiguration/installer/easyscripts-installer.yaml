@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Installer - Easyscripts"
-  tags: misconfig,easyscripts,installer,vuln
+  tags: misconfig,easyscripts,installer,vuln,daily_clustering
 
 http:
   - method: GET

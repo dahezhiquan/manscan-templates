@@ -19,7 +19,7 @@ info:
     - https://fullstory.com
   metadata:
     max-request: 1
-  tags: phishing,fullstory,analytics,osint,discovery
+  tags: phishing,fullstory,analytics,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

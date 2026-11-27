@@ -16,7 +16,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:logger html:"htmlWebpackPlugin.options.title"
-  tags: panel,logger1000,sungrow,discovery
+  tags: panel,logger1000,sungrow,discovery,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 4
     github-query: "REACT_APP_"
-  tags: react,exposure,config,js,vuln
+  tags: react,exposure,config,js,vuln,daily
 
 http:
   - method: GET

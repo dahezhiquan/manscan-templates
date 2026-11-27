@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Rekognition Image Validation Debug UI"
-  tags: misconfig,exposure,vuln
+  tags: misconfig,exposure,vuln,daily_clustering
 
 http:
   - method: GET

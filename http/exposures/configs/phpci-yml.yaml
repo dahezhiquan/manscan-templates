@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 2
     fofa-query: body="phpci.yml"
-  tags: phpci,misconfig,vuln
+  tags: phpci,misconfig,vuln,daily
 
 http:
   - method: GET

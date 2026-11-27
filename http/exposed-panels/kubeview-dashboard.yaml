@@ -29,7 +29,7 @@ info:
       - icon_hash=-379154636
       - title="kubeview"
     google-query: intitle:"kubeview"
-  tags: exposure,kubernetes,kubeview,dashboard,panel,kubeview_project,discovery
+  tags: exposure,kubernetes,kubeview,dashboard,panel,kubeview_project,discovery,daily_clustering
 http:
   - method: GET
     path:

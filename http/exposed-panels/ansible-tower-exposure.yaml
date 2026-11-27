@@ -32,7 +32,7 @@ info:
       - intitle:"Ansible Tower"
       - intitle:"ansible tower"
     fofa-query: title="ansible tower"
-  tags: panel,ansible,redhat,discovery
+  tags: panel,ansible,redhat,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: "PHPnow works"
-  tags: misconfig,phpnow,exposure,vuln
+  tags: misconfig,phpnow,exposure,vuln,daily_clustering
 
 http:
   - method: GET

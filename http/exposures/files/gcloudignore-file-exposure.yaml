@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,gcloud,google,config,files,cloud
+  tags: exposure,gcloud,google,config,files,cloud,daily
 
 http:
   - method: GET

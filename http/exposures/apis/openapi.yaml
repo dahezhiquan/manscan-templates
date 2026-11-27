@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: exposure,api,discovery
+  tags: exposure,api,discovery,daily
 
 http:
   - method: GET

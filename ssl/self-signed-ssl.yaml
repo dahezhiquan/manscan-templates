@@ -17,7 +17,7 @@ info:
     - https://www.rapid7.com/db/vulnerabilities/ssl-self-signed-certificate/
   metadata:
     max-request: 1
-  tags: ssl,tls,self-signed,vuln
+  tags: ssl,tls,self-signed,vuln,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

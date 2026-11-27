@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: misc,headers,deprecated,feature-policy,permissions
+  tags: misc,headers,deprecated,feature-policy,permissions,daily,daily_clustering
 
 http:
   - method: GET

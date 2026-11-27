@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"BaGet"
-  tags: misconfig,glitchtip
+  tags: misconfig,glitchtip,daily_clustering
 
 http:
   - method: GET

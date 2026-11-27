@@ -25,7 +25,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"phpcs.xml"
-  tags: devops,exposure,php,phpcs,vuln
+  tags: devops,exposure,php,phpcs,vuln,daily
 
 http:
   - method: GET

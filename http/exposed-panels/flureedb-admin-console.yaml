@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"FlureeDB Admin Console"
-  tags: panel,flureedb,discovery
+  tags: panel,flureedb,discovery,daily_clustering
 http:
   - method: GET
     path:

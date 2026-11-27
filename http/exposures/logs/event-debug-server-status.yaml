@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Event Debug Server"
-  tags: event,exposure,debug,vuln
+  tags: event,exposure,debug,vuln,daily,daily_clustering
 
 http:
   - method: GET

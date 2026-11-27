@@ -23,7 +23,7 @@ info:
     vendor: Inductive Automation
     product: ignition
     shodan-query: http.title:"Ignition Gateway"
-  tags: panel,scada,hmi,ics,ignition,inductive-automation,opc-ua,discovery
+  tags: panel,scada,hmi,ics,ignition,inductive-automation,opc-ua,discovery,daily_clustering
 http:
   - method: GET
     path:

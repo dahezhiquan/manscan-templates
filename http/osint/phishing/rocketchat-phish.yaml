@@ -20,7 +20,7 @@ info:
     - https://rocket.chat
   metadata:
     max-request: 1
-  tags: phishing,rocket.chat,communication,osint,discovery
+  tags: phishing,rocket.chat,communication,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

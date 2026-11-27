@@ -24,7 +24,7 @@ info:
     shodan-query: http.html:"Omnia MPX"
     product: omnia_mpx_node
     vendor: telosalliance
-  tags: panel,omnia,omniampx,discovery
+  tags: panel,omnia,omniampx,discovery,daily_clustering
 http:
   - method: GET
     path:

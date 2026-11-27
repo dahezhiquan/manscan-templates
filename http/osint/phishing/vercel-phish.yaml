@@ -20,7 +20,7 @@ info:
     - https://vercel.com
   metadata:
     max-request: 1
-  tags: phishing,vercel,hosting,osint,discovery
+  tags: phishing,vercel,hosting,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

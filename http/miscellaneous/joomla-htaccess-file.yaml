@@ -15,7 +15,7 @@ info:
     - 根据 Joomla 官方建议更新安全配置，并保持核心和扩展为受支持版本。
   metadata:
     max-request: 1
-  tags: miscellaneous,misc,joomla,vuln
+  tags: miscellaneous,misc,joomla,vuln,daily
 
 http:
   - method: GET

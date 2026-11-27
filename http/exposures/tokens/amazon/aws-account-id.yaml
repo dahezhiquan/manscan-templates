@@ -20,7 +20,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: aws,amazon,token,exposure,vuln
+  tags: aws,amazon,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

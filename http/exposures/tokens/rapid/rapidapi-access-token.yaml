@@ -23,7 +23,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: exposure,token,rapidapi,vuln
+  tags: exposure,token,rapidapi,vuln,daily,daily_clustering
 
 http:
   - method: GET

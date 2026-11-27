@@ -21,7 +21,7 @@ info:
     vendor: simplemachines
     product: simple_machine_forum
     shodan-query: title:"SMF Installer"
-  tags: misconfig,smf,install,exposure,vuln
+  tags: misconfig,smf,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

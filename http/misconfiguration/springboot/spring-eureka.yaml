@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Eureka"
-  tags: misconfig,springboot,exposure,eureka,vuln
+  tags: misconfig,springboot,exposure,eureka,vuln,daily_clustering
 
 http:
   - method: GET

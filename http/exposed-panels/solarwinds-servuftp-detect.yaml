@@ -16,7 +16,7 @@ info:
     vendor: solarwinds
     product: serv-u
     shodan-query: product:"rhinosoft serv-u httpd"
-  tags: solarwinds,panel,discovery
+  tags: solarwinds,panel,discovery,daily_clustering
 
 http:
   - method: GET

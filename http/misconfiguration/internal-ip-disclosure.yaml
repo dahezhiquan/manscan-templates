@@ -16,7 +16,7 @@ info:
     - https://support.kemptechnologies.com/hc/en-us/articles/203522429-How-to-Mitigate-Against-Internal-IP-Address-Domain-Name-Disclosure-In-Real-Server-Redirect
   metadata:
     max-request: 1
-  tags: misconfig,disclosure,vuln
+  tags: misconfig,disclosure,vuln,daily_clustering
 
 http:
   - method: GET

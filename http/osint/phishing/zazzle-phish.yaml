@@ -19,7 +19,7 @@ info:
     - https://zazzle.com
   metadata:
     max-request: 1
-  tags: phishing,zazzle,osint,discovery
+  tags: phishing,zazzle,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -27,7 +27,7 @@ info:
       - http.title:"conductor ui", http.title:"workflow ui"
     fofa-query: title="conductor ui", http.title:"workflow ui"
     google-query: intitle:"conductor ui", http.title:"workflow ui"
-  tags: webserver,netflix,conductor,panel,discovery
+  tags: webserver,netflix,conductor,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

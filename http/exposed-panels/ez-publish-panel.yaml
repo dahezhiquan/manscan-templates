@@ -24,7 +24,7 @@ info:
     shodan-query: http.html:"eZ Publish"
     product: ez_publish
     vendor: ez
-  tags: panel,ez,discovery
+  tags: panel,ez,discovery,daily_clustering
 http:
   - method: GET
     path:

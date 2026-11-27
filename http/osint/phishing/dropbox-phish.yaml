@@ -19,7 +19,7 @@ info:
     - https://dropbox.com
   metadata:
     max-request: 1
-  tags: phishing,dropbox,osint,discovery
+  tags: phishing,dropbox,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

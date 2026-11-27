@@ -23,7 +23,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"PendingInstallVZW - Web Page Configuration"
-  tags: exposure,cypress,pendinginstallvzw,config,vuln
+  tags: exposure,cypress,pendinginstallvzw,config,vuln,daily,daily_clustering
 
 http:
   - method: GET

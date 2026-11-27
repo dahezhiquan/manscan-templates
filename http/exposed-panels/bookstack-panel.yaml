@@ -29,7 +29,7 @@ info:
       - http.title:"bookstack"
     fofa-query: title="bookstack"
     google-query: intitle:"bookstack"
-  tags: panel,bookstack,bookstackapp,discovery
+  tags: panel,bookstack,bookstackapp,discovery,daily_clustering
 http:
   - method: GET
     path:

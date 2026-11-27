@@ -20,7 +20,7 @@ info:
     - https://skype.com
   metadata:
     max-request: 1
-  tags: phishing,skype,osint,discovery
+  tags: phishing,skype,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

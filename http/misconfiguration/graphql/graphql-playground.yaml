@@ -23,7 +23,7 @@ info:
     vendor: graphql
     product: playground
     shodan-query: title:"GraphQL Playground"
-  tags: misconfig,graphql,vuln
+  tags: misconfig,graphql,vuln,daily_clustering
 
 http:
   - method: GET

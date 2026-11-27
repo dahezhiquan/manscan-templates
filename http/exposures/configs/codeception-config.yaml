@@ -23,7 +23,7 @@ info:
     shodan-query: html:"codeception.yml"
     product: codeception
     vendor: codeception
-  tags: exposure,devops,codeception,config,cicd,vuln
+  tags: exposure,devops,codeception,config,cicd,vuln,daily
 
 http:
   - method: GET

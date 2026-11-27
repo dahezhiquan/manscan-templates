@@ -23,7 +23,7 @@ info:
     vendor: voidtools
     product: everything
     shodan-query: http.favicon.hash:-977323269
-  tags: exposure,everything,listing,voidtools,misconfig,vuln
+  tags: exposure,everything,listing,voidtools,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

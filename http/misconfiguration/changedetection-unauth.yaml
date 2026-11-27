@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Change Detection"
-  tags: changedetection,unauth,exposure,vuln
+  tags: changedetection,unauth,exposure,vuln,daily_clustering
 
 http:
   - method: GET

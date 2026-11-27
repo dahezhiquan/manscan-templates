@@ -26,7 +26,7 @@ info:
     fofa-query:
       - icon_hash=463802404
       - body="ray dashboard"
-  tags: misconfig,exposure,ray,discovery
+  tags: misconfig,exposure,ray,discovery,daily_clustering
 
 http:
   - method: GET

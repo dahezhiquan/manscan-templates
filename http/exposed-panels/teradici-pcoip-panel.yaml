@@ -15,7 +15,7 @@ info:
     max-request: 1
     vendor: teradici
     product: pcoip_client
-  tags: panel,teradici,pcoip,discovery
+  tags: panel,teradici,pcoip,discovery,daily_clustering
 
 http:
   - method: GET

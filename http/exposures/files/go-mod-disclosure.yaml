@@ -23,7 +23,7 @@ info:
     vendor: golang
     product: go
     shodan-query: html:"go.mod"
-  tags: exposure,files,go,vuln
+  tags: exposure,files,go,vuln,daily
 
 http:
   - method: GET

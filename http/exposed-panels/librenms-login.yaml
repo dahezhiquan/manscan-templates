@@ -23,7 +23,7 @@ info:
     vendor: librenms
     product: librenms
     fofa-query: title="librenms"
-  tags: librenms,panel,discovery
+  tags: librenms,panel,discovery,daily_clustering
 http:
   - method: GET
     path:

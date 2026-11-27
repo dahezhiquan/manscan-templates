@@ -26,7 +26,7 @@ info:
     shodan-query: title:"MachForm Admin Panel"
     product: machform
     vendor: machform
-  tags: panel,machform,admin,discovery
+  tags: panel,machform,admin,discovery,daily_clustering
 http:
   - method: GET
     path:

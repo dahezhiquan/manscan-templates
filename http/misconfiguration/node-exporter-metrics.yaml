@@ -15,7 +15,7 @@ info:
     - 审计已暴露的指标内容，确认是否包含主机名、版本、标签或业务敏感标识。
   metadata:
     max-request: 1
-  tags: node,exposure,debug,misconfig,vuln
+  tags: node,exposure,debug,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

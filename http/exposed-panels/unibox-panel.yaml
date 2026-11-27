@@ -15,7 +15,7 @@ info:
     vendor: indionetworks
     product: unibox
     shodan-query: http.favicon.hash:176427349
-  tags: panel,unibox,login,discovery
+  tags: panel,unibox,login,discovery,daily_clustering
 
 http:
   - method: GET

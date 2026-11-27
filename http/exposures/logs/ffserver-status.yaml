@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"ffserver Status"
-  tags: exposure,logs,ffserver,vuln
+  tags: exposure,logs,ffserver,vuln,daily,daily_clustering
 
 http:
   - method: GET

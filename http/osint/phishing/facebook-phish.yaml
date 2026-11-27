@@ -19,7 +19,7 @@ info:
     - https://facebook.com
   metadata:
     max-request: 1
-  tags: phishing,facebook,osint,discovery
+  tags: phishing,facebook,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

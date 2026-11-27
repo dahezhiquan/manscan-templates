@@ -18,7 +18,7 @@ info:
     max-request: 1
     shodan-query: title:"Express Status"
     fofa-query: title="Express Status"
-  tags: node,express,misconfig,status,vuln
+  tags: node,express,misconfig,status,vuln,daily_clustering
 
 http:
   - method: GET

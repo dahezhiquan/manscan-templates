@@ -19,7 +19,7 @@ info:
     - https://gamestop.com
   metadata:
     max-request: 1
-  tags: phishing,gamestop,ecommerce,osint,discovery
+  tags: phishing,gamestop,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

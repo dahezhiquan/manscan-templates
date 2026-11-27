@@ -17,7 +17,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: title:"THIS WEBSITE HAS BEEN SEIZED"
-  tags: seized,miscellaneous,misc,vuln
+  tags: seized,miscellaneous,misc,vuln,daily,daily_clustering
 
 http:
   - method: GET

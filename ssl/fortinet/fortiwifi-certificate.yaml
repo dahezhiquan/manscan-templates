@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: product:"Fortinet FortiWiFi"
-  tags: ssl,tls,fortinet,fortiwifi,discovery
+  tags: ssl,tls,fortinet,fortiwifi,discovery,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
 

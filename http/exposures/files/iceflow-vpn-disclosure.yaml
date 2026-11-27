@@ -17,7 +17,7 @@ info:
     - 审计远程登录、文件传输、代理连接和异常网络访问记录，确认是否存在凭据滥用。
   metadata:
     max-request: 8
-  tags: exposure,files,iceflow,logs,vuln
+  tags: exposure,files,iceflow,logs,vuln,daily
 
 http:
   - method: GET

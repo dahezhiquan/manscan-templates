@@ -20,7 +20,7 @@ info:
     vendor: git-scm
     product: git
     shodan-query: html:"git web interface version"
-  tags: git,misconfig,vuln
+  tags: git,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

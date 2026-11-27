@@ -29,7 +29,7 @@ info:
       - http.html:"OcoMon"
       - http.html:"ocomon"
     fofa-query: body="ocomon"
-  tags: panel,ocomon,oss,ocomon_project,discovery
+  tags: panel,ocomon,oss,ocomon_project,discovery,daily_clustering
 http:
   - method: GET
     path:

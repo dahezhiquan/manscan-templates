@@ -20,7 +20,7 @@ info:
     - https://namecheap.com
   metadata:
     max-request: 1
-  tags: phishing,namecheap,domain,osint,discovery
+  tags: phishing,namecheap,domain,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

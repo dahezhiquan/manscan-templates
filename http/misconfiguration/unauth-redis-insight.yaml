@@ -12,7 +12,7 @@ info:
     verified: 'true'
     max-request: 1
     shodan-query: title:"RedisInsight"
-  tags: redis,redisinsight,unauth,misconfig,vuln
+  tags: redis,redisinsight,unauth,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可查看或操作管理功能、任务队列、监控数据、配置项、项目数据或设备状态。
     - 若界面提供写入、执行、上传或注册能力，可能进一步造成服务接管、数据泄露或业务中断。

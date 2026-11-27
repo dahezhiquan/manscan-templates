@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.html:".asmx?WSDL"
-  tags: config,exposure,asmx,soap,discovery
+  tags: config,exposure,asmx,soap,discovery,daily,daily_clustering
 
 http:
   - method: GET

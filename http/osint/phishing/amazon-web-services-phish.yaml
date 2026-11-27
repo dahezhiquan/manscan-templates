@@ -20,7 +20,7 @@ info:
     - https://signin.aws.amazon.com
   metadata:
     max-request: 1
-  tags: phishing,aws,osint,discovery
+  tags: phishing,aws,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

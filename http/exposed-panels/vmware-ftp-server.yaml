@@ -14,7 +14,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"VMWARE FTP SERVER"
-  tags: panel,vmware,ftp,discovery
+  tags: panel,vmware,ftp,discovery,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     max-request: 1
     vendor: apache
     product: kyuubi
-  tags: config,exposure,kyuubi,apache,vuln
+  tags: config,exposure,kyuubi,apache,vuln,daily
 
 http:
   - method: GET

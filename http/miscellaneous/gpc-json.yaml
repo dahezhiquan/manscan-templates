@@ -16,7 +16,7 @@ info:
   metadata:
     verified: true
     max-request: 2
-  tags: miscellaneous,misc,generic,gpc,vuln
+  tags: miscellaneous,misc,generic,gpc,vuln,daily
 
 http:
   - method: GET

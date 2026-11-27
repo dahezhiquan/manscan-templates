@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: config,exposure,plesk,vuln
+  tags: config,exposure,plesk,vuln,daily
 
 http:
   - method: GET

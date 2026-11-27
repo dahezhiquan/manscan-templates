@@ -10,7 +10,7 @@ info:
     - https://glances.readthedocs.io/en/latest/quickstart.html#how-to-protect-your-server-or-web-server-with-a-login-password
   metadata:
     max-request: 1
-  tags: exposure,glances,misconfig,vuln
+  tags: exposure,glances,misconfig,vuln,daily_clustering
   impact: |-
     - 攻击者可查看或操作管理功能、任务队列、监控数据、配置项、项目数据或设备状态。
     - 若界面提供写入、执行、上传或注册能力，可能进一步造成服务接管、数据泄露或业务中断。

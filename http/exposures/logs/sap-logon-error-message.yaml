@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Logon Error Message"
-  tags: sap,logon,error,log,vuln
+  tags: sap,logon,error,log,vuln,daily,daily_clustering
 
 http:
   - method: GET

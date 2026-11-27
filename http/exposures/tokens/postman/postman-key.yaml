@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: postman,keys,token,api,exposure,vuln
+  tags: postman,keys,token,api,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

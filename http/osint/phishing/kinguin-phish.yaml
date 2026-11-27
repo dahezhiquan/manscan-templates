@@ -19,7 +19,7 @@ info:
     - https://kinguin.net
   metadata:
     max-request: 1
-  tags: phishing,kinguin,osint,discovery
+  tags: phishing,kinguin,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     vendor: apple
     product: cups
     shodan-query: html:"Home - CUPS"
-  tags: apple,cups,exposure,misconfig,vuln
+  tags: apple,cups,exposure,misconfig,vuln,daily_clustering
 
 http:
   - method: GET

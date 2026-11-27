@@ -20,7 +20,7 @@ info:
     - http.title:"manageengine servicedesk plus"
     fofa-query: title="manageengine servicedesk plus"
     google-query: intitle:"manageengine servicedesk plus"
-  tags: panel,zoho,manageengine,zohocorp,discovery
+  tags: panel,zoho,manageengine,zohocorp,discovery,daily_clustering
 
 http:
   - method: GET

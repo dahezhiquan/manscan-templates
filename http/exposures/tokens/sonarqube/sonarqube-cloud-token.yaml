@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 2
     verified: true
-  tags: exposure,token,sonarqube,vuln
+  tags: exposure,token,sonarqube,vuln,daily
 
 flow: http(1) && http(2)
 

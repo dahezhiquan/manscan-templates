@@ -20,7 +20,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"okta"
-  tags: panel,okta,login,discovery
+  tags: panel,okta,login,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://spotify.com
   metadata:
     max-request: 1
-  tags: phishing,spotify,osint,discovery
+  tags: phishing,spotify,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

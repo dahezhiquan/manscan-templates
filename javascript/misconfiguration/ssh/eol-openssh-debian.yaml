@@ -20,7 +20,7 @@ info:
     max-request: 1
     vendor: debian
     product: debian
-  tags: js,ssh,enum,debian,eol,network,misconfig,vuln
+  tags: js,ssh,enum,debian,eol,network,misconfig,vuln,daily
 
 javascript:
   - pre-condition: |

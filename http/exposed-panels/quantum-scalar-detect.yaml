@@ -15,7 +15,7 @@ info:
     max-request: 1
     vendor: quantum
     product: scalar_i500
-  tags: panel,quantum,scalar,discovery
+  tags: panel,quantum,scalar,discovery,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://github.com/jaeles-project/jaeles-signatures/blob/master/common/jboss-seam-debug-page.yaml
   metadata:
     max-request: 1
-  tags: jboss,logs,exposure,vuln
+  tags: jboss,logs,exposure,vuln,daily
 
 http:
   - method: GET

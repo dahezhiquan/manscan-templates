@@ -19,7 +19,7 @@ info:
     shodan-query: product:"redis"
     product: redis
     vendor: redis
-  tags: js,redis,default-login,network,vuln,fuzz
+  tags: js,redis,default-login,network,vuln,fuzz,daily
 
 javascript:
   - pre-condition: |

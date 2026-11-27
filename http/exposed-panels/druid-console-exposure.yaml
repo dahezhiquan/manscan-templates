@@ -22,7 +22,7 @@ info:
     max-request: 1
     vendor: alibaba
     product: druid
-  tags: panel,alibaba,druid,discovery
+  tags: panel,alibaba,druid,discovery,daily_clustering
 http:
   - method: GET
     path:

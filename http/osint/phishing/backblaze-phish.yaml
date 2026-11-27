@@ -20,7 +20,7 @@ info:
     - https://backblaze.com
   metadata:
     max-request: 1
-  tags: phishing,backblaze,backup,osint,discovery
+  tags: phishing,backblaze,backup,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

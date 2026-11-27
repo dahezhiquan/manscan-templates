@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"HomeWorks Illumination Web Keypad"
-  tags: misconfig,iot,homeworks,discovery
+  tags: misconfig,iot,homeworks,discovery,daily_clustering
 
 http:
   - method: GET

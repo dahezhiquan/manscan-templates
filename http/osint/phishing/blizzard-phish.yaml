@@ -19,7 +19,7 @@ info:
     - https://blizzard.com
   metadata:
     max-request: 1
-  tags: phishing,blizzard,osint,discovery
+  tags: phishing,blizzard,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

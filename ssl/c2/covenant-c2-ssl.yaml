@@ -19,7 +19,7 @@ info:
     verified: "true"
     max-request: 1
     shodan-query: ssl:”Covenant” http.component:”Blazor”
-  tags: ssl,tls,c2,ir,osint,malware,covenant,discovery
+  tags: ssl,tls,c2,ir,osint,malware,covenant,discovery,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

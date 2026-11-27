@@ -17,7 +17,7 @@ info:
     vendor: tigase
     product: tigase
     shodan-query: title:"Tigase XMPP Server"
-  tags: tigase,xmpp,server,panel,exposure,discovery
+  tags: tigase,xmpp,server,panel,exposure,discovery,daily_clustering
 
 http:
   - method: GET

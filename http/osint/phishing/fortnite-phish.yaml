@@ -19,7 +19,7 @@ info:
     - https://fortnite.com
   metadata:
     max-request: 1
-  tags: phishing,fortnite,epic-games,osint,discovery
+  tags: phishing,fortnite,epic-games,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

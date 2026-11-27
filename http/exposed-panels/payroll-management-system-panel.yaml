@@ -17,7 +17,7 @@ info:
     shodan-query: http.title:"Admin | Employee's Payroll Management System"
     product: payroll_management_system
     vendor: payroll_management_system_project
-  tags: panel,payroll,discovery
+  tags: panel,payroll,discovery,daily_clustering
 
 http:
   - method: GET

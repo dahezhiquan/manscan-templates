@@ -15,7 +15,7 @@ info:
     max-request: 1
     verified: true
     shodan-query: html:"Login | Rallly"
-  tags: panel,login,rallly,discovery
+  tags: panel,login,rallly,discovery,daily_clustering
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: wordpress,wp-plugin,flexible-shipping,log,exposure
+  tags: wordpress,wp-plugin,flexible-shipping,log,exposure,daily
 
 http:
   - method: GET

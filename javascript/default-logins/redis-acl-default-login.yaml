@@ -23,7 +23,7 @@ info:
     shodan-query: product:"Redis"
     vendor: redis
     product: redis
-  tags: js,redis,acl,auth,default-login,network,fuzz,vuln
+  tags: js,redis,acl,auth,default-login,network,fuzz,vuln,daily
 
 flow: tcp(1) && javascript(1)
 

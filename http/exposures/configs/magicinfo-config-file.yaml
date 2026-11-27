@@ -23,7 +23,7 @@ info:
     product: magicinfo_9_server
     shodan-query: title:"MagicINFO"
     fofa-query: title:"MagicINFO"
-  tags: config,exposure,magicinfo,vuln
+  tags: config,exposure,magicinfo,vuln,daily
 
 http:
   - method: GET

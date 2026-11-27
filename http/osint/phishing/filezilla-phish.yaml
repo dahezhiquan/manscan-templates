@@ -20,7 +20,7 @@ info:
     - https://filezilla-project.org
   metadata:
     max-request: 1
-  tags: phishing,filezilla,osint,discovery
+  tags: phishing,filezilla,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

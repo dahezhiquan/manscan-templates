@@ -22,7 +22,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: config,exposure,aws,credentials,vuln
+  tags: config,exposure,aws,credentials,vuln,daily
 
 http:
   - method: GET

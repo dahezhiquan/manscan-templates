@@ -25,7 +25,7 @@ info:
       - http.title:"OctoPrint"
     product: octoprint
     vendor: octoprint
-  tags: iot,octoprint,panel,discovery
+  tags: iot,octoprint,panel,discovery,daily_clustering
 
 http:
   - method: GET

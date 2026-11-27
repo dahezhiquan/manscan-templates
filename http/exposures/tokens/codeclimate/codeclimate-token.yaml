@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: codeclimate,token,exposure,vuln
+  tags: codeclimate,token,exposure,vuln,daily,daily_clustering
 
 http:
   - method: GET

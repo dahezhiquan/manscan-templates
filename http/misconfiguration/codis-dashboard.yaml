@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: title:"Codis • Dashboard"
-  tags: misconfig,exposure,codis,discovery
+  tags: misconfig,exposure,codis,discovery,daily_clustering
 
 http:
   - method: GET

@@ -20,7 +20,7 @@ info:
     - https://loom.com
   metadata:
     max-request: 1
-  tags: phishing,loom,video,osint,discovery
+  tags: phishing,loom,video,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

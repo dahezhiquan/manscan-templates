@@ -21,7 +21,7 @@ info:
     vendor: phpgedview
     product: phpgedview
     shodan-query: html:"/phpgedview.db"
-  tags: misconfig,phpgedview,install,exposure,vuln
+  tags: misconfig,phpgedview,install,exposure,vuln,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: panel,bizzy,login,discovery
+  tags: panel,bizzy,login,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -23,7 +23,7 @@ info:
     vendor: apache
     product: impala
     shodan-query: http.favicon.hash:587330928
-  tags: misconfig,apache,impala,vuln
+  tags: misconfig,apache,impala,vuln,daily_clustering
 
 http:
   - method: GET

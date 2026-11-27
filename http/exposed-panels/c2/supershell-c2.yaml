@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: icon_hash="-1010228102"
-  tags: c2,ir,osint,supershell,panel,vuln
+  tags: c2,ir,osint,supershell,panel,vuln,daily_clustering
 http:
   - method: GET
     path:

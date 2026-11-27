@@ -21,7 +21,7 @@ info:
     - https://microsoft.com
   metadata:
     max-request: 1
-  tags: phishing,microsoft,osint,discovery
+  tags: phishing,microsoft,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/ssl-certificate-name-hostname-mismatch/
   metadata:
     max-request: 1
-  tags: ssl,tls,mismatched,vuln
+  tags: ssl,tls,mismatched,vuln,daily,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
     matchers:

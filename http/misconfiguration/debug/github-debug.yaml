@@ -21,7 +21,7 @@ info:
     vendor: github
     product: github
     shodan-query: http.title:"GitHub Debug"
-  tags: misconfig,github,debug,vuln
+  tags: misconfig,github,debug,vuln,daily_clustering
 
 http:
   - method: GET

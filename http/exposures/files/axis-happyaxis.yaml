@@ -17,7 +17,7 @@ info:
     - 若文件中包含凭据、令牌、连接串或私有地址，应执行密钥轮换、权限收敛和受影响系统访问审计。
   metadata:
     max-request: 4
-  tags: axis,axis2,middleware,exposure,apache,files,vuln
+  tags: axis,axis2,middleware,exposure,apache,files,vuln,daily
 
 http:
   - method: GET

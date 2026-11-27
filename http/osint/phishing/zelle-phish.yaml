@@ -20,7 +20,7 @@ info:
     - https://zellepay.com
   metadata:
     max-request: 1
-  tags: phishing,zelle,osint,discovery
+  tags: phishing,zelle,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

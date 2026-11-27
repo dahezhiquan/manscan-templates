@@ -20,7 +20,7 @@ info:
     - http.title:"zeroshell"
     fofa-query: title="zeroshell"
     google-query: intitle:"zeroshell"
-  tags: panel,zeroshell,discovery
+  tags: panel,zeroshell,discovery,daily_clustering
 
 http:
   - method: GET

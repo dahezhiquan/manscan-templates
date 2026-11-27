@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"editorconfig"
-  tags: config,exposure,vuln
+  tags: config,exposure,vuln,daily
 
 http:
   - method: GET

@@ -21,7 +21,7 @@ info:
     verified: true
     max-request: 4
     shodan-query: html:"Powered by vtiger CRM"
-  tags: vtiger,exposure,vtiger-crm,vuln
+  tags: vtiger,exposure,vtiger-crm,vuln,daily
 
 flow: http(1) && http(2)
 

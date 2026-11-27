@@ -19,7 +19,7 @@ info:
     - https://any.do
   metadata:
     max-request: 1
-  tags: phishing,anydo,productivity,osint,discovery
+  tags: phishing,anydo,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -19,7 +19,7 @@ info:
     - https://fedex.com
   metadata:
     max-request: 1
-  tags: phishing,fedex,shipping,osint,discovery
+  tags: phishing,fedex,shipping,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

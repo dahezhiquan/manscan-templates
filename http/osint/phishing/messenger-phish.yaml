@@ -20,7 +20,7 @@ info:
     - https://messenger.com
   metadata:
     max-request: 1
-  tags: phishing,messenger,osint,discovery
+  tags: phishing,messenger,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

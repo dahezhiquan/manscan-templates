@@ -19,7 +19,7 @@ info:
     - https://cvs.com
   metadata:
     max-request: 1
-  tags: phishing,cvs,ecommerce,osint,discovery
+  tags: phishing,cvs,ecommerce,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

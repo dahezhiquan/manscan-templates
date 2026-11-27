@@ -19,7 +19,7 @@ info:
     - https://gumroad.com
   metadata:
     max-request: 1
-  tags: phishing,gumroad,osint,discovery
+  tags: phishing,gumroad,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

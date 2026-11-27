@@ -13,7 +13,7 @@ info:
     - 对不再使用、来源不明或超出业务边界的证书执行替换、撤销和私钥审计。
   metadata:
     max-request: 1
-  tags: ssl,tls,discovery
+  tags: ssl,tls,discovery,daily_clustering
 ssl:
   - address: "{{Host}}:{{Port}}"
 

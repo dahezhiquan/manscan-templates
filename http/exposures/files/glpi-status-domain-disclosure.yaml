@@ -17,7 +17,7 @@ info:
     - 复核相关组件版本和配置，修复因暴露信息指向的弱配置或已知漏洞。
   metadata:
     max-request: 3
-  tags: glpi,exposure,status,files,vuln
+  tags: glpi,exposure,status,files,vuln,daily
 
 http:
   - method: GET

@@ -22,7 +22,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.title:"Cloudphysician RADAR"
-  tags: panel,edb,discovery
+  tags: panel,edb,discovery,daily_clustering
 http:
   - method: GET
     path:

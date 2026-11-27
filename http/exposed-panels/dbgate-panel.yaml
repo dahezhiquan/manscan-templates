@@ -21,7 +21,7 @@ info:
   metadata:
     max-request: 1
     shodan-query: http.favicon.hash:1198579728
-  tags: panel,dbgate,oss,discovery
+  tags: panel,dbgate,oss,discovery,daily_clustering
 http:
   - method: GET
     path:

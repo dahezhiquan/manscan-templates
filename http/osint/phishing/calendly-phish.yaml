@@ -19,7 +19,7 @@ info:
     - https://calendly.com
   metadata:
     max-request: 1
-  tags: phishing,calendly,scheduling,osint,discovery
+  tags: phishing,calendly,scheduling,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

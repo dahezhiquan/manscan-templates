@@ -24,7 +24,7 @@ info:
     shodan-query: http.title:"Installation - Gogs"
     product: gogs
     vendor: gogs
-  tags: misconfig,exposure,gogs,install,vuln
+  tags: misconfig,exposure,gogs,install,vuln,daily_clustering
 
 http:
   - method: GET

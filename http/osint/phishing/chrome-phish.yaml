@@ -19,7 +19,7 @@ info:
     - https://www.google.com/intl/en_uk/chrome/
   metadata:
     max-request: 1
-  tags: phishing,chrome,osint,discovery
+  tags: phishing,chrome,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -20,7 +20,7 @@ info:
     - https://roamresearch.com
   metadata:
     max-request: 1
-  tags: phishing,roam-research,notes,productivity,osint,discovery
+  tags: phishing,roam-research,notes,productivity,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

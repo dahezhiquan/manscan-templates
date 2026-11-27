@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     fofa-query: body="Krayin Installer"
-  tags: misconfig,exposure,krayin,crm,install
+  tags: misconfig,exposure,krayin,crm,install,daily_clustering
 
 http:
   - method: GET

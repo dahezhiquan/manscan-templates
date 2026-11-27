@@ -24,7 +24,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-  tags: exposure,deadjoe,misconfig,files
+  tags: exposure,deadjoe,misconfig,files,daily
 
 http:
   - method: GET

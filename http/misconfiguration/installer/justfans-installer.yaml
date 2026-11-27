@@ -19,7 +19,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: html:"Install the script - JustFans"
-  tags: misconfig,install,exposure,justfans,vuln
+  tags: misconfig,install,exposure,justfans,vuln,daily_clustering
 
 http:
   - method: GET

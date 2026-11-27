@@ -17,7 +17,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: http.title:"Snapdrop"
-  tags: iot,snapdrop,discovery
+  tags: iot,snapdrop,discovery,daily_clustering
 
 http:
   - method: GET

@@ -19,7 +19,7 @@ info:
     - https://thunderbird.net
   metadata:
     max-request: 1
-  tags: phishing,thunderbird,osint,discovery
+  tags: phishing,thunderbird,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -28,7 +28,7 @@ info:
     max-request: 3
     shodan-query: http.html:"ServiceStack"
     fofa-query: body="ServiceStack"
-  tags: servicestack,exposure,misconfig,logs
+  tags: servicestack,exposure,misconfig,logs,daily
 
 http:
   - method: GET

@@ -24,7 +24,7 @@ info:
     max-request: 1
     vendor: cisco
     product: integrated_management_controller
-  tags: panel,cisco,edb,discovery
+  tags: panel,cisco,edb,discovery,daily_clustering
 http:
   - method: GET
     path:

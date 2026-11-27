@@ -18,7 +18,7 @@ info:
   reference:
     - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT
     - https://scotthelme.co.uk/a-new-security-header-expect-ct/
-  tags: headers,expect-ct,misconfig
+  tags: headers,expect-ct,misconfig,daily_clustering
 
 http:
   - method: GET

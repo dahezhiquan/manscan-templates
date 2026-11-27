@@ -19,7 +19,7 @@ info:
     - https://printful.com
   metadata:
     max-request: 1
-  tags: phishing,printful,osint,discovery
+  tags: phishing,printful,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

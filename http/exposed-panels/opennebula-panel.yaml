@@ -32,7 +32,7 @@ info:
       - title="OpenNebula Sunstone Login"
       - icon_hash="-119786698"
       - icon_hash="656672194"
-  tags: panel,opennebula,discovery
+  tags: panel,opennebula,discovery,daily_clustering
 http:
   - method: GET
     path:

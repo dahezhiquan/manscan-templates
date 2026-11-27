@@ -20,7 +20,7 @@ info:
     - https://medium.com
   metadata:
     max-request: 1
-  tags: phishing,medium,osint,discovery
+  tags: phishing,medium,osint,discovery,daily_clustering
 http:
   - method: GET
     path:

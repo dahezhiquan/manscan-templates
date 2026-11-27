@@ -15,7 +15,7 @@ info:
     - 轮换已暴露的密钥、令牌和凭据，并审计异常下载或枚举行为。
   metadata:
     max-request: 1
-  tags: misconfig,concrete,cms,vuln
+  tags: misconfig,concrete,cms,vuln,daily_clustering
 
 http:
   - method: GET

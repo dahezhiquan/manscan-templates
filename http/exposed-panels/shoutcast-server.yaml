@@ -16,7 +16,7 @@ info:
     shodan-query: http.title:"SHOUTcast Server"
     product: dnas
     vendor: shoutcast
-  tags: panel,discovery
+  tags: panel,discovery,daily_clustering
 
 http:
   - method: GET

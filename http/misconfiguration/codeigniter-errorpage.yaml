@@ -22,7 +22,7 @@ info:
     product: codeigniter
     shodan-query: title:"Error" html:"CodeIgniter"
     fofa-query: title="ErrorException"
-  tags: codeigniter,misconfig,error,vuln
+  tags: codeigniter,misconfig,error,vuln,daily_clustering
 
 http:
   - method: GET

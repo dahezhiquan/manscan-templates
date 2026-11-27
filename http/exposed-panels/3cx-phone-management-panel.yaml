@@ -39,7 +39,7 @@ info:
       - icon_hash=970132176
       - title="3cx phone system management console"
       - title="3cx webclient"
-  tags: panel,3cx,discovery
+  tags: panel,3cx,discovery,daily_clustering
 http:
   - method: GET
     path:

@@ -28,7 +28,7 @@ info:
     shodan-query: html:"access_tokens.db"
     product: cloud_platform
     vendor: google
-  tags: google,cloud,devops,exposure,vuln
+  tags: google,cloud,devops,exposure,vuln,daily
 
 http:
   - method: GET

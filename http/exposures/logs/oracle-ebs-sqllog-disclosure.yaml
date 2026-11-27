@@ -23,7 +23,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-  tags: oracle,ebs,logs,exposure,vuln
+  tags: oracle,ebs,logs,exposure,vuln,daily
 
 http:
   - method: GET

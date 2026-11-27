@@ -2,9 +2,10 @@
 # tags 表示需要忽略执行的标签列表。除非用户明确要求执行这些标签
 # dos 标签：可能造成目标崩溃的模版
 
-# tags:
-#   - "dos"
-
+tags:
+  - wordpress
+  - wp-plugin
+  - wp-theme
 
 # files 表示需要忽略执行的模板文件列表。除非用户明确要求执行这些文件
 
